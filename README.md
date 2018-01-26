@@ -26,10 +26,10 @@ Preprocessor Syntax (Developer writes this code) -> preprocessor converts syntax
 
 There are many different flavors of syntax that we need to be aware of.  Some of the most popular in use today are:
 
-* LESS
-* SASS
-* Stylus
-* PostCSS
+* [LESS](http://lesscss.org/)
+* [SASS](http://sass-lang.com/)
+* [Stylus](http://stylus-lang.com/)
+* [PostCSS](http://postcss.org/)
 
 Note: Learning one syntax will prepare you for all the others.  Don’t stress over which preprocessor is better or get hung up on features. For now, we are using LESS because it can be used with JavaScript as the processing language and is easily installed with the node package manager.
 
