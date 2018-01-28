@@ -10,7 +10,7 @@ Description / Rationale
 
 Preprocessing extends the ability of CSS by adding abstractions and making CSS easier to use. There are many flavors of preprocessors but the one we will focus on will be LESS (Leaner Style Sheets).  LESS is a language extension for CSS.  It fits nicely into almost every type of development stack and has been ported to JavaScript among many other programming languages. http://lesscss.org/
 
-Perhaps the biggest reason to learn a preprocessor is equal parts team coding techniques, and speed to delivery with no errors.  
+Perhaps the biggest reason to learn a preprocessor is equal parts team coding techniques, and speed to delivery with no errors.
 
 Instructor Notes
 
@@ -20,7 +20,7 @@ Teacher Demo
 
 Short Intro to Preprocessing
 
-Preprocessing can cause confusion even after reading about it, take a few minutes to describe how preprocessors use other more robust languages to extend CSS syntax.  
+Preprocessing can cause confusion even after reading about it, take a few minutes to describe how preprocessors use other more robust languages to extend CSS syntax.
 
 Preprocessor Syntax (Developer writes this code) -> preprocessor converts syntax into CSS -> Outputted CSS (developer does NOT write this code)
 
@@ -41,15 +41,17 @@ Variables
 
 Start with a simple HTML structure to demonstrate scope:
 
+```html
 <div class="parent">
   <p>Parent</p>
-  <div class="child"> 
+  <div class="child">
     <p>Child</p>
     <div class="grandchild">
       <p>Grandchild</p>
     </div><!-- grandchild -->
   </div><!-- child -->
 </div><!-- parent -->
+```
 
 Add some simple colors and show that the CSS selectors could be shown like this:
 
@@ -118,20 +120,20 @@ Here is the above example nested:
 // Selectors below variables
 .parent {
   color: @orchid;
-  
+
   .child {
     color: @pastel-green;
-    
+
     .grandchild {
       color: @roman;
-      
+
     }/
   }// child
 }// parent
 
-Take time to explain that the above structure ultimately outputs as pure CSS but now we don’t have to worry about re-writing the selector train over and over.  
+Take time to explain that the above structure ultimately outputs as pure CSS but now we don’t have to worry about re-writing the selector train over and over.
 
-Note: A danger of introducing nesting to developers new to the concept will want to start nesting EVERYTHING from the body tag on down.  Explain that we should try to keep nesting to a “4 Deep Rule.”  Focus on components and not on the whole page. 
+Note: A danger of introducing nesting to developers new to the concept will want to start nesting EVERYTHING from the body tag on down.  Explain that we should try to keep nesting to a “4 Deep Rule.”  Focus on components and not on the whole page.
 
 Nested-At rules and bubbling
 
@@ -139,7 +141,7 @@ Nested-At rules and bubbling
 
 Operators
 
-Operators allow more flexibility in a previously rigid CSS environment.  In LESS we can use +,-,*,/.  These operators can work on numbers, colors, and variables.  
+Operators allow more flexibility in a previously rigid CSS environment.  In LESS we can use +,-,*,/.  These operators can work on numbers, colors, and variables.
 
 Occasionally you will come across a request where you would want to double the width of something no matter what the hard coded pixel is.  You can easily implement this using operators.  Using the previous example we could double the font using the * operator:
 
@@ -158,20 +160,20 @@ One of the major conveniences that preprocessors bring are comments.  Because we
 
 /* This is a block comment */
 
-Using single line comments to tag larger nested structures can be a huge help for a future developer reading your code.  
+Using single line comments to tag larger nested structures can be a huge help for a future developer reading your code.
 
 Example:
 
 .parent {
   color: @orchid;
   font-size: 45px * 2;
-  
+
   .child {
     color: @pastel-green;
-    
+
     .grandchild {
       color: @roman;
-      
+
     }// grandchild
   }// child
 }// parent
@@ -191,25 +193,25 @@ This is really just holding a string, nothing more to it!  But when you combine 
 .parent {
   color: @orchid;
   font-size: 45px * 2;
-  
+
   .child {
     color: @pastel-green;
-    
+
     @media @laptop {
       color: black;
     }
-    
+
     @media @tablet {
       color: red;
     }
-    
+
     @media @phone {
       color: silver;
     }
-    
+
     .grandchild {
       color: @roman;
-      
+
     }// grandchild
   }// child
 }// parent
@@ -244,7 +246,7 @@ This would compile out to:
 
 Now you could easily adjust tablet and mobile styles over and over using a simple @laptop or @tablet nested inside the proper element.  This is a massive idea to grasp when it comes to easily reading media queries in LESS!
 
-Group Demo 
+Group Demo
 
 Install LESS together via npm.  Go through the exported file process with them.  Make sure they understand that the exported CSS file is NOT where they work on project updates.
 
