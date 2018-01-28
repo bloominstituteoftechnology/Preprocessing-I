@@ -1,24 +1,23 @@
 # Preprocessing-One
 Preprocessing Module 1
 
-
-Objective
+## Objective
 
 Student should be able to install LESS as well as implement variables, operators, nesting, nested at-rules and bubbling.
 
-Description / Rationale
+## Description / Rationale
 
 Preprocessing extends the ability of CSS by adding abstractions and making CSS easier to use. There are many flavors of preprocessors but the one we will focus on will be LESS (Leaner Style Sheets).  LESS is a language extension for CSS.  It fits nicely into almost every type of development stack and has been ported to JavaScript among many other programming languages. http://lesscss.org/
 
 Perhaps the biggest reason to learn a preprocessor is equal parts team coding techniques, and speed to delivery with no errors.
 
-Instructor Notes
+## Instructor Notes
 
 The students will be implementing LESS syntax on a project that is already built in normal CSS.   The guided demo will showcase everything they need to learn in order to accomplish the challenge.
 
-Teacher Demo
+## Teacher Demo
 
-Short Intro to Preprocessing
+## Short Intro to Preprocessing
 
 Preprocessing can cause confusion even after reading about it, take a few minutes to describe how preprocessors use other more robust languages to extend CSS syntax.
 
@@ -33,11 +32,11 @@ There are many different flavors of syntax that we need to be aware of.  Some of
 
 Note: Learning one syntax will prepare you for all the others.  Don’t stress over which preprocessor is better or get hung up on features. For now, we are using LESS because it can be used with JavaScript as the processing language and is easily installed with the node package manager.
 
-Guided Practice
+## Guided Practice
 
 Demonstrate the following in your favorite web editor, I prefer codepen.io for easy LESS configurations:
 
-Variables
+### Variables
 
 Start with a simple HTML structure to demonstrate scope:
 
@@ -93,7 +92,7 @@ Note: be sure to put the variables at the top of the page and explain how the ca
 
 Now that they can grasp the simple nature of variables, you can expound on how using variables across a team on a massive project can save literally hours of communication issues as well as DRY principles in programming.
 
-Nesting
+### Nesting
 
 CSS scope is one of the biggest problems for beginning and even advanced CSS developers.  Throw in multiple teams contributing to a code base and you have a recipe for specificity disaster.  The introduction of nesting allows even a beginning CSS developer to correctly scope specificity.  Lets keep using our code example from above:
 
@@ -146,9 +145,7 @@ Note: A danger of introducing nesting to developers new to the concept will want
 
 Nested-At rules and bubbling
 
-
-
-Operators
+### Operators
 
 Operators allow more flexibility in a previously rigid CSS environment.  In LESS we can use +,-,*,/.  These operators can work on numbers, colors, and variables.
 
@@ -163,7 +160,7 @@ Occasionally you will come across a request where you would want to double the w
 
 Operators can be used to create your own unique css rules or make tasks easier.  They are not used a lot compared to other features in LESS.
 
-Comments
+### Comments
 
 One of the major conveniences that preprocessors bring are comments.  Because we are writing in a language like JavaScript we can use // for single line comments and of course we can still use the block comment syntax from CSS:
 
@@ -193,7 +190,7 @@ Example:
 }// parent
 ```
 
-Escaping
+### Escaping
 
 Escaping allows you to use any string you want as a property or variable value. This can be pretty confusing at first as it’s a more advanced feature of LESS.  The syntax looks like this: ~”anything"
 
@@ -267,15 +264,15 @@ This would compile out to:
 
 Now you could easily adjust tablet and mobile styles over and over using a simple @laptop or @tablet nested inside the proper element.  This is a massive idea to grasp when it comes to easily reading media queries in LESS!
 
-Group Demo
+# Group Demo
 
 Install LESS together via npm.  Go through the exported file process with them.  Make sure they understand that the exported CSS file is NOT where they work on project updates.
 
-Challenge
+# Challenge
 
 Convert a single web page built with CSS into LESS syntax and incorporate proper nesting techniques, add variables, comments, and utilize escaping.
 
 
-Pre Class Links
+## Pre Class Links
 
 https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus
