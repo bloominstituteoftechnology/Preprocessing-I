@@ -97,6 +97,7 @@ Nesting
 
 CSS scope is one of the biggest problems for beginning and even advanced CSS developers.  Throw in multiple teams contributing to a code base and you have a recipe for specificity disaster.  The introduction of nesting allows even a beginning CSS developer to correctly scope specificity.  Lets keep using our code example from above:
 
+```less
 @orchid: #D95ED9;
 @pastel-green: #8CD95E;
 @roman: #D95E61;
@@ -112,11 +113,13 @@ CSS scope is one of the biggest problems for beginning and even advanced CSS dev
 .parent .child .grandchild {
   color: @roman;
 }
+```
 
 We actually have our scope locked in nicely with a verbose selector train, but writing this over and over could introduce human error and one wrong selector could bleed scope.  Nesting is simply indenting child selectors inside of a parent.  Being able to control child selectors by indentation creates an easy to read and verbose selection structure.
 
 Here is the above example nested:
 
+```less
 // Variables at the top of the page
 @orchid: #D95ED9;
 @pastel-green: #8CD95E;
@@ -135,6 +138,7 @@ Here is the above example nested:
     }/
   }// child
 }// parent
+```
 
 Take time to explain that the above structure ultimately outputs as pure CSS but now we don’t have to worry about re-writing the selector train over and over.
 
@@ -150,10 +154,12 @@ Operators allow more flexibility in a previously rigid CSS environment.  In LESS
 
 Occasionally you will come across a request where you would want to double the width of something no matter what the hard coded pixel is.  You can easily implement this using operators.  Using the previous example we could double the font using the * operator:
 
+```less
 .parent {
   color: @orchid;
   font-size: 45px * 2;  // 90px
 }
+```
 
 Operators can be used to create your own unique css rules or make tasks easier.  They are not used a lot compared to other features in LESS.
 
@@ -161,14 +167,17 @@ Comments
 
 One of the major conveniences that preprocessors bring are comments.  Because we are writing in a language like JavaScript we can use // for single line comments and of course we can still use the block comment syntax from CSS:
 
+```js
 // Single line comments FTW
 
 /* This is a block comment */
+```
 
 Using single line comments to tag larger nested structures can be a huge help for a future developer reading your code.
 
 Example:
 
+```less
 .parent {
   color: @orchid;
   font-size: 45px * 2;
@@ -182,6 +191,7 @@ Example:
     }// grandchild
   }// child
 }// parent
+```
 
 Escaping
 
@@ -189,12 +199,15 @@ Escaping allows you to use any string you want as a property or variable value. 
 
 As an example we could use escaping to allow us to inject media queries a lot easier by setting up variables first:
 
+```less
 @laptop: ~"(max-width: 1100px)";
 @tablet: ~"(max-width: 768px)";
-@phone: ~"(max-width: 400px)”;
+@phone: ~"(max-width: 400px)";
+```
 
 This is really just holding a string, nothing more to it!  But when you combine it with other CSS items, you can get some amazing results:
 
+```less
 .parent {
   color: @orchid;
   font-size: 45px * 2;
@@ -220,9 +233,11 @@ This is really just holding a string, nothing more to it!  But when you combine 
     }// grandchild
   }// child
 }// parent
+```
 
 This would compile out to:
 
+```less
 .parent {
   color: #D95ED9;
   font-size: 90px;
@@ -248,6 +263,7 @@ This would compile out to:
 .parent .child .grandchild {
   color: #D95E61;
 }
+```
 
 Now you could easily adjust tablet and mobile styles over and over using a simple @laptop or @tablet nested inside the proper element.  This is a massive idea to grasp when it comes to easily reading media queries in LESS!
 
