@@ -55,6 +55,7 @@ Start with a simple HTML structure to demonstrate scope:
 
 Add some simple colors and show that the CSS selectors could be shown like this:
 
+```css
 .parent {
   color: #D95ED9;
 }
@@ -66,10 +67,13 @@ Add some simple colors and show that the CSS selectors could be shown like this:
 .parent .child .grandchild {
   color: #D95E61;
 }
+```
 
 Explain that in this small example, we can already start to see 3 values that could be repeated over and over in a website color scheme. Introduce the use of variables using LESS:
 
 Note: be sure to put the variables at the top of the page and explain how the cascade in CSS doesn’t go away in a preprocessor syntax
+
+```less
 @orchid: #D95ED9;
 @pastel-green: #8CD95E;
 @roman: #D95E61;
@@ -85,6 +89,7 @@ Note: be sure to put the variables at the top of the page and explain how the ca
 .parent .child .grandchild {
   color: @roman;
 }
+```
 
 Now that they can grasp the simple nature of variables, you can expound on how using variables across a team on a massive project can save literally hours of communication issues as well as DRY principles in programming.
 
