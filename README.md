@@ -34,7 +34,7 @@ Note: Learning one syntax will prepare you for all the others.  Don’t stress o
 
 ## Guided Practice
 
-Demonstrate the following in your favorite web editor, I prefer codepen.io for easy LESS configurations:
+Demonstrate the following in your favorite web editor, I prefer [codepen.io](https://codepen.io/) for easy LESS configurations:
 
 ### Variables
 
