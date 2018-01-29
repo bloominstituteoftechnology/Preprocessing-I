@@ -134,7 +134,7 @@ Here is the above example nested:
     .grandchild {
       color: @roman;
 
-    }/
+    }
   }// child
 }// parent
 ```
@@ -165,7 +165,7 @@ Operators can be used to create your own unique css rules or make tasks easier. 
 One of the major conveniences that preprocessors bring are comments.  Because we are writing in a language like JavaScript we can use // for single line comments and of course we can still use the block comment syntax from CSS:
 
 ```js
-// Single line comments FTW
+// Single line comments For The Win!
 
 /* This is a block comment */
 ```
