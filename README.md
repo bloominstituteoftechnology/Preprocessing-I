@@ -52,7 +52,7 @@ Start with a simple HTML structure to demonstrate scope:
 </div><!-- parent -->
 ```
 
-Add some simple colors and show that the CSS selectors could be shown like this:
+Add some [simple colors](http://chir.ag/projects/name-that-color) and show that the CSS selectors could be shown like this:
 
 ```css
 .parent {
@@ -275,4 +275,5 @@ Convert a single web page built with CSS into LESS syntax and incorporate proper
 
 ## Pre Class Links
 
-https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus
+[An Introduction to CSS Pre-Processors: SASS, LESS and Stylus](https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus)
+[A Useful Color Picker Tool](http://chir.ag/projects/name-that-color)
