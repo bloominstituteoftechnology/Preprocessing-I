@@ -275,6 +275,6 @@ Convert a single web page built with CSS into LESS syntax and incorporate proper
 
 ## Pre Class Links
 
-[An Introduction to CSS Pre-Processors: SASS, LESS and Stylus](https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus)
-[A Useful Color Picker Tool](http://chir.ag/projects/name-that-color)
-Also: macOS comes with the Digital Color Meter app and these are some options for [Windows](https://graphicdesign.stackexchange.com/q/76383) and [Linux](https://alternativeto.net/software/digitalcolor-meter/?platform=linux)
+- [An Introduction to CSS Pre-Processors: SASS, LESS and Stylus](https://htmlmag.com/article/an-introduction-to-css-preprocessors-sass-less-stylus)
+- [A Useful Color Picker Tool](http://chir.ag/projects/name-that-color)
+- Also: macOS comes with the Digital Color Meter app and these are some options for [Windows](https://graphicdesign.stackexchange.com/q/76383) and [Linux](https://alternativeto.net/software/digitalcolor-meter/?platform=linux)
