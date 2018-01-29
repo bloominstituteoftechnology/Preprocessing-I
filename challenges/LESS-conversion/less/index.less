@@ -68,6 +68,12 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+// LESS variables:
+@display-flex: flex;
+@abbey: black;
+@white-solid: white;
+@silver-chalice: #b0b0b0;
+
 /* Header Styles */
 
 // header {
@@ -99,21 +105,21 @@ h1, h2, h3, h4, h5 {
 
 header {
     width: 100%;
-    display: flex;
+    display: @display-flex;
         nav {
             ul {
                 margin-top: 40px;
                 width: 610px;
                 justify-content: space-between;
-                display: flex;
+                display: @display-flex;
                 li {
                     a {
                         text-decoration: none;
-                        color: #b0b0b0;
+                        color: @silver-chalice;
                     }
                     a:hover {
                         text-decoration: underline;
-                        color: black;
+                        color: @abbey;
                     }
                 }
             }
@@ -159,30 +165,30 @@ header {
 // }
 
 .cta {
-    display: flex;
+    display: @display-flex;
     margin-top: 72px;
     justify-content: flex-end;
     .cta-text {
         font-size: 72px;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
+        display: @display-flex;
         justify-content: center;
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
         button {
-            border: 1px double black;
+            border: 1px double @abbey;
             font-size: 16px;
-            background: white;
+            background: @white-solid;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
         }
         button:hover {
-            background: black;
-            color: white;
+            background: @abbey;
+            color: @white-solid;
         }
     }
 }
@@ -218,14 +224,14 @@ header {
 // }
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @abbey; 
+   border-bottom: 2px solid @abbey;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
    .top-content {
-        display: flex;
+        display: @display-flex;
         justify-content: space-around;
     }
     .middle-img {
@@ -233,7 +239,7 @@ header {
         margin: 30px auto;
     }
     .bottom-content {
-        display: flex;
+        display: @display-flex;
         justify-content: space-around;
         p {
             padding-right: 20px;
