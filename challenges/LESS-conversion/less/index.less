@@ -86,19 +86,22 @@ header {
         a {
           text-decoration: none;
           color: @silver-chalice;
-        }
-        a:hover {
-          text-decoration: underline;
-          color: black;
+          &:hover {
+            text-decoration: underline;
+            color: black;
+          }
         }
       }
     }
   }
+}
   .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
-}
 
 /* Call To Action (CTA) Styles */
 
@@ -123,10 +126,13 @@ header {
       height: 32px;
       margin-top: 10px;
       cursor: pointer;
-    }
-    button:hover {
-      background: black;
-      color: white;
+      &:hover {
+        background: black;
+        color: white;
+        @media (max-width: 400px) {
+          background: purple;
+        }
+      }
     }
   }
 }
@@ -147,6 +153,9 @@ header {
   .mainContent__middle--img {
   display: block;
   margin: 30px auto;
+  @media (max-width: 400px) {
+    display: none;
+  }
   }
   .mainContent__bottom {
   display: flex;
@@ -154,6 +163,11 @@ header {
   p {
     padding-right: 20px;
   }
+  }
+  @media (max-width: 375px) {
+    .mainContent__textContent {
+      color: orange;
+    }
   }
 }
 
