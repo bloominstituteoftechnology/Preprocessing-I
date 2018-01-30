@@ -1,3 +1,4 @@
+@import "variables";
 @import "reset";
 @import "general-styles";
 @import "header";
@@ -5,16 +6,81 @@
 @import "main-content";
 @import "contact";
 @import "footer";
+@mobile: ~'(max-width:480px)';
+@laptop: ~'(min-width:481px)';
+@desktop: ~'(min-width:768px)';
+@main-color: #0386da;
+.button() {
+    padding: 20px 30px 20px 30px;
+    margin-top:10px;
+    font-size: 12px * 1.25;
+    background-color: @main-color;
+    text-align:center;
+    color:white;
+    border:0;
+    &:hover {
+        background-color: desaturate(@main-color, 30%);
+    }
+}
 
+body {
+    @media @mobile {
+        background-color: rgb(169, 218, 169);
+    }
+    @media @laptop {
+        background-color: rgb(67, 166, 196);
+    }
+    @media @desktop {
+        background-color: rgb(235, 235, 235);
+    }
+}
 
+@keyframes rotate-img {
+    0% {
+        .rotate(30deg)
+    }
+    25% {
+        .rotate(-30deg)
+    }
+    75% {
+        .rotate(-30deg)
+    }
+    100% {
+        .rotate(30deg)
+    }
+}
 
+.logo {
+    .rotate(-8deg);
+}
 
+.cta {
+    img {
+        .animation(rotate-img, 10s, infinite, ease-in-out);
+    }
+    button {
+        .transition(.25s all ease-in-out);
+    }
+    h1 {
+        .transition(.25s all ease-in-out);
+        &:hover {
+            .scale(1.15);
+        }
+    }
+}
 
+.text-content {
+    button {
+        .button();
+    }
+}
 
-
-
-
-
-
-
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+{
+    color: desaturate(@main-color, 20%);
+}
