@@ -150,18 +150,65 @@ h5 {
 }
 /* Header Styles */
 header {
-  width: 100%;
   display: flex;
+  width: 100%;
+}
+@media (min-width: 300px) {
+  header {
+    flex-flow: column nowrap;
+  }
+}
+@media (min-width: 800px) {
+  header {
+    flex-flow: row nowrap;
+  }
 }
 header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+  display: flex;
+}
+@media (min-width: 300px) {
+  header .logo {
+    align-self: center;
+    margin: 0px;
+  }
+}
+@media (min-width: 800px) {
+  header .logo {
+    align-self: flex-end;
+    margin: 28px 0 0 91px;
+  }
+}
+header nav {
+  display: flex;
+}
+@media (min-width: 300px) {
+  header nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (min-width: 800px) {
+  header nav {
+    flex-flow: row nowrap;
+  }
 }
 header nav ul {
-  margin-top: 40px;
-  width: 610px;
-  justify-content: space-between;
   display: flex;
+}
+@media (min-width: 300px) {
+  header nav ul {
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 800px) {
+  header nav ul {
+    margin-top: 40px;
+    width: 610px;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+  }
 }
 header nav ul li {
   user-select: none;

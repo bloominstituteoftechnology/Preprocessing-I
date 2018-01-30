@@ -72,22 +72,53 @@ h1, h2, h3, h4, h5 {
 // Variables
 @black: black;
 @white: white;
+@mobile-width: 300px;
+@desktop-width: 800px;
 
 /* Header Styles */
 
 header {
+  display: flex;
     width: 100%;
-    display: flex;
+    @media (min-width: @mobile-width) {
+      flex-flow: column nowrap;
+    }
+    @media (min-width: @desktop-width) {
+      flex-flow: row nowrap;
+    }
     .logo {
-      align-self: flex-end;
-      margin: 28px 0 0 91px;
+      display: flex;
+      @media (min-width: @mobile-width) {
+        align-self: center;
+        margin: 0px;
+      }
+      @media (min-width: @desktop-width) {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+      }
     }
     nav {
+     display: flex;
+      @media (min-width: @mobile-width) {
+        width: 100%;
+        justify-content: center;
+      }
+      @media (min-width: @desktop-width) {
+        flex-flow: row nowrap;
+      }
       ul {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
         display: flex;
+        @media (min-width: @mobile-width) {
+          flex-flow: column nowrap;
+          align-content: center;
+          justify-content: center;
+        }
+        @media (min-width: @desktop-width) {
+          margin-top: 40px; 
+          width: 610px;
+          justify-content: space-between;
+          flex-flow: row nowrap;
+        }
         li {
           user-select: none;
           a {
@@ -102,6 +133,7 @@ header {
       }
     }
 }
+
 /* Call To Action (CTA) Styles */
 
 .cta {
