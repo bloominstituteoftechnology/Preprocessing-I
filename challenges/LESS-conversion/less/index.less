@@ -1,0 +1,286 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+@black:                 black;
+@white:                 white;
+@bobo:                  #b0b0b0;
+@lightblue :            lightblue;
+@red:                   rgb(117, 0, 0);
+@100-percent: 100%;
+@auto-margin: auto;
+@flex-display: flex;
+@crazy-border: 5px double @white;
+@default-padding: 5px;
+@default-font-size: 5px;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: @100-percent;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: @lightblue;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 880px;
+    margin: @auto-margin;
+    @media (max-width: 400px){
+        width: 400px;
+    }
+}
+
+/* Header Styles */
+
+.main-header {
+    width: @100-percent;
+    display: @flex-display;
+    
+    .main-header__nav {
+        background-color: @black;
+        color: @white;
+        border: @crazy-border;
+        
+        .main-header__ul {
+            padding: @default-padding * 4;
+            width: 610px;
+            justify-content: space-between;
+            align-content: center;
+            display: @flex-display;
+            @media (max-width: 400px){
+                flex-direction: column;
+                width: 100px;
+            }
+            .main-header__li {
+                .main-header__a {
+                    text-decoration: none;
+                    font-size: @default-font-size * 4;
+                    color: @bobo;
+                    &:hover {
+                        color: @black;
+                        background-color: @white;
+                    }
+                }
+            }
+        }
+    }
+    .main-header__logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+        
+        @media (max-width: 400px){
+            align-self: flex-start;
+            margin: 60px 0px 0px 50px;
+        }
+    }
+}
+
+/* Call To Action (CTA) Styles */
+
+.cta {
+    display: @flex-display;
+    margin-top: 72px;
+    justify-content: flex-end;
+    @media (max-width: 400px) {
+        margin-top:10px;
+    }
+    .cta__text {
+        border: @crazy-border;
+        color: @white;
+        background-color: @black;
+        padding: @default-padding * 2;
+        font-size: @default-font-size * 14;
+        text-align: center;
+        letter-spacing: 5px;
+        display: @flex-display;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        @media (max-width: 400px) {
+            width: @100-percent;
+            margin: 0px 0px 0px 0px;
+        }
+        .cta__button {
+            border: @crazy-border;;
+            font-size: @default-font-size * 3;
+            color: @white;
+            background: @black;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                background: @white;
+                color: @black;
+                border-color: @black;
+            }
+        }
+    }
+    .cta__image {
+        @media (max-width: 400px) {
+            display: none;
+        }
+    }
+}
+
+/* Main Content Styles */
+
+.main {
+   margin: 75px 0 35px 0;
+   padding: @default-padding * 7 0;
+   font-size: @default-font-size * 3;
+   line-height: 18px;
+   background-color: @black;
+   border:@crazy-border;
+
+   @media (max-width: 400px) {
+   margin: 10px 0px 0px 0px;
+   }
+   
+   .main__top {
+        display: flex;
+        justify-content: space-around;
+        padding: @default-padding;
+        color: rgb(102, 20, 102);
+        .main__top-text {
+            padding: @default-padding;
+            @media (max-width: 400px) {
+                font-size: @default-font-size * 2;
+            }
+            .main__top-header {
+                font-size: @default-font-size * 5;
+            }
+            &:hover {
+                background-color: @black;
+                color:rgb(55, 55, 155);
+            }
+        }
+        &:hover {
+            background-color: @lightblue;
+            color: rgb(253, 4, 158);
+        }
+    }
+    .main__middle {
+        display: block;
+        margin: 20px @auto-margin;
+        width: 99%;
+
+        &:hover {
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }    
+    }
+    .main__bottom {
+        padding: @default-padding;
+        display: flex;
+        justify-content: space-around;
+        color: rgb(45, 131, 28);
+        .main__bottom-text {
+            padding: @default-padding;
+            @media (max-width: 400px) {
+                font-size: @default-font-size * 2;
+            }
+            .main__bottom-header {
+                font-size: @default-font-size * 5;
+            }
+            &:hover {
+                background-color:@black;
+                color:@red;
+            }
+        }
+        .main__bottom-p {
+            padding-right: @default-padding * 4;
+        }
+        &:hover {
+            background-color: @lightblue;
+            color: rgb(160, 124, 7);
+        }
+    }
+}
+
+/* Contact Styles */
+
+.contact {
+    @media (max-width: 400px) {
+        width: 25%;
+        font-size: @default-font-size * 2;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;    
+    }
+    h4 {
+        font-size: @default-font-size * 6;
+    }
+    p {
+        margin: 15px 0;
+        font-family: 'Bangers', cursive;
+    }
+}
+
+/* Footer Styles */
+
+footer {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+

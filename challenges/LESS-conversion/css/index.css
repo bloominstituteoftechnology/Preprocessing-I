@@ -2,174 +2,350 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-html, body {
-    height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+html,
+body {
+  height: 100%;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: lightblue;
 }
-
-h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
-
 .container {
-    width: 880px;
-    margin: auto;
+  width: 880px;
+  margin: auto;
 }
-
+@media (max-width: 400px) {
+  .container {
+    width: 400px;
+  }
+}
 /* Header Styles */
-
-header {
-    width: 100%;
-    display: flex;
+.main-header {
+  width: 100%;
+  display: flex;
 }
-
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
+.main-header .main-header__nav {
+  background-color: black;
+  color: white;
+  border: 5px double white;
 }
-
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
+.main-header .main-header__nav .main-header__ul {
+  padding: 20px;
+  width: 610px;
+  justify-content: space-between;
+  align-content: center;
+  display: flex;
 }
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
+@media (max-width: 400px) {
+  .main-header .main-header__nav .main-header__ul {
+    flex-direction: column;
+    width: 100px;
+  }
 }
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+.main-header .main-header__nav .main-header__ul .main-header__li .main-header__a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #b0b0b0;
 }
-
+.main-header .main-header__nav .main-header__ul .main-header__li .main-header__a:hover {
+  color: black;
+  background-color: white;
+}
+.main-header .main-header__logo {
+  align-self: flex-end;
+  margin: 28px 0 0 91px;
+}
+@media (max-width: 400px) {
+  .main-header .main-header__logo {
+    align-self: flex-start;
+    margin: 60px 0px 0px 50px;
+  }
+}
 /* Call To Action (CTA) Styles */
-
 .cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
+  display: flex;
+  margin-top: 72px;
+  justify-content: flex-end;
 }
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
+@media (max-width: 400px) {
+  .cta {
     margin-top: 10px;
-    cursor: pointer;
+  }
 }
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+.cta .cta__text {
+  border: 5px double white;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  font-size: 70px;
+  text-align: center;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 82px 0 0;
 }
-
+@media (max-width: 400px) {
+  .cta .cta__text {
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+  }
+}
+.cta .cta__text .cta__button {
+  border: 5px double white;
+  font-size: 15px;
+  color: white;
+  background: black;
+  width: 170px;
+  height: 32px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.cta .cta__text .cta__button:hover {
+  background: white;
+  color: black;
+  border-color: black;
+}
+@media (max-width: 400px) {
+  .cta .cta__image {
+    display: none;
+  }
+}
 /* Main Content Styles */
-
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+.main {
+  margin: 75px 0 35px 0;
+  padding: 35px 0;
+  font-size: 15px;
+  line-height: 18px;
+  background-color: black;
+  border: 5px double white;
 }
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
+@media (max-width: 400px) {
+  .main {
+    margin: 10px 0px 0px 0px;
+  }
 }
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
+.main .main__top {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  color: #661466;
 }
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
+.main .main__top .main__top-text {
+  padding: 5px;
 }
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+@media (max-width: 400px) {
+  .main .main__top .main__top-text {
+    font-size: 10px;
+  }
 }
-
+.main .main__top .main__top-text .main__top-header {
+  font-size: 25px;
+}
+.main .main__top .main__top-text:hover {
+  background-color: black;
+  color: #37379b;
+}
+.main .main__top:hover {
+  background-color: lightblue;
+  color: #fd049e;
+}
+.main .main__middle {
+  display: block;
+  margin: 20px auto;
+  width: 99%;
+}
+.main .main__middle:hover {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.main .main__bottom {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  color: #2d831c;
+}
+.main .main__bottom .main__bottom-text {
+  padding: 5px;
+}
+@media (max-width: 400px) {
+  .main .main__bottom .main__bottom-text {
+    font-size: 10px;
+  }
+}
+.main .main__bottom .main__bottom-text .main__bottom-header {
+  font-size: 25px;
+}
+.main .main__bottom .main__bottom-text:hover {
+  background-color: black;
+  color: #750000;
+}
+.main .main__bottom .main__bottom-p {
+  padding-right: 20px;
+}
+.main .main__bottom:hover {
+  background-color: lightblue;
+  color: #a07c07;
+}
 /* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
+@media (max-width: 400px) {
+  .contact {
+    width: 25%;
+    font-size: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-
+.contact h4 {
+  font-size: 30px;
+}
+.contact p {
+  margin: 15px 0;
+  font-family: 'Bangers', cursive;
+}
 /* Footer Styles */
-
 footer {
-    text-align: center;
-    margin: 40px 0 20px;
+  text-align: center;
+  margin: 40px 0 20px;
 }
