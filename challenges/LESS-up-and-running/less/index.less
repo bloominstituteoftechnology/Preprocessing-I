@@ -70,67 +70,100 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Header Styles */
+// Convert styles below to nested styles.  Use commented labels as category hints.
 
-header {
+.header {
     width: 100%;
     display: flex;
-}
+    nav {
+        ul {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
+            li{
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+            }
+                a{
+                    text-decoration: none;
+                    color: #b0b0b0; 
+                }
+                a:hover {
+                    text-decoration: underline;
+                    color: black;
+                }   
+            }
+        }
+    .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+    }
 }
 
 /* Call To Action (CTA) Styles */
-
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+
+        .cta-text button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .cta-text button:hover {
+            background: black;
+            color: white;
+        }
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+// .cta {
+//     display: flex;
+//     margin-top: 72px;
+//     justify-content: flex-end;
+// }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+// .cta .cta-text {
+//     font-size: 72px;
+//     text-align: center;
+//     letter-spacing: 5px;
+//     display: flex;
+//     justify-content: center;
+//     flex-flow: column;
+//     align-items: center;
+//     margin: 0 82px 0 0;
+// }
+
+// .cta .cta-text button {
+//     border: 1px double black;
+//     font-size: 16px;
+//     background: white;
+//     width: 170px;
+//     height: 32px;
+//     margin-top: 10px;
+//     cursor: pointer;
+// }
+
+// .cta .cta-text button:hover {
+//     background: black;
+//     color: white;
+// }
 
 /* Main Content Styles */
 
@@ -165,12 +198,12 @@ header .logo {
 /* Contact Styles */
 
 .contact p {
-    margin: 15px 0;
+    margin: 500px 0;
 }
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 10px 10 10px;
 }
