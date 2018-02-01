@@ -1,3 +1,7 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 html,
 body,
 div,
@@ -5,8 +9,14 @@ span,
 applet,
 object,
 iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
 h6,
 p,
+blockquote,
 pre,
 a,
 abbr,
@@ -21,6 +31,7 @@ em,
 img,
 ins,
 kbd,
+q,
 s,
 samp,
 small,
@@ -37,11 +48,14 @@ center,
 dl,
 dt,
 dd,
+ol,
+ul,
 li,
 fieldset,
 form,
 label,
 legend,
+table,
 caption,
 tbody,
 tfoot,
@@ -49,36 +63,26 @@ thead,
 tr,
 th,
 td,
+article,
+aside,
 canvas,
+details,
 embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
 output,
 ruby,
+section,
 summary,
 time,
 mark,
 audio,
-video,
-h1,
-h2,
-h3,
-h4,
-h5,
-blockquote,
-q,
-ol,
-ul,
-table,
-article,
-aside,
-details,
-figure,
-figcaption,
-hgroup,
-menu,
-nav,
-section,
-footer,
-header {
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -86,13 +90,50 @@ header {
   font: inherit;
   vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
   font-family: "Titillium Web", sans-serif;
-}
-body {
-  line-height: 1;
 }
 h1,
 h2,
@@ -103,44 +144,26 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-blockquote,
-q {
-  quotes: none;
+.container {
+  width: 880px;
+  margin: auto;
 }
-ol,
-ul {
-  list-style: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-article,
-aside,
-details,
-figure,
-figcaption,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-footer {
-  margin: 40px 0 20px;
-  display: block;
-  text-align: center;
-}
+/* Header Styles */
 header {
-  display: block;
-  display: flex;
   width: 100%;
+  display: flex;
+}
+header nav {
+  /* can be deleted if not styling */
 }
 header nav ul {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
+}
+header nav ul li {
+  /* can be deleted if not styling */
 }
 header nav ul li a {
   text-decoration: none;
@@ -154,20 +177,7 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-* {
-  box-sizing: border-box;
-}
-.container {
-  width: 880px;
-  margin: auto;
-}
+/* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
@@ -184,7 +194,7 @@ q:after {
   margin: 0 82px 0 0;
 }
 .cta .cta-text button {
-  border: 1ox double black;
+  border: 1px double black;
   font-size: 16px;
   background: white;
   width: 170px;
@@ -196,6 +206,7 @@ q:after {
   background: black;
   color: white;
 }
+/* Main Content Styles */
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -219,6 +230,16 @@ q:after {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
+.main-content .middle-img {
+  display: block;
+  margin: 30px auto;
+}
+/* Contact Styles */
 .contact p {
   margin: 15px 0;
+}
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
 }
