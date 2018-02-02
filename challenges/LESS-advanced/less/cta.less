@@ -1,0 +1,73 @@
+/* Call To Action (CTA) Styles */
+@johnsblue: #180ece;
+#buttons () {
+    .button1 {
+        border: 1px double black;
+        font-size: 16px;
+        background: white;
+        width: 170px;
+        height: 32px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .johnsbutton {
+        border: 2px double @johnsblue;
+        font-size: 16px;
+        font-weight: bold;
+        background: @johnsblue;
+        padding: 35px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}
+
+.cta {
+    display: flex;
+    margin-top: 72px;
+    justify-content: flex-end;
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        
+        // 1 mixin
+        &:hover{
+            .translate(30px, 0);
+        }
+    }
+
+    .cta-text button {
+        #buttons.johnsbutton;
+
+        // 2 mixin
+        &:hover {
+            background: black;
+            color: white;
+            .transition(1s);
+        }
+    }
+
+    // 3 mixin
+    @keyframes rotate-cta-img {
+        0% {
+            .rotate(0deg)
+        }
+        100% {
+            .rotate(360deg)
+        }
+    }
+
+    .cta-img {
+        &:hover {
+            .animation(rotate-cta-img, 6s, infinite, linear);
+        }
+    }
+
+}// cta
