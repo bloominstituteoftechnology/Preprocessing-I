@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//    v2.0 | 20110126
+//    License: none (public domain)
+// 
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,13 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Variables 
+
+@color-purple: purple; 
+@color-teal: teal; 
+
+// Set every element's box-sizing to border-box
+
 * {
     box-sizing: border-box;
 }
@@ -69,70 +75,91 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
-/* Header Styles */
+// Header Styles 
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    
+        ul {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
+            @media (max-width: 400px) {
+                flex-direction: column; 
+            }
+            
+        
+            li a {
+                text-decoration: none;
+                color: @color-teal; 
+                @media (max-width: 768px) {
+                    color: orange;  
+                }
+                
+                &:hover {
+                    text-decoration: underline;
+                    color: @color-purple; 
+                }
+            } // li a
+    
+            
+        } // ul
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    } // nav
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
+    
+} // header
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px - 10px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        color: @color-purple; 
+        @media (max-width: 768px) {
+            color: gold; 
+        }
+    } // .cta-text
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    .cta-text button {
+        border: 1px double black;
+        font-size: 16px + 4px;
+        background: white;
+        width: 170px;
+        height: 32px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    
+    .cta-text button:hover {
+        background: black;
+        color: white;
+    }
+} // .cta
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
-/* Main Content Styles */
+// Main Content Styles
+
 
 .main-content {
    border-top: 2px solid black; 
@@ -141,34 +168,45 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+   color: @color-purple; 
+   
 
-.main-content .top-content {
+    .top-content {
     display: flex;
     justify-content: space-around;
-}
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media (max-width: 768px) {
+            display: none; 
+        }
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        p {
+            padding-right: 20px;
+        }
+    }
+} // .main-content
 
-/* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
-}
+// Contact Styles
 
-/* Footer Styles */
+.contact {
+
+   color: @color-teal; 
+     
+    p {
+        margin: 15px 0;
+    }
+} // .contact
+
+// Footer Styles
 
 footer {
     text-align: center;
