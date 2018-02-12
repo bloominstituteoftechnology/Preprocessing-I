@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+//  http://meyerweb.com/eric/tools/css/reset/ 
+//    v2.0 | 20110126
+//    License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -64,111 +64,290 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
+// VARIABLES
+
+@background-color: yellow;
+@cta-text-color: rgb(170, 30, 30);
+
+// "Escaping"
+
+@max786: ~"(max-width: 786px)";
+@max400: ~"(max-width: 400px)";
+
+html {
+    background-color: @background-color;
 }
 
-/* Header Styles */
+.container {
+    max-width: 880px;
+    width: 96%;
+    margin: auto;
+    justify-content: center;
+    
+}
+
+//  Header Styles 
 
 header {
     width: 100%;
     display: flex;
-}
-
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
     justify-content: space-between;
-    display: flex;
-}
+    align-content: flex-end;
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media @max786 {
+        flex-direction: column;
+        width: 100%;
+        align-content: center;
+    }
+    @media @max400 {
+        margin-top: 50px / 2; // Using equation just because....
+    }
+    nav {
+        width: 100%;
+        @media @max400 {
+            margin: 0;
+            align-self: center;
+        }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        ul {
+            margin-top: 40px; 
+            width: 85%;
+            justify-content: space-between;
+            display: flex; 
+            
+            @media(max-width:786px) {
+                width: 100%;
+                margin: 0;
+                justify-content: space-around;
+            }
+            @media @max400 {
+                flex-direction: column;
+                align-items: center;
+            }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+            li {
+                @media @max400 {
+                    display: block;
+                    margin: 3%;
+                    text-align: center;
+                    border-top: 1px solid blue;
+                    border-bottom: 1px solid blue;
+                }
+                a {
+                    text-decoration: none;
+                    color: #b0b0b0;
 
-/* Call To Action (CTA) Styles */
+                    &:hover {
+                        text-decoration: underline;
+                        color: black;
+
+                    } //nav ul li a:hover
+
+                } // nav ul li a
+
+            } // nav ul li
+            
+        } // nav ul
+        
+        
+    } // nav
+
+    .logo {
+        align-self: flex-end;
+        margin: 0;
+        width: 15%;
+
+        @media(max-width:786px) {
+            width: 50%;
+            order: -1;
+            align-self: center;
+            margin: 2%;
+        } // header.logo media 786
+
+    } // header.logo
+    
+} // header
+
+// header nav ul {
+//     margin-top: 40px; 
+//     width: 610px;
+//     justify-content: space-between;
+//     display: flex;
+// }
+
+// header nav ul li a {
+//     text-decoration: none;
+//     color: #b0b0b0;
+// }
+
+// header nav ul li a:hover {
+//     text-decoration: underline;
+//     color: black;
+// }
+
+// header .logo {
+//     align-self: flex-end;
+//     margin: 28px 0 0 91px;
+// }
+
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+    margin: 72px auto 0;
+   
+    justify-content: space-around;
+    width: 85%;
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        color: @cta-text-color;
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+            &:hover {
+                background: black;
+                color: white;
+            } // button:hover
 
-/* Main Content Styles */
+        } // button
+        @media @max786 {
+            margin: 0;
+        }
+    } // .cta-text
+    img {
+        @media @max786 {
+            display: none;
+            
+        }
+    }
+    @media @max786 {
+        margin: 72px auto 0 auto;
+        justify-content: center;
+    }
+} // .cta
+
+// .cta .cta-text {
+//     font-size: 72px;
+//     text-align: center;
+//     letter-spacing: 5px;
+//     display: flex;
+//     justify-content: center;
+//     flex-flow: column;
+//     align-items: center;
+//     margin: 0 82px 0 0;
+// }
+
+// .cta .cta-text button {
+//     border: 1px double black;
+//     font-size: 16px;
+//     background: white;
+//     width: 170px;
+//     height: 32px;
+//     margin-top: 10px;
+//     cursor: pointer;
+// }
+
+// .cta .cta-text button:hover {
+//     background: black;
+//     color: white;
+// }
+
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 8px * 2;  // Using equation just because....
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .text-content {
+       @media @max400 {
+           margin: 10px 0;
+       }
+   }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+        @media @max400 {
+            flex-direction: column;
+            text-align: justify;
+        }
+   } // .top-content
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media @max786 {
+            width: 100%;
+        }
+   } // .middle-img
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+   .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-/* Contact Styles */
+        @media @max400 {
+            flex-direction: column;
+            text-align: justify;
+            width: 100%;
+            margin: 0;
+        }
+
+        p {
+            margin: 15px 0;
+            @media @max400 {
+                padding-right: 0;
+            }
+        } // .bottom-content p
+
+   } // .bottom-content
+
+} // .main-content
+
+// .main-content .top-content {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+// .main-content .middle-img {
+//     display: block;
+//     margin: 30px auto;
+// }
+
+// .main-content .bottom-content {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+// .main-content .bottom-content p {
+//     padding-right: 20px;
+// }
+
+// Contact Styles 
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles 
 
 footer {
     text-align: center;
