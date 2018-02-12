@@ -150,6 +150,10 @@ h5 {
   margin-bottom: 10px;
 }
 
+@primary-color: red;
+@secondary-color: blue;
+@accent-color: purple;
+
 .container {
   width: 880px;
   margin: auto;
@@ -165,10 +169,10 @@ h5 {
         li {
           a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @primary-color;
             &:hover {
               text-decoration: underline;
-              color: black;
+              color: @accent-color;
             }
           }
         }
@@ -183,8 +187,12 @@ h5 {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
     .cta-text {
       font-size: 72px;
+      color: @primary-color;
       text-align: center;
       letter-spacing: 5px;
       display: flex;
@@ -195,15 +203,22 @@ h5 {
       button {
         border: 1px double black;
         font-size: 16px;
-        background: white;
+        background: @secondary-color;
         width: 170px;
         height: 32px;
         margin-top: 10px;
         cursor: pointer;
         &:hover {
-          background: black;
+          background: @accent-color;
           color: white;
         }
+      }
+    }
+    img {
+      @media (max-width: 900px) {
+        width: 50%;
+        height: 50%;
+        align-self: center;
       }
     }
   }
