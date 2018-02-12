@@ -74,6 +74,16 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
 		background-color: @secondary-color;
+
+		@media (max-width: 768px) {
+		        width: 100%;
+		    }
+
+		@media (max-width: 400px) {
+		        width: 100%;
+		}
+
+
 }
 
 // Header Styles (Start Nesting)
@@ -83,26 +93,90 @@ header {
     display: flex;
 		background-color: @main-color;
 
-		nav ul {
-		    margin-top: 20px * 2; //multiplication wow!
-		    width: 610px;
-		    justify-content: space-between;
-		    display: flex;
+		@media (max-width: 768px) {
+		        flex-wrap: wrap;
+		        justify-content: center;
+		    }
 
-				li a {
-				    text-decoration: none;
-				    color: black;
+		@media (max-width: 400px) {
+		        flex-wrap: wrap;
+		        justify-content: center;
+		    }
 
-						&:hover {
-						    text-decoration: underline;
-						    color: darkblue;
+		nav {
+			@media (max-width: 768px) {
+			        width: 90%;
+			    }
+
+			@media (max-width: 400px) {
+			        width: 100%;
+			    }
+
+			 ul {
+			    margin-top: 20px * 2; //multiplication wow!
+			    width: 610px;
+			    justify-content: space-between;
+			    display: flex;
+
+					@media (max-width: 768px) {
+					        width: 100%;
+					        margin: 20px 0;
+					    }
+
+					@media (max-width: 400px) {
+					        width: 100%;
+					        display: flex;
+					        flex-direction: column;
+					        margin: 0;
+					        align-items: center;
+					    }
+
+					li {
+						@media (max-width: 400px) {
+						        width: 100%;
+						        margin: 0;
+						    }
+
+						a {
+						    text-decoration: none;
+						    color: black;
+
+								@media (max-width: 400px) {
+								        display: block;
+								        text-align: center;
+								        padding: 20px 0;
+								        font-size: 2rem;
+								        border-bottom: 1px solid gray;
+								    }
+
+								 &:firstchild{
+									 @media (max-width: 400px) {
+								         border-top: 1px solid gray;
+								     }
+								 }
+
+								&:hover {
+								    text-decoration: underline;
+								    color: darkblue;
+
+										@media (max-width: 400px) {
+										        background: gray;
+										    }
+								}
 						}
-				} //li a
-		} //nav ul
+					} //li
+			} // ul
+		} //nav
 
 		.logo {
 		    align-self: flex-end;
 		    margin: 28px 0 0 91px;
+
+				@media (max-width: 768px) {
+				        order: -1;
+				        max-width: 100%;
+				        margin: 20px 0;
+				    }
 		}
 }
 
@@ -112,6 +186,12 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+		@media (max-width: 768px) {
+		        margin-top: 50px;
+		        flex-flow: column;
+		        align-items: center;
+		    }
 
 		.cta-text {
 		    font-size: 72px;
@@ -123,6 +203,10 @@ header {
 		    align-items: center;
 		    margin: 0 82px 0 0;
 				color: @text-header;
+
+				@media (max-width: 768px) {
+				        margin: 0;
+				    }
 
 				button {
 				    border: 1px double black;
@@ -139,6 +223,18 @@ header {
 						}
 				}
 		} //cta-text
+		img {
+
+		@media (max-width: 768px) {
+		        /* In case you want the image, but it's ugly ;)
+
+		        max-width: 70%;
+		        margin: 0;
+
+		        */
+		        display: none;
+		    }
+		} //img
 } //cta
 
 // Main Content Styles
@@ -152,19 +248,39 @@ header {
    line-height: 18px;
 	 background-color: @main-color;
 
+	 @media (max-width: 768px) {
+	        margin: 50px 2% 35px;
+	     }
+
 	 .top-content {
 	     display: flex;
 	     justify-content: space-around;
+
+			 @media (max-width: 400px) {
+			         justify-content: space-around;
+			         flex-direction: column;
+			         height: 300px;
+			     }
 	 }
 
 	 .middle-img {
 	     display: block;
 	     margin: 30px auto;
+
+			 @media (max-width: 768px) {
+			        width: 100%;
+			     }
 	 }
 
 	 .bottom-content {
 	     display: flex;
 	     justify-content: space-around;
+
+			 @media (max-width: 400px) {
+			         flex-wrap: wrap;
+			         align-content: space-between;
+			         height: 440px;
+			     }
 
 			 p {
 			     padding-right: 20px;
@@ -174,8 +290,19 @@ header {
 
 // Contact Styles
 
-.contact p {
-    margin: 15px 0;
+.contact {
+
+	@media (max-width: 768px) {
+	        margin: 20px 2%;
+	    }
+
+	@media (max-width: 400px) {
+	        margin: 20px;
+	    }
+
+	p {
+		margin: 15px 0;
+	}
 }
 
 // Footer Styles
