@@ -64,75 +64,80 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+// Variables
+@containerSize: (440px);
+@headerColor: orange;
+@ctaTextColor: orange;
+@contentFont: 'Butcherman, cursive'
+@buttonBackground: (background-image: url('https://media1.tenor.com/images/0bdb2af3738b4d7a428707fbac6de564/tenor.gif')); //sad this didnt work 
+
 .container {
-    width: 880px;
+    width: @containerSize*2;
     margin: auto;
 }
 
-/* Header Styles */
+//Header Styles 
 
 header {
     width: 100%;
     display: flex;
-}
-
-header nav ul {
+     nav ul {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
+        li a {
+        text-decoration: none;
+        color: @headerColor;
+        }
+        li a:hover {
+        text-decoration: underline;
+        color: black;
+        }
+    }
+    .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    }
 }
 
-/* Call To Action (CTA) Styles */
+
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    color: @ctaTextColor;
+    font-family: @contentFont;
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: @buttonBackground;
+            color: white;
+        }
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
@@ -141,34 +146,34 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+   font-family: @contentFont;
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    .middle-img {
+        display: flex;
+        margin: 30px auto;
+    }
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        p {
+            padding-right: 20px;
+        }
+    }
 }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
+//Contact Styles 
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
