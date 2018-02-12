@@ -59,7 +59,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
+    font-family: @contentFont;
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5 {
 @containerSize: (440px);
 @headerColor: orange;
 @ctaTextColor: orange;
-@contentFont: 'Butcherman, cursive'; //sad this didnt work 
+@contentFont: "Butcherman"; //sad this didnt work 
 
 
 .container {
@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5 {
 //Header Styles 
 
 header {
+    font-family: 'Titillium Web', sans-serif;
     width: 100%;
     display: flex;
      nav ul {
@@ -95,7 +96,7 @@ header {
         color: black;
         }
          @media(max-width: 768px){
-        align-self: center;
+        
         
         }
     }
@@ -105,8 +106,7 @@ header {
         @media(max-width: 768px){
             align-self: center;
             margin: 20px 0 0 0;
-            }
-        
+            }   
     }
     @media(max-width: 768px){
         flex-flow: column-reverse wrap;
@@ -124,7 +124,7 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
     color: @ctaTextColor;
-    font-family: @contentFont;
+    font-family: 'Titillium Web', sans-serif;
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -169,7 +169,8 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-   font-family: @contentFont;
+   font-family: 'Titillium Web', sans-serif;
+   max-width: 100%;
     .top-content {
         display: flex;
         justify-content: space-around;
@@ -178,7 +179,8 @@ header {
         display: flex;
         margin: 30px auto;
         @media(max-width: 768px){
-        
+        max-width: 100%;
+        width: 768px;
         }
     }
     .bottom-content {
@@ -188,6 +190,9 @@ header {
             padding-right: 20px;
         }
     }
+    @media(max-width: 768px){
+        justify-content: center;
+        }
 }
 
 
