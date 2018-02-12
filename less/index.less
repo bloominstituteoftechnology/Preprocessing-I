@@ -67,6 +67,14 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width: 768px){
+        width: 90%;
+        margin: auto;
+    }
+    @media (max-width: 400px){
+        width: 90%;
+        margin: auto;
+    }
 }
 
 /* Header Styles */
@@ -74,28 +82,51 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    @media (max-width: 768px){
+        justify-content: center;
+        width: 80%;
+        flex-wrap: wrap;
+    }
+    @media (max-width: 768px){
+        flex-wrap: wrap;
+    }
         nav {
+            @media (max-width:400px)
+            {flex-direction: column;}
         ul {
             margin-top: 40px; 
             width: 610px;
-            justify-content: space-between;
+            justify-content: space-around;
             display: flex;
+            @media (max-width: 768px){
+                margin-top: 6%;
+                margin-left: 13%;
+               }
+            @media (max-width:400px)
+            {margin-top: 6%; }
+            
         li {
         a {
             text-decoration: none;
             color: #b0b0b0;
+            @media (max-width: 768px){
+                margin-right: 5%;
+            }
+            @media (max-width:400px)
+            {margin: auto;}
         a:hover {
             text-decoration: underline;
             color: black;
-}
-}
-}
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        }}}}}
+        .logo {
+            align-self: flex-start;
+            margin: 28px 0 0 91px;
+            @media (max-width: 768px){
+                order: -1;
+                justify-content: center;
+                margin-left: 35%;
+            }
+}}
 
 /* Call To Action (CTA) Styles */
 
@@ -103,34 +134,38 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
+    @media (max-width: 768px){
+        justify-content: center;
+    }
+    @media(max-width: 400px){
+        flex-wrap: wrap;
+    }
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        @media (max-width: 768px){width 20%;}
+        button {
+        border: 1px double black;
+        font-size: 16px;
     background: white;
     width: 170px;
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
 }
-
-.cta .cta-text button:hover {
+   button:hover {
     background: black;
     color: white;
+}     
 }
-
+}
+}
 /* Main Content Styles */
 
 .main-content {
@@ -140,27 +175,25 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+    .top-content {
+      display: flex;
+      justify-content: space-around;
 }
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
+    .middle-img {
     display: block;
     margin: 30px auto;
+        @media (max-width: 768px){
+            width: 100%;
+        }
 }
-
-.main-content .bottom-content {
+    .bottom-content {
     display: flex;
     justify-content: space-around;
+        p {
+        padding-right: 20px;
 }
-
-.main-content .bottom-content p {
-    padding-right: 20px;
 }
-
+}
 /* Contact Styles */
 
 .contact p {
