@@ -55,7 +55,9 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 62.5%;
+
+    //Implementing base font-size utilizing variable from operation and function
+    font-size: percentage(@base-font-size);
     background-color: @alt-background-color;
     color: @alt-body-color;
  
@@ -72,7 +74,7 @@ h1, h2, h3, h4, h5 {
     max-width: 880px;
     width: 100%;
     margin: auto;
-    font-size: 1.6rem;
+    font-size: @body-rem;
 
     @media (max-width: 768px) {
         max-width: 768px;
@@ -91,6 +93,10 @@ h1, h2, h3, h4, h5 {
 @alt-background-color: lightslategray;
 @alt-divider-color: mintcream;
 @alt-highlight-color: ivory;
+
+//Required Operations (implementing as font size above to achieve 62.5%)
+@base-font-size: 10 / 16;
+@body-rem: 0.8rem * 2;
 
 // Header Styles
 
