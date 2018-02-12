@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -105,28 +100,32 @@ section {
   display: block;
 }
 body {
+  max-width: 880px;
   line-height: 1;
 }
-ol,
-ul {
+body ol ul {
   list-style: none;
 }
-blockquote,
-q {
+body blockquote q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+body blockquote q:before {
   content: '';
   content: none;
 }
-table {
+body blockquote q:after {
+  content: '';
+  content: none;
+}
+body blockquote:before,
+body blockquote:after {
+  content: '';
+  content: none;
+}
+body table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -135,57 +134,125 @@ body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
+html h1,
+body h1,
+html h2,
+body h2,
+html h3,
+body h3,
+html h4,
+body h4,
+html h5,
+body h5 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-.container {
-  width: 880px;
+html .container,
+body .container {
+  width: 100%;
   margin: auto;
 }
-/* Header Styles */
+html .middle-img,
+body .middle-img {
+  width: 95%;
+}
+html header,
+body header {
+  width: 100%;
+}
+html nav,
+body nav {
+  width: 75%;
+}
+html nav ul,
+body nav ul {
+  width: 100%;
+}
+html .cta,
+body .cta {
+  width: 100%;
+}
+html .cta .cta-text,
+body .cta .cta-text {
+  width: 100%;
+}
 header {
   width: 100%;
   display: flex;
 }
+@media (min-width: 0px) {
+  header nav ul {
+    height: 140px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  header nav ul {
+    height: 100%;
+    flex-direction: row;
+  }
+}
 header nav ul {
   margin-top: 40px;
-  width: 610px;
   justify-content: space-between;
   display: flex;
 }
 header nav ul li a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: #07f7cc;
 }
 header nav ul li a:hover {
   text-decoration: underline;
-  color: black;
+  color: #f7b80e;
 }
-header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+@media (min-width: 0px) {
+  header .logo {
+    display: none;
+  }
 }
-/* Call To Action (CTA) Styles */
+@media (min-width: 768px) {
+  header .logo {
+    display: inline-block;
+    align-self: flex-end;
+    margin: 28px 0 0 91px;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
 }
+@media (min-width: 0px) {
+  .cta img {
+    display: none;
+  }
+  .cta .cta .cta-text {
+    margin-right: 0;
+  }
+}
+@media (min-width: 881px) {
+  .cta img {
+    display: inline-block;
+  }
+}
 .cta .cta-text {
-  font-size: 72px;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+}
+@media (min-width: 0px) {
+  .cta .cta-text {
+    font-size: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .cta .cta-text {
+    font-size: 72px;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -197,10 +264,9 @@ header .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: #f7b80e;
+  color: #f7b80e;
 }
-/* Main Content Styles */
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -224,11 +290,9 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
