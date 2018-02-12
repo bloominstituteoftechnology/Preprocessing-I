@@ -1,11 +1,10 @@
 //variables
-@link-color: #000000;
-@hover-color: #02c94d;
-@bg-color: #06cbff;
-@border-color: #000000;
-@button-hover: #02c94d;
+@secondary-color: #000000;
+@primary-color: #06cbff;
 @button-txt-hover: #ffffff;
-
+@hover-color: #02c94d;
+//@smartphones: ~"only screen and (max-width: 479px)";
+//@tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)";
 // Is this working?
 // http://meyerweb.com/eric/tools/css/reset/ 
 // v2.0 | 20110126
@@ -39,7 +38,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    background-color: @bg-color;
+    background-color: @primary-color;
 }
 ol, ul {
 	list-style: none;
@@ -72,34 +71,39 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
-
+// Header Styles 
 .container {
     width: 880px;
-    margin: auto;
-}
-
-// Header Styles 
-
-header {
-    width: 100%;
-    display: flex;
-}
-    nav ul {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
+    margin: auto;   
+    header {
+        width: 100%;
         display: flex;
+        @media (max-width: 768px){
+           background: 
         }
-        li a {
-            text-decoration: none;
-            color: @link-color;
+        }
+
+        nav {
+
+            ul {
+                margin-top: 40px; 
+                width: 610px;
+                justify-content: space-between;
+                display: flex;
+              
+                li {
+                a {
+                    text-decoration:@secondary-color;
         
-            &:hover {
-                text-decoration: underline;
-                color: @hover-color;
+                    &:hover {
+                        text-decoration: underline;
+                        color: @hover-color;
                 }
             }
-    
+        }
+    }
+}    
+}
 
 
 header .logo {
@@ -125,16 +129,16 @@ header .logo {
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double @border-color;
+            border: 1px double @secondary-color;
             font-size: 16px;
-            background: @bg-color;
+            background: @primary-color;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
         }    
             button:hover {
-                background: @button-hover;
+                background: @hover-color;
                 color: @button-txt-hover;
             }
         }
@@ -144,8 +148,8 @@ header .logo {
 // Main Content Styles 
 
 .main-content {
-   border-top: 2px solid @border-color; 
-   border-bottom: 2px solid @border-color;
+   border-top: 2px solid @secondary-color; 
+   border-bottom: 2px solid @secondary-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
