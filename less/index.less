@@ -1,8 +1,7 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,49 +47,86 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
 
+@primary-color: goldenrod;
+@secondary-color: black;
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    color: @secondary-color;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @secondary-color;
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
+    background: @primary-color;
 }
 
-/* Header Styles */
+// Header Styles
 
 header {
     width: 100%;
     display: flex;
 
+    @media (max-width:768px){
+        flex-direction: column-reverse;
+    }
+
     nav {
 
         ul {
             margin-top: 40px; 
-            width: 610px;
+            width: 100%;
             justify-content: space-between;
             display: flex;
+            
+            
+            li{
+                @media (max-width:400px){
+                    justify-items: center;
+                    &:first-child {
+                        border-top: 1px solid @secondary-color;
+                    }
+                }
 
-            li a {
-                text-decoration: none;
-                color: #b0b0b0;
+                a {
+                    text-decoration: none;
+                    color:@secondary-color;
+                     @media (max-width:400px){
+                        height:40px;
+                        padding: 15px 0;
+                        border-bottom: 1px solid @secondary-color;
+                        display: block;
+                        
+                     }
+                    
+                    
+                   
+                }
+
+            
+
+                a:hover {
+                    text-decoration: underline;
+                    color: @secondary-color;
             }
+            }
+            @media (max-width: 400px){
+                flex-direction: column;
 
-            li a:hover {
-                text-decoration: underline;
-                color: black;
             }
 
         }    
@@ -99,6 +135,11 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width:768px) {
+            display:block;
+            align-self: center;
+        }
     }
 
 
@@ -107,7 +148,7 @@ header {
 
 
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
@@ -127,11 +168,12 @@ header {
         button {
             border: 1px double black;
             font-size: 16px;
-            background: white;
+            background: @primary-color;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+            color: @secondary-color;
         }
 
         button:hover {
@@ -139,12 +181,18 @@ header {
             color: white;
         }
     }
+
+    img {
+        @media (max-width:400px){
+            display:none;
+        }
+    }
 }
 
 
 
 
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
@@ -175,7 +223,7 @@ header {
 }   
 
 
-/* Contact Styles */
+// Contact Styles
 
 .contact {
     p {
@@ -183,7 +231,7 @@ header {
     }
 }
 
-/* Footer Styles */
+// Footer Styles 
 
 footer {
     text-align: center;
