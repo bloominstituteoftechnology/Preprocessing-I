@@ -70,7 +70,15 @@ h1, h2, h3, h4, h5 {
     margin: auto;
     font-size: 1.6rem;
 
-    @media (max-width: 768px) {width: 100%;}
+    @media (max-width: 768px) {
+        max-width: 768px;
+        width: 100%;
+    }
+    @media (max-width: 400px) {
+        max-width: 400px;
+        width: 100%;
+    }
+
 }
 
 //Color theme variables
@@ -87,8 +95,9 @@ header {
     }
 
     nav {
+        width: 100%;
         @media (max-width: 768px) {width: 90%;}
-        nav ul {
+         ul {
             margin: 40px 5% 0; 
             width: 100%;
             justify-content: space-between;
@@ -125,12 +134,14 @@ header {
 
                         &:hover {
                             background: gray;
+                            text-decoration: none;
+                            
                         }
                     }
     
                     &:hover {
-                        text-decoration: underline;
                         color: black;
+
                     }
                 }
     
@@ -159,6 +170,7 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    width: 100%;
     @media (max-width: 768px) {
         margin-top: 50px;
         flex-flow: column;
@@ -176,6 +188,10 @@ header {
         margin: 0 9% 0 0;
         @media (max-width: 768px) {
             margin: 0;
+        }
+        @media (max-width: 400px) {
+            margin: 0;
+            font-size: 6rem;
         }
 
         button {
