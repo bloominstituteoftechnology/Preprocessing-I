@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,7 +121,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -134,6 +128,7 @@ html,
 body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  color: black;
 }
 h1,
 h2,
@@ -143,35 +138,68 @@ h5 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  color: black;
 }
 .container {
-  width: 880px;
+  width: 100%;
+  max-width: 880px;
   margin: auto;
+  background: goldenrod;
 }
-/* Header Styles */
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column-reverse;
+  }
+}
 header nav ul {
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav ul li {
+    justify-items: center;
+  }
+  header nav ul li:first-child {
+    border-top: 1px solid black;
+  }
+}
 header nav ul li a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: black;
+}
+@media (max-width: 400px) {
+  header nav ul li a {
+    height: 40px;
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+    display: block;
+  }
 }
 header nav ul li a:hover {
   text-decoration: underline;
   color: black;
 }
+@media (max-width: 400px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
+@media (max-width: 768px) {
+  header .logo {
+    display: block;
+    align-self: center;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
@@ -190,17 +218,22 @@ header .logo {
 .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: goldenrod;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+  color: black;
 }
 .cta .cta-text button:hover {
   background: black;
   color: white;
 }
-/* Main Content Styles */
+@media (max-width: 400px) {
+  .cta img {
+    display: none;
+  }
+}
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -224,11 +257,9 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
