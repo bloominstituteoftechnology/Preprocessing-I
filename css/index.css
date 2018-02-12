@@ -90,7 +90,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,7 +125,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -148,10 +146,52 @@ h5 {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+header .logo {
+  align-self: flex-end;
+  margin: 28px 0 0 91px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 768px) {
+  header nav {
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    width: 100%;
+  }
 }
 header nav ul {
   margin-top: 40px;
@@ -159,23 +199,66 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+}
 header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
-header nav ul li a:hover {
-  text-decoration: underline;
-  color: black;
+@media (max-width: 400px) {
+  header nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+    color: #c30909;
+    font-family: "Courier New", Courier, monospace;
+  }
+  header nav ul li a:hover {
+    text-decoration: underline;
+    color: black;
+  }
 }
-header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+@media (max-width: 400px) and (max-width: 400px) {
+  header nav ul li a:hover {
+    background: gray;
+  }
 }
-/* Call To Action (CTA) Styles */
+@media (max-width: 400px) {
+  header nav ul li:first child {
+    background: gray;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 50px;
+    flex-flow: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -186,6 +269,17 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+    color: #c30909;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    color: #030396;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -200,7 +294,16 @@ header .logo {
   background: black;
   color: white;
 }
-/* Main Content Styles */
+@media (max-width: 768px) {
+  .cta .cta-text button:hover {
+    background: #030396;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text button:hover {
+    background: #c30909;
+  }
+}
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -209,9 +312,26 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
+@media (max-width: 768px) {
+  .main-content {
+    margin: 50px 2% 35px;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
+}
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
 }
 .main-content .middle-img {
   display: block;
@@ -221,14 +341,29 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+}
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
+@media (max-width: 768px) {
+  .contact {
+    margin: 20px 2%;
+  }
+}
+@media (max-width: 400px) {
+  .contact {
+    margin: 20px;
+  }
+}
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
