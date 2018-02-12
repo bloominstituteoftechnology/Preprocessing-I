@@ -102,14 +102,12 @@ header {
 					} //header
 
 
-
 					/* Call To Action (CTA) Styles */
 
 					.cta {
 						display: flex;
 						margin-top: 72px;
 						justify-content: flex-end;
-
 
 						.cta-text {
 							font-size: 72px;
@@ -121,20 +119,23 @@ header {
 							align-items: center;
 							margin: 0 82px 0 0;
 
+@height: 32px;
+@font-size: 16px;
 
-							button {
-								border: 1px double black;
-								font-size: 16px;
-								background: white;
-								width: 170px;
-								height: 32px;
-								margin-top: 10px;
-								cursor: pointer;
-
+						button {
+							border: 1px double black;
+							font-size: @font-size;
+							background: white;
+							width: 170px;
+							height: @height;
+							margin-top: 10px;
+							cursor: pointer;
 
 								&:hover {
 									background: black;
 									color: white;
+									height: @height * 2; //Using * LESS operator to increase button height on hover
+									font-size: @font-size + 10; //Using + LESS operator to increase button font-size on hover
 									} //.cta .cta-text button:hover
 
 									} //.cta .cta-text button
@@ -174,7 +175,7 @@ header {
 														} //.main-content .bottom-content
 
 														} //.main-content .bottom-content p
-														
+
 														} //.main-content
 
 														/* Contact Styles */
