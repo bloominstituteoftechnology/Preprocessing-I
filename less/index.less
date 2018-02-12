@@ -4,6 +4,13 @@
 // License: none (public domain)
 
 
+//Color Variables
+@primary-color:#242E3A;
+@secondary-color: #BDE4A7;
+@accent-color: #7A9CC6;
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,7 +37,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    background: @accent-color;
 }
 ol, ul {
 	list-style: none;
@@ -56,7 +64,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 62.5%
+    //font-size: 62.5%
 }
 
 h1, h2, h3, h4, h5 {
@@ -66,7 +74,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    max-width: 880px;
+    max-width: 800px + 80px;  //Demonstrating operator
     margin: auto;
 
     @media(max-width: 1100px){
@@ -124,11 +132,11 @@ header {
             li a {
                 display: block;
                 text-decoration: none;
-                color: #b0b0b0;
+                color: @primary-color;
 
                 &:hover{
                     text-decoration: underline;
-                    color: black;
+                    color:@secondary-color;
                 }//Hover
             }//li a
         }//nav ul
@@ -185,6 +193,7 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 5% 0 5%;
+        color: @secondary-color;
 
         @media(max-width: 768px){
             font-size: 58px;
@@ -203,7 +212,7 @@ header {
         button {
             border: 1px double black;
             font-size: 16px;
-            background: white;
+            background:@secondary-color;
             width: 170px;
             height: 32px;
             margin-top: 10px;
@@ -242,6 +251,7 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+   color: @primary-color;
 
    @media(max-width: 768px){
        width: 100%;
