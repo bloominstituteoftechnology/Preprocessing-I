@@ -144,7 +144,6 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-@button Background: (background-image: url('https://media1.tenor.com/images/0bdb2af3738b4d7a428707fbac6de564/tenor.gif'));
 .container {
   width: 880px;
   margin: auto;
@@ -167,15 +166,33 @@ header nav ul li a:hover {
   text-decoration: underline;
   color: black;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    align-self: center;
+  }
+}
 header .logo {
-  align-self: flex-end;
+  align-self: center;
   margin: 28px 0 0 91px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    align-self: center;
+    margin: 20px 0 0 0;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    flex-flow: column-reverse wrap;
+    justify-content: center;
+  }
 }
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
   color: orange;
+  font-family: 'Butcherman, cursive';
 }
 .cta .cta-text {
   font-size: 72px;
@@ -183,7 +200,7 @@ header .logo {
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
-  flex-flow: column;
+  flex-flow: column wrap;
   align-items: center;
   margin: 0 82px 0 0;
 }
@@ -197,8 +214,18 @@ header .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
+  background-color: black;
   color: white;
+}
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .cta {
+    justify-content: center;
+  }
 }
 .main-content {
   border-top: 2px solid black;
@@ -207,6 +234,7 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+  font-family: 'Butcherman, cursive';
 }
 .main-content .top-content {
   display: flex;

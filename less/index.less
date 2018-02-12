@@ -68,8 +68,8 @@ h1, h2, h3, h4, h5 {
 @containerSize: (440px);
 @headerColor: orange;
 @ctaTextColor: orange;
-@contentFont: 'Butcherman, cursive'
-@buttonBackground: (background-image: url('https://media1.tenor.com/images/0bdb2af3738b4d7a428707fbac6de564/tenor.gif')); //sad this didnt work 
+@contentFont: 'Butcherman, cursive'; //sad this didnt work 
+
 
 .container {
     width: @containerSize*2;
@@ -94,11 +94,26 @@ header {
         text-decoration: underline;
         color: black;
         }
+         @media(max-width: 768px){
+        align-self: center;
+        
+        }
     }
     .logo {
-    align-self: flex-end;
+    align-self: center;
     margin: 28px 0 0 91px;
+        @media(max-width: 768px){
+            align-self: center;
+            margin: 20px 0 0 0;
+            }
+        
     }
+    @media(max-width: 768px){
+        flex-flow: column-reverse wrap;
+        justify-content: center;
+
+    }
+    
 }
 
 
@@ -116,7 +131,7 @@ header {
         letter-spacing: 5px;
         display: flex;
         justify-content: center;
-        flex-flow: column;
+        flex-flow: column wrap;
         align-items: center;
         margin: 0 82px 0 0;
         button {
@@ -129,10 +144,18 @@ header {
             cursor: pointer;
         }
         button:hover {
-            background: @buttonBackground;
+            background-color: black;
             color: white;
         }
     }
+     img{
+        @media(max-width: 768px){
+        display: none;
+        }
+    }
+    @media(max-width: 768px){
+        justify-content: center;
+        }
 }
 
 
@@ -154,6 +177,9 @@ header {
     .middle-img {
         display: flex;
         margin: 30px auto;
+        @media(max-width: 768px){
+        
+        }
     }
     .bottom-content {
         display: flex;
