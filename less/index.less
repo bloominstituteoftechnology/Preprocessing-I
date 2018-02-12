@@ -1,8 +1,7 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//   v2.0 | 20110126
+//   License: none (public domain)
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +47,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -70,7 +69,7 @@ h1, h2, h3, h4, h5 {
     max-width: 880px;
     margin: 0 auto;
 }
-/*Color Scheme*/
+// Color Scheme
 @color-base:#4D6968;
 @primary-color:#D3C4A8;
 @secondary-color:#563536;
@@ -83,7 +82,7 @@ body {
 .container {
     background:@primary-color;
 }
-/* Header Styles */
+// Header Styles
 
 header {
     min-height:50px;
@@ -111,6 +110,9 @@ header {
 
             li {
                 flex-grow:0.15;
+                @media (max-width:768px) {
+                    text-align:center;
+                }
             
                 a {
                     text-decoration: none;
@@ -133,7 +135,7 @@ header {
     } // end .logo
 } // end header
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
@@ -141,6 +143,9 @@ header {
     align-items:center;
     padding:5%;
     justify-content:space-around;
+    @media (max-width:768px) {
+        flex-wrap:wrap-reverse;
+    }
 
     img {
         width:60%;
@@ -154,6 +159,15 @@ header {
         align-items:center;
         font-size: 5rem;
         text-align:center;
+        @media (max-width:414px) {
+            font-size:16vw;
+        }
+
+        h1 br {
+            @media(max-width:768px) {
+                display:none;
+            }
+        }
 
         button {
             border: 1px double black;
@@ -175,11 +189,14 @@ header {
     }        
 }
 
-/* Main Content Styles */
+// Main Content Styles
 
 h4, p {
     font-size: 1.6rem;
     line-height: 1.2;
+    @media (max-width:414px) {
+        margin-bottom:1.4rem;
+    }
 }
 .main-content {
    border-top: 2px solid black;
@@ -194,6 +211,9 @@ h4, p {
         display: flex;
         justify-content: space-around;
         padding:0 1rem;
+        @media (max-width:414px) {
+            flex-wrap:wrap;
+        }
         
         .text-content {
             margin-right:1rem;
@@ -210,6 +230,9 @@ h4, p {
         display: flex;
         justify-content: space-around;
         padding:0 1rem;
+        @media (max-width:414px) {
+            flex-wrap:wrap;
+        }
 
         .text-content {
             margin-right:1rem;
@@ -217,13 +240,13 @@ h4, p {
     }    
 }
 
-/* Contact Styles */
+// Contact Styles
 
 .contact {
     margin:1rem 0 0 1rem;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
