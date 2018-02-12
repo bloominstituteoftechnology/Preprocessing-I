@@ -90,6 +90,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+/*Variables*/
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -141,8 +142,8 @@ h3,
 h4,
 h5 {
   font-family: 'Bangers', cursive;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 11.5px;
 }
 .container {
   width: 880px;
@@ -153,23 +154,28 @@ header {
   width: 100%;
   display: flex;
 }
-header nav ul {
+header .logo {
+  align-self: flex-end;
+  margin: 28px 0 0 91px;
+}
+header .logo nav ul {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
-header nav ul li a {
+header .logo nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
-header nav ul li a:hover {
+header .logo nav ul li a:hover {
   text-decoration: underline;
-  color: black;
+  color: aqua;
 }
-header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+@media (max-width: 500px) {
+  header .logo nav ul li a:hover {
+    background-color: purple;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
@@ -187,7 +193,7 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
-.cta .cta-text button {
+.cta .cta-text .button {
   border: 1px double black;
   font-size: 16px;
   background: white;
@@ -196,33 +202,38 @@ header .logo {
   margin-top: 10px;
   cursor: pointer;
 }
-.cta .cta-text button:hover {
-  background: black;
+.cta .cta-text .button:hover {
+  background: goldenrod;
   color: white;
 }
 /* Main Content Styles */
 .main-content {
   border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid aqua;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
 }
-.main-content .top-content {
-  display: flex;
-  justify-content: space-around;
-}
-.main-content .middle-img {
-  display: block;
-  margin: 30px auto;
-}
-.main-content .bottom-content {
-  display: flex;
-  justify-content: space-around;
-}
-.main-content .bottom-content p {
-  padding-right: 20px;
+@media (min-width: 400) {
+  .main-content {
+    text-transform: cursive;
+  }
+  .main-content .top-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .main-content .top-content .middle-img {
+    display: block;
+    margin: 30px auto;
+  }
+  .main-content .top-content .middle-img .bottom-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .main-content .top-content .middle-img .bottom-content p {
+    padding-right: 20px;
+  }
 }
 /* Contact Styles */
 .contact p {
