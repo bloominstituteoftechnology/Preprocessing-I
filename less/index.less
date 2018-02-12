@@ -1,8 +1,7 @@
-// Is this working?
-// http://meyerweb.com/eric/tools/css/reset/ 
-//   v2.0 | 20110126
-//   License: none (public domain)
-
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,10 +23,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-// HTML5 display-role reset for older browsers
+/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+html{
+    font-size: 62.5%; 
 }
 body {
 	line-height: 1;
@@ -48,128 +50,281 @@ table {
 	border-spacing: 0;
 }
 
-// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    font-size: 1.8rem; /*18px*/
+    margin-bottom: 15px;
+    font-family: 'Rubik', sans-serif;
+}
+
+p {
+    line-height: 1.4;
+    font-size: 1.6rem;
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
-
-// Header Styles
 
 header {
+    margin: 2.6% 0 5% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header nav a{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 4.5%;
+    }
+    header img {
+        margin: 0 0 4%  0;
+    }
+
+}
+
+@media (max-width: 400px){
+    header{
+        margin-top: 7.5%;
+        margin-bottom: 0;
+    }
+    header img{
+        margin-bottom: 7.5%;
+    }
+}
+
+header nav{
     width: 100%;
     display: flex;
+    justify-content: space-around;
+}
 
-    nav ul {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
-        li a {
-            text-decoration: none;
-            color: #b0b0b0;
-
-            &:hover{
-                text-decoration: underline;
-                color: black;
-            }//Hover
-        }//a
-    }//nav ul
-
-    .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 91px;
-    }//logo
-}//header
-
-// Call To Action (CTA) Styles
-
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-
-    .cta-text {
-        font-size: 72px;
-        text-align: center;
-        letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
-        flex-flow: column;
+@media (max-width: 400px){
+    header nav{
+        width: 100%;
+        flex-direction: column;
         align-items: center;
-        margin: 0 82px 0 0;
-    
-        button {
-            border: 1px double black;
-            font-size: 16px;
-            background: white;
-            width: 170px;
-            height: 32px;
-            margin-top: 10px;
-            cursor: pointer;
-        }//button
-    }//.cta-text
-}//.cta
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    }
 }
 
-// Main Content Styles
-
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
+header nav a{
     display: block;
-    margin: 30px auto;
+    font-size: 1.4rem;
 }
 
-.main-content .bottom-content {
+@media (max-width: 400px){
+    header nav a {
+        text-align: center;
+        width: 100%;
+        height: 45px;
+        padding: 4%;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+.middle-img {
+    width: 100%;
+}
+
+.top-content {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 2.5%;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed black;
+}
+@media (max-width: 768px){
+    .top-content{
+        margin-top: 2.7%;
+    }
+}
+
+@media (max-width: 400px){
+    .top-content{
+        flex-direction: column;
+        padding-bottom: 3%;
+    }
+}
+.top-content .text-container {
+    width: 48%;
+    padding: 0 1%;
+    padding-bottom: 20px;  
+}
+
+@media (max-width: 400px){
+    .top-content .text-container{
+        font-size: 1.8rem;
+        width: 100%;
+        padding: 3% 6% 2%;
+    }
+}
+
+.middle-content {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed black;
+}
+
+.middle-content h2 {
+    padding: 0 2%;
+    margin-bottom: 0;
+}
+
+.middle-content .boxes {
+    font-size: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 400px){
+    .middle-content .boxes {
+        flex-direction: row-reverse;
+    }
+}
+
+.middle-content .boxes .box {
+    width: 12.5%;
+    height: 100px;
+    background: black;
+    margin: 20px 2.5%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px){
+    .middle-content .boxes .box {
+        width: 13%;
+    }
+}
+
+@media (max-width: 400px){
+    .middle-content .boxes .box {
+        width: 25%;
+    }
+}
+
+.bottom-content {
+    display: flex;
+    margin: 0 2% 20px;
     justify-content: space-around;
 }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+@media (max-width: 400px){
+    .bottom-content{
+        flex-direction: column;
+        margin: 0 6% 0% 3%;
+    }
 }
 
-// Contact Styles
-
-.contact p {
-    margin: 15px 0;
+.bottom-content .text-container {
+    padding-right: 4%;
 }
 
-// Footer Styles 
+@media (max-width: 400px){
+    .bottom-content .text-container {
+        padding: 0 0 5.3%;
+    }
+}
+
+.bottom-content .text-container:last-child {
+    padding-right: 0;
+}
 
 footer {
-    text-align: center;
-    margin: 40px 0 20px;
+    width: 100%;
+    background: black;
+}
+
+footer nav {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2%;
+    font-size: 1.4rem;/*14px*/
+}
+
+@media (max-width:400px){
+    footer nav {
+        width: 100%;
+        justify-content: space-around;
+        padding-left: 7%;
+        padding-right: 13%;
+    }
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 1000px){
+    .middle-content .boxes .box:nth-of-type(2){
+        background: forestgreen;
+    }
+
+    .middle-content .boxes .box:nth-of-type(4){
+        background: darkorchid;
+    }
+
+    .middle-content .boxes .box:nth-of-type(6){
+        background: hotpink;
+    }
+
+    .middle-content .boxes .box:nth-of-type(8){
+        background: indigo;
+    }
+
+    .middle-content .boxes .box:nth-of-type(10){
+        background: lawngreen;
+    }
+}
+
+@media (max-width: 768px){
+    .middle-content .boxes .box:nth-of-type(1){
+        background: teal;
+    }
+
+    .middle-content .boxes .box:nth-of-type(3){
+        background: gold;
+    }
+
+    .middle-content .boxes .box:nth-of-type(5){
+        background: cadetblue;
+    }
+
+    .middle-content .boxes .box:nth-of-type(7){
+        background: coral;
+    }
+
+    .middle-content .boxes .box:nth-of-type(9){
+        background: crimson;
+    }
+}
+
+@media (max-width: 400px){
+    .middle-content .boxes .box:nth-of-type(10){
+        display: none;
+    }
 }
