@@ -1,8 +1,14 @@
-// Is this working?
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
+@container-background: #805300;
+@header-background: @container-background*3;
+@cta-background: @container-background*1.5;
+@main-background: @container-background*2.5;
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -65,7 +71,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    background: @container-background;
+    max-width: 880px; // Switch to percent width
     margin: auto;
 }
 
@@ -74,21 +81,27 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-    nav ul {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
-        li a {
-            text-decoration: none;
-            color: #b0b0b0;
-            &:hover {
-                text-decoration: underline;
-                color: black;
+    background: @header-background;
+    nav {
+        width: 80%;
+        ul {
+            margin-top: 40px; 
+            width: 610px; // 610/800 = 76.25%
+            justify-content: space-between;
+            display: flex;
+            li a {
+                text-decoration: none;
+                color: #b0b0b0;
+                &:hover {
+                    text-decoration: underline;
+                    color: black;
+                }
             }
         }
-    }
+
+    } 
     .logo {
+        width: 20% - 91px; // Use of Operations to account for left margin
         align-self: flex-end;
         margin: 28px 0 0 91px;
     }
@@ -97,6 +110,7 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
+    background: @cta-background;
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
@@ -111,7 +125,7 @@ header {
         margin: 0 82px 0 0;
         button {
             border: 1px double black;
-            font-size: 16px;
+            font-size: 8px * 2; // Was 16px
             background: white;
             width: 170px;
             height: 32px;
@@ -123,11 +137,16 @@ header {
             }
         }
     }
+    .cta-img {
+        height: auto;
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
+   background: @main-background;
+   width: 100%;
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
@@ -136,15 +155,16 @@ header {
    line-height: 18px;
    .top-content {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     }
     .middle-img {
+        width: 100%;
         display: block;
         margin: 30px auto;
     }
     .bottom-content {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         p {
             padding-right: 20px;
         }
