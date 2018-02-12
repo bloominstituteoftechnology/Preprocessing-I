@@ -56,6 +56,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -71,26 +72,80 @@ h1, h2, h3, h4, h5 {
 
 
 .container {
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     margin: auto;
+    font-size: 1.6rem;
+    
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+    
 }
+    
 
-/* Header Styles */
+
+// Header Styles 
 
 header {
     width: 100%;
     display: flex;
     
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    
     nav{
+        width: 100%;
+        
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+        
+        @media (max-width: 400px) {
+            width: 1001%;   
+        }
         
         ul{
-            margin-top: 40px; 
-            width: 610px;
+            margin: 40px 5% 0; 
+            width: 100%;
             justify-content: space-between;
             display: flex;
             
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 20px 0;
+            }
+            
+            @media (max-width: 400px) {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                align-items: center;
+        
+            }
+            
+            
             
             li{
+                @media (max-width: 400px) {
+                    width: 100%;
+                    margin: 0;
+                }
+                    
+                    
+                    &:first-child {
+                    @media (max-width: 400px) {  
+                        border-top: 1px solid gray;
+                    }
+                }
+                
+                
+                     
+                     
+                     
                 a{
                     text-decoration: none;
                     color: @white-color;
@@ -99,19 +154,39 @@ header {
                     &:hover{
                     text-decoration: underline;
                     color: @black-color;
+                        
+                        
+                        @media (max-width: 400px) {
+                            background: gray;
+                        }
                     }
-                }
-                
-
-            }
-        }
-    }  //  <---------End of nav
+                    
+                    
+                    @media (max-width: 400px) {
+                        display: block;
+                        text-align: center;
+                        padding: 20px 0;
+                        font-size: 2rem;
+                        border-bottom: 1px solid gray; 
+                    }
+                    
+                    
+                } // <--------End of a
+        } //  <---------------End of li
+    } //  <---------End of ul
     
     
     .logo{
         align-self: flex-end;
-        margin: 28px 0 0 91px;
-    } //  <--------- End of logo
+        margin: 28px 2% 0 10%;
+        
+        @media (max-width: 768px) {
+            order: -1;
+            max-width: 100%;
+            margin: 20px 0;
+            }
+        } //  <--------- End of logo
+    } // <--------End of nav
     
     
 }  //  <------------ End of Header
@@ -150,21 +225,37 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
     
+    @media (max-width: 768px) {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
+    
     
     .cta-text{
-            font-size: 72px;
-            text-align: center;
-            letter-spacing: 5px;
-            display: flex;
-            justify-content: center;
-            flex-flow: column;
-            align-items: center;
-            margin: 0 82px 0 0;
+        font-size: 7.2rem;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 9% 0 0;
+        
+        
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+        
+        @media (max-width: 400px) {
+            font-size: 4rem;
+        }
+        
         
         
         button{
                 border: 1px double black;
-                font-size: 16px;
+                font-size: 1.6rem;
                 background: white;
                 width: 170px;
                 height: 32px;
@@ -182,6 +273,16 @@ header {
         
     
     } // < --------End of cta-text
+    
+    img{
+        max-width: 100%;
+        margin-right: 1%;
+        
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    
 } //  <-----------End of cta
 
 
@@ -212,26 +313,43 @@ header {
 //    color: white;
 //}
 
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+   font-size: 1.6rem;
+   line-height: 1.3rem;
+    
+    
+    @media (max-width: 768px) {
+        margin: 50px 2% 35px;
+    }
     
     
     .top-contect{
             display: flex;
             justify-content: space-around;
         
+        
+            @media (max-width: 400px) {
+                flex-direction: column;
+                height: 300px;
+
+            }
+        
     }
     
     .middle-img{
+            max-width: 100%;
             display: block;
             margin: 30px auto;
+        
+        @media (max-width: 768px) {
+            widows: 100%;
+        }
         
     }
     
@@ -240,11 +358,23 @@ header {
             justify-content: space-around;
         
         
-        p{
-            padding-right: 20px;
+        @media (max-width: 400px) {
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
         }
         
+        
+            p{
+                padding-right: 2%;
+            }
+        
     } //  <--------End of bottom-content 
+    
+    .text-content{
+        margin: 0 1%;
+    }
+    
 }  // <-------------End of main-content
 
 
@@ -272,6 +402,17 @@ header {
 
 
 .contact{
+    margin: 20px 1%;
+    
+    @media (max-width: 768px) {
+        margin: 20px 2%;
+    }
+    
+    @media (max-width: 400px) {
+        margin: 20px;
+    }
+    
+    
     p{
         margin: 15px 0;
     }
@@ -283,9 +424,9 @@ header {
 //    margin: 15px 0;
 //}
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
+    }
