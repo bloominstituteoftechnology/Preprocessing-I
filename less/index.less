@@ -1,8 +1,16 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//   v2.0 | 20110126
+//   License: none (public domain)
+
+// LESS varible declarations:
+@background-color: white;
+@nav-color: #0e0a0a;
+@navH-color: blue;
+@border-color: black;
+@btn-bck-color: white;
+@btnH-bck-color: black;
+@btnH-color: white;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +32,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +56,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -67,9 +75,10 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background-color: @background-color;
 }
 
-/* Header Styles */
+// Header Styles
 
 header {
     width: 100%;
@@ -87,11 +96,11 @@ header {
                 
                 a {
                     text-decoration: none;
-                    color: #b0b0b0;
+                    color: @nav-color + rgb(0,0,0); //+ operator usage
 
                     &:hover {
                         text-decoration: underline;
-                        color: black;
+                        color: @navH-color;
                     } //a:hover
                 } //anchor
             } //list
@@ -104,7 +113,7 @@ header {
     } //.logo
 } //header
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
@@ -122,27 +131,27 @@ header {
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double black;
-            font-size: 16px;
-            background: white;
+            border: 1px double @border-color;
+            font-size: 16px * 1.1; //* operator usage
+            background: @btn-bck-color;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
 
             &:hover {
-                background: black;
-                color: white;
+                background: @btnH-bck-color;
+                color: @btnH-color;
             } //button:hover
         } //button
     } //cta-text
 } //cta
 
-/* Main Content Styles */
+// Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @border-color; 
+   border-bottom: 2px solid @border-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
@@ -168,7 +177,7 @@ header {
    } //bottom-content
 } //main-content
 
-/* Contact Styles */
+// Contact Styles
 
 .contact {
     p {
@@ -176,7 +185,7 @@ header {
     }
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
