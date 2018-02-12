@@ -55,6 +55,7 @@ table {
 
 html, body {
     height: 100%;
+    font-size:62.5%;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -65,17 +66,18 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+    width:100%;
+    max-width: 880px;
+    margin: 0 auto;
 }
 /*Color Scheme*/
-@color-base:#2B5F6E;
-@primary-color:#81969C;
-@secondary-color:#0D4656;
-@tertiary-color:#012A36;
+@color-base:#4D6968;
+@primary-color:#D3C4A8;
+@secondary-color:#563536;
+@tertiary-color:#AD9D7E;
 
 body {
-    background:@color-base;
+    background:@secondary-color;
 }
 
 .container {
@@ -84,29 +86,50 @@ body {
 /* Header Styles */
 
 header {
-    width: 100%;
+    min-height:50px;
     display: flex;
-    background:@tertiary-color;
+    background:@color-base;
+    align-items:center;
+    justify-content:space-between;
+    padding:2% 5%;
+    border-bottom: 2px solid black;
+    @media (max-width:768px) {
+        flex-wrap:wrap-reverse;
+    }
 
-    nav ul {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
+    nav {
+        width: 100%;
+        
+        ul {
+            display:flex;
+            justify-content:flex-start;
+            @media (max-width:768px) {
+                justify-content:center;
+                margin-left:0;
+                margin-top:1%;
+            }
 
-        li a {
-            text-decoration: none;
-            color: #b0b0b0;
+            li {
+                flex-grow:0.15;
+            
+                a {
+                    text-decoration: none;
+                    color: #b0b0b0;
+                    font-size:1.3rem;
 
-            &:hover {
-                text-decoration: underline;
-                color: black;
-            } // end a:hover
-        } // end li a   
-    } // end nav ul
+                    &:hover {
+                        text-decoration: underline;
+                        color: black;
+                    } // end a:hover
+                } // end a
+            } // end li    
+        } // end ul       
+    } // end nav
     .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 91px;
+    margin: 0 auto;
+    @media (max-width:768px) {
+        margin-bottom:1rem;
+    }
     } // end .logo
 } // end header
 
@@ -114,29 +137,35 @@ header {
 
 .cta {
     display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
+    justify-content:center;
+    align-items:center;
+    padding:5%;
+    justify-content:space-around;
 
+    img {
+        width:60%;
+        height:auto;
+        max-width:379px;
+    }
 
     .cta-text {
-        font-size: 72px;
-        text-align: center;
-        letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
-        margin: 0 82px 0 0;
-    
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        font-size: 5rem;
+        text-align:center;
 
         button {
             border: 1px double black;
-            font-size: 16px;
+            font-size: 1rem;
             background: white;
-            width: 170px;
-            height: 32px;
-            margin-top: 10px;
+            height:100%;
+            width:40%;
             cursor: pointer;
+            text-align:center;
+            max-width:150px;
+            min-width:71px;
+            line-height:1.2;
         
             &:hover {
                 background: black;
@@ -148,45 +177,55 @@ header {
 
 /* Main Content Styles */
 
+h4, p {
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-
+   background:@color-base;
+   color:#b0b0b0 * 1.25;
+   display:flex;
+   flex-direction:column;
+   padding:3rem 0;
 
     .top-content {
         display: flex;
         justify-content: space-around;
-    }
+        padding:0 1rem;
+        
+        .text-content {
+            margin-right:1rem;
+        }
+    }    
 
     .middle-img {
-        display: block;
+        width:100%;
+        height:auto;
         margin: 30px auto;
     }
 
     .bottom-content {
         display: flex;
         justify-content: space-around;
-    
+        padding:0 1rem;
 
-        p {
-            padding-right: 20px;
+        .text-content {
+            margin-right:1rem;
         }
     }    
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    margin:1rem 0 0 1rem;
 }
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    padding: 1rem 0;
 }
