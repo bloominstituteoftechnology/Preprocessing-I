@@ -4,8 +4,9 @@
    License: none (public domain)
 */
 
-@container-color: red;
-@block-color: green;
+@header-font-color: rgb(192, 65, 87);
+@font-color: rgb(116, 35, 116);
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -59,18 +60,19 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    color: @font-color;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color:@header-font-color;
 }
 
 .container {
     width: 880px;
     margin: auto;
-    background-color: @container-color;
 
     @media (max-width: 768px) {
         width: 100%;
@@ -130,7 +132,7 @@ header {
                 }
                 a {
                     text-decoration: none;
-                    color: #b0b0b0;
+                    color: @header-font-color;
 
                     @media (max-width: 400px) {
                         display: block;
@@ -141,7 +143,7 @@ header {
                     }
                     &:hover {
                         text-decoration: underline;
-                        color: black;
+                        color:@font-color;
 
                         @media (max-width: 400px) {
                             background: gray;
@@ -192,14 +194,14 @@ header {
         button {
             border: 1px double black;
             font-size: 16px;
-            background: white / 2; // !! LESS
+            background: @header-font-color * 2; // !! LESS
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
 
             &:hover {
-                background: black;
+                background: @font-color;
                 color: white;
             } // .cta .cta-text button:hover
         } // .cta .cta-text button
@@ -219,7 +221,6 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-   background-color: @block-color;
 
    @media (max-width: 768px) {
     margin: 50px 2% 35px;
