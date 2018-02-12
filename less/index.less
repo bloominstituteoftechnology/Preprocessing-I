@@ -65,8 +65,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+    max-width: 880px;
+    width: 96%;
+    margin: 2%;
 }
 
 /* Header Styles */
@@ -74,29 +75,84 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media(max-width:786px) {
+        flex-direction: column;
+        width: 100%;
+        align-content: center;
+    }
+    nav {
+        ul {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex; 
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+            li {
+                a {
+                    text-decoration: none;
+                    color: #b0b0b0;
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+                    &:hover {
+                        text-decoration: underline;
+                        color: black;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+                    } //nav ul li a:hover
+
+                } // nav ul li a
+
+            } // nav ul li
+            @media(max-width:786px) {
+                width: 100%;
+                margin: 0;
+                justify-content: space-around;
+            }
+        } // nav ul
+        @media(max-width:786px) {
+            width: 80%;
+            margin: 2% 10%;
+        }
+        @media(max-width:786px) {
+            width: 80%;
+            margin: 2% auto;
+        }
+    } // nav
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media(max-width:786px) {
+            order: -1;
+            align-self: center;
+            margin: 2%;
+        } // header.logo media 786
+
+    } // header.logo
+    
+} // header
+
+// header nav ul {
+//     margin-top: 40px; 
+//     width: 610px;
+//     justify-content: space-between;
+//     display: flex;
+// }
+
+// header nav ul li a {
+//     text-decoration: none;
+//     color: #b0b0b0;
+// }
+
+// header nav ul li a:hover {
+//     text-decoration: underline;
+//     color: black;
+// }
+
+// header .logo {
+//     align-self: flex-end;
+//     margin: 28px 0 0 91px;
+// }
 
 /* Call To Action (CTA) Styles */
 
@@ -104,33 +160,73 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+            &:hover {
+                background: black;
+                color: white;
+            } // button:hover
+
+        } // button
+        @media (max-width: 786px) {
+            margin: 0;
+        }
+    } // .cta-text
+    img {
+        @media (max-width: 786px) {
+            display: none;
+            
+        }
+    }
+    @media (max-width: 786px) {
+        margin: 72px auto 0 auto;
+        justify-content: center;
+    }
+} // .cta
+
+// .cta .cta-text {
+//     font-size: 72px;
+//     text-align: center;
+//     letter-spacing: 5px;
+//     display: flex;
+//     justify-content: center;
+//     flex-flow: column;
+//     align-items: center;
+//     margin: 0 82px 0 0;
+// }
+
+// .cta .cta-text button {
+//     border: 1px double black;
+//     font-size: 16px;
+//     background: white;
+//     width: 170px;
+//     height: 32px;
+//     margin-top: 10px;
+//     cursor: pointer;
+// }
+
+// .cta .cta-text button:hover {
+//     background: black;
+//     color: white;
+// }
 
 /* Main Content Styles */
 
@@ -141,26 +237,50 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+   } // .top-content
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+   .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media (max-width: 786px) {
+            width: 100%;
+        }
+   } // .middle-img
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        p {
+            margin: 15px 0;
+        } // .bottom-content p
+
+   } // .bottom-content
+
+} // .main-content
+
+// .main-content .top-content {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+// .main-content .middle-img {
+//     display: block;
+//     margin: 30px auto;
+// }
+
+// .main-content .bottom-content {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+// .main-content .bottom-content p {
+//     padding-right: 20px;
+// }
 
 /* Contact Styles */
 
