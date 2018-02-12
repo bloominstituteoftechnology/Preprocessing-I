@@ -1,8 +1,20 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+ //  v2.0 | 20110126
+ //  License: none (public domain)
+
+ @tabbreak: 768px;
+ @phonebreak: 412px;
+ 
+
+ @primary-color: #572A72;
+ @secondary-color: #6DFF87;
+
+ @primary-background: @primary-color;
+ @secondary-text: @secondary-color;
+ @primary-hov: black;
+ @secondary-hov: whitesmoke;
+ 
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +36,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -50,7 +62,7 @@ table {
 
 // is this thing working (testing less watcher)
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -58,6 +70,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background-color: @primary-background;
 }
 
 h1, h2, h3, h4, h5 {
@@ -69,16 +82,46 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media(max-width: @tabbreak){
+        
+            .container{
+                width: 100%;
+            
+    }
+
+
+
+
 }
 
-/* Header Styles */
+@media(max-width: @phonebreak){
+        
+    .container{
+        width: 100%;
+    
+}
+
+}
+// Header Styles 
 
 header {
     width: 100%;
     display: flex;
+    background-color: @primary-color;
+    @media(max-width: 768px){
+        width: 80%;
+        flex-flow: column wrap; 
+    }
 
+    @media(max-width: 412px){
+        width: 80%;
+        flex-flow: column wrap;
+    }
 
     nav{
+
+        background-color: @primary-background;
 
         ul {
             margin-top: 40px; 
@@ -86,14 +129,28 @@ header {
             justify-content: space-between;
             display: flex;
 
+
+
+            @media(max-width:768px){
+                width: 129%;
+                justify-content: space-evenly;
+                margin-left: 2%;
+            }
+
+            @media(max-width: 412px){
+                width: 129%;
+                justify-content: space-evenly;
+                margin-left: 2%;
+            }
+
             li a {
                 text-decoration: none;
-                color: #b0b0b0;
+                color: @secondary-color;
             }
 
             li a:hover {
                 text-decoration: underline;
-                color: black;
+                color: white;
             }
 
 
@@ -101,21 +158,49 @@ header {
 
     } // nav
 
+    
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media(max-width: 768px){
+            margin: 28px 0 0 30%;
+            align-self: center;
+        }
+
+        @media(max-width: 412px){
+            margin: 28px 0 0 30%;
+            align-self: center;
+        }
     } // .logo
     
 } // header
 
 
 
-/* Call To Action (CTA) Styles */
+
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    background-color: @primary-background;
+
+    @media(max-width: 768px){
+        justify-content: space-evenly;
+        width: 100%;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    @media(max-width: @phonebreak){
+        justify-content: space-evenly;
+        width: 100%;
+        flex-flow: column wrap;
+        align-items: center;
+
+    }
 
     .cta-text {
         font-size: 72px;
@@ -127,14 +212,41 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media(max-width: 768px){
+            font-size: 70px;
+            margin-left: 3%;
+            margin-right: 0;
+        }
+
+        @media(max-width: @phonebreak){
+            font-size: 70px;
+            margin-left: 3%;
+            margin-right: 0;
+        }
+
         button {
             border: 1px double black;
             font-size: 16px;
-            background: white;
+            background: @secondary-text;
             width: 170px;
             height: 32px;
             margin-top: 5*2px;
             cursor: pointer;
+
+            @media(max-width: 768px){
+            width: 40%;
+            height: 45px;
+            text-align: center;
+            margin-left: 4%;
+
+            }
+
+            @media(max-width:@phonebreak){
+                width: 40%;
+                height: 45px;
+                text-align: center;
+                margin-left: 4%;
+            }
         } // Button
 
         button:hover {
@@ -143,34 +255,99 @@ header {
         } // Button:hover
     } // .cta-text
 
+    img{
+        @media(max-width: 768px){
+            width: 40%;
+            margin: 5% 0 0 6%;
+        }
+        @media (max-width: @phonebreak) {
+            width: 40%;
+            margin: 5% 0 0 6%;
+            
+        }
+    }
 
 } // .cta
 
+.cta:hover{
+    background: @primary-hov;
+    color: @secondary-hov;
+}
 
 
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid whitesmoke; 
+   border-bottom: 2px solid whitesmoke;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
 
+   color: @secondary-text;
+
+   @media(max-width:768px){
+    margin-left: 5%;
+   }
+
+   @media(max-width:@phonebreak){
+    margin-left: 5%;
+   }
+
    .top-content {
     display: flex;
     justify-content: space-around;
+
+    @media(max-width:768px){
+        text-align: center;
+        font-size: 1.1875rem;
+    }
+
+    @media(max-width:@phonebreak){
+        text-align: center;
+        font-size: 1.1875rem;
+    }
 }
 
     .middle-img {
     display: block;
     margin: 30px auto;
+
+    @media(max-width: 768px){
+        width: 100%;
+    }
+
+    @media(max-width:@phonebreak){
+        width: 100%;
+    }
 }
 
  .bottom-content {
     display: flex;
     justify-content: space-around;
+
+    @media(max-width:768px){
+        flex-flow: column wrap;
+        text-align: center;
+        font-size: 1.125rem;
+    }
+
+    @media(max-width:@phonebreak){
+        flex-flow: column wrap;
+        text-align: center;
+        font-size: 1.125rem;
+    }
+
+    .text-content{
+        @media(max-width:768px){
+            padding: 10px 0 10px 0;
+        }
+        @media(max-width:@phonebreak){
+        padding: 10px 0 10px 0;
+    }
+    }
+    
 
     p {
         padding-right: 20px;
@@ -178,20 +355,54 @@ header {
 } // .bottom-content
 } // .main-content
 
-
-
-
-.main-content .bottom-content 
-
-/* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
+.main-content:hover{
+    background: @primary-hov;
+    color: @secondary-hov;
 }
 
-/* Footer Styles */
+
+
+
+// Contact Styles 
+
+.contact {
+
+color: @secondary-text;
+
+@media(max-width:768px){
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+@media(max-width:@phonebreak){
+    
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        font-size: 100%;
+    
+}
+
+p {
+    margin: 15px 0;
+    
+}
+
+
+
+}
+
+.contact:hover{
+    background: @primary-hov;
+    color: @secondary-hov;
+}
+
+// Footer Styles 
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+}
+
 }
