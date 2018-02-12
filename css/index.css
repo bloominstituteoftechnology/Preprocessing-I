@@ -128,6 +128,7 @@ html,
 body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
 }
 h1,
 h2,
@@ -140,86 +141,180 @@ h5 {
 }
 .container {
   width: 880px;
+  width: 100%;
   margin: auto;
+  font-size: 1.6rem;
   background-color: white;
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (max-width: 720px) {
+  .container {
+    max-width: 720px;
+  }
 }
 header {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+}
+@media (max-width: 720px) {
+  header {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+  }
+}
+header nav {
+  flex-grow: 1;
+}
+@media (max-width: 720px) {
+  header nav {
+    width: 100%;
+    margin: 15px 0;
+  }
 }
 header nav ul {
-  margin-top: 40px;
-  width: 610px;
-  justify-content: space-between;
   display: flex;
+  margin: 0 7.2%;
+}
+header nav ul li {
+  flex-grow: 1;
 }
 header nav ul li a {
   text-decoration: none;
   color: #0e0a0a;
+  font-size: 1.4rem;
 }
 header nav ul li a:hover {
   text-decoration: underline;
   color: blue;
+  cursor: pointer;
 }
 header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 0 0.6%;
 }
 .cta {
   display: flex;
-  margin-top: 72px;
-  justify-content: flex-end;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+@media (max-width: 400px) {
+  .cta {
+    margin-top: 15px;
+  }
 }
 .cta .cta-text {
-  font-size: 72px;
+  font-size: 7.2rem;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 0.5rem;
   display: flex;
-  justify-content: center;
-  flex-flow: column;
+  flex-direction: column;
   align-items: center;
-  margin: 0 82px 0 0;
 }
 .cta .cta-text button {
   border: 1px double black;
-  font-size: 17.6px;
+  font-size: 1.76rem;
   background: white;
-  width: 170px;
+  width: 17rem;
   height: 32px;
-  margin-top: 10px;
   cursor: pointer;
 }
 .cta .cta-text button:hover {
   background: black;
   color: white;
 }
+@media (max-width: 720px) {
+  .cta img {
+    display: none;
+  }
+}
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  margin: 75px 0 35px 0;
-  padding: 35px 0;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 18px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+}
+@media (max-width: 720px) {
+  .main-content {
+    height: 530px;
+  }
+}
+@media (max-width: 400px) {
+  .main-content {
+    margin: 15px 0px;
+    height: 100%;
+  }
 }
 .main-content .top-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+@media (max-width: 400px) {
+  .main-content .top-content {
+    margin: 10px 0px;
+  }
+}
+.main-content .top-content .text-content {
+  margin: 0 0.6%;
 }
 .main-content .middle-img {
-  display: block;
-  margin: 30px auto;
+  max-width: 100%;
+  margin: 0 0.6%;
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    margin: 10px 0px;
+  }
+}
+.main-content .bottom-content .text-content {
+  margin-left: 0.6%;
+}
 .main-content .bottom-content p {
   padding-right: 20px;
 }
+.contact {
+  margin-left: 0.6%;
+  /* 5px/880px = .6% */
+}
+@media (max-width: 400px) {
+  .contact {
+    text-align: center;
+    margin: 0px;
+  }
+}
 .contact p {
-  margin: 15px 0;
+  margin-left: 0.6%;
+  /* 5px/880px = .6% */
+}
+@media (max-width: 400px) {
+  .contact p {
+    margin: 5px 0;
+  }
 }
 footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 400px) {
+  footer {
+    text-align: center;
+    margin: 10px 0px 5px;
+  }
 }
