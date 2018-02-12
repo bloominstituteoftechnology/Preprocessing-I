@@ -151,6 +151,11 @@ h5 {
     width: 100%;
   }
 }
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
@@ -161,30 +166,101 @@ header {
     justify-content: center;
   }
 }
-header header .logo {
+@media (max-width: 400px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-header header nav ul {
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 768px) {
+  header nav {
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    width: 100%;
+  }
+}
+header nav ul {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
-header header nav ul header nav ul li a {
+@media (max-width: 400px) {
+  header nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+}
+header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
-header header nav ul header nav ul li a:hover {
+@media (max-width: 400px) {
+  header nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+    color: #c30909;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
+header nav ul li a:hover {
   text-decoration: underline;
   color: black;
+}
+@media (max-width: 400px) {
+  header nav ul li a:hover {
+    background: gray;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li:first child {
+    background: gray;
+  }
 }
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
 }
-.cta .cta .cta-text {
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 50px;
+    flex-flow: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
+}
+.cta .cta-text {
   font-size: 72px;
   text-align: center;
   letter-spacing: 5px;
@@ -194,7 +270,18 @@ header header nav ul header nav ul li a:hover {
   align-items: center;
   margin: 0 82px 0 0;
 }
-.cta .cta .cta-text .cta .cta-text button {
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+    color: #c30909;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    color: #030396;
+  }
+}
+.cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
   background: white;
@@ -203,9 +290,19 @@ header header nav ul header nav ul li a:hover {
   margin-top: 10px;
   cursor: pointer;
 }
-.cta .cta .cta-text .cta .cta-text button:hover {
+.cta .cta-text button:hover {
   background: black;
   color: white;
+}
+@media (max-width: 768px) {
+  .cta .cta-text button:hover {
+    background: #030396;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text button:hover {
+    background: #c30909;
+  }
 }
 .main-content {
   border-top: 2px solid black;
@@ -215,20 +312,54 @@ header header nav ul header nav ul li a:hover {
   font-size: 16px;
   line-height: 18px;
 }
-.main-content .main-content .top-content {
+@media (max-width: 768px) {
+  .main-content {
+    margin: 50px 2% 35px;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
+}
+.main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .main-content .middle-img {
+@media (max-width: 400px) {
+  .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
+}
+.main-content .middle-img {
   display: block;
   margin: 30px auto;
 }
-.main-content .main-content .bottom-content {
+.main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .main-content .bottom-content .main-content .bottom-content p {
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+}
+.main-content .bottom-content p {
   padding-right: 20px;
+}
+@media (max-width: 768px) {
+  .contact {
+    margin: 20px 2%;
+  }
+}
+@media (max-width: 400px) {
+  .contact {
+    margin: 20px;
+  }
 }
 .contact p {
   margin: 15px 0;
