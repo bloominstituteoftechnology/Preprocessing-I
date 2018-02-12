@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+//  http://meyerweb.com/eric/tools/css/reset/ 
+//    v2.0 | 20110126
+//    License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -64,14 +64,24 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+// VARIABLES
+
+@background-color: yellow;
+@cta-text-color: rgb(170, 30, 30);
+
+html {
+    background-color: @background-color;
+}
+
 .container {
     max-width: 880px;
     width: 96%;
     margin: auto;
     justify-content: center;
+    
 }
 
-/* Header Styles */
+//  Header Styles 
 
 header {
     width: 100%;
@@ -84,16 +94,40 @@ header {
         width: 100%;
         align-content: center;
     }
+    @media (max-width: 400px) {
+        margin-top: 50px / 2; // Using equation just because....
+    }
     nav {
         width: 100%;
+        @media (max-width: 400px) {
+            margin: 0;
+            align-self: center;
+        }
 
         ul {
             margin-top: 40px; 
             width: 85%;
             justify-content: space-between;
             display: flex; 
+            
+            @media(max-width:786px) {
+                width: 100%;
+                margin: 0;
+                justify-content: space-around;
+            }
+            @media (max-width: 400px) {
+                flex-direction: column;
+                align-items: center;
+            }
 
             li {
+                @media (max-width: 400px) {
+                    display: block;
+                    margin: 3%;
+                    text-align: center;
+                    border-top: 1px solid blue;
+                    border-bottom: 1px solid blue;
+                }
                 a {
                     text-decoration: none;
                     color: #b0b0b0;
@@ -107,20 +141,10 @@ header {
                 } // nav ul li a
 
             } // nav ul li
-            @media(max-width:786px) {
-                width: 100%;
-                margin: 0;
-                justify-content: space-around;
-            }
+            
         } // nav ul
-        @media(max-width:786px) {
-            width: 80%;
-            margin: 2% 10%;
-        }
-        @media(max-width:786px) {
-            width: 80%;
-            margin: 2% auto;
-        }
+        
+        
     } // nav
 
     .logo {
@@ -161,14 +185,17 @@ header {
 //     margin: 28px 0 0 91px;
 // }
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
+    margin: 72px auto 0;
+   
+    justify-content: space-around;
+    width: 85%;
 
     .cta-text {
+        color: @cta-text-color;
         font-size: 72px;
         text-align: center;
         letter-spacing: 5px;
@@ -176,7 +203,7 @@ header {
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 82px 0 0;
+        margin: 0;
 
         button {
             border: 1px double black;
@@ -235,19 +262,29 @@ header {
 //     color: white;
 // }
 
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 8px * 2;  // Using equation just because....
    line-height: 18px;
+
+   .text-content {
+       @media (max-width: 400px) {
+           margin: 10px 0;
+       }
+   }
 
    .top-content {
         display: flex;
         justify-content: space-around;
+        @media (max-width: 400px) {
+            flex-direction: column;
+            text-align: justify;
+        }
    } // .top-content
 
    .middle-img {
@@ -262,8 +299,18 @@ header {
         display: flex;
         justify-content: space-around;
 
+        @media (max-width: 400px) {
+            flex-direction: column;
+            text-align: justify;
+            width: 100%;
+            margin: 0;
+        }
+
         p {
             margin: 15px 0;
+            @media (max-width: 400px) {
+                padding-right: 0;
+            }
         } // .bottom-content p
 
    } // .bottom-content
@@ -289,13 +336,13 @@ header {
 //     padding-right: 20px;
 // }
 
-/* Contact Styles */
+// Contact Styles 
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles 
 
 footer {
     text-align: center;
