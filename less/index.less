@@ -84,6 +84,21 @@ header {
     width: 100%;
     display: flex;
 
+    @media(max-width:400px){
+        margin: 0;
+        height: 200px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-content: space-around;
+    }
+
+    nav {
+        @media(max-width: 400px){
+            margin: 0;
+        }//media 400
+    }//nav
+
     nav ul {
         margin-top: 40px; 
         width: 610px;
@@ -97,6 +112,15 @@ header {
             display: flex;
             margin-left: 19px;
         }//media 768
+
+        @media(max-width:400px){
+            height: 140px;
+            margin: 0;
+            width: 100%;
+            flex-direction: column; 
+            justify-content: space-around;
+            align-items: center;
+        }//media 400
 
         li a {
             text-decoration: none;
@@ -120,6 +144,11 @@ header {
         @media(max-width: 768px){
             margin-left: 60px;
         }//media 768
+
+        @media(max-width:400px){
+            margin: 0 0 0;
+            align-self: center;
+        }//media 400
     }//logo
 }//header
 
@@ -138,7 +167,13 @@ header {
         display: flex;
         margin-top: 30px;
         justify-content: flex-start;
-    }
+    }//media 768
+
+    @media(max-width:400px){
+        flex-wrap: wrap;
+        flex-flow: column;
+        justify-content: space-between;
+    }//media 400
 
     .cta-text {
         font-size: 72px;
@@ -158,7 +193,11 @@ header {
             flex-flow: column;
             align-items: center;
             margin: 0px 75px 0 30px;
-        }
+        }//media 768
+
+        @media(max-width:400px){
+            margin: 0 0 30px 0;
+        }//media 400
 
         button {
             border: 1px double black;
@@ -175,6 +214,12 @@ header {
             }//Hover
         }//button
     }//cta-text
+
+    img{
+        @media(max-width:400px){
+            margin: 20px;
+        }//media 400
+    }//img
 }//cta
 
 // Main Content Styles
@@ -217,9 +262,21 @@ header {
             padding-right: 20px;
         }//p
 
+        .text-content{
+            @media(max-width:400ox){
+                margin: 20px 0;
+            }
+        }
+
         @media(max-width: 768px){
             margin: 30px 20px;
         }//media 768
+
+        @media(max-width: 400px){
+            flex-direction: column;
+        }
+
+
     }//bottom-content
 }//main-content
 
@@ -240,55 +297,4 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
-   
-@media(max-width: 400px){
-    .container{
-        width: 100%;
-    }
-    header{
-        margin: 0;
-        height: 200px;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-        justify-content: space-around;
-        align-content: space-around;
-    }
-
-    header nav {
-        margin: 0;
-}
-    header nav ul {
-        height: 140px;
-        margin: 0;
-        width: 100%;
-        flex-direction: column; 
-        justify-content: space-around;
-        align-items: center;
-    }
-    header .logo {
-        margin: 0 0 0;
-        align-self: center;
-    }
-    .cta {
-        flex-wrap: wrap;
-        flex-flow: column;
-        justify-content: space-between;
-
-    }
-    .cta .cta-text {
-        margin: 0 0 30px 0;
-    }
-    .cta img {
-        margin: 20px;
-    }
-    .main-content {
-        width: 100%;
-    }
-    .bottom-content{
-        flex-direction: column;
-    }
-    .bottom-content .text-content {
-        margin: 20px 0;
-    }
 }
