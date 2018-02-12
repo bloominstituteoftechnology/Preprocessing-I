@@ -142,11 +142,6 @@ h5 {
   width: 880px;
   margin: auto;
 }
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-}
 header {
   width: 100%;
   display: flex;
@@ -154,12 +149,9 @@ header {
 }
 @media (max-width: 768px) {
   header {
+    flex-wrap: wrap;
+    justify-content: center;
     background: grey;
-  }
-}
-@media (max-width: 768px) {
-  header header nav {
-    width: 90%;
   }
 }
 header nav ul {
@@ -168,26 +160,25 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
-@media (max-width: 768px) {
-  header nav ul {
-    width: 100%;
-    margin: 20px 0;
-  }
-}
-header li a {
+header nav ul li a {
   text-decoration: none;
   color: black;
 }
-header li a:hover {
+@media (max-width: 768px) {
+  header nav ul li a {
+    color: purple;
+  }
+}
+header nav ul li a:hover {
   text-decoration: underline;
   color: black;
 }
-header .logo {
+.logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
 @media (max-width: 768px) {
-  header .logo {
+  .logo {
     order: -1;
     max-width: 100%;
     margin: 20px 0;
@@ -210,12 +201,7 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
-@media (max-width: 768px) {
-  .cta .cta-text {
-    margin: 0;
-  }
-}
-.cta button {
+.cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
   background: white;
@@ -224,7 +210,7 @@ header .logo {
   margin-top: 10px;
   cursor: pointer;
 }
-.cta button:hover {
+.cta .cta-text button:hover {
   background: black;
   color: white;
 }
@@ -236,24 +222,23 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
-.main-content .main-content .top-content {
+.main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .middle-img {
+.middle-img {
   display: block;
   margin: 30px auto;
 }
-.main-content .main-content .bottom-content {
+.bottom-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .bottom-content p {
+.bottom-content p {
   padding-right: 20px;
 }
 .contact p {
   margin: 15px 0;
-  background: pink;
 }
 footer {
   text-align: center;

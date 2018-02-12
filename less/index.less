@@ -1,12 +1,11 @@
 // Is this working?
 // http://meyerweb.com/eric/tools/css/reset/ 
 //  v2.0 | 20110126
-// License: none (public domain)
+//   License: none (public domain)
 @headercolor: pink;
 @ctacolor: grey;
 @navfontcolor: black;
 @ctatextcolor: salmon;
-
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -28,7 +27,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-// HTML5 display-role reset for older browsers
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -52,7 +51,7 @@ table {
 	border-spacing: 0;
 }
 
-// Set every element's box-sizing to border-box
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -71,13 +70,9 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
-
-    @media (max-width: 768px) {
-        width: 100%;
-    }
 }
 
-// Header Styles
+// Header Styles 
 
 header {
     width: 100%;
@@ -85,75 +80,69 @@ header {
     background: @headercolor;
 
     @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
         background: @ctacolor;
     }
 
-    header nav {
-        @media (max-width: 768px) {
-            width: 90%;
-        }
-    }
-        nav ul {
-        margin-top: 80px / 2; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
+    nav {
 
-        @media (max-width: 768px) {
-            width: 100%;
-            margin: 20px 0;
-    
-        }
-    }
-            li a {
-            text-decoration: none;
-            color: @navfontcolor;
-        }
-    
-                li a:hover {
-                text-decoration: underline;
-                color: black;
-            }
-    
-                    .logo {
-                    align-self: flex-end;
-                    margin: 28px 0 0 91px;
+        ul {
+            margin-top: 80px / 2; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
+
+            li {
+
+                a {
+                    text-decoration: none;
+                    color: @navfontcolor;
 
                     @media (max-width: 768px) {
-                        order: -1;
-                        max-width: 100%;
-                        margin: 20px 0;
+                        color: purple;
                     }
-                 }
 
+                    &:hover {
+                        text-decoration: underline;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
 }
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
 
-// Call To Action (CTA) Styles
+        @media (max-width: 768px) {
+            order: -1;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+    }
+
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
     background: @ctacolor;
-    
 
     .cta-text {
-    font-size: 72px;
-    color: @ctatextcolor;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-
-        @media (max-width: 768px) {
-        margin: 0;
-        }
-    }
-    
-            button {
+        font-size: 72px;
+        color: @ctatextcolor;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        
+        button {
             border: 1px double black;
             font-size: 16px;
             background: white;
@@ -161,17 +150,16 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
-            }
-    
-                button:hover {
+
+            &:hover {
                 background: black;
                 color: white;
             }
+        }
+    }
 }
 
-
-
-// Main Content Styles
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
@@ -180,35 +168,32 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-
-    .main-content .top-content {
-    display: flex;
-    justify-content: space-around;
+   .top-content {
+        display: flex;
+        justify-content: space-around;
     }
-
-        .middle-img {
+}
+    .middle-img {
         display: block;
         margin: 30px auto;
+    }
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+
+        p {
+            padding-right: 10px * 2;
         }
-
-            .main-content .bottom-content {
-            display: flex;
-            justify-content: space-around;
-            }
-
-                .bottom-content p {
-                padding-right: 10px * 2;
-                }
-}
+    }
 
 // Contact Styles
 
 .contact p {
     margin: 15px 0;
-    background: @headercolor;
 }
 
-// Footer Styles
+// Footer Styles 
 
 footer {
     text-align: center;
