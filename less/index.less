@@ -56,12 +56,16 @@ html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 62.5%;
+    background-color: @alt-background-color;
+    color: @alt-body-color;
+ 
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @alt-header-color;
 }
 
 .container {
@@ -81,8 +85,12 @@ h1, h2, h3, h4, h5 {
 
 }
 
-//Color theme variables
-@primary-color: blue;
+//Alternate Theme Variables
+@alt-header-color: white;
+@alt-body-color: lightgray;
+@alt-background-color: lightslategray;
+@alt-divider-color: mintcream;
+@alt-highlight-color: ivory;
 
 // Header Styles
 
@@ -118,22 +126,22 @@ header {
                     margin: 0;
                     
                     &:first-child {
-                        border-top: 1px solid gray;
+                        border-top: 1px solid @alt-divider-color
                     }
                 }
     
                 a {
                     text-decoration: none;
-                    color: #b0b0b0;
+                    color: @alt-header-color;
                     @media (max-width: 400px) {
                         display: block;
                         text-align: center;
                         padding: 20px 0;
                         font-size: 2rem;
-                        border-bottom: 1px solid gray;
+                        border-bottom: 1px solid @alt-divider-color;
 
                         &:hover {
-                            background: gray;
+                            background: @alt-highlight-color;
                             text-decoration: none;
                             
                         }
@@ -195,17 +203,17 @@ header {
         }
 
         button {
-            border: 1px double black;
+            border: 1px double @alt-body-color;
             font-size: 1.6rem;
-            background: white;
+            background: @alt-header-color;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
     
             &:hover {
-                background: black;
-                color: white;
+                background: @alt-background-color;
+                color: @alt-body-color;
             }
         }
     }
@@ -222,8 +230,8 @@ header {
 // Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @alt-divider-color; 
+   border-bottom: 2px solid @alt-divider-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 1.6rem;
