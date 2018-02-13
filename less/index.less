@@ -1,7 +1,7 @@
 // Is this working?
 // http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+   // v2.0 | 20110126
+   // License: none (public domain)
 
 
 html, body, div, span, applet, object, iframe,
@@ -63,6 +63,8 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
+@primary-color: deepPink;
+@secondary-color: darkTurquoise;
 
 .container {
     width: 880px;
@@ -82,24 +84,32 @@ header {
             justify-content: space-between;
             display: flex;
 
-            a [
+            @media (max-width: 900px) {
+                flex-flow: row-reverse;
+            }
+
+            
+            a {
                 text-decoration: none;
                 color: #b0b0b0;
-                &hover {
+                @media (max-width: 600px) {
+                    color: @primary-color;
+                }
+                &:hover {
                     text-decoration: underline;
                     color: black;
-
+                    
                 }
 
-            ]
+            }
 
         }
     }
+    
     logo {
         align-self: flex-end;
-        margin: 28px 0 0 91px;
-
-    }
+        margin-right: 56px;
+      }
 }
 
 // Call To Action (CTA) Styles 
@@ -116,7 +126,7 @@ header {
         display: flex;
         justify-content: center;
         flex-flow: column;
-        align-items: center;
+        align-items: flex-start;
         margin: 0 82px 0 0;
 
         button {
@@ -128,7 +138,7 @@ header {
             margin-top: 10px;
             cursor: pointer;
             
-            &hover: {
+            &:hover {
                 background: black;
                 color: white;
 
