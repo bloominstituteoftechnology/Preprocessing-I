@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+//http://meyerweb.com/eric/tools/css/reset/ 
+  // v2.0 | 20110126
+   //License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+//HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,10 +48,13 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+//Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
+
+@primary-color: rgb(17, 0, 255);
+@secondary-color: rgb(0, 191, 225);
 
 html, body {
     height: 100%;
@@ -69,28 +72,28 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
-/* Header Styles */
+//Header Styles 
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav ul {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    li a {
+        text-decoration: none;
+        color: @primary-color;
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
+    a:hover {
+        text-decoration: underline;
+        color: @secondary-color;
+       }
+     }
+   }
 }
 
 header .logo {
@@ -98,23 +101,23 @@ header .logo {
     margin: 28px 0 0 91px;
 }
 
-/* Call To Action (CTA) Styles */
+//Call To Action (CTA) Styles
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+    }
 }
 
 .cta .cta-text button {
@@ -125,52 +128,173 @@ header .logo {
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
+
+    .cta-text button:hover {
+        background: black;
+        color: white;
+    }
 }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+//Main Content Styles
+
+    .main-content {
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
+
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+
+
+    .bottom-content p {
+        padding-right: 20px;
+       }
+     }
+    }
+  }
 }
 
-/* Main Content Styles */
-
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
+//Contact Styles 
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+//Footer Styles
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+}
+
+//Media Queries 
+//For Tablet
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+        header {
+            flex-wrap: wrap;
+            justify-content: center;
+    
+        nav {
+            width: 90%;
+            color: @primary-color;
+
+        nav ul {
+            width: 100%;
+            margin: 20px 0;
+            color: @secondary-color;
+    }
+  }
+}
+
+    header .logo {
+        order: -1;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+        .cta {
+            margin-top: 45px;
+            flex-flow: column;
+            align-items: center;
+
+        .cta-text {
+            margin: 0;
+
+        img {
+            display: none;
+        }
+      }
+    }
+
+        .main-content {
+            margin: 45px 2% 30px;
+        }
+
+        .contact {
+            margin: 20px 2%;
+        }
+    }
+  
+    //Phone media query
+
+
+  @media (max-width: 400px){
+    .container {
+        width: 100%;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+
+    nav {
+        width: 100%;
+
+    nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+
+    li {
+        width: 100%;
+        margin: 0;
+        color: @primary-color;
+
+    a {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 2rem;
+        border-bottom: 1px solid gray;
+        color: @secondary-color;
+    }
+   }
+  }
+ }
+}
+
+        header nav ul li:first-child {
+            border-top: 1 px solid gray;
+        
+
+        li a:hover {
+            background: gray;
+   }
+}
+
+        .main-content .top-content {
+            justify-content: space-around;
+            flex-direction: column;
+            height: 250px;
+
+        .bottom-content {
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 400px;
+    }
+}
+
+    .contact {
+        margin: 15px;
+     }
+   }
 }
