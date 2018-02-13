@@ -60,6 +60,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -71,8 +72,12 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    font-size: 1.6rem;
 
     @media(max-width: 768px) {
+        width: 100%;
+    }
+    @media (max-width: 400px) {
         width: 100%;
     }
 }
@@ -87,10 +92,17 @@ header {
         flex-wrap: wrap;
         justify-content: center;
     }
+    @media (max-width: 400px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     nav {
         @media(max-width: 768px) {
             width: 90%;
+        }
+        @media (max-width: 400px) {
+            width: 100%;
         }
         ul {
             margin-top: 40px; 
@@ -102,14 +114,38 @@ header {
                 width: 100%;
                 margin: 20px 0;
             }
+            @media(max-width: 400px) {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                align-items: center;
+            }
 
             li {
+                @media(max-width: 400px){
+                    width: 100%;
+                    margin: 0;
+                    &:first-child {
+                        border-top: 1px solid gray;
+                    }
+                    &:hover {
+                        background: gray;
+                    }
+                }
                 a {
                     text-decoration: none;
                     color: #b0b0b0;
                     &:hover {
                         text-decoration: underline;
                         color: black;
+                    @media(max-width: 400px) {
+                        display: block;
+                        text-align: center;
+                        padding: 20px 0;
+                        font-size: 2rem;
+                        border-bottom: 1px solid gray;
+                    }
                     }
                 }
                 
@@ -126,7 +162,7 @@ header {
             max-width: 100%;
             margin: 20px 0;
         }       
-}
+    }
 }
 
 
@@ -144,9 +180,9 @@ header {
     }
 
     .cta-text {
-        font-size: 72px * 1.5;
+        font-size: 3.6rem * 2;
         text-align: center;
-        letter-spacing: 5px;
+        letter-spacing: 10px/2;
         display: flex;
         justify-content: center;
         flex-flow: column;
@@ -156,11 +192,15 @@ header {
 
         @media(max-width: 768px) {
             margin: 0;
-            font-size: 72px;
+            font-size: 7.2rem;
+        }
+        @media(max-width: 400px) {
+            margin: 0;
+            font-size: 4.7rem;
         }
 
         button {
-            border: 1px+1 double black;
+            border: 1px double black;
             font-size: 16px;
             background: white;
             width: 170px;
@@ -199,6 +239,12 @@ header {
         display: flex;
         justify-content: space-around;
 
+        @media (max-width: 400px){
+            justify-content: space-around;
+            flex-direction: column;
+            height: 300px;
+        }
+
         .text-content {
             h4 {
                 color: @electricblue;
@@ -217,6 +263,12 @@ header {
         display: flex;
         justify-content: space-around;
 
+        @media (max-width: 400px){
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
+
         .text-content {
             
             h4 {
@@ -234,12 +286,16 @@ header {
 // Contact Styles 
 
 .contact {
-    p { 
-        margin: 15px 0;
-    }
     @media(max-width: 768px) {
         margin: 20px 2%;
     }
+    @media (max-width: 400px){
+        margin: 20px;
+    }
+    p { 
+        margin: 15px 0;
+    }
+   
 }
 
 // Footer Styles 

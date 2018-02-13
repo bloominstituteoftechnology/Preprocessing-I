@@ -128,6 +128,7 @@ html,
 body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
 }
 h1,
 h2,
@@ -141,8 +142,14 @@ h5 {
 .container {
   width: 880px;
   margin: auto;
+  font-size: 1.6rem;
 }
 @media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
   .container {
     width: 100%;
   }
@@ -157,9 +164,20 @@ header {
     justify-content: center;
   }
 }
+@media (max-width: 400px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 @media (max-width: 768px) {
   header nav {
     width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    width: 100%;
   }
 }
 header nav ul {
@@ -174,6 +192,27 @@ header nav ul {
     margin: 20px 0;
   }
 }
+@media (max-width: 400px) {
+  header nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+  header nav ul li:first-child {
+    border-top: 1px solid gray;
+  }
+  header nav ul li:hover {
+    background: gray;
+  }
+}
 header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
@@ -181,6 +220,15 @@ header nav ul li a {
 header nav ul li a:hover {
   text-decoration: underline;
   color: black;
+}
+@media (max-width: 400px) {
+  header nav ul li a:hover {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+  }
 }
 header .logo {
   align-self: flex-end;
@@ -206,7 +254,7 @@ header .logo {
   }
 }
 .cta .cta-text {
-  font-size: 108px;
+  font-size: 7.2rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
@@ -219,11 +267,17 @@ header .logo {
 @media (max-width: 768px) {
   .cta .cta-text {
     margin: 0;
-    font-size: 72px;
+    font-size: 7.2rem;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    margin: 0;
+    font-size: 4.7rem;
   }
 }
 .cta .cta-text button {
-  border: 2px double black;
+  border: 1px double black;
   font-size: 16px;
   background: white;
   width: 170px;
@@ -257,6 +311,13 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
+}
 .main-content .top-content .text-content h4 {
   color: #3355FF;
 }
@@ -273,19 +334,31 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+}
 .main-content .bottom-content .text-content h4 {
   color: #3355FF;
 }
 .main-content .bottom-content .text-content p {
   padding-right: 20px;
 }
-.contact p {
-  margin: 15px 0;
-}
 @media (max-width: 768px) {
   .contact {
     margin: 20px 2%;
   }
+}
+@media (max-width: 400px) {
+  .contact {
+    margin: 20px;
+  }
+}
+.contact p {
+  margin: 15px 0;
 }
 footer {
   text-align: center;
