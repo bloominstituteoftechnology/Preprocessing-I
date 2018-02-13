@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+//HTML5 display-role reset for older browsers//
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,17 +48,26 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+//Set every element's box-sizing to border-box//
+
+@primary-color: #00686d; // Theme color variables //
+@secondary-color: #161616; // Theme color variables //
+@tertiary-color: #f7f7f7; // Theme color variables //
+@quaternary-color: #a1a2a3; // Theme color variables //
+
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
+    background-color: @primary-color; // Color Variable use //
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
+    color: @secondary-color;
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -67,110 +76,176 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    }
 }
 
-/* Header Styles */
+// Header //
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    .logo {
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        @media (max-width: 768px) {
+            Display: flex;
+            align-self: flex-start;
+            margin-top: 2.3rem;
+            margin-left: 2rem;
+        }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
+    
+    nav {
+        ul {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
 
-/* Call To Action (CTA) Styles */
+    @media (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    li {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            line-height: 12px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-left: 70px;
+            border-top: 2px solid black;
+
+        }
+            a {
+                color: @tertiary-color;
+    
+                @media (max-width: 768px) {
+                    width: 100%;
+                    text-align: center;
+                    padding-left: 40px;
+                    padding-top: 10px;
+                    margin: 5px 0 15px 0;
+                }
+
+    &:hover {
+        text-decoration: underline;
+        color: black;
+    }
+        }
+    }
+        }
+    }
+
+// Call to action (CTA) styles // 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: @quaternary-color;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: @tertiary-color;
+            }
+        }
+
+    }
+
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
+// Main Content styles //
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px @secondary-color; 
+   border-bottom: 2px @secondary-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 8px * 2px; // operator example 1 //
    line-height: 18px;
-}
 
-.main-content .top-content {
+   .top-content {
     display: flex;
     justify-content: space-around;
-}
 
-.main-content .middle-img {
+    p {
+        color: @tertiary-color;
+        padding-right: 10px + 10px; // operator example 2 //
+    }
+
+}
+.middle-img {
     display: block;
     margin: 30px auto;
 }
 
-.main-content .bottom-content {
+.bottom-content {
     display: flex;
     justify-content: space-around;
+
+    p {
+        color: @tertiary-color;
+        padding-right: 10px + 10px; // operator example 2 //
+    }
+
 }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
 }
 
-/* Contact Styles */
+// Contact styles //
 
-.contact p {
-    margin: 15px 0;
+.contact {
+
+    p {
+        color: @tertiary-color;
+        text-decoration-color: @tertiary-color;
+        margin: 15px 0;
+    }
 }
 
-/* Footer Styles */
+// Footer Styles //
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+
+    p {
+        color: @tertiary-color;
+    }
 }

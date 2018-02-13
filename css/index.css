@@ -90,7 +90,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,12 +125,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
 html,
 body {
+  background-color: #00686d;
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -140,6 +139,7 @@ h2,
 h3,
 h4,
 h5 {
+  color: #161616;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -148,30 +148,74 @@ h5 {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+}
 header {
   width: 100%;
   display: flex;
+  align-self: flex-end;
+  margin: 28px 0 0 91px;
 }
-header nav ul {
+@media (max-width: 768px) {
+  header .logo {
+    Display: flex;
+    align-self: flex-start;
+    margin-top: 2.3rem;
+    margin-left: 2rem;
+  }
+}
+nav ul {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
-header nav ul li a {
-  text-decoration: none;
-  color: #b0b0b0;
+@media (max-width: 768px) {
+  nav ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
-header nav ul li a:hover {
+nav ul li {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  nav ul li {
+    line-height: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 70px;
+    border-top: 2px solid black;
+  }
+}
+nav ul li a {
+  color: #f7f7f7;
+}
+@media (max-width: 768px) {
+  nav ul li a {
+    width: 100%;
+    text-align: center;
+    padding-left: 40px;
+    padding-top: 10px;
+    margin: 5px 0 15px 0;
+  }
+}
+nav ul li a:hover {
   text-decoration: underline;
   color: black;
 }
-header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
-}
-/* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
@@ -190,20 +234,18 @@ header .logo {
 .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: #a1a2a3;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: #f7f7f7;
 }
-/* Main Content Styles */
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px #161616;
+  border-bottom: 2px #161616;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
@@ -212,6 +254,10 @@ header .logo {
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+}
+.main-content .top-content p {
+  color: #f7f7f7;
+  padding-right: 20px;
 }
 .main-content .middle-img {
   display: block;
@@ -222,14 +268,18 @@ header .logo {
   justify-content: space-around;
 }
 .main-content .bottom-content p {
+  color: #f7f7f7;
   padding-right: 20px;
 }
-/* Contact Styles */
 .contact p {
+  color: #f7f7f7;
+  text-decoration-color: #f7f7f7;
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+footer p {
+  color: #f7f7f7;
 }
