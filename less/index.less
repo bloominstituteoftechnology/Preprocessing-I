@@ -10,9 +10,9 @@
 @accent-color: #7A9CC6;
 
 //Media Query Variables
-@maxSmall: ~" @maxSmall";
-@maxMed: ~" @maxMed";
-@maxLrg: ~" @maxLrg";
+@maxSmall: ~" (max-width:400px)";
+@maxMed: ~" (max-width:768px)";
+@maxLrg: ~" (max-width:1100px)";
 
 
 
@@ -94,9 +94,12 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    
     padding: 0 5%;
 
-
+    @media @maxMed{
+        flex-direction: column-reverse;
+    }
     @media @maxSmall{
         margin: 0;
         height: 200px;
@@ -108,7 +111,6 @@ header {
 
     nav {
         width: 100%;
-
 
         @media @maxSmall{
             margin: 0;
@@ -123,10 +125,11 @@ header {
 
             @media @maxMed{
                 margin-top: 40px;
-                width: 60%;
+                width: 100%;
                 justify-content: space-between;
                 display: flex;
-                margin-left: 19px;
+                margin-left: 5%;
+                padding-right: 5%;
             }//media 768
 
             @media @maxSmall{
@@ -162,7 +165,7 @@ header {
         }//media 1100
 
         @media @maxMed{
-            // margin-left: 60px;
+            align-self: center;
         }//media 768
 
         @media @maxSmall{
@@ -182,12 +185,12 @@ header {
 
     @media @maxLrg{
         justify-content: space-around;
+        align-items: center;
     }// media query 1100px
 
     @media @maxMed{
-        display: flex;
-        flex-flow: column;
-        flex-wrap: wrap;
+        flex-direction: column;
+        // flex-wrap: wrap;
         margin-top: 30px;
         justify-content: flex-start;
     }//media 768
@@ -207,7 +210,7 @@ header {
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 5% 0 5%;
+        margin: 0 0 30px 0;
         color: @secondary-color;
 
         @media @maxMed{
@@ -217,7 +220,7 @@ header {
             justify-content: center;
             flex-flow: column;
             align-items: center;
-            margin: 0px 8.5% 0 3.4%;
+            margin: 0 0 5% 0;
         }//media 768
 
         @media @maxSmall{
@@ -242,8 +245,8 @@ header {
     
     img{
         padding: 3%;
-        @media @maxMed{
-            width: 100%;
+        @media @maxLrg{
+            max-width: 50%;
         }//media 768
 
         @media @maxSmall{
@@ -255,6 +258,7 @@ header {
 // Main Content Styles
 
 .main-content {
+    width: 100%;
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 8.5% 0 4% 0;
@@ -277,6 +281,7 @@ header {
     }//top-content
 
     .middle-img {
+        width: 100%;
         display: block;
         margin: 30px auto;
 
@@ -314,6 +319,7 @@ header {
 // Contact Styles 
 
 .contact {
+    font-size: 1.6rem;
     p {
         margin: 15px 0;
     }//p
@@ -326,6 +332,7 @@ header {
 // Footer Styles 
 
 footer {
+    font-size: 1.6rem;
     text-align: center;
     margin: 40px 0 20px;
 }
