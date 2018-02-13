@@ -139,18 +139,39 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
-  margin: auto;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
 }
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 19px 0 0 0;
+    justify-content: center;
+  }
 }
 header nav ul {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 400px) {
+  header nav ul {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
 }
 header nav ul li a {
   text-decoration: none;
@@ -160,11 +181,27 @@ header nav ul li a:hover {
   text-decoration: underline;
   color: black;
 }
+@media (max-width: 400px) {
+  header nav ul li a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
 .cta {
+  width: 100%;
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
@@ -193,6 +230,7 @@ header .logo {
   color: white;
 }
 .main-content {
+  width: 100%;
   border-top: 1px double black;
   border-bottom: 1px double black;
   margin: 75px 0 35px 0;
@@ -205,7 +243,7 @@ header .logo {
   justify-content: space-around;
 }
 .main-content .top-content .text-content p {
-  color: #4D8FAC;
+  color: #000067;
 }
 .main-content .top-content .text-content h4 {
   color: mediumblue;
@@ -219,7 +257,7 @@ header .logo {
   justify-content: space-around;
 }
 .main-content .bottom-content .text-content p {
-  color: #4D8FAC;
+  color: #000067;
 }
 .main-content .bottom-content .text-content h4 {
   color: mediumblue;
@@ -227,10 +265,23 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
+.contact {
+  width: 100%;
+}
 .contact p {
   margin: 15px 0;
 }
 footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 768px) {
+  footer {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  footer {
+    width: 100%;
+  }
 }
