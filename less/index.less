@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//   v2.0 | 20110126
+//   License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -65,111 +65,210 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    @media(max-width: 768px) {      
+        width: 100%
+    }
+
 }
 
-/* Header Styles */
+// Variables
 
+@normal-font-size: 16px;
+@border : 1px double black;
+@main-content-header-color: mediumblue;
+
+// Header Styles 
 header {
     width: 100%;
     display: flex;
+    @media (max-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 19px 0 0 0;
+        justify-content:center;
+    }
+    nav ul {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+
+        @media (max-width: 400px) {
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #b0b0b0;
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }
+
+            @media (max-width: 400px) {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+            }
+        }
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+            order: -1;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+    }
 }
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
-
+// Call To Action (CTA) Styles 
 .cta {
+    width: 100%;
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        button {
+            border: @border;
+            font-size: @normal-font-size;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            background: black;
+            color: white;
+        }
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
-
+// Main Content Styles 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   width: 100%;
+   border-top: @border; 
+   border-bottom: @border;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @normal-font-size;
    line-height: 18px;
-}
 
-.main-content .top-content {
+   @media (max-width: 768px) {
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+   .top-content {
     display: flex;
     justify-content: space-around;
+    @media (max-width: 400px) {
+        flex-direction: column;
+
+   }
+
+
+        .text-content  {
+
+    
+            p {
+                @media (max-width: 400px) {
+                    margin-bottom: 5%;
+               }
+            color: @main-content-header-color / 2;
+            }
+             
+            h4 {
+            color: @main-content-header-color;
+            }
+        }
+    }
+
+    .middle-img {
+        width: 100%;
+        display: block;
+        margin: 30px auto;
+    }
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        @media (max-width: 400px) {
+            flex-direction: column;
+    
+       }
+        .text-content {
+            p {
+                @media (max-width: 400px) {
+                    margin-bottom: 5%;
+                }
+            color:@main-content-header-color / 2 ;
+            }
+        
+            h4 {
+            color: @main-content-header-color;
+            }
+        }
+
+        p {
+            padding-right: 20px;
+        }
+    }
 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+// Contact Styles 
+.contact {
+    width: 100%;
+    margin-left: 1%;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    @media (max-width: 768px) {
+        margin-left: 1%;
+    }
 
-/* Contact Styles */
+    @media (max-width: 400px) {
+        margin-left: 1%;
+    }
 
-.contact p {
+    p {
     margin: 15px 0;
+    }
 }
 
-/* Footer Styles */
-
+// Footer Styles
 footer {
     text-align: center;
     margin: 40px 0 20px;
