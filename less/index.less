@@ -47,93 +47,264 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* Set every element's box-sizing to border-box */
+//Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
-
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
 }
-
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
-
+//////////////// Start Modifications /////////////////////////
+//initialize variables
+@primary-color:#5f9ea0-111;
+@secondary-color:@primary-color + 111;
+@large-tablet:1100px;
+@tablet: 760px;
+@phone: 400px;
 .container {
+    color:@primary-color;
     width: 880px;
     margin: auto;
-}
+    @media(max-width:@large-tablet){
+        width:90vw;
+        margin:auto;
+    }
+    @media(max-width:@tablet){
+        width:90vw;
+        margin:auto;
+    }
+    @media(max-width:@phone){
+        width:100vw;
+    }
+}//end CONTAINER
 
-/* Header Styles */
-
+//Header Styles
 header {
     width: 100%;
     display: flex;
-}
+    @media(max-width:@large-tablet){
+        width: 90%;
+        display: flex;
+    }
+    @media(max-width:@tablet){
+        width: 90%;
+        height:100px;
+        display: flex;
+        justify-content:center;
+        flex-direction: column-reverse;
+        margin-bottom: 5%;
+    }
+    @media(max-width:@phone){
+        width:100%;
+        height:150px;
+        display: flex;
+        align-content: center;
+        flex-direction: column-reverse;
+        margin:0px 0px 5% 0px;
+    }
+    @media(max-width:215px){
+        margin-bottom:1%;
+    }
+    nav{
+        @media(max-width:@tablet){
+            margin:0px;
+        }
+        ul {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
+            @media(max-width:@large-tablet){
+                margin-top: 40px; 
+                width: 60vw;
+                justify-content: space-between;
+                display: flex;
+            }
+            @media(max-width:@tablet){
+                margin-top:20px;
+                width: 100%;
+                justify-content: space-around;
+                font-size:1em;
+            }
+            @media(max-width:@phone){
+                flex-direction:column;
+                margin-top:5%;
+                width: 100%;
+                font-size:1em;
+                text-align:center;
+            }
+            li{
+                @media(max-width:@phone){
+                    border:lightgrey solid 1px;
+                    width:100%;
+                    background-color:black;
+                }
+            }
+            li a {
+                text-decoration: none;
+                color: #b0b0b0;
+                &hover {
+                    text-decoration: underline;
+                    color: black;
+                }
+            }//end li
+        }//end nav ul
+    }//end nav
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+        @media(max-width:@large-tablet){
+            align-self: flex-end;
+            margin: 28px 0 0 9%;
+        }
+        @media(max-width:@tablet){
+            align-self:center;
+        }
+        @media(max-width:@phone){
+            margin-top:15px;
+            padding-right:7%;
+            height:auto;
+            width:50%;
+        }
+    }//end .logo
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+}//end HEADER
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
-
+// Call To Action (CTA) Styles
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+    @media(max-width:@large-tablet){
+        display: flex;
+        width:90vw;
+        margin-top: 35px;
+        justify-content: center;
+        img{
+            width:300px;
+            height:300px;
+        }
+    }
+    @media(max-width:@tablet){
+        display: flex;
+        width:100%;
+        margin-top: 5%;
+        justify-content: center;
+        img{
+            width:35vw;
+            height:35vw;
+        }
+    }
+    @media(max-width:@phone){
+        display: flex;
+        flex-flow: row;
+        width:85vw;
+        margin-top: 20px;
+        justify-content: center;
+        img{
+            display:none;
+        }
+    }
+    @media(max-width:215px){
+        margin-top:0;
+    }
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        color:@primary-color;
+        @media(max-width:@large-tablet){
+            font-size: 4.0rem;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 4.5% 0 0;
+        }
+        @media(max-width:@tablet){
+            margin-top:4px;
+            font-size: 6.7vw;
+            text-align: center;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            img{
+                width:45%;
+                height:45%;
+            }
+        }
+        @media(max-width:@phone){
+            padding-left:25%;
+            margin-top:4px;
+            font-size: 1.5rem;
+            text-align: center;
+            letter-spacing: 2px;
+            flex-flow:row;
+            align-items: center;
+        }
+        @media(max-width:215px){
+            margin:0px;
+            padding-right:5%;
+            h1{
+                display:none;
+            }
+        }
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            @media(max-width:@tablet){
+                border: 1px double black;
+                font-size: 2.5vw;
+                background: white;
+                width: 19vw;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            @media(max-width:@phone){
+                border: 1px double black;
+                font-size: .6rem;
+                background: white;
+                width: 19vw;
+                height: 32px;
+                cursor: pointer;
+            }
+            @media(max-width:215px){
+                font-size: .8rem;
+                width: 100%;
+                height: 32px;
+                margin-top: 3px;
+                cursor: pointer;
+            }
+        }
+        button:hover {
+            background: black;
+            color: white;
+            }
+    }//end cta-text
+}//end CTA
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
-
+// Main Content Styles
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
@@ -141,35 +312,99 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+   @media(max-width:@large-tablet){
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin: 40px 0 35px 0;
+    padding: 35px 0;
+    font-size: 1rem;
+    line-height: 18px;
+   }
+   @media(max-width:@tablet){
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin: 7% 0 35px 0;
+    padding: 3.5% 0;
+    font-size: 1rem;
+    line-height: 18px;
+    h4{
+        font-size:3;
+     }
+   }
+   @media(max-width:@phone){
+    padding: 3.5% 0;
+    margin-top:4%;
+    display:flex;
+    flex-flow:column;
+    font-size: 1rem;
+    line-height: 18px;
+    h4{
+        margin:2% 0 0 1%;
+        text-align: center;
+    }
+   }
+   
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+        @media(max-width:@tablet){
+            display: flex;
+            justify-content: space-around;
+        }
+        @media(max-width:@phone){
+            flex-direction:column;
+        }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media(max-width:@large-tablet){
+            display: block;
+            width:100%;
+        }
+        @media(max-width:@tablet){
+            display: block;
+            width:90vw;
+        }
+        @media(max-width:@phone){
+            margin:4% 0px 4% 0px;
+            width:100%;
+        }
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        p {
+            padding-right: 20px;
+            @media(max-width:@phone){
+                font-size:1rem;
+            }
+        } 
+        @media(max-width:@tablet){
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        @media(max-width:@phone){
+            flex-direction:column;
+        }
+    } 
+}//end MAIN CONTENT
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
-
-.contact p {
+// Contact Styles
+.contact{ 
+    @media(max-width:@phone){
+        justify-content: center;
+        text-align:center;
+    }
+    p {
     margin: 15px 0;
+    }
 }
-
-/* Footer Styles */
-
+// Footer Styles
 footer {
     text-align: center;
     margin: 40px 0 20px;
