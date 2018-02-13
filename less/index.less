@@ -1,8 +1,20 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
+
+//Color Variables
+@primary-color:#242E3A;
+@secondary-color: #BDE4A7;
+@accent-color: #7A9CC6;
+
+//Media Query Variables
+@maxSmall: ~" (max-width:400px)";
+@maxMed: ~" (max-width:768px)";
+@maxLrg: ~" (max-width:1100px)";
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,13 +36,14 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    background: @accent-color;
 }
 ol, ul {
 	list-style: none;
@@ -48,7 +61,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -56,121 +69,270 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @secondary-color;
 }
 
 .container {
-    width: 880px;
+    max-width: 800px + 80px;  //Demonstrating operator
     margin: auto;
-}
 
-/* Header Styles */
+    @media @maxLrg{
+        width: 100%;
+    }//media 1100px
+}//container
+
+
+// Header Styles
 
 header {
     width: 100%;
     display: flex;
-}
+    
+    padding: 0 5%;
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media @maxMed{
+        flex-direction: column-reverse;
+    }
+    @media @maxSmall{
+        margin: 0;
+        height: 200px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-content: space-around;
+    }
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    nav {
+        width: 100%;
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media @maxSmall{
+            margin: 0;
+        }//media 400
+    
+        ul {
+            margin-top: 40px; 
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+        
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+            @media @maxMed{
+                margin-top: 40px;
+                width: 100%;
+                justify-content: space-between;
+                display: flex;
+                margin-left: 5%;
+                padding-right: 5%;
+            }//media 768
 
-/* Call To Action (CTA) Styles */
+            @media @maxSmall{
+                height: 140px;
+                margin: 0;
+                width: 100%;
+                flex-direction: column; 
+                justify-content: space-around;
+                align-items: center;
+            }//media 400
+
+            li a {
+                display: block;
+                text-decoration: none;
+                color: @primary-color;
+                font-size: 1.6rem;
+
+                &:hover{
+                    text-decoration: underline;
+                    color:@secondary-color;
+                }//Hover
+            }//li a
+        }//nav ul
+    }//nav
+    
+    .logo {
+        align-self: flex-end;
+        width: 20%;
+        margin: 28px 0 0 91px;
+
+        @media @maxLrg{
+            margin-left: 5%;
+        }//media 1100
+
+        @media @maxMed{
+            align-self: center;
+        }//media 768
+
+        @media @maxSmall{
+            margin: 0 0 0;
+            align-self: center;
+        }//media 400
+    }//logo
+}//header
+
+// Call To Action (CTA) Styles
 
 .cta {
+    width: 100%;
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media @maxLrg{
+        justify-content: space-around;
+        align-items: center;
+    }// media query 1100px
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media @maxMed{
+        flex-direction: column;
+        // flex-wrap: wrap;
+        margin-top: 30px;
+        justify-content: flex-start;
+    }//media 768
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    @media @maxSmall{
+        flex-wrap: wrap;
+        flex-flow: column;
+        justify-content: space-between;
+    }//media 400
 
-/* Main Content Styles */
+    .cta-text {
+        width: 100%;
+        font-size: 7.2rem; // 72px
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 0 30px 0;
+        color: @secondary-color;
+
+        @media @maxMed{
+            font-size: 5.8rem; //58px
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 0 5% 0;
+        }//media 768
+
+        @media @maxSmall{
+            margin: 0 0 3.4% 0;
+        }//media 400
+
+        button {
+            border: 1px double black;
+            font-size: 1.6rem;
+            background:@secondary-color;
+            width: 150px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover{
+                background: black;
+                color: white;
+            }//Hover
+        }//button
+    }//cta-text
+    
+    img{
+        padding: 3%;
+        @media @maxLrg{
+            max-width: 50%;
+        }//media 768
+
+        @media @maxSmall{
+            margin: 20px;
+        }//media 400
+    }//img
+}//cta
+
+// Main Content Styles
 
 .main-content {
+    width: 100%;
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
+   margin: 8.5% 0 4% 0;
+   padding: 4% 0;
+   font-size: 1.6rem;//16px
    line-height: 18px;
-}
+   color: @primary-color;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   @media @maxMed{
+       width: 100%;
+   }//media 768
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+   .top-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        @media @maxMed{
+            margin: 40px 20px;
+        }//media 768
+    }//top-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    .middle-img {
+        width: 100%;
+        display: block;
+        margin: 30px auto;
 
-/* Contact Styles */
+        @media @maxLrg{
+            width: 100%;
+        }//media 1100
+    }//middle-img
 
-.contact p {
-    margin: 15px 0;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-/* Footer Styles */
+        p {
+            padding-right: 20px;
+        }//p
+
+        .text-content{
+            @media(max-width:400ox){
+                margin: 20px 0;
+            }
+        }
+
+        @media @maxMed{
+            margin: 30px 20px;
+        }//media 768
+
+        @media @maxSmall{
+            flex-direction: column;
+        }
+
+
+    }//bottom-content
+}//main-content
+
+// Contact Styles 
+
+.contact {
+    font-size: 1.6rem;
+    p {
+        margin: 15px 0;
+    }//p
+
+    @media @maxMed{
+        margin: 30px 20px;
+    }
+}//contact
+
+// Footer Styles 
 
 footer {
+    font-size: 1.6rem;
     text-align: center;
     margin: 40px 0 20px;
 }
