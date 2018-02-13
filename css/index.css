@@ -102,7 +102,7 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+  display: inline;
 }
 body {
   line-height: 1;
@@ -148,10 +148,13 @@ h5 {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
 header {
   width: 100%;
   display: flex;
+  /* Call To Action (CTA) Styles */
+  /* Main Content Styles */
+  /* Contact Styles */
+  /* Footer Styles */
 }
 header nav ul {
   margin-top: 40px;
@@ -159,27 +162,37 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
 header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
+@media (max-width: 500px) {
+  header nav ul li a {
+    color: pink;
+  }
+}
 header nav ul li a:hover {
   text-decoration: underline;
-  color: black;
+  color: gold;
 }
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
-.cta {
+header .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
 }
-.cta .cta-text {
+header .cta .cta-text {
   font-size: 72px;
   text-align: center;
+  color: #00080c;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
@@ -187,7 +200,7 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
-.cta .cta-text button {
+header .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
   background: white;
@@ -196,12 +209,11 @@ header .logo {
   margin-top: 10px;
   cursor: pointer;
 }
-.cta .cta-text button:hover {
+header .cta .cta-text button:hover {
   background: black;
   color: white;
 }
-/* Main Content Styles */
-.main-content {
+header .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   margin: 75px 0 35px 0;
@@ -209,27 +221,25 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
-.main-content .top-content {
+header .main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .middle-img {
-  display: block;
+header .main-content .middle-img {
+  display: inline;
   margin: 30px auto;
 }
-.main-content .bottom-content {
+header .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .bottom-content p {
+header .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
-.contact p {
+header .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
-footer {
+header footer {
   text-align: center;
   margin: 40px 0 20px;
 }
