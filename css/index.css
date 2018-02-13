@@ -149,13 +149,16 @@ header {
   width: 100%;
   display: flex;
 }
+header nav .dropdown {
+  display: none;
+}
 header nav ul {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
-header nav ul li a {
+header nav ul a {
   text-decoration: none;
   color: #b0b0b0;
 }
@@ -163,7 +166,7 @@ header nav ul a:hover {
   text-decoration: underline;
   color: black;
 }
-header .logo {
+header nav .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
   filter: invert(100%);
@@ -256,12 +259,82 @@ footer {
   .cta .cta-text {
     margin: 0;
   }
-  .cta .img {
+  .cta img {
     display: none;
   }
 }
 @media (max-width: 400px) {
   .container {
-    color: red;
+    width: 100%;
+  }
+  .container nav {
+    width: 100%;
+  }
+  .container nav .dropdown {
+    display: flex;
+  }
+  .container nav a {
+    display: none;
+  }
+  .dropdown {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+  }
+  .dropdown .dropbtn {
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border: 1px double black;
+    font-size: 1.6rem;
+    background: white;
+    width: 320px;
+  }
+  .dropdown .dropbtn .dropdown-content {
+    width: 100%;
+    margin-top: 52px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    align-items: center;
+  }
+  .dropdown .dropbtn .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+  }
+  .dropdown .dropbtn .dropdown-content a:hover {
+    background-color: black;
+    color: white;
+  }
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-flow: column;
+  }
+  .dropdown:hover .dropbtn {
+    background-color: black;
+    color: white;
+  }
+  .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
+  .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+  .contact {
+    margin: 20px;
   }
 }

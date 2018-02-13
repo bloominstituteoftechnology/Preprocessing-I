@@ -82,30 +82,34 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    nav{
+        .dropdown{
+            display:none;
+        }
+        ul {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
+            
+            a {
+                text-decoration: none;
+                color: #b0b0b0;
+            }
 
-    nav ul {
-        margin-top: 40px; 
-         width: 610px;
-         justify-content: space-between;
-         display: flex;
-        
-        li a {
-            text-decoration: none;
-            color: #b0b0b0;
+            a:hover {
+                text-decoration: underline;
+                color: black;
+            }
         }
-                
-        a:hover {
-            text-decoration: underline;
-            color: black;
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+            filter:invert(100%);
         }
-    }
-    .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 91px;
-        filter:invert(100%);
     }
 }
-    
+
 
 // Call To Action (CTA) Styles
 
@@ -123,7 +127,7 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
-        
+
         button {
             border: 1px double black;
             color:white;
@@ -164,7 +168,7 @@ header {
     .bottom-content {
         display: flex;
         justify-content: space-around;
-        
+
         p {
             padding-right: 20px;
         }
@@ -189,21 +193,21 @@ footer {
 @media (max-width: @tablet-size){
     .container {
         width: 100%;
-    
+
         header {
             flex-wrap: wrap;
             justify-content: center;
                 
             nav {
                 width: 90%;
-                        
+
                 ul {
                     width: 100%;
                     margin: 20px 0;
                     Display:flex;
                     }
             }
-            
+
             .logo {
                 order: -1;
                 max-width: 100%;
@@ -211,7 +215,7 @@ footer {
             }
         }
     }
-    
+
     .cta {
         margin-top: 50px;
         flex-flow: column;
@@ -220,14 +224,94 @@ footer {
         .cta-text {
                 margin: 0;
         }
-        
-        .img {
+
+        img {
             display:none;
         }
-    }   
+    }
 }
 @media (max-width: @phone-size){
     .container{
-        color:red;
+        width:100%;
+
+        nav{
+            width: 100%;
+            
+            .dropdown{
+                display:flex;
+            }
+            
+            a{
+                display:none;
+            }
+        }
+    }
+
+    .dropdown{
+		display: flex;
+        text-align: center;
+		justify-content:center;
+        padding: 20px 0;
+        font-size: 2rem;
+		border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+
+        .dropbtn {
+
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            border: 1px double black;
+            font-size: 1.6rem;
+            background: white;
+            width:320px;
+
+            .dropdown-content {
+                width:100%;
+                margin-top:52px;
+                cursor: pointer;
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                align-items: center;
+
+                a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: flex;
+                }
+                a:hover {
+                    background-color: black;
+                    color:white;
+                }
+            }
+        }
+    }
+    .dropdown:hover .dropdown-content {
+		display: flex;
+		flex-flow:column;
+	}
+    .dropdown:hover .dropbtn {
+		background-color: black;
+		color:white;
+    }
+    .main-content .top-content {
+        justify-content: space-around;
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .main-content .bottom-content {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+    }
+
+    .contact {
+        margin: 20px;
     }
 }
