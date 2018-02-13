@@ -63,6 +63,11 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@primary-color: black;
+@secondary-color: purple;
+@font-color: gray;
+@accent-color: teal;
+
 .container {
     width: 880px;
     margin: auto;
@@ -74,25 +79,37 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
     nav ul {
-        margin-top: 40px; 
+        margin-top: 40px * 2px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
+        @media (max-width: 768px) {
+            flex-direction: column;
+
+        }
 
     li a {
         text-decoration: none;
-        color: #b0b0b0;
+        color: @font-color;
+
+        @media (max-width: 400px + 100px) {
+            color: @primary-color;
+        }
         }   
 
         a:hover {
             text-decoration: underline;
-            color: black;
+            color: @accent-color;
         }
     }
     .logo {
         align-self: flex-end;
-    margin: 28px 0 0 91px;
+        margin: 28px 0 0 91px;
     }
 }
 
@@ -114,25 +131,25 @@ header {
         margin: 0 82px 0 0;
 
     .cta-text button {
-        border: 1px double black;
+        border: 1px double @primary-color;
         font-size: 16px;
-        background: white;
+        background: @secondary-color;
         width: 170px;
         height: 32px;
         margin-top: 10px;
         cursor: pointer;
         }
     } button:hover {
-        background: black;
-        color: white;
+        background: @primary-color;
+        color: @secondary-color;
     }
 }
 
 // Main Content Styles 
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @primary-color; 
+   border-bottom: 2px solid @primary-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
