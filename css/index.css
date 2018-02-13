@@ -143,16 +143,24 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
   margin: auto;
 }
 header {
-  width: 100%;
+  max-width: 100%;
   display: flex;
+  background-color: #f0f0f0;
+  padding: 0 1% 1% 1%;
 }
 @media (max-width: 768px) {
   header {
-    display: flex;
+    flex-flow: column-reverse wrap;
+  }
+}
+@media (max-width: 768px) {
+  header nav {
+    max-width: 100%;
+    justify-content: center;
   }
 }
 header nav ul {
@@ -160,6 +168,13 @@ header nav ul {
   width: 610px;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 768px) {
+  header nav ul {
+    max-width: 100%;
+    align-self: center;
+    margin: 40px 0 0 60px;
+  }
 }
 header nav ul a {
   text-decoration: none;
@@ -171,12 +186,25 @@ header nav ul a:hover {
 }
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 78px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    width: 20%;
+    margin-left: 30px;
+    align-self: center;
+  }
 }
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -188,14 +216,26 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
+@media (max-width: 768px) {
+  .cta .cta-text {
+    font-size: 52px;
+    margin-right: 8%;
+  }
+}
 .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: #63cd49;
+  color: white;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .cta .cta-text button {
+    height: 30px;
+  }
 }
 .cta .cta-text button:hover {
   background: black;
@@ -208,18 +248,36 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+  background-color: #f0f0f0;
 }
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+  background-color: #f0f0f0;
+}
+@media (max-width: 768px) {
+  .main-content .top-content {
+    margin: 0 1%;
+  }
 }
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
 }
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
+}
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+  background-color: #f0f0f0;
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content {
+    margin: 0 1%;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;
@@ -228,7 +286,18 @@ header .logo {
   margin: 15px 0;
   color: darkblue;
 }
+.contact h4 {
+  color: black;
+}
+@media (max-width: 768px) {
+  .contact {
+    margin: 1%;
+  }
+}
 footer {
   text-align: center;
-  margin: 40px 0 20px;
+  margin: 40px 0 0;
+  padding: 20px;
+  background-color: gray;
+  border-bottom: black;
 }

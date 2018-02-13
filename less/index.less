@@ -73,28 +73,39 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 }
 
 // color variables
 @primary: darkblue;
+@wall: #f0f0f0;
+@ex: #63cd49;
 
 // Header Styles
-
 header {
-  width: 100%;
+  max-width: 100%;
   display: flex;
+	background-color: @wall;
+	padding:0 1% 1% 1%;
 	@media (max-width: 768px){
-		display: flex;
+		flex-flow: column-reverse wrap;
 	}
 	nav {
-
+		@media (max-width:768px){
+			max-width: 100%;
+			justify-content: center;
+		}
 		ul {
 			margin-top: 20px + 20; //add operator
 	    width: 122px * 5; // multiply operator
 	    justify-content: space-between;
 	    display: flex;
+			@media (max-width: 768px){
+				max-width: 100%;
+				align-self: center;
+				margin: 40px 0 0 60px;
+			}
 
 			a {
 				text-decoration: none;
@@ -109,7 +120,12 @@ header {
 	}
 	.logo {
 		align-self: flex-end;
-	  margin: 28px 0 0 91px;
+	  margin: 28px 0 0 78px;
+		@media (max-width:768px){
+			width: 20%;
+			margin-left: 30px;
+			align-self: center;
+		}
 	}
 }
 
@@ -120,9 +136,17 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+		@media (max-width: 768px){
+			margin-left: 2%;
+			margin-right: 2%;
+		}
 
 	.cta-text {
     font-size: 72px;
+		@media (max-width: 768px){
+			font-size: 52px;
+			margin-right: 8%;
+		}
     text-align: center;
     letter-spacing: 5px;
     display: flex;
@@ -132,24 +156,27 @@ header {
     margin: 0 82px 0 0;
 
 		 button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
+			 @media (max-width: 768px){
+					height: 30px;
+				}
+	    border: 1px double black;
+	    font-size: 16px;
+		  background: @ex;
+			color: white;
+		  width: 170px;
+		  height: 32px;
+		  margin-top: 10px;
+	   	cursor: pointer;
 
 			&:hover {
-    background: black;
-    color: white;
+			  background: black;
+			  color: white;
 			}
 		}
 	}
 }
 
 // Main Content Styles
-
 .main-content {
    border-top: 2px solid black;
    border-bottom: 2px solid black;
@@ -157,19 +184,31 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+	 background-color: @wall;
 	.top-content {
     display: flex;
     justify-content: space-around;
+		background-color: @wall;
+		@media (max-width: 768px){
+			margin: 0 1%;
+
+		}
 	}
 	.middle-img {
     display: block;
     margin: 30px auto;
+		@media (max-width: 768px){
+			width: 100%;
+		}
 	}
 
 	.bottom-content {
     display: flex;
     justify-content: space-around;
-
+		background-color: @wall;
+		@media (max-width: 768px){
+			margin: 0 1%;
+		}
 		p {
     padding-right: 20px;
 		}
@@ -183,11 +222,20 @@ header {
     margin: 15px 0;
 		color: @primary;
 	}
+	h4 {
+		color: black;
+	}
+	@media (max-width: 768px){
+		margin: 1%;
+	}
 }
 
 // Footer Styles
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 40px 0 0;
+		padding: 20px;
+		background-color: gray;
+		border-bottom: black;
 }
