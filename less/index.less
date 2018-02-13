@@ -70,33 +70,60 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Header Styles */
+/* MY VARIABLES: */
+@main-color: red;
+@second-color: #b0b0b0/2;
+@media-color: yellow;
+
 
 header {
     width: 100%;
     display: flex;
-}
-
+        nav {
+            ul {
+                margin-top: 40px; 
+                width: 610px;
+                justify-content: space-between;
+                display: flex;
+                    a {
+                        text-decoration: none;
+                        color: #b0b0b0;
+                        color: @main-color;
+                            &:hover {
+                                text-decoration: underline;
+                                color: @second-color;
+                            }
+                    } //a end
+            } //nav ul end
+        } //nav end
+         //.logo end 
+         header .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+            } //header. logo end;
+        @media (max-width:400px) {
+        background: @media-color;
+    }
+} //header end
+/* Comment this out later: 
 header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
+    
+    
 }
 
 header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
+    
+    
 }
+
+
+
 
 header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    
+}*/
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+
 
 /* Call To Action (CTA) Styles */
 
@@ -104,63 +131,75 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+    } //cta-text end
+    .cta-text button {
+        border: 1px double @second-color;
+        font-size: 16px;
+        background: white;
+        width: 170px;
+        height: 32px;
+        margin-top: 10px;
+        cursor: pointer;
+        &:hover {
+            background: @second-color;
+            color: @media-color;
+        }
+    } //cta-text button
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
 }
+/*
+.cta 
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+.cta 
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
+.cta .cta-text button
+*/
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @second-color; 
+   border-bottom: 2px solid @second-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+        } //.top content end
+    
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        } //middle img end
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+            p {
+                padding-right: 20px;
+            } //p end;
+        }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
 }
+/*
+.main-content 
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+.main-content 
+
+.main-content 
+
+.main-content .bottom-content */
 
 /* Contact Styles */
 
