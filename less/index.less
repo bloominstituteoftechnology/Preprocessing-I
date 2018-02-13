@@ -72,6 +72,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+	@media (max-width: 400px) {
+	        width: 100%;
+	    }
 	width: 880px;
 	margin: auto;
 }
@@ -79,27 +85,69 @@ h1, h2, h3, h4, h5 {
 // Header Styles
 
 header {
+	@media (max-width: 768px) {
+		flex-wrap: wrap;
+	  justify-content: center;
+	}
+	@media (max-width: 400px) {
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  }
 	width: 100%;
 	display: flex;
 
   nav ul {
+		@media (max-width: 768px) {
+		 width: 90%;
+		 margin: 20px 0;
+				}
+	  @media (max-width: 400px) {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		align-items: center;
+				}
 		margin-top: 40px;
 		width: 610px;
 		justify-content: space-between;
 		display: flex;
+		@media (max-width: 400px) {
+		        width: 100%;
+		        margin: 0;
+		    }
 
     li a {
+			@media (max-width: 400px) {
+						background: gray;
+				}
+			        display: block;
+			        text-align: center;
+			        padding: 20px 0;
+			        font-size: 2rem;
+			        border-bottom: 1px solid gray;
+			    }
 			text-decoration: none;
 			color: @color-two;
 
       &:hover {
+				@media (max-width: 400px) {
+						background: gray;
+				}
 				text-decoration: underline;
 				color: black;
 				} // header nav ul li a:hover
 			} // header nav ul li a
 		} // header nav ul
 
+
 	.logo {
+		@media (max-width: 768px) {
+		        order: -1;
+		        max-width: 100%;
+		        margin: 20px 0;
+		    }
+
 		align-self: flex-end;
 		margin: 28px 0 0 91px;
 		} // header .logo
@@ -108,11 +156,20 @@ header {
 // Call To Action (CTA) Styles
 
 .cta {
+	@media (max-width: 768px) {
+	        margin-top: 50px;
+	        flex-flow: column;
+	        align-items: center;
+	    }
+
 	display: flex;
 	margin-top: 72px;
 	justify-content: flex-end;
 
 		.cta-text {
+			@media (max-width: 768px) {
+			        margin: 0;
+			    }
 			font-size: 72px;
 			text-align: center;
 			letter-spacing: 5px;
@@ -145,6 +202,9 @@ header {
 // Main Content Styles
 
 .main-content {
+	@media (max-width: 768px) {
+			 margin: 50px 2% 35px;
+		}
 	border-top: 2px solid black;
 	border-bottom: 2px solid black;
 	margin: 75px 0 35px 0;
@@ -153,16 +213,30 @@ header {
 	line-height: 18px;
 
 		.top-content {
+			@media (max-width: 400px) {
+				justify-content: space-around;
+        flex-direction: column;
+        height: 300px;
+    }
 			display: flex;
 			justify-content: space-around;
 			} // .main-content .top-content
 
 		.middle-img {
+			@media (max-width: 768px) {
+				 width: 100%;
+			}
+
 			display: block;
 			margin: 30px auto;
 			} // .main-content .middle-img
 
 		.bottom-content {
+					@media (max-width: 400px) {
+						flex-wrap: wrap;
+						align-content: space-between;
+						height: 440px;
+				}
 			display: flex;
 			justify-content: space-around;
 
@@ -183,3 +257,35 @@ footer {
  text-align: center;
 	margin: 40px 0 20px;
 	}
+
+//media queries
+
+// Tablet
+@media (max-width: 768px) {
+    .cta img {
+        /* In case you want the image, but it's ugly ;)
+
+        max-width: 70%;
+        margin: 0;
+
+        */
+        display: none;
+    }
+
+
+    .contact {
+        margin: 20px 2%;
+    }
+}
+
+/* Phone */
+@media (max-width: 400px) {
+
+    header nav ul li:first-child {
+        border-top: 1px solid gray;
+    }
+
+    .contact {
+        margin: 20px;
+    }
+}

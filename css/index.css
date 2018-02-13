@@ -143,9 +143,31 @@ h5 {
   width: 880px;
   margin: auto;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 header nav ul {
   margin-top: 40px;
@@ -153,9 +175,39 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    width: 90%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul {
+    width: 100%;
+    margin: 0;
+  }
+}
 header nav ul li a {
   text-decoration: none;
   color: #497776;
+}
+@media (max-width: 400px) {
+  header nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+  }
 }
 header nav ul li a:hover {
   text-decoration: underline;
@@ -165,10 +217,24 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 50px;
+    flex-flow: column;
+    align-items: center;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -179,6 +245,11 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+  }
 }
 .cta .cta-text button {
   border: 1px double #497776;
@@ -204,6 +275,11 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
+@media (max-width: 768px) {
+  .main-content {
+    margin: 50px 2% 35px;
+  }
+}
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
@@ -211,6 +287,11 @@ header .logo {
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+}
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
 }
 .main-content .bottom-content {
   display: flex;
@@ -225,4 +306,40 @@ header .logo {
 footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 768px) {
+  .cta img {
+    /* In case you want the image, but it's ugly ;)
+
+        max-width: 70%;
+        margin: 0;
+
+        */
+    display: none;
+  }
+  .contact {
+    margin: 20px 2%;
+  }
+}
+/* Phone */
+@media (max-width: 400px) {
+  header nav ul li:first-child {
+    border-top: 1px solid gray;
+  }
+  header nav ul li a:hover {
+    background: gray;
+  }
+  .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
+  .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+  .contact {
+    margin: 20px;
+  }
 }
