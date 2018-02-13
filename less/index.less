@@ -33,86 +33,74 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
-
-        body {
-            line-height: 1;
-
-            ol, ul {
-                list-style: none;
-
-                blockquote, q {
-                    quotes: none;
-
-                    blockquote:before, blockquote:after,
-                    q:before, q:after {
-                        content: '';
-                        content: none;
-
-                        table {
-                            border-collapse: collapse;
-                            border-spacing: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 // Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
+}
 
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
 
-        html, body {
-            height: 100%;
-            font-family: 'Titillium Web', sans-serif;
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
 
-
-            h1, h2, h3, h4, h5 {
-                font-family: 'Bangers', cursive;
-                letter-spacing: 1px;
-                margin-bottom: 10px;
-
-
-                .container {
-                    width: 880px;
-                    margin: auto;
-                }
-            }
-        }
-    }        
+.container {
+    width: 880px;
+    margin: auto;
+}
 
 // Header Styles 
 
 header {
     width: 100%;
     display: flex;
+}
 
+header nav ul {
+    margin-top: 40px; 
+    width: 610px;
+    justify-content: space-between;
+    display: flex;
+}
 
-    header nav ul {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
+header nav ul li a {
+    text-decoration: none;
+    color: @light-gray;
+}
 
+header nav ul li a:hover {
+    text-decoration: underline;
+    color: @true-blue;
+}
 
-        header nav ul li a {
-            text-decoration: none;
-            color: @light-gray;
-
-
-            header nav ul li a:hover {
-                text-decoration: underline;
-                color: @true-blue;
-
-
-                header .logo {
-                    align-self: flex-end;
-                    margin: 28px 0 0 91px;
-                }
-            }
-        }
-    }
+header .logo {
+    align-self: flex-end;
+    margin: 28px 0 0 91px;
 }
 
 // Call To Action (CTA) Styles 
@@ -121,37 +109,33 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-
-
-    .cta .cta-text {
-        font-size: 72px;
-        text-align: center;
-        letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
-        margin: 0 82px 0 0;
-
-
-        .cta .cta-text button {
-            border: 1px double black;
-            font-size: 16px;
-            background: @true-blue;
-            width: 170px;
-            height: 32px;
-            margin-top: 10px;
-            cursor: pointer;
-
-
-            .cta .cta-text button:hover {
-                background: @greenish;
-                color: white;
-            }
-        }
-    }
 }
 
+.cta .cta-text {
+    font-size: 72px;
+    text-align: center;
+    letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 82px 0 0;
+}
+
+.cta .cta-text button {
+    border: 1px double black;
+    font-size: 16px;
+    background: @greenish;
+    width: 170px;
+    height: 32px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.cta .cta-text button:hover {
+    background: @greenish;
+    color: white;
+}
 
 // Main Content Styles
 
@@ -162,30 +146,25 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+}
 
+.main-content .top-content {
+    display: flex;
+    justify-content: space-around;
+}
 
-    .main-content .top-content {
-        display: flex;
-        justify-content: space-around;
+.main-content .middle-img {
+    display: block;
+    margin: 30px auto;
+}
 
+.main-content .bottom-content {
+    display: flex;
+    justify-content: space-around;
+}
 
-        .main-content .middle-img {
-            display: block;
-            margin: 30px auto;
-
-
-            .main-content .bottom-content {
-                display: flex;
-                justify-content: space-around;
-
-
-                .main-content .bottom-content p {
-                    padding-right: 20px;
-
-                }
-            }
-        }
-    }
+.main-content .bottom-content p {
+    padding-right: 20px;
 }
 
 // Contact Styles 
