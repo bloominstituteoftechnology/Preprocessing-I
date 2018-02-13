@@ -5,12 +5,12 @@
 */
 
 // Media Queries:
-// @phone: ~"(max-width: 400px)";
-// @tablet: ~"(max-width: 768px)";
-// @laptop: ~"(max-width: 1100px)";
+@phone: ~"(max-width: 400px)";
+@tablet: ~"(max-width: 768px)";
+@laptop: ~"(max-width: 1100px)";
 
 // Change the whole background color theme by adjusting the hue!
-@hue: 340; // Adjust this between 0 and 360 to change color scheme
+@hue: 300; // Adjust this between 0 and 360 to change color scheme
 @saturation: 70%;
 @lightness: 60%;
 @container-background: hsl(@hue, @saturation, @lightness);
@@ -71,6 +71,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -83,6 +84,9 @@ h1, h2, h3, h4, h5 {
     background: @container-background;
     max-width: 880px; // Switch to percent width
     margin: auto;
+    @media @phone {
+        background: @header-background/4;
+    }
 }
 
 /* Header Styles */
@@ -91,23 +95,60 @@ header {
     width: 100%;
     display: flex;
     background: @header-background;
-    @media (max-width: 768px){
-        flex-wrap: wrap;
-        background: green;
+    @media @tablet {
+        flex-wrap: wrap-reverse;
+        justify-content: space-around;
     }
+    @media @phone {
+        background: @header-background/4;
+    }
+
     nav {
         width: 80%;
+        @media @tablet {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        
+        }
         ul {
+            display: flex;
             margin-top: 40px; 
             width: 610px; // 610/800 = 76.25%
             justify-content: space-between;
-            display: flex;
-            li a {
-                text-decoration: none;
-                color: #b0b0b0;
-                &:hover {
-                    text-decoration: underline;
-                    color: black;
+            @media @tablet {
+                width: 100%;
+                margin-top:0;
+            }
+            @media @phone {
+                display: flex;
+                flex-direction: column;
+            }
+
+            li {
+                @media @phone {
+                    display:flex;
+                    justify-content: center;
+                    margin: 5px 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: rgb(160, 158, 158);
+                    font-size: 1.4rem;
+                    &:hover {
+                        text-decoration: underline;
+                        color: black;
+                    }
+                    @media @tablet {
+                        font-size: 2rem;
+                    }
+                    @media @phone {
+                        color: white;
+                        font-weight: lighter;
+                        font-size: 1.6rem;
+                    }
                 }
             }
         }
@@ -117,6 +158,9 @@ header {
         width: 20% - 91px; // Use of Operations to account for left margin
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        @media @tablet{
+            margin: 15px;   
+        }
     }
 }
 
@@ -127,8 +171,11 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    @media @phone {
+        margin-top: 0px;
+    }
     .cta-text {
-        font-size: 72px;
+        font-size: 4.3rem;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -138,7 +185,7 @@ header {
         margin: 0 82px 0 0;
         button {
             border: 1px double black;
-            font-size: 8px * 2; // Was 16px
+            font-size: 0.8rem * 2; // Was 16px
             background: white;
             width: 170px;
             height: 32px;
@@ -152,6 +199,9 @@ header {
     }
     .cta-img {
         height: auto;
+        @media @phone {
+            display: none;
+        }
     }
 }
 
@@ -163,12 +213,21 @@ header {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
+   padding: 35px 5px;
+   font-size: 1.6rem;
    line-height: 18px;
    .top-content {
     display: flex;
     flex-direction: column;
+    h4{
+            font-size:1.4rem;
+            margin-top: 10px;
+        }
+        p {
+            letter-spacing: 0.05rem;
+            font-size: 1.4rem;
+            
+        }
     }
     .middle-img {
         width: 100%;
@@ -178,21 +237,36 @@ header {
     .bottom-content {
         display: flex;
         flex-direction: column;
+        h4{
+            font-size:1.4rem;
+            margin-top: 10px;
+        }
         p {
-            padding-right: 20px;
+            letter-spacing: 0.05rem;
+            font-size: 1.4rem;
         }
     }
 }
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+    font-size: 1.4rem;
+    @media @phone {
+        text-align: center;
+    }
+    p {
     margin: 15px 0;
+  }
 }
 
 /* Footer Styles */
 
 footer {
+    font-size: 1rem;
     text-align: center;
     margin: 40px 0 20px;
+    @media @phone {
+        padding-bottom: 5px;
+    }
 }
