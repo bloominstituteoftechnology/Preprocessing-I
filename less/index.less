@@ -164,11 +164,17 @@ header {
         }
     }
 }
+
 // Call To Action (CTA) Styles
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    @media @tablets {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
 
     .cta-text {
         font-size: 72px;
@@ -179,6 +185,9 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        @media @tablets {
+            margin: 0;
+        }
 
         button {
             border: 1px double black;
@@ -193,6 +202,12 @@ header {
                 background: black;
                 color: white;
             }
+        }
+    }
+
+    img {
+        @media @tablets {
+            display: none;
         }
     }
 }
