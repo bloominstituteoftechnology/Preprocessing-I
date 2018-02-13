@@ -51,6 +51,8 @@ table {
 @background: #2f538e;
 @h-text: #562877 + 40;
 @content-text: #BCA520;
+@smartphones: ~"only screen and (max-width: 439px)";
+@tablets: ~"only screen and (min-width: 440px) and (max-width: 768px)";
 
 // Set every element's box-sizing to border-box 
 * {
@@ -73,27 +75,81 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
     background: @background;
+    @media @tablets {    
+            width: 100%;      
+     }
+        @media @smartphones {
+            width: 100%;       
+     }  
 }
-// Header Styles
 
+// Header Styles
 header {
     width: 100%;
     display: flex;
     background: @background;
+    @media @tablets {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-    nav ul {
+    nav {
+        @media @tablets {
+            width: 90%;
+        }
+        @media @smartphones {
+            width: 100%;
+        }
+    }
+
+    ul {
         margin-top: 40px;
         width: 610px;
         justify-content: space-between;
         display: flex;
 
-        li a {
-            text-decoration: none;
-            color: #b0b0b0;
+        @media @tablets {
+            width: 100%;
+            margin: 20px 0;
+        }
+        @media @smartphones {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            align-items: center;
+        }
 
-            a:hover {
-                text-decoration: underline;
-                color: black;
+        li {
+            @media @smartphones {
+                width: 100%;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: #b0b0b0;
+                @media @smartphones {
+                    display: block;
+                    text-align: center;
+                    padding: 20px 0;
+                    font-size: 2rem;
+                    border-bottom: 1px solid gray;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                    color: black;
+                    @media @smartphones {
+                        background: gray;
+                    }
+                }
+            }
+
+            &:first-child {
+                @media @smartphones {
+                    border-top: 1px solid gray;
+                }
             }
         }
     }
@@ -101,11 +157,14 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        @media @tablets {
+            order: -1;
+            max-width: 100%;
+            margin: 20px 0;
+        }
     }
 }
-
-// Call To Action (CTA) Styles 
-
+// Call To Action (CTA) Styles
 .cta {
     display: flex;
     margin-top: 72px;
@@ -137,9 +196,7 @@ header {
         }
     }
 }
-
 // Main Content Styles
-
 .main-content {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -168,18 +225,14 @@ header {
         }
     }
 }
-
-// Contact Styles 
-
+// Contact Styles
 .contact {
 
     p {
         margin: 15px 0;
     }
 }
-
-// Footer Styles 
-
+// Footer Styles
 footer {
     text-align: center;
     margin: 40px 0 20px;
