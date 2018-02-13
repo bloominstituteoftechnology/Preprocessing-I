@@ -52,10 +52,14 @@ table {
 * {
     box-sizing: border-box;
 }
-
+@cadetcolor : cadetblue;
+@newbackground : #6d4a74;
+@html-color : #2A172F;
+@button-color: #3C2A40;
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background: saturate(@html-color, 8%);
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,9 +68,13 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
+
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+    width: percentage(1.0);
+    background: @newbackground
 }
 
 /* Header Styles */
@@ -74,29 +82,95 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: 768px){
+        flex-wrap: wrap;
+        justify-content: space-around;
+    } //@media 768px
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media (max-width: 400px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    nav {
+        width: 69.3%;
+        @media(max-width: 400px){
+            width: 100%;
+        }
+
+         ul {
+            margin-top: 40px; 
+            width: 305px + 305px;
+            justify-content: space-between;
+            display: flex;
+            font-weight: bold;
+            width: 100%;
+
+            @media(max-width: 400px){
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-top: 20px;
+            }  
+        
+
+
+            li {
+                
+                @media (max-width: 400px){
+                    width: 100%;
+                    height: 50px;
+                    border-bottom: 1px solid gray;
+                    text-align: center;
+                    padding: 15px 0;
+                }
+
+                
+                a {
+                text-decoration: none;
+                color: @cadetcolor;
+
+                @media (max-width: 400px){
+                    width: 100%;
+                }
+                
+                
+                     &:hover {
+                        text-decoration: underline;
+                        color: black;
+                    } //&:hover
+                } // a
+            } // li
+
+            .specborder {
+                @media (max-width: 400px){
+                border-top: 1px solid gray;
+                }
+            }
+            
+        } // ul
+    } // nav
+
+    .logo {
+        align-self: flex-end;
+        margin: (14px * 2px) 0 0 91px;
+        
+        @media (max-width: 768px){
+            order: -1;
+        }
+
+        @media (max-width: 400px){
+            align-self: center;
+            margin: 20px 0;
+        }
+    } // .logo
+
+} //header
 
 /* Call To Action (CTA) Styles */
 
@@ -104,33 +178,62 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media (max-width: 400px){
+        align-items: center;
+        
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+
+        @media (max-width: 768px){
+            font-size: 48px;
+        }
+
+        @media (max-width: 400px){
+            margin: 0 auto;
+        }
+
+
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: @button-color;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+
+                &:hover {
+                    background: black;
+                    color: white;
+                } // &: hover
+            
+        } // button
+    } // .cta-text
+
+    img {
+        @media (max-width: 768px){
+            width: 50%;
+            height: 50%;
+        }
+
+        @media (max-width: 400px){
+            display: none;
+        }
+
+    }
+} // .cta
 
 /* Main Content Styles */
 
@@ -141,36 +244,57 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .top-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        @media (max-width: 400px){
+            flex-wrap: wrap;
+            
+            .specialpar {
+                margin-bottom: 20px;
+            }
+        }
+    } // .top-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        width: 100%;
+    } // .middle-img
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        @media (max-width: 400px){
+            flex-wrap: wrap;
+        }
+
+        p {
+            padding-right: 20px;
+            margin-bottom: 20px;
+        } // p
+    } // .bottom-content
+
+} // .main-content
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
-}
+.contact {
+
+    @media (max-width: 400px){
+        text-align: center;
+    }
+    p {
+        margin: 15px 0;
+    } // p
+} // .contact
 
 /* Footer Styles */
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
+} // footer
