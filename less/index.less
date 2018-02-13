@@ -68,117 +68,6 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
-
-    @media(max-width:768px){
-        .container {
-            width: 100%; 
-        }
-        
-        header nav ul {
-            width: 457px;
-            margin-left: 20px;
-        }
-    
-        header .logo {
-            margin: 28px 0 0 58px;   
-        }
-        .cta{
-            justify-content: center;
-        }
-        .cta-text{
-            margin: 0 40px 0 0
-        }
-    
-        .main-content .middle-img {
-            width: 100%;
-        }
-        
-        .main-content{
-                margin: 75px 20px 35px;
-        }
-    }
-    
-
-    @media (max-width:400px){
-        .container{
-            width: 100%;
-        }
-    
-        header{
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    
-        header nav{
-            width: 100%;
-        }
-    
-        header nav ul {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            margin:0;
-            align-items: center;
-        }
-    
-        header nav ul li{
-            width: 100%;
-            margin:0;
-        }
-    
-        header nav ul li a{
-            display: block;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 15px;
-            border-bottom: 1px solid gray;
-        }
-    
-        header nav ul li:first-child{
-            border-top: 1px solid gray;
-        }
-    
-        header nav ul li a:hover{
-            background: slategrey;
-        }
-    
-        header .logo{
-            order: -1;
-            max-width: 100%;
-            margin: 20px 0; 
-        }
-    
-        .cta{
-            margin-top: 50px;
-            flex-flow: column;
-            align-items: center;
-        }
-    
-        .cta .cta-text{
-            margin-bottom: 50px;
-        }
-    
-        .cta img{
-            display: none;
-        }
-        
-        .main-content .top-content{
-            justify-content: space-around;
-            flex-direction: column;
-            height: 300px;
-        }
-    
-        .main-content .bottom-content{
-            flex-wrap: wrap;
-            align-content: space-between;
-            height: 440px;
-        }
-        .contact{
-            margin-left: 20px;
-        }
-    }
-    
-    
 }
 
 //  Header Styles */
@@ -192,22 +81,31 @@ header {
                 width: 610px;
                 justify-content: space-between;
                 display: flex;
-            
-            li{ 
-                a {
-                    text-decoration: none;
-                    color: #b0b0b0;
-                        a:hover {
-                        text-decoration: underline;
-                        color: black;
-                    }
+                @media (max-width:768px){
+                    flex-direction: row-reverse;
                 }
-            }    
-        }
-    }
+                @media (max-width:400px){
+                    flex-direction: column;
+                }
+
+                li{ 
+                    a {
+                        text-decoration: none;
+                        color: #b0b0b0;
+                                    &:hover {
+                                    text-decoration: underline;
+                                    color: black;
+                                    @media(max-width:400px){
+                                        color: @CustomBgcolor;
+                                    }
+                                }   
+                        }
+                    }       
+                }
+            }
     .logo{ 
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
     }
 }
 // Call To Action (CTA) Styles 
@@ -233,13 +131,13 @@ header {
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
-            }
             &:hover {
                 background:@CustomBgcolor;
                 color: white;
             }
         }
     }
+}
 
 
 //  Main Content Styles 

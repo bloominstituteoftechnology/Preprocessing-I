@@ -147,95 +147,6 @@ h5 {
   width: 880px;
   margin: auto;
 }
-@media (max-width: 768px) {
-  .container .container {
-    width: 100%;
-  }
-  .container header nav ul {
-    width: 457px;
-    margin-left: 20px;
-  }
-  .container header .logo {
-    margin: 28px 0 0 58px;
-  }
-  .container .cta {
-    justify-content: center;
-  }
-  .container .cta-text {
-    margin: 0 40px 0 0;
-  }
-  .container .main-content .middle-img {
-    width: 100%;
-  }
-  .container .main-content {
-    margin: 75px 20px 35px;
-  }
-}
-@media (max-width: 400px) {
-  .container .container {
-    width: 100%;
-  }
-  .container header {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .container header nav {
-    width: 100%;
-  }
-  .container header nav ul {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    align-items: center;
-  }
-  .container header nav ul li {
-    width: 100%;
-    margin: 0;
-  }
-  .container header nav ul li a {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 15px;
-    border-bottom: 1px solid gray;
-  }
-  .container header nav ul li:first-child {
-    border-top: 1px solid gray;
-  }
-  .container header nav ul li a:hover {
-    background: slategrey;
-  }
-  .container header .logo {
-    order: -1;
-    max-width: 100%;
-    margin: 20px 0;
-  }
-  .container .cta {
-    margin-top: 50px;
-    flex-flow: column;
-    align-items: center;
-  }
-  .container .cta .cta-text {
-    margin-bottom: 50px;
-  }
-  .container .cta img {
-    display: none;
-  }
-  .container .main-content .top-content {
-    justify-content: space-around;
-    flex-direction: column;
-    height: 300px;
-  }
-  .container .main-content .bottom-content {
-    flex-wrap: wrap;
-    align-content: space-between;
-    height: 440px;
-  }
-  .container .contact {
-    margin-left: 20px;
-  }
-}
 header {
   width: 100%;
   display: flex;
@@ -246,13 +157,28 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: row-reverse;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
 header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
-header nav ul li a a:hover {
+header nav ul li a:hover {
   text-decoration: underline;
   color: black;
+}
+@media (max-width: 400px) {
+  header nav ul li a:hover {
+    color: lightblue;
+  }
 }
 header .logo {
   align-self: flex-end;
@@ -282,7 +208,7 @@ header .logo {
   margin-top: 10px;
   cursor: pointer;
 }
-.cta .cta-text:hover {
+.cta .cta-text button:hover {
   background: lightblue;
   color: white;
 }
