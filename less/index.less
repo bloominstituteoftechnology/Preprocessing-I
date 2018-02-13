@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// /* http://meyerweb.com/eric/tools/css/reset/ 
+//    v2.0 | 20110126
+//    License: none (public domain)
+// */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
@@ -108,8 +108,6 @@ header {
     display: flex;
 
   nav{
-   
-    background-color: @maincolor;
     
     
     ul{margin-top: 20px*2; 
@@ -129,7 +127,7 @@ header {
         li{
             a{
                 text-decoration: none;
-                color: #b0b0b0;
+                color:@thirdc;
             }
              a:hover {
                 text-decoration: underline;
@@ -182,26 +180,32 @@ header {
 
 //cta to be implemented using less
 .cta{
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
- 
+
     @media (max-width: 768px) {
+        
         display: flex;
         margin-top: 9.4%;
         justify-content: flex-start;
         }
-    
-    @media (max-width: 400px){
+
+        @media (max-width: 400px){
             display: flex;
             margin-top: 18%;
             justify-content: flex-start;
             flex-direction: column-reverse;
-            width:100%;
+            width:100%; }
+
+
+    display: flex;
+    margin-top: 72px;
+    justify-content: flex-end;
+ 
+    
+   
         
-    }
-img{
-    width: 100%;
+    
+    img{
+    
     @media (max-width: 768px) {
         width:75%;
 
@@ -214,6 +218,7 @@ img{
 
 
   .cta-text{
+      .h1{
 
     @media (max-width: 768px) {
         font-size: 55px;
@@ -224,11 +229,13 @@ img{
         flex-flow: column;
         align-items: center;
         margin: 0 10.7% 0 0;
+        
     }
 
 
 @media (max-width: 400px){
 font-size: 20px;
+color: @secondaryc;
 text-align: center;
 letter-spacing: 1.2%;
 display: flex;
@@ -244,22 +251,23 @@ margin: 0 20.5% 0 0;}
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    margin: 0 82px 0 0;
- 
-    
-  .cta-text button{
+     margin: 0 82px 0 0;}
+   
+     .cta-text button{
     border: 1px double black;
     font-size: 16px;
-    background: white;
+    background:@secondaryc;
+    ;
     width: 170px;
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
   }
-  .cta-text button:hover {
-    background: black;
-    color: white;
+  button:hover {
+    background: @thirdc;
+    color:@secondaryc;
   }
+}
 }
 /* Main Content Styles */
 
@@ -305,7 +313,7 @@ margin: 0 20.5% 0 0;}
             justify-content: space-around;
             font-size: 16px;
             width:91%;
-            color: secondaryc;
+            color: @secondaryc;
             }
             @media (max-width: 400px) {
               
@@ -320,8 +328,28 @@ margin: 0 20.5% 0 0;}
     .middle-img {
         display: block;
         margin: 30px auto;
+        @media (max-width: 400px){
+           
+                display: block;
+                width: 91.5%;
+                margin: 7.5% auto; }
+        @media (max-width: 768px){
+                    
+                        display: block;
+                        width: 91.5%;
+                        margin: 0;
     }
+}
     .bottom-content {
+        @media (max-width: 400px){
+            justify-content: space-between;
+            width:79.5%;
+        }
+        @media (max-width: 768px){
+                display: block;
+                width: 91.5%;
+                margin: 0;
+        }
         display: flex;
         justify-content: space-around;
         p {
@@ -343,5 +371,4 @@ margin: 0 20.5% 0 0;}
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
 }
