@@ -81,9 +81,16 @@ header {
                 width: 610px;
                 justify-content: space-between;
                 display: flex;
-                @media (max-width:768px){
-                    flex-direction: row-reverse;
+                // use multilication and escape
+                @tablet: ~'(max-width:768px)';
+                    @media @tablet{
+                        font-size:1.2rem*2;
+                        flex-direction: row-reverse;
+                    }
                 }
+                // @media (max-width:768px){
+                //     flex-direction: row-reverse;
+                // }
                 @media (max-width:400px){
                     flex-direction: column;
                 }
@@ -102,12 +109,13 @@ header {
                         }
                     }       
                 }
-            }
     .logo{ 
         align-self: flex-end;
         margin: 28px 0 0 91px;
     }
 }
+
+
 // Call To Action (CTA) Styles 
 
 .cta {
@@ -115,7 +123,8 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
             .cta-text {
-                font-size: 72px;
+                // added addition here.
+                font-size: 72px + 2px;
                 text-align: center;
                 letter-spacing: 5px;
                 display: flex;
