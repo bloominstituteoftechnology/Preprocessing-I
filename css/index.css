@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,7 +121,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -148,7 +142,6 @@ h5 {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
 header {
   width: 100%;
   display: flex;
@@ -159,9 +152,20 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    width: 58.6%;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul {
+    flex-direction: column;
+    width: 18.8%;
+  }
+}
 header nav ul li a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: orange;
 }
 header nav ul li a:hover {
   text-decoration: underline;
@@ -177,7 +181,33 @@ header .logo {
   margin-top: 72px;
   justify-content: flex-end;
 }
-.cta .cta-text {
+@media (max-width: 768px) {
+  .cta {
+    display: flex;
+    margin-top: 9.4%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 400px) {
+  .cta {
+    display: flex;
+    margin-top: 18%;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .cta img {
+    width: 75%;
+  }
+}
+@media (max-width: 400px) {
+  .cta img {
+    width: 25%;
+  }
+}
+.cta .cta-text .h1 {
   font-size: 72px;
   text-align: center;
   letter-spacing: 5px;
@@ -187,18 +217,43 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
-.cta .cta-text button {
+@media (max-width: 768px) {
+  .cta .cta-text .h1 {
+    font-size: 55px;
+    text-align: center;
+    letter-spacing: .6%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 10.7% 0 0;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text .h1 {
+    font-size: 20px;
+    color: green;
+    text-align: center;
+    letter-spacing: 1.2%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 20.5% 0 0;
+  }
+}
+.cta .cta-text .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: green;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: orange;
+  color: green;
 }
 /* Main Content Styles */
 .main-content {
@@ -213,13 +268,57 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 768px) {
+  .main-content .top-content {
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    width: 91%;
+    color: green;
+  }
+}
+@media (max-width: 400px) {
+  .main-content .top-content {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    width: 94%;
+  }
+}
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
 }
+@media (max-width: 400px) {
+  .main-content .middle-img {
+    display: block;
+    width: 91.5%;
+    margin: 7.5% auto;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    display: block;
+    width: 91.5%;
+    margin: 0;
+  }
+}
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    justify-content: space-between;
+    width: 79.5%;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content {
+    display: block;
+    width: 91.5%;
+    margin: 0;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;
