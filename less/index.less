@@ -153,6 +153,7 @@ h5 {
   max-width: 880px;
   width: 100%;
   margin: auto;
+  padding: 1%;
 }
 
 // Variable colors
@@ -174,9 +175,31 @@ header {
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+  }
+
+  @media (max-width: 400px) {
+    padding: 25px;
+    border-bottom: 2px inset black;
+  }
+
   nav ul {
     margin-top: 2.5rem;
     display: flex;
+
+    @media (max-width: 400px) {
+      margin-top: 1.25rem;
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        padding: 5px;
+      }
+    }
 
     li a {
       padding: 0 2rem;
@@ -191,8 +214,6 @@ header {
   }
 
   .logo {
-    width: 10% * 2;
-    align-self: flex-end;
   }
 }
 
@@ -203,15 +224,28 @@ header {
   margin-top: 2.5% * 3;
   justify-content: flex-end;
 
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .cta-text {
     font-size: 4.75rem;
     text-align: center;
-    letter-spacing: 1rem;
+    letter-spacing: 1em;
     display: flex;
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    margin: 0 82px 0 0;
+    margin-right: 5%;
+
+    @media (max-width: 768px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 400px) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
 
     button {
       border: 1px double @button-border;
@@ -228,6 +262,13 @@ header {
       }
     }
   }
+
+  img {
+    @media (max-width: 768px) {
+      width: 350px;
+      height: 350px;
+    }
+  }
 }
 
 // Main Content Styles
@@ -240,19 +281,38 @@ header {
   font-size: 16px;
   line-height: 18px;
 
+  p {
+    @media (max-width: 400px) {
+      padding-right: 0;
+      padding-bottom: 18px;
+    }
+  }
+
   .top-content {
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+    }
   }
 
   .middle-img {
     display: block;
     margin: 30px auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   .bottom-content {
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+    }
 
     p {
       padding-right: 20px;
