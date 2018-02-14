@@ -1,9 +1,14 @@
+// variables
+@tablet-width : 800px;
+@phone-width: 400px;
+
+@primary-color: #b0b0b0;
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,7 +53,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -56,121 +61,293 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
 }
 
 .container {
-    width: 880px;
-    margin: auto;
-}
-
-/* Header Styles */
-
-header {
     width: 100%;
-    display: flex;
-}
+    max-width: 880px;
+    margin: auto;
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    // Header Styles
+    header {
+        width: 100%;
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        nav {
+            flex-grow: 1;
+            ul {
+                justify-content: space-around;
+                display: flex;
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+                li{
+                    a {
+                        text-decoration: none;
+                        color: @primary-color;
+                        font-size: 1.8rem;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+                        &:hover{
+                            text-decoration: underline;
+                            color: black;
+                            @media (max-width: @phone-width) {
+                                // phone a styles
+                                text-decoration: none;
+                                background: @primary-color;
+                            }
+                        }
+                        @media (max-width: @tablet-width) {
+                            // tablet a styles 
+                        }
+                
+                        @media (max-width: @phone-width) {
+                            // phone a styles
+                            display: block;
+                            padding: 1rem 0;
+                        }
+                    }// a
+                    @media (max-width: @tablet-width) {
+                        // tablet li styles 
+                    }
+            
+                    @media (max-width: @phone-width) {
+                        // phone li styles
+                        border-bottom: 1px solid @primary-color;
+                        width: 100%;
+                        text-align: center;
+                    }
+                    &:first-child{
+                        @media (max-width: @phone-width) {
+                            // phone li styles
+                            border-top: 1px solid @primary-color;
+                        }
+                    }
+                }// li
+                @media (max-width: @tablet-width) {
+                    // tablet ul styles 
+                }
+        
+                @media (max-width: @phone-width) {
+                    // phone ul styles
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }// ul
+            @media (max-width: @tablet-width) {
+                // tablet nav styles 
+                width: 100%;
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone nav styles
+            }
+        }// nav
 
-/* Call To Action (CTA) Styles */
+        .logo {
+            @media (max-width: @tablet-width) {
+                // tablet logo styles 
+                order: -1;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone logo styles
+            }
+        }
+        @media (max-width: @tablet-width) {
+            // tablet header styles 
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+        @media (max-width: @phone-width) {
+            // phone header styles
+        }
+    } //header
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    // Call To Action (CTA) Styles
+    .cta {
+        display: flex;
+        margin-top: 7.2rem;
+        justify-content: flex-end;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        .cta-text {
+            font-size: 7.2rem;
+            text-align: center;
+            letter-spacing: .5rem;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 8.2rem 0 0;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+            button {
+                border: .1rem double black;
+                font-size: 1.6rem;
+                background: white;
+                width: 17rem;
+                height: 3.2rem;
+                margin-top: 1rem;
+                cursor: pointer;
 
-/* Main Content Styles */
+                &:hover {
+                    background: black;
+                    color: white;
+                }
+            }// button
+            
+            @media (max-width: @tablet-width) {
+                // tablet cta-text styles 
+                font-size: 4rem;
+                margin: 0 auto;
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone cta-text styles
+            }
+        }// cta-text
 
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+        img {
+            @media (max-width: @tablet-width) {
+                // tablet cta styles 
+                min-height: 200px;
+                width: 100%;
+                height: 100%;
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone cta styles
+                display: none;
+            }
+        }//img
+        @media (max-width: @tablet-width) {
+            // tablet cta styles 
+        }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+        @media (max-width: @phone-width) {
+            // phone cta styles
+        }
+    }// cta
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    // Main Content Styles
+    .main-content {
+        border-top: .2rem solid black; 
+        border-bottom: .2rem solid black;
+        margin: 7.5rem 0 3.5rem 0;
+        padding: 3.5rem 0;
+        font-size: 1.6rem;
+        line-height: 1.8;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .top-content {
+            display: flex;
+            justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+            @media (max-width: @phone-width) {
+                // phone bottom-content styles
+                h4 {
+                    text-align: center;
+                }
+            }
 
-/* Contact Styles */
+            @media (max-width: @tablet-width) {
+                // tablet top-content styles 
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone top-content styles
+                flex-direction: column;
+                padding-left: 1rem; 
+                padding-right: 1rem;
+            }
+        }// top-content
 
-.contact p {
-    margin: 15px 0;
-}
+        .middle-img {
+            display: block;
+            margin: 3rem auto;
+            @media (max-width: @tablet-width) {
+                // tablet middle-content styles 
+                width: 100%;
+                padding: 0 1rem;
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone middle-content styles
+            }
+        }// middle-content
 
-/* Footer Styles */
+        .bottom-content {
+            display: flex;
+            justify-content: space-around;
+            padding-left: 1rem;
+            padding-right: 1rem;
 
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
-}
+            @media (max-width: @phone-width) {
+                // phone bottom-content styles
+                h4 {
+                    text-align: center;
+                }
+            }
+
+            @media (max-width: @tablet-width) {
+                // tablet bottom-content styles 
+            }
+    
+            @media (max-width: @phone-width) {
+                // phone bottom-content styles
+                flex-direction: column;
+            }
+        }// bottom-content
+        @media (max-width: @tablet-width) {
+            // tablet main-content styles 
+        }
+
+        @media (max-width: @phone-width) {
+            // phone main-content styles
+        }
+    }// main-content
+
+    // Contact Styles 
+    .contact {
+        h4 {
+            font-size: 1.6rem;
+        } // h4
+        
+        p {
+            margin: 1.5rem 0;
+            font-size: 1.4rem;
+        }// p
+        @media (max-width: @tablet-width) {
+            // tablet contact styles 
+            text-align: center;
+        }
+
+        @media (max-width: @phone-width) {
+            // phone contact styles
+        }
+    }// contact
+
+    // Footer Styles 
+    footer {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 4rem 0 2rem;
+        @media (max-width: @tablet-width) {
+            // tablet footer styles 
+        }
+
+        @media (max-width: @phone-width) {
+            // phone footer styles
+        }
+    }// footer
+
+} // container
+
