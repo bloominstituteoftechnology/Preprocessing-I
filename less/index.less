@@ -1,8 +1,7 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/
+// v2.0 | 20110126
+// License: none (public domain)
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,8 +23,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,14 +47,25 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
 
+// End of reset
+
+@prussian-blue: #003366;
+@silver-sand: #BFC1C2;
+@roman-silver: #838996;
+
 html, body {
+	background-color: @prussian-blue;
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
+	p {
+		color: @roman-silver;
+	}
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,111 +74,179 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
+h4 {
+	color: @silver-sand;
 }
 
-/* Header Styles */
+.container {
+    width: 440 + 440px;
+    margin: auto;
+
+	@media (max-width: 400px) {
+		.container {
+			width: 400px;
+		}
+	}
+}
+
+// Header Styles
 
 header {
     width: 100%;
     display: flex;
+
+	@media (max-width: 400px) {
+		header {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+		@media (max-width: 400px) {
+			nav {
+				order: 1;
+			}
+		}
+
+	nav {
+		ul {
+	    margin-top: 20 * 2px;
+	    width: 610px;
+	    justify-content: space-between;
+	    display: flex;
+
+		@media (max-width: 400px) {
+			ul {
+				text-align: center;
+				width: 276px;
+				height: 200px;
+				flex-direction: column;
+			}
+		}
+
+		li {
+			a {
+				text-decoration: none;
+				color: @silver-sand;
+
+				&:hover {
+				    text-decoration: underline;
+				    color: black;
+				}
+			}
+		}
+	}
+
+	.logo {
+	    align-self: flex-end;
+	    margin: 28px 0 0 91px;
+
+		@media (max-width: 400px) {
+			align-self: center;
+			margin: 28px auto;
+			}
+		}
+	}
 }
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+	@media (max-width: 400px) {
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.cta-text {
+	    font-size: 72px;
+	    text-align: center;
+	    letter-spacing: 5px;
+	    display: flex;
+	    justify-content: center;
+	    flex-flow: column;
+	    align-items: center;
+	    margin: 0 82px 0 0;
+
+		@media (max-width: 400px) {
+			font-size: 32px;
+			margin: 0 auto;
+		}
+
+		button {
+		    border: 1px double black;
+		    font-size: 16px;
+		    background: black;
+			color: @silver-sand;
+		    width: 170px;
+		    height: 32px;
+		    margin-top: 10px;
+		    cursor: pointer;
+
+			&:hover {
+			    background: @silver-sand;
+			    color: black;
+			}
+
+			@media (max-width: 400px) {
+				font-size: 10px;
+				letter-spacing: 2px;
+			}
+		}
+
+
+	}
+
+	.cta img {
+		@media (max-width: 400px) {
+			margin-top: 35px;
+			max-width: 300px;
+		}
+	}
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
+// Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @silver-sand;
+   border-bottom: 2px solid @silver-sand;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+
+   .top-content {
+       display: flex;
+       justify-content: space-around;
+   }
+
+   .middle-img {
+       display: block;
+       margin: 30px auto;
+   }
+
+   .bottom-content {
+       display: flex;
+       justify-content: space-around;
+
+	   p {
+	       padding-right: 20px;
+	   }
+   }
+
 }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
+// Contact Styles
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;

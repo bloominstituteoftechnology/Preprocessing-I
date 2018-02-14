@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,14 +121,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
 html,
 body {
+  background-color: #003366;
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+}
+html p,
+body p {
+  color: #838996;
 }
 h1,
 h2,
@@ -144,14 +143,32 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
+h4 {
+  color: #BFC1C2;
+}
 .container {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 400px) {
+  .container .container {
+    width: 400px;
+  }
+}
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 400px) {
+  header header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    order: 1;
+  }
 }
 header nav ul {
   margin-top: 40px;
@@ -159,9 +176,17 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav ul ul {
+    text-align: center;
+    width: 276px;
+    height: 200px;
+    flex-direction: column;
+  }
+}
 header nav ul li a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: #BFC1C2;
 }
 header nav ul li a:hover {
   text-decoration: underline;
@@ -171,11 +196,22 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
+@media (max-width: 400px) {
+  header .logo {
+    align-self: center;
+    margin: 28px auto;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 400px) {
+  .cta {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -187,23 +223,41 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
+@media (max-width: 400px) {
+  .cta .cta-text {
+    font-size: 32px;
+    margin: 0 auto;
+  }
+}
 .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: black;
+  color: #BFC1C2;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
 }
-.cta .cta-text button:hover {
-  background: black;
-  color: white;
+@media (max-width: 400px) {
+  .cta .cta-text button {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
 }
-/* Main Content Styles */
+.cta .cta-text button:hover {
+  background: #BFC1C2;
+  color: black;
+}
+@media (max-width: 400px) {
+  .cta .cta img {
+    margin-top: 35px;
+    max-width: 300px;
+  }
+}
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #BFC1C2;
+  border-bottom: 2px solid #BFC1C2;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
@@ -224,11 +278,9 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
