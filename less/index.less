@@ -64,6 +64,10 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@primary-color: red;
+@secondary-color:green;
+
+
 .container {
     width: 880px;
     margin: auto;
@@ -74,40 +78,46 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
+  }
+   nav ul {
+      margin-top: 40px; 
+      width: 610px-5;
+      justify-content: space-between;
+      display: flex;
+      @media (max-width: 800px) {
+    flex-direction: column;
+        color: green;
+     }
+        li {
+           a {
+            text-decoration: none;
+             color: red/2;
+               &:hover {
+                text-decoration: underline;
+                 color: gold/2;
+          }
+       }
+    }
+  }
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
 
 header .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    background: gold/4;
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 72px-3;
     justify-content: flex-end;
+  
 }
 
 .cta .cta-text {
-    font-size: 72px;
+    font-size: 72px + 4;
     text-align: center;
     letter-spacing: 5px;
     display: flex;
@@ -115,22 +125,28 @@ header .logo {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
+    background-color: antiquewhite;
+    @media (max-width:400px){
+    width: 100%;
+    }
+          button {
+            border: 1px double black;
+            font-size: 16px/2+5;
+            background: white*blue/;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px-3;
+            cursor: pointer;
+              &:hover {
+                  background: green*gold/2;
+                  color: white*black/2;
+      }
+   }
 }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+
+
 
 /* Main Content Styles */
 
@@ -138,34 +154,41 @@ header .logo {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
-   padding: 35px 0;
+   padding: 35px-5 0;
    font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+   line-height: 18px*2-2;
+   background-color: gold+blue;
+      .top-content {
+        display: flex;
+        justify-content: space-around;
+        @media(max-width:400px) {
+              flex-wrap: wrap;
+              padding: 0 2%;
+          }
+  }
+        .middle-img {
+          display: block;
+          margin: 30px auto;
+          background-color: blue;
+  }
+        .bottom-content {
+          display: flex;
+          justify-content: space-around;
+          @media(max-width:400px){
+              flex-wrap: wrap;
+              padding: 0 2%;
+          }
+            p {
+                padding-right: 20px;
+        }
+    }
 }
 
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
+    background-color:gold;
 }
 
 /* Footer Styles */
@@ -173,4 +196,6 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    background-color: aqua/2;
 }
+
