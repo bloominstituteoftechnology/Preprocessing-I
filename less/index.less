@@ -66,6 +66,11 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+
+    @media (max-width: 400px) {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .container {
@@ -73,6 +78,10 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 
     @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media (max-width: 400px) {
         width: 100%;
     }
     
@@ -95,15 +104,33 @@ h1, h2, h3, h4, h5 {
                 width: 100%;
                 align-self: center;
             }
-            
-            li a {
-                text-decoration: none;
-                color: black;
+
+            @media (max-width: 400px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
             }
             
-            li a:hover {
+            li {
+                a {
+                text-decoration: none;
+                color: black;
+                }
+                
+                @media (max-width: 400px) {
+                    width: 100%;
+                    border-top: 1px solid black;
+                    text-align: center;
+                    padding-top: 15px;
+                    margin: 5px 0 10px 0;
+                }
+            }
+
+            li {
+                a:hover {
                 text-decoration: underline;
                 color: #b0b0b0;
+                }
             }
 
         }       
@@ -131,7 +158,11 @@ h1, h2, h3, h4, h5 {
                 display: none;
             }
         }
-        
+
+        @media (max-width: 400px) {
+            margin-top: 20px;
+        }
+
         .cta-text {
             font-size: 72px;
             text-align: center;
@@ -146,7 +177,11 @@ h1, h2, h3, h4, h5 {
                 width: 100%;
                 margin: 0 0 0 0
             }
-            
+
+            @media (max-width: 400px) {
+                font-size: 58px;
+            }
+                
             button {
                 border: 1px double black;
                 font-size: 10px + 6px;
@@ -173,10 +208,20 @@ h1, h2, h3, h4, h5 {
        padding: 35px 0;
        font-size: 16px;
        line-height: 18px;
+
+       @media (max-width: 400px) {
+           .text-content {
+               padding-top: 30px;
+           }
+       }
        
        .top-content {
            display: flex;
            justify-content: space-around;
+
+           @media (max-width: 400px) {
+               flex-direction: column;
+           }
        }
        .middle-img {
            display: block;
@@ -189,6 +234,10 @@ h1, h2, h3, h4, h5 {
        .bottom-content {
            display: flex;
            justify-content: space-around;
+
+           @media (max-width: 400px) {
+               flex-direction: column;
+           }
            
            p {
                padding-right: 20px;
@@ -197,9 +246,19 @@ h1, h2, h3, h4, h5 {
     }
 
     // Contact Styles 
-    .contact p {
+    .contact { 
+        p {
         margin: 15px 0;
+        }
+       
+        @media (max-width: 400px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
+
     
     // Footer Styles
     footer {
