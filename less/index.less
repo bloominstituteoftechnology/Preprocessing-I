@@ -5,6 +5,10 @@
 @tealBlue: #05a2c7;
 @navy: #264567; 
 @ltBlue: #8fd4e6;
+.mainBorder {
+    border-top: 2px solid @ltBlue; 
+    border-bottom: 2px solid @ltBlue;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -152,6 +156,7 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    width: 100%;
 
     @media (max-width: 768px) {
         justify-content: center;
@@ -168,8 +173,11 @@ header {
         align-items: center;
         margin: 0 10% 0 0;
 
-        @media (max-width: 900px) {
-            font-size: 5rem;
+        @media (max-width: 930px) {
+            h1 {
+                font-size: 6rem;
+                padding-left: 10%;
+            }
         }
         @media (max-width: 768px) {
             font-size: 4.5rem;
@@ -197,12 +205,10 @@ header {
     }
 }
 
-
 // Main Content Styles 
 
 .main-content {
-   border-top: 2px solid @ltBlue; 
-   border-bottom: 2px solid @ltBlue;
+   .mainBorder;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 1.6rem;
