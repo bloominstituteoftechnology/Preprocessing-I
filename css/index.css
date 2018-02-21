@@ -90,7 +90,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,10 +125,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
-* {
-  box-sizing: border-box;
-}
 html,
 body {
   height: 100%;
@@ -148,7 +143,11 @@ h5 {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 1000px) {
+  .container {
+    background: purple;
+  }
+}
 header {
   width: 100%;
   display: flex;
@@ -163,6 +162,11 @@ header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
+@media (max-width: 900px) {
+  header {
+    background: white;
+  }
+}
 header nav ul li a:hover {
   text-decoration: underline;
   color: black;
@@ -171,7 +175,6 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
@@ -200,7 +203,12 @@ header .logo {
   background: black;
   color: white;
 }
-/* Main Content Styles */
+@media (max-width: 850px) {
+  .cta .cta-text button:hover {
+    background: lime;
+    color: purple;
+  }
+}
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -208,6 +216,11 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+}
+@media (max-width: 850px) {
+  .main-content {
+    background: lime;
+  }
 }
 .main-content .top-content {
   display: flex;
@@ -224,11 +237,16 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
+@media (max-width: 800px) {
+  .contact p {
+    font-family: 'Impact', cursive;
+    font-size: 50px;
+    background: skyblue;
+  }
+}
 footer {
   text-align: center;
   margin: 40px 0 20px;

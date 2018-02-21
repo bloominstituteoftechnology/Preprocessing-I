@@ -52,6 +52,10 @@ table {
 
 @color-One: black;
 @color-Two: white;
+@accentColor-One: lime;
+@accentColor-Two: purple;
+@accentColor-Three: skyblue;
+@fontStyle-Site: 'Impact', cursive;
 
 html, body {
     height: 100%;
@@ -67,6 +71,10 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    
+    @media (max-width: 1000px) {
+        background: @accentColor-Two;
+    } // 0 - 1000px everything in container changed to accentcolor-Two
 }
 
 // Header Styles
@@ -88,11 +96,15 @@ header {
                 a {
                     text-decoration: none;
                     color: #b0b0b0;
-                } // list elements
-            } // list
-        } // unorderd list
-    } // nav bar
-} // parent header
+                } 
+            } 
+        } 
+    } 
+    
+    @media(max-width: 900px) {
+        background: @color-Two;
+    } // only turns header bar white 0 - 900px
+} 
 
 header nav ul li a:hover {
     text-decoration: underline;
@@ -133,12 +145,17 @@ header .logo {
             &:hover {
                 background: @color-One;
                 color: @color-Two;
-            } // button hover
-        } // button
-    } // child of cta
+
+                @media (max-width: 850px) {
+                    background: @accentColor-One;
+                    color: @accentColor-Two;
+                } // 0 - 850px button a: hover is changed to those colors
+            } 
+        }
+    } 
 
     
-} // parent cta
+} 
 
 // Main Content Styles
 
@@ -150,15 +167,19 @@ header .logo {
    font-size: 16px;
    line-height: 36px / 2;
 
+   @media (max-width: 850px) {
+       background: @accentColor-One;
+   } // 0 - 850px main-content changes color
+
     .top-content {
         display: flex;
         justify-content: space-around;
-    } // top part of main content
+    }
 
     .middle-img {
         display: block;
         margin: 30px auto;
-    } // inside main content
+    } 
 
     .bottom-content {
         display: flex;
@@ -166,9 +187,9 @@ header .logo {
 
         p {
             padding-right: 20px;
-        } // p of bottom content
-    } // bottom content of main content
-} // parent main content
+        } 
+    } 
+} 
 
 // Contact Styles
 
@@ -176,8 +197,14 @@ header .logo {
 
     p {
         margin: 15px 0;
-    } // contact child elements
-} // contact parent
+
+        @media (max-width: 800px) {
+            font-family: @fontStyle-Site;
+            font-size: 50px;
+            background: @accentColor-Three;
+        } // 0 - 800px contact p changes bg, font size, and font family
+    } 
+} 
 
 // Footer Styles
 
