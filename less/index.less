@@ -49,9 +49,9 @@ table {
 }
 
 // Set every element's box-sizing to border-box
-* {
-    box-sizing: border-box;
-}
+
+@color-One: black;
+@color-Two: white;
 
 html, body {
     height: 100%;
@@ -96,7 +96,7 @@ header {
 
 header nav ul li a:hover {
     text-decoration: underline;
-    color: black;
+    color: @color-One;
 }
 
 header .logo {
@@ -108,13 +108,13 @@ header .logo {
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 36px + 36px;
     justify-content: flex-end;
 
     .cta-text {
-        font-size: 72px;
+        font-size: 144px / 2;
         text-align: center;
-        letter-spacing: 5px;
+        letter-spacing: 2.5px * 2;
         display: flex;
         justify-content: center;
         flex-flow: column;
@@ -122,17 +122,17 @@ header .logo {
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double black;
-            font-size: 16px;
-            background: white;
-            width: 170px;
+            border: 1px double @color-One;
+            font-size: 32px / 2;
+            background: @color-Two;
+            width: 85px + 85px;
             height: 32px;
-            margin-top: 10px;
+            margin-top: 5px + 5px;
             cursor: pointer;
 
             &:hover {
-                background: black;
-                color: white;
+                background: @color-One;
+                color: @color-Two;
             } // button hover
         } // button
     } // child of cta
@@ -143,12 +143,12 @@ header .logo {
 // Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @color-One;
+   border-bottom: 2px solid @color-One;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
-   line-height: 18px;
+   line-height: 36px / 2;
 
     .top-content {
         display: flex;
