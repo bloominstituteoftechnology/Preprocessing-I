@@ -71,17 +71,30 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
     
     // Header Styles 
     header {
         width: 100%;
         display: flex;
         
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
         nav ul {
             margin-top: 40px; 
             width: 122px * 5px;
             justify-content: space-between;
             display: flex;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                align-self: center;
+            }
             
             li a {
                 text-decoration: none;
@@ -92,12 +105,18 @@ h1, h2, h3, h4, h5 {
                 text-decoration: underline;
                 color: #b0b0b0;
             }
-        }
-        
+
+        }       
         .logo {
             align-self: flex-end;
             margin: 28px 0 0 91px;
+
+            @media (max-width: 768px) {
+                align-self: center;
+                margin: 28px 0 0 0;
+            }
         }
+
     } // header
     
     // Call To Action (CTA) Styles
@@ -105,6 +124,13 @@ h1, h2, h3, h4, h5 {
         display: flex;
         margin-top: 72px;
         justify-content: flex-end;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+            img {
+                display: none;
+            }
+        }
         
         .cta-text {
             font-size: 72px;
@@ -115,6 +141,11 @@ h1, h2, h3, h4, h5 {
             flex-flow: column;
             align-items: center;
             margin: 0 82px 0 0;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 0 0 0 0
+            }
             
             button {
                 border: 1px double black;
@@ -131,6 +162,7 @@ h1, h2, h3, h4, h5 {
                 color: black;
             }
         }
+
     } // .cta
     
     // Main Content Styles 
@@ -149,6 +181,10 @@ h1, h2, h3, h4, h5 {
        .middle-img {
            display: block;
            margin: 30px auto;
+
+           @media (max-width: 768px) {
+               width: 100%;
+           }
        }
        .bottom-content {
            display: flex;
