@@ -1,7 +1,7 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+.mainBorder {
+  border-top: 2px solid #8fd4e6;
+  border-bottom: 2px solid #8fd4e6;
+}
 html,
 body,
 div,
@@ -90,7 +90,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,14 +125,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
-html,
-body {
+html {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
 }
 h1,
 h2,
@@ -145,51 +143,115 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  width: 100%;
+  max-width: 880px;
   margin: auto;
+  font-size: 1.6rem;
 }
-/* Header Styles */
+@media (max-width: 1100px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 78%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: 83%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
+}
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
+header .logo {
+  align-self: flex-end;
+  margin: 28px 0 0 9%;
+}
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    width: 40%;
+    display: block;
+    margin: 5% auto;
+  }
+}
+header nav {
+  width: 100%;
+}
 header nav ul {
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 400px) {
+  header nav ul {
+    width: 100%;
+    display: block;
+  }
+  header nav ul li {
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3%;
+    border-bottom: 0.15rem solid #264567;
+    text-align: center;
+  }
 }
 header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
 }
-header nav ul li a:hover {
+header nav ul a:hover {
   text-decoration: underline;
-  color: black;
+  color: #264567;
 }
-header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
-}
-/* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .cta {
+    justify-content: center;
+  }
 }
 .cta .cta-text {
-  font-size: 72px;
+  color: #05a2c7;
+  font-size: 7rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+  margin: 0 10% 0 0;
+}
+@media (max-width: 930px) {
+  .cta .cta-text {
+    font-size: 6rem;
+    margin: 0 auto;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
-  font-size: 16px;
+  font-size: 1.6rem;
   background: white;
   width: 170px;
   height: 32px;
@@ -197,39 +259,54 @@ header .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: #264567;
+  color: #8fd4e6;
 }
-/* Main Content Styles */
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
+}
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #8fd4e6;
+  border-bottom: 2px solid #8fd4e6;
   margin: 75px 0 35px 0;
   padding: 35px 0;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
 }
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 900px) {
+  .main-content p {
+    padding-right: 10%;
+  }
+}
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+  max-width: 880px;
+  width: 98%;
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
 .main-content .bottom-content p {
-  padding-right: 20px;
+  padding-right: 2%;
 }
-/* Contact Styles */
+@media (max-width: 900px) {
+  .main-content .bottom-content p {
+    padding-right: 10%;
+  }
+}
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
+  color: #264567;
 }

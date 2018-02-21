@@ -1,8 +1,15 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+@tealBlue: #05a2c7;
+@navy: #264567; 
+@ltBlue: #8fd4e6;
+//mixin for .main-content border
+.mainBorder {
+    border-top: 2px solid @ltBlue; 
+    border-bottom: 2px solid @ltBlue;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +31,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,14 +55,15 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,112 +73,184 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 10% + 90%;
+    max-width: 880px;
     margin: auto;
+    font-size: 1.6rem;
+
+    @media (max-width: 1100px) {
+        width: 90%;
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        width: 78%;
+    }
+    @media (max-width: 600px) {
+        width: 83%;
+    }
+    @media (max-width: 400px) {
+        width: 90%;
+    }
 }
 
-/* Header Styles */
+// Header Styles 
 
 header {
     width: 100%;
     display: flex;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+    
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 9%;
+
+        @media (max-width: 768px) {
+            order: -1;
+            width: 40%;
+            display: block;
+            margin: 5% auto;
+        }
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        margin-top: 40px; 
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+
+        @media (max-width: 400px) {
+            width: 100%;
+            display: block;
+            li {
+                font-size: 1.5rem;
+                width: 100%;
+                margin: 0 auto;
+                padding: 3%;
+                border-bottom: .15rem solid @navy;
+                text-align: center;
+            }
+        }
+
+        li a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+            color: @navy;
+        }
+
+    }
 }
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+
+    .cta-text {
+        color: @tealBlue;
+        font-size: 5rem + 2rem;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 10% 0 0;
+
+        @media (max-width: 930px) {
+            font-size: 6rem;
+            margin: 0 auto;
+        }
+
+        button {
+            border: 1px double black;
+            font-size: 1.6rem;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: @navy;
+                color: @ltBlue;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        img {
+            display: none;
+        }
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   .mainBorder;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   font-size: 1.6rem;
+   line-height: 1.8rem;
 
-.main-content .top-content {
+   .top-content {
     display: flex;
     justify-content: space-around;
+    }
+
+    p {
+        @media (max-width: 900px) {
+            padding-right: 10%;
+        }
+    }
+
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        max-width: 880px;
+        width: 98%;
+    }
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+
+        p {
+            padding-right: 2%;
+            @media (max-width: 900px) {
+                padding-right: 10%;
+            }
+        }
+    }
 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
+// Contact Styles 
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles 
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @navy;
 }
