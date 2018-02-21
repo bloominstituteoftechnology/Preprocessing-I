@@ -124,10 +124,10 @@ table {
 * {
   box-sizing: border-box;
 }
-html,
-body {
+html {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
 }
 h1,
 h2,
@@ -139,18 +139,63 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  width: 100%;
+  max-width: 880px;
   margin: auto;
+  font-size: 1.6rem;
+}
+@media (max-width: 1100px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 78%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: 83%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
 }
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
+header .logo {
+  align-self: flex-end;
+  margin: 28px 0 0 9%;
+}
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+  }
+}
+header nav {
+  width: 100%;
+}
 header nav ul {
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 768px) {
+  header nav ul {
+    width: 100%;
+  }
 }
 header nav ul li a {
   text-decoration: none;
@@ -158,11 +203,7 @@ header nav ul li a {
 }
 header nav ul a:hover {
   text-decoration: underline;
-  color: #05a2c7;
-}
-header nav ul .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+  color: #264567;
 }
 .cta {
   display: flex;
@@ -171,18 +212,18 @@ header nav ul .logo {
 }
 .cta .cta-text {
   color: #05a2c7;
-  font-size: 72px;
+  font-size: 7rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+  margin: 0 10% 0 0;
 }
 .cta .cta-text button {
   border: 1px double black;
-  font-size: 16px;
+  font-size: 1.6rem;
   background: white;
   width: 170px;
   height: 32px;
@@ -190,16 +231,16 @@ header nav ul .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: #264567;
+  color: #8fd4e6;
 }
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #8fd4e6;
+  border-bottom: 2px solid #8fd4e6;
   margin: 75px 0 35px 0;
   padding: 35px 0;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
 }
 .main-content .top-content {
   display: flex;
@@ -214,7 +255,7 @@ header nav ul .logo {
   justify-content: space-around;
 }
 .main-content .bottom-content p {
-  padding-right: 20px;
+  padding-right: 2%;
 }
 .contact p {
   margin: 15px 0;
@@ -222,4 +263,5 @@ header nav ul .logo {
 footer {
   text-align: center;
   margin: 40px 0 20px;
+  color: #264567;
 }
