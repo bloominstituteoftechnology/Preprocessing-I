@@ -4,6 +4,11 @@
    License: none (public domain)
 */
 
+@blue: blue;
+@red: red;
+@green: green;
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -62,11 +67,38 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @green;
 }
 
 .container {
-    width: 880px;
+    width: 750px;
     margin: auto;
+
+    @media (max-width: 768px) {
+    
+        header {
+            flex-direction: column-reverse;
+            align-items: center;
+    
+            img {
+                margin-bottom: 25px;
+                align-self: center;
+            }
+        }
+    
+        .cta {
+            .cta-text {
+                width: 50%;
+                h1 {
+                    width: 100%;
+                }
+            }
+
+            img {
+                width: 50%;
+            }
+        }
+    }
 }
 
 /* Header Styles */
@@ -74,98 +106,104 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav ul {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        ul {
+            margin-top: 2 * 20px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;
 
-header nav ul li a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+            li {
+                a {
+                    text-decoration: none;
+                    color: @blue;
+                }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-    color: black;
-}
+                a:hover {
+                    text-decoration: underline;
+                    color: @red;
+                }
+            }
+        }
+    }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
+} 
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 2 + 70px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    .cta-text button {
+        border: 1px double @red;
+        font-size: 16px;
+        background: @blue;
+        width: 170px;
+        height: 32px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    .cta-text button:hover {
+        background: @red;
+        color: @green;
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @red; 
+   border-bottom: 2px solid @blue;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+    }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+    .bottom-content p {
+        padding-right: 20px;
+    }
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    p {
+        margin: 15px 0;
+    }
 }
 
 /* Footer Styles */
@@ -174,3 +212,4 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
