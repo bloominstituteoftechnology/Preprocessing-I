@@ -104,6 +104,9 @@ header {
 
         @media (max-width: 768px) {
             order: -1;
+            width: 40%;
+            display: block;
+            margin: 10% auto;
         }
     }
 
@@ -117,13 +120,22 @@ header {
         justify-content: space-between;
         display: flex;
 
-        @media (max-width: 768px) {
+        @media (max-width: 400px) {
             width: 100%;
+            display: block;
+            li {
+                font-size: 1.5rem;
+                width: 100%;
+                margin: 0 auto;
+                padding: 3%;
+                border-bottom: .15rem solid @navy;
+                text-align: center;
+            }
         }
+
         li a {
             text-decoration: none;
             color: #b0b0b0;
-
         }
     
         a:hover {
@@ -141,6 +153,10 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+
     .cta-text {
         color: @tealBlue;
         font-size: 5rem + 2rem;
@@ -151,6 +167,13 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 10% 0 0;
+
+        @media (max-width: 900px) {
+            font-size: 5rem;
+        }
+        @media (max-width: 768px) {
+            font-size: 4.5rem;
+        }
 
         button {
             border: 1px double black;
@@ -165,6 +188,11 @@ header {
                 background: @navy;
                 color: @ltBlue;
             }
+        }
+    }
+    @media (max-width: 768px) {
+        img {
+            display: none;
         }
     }
 }
@@ -188,6 +216,8 @@ header {
     .middle-img {
         display: block;
         margin: 30px auto;
+        max-width: 880px;
+        width: 98%;
     }
 
     .bottom-content {
