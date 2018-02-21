@@ -26,7 +26,7 @@ time, mark, audio, video {
 // HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: inline;
 }
 body {
 	line-height: 1;
@@ -70,21 +70,41 @@ h1, h2, h3, h4, h5 {
 @header-hover-color: maroon + #111;
 @border-color: black;
 @button-background-color: lightgray;
+@nav-color: #b0b0b0;
 
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width: 768px) {
+        width: 768px;
+    }
+    @media (max-width: 400px) {
+        width: 400px;
+    }
     header { // Header
         width: 100%;
         display: flex;
+        @media (max-width: 768px) {
+            padding: 3% 15% 0 15%;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
         nav ul {
+            display: flex;
             margin-top: 40px; 
             width: 610px;
             justify-content: space-between;
-            display: flex;
+            @media (max-width: 768px) {
+                justify-content: space-evenly;
+            }
+            @media (max-width: 400px) {
+                justify-content: center;
+                flex-direction: column;
+                background-color:red;
+            }
             li a {
                 text-decoration: none;
-                color: #b0b0b0;
+                color: @nav-color;
                 &:hover {
                     text-decoration: underline;
                     color: @header-hover-color;
@@ -94,12 +114,20 @@ h1, h2, h3, h4, h5 {
         .logo {
             align-self: flex-end;
             margin: 28px 0 0 91px;
+            @media (max-width: 768px) {
+                margin: 0 0;
+                align-self: center;
+            }
         }
     }
     .cta { // CTA
         display: flex;
         margin-top: 72px;
         justify-content: flex-end;
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
         .cta-text {
             font-size: 72px;
             text-align: center;
@@ -109,6 +137,15 @@ h1, h2, h3, h4, h5 {
             flex-flow: column;
             align-items: center;
             margin: 0 82px 0 0;
+            @media (max-width: 768px) {
+                align-self: center;
+                padding-left: 5%;
+                margin-bottom: 5%;
+            }
+            @media (max-width: 400px) {
+                margin-left: 17%;
+                font-size: 50px;
+            }
             button {
                 border: 1px double @border-color;
                 font-size: 16px;
@@ -123,6 +160,16 @@ h1, h2, h3, h4, h5 {
                 }
             }
         }
+        img {
+            margin: 0;
+            @media (max-width: 768px) {
+                align-self: center;
+                margin-bottom: 5%;
+            }
+            @media (max-width: 400px) {
+                width: 70%;
+            }
+        }
     }
     .main-content {
         border-top: 2px solid @border-color; 
@@ -131,24 +178,64 @@ h1, h2, h3, h4, h5 {
         padding: 35px 0;
         font-size: 16px;
         line-height: 18px;
+        @media (max-width: 768px) {
+            margin-left: 5%;
+            flex-direction: column;
+        }
         .top-content {
             display: flex;
             justify-content: space-around;
+            @media (max-width: 768px) {
+                margin: 5% 5%;
+                flex-direction: column;
+            }
+            h4 {
+                @media (max-width: 768px) {
+                    padding-top: 3%;
+                }
+            }
         }
         .middle-img {
             display: block;
             margin: 30px auto;
+            @media (max-width: 768px) {
+                width: 100%;
+                flex-direction: column;
+            }
         }
         .bottom-content {
             display: flex;
             justify-content: space-around;
+            @media (max-width: 768px) {
+                margin: 5% 5%;
+                flex-direction: column;
+            }
+            h4 {
+                @media (max-width: 768px) {
+                    padding-top: 3%;
+                }
+            }
             p {
                 padding-right: 20px;
             }
         }
      }
-    .contact p {
-        margin: 15px 0;
+    .contact {
+        @media (max-width: 768px) {
+            padding: 5%;
+        }
+        h4 {
+            margin: 15px 0;
+            @media (max-width: 768px) {
+                padding-left: 5%;
+            }
+        }
+        p {
+            margin: 15px 0;
+            @media (max-width: 768px) {
+                padding-left: 5%;
+            }
+        }
     }
     footer {
         text-align: center;
