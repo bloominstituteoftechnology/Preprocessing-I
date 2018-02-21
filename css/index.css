@@ -119,7 +119,7 @@ q:after {
 }
 table {
   border-collapse: collapse;
-  border-spacing: 0;
+  border-spacing: Infinity;
 }
 * {
   box-sizing: border-box;
@@ -137,18 +137,35 @@ h5 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  background-color: green;
 }
 .container {
   width: 880px;
   margin: auto;
 }
+@media (min-width: 0px) {
+  .container {
+    max-width: 380px;
+  }
+}
 .container header {
   width: 100%;
   display: flex;
 }
+@media (min-width: 0px) {
+  .container header {
+    flex-direction: column-reverse;
+  }
+}
 .container header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
+}
+@media (min-width: 0px) {
+  .container header .logo {
+    align-self: center;
+    margin: 25px 0;
+  }
 }
 .container header nav ul {
   margin-top: 40px;
@@ -178,6 +195,7 @@ h5 {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+  color: purple;
 }
 .container .cta .cta-text button {
   border: 1px double black;
@@ -189,7 +207,7 @@ h5 {
   cursor: pointer;
 }
 .container .cta .cta-text button:hover {
-  background: black;
+  background: purple;
   color: white;
 }
 .container .main-content {

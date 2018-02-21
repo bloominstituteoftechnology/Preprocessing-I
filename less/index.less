@@ -43,14 +43,15 @@ q:before, q:after {
 }
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing: 1000 / 0;
 }
 
 // Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
-
+@cta-color: purple;
+@h-color: green;
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -59,18 +60,28 @@ html, body {
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 5px + 5px;
+    background-color: @h-color;
 }
 
 .container {
     width: 880px;
     margin: auto;
+    @media (min-width: 0px) {
+        max-width: 380px;
+    }
 
     header {
+        @media (min-width: 0px) {
+            flex-direction: column-reverse;
+                }
         width: 100%;
         display: flex;
-
         .logo {
+            @media (min-width: 0px) {
+                align-self: center;
+	            margin: 25px 0;
+            }
             align-self: flex-end;
             margin: 28px 0 0 91px;
         }
@@ -79,7 +90,7 @@ h1, h2, h3, h4, h5 {
             
             ul {
                 margin-top: 40px; 
-                width: 610px;
+                width: 920px - 310px;
                 justify-content: space-between;
                 display: flex;
 
@@ -128,7 +139,7 @@ h1, h2, h3, h4, h5 {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
-
+        color: @cta-color;
         button {
             border: 1px double black;
             font-size: 16px;
@@ -138,7 +149,7 @@ h1, h2, h3, h4, h5 {
             margin-top: 10px;
             cursor: pointer;
             &:hover {
-                background: black;
+                background: purple;
                 color: white;
             }
         }
