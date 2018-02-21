@@ -90,7 +90,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,7 +125,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -148,10 +146,26 @@ h5 {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 720px;
+    margin-left: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 380px;
+    margin-left: auto;
+  }
+}
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header nav {
+    width: 70%;
+  }
 }
 header nav ul {
   margin-top: 40px;
@@ -159,9 +173,22 @@ header nav ul {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav ul {
+    width: 100%;
+  }
+  header nav ul li:first-child {
+    margin-left: 5px;
+  }
+}
 header nav ul li a {
   text-decoration: none;
   color: #b0b0b0;
+}
+@media (max-width: 768px) {
+  header nav ul li a {
+    font-size: 90%;
+  }
 }
 header nav ul li a:hover {
   text-decoration: underline;
@@ -171,11 +198,28 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
+@media (max-width: 768px) {
+  header .logo {
+    width: 20%;
+    margin-left: 100px;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .cta img {
+    width: 330px;
+    height: 330px;
+    margin-right: 20px;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -186,6 +230,11 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin-right: 62px;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -200,7 +249,6 @@ header .logo {
   background: black;
   color: white;
 }
-/* Main Content Styles */
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -208,6 +256,12 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+}
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
 }
 .main-content .top-content {
   display: flex;
@@ -224,11 +278,9 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
