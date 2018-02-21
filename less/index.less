@@ -3,6 +3,9 @@
 //   v2.0 | 20110126
 //   License: none (public domain)
 
+@background-color: yellow;
+@button-color: black;
+@button-txt-color: white;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -56,6 +59,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background: @background-color;
 }
 
 h1, h2, h3, h4, h5 {
@@ -81,12 +85,12 @@ h1, h2, h3, h4, h5 {
             
             li a {
                 text-decoration: none;
-                color: #b0b0b0;
+                color: black;
             }
             
             li a:hover {
                 text-decoration: underline;
-                color: black;
+                color: #b0b0b0;
             }
         }
         
@@ -115,15 +119,16 @@ h1, h2, h3, h4, h5 {
             button {
                 border: 1px double black;
                 font-size: 10px + 6px;
-                background: white;
+                background: @button-color;
+                color: @button-txt-color;
                 width: 170px;
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
             }
             button:hover {
-                background: black;
-                color: white;
+                background: white;
+                color: black;
             }
         }
     } // .cta
