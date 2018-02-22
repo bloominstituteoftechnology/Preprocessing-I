@@ -71,17 +71,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 750px;
+    width: 100%;
     margin: auto;
 
     @media (max-width: 768px) {
-    
         header {
             flex-direction: column-reverse;
             align-items: center;
     
             img {
-                margin-bottom: 25px;
+                margin: 20px 0 0;
                 align-self: center;
             }
         }
@@ -89,13 +88,78 @@ h1, h2, h3, h4, h5 {
         .cta {
             .cta-text {
                 width: 50%;
+                margin-right: 5%;
                 h1 {
                     width: 100%;
+                    font-size: 55px;
                 }
             }
 
             img {
                 width: 50%;
+            }
+        }
+
+        .main-content {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 400px) {
+        header {
+            nav {
+                ul {
+                    width: 395px;
+                    font-size: 1rem;
+                    flex-direction: column;
+                    display: block;
+                    text-align: center;
+                    margin-top: 20px;
+                    
+                    li {
+                        margin: 30px;
+                        border-top: solid 1px;
+                        padding-top: 15px 0;
+                    }
+                }
+            }
+        }
+
+        .cta {
+            flex-direction: column;
+            align-items: center;
+
+            .cta-text {
+                h1 {
+                    font-size: 35px;
+                }
+
+                button {
+                    width: 125px;
+                }
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        .main-content {
+            margin: 50px 0 35px 0;
+            
+            .top-content {
+                flex-direction: column;
+            }
+
+            img {
+                width: 100%;
+                margin: 30px 0;
+            }
+
+            .bottom-content {
+                flex-direction: column;
             }
         }
     }
@@ -106,6 +170,7 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    justify-content: center;
 
     nav {
         ul {
@@ -139,7 +204,7 @@ header {
 .cta {
     display: flex;
     margin-top: 2 + 70px;
-    justify-content: flex-end;
+    justify-content: center;
 
     .cta-text {
         font-size: 72px;
