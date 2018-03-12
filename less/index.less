@@ -5,10 +5,10 @@
 =======
 // Hey Ilho!!!
 >>>>>>> 21db1d966ec8805affb3605748e3861430a18360
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -30,7 +30,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -54,7 +54,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -71,32 +71,39 @@ h1, h2, h3, h4, h5 {
 }
 
 // Variables
-@flex: display flex;
-@gray: #b0b0b0
+@navTextColor: #b0b0b0;
+@navTextColorHover: black;
+@buttonBorder: black;
+@buttonBackground: white;
+@buttonHover: white;
+@buttonHoverBackground: black;
+@borderTop: black;
+@borderBottom: black;
+
 
 .container {
     width: 880px;
     margin: auto;
 
-    /* Header Styles */
+    // Header Styles
     .header {
         width: 100%;
-        display: @flex;
+        display: flex;
         & nav {
-            margin-top: 40px; 
-            width: 610px;
+            margin-top: (4 * 10)px; 
+            width: (600 + 10)px;
             justify-content: space-between;
-            @display: @flex
+            display: flex;
         }//header .nav
 
         & nav a {
             text-decoration: none;
-            color: @gray;
+            color: @navTextColor;
         }
 
         & nav a:hover {
             text-decoration: underline;
-            color: black;}
+            color: @navTextColorHover;}
 
         & .logo {
             align-self: flex-end;
@@ -107,7 +114,7 @@ h1, h2, h3, h4, h5 {
 
 
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
@@ -125,9 +132,9 @@ h1, h2, h3, h4, h5 {
         margin: 0 82px 0 0;
 
         & .cta-text button {
-            border: 1px double black;
+            border: 1px double @buttonBorder;
             font-size: 16px;
-            background: white;
+            background: @buttonBackground;
             width: 170px;
             height: 32px;
             margin-top: 10px;
@@ -135,23 +142,17 @@ h1, h2, h3, h4, h5 {
         }// .cta-text button
 
         & .cta-text button:hover {
-            background: black;
-            color: white;
+            background: @buttonHoverBackground;
+            color: @buttonHover;
         }// .cta .cta-text button:hover
     }// .cta-text
 }//.cta
 
-
-
-
-
-
-
-/* Main Content Styles */
+// Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @borderTop; 
+   border-bottom: 2px solid @borderBottom;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
@@ -179,13 +180,13 @@ h1, h2, h3, h4, h5 {
 }// .main-content
 
 
-/* Contact Styles */
+// Contact Styles
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
