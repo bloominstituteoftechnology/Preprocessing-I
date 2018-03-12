@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    background-color: @blue;
 }
 ol, ul {
 	list-style: none;
@@ -64,9 +65,19 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@yellow:#faf884;
+@green:#baed91;
+@blue:#b2cefe;
+
 .container {
     width: 880px;
     margin: auto;
+    background-color: @blue;
+
+    @media (max-width: 768px){
+        width:100%;
+    }
+
 }
 
 // Header Styles
@@ -74,6 +85,13 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    background-color: @yellow;
+
+    @media (max-width: 768px){
+        justify-content: space-around;
+        width: 100%;
+        padding-left: 10px;
+    }
     
     nav {
     margin-top: 40px; 
@@ -85,6 +103,7 @@ header {
         a {
         text-decoration: none;
         color: #b0b0b0;
+
         
             &:hover {
             text-decoration: underline;
@@ -96,6 +115,11 @@ header {
     .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+
+        @media (max-width: 768px){
+            margin-left: 40px;
+            margin-right: 20px   
+        }
     }
 } //header
 
@@ -105,9 +129,15 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+        @media (max-width: 768px){
+            width:100%;
+            padding-right: 10px;
+            justify-content: center;
+
+        }
 
     .cta-text {
-    font-size: 72px * 2;
+    font-size: 72px * 2/2;
     text-align: center;
     letter-spacing: 4px + 1px;
     display: flex;
@@ -115,6 +145,9 @@ header {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
+        @media (max-width: 768px){
+             margin-right: 20px;
+        }
 
         button {
         border: 1px double black;
@@ -133,20 +166,28 @@ header {
     
     } // .cta-text
 
+    .cta img{
+        width:auto;
+    }
+
 } //.cta
 
 // Main Content Styles
 
+
+
+
+
 .main-content {
-   border-top: 2px solid black; 
+    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
-
-.main-content {
+        @media (max-width: 768px){
+            margin-right: 20px;
+    }
 
     .top-content {
     display: flex;
@@ -156,6 +197,10 @@ header {
     .middle-img {
     display: block;
     margin: 30px auto;
+
+        @media (max-width: 768px){
+                 width: 90%;   
+            }
     }
 
     .bottom-content {
@@ -174,6 +219,9 @@ header {
 
 .contact p {
     margin: 15px 0;
+    @media (max-width: 768px){
+        margin-left: 20px;
+    }
 }
 
 // Footer Styles 
