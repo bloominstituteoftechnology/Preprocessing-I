@@ -68,10 +68,11 @@ h1, h2, h3, h4, h5 {
 }
 
 // Variables
-@navTextColor: red;//#b0b0b0
-@navTextColorHover: black;
+@containerColor: #c6b382;
+@navTextColor: #442f38;//#b0b0b0
+@navTextColorHover: darken(@navTextColor, 50%);
 @buttonBorder: black;
-@buttonBackground: white;
+@buttonBackground: gray;
 @buttonHover: white;
 @buttonHoverBackground: darken(@buttonBackground, 50%);
 @borderTop: black;
@@ -81,14 +82,15 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background: @containerColor;
 
     // Header Styles
-    .header {
+    header {
         width: 100%;
         display: flex;
         & nav {
-            margin-top: (4 * 10)px; 
-            width: (600 + 10)px;
+            margin-top: 4*10px; 
+            width: 600+10px;
             justify-content: space-between;
             display: flex;
         }//header .nav
@@ -107,7 +109,7 @@ h1, h2, h3, h4, h5 {
             margin: 28px 0 0 91px;
         }
 
-    }// .header
+    }// header
 
 
 
@@ -128,7 +130,7 @@ h1, h2, h3, h4, h5 {
             align-items: center;
             margin: 0 82px 0 0;
 
-            & .cta-text button {
+            & button {
                 border: 1px double @buttonBorder;
                 font-size: 16px;
                 background: @buttonBackground;
@@ -138,7 +140,7 @@ h1, h2, h3, h4, h5 {
                 cursor: pointer;
             }// .cta-text button
 
-            & .cta-text button:hover {
+            & button:hover {
                 background: @buttonHoverBackground;
                 color: @buttonHover;
             }// .cta .cta-text button:hover
