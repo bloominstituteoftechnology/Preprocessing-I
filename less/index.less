@@ -172,7 +172,16 @@ h1, h2, h3, h4, h5 {
             justify-content: space-between;
         }
 
+        @media (max-width: 400px) {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
         .cta-text {
+            max-width: 100%;
+            height: auto;
             width: 45%;
             font-size: 7.2rem;
             text-align: center;
@@ -186,6 +195,13 @@ h1, h2, h3, h4, h5 {
             @media (max-width: 768px){
                 margin: 0;
             }
+
+            @media (max-width: 400px){
+                display: flex;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
 
             button {
                 border: 1px double black;
@@ -201,14 +217,19 @@ h1, h2, h3, h4, h5 {
                     color: @brightbluish;
                 }
             }
-        }
         
         img {
+
             @media (max-width: 768px){
                 min-width: 160px;
                 height: auto;
                 display: flex;
                 width: 45%;
+            }
+
+            @media (max-width: 400px){
+                margin-top: 40px;
+                width: 100%;
             }
         }
     } //cta
