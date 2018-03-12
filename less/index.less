@@ -156,11 +156,17 @@ header {
     justify-content: flex-end;
     background: @main-color;
     @media(max-width: 768px) {
-        margin-top: 5rem;
+        display: flex;
+        margin: 72px 1% 0 1%;
+        justify-content: flex-end;
+        background: none;
+    }// media 768px
+    @media(max-width: 400px) {
+        margin-top: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }// media 768px
+    }// media 400px
     .cta-text {
         font-size: 36px * 2;
         text-align: center;
@@ -170,6 +176,16 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        @media(max-width: 400px) {
+            margin: 0 20% 50px 0;
+        }// media 400px
+        h1 {
+            @media(max-width: 768px) {
+                letter-spacing: 6px;
+                margin-left: 40%;
+                font-size: 55px;
+            }// media 768px
+        }// h1
         button {
             border: 1px double black;
             font-size: 32px / 2;
@@ -178,12 +194,23 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+            @media(max-width: 768px) {
+                margin-left: 40%;
+            }// media 768px
+            @media(max-width: 400px) {
+                margin-bottom: 20px;
+            }
             &:hover {
                 background: black;
                 color: @accent-color;
             }// hover
         }// button 
     }// cta-text
+    img {
+        @media(max-width: 400px) {
+            max-width: 80%;
+        }
+    }
 }// cta
 
 // Main Content Styles 
