@@ -69,6 +69,11 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+//Variables
+@a-color: #030407; //Ebony
+@hover-color: #C5A107; //Buddha Gold
+@border-color: #46A11B; //Vida Loca
+
 
 // Header Styles
 
@@ -84,14 +89,15 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @a-color;
 
-                &:hover {
-                    text-decoration: underline;
-                    color: black;
+            &:hover {
+                text-decoration: underline;
+                color: @hover-color;
             }//&:hover
         }//a
     }//nav
+
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
@@ -116,7 +122,7 @@ header {
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double black;
+            border: 1px double @border-color;
             font-size: 16px;
             background: white;
             width: 170px;
@@ -126,7 +132,7 @@ header {
             cursor: pointer;
 
             &:hover {
-                background: black;
+                background: @hover-color;
                 color: white;
             }//&:hover
         }//button
@@ -137,8 +143,8 @@ header {
 //Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @border-color; 
+   border-bottom: 2px solid @border-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
