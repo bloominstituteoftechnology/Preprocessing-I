@@ -3,6 +3,11 @@
 // v2.0 | 20110126
 //License: none (public domain)
 
+@skeptic: #CAE6DA;
+@snowy-mint: #D6FFDB;
+@sweet-corn: #FBEA8C;
+@zest: #E5841B;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -65,7 +70,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
+    background-color: @sweet-corn;
     margin: auto;
 }
 
@@ -74,6 +81,10 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    background-color: @skeptic;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
     nav {
         margin-top: 40px; 
         width: 610px;
@@ -103,6 +114,7 @@ header {
     justify-content: flex-end;
     .cta-text {
         font-size: 72px;
+        color: @zest;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -115,7 +127,7 @@ header {
             font-size: 16px;
             background: white;
             width: 170px;
-            height: 32px;
+            height: 30 + 2px; // ;)
             margin-top: 10px;
             cursor: pointer;
         }
