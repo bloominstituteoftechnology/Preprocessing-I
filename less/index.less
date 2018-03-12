@@ -243,7 +243,7 @@ header {
                 color: @yellow-orange;
 
                 @media (max-width: 767px ) {
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     width: 58%;
                     margin-top: 12px 2%;
                 }
@@ -273,16 +273,39 @@ header {
     font-size: 1.6rem;
     line-height: 18px;
 
+    @media (max-width: 767px) {
+        padding: 2% 0;
+        line-height: 18px - 2;
+        margin: 14.5% 1% 9.5% 1%;
+    }
+
+    @media (max-width: 400px) {
+        padding: 10% 0;
+    }
+
 
         .top-content {
             display: flex;
             justify-content: space-around;
+
+            @media (max-width: 400px) {
+                flex-direction: column;
+                margin: 2%;
+            }
+
+            h4 {
+                margin-top: 2%;
+            }
         }
 
 
         .middle-img {
             display: block;
             margin: 30px auto;
+
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
         }
 
 
@@ -290,10 +313,20 @@ header {
             display: flex;
             justify-content: space-around;
 
+            @media (max-width: 400px) {
+                flex-direction: column;
+                align-items: space-around;
+                margin: 2%;
+            }
+
 
              p {
                 .calc(20);
                 padding-right: @average;
+            }
+
+            h4 {
+                margin-top: 2%;
             }
         }
     }
@@ -302,6 +335,10 @@ header {
 
 .contact {
     font-size: 1.6rem;
+
+    @media (max-width: 767px) {
+        margin-left: 1%;
+    }
 }
 
 .contact p {
