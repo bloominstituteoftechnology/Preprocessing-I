@@ -69,8 +69,7 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 
     @media (max-width: 768px) {
-        width: 100%;
-                
+        width: 100%;                
     }
 }
 
@@ -78,6 +77,7 @@ h1, h2, h3, h4, h5 {
 @a-color: #030407; //Ebony
 @hover-color: #C5A107; //Buddha Gold
 @border-color: #46A11B; //Vida Loca
+@stretch-color: #C2CFE5; //Periwinkle Gray
 
 
 // Header Styles
@@ -90,39 +90,41 @@ header {
         width: 100%
     }
 
-    /*@media (max-width: 400px) {
+    @media (max-width: 400px) {
         flex-flow: wrap;
         justify-content: center;
     }
-*/
+
     nav {
         margin-top: 20px + 20px; // + operator example
         width: 61px * 10px; // * operator example
         justify-content: space-between;
         display: flex;
 
-        /*@media (max-width: 400px) {
+        @media (max-width: 400px) {
             width: 100%;
             flex-flow: column;
             align-items: center;
             margin:0;
-        }*/
+            border-top: 1px #b0b0b0 solid; 
+        }
 
         a {
             text-decoration: none;
-            color: @a-color;
+            color: @a-color; //Ebony
 
-           /* @media (max-width: 400px) {
+            @media (max-width: 400px) {
                 width: 100%;
                 display:block;
                 padding: 20px;
                 text-align: center;
                 font-size: 20px;
-            }*/
+                border-bottom: 1px #b0b0b0 solid;
+            }
 
             &:hover {
                 text-decoration: underline;
-                color: @hover-color;
+                color: @hover-color; //Buddha Gold
             }//&:hover
         }//a
     }//nav
@@ -135,11 +137,11 @@ header {
             width: 30%;
         }
 
-        /*@media (max-width: 400px) {
+        @media (max-width: 400px) {
             max-width: 100%;
             margin: 20px 0;
             order: -1;
-        }*/
+        }
     }//.logo
 }//header
 
@@ -155,10 +157,11 @@ header {
         justify-content: space-between;
     }
 
-    /*@media (max-width: 400px) {
+    @media (max-width: 400px) {
         flex-flow: column;
         align-items: center;
-    }*/
+        margin: 20px auto 0;
+    }
 
     .cta-text {
         font-size: 72px;
@@ -175,18 +178,16 @@ header {
             font-size: 50px;
         }
 
-      /*  @media (max-width: 400px) {
+        @media (max-width: 400px) {
             margin: 0 0 50px 0;
-        }*/
+        }        
 
-        } // .cta image
-
-       /* @media (max-width: 400px) {
+        @media (max-width: 400px) {
             max-width: 80%;
-        }*/
+        }
 
         button {
-            border: 1px double @border-color;
+            border: 1px double @border-color; //Vida Loca
             font-size: 16px;
             background: white;
             width: 170px;
@@ -196,7 +197,7 @@ header {
             cursor: pointer;
 
             &:hover {
-                background: @hover-color;
+                background: @hover-color; //Buddha Gold
                 color: white;
             }//&:hover
         }//button
@@ -208,14 +209,19 @@ header {
             height: auto;
             //display: none;
         }
+
+        @media (max-width: 400px) {
+            max-width: 100%;            
+        }
+    }
 }//.cta
 
 
 //Main Content Styles
 
 .main-content {
-   border-top: 2px solid @border-color; 
-   border-bottom: 2px solid @border-color;
+   border-top: 2px solid @border-color; //Vida Loca
+   border-bottom: 2px solid @border-color; //Vida Loca
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
@@ -224,12 +230,16 @@ header {
    .top-content {
         display: flex;
         justify-content: space-around;
-    }//.top-content
 
-  /*  @media (max-width: 400px) {
-        flex-flow: column;
-        height: 300px;
-    }*/
+        @media (max-width: 400px) {
+            flex-direction: column;
+            flex-wrap: wrap;        
+        }
+
+        p {
+            margin: 20px 0;
+        }//p
+    }//.top-content    
 
     .middle-img {
         display: block;
@@ -244,14 +254,12 @@ header {
         display: flex;
         justify-content: space-around;
 
-      /*  @media (max-width: 400px) {
-            flex-flow: wrap;
-            align-content: space-between;
-            height: 440px;
-        }*/
+        @media (max-width: 400px) {            
+            flex-direction: column;            
+        }
 
         p {
-            padding-right: 20px;
+            margin: 20px 0;
         }//p
     }//.bottom-content
 }//.main-content
@@ -267,4 +275,9 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+}
+
+//Stretch Goals
+p, a, h1, h2, h3, h4,h5 {
+    color: multiply(@hover-color, @stretch-color);
 }
