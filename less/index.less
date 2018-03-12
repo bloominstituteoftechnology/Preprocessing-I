@@ -64,6 +64,12 @@ table {
           border-top: @arguments;
       };
 
+// calc mixin for calculation margins and width percent based
+
+.calc(@x, @y: 880) {
+    @average: ((@x / @y) * 100%);
+}
+
 
 
 //Set every element's box-sizing to border-box 
@@ -77,6 +83,10 @@ html, body {
     background-color: @main-bg;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -84,7 +94,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -93,30 +104,81 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 400px) {
+
+    }
 
 
          nav {
             margin-top: 40px; 
-            width: 610px;
+            width: 69%;
             justify-content: space-between;
             display: flex;
+
+            @media (max-width: 767px) {
+                width: 59.588%;
+                margin: 34px 2.5% 20px 2.5%;
+            }
+
+            @media (max-width: 400px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
         
 
                  a {
                     text-decoration: none;
                     color: @jumbo;
+                    font-size: 1.6rem;
+
+                    @media (max-width: 767px) {
+                        flex: 1 1 auto;
+                    }
+
+                    @media (max-width: 400px) {
+                        font-size: 1.4rem;
+                        border-bottom: 1px solid #000;
+                        width: 100%;
+                        padding: 4.5% 0;
+                        text-align: center;
+
+                    }
                 
 
                     &:hover {
                         text-decoration: underline;
                         color: @yellow-orange;
                     }
+
+                    &:first-child {
+                        @media (max-width: 400px) {
+                            .border-prop();
+                        }
+                    }
                 }
             }
 
         .logo {
+            .calc(91);
              align-self: flex-end;
-             margin: 28px 0 0 91px;
+             margin: 28px 0 0 @average;
+
+             @media (max-width: 767px) {
+                margin: 4px 0 0 6.5%;
+             }
+
+             @media (max-width: 400px) {
+                margin: 1% auto;
+                order: -1;
+                padding: 1rem 0;
+             }
         }       
     }
  
@@ -124,31 +186,67 @@ header {
 // Call To Action (CTA) Styles
 
 .cta {
+    .calc(72);
     display: flex;
-    margin-top: 72px;
+    margin-top: @average;
     justify-content: flex-end;
+
+    @media (max-width: 767px) {
+        margin-top: 8%;
+        margin-right: 3%;
+        justify-content: center;
+    }
+
+    @media (max-width: 400px) {
+        margin: 10% 8%;
+        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: space-around
+    }
 
 
         .cta-text {
-        font-size: 72px;
+        font-size: 7.2rem;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 82px 0 0;
+        .calc(82);
+        margin: 0 @average 0 0;
+
+        @media (max-width: 767px) {
+            font-size: 4.5rem;
+            align-items: center;
+            margin: 10px 3% 0 4%;
+        }
+
+        @media (max-width: 400px) {
+            letter-spacing: 8px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 40px auto;
+        }
 
 
             button {
                 border: 1px double black;
-                font-size: 16px;
+                font-size: 1.6rem;
                 background: @jumbo;
-                width: 170px;
+                width: 54%;
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
                 color: @yellow-orange;
+
+                @media (max-width: 767px ) {
+                    font-size: 1rem;
+                    width: 58%;
+                    margin-top: 12px 2%;
+                }
         
 
                     &:hover {
@@ -157,17 +255,23 @@ header {
                 }
             }
         }
+        img {
+            @media (max-width: 400px) {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
     }
 
 // Main Content Styles
 
 .main-content {
    .border-prop(2px);
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+    border-bottom: 2px solid black;
+    margin: 75px 0 35px 0;
+    padding: 4% 0;
+    font-size: 1.6rem;
+    line-height: 18px;
 
 
         .top-content {
@@ -188,12 +292,17 @@ header {
 
 
              p {
-                padding-right: 20px;
+                .calc(20);
+                padding-right: @average;
             }
         }
     }
 
 // Contact Styles
+
+.contact {
+    font-size: 1.6rem;
+}
 
 .contact p {
     margin: 15px 0;
@@ -204,4 +313,8 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
+
+        p {
+            font-size: 1.6rem;
+        }
+    }
