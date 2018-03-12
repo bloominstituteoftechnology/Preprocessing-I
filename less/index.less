@@ -1,10 +1,7 @@
 // Is this working?
 // Hello David!
-<<<<<<< HEAD
 // git remote -v test
-=======
 // Hey Ilho!!!
->>>>>>> 21db1d966ec8805affb3605748e3861430a18360
 // http://meyerweb.com/eric/tools/css/reset/ 
 // v2.0 | 20110126
 // License: none (public domain)
@@ -71,12 +68,12 @@ h1, h2, h3, h4, h5 {
 }
 
 // Variables
-@navTextColor: #b0b0b0;
+@navTextColor: red;//#b0b0b0
 @navTextColorHover: black;
 @buttonBorder: black;
 @buttonBackground: white;
 @buttonHover: white;
-@buttonHoverBackground: black;
+@buttonHoverBackground: darken(@buttonBackground, 50%);
 @borderTop: black;
 @borderBottom: black;
 
@@ -114,81 +111,82 @@ h1, h2, h3, h4, h5 {
 
 
 
-// Call To Action (CTA) Styles
+    // Call To Action (CTA) Styles
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
+    .cta {
+        display: flex;
+        margin-top: 72px;
+        justify-content: flex-end;
 
-    & .cta-text {
-        font-size: 72px;
+        & .cta-text {
+            font-size: 72px;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 82px 0 0;
+
+            & .cta-text button {
+                border: 1px double @buttonBorder;
+                font-size: 16px;
+                background: @buttonBackground;
+                width: 170px;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+            }// .cta-text button
+
+            & .cta-text button:hover {
+                background: @buttonHoverBackground;
+                color: @buttonHover;
+            }// .cta .cta-text button:hover
+        }// .cta-text
+    }//.cta
+
+    // Main Content Styles
+
+    .main-content {
+    border-top: 2px solid @borderTop; 
+    border-bottom: 2px solid @borderBottom;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
+
+        & .top-content {
+            display: flex;
+            justify-content: space-around;
+        }// .main-content .top-content
+
+        & .middle-img {
+            display: block;
+            margin: 30px auto;
+        }// .main-content .middle-img
+
+        & .bottom-content {
+            display: flex;
+            justify-content: space-around;
+
+            & .bottom-content p {
+                padding-right: 20px;
+            }// .main-content .bottom-content p
+        }// .main-content .bottom-content
+
+    }// .main-content
+
+
+    // Contact Styles
+
+    .contact p {
+        margin: 15px 0;
+    }
+
+    // Footer Styles
+
+    footer {
         text-align: center;
-        letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
-        margin: 0 82px 0 0;
-
-        & .cta-text button {
-            border: 1px double @buttonBorder;
-            font-size: 16px;
-            background: @buttonBackground;
-            width: 170px;
-            height: 32px;
-            margin-top: 10px;
-            cursor: pointer;
-        }// .cta-text button
-
-        & .cta-text button:hover {
-            background: @buttonHoverBackground;
-            color: @buttonHover;
-        }// .cta .cta-text button:hover
-    }// .cta-text
-}//.cta
-
-// Main Content Styles
-
-.main-content {
-   border-top: 2px solid @borderTop; 
-   border-bottom: 2px solid @borderBottom;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-
-    & .top-content {
-        display: flex;
-        justify-content: space-around;
-    }// .main-content .top-content
-
-    & .middle-img {
-        display: block;
-        margin: 30px auto;
-    }// .main-content .middle-img
-
-    & .bottom-content {
-        display: flex;
-        justify-content: space-around;
-
-        & .bottom-content p {
-            padding-right: 20px;
-        }// .main-content .bottom-content p
-    }// .main-content .bottom-content
-
-}// .main-content
-
-
-// Contact Styles
-
-.contact p {
-    margin: 15px 0;
-}
-
-// Footer Styles
-
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
+        margin: 40px 0 20px;
+    }
 }
