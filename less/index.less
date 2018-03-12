@@ -58,6 +58,14 @@ table {
 @white: #fff;
 @button-hover-color: @yellow-orange / 2;
 
+// Mixin for border - it can adjust properties based on arguments passed
+
+.border-prop( @size: 1px; @style: solid; @color: black;) {
+          border-top: @arguments;
+      };
+
+
+
 //Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
@@ -154,7 +162,7 @@ header {
 // Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
+   .border-prop(2px);
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
