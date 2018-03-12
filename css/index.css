@@ -126,6 +126,7 @@ table {
 }
 html,
 body {
+  font-size: 62.5%;
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -139,16 +140,19 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  width: 100%;
+  max-width: 880px;
   margin: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 768) {
   .container {
+    max-width: 768px;
     width: 100%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 400) {
   .container {
+    max-width: 400px;
     width: 100%;
   }
 }
@@ -156,108 +160,73 @@ header {
   width: 100%;
   display: flex;
 }
-@media (max-width: 680px) and (min-width: 401px) {
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media (max-width: 400px) {
-  header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-  }
-}
 @media (max-width: 768px) {
-  header nav {
-    width: 59%;
-    /*450/768*/
-    justify-content: space-around;
+  header {
+    margin-top: 3%;
+    flex-flow: row wrap;
+    justify-content: center;
   }
 }
-@media (max-width: 680px) and (min-width: 401px) {
-  header nav {
-    width: 100%;
-  }
-}
-@media (max-width: 400px) {
-  header nav {
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
+header nav {
+  width: 100%;
 }
 header nav ul {
   margin-top: 40px;
-  width: 610px;
-  justify-content: space-between;
+  min-width: 69%;
+  width: 100%;
+  justify-content: space-around;
   display: flex;
 }
-header nav ul a {
+@media (max-width: 400px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid gray;
+  }
+  header nav ul li:hover {
+    background: gray;
+  }
+}
+header nav ul li a {
+  font-size: 1.6rem;
   text-decoration: none;
   color: #b0b0b0;
 }
-header nav ul a:hover {
-  text-decoration: underline;
+header nav ul li a:hover {
+  text-decoration: none;
   color: black;
 }
 @media (max-width: 400px) {
-  header nav ul a:hover {
-    background: gray;
-    text-decoration: none;
-  }
-}
-@media (max-width: 680px) and (min-width: 401px) {
-  header nav ul a {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 400px) {
-  header nav ul a {
-    border-bottom: 1px solid #b0b0b0;
+  header nav ul li a {
     width: 100%;
+    height: auto;
+    padding: 5% 0;
+    font-size: 2rem;
     text-align: center;
-    padding: 20px 0;
-    font-size: 1.9rem;
+  }
+  header nav ul li a:hover {
+    color: white;
   }
 }
 @media (max-width: 400px) {
-  header nav ul a:nth-of-type(1) {
-    border-top: 1px solid #b0b0b0;
+  header nav ul li:nth-of-type(6) {
+    border-bottom: 1px solid gray;
   }
 }
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 10%;
 }
 @media (max-width: 768px) {
   header .logo {
-    margin: 4% 0 0 7%;
-    /*28/768 & 76/768*/
-    max-width: 100%;
-    height: auto;
-  }
-}
-@media (max-width: 680px) and (min-width: 401px) {
-  header .logo {
-    max-width: 100%;
-    height: auto;
-    align-self: center;
     order: -1;
-  }
-}
-@media (max-width: 400px) {
-  header .logo {
-    order: -1;
-    margin-left: 30%;
-    /* see if this can be adjusted some other way*/
-    /*120/400*/
-    max-width: 100%;
-    height: auto;
+    margin: 0;
   }
 }
 .cta {
@@ -267,37 +236,29 @@ header .logo {
 }
 @media (max-width: 768px) {
   .cta {
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-  }
-}
-@media (max-width: 400px) {
-  .cta {
-    display: flex;
-    flex-direction: column;
-    margin-top: 72px;
   }
 }
 .cta .cta-text {
-  font-size: 72px;
+  font-size: 7.2rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+  margin: 0 10% 0 0;
 }
 @media (max-width: 768px) {
   .cta .cta-text {
-    font-size: 6.2rem;
     margin: 0;
+    margin-bottom: 5%;
   }
 }
 @media (max-width: 400px) {
   .cta .cta-text {
-    margin: 0 .8% 0 0;
-    /*3/400*/
+    font-size: 5.5rem;
   }
 }
 .cta .cta-text button {
@@ -314,27 +275,13 @@ header .logo {
   background: black;
   color: white;
 }
-@media (max-width: 680px) and (min-width: 401px) {
-  .cta .cta-text button {
-    height: auto;
-  }
-}
-@media (max-width: 768px) {
-  .cta img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-@media (max-width: 680px) and (min-width: 401px) {
-  .cta img {
-    display: none;
-  }
+.cta img {
+  max-width: 100%;
+  height: auto;
 }
 @media (max-width: 400px) {
   .cta img {
-    width: 82%;
-    margin-top: 40px;
-    align-self: center;
+    display: none;
   }
 }
 .main-content {
@@ -345,22 +292,6 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
-@media (max-width: 768px) {
-  .main-content {
-    padding: 2.5% 2.5%;
-    /*19/768*/
-    width: 100%;
-  }
-}
-@media (max-width: 400px) {
-  .main-content {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    width: 95%;
-    margin-left: 3%;
-    /*10/380*/
-  }
-}
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
@@ -368,44 +299,56 @@ header .logo {
 @media (max-width: 400px) {
   .main-content .top-content {
     flex-direction: column;
-    margin-top: 10px;
   }
+}
+.main-content .top-content .text-content {
+  padding: 1%;
 }
 @media (max-width: 400px) {
   .main-content .top-content .text-content {
-    margin-bottom: 15px;
+    margin-bottom: 6%;
   }
 }
 .main-content .middle-img {
+  width: 100%;
+  height: auto;
   display: block;
   margin: 30px auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .main-content .middle-img {
-    width: 100%;
+    margin: 0;
   }
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .bottom-content p {
-  padding-right: 20px;
-}
 @media (max-width: 400px) {
   .main-content .bottom-content {
     flex-direction: column;
   }
 }
+.main-content .bottom-content .text-content {
+  padding: 0 1%;
+}
 @media (max-width: 400px) {
   .main-content .bottom-content .text-content {
-    margin-bottom: 15px;
+    margin-bottom: 6%;
   }
 }
-@media (max-width: 768px) {
+.main-content .bottom-content .text-content:nth-of-type(1) {
+  margin-top: 6%;
+}
+.contact {
+  font-size: 1.6rem;
+  margin-left: 1%;
+}
+@media (max-width: 400px) {
   .contact {
-    padding: 5% 2.5%;
-    /*35/768 & 19/768*/
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
   }
 }
 .contact p {
@@ -414,5 +357,5 @@ header .logo {
 footer {
   text-align: center;
   margin: 40px 0 20px;
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
