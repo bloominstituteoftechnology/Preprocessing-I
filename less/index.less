@@ -69,6 +69,12 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+		@media (max-width: 400px) {
+			width: 100%;
+}
 }
 
 // Header Styles
@@ -76,26 +82,55 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		@media (max-width: 400px) {
+			flex-wrap: wrap;
+			justify-content: center;
+}
 
     nav {
         margin-top: 40px;
         width: 610px;
         justify-content: space-between;
         display: flex;
+				@media (max-width: 768px) {
+					width: 85%;
+				}
+				@media (max-width: 400px) {
+					width: 100%;
+		}
 
         a {
             text-decoration: none;
             color: #b0b0b0;
+
+						@media (max-width: 400px) {
+							display: block;
+							text-align: center;
+							font-size: 32px;
+							border-bottom: 1px solid gray;
+						}
         } // a
 
         a:hover {
             text-decoration: underline;
             color: @firstcolor;
+						@media (max-width: 400px) {
+							background: @firstcolor;
+						}
         } // hover
 
         .logo {
             align-self: flex-end;
             margin: 28px 0 0 91px;
+						@media (max-width: 768px) {
+							order: -1;
+							max-width: 100%;
+							margin: 20px 0;
+						}
         } // logo
     } // nav
 } // header
@@ -106,6 +141,16 @@ header {
 	display: flex;
 	margin-top: 72px;
 	justify-content: flex-end;
+	@media (max-width: 768px) {
+		margin-top: 50px;
+		flex-flow: column;
+		align-items: center;
+	}
+	@media (max-width: 400px) {
+		margin-top: 25px;
+		flex-flow: column;
+		align-items: center;
+	}
 
 	.cta-text {
 		font-size: 36px * 2;
@@ -116,6 +161,9 @@ header {
 		flex-flow: column;
 		align-items: center;
 		margin: 0 82px 0 0;
+		@media (max-width: 768px) {
+			margin: 0;
+		}
 
 		button {
 			border: 1px double black;
@@ -143,18 +191,34 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+	 @media (max-width: 768px) {
+		 margin: 50px 2% 30px;
+	 }
 
 		.top-content {
     display: flex;
     justify-content: space-around;
+		@media (max-width: 400px) {
+			justify-content: space-around;
+			flex-direction: column;
+			height: 250px;
+		}
 
 		.middle-img {
     display: block;
     margin: 30px auto;
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 
 		.bottom-content {
     display: flex;
     justify-content: space-around;
+		@media (max-width: 400px) {
+			flex-wrap: wrap;
+			align-content: space-between;
+			height: 350px;
+		}
 
 		p {
     padding-right: 20px;
@@ -167,6 +231,11 @@ header {
 
 .contact p {
     margin: 15px 0;
+		@media (max-width: 768px) {
+			margin: 20px 10px;
+		}
+		@media (max-width: 400px)
+		margin: 20px;
 }
 
 // Footer Styles
