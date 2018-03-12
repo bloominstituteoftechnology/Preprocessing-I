@@ -83,6 +83,12 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 400px) {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     nav {
         margin-top: 40px; 
         width: 610px;
@@ -93,13 +99,35 @@ header {
             width: 70%;
         }
 
+        @media (max-width: 400px) {
+            flex-flow: column;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
         a {
             text-decoration: none;
             color: @blue;
 
+            @media (max-width: 400px) {
+                padding: 5%;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+
             &:hover {
                 text-decoration: underline;
                 color: black;
+
+                @media (max-width: 400px) {
+                    color: white;
+                    background-color: black;
+                }
             }
         }
     }
@@ -111,6 +139,11 @@ header {
         @media (max-width: 768px) {
             margin:4% 0 0 6%;
         }
+
+        @media (max-width: 400px) {
+            order: -1;
+            align-self: center;
+        }
     }
 }
 
@@ -121,6 +154,12 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media (max-width: 400px) {
+        margin-top: 0;
+        flex-flow: column;
+        align-items: center;
+    }
 
     .cta-text {
         font-size: @standardFont * 4.5;
@@ -137,6 +176,11 @@ header {
             width: 50%;
             font-size: 4.5rem;
             margin-left: 2%;
+        }
+
+        @media (max-width: 400px) {
+            margin: 0;
+            width: 100%;
         }
 
         button {
@@ -158,6 +202,11 @@ header {
             @media (max-width: 768px) {
                 width: 50%;
                 margin-right: 2%;
+            }
+
+            @media (max-width: 400px) {
+                width: 85%;
+                margin: 15% 0;
             }
         }
     }
@@ -187,6 +236,11 @@ header {
                 margin-top: 0;
             }
         }
+
+        @media (max-width: 400px) {
+            flex-flow: column;
+            margin-top: 5%;
+        }
    }
 
    .middle-img {
@@ -196,6 +250,10 @@ header {
         @media (max-width: 768px) {
             width: 100%;
             margin: 0;
+        }
+
+        @media (max-width: 400px) {
+            margin-top: 13%;
         }
    }
 
@@ -211,15 +269,35 @@ header {
                 margin-bottom: 0;
             }
         }
+
+        @media (max-width: 400px) {
+            flex-flow: column;
+        }
    }
 }
 
 
 //Contact Styles
 
-.contact p {
-    margin: 15px 0;
-    color: @blue;
+.contact {
+    p {
+        margin: 15px 0;
+        color: @blue;
+
+        @media (max-width: 400px) {
+            margin-bottom: 5%;
+        }
+    }
+
+    @media (max-width: 400px) {
+        margin-bottom: 10%;
+    }
+
+    h4 {
+        @media (max-width: 400px) {
+            margin-bottom: 5%;
+        }
+    }
 }
 
 
