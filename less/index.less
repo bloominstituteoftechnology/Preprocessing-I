@@ -78,6 +78,18 @@ h1, h2, h3, h4, h5 {
 .container {
   width: 880+200px;
   margin: auto;
+
+  @media(max-width: 768px)
+  {
+    
+        width: 100%
+  }
+
+  @media(max-width: 400px)
+  {
+        width: 100%
+  }
+    
 }
 
 // Header Styles
@@ -85,16 +97,57 @@ h1, h2, h3, h4, h5 {
 header {
   width: 100%;
   display: flex;
+  @media(max-width: 768px)
+  {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+  }
+  @media(max-width: 400px)
+  {
+        justify-content: center; 
+        margin-bottom: 0px;
+        display:flex;
+  }
+       
+         
+    
 
   nav {
     margin-top: 5*10px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
+    @media(max-width: 400px)
+    {
 
+     
+        width: 100%;
+        display: flex; 
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+
+    
     a {
       text-decoration: none;
       color: @link-color;
+
+      @media(max-width: 400px)
+        {
+          width: 100%;
+          margin: 0;
+          display: block; 
+          text-align: center;
+          padding: 5% 0;
+          font-size: 1.5rem;
+          border-bottom: 1px solid gray;
+          border-top: 1px solid gray;
+        }
+    }
 
       &:hover {
         text-decoration: underline;
@@ -107,6 +160,12 @@ header {
   .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    @media(max-width: 768px)
+    {
+            flex-wrap: wrap;
+    }
+        
+  
   } 
 
 
@@ -165,7 +224,24 @@ header {
   .top-content {
     display: flex;
     justify-content: space-around;
+
+    @media(max-width: 400px)
+    {
+    .text-content{
+        width: 100%;
+        margin-top: 0;
+        
+        flex-direction: row;
+        flex-direction: column;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
   }
+  @media(max-width: 768px)
+  {
+
   .middle-img {
     display: block;
     margin: 30px auto;
@@ -177,13 +253,13 @@ header {
     p {
       padding-right: 20px;
     }
+    @media(max-width: 400px)
+    {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
-
-
-
-
-
 
 
 // Contact Styles
@@ -197,4 +273,15 @@ header {
 footer {
   text-align: center;
   margin: 40px 0 20px;
+  @media(max-width: 400px)
+  {
+
+  nav{
+    display: flex;
+    justify-content: space-around; 
+    width: 90%;
+    margin: 0 5%
+    }
+  }
+}
 }
