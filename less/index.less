@@ -4,6 +4,12 @@
    License: none (public domain)
 */
 
+@cta-button: green;
+@h4-purple: purple;
+@text-red: red;
+@footer: blue;
+@contact: brown;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -67,6 +73,14 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media(max-width: 500px) {
+        width: 100%;
+    }
+}
+
+h4 {
+    color: @h4-purple;
 }
 
 // Header Styles 
@@ -75,9 +89,21 @@ header {
     width: 100%;
     display: flex;
 
+    @media(max-width: 500px) {
+            flex-direction: column;
+            margin-top: 5%;
+    }
+
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        @media(max-width: 500px) {
+        display: block;
+        margin: 0 ;
+        align-self: center;
+        order: -1;
+        height: 4.5rem;
+        }
     }
 
      nav {
@@ -86,9 +112,25 @@ header {
         justify-content: space-between;
         display: flex;
 
+        @media(max-width: 500px) {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
         a {
             text-decoration: none;
             color: #b0b0b0 + #ffff00;
+            @media(max-width: 500px) {
+                border: .5rem solid black;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 0;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0 1rem 0;
+                font-size: 1.5rem;
+            }
 
             a:hover {
                 text-decoration: underline;
@@ -107,6 +149,18 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    color: @cta-button;
+
+    @media(max-width: 500px) {
+        display: block;
+        max-width: 100%
+    }
+
+        img{
+            margin: 3rem 0 0 3rem;
+            max-width: 100%;
+            margin-right: 15%;
+        }
 
     .cta-text {
         font-size: 72px;
@@ -118,6 +172,11 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media(max-width: 500px) {
+        margin: 0;
+        font-size: 5rem;
+        }
+
         button {
             border: 1px double black;
             font-size: 16px;
@@ -126,6 +185,11 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+
+            @media(max-width: 500px) {
+                font-size: 2rem;
+                width: 20rem;
+            }
 
             button:hover {
                 background: black;
@@ -146,19 +210,35 @@ header {
    font-size: 16px;
    line-height: 18px;
 
+   .text-content {
+       color: @text-red;
+   }
+
    .top-content {
         display: flex;
         justify-content: space-around;
+        
+        @media(max-width: 500px) {
+            display: block;
+        }
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
+
+        @media(max-width: 500px) {
+            max-width: 100%;;
+        }
     }
 
     .bottom-content {
         display: flex;
         justify-content: space-around;
+
+        @media(max-width: 500px) {
+            display: block;
+        }
 
         p {
             padding-right: 5 + 20px;
@@ -171,6 +251,7 @@ header {
 
 .contact p {
     margin: 15px 0;
+    color: @contact;
 }
 
 // Footer Styles 
@@ -178,4 +259,5 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @footer;
 }
