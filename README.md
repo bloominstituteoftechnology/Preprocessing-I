@@ -16,7 +16,7 @@ Lets get LESS working on an existing CSS project so we can see the power this ne
 
 * Fork and clone this repo to get started.
 * Once you have the repo on your local machine open terminal or git bash and ```cd``` into the project's root folder.
-* Now that you are in the projects root folder run ```less-watch-compiler less css index.less```.  **If you get errors here it is most likely because you didn't finish the prerequisites section.  Please make sure you installed your LESS watch compiler globally.**
+* Now that you are in the projects root folder run `.  **If you get errors here it is most likely because you didn't finish the prerequisites section.  Please make sure you installed your LESS watch compiler globally.**
 * At this point, the compiler should be up and running with a message in your terminal that says ```Watching directory for file changes.```.  This means your index.less file is now active and producing an index.css file after compiling.  Great work!  Go check out that index.html file now and your CSS should be working again.  
 
 ## Task 2 - Convert the existing CSS project into a LESS project
