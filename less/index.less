@@ -67,10 +67,13 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 // Color Scheme Variables
-@malachite: #00FF48;
+@san-felix: #255909;
 @deep-cerulean: #0971B2;
 
 // /* Header Styles */
@@ -80,6 +83,11 @@ header {
 
     width: 100%;
     display: flex;
+    @media (max-width: 768px) {
+        flex-flow: wrap-reverse;
+        justify-content: center;
+    }
+
     nav {
         margin-top: @header-margin-top; 
         width: 610px;
@@ -87,7 +95,7 @@ header {
         display: flex;
         a {
             text-decoration: none;
-            color: @malachite;
+            color: @san-felix;
             &:hover {
                 text-decoration: underline;
                 color: black;
@@ -97,6 +105,10 @@ header {
     .logo {
         align-self: flex-end;
         margin: (@header-margin-top - 12px) 0 0 91px;
+        @media (max-width: 768px) {
+            width: 40%;
+            margin: 5% 0 0 0;
+        }
     }
 }
 
