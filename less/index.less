@@ -124,13 +124,23 @@ header {
                 display: block;
                 text-align: center;
                 padding: 5% 0;
-                font-size: 2px;
+                font-size: 20px;
                 width: 100%;
                 border-bottom: 1px solid grey;
+                background: @accent-color;
+                color: black;
             }// media 400px
+            &:nth-child(1) {
+                @media(max-width: 400px) {
+                    border-top: 1px solid grey;
+                }
+            }
             &:hover {
                 text-decoration: underline;
                 color: @accent-color;
+                @media(max-width: 400px) {
+                    color: grey;
+                }
             }// hover
         }// a
     }// nav
@@ -177,7 +187,7 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
         @media(max-width: 400px) {
-            margin: 0 20% 50px 0;
+            margin: 0 38% 50px 0;
         }// media 400px
         h1 {
             @media(max-width: 768px) {
@@ -272,4 +282,7 @@ footer {
         margin: 2% auto;
         font-size: 16px;
     }// media 768px
+    @media(max-width: 400px) {
+        background: @accent-color;
+    }// media 400px
 }// footer
