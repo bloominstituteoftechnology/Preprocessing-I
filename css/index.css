@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,7 +121,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -148,42 +142,63 @@ h5 {
   width: 880px;
   margin: auto;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
 .container header {
   width: 100%;
   display: flex;
 }
-.container header nav ul {
+@media (max-width: 768px) {
+  .container header {
+    width: 100%;
+    display: flex;
+  }
+}
+.container header nav {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
 @media (max-width: 768px) {
-  .container header nav ul {
-    flex-direction: column;
+  .container header nav {
+    width: 100%;
+    display: flex;
   }
 }
-.container header nav ul li a {
+.container header nav a {
   text-decoration: none;
   color: #b0b0b0;
 }
-@media (max-width: 500px) {
-  .container header nav ul li a {
-    color: pink;
+@media (max-width: 768px) {
+  .container header nav a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: goldenrod;
   }
 }
-.container header nav ul li a:hover {
+.container header nav a:hover {
   text-decoration: underline;
-  color: gold;
+  color: black;
 }
-.container header .logo {
+.container .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
 .container .cta {
   display: flex;
-  margin-top: 36px;
+  margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .container .cta {
+    width: 100%;
+    display: flex;
+  }
 }
 .container .cta .cta-text {
   font-size: 72px;
@@ -195,9 +210,18 @@ h5 {
   align-items: center;
   margin: 0 82px 0 0;
 }
+@media (max-width: 768px) {
+  .container .cta .cta-text {
+    width: 100%;
+    display: flex;
+    color: navy;
+    font-size: 96px;
+    margin: auto;
+  }
+}
 .container .cta .cta-text button {
   border: 1px double black;
-  font-size: 8px;
+  font-size: 16px;
   background: white;
   width: 170px;
   height: 32px;
@@ -208,6 +232,11 @@ h5 {
   background: black;
   color: white;
 }
+@media (max-width: 768px) {
+  .container .cta img {
+    display: none;
+  }
+}
 .container .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -216,9 +245,23 @@ h5 {
   font-size: 16px;
   line-height: 18px;
 }
+@media (max-width: 768px) {
+  .container .main-content {
+    color: green;
+  }
+}
 .container .main-content .top-content {
   display: flex;
   justify-content: space-around;
+}
+.container .main-content .middle-img {
+  display: block;
+  margin: 30px auto;
+}
+@media (max-width: 768px) {
+  .container .main-content .middle-img {
+    max-width: 100%;
+  }
 }
 .container .main-content .bottom-content {
   display: flex;
@@ -230,7 +273,17 @@ h5 {
 .container .contact p {
   margin: 15px 0;
 }
+@media (max-width: 768px) {
+  .container .contact p {
+    color: green;
+  }
+}
 .container footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 768px) {
+  .container footer {
+    color: #dad920;
+  }
 }
