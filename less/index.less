@@ -151,9 +151,23 @@ h5 {
 }
 
 .container {
-  width: 880px;
-  margin: auto;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+
+  // @media (max-width: 768px) {
+  //   width: 100%;
+  // }
+  //
+  // @media (max-width: 768px) {
+  //   width: 100%;
+  // }
 }
+
+//  color variables
+@SilverChalice: #B0B0B0;
+@Bamboo: #DA6304;
+@Bahia: #A5CB0C;
 
 //Header Styles
 
@@ -164,7 +178,7 @@ header {
   //header nav
   nav {
     ul {
-      margin-top: 40px;
+      margin-top: 20px * 2;
       width: 610px;
       justify-content: space-between;
       display: flex;
@@ -172,7 +186,11 @@ header {
       li {
         a {
           text-decoration: none;
-          color: #b0b0b0;
+          color: @SilverChalice;
+
+          @media (max-width: 768px) {
+            color: @Bahia;
+          }
 
           &:hover {
             text-decoration: underline;
@@ -193,10 +211,14 @@ header {
 
 .cta {
   display: flex;
-  margin-top: 72px;
+  margin-top: 70px + 2;
   justify-content: flex-end;
 
   .cta-text {
+    @media (max-width: 768px) {
+      color: @Bamboo;
+    }
+
     font-size: 72px;
     text-align: center;
     letter-spacing: 5px;
