@@ -1,8 +1,7 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126 License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,17 +47,23 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
  
 
-
+@color-red: red;
+@color-teal: teal;
+@color-green: green;
 
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    
+}
+
+html {
     font-size: 62.5%;
 }
 
@@ -71,19 +76,47 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background: @color-teal;
+    @media (max-width: 768px){
+    
+        .contaner{
+            display: flex;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+        header {
+            width: 100%;
+            display:flex;
+            flex-wrap: wrap; 
+            height: 100%;
+            text-align: center; 
+            background: yellow; 
+        } 
+    }
+
+    @media (max-width: 700px) {
+        padding: 20%;
+    }
+    @media (max-width: 400px) {
+        padding: 5%;
+        background: blue;
+    }
 }
 
-/* Header Styles */
+// Header Styles
 
 header {
     width: 100%;
     display: flex;
+    background: @color-green;
 
     nav ul {
         margin-top: 40px; 
-        width: 305*2px;
+        width: 600px;
         justify-content: space-between;
         display: flex;
+        font-size: 1.6rem;
 
         li a {
             text-decoration: none;
@@ -91,7 +124,7 @@ header {
 
             &:hover {
                 text-decoration: underline;
-                color: black;
+                color: @color-red;
             }
         }
     }
@@ -107,7 +140,7 @@ header {
 
 
 
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
@@ -125,9 +158,9 @@ header {
         margin: 0 82px 0 0;
         border: 2px solid black;
         button {
-            border: 1px double black;
+            border: 1px double @color-red;
             font-size: 16px;
-            background: white;
+            background: @color-teal;
             width: 170px;
             height: 32px;
             margin-top: 10px;
@@ -143,7 +176,7 @@ header {
 
 
 
-/* Main Content Styles */
+// Main Content Styles
 
 .main-content {
    border-top: 2px solid black; 
@@ -175,13 +208,13 @@ header {
 
 
 
-/* Contact Styles */
+// Contact Styles
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
