@@ -67,6 +67,11 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+                
+    }
 }
 
 //Variables
@@ -79,17 +84,41 @@ h1, h2, h3, h4, h5 {
 
 header {
     width: 100%;
-    display: flex;
+    display: flex; 
 
+     @media (max-width: 768px) {
+        width: 100%
+    }
+
+    /*@media (max-width: 400px) {
+        flex-flow: wrap;
+        justify-content: center;
+    }
+*/
     nav {
         margin-top: 20px + 20px; // + operator example
         width: 61px * 10px; // * operator example
         justify-content: space-between;
         display: flex;
 
+        /*@media (max-width: 400px) {
+            width: 100%;
+            flex-flow: column;
+            align-items: center;
+            margin:0;
+        }*/
+
         a {
             text-decoration: none;
             color: @a-color;
+
+           /* @media (max-width: 400px) {
+                width: 100%;
+                display:block;
+                padding: 20px;
+                text-align: center;
+                font-size: 20px;
+            }*/
 
             &:hover {
                 text-decoration: underline;
@@ -101,6 +130,16 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+            width: 30%;
+        }
+
+        /*@media (max-width: 400px) {
+            max-width: 100%;
+            margin: 20px 0;
+            order: -1;
+        }*/
     }//.logo
 }//header
 
@@ -111,6 +150,16 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+   @media (max-width: 768px) {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /*@media (max-width: 400px) {
+        flex-flow: column;
+        align-items: center;
+    }*/
+
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -120,6 +169,21 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+
+        @media (max-width: 768px) {
+            margin: 0 4% 0 0;
+            font-size: 50px;
+        }
+
+      /*  @media (max-width: 400px) {
+            margin: 0 0 50px 0;
+        }*/
+
+        } // .cta image
+
+       /* @media (max-width: 400px) {
+            max-width: 80%;
+        }*/
 
         button {
             border: 1px double @border-color;
@@ -137,6 +201,13 @@ header {
             }//&:hover
         }//button
     }//.cta-text
+
+    img {
+        @media (max-width: 768px) {
+            max-width: 53%;
+            height: auto;
+            //display: none;
+        }
 }//.cta
 
 
@@ -155,14 +226,29 @@ header {
         justify-content: space-around;
     }//.top-content
 
+  /*  @media (max-width: 400px) {
+        flex-flow: column;
+        height: 300px;
+    }*/
+
     .middle-img {
         display: block;
         margin: 30px auto;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
     }//.middle-img
 
     .bottom-content {
         display: flex;
         justify-content: space-around;
+
+      /*  @media (max-width: 400px) {
+            flex-flow: wrap;
+            align-content: space-between;
+            height: 440px;
+        }*/
 
         p {
             padding-right: 20px;
