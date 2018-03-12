@@ -142,9 +142,33 @@ h5 {
   width: 880px;
   margin: auto;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 400) {
+  .container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    height: 100%;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 header nav {
   margin-top: 40px;
@@ -152,22 +176,76 @@ header nav {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav {
+    margin: 40px 7% 0 3%;
+    width: 50%;
+    display: flex;
+    font-size: 18px;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    margin: 0;
+    align-items: center;
+  }
+}
 header nav a {
   text-decoration: none;
   color: #b0b0b0;
 }
+@media (max-width: 768px) {
+  header nav a {
+    margin-right: 8%;
+  }
+}
+@media (max-width: 400px) {
+  header nav a {
+    margin: 0;
+    display: block;
+    text-align: center;
+    padding: 5% 0;
+    font-size: 2px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+  }
+}
 header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: #9FEAD2;
 }
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768) {
+  header .logo {
+    align-self: flex-end;
+  }
+}
+@media (max-width: 400px) {
+  header .logo {
+    max-width: 100%;
+    margin: 20px 0;
+    order: -1;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+  background: #F1D5EB;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -190,7 +268,7 @@ header .logo {
 }
 .cta .cta-text button:hover {
   background: black;
-  color: white;
+  color: #9FEAD2;
 }
 .main-content {
   border-top: 2px solid black;
@@ -211,6 +289,9 @@ header .logo {
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+.contact {
+  background: #F1D5EB;
 }
 .contact p {
   margin: 15px 0;
