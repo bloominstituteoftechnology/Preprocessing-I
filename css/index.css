@@ -147,9 +147,23 @@ h5 {
   font-size: 6rem;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
+  width: 100%;
   margin: auto;
   background-color: tan;
+}
+@media (max-width: 768px) {
+  .container {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    background-color: yellow;
+    flex-wrap: wrap;
+  }
 }
 header {
   width: 100%;
@@ -161,6 +175,11 @@ header nav {
   width: 610px;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 400px) {
+  header nav {
+    flex-flow: column wrap;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -179,7 +198,12 @@ header .logo {
   margin-top: 72px;
   justify-content: flex-end;
 }
-.cta .cta-text {
+@media (max-width: 400px) {
+  .cta {
+    flex-direction: column;
+  }
+}
+.cta-text {
   font-size: 72px;
   text-align: center;
   letter-spacing: 5px;
@@ -189,7 +213,12 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
-.cta .cta-text button {
+@media (max-width: 768px) {
+  .cta-text {
+    margin: 0 auto;
+  }
+}
+.cta-text .cta-text button {
   border: 1px double black;
   font-size: 16px;
   background: tan;
@@ -199,7 +228,7 @@ header .logo {
   cursor: pointer;
   color: blue;
 }
-.cta .cta-text button:hover {
+.cta-text .cta-text button:hover {
   color: black;
 }
 .main-content {
@@ -209,6 +238,11 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+}
+@media (max-width: 768px) {
+  .main-content {
+    color: blue;
+  }
 }
 .main-content .top-content {
   display: flex;
@@ -224,6 +258,7 @@ header .logo {
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+  width: 80%;
 }
 .contact p {
   margin: 15px 0;
@@ -231,6 +266,6 @@ header .logo {
 }
 footer {
   text-align: center;
-  margin: 40px 0 20px;
+  margin: 0 auto;
   font-size: 2rem;
 }

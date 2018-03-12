@@ -72,11 +72,24 @@ h1, h2, h3, h4, h5 {
 @tan: tan;
 @black: black;
 @blue: blue;
+@yellow: yellow;
 
 .container {
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     margin: auto;
     background-color: @tan;
+
+    @media(max-width: 768px) {
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media(max-width: 400px) {
+        background-color: @yellow;
+        flex-wrap: wrap;
+    }
 }
 
 // Header Styles 
@@ -91,7 +104,10 @@ header {
         width: 610px;
         justify-content: space-between;
         display: flex;
-        
+
+        @media(max-width: 400px) {
+            flex-flow: column wrap;
+        }
         a {
             text-decoration: none;
             color: @blue;
@@ -115,6 +131,11 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media(max-width: 400px) {
+        flex-direction: column;
+    }
+}
+
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -123,8 +144,11 @@ header {
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 82px 0 0;
-    }
+        margin: 0 82px 0 0;   
+        
+        @media(max-width: 768px) {
+        margin: 0 auto;      
+}
     
     .cta-text button {
             border: 1px double black;
@@ -152,6 +176,10 @@ header {
    font-size: 16px;
    line-height: 18px;
 
+   @media(max-width: 768px) {
+    color: @blue;
+   }
+
    .top-content {
     display: flex;
     justify-content: space-around;
@@ -168,6 +196,7 @@ header {
     .middle-img {
         display: block;
         margin: 30px auto;
+        width: 80%;
    }
 }
 
@@ -182,6 +211,6 @@ header {
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 0 auto;
     font-size: 1rem * 2;
 }
