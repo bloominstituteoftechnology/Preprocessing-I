@@ -65,6 +65,9 @@ table {
 @cerise-red: #EB2D80;
 @mauvelous: #F38C94;
 
+//testing variable height
+@height: width;
+
 // Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
@@ -192,15 +195,19 @@ header {
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 25px;
     justify-content: space-around;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
 
     @media (max-width: 400px) {
         flex-direction: column;
     }
 
     .cta-text {
-        font-size: 72px;
+        font-size: 60px;
         text-align: center;        
         display: flex;
         justify-content: center;
@@ -241,10 +248,11 @@ header {
             }
         }//button
     }//cta-text
-
     img {
-        @media (max-width: 768px) {
-            width: 50%;
+        padding-top: 30px;
+
+        @media(max-width: 400px) {
+            width: 100%;
         }
     }
 }//cta
