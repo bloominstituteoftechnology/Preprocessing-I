@@ -1,8 +1,21 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//   v2.0 | 20110126
+//   License: none (public domain)
+//
+
+// Variables for LESS
+
+@tan: tan;
+@black: black;
+@blue: blue;
+@yellow: yellow;
+@green: green;
+
+// Use of escaping to use an arbitrary string as a property as long as it has the syntax of ~"any string"
+
+@m768: ~"(max-width: 768px)";
+@m400: ~"(max-width: 400px)";
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -69,17 +82,11 @@ h1, h2, h3, h4, h5 {
     font-size: 30rem / 5;
 }
 
-@media(max-width: 400px) {
+@media @m400 {
     h4 {
         font-size: 2rem;
     }
 }
-
-@tan: tan;
-@black: black;
-@blue: blue;
-@yellow: yellow;
-@green: green;
 
 .container {
     max-width: 880px;
@@ -87,13 +94,13 @@ h1, h2, h3, h4, h5 {
     margin: auto;
     background-color: @tan;
 
-    @media(max-width: 768px) {
+    @media @m768 {
         background-color: @green;
         display: flex;
         flex-direction: column;
     }
 
-    @media(max-width: 400px) {
+    @media @m400 {
         background-color: @yellow;
         flex-wrap: wrap;
     }
@@ -112,7 +119,7 @@ header {
         justify-content: space-between;
         display: flex;
 
-        @media(max-width: 400px) {
+        @media @m400 {
             flex-flow: column wrap;
         }
         a {
@@ -138,7 +145,7 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
-    @media(max-width: 400px) {
+    @media @m400 {
         flex-direction: column;
         }
     }
@@ -152,7 +159,7 @@ header {
         align-items: center;
         margin: 0 82px 0 0;   
         
-        @media(max-width: 768px) {
+        @media @m768 {
         margin: 0 auto;      
     }
     .cta-text button {
@@ -181,11 +188,11 @@ header {
    font-size: 16px;
    line-height: 18px;
 
-   @media(max-width: 768px) {
+   @media @m768 {
     color: @blue;
    }
 
-   @media(max-width: 400px) {
+   @media @m400 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -199,7 +206,7 @@ header {
     justify-content: space-around;
    }
 
-   @media(max-width: 400px) {
+   @media @m400 {
     justify-content: column;
    }
 
