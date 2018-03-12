@@ -65,13 +65,24 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@reddish: red;
+@bluish: lightblue;
+@greenish: green;
+@yellowish: yellow;
+@orangish: orange;
+@blackish: black;
+@pinkish: pink;
+@brightbluish: blue;
+
 .container {
     width: 880px;
     margin: auto;
+    background-color: @bluish;
 
     header {
         width: 100%;
         display: flex;
+        background-color: @orangish;
 
         nav {
             margin-top: 40px; 
@@ -81,11 +92,11 @@ h1, h2, h3, h4, h5 {
 
             a {
                 text-decoration: none;
-                color: #b0b0b0;
+                color: @blackish;
 
-                a:hover {
+                &:hover {
                     text-decoration: underline;
-                    color: black;
+                    color: @brightbluish;
                 }
             }
         }
@@ -113,15 +124,15 @@ h1, h2, h3, h4, h5 {
             button {
                 border: 1px double black;
                 font-size: 16px;
-                background: white;
+                background: @pinkish;
                 width: 170px;
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
 
-                button:hover {
-                    background: black;
-                    color: white;
+                &:hover {
+                    background: @orangish;
+                    color: @brightbluish;
                 }
             }
         }        
@@ -154,14 +165,16 @@ h1, h2, h3, h4, h5 {
             }
         }
     } //main-content
-    
+
      .contact {
+        background-color: @orangish;
          p {
             margin: 15px 0;
          }
     } //contact
 
     footer {
+        background-color: @pinkish;
         text-align: center;
         margin: 40px 0 20px;
     }
