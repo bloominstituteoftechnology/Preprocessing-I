@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//   v2.0 | 20110126
+//   License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -64,18 +64,56 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@button-color: #341115;
+
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%; 
+    }
 }
 
-/* Header Styles */
+// Header Styles 
 
 header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 680px) and (min-width: 401px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (max-width: 400px) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
     nav {
+        @media (max-width: 768px) {
+            width: 59%; /*450/768*/
+            justify-content: space-around;
+        }
+
+        @media (max-width: 680px) and (min-width: 401px) {
+            width: 100%;
+        }
+
+        @media (max-width: 400px) {
+            justify-content: space-around;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
 
         ul {
             margin-top: 40px; 
@@ -90,7 +128,29 @@ header {
                 &:hover {
                     text-decoration: underline;
                     color: black;
+
+                    @media (max-width: 400px) {
+                        background: gray;
+                        text-decoration: none;
+                    }
                 }
+
+                @media (max-width: 680px) and (min-width: 401px) {
+                    font-size: 1.5rem;
+                }
+
+                @media (max-width: 400px) {
+                    border-bottom: 1px solid #b0b0b0;
+                    width: 100%;
+                    text-align: center;
+                    padding: 20px 0;
+                    font-size: 1.9rem;
+                }
+            }
+            a:nth-of-type(1) {
+                 @media (max-width: 400px) {
+                    border-top: 1px solid #b0b0b0;
+                 }
             }
         }
     }
@@ -98,21 +158,48 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+            margin: 4% 0 0 7%; /*28/768 & 76/768*/
+            max-width: 100%;
+            height: auto; 
+        }
+
+        @media (max-width: 680px) and (min-width: 401px) {
+            max-width: 100%;
+            height: auto;
+            align-self: center;
+            order: -1;
+        }
+
+        @media (max-width: 400px) {
+            order: -1;
+            margin-left: 30%;   /* see if this can be adjusted some other way*/ /*120/400*/ 
+            max-width: 100%;
+            height: auto; 
+        }
     }
 }
 
 
 
-
-
-
-
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles 
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+        width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 72px;
+    }
 
     .cta-text {
         font-size: 72px;
@@ -124,10 +211,20 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media (max-width: 768px) {
+            font-size: 6.2rem;
+            margin: 0;
+        }
+
+        @media (max-width: 400px) {
+            margin: 0 .8% 0 0; /*3/400*/
+        }
+
         button {
             border: 1px double black;
             font-size: 16px;
-            background: white;
+            background:@button-color;
+            color: white;
             width: 170px;
             height: 32px;
             margin-top: 10px;
@@ -137,11 +234,31 @@ header {
                 background: black;
                 color: white;
             }
+
+            @media (max-width: 680px) and (min-width: 401px) {
+                height: auto;
+            }
+        }
+    }
+    img {
+        @media (max-width: 768px) {
+        max-width: 100%;
+        height: auto;
+        }
+
+        @media (max-width: 680px) and (min-width: 401px) {
+            display: none;
+        }
+
+        @media (max-width: 400px) {
+            width: 82%;
+            margin-top: 40px;
+            align-self: center;
         }
     }
 }
 
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
@@ -151,14 +268,40 @@ header {
    font-size: 16px;
    line-height: 18px;
 
+   @media (max-width: 768px) {
+        padding: 2.5% 2.5%; /*19/768*/
+        width: 100%;
+   }
+
+   @media (max-width: 400px) {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        width: 95%;
+        margin-left: 3%; /*10/380*/
+   }
+
    .top-content {
         display: flex;
         justify-content: space-around;
+
+        @media (max-width: 400px) {
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .text-content {
+            @media (max-width: 400px) {
+                margin-bottom: 15px;
+            }
+        }
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
+       
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 
     .bottom-content {
@@ -168,20 +311,33 @@ header {
         p {
             padding-right: 20px;
         }
+        @media (max-width: 400px) {
+            flex-direction: column;
+        }
+        .text-content {
+            @media (max-width: 400px) {
+                margin-bottom: 15px;
+            }
+        }
     }
 }
 
-/* Contact Styles */
+// Contact Styles 
 
 .contact { 
+    @media (max-width: 768px) {
+        padding: 5% 2.5%; /*35/768 & 19/768*/
+    }
+
     p {
         margin: 15px 0;
     }
 }
 
-/* Footer Styles */
+// Footer Styles 
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    font-size: 1rem;
 }
