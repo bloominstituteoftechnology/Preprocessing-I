@@ -142,9 +142,33 @@ h5 {
   width: 1080px;
   margin: auto;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    justify-content: center;
+    margin-bottom: 0px;
+    display: flex;
+  }
 }
 header nav {
   margin-top: 50px;
@@ -152,17 +176,44 @@ header nav {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
 header nav a {
   text-decoration: none;
   color: #9E583D;
 }
-header nav a:hover {
+@media (max-width: 400px) {
+  header nav a {
+    width: 100%;
+    margin: 0;
+    display: block;
+    text-align: center;
+    padding: 5% 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+  }
+}
+header nav:hover {
   text-decoration: underline;
   color: black;
 }
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    flex-wrap: wrap;
+  }
 }
 .cta {
   display: flex;
@@ -206,21 +257,46 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
-.main-content .middle-img {
-  display: block;
-  margin: 30px auto;
+@media (max-width: 400px) {
+  .main-content .top-content .text-content {
+    width: 100%;
+    margin-top: 0;
+    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+  }
 }
-.main-content .bottom-content {
-  display: flex;
-  justify-content: space-around;
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    display: block;
+    margin: 30px auto;
+  }
+  .main-content .bottom-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .main-content .bottom-content p {
+    padding-right: 20px;
+  }
 }
-.main-content .bottom-content p {
-  padding-right: 20px;
+@media (max-width: 768px) and (max-width: 400px) {
+  .main-content .bottom-content {
+    display: flex;
+    flex-direction: column;
+  }
 }
-.contact p {
+.main-content .contact p {
   margin: 15px 0;
 }
-footer {
+.main-content footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 400px) {
+  .main-content footer nav {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 5%;
+  }
 }
