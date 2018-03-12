@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+//Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -56,120 +56,183 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
-}
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
+    h1, h2, h3, h4, h5 {
+        font-family: 'Bangers', cursive;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
 
-.container {
-    width: 880px;
-    margin: auto;
-}
+    .container {
+        width: 880px;
+        margin: auto;
 
-/* Header Styles */
+        @media (max-width: 768px){
+            width: 100%;
+        }
+    }
+    
+}
+//colors 
+@torea-bay: #0E429A;
+@dove-gray: #616161 + 111;
+@firefly: #0D182B;
+@tuna: #353940 * 2;
+@aqua-forest: #5B9F78;
+@cardinal: #C5164C + 222;
+
+
+
+//Header Styles
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media (max-width: 768px) {
+            width: 90%;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        a {
+            text-decoration: none;
+            color: @aqua-forest;
 
-/* Call To Action (CTA) Styles */
+            &:hover {
+                text-decoration: underline;
+                color: @firefly;
+            } //link hovers
+        } //links
+    } //navigation bar
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+            order: -1;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+    } //logo
+} //header
+
+
+
+//Call To Action (CTA) Styles
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media (max-width: 768px) {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+        @media (max-width: 768px) {
+            margin: 0;
+        }
 
-/* Main Content Styles */
+        button {
+            border: 1px double @torea-bay;
+            font-size: 16px;
+            background: @cardinal;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: @tuna;
+                color: @dove-gray;
+            } //button hover
+        }//button
+    }//cta text
+    img {
+        @media (max-width: 768px) {
+            margin-top: 20px; 
+        }
+    }
+}//cta
+
+// Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @torea-bay; 
+   border-bottom: 2px solid @torea-bay;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
+   @media (max-width: 768px) {
+    margin: 50px 2% 35px;
+   }
+
+   .top-content {
     display: flex;
     justify-content: space-around;
-}
+    }//top content
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }//middle image
+    
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        p {
+            padding-right: 20px;
+        }//bottom content paragraph
+    }//bottom content
+}//main content
 
-/* Contact Styles */
+
+//Contact Styles
+h4 {
+    @media (max-width: 768px) {
+        margin: 20px 2%;
+    }
+}
 
 .contact p {
     margin: 15px 0;
+
+    @media (max-width: 768px) {
+        margin: 20px 2%;
+    }
 }
 
-/* Footer Styles */
-
+// Footer Styles
 footer {
     text-align: center;
     margin: 40px 0 20px;

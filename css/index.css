@@ -90,7 +90,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,7 +125,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -135,47 +133,82 @@ body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
+html h1,
+body h1,
+html h2,
+body h2,
+html h3,
+body h3,
+html h4,
+body h4,
+html h5,
+body h5 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-.container {
+html .container,
+body .container {
   width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 768px) {
+  html .container,
+  body .container {
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
 }
-header nav ul {
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+header nav {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
-header nav ul li a {
-  text-decoration: none;
-  color: #b0b0b0;
+@media (max-width: 768px) {
+  header nav {
+    width: 90%;
+  }
 }
-header nav ul li a:hover {
+header nav a {
+  text-decoration: none;
+  color: #5B9F78;
+}
+header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: #0D182B;
 }
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 50px;
+    flex-flow: column;
+    align-items: center;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -187,27 +220,41 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+  }
+}
 .cta .cta-text button {
-  border: 1px double black;
+  border: 1px double #0E429A;
   font-size: 16px;
-  background: white;
+  background: #fff4ff;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: #6a7280;
+  color: #d0d0d0;
 }
-/* Main Content Styles */
+@media (max-width: 768px) {
+  .cta img {
+    margin-top: 20px;
+  }
+}
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #0E429A;
+  border-bottom: 2px solid #0E429A;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+}
+@media (max-width: 768px) {
+  .main-content {
+    margin: 50px 2% 35px;
+  }
 }
 .main-content .top-content {
   display: flex;
@@ -217,6 +264,11 @@ header .logo {
   display: block;
   margin: 30px auto;
 }
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
+}
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
@@ -224,11 +276,19 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
+@media (max-width: 768px) {
+  h4 {
+    margin: 20px 2%;
+  }
+}
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
+@media (max-width: 768px) {
+  .contact p {
+    margin: 20px 2%;
+  }
+}
 footer {
   text-align: center;
   margin: 40px 0 20px;
