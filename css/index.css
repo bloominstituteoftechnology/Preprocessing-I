@@ -157,15 +157,41 @@ header {
     justify-content: center;
   }
 }
+@media (max-width: 400px) {
+  header {
+    flex-flow: column;
+    padding: 0;
+  }
+}
 header nav {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav {
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+    margin: 5% 0;
+    border-top: 1px solid gray;
+  }
+}
 header nav a {
   text-decoration: none;
   color: #255909;
+}
+@media (max-width: 400px) {
+  header nav a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 6% 0;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 header nav a:hover {
   text-decoration: underline;
@@ -179,6 +205,12 @@ header .logo {
   header .logo {
     width: 40%;
     margin: 5% 0 0 0;
+  }
+}
+@media (max-width: 400px) {
+  header .logo {
+    margin: 5% auto;
+    order: -1;
   }
 }
 .cta {
@@ -206,7 +238,7 @@ header .logo {
 }
 @media (max-width: 768px) {
   .cta .cta-text {
-    margin-bottom: 8%;
+    margin: 8% 0;
   }
 }
 .cta .cta-text button {
