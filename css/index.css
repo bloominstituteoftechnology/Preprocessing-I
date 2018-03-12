@@ -149,15 +149,43 @@ h5 {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    max-width: 400px;
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 600px) {
+  header {
+    margin: 1% auto;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+}
+header nav {
+  width: 100%;
+}
 header nav ul {
   margin-top: 40px;
-  width: 610px;
+  width: 90%;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header nav ul li a {
   text-decoration: none;
@@ -165,7 +193,11 @@ header nav ul li a {
 }
 @media (max-width: 768px) {
   header nav ul li a {
+    width: 100%;
     color: #A5CB0C;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin: 0;
   }
 }
 header nav ul li a:hover {
@@ -174,12 +206,15 @@ header nav ul li a:hover {
 }
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 2%;
 }
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+.cta img {
+  zoom: 60%;
 }
 .cta .cta-text {
   font-size: 72px;
@@ -223,6 +258,7 @@ header .logo {
   justify-content: space-around;
 }
 .main-content .middle-img {
+  max-width: 99%;
   display: block;
   margin: 30px auto;
 }
@@ -241,4 +277,9 @@ header .logo {
 footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 768px) {
+  footer {
+    color: #A5CB0C;
+  }
 }

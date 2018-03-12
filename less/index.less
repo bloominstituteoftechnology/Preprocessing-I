@@ -155,13 +155,15 @@ h5 {
   width: 100%;
   margin: 0 auto;
 
-  // @media (max-width: 768px) {
-  //   width: 100%;
-  // }
-  //
-  // @media (max-width: 768px) {
-  //   width: 100%;
-  // }
+  @media (max-width: 768px) {
+    max-width: 768px;
+    width: 100%;
+  }
+
+  @media (max-width: 400px) {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 
 //  color variables
@@ -175,13 +177,25 @@ header {
   width: 100%;
   display: flex;
 
+  @media (max-width: 600px) {
+    margin: 1% auto;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+
   //header nav
   nav {
+    width: 100%;
+
     ul {
       margin-top: 20px * 2;
-      width: 610px;
+      width: 90%;
       justify-content: space-between;
       display: flex;
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       li {
         a {
@@ -189,7 +203,11 @@ header {
           color: @SilverChalice;
 
           @media (max-width: 768px) {
+            width: 100%;
             color: @Bahia;
+            text-align: center;
+            border-bottom: 1px solid gray;
+            margin: 0;
           }
 
           &:hover {
@@ -203,7 +221,7 @@ header {
   // header logo
   .logo {
     align-self: flex-end;
-    margin: 28px 0 0 91px;
+    margin: 28px 0 0 2%;
   }
 }
 
@@ -214,6 +232,9 @@ header {
   margin-top: 70px + 2;
   justify-content: flex-end;
 
+  img {
+    zoom: 60%;
+  }
   .cta-text {
     @media (max-width: 768px) {
       color: @Bamboo;
@@ -261,6 +282,7 @@ header {
   }
 
   .middle-img {
+    max-width: 99%;
     display: block;
     margin: 30px auto;
   }
@@ -284,6 +306,9 @@ header {
 /* Footer Styles */
 
 footer {
+  @media (max-width: 768px) {
+    color: @Bahia;
+  }
   text-align: center;
   margin: 40px 0 20px;
 }
