@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,12 +121,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
 html,
 body {
+  font-size: 62.5%;
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -145,52 +140,132 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  width: 100%;
+  max-width: 880px;
   margin: auto;
 }
-/* Header Styles */
+@media (max-width: 768) {
+  .container {
+    max-width: 768px;
+    width: 100%;
+  }
+}
+@media (max-width: 400) {
+  .container {
+    max-width: 400px;
+    width: 100%;
+  }
+}
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    margin-top: 3%;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+header nav {
+  width: 100%;
+}
 header nav ul {
   margin-top: 40px;
-  width: 610px;
-  justify-content: space-between;
+  min-width: 69%;
+  width: 100%;
+  justify-content: space-around;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid gray;
+  }
+  header nav ul li:hover {
+    background: gray;
+  }
+}
 header nav ul li a {
+  font-size: 1.6rem;
   text-decoration: none;
   color: #b0b0b0;
 }
 header nav ul li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: black;
+}
+@media (max-width: 400px) {
+  header nav ul li a {
+    width: 100%;
+    height: auto;
+    padding: 5% 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+  header nav ul li a:hover {
+    color: white;
+  }
+}
+@media (max-width: 400px) {
+  header nav ul li:nth-of-type(6) {
+    border-bottom: 1px solid gray;
+  }
 }
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 10%;
 }
-/* Call To Action (CTA) Styles */
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    margin: 0;
+  }
+}
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
 }
+@media (max-width: 768px) {
+  .cta {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 .cta .cta-text {
-  font-size: 72px;
+  font-size: 7.2rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+  margin: 0 10% 0 0;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    font-size: 5.5rem;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: #341115;
+  color: white;
   width: 170px;
   height: 32px;
   margin-top: 10px;
@@ -200,7 +275,15 @@ header .logo {
   background: black;
   color: white;
 }
-/* Main Content Styles */
+.cta img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 400px) {
+  .cta img {
+    display: none;
+  }
+}
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -213,23 +296,66 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .top-content {
+    flex-direction: column;
+  }
+}
+.main-content .top-content .text-content {
+  padding: 1%;
+}
+@media (max-width: 400px) {
+  .main-content .top-content .text-content {
+    margin-bottom: 6%;
+  }
+}
 .main-content .middle-img {
+  width: 100%;
+  height: auto;
   display: block;
   margin: 30px auto;
+}
+@media (max-width: 400px) {
+  .main-content .middle-img {
+    margin: 0;
+  }
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .bottom-content p {
-  padding-right: 20px;
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-direction: column;
+  }
 }
-/* Contact Styles */
+.main-content .bottom-content .text-content {
+  padding: 0 1%;
+}
+@media (max-width: 400px) {
+  .main-content .bottom-content .text-content {
+    margin-bottom: 6%;
+  }
+}
+.main-content .bottom-content .text-content:nth-of-type(1) {
+  margin-top: 6%;
+}
+.contact {
+  font-size: 1.6rem;
+  margin-left: 1%;
+}
+@media (max-width: 400px) {
+  .contact {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+}
 .contact p {
   margin: 15px 0;
 }
-/* Footer Styles */
 footer {
   text-align: center;
   margin: 40px 0 20px;
+  font-size: 1.6rem;
 }
