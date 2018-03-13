@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html,
 body,
 div,
@@ -90,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -126,9 +121,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
 }
 html,
 body {
@@ -141,29 +138,55 @@ h3,
 h4,
 h5 {
   font-family: 'Bangers', cursive;
-  letter-spacing: 1px;
+  letter-spacing: 5px;
   margin-bottom: 10px;
+  font-size: 6rem;
+}
+@media (max-width: 400px) {
+  h4 {
+    font-size: 2rem;
+  }
 }
 .container {
-  width: 880px;
+  max-width: 880px;
+  width: 100%;
   margin: auto;
+  background-color: tan;
 }
-/* Header Styles */
+@media (max-width: 768px) {
+  .container {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    background-color: yellow;
+    flex-wrap: wrap;
+  }
+}
 header {
   width: 100%;
   display: flex;
+  font-size: 2rem;
 }
-header nav ul {
+header nav {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
-header nav ul li a {
-  text-decoration: none;
-  color: #b0b0b0;
+@media (max-width: 400px) {
+  header nav {
+    flex-flow: column wrap;
+  }
 }
-header nav ul li a:hover {
+header nav a {
+  text-decoration: none;
+  color: blue;
+}
+header nav a:hover {
   text-decoration: underline;
   color: black;
 }
@@ -171,11 +194,15 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
-/* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 400px) {
+  .cta {
+    flex-direction: column;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -187,20 +214,24 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0 auto;
+  }
+}
 .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
+  background: tan;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+  color: blue;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  color: black;
 }
-/* Main Content Styles */
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -209,13 +240,29 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
+@media (max-width: 768px) {
+  .main-content {
+    color: blue;
+  }
+}
+@media (max-width: 400px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-size: 1.5rem;
+  }
+}
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .middle-img {
-  display: block;
-  margin: 30px auto;
+@media (max-width: 400px) {
+  .main-content {
+    justify-content: column;
+  }
 }
 .main-content .bottom-content {
   display: flex;
@@ -224,12 +271,17 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-/* Contact Styles */
+.main-content .middle-img {
+  display: block;
+  margin: 30px auto;
+  width: 80%;
+}
 .contact p {
   margin: 15px 0;
+  font-size: 2rem;
 }
-/* Footer Styles */
 footer {
   text-align: center;
-  margin: 40px 0 20px;
+  margin: 0 auto;
+  font-size: 2rem;
 }
