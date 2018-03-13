@@ -1,8 +1,11 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// Hello David!
+// git remote -v test
+// Hey Ilho!!!
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +27,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +51,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -56,6 +59,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background-color: @backgroundColor;
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,113 +68,358 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+// Color Scheme Variables
+
+// Desktop
+@backgroundColor: #000000;
+@containerColor: #262626;
+@header: #1e1e1e;
+@navTextColor: #767676;//#b0b0b0
+@navTextColorHover: lighten(@navTextColor, 50%);
+@textColor: #ffffff;
+@buttonBorder: #ffffff;
+@buttonBackground: #4b4b4b;
+@buttonHover: darken(@buttonBackground, 20%);
+@buttonHoverBackground: lighten(@buttonBackground, 20%);
+@borderTop: #000000;
+@borderBottom: #000000;
+
+
+// Tablet
+@backgroundColor-medium: #f6f6f6;
+@containerColor-medium: #ffffff;
+@header-medium: #1b2f53;
+@navTextColor-medium: #aac1d6;//#b0b0b0
+@navTextColorHover-medium: lighten(@navTextColor, 20%);
+@textColor-medium: #000000;
+@buttonBorder-medium: #000000;
+@buttonBackground-medium: #f4f4f4;
+@buttonHover-medium: lighten(@buttonBackground, 20%);
+@buttonHoverBackground-medium: darken(@buttonBackground, 20%);
+@borderTop-medium: #000000;
+@borderBottom-medium: #000000;
+
+
+// Mobile
+@backgroundColor-small: #000000;
+@containerColor-small: #262626;
+@header-small: #1e1e1e;
+@navTextColor-small: #767676;//#b0b0b0
+@navTextColorHover-small: lighten(@navTextColor, 50%);
+@textColor-small: #ffffff;
+@buttonBorder-small: #ffffff;
+@buttonBackground-small: #4b4b4b;
+@buttonHover-small: darken(@buttonBackground, 20%);
+@buttonHoverBackground-small: lighten(@buttonBackground, 20%);
+@borderTop-small: #000000;
+@borderBottom-small: #000000;
+
+
+
 .container {
+    width: 100%;
     width: 880px;
     margin: auto;
-}
+    background: @containerColor;
 
-/* Header Styles */
+    @media(max-width: 768px) {
+       background: @containerColor-medium;
+       width: 100%;
+    }
 
-header {
-    width: 100%;
-    display: flex;
-}
+    @media(max-width: 400px) {
+        background: @containerColor-small;
+    }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    // Header Styles
+    header {
+        width: 100%;
+        display: flex;
+        background: @header;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        @media(max-width: 768px) {
+            background: @header-medium;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media (max-width: 750px) {
+            flex-wrap: wrap;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        @media(max-width: 400px) {
+            background: @header-small;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-/* Call To Action (CTA) Styles */
+        nav {
+            margin-top: 4*10px; 
+            width: 600+10px;
+            justify-content: space-between;
+            display: flex;
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+            @media (max-width: 768px) {
+                width: 59%;
+                margin-left: 3%;
+            }
+        
+            @media (max-width: 750px) {
+                width: 100%;
+            }
+        
+            @media (max-width: 400px) {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                align-items: center;
+            }
+        }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+        a {
+            text-decoration: none;
+            color: @navTextColor;
 
-.cta .cta-text button {
-    border: 1px double black;
+            @media(max-width: 768px) {
+                color: @navTextColor-medium;
+            }
+
+            @media(max-width: 400px) {
+                color: @navTextColor-small;
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 1px solid #ffffff;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+            color: @navTextColorHover;
+
+            @media(max-width: 768px) {
+                color: @navTextColorHover-medium;
+            }
+
+            @media(max-width: 400px) {
+                color: @navTextColorHover-small;
+            }
+        }
+
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+
+            @media (max-width: 768px) {
+                margin: 28px 0 0 8%;
+            }
+        
+            @media (max-width: 750px) {
+                order: -1;
+                display: block;
+                margin: 30px auto 0;
+            }
+    
+            @media (max-width: 400px) {
+                margin: 20px 0;
+            }
+        }
+    }// header
+
+
+
+    // Call To Action (CTA) Styles
+
+    .cta {
+        display: flex;
+        margin-top: 72px;
+        justify-content: flex-end;
+
+        @media (max-width: 750px) {
+            justify-content: center;
+        }
+        
+        @media (max-width: 400px) {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-text {
+            font-size: 72px - 10px;
+            color: @textColor;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 82px 0 0;
+
+            @media(max-width: 768px) {
+                color: @textColor-medium;
+                margin: 0 5% 0 0;
+            }
+
+            @media(max-width: 400px) {
+                color: @textColor-small;
+                margin: 0;
+            }
+
+            h1 {
+      
+                @media (max-width: 768px) {
+                    letter-spacing: 0;
+                }
+              }
+
+            button {
+                border: 1px double @buttonBorder;
+                font-family: 'Titillium Web', sans-serif;
+                font-size: 16px;
+                color: @textColor;
+                background: @buttonBackground;
+                width: 170px;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+
+                @media(max-width: 768px) {
+                    color: @textColor-medium;
+                    background: @buttonBackground-medium;
+                }
+         
+                @media(max-width: 400px) {
+                    color: @textColor-small;
+                    background: @buttonBackground-small;
+                }
+            }// .cta-text button
+
+            button:hover {
+                color: @buttonHover;
+                background: @buttonHoverBackground;
+                
+                @media(max-width: 768px) {
+                    color: @buttonHover-medium;
+                    background: @buttonHoverBackground-medium;
+                }
+                
+                @media(max-width: 400px) {
+                    color: @buttonHover-small;
+                    background: @buttonHoverBackground-small;
+                }
+            }// .cta .cta-text button:hover
+        }// .cta-text
+
+        img {
+            @media (max-width: 768px) {
+                max-width: 100%;
+                margin-right: 2%;
+            }
+        
+            @media (max-width: 750px) {
+                display: none;
+            }
+        
+            @media (max-width: 400px) {
+                display: block;
+                max-width: 80%;
+                margin: 55px 0 0 0;
+            }
+        }
+    }//.cta
+
+    // Main Content Styles
+
+    .main-content {
+    border-top: 2px solid @borderTop; 
+    border-bottom: 2px solid @borderBottom;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
     font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    color: @textColor;
+    line-height: 18px;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    @media(max-width: 768px) {
+        border-top: 2px solid @borderTop-medium;
+        border-bottom: 2px solid @borderBottom-medium;
+        color: @textColor-medium;
+        margin: 75px 2% 35px;
+    }
+    @media(max-width: 400px) {
+        border-top: 2px solid @borderTop-small;
+        border-bottom: 2px solid @borderBottom-small;
+        color: @textColor-small;
+    }
 
-/* Main Content Styles */
+        .top-content {
+            display: flex;
+            justify-content: space-around;
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                height: 300px;
+            }
+        }// .main-content .top-content
 
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+        .middle-img {
+            display: block;
+            margin: 30px auto;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 25px auto;
+            }
+        }// .main-content .middle-img
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+        .bottom-content {
+            display: flex;
+            justify-content: space-around;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                align-content: space-between;
+                height: 440px;
+            }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+            p {
+                padding-right: 20px;
+            }// .main-content .bottom-content p
+        }// .main-content .bottom-content
 
-/* Contact Styles */
+    }// .main-content
 
-.contact p {
-    margin: 15px 0;
-}
 
-/* Footer Styles */
+    // Contact Styles
+    .contact {
+        color: @textColor;
+        @media(max-width: 768px) {
+            color: @textColor-medium;
+            margin: 20px 2%;
+        }
+            @media(max-width: 400px) {
+            color: @textColor-small;
+        }
+    }
 
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
+    .contact p {
+        margin: 15px 0;
+    }
+
+    // Footer Styles
+
+    footer {
+        text-align: center;
+        margin: 40px 0 20px;
+        color: @textColor;
+
+        @media(max-width: 768px) {
+            color: @textColor-medium;
+        }
+        @media(max-width: 400px) {
+            color: @textColor-small;
+        }
+    }
 }
