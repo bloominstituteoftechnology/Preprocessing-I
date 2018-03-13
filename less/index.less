@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
 * {
     box-sizing: border-box;
 }
@@ -67,110 +67,217 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;                
+    }
 }
 
-/* Header Styles */
+//Variables
+@a-color: #030407; //Ebony
+@hover-color: #C5A107; //Buddha Gold
+@border-color: #46A11B; //Vida Loca
+@stretch-color: #C2CFE5; //Periwinkle Gray
+
+
+// Header Styles
 
 header {
     width: 100%;
-    display: flex;
-}
+    display: flex; 
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+     @media (max-width: 768px) {
+        width: 100%
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media (max-width: 400px) {
+        flex-flow: wrap;
+        justify-content: center;
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    nav {
+        margin-top: 20px + 20px; // + operator example
+        width: 61px * 10px; // * operator example
+        justify-content: space-between;
+        display: flex;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        @media (max-width: 400px) {
+            width: 100%;
+            flex-flow: column;
+            align-items: center;
+            margin:0;
+            border-top: 1px #b0b0b0 solid; 
+        }
 
-/* Call To Action (CTA) Styles */
+        a {
+            text-decoration: none;
+            color: @a-color; //Ebony
+
+            @media (max-width: 400px) {
+                width: 100%;
+                display:block;
+                padding: 20px;
+                text-align: center;
+                font-size: 20px;
+                border-bottom: 1px #b0b0b0 solid;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: @hover-color; //Buddha Gold
+            }//&:hover
+        }//a
+    }//nav
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+            width: 30%;
+        }
+
+        @media (max-width: 400px) {
+            max-width: 100%;
+            margin: 20px 0;
+            order: -1;
+        }
+    }//.logo
+}//header
+
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+   @media (max-width: 768px) {
+        width: 100%;
+        justify-content: space-between;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media (max-width: 400px) {
+        flex-flow: column;
+        align-items: center;
+        margin: 20px auto 0;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-/* Main Content Styles */
+        @media (max-width: 768px) {
+            margin: 0 4% 0 0;
+            font-size: 50px;
+        }
+
+        @media (max-width: 400px) {
+            margin: 0 0 50px 0;
+        }        
+
+        @media (max-width: 400px) {
+            max-width: 80%;
+        }
+
+        button {
+            border: 1px double @border-color; //Vida Loca
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+
+            cursor: pointer;
+
+            &:hover {
+                background: @hover-color; //Buddha Gold
+                color: white;
+            }//&:hover
+        }//button
+    }//.cta-text
+
+    img {
+        @media (max-width: 768px) {
+            max-width: 53%;
+            height: auto;
+            //display: none;
+        }
+
+        @media (max-width: 400px) {
+            max-width: 100%;            
+        }
+    }
+}//.cta
+
+
+//Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @border-color; //Vida Loca
+   border-bottom: 2px solid @border-color; //Vida Loca
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .top-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+        @media (max-width: 400px) {
+            flex-direction: column;
+            flex-wrap: wrap;        
+        }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        p {
+            margin: 20px 0;
+        }//p
+    }//.top-content    
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
 
-/* Contact Styles */
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+    }//.middle-img
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+
+        @media (max-width: 400px) {            
+            flex-direction: column;            
+        }
+
+        p {
+            margin: 20px 0;
+        }//p
+    }//.bottom-content
+}//.main-content
+
+// Contact Styles
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+}
+
+//Stretch Goals
+p, a, h1, h2, h3, h4,h5 {
+    color: multiply(@hover-color, @stretch-color);
 }
