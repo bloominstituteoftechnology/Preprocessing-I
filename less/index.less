@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +49,8 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
+
 * {
     box-sizing: border-box;
 }
@@ -64,75 +66,90 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
+
 .container {
-    width: 880px;
+    width: 900px - 20;
     margin: auto;
 }
 
-/* Header Styles */
+// Header Styles 
+
+@orchid: #D95ED9;
+@pastel-green: #8CD95E;
+@boston-blue: #418FB4;
+@orange: #FF6600;
+@granny-smith: #AAE09E;
+@can-can: #E09EAC;
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
+    nav {
+    margin-top: 2 * 20px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
+
+        a {
+            text-decoration: none;
+            color: @orchid;
+        }
+
+        a:hover {
+                text-decoration: underline;
+                color: @boston-blue;
+        }    
+    }
+    
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
+
 }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
+// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 50 + 2px;
     justify-content: flex-end;
+    color: @boston-blue;
+
+        .cta-text {
+            font-size: 72px;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 82px 0 0;
+                
+                button {
+                    border: 1px double @pastel-green;
+                    font-size: 16px;
+                    background: white;
+                    width: 170px;
+                    height: 32px;
+                    margin-top: 10px;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                        background: @boston-blue;
+                        color: @orchid;
+                    }
+
+        }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
+// Main Content Styles 
 
 .main-content {
    border-top: 2px solid black; 
@@ -141,36 +158,85 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+
+        p {
+        color: @granny-smith;
+        }
+    }
+
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+    
+         p {
+            padding-right: 20px;
+            color: @granny-smith;
+        }
+    }
+
 }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
+// Contact Styles 
 
 .contact p {
     margin: 15px 0;
+    color: @can-can;
 }
 
-/* Footer Styles */
+// Footer Styles 
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @orange;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    header nav {
+        width: 60%;
+        margin-left: 3%;
+    }
+
+    header .logo {
+        margin: 4% 0 0 8%;
+    }
+
+    .cta {
+        justify-content: center;
+        
+        .cta-text {
+            margin: 0 5% 0 0;
+        }
+
+    }
+
+    .middle-img {
+       width: 100%;
+    }
+
+    .main-content {
+       margin: 10% 3% 5%;
+
+        .middle-img {
+            width: 100%;
+        }
+    }
+
+    .contact {
+        margin: 3% 3% 5%;
+    }
 }
