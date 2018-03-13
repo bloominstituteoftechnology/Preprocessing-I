@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -67,73 +67,163 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
-}
+    @media(max-width: 768px) {
+        width: 100%;
+    }// media 768px
+    @media(max-width: 400) {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }// media 400px
+}// container
 
-/* Header Styles */
+//Variables
+@main-color: @vanilla-ice; 
+@vanilla-ice: #F1D5EB;
+@accent-color: @water-leaf;
+@water-leaf: #9FEAD2;
 
+// Header Styles 
 header {
     width: 100%;
     display: flex;
-}
+    @media(max-width: 768px) {
+        flex-wrap: wrap;
+        height: 100%;
+    }// media 768px
+    @media(max-width: 400px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }// media 400px
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+        @media(max-width: 768px) {
+            margin: 40px 7% 0 3%;
+            width: 50%;
+            display: flex;
+            font-size: 18px;
+        }// media 768px
+        @media(max-width: 400px) {
+            width: 100%;
+            flex-direction: column;
+            display: flex;
+            margin: 0;
+            align-items: center;
+        }// media 400px
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            @media(max-width: 768px) {
+                margin-right: 8%;
+            }// media 768px
+            @media(max-width: 400px) {
+                margin: 0;
+                display: block;
+                text-align: center;
+                padding: 5% 0;
+                font-size: 20px;
+                width: 100%;
+                border-bottom: 1px solid grey;
+                background: multiply(@main-color, @accent-color);// mulitplying the colors together to make a darker background
+                color: black;
+            }// media 400px
+            &:nth-child(1) {
+                @media(max-width: 400px) {
+                    border-top: 1px solid grey;
+                }
+            }
+            &:hover {
+                text-decoration: underline;
+                color: @accent-color;
+                @media(max-width: 400px) {
+                    color: grey;
+                }
+            }// hover
+        }// a
+    }// nav
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+        @media(max-width: 768) {
+            align-self: flex-end;
+        }// media 768px
+        @media(max-width: 400px) {
+            max-width: 100%;
+            margin: 20px 0;
+            order: -1;
+        }// media 400px
+    }// logo
+}// header
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
-
+// Call To Action (CTA) Styles 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+    background: @main-color;// mulitplying the colors together to make a darker background
+    @media(max-width: 768px) {
+        display: flex;
+        margin: 72px 1% 0 1%;
+        justify-content: flex-end;
+        background: none;
+    }// media 768px
+    @media(max-width: 400px) {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }// media 400px
+    .cta-text {
+        font-size: 36px * 2;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        @media(max-width: 400px) {
+            margin: 0 38% 50px 0;
+        }// media 400px
+        h1 {
+            @media(max-width: 768px) {
+                letter-spacing: 6px;
+                margin-left: 40%;
+                font-size: 55px;
+            }// media 768px
+        }// h1
+        button {
+            border: 1px double black;
+            font-size: 32px / 2;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            @media(max-width: 768px) {
+                margin-left: 40%;
+            }// media 768px
+            @media(max-width: 400px) {
+                margin-bottom: 20px;
+            }
+            &:hover {
+                background: black;
+                color: @accent-color;
+            }// hover
+        }// button 
+    }// cta-text
+    img {
+        @media(max-width: 400px) {
+            max-width: 80%;
+        }
+    }
+}// cta
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
-
+// Main Content Styles 
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
@@ -141,36 +231,60 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
-
-.main-content .top-content {
+   background: multiply(@main-color, @accent-color);// mulitplying the colors together to make a darker background
+   @media(max-width: 768px) {
+       font-size: 14px;
+       margin: 75px 2% 35px;
+   }// media 768px
+   .top-content {
     display: flex;
     justify-content: space-around;
-}
-
-.main-content .middle-img {
+    @media(max-width: 400px) {
+        flex-wrap: wrap;
+        height: 300px;
+    }// media 400px
+   }// top-content
+   .middle-img {
     display: block;
     margin: 30px auto;
-}
-
-.main-content .bottom-content {
+    @media(max-width: 768px) {
+        width: 100%;
+        margin: 25px auto;
+    }// media 768px
+   }// middle-image
+   .bottom-content {
     display: flex;
     justify-content: space-around;
-}
+    @media(max-width: 400px) {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+    }// media 400px
+   }// bottom-content
+}// main-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+// Contact Styles 
+.contact {
+    background: @main-color;
+    @media(max-width: 768px) {
+        background: none;
+        margin: 20px 2%;
+    }// media 768px
+    p {
+        margin: 15px 0;
+    }// p
+}// contact
 
-/* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
-}
-
-/* Footer Styles */
-
+// Footer Styles 
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
+    background: multiply(@main-color, @accent-color);// mulitplying the colors together to make a darker background
+    @media(max-width: 768px) {
+        margin: 2% auto;
+        font-size: 16px;
+    }// media 768px
+    @media(max-width: 400px) {
+        background: @accent-color;
+    }// media 400px
+}// footer
