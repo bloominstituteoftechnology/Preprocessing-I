@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//    v2.0 | 20110126
+//    License: none (public domain)
+//
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,13 +48,13 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// /* Set every element's box-sizing to border-box */ //
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+    height: 62.5%;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -67,110 +67,228 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
-/* Header Styles */
+// Color Scheme Variables
+@san-felix: #255909;
+@deep-cerulean: #0971B2;
+
+// /* Header Styles */
 
 header {
+    @header-margin-top: 40px;
+
     width: 100%;
     display: flex;
+
+    @media (max-width: 768px) {
+        flex-flow: wrap-reverse;
+        justify-content: center;
+    }
+
+    @media (max-width: 400px) {
+        flex-flow: column;
+        padding: 0;
+    }
+
+    nav {
+        margin-top: @header-margin-top; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+
+        @media (max-width: 400px) {
+            width: 100%;
+            flex-flow: column;
+            align-items: center;
+            margin: 5% 0;
+            border-top: 1px solid gray;
+        }
+
+        a {
+            text-decoration: none;
+            color: @san-felix;
+
+            @media (max-width: 400px) {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding: 6% 0;
+                border-bottom: 1px solid gray;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }
+        }
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin: (@header-margin-top - 12px) 0 0 91px;
+
+        @media (max-width: 768px) {
+            width: 40%;
+            margin: 5% 0 0 0;
+        }
+        
+        @media (max-width: 400px) {
+            margin: 5% auto;
+            order: -1;
+        }
+    }
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
+// /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media (max-width: 768px) {
+        flex-flow: wrap;
+        justify-content: center;
+        margin: 8% 5% 8%;
+    }
+
+    @media (max-width: 400px) {
+        flex-flow: column;
+        margin: 8% auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        color: @deep-cerulean;
+
+        @media (max-width: 768px) {
+            margin: 8% 0;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 4rem ;
+            margin-bottom: 12%;
+        }
+
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: black;
+                color: white;
+            }
+        }
+    }
+
+    img {
+        @media (max-width: 400px) {
+            width: 75%;
+        }
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
-
+// /* Main Content Styles */
+ 
 .main-content {
+   @font-size: 16px * 1.2;
+
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+   font-size: @font-size;
+   line-height: @font-size + 2px;
+
+    @media (max-width: 400px) {
+       margin: 19% 5% 9%;
+       padding-top: 8%;
+   }
+
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+
+        @media (max-width: 400px) {
+            flex-flow: column;
+            display: flex;
+        }
+    }
+
+   .middle-img {
+        display: block;
+        margin: 30px auto;
+
+        @media (max-width: 400px) {
+            width: 100%;
+            height: 100px;
+       }
+   }
+
+   .bottom-content {
+        display: flex;
+        justify-content: space-around;
+
+        @media (max-width: 400px) {
+            flex-flow: column;
+            display: flex;
+        }
+
+        p {
+            padding-right: 20px;
+        }
+    }
+
+    .text-content h4 {
+        @media (max-width: 400px) {
+            margin-top: 4%;
+        }
+    }
 }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
+// /* Contact Styles */
+
+.contact {
+    @media (max-width: 400px) {
+        margin: 0 5%;
+    }
+
+    p {
+        margin: 15px 0;
+    }
 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
-}
-
-/* Footer Styles */
+// /* Footer Styles */
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @deep-cerulean;
+    font-weight: bold;
+
+    @media (max-width: 400px) {
+        margin-top: 15%;
+    }
 }
