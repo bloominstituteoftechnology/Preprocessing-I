@@ -1,5 +1,5 @@
 // Is this working?
-//  http://meyerweb.com/eric/tools/css/reset/ 
+//  http://meyerweb.com/eric/tools/css/reset/
 //    v2.0 | 20110126
 //    License: none (public domain)
 
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,8 +24,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-//  HTML5 display-role reset for older browsers 
-article, aside, details, figcaption, figure, 
+//  HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,10 +48,11 @@ table {
 	border-spacing: 0;
 }
 
-//  Set every element's box-sizing to border-box 
+//  Set every element's box-sizing to border-box
 @lbulb: yellow;
 @backgCr: red;
 @backgCbu: blue;
+@backgCbg: green;
 @backgCba: black;
 @green: #67ED61;
 @blue: #61D0ED;
@@ -78,15 +79,21 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
     background: black;
+		@media (max-width: 768px) {
+        background: white;
+        max-width: 768px;
+        width: 100%;
+        margin: auto;
+    }
 }
 
-//  Header Styles 
+//  Header Styles
 
 header {
     width: 100%;
     display: flex;
     nav {
-        margin-top: 40px; 
+        margin-top: 40px;
         width: 610px;
         justify-content: space-between;
         display: flex;
@@ -96,9 +103,22 @@ header {
             &:hover {
                 text-decoration: underline;
                 color: @green;
-            }            
+            }
+        }
+				@media (max-width: 768px) {
+            width: 63%;
+            display: flex;
+            color: @backgCr;
         }
     }
+		@media (max-width: 768px) {
+		width: 100%;
+		display: inline-flex;
+		justify-content: flex-start;
+		margin-top: 20px;
+		align-items: center;
+		color: @backgCr;
+		}
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
@@ -119,7 +139,7 @@ header {
 
 
 
-//  Call To Action (CTA) Styles 
+//  Call To Action (CTA) Styles
 
 .cta {
     display: flex;
@@ -147,8 +167,38 @@ header {
             &:hover {
                 background:@green;
                 color: @blue;
+								@media (max-width: 768px) {
+                    background: @backgCbu;
+                    color: @backgCr;
+                }
+            }
+						@media (max-width: 768px) {
+            border: 1px double black;
+            font-size: 1rem;
+            background: white;
+            width: 56% ;
+            height: 32px ;
+            margin-top: 8px;
+            margin-bottom: 35px;
+            cursor: pointer;
+
             }
         }
+				@media (max-width: 768px) {
+            font-size: 3.2rem;
+            text-align: center;
+            letter-spacing: .313rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0% auto;
+        }
+    }
+		@media (max-width: 768px) {
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-around;
+        padding-right: 6.5%;
     }
 }
 
@@ -158,29 +208,71 @@ header {
 
 
 
-//  Main Content Styles 
+//  Main Content Styles
 
 .main-content {
-   border-top: 2px solid @green; 
+   border-top: 2px solid @green;
    border-bottom: 2px solid @green;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+	 @media (max-width: 768px) {
+       background: @backgCbu;
+       border-top: 2px solid black;
+       margin-top: 0px;
+       font-size: 1rem;
+       width: 98%;
+       line-height: 1.125rem;
+
+
+   }
    .top-content {
     display: flex;
     justify-content: space-around;
     color: @blue;
+		@media (max-width: 768px) {
+        background: @backgCr;
+        display: flex;
+         justify-content: center;
+         align-items: center;
+         margin: auto;
+         width: 98%;
+         color: @backgCbu + @backgCr + @backgCbg;
+         p {
+            margin-bottom: 6px;
+
+         }
+    }
     }
 
     .middle-img {
     display: block;
     margin: 30px auto;
+		@media (max-width: 768px) {
+        display: inline-flex;
+        width: 100%;
+        margin: 1.875rem auto;
+        margin-bottom: 20px;
+    }
     }
 
     .bottom-content {
     display: flex;
     justify-content: space-around;
+		@media (max-width: 768px) {
+        background: @lbulb;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        width: 100%;
+        color: @backgCbu + @backgCr + @backgCbg;
+        p {
+            margin-bottom: 0px;
+        }
+
+    }
+
     color: @blue;
     p {
         padding-right: 20px;
@@ -192,14 +284,20 @@ header {
 
 
 
-//  Contact Styles 
-
-.contact p {
+//  Contact Styles
+.contact {
+	margin-left: 2.3%;
+	p {
     margin: 15px 0;
     color: white;
+		@media (max-width: 768px) {
+        margin: 15px 0%;
+        color: (@backgCbg + @backgCbu + @backgCr) * 2;
+        background: @backgCba;
+    }
 }
-
-//  Footer Styles 
+}
+//  Footer Styles
 
 footer {
     text-align: center;
