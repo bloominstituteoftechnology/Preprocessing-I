@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/ 
+//    v2.0 | 20110126
+//    License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -56,6 +56,18 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
+    @media (max-width: 768px) {
+        background-color: @nice-blue;
+    }
+
+    @media (max-width: 400px) {
+        background-color: @Monza;
+    }
+}
+
+html {
+    font-size: 62.5%; //1rem = 10px
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,113 +76,143 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+// Color scheme variables
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+@double-nice-blue: @nice-blue * 2;
+@Sherwood-Green: #02402C;
+@Monza: #B2011C;
+@Malachite: #13F64A;
+@Disco: #871C79;
+@Yellow: #ffff00;
+@Purple: #960B98;
+
+
+//experimenting with variables
+@max-width: 880px;
+@tablet-width: 768px
+@phone-width: 400px;
+
+// .tablet {
+//     @media (max-width: @tablet-width){
+
+//     }
+// }
+
 .container {
-    width: 880px;
-    margin: auto;
-}
-
-/* Header Styles */
-
-header {
+    max-width: @max-width; //@max-width: 880px;
     width: 100%;
-    display: flex;
-}
+    margin: auto;
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    // Header Styles 
+    header {
+        width: 100%;
+        display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        nav {
+            margin-top: 40px; 
+            width: 69.4%;
+            justify-content: space-between;
+            display: flex;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+            a {
+                text-decoration: none;
+                color: @Sherwood-Green;
+                font-size: 1.5rem;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+                &:hover {
+                    text-decoration: underline;
+                    color: blue;
+                    cursor: pointer;
+                }// header nav a:hover
+            }// header nav a 
+        }//header nav
 
-/* Call To Action (CTA) Styles */
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+            
+            &:hover {
+                background: url('img/lit-logo.gif');
+            }// header logo:hover
+        }   // header logo
+    }// container header
+    
+    // Call To Action (CTA) Styles 
+    .cta {
+        display: flex;
+        margin-top: 72px;
+        justify-content: flex-end;
+    
+        .cta-text {
+            font-size: 7.2rem;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 82px 0 0;
+        
+        
+            &:hover {
+                color: @Purple;
+            }//.cta .cta-text:hover 
+    
+            button {
+                border: 1px double black;
+                font-size: 1.6rem;
+                background: white;
+                width: auto;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+            
+                &:hover {
+                    background: @Sherwood-Green;
+                    color: @Yellow;
+                }//.cta .cta-text button:hover 
+            }// .cta .cta-text button
+        }// .cta .cta-text
+    }// container .cta
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
-
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
-
-/* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
-}
-
-/* Footer Styles */
-
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
-}
+    // Main Content Styles 
+    .main-content {
+       border-top: 2px solid black; 
+       border-bottom: 2px solid black;
+       margin: 75px 0 35px 0;
+       padding: 35px 0;
+       font-size: 1.6rem;
+       line-height: 18px;
+    
+        .top-content {
+            display: flex;
+            justify-content: space-around;
+        }// .main-content .top-content 
+        
+        .middle-img {
+            display: block;
+            margin: 30px auto;
+        }// .main-content .middle-img 
+        
+        .bottom-content {
+            display: flex;
+            justify-content: space-around;
+        
+            p {
+                padding-right: 20px;
+            }// .main-content .bottom-content p 
+        }// .main-content .bottom-content 
+    }// container .main-content
+    
+    // Contact Styles 
+    .contact p {
+        margin: 15px 0;
+    }// container contact
+    
+    // Footer Styles
+    footer {
+        text-align: center;
+        margin: 40px 0 20px;
+    } // container footer
+} // container
