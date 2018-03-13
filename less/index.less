@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// http://meyerweb.com/eric/tools/css/reset/
+   // v2.0 | 20110126
+   // License: none (public domain)
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,8 +24,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,7 +48,9 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Set every element's box-sizing to border-box
+@firstcolor: #B8355E;
+@secondcolor: #7CBF98;
 * {
     box-sizing: border-box;
 }
@@ -67,108 +69,177 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+		@media (max-width: 400px) {
+			width: 100%;
+}
 }
 
-/* Header Styles */
+// Header Styles
 
 header {
     width: 100%;
     display: flex;
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		@media (max-width: 400px) {
+			flex-wrap: wrap;
+			justify-content: center;
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 40px;
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+				@media (max-width: 768px) {
+					width: 85%;
+				}
+				@media (max-width: 400px) {
+					width: 100%;
+		}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+						@media (max-width: 400px) {
+							display: block;
+							text-align: center;
+							font-size: 32px;
+							border-bottom: 1px solid gray;
+						}
+        } // a
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        a:hover {
+            text-decoration: underline;
+            color: @firstcolor;
+						@media (max-width: 400px) {
+							background: @firstcolor;
+						}
+        } // hover
 
-/* Call To Action (CTA) Styles */
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+						@media (max-width: 768px) {
+							order: -1;
+							max-width: 100%;
+							margin: 20px 0;
+						}
+        } // logo
+    } // nav
+} // header
 
+
+// Call To Action (CTA) Styles
 .cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
+	display: flex;
+	margin-top: 72px;
+	justify-content: flex-end;
+	@media (max-width: 768px) {
+		margin-top: 50px;
+		flex-flow: column;
+		align-items: center;
+	}
+	@media (max-width: 400px) {
+		margin-top: 25px;
+		flex-flow: column;
+		align-items: center;
+	}
+
+	.cta-text {
+		font-size: 36px * 2;
+		text-align: center;
+		letter-spacing: 5px;
+		display: flex;
+		justify-content: center;
+		flex-flow: column;
+		align-items: center;
+		margin: 0 82px 0 0;
+		@media (max-width: 768px) {
+			margin: 0;
+		}
+
+		button {
+			border: 1px double black;
+			font-size: 32px / 2;
+			background: @secondcolor;
+			width: 170px;
+			height: 32px;
+			margin-top: 10px;
+			cursor: pointer;
+
+			button:hover {
+				background: black;
+				color: white;
+			}
+		}
+	}
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
+// Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+	 @media (max-width: 768px) {
+		 margin: 50px 2% 30px;
+	 }
 
-.main-content .top-content {
+		.top-content {
     display: flex;
     justify-content: space-around;
-}
+		@media (max-width: 400px) {
+			justify-content: space-around;
+			flex-direction: column;
+			height: 250px;
+		}
 
-.main-content .middle-img {
+		.middle-img {
     display: block;
     margin: 30px auto;
-}
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 
-.main-content .bottom-content {
+		.bottom-content {
     display: flex;
     justify-content: space-around;
-}
+		@media (max-width: 400px) {
+			flex-wrap: wrap;
+			align-content: space-between;
+			height: 350px;
+		}
 
-.main-content .bottom-content p {
+		p {
     padding-right: 20px;
+				}
+			}
+		}
+	}
 }
-
-/* Contact Styles */
+// Contact Styles
 
 .contact p {
     margin: 15px 0;
+		@media (max-width: 768px) {
+			margin: 20px 10px;
+		}
+		@media (max-width: 400px) {
+		margin: 20px;
+	}
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
