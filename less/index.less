@@ -56,6 +56,14 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
+    @media (max-width: 768px) {
+        background-color: @nice-blue;
+    }
+
+    @media (max-width: 400px) {
+        background-color: @Monza;
+    }
 }
 
 html {
@@ -68,14 +76,31 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+// Color scheme variables
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
+@double-nice-blue: @nice-blue * 2;
 @Sherwood-Green: #02402C;
 @Monza: #B2011C;
-@half-nice-blue: @nice-blue * 2;
+@Malachite: #13F64A;
+@Disco: #871C79;
+@Yellow: #ffff00;
+@Purple: #960B98;
+
+
+//experimenting with variables
+@max-width: 880px;
+@tablet-width: 768px
+@phone-width: 400px;
+
+// .tablet {
+//     @media (max-width: @tablet-width){
+
+//     }
+// }
 
 .container {
-    max-width: 880px;
+    max-width: @max-width; //@max-width: 880px;
     width: 100%;
     margin: auto;
 
@@ -98,6 +123,7 @@ h1, h2, h3, h4, h5 {
                 &:hover {
                     text-decoration: underline;
                     color: blue;
+                    cursor: pointer;
                 }// header nav a:hover
             }// header nav a 
         }//header nav
@@ -105,11 +131,12 @@ h1, h2, h3, h4, h5 {
         .logo {
             align-self: flex-end;
             margin: 28px 0 0 91px;
+            
             &:hover {
-                
+                background: url('img/lit-logo.gif');
             }// header logo:hover
-        // header logo
-}// container header
+        }   // header logo
+    }// container header
     
     // Call To Action (CTA) Styles 
     .cta {
@@ -128,6 +155,10 @@ h1, h2, h3, h4, h5 {
             margin: 0 82px 0 0;
         
         
+            &:hover {
+                color: @Purple;
+            }//.cta .cta-text:hover 
+    
             button {
                 border: 1px double black;
                 font-size: 1.6rem;
@@ -138,8 +169,8 @@ h1, h2, h3, h4, h5 {
                 cursor: pointer;
             
                 &:hover {
-                    background: black;
-                    color: white;
+                    background: @Sherwood-Green;
+                    color: @Yellow;
                 }//.cta .cta-text button:hover 
             }// .cta .cta-text button
         }// .cta .cta-text
@@ -183,5 +214,5 @@ h1, h2, h3, h4, h5 {
     footer {
         text-align: center;
         margin: 40px 0 20px;
-    }// container footer
-}// container
+    } // container footer
+} // container
