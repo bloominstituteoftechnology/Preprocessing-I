@@ -1,8 +1,7 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/*   http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
-   License: none (public domain)
-*/
+   License: none (public domain) */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,7 +47,32 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// Variable declarations
+
+@main-bg: @sidecar;
+
+@sidecar: #F7E7CE;
+@limed: #3B444B;
+@yellow-orange: #F9B03E;
+@jumbo: #222;
+@white: #fff;
+@button-hover-color: @yellow-orange / 2;
+
+// Mixin for border - it can adjust properties based on arguments passed
+
+.border-prop( @size: 1px; @style: solid; @color: black;) {
+          border-top: @arguments;
+      };
+
+// calc mixin for calculation margins and width percent based
+
+.calc(@x, @y: 880) {
+    @average: ((@x / @y) * 100%);
+}
+
+
+
+//Set every element's box-sizing to border-box 
 * {
     box-sizing: border-box;
 }
@@ -56,6 +80,11 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background-color: @main-bg;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,112 +94,271 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
 }
 
-/* Header Styles */
+// Header Styles
 
 header {
     width: 100%;
     display: flex;
-}
+    
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: 400px) {
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+         nav {
+            margin-top: 40px; 
+            width: 69%;
+            justify-content: space-between;
+            display: flex;
 
-/* Call To Action (CTA) Styles */
+            @media (max-width: 767px) {
+                width: 59.588%;
+                margin: 34px 2.5% 20px 2.5%;
+            }
+
+            @media (max-width: 400px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        
+
+                 a {
+                    text-decoration: none;
+                    color: @jumbo;
+                    font-size: 1.6rem;
+
+                    @media (max-width: 767px) {
+                        flex: 1 1 auto;
+                    }
+
+                    @media (max-width: 400px) {
+                        font-size: 1.4rem;
+                        border-bottom: 1px solid #000;
+                        width: 100%;
+                        padding: 4.5% 0;
+                        text-align: center;
+                        background-color: @limed;
+                        color: @yellow-orange;
+
+                    }
+                
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: @yellow-orange;
+
+                        @media (max-width: 400px) {
+                            color: @white;
+                            text-decoration: none;
+                        }
+                    }
+
+                    &:first-child {
+                        @media (max-width: 400px) {
+                            .border-prop();
+                        }
+                    }
+                }
+            }
+
+        .logo {
+            .calc(91);
+             align-self: flex-end;
+             margin: 28px 0 0 @average;
+
+             @media (max-width: 767px) {
+                margin: 4px 0 0 6.5%;
+             }
+
+             @media (max-width: 400px) {
+                margin: 1% auto;
+                order: -1;
+                padding: 1rem 0;
+             }
+        }       
+    }
+ 
+
+// Call To Action (CTA) Styles
 
 .cta {
+    .calc(72);
     display: flex;
-    margin-top: 72px;
+    margin-top: @average;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media (max-width: 767px) {
+        margin-top: 8%;
+        margin-right: 3%;
+        justify-content: center;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media (max-width: 400px) {
+        margin: 10% 8%;
+        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: space-around
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
-/* Main Content Styles */
+        .cta-text {
+        font-size: 7.2rem;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        .calc(82);
+        margin: 0 @average 0 0;
+
+        @media (max-width: 767px) {
+            font-size: 4.5rem;
+            align-items: center;
+            margin: 10px 3% 0 4%;
+        }
+
+        @media (max-width: 400px) {
+            letter-spacing: 8px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 40px auto;
+        }
+
+
+            button {
+                border: 1px double black;
+                font-size: 1.6rem;
+                background: @jumbo;
+                width: 54%;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+                color: @yellow-orange;
+
+                @media (max-width: 767px ) {
+                    font-size: 1.2rem;
+                    width: 58%;
+                    margin-top: 12px 2%;
+                }
+        
+
+                    &:hover {
+                        background: @white;
+                        color: @button-hover-color;
+                }
+            }
+        }
+        img {
+            @media (max-width: 400px) {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+    }
+
+// Main Content Styles
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   .border-prop(2px);
+    border-bottom: 2px solid black;
+    margin: 75px 0 35px 0;
+    padding: 4% 0;
+    font-size: 1.6rem;
+    line-height: 18px;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    @media (max-width: 767px) {
+        padding: 2% 0;
+        line-height: 18px - 2;
+        margin: 14.5% 1% 9.5% 1%;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    @media (max-width: 400px) {
+        padding: 10% 0;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        .top-content {
+            display: flex;
+            justify-content: space-around;
 
-/* Contact Styles */
+            @media (max-width: 400px) {
+                flex-direction: column;
+                margin: 2%;
+            }
+
+            h4 {
+                margin-top: 2%;
+            }
+        }
+
+
+        .middle-img {
+            display: block;
+            margin: 30px auto;
+
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+        }
+
+
+        .bottom-content {
+            display: flex;
+            justify-content: space-around;
+
+            @media (max-width: 400px) {
+                flex-direction: column;
+                align-items: space-around;
+                margin: 2%;
+            }
+
+
+             p {
+                .calc(20);
+                padding-right: @average;
+            }
+
+            h4 {
+                margin-top: 2%;
+            }
+        }
+    }
+
+// Contact Styles
+
+.contact {
+    font-size: 1.6rem;
+
+    @media (max-width: 767px) {
+        margin-left: 1%;
+    }
+}
 
 .contact p {
     margin: 15px 0;
 }
 
-/* Footer Styles */
+// Footer Styles
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
+
+        p {
+            font-size: 1.6rem;
+        }
+    }
