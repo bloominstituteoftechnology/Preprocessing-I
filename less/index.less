@@ -89,9 +89,8 @@ header {
     display: flex;
 
     @media (max-width: 400px) {
-        flex-flow: column;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
     }
 
     nav {
@@ -101,16 +100,16 @@ header {
         display: flex;
 
         @media (max-width: 768px) {
-            width: 70%;
+            width: 59%;
+            margin-left: 3%;
         }
 
         @media (max-width: 400px) {
-            flex-flow: column;
-            align-items: center;
             width: 100%;
+            display: flex;
+            flex-direction: column;
             margin: 0;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
+            align-items: center;
         }
 
         a {
@@ -118,11 +117,12 @@ header {
             color: @blue;
 
             @media (max-width: 400px) {
-                padding: 5%;
                 width: 100%;
+                display: block;
                 text-align: center;
-                border-top: 1px solid black;
-                border-bottom: 1px solid black;
+                padding: 20px 0;
+                font-size: 2rem;
+                border-bottom: 1px solid gray;
             }
 
             &:hover {
@@ -131,8 +131,14 @@ header {
 
                 @media (max-width: 400px) {
                     color: white;
-                    background-color: black;
+                    background: black;
                 }
+            }
+        }
+
+        &:first-child {
+            @media (max-width: 400px) {
+                border-top: 1px solid gray;
             }
         }
     }
@@ -142,7 +148,7 @@ header {
         margin: 28px 0 0 91px;
 
         @media (max-width: 768px) {
-            margin:4% 0 0 6%;
+            margin: 28px 0 0 8%;
         }
 
         @media (max-width: 400px) {
@@ -160,8 +166,12 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width: 768px) {
+        justify-content: flex-end;
+    }
+
     @media (max-width: 400px) {
-        margin-top: 0;
+        margin-top: 50px;
         flex-flow: column;
         align-items: center;
     }
@@ -177,15 +187,18 @@ header {
         margin: 0 82px 0 0;
         color: @blue;
 
+        h1 {
+            @media (max-width: 768px) {
+                letter-spacing: 0;
+            }
+        }
+
         @media (max-width: 768px) {
-            width: 50%;
-            font-size: 4.5rem;
-            margin-left: 2%;
+            margin: 0 5% 0 0;
         }
 
         @media (max-width: 400px) {
             margin: 0;
-            width: 100%;
         }
 
         button {
@@ -205,13 +218,14 @@ header {
 
         img {
             @media (max-width: 768px) {
-                width: 50%;
+                max-width: 100%;
                 margin-right: 2%;
             }
 
             @media (max-width: 400px) {
-                width: 85%;
-                margin: 15% 0;
+                display: block;
+                max-width: 80%;
+                margin: 55px 0 0 0;
             }
         }
     }
@@ -243,8 +257,8 @@ header {
         }
 
         @media (max-width: 400px) {
-            flex-flow: column;
-            margin-top: 5%;
+            flex-wrap: wrap;
+            height: 300px;
         }
    }
 
@@ -254,11 +268,7 @@ header {
 
         @media (max-width: 768px) {
             width: 100%;
-            margin: 0;
-        }
-
-        @media (max-width: 400px) {
-            margin-top: 13%;
+            margin: 25px auto;
         }
    }
 
@@ -276,8 +286,14 @@ header {
         }
 
         @media (max-width: 400px) {
-            flex-flow: column;
+            flex-wrap: wrap;
+            align-items: space-between;
+            height: 440px;
         }
+   }
+
+   @media (max-width: 768px) {
+        margin: 75px 2% 35px;
    }
 }
 
@@ -294,14 +310,18 @@ header {
         }
     }
 
-    @media (max-width: 400px) {
-        margin-bottom: 10%;
-    }
-
     h4 {
         @media (max-width: 400px) {
             margin-bottom: 5%;
         }
+    }
+
+    @media (max-width: 768px) {
+        margin: 20px 2%;
+    }
+
+    @media (max-width: 400px) {
+        margin-bottom: 10%;
     }
 }
 
