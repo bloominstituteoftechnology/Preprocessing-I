@@ -59,6 +59,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background-color: @backgroundColor;
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,48 +68,164 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-// Variables
-@containerColor: #c6b382;
-@navTextColor: #442f38;//#b0b0b0
-@navTextColorHover: darken(@navTextColor, 50%);
-@buttonBorder: black;
-@buttonBackground: gray;
-@buttonHover: white;
-@buttonHoverBackground: darken(@buttonBackground, 50%);
-@borderTop: black;
-@borderBottom: black;
+// Color Scheme Variables
+
+// Desktop
+@backgroundColor: #000000;
+@containerColor: #262626;
+@header: #1e1e1e;
+@navTextColor: #767676;//#b0b0b0
+@navTextColorHover: lighten(@navTextColor, 50%);
+@textColor: #ffffff;
+@buttonBorder: #ffffff;
+@buttonBackground: #4b4b4b;
+@buttonHover: darken(@buttonBackground, 20%);
+@buttonHoverBackground: lighten(@buttonBackground, 20%);
+@borderTop: #000000;
+@borderBottom: #000000;
+
+
+// Tablet
+@backgroundColor-medium: #f6f6f6;
+@containerColor-medium: #ffffff;
+@header-medium: #1b2f53;
+@navTextColor-medium: #aac1d6;//#b0b0b0
+@navTextColorHover-medium: lighten(@navTextColor, 20%);
+@textColor-medium: #000000;
+@buttonBorder-medium: #000000;
+@buttonBackground-medium: #f4f4f4;
+@buttonHover-medium: lighten(@buttonBackground, 20%);
+@buttonHoverBackground-medium: darken(@buttonBackground, 20%);
+@borderTop-medium: #000000;
+@borderBottom-medium: #000000;
+
+
+// Mobile
+@backgroundColor-small: #000000;
+@containerColor-small: #262626;
+@header-small: #1e1e1e;
+@navTextColor-small: #767676;//#b0b0b0
+@navTextColorHover-small: lighten(@navTextColor, 50%);
+@textColor-small: #ffffff;
+@buttonBorder-small: #ffffff;
+@buttonBackground-small: #4b4b4b;
+@buttonHover-small: darken(@buttonBackground, 20%);
+@buttonHoverBackground-small: lighten(@buttonBackground, 20%);
+@borderTop-small: #000000;
+@borderBottom-small: #000000;
+
 
 
 .container {
+    width: 100%;
     width: 880px;
     margin: auto;
     background: @containerColor;
+
+    @media(max-width: 768px) {
+       background: @containerColor-medium;
+       width: 100%;
+    }
+
+    @media(max-width: 400px) {
+        background: @containerColor-small;
+    }
 
     // Header Styles
     header {
         width: 100%;
         display: flex;
-        & nav {
+        background: @header;
+
+        @media(max-width: 768px) {
+            background: @header-medium;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (max-width: 750px) {
+            flex-wrap: wrap;
+        }
+
+        @media(max-width: 400px) {
+            background: @header-small;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav {
             margin-top: 4*10px; 
             width: 600+10px;
             justify-content: space-between;
             display: flex;
-        }//header .nav
 
-        & nav a {
+            @media (max-width: 768px) {
+                width: 59%;
+                margin-left: 3%;
+            }
+        
+            @media (max-width: 750px) {
+                width: 100%;
+            }
+        
+            @media (max-width: 400px) {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                align-items: center;
+            }
+        }
+
+        a {
             text-decoration: none;
             color: @navTextColor;
+
+            @media(max-width: 768px) {
+                color: @navTextColor-medium;
+            }
+
+            @media(max-width: 400px) {
+                color: @navTextColor-small;
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 1px solid #ffffff;
+            }
         }
 
-        & nav a:hover {
+        &:hover {
             text-decoration: underline;
-            color: @navTextColorHover;}
+            color: @navTextColorHover;
 
-        & .logo {
+            @media(max-width: 768px) {
+                color: @navTextColorHover-medium;
+            }
+
+            @media(max-width: 400px) {
+                color: @navTextColorHover-small;
+            }
+        }
+
+        .logo {
             align-self: flex-end;
             margin: 28px 0 0 91px;
-        }
 
+            @media (max-width: 768px) {
+                margin: 28px 0 0 8%;
+            }
+        
+            @media (max-width: 750px) {
+                order: -1;
+                display: block;
+                margin: 30px auto 0;
+            }
+    
+            @media (max-width: 400px) {
+                margin: 20px 0;
+            }
+        }
     }// header
 
 
@@ -120,8 +237,20 @@ h1, h2, h3, h4, h5 {
         margin-top: 72px;
         justify-content: flex-end;
 
-        & .cta-text {
-            font-size: 72px;
+        @media (max-width: 750px) {
+            justify-content: center;
+        }
+        
+        @media (max-width: 400px) {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-text {
+            font-size: 72px - 10px;
+            color: @textColor;
             text-align: center;
             letter-spacing: 5px;
             display: flex;
@@ -130,21 +259,77 @@ h1, h2, h3, h4, h5 {
             align-items: center;
             margin: 0 82px 0 0;
 
-            & button {
+            @media(max-width: 768px) {
+                color: @textColor-medium;
+                margin: 0 5% 0 0;
+            }
+
+            @media(max-width: 400px) {
+                color: @textColor-small;
+                margin: 0;
+            }
+
+            h1 {
+      
+                @media (max-width: 768px) {
+                    letter-spacing: 0;
+                }
+              }
+
+            button {
                 border: 1px double @buttonBorder;
+                font-family: 'Titillium Web', sans-serif;
                 font-size: 16px;
+                color: @textColor;
                 background: @buttonBackground;
                 width: 170px;
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
+
+                @media(max-width: 768px) {
+                    color: @textColor-medium;
+                    background: @buttonBackground-medium;
+                }
+         
+                @media(max-width: 400px) {
+                    color: @textColor-small;
+                    background: @buttonBackground-small;
+                }
             }// .cta-text button
 
-            & button:hover {
-                background: @buttonHoverBackground;
+            button:hover {
                 color: @buttonHover;
+                background: @buttonHoverBackground;
+                
+                @media(max-width: 768px) {
+                    color: @buttonHover-medium;
+                    background: @buttonHoverBackground-medium;
+                }
+                
+                @media(max-width: 400px) {
+                    color: @buttonHover-small;
+                    background: @buttonHoverBackground-small;
+                }
             }// .cta .cta-text button:hover
         }// .cta-text
+
+        img {
+            @media (max-width: 768px) {
+                max-width: 100%;
+                margin-right: 2%;
+            }
+        
+            @media (max-width: 750px) {
+                display: none;
+            }
+        
+            @media (max-width: 400px) {
+                display: block;
+                max-width: 80%;
+                margin: 55px 0 0 0;
+            }
+        }
     }//.cta
 
     // Main Content Styles
@@ -155,23 +340,51 @@ h1, h2, h3, h4, h5 {
     margin: 75px 0 35px 0;
     padding: 35px 0;
     font-size: 16px;
+    color: @textColor;
     line-height: 18px;
 
-        & .top-content {
+    @media(max-width: 768px) {
+        border-top: 2px solid @borderTop-medium;
+        border-bottom: 2px solid @borderBottom-medium;
+        color: @textColor-medium;
+        margin: 75px 2% 35px;
+    }
+    @media(max-width: 400px) {
+        border-top: 2px solid @borderTop-small;
+        border-bottom: 2px solid @borderBottom-small;
+        color: @textColor-small;
+    }
+
+        .top-content {
             display: flex;
             justify-content: space-around;
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                height: 300px;
+            }
         }// .main-content .top-content
 
-        & .middle-img {
+        .middle-img {
             display: block;
             margin: 30px auto;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 25px auto;
+            }
         }// .main-content .middle-img
 
-        & .bottom-content {
+        .bottom-content {
             display: flex;
             justify-content: space-around;
 
-            & .bottom-content p {
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                align-content: space-between;
+                height: 440px;
+            }
+
+            p {
                 padding-right: 20px;
             }// .main-content .bottom-content p
         }// .main-content .bottom-content
@@ -180,6 +393,16 @@ h1, h2, h3, h4, h5 {
 
 
     // Contact Styles
+    .contact {
+        color: @textColor;
+        @media(max-width: 768px) {
+            color: @textColor-medium;
+            margin: 20px 2%;
+        }
+            @media(max-width: 400px) {
+            color: @textColor-small;
+        }
+    }
 
     .contact p {
         margin: 15px 0;
@@ -190,5 +413,13 @@ h1, h2, h3, h4, h5 {
     footer {
         text-align: center;
         margin: 40px 0 20px;
+        color: @textColor;
+
+        @media(max-width: 768px) {
+            color: @textColor-medium;
+        }
+        @media(max-width: 400px) {
+            color: @textColor-small;
+        }
     }
 }
