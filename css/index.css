@@ -152,6 +152,7 @@ h5 {
   width: 100%;
   margin: auto;
   background-color: tan;
+  padding: 0 30px 0 30px;
 }
 @media (max-width: 768px) {
   .container {
@@ -170,16 +171,26 @@ header {
   width: 100%;
   display: flex;
   font-size: 2rem;
+  justify-content: space-between;
+}
+@media (max-width: 400px) {
+  header {
+    flex-flow: column wrap;
+    flex-direction: center;
+  }
 }
 header nav {
-  margin-top: 40px;
-  width: 610px;
-  justify-content: space-between;
   display: flex;
+  margin-top: 40px;
+  margin-left: 30px;
+  width: 100%;
+  justify-content: space-around;
 }
 @media (max-width: 400px) {
   header nav {
-    flex-flow: column wrap;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 auto;
   }
 }
 header nav a {
@@ -192,12 +203,19 @@ header nav a:hover {
 }
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 40px 0 91px;
+}
+@media (max-width: 400px) {
+  header .logo {
+    order: -1;
+    align-self: center;
+    width: 80%;
+  }
 }
 .cta {
   display: flex;
   margin-top: 72px;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 @media (max-width: 400px) {
   .cta {
@@ -205,18 +223,29 @@ header .logo {
   }
 }
 .cta .cta-text {
-  font-size: 72px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   letter-spacing: 5px;
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
-  align-items: center;
-  margin: 0 82px 0 0;
 }
 @media (max-width: 768px) {
   .cta .cta-text {
     margin: 0 auto;
+  }
+}
+.cta .logo {
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .cta .logo {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 400px) {
+  .cta .logo {
+    margin: 30px auto;
   }
 }
 .cta .cta-text button {
@@ -274,11 +303,17 @@ header .logo {
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
-  width: 80%;
+  width: 90%;
 }
-.contact p {
+.main-content h4 {
+  margin-bottom: 20px;
+}
+.contact {
   margin: 15px 0;
   font-size: 2rem;
+}
+.contact p {
+  margin-top: 20px;
 }
 footer {
   text-align: center;
