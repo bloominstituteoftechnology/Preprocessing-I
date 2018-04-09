@@ -177,12 +177,6 @@ header .logo {
   display: flex;
   margin-top: 144px;
   justify-content: flex-end;
-  /* MEDIA QUERY */
-}
-@media (max-width: 800px) {
-  .cta img {
-    display: none;
-  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -244,4 +238,101 @@ header .logo {
 footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+/* MEDIA QUERY */
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+  .container .cta {
+    justify-content: center;
+  }
+  .container .cta .cta-text {
+    margin: 0 5% 0 0;
+  }
+  .container .cta img {
+    display: none;
+  }
+  .container header {
+    flex-wrap: wrap;
+  }
+  .container header nav {
+    width: 100%;
+    margin: 38px 3%;
+  }
+  .container header .logo {
+    order: -1;
+    display: block;
+    margin: 30px auto 0;
+  }
+  .container .main-content {
+    font-size: 1.4rem;
+    margin: 75px 2% 35px;
+  }
+  .container .main-content .middle-img {
+    width: 100%;
+    margin: 25px auto;
+  }
+  .container .contact {
+    margin: 20px 2%;
+  }
+}
+@media (max-width: 400px) {
+  .container header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+  .container header nav a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+  }
+  .container header nav a:hover {
+    background: gray;
+  }
+  .container header nav:first-child {
+    border-top: 1px solid gray;
+  }
+  .container header .logo {
+    order: -1;
+    margin: 20px 0;
+  }
+  .container .cta {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .cta .cta-text {
+    max-width: 360px;
+    width: 100%;
+    margin: 0;
+  }
+  .container .cta img {
+    display: block;
+    max-width: 80%;
+    margin: 55px 0 0 0;
+  }
+  .container .main-content .top-content {
+    flex-wrap: wrap;
+    height: 300px;
+  }
+  .container .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+  .container .main-content .bottom-content .text-content:nth-child(2) {
+    padding: 20px 0 20px;
+  }
 }

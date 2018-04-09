@@ -107,19 +107,6 @@ header {
     margin-top: 72px * 2; // MULTIPLICATION OPERATOR
     justify-content: flex-end;
 
-/* MEDIA QUERY */
-
-    @media( max-width: 800px){
-    
-    img {
-
-        display: none;
-    }
-
-
-    }
-
-
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -197,4 +184,120 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+}
+
+/* MEDIA QUERY */
+.container {
+    @media( max-width: 800px){
+        width: 100%;
+         .cta {
+        justify-content: center;
+            .cta-text {
+                margin: 0 5% 0 0;
+            }
+             img {
+            display: none;
+        }
+    }
+        
+        header {
+            flex-wrap: wrap;
+            
+            nav {
+                width: 100%;
+                margin: 38px 3%;
+            }
+            .logo {
+            order: -1;
+            display: block;
+            margin: 30px auto 0;
+            }
+        }
+
+    .main-content {
+        font-size: 1.4rem;
+        margin: 75px 2% 35px;
+        
+            .middle-img {
+               width: 100%;
+               margin: 25px auto;
+            }
+        }
+    
+        .contact {
+            margin: 20px 2%;
+        }
+    }
+    // 400px;
+    @media (max-width: 400px) {
+
+        header {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            nav {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                align-items: center;
+
+
+                a {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    padding: 20px 0;
+                    font-size: 2rem;
+                    border-bottom: 1px solid gray;
+
+
+                       &:hover {
+                            background: gray;
+                        }
+                }
+
+
+                &:first-child {
+                    border-top: 1px solid gray;
+                }
+            }
+            .logo {
+                order: -1;
+                margin: 20px 0;
+            }
+        }
+
+        .cta {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .cta-text{
+            max - width: 360px;
+            width: 100%;
+            margin: 0;
+            }
+            img {
+            display: block;
+            max-width: 80%;
+            margin: 55px 0 0 0;
+            }
+        }
+        
+        .main-content .top-content {
+            flex-wrap: wrap;
+            height: 300px;
+        }
+
+        .main-content .bottom-content {
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+            .text-content:nth-child(2) {
+                padding: 20px 0 20px;
+            }
+        }
+    }
 }
