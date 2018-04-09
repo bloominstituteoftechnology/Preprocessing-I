@@ -9,9 +9,8 @@ Lets get LESS working on an existing CSS project so we can see the power this ne
 
 ## Prerequisites
 
-1. Node and Yarn are installed on your machine
-2. LESS has been installed globally on your machine
-3. LESS Watch Compiler has been installed globally on your machine
+1. Node, npm, and LESS have been installed globally on your machine
+2. LESS Watch Compiler has been installed globally on your machine
 
 ## Task 1 - Set up your LESS compiler
 
@@ -26,7 +25,7 @@ You might be asking, "Wait, I don't get it, it's just CSS in an index.less file 
 
 * Convert all of the current selector chains into nested selectors.
 * Find a way to use at least two different operators like + or * to do something to the layout.
-* Look for ways you could use your own mixin where repeat code is found.
+* Convert all the block comments into single line comments.
 * Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here).
 * Introduce media queries from last week's projects with the nested @media rules.  
 

@@ -53,9 +53,14 @@ table {
     box-sizing: border-box;
 }
 
+@background: green;
+@background2: black;
+@text: white;
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background: @background2;
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,9 +69,14 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
 .container {
     width: 880px;
     margin: auto;
+    background: @background;
+    @media (max-width: 768px) {
+    	   width: 100%;
+	   }
 }
 
 /* Header Styles */
@@ -74,62 +84,146 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: 400px) {
+    	   
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    nav {
+    	margin-top: 40px; 
+    	width: 610px;
+    	justify-content: space-between;
+	display: flex;
+		
+	@media (max-width: 768px) {
+		width: 100%;
+		margin: 38px 3%;
+		}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+	@media (max-width: 400px) {
+	
+		width: 100%;
+        	display: flex;
+        	flex-direction: column;
+        	margin: 0;
+        	align-items: center;
+		}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+		a {
+    	       text-decoration: none;
+    	       color: #b0b0b0;
+	       @media (max-width: 400) {
+	           width: 100%;
+          	   display: block;
+          	   text-align: center;
+          	   padding: 20px 0;
+          	   font-size: 2rem;
+          	   border-bottom: 1px solid gray;
+    	  	   }
 
-/* Call To Action (CTA) Styles */
 
+	       &:hover {
+    	       text-decoration: underline;
+    	       color: black;
+	       @media (max-width: 400){
+	       	      background: gray;
+		      }
+	       }
+	       
+	       }
+	}
+		
+	.logo {
+		align-self: flex-end;
+		margin: 25px 0 0 91px;
+
+
+		@media (max-width: 768px){
+			order: -1;
+			display: block;
+			margin: 30px auto 0;
+			justify-content: center;
+		       }
+		@media (max-width: 400px) {
+		       margin: 20px 0;
+		       }
+	 }
+
+	
+}	
+
+    
+
+// Call To Action (CTA) Styles //
+@font-size--large: 50px;
+@font-size--medium: 12px;
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 62px+10; //used + operator //
     justify-content: flex-end;
+	@media (max-width:768px) {
+		justify-content: center;
+	}
+
+	@media (max-width: 400px) {
+	        margin-top: 50px;
+    		display: flex;
+        	flex-direction: column;
+        	align-items: center;
+    		}
+
+	img {
+		@media (max-width: 768px) {
+		display: none;
+		}
+		@media (max-width: 400px) {
+		display: block;
+		max-width: 80%
+		margin: 55px 0 0 0;
+		}
+	}
+    .cta-text {
+    	 font-size: @font-size--large;
+    	 text-align: center;
+    	 letter-spacing: 5px;
+    	 display: flex;
+    	 justify-content: center;
+    	 flex-flow: column;
+    	 align-items: center;
+	 margin: 0 82px 0 0;
+
+	 @media (max-width:768px) {
+		margin: 0 5% 0 0;
+		}
+		 
+	 @media (max-width: 400px) {
+		 font-size: @font-size--medium;
+		 margin: 0;
+		 }
+
+
+	 button {
+    	      border: 1px double black;
+    	      font-size: 16px;
+    	      background: white;
+    	      width: 180px -10; //used - operator //
+    	      height: 32px;
+    	      margin-top: 10px;
+    	      cursor: pointer;
+
+
+	      &:hover {
+    	      background: black;
+    	      color: white;
+	      }
+	  }
+
+
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
 }
 
 /* Main Content Styles */
@@ -141,31 +235,61 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+   color: @text;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   @media (max-width:768px) {
+	font-size: 22.4 px;
+	margin: 75px 2% 35px;
+	}
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .top-content {
+   		  display: flex;
+		  justify-content: space-around;
+                  @media (max-width: 400px) {
+   		  	  flex-wrap: wrap;
+        		  height: 300px;
+			  }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+		}
 
+   .middle-img {
+    		  display: block;
+			  margin: 30px auto;
+			  
+			  @media (max-width:768px) {
+				width: 100%;
+				margin: 25px auto;
+			  }
+			  
+	       }
+ 
+
+   .bottom-content {
+    		  display: flex;
+    		  justify-content: space-around;
+		  @media (max-width: 400px) {
+		  	  flex-wrap: wrap;
+       			  align-content: space-between;
+       			  height: 440px;
+			  }
+			  
+         	  &.bottom-content p {
+    		  padding-right: 20px;
+		  }
+   		}
+
+
+}
+     
 /* Contact Styles */
 
 .contact p {
-    margin: 15px 0;
+	margin: 15px 0;
+	@media (max-width:768px) {
+		margin: 20px 2%;
+	}
+
 }
 
 /* Footer Styles */
