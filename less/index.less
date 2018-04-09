@@ -64,108 +64,141 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
+html {
+    font-size: 62.5%;
 }
+
+.container {
+    width: 100%;
+	max-width: 880px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+
+    @media(max-width: 900px) {
+        padding: 0 2.5%;
+        max-width: 768px;
+    }
+}
+
 
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }//a:hover
+        }//a
+    }//nav
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }//logo
+}//header
+
 
 /* Call To Action (CTA) Styles */
-
+@var-color: #e70909; //SHOW VARIABLE FOR COLOR
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 62px + 10;//using an operator to do something to the layout
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 7.2rem;
+        text-align: center;
+        letter-spacing: 2px * 2.5;//using an operator to do something to the layout
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        color: lighten(@var-color, 35); // CHANGING COLOR WITH VARIABLE // used  lighten color operation function
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            font-size: 1.6rem / 0.5; // USING OPERATOR TO DO SOMETHING TO LAYOUT
+            background: white;
+            width: 170px / 0.5;
+            height: 32px / 0.5;
+            margin-top: 10px;
+            cursor: pointer;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+            &:hover {
+                background: black;
+                color: white;
+            }//button:hover
+        }//button
+    }//cta-text
+}//cta
+
+
 
 /* Main Content Styles */
+
+//this is being used to show mixin
+.flex-around { 
+    display: flex;
+    justify-content: space-around;
+}
+// ALSO FOR MIXIN
+.font-class {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+  }
 
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 1.6rem;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   .top-content {
+        .flex-around;
+    }//top-content
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    //changed image to be responsive
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        width: 100%;
+        height: auto;
+    }//middle-img
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        .flex-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        p {
+            padding-right: 20px;
+        }//p
+    }//bottom-content
+
+
+}//main-content
+
 
 /* Contact Styles */
 
 .contact p {
-    margin: 15px 0;
+    .font-class;   // ADDED MIXIN
+    .flex-around; // ADDED MIXIN
 }
 
 /* Footer Styles */
@@ -173,4 +206,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @var-color; //SHOW VARIABLE FOR COLOR
 }
