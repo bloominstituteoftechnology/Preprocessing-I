@@ -71,11 +71,25 @@ h1, h2, h3, h4, h5 {
 
 /* Header Styles */
 @hover-color: black;
-@link-color: #b0b0b0; 
+@link-color: #9999ff; 
+
+// Large screen styling
 
 header {
     width: 100%;
     display: flex;
+
+// Medium screen styling
+@media (max-width: 768px) {
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+// Small screen styling
+@media (max-width: 400px) {
+    width: 100%;
+    margin: 0;
+}
 
     nav {
         margin-top: 40px; 
@@ -103,7 +117,8 @@ header {
 /* Call To Action (CTA) Styles */
 
 @button-color: white;
-@hover-color: black;
+@button-text: #9966cc;
+@text-color: #0066cc;
 
 .cta {
     display: flex;
@@ -112,6 +127,7 @@ header {
 
     .cta-text {
         font-size: 72px;
+        color: @text-color;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -119,11 +135,13 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        
 
         button {
             border: 1px double black;
             font-size: 16px;
             background: @button-color;
+            color: @button-text;
             width: 170px;
             height: 32px;
             margin-top: 10px;
@@ -140,6 +158,7 @@ header {
 
 /* Main Content Styles */
 @border-style: 2px solid black; 
+@content-color: #003399;
 
 .main-content {
    border-top: @border-style; 
@@ -151,6 +170,7 @@ header {
 
    .top-content {
         display: flex;
+        color: @content-color;
         justify-content: space-around;
    }
 
@@ -162,6 +182,7 @@ header {
    .bottom-content {
     display: flex;
     justify-content: space-around;
+    color: @content-color;
 
         p {
             padding-right: 20px;
