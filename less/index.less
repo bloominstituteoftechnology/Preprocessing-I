@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5 {
 @softblack: #4d4d4d;
 @brightgreen: #33cc33;
 @tablet: ~"(max-width: 768px)";
-@mobile: ~"(max-width: 400px)"
+@mobile: ~"(max-width: 400px)";
 
 .container {
     width: 880px;
@@ -91,7 +91,12 @@ header {
 
     @media @tablet {
         flex-direction: column-reverse;
-    }¡
+    }
+
+    @media @mobile{
+        flex-direction:column;
+        justify-content: center;
+    }
     
     nav {
         margin-top: @margin*2; 
@@ -105,13 +110,30 @@ header {
             padding: 0 1.3%;
         }
 
+        @media @mobile{
+            flex-direction:column;
+            align-items:center;
+        }
+
         a {
             text-decoration: none;
             color: #b0b0b0;
             &:hover {
                 background: @softblack;
                 color:@brightgreen;
-            }//hover
+            }//hover        
+            @media @mobile{
+                width:100%;
+                flex-direction: column;
+                border-bottom: 1px solid gray;
+                padding:22px 0;
+                font-size:2rem;
+                text-align: center;
+                &:first-child {
+                    border-top:1px solid gray;
+                } 
+            }
+            
         }//a
       
     }//nav
@@ -125,6 +147,12 @@ header {
         @media @tablet {
             align-self: center;
             margin: 29px 0 0 0;
+        }
+
+        @media @mobile{
+            order: -1;
+            margin: 20px 0;
+            align-self:center;
         }
     }//logo
 }//header
@@ -142,10 +170,18 @@ header {
         padding-right: 5%;
     }
 
+    @media @mobile{
+        display:flex;
+        margin:5%;
+        flex-direction:column;
+        align-items:center;
+    }
+
     img {
         @media @tablet {
             display: none;
         }
+
     }
 
     .cta-text {
@@ -162,6 +198,10 @@ header {
             margin: 0;
         }
 
+        @media @mobile{
+            align-self: center;
+        }
+
         button {
             border: 1px double @softblack;
             font-size: 16px;
@@ -173,6 +213,10 @@ header {
 
             @media @tablet {
                 width: 48%;
+            }
+
+            @media @mobile{
+                width: 58%;
             }
 
             &:hover {
@@ -262,9 +306,10 @@ header {
 
 // seemed reduntant to nest p inside of .contact 
 // since p doesn't inherit anything from .contact
-.contact p {
+.contact{
+    p {
     margin: @margin - 5 0;
-    
+    }
     @media @tablet{
         padding-left: 1.3%;
     }
@@ -273,6 +318,7 @@ header {
         margin-left: 5%;
     }
 }
+
 
 /* Footer Styles */
 
