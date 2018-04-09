@@ -68,12 +68,26 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
 
+    @media (max-width: 768px) {
+            width: 768px;
+    }
 
+    @media (max-width: 400px) {
+            width: 400px;
+        }
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
+
+    @media (max-width: 768px) { 
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 400px) {
+        justify-content: center;
+    }
 
 nav {
     margin-top: 40px; 
@@ -81,20 +95,47 @@ nav {
     justify-content: space-between;
     display: flex;
 
+    @media (max-width: 768px) {
+        width: 768px;
+        padding: 0 30px;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
 
 a {
     text-decoration: none;
     color: #b0b0b0;
-    
-&:hover {
+    &:hover {
     text-decoration: underline;
     color: black;
     }
+    @media (max-width: 400px) {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 20px;
+        border-bottom: 1px solid gray;
+        &:first-child {
+            border-top: 1px solid red;
+        }
+    }
 }
- }
+}
 .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+
+    @media (max-width: 700px) {
+        order: -1;
+        display: block;
+        margin: 30px auto 0;
+    }
 }
 }
 
