@@ -67,6 +67,8 @@ h1, h2, h3, h4, h5 {
 //Variables
 
 @margin: 20px;
+@softblack:#4d4d4d;
+@brightgreen:#33cc33;
 
 .container {
     width: 880px;
@@ -88,8 +90,15 @@ header {
         a {
             text-decoration: none;
             color: #b0b0b0;
+            &:hover {
+                background: @softblack;
+                color:@brightgreen;
+            }//hover
         }//a
+      
     }//nav
+   
+        
 
     .logo {
         align-self: flex-end;
@@ -115,7 +124,7 @@ header {
         margin: 0 @margin*4+2 0 0;
 
         button {
-            border: 1px double black;
+            border: 1px double @softblack;
             font-size: 16px;
             background: white;
             width: 170px;
@@ -124,8 +133,8 @@ header {
             cursor: pointer;
 
             &:hover {
-                background: black;
-                color: white;
+                background: @softblack;
+                color: @brightgreen;
             }//hover button
         }//button
     }//cta-text
@@ -134,8 +143,8 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @softblack;
+   border-bottom: 2px solid @softblack;
    margin: @margin*3+15 0 @margin+15 0;
    padding: 35px 0;
    font-size: 16px;
@@ -169,7 +178,7 @@ header {
 // seemed reduntant to nest p inside of .contact 
 // since p doesn't inherit anything from .contact
 .contact p {
-    margin: @margin-5 0;
+    margin: @margin - 5 0;
 }
 
 /* Footer Styles */
