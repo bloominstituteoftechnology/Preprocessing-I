@@ -64,6 +64,10 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+//Variables
+
+@margin: 20px;
+
 .container {
     width: 880px;
     margin: auto;
@@ -76,7 +80,7 @@ header {
     display: flex;
     
     nav {
-        margin-top: 40px; 
+        margin-top: @margin*2; 
         width: 610px;
         justify-content: space-between;
         display: flex;
@@ -89,7 +93,7 @@ header {
 
     .logo {
         align-self: flex-end;
-        margin: 28px 0 0 91px;
+        margin: @margin+8 0 0 @margin*4+11;
     }//logo
 }//header
 
@@ -97,7 +101,7 @@ header {
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: @margin*3+12;
     justify-content: flex-end;
 
     .cta-text {
@@ -108,7 +112,7 @@ header {
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 82px 0 0;
+        margin: 0 @margin*4+2 0 0;
 
         button {
             border: 1px double black;
@@ -132,7 +136,7 @@ header {
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
+   margin: @margin*3+15 0 @margin+15 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
@@ -144,7 +148,7 @@ header {
     
     .middle-img {
         display: block;
-        margin: 30px auto;
+        margin: @margin+10 auto;
     }//middle-img
     
     .bottom-content {
@@ -165,12 +169,12 @@ header {
 // seemed reduntant to nest p inside of .contact 
 // since p doesn't inherit anything from .contact
 .contact p {
-    margin: 15px 0;
+    margin: @margin-5 0;
 }
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: @margin*2 0 @margin;
 }
