@@ -64,9 +64,27 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+// Variables
+
+@margin: 20px;
+@softblack: #4d4d4d;
+@brightgreen: #33cc33;
+
+// Stretch goal: implement escaping for media
+// query variables
+
+@tablet: ~"(max-width: 768px)";
+@mobile: ~"(max-width: 400px)";
+
 .container {
     width: 880px;
     margin: auto;
+
+    @media @tablet {
+        width: 100%;
+        margin: auto;
+        padding: 0 2.6%;
+    }
 }
 
 /* Header Styles */
@@ -74,103 +92,247 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media @tablet {
+        flex-direction: column-reverse;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media @mobile {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    nav {
+        margin-top: @margin*2; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media @tablet {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 1.3%;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        @media @mobile {
+            flex-direction:column;
+            align-items:center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            &:hover {
+                background: @softblack;
+                color: @brightgreen;
+            }//hover
+
+            @media @mobile {
+                width:100%;
+                flex-direction: column;
+                border-bottom: 1px solid gray;
+                padding: 22px 0;
+                font-size: 2rem;
+                text-align: center;
+                &:first-child {
+                    border-top: 1px solid gray;
+                } 
+            } 
+        }//a
+    }//nav
+   
+        
+
+    .logo {
+        align-self: flex-end;
+        margin: @margin+8 0 0 @margin*4+11;
+
+        @media @tablet {
+            align-self: center;
+            margin: 29px 0 0 0;
+        }
+
+        @media @mobile {
+            order: -1;
+            margin: 20px 0;
+            align-self: center;
+        }
+    }//logo
+}//header
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: @margin*3+12;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media @tablet {
+        width: 100%;
+        justify-content: space-around;
+        padding-right: 5%;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media @mobile {
+        display: flex;
+        margin: 5%;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    img {
+        @media @tablet {
+            display: none;
+        }
+
+    }
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 @margin*4+2 0 0;
+
+        @media @tablet {
+            margin: 0;
+        }
+
+        @media @mobile {
+            align-self: center;
+        }
+
+        button {
+            border: 1px double @softblack;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            @media @tablet {
+                width: 48%;
+            }
+
+            @media @mobile {
+                width: 58%;
+            }
+
+            &:hover {
+                background: @softblack;
+                color: @brightgreen;
+            }//hover button
+        }//button
+    }//cta-text
+}//cta
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
+   border-top: 2px solid @softblack;
+   border-bottom: 2px solid @softblack;
+   margin: @margin*3+15 0 @margin+15 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+    
+    @media @tablet {
+        flex-direction: column;
+        border-bottom: 1px solid black; 
+    }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    @media @mobile {
+        margin: 75px 5% 35px 5%;
+        padding-bottom: 0px;
+    }
+    
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+        
+        @media @tablet {
+            padding: 0 1.3%;
+        }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+        @media @mobile {
+            flex-direction: column;
+            padding-bottom: 0;
+        }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .text-content {
+            @media @mobile {
+                padding: 14px 0;
+            }
+        }
+    }//top-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    
+    .middle-img {
+        display: block;
+        margin: @margin+10 auto;
+        
+        @media @tablet {
+            max-width: 100%;
+            padding: 5px 0;
+        }
+
+        @media @mobile {
+            width: 100%;
+            padding-top: 17px;
+        }
+    }//middle-img
+    
+    .bottom-content {
+        .top-content;
+        @media @mobile {
+            padding-top: 17px;
+        }
+          
+        p {
+            padding-right: 20px;
+
+            @media @mobile {
+                padding-bottom: 36px;
+            }
+        }//p
+    }//bottom content
+}//main content
+    
+
+
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+// seemed reduntant to nest p inside of .contact 
+// since p doesn't inherit anything from .contact
+.contact{
+    p {
+    margin: @margin - 5 0;
+    }
+
+    @media @tablet {
+        padding-left: 1.3%;
+    }
+
+    @media @mobile {
+        margin-left: 5%;
+    }
 }
+
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: @margin*2 0 @margin;
+    
+    @media @tablet {
+        font-size: 75%;
+        margin-bottom:5%;
+    }
 }
+  
