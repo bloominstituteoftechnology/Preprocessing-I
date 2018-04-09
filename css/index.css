@@ -215,7 +215,10 @@ h5 {
     border-bottom: 1px solid gray;
   }
   .container header nav a:first-child {
-    border-top: 1px solid red;
+    border-top: 1px solid gray;
+  }
+  .container header nav a:hover {
+    background: gray;
   }
 }
 .container header .logo {
@@ -229,10 +232,33 @@ h5 {
     margin: 30px auto 0;
   }
 }
+@media (max-width: 400px) {
+  .container header .logo {
+    margin: 20px 0;
+  }
+}
 .container .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .container .cta {
+    justify-content: center;
+  }
+  .container .cta img {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .container .cta {
+    margin-top: 50px;
+    flex-flow: column;
+    align-items: center;
+  }
+  .container .cta img {
+    max-width: 80%;
+  }
 }
 .container .cta .cta-text {
   font-size: 72px;
@@ -243,6 +269,11 @@ h5 {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+}
+@media (max-width: 768px) {
+  .container .cta .cta-text {
+    margin: 0;
+  }
 }
 .container .cta .cta-text button {
   border: 1px double black;
@@ -265,17 +296,41 @@ h5 {
   font-size: 16px;
   line-height: 18px;
 }
+@media (max-width: 768px) {
+  .container .main-content {
+    margin: 75px 20px 35px;
+  }
+}
 .container .main-content .top-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .container .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
 }
 .container .main-content .middle-img {
   display: block;
   margin: 30px auto;
 }
+@media (max-width: 768px) {
+  .container .main-content .middle-img {
+    width: 100%;
+  }
+}
 .container .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .container .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
 }
 .container .main-content .bottom-content p {
   padding-right: 20px;

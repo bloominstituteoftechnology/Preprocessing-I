@@ -122,7 +122,10 @@ a {
         font-size: 20px;
         border-bottom: 1px solid gray;
         &:first-child {
-            border-top: 1px solid red;
+            border-top: 1px solid gray; //change it to gray
+        }
+        &:hover {
+            background: gray;
         }
     }
 }
@@ -136,6 +139,10 @@ a {
         display: block;
         margin: 30px auto 0;
     }
+
+    @media (max-width: 400px) {
+        margin: 20px 0;
+    }
 }
 }
 
@@ -145,9 +152,24 @@ a {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
+    @media (max-width: 768px) {
+        justify-content: center;
+        img {
+            display: none;
+        }
+    }
+
+    @media (max-width: 400px) {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+        img {
+            max-width: 80%;
+        }
+    }
+
+.cta-text {
     font-size: 72px;
     text-align: center;
     letter-spacing: 5px;
@@ -156,9 +178,13 @@ a {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
+    @media (max-width: 768px) {
+        margin: 0;
+    }
+
+
+button {
     border: 1px double black;
     font-size: 16px;
     background: white;
@@ -166,53 +192,73 @@ a {
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
+    &:hover {
+        background: black;
     color: white;
+    }
+}
+}
 }
 
-/* Main Content Styles */
-
+/* Main Content Styles (Marco worked on files below)*/
+@my-color: black;
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   border-top: 2px @my-color; 
+   border-bottom: 2px  @my-color;
+   margin: 70px + 10 0 35px 0;
+   padding: 30px + 5 0;
+   font-size: 10px + 6;
+   line-height: 10px + 8;
 
-.main-content .top-content {
+   @media (max-width: 758px + 10) { /* just added 10 px to previous 768*/
+    margin: 75px 20px 35px;
+   }
+
+.top-content {
     display: flex;
     justify-content: space-around;
+    @media (max-width: 400px) {
+        justify-content: space-around;
+        flex-direction: column;
+        height: 300px;
+    }
 }
 
-.main-content .middle-img {
+.middle-img {
     display: block;
     margin: 30px auto;
+    @media (max-width: 758px + 10) {
+        width: 100%;
+    }
 }
 
-.main-content .bottom-content {
+.bottom-content {
     display: flex;
     justify-content: space-around;
-}
 
-.main-content .bottom-content p {
+    @media(max-width: 410px - 10) {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+    }
+
+p {
     padding-right: 20px;
 }
-
+}
+}
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
-}
 
-/* Footer Styles */
+    @media (max-width:700px + 68) {
 
-footer {
+    }
+    footer {
     text-align: center;
     margin: 40px 0 20px;
 }
 }
+}
+/* Footer Styles * copied to .contact to nest/
