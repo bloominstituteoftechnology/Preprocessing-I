@@ -9,8 +9,9 @@ Lets get LESS working on an existing CSS project so we can see the power this ne
 
 ## Prerequisites
 
-1. Node, npm, and LESS have been installed globally on your machine
-2. LESS Watch Compiler has been installed globally on your machine
+1. Node and Yarn are installed on your machine
+2. LESS has been installed globally on your machine
+3. LESS Watch Compiler has been installed globally on your machine
 
 ## Task 1 - Set up your LESS compiler
 
