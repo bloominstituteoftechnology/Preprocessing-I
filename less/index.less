@@ -72,7 +72,17 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+		background-color: @backgroundColor;
+		color: @fontColor;
 }
+
+// Variables
+
+@gray: #b0b0b0;
+@backgroundColor: #FBF2c0;
+@fontColor: #48392a;
+@middleBackground: #c06e52;
+@footerColor: #f04;
 
 /* Header Styles */
 
@@ -88,7 +98,7 @@ header {
 
     a {
       text-decoration: none;
-      color: #b0b0b0;
+      color: @gray;
 
       &:hover {
         text-decoration: underline;
@@ -146,6 +156,7 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+	 background-color: @middleBackground;
 
 	 .top-content {
 	     display: flex;
@@ -158,8 +169,7 @@ header {
 	 }
 
 	 .bottom-content {
-	     display: flex;
-	     justify-content: space-around;
+	     .top-content
 
 			 p {
 			     padding-right: 20px;
@@ -179,4 +189,5 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+		background-color: @footerColor;
 }
