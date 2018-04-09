@@ -4,6 +4,14 @@
    License: none (public domain)
 */
 
+/* Variable Corner */
+@BP0: 800px;
+@BP1: 768px;
+@BP2: 480px;
+@maxBP1: ~"(max-width: 768px)";
+@maxBP2: ~"(max-width: 400px)";
+/* -------------- */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,6 +64,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,8 +74,19 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
+    
+    @media @maxBP1 {
+        width: 95%;
+        padding: 32px 0;
+    }
+
+    @media @maxBP2 {
+        width: 100%;
+        padding: 22px 0;
+    }
 }
 
 /* Header Styles */
@@ -74,28 +94,71 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media @maxBP1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media @maxBP2 {
+        flex-direction: column;
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        @media @maxBP1 {
+            width: 100%;
+            padding: 7px 1.64474%;
+        }
+
+        @media @maxBP2 {
+            margin-top: 20px;
+            padding: 0;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: #b0b0b0;
+        &:hover {
+            text-decoration: underline;
+            color: black;
+        }
+        @media @maxBP2 {
+            width: 100%;
+            border-top: 1px solid black;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2rem;
+
+            &:last-child {
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media @maxBP1 {
+            display: block;
+            order: -1;
+            margin: auto;
+        }
+
+        @media @maxBP2 {
+            align-self: center;
+            margin: 0;
+        }
+    }
 }
 
 /* Call To Action (CTA) Styles */
@@ -104,32 +167,64 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media @maxBP1 {
+        justify-content: center;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media @maxBP2 {
+        margin-top: 48px;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    .cta-text {
+        font-size: 6.4rem;
+        text-align: center;
+        letter-spacing: 0.5rem;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 100%*(82px/@BP0) 0 0;
+        // margin: 0 82px 0 0;
+
+        @media @maxBP1 {
+            margin: 4px 100%*(35px/@BP1) 0 0;
+        }
+
+        @media @maxBP2 {
+            font-size: 15vw;
+            margin: 0;
+        }
+
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            @media @maxBP1 {
+                margin: 12px 100%*(6px/@BP1) 12px 0;
+                padding-top: 4px;
+            }
+
+            @media @maxBP2 {
+                margin: 14px 0 0 100%*(2px/@BP2);
+            }
+
+            &:hover {
+                background: black;
+                color: white;
+            }
+        }
+    }
+
+    img {
+        @media @maxBP1 {
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -141,36 +236,102 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+   @media @maxBP1 {
+       font-size: 1.6rem;
+       margin-bottom: 37px;
+   }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   @media @maxBP2 {
+       & > * {
+           flex-direction: column;
+           align-items: center;
+       }
+       margin: 76px 3.75% 15px;
+       padding: 40px 0 10px;
+   }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+   .text-content {
+       @media @maxBP1 {
+            margin: 0.7rem 0 0 1.37061%;
+            word-spacing: 0.5rem;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+            p {
+                padding: 5px 0 0 100%*(4px/@BP1);
+            }
+        }
+    }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+    @media @maxBP2 {
+        h4 {
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        p {
+            margin: 1.3rem 0;
+        }
+    }
+    
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media @maxBP1 {
+            width: 100%;
+            margin: 26px auto 22px;
+        }
+
+        @media @maxBP2 {
+            margin: 25px 0 22px;
+        }
+    }
+
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        p {
+            padding-right: 100%*(20px/@BP0);
+        }
+
+        @media @maxBP2 {
+            margin: 13px 0 20px;
+        }
+    }
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
-}
+.contact {
+    font-size: 1.6rem;
 
+    @media @maxBP1 {
+        margin: 0 1.69271%;
+    } 
+
+    @media @maxBP2 {
+        margin: 35px 0 35px 5%;
+    }
+
+    p {
+        margin: 15px 0;
+
+        @media @maxBP1 {
+            padding: 4px 0 0 0;
+        }
+
+        @media @maxBP2 {
+            padding-bottom: 5px;
+        }
+    }
+}
 /* Footer Styles */
 
 footer {
+    font-size: 1.6rem;
     text-align: center;
     margin: 40px 0 20px;
 }
