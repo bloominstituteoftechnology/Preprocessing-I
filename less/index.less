@@ -1,3 +1,12 @@
+.mixin {
+    display: flex;
+    justify-content: space-around;
+}
+
+@bcolor: yellow;
+
+@linkc: black;
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -24,6 +33,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -56,6 +66,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background-color: @bcolor;
 }
 
 h1, h2, h3, h4, h5 {
@@ -76,14 +87,14 @@ header {
     display: flex;
 
     nav {
-        margin-top: 40px; 
-        width: 610px;
+        margin-top: 40px * 2; 
+        width: 610px + 10;
         justify-content: space-between;
         display: flex;
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @linkc;
 
             &:hover {
                 text-decoration: underline;
@@ -149,8 +160,7 @@ header {
    line-height: 18px;
 
    .top-content {
-    display: flex;
-    justify-content: space-around;
+    .mixin;
 }
 
     .middle-img {
@@ -159,8 +169,7 @@ header {
 }
 
     .bottom-content {
-    display: flex;
-    justify-content: space-around;
+    .mixin;
 
     p {
         padding-right: 20px;
