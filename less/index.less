@@ -3,8 +3,9 @@
 @menu-color: hotpink;
 @my-favorite-color: green;
 @rainbow: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
-
-
+@my-border-color: orange;
+@my_new_color: white;
+@my_background_color: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 
 
 ///THIS IS A CHANGE I MADE!!!
@@ -78,6 +79,7 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background: @my_background_color;
     @media (max-width:880px) {
         width: 100%;
     }
@@ -168,8 +170,8 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @my-border-color; 
+   border-bottom: 2px solid @my-border-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 1.6rem;
@@ -196,6 +198,7 @@ header {
 .main-content-mix {
     display: flex;
     justify-content: space-around;
+    color: @my_new_color;
 }
 
 
@@ -203,6 +206,7 @@ header {
 .contact {
     margin: 15px 0;
     font-size: 1.6rem;
+    color: @my_new_color;
 }
 
 /* Footer Styles */
@@ -211,4 +215,5 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
     font-size:1.6rem;
+    color: @my_new_color;
 }
