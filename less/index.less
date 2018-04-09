@@ -67,12 +67,19 @@ h1, h2, h3, h4, h5 {
 //Variables
 
 @margin: 20px;
-@softblack:#4d4d4d;
-@brightgreen:#33cc33;
+@softblack: #4d4d4d;
+@brightgreen: #33cc33;
+@tablet: ~"(max-width: 768px)";
 
 .container {
     width: 880px;
     margin: auto;
+
+    @media @tablet {
+        width: 100%;
+        margin: auto;
+        padding: 0 2.6%;
+    }
 }
 
 /* Header Styles */
@@ -80,12 +87,22 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+
+    @media @tablet {
+        flex-direction: column-reverse;
+    }
     
     nav {
         margin-top: @margin*2; 
         width: 610px;
         justify-content: space-between;
         display: flex;
+
+        @media @tablet {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 1.3%;
+        }
 
         a {
             text-decoration: none;
@@ -103,6 +120,11 @@ header {
     .logo {
         align-self: flex-end;
         margin: @margin+8 0 0 @margin*4+11;
+
+        @media @tablet {
+            align-self: center;
+            margin: 29px 0 0 0;
+        }
     }//logo
 }//header
 
@@ -112,6 +134,18 @@ header {
     display: flex;
     margin-top: @margin*3+12;
     justify-content: flex-end;
+
+    @media @tablet {
+        width: 100%;
+        justify-content: space-around;
+        padding-right: 5%;
+    }
+
+    img {
+        @media @tablet {
+            display: none;
+        }
+    }
 
     .cta-text {
         font-size: 72px;
@@ -123,6 +157,10 @@ header {
         align-items: center;
         margin: 0 @margin*4+2 0 0;
 
+        @media @tablet {
+            margin: 0;
+        }
+
         button {
             border: 1px double @softblack;
             font-size: 16px;
@@ -131,6 +169,10 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+
+            @media @tablet {
+                width: 48%;
+            }
 
             &:hover {
                 background: @softblack;
@@ -161,8 +203,7 @@ header {
     }//middle-img
     
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .top-content;
           
         p {
             padding-right: 20px;
