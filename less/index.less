@@ -96,15 +96,34 @@ header {
   width: 100%;
   display: flex;
 
+	@media(max-width: 400px){
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
   nav {
     margin-top: 20px * 2;
     width: 1220px / 2;
     justify-content: space-between;
     display: flex;
 
+		@media(max-width: 400px){
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+		}
+
     a {
       text-decoration: none;
       color: @gray;
+
+			@media(max-width:400px){
+				border: 1px solid gray;
+				width: 100%;
+				text-align: center;
+				padding: 1.25rem;
+				font-size: 1.25rem;
+			}
 
       &:hover {
         text-decoration: underline;
@@ -116,6 +135,11 @@ header {
   .logo {
     align-self: flex-end;
     margin: 18px + 10 0 0 91px;
+
+		@media(max-width: 400px){
+			align-self: center;
+			padding-right: 4.5rem;
+		}
   }
 }
 

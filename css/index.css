@@ -161,15 +161,37 @@ header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 400px) {
+  header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 header nav {
   margin-top: 40px;
   width: 610px;
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 400px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
 header nav a {
   text-decoration: none;
   color: #b0b0b0;
+}
+@media (max-width: 400px) {
+  header nav a {
+    border: 1px solid gray;
+    width: 100%;
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 1.25rem;
+  }
 }
 header nav a:hover {
   text-decoration: underline;
@@ -178,6 +200,12 @@ header nav a:hover {
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
+}
+@media (max-width: 400px) {
+  header .logo {
+    align-self: center;
+    padding-right: 4.5rem;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
