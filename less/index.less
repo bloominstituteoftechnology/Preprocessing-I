@@ -78,6 +78,10 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+
+    @media(max-width: 400px){
+        flex-flow: column-reverse;
+    }
     nav {
         margin-top: 40px; 
         width: 610px;
@@ -98,9 +102,14 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+                order: -1; 
+                align-self: center;
+        }
     }
-} 
- 
+}
+     
 /* Call To Action (CTA) Styles */
 .cta {
     display: flex;
@@ -129,7 +138,11 @@ header {
             color: white;
         }
     }
-    
+    img{
+        @media(max-width: 768px){
+                 display: none;
+                }
+        }  
 }
 
 /* Main Content Styles */
