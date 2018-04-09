@@ -1,3 +1,8 @@
+// hopefully this will work now //
+// gonna spend all our time trying for this to work//
+// third time is a charm //
+
+
 # Preprocessing
 Preprocessing extends the ability of CSS by adding abstractions and making CSS easier to use. There are many flavors of preprocessors but the one we will focus on will be LESS (Leaner Style Sheets).  
 
