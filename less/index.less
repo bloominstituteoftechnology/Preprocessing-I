@@ -87,7 +87,12 @@ header {
     	margin-top: 40px; 
     	width: 610px;
     	justify-content: space-between;
-    	display: flex;
+		display: flex;
+		
+		@media (max-width: 768px) {
+			width: 100%;
+			margin: 38px 3%;
+		}
 	
 
 		a {
@@ -105,8 +110,13 @@ header {
 	.logo {
 			align-self: flex-end;
 			margin: 25px 0 0 91px;
-			@media (max-width: 800){
-			       display: none;
+
+
+		@media (max-width: 768px){
+				order: -1;
+				display: block;
+				margin: 30px auto 0;
+				justify-content: center;
 			       }
 	 }
 
@@ -116,29 +126,44 @@ header {
     
 
 // Call To Action (CTA) Styles //
-
+@font-size--large: 50px;
+@font-size--medium: 12px;
 .cta {
     display: flex;
-    margin-top: 62px+10;
+    margin-top: 62px+10; //used + operator //
     justify-content: flex-end;
-
-
+	@media (max-width:768px) {
+		justify-content: center;
+	}
+	img {
+		@media (max-width: 768px) {
+		display: none;
+		}
+	}
     .cta-text {
-    	 font-size: 72px;
+    	 font-size: @font-size--large;
     	 text-align: center;
     	 letter-spacing: 5px;
     	 display: flex;
     	 justify-content: center;
     	 flex-flow: column;
     	 align-items: center;
-    	 margin: 0 82px 0 0;
+		 margin: 0 82px 0 0;
+
+		 @media (max-width:768px) {
+			margin: 0 5% 0 0;
+		}
+		 
+		 @media (max-width: 400px) {
+			 font-size: @font-size--medium;
+		 }
 
 
 	 button {
     	      border: 1px double black;
     	      font-size: 16px;
     	      background: white;
-    	      width: 180px -10;
+    	      width: 180px -10; //used - operator //
     	      height: 32px;
     	      margin-top: 10px;
     	      cursor: pointer;
@@ -167,6 +192,11 @@ header {
    line-height: 18px;
    color: @text;
 
+   @media (max-width:768px) {
+	font-size: 22.4 px;
+    margin: 75px 2% 35px;
+}
+
 
    .top-content {
    		  display: flex;
@@ -176,7 +206,13 @@ header {
 
    .middle-img {
     		  display: block;
-    		  margin: 30px auto;
+			  margin: 30px auto;
+			  
+			  @media (max-width:768px) {
+				width: 100%;
+				margin: 25px auto;
+			  }
+			  
 	       }
  
 
@@ -196,7 +232,11 @@ header {
 /* Contact Styles */
 
 .contact p {
-    margin: 15px 0;
+	margin: 15px 0;
+	@media (max-width:768px) {
+		margin: 20px 2%;
+	}
+
 }
 
 /* Footer Styles */
