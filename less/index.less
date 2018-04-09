@@ -71,37 +71,100 @@ h1, h2, h3, h4, h5 {
     max-width: 880px;
     width: 100%;
     margin: auto;
-
+    
+    @media(max-width: 800px){
+        max-width: 800px;
+        width: 100%;
+    }
+    @media(max-width: 500px){
+        max-width: 500px;
+        width: 100%;
+    }  
         header {
             width: 100%;
             display: flex;
-            
+
+            @media(max-width: 800px){
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @media(max-width: 500px){
+                flex-direction: column;
+                align-items: center;
+                }
+
             nav {
                 margin-top: 40px; 
-                width: 610px;
+                width: 70%;
                 justify-content: space-between;
                 display: flex;
-            
+                
+                @media(max-width: 800px){
+                    width: 100%;
+                    justify-content: space-around;
+                    margin-top: 10px; 
+                }
+                @media(max-width: 500px){
+                    flex-direction: column;
+                    align-items: center;
+                    }
+
                 a {
                     text-decoration: none;
                     color: #b0b0b0;
                 
+                    @media(max-width: 500px){
+                        border-top: 1px solid gray;
+                        width: 100%;
+                        text-align: center;
+                        padding: 20px;
+                        } 
+                        
                     &:hover {
                         text-decoration: underline;
                         color: black;
+                    
+                    }
+                    &:last-child {
+                        @media(max-width: 500px){
+                            border-bottom: 1px solid gray;
+                    }        
                 }
                 } // Header Links
             }// Nav items
             .logo {
                 align-self: flex-end;
                 margin: 28px 0 0 91px;
+
+                @media(max-width: 800px){
+                    order: -1;
+                    margin: 28px 0;
+                }
+                @media(max-width: 500px){
+                    margin: 0;
+                    align-self: center;
+                    margin: 0px;
+                }
             }// Logo
     } // Header Styles
 
-    .cta {
+    .cta { 
         display: flex;
         margin-top: 72px;
         justify-content: flex-end;
+
+        @media(max-width: 800px){
+            justify-content: center;
+            }
+
+        img {
+        @media(max-width: 800px){
+            display: none;
+            }
+            @media(max-width: 500px){
+                display: none;
+                }
+        }
     
         .cta-text {
             font-size: 72px;
@@ -113,6 +176,10 @@ h1, h2, h3, h4, h5 {
             align-items: center;
             margin: 0 82px 0 0;
             color: @cta-text; //variable
+
+            @media(max-width: 800px){
+                margin: 0px; 
+            }
         
             button {
                 border: 1px double black;
@@ -144,30 +211,47 @@ h1, h2, h3, h4, h5 {
      
         .content {
             .bottom-content;
-            
-        } //mixin
+            }   //mixin
 
         .middle-img {
-            display: block;
+            width: 100%;
             margin: 30px auto;
+
+            @media(max-width:500px){
+                width: 100%;
+                margin: auto;
+            }
         }
         
         .bottom-content {
             display: flex;
             justify-content: space-around;
-        
+
+            @media(max-width:500px){
+                width: 100%;
+                padding: 20px;
+                flex-direction: column;
+            }
+            .text-content {
+                @media(max-width:500px){
+                    margin-top: 10px;
+                }
             p {
                 padding-right: 10px + 10; // Used operator
             }
         } 
+        }
     }
     .contact{
+        @media(max-width:500px){
+            margin-left: 5%;
+        }
         p {
            margin: 15px 0;
         }
-    }
-    footer {
-        text-align: center;
-        margin: 40px 0 20px;
-    }
+}
+footer {
+    text-align: center;
+    margin: 40px 0 20px;
+}
 }
