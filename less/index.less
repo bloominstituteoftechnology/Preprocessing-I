@@ -206,8 +206,9 @@ h1, h2, h3, h4, h5 {
         padding: 35px 0;
         font-size: 16px;
         line-height: 9px * 2;  // Used operator
-        color: @main-content-text; //variable
+        color: desaturate(@main-content-text, 50%); // used function
         background: @main-content-background; //variable
+       
      
         .content {
             .bottom-content;
@@ -222,18 +223,23 @@ h1, h2, h3, h4, h5 {
                 margin: auto;
             }
         }
-        
+
+        .contact{
+            @media(max-width:800px){
+                margin-left: 5%;
+            }
+        }
         .bottom-content {
             display: flex;
             justify-content: space-around;
 
-            @media(max-width:500px){
+            @media(max-width: 500px){
                 width: 100%;
                 padding: 20px;
                 flex-direction: column;
             }
             .text-content {
-                @media(max-width:500px){
+                @media(max-width: 500px){
                     margin-top: 10px;
                 }
             p {
