@@ -166,13 +166,25 @@ h5 {
     margin: auto;
 }
 
+/* Mixings */
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.no-shadow {
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
 /* Header Styles */
 
 //Converting Style rules to Nested--Tramane
 header {
     width: 100%;
     display: flex;
-    background: @nav-background;
+
+    .shadow;
+    &:hover {
+        .no-shadow;
+    }
 
     nav {
         margin-top: 40px;
@@ -195,6 +207,10 @@ header {
         align-self: flex-end;
         margin: 28px 0 0 91px;
 
+        .shadow;
+        &:hover {
+            .no-shadow;
+        }
     }
 }
 
@@ -225,9 +241,12 @@ header {
             margin-top: 10px;
             cursor: pointer;
 
+            .shadow;
+
             &:hover {
                 background: black;
                 color: white;
+                .no-shadow;
             }
         }
     }
@@ -236,16 +255,27 @@ header {
 /* Main Content Styles */
 
 .main-content {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    margin: 75px 0 35px 0;
-    padding: 35px 0;
-    font-size: 16px;
-    line-height: 18px;
 
-    .top-content {
-        display: flex;
-        justify-content: space-around;
+
+   border-top: 2px solid black; 
+   border-bottom: 2px solid black;
+   margin: 75px 0 35px 0;
+   padding: 35px 0;
+   font-size: 16px;
+   line-height: 18px;
+
+
+   .top-content {
+    display: flex;
+    justify-content: space-around;
+
+    .text-content {
+        .shadow;
+        &:hover {
+            .no-shadow;
+        }
+    }
+
     }
 
     .middle-img {
@@ -256,9 +286,19 @@ header {
     .bottom-content {
         display: flex;
         justify-content: space-around;
-        p {
-            padding-right: 20px;
+
+
+        .text-content {
+            p {
+                padding-right: 20px;
+            }
+            .shadow;
+            &:hover {
+                .no-shadow;
+            }
         }
+
+        
     }
 }
 
