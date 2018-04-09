@@ -1,5 +1,6 @@
+Made changes to read me file...
 # Preprocessing
-Preprocessing extends the ability of CSS by adding abstractions and making CSS easier to use. There are many flavors of preprocessors but the one we will focus on will be LESS (Leaner Style Sheets).  
+Preprocessing extends the ability of CSS by adding abstractions and making CSS easier to use. There are many flavors of preprocessors but the one we will focus on will be LESS (Leaner Style Sheets).
 
 LESS is a language extension for CSS.  It fits nicely into almost every type of development stack and has been ported to JavaScript among many other programming languages. http://lesscss.org/
 
@@ -18,7 +19,7 @@ Lets get LESS working on an existing CSS project so we can see the power this ne
 * Fork and clone this repo to get started.
 * Once you have the repo on your local machine open terminal or git bash and ```cd``` into the project's root folder.
 * Now that you are in the projects root folder run ```less-watch-compiler less css index.less```.  **If you get errors here it is most likely because you didn't finish the prerequisites section.  Please make sure you installed your LESS watch compiler globally.**
-* At this point, the compiler should be up and running with a message in your terminal that says ```Watching directory for file changes.```.  This means your index.less file is now active and producing an index.css file after compiling.  Great work!  Go check out that index.html file now and your CSS should be working again.  
+* At this point, the compiler should be up and running with a message in your terminal that says ```Watching directory for file changes.```.  This means your index.less file is now active and producing an index.css file after compiling.  Great work!  Go check out that index.html file now and your CSS should be working again.
 
 ## Task 2 - Convert the existing CSS project into a LESS project
 
@@ -28,6 +29,6 @@ You might be asking, "Wait, I don't get it, it's just CSS in an index.less file 
 * Find a way to use at least two different operators like + or * to do something to the layout.
 * Look for ways you could use your own mixin where repeat code is found.
 * Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here).
-* Introduce media queries from last week's projects with the nested @media rules.  
+* Introduce media queries from last week's projects with the nested @media rules.
 
 ## Stretch Task - Find something we didn't cover in the LESS documentation and see if you can implement it in your project.  Be sure to use comments to call out what you are doing.
