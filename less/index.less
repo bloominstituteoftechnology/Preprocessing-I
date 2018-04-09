@@ -53,9 +53,14 @@ table {
     box-sizing: border-box;
 }
 
+@background: green;
+@background2: black;
+@text: white;
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background: @background2;
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,11 +69,11 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
 .container {
     width: 880px;
-	margin: auto;
-	
-	
+    margin: auto;
+    background: @background;
 }
 
 /* Header Styles */
@@ -94,17 +99,17 @@ header {
     	       text-decoration: underline;
     	       color: black;
 	       }	   
-		}
+	       }
 	}
 		
 	.logo {
 			align-self: flex-end;
 			margin: 25px 0 0 91px;
+			@media (max-width: 800){
+			       display: none;
+			       }
 	 }
 
-	
-	
-    
 	
 }	
 
@@ -144,7 +149,11 @@ header {
     	      color: white;
 	      }
 	  }
-     }
+
+
+}
+
+
 }
 
 /* Main Content Styles */
@@ -156,6 +165,7 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+   color: @text;
 
 
    .top-content {
@@ -179,7 +189,8 @@ header {
     		  padding-right: 20px;
 		  }
    		}
-  
+
+
 }
      
 /* Contact Styles */
