@@ -112,7 +112,7 @@ header {
 
 
 /* Call To Action (CTA) Styles */
-
+@var-color: #e70909; //SHOW VARIABLE FOR COLOR
 .cta {
     display: flex;
     margin-top: 62px + 10;//using an operator to do something to the layout
@@ -127,10 +127,11 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @var-color; // CHANGING COLOR WITH VARIABLE
 
         button {
             border: 1px double black;
-            font-size: 1.6rem;
+            font-size: 1.6rem / 0.5; // USING OPERATOR TO DO SOMETHING TO LAYOUT
             background: white;
             width: 170px;
             height: 32px;
@@ -154,6 +155,12 @@ header {
     display: flex;
     justify-content: space-around;
 }
+// ALSO FOR MIXIN
+.font-class {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+  }
 
 .main-content {
    border-top: 2px solid black; 
@@ -190,7 +197,8 @@ header {
 /* Contact Styles */
 
 .contact p {
-    margin: 15px 0;
+    .font-class;   // ADDED MIXIN
+    .flex-around; // ADDED MIXIN
 }
 
 /* Footer Styles */
@@ -198,4 +206,5 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @var-color; //SHOW VARIABLE FOR COLOR
 }
