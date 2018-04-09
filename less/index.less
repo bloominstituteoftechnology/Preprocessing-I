@@ -63,17 +63,23 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
-
+@borderColor : gray;
+@tabletConversion: 880px - 112;
+@mobileConversion:768px - 168;
+.bordered {
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+}
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 
-    @media (max-width: 768px) {
-            width: 768px;
+    @media (max-width: @tabletConversion ) {
+            max-width: @tabletConversion;
     }
 
-    @media (max-width: 400px) {
-            width: 400px;
+    @media (max-width: @mobileConversion) {
+            max-width: @mobileConversion;
         }
 /* Header Styles */
 
@@ -81,11 +87,11 @@ header {
     width: 100%;
     display: flex;
 
-    @media (max-width: 768px) { 
+    @media (max-width: @tabletConversion) { 
         flex-wrap: wrap;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: @mobileConversion) {
         justify-content: center;
     }
 
@@ -95,12 +101,12 @@ nav {
     justify-content: space-between;
     display: flex;
 
-    @media (max-width: 768px) {
-        width: 768px;
+    @media (max-width: @tabletConversion) {
+        width: 100%;
         padding: 0 30px;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: @mobileConversion) {
         width: 100%;
         flex-direction: column;
         margin: 0;
@@ -114,15 +120,15 @@ a {
     text-decoration: underline;
     color: black;
     }
-    @media (max-width: 400px) {
+    @media (max-width: @mobileConversion) {
         width: 100%;
         display: block;
         text-align: center;
         padding: 20px 0;
         font-size: 20px;
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid @borderColor;
         &:first-child {
-            border-top: 1px solid gray; //change it to gray
+            border-top: 1px solid @borderColor; //change it to gray
         }
         &:hover {
             background: gray;
@@ -134,13 +140,13 @@ a {
     align-self: flex-end;
     margin: 28px 0 0 91px;
 
-    @media (max-width: 700px) {
+    @media (max-width: @tabletConversion) {
         order: -1;
         display: block;
         margin: 30px auto 0;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: @mobileConversion) {
         margin: 20px 0;
     }
 }
@@ -153,14 +159,14 @@ a {
     margin-top: 72px;
     justify-content: flex-end;
 
-    @media (max-width: 768px) {
+    @media (max-width: @tabletConversion) {
         justify-content: center;
         img {
             display: none;
         }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: @mobileConversion) {
         margin-top: 50px;
         flex-flow: column;
         align-items: center;
@@ -179,7 +185,7 @@ a {
     align-items: center;
     margin: 0 82px 0 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: @tabletConversion) {
         margin: 0;
     }
 
@@ -203,14 +209,13 @@ button {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+    .bordered;              //Mixin
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
 
-   @media (max-width: 768px) {
+   @media (max-width: @tabletConversion) {
     margin: 75px 20px 35px;
     .text-content {
         margin: 0 10px;
@@ -220,7 +225,8 @@ button {
 .top-content {
     display: flex;
     justify-content: space-around;
-    @media (max-width: 400px) {
+    
+    @media (max-width: @mobileConversion) {
         justify-content: space-around;
         flex-direction: column;
         height: 300px;
@@ -230,7 +236,8 @@ button {
 .middle-img {
     display: block;
     margin: 30px auto;
-    @media (max-width: 768px) {
+
+    @media (max-width: @tabletConversion) {
         width: 100%;
     }
 }
@@ -239,7 +246,7 @@ button {
     display: flex;
     justify-content: space-around;
 
-    @media(max-width: 400px) {
+    @media(max-width: @mobileConversion) {
         flex-wrap: wrap;
         align-content: space-between;
         height: 440px;
@@ -250,14 +257,20 @@ p {
 }
 }
 /* Contact Styles */
+@media (max-width: @tabletConversion) {
+    .contact {
+        margin: 0 30px;
+    }
+}
 
+@media (max-width: @mobileConversion) {
+    .contact {
+        margin: 20px;
+    }
+}
 .contact p {
     margin: 15px 0;
 
-    @media (max-width:768px) {
-
-    }
-}
 
 /* Footer Styles */
 
@@ -265,4 +278,5 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 } 
+}
 }
