@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,24 +25,29 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -65,59 +70,98 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+	width: 100%;
+	max-width: 800px + 80;
+  margin: auto;
+	background-color: @backgroundColor;
+	color: @fontColor;
+
+		@media (min-width:401px) and (max-width: 860px){
+			 padding: 0 percentage(50px / @container-width);
+		}
 }
+
+// Variables
+
+@gray: #b0b0b0;
+@backgroundColor: #FBF2c0;
+@fontColor: #48392a;
+@middleBackground: #c06e52;
+@footerColor: #f04;
+@container-width: 880px;
 
 /* Header Styles */
 
 header {
-    width: 100%;
-    display: flex;
-}
+  width: 100%;
+  display: flex;
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
+	@media(max-width: 400px){
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+  nav {
+    margin-top: 20px * 2;
+    width: 1220px / 2;
     justify-content: space-between;
     display: flex;
-}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+		@media(max-width: 400px){
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+		}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    a {
+      text-decoration: none;
+      color: @gray;
 
-header .logo {
+			@media(max-width:400px){
+				border: 1px solid gray;
+				width: 100%;
+				text-align: center;
+				padding: 1.25rem;
+				font-size: 1.25rem;
+			}
+
+      &:hover {
+        text-decoration: underline;
+        color: black;
+      }
+    }
+  }
+
+  .logo {
     align-self: flex-end;
-    margin: 28px 0 0 91px;
+    margin: 18px + 10 0 0 91px;
+
+		@media(max-width: 400px){
+			align-self: center;
+			padding-right: 4.5rem;
+		}
+  }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+  display: flex;
+  margin-top: 72px;
+  justify-content: flex-end;
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+  .cta-text {
+      font-size: 72px;
+      text-align: center;
+      letter-spacing: 5px;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      align-items: center;
+      margin: 0 82px 0 0;
+  }
 
-.cta .cta-text button {
+  .cta-text button {
     border: 1px double black;
     font-size: 16px;
     background: white;
@@ -125,41 +169,43 @@ header .logo {
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
-}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+	 background-color: @middleBackground;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 .top-content {
+	     display: flex;
+	     justify-content: space-around;
+	 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+	 .middle-img {
+	     display: block;
+	     margin: 30px auto;
+	 }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 .bottom-content {
+	     .top-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+			 p {
+			     padding-right: 20px;
+			 }
+	 }
+
 }
 
 /* Contact Styles */
@@ -173,4 +219,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+		background-color: @footerColor;
 }
