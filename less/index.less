@@ -70,10 +70,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 800px + 80;
-    margin: auto;
-		background-color: @backgroundColor;
-		color: @fontColor;
+	width: 100%;
+	max-width: 800px + 80;
+  margin: auto;
+	background-color: @backgroundColor;
+	color: @fontColor;
+
+		@media (min-width:401px) and (max-width: 860px){
+			 padding: 0 percentage(50px / @container-width);
+		}
 }
 
 // Variables
@@ -83,6 +88,7 @@ h1, h2, h3, h4, h5 {
 @fontColor: #48392a;
 @middleBackground: #c06e52;
 @footerColor: #f04;
+@container-width: 880px;
 
 /* Header Styles */
 
