@@ -1,3 +1,12 @@
+///MY VARIABLES
+
+@menu-color: hotpink;
+@hover-color: red;
+@background-color: green;
+@border-color: orange;
+
+
+
 
 ///THIS IS A CHANGE I MADE!!!
 
@@ -72,34 +81,42 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+
+html {
+    font-size: 100% * (10/16); //operator useage demonstration
+}
 /* Header Styles */
+
 
 header {
     width: 100%;
     display: flex;
-}
+    nav {
+        font-size: 1.6rem;
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+        a {
+            text-decoration: none;
+            color: @menu-color;
+            &hover {
+                text-decoration: underline;
+                color: @hover-color;
+            }
+        }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    }
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
+    
+}//header 
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+
 
 /* Call To Action (CTA) Styles */
 
@@ -107,68 +124,68 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+    .cta-text {
+        font-size: 7.2rem;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        button {
+            border: 1px double @border-color;
+            font-size: 1.6rem;
+            background: @background-color;
+            width: 100px + 70;  //operator demonstration
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                background: @hover-color;
+                color: @button-color;
+            } //hover
+        }//button
+    }//cta-text
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+}//cta
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @border-color; 
+   border-bottom: 2px solid @border-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 1.6rem;
    line-height: 18px;
-}
+   .top-content {
+     .main-content-mix;
+   }//top-content
+     .middle-img {
+      display: block;
+      margin: 30px auto;
+   }
+     .bottom-content {
+     .main-content-mix;
+      p {
+        padding-right: 20px;
+      }
+   }
 
-.main-content .top-content {
+}//main-content
+
+.main-content-mix {
     display: flex;
     justify-content: space-around;
 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
 
 /* Contact Styles */
-
-.contact p {
+.contact {
     margin: 15px 0;
+    font-size: 1.6rem;
 }
 
 /* Footer Styles */
@@ -176,4 +193,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    font-size:1.6rem;
 }
