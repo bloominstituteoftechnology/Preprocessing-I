@@ -148,6 +148,11 @@ h5 {
   width: 880px;
   margin: auto;
 }
+@media (max-width: 880px) {
+  .container {
+    width: 100%;
+  }
+}
 html {
   font-size: 62.5%;
 }
@@ -156,10 +161,16 @@ header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 591px) {
+  header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 header nav {
   font-size: 1.6rem;
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
 }
@@ -167,9 +178,9 @@ header nav a {
   text-decoration: none;
   color: hotpink;
 }
-header nav ahover {
+header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: green;
 }
 header .logo {
   align-self: flex-end;
@@ -181,6 +192,11 @@ header .logo {
   margin-top: 72px;
   justify-content: flex-end;
 }
+@media (max-width: 600px) {
+  .cta img {
+    display: none;
+  }
+}
 .cta .cta-text {
   font-size: 7.2rem;
   text-align: center;
@@ -190,6 +206,7 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+  color: green;
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -201,8 +218,9 @@ header .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  color: lightpink;
+  font-weight: bolder;
 }
 /* Main Content Styles */
 .main-content {
@@ -220,6 +238,11 @@ header .logo {
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+}
+@media (max-width: 880px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
 }
 .main-content .bottom-content {
   display: flex;

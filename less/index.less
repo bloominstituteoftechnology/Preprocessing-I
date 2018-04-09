@@ -1,9 +1,8 @@
 ///MY VARIABLES
 
 @menu-color: hotpink;
-@hover-color: red;
-@background-color: green;
-@border-color: orange;
+@my-favorite-color: green;
+@rainbow: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 
 
 
@@ -79,6 +78,9 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width:880px) {
+        width: 100%;
+    }
 }
 
 
@@ -91,20 +93,25 @@ html {
 header {
     width: 100%;
     display: flex;
+    @media (max-width:591px) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
     nav {
         font-size: 1.6rem;
         margin-top: 40px; 
-        width: 610px;
+        width: 100%;
         justify-content: space-between;
         display: flex;
         a {
             text-decoration: none;
             color: @menu-color;
-            &hover {
+            &:hover {
                 text-decoration: underline;
-                color: @hover-color;
+                color: @my-favorite-color;
             }
         }
+
 
 
     }
@@ -124,6 +131,11 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    img {
+        @media (max-width: 600px) {
+            display: none;
+        }
+    }
     .cta-text {
         font-size: 7.2rem;
         text-align: center;
@@ -133,17 +145,19 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @my-favorite-color;
         button {
-            border: 1px double @border-color;
+            border: 1px double black;
             font-size: 1.6rem;
-            background: @background-color;
+            background: white;
             width: 100px + 70;  //operator demonstration
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
             &:hover {
-                background: @hover-color;
-                color: @button-color;
+                background: @rainbow;
+                color: lightpink;
+                font-weight: bolder;
             } //hover
         }//button
     }//cta-text
@@ -154,8 +168,8 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid @border-color; 
-   border-bottom: 2px solid @border-color;
+   border-top: 2px solid black; 
+   border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 1.6rem;
@@ -166,6 +180,9 @@ header {
      .middle-img {
       display: block;
       margin: 30px auto;
+      @media (max-width:880px) {
+          width: 100%;
+      }
    }
      .bottom-content {
      .main-content-mix;
