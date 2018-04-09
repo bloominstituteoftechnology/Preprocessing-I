@@ -64,8 +64,19 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+/* Wladimir Fraga LESS
+variables */
+
+@screenWidth: 880px;
+@between: space-between;
+@around: space-around;
+@20: 20px;
+@tablet: 768px;
+@mobile: 400px;
+
 .container {
-    width: 880px;
+    max-width: @screenWidth;
+    width: 100%;
     margin: auto;
 }
 
@@ -74,28 +85,47 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: @tablet) {
+        flex-direction: column;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media (max-width: @mobile) {
+        margin-top: 30px;
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+     nav {
+        margin-top: @20 * 2; 
+        width: 610px;
+        justify-content: @between;
+        display: flex;
+        @media (max-width: @tablet) {
+            width: 100%;
+            margin-top: 30px;
+            justify-content: space-around;
+        }
+        @media (max-width: @mobile) {
+            flex-direction: column; 
+            align-items: center;  
+        }
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    .logo {
+        align-self: flex-end;
+        margin: @20 + 8 0 0 91px;
+        @media (max-width: @tablet) {
+            order: -1;
+            align-self: center;
+            margin: 28px 0 0 0;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+    }
 }
 
 /* Call To Action (CTA) Styles */
@@ -104,32 +134,40 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    @media (max-width: @tablet) {
+        justify-content: center;
+    }
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        @media (max-width: @tablet) {
+            margin: auto;
+        }
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                background: black;
+                color: white;
+            }
+        }
+    }
+    img {
+        @media (max-width: @tablet) {
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -141,25 +179,21 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+   .top-content {
+       display: flex;
+       justify-content: @around;
+   }
+   .middle-img {
+       display: block;
+       margin: 30px auto;
+    }
+    .bottom-content {
+        display: flex;
+        justify-content: @around;
+        p {
+            padding-right: @20;
+        }
+    }
 }
 
 /* Contact Styles */
@@ -172,5 +206,5 @@ header .logo {
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: @20 * 2 0 @20;
 }
