@@ -63,6 +63,9 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
+@cta-text: rgb(12, 59, 12);
+@main-content-text: gold;
+@main-content-background: blue;
 
 .container {
     max-width: 880px;
@@ -109,6 +112,7 @@ h1, h2, h3, h4, h5 {
             flex-flow: column;
             align-items: center;
             margin: 0 82px 0 0;
+            color: @cta-text; //variable
         
             button {
                 border: 1px double black;
@@ -118,6 +122,7 @@ h1, h2, h3, h4, h5 {
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
+                color: @cta-text; //variable
             
             &:hover {
                 background: black;
@@ -134,11 +139,13 @@ h1, h2, h3, h4, h5 {
         padding: 35px 0;
         font-size: 16px;
         line-height: 9px * 2;  // Used operator
+        color: @main-content-text; //variable
+        background: @main-content-background; //variable
      
-        .top-content {
-            display: flex;
-            justify-content: space-around;
-        }
+        .content {
+            .bottom-content;
+            
+        } //mixin
 
         .middle-img {
             display: block;
