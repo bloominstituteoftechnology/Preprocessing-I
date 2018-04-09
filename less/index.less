@@ -52,7 +52,9 @@ table {
 * {
     box-sizing: border-box;
 }
-
+html {
+    font-size: 62.5%;
+}
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -70,7 +72,8 @@ h1, h2, h3, h4, h5 {
 @text-color: purple;
 
 .container {
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     margin: auto;
 }
 
@@ -87,20 +90,58 @@ p {
 header {
     width: 100%;
     display: flex;
+    //Medium screen styling
+    @media(max-width: 768px){
+        flex-wrap: wrap;
+    }
+
+    //Small screen styling
+    @media(max-width: 400px){
+        justify-content: center;
+    }
 
     nav {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
+    //Medium screen styling
+    @media(max-width: 768px){
+        width: 100%;
+        margin: 38px 3%;
+    }
+
+    //Small screen styling
+    @media(max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
 
         a {
             text-decoration: none;
             color: @link-color;
+            font-size: 1.6rem;
+
+            //Small screen styling
+            @media(max-width: 400px) {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 2rem;
+                border-bottom: 1px solid gray;
+            }
 
             &:hover {
                 text-decoration: underline;
                 color: @link-hover-color;
+
+                //Small screen styling
+                @media(max-width: 400px) {
+                    background: gray;
+                }
             } //a:hover
         } //a
     } //nav
@@ -108,6 +149,18 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        
+        //Medium screen styling
+        @media(max-width: 768px) {
+            order: -1;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        //Small screen styling
+        @media(max-width: 400px) {
+            margin: 20px 0;
+        }
     } //logo
 } //header
 
@@ -117,6 +170,19 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    //Medium screen styling
+    @media(max-width: 768px) {
+        justify-content: center;
+    }
+
+    //Small screen styling
+    @media(max-width: 400px){
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .cta-text {
         color: @title-color;
@@ -129,9 +195,24 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        //Medium screen styling
+        @media(max-width: 768px) {
+            margin: 0 5% 0 0;
+        }
+        //Small screen styling
+        @media(max-width: 400px){
+            margin: 0;
+        }
+        
+        h1 {
+            @media (max-width: 768px) {
+                letter-spacing: 0;
+            }
+            
+        }
         button {
             border: 1px double black;
-            font-size: 16px;
+            font-size: 1.6rem;
             background: white;
             width: 170px;
             height: 32px;
@@ -144,6 +225,20 @@ header {
             } //&:hover
         } //button
     } //.cta-text
+    
+    img {
+        //Medium screen styling
+        @media(max-width: 768px) {
+            display: none;
+        }
+
+        //Small screen styling
+        @media(max-width: 400px){
+            // display: block;
+            max-width:80%;
+            margin: 55px 0 0 0;
+        }
+} //img       
 } //.cta
 
 /* Main Content Styles */
@@ -153,22 +248,51 @@ header {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 1.6rem;
    line-height: 18px;
+
+   //Medium screen styling
+   @media(max-width:768px){
+       margin: 75px 2% 35px;
+   }
 
    .top-content {
     display: flex;
     justify-content: space-around;
+    
+    //Small screen styling
+    @media(max-width: 400px){
+        flex-wrap: wrap;
+        height: 300px;
+    }
     } //.top-content
 
     .middle-img {
         display: block;
         margin: 30px auto;
+
+        //Medium screen styling
+        @media(max-width:768px){
+            width: 100%;
+            margin: 25px auto;
+        }
+
+        //Small screen styling
+        @media(max-width: 400px){
+            margin-bottom: 60px;
+        }
     } //.middle-img
 
     .bottom-content {
         display: flex;
         justify-content: space-around;
+        
+        //Small screen styling
+        @media(max-width: 400px){
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
 
         p {
             padding-right: 20px;
@@ -178,13 +302,19 @@ header {
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
-}
-
+.contact {
+    font-size: 1.6rem;
+    @media(max-width:768px){
+        margin:20px 2%;
+    }
+    p {
+      margin: 15px 0;
+    }//p
+}//.contact
 /* Footer Styles */
 
 footer {
+    font-size: 1.6rem;
     text-align: center;
     margin: 40px 0 20px;
 }
