@@ -31,4 +31,4 @@ You might be asking, "Wait, I don't get it, it's just CSS in an index.less file 
 
 ## Stretch Task - Find something we didn't cover in the LESS documentation and see if you can implement it in your project.  Be sure to use comments to call out what you are doing.
 
-Paul Fang, Kelly Manahan
+Kelly Manahan, Wladimir Fraga
