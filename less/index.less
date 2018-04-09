@@ -164,6 +164,12 @@ h5 {
 .container {
     width: 880px;
     margin: auto;
+    .shadow;
+    @media only screen and ( max-width: 400px) {
+        max-width: 400px;
+        width: 100%;
+        padding-bottom: 20px;
+    }
 }
 
 /* Mixings */
@@ -172,6 +178,21 @@ h5 {
 }
 .no-shadow {
     box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+.fix-to-mobile-width {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.text-content-mobile {
+    @media only screen and ( max-width: 400px) {
+        padding: 13px;
+        font-size: 100% - 12%;
+        .no-shadow;
+        &:hover {
+            .shadow;
+        }
+    }
 }
 
 /* Header Styles */
@@ -194,12 +215,22 @@ header {
         
         a {
             text-decoration: none;
-            color: white;
+            color: black;
 
             &:hover {
                 text-decoration: underline;
                 color: black;
             }
+            
+            @media only screen and ( max-width: 400px) {
+                text-align: center;
+                padding: 14px 0;
+                border: 0.5px solid black;
+            }
+        }
+
+        @media only screen and ( max-width: 400px) {
+            flex-direction: column;
         }
     }
 
@@ -211,6 +242,13 @@ header {
         &:hover {
             .no-shadow;
         }
+        @media only screen and ( max-width: 400px) {
+            order: -1;
+        }
+    }
+
+    @media only screen and ( max-width: 400px) {
+        .fix-to-mobile-width;
     }
 }
 
@@ -249,6 +287,22 @@ header {
                 .no-shadow;
             }
         }
+        
+
+        @media only screen and ( max-width: 400px) {
+            margin-right: 0;
+            font-size: 48px;
+        }
+
+    }
+
+    img {
+        @media only screen and ( max-width: 400px) {
+            display: none;
+        }    
+    }
+    @media only screen and ( max-width: 400px) {
+        justify-content: space-around;
     }
 }
 
@@ -274,6 +328,7 @@ header {
         &:hover {
             .no-shadow;
         }
+        .text-content-mobile;
     }
 
     }
@@ -281,6 +336,7 @@ header {
     .middle-img {
         display: block;
         margin: 30px auto;
+        max-width: 100%;
     }
 
     .bottom-content {
@@ -296,9 +352,15 @@ header {
             &:hover {
                 .no-shadow;
             }
+            .text-content-mobile
         }
+        @media only screen and ( max-width: 400px) {
+            flex-direction: column;
+        }    
+    }
 
-        
+    @media only screen and ( max-width: 400px) {
+        .fix-to-mobile-width;
     }
 }
 
@@ -306,6 +368,9 @@ header {
 
 .contact p {
     margin: 15px 0;
+    @media only screen and ( max-width: 400px) {
+        padding: 0 13px;
+    }
 }
 
 /* Footer Styles */
