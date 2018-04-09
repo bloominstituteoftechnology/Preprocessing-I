@@ -159,71 +159,66 @@ h5 {
 }
 
 //Variables
-@nav-background: #4CB2A1;
-
+@nav-background: #7ecb20;
+@main-background: #b2ff59;
+@text-background: #e7ff8c;
 .container {
     width: 880px;
     margin: auto;
-    @media (max-width: 750px + 50) { 
-        .container {     
-            max-width: 768px; 
+    @media (max-width: 750px + 50) {
+        .container {
+            max-width: 768px;
             width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             padding: 25px 3%;
         }
-    
-            header {
-                display: flex;
-                flex-direction: column-reverse;
-                align-items: space-around;
-                width: 100%;
-            }
-    
-                nav {
-                display: flex;
-                width: 100%;
-                align-items: center;
-                justify-content: space-between;
-            }
-    
-         .logo {
-            margin:  auto;
+        header {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: space-around;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            margin: auto;
             display: flex;
             justify-content: center;
         }
-    
         .cta img {
             display: none;
         }
-    
         .cta {
             display: flex;
             justify-content: center;
             align-items: center;
-
             .cta-text {
                 display: flex;
                 justify-content: center;
                 margin: auto;
             }
         }
-    
         .main-content .middle-img {
             width: 100%;
             margin: 20px auto;
         }
-    
     }
-}//Tablet Bubbling}
+} //Tablet Bubbling}
 
 /* Mixings */
+
 .shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .no-shadow {
-    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 /* Header Styles */
@@ -232,33 +227,28 @@ h5 {
 header {
     width: 100%;
     display: flex;
-
+    background: @nav-background;
     .shadow;
     &:hover {
         .no-shadow;
     }
-
     nav {
         margin-top: 40px;
         width: 610px;
         justify-content: space-between;
         display: flex;
-        
         a {
             text-decoration: none;
-            color: grey;
-
+            color: white;
             &:hover {
                 text-decoration: underline;
                 color: black;
             }
         }
     }
-
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
-
         .shadow;
         &:hover {
             .no-shadow;
@@ -273,7 +263,7 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-
+    
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -283,7 +273,6 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
-
         button {
             border: 1px double black;
             font-size: 16px;
@@ -292,9 +281,7 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
-
             .shadow;
-
             &:hover {
                 background: black;
                 color: white;
@@ -307,39 +294,30 @@ header {
 /* Main Content Styles */
 
 .main-content {
-
-
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-
-
-   .top-content {
-    display: flex;
-    justify-content: space-around;
-
-    .text-content {
-        .shadow;
-        &:hover {
-            .no-shadow;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
+    background: @text-background;
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+        .text-content {
+            .shadow;
+            &:hover {
+                .no-shadow;
+            }
         }
     }
-
-    }
-
     .middle-img {
         display: block;
         margin: 30px auto;
     }
-
     .bottom-content {
         display: flex;
         justify-content: space-around;
-
-
         .text-content {
             p {
                 padding-right: 20px;
@@ -349,16 +327,18 @@ header {
                 .no-shadow;
             }
         }
-
-        
     }
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    background: @main-background;
+            p {
+            margin: 15px 0;
+        }
 }
+
 
 /* Footer Styles */
 
