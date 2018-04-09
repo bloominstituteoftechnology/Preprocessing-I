@@ -68,16 +68,30 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    background-color: @primary-background;
+}
+
 .container {
     width: 100%;
 	max-width: 880px;
     margin: 0 auto;
     font-size: 1.6rem;
+    .text-color(@primary-background);
 
     @media(max-width: 900px) {
         padding: 0 2.5%;
         max-width: 768px;
     }
+}
+@primary-background:rgb(105, 104, 104);
+
+.text-color(@a) when (lightness(@a) >= 50%) {
+    color: @var-color;
+}
+
+.text-color(@a) when (lightness(@a) < 50%) {
+    color: lightgray;
 }
 
 
@@ -86,6 +100,7 @@ html {
 header {
     width: 100%;
     display: flex;
+    
 
     nav {
         margin-top: 40px; 
@@ -95,11 +110,11 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            .text-color(@primary-background);
 
             &:hover {
                 text-decoration: underline;
-                color: black;
+                .text-color(@primary-background)
             }//a:hover
         }//a
     }//nav
@@ -107,6 +122,7 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        background-color: white;
     }//logo
 }//header
 
@@ -157,7 +173,7 @@ header {
 }
 // ALSO FOR MIXIN
 .font-class {
-    color: black;
+    .text-color(@primary-background);
     font-size: 18px;
     text-align: center;
   }
