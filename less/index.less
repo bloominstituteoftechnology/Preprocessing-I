@@ -67,36 +67,56 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 }
 
 /* Header Styles */
 
+@aqua-park: #99ccff;
+
 header {
     width: 100%;
     display: flex;
+ 
+    @media(max-width: 800px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-    .nav {
-        margin-top: 40px; 
+    nav {
+        margin-top: 40px;
         width: 610px;
         justify-content: space-between;
         display: flex;
 
-        .a {
+        @media(max-width: 800px) {
+            width: 90%;
+            order: 2;
+        }
+
+        a {
             text-decoration: none;
             color: #b0b0b0;
 
-            &:hover {
-                text-decoration: underline;
-                color: black;
+        &:hover {
+            text-decoration: underline;
+            color: black;
             }
         }
     }
+ 
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
 
-    .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 91px;
+            @media(max-width: 800px){
+                margin-left: 0;
+            }
     }
-}
+ }
 
 /* Call To Action (CTA) Styles */
 
@@ -104,6 +124,16 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media (max-width: 800px){
+        justify-content: center;
+    }
+
+    img {
+        @media (max-width: 800px){
+            display: none;
+        }
+    }
 
     .cta-text {
         font-size: 72px;
@@ -114,6 +144,10 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+
+        @media(max-width: 800px) {
+            margin-right: 0;
+        }
 
         button {
             border: 1px double black;
@@ -144,24 +178,40 @@ header {
    font-size: 16px;
    line-height: 18px;
 
-   .top-content {
+   .top-bottom-content {
         display: flex;
         justify-content: space-around;
+
+        .text-content {
+
+            margin-right: 3%;
+            h4 {
+                @media(max-width: 800px) {
+                    color: @aqua-park;
+                }
+            }
+
+        }
+   }
+
+   .top-content {
+        .top-bottom-content
+    }
+
+    .bottom-content {
+        .top-bottom-content
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
-    }
 
-    .bottom-content {
-        display: flex;
-        justify-content: space-around;
-
-        p {
-            padding-right: 20px / 2;
+        @media( max-width: 800px) {
+            width: 100% / 1.1;
         }
     }
+
+    
 
 }
 
