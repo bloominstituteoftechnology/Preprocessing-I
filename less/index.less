@@ -4,17 +4,7 @@
    License: none (public domain)
 */
 
-// Color variables:
-@color-black: black;
-@color-white: white;
-@color-purple: rgb(85, 2, 85);
-@color-gray: rgb(170, 170, 170);
-@color-green: forestgreen;
 
-.my-content {
-    .top-content;
-    .bottom-content;
-}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -65,6 +55,19 @@ table {
     box-sizing: border-box;
 }
 
+// Color variables:
+@color-black: black;
+@color-white: white;
+@color-purple: rgb(85, 2, 85);
+@color-gray: rgb(170, 170, 170);
+@color-green: forestgreen;
+
+//mixin for .middle-content
+.my-content {
+    display:flex;
+    justify-content: space-around;
+}
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -109,7 +112,7 @@ header {
 
     nav {
       margin-top: 40px; 
-      width: 800px - 190;
+      width: 800px - 190; //<--operator
       justify-content: space-between;
       display: flex;
 
@@ -225,11 +228,8 @@ header {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-<<<<<<< HEAD
-   font-size: 8px * 2;
-=======
+   font-size: 8px * 2; //operator <-
    font-size: 16px; 
->>>>>>> 42878553c4485a61f0949a7ea0823ce0847d80d8
    line-height: 18px;
 
    @media(min-width: 401px) and (max-width: 768px) {
@@ -245,8 +245,7 @@ header {
    
 
    .top-content, .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .my-content;
 
         p {
             padding-right: 20px;
