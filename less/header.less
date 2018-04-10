@@ -1,0 +1,66 @@
+/* Header Styles */
+header {
+    width: 100%;
+    display: flex;
+
+    @media @tablet {
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    nav {
+        margin-top: 40px * 2; 
+        width: 610px + 10;
+        justify-content: space-between;
+        display: flex;
+
+        @media @tablet {
+            justify-content: space-around;
+            margin: 5.2% 0 0 0;
+            width: 100%;
+        }
+
+        @media @mobile {
+            margin: 5% 0 0 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: @link-color;
+
+            @media @mobile {
+                border-bottom: 1px solid #000;
+                font-size: 2rem;
+                padding: 5% 0;
+                text-align: center;
+                width: 100%;
+
+                &:first-child {
+                    border-top: 1px solid #000;
+                }
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: @link-color;
+            }
+        }
+    }
+ 
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media @tablet {
+            align-self: center;
+            margin: 3.9% 0 0 0;
+        }
+
+        @media @mobile {
+            margin: 5% 0 0 0;
+        }
+    }
+}
