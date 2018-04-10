@@ -1,4 +1,34 @@
-<<<<<<< HEAD
+@keyframes rave {
+  0% {
+    background-color: red;
+  }
+  14% {
+    background-color: orange;
+  }
+  28% {
+    background-color: yellow;
+  }
+  42% {
+    background-color: green;
+  }
+  56% {
+    background-color: blue;
+  }
+  70% {
+    background-color: indigo;
+  }
+  84% {
+    background-color: violet;
+  }
+}
+.makingThingsReadableAgain {
+  text-shadow: 5px 5px violet;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
 html,
 body,
 div,
@@ -129,6 +159,10 @@ html,
 body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  background-color: blue;
+  animation-name: rave;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 h1,
 h2,
@@ -142,24 +176,43 @@ h5 {
 .container {
   width: 880px;
   margin: auto;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+@media (max-width: 880px) {
+  .container {
+    width: 100%;
+  }
+}
+html {
+  font-size: 62.5%;
 }
 header {
   width: 100%;
   display: flex;
 }
+
+@media (max-width: 591px) {
+  header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 header nav {
+  font-size: 1.6rem;
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
 }
 header nav a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: hotpink;
+  text-shadow: 5px 5px indigo;
 }
 header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: green;
+  text-shadow: 5px 5px magenta;
 }
 header .logo {
   align-self: flex-end;
@@ -170,8 +223,13 @@ header .logo {
   margin-top: 72px;
   justify-content: flex-end;
 }
+@media (max-width: 600px) {
+  .cta img {
+    display: none;
+  }
+}
 .cta .cta-text {
-  font-size: 72px;
+  font-size: 7.2rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
@@ -179,10 +237,12 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+  color: green;
+  text-shadow: 5px 5px violet;
 }
 .cta .cta-text button {
   border: 1px double black;
-  font-size: 16px;
+  font-size: 1.6rem;
   background: white;
   width: 170px;
   height: 32px;
@@ -190,39 +250,54 @@ header .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
-  color: white;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  color: lightpink;
+  font-weight: bolder;
 }
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid orange;
+  border-bottom: 2px solid orange;
   margin: 75px 0 35px 0;
   padding: 35px 0;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 18px;
 }
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
 }
+@media (max-width: 880px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
+}
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 .main-content .bottom-content p {
   padding-right: 20px;
 }
-.contact p {
+.main-content-mix {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+/* Contact Styles */
+.contact {
   margin: 15px 0;
+  font-size: 1.6rem;
+  color: white;
 }
 footer {
   text-align: center;
   margin: 40px 0 20px;
+  font-size: 1.6rem;
+  color: white;
 }
-=======
-/* Compile your LESS file! */
->>>>>>> 74662ed18bdcff805aea78222d78802afe2ca245

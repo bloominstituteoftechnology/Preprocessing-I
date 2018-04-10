@@ -1,3 +1,27 @@
+// MY VARIABLES
+
+@menu-color: hotpink;
+@my-favorite-color: green;
+@rainbow: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+@my-border-color: orange;
+@my_new_color: white;
+@my_background_color: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+@keyframes rave {
+    0% {background-color:   red;} 
+    14% {background-color: orange;}
+    28% {background-color: yellow;}
+    42% {background-color: green;}
+    56% {background-color: blue;}
+    70% {background-color: indigo;}
+    84% {background-color: violet;}
+  }
+  .makingThingsReadableAgain {
+      text-shadow: 5px 5px violet;
+    } // Made a random class for making text shadows!
+
+
+///THIS IS A CHANGE I MADE!!!
+
 // Is this working?
 // http://meyerweb.com/eric/tools/css/reset/ 
 // v2.0 | 20110126
@@ -55,6 +79,10 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background-color: blue;
+    animation-name: rave;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 
 h1, h2, h3, h4, h5 {
@@ -66,42 +94,64 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background: @my_background_color;
+    @media (max-width:880px) {
+        width: 100%;
+    }
 }
 
-// Header Styles 
+html {
+    font-size: 100% * (10/16); //operator useage demonstration
+}
+// Header Styles
+
 
 header {
     width: 100%;
     display: flex;
-
+    @media (max-width:591px) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
     nav {
+        font-size: 1.6rem;
         margin-top: 40px; 
-        width: 61px * 10;
+        width: 100%;
         justify-content: space-between;
         display: flex;
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @menu-color;
+            text-shadow: 5px 5px indigo;
             &:hover {
                 text-decoration: underline;
-                color: black;
+                color: @my-favorite-color;
+                text-shadow: 5px 5px magenta;
             }
         }
+
+
+
     }
     .logo {
-            align-self: flex-end;
-            margin: 28px 0 0 91px;
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
     }
-}
+    
+}//header 
 
-// Call To Action (CTA) Styles
 
 .cta {
     display: flex;
     margin-top: 70px + 2;
     justify-content: flex-end;
+    img {
+        @media (max-width: 600px) {
+            display: none;
+        }
+    }
     .cta-text {
-        font-size: 72px;
+        font-size: 7.2rem;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -109,52 +159,67 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @my-favorite-color;
+        .makingThingsReadableAgain;
         button {
             border: 1px double black;
-            font-size: 16px;
+            font-size: 1.6rem;
             background: white;
-            width: 17px * 10;
+            width: 100px + 70;  //operator demonstration
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
             &:hover {
-                background: black;
-                color: white;
-            }
-        }
-    }
-}
+                background: @rainbow;
+                color: lightpink;
+                font-weight: bolder;
+            } //hover
+        }//button
+    }//cta-text
 
-// Main Content Styles
+}//cta
+
+
+// Main Content Styles 
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @my-border-color; 
+   border-bottom: 2px solid @my-border-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 1.6rem;
    line-height: 18px;
    .top-content {
-        display: flex;
-        justify-content: space-around;
+     .main-content-mix;
+   }//top-content
+     .middle-img {
+      display: block;
+      margin: 30px auto;
+      @media (max-width:880px) {
+          width: 100%;
+      }
    }
-   .middle-img {
-        display: block;
-        margin: 30px auto;
+     .bottom-content {
+     .main-content-mix;
+      p {
+        padding-right: 20px;
+      }
    }
-   .bottom-content {
-        display: flex;
-        justify-content: space-around;
-        p {
-            padding-right: 20px;
-        }
-   }
+
+}//main-content
+
+.main-content-mix {
+    display: flex;
+    justify-content: space-around;
+    color: @my_new_color;
 }
 
-// Contact Styles
 
-.contact p {
+// Contact Styles 
+.contact {
     margin: 15px 0;
+    font-size: 1.6rem;
+    color: @my_new_color;
 }
 
 // Footer Styles
@@ -162,4 +227,6 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    font-size:1.6rem;
+    color: @my_new_color;
 }
