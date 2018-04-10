@@ -2,8 +2,14 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/* Variable Corner */
-/* -------------- */
+/*--------Variable Corner--------*/
+/* Breakpoints */
+/* Colors! Define one color for @color-base, and the other colors will generate */
+/*`spin()` doesn't like BLACK or WHITE :( */
+/*Magic number is 180 degrees to get complementary color of @color-base*/
+/* Chooses white or black based on contrast against @color-base*/
+/*Magic number is 360 degrees / 3 to get a tertriary color*/
+/* ----------------------------- */
 html,
 body,
 div,
@@ -134,6 +140,7 @@ table {
 }
 html,
 body {
+  background-color: hotpink;
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
   font-size: 62.5%;
@@ -143,14 +150,19 @@ h2,
 h3,
 h4,
 h5 {
+  color: #b4ff69;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 10px;
+}
+h1 {
+  color: #69b4ff;
 }
 .container {
   width: 100%;
   max-width: 880px;
   margin: auto;
+  color: #ffffff;
 }
 @media (max-width: 768px) {
   .container {
@@ -166,7 +178,8 @@ h5 {
 }
 /* Header Styles */
 header {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   display: flex;
 }
 @media (max-width: 768px) {
@@ -182,7 +195,7 @@ header {
 }
 header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 76.25%;
   justify-content: space-between;
   display: flex;
 }
@@ -203,7 +216,7 @@ header nav {
 header a {
   text-decoration: none;
   font-size: 1.4rem;
-  color: #b0b0b0;
+  color: #ffffff;
 }
 header a:hover {
   text-decoration: underline;
@@ -212,18 +225,18 @@ header a:hover {
 @media (max-width: 400px) {
   header a {
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 1px solid #69ffb4;
     text-align: center;
     padding: 20px 0;
     font-size: 2rem;
   }
   header a:last-child {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #69ffb4;
   }
 }
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 11.375%;
 }
 @media (max-width: 768px) {
   header .logo {
@@ -262,7 +275,7 @@ header .logo {
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 10.25% 0 0;
+  margin: 0 4.5% 0 0;
 }
 @media (max-width: 768px) {
   .cta .cta-text {
@@ -276,9 +289,10 @@ header .logo {
   }
 }
 .cta .cta-text button {
-  border: 1px double black;
+  border: 1px double #69ffb4;
   font-size: 16px;
-  background: white;
+  color: #ffffff;
+  background: transparent;
   width: 170px;
   height: 32px;
   margin-top: 10px;
@@ -297,7 +311,6 @@ header .logo {
 }
 .cta .cta-text button:hover {
   background: black;
-  color: white;
 }
 @media (max-width: 768px) {
   .cta img {
@@ -306,8 +319,8 @@ header .logo {
 }
 /* Main Content Styles */
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #69ffb4;
+  border-bottom: 2px solid #69ffb4;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
@@ -339,11 +352,11 @@ header .logo {
   }
 }
 @media (max-width: 400px) {
-  .main-content h4 {
+  .main-content .text-content h4 {
     margin: 0;
     font-size: 1.7rem;
   }
-  .main-content p {
+  .main-content .text-content p {
     margin: 1.3rem 0;
   }
 }
@@ -352,12 +365,12 @@ header .logo {
   justify-content: space-around;
 }
 .main-content .middle-img {
+  width: 100%;
   display: block;
   margin: 30px auto;
 }
 @media (max-width: 768px) {
   .main-content .middle-img {
-    width: 100%;
     margin: 26px auto 22px;
   }
 }

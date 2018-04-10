@@ -4,13 +4,21 @@
    License: none (public domain)
 */
 
-/* Variable Corner */
+/*--------Variable Corner--------*/
+/* Breakpoints */
 @BP0: 800px;
 @BP1: 768px;
 @BP2: 480px;
 @maxBP1: ~"(max-width: 768px)";
 @maxBP2: ~"(max-width: 400px)";
-/* -------------- */
+/* Colors! Define one color for @color-base, and the other colors will generate */
+@color-base: hotpink; /*`spin()` doesn't like BLACK or WHITE :( */
+@backgroundCOLOR: @color-base;
+@borderCOLOR: spin(@color-base, 180); /*Magic number is 180 degrees to get complementary color of @color-base*/
+@fontCOLOR: contrast(@color-base); /* Chooses white or black based on contrast against @color-base*/
+@h1COLOR: spin(@color-base, -(360/3)); /*Magic number is 360 degrees / 3 to get a tertriary color*/
+@headerCOLOR: spin(@color-base, (360/3));
+/* ----------------------------- */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -62,21 +70,28 @@ table {
 }
 
 html, body {
+    background-color: @backgroundCOLOR;
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
+    color: @headerCOLOR;
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+}
+
+h1 {
+    color: @h1COLOR;
 }
 
 .container {
     width: 100%;
     max-width: 880px;
     margin: auto;
+    color: @fontCOLOR;
     
     @media @maxBP1 {
         width: 95%;
@@ -92,7 +107,8 @@ h1, h2, h3, h4, h5 {
 /* Header Styles */
 
 header {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
 
     @media @maxBP1 {
@@ -106,7 +122,7 @@ header {
 
     nav {
         margin-top: 40px; 
-        width: 610px;
+        width: 100%*(610px/@BP0);
         justify-content: space-between;
         display: flex;
 
@@ -116,6 +132,7 @@ header {
         }
 
         @media @maxBP2 {
+            
             margin-top: 20px;
             padding: 0;
             flex-direction: column;
@@ -126,27 +143,29 @@ header {
     a {
         text-decoration: none;
         font-size: 1.4rem;
-        color: #b0b0b0;
+        color: @fontCOLOR;
+        
         &:hover {
             text-decoration: underline;
             color: black;
         }
+
         @media @maxBP2 {
             width: 100%;
-            border-top: 1px solid black;
+            border-top: 1px solid @borderCOLOR;
             text-align: center;
             padding: 20px 0;
             font-size: 2rem;
 
             &:last-child {
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid @borderCOLOR;
             }
         }
     }
 
     .logo {
         align-self: flex-end;
-        margin: 28px 0 0 91px;
+        margin: 28px 0 0 100%*(91px/@BP0);
 
         @media @maxBP1 {
             display: block;
@@ -184,7 +203,7 @@ header {
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 100%*(82px/@BP0) 0 0;
+        margin: 0 100%*(36px/@BP0) 0 0;
         // margin: 0 82px 0 0;
 
         @media @maxBP1 {
@@ -197,9 +216,10 @@ header {
         }
 
         button {
-            border: 1px double black;
+            border: 1px double @borderCOLOR;
             font-size: 16px;
-            background: white;
+            color: contrast(@backgroundCOLOR);
+            background: transparent;
             width: 170px;
             height: 32px;
             margin-top: 10px;
@@ -215,7 +235,6 @@ header {
 
             &:hover {
                 background: black;
-                color: white;
             }
         }
     }
@@ -230,8 +249,8 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @borderCOLOR; 
+   border-bottom: 2px solid @borderCOLOR;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
@@ -242,12 +261,12 @@ header {
    }
 
    @media @maxBP2 {
+        margin: 76px 3.75% 15px;
+        padding: 40px 0 10px;
        & > * {
            flex-direction: column;
            align-items: center;
        }
-       margin: 76px 3.75% 15px;
-       padding: 40px 0 10px;
    }
 
    .text-content {
@@ -259,7 +278,7 @@ header {
                 padding: 5px 0 0 100%*(4px/@BP1);
             }
         }
-    }
+
 
     @media @maxBP2 {
         h4 {
@@ -271,6 +290,7 @@ header {
             margin: 1.3rem 0;
         }
     }
+    }
     
    .top-content {
         display: flex;
@@ -278,10 +298,11 @@ header {
     }
 
     .middle-img {
+        width: 100%;
         display: block;
         margin: 30px auto;
+
         @media @maxBP1 {
-            width: 100%;
             margin: 26px auto 22px;
         }
 
