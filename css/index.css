@@ -1,4 +1,4 @@
-.mixin {
+.flex-with-space-around {
   display: flex;
   justify-content: space-around;
 }
@@ -151,7 +151,7 @@ h5 {
 }
 .container {
   max-width: 880px;
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
 }
 /* Header Styles */
@@ -171,12 +171,23 @@ header nav {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav {
+    justify-content: space-around;
+    margin: 5.2% 0 0 0;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    margin: 5% 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 header nav a {
   text-decoration: none;
-  color: black;
-}
-header nav a:hover {
-  text-decoration: underline;
   color: black;
 }
 @media (max-width: 400px) {
@@ -184,7 +195,6 @@ header nav a:hover {
     border-bottom: 1px solid #000;
     font-size: 2rem;
     padding: 5% 0;
-    /* (20/400)*100 =  */
     text-align: center;
     width: 100%;
   }
@@ -192,22 +202,9 @@ header nav a:hover {
     border-top: 1px solid #000;
   }
 }
-@media (max-width: 768px) {
-  header nav {
-    justify-content: space-around;
-    margin: 5.2% 0 0 0;
-    /* (40/768)*100 = 5.2 */
-    width: 100%;
-  }
-}
-@media (max-width: 400px) {
-  header nav {
-    margin: 5% 0 0 0;
-    /* (20/400)*100 = 5 */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+header nav a:hover {
+  text-decoration: underline;
+  color: black;
 }
 header .logo {
   align-self: flex-end;
@@ -230,6 +227,17 @@ header .logo {
   margin-top: 72px;
   justify-content: flex-end;
 }
+@media (max-width: 768px) {
+  .cta {
+    justify-content: center;
+    margin: 9.4% 0 0 0;
+  }
+}
+@media (max-width: 400px) {
+  .cta {
+    margin: 12.5% 0 0 0;
+  }
+}
 .cta .cta-text {
   font-size: 72px;
   text-align: center;
@@ -239,6 +247,19 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+  }
+  .cta .cta-text h1 {
+    margin: 0 0 5.1% 0;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    margin: 0;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -254,33 +275,8 @@ header .logo {
   color: white;
 }
 @media (max-width: 768px) {
-  .cta .cta-text {
-    margin: 0;
-  }
-  .cta .cta-text h1 {
-    margin: 0 0 5.1% 0;
-  }
-}
-@media (max-width: 400px) {
-  .cta .cta-text {
-    margin: 0;
-  }
-}
-@media (max-width: 768px) {
   .cta img {
     display: none;
-  }
-}
-@media (max-width: 768px) {
-  .cta {
-    justify-content: center;
-    margin: 9.4% 0 0 0;
-    /* (72/768)*100 = 9.4 */
-  }
-}
-@media (max-width: 400px) {
-  .cta {
-    margin: 12.5% 0 0 0;
   }
 }
 /* Main Content Styles */
@@ -291,6 +287,18 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+}
+@media (max-width: 768px) {
+  .main-content {
+    margin: 9.8% 2.6% 4.6% 2.6%;
+    padding: 4.6% 0;
+  }
+}
+@media (max-width: 400px) {
+  .main-content {
+    margin: 18.75% 5% 8.75% 5%;
+    padding: 12.5% 0;
+  }
 }
 .main-content .top-content {
   display: flex;
@@ -312,7 +320,6 @@ header .logo {
   }
   .main-content .top-content .text-content {
     margin: 8.4% 0 0 0;
-    /* (27/400)*100 = 6.75 */
     width: 100%;
   }
 }
@@ -355,26 +362,10 @@ header .logo {
   }
   .main-content .bottom-content .text-content {
     margin: 8.4% 0 0 0;
-    /* (27/400)*100 = 6.75 */
     width: 100%;
   }
   .main-content .bottom-content .text-content:first-child {
     margin: 0;
-  }
-}
-@media (max-width: 768px) {
-  .main-content {
-    margin: 9.8% 2.6% 4.6% 2.6%;
-    /* (75/768)*100 = 9.8 , (20/768)*100 = 2.6 , (35/768)*100 = 4.6 */
-    padding: 4.6% 0;
-    /* (35/768)*100 = 4.6 */
-  }
-}
-@media (max-width: 400px) {
-  .main-content {
-    margin: 18.75% 5% 8.75% 5%;
-    /* (75/400)*100 = 18.75 , (20/400)*100 = 5 , (35/400)*100 = 8.75 */
-    padding: 12.5% 0;
   }
 }
 /* Contact Styles */
@@ -400,7 +391,6 @@ header .logo {
 @media (max-width: 400px) {
   .contact {
     margin: 0 5%;
-    /* (20/400)*100 = 5 */
     padding: 0;
   }
 }
