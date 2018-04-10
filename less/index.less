@@ -1,8 +1,9 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,39 +14,39 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -64,39 +65,87 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
+@primary: red;
+@secondary: green;
+
+ html {
+   font-size: 62.5%;
 }
 
+.container {
+    max-width: 880px;
+    margin: auto;
+    width: 100%;
+
+}
+
+//mixin
+.font-size {
+    font-size: 1.6rem;
+}
+
+//escaping
+
+@tabletRes: ~"(max-width: 780px)";
+@mobileRes: ~"(max-width: 500px)";
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
+    align-items: center;
+    .font-size;
+    //escaping
+    @media @tabletRes {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        //escaping
+         @media @tabletRes {
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @media @mobileRes {
+            width: 100%;
+            flex-direction: column;
+        }
+        a {
+            text-decoration: none;
+            color: @primary; //used varible to change color
+            &:hover {
+                text-decoration: underline;
+                color: @secondary; // used variable to change color
+            }
+            @media @mobileRes {
+                padding: 20px 0;
+                border-bottom: 1px solid black;
+                width: 100%;
+                text-align: center;
+                &:first-child {
+                    border-top: 1px solid black;
+                }
+            }
+        }
+    }
+    .logo {
+        align-self: center;
+        margin: 28px 0 0 91px;
+        @media @tabletRes {
+            order: -1;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        @media @mobileRes {
+            margin: 20px 0 0 0;
+        }
+    }
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
 
 /* Call To Action (CTA) Styles */
 
@@ -104,68 +153,112 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
     align-items: center;
-    margin: 0 82px 0 0;
+    @media @tabletRes {
+        img {
+            display: none;
+        }
+        .cta-text {
+           margin: 0 auto;
+        }
+        justify-content: center;
+    }
+    .cta-text {
+        margin-right: 80px;
+        display: flex;
+        flex-direction: column;
+        @media @tabletRes {
+            margin: auto;
+        }
+        h1 {
+        font-size: 7.2rem;
+        text-align: center;
+        letter-spacing: 5px;
+        align-items: center;
+            @media @mobileRes {
+                font-size: 4rem;
+            }
+        }
+        button {
+            border: 1px double @primary;
+            .font-size; //mixin used
+            background: @secondary;
+            padding: 10px 40px;
+            margin-top: 10px;
+            cursor: pointer;
+            margin: 10px auto;
+            &:hover {
+                background: @primary;
+                color: @secondary;
+            }
+        }
+    }
 }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+   .font-size; //mixin used
+   line-height: 9px + 9; // Using + operator
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+        .text-content {
+            flex-basis: 48%;
+        }
+        @media @mobileRes {
+            flex-direction: column;
+        }
+        .text-content {
+            @media @mobileRes {
+                margin-bottom: 10px;
+                padding: 0 2%;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        width: 100%;
+    }
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        @media @mobileRes {
+            flex-direction: column;
+            padding: 0 2%;
+        }
+        .text-content {
+            flex-basis: 31%;
+            @media @mobileRes {
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        p {
+            padding-right: 10px * 2; // Using  * operator
+        }
+    }
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    .font-size;
+    padding-left: 2px;
+    p {
+        margin: 15px 0;
+    }
 }
 
 /* Footer Styles */
@@ -173,4 +266,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    .font-size;
 }
