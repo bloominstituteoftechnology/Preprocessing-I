@@ -32,11 +32,11 @@ You might be asking, "Wait, I don't get it, it's just CSS in an index.less file 
 
 <!-- * Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here). -->
 
-* Introduce media queries from last week's projects with the nested @media rules.  
+<!-- * Introduce media queries from last week's projects with the nested @media rules.   -->
 
 ## Stretch Task - Find something we didn't cover in the LESS documentation and see if you can implement it in your project.  Be sure to use comments to call out what you are doing.
 
-media queries for last part of challenge
+<!-- media queries for last part of challenge
 
 @media (max-width: 768px) {
 
@@ -156,4 +156,4 @@ media queries for last part of challenge
     .contact {
         margin: 20px;
     }
-}
+} -->
