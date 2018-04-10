@@ -4,6 +4,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -64,39 +65,74 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@primary: red;
+@secondary: green;
+
 .container {
     width: 880px;
     margin: auto;
 }
+
+// html {
+//     font-size: 62.5%;
+// }
+
+//mixin 
+.font-size {
+    font-size: 16px;
+}
+
+//escaping
+
+@tabletRes: ~"(max-width: 780px)";
 
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
+    
+    //escaping
+    @media @tabletRes {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+
+        //escaping
+         @media @tabletRes {
+            // margin: 0 auto;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        a {
+            text-decoration: none;
+            color: @primary; //used varible to change color
+
+            &:hover {
+                text-decoration: underline;
+                color: @secondary; // used variable to change color
+            }
+        }
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+        @media @tabletRes {
+            order: -1;
+            margin: 0 auto;
+        }
+    }
+    
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
 
 /* Call To Action (CTA) Styles */
 
@@ -104,33 +140,46 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media @tabletRes {
+        img {
+            display: none;
+        }
+
+        .cta-text {
+           margin: 0 auto;
+        }
+
+        justify-content: center;
+    } 
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 10.3% 0 0; // 82 / 800 = 0.1025
+
+        button {
+            border: 1px double @primary;
+            .font-size ; //mixin used
+            background: @secondary;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: @primary;
+                color: @secondary;
+            }
+        }
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
@@ -139,27 +188,27 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   .font-size; //mixin used
+   line-height: 9px + 9; // Using + operator 
 
-.main-content .top-content {
+   .top-content {
     display: flex;
     justify-content: space-around;
-}
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        p {
+            padding-right: 10px * 2; // Using  * operator 
+        }
+    }
 }
 
 /* Contact Styles */
