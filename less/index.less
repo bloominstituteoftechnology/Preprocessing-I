@@ -11,6 +11,11 @@
 @color-gray: rgb(170, 170, 170);
 @color-green: forestgreen;
 
+.my-content {
+    .top-content;
+    .bottom-content;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -68,7 +73,7 @@ html, body {
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 10px * 1;
 }
 
 .container {
@@ -97,9 +102,14 @@ header {
             flex-wrap: wrap;
     }
 
+    @media(max-width: 400px) {
+        flex-direction: column;
+		justify-content: center;
+    }
+
     nav {
       margin-top: 40px; 
-      width: 610px;
+      width: 800px - 190;
       justify-content: space-between;
       display: flex;
 
@@ -107,15 +117,32 @@ header {
             max-width: 100%;
             justify-content: space-around;
       }
+
+      @media(max-width: 400px) {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
     
         a {
             text-decoration: none;
             color: #b0b0b0;
 
-        &:hover {
-            text-decoration: underline;
-            color: black;
-        }    
+            &:hover {
+                text-decoration: underline;
+                color: black;
+                background: gray;
+
+                    @media(max-width: 400px) {
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                        padding: 5% 0;
+                        font-size: 1.25rem;
+                        border-bottom: 1px solid grey;
+                    }
+                }    
         }
     }    
 
@@ -198,21 +225,22 @@ header {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 8px * 2;
    line-height: 18px;
+
+   @media(min-width: 401px) and (max-width: 768px) {
+       background-color: aqua;
+
+   }
+
+   @media(max-width: 400px) {
+       background-color: pink;
+
+   }
+
    
 
-   .top-content {
-        display: flex;
-        justify-content: space-around;
-   }
-
-   .middle-img {
-        display: block;
-        margin: 30px auto;
-   }
-
-   .bottom-content {
+   .top-content, .bottom-content {
         display: flex;
         justify-content: space-around;
 
@@ -220,6 +248,15 @@ header {
             padding-right: 20px;
         }
    }
+
+   .middle-img {
+        display: block;
+        margin: 30px auto;
+   }
+
+
+       
+   
 }
 
 /* Contact Styles */
