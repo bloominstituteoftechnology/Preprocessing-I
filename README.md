@@ -30,8 +30,130 @@ You might be asking, "Wait, I don't get it, it's just CSS in an index.less file 
 
 <!-- * Convert all the block comments into single line comments. -->
 
-* Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here).
+<!-- * Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here). -->
 
 * Introduce media queries from last week's projects with the nested @media rules.  
 
 ## Stretch Task - Find something we didn't cover in the LESS documentation and see if you can implement it in your project.  Be sure to use comments to call out what you are doing.
+
+media queries for last part of challenge
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 768px;
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+  
+    header nav {
+        width: 768px;
+        padding: 0 30px;
+    }
+
+    header .logo {
+        order: -1;
+        display: block;
+        margin: 30px auto 0;
+    }
+
+    .cta {
+        justify-content: center;
+    }
+    
+    .cta .cta-text {
+        margin: 0;
+    }
+
+    .cta img {
+        display: none;
+    }
+
+    .main-content .middle-img {
+       width: 100%;
+    }
+
+    .main-content {
+       margin: 75px 20px 35px;
+    }
+
+    .text-content {
+        margin: 0 10px;
+    }
+
+    .contact {
+        margin: 0 30px;
+    }
+}
+
+/* Phone */
+@media (max-width: 400px) {
+
+    .container {
+        width: 400px;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    header nav {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 20px;
+        border-bottom: 1px solid gray;
+    }
+
+    header nav a:first-child {
+        border-top: 1px solid gray;
+    }
+
+    header nav a:hover {
+        background: gray;
+    }
+
+    header .logo {
+        margin: 20px 0;
+    }
+
+    .cta {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .cta img {
+        max-width: 80%;
+    }
+
+    .main-content .top-content {
+        justify-content: space-around;
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .main-content .bottom-content {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+    }
+
+    .text-content {
+        margin: 0;
+    }
+
+    .contact {
+        margin: 20px;
+    }
+}
