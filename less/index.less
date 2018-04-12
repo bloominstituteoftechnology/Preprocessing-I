@@ -4,12 +4,21 @@
    License: none (public domain)
 */
 
-// Color variables:
+// Color variables: 
 @color-black: black;
 @color-white: white;
 @color-purple: rgb(85, 2, 85);
 @color-gray: rgb(170, 170, 170);
-@color-green: forestgreen;
+@color-orange: orange;
+@my-border: 2px solid @color-black;
+
+// Mixin
+.my-content { 
+    display: flex;
+    justify-content: space-around;
+
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -82,7 +91,7 @@ h1, h2, h3, h4, h5 {
 
     @media(max-width: 400px) {
         max-width: 100%;
-        background-color: @color-green;
+        background-color: @color-orange;
     }
 }
 
@@ -194,32 +203,31 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px; 
    line-height: 18px;
-   
+   border: @my-border;
 
-   .top-content {
-        display: flex;
-        justify-content: space-around;
+   .my-content {
+    p {
+        padding-right: 20px;
+    }
    }
 
-   .middle-img {
+   .top-content{
+   .my-content
+}
+
+    .bottom-content {
+     .my-content 
+}
+
+    .middle-img {
         display: block;
         margin: 30px auto;
    }
 
-   .bottom-content {
-        display: flex;
-        justify-content: space-around;
-
-        p {
-            padding-right: 20px;
-        }
-   }
 }
 
 /* Contact Styles */
