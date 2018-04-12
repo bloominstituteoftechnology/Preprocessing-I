@@ -4,6 +4,25 @@
    License: none (public domain)
 */
 
+<<<<<<< HEAD
+// Color variables: 
+@color-black: black;
+@color-white: white;
+@color-purple: rgb(85, 2, 85);
+@color-gray: rgb(170, 170, 170);
+@color-orange: orange;
+@my-border: 2px solid @color-black;
+
+// Mixin
+.my-content { 
+    display: flex;
+    justify-content: space-around;
+
+}
+=======
+>>>>>>> 3b251cc6647c7d5162f92116aed0d0cfd75e851f
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,6 +72,19 @@ table {
     box-sizing: border-box;
 }
 
+// Color variables:
+@color-black: black;
+@color-white: white;
+@color-purple: rgb(85, 2, 85);
+@color-gray: rgb(170, 170, 170);
+@color-green: forestgreen;
+
+//mixin for .middle-content
+.my-content {
+    display:flex;
+    justify-content: space-around;
+}
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -61,12 +93,22 @@ html, body {
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 10px * 1;
 }
 
 .container {
     width: 880px;
     margin: auto;
+
+    @media(min-width: 401px) and (max-width: 768px) {
+        max-width: 100%;
+        background-color: @color-purple;
+    }
+
+    @media(max-width: 400px) {
+        max-width: 100%;
+        background-color: @color-orange;
+    }
 }
 
 /* Header Styles */
@@ -74,28 +116,67 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media(min-width: 401px) and (max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media(max-width: 400px) {
+        flex-direction: column;
+		justify-content: center;
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    nav {
+      margin-top: 40px; 
+      width: 800px - 190; //<--operator
+      justify-content: space-between;
+      display: flex;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+      @media(min-width: 401px) and (max-width: 768px) {
+            max-width: 100%;
+            justify-content: space-around;
+      }
+
+      @media(max-width: 400px) {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
+    
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+                background: gray;
+
+                    @media(max-width: 400px) {
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                        padding: 5% 0;
+                        font-size: 1.25rem;
+                        border-bottom: 1px solid grey;
+                    }
+                }    
+        }
+    }    
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media(min-width: 401px) and (max-width: 768px) {
+            order: -1;
+            display: block;
+            margin: 4% auto 0;
+        }
+    }
+
 }
 
 /* Call To Action (CTA) Styles */
@@ -104,62 +185,120 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media(min-width: 401px) and (max-width: 768px) {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    @media(max-width: 400px) {
+        max-width: 100%;
+        justify-content: center;
+        padding-left: 17%;
+        margin-top: 11%;
+    }
+
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+
+        button {
+            border: 1px double @color-black;
+            font-size: 16px;
+            background: @color-white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+        &:hover {
+            background: @color-black;
+            color: @color-white;
+        }
+
+        }
+    }
+
+    img {
+        @media(min-width: 401px) and (max-width: 768px) {
+            display: none;
+        }
+
+        @media(max-width: 400px) {
+            display: none;
+        }
+
+    }
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 8px * 2; //operator <-
+   font-size: 16px; 
    line-height: 18px;
+<<<<<<< HEAD
+   border: @my-border;
+
+   .my-content {
+    p {
+        padding-right: 20px;
+    }
+   }
+
+   .top-content{
+   .my-content
 }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
+    .bottom-content {
+     .my-content 
 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+   }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+=======
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+   @media(min-width: 401px) and (max-width: 768px) {
+       background-color: aqua;
+
+   }
+
+   @media(max-width: 400px) {
+       background-color: pink;
+
+   }
+
+   
+
+   .top-content, .bottom-content {
+        .my-content;
+
+        p {
+            padding-right: 20px;
+        }
+   }
+
+   .middle-img {
+        display: block;
+        margin: 30px auto;
+   }
+
+
+       
+   
+>>>>>>> 3b251cc6647c7d5162f92116aed0d0cfd75e851f
 }
 
 /* Contact Styles */
