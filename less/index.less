@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -56,8 +55,13 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
 }
 
 html, body {
@@ -71,50 +75,82 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-html {
-	font-size: 62.5%;
-}
+// Variables Section
 
-.mixin { //MIXIN!!!
+@navy-color: navy;
+@green-color: green;
+@darkred-color: DarkRed;
+@lightskyblue-color: LightSkyBlue;
+@oldlace-color: OldLace;
+@black-color: black;
+@gray-color: gray;
+@white-color: white;
+@hexcolor-gray: #b0b0b0;
+
+// Mixins Section
+
+.flex_justifycontent_spacearound {
 		display: flex;
 		justify-content: space-around;
 }
 
-@color: navy;
-
 .container {
-    max-width: 800px + 80; // We used an operator here!
+	max-width: 800px + 80; // Operator used here.
 	width: 100%;
-    margin: auto;
+  margin: 0 auto;
 	font-size: 1.6rem;
-	color: @color;
+	color: @navy-color; // Variable used here.
+
+	// Media query for .container at 768px.
+
 	@media (max-width: 768px) {
-		background: pink;
-		@color: green;
-		color: @color;
-	}
-	@media (max-width:400px) {
-		background: teal;
-		@color: purple;
-		color: @color;
+		width: 100%;
+		background: @lightskyblue-color; // Variable used here.
+		color: @green-color; // Variable used here.
 	}
 
-		/* Header Styles */
+	// Media query for .container at 400px.
 
-		header {
-		    width: 10% * 10; // We used an operator here!
+	@media (max-width: 400px) {
+		background: @oldlace-color; // Variable used here.
+		color: @darkred-color; // Variable used here.
+	}
+
+	/* Header Styles */
+
+	header {
+		width: 10% * 10; // Operator used here.
+		display: flex;
+
+		// Media query for header at 768px.
+
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+		}
+
+		// Media query for header at 400px.
+
+		@media (max-width: 400px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		nav {
+			width: 100%;
+			margin: 38px 1% 0;
+			width: 100%;
+			justify-content: space-between;
 			display: flex;
-			@media (max-width: 400px) {
-					flex-wrap: wrap;
-					justify-content: center;
+
+			// Media query for nav at 768px.
+
+			@media (max-width: 768px) {
+				width: 100%;
+				margin: 38px 3%;
 			}
 
-			nav {
-				width: 100%;
-		    margin: 38px 1% 0;
-		    width: 100%;
-		    justify-content: space-between;
-			display: flex;
+			// Media query for nav at 400px.
+
 			@media (max-width: 400px) {
 				width: 100%;
 				display: flex;
@@ -122,66 +158,86 @@ html {
 				margin: 0;
 				align-items: center;
 			}
-			&:first-child {
-				@media (max-width:400px) {
-				border-top: 1px solid gray;
-				}
 
+			&:first-child {
+
+				// Media query for the first child in nav at 400px.
+
+				@media (max-width: 400px) {
+					border-top: 1px solid @black-color; // Variable used here.
+				}
 			}
 
-				a {
-					text-decoration: none;
-				   color: #b0b0b0;
-				   @media (max-width: 400px) {
+			a {
+				text-decoration: none;
+				color: @hexcolor-gray; // Variable used here.
+
+				// Media query for a at 768px.
+
+				@media (max-width: 768px) {
+					color: @black-color; // Variable used here.
+				}
+
+				// Media query for a at 400px.
+
+				@media (max-width: 400px) {
 					width: 100%;
 					display: block;
 					text-align: center;
 					padding: 20px 0;
 					font-size: 2rem;
-					border-bottom: 1px solid gray;
-				   }
+					border-bottom: 1px solid @black-color; // Variable used here.
+				}
 
 					&:hover {
 						text-decoration: underline;
-						color: black;
-						@media (max-width:400px) {
-							background: gray;
-						}
-					} // a:hover
-				} // a
+						color: @black-color; // Variable used here.
 
-				@media (max-width: 768px) {
-			 		width: 100%;
-			 		margin: 38px 3%;
-	 			} // media query for nav
+						// Media query for a hover at 400px.
+
+						@media (max-width: 400px) {
+							background: @gray-color; // Variable used here.
+						}
+					} // &:hover
+				} // a
 			} // nav
 
 			.logo {
 			    align-self: flex-end;
 			    margin: 28px 0 0 9%;
 
+					// Media query for .logo at 768px.
+
 					@media (max-width: 768px) {
 						order: -1;
 						display: block;
 						margin: 30px auto 0;
-					} // media query for logo
-					@media (max-width:400px) {
+					}
+
+					// Media query for .logo at 400px.
+
+					@media (max-width: 400px) {
 						order: -1;
 						margin: 20px 0;
 					}
-			} // logo
-
-			@media (max-width: 768px) {
-        flex-wrap: wrap;
-			} // media query for header
+			} // .logo
 		} // header
 
 		/* Call To Action (CTA) Styles */
 
 		.cta {
-		    display: flex;
-		    margin-top: 72px;
+			display: flex;
+			margin-top: 72px;
 			justify-content: flex-end;
+
+			// Media query for .cta at 768px.
+
+			@media (max-width: 768px) {
+				justify-content: center;
+			}
+
+			// Media query for .cta at 400px.
+
 			@media (max-width:400px) {
 				margin-top: 50px;
 				display: flex;
@@ -189,132 +245,156 @@ html {
 				align-items: center;
 			}
 
-				.cta-text {
-				    font-size: 7.2rem;
-				    text-align: center;
-				    letter-spacing: 5px;
-				    display: flex;
-				    justify-content: center;
-				    flex-flow: column;
-				    align-items: center;
-					margin: 0 9% 0 0;
-					@media (max-width:400px) {
-						margin: 0;
+			.cta-text {
+				font-size: 7.2rem;
+				text-align: center;
+				letter-spacing: 5px;
+				display: flex;
+				justify-content: center;
+				flex-flow: column;
+				align-items: center;
+				margin: 0 9% 0 0;
+
+				// Media query for .cta-text at 768px.
+
+				@media (max-width: 768px) {
+					margin: 0 5% 0 0;
+				}
+
+				// Media query for .cta-text at 400px.
+
+				@media (max-width: 400px) {
+					margin: 0;
+				}
+
+				h1 {
+					letter-spacing: 5px;
+					margin-bottom: 5px;
+
+					// Media query for h1 at 768px.
+
+					@media (max-width: 768px) {
+						letter-spacing: 0;
 					}
+				} // h1
+			} // .cta-text
 
-						h1 {
-							@media (max-width: 768px) {
-								 letter-spacing: 0;
-							} // media query for h1
-						} // h1
+			button {
+				border: 1px double @black-color; // Variable used here.
+				font-size: 1.6rem;
+				background: @white-color; // Variable used here.
+				width: 52%;
+				height: 32px;
+				margin-top: 10px;
+				cursor: pointer;
 
-						@media (max-width: 768px) {
-							 margin: 0 5% 0 0;
-						} // media query for cta-text
-				} // cta-text
-
-				button {
-						border: 1px double black;
-						font-size: 1.6rem;
-						background: white;
-						width: 52%;
-						height: 32px;
-						margin-top: 10px;
-						cursor: pointer;
-
-						&:hover {
-							background: black;
-							color: white;
-						} // button:hover
-				} // button
+				&:hover {
+					background: @black-color; // Variable used here.
+					color: @white-color; // Variable used here.
+				} // &:hover
+			} // button
 
 				img {
 					max-width: 100%;
 					margin-right: 1%;
 
+					// Media query for img at 768px.
+
 					@media (max-width: 768px) {
 						display: none;
-					} // media query for img
-					@media (max-width:400px) {
+					}
+
+					// Media query for img at 400px.
+
+					@media (max-width: 400px) {
 						display: block;
 						max-width: 80%;
 						margin: 55px 0 0 0;
 					}
 				} // img
-
-				@media (max-width: 768px) {
-					justify-content: center;
-				} // media query for cta
-		} // cta
+		} // .cta
 
 		/* Main Content Styles */
 
 		.main-content {
-		   border-top: 2px solid black;
-		   border-bottom: 2px solid black;
-		   margin: 75px 0 35px 0;
-		   padding: 35px 0;
-		   font-size: 1.6rem;
-		   line-height: 1.3;
+			border-top: 2px solid @black-color; // Variable used here.
+			border-bottom: 2px @black-color; // Variable used here.
+			margin: 75px 0 35px 0;
+			padding: 35px 0;
+			font-size: 1.6rem;
+			line-height: 1.3;
 
-			 .top-content {
-			 		.mixin; // We used a mixin here!
+			// Media query for .main-content at 768px.
 
-					.text-content {
+			@media (max-width: 768px) {
+				font-size: 1.4rem;
+				margin: 75px 2% 35px;
+			}
+
+			.top-content {
+				.flex_justifycontent_spacearound; // Mixin used here.
+
+				// Media query for .top-content at 400px.
+
+				@media (max-width: 400px) {
+					flex-wrap: wrap;
+					height: 300px;
+				}
+
+				.text-content {
 					margin: 0 1%;
-					@media (max-width: 400px) {
-						flex-wrap: wrap;
-						height: 200px;
-					}
+				} // .text-content
+			} // .top-content
 
-					} // text-content
-			 } // top-content
+			.middle-img {
+				max-width: 100%;
+				display: block;
+				margin: 25px auto;
 
-			 .middle-img {
-				 max-width: 100%;
-					display: block;
-					margin: 30px auto;
+				// Media query for .middle-img at 768px.
 
-					@media (max-width: 768px) {
-						width: 100%;
-						margin: 25px auto;
-					} // media query for middle-img
-			} // middle-img
+				@media (max-width: 768px) {
+					width: 100%;
+					margin: 25px auto;
+				}
+			} // .middle-img
 
 			.bottom-content {
-				.mixin;
+				.flex_justifycontent_spacearound;
 
-				 p {
-				     padding-right: 2%;
-				 } // p
+				// Media query for .bottom-content at 400px.
 
-				 .text-content {
-					 margin-top: 10px;
-				 } // text-content
-				@media (max-width:400px){
+				@media (max-width: 400px) {
 					flex-wrap: wrap;
 					align-content: space-between;
 					height: 440px;
 				}
-			 } // bottom-content
 
-			 @media (max-width: 768px) {
-				 font-size: 1.4rem;
-				 margin: 75px 2% 35px;
-			 } // media query for main-content
-		} // main-content
+				p {
+					padding-right: 2%;
+				} // p
+
+				.text-content {
+					margin-top: 10px;
+				} // .text-content
+			} // .bottom-content
+		} // .main-content
+
+		/* Contact styles */
 
 		.contact {
 			margin: 20px 1%;
 
+			// Media query for .contact at 768px.
+
+			@media (max-width: 768px) {
+				margin: 20px 2%;
+			}
+
 			p {
 				margin: 15px 0;
 			} // p
-
-			@media (max-width: 768px) {
-				 margin: 20px 2%;
-			} // media query for contact
-		} // contact
+		} // .contact
 
 		/* Footer Styles */
 
@@ -322,8 +402,4 @@ html {
 			text-align: center;
 		  margin: 40px 0 20px;
 		} // footer
-
-		@media (max-width: 768px) {
-        width: 100%;
-    } // media query for container
-} // container
+} // .container
