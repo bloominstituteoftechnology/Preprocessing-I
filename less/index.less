@@ -71,9 +71,10 @@ h1, h2, h3, h4, h5 {
 @logo-margin-top: percentage(28 / @max-width);
 @logo-margin-left: percentage(91 / @max-width);
 
-@cta-text-width: 391px;
-@button-width: percentage(170 / @cta-text-width);
+@cta-text-width-px: 391px;
+@button-width: percentage(170 / @cta-text-width-px);
 
+@main-content-right-padding-p: percentage(20/@max-width);
 
 //Mixin
 .flex-space-around{
@@ -84,7 +85,7 @@ h1, h2, h3, h4, h5 {
 // Dark Theme Changer
 // You can chanage the theme by adjusting the @mode variable from "normal" to "dark"
 
-@mode: "dark";
+@mode: "normal";
 
 // When in dark mode, you can choose 3 colors. Just uncomment the one you want!
 
@@ -120,13 +121,29 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 768px){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     nav {
         margin-top: 40px; 
         // width: 610px;
         width: percentage(610 / @max-width);
         justify-content: space-between;
         display: flex;
-    
+        
+        @media (max-width: 768px){
+            justify-content: space-around;
+            width: 100%;
+        }
+    }
+
+    img {
+        @media (max-width: 768px){
+            order: -1;
+            padding-right: 60px;
+        }
     }
 
     a {
@@ -165,6 +182,11 @@ header {
         margin: 0 82px 0 0;
         .theme(@mode);
 
+        @media (max-width: 768px){
+            width:100%;
+            margin-right: 0;
+        }
+
         button {
             border: 1px double black;
             font-size: 16px;
@@ -184,6 +206,14 @@ header {
     }
 }
 
+section{
+    img{
+        @media (max-width: 768px){
+            display: none;
+        }
+    }
+}
+
 /* Main Content Styles */
 
 .main-content {
@@ -193,19 +223,38 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-   
+
+   p {
+    padding-right: @main-content-right-padding-p;
+   }
+
+   @media (max-width: 768px){
+       padding: 20px 2.27% 20px;
+       border-top: none;
+       border-bottom: none;
+   }
    .top-content {
         .flex-space-around;
+        
+        @media (max-width: 768px){
+            border-top: 2px solid black;
+            padding-top: 20px;
+        }
     }
     .middle-img {
         display: block;
         margin: 30px auto;
+
+        @media (max-width: 768px){
+            width: 100%;
+        }
     }
     .bottom-content {
         .flex-space-around;
 
-        .p {
-            padding-right: 20px;
+        @media (max-width: 768px){
+            border-bottom: 2px solid black;
+            padding-bottom: 40px;
         }
     }
 }
@@ -213,8 +262,16 @@ header {
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    p {
+        margin: 15px 0;
+    }
+
+    @media (max-width: 768px){
+        margin-left: 2.27%;
+    }
+
+    
 }
 
 /* Footer Styles */
