@@ -59,10 +59,11 @@ table {
 @color_list: #FF3399, red, #FF6600, yellow;
 @tablet_colors: yellow, #CCFF00, #66CC00, green;
 @bg_overlay: fade(#FFFFFF, 40%);
-@header_color: #660000;
+@header_color: #FFFFFF;
 @rb_button: red, orange, yellow, green, blue, indigo, violet;
 @outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 @regular_font: 16px;
+
 
 //end of less variables
 
@@ -104,10 +105,12 @@ header {
     display: flex;
 					a {
     text-decoration: none;
+	font-weight:bold;
     color: @header_color;
+	text-shadow:@outline;
 						}
 					a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: black;
 						}
 
@@ -139,6 +142,9 @@ header {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
+	@media (max-width:768px){
+	margin:0;
+	}
 	
 		button {
 		border: 1px double black;
