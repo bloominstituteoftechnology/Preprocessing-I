@@ -61,14 +61,12 @@ table {
     color: @text-color;
     background-color: @background-accent-1;
     text-decoration-color: @text-contrast-1;
-    border-color: @text-contrast-1;
 }
 
 .color-scheme-2() {
     color: @text-color;
     background-color: @background-accent-2;
     text-decoration-color: @text-contrast-2;
-    border-color: @text-contrast-2;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -95,9 +93,10 @@ body {
     width: 880px;
     margin: auto;
     .color-scheme-2;
+    border: .5vw solid @text-contrast-1;
     @media (max-width: @tablet-size) {
         max-width: @tablet-size;
-        width: 95%;
+        border-width: .1vw;
     }
 
     @media (max-width: @mobile-size) {
@@ -149,20 +148,21 @@ body {
                 color: inherit;
                 &:hover {
                     text-decoration: underline;
-                    color: black;
+                    color: @text-contrast-1;
+                    text-decoration-color: @text-contrast-1;
                 } // end hover
 
                 @media (max-width: @mobile-size) {
                     height: 55px;
                     text-align: center;
                     width: 100%;
-                    border-bottom: 1px solid gray;
+                    border-bottom: 1px solid @text-contrast-1;
                     padding: 17px 7.6px / @mobile-size 17px;
                     font-size: 2rem;
                     font-weight: bold;
 
                     &:first-of-type {
-                        border-top: 1px solid gray;
+                        border-top: 1px solid @text-contrast-1;
                     } //end first-of-type
                 } // end media query mobile
 
@@ -183,7 +183,7 @@ body {
 
     .cta {
         display: flex;
-        margin-top: 72px;
+        margin: 72px 1vw 0px;
         justify-content: flex-end;
 
         .cta-text {
@@ -260,10 +260,7 @@ body {
         .middle-img {
         display: block;
         margin: 30px auto;
-
-            @media (max-width: @tablet-size) {
-                width: 100%;
-            }
+        width: 100%;
 
         } // end middle-img
 
@@ -279,12 +276,17 @@ body {
                 flex-direction: column;
             } // end @mobile-size media query
 
-            
         } //end bottom-content
 
     } // end main-content
 
 
+    .text-content {
+        @media (max-width: @tablet-size) {
+                            padding: 0px 9px;
+
+        }
+    }   
     /* Contact Styles */
 
     .contact p {
