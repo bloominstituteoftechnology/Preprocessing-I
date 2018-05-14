@@ -64,17 +64,20 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
-}
-
 // Variables
 
 @mets-O: #ffa500;
 @mets-B: #0000ff;
 @mets-font-weight: bold;
 
+.container {
+    width: 880px;
+    margin: auto;
+
+    @media (max-width:768px) {
+        width:100%;
+    }
+}
 
 
 /* Header Styles */
@@ -83,19 +86,52 @@ header {
     width: 100%;
     display: flex;
     background-color: @mets-B;
+
+    @media (max-width:768px) {
+        flex-wrap: wrap;
+    }
+
+    @media (max-width:400px) { 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
    
-    
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
-        
+
+        @media (max-width:768px) {
+            width: 100%;
+            padding: 0 3.9%;
+        }
+
+        @media (max-width:400px) { 
+            width: 100%;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
 
         a {
             text-decoration: none;
             color: @mets-O;
             font-weight: @mets-font-weight;
+
+            @media (max-width:400px) { 
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 2.0rem;
+                border-bottom: 1px solid gray; 
+            }
+        }
+        a:first-child {
+            @media (max-width:400px) {
+            border-top: 1px solid gray;
+            }
         }
         a:hover {
             text-decoration: underline;
@@ -106,6 +142,17 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width:768px) {
+            order: -1;
+            display: block;
+            margin: 3.9% auto 0;
+        }
+
+        @media (max-width:400px) {
+            margin: 20px 0;
+         }     
+
     } 
 }
 
@@ -116,6 +163,16 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
     background-color: @mets-O;
+
+    @media (max-width:768px) {
+        justify-content: center;
+    }
+
+    @media (max-width:400px) {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
 
     .cta-text {
         font-size: 72px;
@@ -128,6 +185,10 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
         color: @mets-B;
+        
+        @media (max-width:768px) {
+            margin: 0; 
+        }
 
         button {
             border: 1px double black;
@@ -148,6 +209,11 @@ header {
             height: 32px * 1.5; // Used Operator to increase button width
         }
     }
+    img {
+        @media (max-width:768px) {
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -159,15 +225,35 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+   background-color: @mets-B;
+   font-weight: @mets-font-weight;
+
+   @media (max-width:768px) {
+    width: 100%;
+    margin: 9.8% 2.6% 4.56%;
+   }
 
    .top-content {
     display: flex;
     justify-content: space-around;
+
+    @media (max-width:400px) {
+        flex-direction: column;
+        height: 300px;   
+        }
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
+
+        @media (max-width:768px) {
+            width: 100%;
+            margin: 25px auto;
+        }
+        @media (max-width:400px) {
+            max-width: 90%;
+        }
     }
 
     .bottom-content {
@@ -175,17 +261,42 @@ header {
         // display: flex;
         // justify-content: space-around;
 
+        @media (max-width:400px) {
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;  
+        }
+
         p {
             padding-right: 20px;
+        }
+    }
+    .text-content {
+        @media (max-width:768px) {
+        margin: 0 1.3%;
+        }
+        @media (max-width:400px) {
+        margin: 0;
         }
     }
 }
 
 /* Contact Styles */
+.contact {
+    background-color: @mets-O;
+    @media (max-width:768px) {
 
-.contact p {
-    margin: 15px 0;
+    margin: 0 3.91%;
+    }
+
+    @media (max-width:400px) {
+    margin: 5%;
+    }
+    p {
+        margin: 15px 0;    
+    }
 }
+
 
 /* Footer Styles */
 
