@@ -64,10 +64,11 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-
+//******************** LESS INIT ******************
 // Global LESS variables
 @max-width : 880px;
 @desktop-tablet-breakpnt: 800px;
+@tablet-phone-breakpnt:400px;
 
 @logo-margin-top: percentage(28 / @max-width);
 @logo-margin-left: percentage(91 / @max-width);
@@ -85,16 +86,14 @@ h1, h2, h3, h4, h5 {
 
 // Dark Theme Changer
 // You can chanage the theme by adjusting the @mode variable from "normal" to "dark"
-
 @mode: "normal";
 
 // When in dark mode, you can choose 3 colors. Just uncomment the one you want!
-
 @dark-mode-color: #f15bf1;
 // @dark-mode-color: #5bf165;
 // @dark-mode-color: #fafc00;
 
-
+//Mixin Gaurds (If/else in less)
 .theme (@mode) when (@mode = "dark") {
     color: @dark-mode-color;
     background-color: black;
@@ -106,6 +105,8 @@ h1, h2, h3, h4, h5 {
 
   }
 
+
+//******************** SITE CSS ******************
 body{
     .theme(@mode);
 }
@@ -138,12 +139,36 @@ header {
             justify-content: space-around;
             width: 100%;
         }
+
+        @media (max-width: @tablet-phone-breakpnt){
+            margin-top: 20px;
+            flex-direction: column;
+        }
+
+        a {
+            @media (max-width: @tablet-phone-breakpnt){
+                text-align: center;
+                padding: 19px 5.69% 19px;
+                font-size: 2.2rem;
+                text-decoration: bold;
+                border-top: 1px solid black;
+            }
+        }
+
+        a:last-child{
+            border-bottom: 1px solid black;
+        }
+        
     }
 
     img {
         @media (max-width: @desktop-tablet-breakpnt){
             order: -1;
             padding-right: 60px;
+        }
+
+        @media (max-width: @tablet-phone-breakpnt){
+            margin-top: 10px;
         }
     }
 
@@ -172,6 +197,10 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width:@tablet-phone-breakpnt){
+        margin-top: 48px;
+    }
+
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -186,6 +215,7 @@ header {
         @media (max-width: @desktop-tablet-breakpnt){
             width:100%;
             margin-right: 0;
+            font-size: 54px;
         }
 
         button {
@@ -241,6 +271,11 @@ section{
             border-top: 2px solid black;
             padding-top: 20px;
         }
+
+        @media (max-width: @tablet-phone-breakpnt){
+            flex-direction: column;
+        }
+        
     }
     .middle-img {
         display: block;
@@ -257,6 +292,18 @@ section{
             border-bottom: 2px solid black;
             padding-bottom: 40px;
         }
+
+        @media (max-width: @tablet-phone-breakpnt){
+            flex-direction: column;
+        }
+        
+    }
+}
+
+.text-content {
+    @media (max-width: @tablet-phone-breakpnt){
+        padding-bottom: 20px;
+        margin-top: 14px;    
     }
 }
 
@@ -280,4 +327,63 @@ section{
 footer {
     text-align: center;
     margin: 40px 0 20px;
+}
+
+
+
+
+/* Mobile */
+@media (max-width: 400px){
+    // .container {
+    //     width: 100%;
+    // }
+
+    // header img{
+    //     margin-top: 10px;
+    // }
+
+    // header nav {
+    //     margin-top: 20px;
+    //     flex-direction: column;
+    // }
+
+    // nav a{
+    //     text-align: center;
+    //     padding: 19px 5.69% 19px;
+    //     font-size: 2.2rem;
+    //     text-decoration: bold;
+    //     border-top: 1px solid black;
+    // }
+    
+    // nav a:last-child{
+    //     border-bottom: 1px solid black;
+    // }
+
+    // .cta {
+    //     margin-top: 48px;
+    // }
+    
+    // .cta .cta-text{
+    //     width:100%;
+    //     margin-right: 0;
+
+    // }
+    
+    // .top-content {
+        
+    // }
+
+    // .text-content{
+    //     padding-bottom: 20px;
+    //     margin-top: 14px;
+    // }
+    
+    // .middle-img {
+    //     width: 100%;
+    // }
+
+    .bottom-content {
+        flex-direction: column;
+    }
+
 }
