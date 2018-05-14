@@ -56,6 +56,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -68,6 +69,10 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
 }
+
+// LESS Variables
+
+@new-color-scheme: #428bca;
 
 /* Header Styles */
 
@@ -84,7 +89,7 @@ header {
             color: #b0b0b0;
             &:hover {
                 text-decoration: underline;
-                color: black;
+                color: @new-color-scheme;
             }
         }
     }
@@ -101,6 +106,7 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
     .cta-text {
+        color: @new-color-scheme;
         font-size: 16px + 56px;
         text-align: center;
         letter-spacing: 5px;
@@ -110,7 +116,8 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
         button {
-            border: 1px double black;
+            color: @new-color-scheme;
+            border: 1px double @new-color-scheme;
             font-size: 16px;
             background: white;
             width: 170px;
@@ -118,7 +125,7 @@ header {
             margin-top: 10px;
             cursor: pointer;
             &:hover {
-                background: black;
+                background: @new-color-scheme;
                 color: white;
             }
         }
@@ -127,9 +134,10 @@ header {
 
 /* Main Content Styles */
 
-
-
 .main-content {
+    h4 {
+        color: @new-color-scheme;
+    }
     border-top: 2px solid black; 
     border-bottom: 2px solid black;
     margin: 75px 0 35px 0;
@@ -155,6 +163,9 @@ header {
 /* Contact Styles */
 
 .contact {
+    h4 {
+        color: @new-color-scheme;
+    }
     p {
         margin: 15px 0;
     }
