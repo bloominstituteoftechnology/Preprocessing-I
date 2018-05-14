@@ -5,6 +5,19 @@
    License: none (public domain)
 */
 
+//Variables & Mixins
+@text-size: 16px;
+
+.borders() {
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+}
+
+.flex() {
+    display: flex;
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -81,7 +94,7 @@ header {
     margin-top: 40px + 10; // operator 
     width: 610px;
     justify-content: space-between;
-    display: flex;
+    .flex();
 
     a {
     text-decoration: none;
@@ -104,7 +117,7 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex();
     margin-top: 72px;
     justify-content: flex-end;
 
@@ -112,7 +125,7 @@ header {
     font-size: 72px - 2; // operator
     text-align: center;
     letter-spacing: 5px;
-    display: flex;
+    .flex();
     justify-content: center;
     flex-flow: column;
     align-items: center;
@@ -121,7 +134,7 @@ header {
 
      button {
     border: 1px double black;
-    font-size: 16px;
+    font-size: @text-size;
     background: white;
     width: 170px;
     height: 32px;
@@ -139,15 +152,14 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+    .borders(); 
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @text-size;
    line-height: 18px;
 
     .top-content {
-    display: flex;
+    .flex();
     justify-content: space-around;
     }
 
@@ -157,7 +169,7 @@ header {
     }
 
     .bottom-content {
-        display: flex;
+        .flex();
         justify-content: space-around;
 
         p {
