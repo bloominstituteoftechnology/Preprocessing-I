@@ -30,7 +30,13 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    @media (max-width: 768px) {
+        overflow-x: hidden !important;
+    }
+    @media (max-width: 400px) {
+        overflow-x: hidden !important;
+    }
 }
 ol, ul {
 	list-style: none;
@@ -68,6 +74,14 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width: 768px) {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    @media (max-width: 400px) {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
 }
 
 // LESS Variables
@@ -90,12 +104,55 @@ header {
             &:hover {
                 text-decoration: underline;
                 color: @new-color-scheme;
+                @media (max-width: 400px) {
+                    background: gray;
+                }
             }
+            &:first-child {
+                @media (max-width: 400px) {
+                    border-top: 1px solid gray;
+                }
+            }
+            @media (max-width: 400px) {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 5% 0;
+                font-size: 1.250em;
+                border-bottom: 1px solid gray;
+            }
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 0 3.90%;
+        }
+        @media (max-width: 400px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
         }
     }
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        @media (max-width: 768px) {
+            order: -1;
+            display: block;
+            margin: 3.90% auto 0;
+        }
+        @media (max-width: 400px) {
+            margin: 5% 0;
+        }
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @media (max-width: 400px) {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -129,6 +186,27 @@ header {
                 color: white;
             }
         }
+        @media (max-width: 768px) {
+            margin: 0;        
+        }
+    }
+    img {
+        @media (max-width: 768px) {
+            display: none;
+        }
+        @media (max-width: 400px) {
+            max-width: 80%;
+        }
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+    }
+    @media (max-width: 400px) {
+        margin-top: 12.5%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
     }
 }
 
@@ -151,12 +229,32 @@ header {
     .middle-img {
         display: block;
         margin: 30px auto;
+        @media (max-width: 768px) {
+           width: 100%;
+        }
     }
     .bottom-content {
         .top-content();
         p {
             padding-right: 20px;
         }
+        @media (max-width: 400px) {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
+    }
+    .text-content {
+        @media (max-width: 768px) {
+            margin: 0 1.30%;
+        }
+        @media (max-width: 400px) {
+            margin: 0;
+        }
+    }
+    @media (max-width: 768px) {
+        margin: 9.76% 2.60% 4.55%;
     }
 }
 
@@ -168,6 +266,12 @@ header {
     }
     p {
         margin: 15px 0;
+    }
+    @media (max-width: 768px) {
+        margin: 0 3.90%;
+    }
+    @media (max-width: 400px) {
+        margin: 5%;
     }
 }
 
