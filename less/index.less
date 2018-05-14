@@ -7,6 +7,8 @@
 
 //Variables & Mixins
 @text-size: 16px;
+@primary-color: aqua;
+@secondary-color: pink;
 
 .borders() {
     border-top: 2px solid black; 
@@ -15,6 +17,10 @@
 
 .flex() {
     display: flex;
+}
+
+.color() {
+    color: @primary-color;
 }
 
 
@@ -98,12 +104,12 @@ header {
 
     a {
     text-decoration: none;
-    color: #b0b0b0;
+    color: @primary-color;
     
 
     &:hover {
         text-decoration: underline;
-        color: black;
+        color: @secondary-color;
            }
         }
     }   
@@ -130,19 +136,19 @@ header {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-
+    .color();
 
      button {
-    border: 1px double black;
+    border: 1px double @primary-color;
     font-size: @text-size;
-    background: white;
+    background: @primary-color;
     width: 170px;
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
 
     &:hover {
-        background: black;
+        background: @secondary-color;
         color: white;
             }
         }
@@ -157,6 +163,7 @@ header {
    padding: 35px 0;
    font-size: @text-size;
    line-height: 18px;
+   .color();
 
     .top-content {
     .flex();
@@ -181,6 +188,7 @@ header {
 
 .contact p {
     margin: 15px 0;
+    .color();
 }
 
 /* Footer Styles */
@@ -188,4 +196,5 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    .color();
 }
