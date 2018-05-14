@@ -109,16 +109,21 @@ header {
         text-decoration: none;
         text-shadow: .5px .5px .5px #000;
         color: @darkorange;
+        
+        // Nested Media Queries
+        @media (max-width: 400px) {
+            font-size: 2rem;
+           }
 
         // Parent Selectors using "&"
         &:hover {
             text-decoration: underline;
-            color: green;
+            color: white;
         }
 
         // Nested Media Queries
         @media (max-width: 400px) {
-            border-top:1px solid @darkgrey;
+            border-top:1px solid @darkorange;
           }
     }
 }
@@ -163,19 +168,26 @@ header .logo {
         height: 3em - 1;
         margin-top: .625em;
         cursor: pointer;
+
+        //  Parent Selectors "&"
+        &:hover {
+            background: aqua;
+            color: @darkorange;
+        }
         
         // Nested Media Queries
         @media (max-width: 400px) {
             background-color: @darkorange;
+            color: aqua;
            }
     }
   }
 }
 
-.cta .cta-text button:hover {
-    background: @darkorange;
-    color: @darkgrey;
-}
+// .cta .cta-text button:hover {
+//     background: @darkorange;
+//     color: @darkgrey;
+// }
 
 .logo2 {
     display:none;
