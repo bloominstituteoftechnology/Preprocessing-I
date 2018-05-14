@@ -71,17 +71,11 @@ h1, h2, h3, h4, h5 {
 
 //Variables and mixins
 
-.light-blue {
-    color: #16AAFF
-}
+@blue-variable: #16AAFF;
 
-.lime-green {
-    color: #128402
-}
+@green-variable: #128402;
 
-.purple {
-    color: #B760C4
-}
+@purple-variable: #B760C4;
 
 .font-class {
     color: black;
@@ -99,16 +93,30 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    
+    @media (max-width: 768px) {
+
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-bottom: 35px;
+        margin-top: 10px;
+
+    }
 
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
+        
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+        }
 
         a {
             text-decoration: none;
-            .lime-green;
+            .green-variable;
         }
 
         a:hover {
@@ -124,6 +132,11 @@ header {
 header .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    @media @tablet {
+        order: -1;
+        display: block;
+        margin: 3% auto 1.5%;
+    }
 }
 
 /* Call To Action (CTA) Styles */
@@ -142,7 +155,7 @@ header .logo {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
-        .light-blue;
+        .blue-variable;
 
         button {
             border: 1px double black;
@@ -170,11 +183,11 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   .purple;
+   .purple-variable;
    line-height: 10px + 8;
 
     h4 {
-        .lime-green;
+        .green-variable;
     }
 
     .top-content {
@@ -206,12 +219,12 @@ header .logo {
     margin: 15px 0;
     
     h4 {
-    .lime-green;
+    .green-variable;
     }
 
     p {
         margin: 15px 0;
-        .purple;
+        .purple-variable;
     }
 
 }
@@ -221,5 +234,17 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
-    .light-blue;
+    .blue-variable;
 }
+
+/* Tablet styles */
+
+
+
+
+
+    /* Fix menu items width */
+  
+    
+
+    
