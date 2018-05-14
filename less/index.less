@@ -64,25 +64,33 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+@width: 880px;
+@font-size: 16px;
+@color: #5b3d7a;
+
+.flex() {
+    display: flex;
+}
+
 .container {
-    width: 880px;
+    width: @width;
     margin: auto;
 
     /* Header Styles */
 
 header {
     width: 100%;
-    display: flex;
+    .flex;
 
     nav {
         margin-top: 40px; 
-        width: 610px;
+        width: @width - 270;
         justify-content: space-between;
-        display: flex;
+        .flex;
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @color;
         } //header nav a
 
         a:hover {
@@ -100,32 +108,34 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex;
     margin-top: 72px;
     justify-content: flex-end;
 
     .cta-text {
-        font-size: 72px;
+        font-size: @font-size * 4.5;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
+        .flex;
         justify-content: center;
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @color;
 
         button {
-            border: 1px double black;
+            border: 1px double @color;
             font-size: 16px;
             background: white;
             width: 170px;
             height: 32px;
             margin-top: 10px;
+            color: @color;
             cursor: pointer;
         } //.cta .cta-text button
 
         button:hover {
-            background: black;
+            background: @color;
             color: white;
         } //.cta .cta-text button:hover
     } //.cta .cta-text
@@ -134,25 +144,35 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @color; 
+   border-bottom: 2px solid @color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
 
    .top-content {
-    display: flex;
+    .flex;
     justify-content: space-around;
+    
+        h4 {
+            color: @color;
+        }
+    
   } //.main-content .top-content
 
   .middle-img {
     display: block;
     margin: 30px auto;
   } //.maint-content .middle-img
+
   .bottom-content {
-    display: flex;
+    .flex;
     justify-content: space-around;
+
+    h4 {
+        color: @color;
+    }
 
     p {
         padding-right: 20px;
@@ -163,6 +183,10 @@ header {
 /* Contact Styles */
 
 .contact {
+
+    h4 {
+        color: @color;
+    }
 
     p{
     margin: 15px 0;
