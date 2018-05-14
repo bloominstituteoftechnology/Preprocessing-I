@@ -1,8 +1,15 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+
+@blue: blue;
+@red: red;
+@green: green;
+
+@tablet: ~"(max-width: 768px)";
+@phone: ~"(max-width: 400px)";
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,8 +20,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +32,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -65,107 +72,222 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
     margin: auto;
+
+		@media @tablet{
+			width: 100%;
+		}
 }
 
 /* Header Styles */
 
 header {
-    width: 100%;
+    @media @tablet{
+			//background: @red;
+			flex-direction: column;
+		}
+
+		@media @phone{
+			//background: @green;
+		}
+
+
     display: flex;
-}
+		//background: @blue;
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+		nav {
+			margin-top: 40px;
+	    width: 61px * 10;
+	    justify-content: space-between;
+	    display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+			@media @tablet{
+				justify-content: space-around;
+				width: 100%;
+			}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+			@media @phone{
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+				margin-top: 0px;
+				width: 100%;
+			}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+			a {
+				text-decoration: none;
+		    color: #b0b0b0;
+
+				@media @phone{
+					padding: 20px 0px;
+					border-top: 2px solid black;
+
+					&:last-child{
+						border-bottom: 2px solid black;
+					}
+
+				}
+
+				&:hover {
+					text-decoration: underline;
+			    color: black;
+				}
+			}//a
+		}//nav
+		.logo {
+			align-self: flex-end;
+	    margin: 28px 0 0 91px;
+
+			@media @tablet{
+				order: -1;
+				align-self: center;
+				margin: 10px 0px;
+			}
+		}//.logo
+}//header
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
     margin-top: 72px;
-    justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
     justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+		//background: @red;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+		@media @tablet{
+			//background: @green;
+			justify-content: center;
+		}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+		@media @phone{
+ 		 //background: @blue;
+ 	 }
+
+		.cta-text {
+			font-size: 72px;
+	    text-align: center;
+	    letter-spacing: 5px;
+	    display: flex;
+	    justify-content: center;
+	    flex-flow: column;
+	    align-items: center;
+	    margin: 0 82px 0 0;
+
+			@media @tablet{
+				margin: 0;
+			}
+
+			@media @phone{
+				padding: 0px 30px;
+				font-size: 68px;
+			}
+
+			button {
+				border: 1px double black;
+		    font-size: 16px;
+		    background: white;
+		    width: 170px;
+		    height: 32px;
+		    margin-top: 10px;
+		    cursor: pointer;
+
+				&:hover {
+					background: black;
+			    color: white;
+				}
+			}//button
+		}//.cta-text
+  img {
+
+		@media @tablet{
+			display: none;
+		}
+	}
+}//.cta
 
 /* Main Content Styles */
 
+//Mixins
+.top-and-bottom-content {
+	display: flex;
+	justify-content: space-around;
+
+	@media @tablet{
+		max-width: 1000px;
+	}
+
+	@media @phone{
+		flex-direction: column;
+	}
+
+	h4 {
+		margin-top: 15px;
+	}
+}
+
+.padding-mobile {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+	 //background: @green;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 @media @tablet{
+		 //background: @blue;
+	 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+	 @media @phone{
+		 //background: @red;
+		 .padding-mobile;
+	 }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 .top-content {
+		 .top-and-bottom-content;
+	 }//.top-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+	 .middle-img {
+		 display: block;
+     margin: 30px auto;
+
+
+		 @media @tablet{
+			 width: 100%;
+			 margin: 30px 0px 10px;
+		 }
+	 }//.middle-img
+
+	 .bottom-content {
+		 .top-and-bottom-content;
+
+		 @media @phone{
+			 &:last-child{
+				 padding-bottom: 40px;
+			 }
+		 }
+
+		 p {
+			 padding-right: 20px;
+		 }
+	 }//.bottom-content
+}//.main-content
 
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
+}
+
+.contact {
+	@media @phone {
+		.padding-mobile;
+	}
 }
 
 /* Footer Styles */
