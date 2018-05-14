@@ -62,6 +62,11 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @base-color;
+}
+
+p {
+    color: @font-color;
 }
 
 .container {
@@ -73,9 +78,10 @@ h1, h2, h3, h4, h5 {
 @base-color: blue;
 @header-color: @base-color + #b0b0b0;
 @inverted-base-color: #fff - @base-color;
+@font-color: @base-color + #777;
 
 // mixin
-.disp-just(@spacer) {
+.dispflex-just(@spacer) {
   display: flex;
   justify-content: @spacer; 
 }
@@ -88,7 +94,7 @@ header {
     nav {
         margin-top: 40px; 
         width: 610px;
-        .disp-just(space-between);
+        .dispflex-just(space-between);
 
         a {
             text-decoration: none;
@@ -109,19 +115,20 @@ header {
 /* Call To Action (CTA) Styles */
 .cta {
     margin-top: 72px;
-    .disp-just(flex-end);
+    .dispflex-just(flex-end);
 
     .cta-text {
         font-size: 72px;
         text-align: center;
         letter-spacing: 5px;
-        .disp-just(center);
+        .dispflex-just(center);
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double black;
+            border: 1px double @base-color;
+            color: @base-color;
             font-size: 16px;
             background: white;
             width: 170px;
@@ -146,7 +153,7 @@ header {
    line-height: 18px;
 
    .top-content {
-       .disp-just(space-around);
+       .dispflex-just(space-around);
    }
 
    .middle-img {
@@ -155,7 +162,7 @@ header {
    }
 
    .bottom-content {
-       .disp-just(space-around);
+       .dispflex-just(space-around);
 
        p {
           padding-right: 20px;
