@@ -57,6 +57,8 @@ table {
 @colordark: navy;
 @smallborder: 1px solid @colordark;
 @bigborder: 2px solid @colordark;
+@tablet: max-width: 768px;
+@phone: max-width: 400px;
 
 html, body {
     height: 100%;
@@ -78,11 +80,12 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Header Styles */
+@tablet: max-width: 768px;
 
 header {
     width: 100%;
     display: flex;
-		@media(max-width: 768px) {
+		@media( @tablet) {
 			flex-wrap: wrap;
 		} // header tablet
 		@media(max-width: 400px) {
@@ -94,7 +97,7 @@ header {
 				width: 610px;
 				justify-content: space-between;
 				display: flex;
-				@media(max-width: 768px) {
+				@media(@tablet) {
 					width: 100%;
 	        margin: 38px 3%;
 				} //nav tablet
@@ -131,7 +134,7 @@ header {
 		.logo {
 			  align-self: flex-end;
 			  margin: 28px 0 0 91px;
-				@media (max-width: 768px) {
+				@media (@tablet) {
 					order: -1;
 	        display: block;
 	        margin: 30px auto 0;
@@ -149,7 +152,7 @@ header {
     display: flex;
     margin-top: 62px + 10;
     justify-content: flex-end;
-		@media (max-width: 768px) {
+		@media (@tablet) {
 			justify-content: center;
 		} // cta tablet
 		@media (max-width: 400px) {
@@ -159,7 +162,7 @@ header {
 			align-items: center;
 		} //cta mobile
 		img {
-			@media (max-width: 768px) {
+			@media (@tablet) {
 				display: none;
 				}//cta img tablet
 			@media (max-width: 400px) {
@@ -177,14 +180,14 @@ header {
 	    flex-flow: column;
 	    align-items: center;
 	    margin: 0 82px 0 0;
-			@media (max-width: 768px) {
+			@media (@tablet) {
 				margin: 0 5% 0 0;
 				} //cta-text tablet
 			@media (max-width: 400px) {
 				margin: 0;
 			}//cta-text mobile
 			h1 {
-				@media (max-width: 768px) {
+				@media (@tablet) {
 					letter-spacing: 0;
 				} //h1 tablet
 			} //h1
@@ -215,7 +218,7 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-	 @media (max-width: 768px) {
+	 @media (@tablet) {
 		 font-size: 1.4rem;
 		 margin: 75px 2% 35px;
 	 		} //main-content tablet
@@ -230,7 +233,7 @@ header {
 	 .middle-img {
 		 display: block;
 		 margin: 30px auto;
-		 @media (max-width: 768px) {
+		 @media (@tablet) {
 			 width: 100%;
        margin: 25px auto;
 		 	}//middle-img tablet
@@ -250,7 +253,7 @@ header {
 
 /* Contact Styles */
 .contact {
-	@media (max-width: 768px) {
+	@media (@tablet) {
 		margin: 20px 2%;
 	} //contact tablet
 	p {
