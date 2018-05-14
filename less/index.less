@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -56,12 +56,24 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+		.color1;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+}
+
+.font(@multiplier) {
+	font-size: 16px * @multiplier;
+}
+.color2 {
+	background-color: lightblue;
+	border: solid black 2px;
+}
+.color1{
+	background-color: slategray;
 }
 
 .container {
@@ -72,31 +84,33 @@ h1, h2, h3, h4, h5 {
 /* Header Styles */
 
 header {
+		.color2;
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+		nav {
+    	margin-top: 40px;
+    	width: 100%;
+    	justify-content: space-around;
+    	display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+ 			a {
+    		text-decoration: none;
+    		color: #000000;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+				&:hover {
+    			text-decoration: underline;
+    			color: white;
+				} // hover
+			} // a
+		} // nav
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+		.logo {
+    	align-self: flex-end;
+    	margin: 28px 0 0 91px;
+			padding-right: 5%;
+		} // logo
+} // header
 
 /* Call To Action (CTA) Styles */
 
@@ -104,68 +118,72 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+	.cta-text {
+    	.font(4.5);
+    	text-align: center;
+    	letter-spacing: 5px;
+	    display: flex;
+	    justify-content: center;
+    	flex-flow: column;
+    	align-items: center;
+    	margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+			button {
+		    border: 1px double black;
+		   	.font(1);
+				.color2;
+		    width: 170px;
+		    height: 32px;
+		    margin-top: 10px;
+		    cursor: pointer;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+				&:hover {
+    			background: black;
+    			color: white;
+				} // hover
+		} // button
+	} // cta-text
+} // cta
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   .font(1);
    line-height: 18px;
-}
 
-.main-content .top-content {
+	 h4 {.color2; padding-left: 10px;}
+
+	 .top-content {
     display: flex;
     justify-content: space-around;
-}
+	}
 
-.main-content .middle-img {
+	.middle-img {
     display: block;
     margin: 30px auto;
-}
+	}
 
-.main-content .bottom-content {
+	.bottom-content {
     display: flex;
     justify-content: space-around;
-}
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+ 		p {
+    	padding-right: 20px;
+		}
+	}
 }
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+	p {
     margin: 15px 0;
+	}
 }
 
 /* Footer Styles */
