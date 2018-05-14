@@ -65,21 +65,20 @@ h1, h2, h3, h4, h5 {
 }
 
 
-//variables
+//variables and mixins
 @width: 100%;
-
-
-
-
-
-
-
-
+.display-flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+@text-color: turquoise;
+@middle-color:  rgb(177, 243, 236);
 
 
 .container {
     width: 880px;
     margin: auto;
+    
 }
 
 /* Header Styles */
@@ -98,12 +97,12 @@ header {
 
             a {
                 text-decoration: none;
-                color: #b0b0b0;
+                color:@text-color;
 
 
         header nav a:hover {
-            text-decoration: underline;
-            color: black;
+            text-decoration: bold;
+            color: @text-color;
             }//nav a:hover
 
 
@@ -130,6 +129,7 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    
 
 
     .cta-text {
@@ -141,11 +141,12 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @text-color;
 
             button {
                 border: 1px double black;
                 font-size: 16px;
-                background: white;
+                background: @text-color;
                 width: 170px;
                 height: 32px;
                 margin-top: 10px;
@@ -174,36 +175,60 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+   background: @middle-color;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+        .top-content {
+            .display-flex-around;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+            h4 {
+                color: @text-color;
+            }
+        }
+        
+        .middle-img {
+            display: block;
+            margin: 30px auto;
+         }//.middle-img
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        
+            .bottom-content {
+            .display-flex-around;
+
+            h4{
+                color: @text-color;
+            }
+
+            p {
+                padding-right: 20px;
+            }//p
+                
+            }//.bottom-content
+
+
+}//main-content
+
+
+
+
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+
+    h4 {
+        color: @text-color;
+    }
+
+    p {
     margin: 15px 0;
 }
 
+}
 /* Footer Styles */
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @text-color;
 }
