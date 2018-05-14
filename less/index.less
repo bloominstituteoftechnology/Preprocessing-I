@@ -53,7 +53,7 @@ table {
     box-sizing: border-box;
 }
 
-@font-size: 16px;
+@fontsize: 16px;
 @blue-background: rgb(120, 135, 221);
 @purple-background: rgb(161, 126, 161);
 
@@ -72,6 +72,15 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
     background: @blue-background;
+    
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+    
+    @media (max-width: 400px) {
+        width: 100%;
+    }
+
 }
 
 /* Header Styles */
@@ -80,6 +89,11 @@ header {
     width: 100%;
     display: flex;
     background: @purple-background;
+    
+    @media (max-width: 400px) {
+        justify-content: center;
+        flex-flow: column;
+    }
 
   nav {
     margin-top: 40px; 
@@ -88,37 +102,48 @@ header {
     display: flex;
     
     @media (max-width: 768px) {
-            width: 100%;
-            padding: 0 30px;
-            display: flex;
-            font-size: 16px;
+        width: 100%;
+        padding: 0 30px;
+        display: flex;
+        font-size: @fontsize;
     }
     
-    a {
-      text-decoration: none;
-      color: #b0b0b0;
-
-      a:hover {
-        text-decoration: underline;
-        color: black;
-
-        .logo {
-            align-self: flex-end;
-            margin: 28px 0 0 91px;
-            
-            @media (max-width: 768px) {
-                order: -1;
-                width: 25%;
-                margin: 30px 0 0 290px;
-            }
-            
-}
-}
+    @media (max-width: 400px) {
+        width: 100%;
+        flex-flow: column;
+    }
+      a {
+        text-decoration: none;
+        color: #b0b0b0;
+        
+        @media (max-width: 400px) {
+            width: 100%;
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+            font-size: @fontsize * 2;
+            border-bottom: 1px solid gray;
+      }
 }
 }
 }
 
+header .logo {
+    align-self: flex-end;
+    margin: 28px 0 0 91px;
+    
+    @media (max-width: 768px) {
+        order: -1;
+        width: 25%;
+        margin: 30px 0 0 290px;
+    }
 
+    @media (max-width: 400px) {
+        display: block;
+    	margin: 20px auto;
+    	width: 45%;
+    }
+}
 /* Call To Action (CTA) Styles */
 
 .cta {
@@ -132,7 +157,7 @@ header {
     }
 
     .cta-text {
-        font-size: @font-size * 4.5;
+        font-size: @fontsize * 4.5;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -142,12 +167,12 @@ header {
         margin: 0 82px 0 0;
         
         @media (max-width: 768px) {
-            margin: 0px 2.60% 0px 0px;
+            margin: 0px 20px 0px 0px;
         }
 
         button {
             border: 1px double black;
-            font-size: @font-size;
+            font-size: @fontsize;
             background: white;
             width: 170px;
             height: 32px;
@@ -158,16 +183,15 @@ header {
                 background: black;
                 color: white;
             }
-
-            .cta img {
-                @media (max-width: 768px){
-                    display: none;
-                }
-}
 }
 }
 }
 
+.cta img {
+    @media (max-width: 768px) {
+        display: none;
+}
+}
 
 /* Main Content Styles */
 
@@ -176,7 +200,7 @@ header {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: @font-size + 2;
+   font-size: @fontsize + 2;
    line-height: 18px;
    background: @purple-background;
    
@@ -193,33 +217,29 @@ header {
     @media (max-width: 768px) {
         margin: 0 10px;
     }
-
-    .middle-img {
-        display: block;
-        margin: 30px auto;
-        
-
-      .bottom-content {
-            .top-content;
-
-        .bottom-content p {
-                padding-right: 20px;
-           
-}
-}
-}
-}
+  }
 }
 
+.main-content .middle-img {
+    display: block;
+    margin: 30px auto;
+    }
+
+.main-content .bottom-content {
+    .top-content;
+}
+
+.main-content .bottom-content p {
+    padding-right: 20px;
+    }
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
     
     @media (max-width: 768px) {
-        margin: 30px 0 0 2.60%;
-        padding: 0;
-        font-size: 16px;
+        margin: 30px 0 0 20px;
+        font-size: @fontsize;
     }
 }
 
