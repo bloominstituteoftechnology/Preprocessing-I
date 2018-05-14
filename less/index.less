@@ -159,8 +159,10 @@ h5 {
 }
 // reset css ends here
 
+@container-width: 880px;
 .container {
-    width: 880px;
+    max-width: @container-width;
+    width: 100%;
     margin: auto;
 }
 
@@ -171,7 +173,7 @@ header {
     display: flex;
     nav {
         margin-top: 40px;
-        width: 610px;
+        width: 100%;
         justify-content: space-between;
         display: flex;
         a {
@@ -185,7 +187,7 @@ header {
     } // nav ends
     .logo {
         align-self: flex-end;
-        margin: 28px 0 0 91px;
+        margin: 28px 0 0 ((91% / @container-width) * 100);
     }
 } // header ends
 /* Call To Action (CTA) Styles */
