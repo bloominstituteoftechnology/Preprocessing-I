@@ -1,8 +1,12 @@
-// Is this working?
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
+// Master Variables List
+
+@text-color: #33cc33
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -56,6 +60,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,46 +72,49 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    
 }
 
 /* Header Styles */
 
+@text-color: #33cc33
+
+
 header {
     width: 100%;
     display: flex;
-}
-
-header nav {
+  nav {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
-}
-
-header nav a {
+    a {
     text-decoration: none;
-    color: #b0b0b0;
-}
+    color: gray;
+  } //nav
+}//header
 
-header nav a:hover {
+header{
+  a:hover {
     text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
-/* Call To Action (CTA) Styles */
-
+    color: black
+  }//hover
+}//header
+  
+header{
+   .logo {
+   align-self: flex-end;
+   margin: 28px 0 0 91px;
+   }//logo  
+}//header 
+  
+//cta styles
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
+  
+  .cta-text {
     font-size: 72px;
     text-align: center;
     letter-spacing: 5px;
@@ -115,9 +123,8 @@ header .logo {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
+   
+    .cta-text button {
     border: 1px double black;
     font-size: 16px;
     background: white;
@@ -125,15 +132,19 @@ header .logo {
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
-}
+   }//cta-text button
+ }//cta-text
+}//cta
 
-.cta .cta-text button:hover {
+
+.cta{
+    .cta-text button:hover {
     background: black;
     color: white;
-}
+  }//cta button hover 
+}//cta
 
-/* Main Content Styles */
-
+//main content styles
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
@@ -141,35 +152,36 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
-
-.main-content .top-content {
+  
+  .top-content {
     display: flex;
     justify-content: space-around;
-}
+    
+    .middle-img {
+      display: block;
+      margin: 30px auto;
+    }//middle-img
+  }//top-content
+}//main content
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
+.main-content {
+  .bottom-content {
     display: flex;
     justify-content: space-around;
-}
-
-.main-content .bottom-content p {
+     p {
     padding-right: 20px;
-}
+    }//p
+  }//bottom-content
+}//main-content
 
 /* Contact Styles */
-
-.contact p {
+.contact{
+  p {
     margin: 15px 0;
-}
+  }//p
+}//contact
 
 /* Footer Styles */
-
 footer {
     text-align: center;
     margin: 40px 0 20px;
