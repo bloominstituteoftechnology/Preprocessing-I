@@ -1,8 +1,28 @@
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
+//Variables & Mixins
+@text-size: 16px;
+@primary-color: aqua;
+@secondary-color: pink;
+
+.borders() {
+    border-top: 2px solid @primary-color; 
+    border-bottom: 2px solid @primary-color;
+}
+
+.flex() {
+    display: flex;
+}
+
+.color() {
+    color: @primary-color;
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -58,6 +78,10 @@ html, body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -65,8 +89,22 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+    @media (max-width: 400px) {
+             width: 100%;
+             margin: 0;
+             padding: 0;
+        }
 }
 
 /* Header Styles */
@@ -74,98 +112,150 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
+    @media (max-width: 768px) {
+        font-size: 14px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
+
+    nav {
+    margin-top: 40px + 10; // operator 
     width: 610px;
     justify-content: space-between;
-    display: flex;
-}
+    .flex();
 
-header nav a {
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 1.6rem; 
+        justify-content: space-around;
+        margin-top: 42px;
+        margin-right: 1.7%;
+    
+    @media (max-width: 400px) {
+        font-size: 2rem;
+        flex-direction: column;
+        margin-top: 13px;
+    }
+    }
+    a {
     text-decoration: none;
-    color: #b0b0b0;
-}
+    color: @primary-color;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    @media(max-width: 400px) {
+        border-bottom: 1px solid;
+        margin: 0;
+        align: center;
+        padding: 4% 0;
+        text-align: center;
+    }
+    
 
-header .logo {
+
+    &:hover {
+        text-decoration: underline;
+        color: @secondary-color;
+           }
+        }
+    }   
+
+    .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+
+    @media(max-width: 768px) {
+        order: -1;
+        align-self: center;
+        margin-top: 26px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex();
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
+    @media(max-width: 768px) {
+        margin-top: 56px;
+    }
+
+    .img {
+    @media (max-width: 768px) {
+        
+        display: none;
+        }
+    }
+    .cta-text {
+    font-size: 72px - 2; // operator
     text-align: center;
     letter-spacing: 5px;
-    display: flex;
+    .flex();
     justify-content: center;
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
+    .color();
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
+     button {
+    border: 1px double @primary-color;
+    font-size: @text-size;
+    background: @primary-color;
     width: 170px;
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
-}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    &:hover {
+        background: @secondary-color;
+        color: white;
+            }
+        }
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+    .borders(); 
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @text-size;
    line-height: 18px;
-}
+   .color();
 
-.main-content .top-content {
-    display: flex;
+    .top-content {
+    .flex();
     justify-content: space-around;
-}
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        width: 100%;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        .flex();
+        justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        p {
+            padding-right: 20px;
+        }
+    }
 }
-
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
+    .color();
 }
 
 /* Footer Styles */
@@ -173,4 +263,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    .color();
 }
