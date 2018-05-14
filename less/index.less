@@ -71,11 +71,11 @@ h1, h2, h3, h4, h5 {
 
 //Variables and mixins
 
-@blue-variable: #16AAFF;
+@blue: #16AAFF;
 
-@green-variable: #128402;
+@green: #128402;
 
-@purple-variable: #B760C4;
+@purple: #B760C4;
 
 .font-class {
     color: black;
@@ -110,13 +110,23 @@ header {
         display: flex;
         
         @media (max-width: 768px) {
-            width: 100%;
+            width: 80%;
             margin-left: 0;
+            margin-right: 15%;
         }
 
         a {
             text-decoration: none;
-            .green-variable;
+            color: @green;
+
+            @media (max-width: 768px) {
+
+                padding-left: 0px;
+                margin-left: 0px;
+                padding-right: 0px;
+                margin-right: 0px;
+
+            }
         }
 
         a:hover {
@@ -132,7 +142,7 @@ header {
 header .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
-    @media @tablet {
+    @media (max-width: 768px) {
         order: -1;
         display: block;
         margin: 3% auto 1.5%;
@@ -155,7 +165,7 @@ header .logo {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
-        .blue-variable;
+        color: (@blue);
 
         button {
             border: 1px double black;
@@ -183,11 +193,11 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   .purple-variable;
+   color: (@purple);
    line-height: 10px + 8;
 
     h4 {
-        .green-variable;
+        color: (@green);
     }
 
     .top-content {
@@ -219,12 +229,12 @@ header .logo {
     margin: 15px 0;
     
     h4 {
-    .green-variable;
+        color: (@green);
     }
 
     p {
         margin: 15px 0;
-        .purple-variable;
+        color: (@purple);
     }
 
 }
@@ -234,7 +244,7 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
-    .blue-variable;
+    color: (@blue);
 }
 
 /* Tablet styles */
