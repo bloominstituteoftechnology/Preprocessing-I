@@ -67,6 +67,34 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Variables */
+
+@dflt-size: 1.6rem;
+@philly-philly: #004C54;
+
+// detached ruleset
+@phone: { max-width: 400px };
+@tablet: { max-width: 768px };
+
+/* Mixins */
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Header Styles */
@@ -74,28 +102,85 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    // use detached ruleset with media
+    @media @tablet {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    @media @phone {
+        justify-content: flex-end;
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        @media @tablet {
+            width: 100%;
+            padding: 0 3.91%;
+        }
+
+        @media @phone {
+            width: 100%;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            font-size: @dflt-size;
+            text-decoration: none;
+            color: @philly-philly;
+
+            @media @phone {
+                width: 100%;
+                display: block;
+                font-size: @dflt-size + 0.4;
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 1px solid grey;
+            }
+
+            &:first-child {
+                @media @phone {
+                    border-top: 1px solid grey;
+                }
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+                
+                @media @phone {
+                    background: @philly-philly;
+                    color: white;
+                }
+            } // hover   
+        } // a
+    } // nav
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media @tablet {
+            padding-left: 5%;
+            margin: 30px auto 0;
+        }
+
+        @media @phone {
+            align-self: center;
+            margin: 20px 0;
+        }
+    } // logo
+} // header
+
+h1, h4 , p {
+    color: @philly-philly;
 }
 
 /* Call To Action (CTA) Styles */
@@ -104,73 +189,144 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    @media @tablet {
+        justify-content: center;
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media @phone {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    .cta-text {
+        font-size: @dflt-size * 4.5;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 10.92% 0 0;
+
+        @media @tablet {
+            margin: 0;
+        }
+
+        @media @phone {
+            font-size: @dflt-size * 3.5;
+        }
+
+        button {
+            border: 1px double black;
+            font-size: @dflt-size;
+            background: white;
+            width: 170px;
+            height: @dflt-size * 2;
+            margin-top: @dflt-size - 0.6;
+            cursor: pointer;
+
+            &:hover {
+                background: @philly-philly;
+                color: white;
+            } // hover
+        } // button
+    } // cta-text
+
+    img {
+        @media @tablet {
+            display: none;
+        }
+
+        @media @phone {
+            max-width: 80%;
+        }
+    } // img
+} // cta
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid black;
+   // use $prop syntax 
+   border-bottom: $border-top;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   font-size: @dflt-size;
+   line-height: @dflt-size + 0.2;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   @media @tablet {
+       margin: 75px 2.6% 35px;
+   }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+   .top-content {
+        .flex-around;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        @media @phone {
+            height: 300px;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    } // top-content
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+
+        @media @tablet {
+            width: 100%;
+        }
+    } // middle-img
+
+    .text-content {
+        @media @tablet {
+            margin: 0 1.3%;
+        }
+
+        @media @phone {
+            margin: 0;
+        }
+    }
+
+    .bottom-content {
+        .flex-around;
+        p {
+            padding-right: 20px;
+        } // p
+
+        @media @phone {
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
+    } // bottom-content
+} // main-content
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    h4 {
+        font-size: @dflt-size;
+    }
+    p {
+        font-size: @dflt-size;
+        margin: 15px 0;
+    }
+    
+    @media @tablet {
+        margin: 0 3.91%;
+    }
+
+    @media @phone {
+        margin: 20px;
+    }
 }
 
 /* Footer Styles */
 
 footer {
+    font-size: @dflt-size;
     text-align: center;
     margin: 40px 0 20px;
 }
