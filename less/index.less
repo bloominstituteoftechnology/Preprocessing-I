@@ -53,6 +53,9 @@ table {
     box-sizing: border-box;
 }
 @nice-blue: #5B83AD;
+@border-1: 2px solid black;
+@std: 16px;
+@lg: 72px;
 
 html, body {
     height: 100%;
@@ -83,20 +86,21 @@ header {
     justify-content: space-between;
     display: flex;
 
-    a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-}
-.logo {
+        a {
+        text-decoration: none;
+        color: #b0b0b0;
+        }
+        a:hover {
+        text-decoration: underline;
+        color: black;
+        }
+        }
+        .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
 }
+
+
 }
 
 
@@ -104,11 +108,11 @@ a:hover {
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: @lg;
     justify-content: flex-end;
 
     .cta-text {
-    font-size: 72px;
+    font-size: @lg;
     text-align: center;
     letter-spacing: 5px;
     display: flex;
@@ -116,34 +120,32 @@ a:hover {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
+
     button {
     border: 1px double black;
-    font-size: 16px;
+    font-size: @std;
     background: white;
     width: 170px;
-    height: 32px;
+    height: @std*2;
     margin-top: 10px;
     cursor: pointer;
     }
-
     button:hover {
     background: black;
     color: white;
 }
-
 }
-
+}
  
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: @border-1; 
+   border-bottom: @border-1;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+   font-size: @std;
+   line-height: @std+2;
 
    .top-content {
     display: flex;
@@ -162,11 +164,8 @@ a:hover {
     p {
     padding-right: 20px;
 }
-
 }
-
 }
-
 
 /* Contact Styles */
 
