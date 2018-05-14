@@ -49,13 +49,44 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+// Color Variables
+
+// desktop
+@navy: #000080;
+@rose: #D41256;
+@lime: #53D412;
+
+// tablet
+@lavender: #E6E6FA;
+@slateblue: #6A5ACD;
+@maroon: #800000;
+
+// mobile
+@lemon: #FFFACD;
+@aqua: #7FFFD4;
+@steelblue:#4682B4;
+
+// variable height
+@height: width;
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
+    background-color: @navy;
+    color: @lime;
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    @media (max-width: 768px) {
+        background-color: @lavender;
+        color: @slateblue;
+    }
+    @media (max-width: 400px) {
+        background-color: @lemon;
+        color: @aqua;
+    }
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,8 +96,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
+    @media (max-width: 768px) {
+        width: 100%
+        padding: 0 2%;
+    }
+    @media (max-width: 400px) {
+        max-width: 400px;
+    }
 }
 
 /* Header Styles */
@@ -74,93 +113,171 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
-
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    @media (max-width: 400px) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 1px solid black;
+    }
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+        @media (max-width: 768px) {
+            padding: 10px 0;
+            margin: 10px 0 0;
+        }
+        @media (max-width: 400px) {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 0;
+            margin: 10px 0 0;
+        }
+        a {
+            text-decoration: none;
+            color: @lime;
+            @media (max-width: 768px) {
+                color: @maroon;
+            }
+            @media (max-width: 400px) {
+                color: @steelblue;
+                width: 100%;
+                text-align: center;
+                padding: 12px 0;
+                border-top: 1px solid black;
+            }
+            a:hover {
+                text-decoration: underline;
+                color: @rose;
+                @media (max-width: 768px) {
+                    color: @maroon;
+                }
+                @media (max-width: 400px) {
+                    color: @aqua;
+                }
+            } // hover
+        } // a
+    } // nav
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 10.34%;
+        @media (max-width: 768px) {
+            align-self: center;
+            padding: 10px 0;
+            order: -1;
+        }
+    } // logo
+} // header 
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    margin-top: 30px;
+    justify-content: space-around;
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
+    .cta-text {
+        font-size: 60px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        @media (max-width: 400px) {
+            padding: 0 0 40px;
+        }
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: @lime;
+            width: 100% / 2;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            @media (max-width: 768px) {
+                background-color: @slateblue;
+            }
+            @media (max-width: 400px) {
+                background-color: @aqua;
+            }
+            &:hover {
+                background: @rose;
+                @media (max-width: 768px) {
+                    background-color: @maroon;
+                }
+                @media (max-width: 400px) {
+                    background-color:@steelblue;
+                }
+            } // hover
+        } // button
+    } // cta-text
+    img {
+        padding-top: 30px;
+        @media (max-width: 400px) {
+            width: 100%;
+        }
+    }
+} // cta
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
+    .top-content {
+        display: flex;
+        justify-content: space-around;   
+        p {
+            padding-right: 20px;
+        }
+        @media (max-width: 400px) {
+            flex-direcion: column;
+        } 
+        .text-content {
+            @media (max-width: 400px) {
+                padding: 20px 0;
+            }
+        }
+    } // top content
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    } // middle img
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        p {
+            padding-right: 20px;
+        } //  bottom p
+        @media (max-width: 400px) {
+            flex-direction: column;
+        }
+        .text-content {
+            @media (max-width: 400px) {
+                padding: 20px 0;
+            }
+        }
+    } // bottom content
+} // main content
 
 /* Contact Styles */
 
