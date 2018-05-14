@@ -154,6 +154,10 @@ h5 {
   margin-left: auto;
   margin-right: auto;
 }
+.fit-text {
+  width: 95%;
+  margin-top: 20px;
+}
 .color-text .text-content h4 {
   color: orange;
 }
@@ -162,8 +166,14 @@ body {
 }
 .container {
   max-width: 880px;
+  width: 100%;
   margin: auto;
   background: cyan;
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
 }
 /* Header Styles */
 header {
@@ -172,6 +182,16 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    width: 100%;
+  }
+}
 header nav {
   margin-top: 40px;
   width: 73.923%;
@@ -179,9 +199,31 @@ header nav {
   display: flex;
   font-size: 1.6rem;
 }
+@media (max-width: 768px) {
+  header nav {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    flex-direction: column;
+    border-top: 1px solid;
+    width: 100%;
+  }
+}
 header nav a {
   text-decoration: none;
   color: #b0b0b0;
+}
+@media (max-width: 400px) {
+  header nav a {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 header nav a:hover {
   text-decoration: underline;
@@ -190,6 +232,13 @@ header nav a:hover {
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    align-self: center;
+    margin-left: 0;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
@@ -200,9 +249,16 @@ header .logo {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 768px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .cta .cta-text {
   font-size: 7.2rem;
   text-align: center;
+  width: 46.753%;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
@@ -210,6 +266,12 @@ header .logo {
   align-items: center;
   margin: 0 42px 0 0;
   color: orange;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin-top: 30px;
+    margin-right: 0;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -223,6 +285,14 @@ header .logo {
 .cta .cta-text button:hover {
   background: black;
   color: white;
+}
+.cta img {
+  width: 45%;
+}
+@media (max-width: 768px) {
+  .cta img {
+    order: -1;
+  }
 }
 /* Main Content Styles */
 .main-content {
@@ -243,6 +313,20 @@ header .logo {
 .main-content .top-content .text-content h4 {
   color: orange;
 }
+@media (max-width: 400px) {
+  .main-content .top-content {
+    flex-direction: column;
+  }
+}
+.main-content .top-content .text-content {
+  width: 49%;
+}
+@media (max-width: 400px) {
+  .main-content .top-content .text-content {
+    width: 95%;
+    margin-top: 20px;
+  }
+}
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
@@ -254,6 +338,20 @@ header .logo {
 }
 .main-content .bottom-content .text-content h4 {
   color: orange;
+}
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-direction: column;
+  }
+}
+.main-content .bottom-content .text-content {
+  width: 49%;
+}
+@media (max-width: 400px) {
+  .main-content .bottom-content .text-content {
+    width: 95%;
+    margin-top: 20px;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;

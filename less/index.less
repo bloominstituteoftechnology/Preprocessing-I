@@ -80,6 +80,11 @@ h1, h2, h3, h4, h5 {
 	margin-right: auto;
 }
 
+.fit-text {
+width: 95%;
+margin-top: 20px;
+}
+
 @bkg-color: cyan;
 @text-color: orange;
 
@@ -94,8 +99,13 @@ body {
 
 .container {
     max-width: 880px;
+		width: 100%;
     margin: auto;
 		background: @bkg-color;
+
+		@media (max-width: 400px) {
+			width: 100%;
+		}
 }
 
 /* Header Styles */
@@ -104,6 +114,14 @@ header {
     display: flex;
 		.pad-and-center;
 
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+
+		@media (max-width: 400px) {
+			width: 100%;
+		}
+
 		nav {
 			margin-top: 40px;
 	    width: 73.923%;
@@ -111,9 +129,28 @@ header {
 	    display: flex;
 			font-size: 1.6rem;
 
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+
+			@media (max-width: 400px) {
+				flex-direction: column;
+				border-top: 1px solid;
+				width: 100%;
+			}
+
 			a {
 				text-decoration: none;
 		    color: #b0b0b0;
+
+				@media (max-width: 400px) {
+					text-align: center;
+					width: 100%;
+					font-size: 2rem;
+					border-bottom: 1px solid black;
+					padding-top: 20px;
+					padding-bottom: 20px;
+				}
 			}
 
 			a:hover {
@@ -125,6 +162,12 @@ header {
 		.logo {
 				align-self: flex-end;
 				margin: 28px 0 0 91px;
+
+				@media (max-width: 768px) {
+					order: -1;
+					align-self: center;
+					margin-left: 0;
+				}
 		}
 } //header
 
@@ -136,9 +179,15 @@ header {
     justify-content: flex-end;
 		.pad-and-center;
 
+		@media (max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
 		.cta-text {
 		    font-size: 7.2rem;
 		    text-align: center;
+				width: 46.753%;
 		    letter-spacing: 5px;
 		    display: flex;
 		    justify-content: center;
@@ -146,6 +195,11 @@ header {
 		    align-items: center;
 		    margin: 0 42px 0 0;
 				color: @text-color;
+
+				@media (max-width: 768px) {
+					margin-top: 30px;
+					margin-right: 0;
+				}
 
 				button {
 				    border: 1px double black;
@@ -161,7 +215,17 @@ header {
 				    background: black;
 				    color: white;
 				}
-		}//cta-text
+		} //cta-text
+
+		img {
+			width: 45%;
+
+			@media (max-width: 768px) {
+				order: -1;
+			}
+
+
+		}
 } //cta
 
 /* Main Content Styles */
@@ -177,8 +241,19 @@ header {
 
 	 .top-content {
 	     .flex-content-space-around;
-
 			 .color-text;
+
+			 @media (max-width: 400px) {
+				 flex-direction: column;
+			 }
+
+			 .text-content{
+				 width: 49%;
+
+				 @media (max-width: 400px) {
+					 .fit-text;
+				 }
+			 }
 	 }
 
 	 .middle-img {
@@ -189,8 +264,19 @@ header {
 
 	 .bottom-content {
 	     .flex-content-space-around;
-
 			 .color-text;
+
+			 @media (max-width: 400px) {
+				 flex-direction: column;
+			 }
+
+			 .text-content{
+				 width: 49%;
+
+				 @media (max-width: 400px) {
+					 .fit-text;
+				 }
+			 }
 
 			 p {
 			     padding-right: 20px;
