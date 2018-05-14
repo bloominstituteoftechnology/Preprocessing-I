@@ -69,8 +69,18 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
-/* Header Styles */
+// variable colors
+@base-color: blue;
+@header-color: @base-color + #b0b0b0;
+@inverted-base-color: #fff - @base-color;
 
+// mixin
+.disp-just(@spacer) {
+  display: flex;
+  justify-content: @spacer; 
+}
+
+/* Header Styles */
 header {
     width: 100%;
     display: flex;
@@ -78,17 +88,16 @@ header {
     nav {
         margin-top: 40px; 
         width: 610px;
-        justify-content: space-between;
-        display: flex;
+        .disp-just(space-between);
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @header-color;
         }
         
         a:hover {
             text-decoration: underline;
-            color: black;
+            color: @base-color;
         }
     } // nav
 
@@ -100,16 +109,14 @@ header {
 
 /* Call To Action (CTA) Styles */
 .cta {
-    display: flex;
     margin-top: 72px;
-    justify-content: flex-end;
-    
+    .disp-just(flex-end);
+
     .cta-text {
         font-size: 72px;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
+        .disp-just(center);
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
@@ -125,24 +132,23 @@ header {
         }
 
         button:hover {
-            background: black;
-            color: white;
+            background: @base-color;
+            color: @inverted-base-color;
         }
     } // cta-text
 }
 
 /* Main Content Styles */
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @inverted-base-color;
+   border-bottom: 2px solid @inverted-base-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
 
    .top-content {
-       display: flex;
-       justify-content: space-around;
+       .disp-just(space-around);
    }
 
    .middle-img {
@@ -151,8 +157,8 @@ header {
    }
 
    .bottom-content {
-       display: flex;
-       justify-content: space-around;
+       .disp-just(space-around);
+       
        p {
           padding-right: 20px;
        }
