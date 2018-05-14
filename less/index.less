@@ -69,12 +69,22 @@ h1, h2, h3, h4, h5 {
 	justify-content: space-around;
 }
 
+@bkg-color: cyan;
+@text-color: orange;
 
-
+.color-text {
+	.text-content h4 {
+		color: @text-color;
+	}
+}
+body {
+	background: @bkg-color - 50;
+}
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+		background: @bkg-color;
 }
 
 /* Header Styles */
@@ -122,6 +132,7 @@ header {
 		    flex-flow: column;
 		    align-items: center;
 		    margin: 0 82px 0 0;
+				color: @text-color;
 
 				button {
 				    border: 1px double black;
@@ -152,6 +163,8 @@ header {
 
 	 .top-content {
 	     .flex-content-space-around;
+
+			 .color-text;
 	 }
 
 	 .middle-img {
@@ -161,6 +174,8 @@ header {
 
 	 .bottom-content {
 	     .flex-content-space-around;
+
+			 .color-text;
 
 			 p {
 			     padding-right: 20px;
