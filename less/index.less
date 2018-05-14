@@ -64,6 +64,19 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
+//variables
+@width: 100%;
+
+
+
+
+
+
+
+
+
+
 .container {
     width: 880px;
     margin: auto;
@@ -72,31 +85,44 @@ h1, h2, h3, h4, h5 {
 /* Header Styles */
 
 header {
-    width: 100%;
+    width: @width;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+            a {
+                text-decoration: none;
+                color: #b0b0b0;
+
+
+        header nav a:hover {
+            text-decoration: underline;
+            color: black;
+            }//nav a:hover
+
+
+            header .logo {
+                align-self: flex-end;
+                margin: 28px 0 0 91px;
+            }//.logo
+            
+
+            
+        }//nav a
+
+        }//nav
+
+} //header
+
+
+
+
 
 /* Call To Action (CTA) Styles */
 
@@ -104,33 +130,40 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+            button {
+                border: 1px double black;
+                font-size: 16px;
+                background: white;
+                width: 170px;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+
+             button:hover {
+                background: black;
+                color: white;
+            }// button hover
+        } //button
+            
+        }//cta-text
+
+}//header
+
+
+
+
 
 /* Main Content Styles */
 
