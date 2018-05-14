@@ -249,6 +249,12 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    @media (max-width: @tablet-size) {
+        justify-content: center;
+        img {
+            display: none;
+        }
+    }
     .cta-text {
         font-size: 7.2rem;
         text-align: center;
@@ -258,6 +264,15 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 ((82% / @container-width) *100) 0 0;
+        @media (max-width: @tablet-size) {
+            margin: 0;
+        }
+        @media (max-width: @mobile-size) {
+            font-size: 5.4rem;
+            img {
+                display: none;
+            }
+        }
         button {
             border: 1px double black;
             font-size: 1.6rem;
