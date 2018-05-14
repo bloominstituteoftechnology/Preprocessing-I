@@ -92,6 +92,15 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
 
+    @media(max-width:768px){//tablet
+        width: 768px;
+        margin:auto;
+        height:auto;
+        
+        max-width:768px;
+        
+    }
+
    
 }
 
@@ -102,6 +111,13 @@ header {
     .flexonit;
     border-bottom:1px solid @newred;
 
+    @media (max-width:768px){
+        width:100%;
+        flex-direction:column-reverse;
+        align-items:center;
+        margin-top:@num20 + 5;
+    }
+
     
     
 
@@ -111,29 +127,44 @@ header {
         width: 610px;
         justify-content: space-between;
         .flexonit;
+
+        @media (max-width:768px){
+            margin-top:@num10;
+            width:100%;
+            justify-content: space-around;
+            
+        }
     
 
         a {
             text-decoration: none;
             color: @newred;
-            }
-
+            
+        }   
             
         
-            a:hover {
+             a:hover {
                  text-decoration: underline;
                 color: black;
 
                 
             }
-        }    
+        
     
-
+    }
           
        
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+       
+        @media (max-width:768px){
+            width:25%;
+            align-self:center;
+            margin:0 0 @num10 * 3 0;
+            justify-content: space-evenly;
+        }
+        
     }
 
 }        
@@ -149,6 +180,10 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width:768px){
+        justify-content: center;
+    }
+
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -158,6 +193,7 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+
 
         h1 {
             color:@newred;
@@ -172,12 +208,21 @@ header {
             height: 32px;
             margin-top: @num10;
             cursor: pointer;
+        }
+
 
             button:hover {
                 background:@newred;
-                color: @newred;
+                color: white;
 
             }
+        
+    }
+
+    img {
+        
+        @media (max-width:768px){
+            display:none;
         }
     }
 }
@@ -195,9 +240,25 @@ header {
    font-size: @num10 + 6;
    line-height: @num20 - 2;//18px
 
+   @media (max-width:768px){
+       width:100%;
+       flex-direction:column;
+       .flexonit;
+       justify-content: center;
+       padding:0 @num20 75px;
+       height:auto;
+   }
+
    .top-content {
     .flexonit;
     justify-content: space-around;
+
+    @media (max-width:768px){
+        height:200px;
+        .flexonit;
+        justify-content: center;
+        align-items: center;
+    }
 
         .text-content {
         
@@ -211,6 +272,13 @@ header {
    .middle-img {
     display: block;
     margin: 30px auto;
+    
+    @media (max-width:768px){
+        margin:0;
+        width:100%;
+        padding-bottom:@num10 *3;
+    }
+    
    }
 
    .bottom-content {
