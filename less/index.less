@@ -60,6 +60,9 @@ table {
 @cta-button-text-color: #fff;
 @rule-color: #0e6888;
 
+@tablet-breakpoint: 728px;
+@phone-breakpoint: 400px;
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -82,8 +85,17 @@ h4 {
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
+
+    @media (max-width: @tablet-breakpoint) {
+        max-width: @tablet-breakpoint;
+    }
+
+    @media (max-width: @phone-breakpoint) {
+        max-width: @phone-breakpoint;
+    }
 }
 
 /* Header Styles */
@@ -92,19 +104,47 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: @tablet-breakpoint) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
 
+        @media (max-width: @tablet-breakpoint) {
+            width: 100%;
+        }
+
+        @media (max-width: @phone-breakpoint) {
+            margin: 20px 0 0 0; 
+            width: 100%;
+            flex-direction: column;
+        }
+
         a {
             text-decoration: none;
             color: @nav-link-color;
 
+            @media (max-width: @phone-breakpoint) {
+                padding: 20px 0;
+                border-top: 1px solid #808080;
+                text-align: center;
+                font-size: 2rem;
+            }
+
             &:hover {
                 text-decoration: underline;
                 color: @nav-link-hover-color;
+            }
+
+            &:last-child {
+                @media (max-width: @phone-breakpoint) {
+                    border-bottom: 1px solid #808080;
+                }
             }
         }
     }
@@ -112,6 +152,15 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width: @tablet-breakpoint) {
+            align-self: center;
+            margin: 30px 0 0 0;
+        }
+
+        @media (max-width: @phone-breakpoint) {
+            margin: 20px 0 0 0;
+        }
     }
 }
 
@@ -121,6 +170,20 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+
+    @media (max-width: @tablet-breakpoint) {
+        justify-content: center;
+    }
+
+    @media (max-width: @phone-breakpoint) {
+        margin: 50px 0 0 0;
+    }
+
+    img {
+        @media (max-width: @tablet-breakpoint) {
+            display: none;
+        }
+    }
 
     .cta-text {
         font-size: 72px + 1;
@@ -132,6 +195,14 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media (max-width: @tablet-breakpoint) {
+            margin: 0 5.63% 0 0;
+        }
+
+        @media (max-width: @phone-breakpoint) {
+            margin: 0;
+        }
+
         button {
             border: 1px double @cta-button-text-color;
             font-size: 16px;
@@ -141,6 +212,14 @@ header {
             margin-top: 10px;
             cursor: pointer;
             color: @cta-button-text-color;
+
+            @media (max-width: @tablet-breakpoint) {
+                margin: 15px 0 0 0;
+            }
+
+            @media (max-width: @phone-breakpoint) {
+                margin: 15px 0 0 0;
+            }
 
             &:hover {
                 background: @cta-button-bg-hover-color;
@@ -154,7 +233,17 @@ header {
 
 .flex-space-around() {
     display: flex;
-    justify-content: space-around;    
+    justify-content: space-around; 
+
+    @media (max-width: @tablet-breakpoint) {
+        padding: 0 1.37%;
+        justify-content: space-between;
+    }
+
+    @media (max-width: @phone-breakpoint) {
+        padding: 0;
+        flex-direction: column;
+    }   
 }
 
 .main-content {
@@ -165,6 +254,15 @@ header {
    font-size: 16px;
    line-height: 18px;
 
+    @media (max-width: @tablet-breakpoint) {
+        line-height: 1.2;
+    }
+
+    @media (max-width: @phone-breakpoint) {
+        margin: 75px 5% 35px;
+        padding: 50px 0 0;
+    }
+
 
    .top-content {
         .flex-space-around;
@@ -173,6 +271,15 @@ header {
     .middle-img {
         display: block;
         margin: 30px auto;
+
+        @media (max-width: @tablet-breakpoint) {
+            width: 100%;
+        }
+
+        @media (max-width: @phone-breakpoint) {
+            display: block;
+            margin: 15px auto 30px;
+        }
     }
 
     .bottom-content {
@@ -180,12 +287,26 @@ header {
 
         p {
             padding-right: 20px;
+
+            @media (max-width: @phone-breakpoint) {
+                padding: 0 2.77% 35px 0;
+            }
         }
     }
 }
 
 
 /* Contact Styles */
+
+.contact {
+    @media (max-width: @tablet-breakpoint) {
+        padding: 0 1.37%;
+    }
+
+    @media (max-width: @phone-breakpoint) {
+        padding: 0 20px;
+    } 
+}
 
 .contact p {
     margin: 15px 0;
