@@ -121,13 +121,15 @@ table {
 @accent: #CBE86B;
 @highlight: #CBE86B;*/
 
-
+/*media query variables*/
+@tablet: ~"(max-width: 880px)";
+@phone: ~"(max-width: 400px)";
 
 /*mixins*/
 .flex-space {
     display: flex;
     justify-content: space-around;
-    @media(max-width: 880px) {
+    @media @tablet {
      flex-direction: column;
     }
 }
@@ -147,7 +149,7 @@ html, body {
     .container {
         width: 880px;
         margin: auto;
-        @media(max-width: 880px) {
+        @media @tablet {
             width: 95%;
         }
     } /*body*/
@@ -160,7 +162,7 @@ html, body {
 header {
     width: 100%;
     display: flex;
-    @media(max-width: 880px) {
+    @media @tablet {
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -178,7 +180,7 @@ header {
         a {
             text-decoration: none;
             color: @secondary;
-            @media(max-width: 400px) {
+            @media @phone {
                 width: 100%;
                 border-top: 1px solid @secondary;
                 text-align: center;
@@ -204,7 +206,7 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
-        @media(max-width: 880px) {
+        @media @tablet {
             order: -1;
             margin: 28px 0 0 0;
         }
@@ -222,7 +224,7 @@ header {
     justify-content: flex-end;
 
     img {
-        @media(max-width: 880px) {
+        @media @tablet {
             display: none;
         }
     }
@@ -240,10 +242,10 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
-        @media(max-width: 880px) {
+        @media @tablet {
             margin: 0;
         }
-        @media(max-width: 400px) {
+        @media @phone {
             font-size: 50px;
         }
 
@@ -283,7 +285,7 @@ header {
 
    h4 {
     color: @highlight;
-    @media(max-width: 880px) {
+    @media @tablet {
         padding-top: 10px + 10;
     }
    }
@@ -291,7 +293,7 @@ header {
    .middle-img {
        display: block;
        margin: 30px auto;
-       @media(max-width: 880px) {
+       @media @tablet {
         width: 100%;
        }
    }
