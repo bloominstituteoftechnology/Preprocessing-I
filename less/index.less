@@ -85,8 +85,10 @@ html {
 
 @dflt-size: 1.6rem;
 @philly-philly: #004C54;
-@phone: 400px;
-@tablet: 768px;
+
+// detached ruleset
+@phone: { max-width: 400px };
+@tablet: { max-width: 768px };
 
 /* Mixins */
 
@@ -101,12 +103,13 @@ header {
     width: 100%;
     display: flex;
 
-    @media (max-width: @tablet) {
+    // use detached ruleset with media
+    @media @tablet {
         flex-direction: column-reverse;
         align-items: center;
     }
 
-    @media (max-width: @phone) {
+    @media @phone {
         justify-content: flex-end;
     }
 
@@ -116,12 +119,12 @@ header {
         justify-content: space-between;
         display: flex;
 
-        @media (max-width: @tablet) {
+        @media @tablet {
             width: 100%;
             padding: 0 3.91%;
         }
 
-        @media (max-width: @phone) {
+        @media @phone {
             width: 100%;
             flex-direction: column;
             padding: 0;
@@ -133,7 +136,7 @@ header {
             text-decoration: none;
             color: @philly-philly;
 
-            @media (max-width: @phone) {
+            @media @phone {
                 width: 100%;
                 display: block;
                 font-size: @dflt-size + 0.4;
@@ -143,7 +146,7 @@ header {
             }
 
             &:first-child {
-                @media (max-width: @phone) {
+                @media @phone {
                     border-top: 1px solid grey;
                 }
             }
@@ -152,7 +155,7 @@ header {
                 text-decoration: underline;
                 color: black;
                 
-                @media (max-width: @phone) {
+                @media @phone {
                     background: @philly-philly;
                     color: white;
                 }
@@ -164,12 +167,12 @@ header {
         align-self: flex-end;
         margin: 28px 0 0 91px;
 
-        @media (max-width: @tablet) {
+        @media @tablet {
             padding-left: 5%;
             margin: 30px auto 0;
         }
 
-        @media (max-width: @phone) {
+        @media @phone {
             align-self: center;
             margin: 20px 0;
         }
@@ -187,11 +190,11 @@ h1, h4 , p {
     margin-top: 72px;
     justify-content: flex-end;
 
-    @media (max-width: @tablet) {
+    @media @tablet {
         justify-content: center;
     }
 
-    @media (max-width: @phone) {
+    @media @phone {
         margin-top: 50px;
         flex-flow: column;
         align-items: center;
@@ -207,11 +210,11 @@ h1, h4 , p {
         align-items: center;
         margin: 0 10.92% 0 0;
 
-        @media (max-width: @tablet) {
+        @media @tablet {
             margin: 0;
         }
 
-        @media (max-width: @phone) {
+        @media @phone {
             font-size: @dflt-size * 3.5;
         }
 
@@ -232,11 +235,11 @@ h1, h4 , p {
     } // cta-text
 
     img {
-        @media (max-width: @tablet) {
+        @media @tablet {
             display: none;
         }
 
-        @media (max-width: @phone) {
+        @media @phone {
             max-width: 80%;
         }
     } // img
@@ -245,21 +248,22 @@ h1, h4 , p {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
+   // use $prop syntax 
    border-bottom: $border-top;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: @dflt-size;
    line-height: @dflt-size + 0.2;
 
-   @media (max-width: @tablet) {
+   @media @tablet {
        margin: 75px 2.6% 35px;
    }
 
    .top-content {
         .flex-around;
 
-        @media (max-width:@phone) {
+        @media @phone {
             height: 300px;
             flex-direction: column;
             justify-content: space-around;
@@ -270,17 +274,17 @@ h1, h4 , p {
         display: block;
         margin: 30px auto;
 
-        @media (max-width: @tablet) {
+        @media @tablet {
             width: 100%;
         }
     } // middle-img
 
     .text-content {
-        @media (max-width: @tablet) {
+        @media @tablet {
             margin: 0 1.3%;
         }
 
-        @media (max-width: @phone) {
+        @media @phone {
             margin: 0;
         }
     }
@@ -291,7 +295,7 @@ h1, h4 , p {
             padding-right: 20px;
         } // p
 
-        @media (max-width: @phone) {
+        @media @phone {
             flex-wrap: wrap;
             align-content: space-between;
             height: 440px;
@@ -310,11 +314,11 @@ h1, h4 , p {
         margin: 15px 0;
     }
     
-    @media (max-width: @tablet) {
+    @media @tablet {
         margin: 0 3.91%;
     }
 
-    @media (max-width: @phone) {
+    @media @phone {
         margin: 20px;
     }
 }
