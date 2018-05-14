@@ -84,7 +84,17 @@ h1, h2, h3, h4, h5 {
 	justify-content: space-around;
 }
 
+.thick-border {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
 @new-color: teal;
+
+@standard-font: 16px;
+
+@tbpadding: 17px;
+
 
 /* Header Styles */
 
@@ -167,7 +177,7 @@ header {
 		}
 
 		.cta-text {
-	    font-size: 72px;
+	    font-size: @standard-font * 4.5;
 	    text-align: center;
 	    letter-spacing: 5px;
 	    display: flex;
@@ -182,7 +192,7 @@ header {
 
 		  button {
 			    border: 1px double black;
-			    font-size: 16px;
+			    font-size: @standard-font;
 			    background: white;
 			    width: 170px;
 			    height: 32px;
@@ -209,11 +219,10 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black;
-   border-bottom: 2px solid black;
+   .thick-border;
    margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
+   padding: @tbpadding+18 0;
+   font-size: @standard-font;
    line-height: 18px;
 
 	 @media (max-width: 400px) {
@@ -227,7 +236,7 @@ header {
 			 .text-content {
 
 				 @media (max-width: 400px) {
-					 	padding: 17px 0;
+					 	padding: @tbpadding 0;
 				 }
 
 			 }
@@ -256,7 +265,7 @@ header {
 			 .text-content {
 
 				 @media (max-width: 400px) {
-						padding: 17px 0;
+						padding: @tbpadding 0;
 				 }
 
 			 }
