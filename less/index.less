@@ -50,6 +50,7 @@ table {
 
 /* Variables */
 @accent-color: #91AA2E;
+@base-font-size: 1.6rem;
 @dark-grey: #432F2C;
 
 /* Set every element's box-sizing to border-box */
@@ -57,9 +58,9 @@ table {
     box-sizing: border-box;
 }
 
-// html {
-// 	font-size: 62.5%;
-// }
+html {
+	font-size: 62.5%;
+}
 
 html, body {
     height: 100%;
@@ -103,6 +104,7 @@ header {
 		}
 
 		nav {
+			font-size: @base-font-size;
 			margin-top: 40px;
 	    width: 610px;
 	    justify-content: space-between;
@@ -125,12 +127,12 @@ header {
 		    color: @accent-color;
 
 				@media (max-width: 768px) {
-					font-size: 16px;
+					font-size: @base-font-size;
 				}
 
 				@media (max-width: 400px) {
 					border-bottom: 1px solid black;
-					font-size: 16px;
+					font-size: @base-font-size;
 					padding: 20px;
 					text-align: center;
 					width: 100%;
@@ -182,7 +184,7 @@ header {
 		}
 
 		.cta-text {
-			font-size: 72px;
+			font-size: @base-font-size * 4;
 	    text-align: center;
 	    letter-spacing: 5px;
 	    display: flex;
@@ -195,9 +197,13 @@ header {
 				margin: 0;
 			}
 
+			@media (max-width: 400px) {
+				font-size: @base-font-size * 3;
+			}
+
 			button {
 				border: 1px double black;
-		    font-size: 16px;
+		    font-size: @base-font-size;
 		    background: white;
 		    width: 170px;
 		    height: 32px;
@@ -219,8 +225,8 @@ header {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+   font-size: @base-font-size;
+   line-height: @base-font-size * 1.125;
 
 	 @media (max-width: 400px) {
 		 margin: 20px;
@@ -269,6 +275,13 @@ header {
 			 width: 100%;
 		 }
 
+		 .text-content {
+			 @media (max-width: 400px) {
+				 margin-bottom: 20px;
+				 width: 100%;
+			 }
+		 }
+
 		 p {
 			 padding-right: 20px;
 		 } // p
@@ -282,6 +295,7 @@ header {
 		margin-left: 20px;
 	}
 	p {
+		font-size: @base-font-size;
     margin: 15px 0;
 	}
 }
@@ -289,6 +303,7 @@ header {
 /* Footer Styles */
 
 footer {
-    text-align: center;
-    margin: 40px 0 20px;
+	font-size: @base-font-size;
+  text-align: center;
+  margin: 40px 0 20px;
 }
