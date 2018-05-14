@@ -4,6 +4,9 @@
    License: none (public domain)
 */
 
+@color-scheme: #CA2929;
+@color-scheme2: #129152;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -67,110 +70,224 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
-}
 
-/* Header Styles */
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 
-header {
-    width: 100%;
-    display: flex;
-}
+    /* Header Styles */
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    header {
+        width: 100%;
+        display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media (max-width: 400px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        nav {
+            margin-top: 40px; 
+            width: 600px + 10;
+            justify-content: space-between;
+            display: flex;
 
-/* Call To Action (CTA) Styles */
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 38px 3%;
+            }
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+            @media (max-width: 400px) {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                align-items: center;
+            }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+            a {
+                text-decoration: none;
+                color: #b0b0b0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+                @media (max-width: 400px) {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    padding: 20px 0;
+                    font-size: 2rem;
+                    border-bottom: 1px solid gray;
+                }
+            }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+            a:hover {
+                text-decoration: underline;
+                color: @color-scheme;
 
-/* Main Content Styles */
+                @media (max-width: 400px) {
+                    background: gray;
+                }
+            }
+        }
 
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+        @media (max-width: 400px) {
+            nav:first-child {
+                border-top: 1px solid gray;
+            }
+        }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+            @media (max-width: 768px) {
+                order: -1;
+                display: block;
+                margin: 30px auto 0;
+            }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+            @media (max-width: 400px) {
+                order: -1;
+                margin: 20px 0;
+            }
+        }
+    }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    /* Call To Action (CTA) Styles */
 
-/* Contact Styles */
+    .cta {
+        display: flex;
+        margin-top: 80px - 8;
+        justify-content: flex-end;
 
-.contact p {
-    margin: 15px 0;
-}
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
 
-/* Footer Styles */
+        @media (max-width: 400px) {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
+        .cta-text {
+            font-size: 72px;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 82px 0 0;
+
+            @media (max-width: 768px) {
+                margin: 0 5% 0 0;
+            }
+
+            @media (max-width: 400px) {
+                margin: 0;
+            }
+
+            button {
+                border: 1px double black;
+                font-size: 16px;
+                background: white;
+                width: 170px;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: @color-scheme2;
+                color: white;
+            }
+        }
+
+        @media (max-width: 768px) {
+            img {
+                display: none;
+            }
+        }
+
+        @media (max-width: 400px) {
+            img {
+                display: block;
+                max-width: 80%;
+                margin: 55px 0 0 0;
+            }
+        }
+    }
+    /* Main Content Styles */
+
+    .main-content {
+        border-top: 2px solid black; 
+        border-bottom: 2px solid black;
+        margin: 75px 0 35px 0;
+        padding: 35px 0;
+        font-size: 16px;
+        line-height: 18px;
+
+        @media (max-width: 768px) {
+            font-size: 1.025rem;
+            margin: 75px 2% 35px;
+        }
+
+        .top-content {
+            display: flex;
+            justify-content: space-around;
+
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                height: 300px;
+            }
+        }
+
+        .middle-img {
+            display: block;
+            margin: 30px auto;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 25px auto;
+            }
+        }
+
+        .bottom-content {
+            .top-content;
+
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                align-content: space-between;
+                height: 440px;
+            }
+
+            p {
+                padding-right: 20px;
+            }
+        }
+    }
+    
+    /* Contact Styles */
+
+    .contact p {
+        margin: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+        .contact {
+            margin: 20px 2%;
+        }
+    }
+
+    /* Footer Styles */
+
+    footer {
+        text-align: center;
+        margin: 40px 0 20px;
+    }
 }
