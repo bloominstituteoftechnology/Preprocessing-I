@@ -69,6 +69,31 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+//Variables and mixins
+
+.light-blue {
+    color: #16AAFF
+}
+
+.lime-green {
+    color: #128402
+}
+
+.purple {
+    color: #B760C4
+}
+
+.font-class {
+    color: black;
+    font-size: 10px + 6;
+  }
+
+.flex-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+
 /* Header Styles */
 
 header {
@@ -83,7 +108,7 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            .lime-green;
         }
 
         a:hover {
@@ -94,17 +119,7 @@ header {
     } // header nav
 } // header
 
-.font-class {
-    color: black;
-    font-size: 10px + 6;
-  }
-
-.flex-space-around {
-    display: flex;
-    justify-content: space-around;
-}
-
-// To be added to the nesting
+// TODO: To be added to the nesting
 
 header .logo {
     align-self: flex-end;
@@ -127,6 +142,7 @@ header .logo {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        .light-blue;
 
         button {
             border: 1px double black;
@@ -154,8 +170,12 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   .font-class;
+   .purple;
    line-height: 10px + 8;
+
+    h4 {
+        .lime-green;
+    }
 
     .top-content {
         .flex-space-around
@@ -166,7 +186,7 @@ header .logo {
         margin: 30px auto;
     }
 
-    // convert .bottom-content to .flex-space-around
+    // TODO: convert .bottom-content to .flex-space-around
 
     .bottom-content {
         display: flex;
@@ -182,8 +202,18 @@ header .logo {
 
 /* Contact Styles */
 
-.contact p {
+.contact {
     margin: 15px 0;
+    
+    h4 {
+    .lime-green;
+    }
+
+    p {
+        margin: 15px 0;
+        .purple;
+    }
+
 }
 
 /* Footer Styles */
@@ -191,4 +221,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    .light-blue;
 }
