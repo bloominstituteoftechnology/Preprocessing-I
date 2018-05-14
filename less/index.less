@@ -52,10 +52,15 @@ table {
 * {
     box-sizing: border-box;
 }
+@nice-blue: #5B83AD;
+@border-1: 2px solid black;
+@std: 16px;
+@lg: 72px;
 
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,6 +72,9 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    @media (max-width: 768px) {
+    width: 100%;
+    }
 }
 
 /* Header Styles */
@@ -74,40 +82,113 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+@media (max-width: 768px) {
+flex-wrap: wrap;
+}
+@media (max-width: 400px) {
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-header nav {
+    nav {
+    @media (max-width: 768px) {
+    width: 100%;
+    margin 38px 3%;
+    }
+    @media (max-width: 400px) {
+    width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+
+        nav:first-child {
+        border-top: 1px solid gray;
+    }
+    }
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
-}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+        @media (max-width: 400px) {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 2rem;
+        border-bottom: 1px solid gray;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
+        a:hover {
+        background: gray;
+    }
+        }
+        text-decoration: none;
+        color: #b0b0b0;
+        }
+        a:hover {
+        text-decoration: underline;
+        color: black;
+        }
+        }
+        .logo {
+        @media (max-width: 768px) {
+        order: -1;
+        display: block;
+        margin: 30px auto 0;
+        }
+        @media (max-width: 400px) {
+        order: -1;
+        margin: 20px 0;
+        }
     align-self: flex-end;
     margin: 28px 0 0 91px;
 }
 
+
+}
+
+
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+@media (max-width: 768px) {
+    justify-content: center;
 
-.cta .cta-text {
-    font-size: 72px;
+    img {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+        display: block;
+        max-width: 80%;
+        margin: 55px 0 0 0;
+    }
+}
+    display: flex;
+    margin-top: @lg;
+    justify-content: flex-end;
+
+    .cta-text {
+    @media (max-width: 768px) {
+    margin: 0 5% 0 0;
+
+    h1 {
+        letter-spacing: 0;
+    }
+    }
+    @media (max-width: 400px) {
+    margin: 0;
+    }
+
+    font-size: @lg;
     text-align: center;
     letter-spacing: 5px;
     display: flex;
@@ -115,62 +196,89 @@ header .logo {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
+    button {
     border: 1px double black;
-    font-size: 16px;
+    font-size: @std;
     background: white;
     width: 170px;
-    height: 32px;
+    height: @std*2;
     margin-top: 10px;
     cursor: pointer;
-}
-
-.cta .cta-text button:hover {
+    }
+    button:hover {
     background: black;
     color: white;
 }
-
+}
+}
+ 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+@media (max-width: 768px) {
+    font-size: 14px;
+    margin: 75pc 2% 35px;
+}
+   border-top: @border-1; 
+   border-bottom: @border-1;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   font-size: @std;
+   line-height: @std+2;
 
-.main-content .top-content {
+   .top-content {
+   @media (max-width: 400px) {
+   flex-wrap: wrap;
+        height: 300px;
+   }
     display: flex;
     justify-content: space-around;
-}
+        }
 
-.main-content .middle-img {
+    .middle-img {
+    @media (max-width: 768px) {
+    width: 100%;
+    margin: 25px aauto;
+    }
     display: block;
     margin: 30px auto;
-}
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+    @media (max-width: 400px) {
+     flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+    }
+    .top-content;
 
-.main-content .bottom-content p {
+    p {
     padding-right: 20px;
+}
+}
 }
 
 /* Contact Styles */
-
+.contact{
+@media (max-width: 768px) {
+    margin: 20px 2%;
+}
 .contact p {
     margin: 15px 0;
 }
-
+}
 /* Footer Styles */
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+/* Tablet */
+@media (max-width: 768px) {
+    .cta .cta-text 
+
+    .cta 
+
+}
+
