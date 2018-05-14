@@ -68,12 +68,14 @@ h1, h2, h3, h4, h5 {
 @dark-blue: #0000cc;
 @whitish-color: #e6e6e6;
 
-
-
 .container {
     width: 880px;
     margin: auto;
     background-color: @whitish-color;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 /* Header Styles */
@@ -82,26 +84,70 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 768px) {
+        flex-flow: wrap;
+        justify-content: center;
+    }
+
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
 
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+        }
+
+        @media (max-width: 400px) {
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         a {
             text-decoration: none;
-            color: @dark-blue;          
+            color: @dark-blue;
+            
+            @media (max-width: 400px) {
+                display: flex;
+                justify-content: center;
+                font-size: 2rem;
+                padding: 20px 2.87%;
+                width: 105%;
+                border-top: 1px solid black;
+            }
         }
 
         a:hover { 
             text-decoration: underline;
             color: black; 
-        } 
+        }
+        
+        a:last-child {
+            @media (max-width: 400px) {
+            border-bottom: 1px solid black;
+            }
+        }
     } // nav  
 
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;       
+            order: -1;
+            margin-right: 10.34%;
+        }
+
+        @media (max-width: 400px) {
+            margin-top: 20px;
+        }
     }  
 } 
 
@@ -112,6 +158,11 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+    }
+
     .cta-text {
         font-size: 72px;
         text-align: center;
@@ -121,6 +172,14 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+
+        @media (max-width: 768px) {
+            margin: 0px;
+        }
+
+        @media (max-width: 400px) {
+            margin-top: -20px;
+        }
 
         button {
             border: 1px double black;
@@ -138,6 +197,11 @@ header {
             color: @dark-blue;
         }
     }
+    img {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -151,19 +215,56 @@ header {
    line-height: 18px * 2;
    color: @light-red;
 
+   @media (max-width: 768px) {
+       margin-right: 2.604%;
+       margin-left: 2.604%;
+   }
+
    .top-content {
         display: flex;
         justify-content: space-around;
+
+        @media (max-width: 768px) {
+            margin-left: 1.375%;
+        }
+
+        @media (max-width: 400px) {
+            flex-flow: wrap;
+        }
+
+        .text-content {
+            @media (max-width: 400px) {
+                margin: 10px -2.87%;
+            }
+        }
    }
 
    .middle-img {
         display: block;
         margin: 30px auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
    }
 
    .bottom-content {
         display: flex;
         justify-content: space-around;
+
+        @media (max-width: 768px) {
+            margin-left: 1.375%;
+        }
+
+        @media (max-width: 400px) {
+            flex-flow: wrap;
+        }
+
+        .text-content {
+            @media (max-width: 400px) {
+                margin: 10px -2.87%;
+            }
+        }
 
         p {
             padding-right: 20px;
@@ -176,6 +277,10 @@ header {
 .contact p {
     margin: 15px 0;
     color: @dark-blue;
+
+    @media (max-width: 768px) {
+        margin-left: 2.604%;
+    }
 }
 
 /* Footer Styles */
