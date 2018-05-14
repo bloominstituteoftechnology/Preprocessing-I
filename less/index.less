@@ -65,6 +65,7 @@ h1, h2, h3, h4, h5 {
 }
 
 
+// Global LESS variables
 @max-width : 880px;
 
 @logo-margin-top: percentage(28 / @max-width);
@@ -72,6 +73,12 @@ h1, h2, h3, h4, h5 {
 
 @cta-text-width: 391px;
 @button-width: percentage(170 / @cta-text-width);
+
+//Mixin
+.flex-space-around{
+    display: flex;
+    justify-content: space-around;
+}
 
 .container {
     max-width: @max-width;
@@ -157,16 +164,14 @@ header {
    line-height: 18px;
    
    .top-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space-around;
     }
     .middle-img {
         display: block;
         margin: 30px auto;
     }
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space-around;
 
         .p {
             padding-right: 20px;
