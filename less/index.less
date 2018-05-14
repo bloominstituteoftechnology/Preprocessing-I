@@ -74,24 +74,37 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
 
-header nav a:hover {
-    text-decoration: underline;
+        a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+    } // header nav
+} // header
+
+.font-class {
     color: black;
+    font-size: 10px + 6;
+  }
+
+.flex-space-around {
+    display: flex;
+    justify-content: space-around;
 }
+
+// To be added to the nesting
 
 header .logo {
     align-self: flex-end;
@@ -104,33 +117,35 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            .font-class;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+        button:hover {
+            background: black;
+            color: white;
+        }
+
+    } // .cta-text
+
+} // .cta
 
 /* Main Content Styles */
 
@@ -139,28 +154,31 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   .font-class;
+   line-height: 10px + 8;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .top-content {
+        .flex-space-around
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    // convert .bottom-content to .flex-space-around
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+    
+        p {
+            padding-right: 10px + 10;
+        }
+    
+    } // .bottom-content
+
+} // .main-content
 
 /* Contact Styles */
 
