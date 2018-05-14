@@ -50,6 +50,19 @@ body {
 
 
 /* Set every element's box-sizing to border-box */
+
+
+
+.flex-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+@heading-color: #41c4f4;
+
+@text-color: #f441a0;
+
+
 * {
     box-sizing: border-box;
 
@@ -66,6 +79,7 @@ body {
         font-family: 'Bangers', cursive;
         letter-spacing: 1px;
         margin-bottom: 10px;
+        color: @heading-color;
             }
 
 
@@ -148,10 +162,6 @@ header .logo {
 }
 
 
-
-
- 
-
 /* Main Content Styles */
 
 .main-content {
@@ -159,34 +169,30 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 10px + 6; // 16px
    line-height: 18px;
 
    .top-content {
-    display: flex;
-    justify-content: space-around;
-    }
+    .flex-space-around;
+    color: @text-color;
 
+   }
     .middle-img {
         display: block;
         margin: 30px auto;
     }
 
         .bottom-content {
-        display: flex;
-        justify-content: space-around;
+            .flex-space-around;
 
-         .bottom-content p {
-            padding-right: 20px;
+         .text-content p {
+            padding-right: 10px * 2; //20px
+            color: @text-color;
         }
         
     }
-    
 }
 
-
-
- 
 
 /* Contact Styles */
 
@@ -198,5 +204,6 @@ header .logo {
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 40px 0 20px; 
 }
+
