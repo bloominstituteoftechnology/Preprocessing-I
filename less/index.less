@@ -55,14 +55,21 @@ html {
 //LESS styles
 
 @head-color: darkblue;
-@border: 2px solid darkblue;
+@border: 2px solid @head-color;
 @bg: #efffe1;
 @button-bg: #99c24d;
+@cta-text-size: 7.2rem;
 
 .flex-SA {
 	display: flex;
 	justify-content: space-around;
 }
+
+.tablet {
+	max-width: 768px;
+}
+
+@mobile: ~"(max-width: 400px)"
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -83,12 +90,12 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
-	@media (max-width: 768px) {
+	@media (.tablet) {
 		width: 100%;
 		padding: 3px 2.6%;
 	}
 	
-	@media (max-width: 400px) {
+	@media (.mobile) {
 		width: 100%;
 		padding: 0;
 	}
@@ -99,14 +106,14 @@ h1, h2, h3, h4, h5 {
 	header {
 	 width: 100%;
 	 display: flex;
-	 @media (max-width: 768px) {
+	 @media (.tablet) {
 		height: 120px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 	 }
 	 
-	 @media (max-width: 400px) {
+	 @media @mobile {
 		width: 100%;
 		height: 450px;
 		margin-bottom: 45px;
@@ -114,10 +121,10 @@ h1, h2, h3, h4, h5 {
 
 		nav {
 			margin-top: 40px; 
-			width: 610px;
+			width: 69.3%;
 			justify-content: space-between;
 			display: flex;
-			@media (max-width: 768px) {
+			@media (.tablet) {
 				width: 100%;
 				display: flex;
 				align-self: flex-end;
@@ -126,7 +133,7 @@ h1, h2, h3, h4, h5 {
 				margin-top: 4.57%;
 			}
 			
-			@media (max-width: 400px) {
+			@media @mobile {
 				display: flex;
 				flex-direction: column;
 				margin: 20px 0 30px 0;
@@ -137,7 +144,7 @@ h1, h2, h3, h4, h5 {
 
 			a {
 				text-decoration: none;
-				color: darkblue;
+				color: @head-color;
 				font-size: 1.6rem;
 				
 				&:hover {
@@ -145,7 +152,7 @@ h1, h2, h3, h4, h5 {
 				color: black;
 				}//a:hover
 				
-				@media (max-width: 400px) {
+				@media @mobile {
 					display: flex;
 					justify-content: space-around;
 					align-items: center;
@@ -156,7 +163,7 @@ h1, h2, h3, h4, h5 {
 					background: @bg;
 				}
 				&:last-child {
-				@media (max-width: 400px) {
+				@media @mobile {
 					border-bottom: @border;
 				}
 			}//last-child
@@ -169,12 +176,12 @@ h1, h2, h3, h4, h5 {
 			align-self: flex-end;
 			margin: 28px 0 0 91px;
 			
-			@media (max-width: 768px) {
+			@media (.tablet) {
 				order: -1;
 				margin: 3.3% 0 0 0;
 			}
 			
-			@media (max-width: 400px) {
+			@media @mobile {
 				margin: 20px auto 0 auto;
 				padding: 0 .34% 0 0;
 			}
@@ -189,18 +196,18 @@ h1, h2, h3, h4, h5 {
 		justify-content: flex-end;
 		color: @head-color;
 		
-		@media (max-width: 768px) {
+		@media (.tablet) {
 			margin: 9.3%;
 		}
 		
-		@media (max-width: 400px) {
+		@media @mobile {
 			justify-content: center;
 			margin: 8px auto 0 auto;
 			padding: 0 0 0 3%;
 		}
 
 		.cta-text {
-			font-size: 7.2rem;
+			font-size: @cta-text-size;
 			text-align: center;
 			letter-spacing: 5px;
 			display: flex;
@@ -209,43 +216,41 @@ h1, h2, h3, h4, h5 {
 			align-items: center;
 			margin: 0 82px 0 0;
 			
-			@media (max-width: 768px) {
+			@media (.tablet) {
 				justify-content: center;
 				margin: 0 auto 0 auto;
 				padding-right: 6.5%;
 			}
 			
-			@media (max-width: 400px) {
-				
+			@media @mobile {
+				font-size: @cta-text-size - 1.2;
 			}
 		
 			button {
-			    border: 1px double darkblue;
-				color: darkblue;
-				font-size: 16px;
+			    border: 1px double @head-color;
+				color: @head-color;
+				font-size: 1.6rem;
 				background: @button-bg;
 				width: 170px;
 				height: 32px;
 				margin-top: 10px;
 				cursor: pointer;
 				
-				@media (max-width: 768px) {
-					font-size: 15.5px;
-					margin-top: 15px;
-				}
+				&:hover {
+					background: @head-color;
+					color: @button-bg;
+				}//button:hover
 				
-				@media (max-width: 400px) {
-					
+				@media (.tablet) {
+					font-size: 1.55rem;
+					margin-top: 10px + 5;
 				}
+
 			}//button
 
-			button:hover {
-				background: darkblue;
-				color: @button-bg;
-			}//button:hover
 		}//cta-text
 		img {
-			@media (max-width: 768px) {
+			@media (.tablet) {
 				display: none;
 			}
 		}
@@ -262,7 +267,7 @@ h1, h2, h3, h4, h5 {
 	   line-height: 18px;
 	   background: @bg;
 	   
-	   @media (max-width: 400px) {
+	   @media @mobile {
 		margin: 75px 5% 25px 5%;
 		display: block;
 	   }
@@ -274,16 +279,16 @@ h1, h2, h3, h4, h5 {
 				color: @head-color;
 			}
 			
-			@media (max-width: 400px) {
+			@media @mobile {
 				display: block;
 			}
 			.text-content {
-				@media (max-width: 768px) {
+				@media (.tablet) {
 					padding: 0 1.5%;
 					line-height: 120%;
 				}
 				
-				@media (max-width: 400px) {
+				@media @mobile {
 					padding: 13px 0;
 					line-height: 1.9rem;
 				}
@@ -295,11 +300,11 @@ h1, h2, h3, h4, h5 {
 		    display: block;
 		    margin: 30px auto;
 			
-			@media (max-width: 768px ) {
+			@media (.tablet) {
 				width: 100%;
 			}
 			
-			@media (max-width: 400px) {
+			@media @mobile {
 				margin: 27px 0 0 .13%;
 			}
 		}
@@ -307,7 +312,7 @@ h1, h2, h3, h4, h5 {
 		.bottom-content {
 			.flex-SA;
 			
-			@media (max-width: 400px) {
+			@media @mobile {
 					display: block;
 					height: 460px;
 					margin-top: 3%;
@@ -319,14 +324,14 @@ h1, h2, h3, h4, h5 {
 				}
 			
 				p {
-				    padding-right: 20px;
+				    padding-right: 40px - 20;
 				}//p
 				
-				@media (max-width: 768px) {
+				@media (.tablet) {
 					padding: 0 1.05%;
 				}
 				
-				@media (max-width: 400px) {		
+				@media @mobile {		
 					padding: 17px 0;
 					line-height: 1.9rem;
 				}
@@ -338,11 +343,11 @@ h1, h2, h3, h4, h5 {
 	.contact {
 		font-size: 1.6rem;
 					
-		@media (max-width: 768px) {
+		@media (.tablet) {
 			padding: 3px 1.3% 10px 1.3%;
 		}
 		
-		@media (max-width: 400px) {
+		@media @mobile {
 			margin: 35px 3.85% 10px;
 		}
 
@@ -361,7 +366,7 @@ h1, h2, h3, h4, h5 {
 	    margin: 40px 0 20px;
 		font-size: 1.6rem;
 		
-		@media (max-width: 768px) {
+		@media (.tablet) {
 			margin: 10px 0 45px;
 		}
 		
