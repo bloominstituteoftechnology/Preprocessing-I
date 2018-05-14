@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -17,35 +16,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -61,60 +60,143 @@ html, body {
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+ @tablet-base: 768px;
+ @phone-base:400px;
+ @display-base:flex;
 
+
+/* Desktop - Tblet - Phone*/
 .container {
     width: 880px;
     margin: auto;
+  @media (max-width: 768px){
+    width: @tablet-base;
+  }
+  
+  @media (max-width: 400px){
+    width: @phone-base;
+  }
 }
 
 /* Header Styles */
 
 header {
     width: 100%;
-    display: flex;
+    display: @display-base;
+   
+  @media (max-width: 768px){
+    width: @tablet-base;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 400px){
+    width: @phone-base;
+    justify-content: center;
+  }
 }
 
 header nav {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
-    display: flex;
+    display: @display-base;
+  @media (max-width: 768px){
+    width: 768px;
+    padding: 0 30px;
+  }
+          
+  @media (max-width: 400px){
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 header nav a {
     text-decoration: none;
     color: #b0b0b0;
+
+  @media (max-width: 400px){
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    border-bottom: 1px solid gray;
+  }
+}
+
+header nav a:first-child {
+  @media (max-width: 400px){
+    border-top: 1px solid gray;
+  }
 }
 
 header nav a:hover {
     text-decoration: underline;
     color: black;
+  @media (max-width: 400px){
+    background: gray;
+  }
 }
 
 header .logo {
-    align-self: flex-end;
     margin: 28px 0 0 91px;
+  @media (max-width: 768px){
+    order: -1;
+    display: block;
+    margin: 30px auto 0;
+  }
+          
+  @media (max-width: 400px){
+    margin: 20px 0;
+  }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    display: @display-base;
     margin-top: 72px;
     justify-content: flex-end;
+  @media (max-width: 768px){
+    justify-content: center;
+  }
+          
+  @media (max-width: 400px){
+    margin-top: 50px;
+    flex-flow: column;
+    align-items: center;
+  }
 }
+
+.cta img {
+  @media (max-width: 768px){
+    display: none;
+  }
+          
+  @media (max-width: 400px){
+     max-width: 80%;
+  }
+    }
 
 .cta .cta-text {
     font-size: 72px;
     text-align: center;
     letter-spacing: 5px;
-    display: flex;
+    display: @display-base;
     justify-content: center;
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
+  
+  @media (max-width: 768px){
+    margin: 0;
+  }
+
 }
 
 .cta .cta-text button {
@@ -141,26 +223,54 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+     
+  @media (max-width: 768px){
+    margin: 75px 20px 35px;
+  }
 }
 
 .main-content .top-content {
-    display: flex;
+    display: @display-base;
+  @media (max-width: 400px){
     justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
 }
 
 .main-content .middle-img {
     display: block;
     margin: 30px auto;
+  
+  @media (max-width: 768px){
+    width: 100%;
+  }
 }
 
 .main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
+    display: @display-base;
+  
+  @media (max-width: 400px){
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
 }
 
 .main-content .bottom-content p {
     padding-right: 20px;
 }
+
+.text-content {
+  @media (max-width: 768px){
+    margin: 0 10px;
+  }
+          
+  @media (max-width: 400px){
+    margin: 0;
+    
+  }
+    }
 
 /* Contact Styles */
 
@@ -168,9 +278,19 @@ header .logo {
     margin: 15px 0;
 }
 
+.contact {
+  @media (max-width: 768px){
+    margin: 0 30px;
+  }
+          
+  @media (max-width: 400px){
+    margin: 20px;
+  }
+}
 /* Footer Styles */
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
