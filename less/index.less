@@ -177,9 +177,12 @@ h5 {
 @main-bg-color: #1d1d1d;
 @link-color: #2996f0;
 @link-hover-color: lighten(@link-color, 20%);
-@general-color: rgb(184, 184, 184);
+@general-color: #b8b8b8;
 // MIXINS
-
+.border-top-and-bottom {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
 //Web pages styling below
 .container {
     max-width: @container-width;
@@ -301,8 +304,7 @@ header {
 /* Main Content Styles */
 
 .main-content {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    .border-top-and-bottom;
     margin: 75px 0 35px 0;
     padding: 35px 0;
     line-height: 18px;
