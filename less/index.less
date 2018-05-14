@@ -68,6 +68,19 @@ h1, h2, h3, h4, h5 {
 @dark-blue: #0000cc;
 @whitish-color: #e6e6e6;
 
+.flex() {
+    display: flex;
+}
+
+.j-center() {
+    justify-content: center;
+}
+
+.jcenter-flex() {
+    .flex;
+    .j-center;
+}
+
 .container {
     width: 880px;
     margin: auto;
@@ -82,21 +95,21 @@ h1, h2, h3, h4, h5 {
 
 header {
     width: 100%;
-    display: flex;
+    .flex;
 
     @media (max-width: 768px) {
         flex-flow: wrap;
-        justify-content: center;
+        .j-center;
     }
 
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
-        display: flex;
+        .flex;
 
         @media (max-width: 768px) {
-            display: flex;
+            .flex;
             justify-content: space-between;
             width: 95%;
         }
@@ -105,7 +118,7 @@ header {
             margin-top: 20px;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            .j-center;
         }
 
         a {
@@ -113,8 +126,7 @@ header {
             color: @dark-blue;
             
             @media (max-width: 400px) {
-                display: flex;
-                justify-content: center;
+                .jcenter-flex;
                 font-size: 2rem;
                 padding: 20px 2.87%;
                 width: 105%;
@@ -139,8 +151,7 @@ header {
         margin: 28px 0 0 91px;
 
         @media (max-width: 768px) {
-            display: flex;
-            justify-content: center;       
+            .jcenter-flex;      
             order: -1;
             margin-right: 10.34%;
         }
@@ -154,21 +165,19 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex;
     margin-top: 72px;
     justify-content: flex-end;
 
     @media (max-width: 768px) {
-        display: flex;
-        justify-content: center;
+        .jcenter-flex;
     }
 
     .cta-text {
         font-size: 72px;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
+        .jcenter-flex;
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
@@ -221,7 +230,7 @@ header {
    }
 
    .top-content {
-        display: flex;
+        .flex;
         justify-content: space-around;
 
         @media (max-width: 768px) {
@@ -249,7 +258,7 @@ header {
    }
 
    .bottom-content {
-        display: flex;
+        .flex;
         justify-content: space-around;
 
         @media (max-width: 768px) {
@@ -274,14 +283,16 @@ header {
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
-    color: @dark-blue;
-
+.contact {
     @media (max-width: 768px) {
         margin-left: 2.604%;
     }
+        p {
+            margin: 15px 0;
+            color: @dark-blue;
+        }
 }
+
 
 /* Footer Styles */
 
