@@ -153,10 +153,22 @@ h5 {
 @borderColor : gray;
 @tabletConversion: 880px - 112;
 @mobileConversion:768px - 168;
+.bordered {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
 
 .container {
   width: 880px;
   margin: auto;
+
+  @media (max-width: @tabletConversion) {
+    max-width: @tabletConversion;
+  }
+
+  @media (max-width: @mobileConversion) {
+    max-width: @mobileConversion;
+  }
 }
 
 /* Header Styles */
@@ -164,6 +176,14 @@ h5 {
 header {
   width: 100%;
   display: flex;
+
+  @media (max-width: @tabletConversion) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: @mobileConversion) {
+    justify-content: center;
+  }
 }
 
 header nav {
