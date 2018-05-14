@@ -58,6 +58,10 @@ html, body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -146,17 +150,31 @@ header {
         }
 
         a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-size: 1.4rem; 
+
             @media (max-width: @tablet-phone-breakpnt){
                 text-align: center;
                 padding: 19px 5.69% 19px;
                 font-size: 2.2rem;
                 text-decoration: bold;
-                border-top: 1px solid black;
+                border-top: 1px solid black;        
             }
         }
 
         a:last-child{
-            border-bottom: 1px solid black;
+            @media (max-width: @tablet-phone-breakpnt){
+                border-bottom: 1px solid black;
+            }
+            
+        }
+
+    
+        a:hover {
+            text-decoration: underline;
+            color: black;
+            .theme(@mode);
         }
         
     }
@@ -170,17 +188,6 @@ header {
         @media (max-width: @tablet-phone-breakpnt){
             margin-top: 10px;
         }
-    }
-
-    a {
-        text-decoration: none;
-        color: #b0b0b0; 
-    }
-
-    a:hover {
-        text-decoration: underline;
-        color: black;
-        .theme(@mode);
     }
 
     .logo {
@@ -202,7 +209,8 @@ header {
     }
 
     .cta-text {
-        font-size: 72px;
+        // font-size: 72px;
+        font-size: 7.2rem;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -215,12 +223,14 @@ header {
         @media (max-width: @desktop-tablet-breakpnt){
             width:100%;
             margin-right: 0;
-            font-size: 54px;
+            // font-size: 54px;
+            font-size: 5.4rem;
         }
 
         button {
             border: 1px double black;
-            font-size: 16px;
+            // font-size: 16px;
+            font-size: 1.6rem;
             background: white;
             // width: 170px;
             width: @button-width;
@@ -252,7 +262,8 @@ section{
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+//    font-size: 16px;
+   font-size: 1.6rem;
    line-height: 18px;
 
    p {
