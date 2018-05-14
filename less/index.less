@@ -48,7 +48,7 @@ table {
 	border-spacing: 0;
 }
 /**********************************************************************/
-@standard_font: 16px;
+// Mixins
 .flex_it(@justify) {
 	display: flex;
 	justify-content: @justify;
@@ -59,6 +59,9 @@ table {
 	margin: 5%;
 	padding: 2%;
 }
+
+// Variables
+@standard_font: 16px;
 
 @scheme1-1: #E27D60;
 @scheme1-2: forestgreen;
@@ -81,15 +84,13 @@ table {
 }
 
 html, body {
-    height: 100%;
+		height: auto;
     font-family: 'Titillium Web', sans-serif;
 		font-size: 62.5%;
 		background-color: @scheme1-2;
 
 		@media(max-width:768px) {
-			html, body {
-				background-color: @scheme2-2;
-			}
+			background-color: @scheme2-2;
 		}
 }
 
@@ -255,6 +256,10 @@ header {
 					p {
 						.border-background(@scheme1-3);
 					}
+
+					@media (max-width: 768px, 2, 2) {
+						.border-background(@scheme2-3);
+					}
  		}
 
 	.middle-img {
@@ -269,6 +274,21 @@ header {
 					    padding-right: 20px;
 							.border-background(@scheme1-3);
 						}
+
+						@media (max-width: 768px) {
+							.border-background(@scheme2-3);
+						}
+			@media (max-width: 768px) {
+				.text-content h4 {
+					margin-left: 1.3%;
+				}
+
+				.text-content p {
+					margin-top: 1.98%;
+					padding-right: 5.25%;
+					margin-left: 0.83%;
+				}
+			}
 	}
 
 }
