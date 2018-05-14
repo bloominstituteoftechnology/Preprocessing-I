@@ -147,6 +147,7 @@ h5 {
 .container {
   width: 880px;
   margin: auto;
+  background-color: #7575f8;
   /* Header Styles */
   /* Call To Action (CTA) Styles */
   /* Main Content Styles */
@@ -159,7 +160,7 @@ h5 {
 }
 .container header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 69%;
   justify-content: space-between;
   display: flex;
 }
@@ -169,7 +170,7 @@ h5 {
 }
 .container header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: #cf0101;
 }
 .container header .logo {
   align-self: flex-end;
@@ -193,8 +194,8 @@ h5 {
 .container .cta .cta-text button {
   border: 1px double black;
   font-size: 16px;
-  background: white;
-  width: 170px;
+  background: #726e6e;
+  width: 40%;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
@@ -202,14 +203,21 @@ h5 {
 .container .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  background-color: #7575f8;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
 }
+.container .main-content h4 {
+  color: red;
+}
 .container .main-content .top-content {
   display: flex;
   justify-content: space-around;
+}
+.container .main-content .top-content .text-content p {
+  background-color: #4cbb51;
 }
 .container .main-content .middle-img {
   display: block;
@@ -220,6 +228,7 @@ h5 {
   justify-content: space-around;
 }
 .container .main-content .bottom-content p {
+  background-color: #4cbb51;
   padding-right: 20px;
 }
 .container .contact p {
@@ -228,4 +237,70 @@ h5 {
 .container footer {
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .container nav {
+    justify-content: space-evenly;
+  }
+  .container .logo {
+    order: -1;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+  .container header nav {
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .container header nav a {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+  }
+  .container header nav a:first-child {
+    border-top: 1px solid gray;
+  }
+  .container header nav a:hover {
+    background: gray;
+  }
+  .container header nav .logo {
+    margin: 20px 0;
+  }
+  .container .cta {
+    width: 50%;
+    align-items: center;
+  }
+  .container .cta img {
+    max-width: 100%;
+  }
+  .container .cta .main-content {
+    width: 100%;
+  }
+  .container .cta .main-content .top-content {
+    justify-content: space-around;
+    flex-direction: column;
+    height: 300px;
+  }
+  .container .cta .main-content .bottom-content {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 440px;
+  }
+  .container .cta .main-content .text-content {
+    margin: 0;
+  }
+  .container .cta .contact {
+    font-size: 1.6rem;
+    margin: 20px;
+  }
 }
