@@ -183,9 +183,19 @@ h5 {
 @secondary-color: #e66278;
 @tertiary-color: #994185;
 @bgcolor: black;
-
+@tablet: (max-width:768px);
+@phone: (max-width: 400px);
+@list: #e662c7, #e66278 30%, #994185;
 h4 {
 	color: @primary-color;
+}
+
+body {
+
+	background-image: svg-gradient(to right, @list);
+  @media (max-width: 768px) {
+		background-image: none;
+	}
 }
 
 .container {
@@ -260,13 +270,17 @@ h4 {
 
 		a {
 			text-decoration: none;
-			color: @primary-color;
+			color: black;
 			@media (max-width: 400px) {
 				margin: 0;
 				padding: 5.5% 0;
 				text-align: center;
 				border-top: 1px solid grey;
 				font-size: 1rem;
+			}
+				@media (max-width: 768px) {
+					color: @primary-color;
+
 			}
 
 			&:hover {
@@ -309,6 +323,8 @@ h4 {
 			.large-font;
 			@media (max-width: 768px) {
 				margin-left: 4%;
+				color: @tertiary-color;
+
 			}
 			@media (max-width: 400px) {
 				.medium-font;
