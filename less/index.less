@@ -1,5 +1,6 @@
+
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +14,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +26,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -56,17 +57,179 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+
 }
+
+//Less-styles//
+.fs{
+    display: flex;
+    justify-content: space-around;
+}
+.newcolorScheme{
+    background: orange;
+    color:white;
+}
+
+.tablet{
+    .container {
+        width: 100%;
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        width: 100%;
+        margin: 38px 3%;
+    }
+
+    header .logo {
+        order: -1;
+        display: block;
+        margin: 30px auto 0;
+    }
+
+    .cta {
+        justify-content: center;
+    }
+
+    .cta .cta-text {
+        margin: 0 5% 0 0;
+    }
+
+    .cta .cta-text h1 {
+        letter-spacing: 0;
+
+    }
+
+    .cta img {
+        display: none;
+    }
+
+    .main-content .middle-img {
+       width: 100%;
+       margin: 25px auto;
+    }
+
+    .main-content {
+         font-size: 1.2rem;
+         color: white;
+       margin: 75px 2% 35px;
+       border-top: 2px solid white;
+   border-bottom: 2px solid white;
+
+    }
+
+    .text-content p,{
+        padding: 0 3% 0;
+    }
+
+    .text-content h4{
+        padding: 8px 3% 0;
+    }
+    .contact {
+        margin: 20px 2%;
+    }
+}
+
+.phone{
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+
+           a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 2rem;
+        border-bottom: 1px solid gray;
+        }
+
+
+    nav:first-child {
+        border-top: 1px solid gray;
+
+         a:hover {
+        background: gray;
+        }
+    }
+}
+
+    .logo {
+        order: -1;
+        margin: 20px 0;
+        }
+    }
+
+    .cta {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta .cta-text{
+        margin: 0;
+    }
+
+    .cta img {
+        display: block;
+        max-width: 80%;
+        margin: 55px 0 0 0;
+    }
+
+    .main-content .top-content {
+        flex-wrap: wrap;
+        height: 300px;
+    }
+
+    .main-content .bottom-content {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+    }
+}
+
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 10px ;
 }
 
 .container {
-    width: 880px;
+    width: 1000px;
     margin: auto;
+
+    @media (max-width: 800px){
+        background: orange;
+        color:white;
+        max-width:100%;
+
+        header nav a{
+            color: green;
+            font-size: 19px bold;
+            letter-spacing: 1px;
+        }
+
+        .tablet
+    }
+
+    @media (max-width: 400px){
+        .phone
+    }
+
 }
 
 /* Header Styles */
@@ -74,29 +237,36 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
+    nav {
+    margin-top: 40px;
     width: 610px;
     justify-content: space-between;
     display: flex;
-}
+    }
 
-header nav a {
+    nav a {
     text-decoration: none;
     color: #b0b0b0;
-}
+    }
 
-header nav a:hover {
+    nav a:hover {
     text-decoration: underline;
     color: black;
-}
+    }
 
-header .logo {
+    .logo {
     align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    margin: 18px 0 0 91px;
+    }
+}//header end
+
+
+
+
+
+
+//to here...
 
 /* Call To Action (CTA) Styles */
 
@@ -104,9 +274,8 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
+    .cta-text {
     font-size: 72px;
     text-align: center;
     letter-spacing: 5px;
@@ -115,52 +284,59 @@ header .logo {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
+    button {
+        border: 1px double green;
+        color: green;
+        font-size: 16px;
+        background: white;
+        width: 170px;
+        height: 32px;
+        margin-top: 10px;
+        cursor: pointer;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
+    button:hover {
+        background: black;
+        color: white;
+        }
+    }
 }
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .middle-img {
+    .top-content {
+        .fs;
+
+    .middle-img {
     display: block;
     margin: 30px auto;
-}
+  }
+ }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+ .bottom-content {
+        .fs;
+  }
+    .bottom-content {
+        .fs;
 
-.main-content .bottom-content p {
+
+    .bottom-content p {
     padding-right: 20px;
-}
+   }
+ }
+
+}//.main
+
+
 
 /* Contact Styles */
 
@@ -174,3 +350,6 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
+
+
