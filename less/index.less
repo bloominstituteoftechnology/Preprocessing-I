@@ -80,17 +80,21 @@ p {
     font-size: 1.6rem;
 
     /* tablet */
-    @media(max-width: 768px) {
+    @media @tablets {
         max-width: 768px;
         width: 100%;
     }
 
     /* mobile */
-    @media(max-width: 400px) {
+    @media @phones {
         max-width: 400px;
         width: 100%;
     }
 }
+
+// device sizes
+@tablets: ~"(max-width: 768px)";
+@phones: ~"(max-width: 400px)";
 
 // variable colors
 @base-color: red;
@@ -111,12 +115,12 @@ header {
     display: flex;
     
     /* tablet */
-    @media(max-width: 768px) {
+    @media @tablets {
         flex-wrap: wrap;
     }
 
     /* mobile */
-    @media(max-width: 400px) {
+    @media @phones {
         justify-content: center;
     }
 
@@ -126,13 +130,13 @@ header {
         .dispflex-just(space-between);
      
         /* tablet */
-        @media(max-width: 768px) {
+        @media @tablets {
             width: 100%;
             padding: 0 3.9063%;
         }
 
         /* mobile */
-        @media(max-width: 400px) {
+        @media @phones {
             width: 100%;
             flex-direction: column;
             margin: 0;
@@ -147,20 +151,20 @@ header {
                 color: @base-color;
                 
                 /* mobile */
-                @media(max-width: 400px) {
+                @media @phones {
                     background: @header-color;
                 }
             } // hover
 
             &:first-child {
                 /* mobile */
-                @media(max-width: 400px) {
+                @media @phones {
                     border-top: 1px solid @header-color;
                 }
             } // first-child
 
             /* mobile */
-            @media(max-width: 400px) {
+            @media @phones {
                 width: 100%;
                 display: block;
                 text-align: center;
@@ -176,14 +180,14 @@ header {
         margin: 28px 0 0 10.3409%;
         
         /* tablet */
-        @media(max-width: 768px) {
+        @media @tablets {
             order: -1;
             display: block;
             margin: 30px auto 0;
         }
 
         /* mobile */
-        @media(max-width: 400px) {
+        @media @phones {
             margin: 20px 0;
         }
     } // .logo
@@ -195,12 +199,12 @@ header {
     .dispflex-just(flex-end);
 
     /* tablet */
-    @media(max-width: 768px) {
+    @media @tablets {
         justify-content: center;
     }
 
     /* mobile */
-    @media(max-width: 400px) {
+    @media @phones {
         margin-top: 50px;
         flex-flow: column;
         align-items: center;
@@ -208,7 +212,7 @@ header {
 
     img {
         /* tablet */
-        @media(max-width: 768px) {
+        @media @tablets {
             display: none;
         }
     }
@@ -223,7 +227,7 @@ header {
         margin: 0 9.3182% 0 0;
 
         /* tablet */
-        @media(max-width: 768px) {
+        @media @tablets {
             margin: 0;
         }
 
@@ -254,13 +258,13 @@ header {
     line-height: 1.8rem;
 
     /* tablet */
-    @media(max-width: 768px) {
+    @media @tablets {
         margin: 75px 2.6042% 35px;
     }
 
     .text-content {
         /* tablet */
-        @media(max-width: 768px) {
+        @media @tablets {
             margin: 0 1.3021%;
         }
     }
@@ -269,7 +273,7 @@ header {
         .dispflex-just(space-around);
 
         /* mobile */
-        @media(max-width: 400px) {
+        @media @phones {
             justify-content: space-around;
             flex-direction: column;
             height: 300px;
@@ -281,7 +285,7 @@ header {
        margin: 30px auto;
        
        /* tablet */
-       @media(max-width: 768px) {
+       @media @tablets {
            width: 100%;
        }
    }
@@ -290,7 +294,7 @@ header {
        .dispflex-just(space-around);
 
         /* mobile */
-       @media(max-width: 400px) {
+       @media @phones {
            flex-wrap: wrap;
             align-content: space-between;
             height: 440px;
@@ -307,12 +311,12 @@ header {
     margin: 0 2%;
     
     /* tablet */
-    @media(max-width: 768px) {
+    @media @tablets {
         margin: 0 2%;
     }
 
     /* mobile */
-    @media(max-width: 400px) {
+    @media @phones {
         margin: 20px 5%;
     }
 
@@ -320,12 +324,12 @@ header {
         margin: 15px 2%;
         
         /* tablet */
-        @media(max-width: 768px) {
+        @media @tablets {
             // margin: 0 3.9063%;
         }
     
         /* mobile */
-        @media(max-width: 400px) {
+        @media @phones {
             margin: 20px 5%;
         }
     }
