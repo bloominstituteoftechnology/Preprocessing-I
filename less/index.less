@@ -48,6 +48,18 @@ table {
 	border-spacing: 0;
 }
 
+/* Variables */
+@body-font-family: 'Titillium Web', sans-serif;
+@header-font-family: 'Bangers', cursive;
+
+@header-color: #1589b4;
+@nav-link-color: #01a6da;
+@nav-link-hover-color: #0e6888;
+@cta-button-bg-color: #2db5e4;
+@cta-button-bg-hover-color: #0e6888;
+@cta-button-text-color: #fff;
+@rule-color: #0e6888;
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -55,13 +67,14 @@ table {
 
 html, body {
     height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: @body-font-family;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
+    font-family: @header-font-family;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @header-color;
 }
 
 h4 {
@@ -87,11 +100,11 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @nav-link-color;
 
             &:hover {
                 text-decoration: underline;
-                color: black;
+                color: @nav-link-hover-color;
             }
         }
     }
@@ -120,17 +133,17 @@ header {
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double black;
+            border: 1px double @cta-button-text-color;
             font-size: 16px;
-            background: white;
+            background: @cta-button-bg-color;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+            color: @cta-button-text-color;
 
             &:hover {
-                background: black;
-                color: white;
+                background: @cta-button-bg-hover-color;
             }
         }
     }
@@ -145,8 +158,8 @@ header {
 }
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @rule-color; 
+   border-bottom: 2px solid @rule-color;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
