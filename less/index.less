@@ -69,21 +69,33 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+// Variables
+
+@mets-O: #ffa500;
+@mets-B: #0000ff;
+@mets-font-weight: bold;
+
+
+
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
+    background-color: @mets-B;
+   
     
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
+        
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @mets-O;
+            font-weight: @mets-font-weight;
         }
         a:hover {
             text-decoration: underline;
@@ -103,30 +115,34 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    background-color: @mets-O;
 
     .cta-text {
         font-size: 72px;
+        display: flex;
+        justify-content: flex-end;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
         justify-content: center;
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @mets-B;
 
         button {
             border: 1px double black;
             font-size: 16px;
-            background: white;
+            background: @mets-B;
             width: 170px;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+            font-weight: @mets-font-weight;
         }
         
         button:hover {
-            background: black;
-            color: white;
+            background: @mets-B;
+            color: @mets-O;
             font-size: 16px + 10; // Used Operator to increase font size
             width: 170px * 1.5; 
             height: 32px * 1.5; // Used Operator to increase button width
@@ -155,8 +171,9 @@ header {
     }
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .top-content;
+        // display: flex;
+        // justify-content: space-around;
 
         p {
             padding-right: 20px;
