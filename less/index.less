@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -47,6 +47,33 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/**********************************************************************/
+@standard_font: 16px;
+.flex_it(@justify) {
+	display: flex;
+	justify-content: @justify;
+}
+.border-background (@color) {
+	border: 2px solid black;
+	background-color: @color;
+	margin: 5%;
+	padding: 2%;
+}
+
+@scheme1-1: #E27D60;
+@scheme1-2: forestgreen;
+@scheme1-3: #E8A87C;
+@scheme1-4: #C38D9E;
+@scheme1-5: #41B3A3;
+
+@scheme2-1: grey;
+@scheme2-2: red;
+@scheme2-3: orange;
+@scheme2-4: yellow;
+@scheme2-5: turquoise;
+
+
+/**********************************************************************/
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -56,7 +83,16 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+		font-size: 62.5%;
+		background-color: @scheme1-2;
+
+		@media(max-width:768px) {
+			html, body {
+				background-color: @scheme2-2;
+			}
+		}
 }
+
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
@@ -65,7 +101,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+		width: 100%;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -74,92 +111,166 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+
+		@media (max-width: 768px) {
+			width: 100%;
+			display: flex;
+			flex-flow: column;
+		}
+
+		nav {
+		    margin-top: 40px;
+		    width: 610px;
+				.flex_it(space-between);
+
+				@media (max-width: 768px) {
+					margin-top: 2.78%;	/* 21px*/
+					display: flex;
+					padding: 2.64%; /* 20px*/
+					width: 100%;
+					align-content: space-between;
+				}
+
+				a {
+				    text-decoration: none;
+						font-size: 1.6rem;
+				    color: white;
+						padding: 3%;
+						border: 2px solid @scheme1-4;
+						border-radius: 50%;
+
+						@media (max-width: 768px) {
+							border: 2px solid @scheme2-4;
+						}
+
+						&:hover {
+						    text-decoration: underline;
+						    color: black;
+						}
+					}
+				}
+		.logo {
+		    align-self: flex-end;
+		    margin: 28px 0 0 91px;
+
+				@media (max-width: 768px) {
+					order: -1;
+					width: 24.1%;
+					margin-left: 0%;
+					align-self: center;
+				}
+		}
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex_it(flex-end);
     margin-top: 72px;
-    justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+		@media (max-width: 768px) {
+			img {
+				display: none;
+			}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+			display: flex;
+			flex-flow: column;
+			margin-top: 6.99%; /* 53px */
+			padding-right: 5.28%; /* 40px */
+			justify-content: flex-end;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+		}
+		.cta-text {
+				.flex_it (center);
+		    font-size: 72px;
+		    text-align: center;
+		    letter-spacing: 5px;
+		    flex-flow: column;
+		    align-items: center;
+		    margin: 0 82px 0 0;
+
+				@media (max-width: 768px) {
+					font-size: 7.2rem; /* 72px */
+					text-align: center;
+					letter-spacing: .5rem; /* 5px */
+					display: flex;
+					justify-content: center;
+					flex-flow: column;
+					align-items: center;
+					margin: 0;
+				}
+
+				button {
+				    border: 1px double black;
+				    font-size: @standard_font;
+				    background: white;
+				    width: 170px;
+				    height: 32px;
+				    margin-top: 10px;
+				    cursor: pointer;
+						background-color: @scheme1-1;
+
+						@media (max-width: 768px) {
+							border: .01rem double black;
+							font-size: 1.6rem;
+							background-color: @scheme2-1;
+							width: 23.68%; /* 170px / 717.984 = 23.68% */
+							height: 3.2rem;
+							margin-top: 2.11%;	/* 16px / 274 */
+							cursor: pointer;
+						}
+
+						&:hover {
+						    background: black;
+						    color: white;
+						}
+				}
+		}
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+   font-size: @standard_font;
+   line-height: @standard_font + 2;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 @media (max-width: 768px) {
+		 width: 96.04%;
+		 margin: 10% 0% 4.62% 1.98%; /* 75px 20px 35px 15px */
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+		 .middle-img {
+			 width: 100%;
+			 margin-bottom: 29px;
+		 }
+	 }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 .top-content {
+ 	    .flex_it (space-around);
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+					p {
+						.border-background(@scheme1-3);
+					}
+ 		}
+
+	.middle-img {
+			display: block;
+			margin: 30px auto;
+	}
+
+	.bottom-content {
+	    .flex_it (space-around);
+
+					p {
+					    padding-right: 20px;
+							.border-background(@scheme1-3);
+						}
+	}
+
 }
 
 /* Contact Styles */
