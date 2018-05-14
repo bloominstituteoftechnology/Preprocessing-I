@@ -67,36 +67,84 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background-color: @backgroundcolor;
+    color: @fontcolor;
+        @media (max-width: 768px) {
+            width: 768px;
+        }
+        @media (max-width: 400px) {
+            width: 400px;
+        }
 }
+
+// Variables
+@font-size: 16px;
+@fontcolor: blue;
+@backgroundcolor: black;
+@navcolor: #b0b0b0;
+@bordercolor: solid white;
 
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
-}
-
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
+    background-color: @bordercolor;
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+        @media (max-width: 400px) {
+            justify-content: center;
+        }
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+            @media (max-width: 768px) {
+                width: 768px;
+                padding: 0 30px;
+            }
+            @media (max-width: 400px) {
+                width: 100%;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+            }
+        a {
     text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+    color: @navcolor;
+    background-color: @bordercolor;
+            @media (max-width: 400px) {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 20px;
+                border-bottom: 1px @bordercolor;
+            }
+            :hover {
+        text-decoration: underline;
+        color: @fontcolor;
+                @media (max-width: 400px) {
+                    background: @bordercolor;   
+                }
+            }
+            }
+        } //nav bracket
+    } // headerr bracket
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+            @media (max-width: 768px) {
+                order: -1;
+                display: block;
+                margin: 30px auto 0;
+            }
+            @media (max-width: 400px) {
+                margin: 20px 0;
+            }
+    }
 
 /* Call To Action (CTA) Styles */
 
@@ -104,68 +152,116 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+        @media (max-width: 400px) {
+            margin-top: 50px;
+            flex-flow: column;
+            align-items: center; 
+        }
+    .img {
+        @media (max-width: 768px) {
+            display: none;
+        }
+        @media (max-width: 400px) {
+            max-width: 80%;
+        }
+    }
+    .cta-text {
+        font-size: @font-size*4.5;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+            @media (max-width: 768px) {
+                margin: 0;
+            }
+        button {
+            border: 1px double @bordercolor;
+            font-size: @font-size;
+            background: @backgroundcolor;
+            width: 170px;
+            height: @font-size*2;
+            margin-top: 10px;
+            cursor: pointer;
+            :hover {
+                background: @fontcolor;
+                color: @backgroundcolor;
+            }
+        }
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px solid @bordercolor;
+   border-bottom: 2px solid @bordercolor;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @font-size;
    line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
+        @media (max-width: 768px) {
+            margin: 75px 20px 35px;
+        }
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+            @media (max-width: 400px) {
+                justify-content: space-around;
+                flex-direction: column;
+                height: 300px;
+            }
+        .text-content {
+            @media (max-width: 768px) {
+                margin: 0 10px;
+            }
+            @media (max-width: 400px) {
+                margin: 0;
+            }
+        }
+   }
+   .middle-img {
     display: block;
     margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+   }
+   .bottom-content {
+       @media (max-width: 400px) {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+       }
+            .text-content {
+                @media (max-width: 768px) {
+                    margin: 0 10px;
+                }
+                @media (max-width: 400px) {
+                    margin: 0;
+                }
+            }
+           p {
     padding-right: 20px;
+           }
+           .top-content
+   }
 }
-
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
+        @media (max-width: 768px) {
+            margin: 0 30px;
+        }
+        @media (max-width: 400px) {
+            margin: 20px;
+        }
 }
 
 /* Footer Styles */
