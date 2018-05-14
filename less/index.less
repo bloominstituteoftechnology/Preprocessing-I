@@ -268,58 +268,58 @@ h5 {
         }
     }
     @media (max-width: 400px) {
-        width: 100%;
         header {
-            
+            justify-content: center;
             nav {
                 width: 100%;
                 flex-direction: column;
                 margin: 0;
                 padding: 0;
                 a {
+                    width: 100%;
                     display: block;
                     text-align: center;
                     padding: 20px 0;
                     font-size: 2rem;
                     border-bottom: 1px solid gray;
+                    .first-child {
+                        border-top: 1px solid gray;
+                    }
+                    .hover {
+                        background: gray;
+                    }
                 }
-                a:first-child {
-                    border-top: 1px solid gray;
-                }
-                a:hover {
-                    background: gray;
-                }
-                .logo {
-                    margin: 20px 0;
-                }
+            }
+            .logo {
+                margin: 20px 0;
             }
         }
         .cta {
-            width: 50%;
+            margin-top: 50px;
+            flex-flow: column;
             align-items: center;
-            img {
-                max-width: 100%;
+            .img {
+                max-width: 80%;
             }
-            .main-content {
-                width: 100%;
-                .top-content {
-                    justify-content: space-around;
-                    flex-direction: column;
-                    height: 300px;
-                }
-                .bottom-content {
-                    flex-wrap: wrap;
-                    align-content: space-between;
-                    height: 440px;
-                }
-                .text-content {
-                    margin: 0;
-                }
+        }
+        .main-content {
+            .top-content {
+                justify-content: space-around;
+                flex-direction: column;
+                height: 300px;
             }
-            .contact {
-                font-size: 1.6rem;
-                margin: 20px;
+            .bottom-content {
+                flex-wrap: wrap;
+                align-content: space-between;
+                height: 440px;
             }
+            .text-content {
+                margin: 0;
+            }
+        }
+        .contact {
+            font-size: 1.6rem;
+            margin: 20px;
         }
     }
 }
