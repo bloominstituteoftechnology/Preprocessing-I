@@ -4,6 +4,9 @@
    License: none (public domain)
 */
 
+@background-gradient: linear-gradient( #6600cc, #3366ff, #6600cc);
+@main-background: powderBlue;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,6 +59,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background: @background-gradient;
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,6 +71,12 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background-color: @main-background;
+    border:2px solid black;
+    padding: 0 5px;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 /* Header Styles */
@@ -74,28 +84,27 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 40px; 
+        width: 880px - 170;  //610px
+        justify-content: space-between;
+        display: flex;
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
+        }
+    }
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
 }
 
 header nav a:hover {
     text-decoration: underline;
     color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
 }
 
 /* Call To Action (CTA) Styles */
@@ -104,27 +113,25 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
+    .cta-text {
+        font-size: 16px * 4.5; //72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    }
 }
 
 .cta .cta-text button:hover {
@@ -141,25 +148,21 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+   .top-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    .middle-img {
+        width: 100%;
+        display: block;
+        margin: 30px auto;
+    }
+    .bottom-content {
+        .top-content;
+        p {
+            padding-right: 20px;
+        }
+    }
 }
 
 /* Contact Styles */
