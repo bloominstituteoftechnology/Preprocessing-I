@@ -78,6 +78,10 @@ html, body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -85,8 +89,22 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+    @media (max-width: 400px) {
+             width: 100%;
+             margin: 0;
+             padding: 0;
+        }
 }
 
 /* Header Styles */
@@ -95,6 +113,14 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 768px) {
+        font-size: 14px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
 
     nav {
     margin-top: 40px + 10; // operator 
@@ -102,10 +128,32 @@ header {
     justify-content: space-between;
     .flex();
 
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 1.6rem; 
+        justify-content: space-around;
+        margin-top: 42px;
+        margin-right: 1.7%;
+    
+    @media (max-width: 400px) {
+        font-size: 2rem;
+        flex-direction: column;
+        margin-top: 13px;
+    }
+    }
     a {
     text-decoration: none;
     color: @primary-color;
+
+    @media(max-width: 400px) {
+        border-bottom: 1px solid;
+        margin: 0;
+        align: center;
+        padding: 4% 0;
+        text-align: center;
+    }
     
+
 
     &:hover {
         text-decoration: underline;
@@ -117,6 +165,14 @@ header {
     .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+
+    @media(max-width: 768px) {
+        order: -1;
+        align-self: center;
+        margin-top: 26px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     }
 }
 
@@ -127,6 +183,16 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media(max-width: 768px) {
+        margin-top: 56px;
+    }
+
+    .img {
+    @media (max-width: 768px) {
+        
+        display: none;
+        }
+    }
     .cta-text {
     font-size: 72px - 2; // operator
     text-align: center;

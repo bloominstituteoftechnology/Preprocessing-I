@@ -135,6 +135,9 @@ body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
 }
+html {
+  font-size: 62.5%;
+}
 h1,
 h2,
 h3,
@@ -145,13 +148,41 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
   margin: auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
 /* Header Styles */
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    font-size: 14px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    flex-direction: column;
+  }
 }
 header nav {
   margin-top: 50px;
@@ -159,9 +190,34 @@ header nav {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav {
+    width: 100%;
+    font-size: 1.6rem;
+    justify-content: space-around;
+    margin-top: 42px;
+    margin-right: 1.7%;
+  }
+}
+@media (max-width: 768px) and (max-width: 400px) {
+  header nav {
+    font-size: 2rem;
+    flex-direction: column;
+    margin-top: 13px;
+  }
+}
 header nav a {
   text-decoration: none;
   color: aqua;
+}
+@media (max-width: 400px) {
+  header nav a {
+    border-bottom: 1px solid;
+    margin: 0;
+    align: center;
+    padding: 4% 0;
+    text-align: center;
+  }
 }
 header nav a:hover {
   text-decoration: underline;
@@ -171,11 +227,30 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    align-self: center;
+    margin-top: 26px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    margin-top: 56px;
+  }
+}
+@media (max-width: 768px) {
+  .cta .img {
+    display: none;
+  }
 }
 .cta .cta-text {
   font-size: 70px;
