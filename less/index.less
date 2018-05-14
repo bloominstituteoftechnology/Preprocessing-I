@@ -90,11 +90,20 @@ h1, h2, h3, h4, h5 {
     margin: auto;
     background-color: @cowboys-lightblue;
 
+    @media (max-width: 768px){
+        display:flex;
+        flex-direction: column;
+    }
     /* Header Styles */
 
     header {
         width: 100%;
         display: flex;
+
+        @media (max-width: 768px){
+            flex-direction: column;
+            align-content: center;
+        }
 
         nav {
             margin-top: 40px; 
@@ -103,6 +112,13 @@ h1, h2, h3, h4, h5 {
             display: flex;
             margin-left: 5%;
             font-size: 1.6rem;
+
+            @media (max-width: 768px){
+                width: 97%;
+                order:2;
+                margin: 40px 1.95% 0 1.95%;
+                text-align:center;
+            }
 
             a {
                 text-decoration: none;
@@ -118,6 +134,12 @@ h1, h2, h3, h4, h5 {
         .logo {
             align-self:flex-end;
             margin: 28px 0 0 10.3%;
+            
+            @media (max-width: 768px){
+                margin: 30px 0 0 0;
+                order: 1;
+                align-self: center;
+            }
         }
 
     }
@@ -128,6 +150,12 @@ h1, h2, h3, h4, h5 {
         margin-top: 72px;
         .cta-spacing;
 
+        @media (max-width: 768px){
+            margin: 0;
+            margin-top: 25px;
+            flex-direction: column;
+        }
+
         .cta-text{
             .cta-spacing;
             font-size: 7.2rem;
@@ -137,6 +165,10 @@ h1, h2, h3, h4, h5 {
             align-items: center;
             margin: 0 9.3% + 5 0 0;
             color: @cowboys-silver;
+
+            @media (max-width: 768px){
+                margin: 50px 0 15px 0;
+            }
             
             button{
                 border: 1px double black;
@@ -146,11 +178,22 @@ h1, h2, h3, h4, h5 {
                 height: 32px;
                 margin-top: 10px;
                 cursor: pointer;
+
+                @media (max-width: 768px){
+                    margin-top: 12px;
+                    width: 25%;
+                }
             }
 
             button:hover {
                 background: black;
                 color: white;
+            }
+        }
+        
+        img{
+            @media (max-width: 768px){
+                display: none;
             }
         }
     }
@@ -162,23 +205,78 @@ h1, h2, h3, h4, h5 {
         border-bottom: 2px*3 solid black;
         margin: 75px 5% 35px 5%;
         padding: 35px 0;
-        font-size: 1.6rem*1.5;
+        font-size: 1.6rem*1.2;
         line-height: 18px;
+
+        @media (max-width: 768px){
+            align-self: center;
+            margin-top: 60px;
+            width: 97%;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            margin-left: 5%;
+        }
 
         .top-content {
             .main-content-spacing;
             .main-content-colorscheme;
+
+            @media (max-width: 768px){
+                flex-direction: row;
+            }
+
+            .top-content {
+                @media (max-width: 768px){
+                    margin-right: 2.8%;
+                }
+
+                p {
+                    @media (max-width: 768px) {
+                        margin-top: 10px;
+                    }
+                }
+            }
         }
 
         .middle-img{
             display:block;
             width:100%;
             margin: 30px auto;
+
+            @media (max-width: 768px){
+                margin-top: 20px;
+                padding-top: 15px;
+            }
+
         }
 
         .bottom-content {
             .main-content-spacing;
             .main-content-colorscheme;
+
+            @media (max-width: 768px){
+                flex-direction: row;
+            }
+
+            .text-content{
+                @media (max-width: 768px){
+                    margin-bottom: 60px;
+                }
+
+                h4 {
+                    @media (max-width: 768px){
+                        padding-bottom: 9px;
+                        margin: 0px;
+                        margin-bottom: 1px;
+                    }
+                }
+
+                p {
+                    @media (max-width: 768px){
+                        padding-top: 1px;
+                    }
+                }
+            }
 
             p {
                 padding-right: 5.6%;
@@ -191,6 +289,13 @@ h1, h2, h3, h4, h5 {
     .contact{
         margin:0 5%;
         font-size:1.6rem;
+
+        @media (max-width: 768px){
+            margin-left: 2.6%;
+            margin-top: 30px;
+            width: 40.9%;
+            margin-bottom: 0;
+        }
 
         p {
             margin: 15px 0;
