@@ -83,7 +83,6 @@ html {
 
 /* Variables */
 
-@blk-border: 2px solid black;
 @dflt-size: 1.6rem;
 @philly-philly: #004C54;
 @phone: 400px;
@@ -108,7 +107,7 @@ header {
     }
 
     @media (max-width: @phone) {
-        justify-content: center;
+        justify-content: flex-end;
     }
 
     nav {
@@ -171,6 +170,7 @@ header {
         }
 
         @media (max-width: @phone) {
+            align-self: center;
             margin: 20px 0;
         }
     } // logo
@@ -189,7 +189,6 @@ h1, h4 , p {
 
     @media (max-width: @tablet) {
         justify-content: center;
-        padding-right: 3%;
     }
 
     @media (max-width: @phone) {
@@ -199,17 +198,21 @@ h1, h4 , p {
     }
 
     .cta-text {
-        font-size: 72px;
+        font-size: @dflt-size * 4.5;
         text-align: center;
         letter-spacing: 5px;
         display: flex;
         justify-content: center;
         flex-flow: column;
         align-items: center;
-        margin: 0 82px 0 0;
+        margin: 0 10.92% 0 0;
 
         @media (max-width: @tablet) {
             margin: 0;
+        }
+
+        @media (max-width: @phone) {
+            font-size: @dflt-size * 3.5;
         }
 
         button {
@@ -242,8 +245,8 @@ h1, h4 , p {
 /* Main Content Styles */
 
 .main-content {
-   border-top: @blk-border; 
-   border-bottom: @blk-border;
+   border-top: 2px solid black; 
+   border-bottom: $border-top;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: @dflt-size;
