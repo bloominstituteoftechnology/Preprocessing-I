@@ -64,8 +64,18 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
+@max-width : 880px;
+
+@logo-margin-top: percentage(28 / @max-width);
+@logo-margin-left: percentage(91 / @max-width);
+
+@cta-text-width: 391px;
+@button-width: percentage(170 / @cta-text-width);
+
 .container {
-    width: 880px;
+    max-width: @max-width;
+    width: 100%;
     margin: auto;
 }
 
@@ -77,7 +87,8 @@ header {
 
     nav {
         margin-top: 40px; 
-        width: 610px;
+        // width: 610px;
+        width: percentage(610 / @max-width);
         justify-content: space-between;
         display: flex;
     
@@ -95,7 +106,8 @@ header {
 
     .logo {
         align-self: flex-end;
-        margin: 28px 0 0 91px;
+        // margin: 28px 0 0 91px;
+        margin: @logo-margin-top 0 0 @logo-margin-left;
     }
 }
 
@@ -120,7 +132,8 @@ header {
             border: 1px double black;
             font-size: 16px;
             background: white;
-            width: 170px;
+            // width: 170px;
+            width: @button-width;
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
@@ -160,9 +173,6 @@ header {
         }
     }
 }
-
-
-
 
 
 /* Contact Styles */
