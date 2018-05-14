@@ -81,10 +81,15 @@ h1, h2, h3, h4, h5 {
     width: 880px;
     margin: auto;
 
-    // @media @tablets {
-    //     max-width: 768px;
-    //     width: 95%;
-    // }
+    @media(max-width: 768px) {
+        max-width: 768px;
+        width: 95%;
+    }
+
+    @media (max-width: 400px) {
+            max-width: 400px;
+            width: 100%;
+        }
     
 }
 
@@ -101,10 +106,16 @@ header {
 
 
     nav {
-        margin-top: 40px; 
+        margin-top: 10px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
+        
+        @media (max-width: 400px) {
+            flex-direction: column;
+            align-items: center;
+            vertical-align: center;
+        }
         
                     // @media (max-width: 768px) {
                     // justify-content: space-between;
@@ -113,6 +124,16 @@ header {
             a {
                 text-decoration: none;
                 color:@text-color;
+
+            @media (max-width: 400px) {
+                height: 55px;
+                text-align: center;
+                width: 100%;
+                border-bottom: 1px solid gray;
+                padding: 17px 1.9% 17px;
+                font-size:16px;
+                font-weight:bold;
+        }
 
 
                 a:hover {
@@ -172,6 +193,7 @@ header {
                             @media (max-width: 768px) {
                             margin-right: auto;
                             margin-left: auto;
+                            font-size: 60px;
                             }
          }//cta-text
 
@@ -222,37 +244,37 @@ header {
             @media(max-width: 768px){
                 justify-content: space-between;
                 margin: 0 1.3%;
-    
+            }
                 .text-content {
                     width: 49%;
-                }
-
-
-            h4 {
-                color: @text-color;
-            }
+              
+                }    
 
             
         }
-
-
-
         
-        .middle-img {
+        .rectangle-img {
             display: block;
             margin: 30px auto;
+            width: @width;
          //.middle-img
-
+        }
         
             .bottom-content {
             .display-flex-around;
+            flex-wrap: wrap;
+             
 
-            h4{
-                color: @text-color;
+            h4 {
+                // color: @text-color;
+                margin-left: 10px;
             }
 
             p {
-                padding-right: 20px;
+                padding-right: 0px;
+                width: 100%;
+                margin-left: 10px;  
+                margin-bottom: 15px;
             }//p
                 
             }//.bottom-content
@@ -284,5 +306,4 @@ footer {
     color: @text-color;
 }
 
- }
-}
+
