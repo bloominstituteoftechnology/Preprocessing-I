@@ -53,6 +53,10 @@ table {
     box-sizing: border-box;
 }
 
+@font-size: 16px;
+@blue-background: rgb(120, 135, 221);
+@purple-background: rgb(161, 126, 161);
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -67,6 +71,7 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    background: @blue-background;
 }
 
 /* Header Styles */
@@ -74,29 +79,44 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
+    background: @purple-background;
 
-header nav {
+  nav {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
+    @media (max-width: 768px) {
+            width: 100%;
+            padding: 0 30px;
+            display: flex;
+            font-size: 16px;
+        }
+    
+    a {
+      text-decoration: none;
+      color: #b0b0b0;
+
+      a:hover {
+        text-decoration: underline;
+        color: black;
+
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+            @media (max-width: 768px) {
+                order: -1;
+                width: 25%;
+                margin: 30px 0 0 290px;
+            }
+            
+    }
+
+    }
+    }
+}
 }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
 
 /* Call To Action (CTA) Styles */
 
@@ -104,33 +124,47 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    background: @blue-background;
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+
+    .cta-text {
+        font-size: @font-size * 4.5;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        @media (max-width: 768px) {
+            margin: 0px 2.60% 0px 0px;
+        }
+
+        button {
+            border: 1px double black;
+            font-size: @font-size;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            button:hover {
+                background: black;
+                color: white;
+            }
+            .cta img {
+                @media (max-width: 768px){
+                    display: none;
+                }
+                
+}
+}
+}
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
@@ -139,33 +173,48 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @font-size + 2;
    line-height: 18px;
-}
+   background: @purple-background;
+   @media (max-width: 768px) {
+        width: 100%;
+        margin: 75px 2.60% 4.557%;
+   }
 
-.main-content .top-content {
+  .top-content {
     display: flex;
     justify-content: space-around;
-}
+    background: @blue-background;
+    @media (max-width: 768px) {
+        margin: 0 10px;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+      .bottom-content {
+            .top-content;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        .bottom-content p {
+                padding-right: 20px;
+           
+}
+}
+}
+}
 }
 
 /* Contact Styles */
 
 .contact p {
     margin: 15px 0;
+    @media (max-width: 768px) {
+        margin: 30px 0 0 2.60%;
+        padding: 0;
+        font-size: 16px;
+    }
 }
 
 /* Footer Styles */
@@ -173,4 +222,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    background: @purple-background;
 }
