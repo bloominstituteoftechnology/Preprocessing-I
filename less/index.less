@@ -147,12 +147,15 @@ body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
 }
+
 html {
     font-size: 62.5%;
 }
+
 body {
     font-size: 1.6rem;
 }
+
 h1,
 h2,
 h3,
@@ -162,19 +165,25 @@ h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
-// reset css ends here
 
+// reset css ends here
 //VARIABLES
 @container-width: 880px;
-@mobile-size: 400px;
 @tablet-size: 768px;
+@mobile-size: 400px;
 // MIXINS
-
 //Web pages styling below
 .container {
     max-width: @container-width;
     width: 100%;
     margin: auto;
+    @media (max-width: @tablet-size) {
+        width: 100%;
+        padding: 0 1.3%;
+    }
+    @media (max-width: @mobile-size) {
+        padding: 0;
+    }
 }
 
 /* Header Styles */
@@ -182,14 +191,40 @@ h5 {
 header {
     width: 100%;
     display: flex;
+    @media (max-width: @tablet-size) {
+        flex-flow: column-reverse;
+        align-items: center;
+    }
+    @media (max-width: @mobile-size) {
+        justify-content: center;
+    }
     nav {
         margin-top: 40px;
         width: 100%;
         justify-content: space-between;
         display: flex;
+        @media (max-width: @tablet-size) {
+            width: 100%;
+        }
+        @media (max-width: @mobile-size) {
+            flex-flow: column;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
         a {
             text-decoration: none;
-            color: #b0b0b0; // Put pseudo classes below this line
+            color: #b0b0b0;
+            @media (max-width: @mobile-size) {
+                padding: 20px 0;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid rgb(53, 53, 53);
+                font-size: 2.4rem;
+                &:last-child {
+                    border-bottom: 1px solid rgb(53, 53, 53);
+                }
+            } // Put pseudo classes below this line
             &:hover {
                 text-decoration: underline;
                 color: black;
@@ -199,6 +234,13 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 ((91% / @container-width) * 100);
+        @media (max-width: @tablet-size) {
+            align-self: center;
+            margin: 28px 0 0 0;
+        }
+        @media (max-width: @mobile-size) {
+            margin: 20px 0;
+        }
     }
 } // header ends
 /* Call To Action (CTA) Styles */
@@ -219,8 +261,7 @@ header {
         button {
             border: 1px double black;
             font-size: 1.6rem;
-            background: white;
-            //Calculation for a responsive button
+            background: white; //Calculation for a responsive button
             width: ((170% / 391) * 100);
             height: 32px;
             margin-top: 10px;
