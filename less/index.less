@@ -166,31 +166,64 @@ h5 {
     width: 880px;
     margin: auto;
     background-color: @blue-backround;
+    @media (max-width: 400px) {
+        width: 100%;
+    }
     /* Header Styles */
     header {
         width: 100%;
         display: flex;
+        @media (max-width: 400px) {
+            justify-content: center;
+        }
         nav {
+            @media (max-width: 400px) {
+                width: 100%;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+            }
             margin-top: 40px;
             width: 69%;
             justify-content: space-between;
             display: flex;
-            a {
-                text-decoration: none;
-                color: #b0b0b0;
-            }
-            a:hover {
-                text-decoration: underline;
-                color: rgb(207, 1, 1);
-            }
         }
-        .logo {
-            align-self: flex-end;
-            margin: 28px 0 0 91px;
+        a {
+            @media (max-width: 400px) {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 2rem;
+                border-bottom: 1px solid gray;
+            }
+            text-decoration: none;
+            color: #b0b0b0;
         }
+        a:hover {
+            text-decoration: underline;
+            color: rgb(207, 1, 1);
+        }
+    }
+    .logo {
+        @media (max-width: 400px) {
+            margin: 20px 0;
+        }
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
     }
     /* Call To Action (CTA) Styles */
     .cta {
+        @media (max-width: 400px) {
+            margin-top: 50px;
+            flex-flow: column;
+            align-items: center;
+        }
+        .img {
+            @media (max-width: 400px) {
+                max-width: 80%;
+            }
+        }
         display: flex;
         margin-top: 72px;
         justify-content: flex-end;
@@ -227,19 +260,30 @@ h5 {
             color: red;
         }
         .top-content {
+            @media (max-width: 400px) {
+                ustify-content: space-around;
+                flex-direction: column;
+                height: 300px;
+            }
             display: flex;
             justify-content: space-around;
+        }
             .text-content {
                 p {
                     background-color: @green-backround;
                 }
             }
-        }
+        
         .middle-img {
             display: block;
             margin: 30px auto;
         }
         .bottom-content {
+            @media (max-width: 400px) {
+                flex-wrap: wrap;
+                align-content: space-between;
+                height: 440px;
+            }
             display: flex;
             justify-content: space-around;
             p {
@@ -257,69 +301,15 @@ h5 {
         text-align: center;
         margin: 40px 0 20px;
     }
-    @media (max-width: 768px) {
-        flex-flow: row wrap;
-        justify-content: center;
-        nav {
-            justify-content: space-evenly;
-        }
-        .logo {
-            order: -1;
-        }
+}
+
+@media (max-width: 768px) {
+    flex-flow: row wrap;
+    justify-content: center;
+    nav {
+        justify-content: space-evenly;
     }
-    @media (max-width: 400px) {
-        header {
-            justify-content: center;
-            nav {
-                width: 100%;
-                flex-direction: column;
-                margin: 0;
-                padding: 0;
-                a {
-                    width: 100%;
-                    display: block;
-                    text-align: center;
-                    padding: 20px 0;
-                    font-size: 2rem;
-                    border-bottom: 1px solid gray;
-                    .first-child {
-                        border-top: 1px solid gray;
-                    }
-                    .hover {
-                        background: gray;
-                    }
-                }
-            }
-            .logo {
-                margin: 20px 0;
-            }
-        }
-        .cta {
-            margin-top: 50px;
-            flex-flow: column;
-            align-items: center;
-            .img {
-                max-width: 80%;
-            }
-        }
-        .main-content {
-            .top-content {
-                justify-content: space-around;
-                flex-direction: column;
-                height: 300px;
-            }
-            .bottom-content {
-                flex-wrap: wrap;
-                align-content: space-between;
-                height: 440px;
-            }
-            .text-content {
-                margin: 0;
-            }
-        }
-        .contact {
-            font-size: 1.6rem;
-            margin: 20px;
-        }
+    .logo {
+        order: -1;
     }
 }
