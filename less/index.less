@@ -69,17 +69,24 @@ h1, h2, h3, h4, h5 {
 @full: 100%;
 @tablet-width: 768px;
 @phone-width: 400px;
+@base-color: #4286f4;
+@triadic-2nd: spin(@base-color, -(360/3));
+@triadic-3rd: spin(@base-color, (360/3));
+
+// here, I'm using LESS color methods to create a triadic color scheme :D
 
 .bordered-plus-light-bg {
     border: 2px solid #FF99C9;
-    background: #58FCEC;
+    background: @base-color;
     padding: 0 2.6% 20px;
-    border-bottom: 30px solid #FF99C9;
+    border-bottom: 30px solid @triadic-2nd;
+    border-top: 30px solid @triadic-3rd;
 } //bordered | mixin for 2px teal border
 
 .container {
     width: 880px;
     margin: auto;
+    background: @base-color;
 
     @media (max-width: @tablet-width) {
         width: @full;
@@ -124,7 +131,7 @@ header {
     } //@media 768px
 
     @media (max-width: @phone-width) {
-        
+        .bordered-plus-light-bg;
     } //@media 400px
 } //header
 
@@ -161,11 +168,13 @@ header {
         } //button
 
         @media (max-width: @tablet-width) {
-            
+            .container {
+                .bordered-plus-light-bg;
+            }
         } //@media 768px
 
         @media (max-width: @phone-width) {
-            
+    
         } //@media 400px
     } //.cta-text
 } //.cta
@@ -204,7 +213,7 @@ header {
     } //@media 768px
 
     @media (max-width: @phone-width) {
-        
+        .bordered-plus-light-bg;
     } //@media 400px
 } //.main-content
 
