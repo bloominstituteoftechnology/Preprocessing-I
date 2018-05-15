@@ -1,4 +1,5 @@
 // Is this working?
+// This is working =)
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,9 +54,27 @@ table {
     box-sizing: border-box;
 }
 
+//less variables here
+
+@color_list: #FF3399, red, #FF6600, yellow;
+@tablet_colors: yellow, #CCFF00, #66CC00, green;
+@bg_overlay: fade(@header_color, 40%);
+@header_color: #FFFFFF;
+@rb_button: red, orange, yellow, green, blue, indigo, violet;
+@ol_white: -1px -1px 0 @header_color, 1px -1px 0 @header_color, -1px 1px 0 @header_color, 1px 1px 0 @header_color;
+@ol_black: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+@regular_font: 16px;
+
+
+//end of less variables
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+	background-image: linear-gradient(90deg, @color_list);
+	@media (max-width: 768px){
+	background-image: linear-gradient(90deg, @tablet_colors);
+	}	 
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,9 +83,14 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+	background: @bg_overlay;
+@media (max-width: 768px){
+	max-width:768px;
+}
 }
 
 /* Header Styles */
@@ -74,40 +98,58 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
-
-header nav {
+	@media (max-width: 768px){
+						flex-wrap:wrap;
+						align-items:space-between;
+						justify-content:space-evenly;
+					}
+		nav {
     margin-top: 40px; 
-    width: 610px;
+    max-width: 610px;
+	width:100%;
     justify-content: space-between;
     display: flex;
-}
-
-header nav a {
+					a {
     text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
+	font-weight:bold;
+    color: @header_color;
+	text-shadow:@ol_black;
+						}
+					a:hover {
+    text-decoration: none;
     color: black;
-}
+	text-shadow:@ol_white;
+						}
 
-header .logo {
+			}
+	.logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
-}
+	@media (max-width: 768px){
+						order:-1;
+						margin:0.5% 30% 1%;
+					}
+			}
+} 
+// end header styles
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 32px;
+	padding-top: 40px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
+	@media (max-width: 768px){
+					border-top:1px dashed black;
+			}
+		
+		img {
+			width:379px;
+		}
+	
+		.cta-text {
+    font-size: (@regular_font * 4);
     text-align: center;
     letter-spacing: 5px;
     display: flex;
@@ -115,22 +157,33 @@ header .logo {
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
+	@media (max-width:768px){
+	margin:0 0 30px 0;
+	}
+	
+		button {
+		border: 1px double black;
+		font-size: @regular_font;
+		font-weight: bold;
+		background-image: radial-gradient(circle, @rb_button);
+		width: 170px;
+		height: 32px;
+		margin-top: 10px;
+		cursor: pointer;
+				}
+		
+		button:hover {
+    background-image: radial-gradient(circle, @rb_button);
+	text-shadow:@ol_black;
     color: white;
+				}
+		}
+		@media (max-width: 768px){
+		flex-direction:column;
+		align-items:center;
+		}
 }
+//end cta styles
 
 /* Main Content Styles */
 
@@ -139,28 +192,32 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @regular_font;
    line-height: 18px;
-}
-
-.main-content .top-content {
+   
+   .top-content {
     display: flex;
     justify-content: space-around;
-}
+	}
 
-.main-content .middle-img {
+	.middle-img {
     display: block;
     margin: 30px auto;
-}
-
-.main-content .bottom-content {
+	max-width:876px;
+	width:100%;
+	}
+	
+	.bottom-content {
     display: flex;
     justify-content: space-around;
+	
+		p {
+		padding-right: 20px;
+			}
+	}
 }
+//end main content styles
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
 
 /* Contact Styles */
 
