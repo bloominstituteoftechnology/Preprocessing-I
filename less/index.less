@@ -58,6 +58,12 @@ table {
 @text-color: #20B2AA;
 @title-text-color: #DC143C;
 
+.mixin-content-display {
+display: flex;
+justify-content: space-around;
+color: @text-color;
+}
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -80,25 +86,78 @@ header {
     width: 10% * 10;  //operator * 10 instead of 100%//
     display: flex;
   
+  @media (max-width: 768px) {
+     flex-wrap: wrap;
+     justify-content: center;
+    }
+  
+  @media (max-width: 400px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
   nav {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
     
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-left: 38px 3%;
+    } //tablet//
+
+    @media (max-width: 400px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      align-items: center;
+    } //phone
+
+    &:first-child {
+      
+      @media (max-width: 400px) {
+        border-top: 1px solid gray;
+      }
+    } //first-child
+    
   a {
     text-decoration: none;
     color: #b0b0b0;
-  }
+    
+    @media (max-width: 400px) {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid gray;
+      } //phone
+    
      &:hover {
     text-decoration: underline;
     color: black;
-  }
+       
+       @media (max-width: 400px) {
+            background: gray;
+          } //phone
+  } //hover
+  } //a tag
   } //nav//
   
   .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    
+    @media (max-width: 768px) {
+        order: -1;
+        display: block;
+        margin: 30px auto 0;
+      } //tablet
+
+      @media (max-width: 400px) {
+        margin: 20px 0;
+      } //phone
 } //logo//
 } //header//
 
@@ -108,6 +167,17 @@ header {
     display: flex;
     margin-top: 100px - 28;  //operator 100 - 28 instead of 72px//
     justify-content: flex-end;
+  
+   @media (max-width: 768px) {
+    justify-content: center;
+  } //tablet
+
+  @media (max-width: 400px) {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } //phone
   
   .cta-text {
     font-size: 72px;
@@ -119,6 +189,21 @@ header {
     align-items: center;
     margin: 0 82px 0 0;
     color: @title-text-color;
+    
+    @media (max-width: 768px) {
+      margin: 0 5% 0 0;
+    } //tablet
+
+    @media (max-width: 400px) {
+      margin: 0;
+    } //phone
+
+    h1 {
+      
+    @media (max-width: 768px) {
+        letter-spacing: 0;
+      } //tablet
+    } //h1
 
     
     button {
@@ -136,6 +221,19 @@ header {
 } //button:hover//
 } //cta cta-text button//
 } //cta-text//
+  
+  img {
+    
+    @media (max-width: 768px) {
+      display: none;
+    } //tablet
+
+    @media (max-width: 400px) {
+      display: block;
+      max-width: 80%;
+      margin: 55px 0 0 0;
+    } //phone
+  }  //img
 } //cta//
 
 
@@ -149,162 +247,71 @@ header {
    font-size: 16px;
    line-height: 18px;
   
+  @media (max-width: 768px) {
+    margin: 75px 2% 35px;
+  } //tablet
+  
   h4 {
     color: @title-text-color;
   }
   
   .top-content {
-    display: flex;
-    justify-content: space-around;
-    color: @text-color;
+    .mixin-content-display;
+    // display: flex;
+    // justify-content: space-around;
+    // color: @text-color;
     
+    @media (max-width: 400px) {
+      flex-wrap: wrap;
+      height: 300px;
+    }//phone
+    } //top content//
+
    .middle-img {
     display: block;
     margin: 30px auto;
      
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 25px auto;
+    } //tablet
+    } //middle-img//
+
     .bottom-content {
-    display: flex;
-    justify-content: space-around;
-  
+    .mixin-content-display;
+     // display: flex;
+    // justify-content: space-around;
+      
+    @media (max-width: 400px) {
+      flex-wrap: wrap;
+      align-content: space-between;
+      height: 440px;
+    } //phone
+    
     p {
-    padding-right: 20px;
-    color: @text-color;
-} //bottom content p//
-} //bottom content //
-} //middle-img//
-} //top content//
+        padding-right: 20px;
+        color: @text-color;
+    }
+ } //bottom content //
 }//main content//
 
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+  
+  @media (max-width: 768px) {
+    margin: 20px 2%;
+  } //tablet
+  
+ p {
     margin: 15px 0;
-}
+} //p
+} //contact
 
 /* Footer Styles */
 
 footer {
     text-align: center;
     margin: 40px 0 20px;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-
-    .container {
-        width: 100%;
-    }
-
-    header {
-        flex-wrap: wrap;
-    }
-
-    header nav {
-        width: 100%;
-        margin: 38px 3%;
-    }
-
-    header .logo {
-        order: -1;
-        display: block;
-        margin: 30px auto 0;
-    }
-
-    .cta {
-        justify-content: center;
-    }
-    
-    .cta .cta-text {
-        margin: 0 5% 0 0;
-    }
-
-    .cta .cta-text h1 {
-        letter-spacing: 0;
-    }
-
-    .cta img {
-        display: none;
-    }
-
-    .main-content .middle-img {
-       width: 100%;
-       margin: 25px auto;
-    }
-
-    .main-content {
-        font-size: 1.4rem;
-       margin: 75px 2% 35px;
-    }
-
-    .contact {
-        margin: 20px 2%;
-    }
-}
-
-/* Phone */
-@media (max-width: 400px) {
-
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    header nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        align-items: center;
-    }
-
-    header nav a {
-        width: 100%;
-        display: block;
-        text-align: center;
-        padding: 20px 0;
-        font-size: 2rem;
-        border-bottom: 1px solid gray;
-    }
-
-    header nav:first-child {
-        border-top: 1px solid gray;
-    }
-
-    header nav a:hover {
-        background: gray;
-    }
-
-    header .logo {
-        order: -1;
-        margin: 20px 0;
-    }
-
-    .cta {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cta .cta-text{
-        margin: 0;
-    }
-
-    .cta img {
-        display: block;
-        max-width: 80%;
-        margin: 55px 0 0 0;
-    }
-
-    .main-content .top-content {
-        flex-wrap: wrap;
-        height: 300px;
-    }
-
-    .main-content .bottom-content {
-        flex-wrap: wrap;
-        align-content: space-between;
-        height: 440px;
-    }
 }
