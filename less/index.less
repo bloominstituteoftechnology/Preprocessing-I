@@ -67,6 +67,11 @@ table {
 
 //Mixins
 
+.display-flex-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -83,6 +88,14 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+   /* @media (max-width: 400px) {
+        width: 100%;
+    }*/
 }
 
 /* Header Styles */
@@ -91,6 +104,13 @@ header {
     width: 100%;
     display: flex;
 
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 400px) {
+        justify-content: center;
+    }
 
     nav {
     margin-top: 40px; 
@@ -98,22 +118,61 @@ header {
     justify-content: space-between;
     display: flex;
 
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 0 3.9063%;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
         a {
         text-decoration: none;
         color: @link-color;
 
+        @media (max-width: 400px) {
+            width: 100%;
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2.0rem;
+            border-bottom: 1px solid gray;
+        }
+            &:first-child {
+                @media (max-width: 400px) {
+                    border-top: 1px solid gray;
+                }
+            }
+
             &:hover {
             text-decoration: underline;
             color: black;
+
+            @media (max-width: 400px) {
+                background: gray;
+            }
             }
         }
     }
-}
 
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
-}
+
+        @media (max-width: 768px) {
+            order: -1;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        @media (max-width: 400px) {
+            margin: 20px 0;
+        }
+    }
 }
 /* Call To Action (CTA) Styles */
 
@@ -122,8 +181,18 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+
+    @media (max-width: 400px) {
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
+
     .cta-text {
-        font-size: 72px;
+        font-size: 72px * (2/3);
         text-align: center;
         letter-spacing: 5px;
         display: flex;
@@ -132,12 +201,16 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+
         button {
             border: 1px double black;
             font-size: 16px;
             background: white;
-            width: 170px;
-            height: 32px;
+            width: 170px + 30;
+            height: 32px + 10;
             margin-top: 10px;
             cursor: pointer;
 
@@ -146,6 +219,15 @@ header {
                 color: white;
             }
          }
+    }
+
+    img {
+        @media (max-width: 768px) {
+            display: none;
+        }
+        @media (max-width: 400px) {
+            max-width: 80%;
+        }
     }
 }
 
@@ -159,19 +241,45 @@ header {
    font-size: 16px;
    line-height: 18px;
 
+   @media (max-width: 768px) {
+        margin: 75px 2.2727% 35px;
+}
+
     .top-content {
-        display: flex;
-        justify-content: space-around;
+        .display-flex-space-around;
+        @media (max-width: 400px) {
+            justify-content: space-around;
+            flex-direction: column;
+            height: 300px;
+        }
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    .text-content {
+        @media (max-width: 768px) {
+            margin: 0 1.3021%;
+        }
+        @media (max-width: 400px) {
+            margin: 0;
+        }
     }
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .display-flex-space-around;
+
+        @media (max-width: 400px) {
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
 
         p {
             padding-right: 20px;
@@ -182,6 +290,13 @@ header {
 
 .contact p {
     margin: 15px 0;
+
+    @media (max-width: 768px) {
+        margin: 0 3.9063%;
+    }
+    @media (max-width: 400px) {
+        margin: 20px 2.2727%;
+    }
 }
 
 /* Footer Styles */
