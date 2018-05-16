@@ -53,15 +53,31 @@ table {
     box-sizing: border-box;
 }
 
+//Theme Variables
+
+@header-color: @elm;
+@text-color: @deep-koamaru;
+@link-color: @matisse;
+
+//Colors
+
+@elm: #198C8F;
+@matisse: #19578F;
+@deep-koamaru: #122A68;
+
+//Mixins
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    color: @text-color;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @header-color;
 }
 
 .container {
@@ -74,62 +90,63 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
+
+    nav {
     margin-top: 40px; 
     width: 610px;
     justify-content: space-between;
     display: flex;
+
+        a {
+        text-decoration: none;
+        color: @link-color;
+
+            &:hover {
+            text-decoration: underline;
+            color: black;
+            }
+        }
+    }
 }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
 }
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
 }
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
-
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+            &:hover {
+                background: black;
+                color: white;
+            }
+         }
+    }
 }
 
 /* Main Content Styles */
@@ -141,27 +158,26 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        p {
+            padding-right: 20px;
+        }
+    }
 }
-
 /* Contact Styles */
 
 .contact p {
