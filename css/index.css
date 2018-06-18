@@ -146,7 +146,8 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  width: 100%;
+  max-width: 880px;
   margin: auto;
 }
 /* Variables */
@@ -155,10 +156,12 @@ h5 {
 header {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 header nav {
-  margin-top: 40px;
-  width: 610px;
+  margin: 30px 0;
+  width: 65%;
   justify-content: space-between;
   display: flex;
 }
@@ -172,24 +175,31 @@ header nav a:hover {
   color: black;
 }
 header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 30px 0 30px 10%;
+}
+@media (max-width: 800px) {
+  header {
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #323D4F;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
-  margin-top: 7.2rem;
-  justify-content: flex-end;
+  margin-top: 6rem;
+  justify-content: center;
 }
 .cta .cta-text {
-  font-size: 72px;
+  font-size: 7.2rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+  margin: 0 5% 0 0;
+  color: #323D4F;
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -199,10 +209,21 @@ header .logo {
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+  background: #323D4F;
+  color: white;
 }
 .cta .cta-text button:hover {
   background: black;
   color: white;
+}
+.cta img {
+  width: 45%;
+  height: auto;
+}
+@media (max-width: 800px) {
+  .cta img {
+    display: none;
+  }
 }
 /* Main Content Styles */
 .main-content {
@@ -212,29 +233,48 @@ header .logo {
   padding: 35px 0;
   font-size: 1.6rem;
   line-height: 18px;
+  width: 100%;
 }
 .main-content h4 {
   font-size: 1.8rem;
+  color: #323D4F;
 }
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
 .main-content .top-content .features {
-  border-top: solid 1px black;
-  border-left: solid 1px red;
-  border-right: solid 1px blue;
-  border-bottom: dashed 1px orange;
+  border-top: solid 2px black;
+  border-left: solid 2px Chocolate;
+  border-right: solid 2px blue;
+  border-bottom: dashed 2px brown;
+  border-radius: 10px;
+  margin-right: 1.1%;
+  padding: 10px 1%;
+}
+@media (max-width: 750px) {
+  .main-content .top-content .features {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 .main-content .top-content .about {
-  border-top: solid 1px black;
-  border-left: solid 1px teal;
-  border-right: solid 1px orange;
-  border-bottom: dashed 1px yellow;
+  border-top: solid 2px black;
+  border-left: solid 2px teal;
+  border-right: solid 2px Cornsilk;
+  border-bottom: dashed 2px Cyan;
+  border-radius: 10px;
+  padding: 10px 1%;
+}
+@media (max-width: 750px) {
+  .main-content .top-content {
+    flex-direction: column;
+  }
 }
 .main-content .middle-img {
   display: block;
-  margin: 30px auto;
+  margin: 20px auto;
+  width: 100%;
 }
 .main-content .bottom-content {
   display: flex;
@@ -244,30 +284,68 @@ header .logo {
   padding-right: 20px;
 }
 .main-content .bottom-content .services {
-  border-top: solid 1px black;
-  border-left: solid 1px silver;
-  border-right: solid 1px purple;
-  border-bottom: dashed 1px gray;
+  border-top: solid 2px black;
+  border-left: solid 2px DarkGreen;
+  border-right: solid 2px purple;
+  border-bottom: dashed 2px DarkSlateGray;
+  border-radius: 10px;
+  margin-right: 1.1%;
+  padding: 10px 1%;
+}
+@media (max-width: 750px) {
+  .main-content .bottom-content .services {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 .main-content .bottom-content .product {
-  border-top: solid 1px black;
-  border-left: solid 1px silver;
-  border-right: solid 1px purple;
-  border-bottom: dashed 1px red;
+  border-top: solid 2px black;
+  border-left: solid 2px Thistle;
+  border-right: solid 2px OliveDrab;
+  border-bottom: dashed 2px DeepSkyBlue;
+  border-radius: 10px;
+  margin-right: 1.1%;
+  padding: 10px 1%;
+}
+@media (max-width: 750px) {
+  .main-content .bottom-content .product {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 .main-content .bottom-content .vision {
-  border-top: solid 1px black;
-  border-left: solid 1px silver;
-  border-right: solid 1px purple;
-  border-bottom: dashed 1px blue;
+  border-top: solid 2px black;
+  border-left: solid 2px YellowGreen;
+  border-right: solid 2px Gold;
+  border-bottom: dashed 2px MediumVioletRed;
+  border-radius: 10px;
+  padding: 10px 1%;
+}
+@media (max-width: 750px) {
+  .main-content .bottom-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .main-content {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }
 /* Contact Styles */
 .contact h4 {
   font-size: 1.8rem;
+  color: #323D4F;
 }
 .contact p {
   margin: 15px 0;
   font-size: 1.6rem;
+}
+@media (max-width: 800px) {
+  .contact {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }
 /* Footer Styles */
 footer {
