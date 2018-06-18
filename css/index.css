@@ -126,6 +126,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/*mixins & variables */
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
@@ -144,10 +145,8 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-/*mixins & variables */
-/* page */
 .container {
-  width: 880px;
+  max-width: 880px;
   margin: auto;
 }
 /* Header Styles */
@@ -155,29 +154,67 @@ header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 69.32%;
   justify-content: space-between;
   display: flex;
+}
+@media (max-width: 768px) {
+  header nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header nav a {
   text-decoration: none;
   color: #b0b0b0;
 }
+@media (max-width: 400px) {
+  header nav a {
+    width: 100%;
+    border-top: 1px solid #23c1fc;
+    border-bottom: 1px solid #23c1fc;
+    text-align: center;
+    line-height: 60px;
+  }
+}
 header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: #23c1fc;
 }
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    align-self: auto;
+    margin-left: 0;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    justify-content: center;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -189,8 +226,13 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+  }
+}
 .cta .cta-text button {
-  border: 1px double black;
+  border: 1px double #23c1fc;
   font-size: 16px;
   background: white;
   width: 170px;
@@ -199,13 +241,18 @@ header .logo {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
+  background: #23c1fc;
   color: white;
+}
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
 }
 /* Main Content Styles */
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #23c1fc;
+  border-bottom: 2px solid #23c1fc;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 16px;
@@ -215,16 +262,33 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .top-content {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+}
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    width: 100%;
+  }
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .main-content .bottom-content p {
-  padding-right: 20px;
+  padding-right: 2.27%;
 }
 /* Contact Styles */
 .contact p {
