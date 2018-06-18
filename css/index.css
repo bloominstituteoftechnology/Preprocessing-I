@@ -143,23 +143,39 @@ body {
   margin: auto 0;
 }
 @media (max-width: 880px) {
-  html .webpage-color,
-  body .webpage-color {
-    background-color: green;
+  html .cta .cta-text button,
+  body .cta .cta-text button {
+    border: 1px double black;
+    background: white;
+    width: 170px;
+    height: 32px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
   }
-  html .webpage-color .cta .cta-text button .container,
-  body .webpage-color .cta .cta-text button .container {
-    background-color: green;
+  html .cta .cta-text button:hover,
+  body .cta .cta-text button:hover {
+    background: black;
+    color: white;
+  }
+  html .container,
+  body .container {
+    background-color: yellow;
+  }
+  html .container header nav a,
+  body .container header nav a {
+    color: black;
+    border-right: 1px solid black;
   }
 }
 @media (max-width: 600px) {
+  html .container,
+  body .container {
+    background: #e69500;
+  }
   html h1,
   body h1 {
     color: #750404;
-  }
-  html header,
-  body header {
-    background: #750404;
   }
   html header nav a,
   body header nav a {
@@ -167,7 +183,7 @@ body {
   }
   html header nav a:hover,
   body header nav a:hover {
-    color: #ffc800;
+    text-decoration: underline;
   }
   html .cta .cta-text button,
   body .cta .cta-text button {
@@ -203,11 +219,11 @@ h5 {
 /* Header Styles */
 header {
   width: 100%;
-  margin: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-around;
 }
 @media (max-width: 600px) {
   header {
@@ -293,6 +309,7 @@ header .logo {
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 10px;
+  background: lightgrey;
 }
 .cta .cta-text button:hover {
   background: black;
