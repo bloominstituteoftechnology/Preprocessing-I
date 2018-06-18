@@ -54,9 +54,9 @@ table {
 }
 
 html, body {
-    height: 100%;
+    height: percentage(@main-width);
     font-family: 'Titillium Web', sans-serif;
-    font-size: 100% / 1.6;
+    font-size: percentage(@main-width / 1.6);
 }
 
 h1, h2, h3, h4, h5 {
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 100%;
+    width: percentage(@main-width);
     max-width: 880px;
     margin: auto;
 }
@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5 {
 @primary-body-size: 1.6rem;
 @primary-sub-heading-size: 1.8rem;
 @primary-site-color: #323D4F;
+@main-width: 1;
 
 
 /* Mixins */
@@ -98,14 +99,14 @@ h1, h2, h3, h4, h5 {
 /* Header Styles */
 
 header {
-    width: 100%;
+    width: percentage(@main-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     nav {
         margin: 30px 0;
-        width: 100% - 35;
+        width: percentage(@main-width - .35);
         justify-content: space-between;
         display: flex;
 
@@ -172,6 +173,10 @@ header {
         width: 45%;
         height: auto;
 
+        &:hover {
+            animation: jumpUp 400ms 1s linear infinite;
+        }
+
         @media (max-width: 800px) {
             display: none;
         }
@@ -188,7 +193,7 @@ header {
    padding: 35px 0;
    font-size: @primary-body-size;
    line-height: 18px;
-   width: 100%;
+   width: percentage(@main-width);
 
    h4 {
     font-size: @primary-sub-heading-size;
@@ -223,7 +228,7 @@ header {
    .middle-img {
         display: block;
         margin: 20px auto;
-        width: 100%;
+        width: percentage(@main-width);
    }
 
    .bottom-content {
@@ -296,4 +301,16 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
     font-size: @primary-body-size;
+}
+
+@keyframes jumpUp {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-30px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
