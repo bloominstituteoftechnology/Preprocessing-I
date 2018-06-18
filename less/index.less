@@ -33,11 +33,16 @@
 
 // Flex box is a commonly used part of our programming 
 .flex-box(@display: flex; @flex-direction: none; @flex-wrap: none; 
-        @justify-content: none; @align-items:none; @align-content: none;@perfect-center: false){
+        @justify-content: none; @align-items:none; @align-content: none; @perfect-center: false;
+        @align-self: none; ){
           & when (@perfect-center = true){
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: @flex-direction;
+            flex-wrap: @flex-wrap;
+            align-content: @align-content;
+
           }
           & when not (@perfect-center = true){
             display:@display;
@@ -46,6 +51,7 @@
             justify-content: @justify-content;
             align-items:@align-items;
             align-content:@align-content;
+            align-self: @align-self;
           }       
 }
 // Very cool i think where flex box can now be a one liner for 6 parts also cool option where i can center as long as 
