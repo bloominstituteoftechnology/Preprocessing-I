@@ -48,12 +48,21 @@ table {
 	border-spacing: 0;
 }
 
-.newfont {
+//=========================
+@button-color: #5A9393;
+@button-text: white;
+//=============================
+.newfont{
     color: indianred;
     font-family: 'Shrikhand';
     letter-spacing: 1px;
     margin-top: 5px;
-        
+}
+.newbutton () {
+    background-color: @button-color;
+    color: @button-text;
+    border: double;
+    font-family: 'Shrikhand'
 }
 
 /* Set every element's box-sizing to border-box */
@@ -68,10 +77,6 @@ html, body {
 
 h1, h2, h3, h4, h5 {
     .newfont
-    
-    // font-family: 'Bangers', cursive;
-    // letter-spacing: 1px;
-    // margin-bottom: 10px;
 }
 
 .container {
@@ -93,7 +98,7 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @button-color;
             
                 &:hover {
                     text-decoration: underline;
@@ -126,9 +131,8 @@ header {
         margin: 0 82px 0 0;
 
             button {
-            border: 1px double black;
+            .newbutton;
             font-size: 16px;
-            background: white;
             width: 170px;
             height: 32px;
             margin-top: 10px;
