@@ -69,9 +69,17 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
-/* LESS Mixins and Variables*/
+/* =================LESS Mixins and Variables*/
+
+@title-font-color: RoyalBlue;
 
 @body-font: 16px;
+@body-font-color: #757E2A;
+
+@contact-font-color: #DAEE3A; 
+
+@footer-font-color: #2B3003;
+
 
 .border-styling(@border-top, @border-right, @border-bottom, @border-left){
     border-top: @border-top;
@@ -94,7 +102,7 @@ header {
     nav{
         margin-top: 25px; 
         width: 610px;
-        .justify-content(space-between)
+        .flex-justify(space-between);
     
         a{
             text-decoration: none;
@@ -117,17 +125,18 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    .justify-content(flex-end)
+    .flex-justify(flex-end);
     margin-top: 72px;
 
     .cta-text{
         font-size: 36px * 2;
         text-align: center;
         letter-spacing: 5px;
-        .justify-content(center);
+        .flex-justify(center);
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @title-font-color;
 
         button {
             border: 1px double black;
@@ -154,6 +163,7 @@ header {
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: @body-font;
+   color: @body-font-color;
    line-height: 18px;
 
    .top-content {
@@ -180,9 +190,11 @@ header {
 /* Contact Styles */
 
 .contact {
-   
+    color: @contact-font-color;
+    
     p {
       margin: 15px 0;
+      
     }
 }// contact
 
@@ -191,4 +203,5 @@ header {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @footer-font-color;
 }
