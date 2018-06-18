@@ -69,7 +69,15 @@ h1, h2, h3, h4, h5 {
     max-width: 880px;
     margin: auto;
 }
+//Mixins
 
+.roundBorders {
+    border-radius: 5px;
+}
+
+// Variables
+
+@whoa: purple;
 /* Header Styles */
 
 header {
@@ -83,7 +91,7 @@ header {
         a {
             text-decoration: none;
             color: #b0b0b0;
-            :hover {
+            &:hover {
                 text-decoration: underline;
                 color: black;
         }
@@ -91,6 +99,7 @@ header {
     .logo {
         margin: 3.18% 0 0 10.34%;
     }
+}
 }
 
 /* Call To Action (CTA) Styles */
@@ -108,21 +117,21 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 9.32% 0 0;
-    
+        button {
+            border: 1px double black;
+            font-size: 1rem;
+            background: white;
+            width: 58.21%;
+            height: 10.95%;
+            margin-top: 3.42%;
+            cursor: pointer;
+            .roundBorders;
+            &:hover {
+                background: black;
+                color: white;
+            }
     }
-    .cta-text button {
-        border: 1px double black;
-        font-size: 1rem;
-        background: white;
-        width: 58.21%;
-        height: 10.95%;
-        margin-top: 3.42%;
-        cursor: pointer;
-        :hover {
-            background: black;
-            color: white;
-        }
-    }
+}
 }
 
 /* Main Content Styles */
@@ -147,8 +156,7 @@ header {
     .bottom-content {
         display: flex;
         p {
-            padding-right: 6.82%;
-        
+            padding-right: 6.82%;        
         }
     }
 }
@@ -156,10 +164,11 @@ header {
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+    p {
     margin: 1.70% 0;
 }
-
+}
 /* Footer Styles */
 
 footer {
@@ -169,7 +178,7 @@ footer {
 
 /*Media Query*/
 
-@media(max-width: 768px) {
+@media(max-width: 736px+32) {
     header{
         flex-direction: column;
         align-content:center;
@@ -198,10 +207,11 @@ footer {
     .contact{
         margin: 3%;
     }
-
+    
 }
-@media(max-width: 400px){
+@media(max-width: 40px*10){
     header{
+        background: @whoa;
          nav{
             flex-direction: column;
             border-top: 1px solid #b0b0b0;
