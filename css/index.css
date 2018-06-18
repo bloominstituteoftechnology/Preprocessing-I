@@ -130,28 +130,26 @@ table {
 * {
   box-sizing: border-box;
 }
+.flex-tablet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 html,
 body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
-  font-size: 62.5%;
   margin: auto 0;
 }
 @media (max-width: 880px) {
-  html .cta .cta-text button,
-  body .cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
+  html .webpage-color,
+  body .webpage-color {
+    background-color: green;
   }
-  html .cta .cta-text button:hover,
-  body .cta .cta-text button:hover {
-    background: black;
-    color: white;
+  html .webpage-color .cta .cta-text button .container,
+  body .webpage-color .cta .cta-text button .container {
+    background-color: green;
   }
 }
 @media (max-width: 600px) {
@@ -175,12 +173,12 @@ body {
   body .cta .cta-text button {
     border: 1px double black;
     font-size: 16px;
+    color: #e69500;
     background-color: #750404;
     width: 170px;
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
-    color: #ffc800;
   }
   html .cta .cta-text button:hover,
   body .cta .cta-text button:hover {
@@ -205,6 +203,7 @@ h5 {
 /* Header Styles */
 header {
   width: 100%;
+  margin: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -213,6 +212,7 @@ header {
 @media (max-width: 600px) {
   header {
     flex-direction: column-reverse;
+    margin: 0;
   }
 }
 header nav {
@@ -222,7 +222,9 @@ header nav {
 }
 @media (max-width: 600px) {
   header nav {
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
   }
 }
@@ -240,13 +242,16 @@ header nav a:hover {
 }
 @media (max-width: 600px) {
   header nav a {
-    border-top: 1px solid #ffc800;
-    align-self: center;
-    justify-content: center;
+    border-top: 1px solid #e69500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 header .logo {
   align-self: flex-end;
+  padding: 10px;
 }
 @media (max-width: 600px) {
   header .logo {
@@ -266,13 +271,12 @@ header .logo {
   }
 }
 .cta .cta-text {
-  flex-direction: column;
-  font-size: 72px;
+  font-size: 5.3rem;
   text-align: center;
   letter-spacing: 5px;
   display: flex;
-  justify-content: center;
-  flex-flow: column;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 @media (max-width: 600px) {
@@ -282,11 +286,11 @@ header .logo {
 }
 .cta .cta-text button {
   border: 1px double black;
-  font-size: 16px;
   background: white;
   width: 170px;
   height: 32px;
   margin-top: 10px;
+  font-size: 16px;
   cursor: pointer;
   margin-bottom: 10px;
 }
