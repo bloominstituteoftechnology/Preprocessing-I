@@ -157,11 +157,13 @@ h5 {
   font-size: 1.8rem;
 }
 
-// Variables =================================
+// Variables and an attempt at an Escape =============================
 
 @color-scheme-primary: #6f8695;
 
 @color-scheme-secondary: #acc196;
+
+@my-frist-escape: ~"#ff0000";
 
 // Mixins ====================================
 
@@ -327,6 +329,10 @@ h5 {
   .bottom-content {
     display: flex;
     .my-first-mixin();
+
+    .text-content .red-text {
+      color: @my-frist-escape;
+    }
 
     @media (max-width: 400px) {
       .center-stuff-column();
