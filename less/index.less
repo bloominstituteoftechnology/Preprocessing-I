@@ -157,12 +157,11 @@ h5 {
 	width: 880px;
 	margin: auto;
 }
-
 // variables
 @nav-link-color: #b0b0b0;
 @nav-link-color-hover: black;
+@p-text-color: #555; // mixins
 
-// mixins
 .flex() {
 	display: flex;
 }
@@ -253,6 +252,10 @@ header {
 	.top-content {
 		.flex;
 		.justify-space-around;
+
+		p {
+			color: @p-text-color;
+		}
 	}
 
 	.middle-img {
@@ -266,12 +269,14 @@ header {
 
 		p {
 			padding-right: 20px;
+			color: @p-text-color;
 		}
 	}
 }
 /* Contact Styles */
 .contact p {
 	margin: 15px 0;
+	color: @p-text-color;
 }
 /* Footer Styles */
 footer {
