@@ -151,6 +151,10 @@ h5 {
   display: flex;
   justify-content: space-around;
 }
+.min-width-pad-margin {
+  padding: 2%;
+  margin: 1%;
+}
 .container {
   width: 880px;
   margin: auto;
@@ -249,11 +253,6 @@ header .logo {
   font-size: 16px;
   line-height: 18px;
 }
-@media (max-width: 768px) {
-  .main-content {
-    background-color: #F900FF;
-  }
-}
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
@@ -269,9 +268,46 @@ header .logo {
 .main-content .bottom-content p {
   padding-right: 20px;
 }
+@media (max-width: 768px) {
+  .main-content {
+    max-width: 768px;
+    background-color: #F900FF;
+  }
+  .main-content .top-content {
+    padding: 2%;
+  }
+}
+@media (max-width: 405px) {
+  .main-content .top-content {
+    display: flex;
+    flex-flow: column;
+    padding: 2%;
+    margin: 1%;
+  }
+  .main-content .top-content .text-content {
+    padding: 2%;
+    margin: 1%;
+  }
+  .main-content .bottom-content {
+    display: flex;
+    flex-flow: column;
+    padding: 2%;
+    margin: 1%;
+  }
+  .main-content .bottom-content .text-content {
+    padding: 2%;
+    margin: 1%;
+  }
+}
 /* Contact Styles */
-.contact p {
+.contact .contact p {
   margin: 15px 0;
+}
+@media (max-width: 405px) {
+  .contact {
+    padding: 2%;
+    margin: 1%;
+  }
 }
 /* Footer Styles */
 footer {
@@ -282,5 +318,11 @@ footer {
 @media (max-width: 768px) {
   footer {
     background-color: #47D7FF;
+  }
+}
+@media (max-width: 405px) {
+  footer {
+    padding: 2%;
+    margin: 1%;
   }
 }

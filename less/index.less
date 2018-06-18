@@ -79,6 +79,12 @@ h1, h2, h3, h4, h5 {
     justify-content: space-around;
 }
 
+.min-width-pad-margin {
+    padding: 2%;
+    margin: 1%;
+            
+}
+
 .container {
     width: 880px;
     margin: auto;
@@ -183,9 +189,6 @@ header {
    padding: 35px 0;
    font-size: @font-size;
    line-height: 18px;
-   @media(max-width: 768px){
-        background-color: extract(@color-array, 2);
-    }
     .top-content {
         .flex-around;
     }
@@ -199,13 +202,46 @@ header {
     .bottom-content p {
         padding-right: 20px;
     }
+    @media(max-width: 768px){
+
+        max-width: 768px;
+        background-color: extract(@color-array, 2);
+        .top-content {
+            padding: 2%;
+        }
+    }
+    @media(max-width: 405px){
+        .top-content {
+            display: flex;
+            flex-flow: column;
+            padding: 2%;
+            margin: 1%;
+            .text-content {
+                .min-width-pad-margin;
+            }
+        }
+        .bottom-content {
+            display: flex;
+            flex-flow: column;
+            padding: 2%;
+            margin: 1%;
+            .text-content {
+                .min-width-pad-margin;
+            }
+        }
+    }
 
 }
 
 
 /* Contact Styles */
-.contact p {
-    margin: 15px 0;
+.contact {
+    .contact p {
+        margin: 15px 0;
+    }
+    @media(max-width:405px){
+            .min-width-pad-margin;
+    }
 }
 
 /* Footer Styles */
@@ -215,5 +251,8 @@ footer {
     margin: 40px 0 20px;
     @media(max-width: 768px){
         background-color: extract(@color-array, 4);
+    }
+    @media(max-width:405px){
+            .min-width-pad-margin;
     }
 }
