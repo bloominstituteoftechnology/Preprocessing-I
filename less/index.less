@@ -89,6 +89,9 @@ h1, h2, h3, h4, h5 {
 @max768: ~"(max-width: 768px)"; // Escaping for tablet view
 @max400: ~"(max-width: 400px)"; // For mobile view; doc: lesscss.org/#escaping
 
+@my-pink: #F08080;
+@my-purple: #8B008B;
+
 
 /* Mixins */
 .flex-space-around() {
@@ -106,6 +109,16 @@ h1, h2, h3, h4, h5 {
     }
 }
 
+
+/* Custom color scheme */
+
+body {
+    background: @my-purple;
+}
+
+h1, h4 {
+    color: @my-pink;
+}
 
 /* Header Styles */
 
@@ -138,7 +151,7 @@ header {
         a {
             text-decoration: none;
             color: #b0b0b0;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
 
             &:hover {
                 text-decoration: underline;
@@ -170,6 +183,7 @@ header {
         }
     }
 }
+
 
 /* Call To Action (CTA) Styles */
 
@@ -209,6 +223,10 @@ header {
             margin-right: 0;
         }
 
+        @media @max400 {
+            font-size: 5.5rem;
+        }
+
         button {
             border: 1px double black;
             font-size: 1.6rem;
@@ -227,6 +245,7 @@ header {
         }
     }
 }
+
 
 /* Main Content Styles */
 
@@ -263,24 +282,26 @@ header {
         .mobile-content;
 
         p {
-            padding-right: 20px;
+            padding-right: 2px * 10;
         }
     }
 }
 
+
 /* Contact Styles */
 
 .contact {
-    font-size: 1.5rem;
+    font-size: 1rem + 0.5;
 
     p {
         margin: 15px 0;
     }
 
     @media @max400 {
-        margin-left: 2.5%;
+        margin-left: 25% / 10;
     }
 }
+
 
 /* Footer Styles */
 
