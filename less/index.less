@@ -74,6 +74,12 @@ h1, h2, h3, h4, h5 {
 @color3: mix(@color-base, mintcream);
 @color4: mix(@color-base, red);
 
+// animations 
+@keyframes backdrop {
+    from {background-color: @color-base;}
+    to {background-color: @color3;}
+}
+
 
 //mixin operators
 
@@ -101,6 +107,10 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    animation-name: backdrop;
+    animation-duration: 20s;
+    animation-direction: alternate;
+
 
 
     nav {
