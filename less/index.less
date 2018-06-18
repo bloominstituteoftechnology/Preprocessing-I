@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -53,124 +53,201 @@ table {
     box-sizing: border-box;
 }
 
+// Color Variables
+@navLinkColor: #e89bbf;
+@primaryColor: #33292e;
+@secondaryColor: #727071;
+@tabletView: 768px;
+@mobileView: 400px
+
 html, body {
-    height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+	height: 100%;
+	font-family: 'Titillium Web', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+		font-family: 'Bangers', cursive;
+		letter-spacing: 1px;
+		margin-bottom: 10px;
 }
 
 .container {
-    width: 880px;
-    margin: auto;
-}
+		width: 880px;
+		margin: auto;
 
-/* Header Styles */
+		/* Header Styles */
 
-header {
-    width: 100%;
-    display: flex;
-}
+		header {
+				width: 100%;
+				display: flex;
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+				@media (max-width: @tabletView){
+					flex-direction: column-reverse;
+				}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+				nav {
+						margin-top: 4px * 10;
+						width: 610px;
+						justify-content: space-between;
+						display: flex;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+						@media(max-width: @tabletView){
+							display: flex;
+							width: 100%;
+							justify-content: space-around;
+						}
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+						@media (max-width: @mobileView){
+							display: flex;
+							width: 100%;
+							flex-direction: column;
+							justify-content: space-around;
+							align-items: center;
+						}
 
-/* Call To Action (CTA) Styles */
+						a {
+								text-decoration: none;
+								color: @navLinkColor;
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+								@media(max-width: @mobileView){
+									justify-content: space-around;
+									width: 100%;
+									text-align: center;
+									border: 1px solid black;
+								}
+						}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+						a:hover {
+								text-decoration: underline;
+								color: black;
+						}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+						.logo {
+								align-self: flex-end;
+								margin: 28px 0 0 91px;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+								@media(max-width: @tabletView){
+									align-self: center;
+								}
 
-/* Main Content Styles */
+								@media (max-width: @mobileView){
+									align-self: center;
+									margin: 10px 0 0 10px;
+								}
+						}
+				}
+		}
 
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+		/* Call To Action (CTA) Styles */
+		.cta {
+		    display: flex;
+		    margin-top: 72px;
+		    justify-content: flex-end;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+				.cta-text {
+				    font-size: 72px;
+				    text-align: center;
+				    letter-spacing: 5px;
+				    display: flex;
+				    justify-content: center;
+				    flex-flow: column;
+				    align-items: center;
+				    margin: 0 82px 0 0;
+						color: @primaryColor;
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+						button {
+						    border: 1px double black;
+						    font-size: 16px;
+						    background: white;
+						    width: 170px;
+						    height: 32px;
+						    margin-top: 10px;
+						    cursor: pointer;
+						}
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+						button:hover {
+						    background: black;
+						    color: white;
+						}
+				}
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+				@media(max-width: @tabletView){
+					justify-content: center;
 
-/* Contact Styles */
+					img {
+						display: none;
+					}
+				}
+		}
 
-.contact p {
-    margin: 15px 0;
-}
+		/* Main Content Styles */
 
-/* Footer Styles */
+		.main-content {
+		   border-top: 2px solid black;
+		   border-bottom: 2px solid black;
+		   margin: 75px 0 35px 0;
+		   padding: 35px 0;
+		   font-size: 16px;
+		   line-height: 18px;
+			 color: @primaryColor;
 
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
+			 @media(max-width: @tabletView){
+				 margin: 9.5% 3.2% 4.5% 3.25%;
+			 }
+
+			 .top-content {
+					display: flex;
+					justify-content: space-around;
+
+					p{
+						color: @secondaryColor;
+					}
+
+					@media(max-width: @mobileView){
+						display: flex;
+						flex-flow: column wrap;
+					}
+			}
+
+			.middle-img {
+			    display: block;
+			    margin: 30px auto;
+			}
+
+			.bottom-content {
+			    display: flex;
+			    justify-content: space-around;
+
+					p {
+					    padding-right: 20px;
+							color: @secondaryColor;
+					}
+
+					@media(max-width: @mobileView){
+						flex-flow: column wrap;
+					}
+			}
+		}
+
+		/* Contact Styles */
+
+		.contact {
+			color: @primaryColor;
+			p {
+		    margin: 15px 0;
+				color: @secondaryColor;
+		}
+
+		@media(max-width: @tabletView){
+			margin: 0 3.2% 0 3.2%;
+		}
+	}
+
+	/* Footer Styles */
+
+	footer {
+	    text-align: center;
+	    margin: 40px 0 20px;
+			color: @secondaryColor;
+	}
 }
