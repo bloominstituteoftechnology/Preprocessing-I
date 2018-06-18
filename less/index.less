@@ -59,6 +59,13 @@ table {
 @yellowish: #ffc800;
 @orange: #e69500;
 
+//adding detached ruleset for stretch goal
+@flexing: {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+};
 //mixins
 
 .btn-red(){
@@ -145,13 +152,18 @@ h1, h2, h3, h4, h5 {
 
 header {
     width: 100%;
-    display: flex;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		nav {
 		    margin-top: 40px;
-		    width: 610px;
+		  	display: flex;
 		    justify-content: space-between;
-		    display: flex;
+				border:1px solid red;
+				width: 100%;
 				a {
+					display: flex;
+					margin: 0 4%;
 				    text-decoration: none;
 				    color: #b0b0b0;
 						&:hover {
@@ -196,16 +208,14 @@ header {
    .mixin-font;
    line-height: 16px + 2;
 	 .top-content {
-	     display: flex;
-	     justify-content: space-around;
+			 @flexing();
 	 }//top-content
 	 .middle-img {
 	     display: block;
 	     margin: 30px auto;
 	 }//middle-img
 	 .bottom-content {
-	     display: flex;
-	     justify-content: space-around;
+	     @flexing();
 			 p {
 			     padding-right: 20px;
 			 }//p
