@@ -67,36 +67,70 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 800px + 80;
     margin: auto;
+
+    @media(max-width: 768px){
+        width: 100%;
+    }
 }
+
+//====Mixins====
+.flex-display{
+    display: flex;
+}
+//==============
+
+//===Variables===
+@Pomegranate: #EF281F;
+@Pink-Swan: #C3BBBB;
+//===============
 
 /* Header Styles */
 
 header {
     width: 50% * 2;
-    display: flex;
+    .flex-display;
+
+    @media(max-width: 768px){
+        flex-wrap: wrap;
+    }
 
     nav {
         margin-top: 80px / 2; 
         width: 600px + 10;
         justify-content: space-between;
-        display: flex;
+        .flex-display;
+
+        @media(max-width: 768px){
+            width: 100%;
+            margin: 38px 3%;
+        }
     }
 
     nav a {
         text-decoration: none;
-        color: #b0b0b0;
+        color: @Pink-Swan;
     }
 
     nav a:hover {
         text-decoration: underline;
-        color: black;
+        color: @Pomegranate;
     }
 
     .logo {
         align-self: flex-end;
         margin: 14px * 2 0 0 92px - 1;
+
+        @media(max-width: 768px){
+            order: -1;
+            display: block;
+            margin: 30px auto 0;
+        }
     }
 }
+
+//===Variables===
+@pink: #D449C8;
+//===============
 
 /* Call To Action (CTA) Styles */
 
@@ -104,6 +138,10 @@ header {
     display: flex;
     margin-top: 9px * 8;
     justify-content: flex-end;
+
+    @media(max-width: 768px){
+        justify-content: center;
+    }
 
     .cta-text {
     font-size: 70px + 2;
@@ -114,6 +152,25 @@ header {
     flex-flow: column;
     align-items: center;
     margin: 0 80px + 2 0 0;
+
+        h1{
+            color: @pink;
+
+            @media(max-width: 768px){
+                letter-spacing: 0;
+            }
+        }
+
+        @media(max-width: 768px){
+            margin: 0 5% 0 0;
+        }
+
+    }
+
+    img{
+        @media(max-width: 768px){
+            display: none;
+        }
     }
 
     button {
@@ -132,19 +189,33 @@ header {
     }
 }
 
+//====Mixins====
+.content-flex(){
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-border(){
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+}
+//==============
+
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   .content-border;
    margin: 5px * 15 0 5px * 7 0;
    padding: 5px * 7 0;
    font-size: 4px * 4;
    line-height: 9px * 2;
 
     .top-content {
-        display: flex;
-        justify-content: space-around;
+        .content-flex;
+    }
+
+    @media(max-width: 768px){
+
     }
 
     .middle-img {
@@ -153,8 +224,7 @@ header {
     }
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .content-flex;
 
         p {
             padding-right: 2px * 10;

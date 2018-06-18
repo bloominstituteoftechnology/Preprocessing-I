@@ -148,10 +148,23 @@ h5 {
   width: 880px;
   margin: auto;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+.flex-display {
+  display: flex;
+}
 /* Header Styles */
 header {
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
 }
 header nav {
   margin-top: 40px;
@@ -159,23 +172,41 @@ header nav {
   justify-content: space-between;
   display: flex;
 }
+@media (max-width: 768px) {
+  header nav {
+    width: 100%;
+    margin: 38px 3%;
+  }
+}
 header nav a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: #C3BBBB;
 }
 header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: #EF281F;
 }
 header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
+}
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    display: block;
+    margin: 30px auto 0;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .cta {
+    justify-content: center;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -186,6 +217,24 @@ header .logo {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+}
+.cta .cta-text h1 {
+  color: #D449C8;
+}
+@media (max-width: 768px) {
+  .cta .cta-text h1 {
+    letter-spacing: 0;
+  }
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0 5% 0 0;
+  }
+}
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
 }
 .cta button {
   border: 1px double black;
