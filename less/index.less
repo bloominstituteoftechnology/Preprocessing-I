@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -74,16 +74,42 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-
+		@media(max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			padding-top: 0;
+		}
 	nav {
     margin-top: 40px;
-    width: 610px;
+    width: 69.32%;
     justify-content: space-between;
     display: flex;
+		@media(max-width: 768px) {
+			order: 1;
+			margin-right: 0;
+			padding: 40px 0;
+		}
+		@media(max-width: 400px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
 
 		a {
-    text-decoration: none;
-    color: #b0b0b0;
+	    text-decoration: none;
+	    color: #b0b0b0;
+			@media(max-width: 400px) {
+				height: 100px;
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 
 		a:hover {
@@ -95,6 +121,25 @@ header {
 	.logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+		img {
+			@media(max-width: 400px){
+				width: auto;
+				height: auto;
+			}
+		}
+		@media( max-width: 768px ) {
+			padding: 40px 0;
+			margin: 0;
+			align-self: center;
+		}
+		@media(max-width: 400px) {
+			border-bottom: 1px solid black;
+			width: 100%;
+			height: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 }//header
 
@@ -104,17 +149,31 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+		@media(max-width: 768px) {
+			justify-content: center;
+		}
+
+		img {
+			@media(max-width: 768px) {
+				display: none;
+			}
+		}
 
 	.cta-text {
-    font-size: 72px;
+    font-size: 36px * 2;
     text-align: center;
-    letter-spacing: 5px;
+    letter-spacing: 5px +5;
     display: flex;
     justify-content: center;
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-
+		@media(max-width: 768px) {
+			margin: 0;
+		}
+		@media(max-width: 400px) {
+			width: 100%;
+		}
 		button {
 	    border: 1px double black;
 	    font-size: 16px;
@@ -123,6 +182,14 @@ header {
 	    height: 32px;
 	    margin-top: 10px;
 	    cursor: pointer;
+			@media(max-width: 768px) {
+					width: 30%;
+			}
+			@media(max-width: 400px) {
+				width: 70%;
+				height: 50px;
+			}
+
 		}
 
 		button:hover {
@@ -145,16 +212,26 @@ header {
 	.top-content {
     display: flex;
     justify-content: space-around;
+		@media(max-width: 400px) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	.middle-img {
     display: block;
     margin: 30px auto;
+		width: 100%;
+		height: auto;
 	}
 
 	.bottom-content {
     display: flex;
     justify-content: space-around;
+		@media(max-width: 400px) {
+			flex-direction: column;
+			align-items: center;
+		}
 
 		p {
     	padding-right: 20px;
