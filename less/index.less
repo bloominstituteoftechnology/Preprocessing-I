@@ -182,6 +182,10 @@ header {
         color: white;
       }
     }
+
+    @media (max-width: @mobile-breakpoint) {
+      font-size: 15vw;
+    }
   }
 
   .img-wrapper {
@@ -213,6 +217,15 @@ header {
     p {
       padding-right: 10px;
     }
+
+    @media (max-width: @mobile-breakpoint) {
+      flex-direction: column;
+      padding-left: 10px;
+
+      .text-content:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   .middle-img {
@@ -223,19 +236,26 @@ header {
   }
 
   .bottom-content {
-    display: flex;
-    justify-content: space-around;
+    // display: flex;
+    // justify-content: space-around;
 
-    p {
-      padding-right: 10px;
-    }
+    // p {
+    //   padding-right: 10px;
+    // }
+    .top-content; // same as top-content might as well use it
   }
 }
 
 /* Contact Styles */
 
-.contact p {
-  margin: 15px 0;
+.contact {
+  p {
+    margin: 15px 0;
+  }
+
+  @media (max-width: @mobile-breakpoint) {
+    padding-left: 10px;
+  }
 }
 
 /* Footer Styles */
