@@ -65,8 +65,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+
 }
 
 /* =================LESS Mixins and Variables*/
@@ -80,7 +81,6 @@ h1, h2, h3, h4, h5 {
 
 @footer-font-color: #2B3003;
 
-
 .border-styling(@border-top, @border-right, @border-bottom, @border-left){
     border-top: @border-top;
     border-right: @border-right;
@@ -93,17 +93,44 @@ h1, h2, h3, h4, h5 {
     justify-content: @justify-content;
 }
 
+.flex-direction(@flex-direction){
+    display: flex;
+    flex-direction: @flex-direction;
+}
+
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
 
+    @media(max-width: 768px) {
+        .flex-direction(column-reverse);
+        align-items: center;
+        max-width: 90%;
+    }
+
+    @media(max-width: 400px) {
+        .flex-direction(column-reverse);
+        align-items: center;
+        max-width: 90%;
+    }
+
     nav{
         margin-top: 25px; 
-        width: 610px;
         .flex-justify(space-between);
     
+        @media(max-width: 768px) {
+            margin-top: 25px; 
+            .flex-justify(space-between);
+        }
+
+        @media(max-width: 400px) {
+            .flex-direction(column);
+            align-items: center;
+            .flex-justify(space-between);
+        }
+
         a{
             text-decoration: none;
             color: #b0b0b0;
@@ -113,12 +140,23 @@ header {
             text-decoration: underline;
             color: black;
         }
+
     }// nav
     
     .logo{
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media(max-width: 768px) {
+            margin: 0;
+            align-self: center;
+        }
+    
+        @media(max-width: 400px) {
+            margin: 0;
+            align-self: center;
      }
+    }
 }// header
 
 
@@ -127,6 +165,28 @@ header {
 .cta {
     .flex-justify(flex-end);
     margin-top: 72px;
+    max-width: 100%;
+
+    @media(max-width: 768px) {
+        display: flex;
+        flex-flow: nowrap;
+    }
+
+    @media(max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .codeimg {
+        @media(max-width: 768px) {
+            .flex-justify(flex-flow);
+            margin: 0;
+         }
+     
+         @media(max-width: 400px) {
+             margin: 0;
+         }
+    } 
 
     .cta-text{
         font-size: 36px * 2;
@@ -137,6 +197,17 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
         color: @title-font-color;
+
+        @media(max-width: 768px) {
+           margin: 0;
+           font-size: 68px;
+        }
+    
+        @media(max-width: 400px) {
+            margin: 0;
+            font-size: 68px;
+        }
+        
 
         button {
             border: 1px double black;
@@ -166,8 +237,36 @@ header {
    color: @body-font-color;
    line-height: 18px;
 
+   @media(max-width: 768px) {
+    .border-styling(2px solid black, null, 2px solid black, null);
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: @body-font;
+    color: @body-font-color;
+    line-height: 18px;
+   }
+
+   @media(max-width: 400px) {
+     display: flex;
+     flex-direction: column;
+     max-width: 90%;
+     .border-styling(2px solid black, null, 2px solid black, null);
+     margin: 75px 0 35px 0;
+     padding: 35px 0;
+     font-size: @body-font;
+     color: @body-font-color;
+     line-height: 18px;
+   }
+
    .top-content {
-    .flex-justify(space-around);
+      .flex-justify(space-around);
+    @media(max-width: 768px) {
+      .flex-justify(space-around);
+    }
+    @media(max-width: 400px) {
+      display: flex;
+      flex-direction: column;
+    }
    }
 
    .middle-img {
@@ -177,6 +276,14 @@ header {
 
    .bottom-content {
        .flex-justify(space-around);
+       @media(max-width: 768px) {
+        .flex-justify(space-around);
+      }
+      @media(max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+      }
+     
 
         p {
          padding-right: 20px;         
@@ -191,7 +298,7 @@ header {
 
 .contact {
     color: @contact-font-color;
-    
+
     p {
       margin: 15px 0;
       

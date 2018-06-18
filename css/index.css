@@ -145,7 +145,7 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
   margin: auto;
 }
 /* =================LESS Mixins and Variables*/
@@ -154,11 +154,41 @@ header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 90%;
+  }
+}
 header nav {
   margin-top: 25px;
-  width: 610px;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  header nav {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 400px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -172,11 +202,48 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768px) {
+  header .logo {
+    margin: 0;
+    align-self: center;
+  }
+}
+@media (max-width: 400px) {
+  header .logo {
+    margin: 0;
+    align-self: center;
+  }
+}
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   justify-content: flex-end;
   margin-top: 72px;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .cta {
+    display: flex;
+    flex-flow: nowrap;
+  }
+}
+@media (max-width: 400px) {
+  .cta {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .cta .codeimg {
+    display: flex;
+    justify-content: flex-flow;
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  .cta .codeimg {
+    margin: 0;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -188,6 +255,18 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
   color: RoyalBlue;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+    font-size: 68px;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    margin: 0;
+    font-size: 68px;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -214,9 +293,50 @@ header .logo {
   color: #757E2A;
   line-height: 18px;
 }
+@media (max-width: 768px) {
+  .main-content {
+    border-top: 2px solid black;
+    border-right: null;
+    border-bottom: 2px solid black;
+    border-left: null;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    color: #757E2A;
+    line-height: 18px;
+  }
+}
+@media (max-width: 400px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    border-top: 2px solid black;
+    border-right: null;
+    border-bottom: 2px solid black;
+    border-left: null;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    color: #757E2A;
+    line-height: 18px;
+  }
+}
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 768px) {
+  .main-content .top-content {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 400px) {
+  .main-content .top-content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .main-content .middle-img {
   display: block;
@@ -225,6 +345,18 @@ header .logo {
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;
