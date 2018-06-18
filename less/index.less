@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -65,107 +65,233 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+		max-width: 880px;
     margin: auto;
+		background: @lightgreen;
+		.flexit;
+		flex-direction: column;
 }
 
-/* Header Styles */
+//===========variables//
+@lightgreen: #0df7b7;
+@hovergreen: #56eb10;
+@verylightblue: #30eee3;
+@darkblue: #3423a2;
+@pink: #ed1de7;
 
-header {
+//============ mixins//
+.std-font() {
+	font-size: 16px;
+}
+
+.flexit() {
+	display: flex;
+}
+
+.column() {
+	.flexit;
+	flex-direction: column;
+}
+
+/* Header/navbar Styles */
+
+.navbar {
     width: 100%;
-    display: flex;
+    .flexit;
+		background: @darkblue;
+		height: auto;
+
+		nav {
+		    margin-top: 20px * 2;
+		    width: 69.31%;
+		    justify-content: space-between;
+		    .flexit;
+
+
+				@media(max-width: 768px) {
+					width: 100%;
+					margin-top: 0;
+				}
+
+				@media(max-width: 400px) {
+					width: 100%;
+				 	.flexit;
+					flex-direction: column;
+				  align-items: center;
+				  height: auto;
+				}
+
+				a {
+				    text-decoration: none;
+				    color: #b0b0b0;
+						font-weight: bold;
+
+						@media(max-width: 400px) {
+							padding: 10px 0;
+							border-bottom: 1px solid black;
+							width: 100%;
+							text-align: center;
+						}
+				}
+
+				a:hover {
+				    text-decoration: underline;
+				    color: @hovergreen;
+				}
+		}
+
+		.logo {
+		    align-self: flex-end;
+		    margin: 28px 0 0 10.34%;
+
+				@media(max-width: 768px) {
+					margin: 10px auto;
+				}
+		}
+
+		@media(max-width: 768px) {
+			flex-direction: column-reverse;
+	    flex-wrap: no-wrap;
+	    justify-content: space-around;
+	    align-items: center;
+			margin-bottom: 20px;
+			height: 100px;
+		}
+
+		@media(max-width: 400px) {
+			border-bottom: 1px solid black;
+		 	padding: 10px 0;
+		  width: 100%;
+		  height: 290px;
+		 	.flexit;
+		  justify-content: center;
+		}
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flexit;
     margin-top: 72px;
     justify-content: flex-end;
+
+		@media(max-width: 768px) {
+			justify-content: center;
+	    align-items: center;
+	    height: 250px;
+	    width: 100%;
+		}
+
+		img {
+			@media(max-width: 768px) {
+				display:none;
+			}
+		}
+
+		.cta-text {
+		    font-size: 72px;
+		    text-align: center;
+		    letter-spacing: 5px;
+		    .flexit;
+		    justify-content: center;
+		    flex-flow: column;
+		    align-items: center;
+		    margin: 0 9.32% 0 0;
+
+				@media(max-width: 768px) {
+					width: auto;
+				}
+
+				button {
+				    border: 1px double black;
+				    .std-font;
+				    background: white;
+				    width: 170px;
+				    height: 32px;
+				    margin-top: 10px;
+				    cursor: pointer;
+				}
+
+				button:hover {
+				    background: @hovergreen;
+				    color: white;
+				}
+		}
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   .std-font;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+	 .top-content {
+	     .flexit;
+	     justify-content: space-around;
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+			 .text-content {
+				 background: @verylightblue;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+				 @media(max-width: 768px) {
+					 padding-left: 10px;
+				 }
+				 @media(max-width: 400px) {
+					 padding-top: 10px;
+				 }
+			 }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+			 @media(max-width: 400px) {
+				 .column;
+			 }
+	 }
+
+	 .middle-img {
+	     display: block;
+	     margin: 30px auto;
+			 width: 100%;
+	 }
+
+	 .bottom-content {
+	     .flexit;
+	     justify-content: space-around;
+
+			 .text-content {
+				 background: @verylightblue;
+
+				 @media(max-width: 768px) {
+					 padding-left: 10px;
+				 }
+
+				 @media(max-width: 400px) {
+					 padding-top: 10px;
+				 }
+			 }
+
+			 p {
+			     padding-right: 20px;
+			 }
+
+			 @media(max-width: 400px) {
+				 .column;
+			 }
+	 }
 }
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+	background: @pink;
+	width: auto;
+
+	p {
     margin: 15px 0;
+	}
 }
 
 /* Footer Styles */
