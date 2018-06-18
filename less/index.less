@@ -34,7 +34,7 @@
 // Flex box is a commonly used part of our programming 
 .flex-box(@display: flex; @flex-direction: none; @flex-wrap: none; 
         @justify-content: none; @align-items:none; @align-content: none; @perfect-center: false;
-        @align-self: none; ){
+        @align-self: none; @flex-flow: none; ){
           & when (@perfect-center = true){
             display: flex;
             justify-content: center;
@@ -42,6 +42,7 @@
             flex-direction: @flex-direction;
             flex-wrap: @flex-wrap;
             align-content: @align-content;
+            flex-flow: @flex-flow;
 
           }
           & when not (@perfect-center = true){
@@ -52,6 +53,7 @@
             align-items:@align-items;
             align-content:@align-content;
             align-self: @align-self;
+            flex-flow: @flex-flow;
           }       
 }
 // Very cool i think where flex box can now be a one liner for 6 parts also cool option where i can center as long as 
@@ -160,9 +162,9 @@ header .logo {
         font-size: @big-space;
         text-align: center;
         letter-spacing: 5px;
-        flex-flow: column;
+        // flex-flow: column;
         margin: 0 @big-space+10 0 0;
-        .flex-box(@perfect-center: true);
+        .flex-box(@perfect-center: true, @flex-flow: column);
         button {
             border: 1px double black;
             font-size: @standard-font;
