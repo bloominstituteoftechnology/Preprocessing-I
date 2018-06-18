@@ -95,20 +95,23 @@ h1, h2, h3, h4, h5 {
     padding-right: 2%;
 }
 
+.flex-space(@type) {
+    display: flex;
+    justify-content: @type;
+}
+
 
 /* Header Styles */
 
 header {
+    .flex-space(space-between);
     width: percentage(@main-width);
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 
     nav {
+        .flex-space(space-between);
         margin: 30px 0;
         width: percentage(@main-width - .35);
-        justify-content: space-between;
-        display: flex;
 
         a {
             text-decoration: none;
@@ -124,7 +127,6 @@ header {
 
     .logo {
         margin: 30px 0 30px 10%;
-
     }
 
     @media (max-width: 800px) {
@@ -136,16 +138,14 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex-space(center);
     margin-top: 6rem;
-    justify-content: center;
 
     .cta-text {
+        .flex-space(center);
         font-size: 7.2rem;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
         flex-flow: column;
         align-items: center;
         margin: 0 5% 0 0;
@@ -201,8 +201,7 @@ header {
    }
 
    .top-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space(space-around);
 
         .features {
             .body-borders(Chocolate, blue, brown);
@@ -232,8 +231,7 @@ header {
    }
 
    .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space(space-around);
 
         p {
             padding-right: 20px;
@@ -308,7 +306,7 @@ footer {
 		transform: translateY(0);
 	}
 	50% {
-		transform: translateY(-30px);
+		transform: translateY(-40px);
 	}
 	100% {
 		transform: translateY(0);
