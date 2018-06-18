@@ -67,6 +67,7 @@ table {
 @txtpurple: #C621CB;
 
 // Mixins
+
 .flex {
     display: flex;
 }
@@ -101,7 +102,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -111,23 +112,52 @@ header {
     width: 100%;
     .flex;
 
+    @media(max-width: 768px) {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
     nav {
     margin-top: @margin10 * 4; 
     width: 610px;
     justify-content: space-between;
     .flex;
 
+    @media(max-width: 768px) {
+        width: 100%;
+        padding: 0 2.5%;
+    }
+
+    @media(max-width: 400px) {
+        background: grey;
+        width: 20vw;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
         a {
             text-decoration: none;
             color: #b0b0b0;
-            // padding: 2.5%;
-            // border: 1px solid black;
-            // border-radius: 5px;
 
             &:hover {
                 text-decoration: underline;
                 color: black;
             }
+
+            @media(max-width: 400px) {
+                width: 100vw;
+                height: 50px;
+                border-top: 1px solid black;
+                font-size: 1.4rem;
+            }
+
+            &:last-child {
+                @media(max-width: 400px) {
+                    border-bottom: 1px solid black;
+                }
+            }
+
         }
 
         .link0 {
@@ -213,6 +243,12 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media(max-width: 768px) {
+            order: -1;
+            align-self: center;
+            margin: 28px auto 0 auto;
+        }
     }
 }
 
@@ -233,6 +269,10 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media(max-width: 768px) {
+            margin: 0 auto;
+        }
+
         button {
             border: 1px double black;
             font-size: 16px;
@@ -248,6 +288,12 @@ header {
             color: white;
         }
     }
+
+    img {
+        @media(max-width: 768px) {
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -260,22 +306,56 @@ header {
     font-size: 16px;
     line-height: 18px;
 
+    @media(max-width: 768px) {
+        padding: 10px 1.5%;
+    }
+
     .top-content {
         .flex;
         .jcsa;
+
+        @media(max-width: 400px) {
+            flex-flow: row wrap;
+        }
+
+        .text-content {
+            width: 45vw;
+
+            @media(max-width: 400px) {
+                width: 100vw;
+                padding-top: 10px;
+            }
+        }
     }
 
     .middle-img {
         display: block;
         margin: (@margin10 + 20) auto;
+
+        @media(max-width: 768px) {
+            width: 95vw;
+            padding: 0;
+        }
     }
     
     .bottom-content {
         .flex;
         .jcsa;
+
+        @media(max-width: 400px) {
+            flex-flow: row wrap;
+        }
                 
         p {
             padding-right: 20px;
+        }
+
+        .text-content {
+            @media(max-width: 400px) {
+                width: 100vw;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
         }
     }
 
@@ -286,7 +366,7 @@ header {
     .tc4 h4 {
         .tch4;
     }
-    
+
     .tc0 h4:after {
         content: "Features";
         color: @txtred;
@@ -324,6 +404,10 @@ header {
 /* Contact Styles */
 
 .contact {
+    @media(max-width: 768px) {
+        padding: 10px 1.5%;
+    }
+
     p {
         margin: (@margin10 * 1.5) 0;
     }
