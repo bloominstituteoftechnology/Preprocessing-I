@@ -66,12 +66,17 @@ table {
 @theme-light-background-color: white;
 @theme-light-image-filter: invert(0%);
 @theme-light-background-image: '';
+// Candy Theme
+@theme-candy-foreground: darken(pink, 50%);
+@theme-candy-background-image: @theme-light-background-image;
+@theme-candy-background-color: pink;
+@theme-candy-image-filter: @theme-light-image-filter;
 
 // Set theme here
-@foreground-color: @theme-dark-foreground;
-@background-image: @theme-dark-background-image;
-@background-color: @theme-dark-background-color;
-@image-filter: @theme-dark-image-filter;
+@foreground-color: @theme-candy-foreground;
+@background-image: @theme-candy-background-image;
+@background-color: @theme-candy-background-color;
+@image-filter: @theme-candy-image-filter;
 
 // Mixins
 .responsive-image(@max: 100%) {
@@ -144,11 +149,11 @@ header {
 
     a {
       text-decoration: none;
-      color: #b0b0b0;
+      color: darken(@foreground-color, 15%);
 
       &:hover {
         text-decoration: underline;
-        color: black;
+        color: @foreground-color;
       }
     }
 
