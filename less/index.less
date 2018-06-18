@@ -53,6 +53,7 @@ table {
 
 @body-font: 'Titillium Web', sans-serif;
 @h-font: 'Bangers', cursive;
+@nonActive: #b0b0b0;
 
 /*mixins*/
 .bodyFont{
@@ -64,10 +65,20 @@ table {
 	letter-spacing: 1px;
 	margin-bottom: 10px;
 }
+.img-logo{
+	align-self: flex-end;
+	margin: 28px 0 0 91px;
+	@media(max-width: 600px){
+		display: none;
+	}
+}
+
+
+
+
 * {
     box-sizing: border-box;
 }
-
 
 html, body {
   .bodyFont;
@@ -87,28 +98,27 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+
+		nav {
+		    margin-top: 40px;
+		    width: 610px;
+		    justify-content: space-between;
+		    display: flex;
+		}
 }
 
-header nav {
-    margin-top: 40px;
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
+a {
     text-decoration: none;
-    color: #b0b0b0;
+    color: @nonActive;
 }
 
-header nav a:hover {
+a:hover {
     text-decoration: underline;
     color: black;
 }
 
 header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+	.img-logo
 }
 
 /* Call To Action (CTA) Styles */
@@ -117,20 +127,19 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+		.cta-text {
+		    font-size: 72px;
+		    text-align: center;
+		    letter-spacing: 5px;
+		    display: flex;
+		    justify-content: center;
+		    flex-flow: column;
+		    align-items: center;
+		    margin: 0 82px 0 0;
+		}
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
+button {
     border: 1px double black;
     font-size: 16px;
     background: white;
@@ -139,8 +148,7 @@ header .logo {
     margin-top: 10px;
     cursor: pointer;
 }
-
-.cta .cta-text button:hover {
+button:hover {
     background: black;
     color: white;
 }
@@ -154,26 +162,25 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+
+	 .top-content {
+	     display: flex;
+	     justify-content: space-around;
+	 }
+	 .middle-img {
+	     display: block;
+	     margin: 30px auto;
+	 }
 }
 
-.main-content .top-content {
+.bottom-content {
     display: flex;
     justify-content: space-around;
+		p {
+		    padding-right: 20px;
+		}
 }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
 
 /* Contact Styles */
 
