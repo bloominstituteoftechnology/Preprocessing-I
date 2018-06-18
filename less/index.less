@@ -58,6 +58,7 @@ table {
 @brown: #750404;
 @yellowish: #ffc800;
 @orange: #e69500;
+@tablet: 600px;
 
 //adding detached ruleset for stretch goal
 @flexing: {
@@ -127,11 +128,12 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+		font-size: 62.5%;
 		margin: auto 0;
-		@media(max-width:800px){
+		@media(max-width:880px){
 				.white-scheme;
 		}
-		@media(max-width:600px){
+		@media(max-width:@tablet){
 				.red-scheme;
 		}
 }
@@ -144,8 +146,9 @@ h1, h2, h3, h4, h5 {
 
 .container {
 		max-width: 900px;
-    width: 880px;
+    // width: 880px;
     margin: auto;
+		margin: 0, 10px;
 }
 
 /* Header Styles */
@@ -153,28 +156,45 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		@media(max-width: @tablet){
+			flex-direction:column-reverse;
+		}
 		nav {
-		    margin-top: 40px;
+				width: 100%;
+		    // margin-top: 40px;
 		  	display: flex;
 		    justify-content: space-between;
-				border:1px solid red;
-				width: 100%;
+				@media(max-width: @tablet){
+					flex-direction: column;
+					align-items: center;
+				}
 				a {
 					display: flex;
-					margin: 0 4%;
+					justify-content: center;
+					padding: 2%;
+					width: 100%;
 				    text-decoration: none;
 				    color: #b0b0b0;
 						&:hover {
 						    text-decoration: underline;
 						    color: black;
 						}//a:hover
+					@media(max-width: @tablet){
+							border-top: 1px solid @yellowish;
+							align-self:center;
+							justify-content: center;
+					}
 				}//a
 		}//nav
 		.logo {
 				align-self: flex-end;
-				margin: 28px 0 0 91px;
+				// margin: 28px 0 0 91px;
+				@media(max-width: @tablet){
+				align-self: center;
+			}
 		}//logo
 }//header
 
@@ -182,9 +202,15 @@ header {
 
 .cta {
     display: flex;
+		flex-wrap: wrap;
     margin-top: 72px;
-    justify-content: flex-end;
+    justify-content: space-around;
+		@media(max-width: @tablet){
+			margin-top: 10px;
+		}
 		.cta-text {
+				display: flex;
+				flex-direction: column;
 		    font-size: 2px + 70;
 		    text-align: center;
 		    letter-spacing: 3px + 2;
@@ -192,11 +218,22 @@ header {
 		    justify-content: center;
 		    flex-flow: column;
 		    align-items: center;
-		    margin: 0 82px 0 0;
+				// border: 1px solid green;
+				@media(max-width: @tablet){
+					margin: 10px 0 0 0 ;
+				}
 				button {
 					.btn-white;
+					margin-bottom: 10px;
 				}//button
 		}//.cta-text
+		@media(max-width: @tablet){
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+		}
+
 }//.cta
 
 /* Main Content Styles */
@@ -212,6 +249,7 @@ header {
 	 }//top-content
 	 .middle-img {
 	     display: block;
+			 width: 100%;
 	     margin: 30px auto;
 	 }//middle-img
 	 .bottom-content {

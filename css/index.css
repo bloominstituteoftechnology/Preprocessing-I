@@ -134,9 +134,10 @@ html,
 body {
   height: 100%;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
   margin: auto 0;
 }
-@media (max-width: 800px) {
+@media (max-width: 880px) {
   html .cta .cta-text button,
   body .cta .cta-text button {
     border: 1px double black;
@@ -198,26 +199,38 @@ h5 {
 }
 .container {
   max-width: 900px;
-  width: 880px;
   margin: auto;
+  margin: 0, 10px;
 }
 /* Header Styles */
 header {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 600px) {
+  header {
+    flex-direction: column-reverse;
+  }
+}
 header nav {
-  margin-top: 40px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
-  width: 100%;
+}
+@media (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header nav a {
   display: flex;
-  margin: 0 4%;
+  justify-content: center;
+  padding: 2%;
+  width: 100%;
   text-decoration: none;
   color: #b0b0b0;
 }
@@ -225,17 +238,35 @@ header nav a:hover {
   text-decoration: underline;
   color: black;
 }
+@media (max-width: 600px) {
+  header nav a {
+    border-top: 1px solid #ffc800;
+    align-self: center;
+    justify-content: center;
+  }
+}
 header .logo {
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+}
+@media (max-width: 600px) {
+  header .logo {
+    align-self: center;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 72px;
-  justify-content: flex-end;
+  justify-content: space-around;
+}
+@media (max-width: 600px) {
+  .cta {
+    margin-top: 10px;
+  }
 }
 .cta .cta-text {
+  flex-direction: column;
   font-size: 72px;
   text-align: center;
   letter-spacing: 5px;
@@ -243,7 +274,11 @@ header .logo {
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+}
+@media (max-width: 600px) {
+  .cta .cta-text {
+    margin: 10px 0 0 0 ;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -253,10 +288,18 @@ header .logo {
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 .cta .cta-text button:hover {
   background: black;
   color: white;
+}
+@media (max-width: 600px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 /* Main Content Styles */
 .main-content {
@@ -275,6 +318,7 @@ header .logo {
 }
 .main-content .middle-img {
   display: block;
+  width: 100%;
   margin: 30px auto;
 }
 .main-content .bottom-content {
