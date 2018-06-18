@@ -49,6 +49,23 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+/*====================================================
+=========Variables*/
+
+@font-change: 'Anonymous Pro', 'serif';  
+@uniqueColor: ''
+
+/*====================================================
+=========Mixins*/
+
+.change-font() {
+    font-size: 100px;
+    color: #AFFF00;
+    font: @font-change;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -62,6 +79,7 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+
 }
 
 .container {
@@ -74,19 +92,25 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+
+        @media ( max-width: 500px) {
+            background: red;
+        }
+
+	    	a {
+                text-decoration: none;
+                color: #b0b0b0;
+            }
+
+	}
 }
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
 
 header nav a:hover {
     text-decoration: underline;
@@ -96,6 +120,10 @@ header nav a:hover {
 header .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    
+    @media ( max-width: 500px) {
+        background: blue;
+    }
 }
 
 /* Call To Action (CTA) Styles */
@@ -103,34 +131,37 @@ header .logo {
 .cta {
     display: flex;
     margin-top: 72px;
-    justify-content: flex-end;
+	justify-content: flex-end;
+	
+	.cta-text {
+        font-size: 72px;
+		text-align: center;
+		letter-spacing: 5px;
+		display: flex;
+		justify-content: center;
+		flex-flow: column;
+		align-items: center;
+		margin: 0 82px 0 0;
+			
+		button {
+				border: 1px double black;
+				font-size: 16px;
+				background: white;
+				width: 170px;
+				height: 32px * 2;
+				margin-top: 10px;
+				cursor: pointer;
+				
+				.cta .cta-text button:hover {
+					background: black;
+					color: white;
+				}
+				
+		}
+	}
 }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
 /* Main Content Styles */
 
@@ -141,11 +172,11 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
+   .top-content {
+	display: flex;
     justify-content: space-around;
+   }
 }
 
 .main-content .middle-img {
@@ -155,12 +186,14 @@ header .logo {
 
 .main-content .bottom-content {
     display: flex;
-    justify-content: space-around;
+	justify-content: space-around;
+	
+	.main-content .bottom-content p {
+		padding-right: 20px;
+	}
 }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+
 
 /* Contact Styles */
 
