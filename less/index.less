@@ -157,10 +157,37 @@ h5 {
 	width: 880px;
 	margin: auto;
 }
+
+// variables
+@nav-link-color: #b0b0b0;
+@nav-link-color-hover: black;
+
+// mixins
+.flex() {
+	display: flex;
+}
+
+.justify-align-center() {
+	justify-content: center;
+	align-items: center;
+}
+
+.justify-space-around() {
+	justify-content: space-around;
+}
+
+.justify-space-between() {
+	justify-content: space-between;
+}
+
+.main-content-border() {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
 /* Header Styles */
 header {
 	width: 100%;
-	display: flex;
+	.flex;
 
 	.logo {
 		align-self: flex-end;
@@ -170,23 +197,23 @@ header {
 	nav {
 		margin-top: 40px;
 		width: 610px;
-		justify-content: space-between;
-		display: flex;
+		.justify-space-between;
+		.flex;
 
 		a {
 			text-decoration: none;
-			color: #b0b0b0;
+			color: @nav-link-color;
 
 			&:hover {
 				text-decoration: underline;
-				color: black;
+				color: @nav-link-color-hover;
 			}
 		}
 	}
 }
 /* Call To Action (CTA) Styles */
 .cta {
-	display: flex;
+	.flex;
 	margin-top: 72px;
 	justify-content: flex-end;
 
@@ -194,10 +221,9 @@ header {
 		font-size: 72px;
 		text-align: center;
 		letter-spacing: 5px;
-		display: flex;
-		justify-content: center;
+		.flex;
+		.justify-align-center;
 		flex-flow: column;
-		align-items: center;
 		margin: 0 82px 0 0;
 
 		button {
@@ -218,16 +244,15 @@ header {
 }
 /* Main Content Styles */
 .main-content {
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	.main-content-border;
 	margin: 75px 0 35px;
 	padding: 35px 0;
 	font-size: 16px;
 	line-height: 18px;
 
 	.top-content {
-		display: flex;
-		justify-content: space-around;
+		.flex;
+		.justify-space-around;
 	}
 
 	.middle-img {
@@ -236,8 +261,8 @@ header {
 	}
 
 	.bottom-content {
-		display: flex;
-		justify-content: space-around;
+		.flex;
+		.justify-space-around;
 
 		p {
 			padding-right: 20px;
