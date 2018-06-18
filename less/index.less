@@ -123,6 +123,21 @@ header {
       width: 100%;
       justify-content: space-around;
     }
+
+    @media (max-width: @mobile-breakpoint) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15px;
+      border-bottom: 1px solid #9a9a9a;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid #9a9a9a;
+      }
+    }
   }
 
   .logo {
@@ -131,6 +146,7 @@ header {
 
     @media (max-width: 768px) {
       order: -1;
+      margin-left: 0;
     }
   }
 }
@@ -168,9 +184,15 @@ header {
     }
   }
 
-  img {
-    width: 100%;
-    height: auto;
+  .img-wrapper {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: @tablet-breakpoint) {
+      display: none;
+    }
   }
 }
 

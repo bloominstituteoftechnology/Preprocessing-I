@@ -188,6 +188,21 @@ header nav a:hover {
     justify-content: space-around;
   }
 }
+@media (max-width: 400px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    border-bottom: 1px solid #9a9a9a;
+  }
+  header nav a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #9a9a9a;
+  }
+}
 header .logo {
   align-self: center;
   margin: 28px 0 0 10.34090909%;
@@ -195,6 +210,7 @@ header .logo {
 @media (max-width: 768px) {
   header .logo {
     order: -1;
+    margin-left: 0;
   }
 }
 /* Call To Action (CTA) Styles */
@@ -226,9 +242,14 @@ header .logo {
   background: black;
   color: white;
 }
-.cta img {
+.cta .img-wrapper img {
   width: 100%;
   height: auto;
+}
+@media (max-width: 768px) {
+  .cta .img-wrapper {
+    display: none;
+  }
 }
 /* Main Content Styles */
 .main-content {
