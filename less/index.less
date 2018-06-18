@@ -274,14 +274,22 @@ header {
 
    .top-content {
       .flex-justify(space-around);
-    @media(max-width: 768px) {
-      .flex-justify(space-around);
-    }
-    @media(max-width: 400px) {
-      display: flex;
-      flex-direction: column;
-    }
+      @replace-tester: replace('Features', 'Features', 'Thanks for using mobile version!');
+         
+          @media(max-width: 768px) {
+          .flex-justify(space-around);
+          
+          }
+
+          @media(max-width: 400px) {
+           display: flex;
+           flex-direction: column;
+           
+          }
+
    }
+
+   
 
    .middle-img {
      display: block;
