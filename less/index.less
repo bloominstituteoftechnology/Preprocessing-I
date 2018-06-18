@@ -64,16 +64,8 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
-}
 
-
-
-
-/* Header Styles */
-
+/* CUSTOM STYLES */
 /* VARIABLES */
 @font-size: 16px;
 @black: black;
@@ -87,11 +79,28 @@ h1, h2, h3, h4, h5 {
     justify-content: space-around;
 }
 
+.container {
+    width: 880px;
+    margin: auto;
+    @media(max-width: 768px){
+        background-color: extract(@color-array, 1);
+        width:100%;
+        max-width: 768px;
+    }
+}
+
 /* HEADER */
 header {
     background-color: extract(@color-array, 3);
     width: 100%;
     display: flex;
+
+    @media(max-width: 768px){
+        background-color: extract(@color-array, 1);
+        width:100%;
+        max-width: 768px;
+    }
+
     nav {
         margin-top: 40px; 
         width: 610px;
@@ -129,6 +138,7 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        }
         button {
             border: 1px double black;
             font-size: @font-size;
@@ -143,7 +153,22 @@ header {
             color: white;
             background-color: extract(@color-array, 2);
         }
+         
+        @media(max-width: 768px){
+            width:100%;
+            max-width: 768px;
+            background-color: extract(@color-array, 3);
+            justify-content: center;
+            .cta-text {
+                font-size: @font-size * 4;
+                margin: 3% 0;
+            }
+            img {
+                display: none;
+            }
     }
+
+
 
 }
 
@@ -158,6 +183,9 @@ header {
    padding: 35px 0;
    font-size: @font-size;
    line-height: 18px;
+   @media(max-width: 768px){
+        background-color: extract(@color-array, 2);
+    }
     .top-content {
         .flex-around;
     }
@@ -185,4 +213,7 @@ footer {
     background-color: extract(@color-array, 5);
     text-align: center;
     margin: 40px 0 20px;
+    @media(max-width: 768px){
+        background-color: extract(@color-array, 4);
+    }
 }

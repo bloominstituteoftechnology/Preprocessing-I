@@ -144,22 +144,36 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-.container {
-  width: 880px;
-  margin: auto;
-}
-/* Header Styles */
+/* CUSTOM STYLES */
 /* VARIABLES */
 /* MIXINS*/
 .flex-around {
   display: flex;
   justify-content: space-around;
 }
+.container {
+  width: 880px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .container {
+    background-color: #BCFF00;
+    width: 100%;
+    max-width: 768px;
+  }
+}
 /* HEADER */
 header {
   background-color: #00FFC4;
   width: 100%;
   display: flex;
+}
+@media (max-width: 768px) {
+  header {
+    background-color: #BCFF00;
+    width: 100%;
+    max-width: 768px;
+  }
 }
 header nav {
   margin-top: 40px;
@@ -196,7 +210,7 @@ header .logo {
   align-items: center;
   margin: 0 82px 0 0;
 }
-.cta .cta-text button {
+.cta button {
   border: 1px double black;
   font-size: 16px;
   background: white;
@@ -205,10 +219,25 @@ header .logo {
   margin-top: 10px;
   cursor: pointer;
 }
-.cta .cta-text :hover {
+.cta :hover {
   background: black;
   color: white;
   background-color: #F900FF;
+}
+@media (max-width: 768px) {
+  .cta {
+    width: 100%;
+    max-width: 768px;
+    background-color: #00FFC4;
+    justify-content: center;
+  }
+  .cta .cta-text {
+    font-size: 64px;
+    margin: 3% 0;
+  }
+  .cta img {
+    display: none;
+  }
 }
 /* Main Content Styles */
 .main-content {
@@ -219,6 +248,11 @@ header .logo {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+}
+@media (max-width: 768px) {
+  .main-content {
+    background-color: #F900FF;
+  }
 }
 .main-content .top-content {
   display: flex;
@@ -244,4 +278,9 @@ footer {
   background-color: #74FF47;
   text-align: center;
   margin: 40px 0 20px;
+}
+@media (max-width: 768px) {
+  footer {
+    background-color: #47D7FF;
+  }
 }
