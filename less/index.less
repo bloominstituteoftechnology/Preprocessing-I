@@ -53,6 +53,42 @@ table {
     box-sizing: border-box;
 }
 
+
+// ===========================
+
+// Variables 
+
+@margin10: 10px;
+@txtred: #DB1F1F;
+@txtorange: #DB9C1F;
+@txtyellow: #D5DB1F;
+@txtgreen: #19A623;
+@txtblue: dodgerblue;
+@txtpurple: #C621CB;
+
+// Mixins
+.flex {
+    display: flex;
+}
+
+.jcsa {
+    justify-content: space-around;
+}
+
+.tch4 {
+    color: black;
+    position: relative;
+}
+
+.tch4after {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    mix-blend-mode: darken;
+}
+
+// ===========================
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -73,63 +109,145 @@ h1, h2, h3, h4, h5 {
 
 header {
     width: 100%;
-    display: flex;
-}
+    .flex;
 
-header nav {
-    margin-top: 40px; 
+    nav {
+    margin-top: @margin10 * 4; 
     width: 610px;
     justify-content: space-between;
-    display: flex;
-}
+    .flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            // padding: 2.5%;
+            // border: 1px solid black;
+            // border-radius: 5px;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        .link0 {
+            position: relative;
+            color: @txtred;
+        }
+        .link0:after {
+            content: "Services";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+        }
+
+        .link1 {
+            position: relative;
+            color: @txtorange;
+        }
+        .link1:after {
+            content: "Product";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+        }
+
+        .link2 {
+            position: relative;
+            color: @txtyellow;
+        }
+        .link2:after {
+            content: "Vision";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+        }
+
+        .link3 {
+            position: relative;
+            color: @txtgreen;
+        }
+        .link3:after {
+            content: "Features";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+        }
+
+        .link4 {
+            position: relative;
+            color: @txtblue;
+        }
+        .link4:after {
+            content: "About";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+        }
+
+        .link5 {
+            position: relative;
+            color: @txtpurple;
+        }
+        .link5:after {
+            content: "Contact";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+        }
+
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        .flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: @margin10;
+            cursor: pointer;
+        }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+        button:hover {
+            background: black;
+            color: white;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -137,40 +255,96 @@ header .logo {
 .main-content {
     border-top: 2px solid black; 
     border-bottom: 2px solid black;
-    margin: 75px 0 35px 0;
+    margin: (@margin10 * 7.5) 0 35px 0;
     padding: 35px 0;
     font-size: 16px;
     line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .top-content {
+        .flex;
+        .jcsa;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .middle-img {
+        display: block;
+        margin: (@margin10 + 20) auto;
+    }
+    
+    .bottom-content {
+        .flex;
+        .jcsa;
+                
+        p {
+            padding-right: 20px;
+        }
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+    .tc0 h4,
+    .tc1 h4,
+    .tc2 h4,
+    .tc3 h4,
+    .tc4 h4 {
+        .tch4;
+    }
+    
+    .tc0 h4:after {
+        content: "Features";
+        color: @txtred;
+        .tch4after;
+    }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+    
+    .tc1 h4:after {
+        content: "About";
+        color: @txtorange;
+        .tch4after;
+    }
+
+    .tc2 h4:after {
+        content: "Services";
+        color: @txtyellow;
+        .tch4after;
+    }
+
+    .tc3 h4:after {
+        content: "Product";
+        color: @txtgreen;
+        .tch4after;
+    }
+
+    .tc4 h4:after {
+        content: "Vision";
+        color: @txtblue;
+        .tch4after;
+        
+    }
+    
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    p {
+        margin: (@margin10 * 1.5) 0;
+    }
+
+    h4 {
+        .tch4;
+    }
+
+    h4:after {
+        content: "Contact";
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        color: @txtpurple;
+        mix-blend-mode: multiply;
+    }
 }
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: (@margin10 * 4) 0 (@margin10 * 2);
 }
