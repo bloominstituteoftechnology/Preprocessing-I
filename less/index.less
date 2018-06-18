@@ -80,6 +80,19 @@ p {
     justify-content: center;
 }
 
+@easy-blue: #00cec9;
+@darker-blue: #0984e3;
+@nice-green: #00b894;
+
+hr {
+    border-color: @easy-blue;
+    @media (max-width: 768px) {
+        border-color: @darker-blue;
+    }
+    @media (max-width: 400px) {
+        border-color: @nice-green;
+    }
+}
 
 .container {
     max-width: 880px;
@@ -94,7 +107,7 @@ p {
 }
 
 .nav {
-    background-color: teal;
+    background-color: @easy-blue;
     position: sticky;
     top: 0;
     width: 100%;
@@ -106,12 +119,14 @@ p {
     @media (max-width: 768px) {
         flex-wrap: wrap;
         height: 100px;
+        background-color: @darker-blue;
     }
     @media (max-width: 400px) {
         position: relative;
         justify-content: center;
         height: 200px + 150px;
         padding: 0;
+        background-color: @nice-green;
     }
     .nav-item {
         font-family: 'Jua';
@@ -520,4 +535,3 @@ p {
     list-style-position: inside;
     line-height: 1.6;
 }
-
