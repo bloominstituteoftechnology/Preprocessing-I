@@ -83,13 +83,15 @@ p {
 @easy-blue: #00cec9;
 @darker-blue: #0984e3;
 @nice-green: #00b894;
+@max768: ~"(max-width: 768px)";
+@max400: ~"(max-width: 400px)";
 
 hr {
     border-color: @easy-blue;
     @media (max-width: 768px) {
         border-color: @darker-blue;
     }
-    @media (max-width: 400px) {
+    @media @max400 {
         border-color: @nice-green;
     }
 }
@@ -98,10 +100,10 @@ hr {
     max-width: 880px;
     width: 100%;
     margin: 0 auto;
-    @media (max-width: 768px) {
+    @media @max768 {
       max-width: 768px;
     }
-    @media (max-width: 400px) {
+    @media @max400 {
       max-width: 768px - 368px;
     }
 }
@@ -116,12 +118,12 @@ hr {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    @media (max-width: 768px) {
+    @media @max768 {
         flex-wrap: wrap;
         height: 100px;
         background-color: @darker-blue;
     }
-    @media (max-width: 400px) {
+    @media @max400 {
         position: relative;
         justify-content: center;
         height: 200px + 150px;
@@ -133,10 +135,10 @@ hr {
         text-decoration: none;
         font-size: 1.5rem;
         color: white;
-        @media (max-width: 768px) {
+        @media @max768 {
             order: 1;
         }
-        @media (max-width: 400px) {
+        @media @max400 {
             width: 100%;
             height: 50px;
             display:flex;
@@ -151,21 +153,21 @@ hr {
     }
     .nav-logo {
         display: flex;
-        @media (max-width: 768px) {
+        @media @max768 {
             order: 0;
             width: 100%;
             justify-content: center;
         }
-        @media (max-width: 400px) {
+        @media @max400 {
             width: 100%;
         }
     }
     img {
         width: 100%;
-        @media (max-width: 768px) {
+        @media @max768 {
             width: 25%;
         }
-        @media (max-width: 400px) {
+        @media @max400 {
             width: 25%;
             height: 50px;
             padding: 10px 0;
@@ -195,7 +197,7 @@ hr {
         padding-top: 100px;
         width: 50%;
         height: 450px;
-        @media (max-width: 768px) {
+        @media @max768 {
             width: 100%;
             padding: 0;
             height: 300px;
@@ -224,7 +226,7 @@ hr {
         .test {
             margin-left: 11.36%;
             margin-bottom: 100px;
-            @media (max-width: 768px) {
+            @media @max768 {
                 margin-left: 0;
                 margin-bottom: 0;
             }
@@ -234,7 +236,7 @@ hr {
         width: 50%;
         .centered-flex;
         align-items: center;
-        @media (max-width: 768px) {
+        @media @max768 {
             display: none;
         }
         img {
@@ -247,11 +249,11 @@ hr {
         padding: 20px 0;
         flex-wrap: wrap;
         font-size: 1.5rem;
-        @media (max-width: 768px) {
+        @media @max768 {
             padding: 20px 2%;
             font-size: 1.5rem;
         }
-        @media (max-width: 400px) {
+        @media @max400 {
             padding: 20px 0;
             flex-wrap: wrap;
             justify-content: center;
@@ -261,12 +263,12 @@ hr {
             width: 50%;
             height: 80px;
             padding: 0 1% 0 0;
-            @media (max-width: 768px) {
+            @media @max768 {
                 width: 50%;
                 height: 150px;
                 padding: 0 1% 0 0;
             }
-            @media (max-width: 400px) {
+            @media @max400 {
                 width: 100%;
                 height: 140px;
                 padding: 10px 1%;
@@ -276,12 +278,12 @@ hr {
             width: 50%;
             height: 80px;
             padding: 0 0 0 1%;
-            @media (max-width: 768px) {
+            @media @max768 {
                 width: 50%;
                 height: 150px;
                 padding: 0 0 0 1%;
             }
-            @media (max-width: 400px) {
+            @media @max400 {
                 width: 100%;
                 height: 140px;
                 padding: 10px 1%;
@@ -290,11 +292,11 @@ hr {
         .middle-img {
             padding: 30px 0;
             width: 100%;
-            @media (max-width: 768px) {
+            @media @max768 {
                 padding: 30px 0;
                 width: 100%;
             }
-            @media (max-width: 400px) {
+            @media @max400 {
                 padding: 10px 1%;
                 width: 100%;
             }
@@ -303,12 +305,12 @@ hr {
             width: 33.33%;
             height: 110px;
             padding: 0 1% 0 0;
-            @media (max-width: 768px) {
+            @media @max768 {
                 width: 33.33%;
                 height: 200px;
                 padding: 0 1% 0 0;
             }
-            @media (max-width: 400px) {
+            @media @max400 {
                 width: 100%;
                 height: 140px;
                 padding: 10px 1%;
@@ -318,12 +320,12 @@ hr {
             width: 33.33%;
             height: 110px;
             padding: 0 1% 0 1%;
-            @media (max-width: 768px) {
+            @media @max768 {
                 width: 33.33%;
                 height: 200px;
                 padding: 0 1% 0 1%;
             }
-            @media (max-width: 400px) {
+            @media @max400 {
                 width: 100%;
                 height: 140px;
                 padding: 10px 1%;
@@ -333,12 +335,12 @@ hr {
             width: 33.33%;
             height: 110px;
             padding: 0 0 0 1%;
-            @media (max-width: 768px) {
+            @media @max768 {
                 width: 33.33%;
                 height: 200px;
                 padding: 0 0 0 1%;
             }
-            @media (max-width: 400px) {
+            @media @max400 {
                 width: 100%;
                 height: 140px;
                 padding: 10px 1%;
@@ -350,11 +352,11 @@ hr {
         width: 20%;
         padding: 20px 0;
         font-size: 1.5rem;
-        @media (max-width: 768px) {
+        @media @max768 {
             padding: 20px 1%;
             font-size: 1.5rem;
         }
-        @media (max-width: 400px) {
+        @media @max400 {
             padding: 10px 1%;
             font-size: 1.5rem;
         }
