@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -17,35 +16,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -56,113 +55,512 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
+/* Your code starts here! */
+
 
 .container {
-    width: 880px;
-    margin: auto;
-}
-
-/* Header Styles */
-
-header {
+    max-width: 880px;
     width: 100%;
+    margin: 0 auto;
+}
+
+.nav {
+    background-color: teal;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 5px 1%;
+    z-index: 1000;
     display: flex;
-    nav {
-        margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
-        a {
-            text-decoration: none;
-            color: #b0b0b0;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: black;
-        }
-    }
-    .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 91px;
-    }
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 
+.nav .nav-item {
+    font-family: 'Jua';
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+}
 
-/* Call To Action (CTA) Styles */
+.nav a:visited {
+    text-decoration: none;
+    color: white;
+}
 
-.cta {
+.nav .nav-logo {
     display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-    .cta-text {
-        font-size: 72px;
-        text-align: center;
-        letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
-        margin: 0 82px 0 0;
-        button {
-            border: 1px double black;
-            font-size: 16px;
-            background: white;
-            width: 170px;
-            height: 32px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: black;
-            color: white;
-        }
-    }
 }
 
-/* Main Content Styles */
-
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-   .top-content {
-       display: flex;
-       justify-content: space-around;
-   }
-   .middle-img {
-       display: block;
-       margin: 30px auto;
-   }
-   .bottom-content {
-       display: flex;
-       justify-content: space-around;
-       p {
-           padding-right: 20px;
-       }
-   }
-
+.nav img {
+    width: 100%;
 }
 
-/* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
+.copyright {
+    display: flex;
+    justify-content: center;
+    padding: 10px 1%;
+    font-size: 1.5rem;
 }
 
-/* Footer Styles */
 
-footer {
+
+/* Index Page CSS */
+
+/* Index Page Header CSS */
+
+.home-content header {
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.home-content .title {
     text-align: center;
-    margin: 40px 0 20px;
+    padding-top: 100px;
+    width: 50%;
+    height: 450px;
 }
+
+.home-content .title .title-text {
+    font-size: 6rem;
+    text-align: center;
+}
+
+.home-content .title button {
+    background-color: white;
+    border: 1px solid;
+    color: black;
+    padding: 5px 10%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition-duration: 0.4s;
+}
+
+.home-content .title button:hover {
+    color: white;
+    background-color: black;
+}
+
+.home-content .title button:focus {
+    outline: 0;
+}
+
+.home-content .title .test {
+    margin-left: 11.36%;
+    margin-bottom: 100px;
+}
+
+.home-content .title-logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content .title-logo img {
+    width:100%;
+}
+
+/* Index Page Main Content */
+
+.home-content .main-content {
+    display: flex;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.home-content .main-content .features {
+    width: 50%;
+    height: 80px;
+    padding: 0 1% 0 0;
+}
+
+.home-content .main-content .about {
+    width: 50%;
+    height: 80px;
+    padding: 0 0 0 1%;
+}
+
+.home-content .main-content .middle-img {
+    padding: 30px 0;
+    width: 100%;
+}
+
+.home-content .main-content .services {
+    width: 33.33%;
+    height: 110px;
+    padding: 0 1% 0 0;
+}
+
+.home-content .main-content .product {
+    width: 33.33%;
+    height: 110px;
+    padding: 0 1% 0 1%;
+}
+
+.home-content .main-content .vision {
+    width: 33.33%;
+    height: 110px;
+    padding: 0 0 0 1%;
+}
+
+.home-content .contact-info-container {
+    display: flex;
+    width: 20%;
+    padding: 20px 0;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+
+    
+    .nav {
+        flex-wrap: wrap;
+        height: 100px;
+    }
+
+    .nav .nav-item {
+        order: 1;
+    }
+
+    .nav .nav-logo {
+        order: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav img {
+        width: 25%;
+    }
+    
+    .home-content .title {
+        width: 100%;
+        padding: 0;
+        height: 300px;
+    }
+
+    .home-content .title .test {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .home-content .title-logo {
+        display: none;
+    }
+
+    .home-content .main-content {
+        padding: 20px 2%;
+        font-size: 1.5rem;
+    }
+
+    .home-content .main-content .features {
+        width: 50%;
+        height: 150px;
+        padding: 0 1% 0 0;
+    }
+
+    .home-content .main-content .about {
+        width: 50%;
+        height: 150px;
+        padding: 0 0 0 1%;
+    }
+
+    .home-content .main-content .middle-img {
+        padding: 30px 0;
+        width: 100%;
+    }
+
+    .home-content .main-content .services {
+        width: 33.33%;
+        height: 200px;
+        padding: 0 1% 0 0;
+    }
+
+    .home-content .main-content .product {
+        width: 33.33%;
+        height: 200px;
+        padding: 0 1% 0 1%;
+    }
+
+    .home-content .main-content .vision {
+        width: 33.33%;
+        height: 200px;
+        padding: 0 0 0 1%;
+    }
+
+    .home-content .contact-info-container {
+        padding: 20px 1%;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+      max-width: 400px;
+    }
+
+    .nav {
+        position: relative;
+        justify-content: center;
+        height: 350px;
+        padding: 0;
+    }
+
+    .nav .nav-item {
+        width: 100%;
+        height: 50px;
+        border: 1px solid black;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav .nav-logo {
+        width: 100%;
+    }
+
+    .nav img {
+        width: 25%;
+        height: 50px;
+        padding: 10px 0;
+    }
+
+    .home-content .main-content {
+        padding: 20px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .home-content .main-content .features {
+        width: 100%;
+        height: 140px;
+        padding: 10px 1%;
+    }
+
+    .home-content .main-content .about {
+        width: 100%;
+        height: 140px;
+        padding: 10px 1%;
+    }
+
+    .home-content .main-content .middle-img {
+        padding: 10px 1%;
+        width: 100%;
+    }
+
+    .home-content .main-content .services {
+        width: 100%;
+        height: 140px;
+        padding: 10px 1%;
+    }
+
+    .home-content .main-content .product {
+        width: 100%;
+        height: 140px;
+        padding: 10px 1%;
+    }
+
+    .home-content .main-content .vision {
+        width: 100%;
+        height: 140px;
+        padding: 10px 1%;
+    }
+
+    .home-content .contact-info-container {
+        padding: 10px 1%;
+        font-size: 1.5rem;
+    }
+}
+
+/* Services Page Specific CSS */
+
+/* Header */
+.services-content header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.services-content header .services-header {
+    width: 100%;
+    padding: 0px 50px 20px 50px;
+}
+
+.services-content header .header-img {
+    padding-top: 80px;
+}
+
+.services-content header .header-content h1 {
+    font-size: 24px;
+}
+
+/* Main Content */
+
+.services-content .services-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px 0px 20px 0px;
+}
+
+.services-content .services-main-content .main-box {
+    background-color: lightgrey;
+    border: 1px solid black;
+    height: 200px;
+    width: 45%;
+    padding: 20px;
+    margin: 10px 2.5%;
+}
+
+.services-content .services-main-content button {
+    background-color: white;
+    border: 1px solid;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+.services-content .services-main-content button:hover {
+    color: white;
+    background-color: black;
+}
+
+.services-content .services-main-content button:focus {
+    outline: 0;
+}
+
+.services-content .end {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.services-content .services-facts {
+    width:50%;
+    padding: 20px 20px 20px 0;
+    line-height: 1.2;
+}
+
+.services-content .services-facts ul {
+    list-style-type: square;
+    list-style-position: inside;
+    line-height: 1.6;
+}
+
+.services-content .services-facts-image {
+    display: inline-block;
+    margin: 5px 0px 5px 20px;
+    width: 50%;
+    height:300px;
+}
+
+
+/* Products Page CSS */
+
+.products-content header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products-content header .products-header {
+    width: 100%;
+    padding: 80px 50px 20px 50px;
+}
+
+.products-content header .header-content h1 {
+    font-size: 24px;
+}
+
+.products-content .products-main-content {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.products-content .products-main-content .product-box {
+    width:100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 1px black solid;
+    display: flex;
+    margin-top:5px;
+}
+
+.products-content .products-main-content .product-box img{
+    width: 300px;
+    height: 250px;
+    padding: 10px;
+}
+
+.products-content .products-main-content .product-box .product-box-content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
+
+.products-content .products-main-content .product-box button {
+    background-color: white;
+    border: 1px solid;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    align-self: flex-end;
+    margin-right: 10px;
+    margin-top: 120px;
+}
+
+.products-content .products-main-content .product-box button:hover {
+    color: white;
+    background-color: black;
+}
+
+.products-content .products-main-content .product-box button:focus {
+    outline: 0;
+}
+
+.products-content .end {
+    display:flex;
+    justify-content: center;
+}
+
+.products-content .end .products-facts {
+    width:50%;
+}
+
+.products-content .end .products-facts-image {
+    width:; 50%;
+}
+
+.products-content .end .products-facts ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    line-height: 1.6;
+}
+
