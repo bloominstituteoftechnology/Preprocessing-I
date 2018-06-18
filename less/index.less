@@ -96,8 +96,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    background: @night-mode-background;
-    color: @night-mode-font-color;
+    background: if((iscolor(@night-mode-background)), @night-mode-background, white);
+    color: if((iscolor(@night-mode-font-color)), @night-mode-font-color, black);
     width: @container-width;
     margin: auto;
 
@@ -164,6 +164,7 @@ header {
 }
     
     .logo {
+        max-width: image-width('./img/logo.png');
         align-self: flex-end;
         margin: 28px 0 0 91px;
 
