@@ -70,14 +70,28 @@ h1, h2, h3, h4, h5 {
 }
 
 // ======================== Variables
-
-
+@text-color: magenta;
+@font-size-primary: 1.6rem;
 // ======================== Mixins
+
+//.custom-font
+
+.custom-font() {
+    color: @text-color;
+    font-size: @font-size-primary;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 //.flexbox-justify(center);
 .flexbox-justify(@position){
     display:flex;
     justify-content: @position;
+}
+
+/* HTML Styles */
+
+html {
+    font-size: 62.5%;
 }
 
 /* Header Styles */
@@ -98,10 +112,16 @@ header {
       
       @media( max-width: 768px ) {
           width: 80%;
-      }
+        }
       a {
         text-decoration: none;
-        color: #b0b0b0;       
+        color: #b0b0b0;
+        font-size: @font-size-primary + 1rem;
+        
+        @media ( max-width: 768px ) {
+            .custom-font();
+        }
+        
     } // header nav a   
      a:hover {
       text-decoration: underline;
@@ -135,7 +155,7 @@ header {
     } 
 
   .cta-text {
-      font-size: 72px;
+      font-size: 7.2rem;
       text-align: center;
      letter-spacing: 5px;
     .flexbox-justify(center);
@@ -145,7 +165,7 @@ header {
       
       button {
         border: 1px double black;
-        font-size: 16px;
+        font-size: 1.6rem;
         background: white;
         width: 170px;
         height: 32px;
@@ -174,7 +194,7 @@ header {
     border-bottom: 2px solid black;
     margin: 75px 0 35px 0;
     padding: 35px 0;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 18px;
    
    .top-content {
@@ -199,9 +219,13 @@ header {
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
-}
+.contact {
+    font-size: 1.6rem;
+    p {
+        margin: 15px 0;
+    } //contact p
+}//contact
+
 
 /* Footer Styles */
 
