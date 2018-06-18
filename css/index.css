@@ -142,103 +142,159 @@ h4,
 h5 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+html {
+  font-size: 62.5%;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
   margin: auto;
 }
-/* Header Styles */
-header {
+.container header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #977BB6;
+}
+@media (max-width: 768px) {
+  .container header {
+    flex-direction: column-reverse;
+  }
+}
+.container header .nav-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 79%;
+}
+@media (max-width: 768px) {
+  .container header .nav-bar {
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .container header .nav-bar {
+    flex-flow: column wrap;
+  }
+}
+.container header .nav-bar a {
+  font-size: 1.6em;
+  margin-right: 5.8%;
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 400px) {
+  .container header .nav-bar a {
+    width: 100%;
+    padding: 5%;
+    margin-right: 0;
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+}
+@media (max-width: 400px) {
+  .container header .nav-bar a:first-child {
+    border-top: 1px solid black;
+  }
+}
+.container header img {
+  align-self: center;
+}
+.container section {
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 100%;
   display: flex;
+  justify-content: space-around;
+}
+.container section .section-text {
+  margin: 0 1.71% 0 1.71%;
+  font-size: 1.6rem;
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+}
+.container section .section-text h2 {
+  color: #977BB6;
+}
+.container section .section-text button {
+  border-color: black;
+  border-width: 1px;
   background-color: #977BB6;
-}
-header nav {
-  margin-top: 40px;
-  width: 610px;
-  justify-content: space-between;
-  display: flex;
-}
-header nav a {
-  text-decoration: none;
   color: white;
+  width: 77.82%;
+  padding: 10px 15px 10px 15px;
 }
-header nav a:hover {
-  text-decoration: underline;
-  color: black;
+@media (max-width: 768px) {
+  .container section .header-img {
+    display: none;
+  }
 }
-header .logo {
-  align-self: flex-end;
-  margin: 28px 0 0 91px;
+.container section .sec-one {
+  justify-content: center;
+  align-items: center;
 }
-/* Call To Action (CTA) Styles */
-.cta {
-  display: flex;
-  margin-top: 72px;
-  justify-content: flex-end;
-}
-.cta .cta-text {
-  font-size: 72px;
+.container section .sec-one h1 {
+  font-size: 6rem;
   text-align: center;
-  letter-spacing: 5px;
+}
+@media (max-width: 400px) {
+  .container .section-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .container .section-content .section-text {
+    width: 100%;
+    margin-bottom: 25px;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+@media (max-width: 400px) {
+  .container hr {
+    margin-left: 4%;
+    margin-right: 4%;
+    border: none;
+    background-color: black;
+    height: 2px;
+  }
+}
+.container .middle-img {
+  width: 100%;
+}
+@media (max-width: 400px) {
+  .container .middle-img {
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+.container .contact {
+  font-size: 1.6rem;
+}
+@media (max-width: 400px) {
+  .container .contact {
+    margin-bottom: 50px;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 25px;
+  }
+}
+.container .contact h2 {
+  color: #977BB6;
+}
+.container footer {
   display: flex;
   justify-content: center;
-  flex-flow: column;
-  align-items: center;
-  margin: 0 82px 0 0;
-}
-.cta .cta-text button {
-  border: 1px double black;
-  font-size: 16px;
-  background: white;
-  width: 170px;
-  height: 32px;
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: #977BB6;
-  color: white;
-}
-.cta .cta-text button:hover {
-  background: black;
-  color: #977BB6;
-}
-/* Main Content Styles */
-.main-content {
-  border-top: 2px solid #977BB6;
-  border-bottom: 2px solid #977BB6;
-  margin: 75px 0 35px 0;
-  padding: 35px 0;
-  font-size: 16px;
-  line-height: 18px;
-}
-.main-content h4 {
-  color: #977BB6;
-}
-.main-content .top-content {
-  display: flex;
-  justify-content: space-around;
-}
-.main-content .middle-img {
-  display: block;
-  margin: 30px auto;
-}
-.main-content .bottom-content {
-  display: flex;
-  justify-content: space-around;
-}
-.main-content .bottom-content p {
-  padding-right: 20px;
-}
-/* Contact Styles */
-.contact h4 {
-  color: #977BB6;
-}
-.contact p {
-  margin: 15px 0;
-}
-/* Footer Styles */
-footer {
-  text-align: center;
-  margin: 40px 0 20px;
+  margin-bottom: 50px;
+  font-size: 1.6rem;
 }
