@@ -2,18 +2,22 @@
 
 // Background Colors
 @background: @Olive;
-@headerbg: @DarkGreen;
+@ctabg: none;
+@headerbg: @CalmGreen;
 @contentbg: @CalmGreen;
 @contactbg: @CalmGreen;
 @footerbg: @DarkGreen;
 
+// Tablet BG Colors
 // Font Colors
 @fontcolor: black;
 
+// Color Bank
 @Olive: #c7d59f;
 @SoftGreen: #b7ce63;
 @CalmGreen: #8fb339;
 @DarkGreen: #4b5842;
+@TanHide: #f78764;
 
 // === Mixins === //
 
@@ -112,6 +116,9 @@ header {
     display: flex;
     background: @headerbg;
     .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@background, 10%), 10);
+    }
     nav {
         margin-top: 40px; 
         width: 610px;
@@ -139,6 +146,7 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    background: spin(saturate(@background, 10%), 10);
     .cta-text {
         text-align: center;
         letter-spacing: 5px;
@@ -172,11 +180,12 @@ header {
     margin-top: 75px;
     padding: 35px 0;
     line-height: 18px;
-    background: @contentbg;
+    background: spin(saturate(@background, 10%), 10);
     .fontsizeConverter(16);
     .top-content {
         display: flex;
         justify-content: space-around;
+        padding-left: 1vw;
     }
     .middle-img {
         display: block;
@@ -185,6 +194,7 @@ header {
     .bottom-content {
         display: flex;
         justify-content: space-around;
+        padding-left: 1vw;
         p {
             padding-right: 20px;
         }
@@ -194,8 +204,8 @@ header {
 /* Contact Styles */
 
 .contact {
-    padding: 15px 0;
-    background: @contactbg;
+    padding: 15px 1vw;
+    background: spin(saturate(@background, 10%), 10);
     .fontsizeConverter(16);
 }
 
@@ -204,6 +214,6 @@ header {
 footer {
     text-align: center;
     padding: 40px 0 20px;
-    background: @footerbg;
+    background: spin(saturate(@background, 10%), 10);
     .fontsizeConverter(16);
 }
