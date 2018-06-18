@@ -3,6 +3,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@body-color: #333333;
+@nav-color: #ffb6c1;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,6 +59,9 @@ html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
 }
+body {
+    color: @body-color;
+}
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
@@ -73,10 +78,15 @@ h1, h2, h3, h4, h5 {
     justify-content: space-around;
 }
 /* Header Styles */
-
+.text-center() {
+    text-align: center;
+}
+.flex (){
+    display: flex;
+}
 header {
     width: 100%;
-    display: flex;
+    .flex;
     nav {
         margin-top: 40px * 1.25; 
         width: 610px;
@@ -84,11 +94,11 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @nav-color;
         }
         a:hover {
             text-decoration: underline;
-            color: black;
+            color: @body-color;
         }
     }
     .logo {
@@ -101,15 +111,15 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex;
     margin-top: 72px;
     justify-content: flex-end;
 
     .cta-text {
         font-size: 72px;
-        text-align: center;
+        .text-center;
         letter-spacing: 5px;
-        display: flex;
+        .flex;
         justify-content: center;
         flex-flow: column;
         align-items: center;
@@ -167,6 +177,6 @@ header {
 /* Footer Styles */
 
 footer {
-    text-align: center;
+    .text-center;
     margin: 40px 0 20px+20;
 }
