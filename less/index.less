@@ -73,8 +73,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    
+    @media (max-width: 768px) {
+            padding: 2%;
+        }
 }
 
 // ===================  Variables ==============
@@ -95,16 +100,44 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    border: 1px solid blue;
+
+    @media (max-width: 768px) {
+        display: flex;
+		flex-direction: column-reverse;
+        align-items: center;
+    }
 
     nav {
         margin-top: 40px; 
         width: 70%;
         justify-content: space-between;
         display: flex;
+        border: 1px solid red;
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        @media (max-width: 400px) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
 
         a {
             text-decoration: none;
             color: @button-color;
+
+            @media (max-width: 400px) {
+                width: 100%;
+		        border-bottom: 1px solid black;
+		        padding: 20px 0;
+            }
 
             &:hover {
                 text-decoration: underline;
@@ -115,8 +148,12 @@ header {
     } // nav
 
     .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 10%;
+        margin: 28px 0 0 30%;
+    
+        @media (max-width: 768px) {
+            align-items: center;
+		    margin: 28px 0 0 0;
+        }
     } //.logo
 } // header
 
@@ -128,6 +165,12 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        border: 1px solid purple;
+    }
+
     .cta-text {
         font-size: 7.2rem + 1;
         text-align: center;
@@ -137,6 +180,14 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 9.3% 0 0;
+
+        @media (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: baseline;
+            font-size: 7.2rem;
+            border: 1px solid gold;
+        }
         
         button {
             border: 1px double black;
@@ -155,6 +206,12 @@ header {
             } // &:hover
         } //button
     } //cta-text
+
+    img {
+        @media (max-width: 768px) {
+            display: none;
+        }//media
+    }//img
 } //cta
 
 /* Main Content Styles */
@@ -166,21 +223,50 @@ header {
    padding: 35px 0;
    font-size: 1.6rem;
    line-height: 18px;
+   width: 100%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 
     .top-content {
         .content-paragraph-display;
+    
+        @media (max-width: 768px) {
+            display: flex;
+		    justify-content: space-between;
+        }
+   
+        @media (max-width: 400px) {
+            display: flex;
+		    flex-direction: column;
+        }
+
+        
     }   //top-content
     
     .middle-img {
         display: block;
         margin: 30px auto;
         width: 100%;
+    
+        @media (max-width: 768px) {
+            margin-top: 45px;
+		    width: 100%;
+        }
+    
     }   //middle-img
     
     .bottom-content {
         .content-paragraph-display;
     
+        @media (max-width: 768px) {
+            display: flex;
+		    flex-direction: space-between;
+        }
+
         .text-content {
+
 
             p {
                 padding-right: 10%;
@@ -204,3 +290,36 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
+// @media (max-width: 768px) {
+
+
+	
+// 	.cta {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+	
+// 	.cta img {
+// 		display: none;
+// 	}
+
+// 	.main-content {
+// 		width: 100%;
+// 	}
+
+// 	.main-content .top-content {
+// 		display: flex;
+// 		justify-content: space-between;
+// 	}
+	
+// 	.main-content .middle-img {
+// 		margin-top: 45px;
+// 		width: 100%;
+// 	}
+
+// 	.main-content .bottom-content {
+// 		display: flex;
+// 		justify-content: space-between;
+// 	}
+// }
