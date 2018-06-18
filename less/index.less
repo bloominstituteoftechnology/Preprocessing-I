@@ -4,6 +4,62 @@
    License: none (public domain)
 */
 
+// =============== Variables 
+@standard-font: 16px; 
+// used on button in cta and main content; more than once = variable. 
+
+@big-space: 72px;
+// used on margin-top in cta and cta text font size
+// end of variables
+// =============== Mixins 
+.flex-space-around(){
+    display: flex;
+    justify-content: space-around;
+    // .top-content and .bottom-content both do this.
+}
+.border-top-bottom(){
+    // border top border bottom of .main-cotent does this may want to use it on other pages
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+}
+
+// New concept not taught today is mixins with default paramaters
+.a-tag(@decoration: none; @color: black; @backgroundColor: none){
+    text-decoration: @decoration;
+    color: @color;
+    background-color: @backgroundColor;
+}
+// a tags are used a couple of times and the same concent can be applied to the hover section of a button
+
+// Flex box is a commonly used part of our programming 
+.flex-box(@display: flex; @flex-direction: none; @flex-wrap: none; 
+        @justify-content: none; @align-items:none; @align-content: none; @perfect-center: false;
+        @align-self: none; @flex-flow: none; ){
+          & when (@perfect-center = true){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: @flex-direction;
+            flex-wrap: @flex-wrap;
+            align-content: @align-content;
+            flex-flow: @flex-flow;
+
+          }
+          & when not (@perfect-center = true){
+            display:@display;
+            flex-direction: @flex-direction;
+            flex-wrap: @flex-wrap;
+            justify-content: @justify-content;
+            align-items:@align-items;
+            align-content:@align-content;
+            align-self: @align-self;
+            flex-flow: @flex-flow;
+          }       
+}
+// Very cool i think where flex box can now be a one liner for 6 parts also cool option where i can center as long as 
+//the @perfect-center paramter = true  .flex-box(@perfect-center: true)
+// end of Mixins
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -67,100 +123,90 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    border: 3px solid black;
 }
 
 /* Header Styles */
 
 header {
     width: 100%;
-    display: flex;
-}
+    .flex-box;
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        .flex-box(@justify-content: space-between);
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
+        a {
+            .a-tag(@color:#b0b0b0);
+        }
+        a:hover {
+            .a-tag(underline, black, red);
+        }
+    }
+    
 }
 
 header .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
 }
+// end of header;
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+    margin-top: @big-space;
+    .flex-box(@justify-content: flex-end);
+    .cta-text {
+        font-size: @big-space;
+        text-align: center;
+        letter-spacing: 5px;
+        // flex-flow: column;
+        margin: 0 @big-space+10 0 0;
+        .flex-box(@perfect-center: true, @flex-flow: column);
+        button {
+            border: 1px double black;
+            font-size: @standard-font;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            .a-tag(@backgroundColor:black, @color:white);
+        }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
 }
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+// End of call to action 
 
 /* Main Content Styles */
-
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+    .border-top-bottom;
+    margin: @big-space+3 0 35px 0;
+    padding: 35px 0;
+    font-size: @standard-font;
+    line-height: 18px @standard-font+2;
+    .top-content {
+        .flex-space-around
+    }
+    .main-content .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
+    .bottom-content {
+        .flex-space-around
+        p {
+            padding-right: 20px;
+        }
+    }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+ }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+// End of the main content
 
 /* Contact Styles */
 
@@ -174,3 +220,4 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
