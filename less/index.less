@@ -71,7 +71,11 @@ h1, h2, h3, h4, h5 {
 .container {
     max-width: 880px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
+
+    @media(max-width:768px){
+        padding: 0 2%;
+    }
 }
 
 // Less  Color Scheme Variables
@@ -84,6 +88,15 @@ h1, h2, h3, h4, h5 {
 @tranquil: #E6FFFF;
 
 
+// Center Text/Block Mixin
+
+.center-text(){
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* Header Styles */
 
 body {
@@ -94,12 +107,21 @@ header {
     width: 100%;
     display: flex;
 
+    @media(max-width: 768px){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
     nav {
         margin-top: 40px; 
         width: 69.21%;
         justify-content: space-between;
         display: flex;
         font-size: 1.6rem;
+
+        @media(max-width: 768px){
+            width: 100%;
+        }
 
         a {
             text-decoration: none;
@@ -115,6 +137,12 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+
+        @media(max-width: 768px){
+            align-self: center;
+            margin: 0;
+            margin-top: 20px;
+        }
     }
 }
 
@@ -125,16 +153,26 @@ header {
     margin-top: 72px;
     justify-content: flex-end;
 
+    .cta-image {
+        
+        @media(max-width: 768px){
+            display:none;
+        }
+    }
+
     .cta-text {
+        .center-text();
         font-size: 6.2rem + 1;
-        text-align: center;
         letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
         flex-flow: column;
-        align-items: center;
         margin: 0 82px 0 0;
         color: @heading-color;
+
+        @media(max-width:768px){
+            margin: 0;
+            width: 100%;
+
+        }
 
         button {
             border: 1px double black;
@@ -155,6 +193,12 @@ header {
 
 /* Main Content Styles */
 
+//Same content style mixin
+.content() {
+    display: flex;
+    justify-content: space-around;
+}
+
 .main-content {
     border-top: 2px solid black; 
     border-bottom: 2px solid black;
@@ -168,8 +212,7 @@ header {
     }
 
     .top-content {
-    display: flex;
-    justify-content: space-around;
+        .content();
     }
 
     .middle-img {
@@ -178,8 +221,7 @@ header {
     }
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .content();
 
         p {
             padding-right: 1%;

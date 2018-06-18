@@ -150,7 +150,12 @@ h5 {
 .container {
   max-width: 880px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 2%;
+  }
 }
 /* Header Styles */
 body {
@@ -160,12 +165,23 @@ header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 header nav {
   margin-top: 40px;
   width: 69.21%;
   justify-content: space-between;
   display: flex;
   font-size: 1.6rem;
+}
+@media (max-width: 768px) {
+  header nav {
+    width: 100%;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -179,22 +195,40 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768px) {
+  header .logo {
+    align-self: center;
+    margin: 0;
+    margin-top: 20px;
+  }
+}
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
 }
+@media (max-width: 768px) {
+  .cta .cta-image {
+    display: none;
+  }
+}
 .cta .cta-text {
-  font-size: 7.2rem;
-  text-align: center;
-  letter-spacing: 5px;
   display: flex;
   justify-content: center;
-  flex-flow: column;
   align-items: center;
+  text-align: center;
+  font-size: 7.2rem;
+  letter-spacing: 5px;
+  flex-flow: column;
   margin: 0 82px 0 0;
   color: #044CBB;
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    margin: 0;
+    width: 100%;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
