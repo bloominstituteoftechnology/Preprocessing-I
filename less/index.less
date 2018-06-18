@@ -63,10 +63,24 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
+.center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .container {
-    width: 880px;
-    margin: auto;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    @media ( max-width: 768px ) {
+        max-width: 768px;
+        width: 100%;
+    }
+    @media ( max-width: 400px ) {
+        max-width: 400px;
+        width: 100%;
+    }
 }
 
 /* Header Styles */
@@ -75,11 +89,20 @@ header {
     width: 100%;
     display: flex;
 
+    @media ( max-width: 768px ) {
+        flex-direction: column;
+    }
+
     nav {
         margin-top: 40px; 
-        width: 610px;
+        width: 100%;
         justify-content: space-between;
         display: flex;
+
+        @media ( max-with: 768px ) {
+            display: flex;
+            justify-content: space-around;
+        }
 
         a {
             text-decoration: none;
@@ -94,6 +117,11 @@ header {
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        
+        @media ( max-width: 768px ) {
+            order: -1;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -103,15 +131,24 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    width: 100%;
+
+    @media ( max-width: 768px ) {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
 
     .cta-text {
+        .center;
+        width: 100%;
         font-size: 72px;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
+        //display: flex;
+        //justify-content: center;
         flex-flow: column;
-        align-items: center;
+        //align-items: center;
         margin: 0 82px 0 0;
 
         button {
@@ -129,6 +166,13 @@ header {
             }
         }
     }
+    
+    img {
+        @media ( max-width: 768px ) {
+            display: none;
+            width: 1px;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -144,16 +188,45 @@ header {
    .top-content {
     display: flex;
     justify-content: space-around;
+    
+    @media ( max-width: 768px ) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .text-content {
+        @media ( max-width: 768px ) {
+            margin-bottom: 20px;
+        }
+    }
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
+        width: 100%;
+
+        @media ( max-width: 768px) {
+            margin: 0 0 20px 0;
+        }
     }
 
     .bottom-content {
         display: flex;
         justify-content: space-around;
+
+        @media ( max-width: 768px ) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+    
+        }
+        .text-content {
+            @media ( max-width: 768px ) {
+                margin-bottom: 20px;
+            }
+        }
 
         p {
             padding-right: 20px;

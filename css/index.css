@@ -145,19 +145,43 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
-  margin: auto;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 /* Header Styles */
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
 header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
+}
+@media (max-with: 768px) {
+  header nav {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -171,20 +195,35 @@ header .logo {
   align-self: flex-end;
   margin: 28px 0 0 91px;
 }
+@media (max-width: 768px) {
+  header .logo {
+    order: -1;
+    margin: 0 auto;
+  }
+}
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .cta {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 }
 .cta .cta-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   font-size: 72px;
   text-align: center;
   letter-spacing: 5px;
-  display: flex;
-  justify-content: center;
   flex-flow: column;
-  align-items: center;
   margin: 0 82px 0 0;
 }
 .cta .cta-text button {
@@ -200,6 +239,12 @@ header .logo {
   background: black;
   color: white;
 }
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+    width: 1px;
+  }
+}
 /* Main Content Styles */
 .main-content {
   border-top: 2px solid black;
@@ -213,13 +258,43 @@ header .logo {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 768px) {
+  .main-content .top-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .top-content .text-content {
+    margin-bottom: 20px;
+  }
+}
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .main-content .middle-img {
+    margin: 0 0 20px 0;
+  }
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content .text-content {
+    margin-bottom: 20px;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;
