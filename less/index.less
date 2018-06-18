@@ -154,15 +154,21 @@ h5 {
 }
 
 .container {
-	width: 880px;
-	margin: auto;
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 0 20px;
+	@media (max-width: 768px) {
+		max-width: 768px;
+	}
+	@media (max-width: 400px) {
+		max-width: 400px;
+	}
 }
 // variables
 @nav-link-color: #b0b0b0;
 @nav-link-color-hover: black;
 @p-text-color: #555;
-@base-font-size: 16px;
- // mixins
+@base-font-size: 16px; // mixins
 
 .flex() {
 	display: flex;
@@ -189,10 +195,22 @@ h5 {
 header {
 	width: 100%;
 	.flex;
+	@media (max-width: 768px) {
+		flex-direction: column-reverse;
+		.justify-align-center;
+	}
+	@media (max-width: 400px) {
+		flex-wrap: wrap;
+	}
 
 	.logo {
 		align-self: flex-end;
 		margin: 28px 0 0 91px;
+		@media (max-width: 768px) {
+			align-self: center;
+			margin: 28px auto 0;
+		}
+
 	}
 
 	nav {
@@ -200,6 +218,9 @@ header {
 		width: 610px;
 		.justify-space-between;
 		.flex;
+		@media (max-width: 400px) {
+			flex-wrap: wrap;
+		}
 
 		a {
 			text-decoration: none;
@@ -217,6 +238,15 @@ header {
 	.flex;
 	margin-top: 72px;
 	justify-content: flex-end;
+	@media (max-width: 768px) {
+		.justify-align-center;
+		}
+
+	.header-image {
+	@media (max-width: 768px) {
+		display: none;
+		}
+	}
 
 	.cta-text {
 		font-size: @base-font-size * 4.5;
@@ -226,6 +256,9 @@ header {
 		.justify-align-center;
 		flex-flow: column;
 		margin: 0 82px 0 0;
+		@media (max-width: 768px) {
+			margin: 0 auto;
+			}
 
 		button {
 			border: 1px double black;
@@ -251,6 +284,7 @@ header {
 	font-size: @base-font-size;
 	line-height: 18px;
 
+
 	.top-content {
 		.flex;
 		.justify-space-around;
@@ -263,6 +297,7 @@ header {
 	.middle-img {
 		display: block;
 		margin: 30px auto;
+		max-width: 100%;
 	}
 
 	.bottom-content {
