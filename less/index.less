@@ -1,17 +1,36 @@
 // === Variables === //
 
+// Background Colors
+@background: @Olive;
+@headerbg: @DarkGreen;
+@contentbg: @CalmGreen;
+@contactbg: @CalmGreen;
+@footerbg: @DarkGreen;
+
+// Font Colors
+@fontcolor: black;
+
+@Olive: #c7d59f;
+@SoftGreen: #b7ce63;
+@CalmGreen: #8fb339;
+@DarkGreen: #4b5842;
 
 // === Mixins === //
-// 72px into 7.2rem
+
+// Enter desired pixel size in parameter
+// mixin will convert to rems
 .fontsizeConverter(@pixsize) {
     @remsize: (@pixsize/10);
     font-size: ~"@{remsize}rem";
 }
 
+
+
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain) 
+    v2.0 | 20110126
+    License: none (public domain) 
 */
 
 html, body, div, span, applet, object, iframe,
@@ -71,6 +90,7 @@ html, body {
 /* adding my universal font-size, so I can use rems */
 html {
     font-size: 62.5%;
+    background: @background;
 }
 
 h1, h2, h3, h4, h5 {
@@ -88,25 +108,29 @@ h1, h2, h3, h4, h5 {
 /* Header Styles */
 header {
     width: 100%;
+    padding-bottom: 1.5vh;
     display: flex;
+    background: @headerbg;
     .fontsizeConverter(16);
     nav {
         margin-top: 40px; 
         width: 610px;
-        justify-content: space-between;
         display: flex;
+        justify-content: space-around;
+        align-items: center;
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            font-weight: bold;
+            color: @fontcolor;
         }
         a:hover {
             text-decoration: underline;
-            color: black;
+            color: @Olive;
         }
     } 
     .logo {
     align-self: flex-end;
-    margin: 28px 0 0 91px;
+    margin: 28px 5px 0 91px;
     }
 }
 /* Call To Action (CTA) Styles */
@@ -145,10 +169,10 @@ header {
 .main-content {
     border-top: 2px solid black; 
     border-bottom: 2px solid black;
-    margin: 75px 0 35px 0;
+    margin-top: 75px;
     padding: 35px 0;
     line-height: 18px;
-    background: teal;
+    background: @contentbg;
     .fontsizeConverter(16);
     .top-content {
         display: flex;
@@ -170,7 +194,8 @@ header {
 /* Contact Styles */
 
 .contact {
-    margin: 15px 0;
+    padding: 15px 0;
+    background: @contactbg;
     .fontsizeConverter(16);
 }
 
@@ -178,6 +203,7 @@ header {
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    padding: 40px 0 20px;
+    background: @footerbg;
     .fontsizeConverter(16);
 }
