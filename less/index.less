@@ -49,19 +49,32 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+/*Variables*/
+
+@body-font: 'Titillium Web', sans-serif;
+@h-font: 'Bangers', cursive;
+
+/*mixins*/
+.bodyFont{
+	height: 100%;
+	font-family:@body-font;
+}
+.hfont{
+	font-family: @h-font;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}
 * {
     box-sizing: border-box;
 }
-@body-font: 'Titillium Web', sans-serif;
+
+
 html, body {
-    height: 100%;
-    font-family:@body-font; 
+  .bodyFont;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+  	.hfont;
 }
 
 .container {
