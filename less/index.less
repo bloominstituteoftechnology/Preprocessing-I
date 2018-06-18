@@ -68,24 +68,28 @@ table {
 
 // Mixins
 
-.flex {
+.flex() {
     display: flex;
 }
 
-.jcsa {
+.jcsa() {
     justify-content: space-around;
 }
 
-.tch4 {
+.tch4() {
     color: black;
     position: relative;
 }
 
-.tch4after {
+.tch4after() {
     position: absolute;
     left: 1px;
     top: 1px;
     mix-blend-mode: darken;
+}
+
+.bgc(@color) {
+    background-color: @color;
 }
 
 // ===========================
@@ -111,10 +115,18 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     .flex;
+    padding: 0 1.5% 10px 1.5%;
+
+    // SVG Gradient Function
+    background-image: svg-gradient(to right, @txtred, @txtorange 10%, @txtyellow 20%, @txtgreen 40%, @txtblue 50%, @txtpurple);
 
     @media(max-width: 768px) {
         flex-flow: column wrap;
         align-items: center;
+    }
+
+    @media(max-width: 400px) {
+        padding-bottom: 0;
     }
 
     nav {
@@ -129,8 +141,8 @@ header {
         }
 
         @media(max-width: 400px) {
-            background: #222;
-            width: 95vw;
+            .bgc(#555);
+            width: 100vw;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
@@ -169,6 +181,9 @@ header {
             position: relative;
             color: @txtred;
             z-index: 0;
+            @media(max-width: 400px) {
+                .bgc(#000);
+            }
         }
         .link0:after {
             content: "Services";
@@ -201,6 +216,9 @@ header {
         .link2 {
             position: relative;
             color: @txtyellow;
+            @media(max-width: 400px) {
+                .bgc(#000);
+            }
         }
         .link2:after {
             content: "Vision";
@@ -233,6 +251,9 @@ header {
         .link4 {
             position: relative;
             color: @txtblue;
+            @media(max-width: 400px) {
+                .bgc(#000);
+            }
         }
         .link4:after {
             content: "About";
