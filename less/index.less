@@ -69,12 +69,23 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+// ======================== Variables
+
+
+// ======================== Mixins
+
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
-  
+   
+    @media( max-width: 768px ) {
+        flex-wrap: wrap;
+        justify-content: center;
+        background: pink;
+    }
+
    nav {
       margin-top: 40px; 
       width: 610px;
@@ -95,6 +106,11 @@ header {
   .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    
+    @media( max-width: 768px ) {
+        order: -1;  
+    }
+    
   } //header logo
 }//header  
 
