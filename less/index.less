@@ -76,6 +76,10 @@ h1, h2, h3, h4, h5 {
     @media @max950 {
         width: 95%;
     }
+
+    @media @max400 {
+        width: 100%;
+    }
 }
 
 
@@ -83,7 +87,7 @@ h1, h2, h3, h4, h5 {
 
 @max950: ~"(max-width: 950px)"; // for resizing
 @max768: ~"(max-width: 768px)"; // Escaping for tablet view
-@max400: ~"(max-width: 400px)"; // doc: lesscss.org/#escaping
+@max400: ~"(max-width: 400px)"; // For mobile view; doc: lesscss.org/#escaping
 
 
 /* Header Styles */
@@ -104,7 +108,14 @@ header {
         display: flex;
 
         @media @max400 {
+            margin-top: 0;
             flex-direction: column;
+        }
+
+        &:first-child {
+            @media @max400 {
+                border-top: 1px solid black;
+            }
         }
 
         a {
@@ -119,6 +130,7 @@ header {
 
             @media @max400 {
                 border-bottom: 1px solid black;
+                font-size: 2rem;
                 text-align: center;
                 width: 100%;
 
@@ -203,6 +215,11 @@ header {
     font-size: 1.6rem;
     line-height: 18px;
 
+    @media @max400 {
+        width: 95%;
+        margin: 75px auto 35px;
+    }
+
     .top-content {
         display: flex;
         justify-content: space-around;
@@ -231,6 +248,10 @@ header {
 
     p {
         margin: 15px 0;
+    }
+
+    @media @max400 {
+        margin-left: 2.5%;
     }
 }
 
