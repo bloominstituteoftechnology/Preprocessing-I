@@ -130,10 +130,16 @@ table {
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
 html,
 body {
   height: 100%;
   font-family: "Titillium Web", sans-serif;
+}
+body {
+  font-size: 1.6rem;
 }
 h1,
 h2,
@@ -145,7 +151,8 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
+  width: 98%;
   margin: auto;
   /* Call To Action (CTA) Styles */
   /* Main Content Styles */
@@ -156,15 +163,23 @@ h5 {
   width: 100%;
   display: flex;
 }
+@media (max-width: 768px) {
+  .container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
 .container header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
 }
 .container header nav a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: #acc196;
 }
 .container header nav a:hover {
   text-decoration: underline;
@@ -172,15 +187,26 @@ h5 {
   border: 3px solid black;
 }
 .container header .logo {
-  align-self: flex-end;
+  align-self: center;
   margin: 28px 0 0 91px;
 }
 .container .cta {
+  width: 100%;
   display: flex;
-  margin-top: 72px;
-  justify-content: flex-end;
+  margin-top: 7.2rem;
+}
+@media (max-width: 768px) {
+  .container .cta {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .container .cta .cta-text {
+  max-width: 100%;
   font-size: 76px;
   text-align: center;
   letter-spacing: 5px;
@@ -188,7 +214,6 @@ h5 {
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
 }
 .container .cta .cta-text button {
   border: 1px double black;
@@ -198,6 +223,11 @@ h5 {
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .container .cta .cta-text button {
+    margin-bottom: 14px;
+  }
 }
 .container .cta .cta-text button:hover {
   background: black;
@@ -210,6 +240,7 @@ h5 {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+  color: #6f8695;
 }
 .container .main-content .top-content {
   display: flex;
@@ -225,9 +256,11 @@ h5 {
 }
 .container .contact p {
   margin: 15px 0;
+  color: #6f8695;
 }
 .container footer {
   text-align: center;
   margin: 40px 0 20px;
+  color: #6f8695;
 }
 /* Header Styles */

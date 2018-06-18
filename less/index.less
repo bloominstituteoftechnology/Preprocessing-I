@@ -133,11 +133,17 @@ table {
 * {
   box-sizing: border-box;
 }
-
+html {
+  font-size: 62.5%;
+}
 html,
 body {
   height: 100%;
   font-family: "Titillium Web", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
 }
 
 h1,
@@ -150,6 +156,12 @@ h5 {
   margin-bottom: 10px;
 }
 
+// Variables =================================
+
+@color-scheme-primary: #6f8695;
+
+@color-scheme-secondary: #acc196;
+
 // Mixins ====================================
 
 .my-first-mixin() {
@@ -157,23 +169,35 @@ h5 {
   justify-content: space-around;
 }
 
+.center-stuff() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
-  width: 880px;
+  max-width: 880px;
+  width: 98%;
   margin: auto;
 
   header {
     width: 100%;
     display: flex;
+    // Tablet Styling ===============
+    @media (max-width: 768px) {
+      .center-stuff();
+      flex-direction: column-reverse;
+    }
 
     nav {
       margin-top: 40px;
-      width: 610px;
+      width: 100%;
       justify-content: space-between;
       display: flex;
 
       a {
         text-decoration: none;
-        color: #b0b0b0;
+        color: @color-scheme-secondary;
       }
 
       a:hover {
@@ -184,7 +208,7 @@ h5 {
     }
 
     .logo {
-      align-self: flex-end;
+      align-self: center;
       margin: 28px 0 0 91px;
     }
   }
@@ -192,11 +216,20 @@ h5 {
   /* Call To Action (CTA) Styles */
 
   .cta {
+    width: 100%;
     display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
+    margin-top: 7.2rem;
+
+    // Tablet Styling =============== a change
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 auto;
+      .center-stuff;
+      flex-direction: column;
+    }
 
     .cta-text {
+      max-width: 100%;
       font-size: 72px + 4;
       text-align: center;
       letter-spacing: 5px;
@@ -204,7 +237,6 @@ h5 {
       justify-content: center;
       flex-flow: column;
       align-items: center;
-      margin: 0 82px 0 0;
 
       button {
         border: 1px double black;
@@ -214,6 +246,11 @@ h5 {
         height: 32px;
         margin-top: 10px;
         cursor: pointer;
+
+        // Tablet Styling ===============
+        @media (max-width: 768px) {
+          margin-bottom: 14px;
+        }
       }
 
       button:hover {
@@ -232,6 +269,7 @@ h5 {
     padding: 35px 0;
     font-size: 16px;
     line-height: 18px;
+    color: @color-scheme-primary;
 
     .top-content {
       .my-first-mixin();
@@ -252,6 +290,7 @@ h5 {
 
   .contact p {
     margin: 15px 0;
+    color: @color-scheme-primary;
   }
 
   /* Footer Styles */
@@ -259,6 +298,7 @@ h5 {
   footer {
     text-align: center;
     margin: 40px 0 20px;
+    color: @color-scheme-primary;
   }
 }
 
