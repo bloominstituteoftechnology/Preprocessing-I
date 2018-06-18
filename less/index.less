@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    color: @color2;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -62,7 +63,39 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: @color-base;
 }
+
+// color scheme
+//triadic
+@color-base: #3bafdA;
+@color1: mix(@color-base, mediumvioletred);
+@color2: mix(@color-base, forestgreen);
+@color3: mix(@color-base, mintcream);
+@color4: mix(@color-base, red);
+
+// animations 
+@keyframes backdrop {
+    from {background-color: @color-base;}
+    to {background-color: @color3;}
+}
+
+
+//mixin operators
+
+.mixin (@a) when (@a = 40px){
+    background-color: @color3;
+}
+
+.mixin (@a) when (@a > 40px){
+    background-color: @color1;
+}
+
+.mixin (@a) {
+    margin-top:@a;
+}
+
+
 
 .container {
     width: 880px;
@@ -74,65 +107,87 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
+    animation-name: backdrop;
+    animation-duration: 20s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+    nav {
+        .mixin(40px); 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
+    }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+                color: black;
+            }
+
+                .logo {
+                    align-self: flex-end;
+                    margin: 28px 0 0 91px;
+                }
 }
 
 /* Call To Action (CTA) Styles */
+//variable declaration:
+@cta-margin-top: 72px;
+
+
+
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    .mixin(@cta-margin-top);
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    .cta-text {
+        font-size: @cta-margin-top;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background: black;
+                color: @color1;
+                @media(any-hover: hover){
+                    border-radius: 20px;
+                }
+            }
 }
 
 /* Main Content Styles */
+
+p {
+    &:extend(.bottom-content);
+    color: @color4;
+    padding-right: 20px;
+
+}
 
 .main-content {
    border-top: 2px solid black; 
@@ -141,25 +196,23 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+    }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .middle-img {
+            display: block;
+            margin: 30px auto;
+        }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        .bottom-content {
+            display: flex;
+            justify-content: space-around;
+
+        }
 }
 
 /* Contact Styles */
