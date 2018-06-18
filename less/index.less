@@ -76,6 +76,9 @@ p {
     max-width: 880px;
     width: 100%;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      max-width: 768px;
+    }
 }
 
 .nav {
@@ -88,11 +91,18 @@ p {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        height: 100px;
+    }
     .nav-item {
         font-family: 'Jua';
         text-decoration: none;
         font-size: 1.5rem;
         color: white;
+        @media (max-width: 768px) {
+            order: 1;
+        }
     }
     a:visited {
         text-decoration: none;
@@ -100,9 +110,17 @@ p {
     }
     .nav-logo {
         display: flex;
+        @media (max-width: 768px) {
+            order: 0;
+            width: 100%;
+            justify-content: center;
+        }
     }
     img {
         width: 100%;
+        @media (max-width: 768px) {
+            width: 25%;
+        }
     }
 }
 
@@ -130,6 +148,11 @@ p {
         padding-top: 100px;
         width: 50%;
         height: 450px;
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 0;
+            height: 300px;
+        }
         .title-text {
             font-size: 6rem;
             text-align: center;
@@ -154,6 +177,10 @@ p {
         .test {
             margin-left: 11.36%;
             margin-bottom: 100px;
+            @media (max-width: 768px) {
+                margin-left: 0;
+                margin-bottom: 0;
+            }
         }
     }
     .title-logo {
@@ -161,6 +188,9 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: 768px) {
+            display: none;
+        }
         img {
             width:100%;
         }
@@ -172,34 +202,67 @@ p {
         flex-wrap: wrap;
         justify-content: center;
         font-size: 1.5rem;
+        @media (max-width: 768px) {
+            padding: 20px 2%;
+            font-size: 1.5rem;
+        }
         .features {
             width: 50%;
             height: 80px;
             padding: 0 1% 0 0;
+            @media (max-width: 768px) {
+                width: 50%;
+                height: 150px;
+                padding: 0 1% 0 0;
+            }
         }
         .about {
             width: 50%;
             height: 80px;
             padding: 0 0 0 1%;
+            @media (max-width: 768px) {
+                width: 50%;
+                height: 150px;
+                padding: 0 0 0 1%;
+            }
         }
         .middle-img {
             padding: 30px 0;
             width: 100%;
+            @media (max-width: 768px) {
+                padding: 30px 0;
+                width: 100%;
+            }
         }
         .services {
             width: 33.33%;
             height: 110px;
             padding: 0 1% 0 0;
+            @media (max-width: 768px) {
+                width: 33.33%;
+                height: 200px;
+                padding: 0 1% 0 0;
+            }
         }
         .product {
             width: 33.33%;
             height: 110px;
             padding: 0 1% 0 1%;
+            @media (max-width: 768px) {
+                width: 33.33%;
+                height: 200px;
+                padding: 0 1% 0 1%;
+            }
         }
         .vision {
             width: 33.33%;
             height: 110px;
             padding: 0 0 0 1%;
+            @media (max-width: 768px) {
+                width: 33.33%;
+                height: 200px;
+                padding: 0 0 0 1%;
+            }
         }
     }
     .contact-info-container {
@@ -207,174 +270,16 @@ p {
         width: 20%;
         padding: 20px 0;
         font-size: 1.5rem;
+        @media (max-width: 768px) {
+            padding: 20px 1%;
+            font-size: 1.5rem;
+        }
     }
 }
 
 
 
-@media (max-width: 768px) {
-    .container {
-      max-width: 768px;
-    }
-    
-    .nav {
-        flex-wrap: wrap;
-        height: 100px;
-    }
 
-    .nav .nav-item {
-        order: 1;
-    }
-
-    .nav .nav-logo {
-        order: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .nav img {
-        width: 25%;
-    }
-    
-    .home-content .title {
-        width: 100%;
-        padding: 0;
-        height: 300px;
-    }
-
-    .home-content .title .test {
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-
-    .home-content .title-logo {
-        display: none;
-    }
-
-    .home-content .main-content {
-        padding: 20px 2%;
-        font-size: 1.5rem;
-    }
-
-    .home-content .main-content .features {
-        width: 50%;
-        height: 150px;
-        padding: 0 1% 0 0;
-    }
-
-    .home-content .main-content .about {
-        width: 50%;
-        height: 150px;
-        padding: 0 0 0 1%;
-    }
-
-    .home-content .main-content .middle-img {
-        padding: 30px 0;
-        width: 100%;
-    }
-
-    .home-content .main-content .services {
-        width: 33.33%;
-        height: 200px;
-        padding: 0 1% 0 0;
-    }
-
-    .home-content .main-content .product {
-        width: 33.33%;
-        height: 200px;
-        padding: 0 1% 0 1%;
-    }
-
-    .home-content .main-content .vision {
-        width: 33.33%;
-        height: 200px;
-        padding: 0 0 0 1%;
-    }
-
-    .home-content .contact-info-container {
-        padding: 20px 1%;
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .container {
-      max-width: 400px;
-    }
-
-    .nav {
-        position: relative;
-        justify-content: center;
-        height: 350px;
-        padding: 0;
-    }
-
-    .nav .nav-item {
-        width: 100%;
-        height: 50px;
-        border: 1px solid black;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav .nav-logo {
-        width: 100%;
-    }
-
-    .nav img {
-        width: 25%;
-        height: 50px;
-        padding: 10px 0;
-    }
-
-    .home-content .main-content {
-        padding: 20px 0;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 1.5rem;
-    }
-
-    .home-content .main-content .features {
-        width: 100%;
-        height: 140px;
-        padding: 10px 1%;
-    }
-
-    .home-content .main-content .about {
-        width: 100%;
-        height: 140px;
-        padding: 10px 1%;
-    }
-
-    .home-content .main-content .middle-img {
-        padding: 10px 1%;
-        width: 100%;
-    }
-
-    .home-content .main-content .services {
-        width: 100%;
-        height: 140px;
-        padding: 10px 1%;
-    }
-
-    .home-content .main-content .product {
-        width: 100%;
-        height: 140px;
-        padding: 10px 1%;
-    }
-
-    .home-content .main-content .vision {
-        width: 100%;
-        height: 140px;
-        padding: 10px 1%;
-    }
-
-    .home-content .contact-info-container {
-        padding: 10px 1%;
-        font-size: 1.5rem;
-    }
-}
 
 /* Services Page Specific CSS */
 
