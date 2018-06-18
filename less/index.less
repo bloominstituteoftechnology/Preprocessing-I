@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -61,75 +61,77 @@ html, body {
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 3.7%;
 }
 
 .container {
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
     margin: auto;
 }
+//Mixins
 
+.roundBorders {
+    border-radius: 5px;
+}
+
+// Variables
+
+@whoa: purple;
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
+    nav {
+        margin-top: 5%; 
+        width: 69.32%;
+        justify-content: space-between;
+        display: flex;
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            &:hover {
+                text-decoration: underline;
+                color: black;
+        }
+    }
+    .logo {
+        margin: 3.18% 0 0 10.34%;
+    }
 }
-
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 8%;
     justify-content: flex-end;
+    .cta-text {
+        font-size: 4.5rem;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 9.32% 0 0;
+        button {
+            border: 1px double black;
+            font-size: 1rem;
+            background: white;
+            width: 58.21%;
+            height: 10.95%;
+            margin-top: 3.42%;
+            cursor: pointer;
+            .roundBorders;
+            &:hover {
+                background: black;
+                color: white;
+            }
+    }
 }
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
 }
 
 /* Main Content Styles */
@@ -137,40 +139,98 @@ header .logo {
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
+   margin: 13.37% 0 6.24% 0;
+   padding: 6.24% 0;
+   font-size: 1rem;
+   line-height: 100%;
+   
+   .top-content {
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    
+    .middle-img {
+        display: block;
+        width: 100%;
+        margin: 5% auto;
+    }
+    .bottom-content {
+        display: flex;
+        p {
+            padding-right: 6.82%;        
+        }
+    }
 }
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    p {
+    margin: 1.70% 0;
 }
-
+}
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 2.69% 0 1.40%;
+}
+
+/*Media Query*/
+
+@media(max-width: 736px+32) {
+    header{
+        flex-direction: column;
+        align-content:center;
+        nav{
+            justify-content: space-around;
+            width: 100%;
+        }
+        .logo{
+            order: -1;
+            width: 50%;
+            
+        }
+    }
+
+    .cta{
+        justify-content: center;
+        margin: 10% 0 10%;
+        img {
+            display: none;
+        }
+    }
+    .main-content{
+        margin: 0 3% auto;
+    }
+
+    .contact{
+        margin: 3%;
+    }
+    
+}
+@media(max-width: 40px*10){
+    header{
+        background: @whoa;
+         nav{
+            flex-direction: column;
+            border-top: 1px solid #b0b0b0;
+            border-bottom: 1px solid #b0b0b0;
+            justify-items: center;
+            align-items: center;
+             a{
+                margin: 10px auto;
+                width:100%;
+            
+        }
+    }
+    }
+    .top-content {
+        flex-direction: column;
+        margin: 0 3% auto;
+    }
+    .bottom-content {
+        flex-direction: column;
+        margin: 0 3% auto;
+    }
 }
