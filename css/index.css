@@ -145,37 +145,110 @@ h5 {
   margin-bottom: 10px;
 }
 .container {
-  width: 880px;
+  max-width: 880px;
   margin: auto;
 }
-/* Header Styles */
+/* Custom Colors */
+/* =======   A Random Mixin   ========= */
+/* =========     Header Styles      =========== */
 header {
   width: 100%;
   display: flex;
 }
+@media (max-width: 400px) {
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+}
 header .logo {
+  display: flex;
   align-self: flex-end;
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 6%;
+}
+@media (max-width: 400px) {
+  header .logo {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+}
+@media (max-width: 768px) {
+  header .logo {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
 }
 header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 70%;
   justify-content: space-between;
   display: flex;
+  border-top: 5px dotted pink;
+  border-bottom: 5px dotted hotpink;
+  width: 100%;
+}
+@media (max-width: 400px) {
+  header nav {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
 }
 header nav a {
   text-decoration: none;
-  color: #b0b0b0;
+  color: gray;
+  margin: 10px 0;
+}
+@media (max-width: 400px) {
+  header nav a {
+    border-top: 5px dotted pink;
+    border-bottom: 5px dotted hotpink;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    font-size: 110%;
+    width: 100%;
+  }
 }
 header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color: pink;
 }
 /* Call To Action (CTA) Styles */
 .cta {
   display: flex;
   margin-top: 72px;
   justify-content: flex-end;
+}
+@media (max-width: 400px) {
+  .cta img {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .cta img {
+    display: none;
+  }
 }
 .cta .cta-text {
   font-size: 72px;
@@ -186,6 +259,28 @@ header nav a:hover {
   flex-flow: column;
   align-items: center;
   margin: 0 82px 0 0;
+  border-top: 5px dotted pink;
+  border-bottom: 5px dotted hotpink;
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  .cta .cta-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: auto;
+  }
 }
 .cta .cta-text button {
   border: 1px double black;
@@ -197,7 +292,7 @@ header nav a:hover {
   cursor: pointer;
 }
 .cta .cta-text button:hover {
-  background: black;
+  background: pink;
   color: white;
 }
 /* Main Content Styles */
@@ -208,6 +303,8 @@ header nav a:hover {
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
+  border-top: 5px dotted pink;
+  border-bottom: 5px dotted hotpink;
 }
 .main-content .top-content {
   display: flex;
@@ -216,6 +313,7 @@ header nav a:hover {
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+  max-width: 99%;
 }
 .main-content .bottom-content {
   display: flex;

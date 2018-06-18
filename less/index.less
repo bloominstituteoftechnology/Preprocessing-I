@@ -65,34 +65,131 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 }
 
-/* Header Styles */
+/* Custom Colors */
+
+@hover-color: pink;
+
+
+
+
+/* =======   A Random Mixin   ========= */
+
+.sweetborders(){
+    border-top: 5px dotted pink;
+    border-bottom: 5px dotted hotpink;
+}
+
+.flex() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: auto;
+}
+
+.flexreverse() {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    
+}
+
+.mobile(){
+    @media (max-width: 400px) {
+       .flexreverse;
+    }
+}
+
+.mobilenavwidth(){
+    .mobile;
+    width: 100%;
+}
+
+.mobilehide(){
+    @media (max-width: 400px) {
+        display: none;
+    }
+}
+
+.tablethide(){
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.mobilemenu(){
+    @media (max-width: 400px) {
+    .sweetborders;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    font-size: 110%;
+    // margin: auto;
+    width: 100%;
+    }
+}
+
+
+.tablet(){
+    @media (max-width: 768px) {
+       .flexreverse
+    }
+}
+
+.ctamobile() {
+    @media (max-width: 400px) {
+        .flex
+    }
+}
+
+.ctatablet() {
+    @media (max-width: 768px) {
+        .flex
+     }
+}
+
+/* =========     Header Styles      =========== */
 
 header {
     width: 100%;
     display: flex;
+    .mobile;
+    .tablet;
 
     .logo {
+        display: flex;
         align-self: flex-end;
-        margin: 28px 0 0 91px;
+        margin: 28px 0 0 6%;
+        .mobile;
+        .tablet;
     }
 
     nav {
         margin-top: 40px; 
-        width: 610px;
+        width: 70%;
         justify-content: space-between;
         display: flex;
+        .sweetborders;
+        .mobilenavwidth;
+    
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: gray;
+            margin: 10px 0;
+            .mobilemenu;
         }
         a:hover {
             text-decoration: underline;
-            color: black;
+            color: @hover-color;
         }
     }
 }
@@ -105,6 +202,13 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+   
+
+
+    img {
+        .mobilehide;
+        .tablethide;
+    }
 
     .cta-text {
         font-size: 72px;
@@ -115,6 +219,9 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        .sweetborders;
+        .ctamobile;
+        .ctatablet;
 
         button {
             border: 1px double black;
@@ -126,7 +233,7 @@ header {
             cursor: pointer;
         }
         button:hover {
-            background: black;
+            background: @hover-color;
             color: white;
         }
     }  
@@ -143,6 +250,7 @@ header {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
+   .sweetborders;
 
     .top-content {
         display: flex;
@@ -151,6 +259,7 @@ header {
     .middle-img {
         display: block;
         margin: 30px auto;
+        max-width: 99%;
     }
     .bottom-content {
         display: flex;
