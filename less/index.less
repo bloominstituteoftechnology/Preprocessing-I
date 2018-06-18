@@ -71,6 +71,15 @@ p {
 
 /* Your code starts here! */
 
+.bordered() {
+    border: 1px solid black;
+}
+
+.centered-flex(){
+    display:flex;
+    justify-content: center;
+}
+
 
 .container {
     max-width: 880px;
@@ -80,7 +89,7 @@ p {
       max-width: 768px;
     }
     @media (max-width: 400px) {
-      max-width: 400px;
+      max-width: 768px - 368px;
     }
 }
 
@@ -101,7 +110,7 @@ p {
     @media (max-width: 400px) {
         position: relative;
         justify-content: center;
-        height: 350px;
+        height: 200px + 150px;
         padding: 0;
     }
     .nav-item {
@@ -115,10 +124,10 @@ p {
         @media (max-width: 400px) {
             width: 100%;
             height: 50px;
-            border: 1px solid black;
             display:flex;
             justify-content: center;
             align-items: center;
+            .bordered;
         }
     }
     a:visited {
@@ -150,8 +159,7 @@ p {
 }
 
 .copyright {
-    display: flex;
-    justify-content: center;
+    .centered-flex;
     padding: 10px 1%;
     font-size: 1.5rem;
 }
@@ -165,8 +173,7 @@ p {
 .home-content {
     header {
     padding: 20px 0 0 0;
-    display: flex;
-    justify-content: center;
+    .centered-flex;
     }
     .title {
         text-align: center;
@@ -184,13 +191,13 @@ p {
         }
         button {
             background-color: white;
-            border: 1px solid;
             color: black;
             padding: 5px 10%;
             text-align: center;
             text-decoration: none;
             font-size: 1.5rem;
             transition-duration: 0.4s;
+            .bordered;
         }
         button:hover {
             color: white;
@@ -210,8 +217,7 @@ p {
     }
     .title-logo {
         width: 50%;
-        display: flex;
-        justify-content: center;
+        .centered-flex;
         align-items: center;
         @media (max-width: 768px) {
             display: none;
@@ -222,10 +228,9 @@ p {
     }
     // Index Page Main Content 
     .main-content {
-        display: flex;
+        .centered-flex;
         padding: 20px 0;
         flex-wrap: wrap;
-        justify-content: center;
         font-size: 1.5rem;
         @media (max-width: 768px) {
             padding: 20px 2%;
