@@ -56,6 +56,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    font-size: 100% / 1.6;
 }
 
 h1, h2, h3, h4, h5 {
@@ -69,67 +70,84 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+
+/* Variables */
+
+@primary-body-size: 1.6rem;
+@primary-sub-heading-size: 1.8rem;
+
+
+/* Mixins */
+
+.body-borders(@color1, @color2) {
+    border-top: solid 1px black;
+    border-left: solid 1px @color1;
+    border-right: solid 1px @color2;
+}
+
+
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-size: @primary-body-size;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }
+        }
+    }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
-    margin-top: 72px;
+    margin-top: 7.2rem;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        button {
+            border: 1px double black;
+            font-size: @primary-body-size;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+            &:hover {
+                background: black;
+                color: white;
+            }
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -139,33 +157,66 @@ header .logo {
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: @primary-body-size;
    line-height: 18px;
-}
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+   h4 {
+    font-size: @primary-sub-heading-size;
+   }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+   .top-content {
+        display: flex;
+        justify-content: space-around;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .features {
+            .body-borders(red, blue);
+            border-bottom: dashed 1px orange;
+        }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        .about {
+            .body-borders(teal, orange);
+            border-bottom: dashed 1px yellow;
+        }
+   }
+
+   .middle-img {
+        display: block;
+        margin: 30px auto;
+   }
+
+   .bottom-content {
+        display: flex;
+        justify-content: space-around;
+
+        p {
+            padding-right: 20px;
+        }
+
+        .services {
+            .body-borders(silver, purple);
+            border-bottom: dashed 1px gray;
+        }
+
+        .product {
+            .body-borders(silver, purple);
+            border-bottom: dashed 1px red;
+        }
+
+        .vision {
+            .body-borders(silver, purple);
+            border-bottom: dashed 1px blue;
+        }
+   }
 }
 
 /* Contact Styles */
 
+.contact h4 {
+    font-size: @primary-sub-heading-size;
+}
 .contact p {
     margin: 15px 0;
+    font-size: @primary-body-size;
 }
 
 /* Footer Styles */
@@ -173,4 +224,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    font-size: @primary-body-size;
 }
