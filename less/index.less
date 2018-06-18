@@ -64,10 +64,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    width: 880px;
-    margin: auto;
-}
+
 
 // ======================== Variables
 @text-color: magenta;
@@ -94,6 +91,16 @@ html {
     font-size: 62.5%;
 }
 
+/* Container Styles */
+
+.container {
+    width: 880px;
+    margin: auto;
+    @media( max-width: 768px ) {
+        width: 100%;
+    }
+}
+
 /* Header Styles */
 
 header {
@@ -103,6 +110,9 @@ header {
     @media( max-width: 768px ) {
         flex-wrap: wrap;
         justify-content: center;
+        background: lightblue;
+        height: 150px;
+        align-content: space-around;
     }
 
    nav {
@@ -111,11 +121,13 @@ header {
       .flexbox-justify(space-between);
       
       @media( max-width: 768px ) {
-          width: 80%;
+        margin-top: 0;  
+        width: 100%;
         }
-      a {
+      
+     a {
         text-decoration: none;
-        color: #b0b0b0;
+        color: #b0b0b0 + #111111;
         font-size: @font-size-primary + 1rem;
         
         @media ( max-width: 768px ) {
@@ -123,11 +135,12 @@ header {
         }
         
     } // header nav a   
-     a:hover {
+    
+    a:hover {
       text-decoration: underline;
       color: black;
-          
     } //header nav a:hover 
+    
   } //header nav  
 
   .logo {
@@ -136,7 +149,7 @@ header {
     
     @media( max-width: 768px ) {
         order: -1;
-        margin: 28px 0 0 0;
+        margin: 0 0 0 0;
     }
 
   } //header logo
@@ -161,7 +174,10 @@ header {
     .flexbox-justify(center);
       flex-flow: column;
       align-items: center;
-      margin: 0 82px 0 0;
+      margin: 0 9.3181818182% 0 0;
+      @media( max-width: 768px ) {
+          width: 100%;
+      }
       
       button {
         border: 1px double black;
@@ -196,7 +212,11 @@ header {
     padding: 35px 0;
     font-size: 1.6rem;
     line-height: 18px;
-   
+    @media( max-width: 768px ) {
+        .custom-font();
+    }
+
+
    .top-content {
      .flexbox-justify(space-around);
    } //top content
@@ -204,13 +224,16 @@ header {
    .middle-img {
      display: block;
      margin: 30px auto;
+     @media( max-width: 768px ) {
+        width: 100%;
+     }
    } //middle image 
    
    .bottom-content {
      .flexbox-justify(space-around);
 
      p {
-     padding-right: 20px;
+     padding-right: 2.27272727%;
      } // bottom content p
      
    } //bottom content
@@ -221,6 +244,11 @@ header {
 
 .contact {
     font-size: 1.6rem;
+
+    @media ( max-width: 768px ) {
+        .custom-font();
+    }
+
     p {
         margin: 15px 0;
     } //contact p
@@ -230,6 +258,10 @@ header {
 /* Footer Styles */
 
 footer {
+    font-size: 1.6rem;
     text-align: center;
     margin: 40px 0 20px;
+    @media ( max-width: 768px ) {
+        .custom-font();
+    }
 }
