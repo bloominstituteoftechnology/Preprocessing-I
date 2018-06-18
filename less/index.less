@@ -69,6 +69,19 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+//mixins
+.mixin-font(){
+	font-size: 16px;
+}
+.mixin-btn(){border: 1px double black;
+		.mixin-font;
+		background: white;
+		width: 170px;
+		height: 32px;
+		margin-top: 10px;
+		cursor: pointer;
+}
+
 /* Header Styles */
 
 header {
@@ -110,13 +123,7 @@ header {
 		    align-items: center;
 		    margin: 0 82px 0 0;
 				button {
-				    border: 1px double black;
-				    font-size: 16px;
-				    background: white;
-				    width: 170px;
-				    height: 32px;
-				    margin-top: 10px;
-				    cursor: pointer;
+						.mixin-btn;
 						&:hover {
 								background: black;
 								color: white;
@@ -126,13 +133,12 @@ header {
 }//.cta
 
 /* Main Content Styles */
-
 .main-content {
    border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   .mixin-font;
    line-height: 18px;
 	 .top-content {
 	     display: flex;
@@ -147,11 +153,9 @@ header {
 	     justify-content: space-around;
 			 p {
 			     padding-right: 20px;
-			 }
+			 }//p
 	 }//.bottom-content
 }//main-content
-
-.main-content .bottom-content
 
 /* Contact Styles */
 
