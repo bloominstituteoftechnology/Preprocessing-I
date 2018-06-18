@@ -1,10 +1,10 @@
 // === Variables === //
 
 // Background Colors
-@background: @CatalinaBlue;
-@ctabg: none;
-@headerbg: @TanHide;
-@contentbg: @WhiteRock;
+@background: @TanHide;
+@ctabg: @CreamCan;
+@headerbg: @CreamCan;
+@contentbg: @CatalinaBlue;
 @contactbg: @CreamCan;
 @footerbg: @TanHide;
 
@@ -33,7 +33,8 @@
     font-size: ~"@{remsize}rem";
 }
 
-
+// .navTablet() {
+// }
 
 
 
@@ -107,7 +108,7 @@ html {
         background: spin(saturate(@background, 10%), 10);
     }
     @media (max-width: 400px) {
-        background: spin(saturate(@background, 10%), 10);
+        background: spin(saturate(@background, 10%), 20);
     }
 }
 
@@ -134,7 +135,7 @@ header {
         background: spin(saturate(@headerbg, 10%), 10);
     }
     @media (max-width: 400px) {
-        background: spin(saturate(@headerbg, 10%), 10);
+        background: spin(saturate(@headerbg, 10%), 20);
     }
     nav {
         margin-top: 40px; 
@@ -163,6 +164,13 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    background: @ctabg;
+    @media (max-width: 800px) {
+        background: spin(saturate(@ctabg, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@ctabg, 10%), 20);
+    }
     .cta-text {
         text-align: center;
         letter-spacing: 5px;
@@ -197,12 +205,13 @@ header {
     padding: 35px 0;
     line-height: 18px;
     background: @contentbg;
+    color: white;
     .fontsizeConverter(16);
     @media (max-width: 800px) {
         background: spin(saturate(@contentbg, 10%), 10);
     }
     @media (max-width: 400px) {
-        background: spin(saturate(@contentbg, 10%), 10);
+        background: spin(saturate(@contentbg, 10%), 20);
     }
     .top-content {
         display: flex;
@@ -233,7 +242,7 @@ header {
         background: spin(saturate(@contactbg, 10%), 10);
     }
     @media (max-width: 400px) {
-        background: spin(saturate(@contactbg, 10%), 10);
+        background: spin(saturate(@contactbg, 10%), 20);
     }
 }
 
@@ -248,6 +257,6 @@ footer {
         background: spin(saturate(@footerbg, 10%), 10);
     }
     @media (max-width: 400px) {
-        background: spin(saturate(@footerbg, 10%), 10);
+        background: spin(saturate(@footerbg, 10%), 20);
     }
 }
