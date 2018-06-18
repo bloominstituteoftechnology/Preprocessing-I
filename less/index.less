@@ -90,6 +90,23 @@ h1, h2, h3, h4, h5 {
 @max400: ~"(max-width: 400px)"; // For mobile view; doc: lesscss.org/#escaping
 
 
+/* Mixins */
+.flex-space-around() {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mobile-content() {
+    @media @max400 {
+        flex-wrap: wrap;
+        .text-content {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
 /* Header Styles */
 
 header {
@@ -133,6 +150,8 @@ header {
                 font-size: 2rem;
                 text-align: center;
                 width: 100%;
+                padding-top: 5px;
+                padding-bottom: 5px;
 
                 &:hover {
                     text-decoration: none;
@@ -147,7 +166,7 @@ header {
 
         @media @max768 {
             align-self: center;
-            margin-left: 0;
+            margin: 10px 0 5px;
         }
     }
 }
@@ -165,6 +184,10 @@ header {
         img {
             display: none;
         }
+    }
+
+    @media @max400 {
+        margin-top: 20px;
     }
 
     .cta-text {
@@ -217,23 +240,27 @@ header {
 
     @media @max400 {
         width: 95%;
-        margin: 75px auto 35px;
+        margin: 40px auto 35px;
     }
 
     .top-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space-around;
+        .mobile-content;
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
         width: 100%;
+
+        @media @max400 {
+            margin: 5px auto;
+        }
     }
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space-around;
+        .mobile-content;
 
         p {
             padding-right: 20px;

@@ -163,6 +163,7 @@ h5 {
   }
 }
 /* Variables */
+/* Mixins */
 /* Header Styles */
 header {
   width: 100%;
@@ -206,6 +207,8 @@ header nav a:hover {
     font-size: 2rem;
     text-align: center;
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   header nav a:hover {
     text-decoration: none;
@@ -218,7 +221,7 @@ header .logo {
 @media (max-width: 768px) {
   header .logo {
     align-self: center;
-    margin-left: 0;
+    margin: 10px 0 5px;
   }
 }
 /* Call To Action (CTA) Styles */
@@ -233,6 +236,11 @@ header .logo {
   }
   .cta img {
     display: none;
+  }
+}
+@media (max-width: 400px) {
+  .cta {
+    margin-top: 20px;
   }
 }
 .cta .cta-text {
@@ -283,21 +291,44 @@ header .logo {
 @media (max-width: 400px) {
   .main-content {
     width: 95%;
-    margin: 75px auto 35px;
+    margin: 40px auto 35px;
   }
 }
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 400px) {
+  .main-content .top-content {
+    flex-wrap: wrap;
+  }
+  .main-content .top-content .text-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
   width: 100%;
 }
+@media (max-width: 400px) {
+  .main-content .middle-img {
+    margin: 5px auto;
+  }
+}
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .main-content .bottom-content {
+    flex-wrap: wrap;
+  }
+  .main-content .bottom-content .text-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;
