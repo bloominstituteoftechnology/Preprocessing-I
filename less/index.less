@@ -69,11 +69,15 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+@nav-bar-color: #977BB6;
+@nav-bar-txt-color: white;
+@theme-color: #977BB6;
 /* Header Styles */
 
 header {
 	width: 100%;
 	display: flex;
+	background-color: @nav-bar-color;
 
 	nav {
 		margin-top: 40px;
@@ -83,7 +87,7 @@ header {
 
 		a {
 			text-decoration: none;
-			color: #b0b0b0;
+			color: @nav-bar-txt-color;
 		}
 
 		a:hover {
@@ -123,11 +127,13 @@ header {
 			height: 32px;
 			margin-top: 10px;
 			cursor: pointer;
+			background-color: @theme-color;
+			color: @nav-bar-txt-color;
 		}
 
 		button:hover {
 			background: black;
-			color: white;
+			color: @theme-color;
 		}
 	}
 }
@@ -135,13 +141,16 @@ header {
 /* Main Content Styles */
 
 .main-content {
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	border-top: 2px solid @theme-color;
+	border-bottom: 2px solid @theme-color;
 	margin: 75px 0 35px 0;
 	padding: 35px 0;
 	font-size: 16px;
 	line-height: 18px;
 
+	h4 {
+		color: @theme-color;
+	}
 	.top-content {
 		display: flex;
 		justify-content: space-around;
@@ -164,8 +173,13 @@ header {
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+	h4 {
+		color: @theme-color;
+	}
+	p {
+		margin: 15px 0;
+	}
 }
 
 /* Footer Styles */
