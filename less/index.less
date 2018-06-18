@@ -79,10 +79,18 @@ h1, h2, h3, h4, h5 {
 @button-height: 32px;
 
 /*=============== Mixins */
+// flex-it(center), flex-it(flex-start), etc...
+// .flex-it(@justify) {
+// 	display: flex;
+// 	justify-content: @justify;
+// }
 
-.flex-it(@justify) {
-	display: flex;
-	justify-content: @justify;
+//.flex-mix(@dir: column; @align: center); || .flex-mix(@just: center;) || etc
+.flex-mix(@just: flex-start; @align: stretch; @dir: row; @wrap: nowrap){
+  display: flex;
+  justify-content: @just;
+  align-items: @align;
+  flex-flow: @dir @wrap;
 }
 
 
@@ -95,7 +103,8 @@ header {
 		nav {
 		    margin-top: 40px;
 		    width: 100%;
-		    .flex-it(space-between);
+		    // .flex-it(space-between);
+				.flex-mix(@just: space-between);
 
 				a {
 				    text-decoration: none;
@@ -106,6 +115,10 @@ header {
 						    text-decoration: underline;
 						    color: @hover-color;
 								font-size: @font-size * 1.3;
+
+								@media(max-width: 400px) {
+									background: gray;
+								}
 						}
 
 						@media(max-width: 400px) {
@@ -119,10 +132,6 @@ header {
 							&:first-child {
 								border-top: 1px solid gray;
 							}
-
-							&:hover {
-								background: gray;
-							}
 						}
 				}
 
@@ -133,8 +142,9 @@ header {
 
 				@media(max-width: 400px) {
 					width: 100%;
-					display: flex;
-					flex-direction: column;
+					// display: flex;
+					// flex-direction: column;
+					.flex-mix(@dir: column);
 					margin: 0;
 					align-items: center;
 				}
@@ -160,8 +170,9 @@ header {
 		}
 
 		@media(max-width: 400px) {
-			flex-wrap: wrap;
-			justify-content: center;
+			// flex-wrap: wrap;
+			// justify-content: center;
+			.flex-mix(@wrap: wrap; @just: center;)
 		}
 }
 
@@ -169,15 +180,15 @@ header {
 
 .cta {
     margin-top: 72px;
-		.flex-it(flex-end);
+		.flex-mix(@just: flex-end);
 
 		.cta-text {
 		    font-size: 7.2rem;
 		    text-align: center;
 		    letter-spacing: 5px;
-				.flex-it(center);
-		    flex-flow: column;
-		    align-items: center;
+				.flex-mix(@just: center; @dir: column; @align: center;);
+		    // flex-flow: column;
+		    // align-items: center;
 		    margin: 0 82px 0 0;
 
 				h1 {
@@ -229,9 +240,10 @@ header {
 
 		@media(max-width: 400px) {
 			margin-top: 50px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: center;
+			.flex-mix(@dir: column; @align: center;)
 		}
 }
 
@@ -246,7 +258,7 @@ header {
    line-height: 18px;
 
 	 .top-content {
-		 .flex-it(space-around);
+		 .flex-mix(@just: space-around);
 
 		 @media(max-width: 400px) {
 			 flex-wrap: wrap;
@@ -265,7 +277,8 @@ header {
 	 }
 
 	 .bottom-content {
-		 .flex-it(space-around);
+		 // .flex-it(space-around);
+		 .flex-mix(@just: space-around);
 
 			p {
 				padding-right: 20px;

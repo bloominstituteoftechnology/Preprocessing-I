@@ -162,6 +162,8 @@ header nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  flex-flow: row nowrap;
 }
 header nav a {
   text-decoration: none;
@@ -172,6 +174,11 @@ header nav a:hover {
   text-decoration: underline;
   color: blue;
   font-size: 2.08rem;
+}
+@media (max-width: 400px) {
+  header nav a:hover {
+    background: gray;
+  }
 }
 @media (max-width: 400px) {
   header nav a {
@@ -185,9 +192,6 @@ header nav a:hover {
   header nav a:first-child {
     border-top: 1px solid gray;
   }
-  header nav a:hover {
-    background: gray;
-  }
 }
 @media (max-width: 768px) {
   header nav {
@@ -199,7 +203,9 @@ header nav a:hover {
   header nav {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-flow: column nowrap;
     margin: 0;
     align-items: center;
   }
@@ -227,8 +233,10 @@ header .logo {
 }
 @media (max-width: 400px) {
   header {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
+    align-items: stretch;
+    flex-flow: row wrap;
   }
 }
 /* Call To Action (CTA) Styles */
@@ -236,6 +244,8 @@ header .logo {
   margin-top: 72px;
   display: flex;
   justify-content: flex-end;
+  align-items: stretch;
+  flex-flow: row nowrap;
 }
 .cta .cta-text {
   font-size: 7.2rem;
@@ -243,8 +253,8 @@ header .logo {
   letter-spacing: 5px;
   display: flex;
   justify-content: center;
-  flex-flow: column;
   align-items: center;
+  flex-flow: column nowrap;
   margin: 0 82px 0 0;
 }
 @media (max-width: 768px) {
@@ -298,8 +308,9 @@ header .logo {
   .cta {
     margin-top: 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    flex-flow: column nowrap;
   }
 }
 /* Main Content Styles */
@@ -314,6 +325,8 @@ header .logo {
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+  align-items: stretch;
+  flex-flow: row nowrap;
 }
 @media (max-width: 400px) {
   .main-content .top-content {
@@ -334,6 +347,8 @@ header .logo {
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+  align-items: stretch;
+  flex-flow: row nowrap;
 }
 .main-content .bottom-content p {
   padding-right: 20px;
