@@ -74,6 +74,12 @@ h1, h2, h3, h4, h5 {
 
 // ======================== Mixins
 
+//.flexbox-justify(center);
+.flexbox-justify(@position){
+    display:flex;
+    justify-content: @position;
+}
+
 /* Header Styles */
 
 header {
@@ -83,14 +89,12 @@ header {
     @media( max-width: 768px ) {
         flex-wrap: wrap;
         justify-content: center;
-        background: pink;
     }
 
    nav {
       margin-top: 40px; 
       width: 610px;
-      justify-content: space-between;
-      display: flex;
+      .flexbox-justify(space-between);
 
       a {
         text-decoration: none;
@@ -110,7 +114,7 @@ header {
     @media( max-width: 768px ) {
         order: -1;  
     }
-    
+
   } //header logo
 }//header  
 
@@ -119,16 +123,14 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
     margin-top: 72px;
-    justify-content: flex-end;
+    .flexbox-justify(flex-end);
   
   .cta-text {
       font-size: 72px;
       text-align: center;
      letter-spacing: 5px;
-      display: flex;
-      justify-content: center;
+    .flexbox-justify(center);
       flex-flow: column;
       align-items: center;
       margin: 0 82px 0 0;
@@ -163,8 +165,7 @@ header {
     line-height: 18px;
    
    .top-content {
-     display: flex;
-     justify-content: space-around;
+     .flexbox-justify(space-around);
    } //top content
    
    .middle-img {
@@ -173,8 +174,7 @@ header {
    } //middle image 
    
    .bottom-content {
-     display: flex;
-     justify-content: space-around;
+     .flexbox-justify(space-around);
      
      p {
      padding-right: 20px;
