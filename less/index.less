@@ -53,9 +53,79 @@ table {
     box-sizing: border-box;
 }
 
+//variables
+@mediumaquamarine: #7cd7c2;
+@brown: #750404;
+@yellowish: #ffc800;
+@orange: #e69500;
+
+//mixins
+
+.btn-red(){
+	border: 1px double black;
+	.mixin-font;
+	background-color: @brown;
+	width: 170px;
+	height: 32px;
+	margin-top: 10px;
+	cursor: pointer;
+		&:hover {
+				background: white;
+				color: @brown;
+		}//hover
+	color: @yellowish;
+}//btn-red
+
+.btn-white(){
+	border: 1px double black;
+	.mixin-font;
+	background: white;
+	width: 170px;
+	height: 32px;
+	margin-top: 10px;
+	cursor: pointer;
+		&:hover {
+				background: black;
+				color: white;
+		}//hover
+}
+
+.white-scheme(){
+	.cta .cta-text button{
+		.btn-white
+}
+
+}
+.red-scheme(){
+	h1{
+		color:@brown;
+	}
+	header{
+		background: @brown;
+		nav a {
+			color: @orange;
+			&:hover{
+				color: @yellowish;
+			}
+		}
+	}
+	.cta .cta-text button {
+		.btn-red;
+	}
+}
+
+.mixin-font(){
+	font-size: 16px;
+}
+.mixin-btn(){
+
+}
+
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+		// .red-scheme;
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,19 +137,6 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
-}
-
-//mixins
-.mixin-font(){
-	font-size: 16px;
-}
-.mixin-btn(){border: 1px double black;
-		.mixin-font;
-		background: white;
-		width: 170px;
-		height: 32px;
-		margin-top: 10px;
-		cursor: pointer;
 }
 
 /* Header Styles */
@@ -123,11 +180,7 @@ header {
 		    align-items: center;
 		    margin: 0 82px 0 0;
 				button {
-						.mixin-btn;
-						&:hover {
-								background: black;
-								color: white;
-						}//hover
+					.btn-white;
 				}//button
 		}//.cta-text
 }//.cta
