@@ -69,7 +69,20 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+// Less Variables
+
+@site-navigation-color: @tarawera;
+@tarawera: #0E3E5B;
+@heading-color: @cobalt;
+@cobalt: #044CBB;
+@background-color: @tranquil;
+@tranquil: #E6FFFF;
+
 /* Header Styles */
+
+body {
+    background-color: @background-color;
+}
 
 header {
     width: 100%;
@@ -83,7 +96,7 @@ header {
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: @site-navigation-color;
         }
 
         a:hover {
@@ -114,6 +127,7 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @heading-color;
 
         button {
             border: 1px double black;
@@ -142,6 +156,10 @@ header {
     font-size: 16px;
     line-height: 18px;
 
+    h4 {
+        color: @heading-color;
+    }
+
     .top-content {
     display: flex;
     justify-content: space-around;
@@ -164,6 +182,9 @@ header {
 
 
 /* Contact Styles */
+.contact h4 {
+    color: @heading-color;
+}
 
 .contact p {
     margin: 15px 0;
