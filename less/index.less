@@ -51,6 +51,11 @@ table {
 //================== Variables
 @std-fontsize: 1.6rem;
 
+//================== Mixins
+.std-content-display() {
+    display: flex;
+    justify-content: space-around;
+}
 
 * {
     box-sizing: border-box;
@@ -59,7 +64,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 6.2rem;
+    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -142,16 +147,14 @@ header nav {
    font-size: @std-fontsize;
    line-height: 18px;
    .top-content {
-        display: flex;
-        justify-content: space-around;
+        .std-content-display;
    }
    .middle-img {
         display: block;
         margin: 30px auto;
    }
    .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .std-content-display;
         p {
             padding-right: 20px;
         }
@@ -161,12 +164,17 @@ header nav {
 /* Contact Styles */
 
 .contact p {
+    font-size: @std-fontsize;
     margin: 15px 0;
+    h4 {
+        font-size: @std-fontsize + .4;
+    }
 }
 
 /* Footer Styles */
 
 footer {
+    font-size: @std-fontsize;
     text-align: center;
     margin: 40px 0 20px;
 }
