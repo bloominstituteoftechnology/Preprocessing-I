@@ -71,8 +71,10 @@ html {
 
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
+    width: 100%;
+    padding: 0 1%;
 }
 
 // Variables
@@ -84,7 +86,13 @@ html {
 .defult-size () {
     font-size: 16rem / 10;
 }
-
+.center-everything () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
 
 /* Header Styles */
 
@@ -92,24 +100,38 @@ html {
 header {
     width: 100%;
     display: flex;
+    @media(max-width: 768px) {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        .center-everything
+    }
     nav {
         margin-top: 40px; 
         width: 610px;
         justify-content: space-between;
         display: flex;
         .defult-size;
+        @media(max-width: 768px) {
+            .center-everything;
+            justify-content: space-between;
+            margin-top: 50px;
+           
+        }
         a {
             text-decoration: none;
             color: #b0b0b0;
         }
-        a:hover {
-           
+        a:hover { 
             color: @btn-color;
         }
     } // Nav
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        @media(max-width: 768px) {
+            .center-everything;
+            margin-top: 40px;
+        }
     } // Logo
 } // Header
 
@@ -129,6 +151,9 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        @media(max-width: 768px) {
+            .center-everything;
+        }
         button {
             border: 1px double black;
             .defult-size;
@@ -143,8 +168,13 @@ header {
             color: white;
         } // Button
     } //CTA Text
-} //CTA
+    img {
 
+        @media(max-width: 768px) {
+            display: none;
+        }
+    }
+} //CTA
 
 
 
@@ -160,11 +190,21 @@ header {
    .top-content {
         display: flex;
         justify-content: space-around;
+        @media(max-width: 768px) {
+         
+            justify-content: space-between;
+            
+           p {
+                padding-right: 20px;
+           }
+        }
     } // Top Content
     .middle-img {
         display: block;
         margin: 30px auto;
+        width: 100%;
     }
+
     .bottom-content {
         display: flex;
         justify-content: space-around;
