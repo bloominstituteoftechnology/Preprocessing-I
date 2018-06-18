@@ -95,7 +95,10 @@ header {
       margin-top: 40px; 
       width: 610px;
       .flexbox-justify(space-between);
-
+      
+      @media( max-width: 768px ) {
+          width: 80%;
+      }
       a {
         text-decoration: none;
         color: #b0b0b0;       
@@ -112,7 +115,8 @@ header {
     margin: 28px 0 0 91px;
     
     @media( max-width: 768px ) {
-        order: -1;  
+        order: -1;
+        margin: 28px 0 0 0;
     }
 
   } //header logo
@@ -126,6 +130,10 @@ header {
     margin-top: 72px;
     .flexbox-justify(flex-end);
   
+    @media( max-width: 768px ) {
+        .flexbox-justify(center);  
+    } 
+
   .cta-text {
       font-size: 72px;
       text-align: center;
@@ -151,6 +159,11 @@ header {
       color: white;
     } //button hover     
   }//cta text
+  img {
+    @media( max-width: 768px ) {
+        display: none;  
+    } 
+  }
 }//cta
 
 
@@ -175,7 +188,7 @@ header {
    
    .bottom-content {
      .flexbox-justify(space-around);
-     
+
      p {
      padding-right: 20px;
      } // bottom content p
