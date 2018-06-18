@@ -64,113 +64,230 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
+
+// =============================== MY MIXINS
+
+.space-around-content() {
+    display: flex;
+    justify-content: space-around;
+}//display:flex + justify-content:space-around
+
+
+//================================ VARIABLES
+
+@text-link: #b0b0b0;
+@text-link-hover-color: black;
+@text-link-hover-decor: underline;
+
+
+
 .container {
     width: 880px;
     margin: auto;
-}
 
-/* Header Styles */
+    /* Header Styles */
+    header {
+        width: 100%;
+        display: flex;
+    
+        nav {
+            margin-top: 40px; 
+            width: 610px;
+            justify-content: space-between;
+            display: flex;  
+    
+            a {
+                text-decoration: none;
+                color: @text-link;
+    
+                &:hover {
+                    text-decoration: @text-link-hover-decor;
+                    color: @text-link-hover-color;
+                }
+            }//Using @text-link variable for color
+        }
+        
+        .logo {
+            align-self: flex-end;
+            margin: 28px 0 0 91px;
+        }
+    } //======================== NAVIGATION MENU
+    
+    /* Call To Action (CTA) Styles */
+    .cta {
+        display: flex;
+        margin-top: 72px;
+        justify-content: flex-end;
+    
+        .cta-text{
+            font-size: 72px;
+            text-align: center;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 82px 0 0;
+    
+            button {
+                border: 1px double black;
+                font-size: 16px;
+                background: white;
+                width: 170px;
+                height: 32px;
+                margin-top: 10px;
+                cursor: pointer;
+    
+                &:hover {
+                    background: black;
+                    color: white;
+                }
+            }//Button
+        }//Font Styling
+    }
+    
+    /* Main Content Styles */
+    .main-content {
+       border-top: 2px solid black; 
+       border-bottom: 2px solid black;
+       margin: 75px 0 35px 0;
+       padding: 35px 0;
+       font-size: 16px;
+       line-height: 18px;
+    
+       .top-content {
+            .space-around-content;
+        }//Using space-around-content mixin
+    
+       .middle-image {
+            display: block;
+            margin: 30px auto;
+        }
+    
+        .bottom-content {
+            .space-around-content;
+            
+            p {
+                padding-right: 10px * 2;  
+            }//USING MATH OPERATOR
+        }//Using space-around-content mixin
+    }
+    
+    /* Contact Styles */
+    .contact p {
+        margin: 15px 0;
+    }
+    
+    /* Footer Styles */
+    footer {
+        text-align: center;
+        margin: 40px 0 20px;
+    }
+}//======================DESKTOP VIEW
 
-header {
-    width: 100%;
-    display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+/* ------------ T A B L E T   M O D E --------------- */
+@media(max-width: 768px){
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    .container {
+        width: 100%;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        header {
+            display: flex;
+            flex-direction: column-reverse;
+            /* border: 1px solid red; */
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+            .logo {
+                /* border: 1px solid blue; */
+                margin: auto;
+                margin-bottom: 30px;
+            }
+        }
 
-/* Call To Action (CTA) Styles */
+        .cta .circleImage {
+            display: none;
+        }
 
-.cta {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
+        .main-content {
+            .top-content {
+                padding: 20px 0px 20px 0px;
+    
+                div {
+                    padding: 20px 1.302%;
+                    /* border: 1px solid blue; */
+                }
+            }
+        
+            .middle-image {
+                max-width: 80%;
+            }
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+            .bottom-content div {
+                width: 33.3%;
+                padding: 0 1.302%;
+            }
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+            .contact {
+                display: flex;
+                justify-content: flex-start;
+                /* border: 1px solid red; */
+                margin-top: 30px;
+                padding: 0 1.302%;
+            }
+        }//main-content
+    }//container
+}// media query for 768px
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
 
-/* Main Content Styles */
+/* ------------ SMARTPHONE  M O D E --------------- */
+@media(max-width: 400px){
+    .container {
+        header nav{
+            /* border: 1px solid blue; */
+            flex-direction: column;
+            text-align: center;
+    
+            a {
+                width: 100%;
+                justify-content: center;
+                padding: 15px 0 15px 0;
+                border-bottom: 1px solid black;
+            }
+        }
 
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+        .cta {
+            flex-direction: column;
+        }
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .middle-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: auto;
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+            .middle-img {
+                width: 100%;
+                height: auto;
+            }
+        }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .bottom-content {
+            flex-direction: column;
+            padding-bottom: 20px;
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+            div {
+                /* border: 1px solid blue; */
+                flex-direction: column;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
 
-/* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
-}
-
-/* Footer Styles */
-
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
-}
+        .contact {
+            /* border: 1px solid green; */
+            padding-left: 2.5%;
+            padding-top: 10px;
+        }
+        
+    }// container
+}// media query for 400px
