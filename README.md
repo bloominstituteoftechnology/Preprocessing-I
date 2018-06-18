@@ -24,10 +24,10 @@ Lets get LESS working on an existing CSS project so we can see the power this ne
 
 You might be asking, "Wait, I don't get it, it's just CSS in an index.less file that's compiling out to an index.css file..."  You're 100% correct!  We just needed to prime the pump and get LESS set up before we actually dig into some LESS syntax.  Here are some tasks to convert that plain old CSS into something new:
 
-* Convert all of the current selector chains into nested selectors.*[x]
-* Find a way to use at least two different operators like + or * to do something to the layout.*[x]
-* Look for ways you could use your own mixin where repeat code is found.*[x]
-* Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here).*[x]
+* Convert all of the current selector chains into nested selectors.*[]*[x]
+* Find a way to use at least two different operators like + or * to do something to the layout.*[]*[x]
+* Look for ways you could use your own mixin where repeat code is found.*[]*[x]
+* Introduce a new color scheme that you control using variables (this is more open ended so be creative with your ideas here).*[]*[x]
 * Introduce media queries from last week's projects with the nested @media rules.  
 
 ## Stretch Task - Find something we didn't cover in the LESS documentation and see if you can implement it in your project.  Be sure to use comments to call out what you are doing.
