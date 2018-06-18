@@ -69,6 +69,13 @@ h1, h2, h3, h4, h5 {
     margin: auto;
 }
 
+// =================== variables
+
+.flex-space{ 
+    display: flex;
+    justify-content: space-around;
+}
+
 /* Header Styles */
 
 header {
@@ -81,9 +88,21 @@ header {
         justify-content: space-between;
         display: flex;
 
+        @media( max-width: 800px ) {
+        margin-top: 40px; 
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        }
+
         a {
             text-decoration: none;
             color: #b0b0b0;
+
+            @media( max-width: 800px ) {
+            text-decoration: none;
+            color: red;
+            }
 
             a:hover {
                 text-decoration: underline;
@@ -117,6 +136,12 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
 
+        @media( max-width: 800px ) {
+        font-size: 65px;
+        color: red;
+        }
+
+
         button {
             border: 1px double black;
             font-size: 16px;
@@ -125,6 +150,13 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+
+            @media( max-width: 800px ) {
+            border: none;
+            color: white;
+            background: red;
+            
+            }
 
             button:hover {
                 background: black;
@@ -145,8 +177,7 @@ header {
    line-height: 18px;
 
    .top-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space;
     } // top content
 
     .middle-img {
@@ -155,8 +186,7 @@ header {
     } // middle image
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-space;
 
         p {
             padding-right: 20px;
