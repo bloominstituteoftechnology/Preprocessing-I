@@ -65,8 +65,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     margin: auto;
+}
+
+.mainAlign () {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Header Styles */
@@ -74,62 +80,92 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        }
+    
+    nav {
+        margin-top: 40px; 
+        width: 70%;
+        justify-content: space-between;
+        display: flex;
+        
+        @media (max-width: 400px){
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid black; 
+        }
+        
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+            @media (max-width: 400px){ 
+                padding: 4%;
+                border-top: 1px solid black;
+            }
+        }
+        a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+    }
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        @media (max-width: 768px){
+            order: -1;
+            align-self: center;
+            margin: 28px 0 0 0;
+        }
+    }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
+    width: 100%;
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+    
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        width: 100%;
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+        @media (max-width: 768px){
+            margin: 0;
+        }
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: black;
+            color: white;
+        }    
+    }
+    img{
+        @media (max-width: 768px){
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
@@ -141,25 +177,33 @@ header .logo {
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+   width: 100%;
+   .top-content {
+        .mainAlign;
+        @media (max-width: 400px){
+            flex-direction: column;
+        }
+        .text-content{
+            margin-bottom: 35px;
+        }
+    }
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        width: 100%
+    }
+    .bottom-content {
+        .mainAlign;
+        @media (max-width: 400px){
+            flex-direction: column;
+        }
+        p {
+            padding-right: 20px;
+        }
+        .text-content{
+            margin-bottom: 35px;
+        }
+    }
 }
 
 /* Contact Styles */
