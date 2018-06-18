@@ -97,9 +97,7 @@ h1, h2, h3, h4, h5 {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    align-self: center;
-    
-    
+    align-self: center;  
 }
 
 .mobile(){
@@ -108,52 +106,10 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-.mobilenavwidth(){
-    .mobile;
-    width: 100%;
-}
-
-.mobilehide(){
-    @media (max-width: 400px) {
-        display: none;
-    }
-}
-
-.tablethide(){
-    @media (max-width: 768px) {
-        display: none;
-    }
-}
-
-.mobilemenu(){
-    @media (max-width: 400px) {
-    .sweetborders;
-    display: flex;
-    justify-content: center;
-    padding: 3% 0;
-    font-size: 110%;
-    // margin: auto;
-    width: 100%;
-    }
-}
-
-
 .tablet(){
     @media (max-width: 768px) {
        .flexreverse
     }
-}
-
-.ctamobile() {
-    @media (max-width: 400px) {
-        .flex
-    }
-}
-
-.ctatablet() {
-    @media (max-width: 768px) {
-        .flex
-     }
 }
 
 /* =========     Header Styles      =========== */
@@ -178,14 +134,24 @@ header {
         justify-content: space-between;
         display: flex;
         .sweetborders;
-        .mobilenavwidth;
+        @media (max-width: 400px) {
+            .flexreverse;
+            width: 100%;
+         }
     
 
         a {
             text-decoration: none;
             color: gray;
             margin: 10px 0;
-            .mobilemenu;
+            @media (max-width: 400px) {
+                .sweetborders;
+                display: flex;
+                justify-content: center;
+                padding: 3% 0;
+                font-size: 110%;
+                width: 100%;
+                }
         }
         a:hover {
             text-decoration: underline;
@@ -206,8 +172,12 @@ header {
 
 
     img {
-        .mobilehide;
-        .tablethide;
+        @media (max-width: 400px) {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     .cta-text {
@@ -220,8 +190,12 @@ header {
         align-items: center;
         margin: 0 82px 0 0;
         .sweetborders;
-        .ctamobile;
-        .ctatablet;
+        @media (max-width: 400px) {
+            .flex
+        }
+        @media (max-width: 768px) {
+            .flex
+        }
 
         button {
             border: 1px double black;
