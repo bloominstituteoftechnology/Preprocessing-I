@@ -107,11 +107,36 @@ header {
 						    color: @hover-color;
 								font-size: @font-size * 1.3;
 						}
+
+						@media(max-width: 400px) {
+							width: 100%;
+							display: block;
+							text-align: center;
+							padding: 20px 0;
+							font-size: 2rem;
+							border-bottom: 1px solid gray;
+
+							&:first-child {
+								border-top: 1px solid gray;
+							}
+
+							&:hover {
+								background: gray;
+							}
+						}
 				}
 
 				@media(max-width: 768px) {
 					width: 100%;
 					margin: 38px 3%;
+				}
+
+				@media(max-width: 400px) {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					margin: 0;
+					align-items: center;
 				}
 		}
 
@@ -124,10 +149,19 @@ header {
 					display: block;
 					margin: 30px auto 0;
 				}
+
+				@media(max-width: 400px) {
+					margin: 20px 0;
+				}
 		}
 
 		@media(max-width: 768px) {
 			flex-wrap: wrap;
+		}
+
+		@media(max-width: 400px) {
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 }
 
