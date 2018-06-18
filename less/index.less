@@ -63,6 +63,14 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
+
+//Button Styles
+@btn-background-color: #4267b2;
+@btn-text-color: white;
+@btn-border-color: #ced0d4;
+@btn-hover-color: #29487d;
+@btn-hover-text-color: white;
+
 .center() {
     display: flex;
     justify-content: center;
@@ -152,17 +160,18 @@ header {
         margin: 0 82px 0 0;
 
         button {
-            border: 1px double black;
+            border: 1px solid @btn-border-color;
             font-size: 16px;
-            background: white;
+            background: @btn-background-color;
+            color: @btn-text-color;
+            cursor: pointer;
             width: 170px;
             height: 32px;
             margin-top: 10px;
-            cursor: pointer;
         
             &:hover {
-                background: black;
-                color: white;
+                background: @btn-hover-color;
+                color: @btn-hover-text-color;
             }
         }
     }
