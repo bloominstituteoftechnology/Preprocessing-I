@@ -67,6 +67,11 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 420px * 2;
     margin: auto;
+
+    @media(max-width:768px){
+        width: 100%;
+        border: 5px solid @parent-color;
+    }
 }
 
 /* Header Styles */
@@ -92,6 +97,10 @@ header {
         }
     }
 
+    @media(max-width: 768px) {
+        border: 2px solid red;
+    }
+
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
@@ -114,6 +123,7 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        color: @parent-color;
 
         button {
             border: 1px double black;
@@ -123,6 +133,7 @@ header {
             height: 32px;
             margin-top: 10px;
             cursor: pointer;
+            color: @parent-color;
 
             &:hover {
                 background: black;
@@ -173,4 +184,17 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
+
+//VARIABLES
+
+//Color Scheme
+@parent-color: @shakespeare;
+@shakespeare: #54ABD0;
+@torch-red: #FF032C;
+
+
+// Font Stack
+@font-stack: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 
