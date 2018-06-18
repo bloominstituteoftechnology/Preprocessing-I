@@ -54,6 +54,11 @@ table {
     justify-content: @justifyVal;
 }
 
+.color-scheme(@newBGColor, @newFontColor) {
+    background: @newBGColor;
+    color: @newFontColor;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -62,6 +67,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    .color-scheme(#1E1F24, #65D6FB);
 }
 
 h1, h2, h3, h4, h5 {
@@ -73,6 +79,10 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    .color-scheme(#1E1F24, #65D6FB);
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 /* Header Styles */
@@ -80,22 +90,65 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
+    @media (max-width: 768px) { /*tablet*/
+        flex-wrap: wrap;
+    }
+    @media (max-width: 400px) { /*phone*/
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     nav {
         margin-top: 40px; 
         width: 610px;
         .flex-justify(space-between);
         nav a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: #65D6FB;
+            @media (max-width: 400px) { /*phone*/
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 2rem;
+                border-bottom: 1px solid gray;
+            }
+        }
+        nav:first-child {
+            @media (max-width: 400px) { /*phone*/
+                border-top: 1px solid gray;
+            }
         }
         a:hover {
             text-decoration: underline;
             color: black;
+            @media (max-width: 400px) { /*phone*/
+                background: gray;
+            }
+        }
+        @media (max-width: 768px) { /*tablet*/
+            width: 100%;
+            margin: 38px 3%;
+        }
+        @media (max-width: 400px) { /*phone*/
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            align-items: center;
         }
     }
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        @media (max-width: 768px) { /*tablet*/
+            order: -1;
+            display: block;
+            margin: 30px auto 0;
+        }
+        @media (max-width: 400px) { /*phone*/
+            order: -1;
+            margin: 20px 0;
+        }
     }
 }
 
@@ -104,6 +157,15 @@ header {
 .cta {
     .flex-justify(flex-end);
     margin-top: 72px;
+    @media (max-width: 768px) { /*tablet*/
+        justify-content: center;
+    }
+    @media (max-width: 400px) { /*phone*/
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .cta-text {
         font-size: 72px + 8;
         text-align: center;
@@ -112,6 +174,11 @@ header {
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        h1 {
+            @media (max-width: 768px) { /*tablet*/
+                letter-spacing: 0;
+            }
+        }
         button {
             border: 1px double black;
             font-size: 16px;
@@ -124,6 +191,22 @@ header {
         button:hover {
             background: black;
             color: white;
+        }
+        img {
+            @media (max-width: 768px) { /*tablet*/
+                display: none;
+            }
+            @media (max-width: 400px) { /*phone*/
+                display: block;
+                max-width: 80%;
+                margin: 55px 0 0 0;
+            }
+        }
+        @media (max-width: 768px) { /*tablet*/
+            margin: 0 5% 0 0;
+        }
+        @media (max-width: 400px) { /*phone*/
+            margin: 0;
         }
     }
 }
@@ -139,23 +222,44 @@ header {
     line-height: 18px;
     .top-content {
         .flex-justify(space-around);
+        @media (max-width: 400px) { /*phone*/
+            flex-wrap: wrap;
+            height: 300px;
+        }
     }
     .middle-img {
         display: block;
         margin: 30px auto;
+        @media (max-width: 768px) { /*tablet*/
+            width: 100%;
+            margin: 25px auto;
+        }
     }
     .bottom-content {
         .flex-justify(space-around);
         p {
             padding-right: 20px;
         }
+        @media (max-width: 400px) { /*phone*/
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
+    }
+    @media (max-width: 768px) { /*tablet*/
+        font-size: 1.4rem;
+        margin: 75px 2% 35px;
     }
 }
 
 /* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
+.contact {
+    .contact p {
+        margin: 15px 0;
+    }
+    @media (max-width: 768px) { /*tablet*/
+        margin: 20px 2%;
+    }
 }
 
 /* Footer Styles */
