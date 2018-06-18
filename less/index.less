@@ -95,6 +95,9 @@ html, body {
 html {
     font-size: 62.5%;
     background: @background;
+    @media (max-width: 800px) {
+        background: spin(saturate(@background, 10%), 10);
+    }
 }
 
 h1, h2, h3, h4, h5 {
@@ -117,7 +120,7 @@ header {
     background: @headerbg;
     .fontsizeConverter(16);
     @media (max-width: 800px) {
-        background: spin(saturate(@background, 10%), 10);
+        background: spin(saturate(@headerbg, 10%), 10);
     }
     nav {
         margin-top: 40px; 
@@ -146,7 +149,10 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-    background: spin(saturate(@background, 10%), 10);
+    background: spin(saturate(@ctabg, 10%), 10);
+    @media (max-width: 800px) {
+        background: spin(saturate(@ctabg, 10%), 10);
+    }
     .cta-text {
         text-align: center;
         letter-spacing: 5px;
@@ -180,8 +186,11 @@ header {
     margin-top: 75px;
     padding: 35px 0;
     line-height: 18px;
-    background: spin(saturate(@background, 10%), 10);
+    background: @contentbg;
     .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@contentbg, 10%), 10);
+    }
     .top-content {
         display: flex;
         justify-content: space-around;
@@ -205,8 +214,11 @@ header {
 
 .contact {
     padding: 15px 1vw;
-    background: spin(saturate(@background, 10%), 10);
+    background: @contactbg;
     .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@contactbg, 10%), 10);
+    }
 }
 
 /* Footer Styles */
@@ -214,6 +226,9 @@ header {
 footer {
     text-align: center;
     padding: 40px 0 20px;
-    background: spin(saturate(@background, 10%), 10);
+    background: @footerbg;
     .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@footerbg, 10%), 10);
+    }
 }
