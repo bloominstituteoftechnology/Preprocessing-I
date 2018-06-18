@@ -53,6 +53,40 @@ table {
   border-spacing: 0;
 }
 
+// Variables section
+@tablet-breakpoint: 768px;
+@mobile-breakpoint: 400px;
+// Dark Theme
+@theme-dark-foreground: white;
+@theme-dark-background-image: linear-gradient(to right, #121212, black);
+@theme-dark-background-color: black;
+@theme-dark-image-filter: invert(100%);
+// Light Theme
+@theme-light-foreground: black;
+@theme-light-background-color: white;
+@theme-light-image-filter: invert(0%);
+@theme-light-background-image: '';
+
+// Set theme here
+@foreground-color: @theme-dark-foreground;
+@background-image: @theme-dark-background-image;
+@background-color: @theme-dark-background-color;
+@image-filter: @theme-dark-image-filter;
+
+// Mixins
+.responsive-image(@max: 100%) {
+  display: block;
+  width: 100%;
+  max-width: @max;
+  height: auto;
+}
+
+.flex-center(@direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: @direction;
+}
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
@@ -64,6 +98,9 @@ html {
 
 body {
   font-size: 1.6rem;
+  background: @background-color;
+  background: @background-image;
+  color: @foreground-color;
 }
 
 html,
@@ -89,24 +126,6 @@ h5 {
   padding: 0 0.5%;
 }
 
-// Variables section
-@tablet-breakpoint: 768px;
-@mobile-breakpoint: 400px;
-
-// Mixins
-.responsive-image(@max: 100%) {
-  display: block;
-  width: 100%;
-  max-width: @max;
-  height: auto;
-}
-
-.flex-center(@direction: row) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: @direction;
-}
 /* Header Styles */
 
 header {
@@ -156,6 +175,7 @@ header {
   .logo {
     align-self: center;
     margin: 28px 0 0 percentage(91/880);
+    filter: @image-filter;
 
     @media (max-width: 768px) {
       order: -1;
@@ -178,17 +198,18 @@ header {
     flex-grow: 1;
 
     button {
-      border: 1px double black;
+      border: 1px double @foreground-color;
       font-size: 1.6rem;
-      background: white;
+      background: transparent;
       width: 170px;
       height: 32px;
       margin-top: 10px;
       cursor: pointer;
+      color: @foreground-color;
 
       &:hover {
-        background: black;
-        color: white;
+        background: @foreground-color;
+        color: @background-color;
       }
     }
 
@@ -211,8 +232,8 @@ header {
 /* Main Content Styles */
 
 .main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid @foreground-color;
+  border-bottom: 2px solid @foreground-color;
   margin: 75px 0 35px 0;
   padding: 35px 0;
   font-size: 1.6rem;
