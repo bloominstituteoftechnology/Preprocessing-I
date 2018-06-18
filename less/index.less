@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5 {
 /* Header Styles */
 
 header {
-    width: 100%;
+    width: @width1;
     display: flex;
     @media (max-width:400px){
         .flex-column;
@@ -91,7 +91,7 @@ header {
         justify-content: space-between;
         display: flex;
         @media (max-width:768px){
-                width: 80%;
+                width: @width1;
                 width: 610px;
                 justify-content: space-around;
                 display: flex;
@@ -99,7 +99,7 @@ header {
         @media (max-width:400px){
             order:1;
             width:80vw;
-            height: 80%;
+            height: @width1;
             .flex-column;
             .center-everything;
             }
@@ -110,23 +110,24 @@ header {
                         justify-content: space-around;
                         padding: 10px;
                         .top-bottom-border;
+                        font-size: 20px;
+                        border-color: gold;
                     }
                 }
-            }
             a:hover {
                 text-decoration: underline;
                 color: black;
             }
+        }
     .logo {
-        align-self: flex-end;
         margin: 28px 0 0 91px;
         @media (max-width:400px){
+                margin: 30px auto 10PX AUTO;
+                .center-everything;
                 order:0;
                 width: 70vw;
                 height: 15%;
-                display:flex;
-                align-self:center;
-                margin: 0;
+                background-color: white;
             }
         }
     }
@@ -134,13 +135,10 @@ header {
 /* Call To Action (CTA) Styles */
 
 .cta {
-    width: 100%;
+    width: @width1;
     margin-top: 72px;
     display: flex;
-    justify-content: center;
-    @media (max-width:768px){
-        width:100%;
-    }
+    .center-everything;
     .cta-text {
         font-size: 72px;
         letter-spacing: 5px;
@@ -149,15 +147,12 @@ header {
         margin: 0 82px 0 0;
         @media (max-width:768px){
             font-size: 50px;
-            width: 50%;
+            width: @width1*0.5;
         }
         @media (max-width:400px){
-            .flex-column;
-            .center-everything;
+            width: @width1;
             letter-spacing: 5px;
-            .default-font{
-                font-size:50px;
-            }
+            color: gold;
         } 
         button {
             border: 1px double black;
@@ -175,7 +170,7 @@ header {
     }    
     .cta-img{
         @media (max-width:768px){
-            width: 80%;
+            width: @width1*0.8;
         }
         @media (max-width:400px){
             display: none;
@@ -196,7 +191,7 @@ header {
         .flex-around;
     }
     .middle-img {
-        width:100%;
+        width:@width1;
         margin: 30px auto;
     }
     .bottom-content {
@@ -205,11 +200,8 @@ header {
             padding-right: 20px;
         }
     }
-    @media (max-width:768px){
-
-    }
     @media (max-width:400px){
-        width:100%;
+        width:@width1;
         .top-content{
             .flex-column;
             .text-content{
@@ -274,5 +266,6 @@ h4, p{
 .top-bottom-border{
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 100%;
+    width: @width1;
 }
+@width1: 100%;
