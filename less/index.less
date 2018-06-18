@@ -210,25 +210,39 @@ header {
 			align-self: center;
 			margin: 28px auto 0;
 		}
-
 	}
 
 	nav {
 		margin-top: 40px;
-		width: 610px;
+		width: 100%;
 		.justify-space-between;
 		.flex;
 		@media (max-width: 400px) {
-			flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		margin: 20px 0;
 		}
 
 		a {
 			text-decoration: none;
 			color: @nav-link-color;
+			@media (max-width: 400px) {
+			padding: 14px;
+			width: 100vw;
+			border: .5px solid #eee;
+			text-align: center;
+			}
 
 			&:hover {
-				text-decoration: underline;
+				text-decoration: none;
 				color: @nav-link-color-hover;
+				@media (max-width: 400px) {
+				background: seagreen;
+				color: white;
+				border: none;
+				}
 			}
 		}
 	}
@@ -240,11 +254,11 @@ header {
 	justify-content: flex-end;
 	@media (max-width: 768px) {
 		.justify-align-center;
-		}
+	}
 
 	.header-image {
-	@media (max-width: 768px) {
-		display: none;
+		@media (max-width: 768px) {
+			display: none;
 		}
 	}
 
@@ -258,7 +272,11 @@ header {
 		margin: 0 82px 0 0;
 		@media (max-width: 768px) {
 			margin: 0 auto;
-			}
+			font-size: @base-font-size * 3.5;
+		}
+		@media (max-width: 400px) {
+			font-size: @base-font-size * 3;
+		}
 
 		button {
 			border: 1px double black;
@@ -280,14 +298,23 @@ header {
 .main-content {
 	.main-content-border;
 	margin: 75px 0 35px;
-	padding: 35px 0;
+	padding: 35px 0 15px 0;
 	font-size: @base-font-size;
 	line-height: 18px;
-
 
 	.top-content {
 		.flex;
 		.justify-space-around;
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+
+		.text-content {
+			@media (max-width: 768px) {
+				flex-direction: column;
+				padding-bottom: 20px;
+			}
+		}
 
 		p {
 			color: @p-text-color;
@@ -296,13 +323,23 @@ header {
 
 	.middle-img {
 		display: block;
-		margin: 30px auto;
+		margin: 10px 0 30px auto;
 		max-width: 100%;
 	}
 
 	.bottom-content {
 		.flex;
 		.justify-space-around;
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+
+		.text-content {
+			@media (max-width: 768px) {
+				flex-direction: column;
+				padding-bottom: 20px;
+			}
+		}
 
 		p {
 			padding-right: 20px;

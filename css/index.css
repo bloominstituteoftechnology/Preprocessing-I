@@ -188,22 +188,41 @@ header .logo {
 }
 header nav {
   margin-top: 40px;
-  width: 610px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
 }
 @media (max-width: 400px) {
   header nav {
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 20px 0;
   }
 }
 header nav a {
   text-decoration: none;
   color: #b0b0b0;
 }
+@media (max-width: 400px) {
+  header nav a {
+    padding: 14px;
+    width: 100vw;
+    border: .5px solid #eee;
+    text-align: center;
+  }
+}
 header nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: black;
+}
+@media (max-width: 400px) {
+  header nav a:hover {
+    background: seagreen;
+    color: white;
+    border: none;
+  }
 }
 /* Call To Action (CTA) Styles */
 .cta {
@@ -235,6 +254,12 @@ header nav a:hover {
 @media (max-width: 768px) {
   .cta .cta-text {
     margin: 0 auto;
+    font-size: 56px;
+  }
+}
+@media (max-width: 400px) {
+  .cta .cta-text {
+    font-size: 48px;
   }
 }
 .cta .cta-text button {
@@ -255,7 +280,7 @@ header nav a:hover {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   margin: 75px 0 35px;
-  padding: 35px 0;
+  padding: 35px 0 15px 0;
   font-size: 16px;
   line-height: 18px;
 }
@@ -263,17 +288,39 @@ header nav a:hover {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 768px) {
+  .main-content .top-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .top-content .text-content {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+}
 .main-content .top-content p {
   color: #555;
 }
 .main-content .middle-img {
   display: block;
-  margin: 30px auto;
+  margin: 10px 0 30px auto;
   max-width: 100%;
 }
 .main-content .bottom-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .bottom-content .text-content {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
 }
 .main-content .bottom-content p {
   padding-right: 20px;
