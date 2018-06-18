@@ -101,12 +101,6 @@ header {
     width: 100%;
     display: flex;
 
-    @media(max-width: 768px){
-        background-color: extract(@color-array, 1);
-        width:100%;
-        max-width: 768px;
-    }
-
     nav {
         margin-top: 40px; 
         width: 610px;
@@ -126,6 +120,37 @@ header {
         align-self: flex-end;
         margin: 28px 0 0 91px;
     } 
+
+     @media(max-width: 768px){
+        background-color: extract(@color-array, 1);
+        width:100%;
+        max-width: 768px;
+    }
+
+    @media(max-width: 405px){
+        background-color: extract(@color-array, 1);
+        width:100%;
+        max-width: 405px;
+        display: flex;
+        flex-flow: column;
+        .logo {
+            align-self: flex-start;
+            order: -1;
+            margin: 0 auto;
+            padding-top: 10%;
+        } 
+        nav {
+            display: flex;
+           flex-flow: column;
+        }
+        nav a {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 2% 0;
+            border-bottom: solid 1px;
+        }
+    }
 }
 
 /* Call To Action (CTA) Styles */
