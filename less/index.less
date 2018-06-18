@@ -73,11 +73,23 @@ h1, h2, h3, h4, h5 {
 
 
 /* Header Styles */
+
+/* VARIABLES */
 @font-size: 16px;
 @black: black;
 @silver-chalice: #b0b0b0;
+@dble-border-black: 2px solid black;
+@color-array: #BCFF00 #F900FF #00FFC4 #47D7FF #74FF47;
 
+/* MIXINS*/
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* HEADER */
 header {
+    background-color: extract(@color-array, 3);
     width: 100%;
     display: flex;
     nav {
@@ -107,6 +119,7 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    background-color: extract(@color-array, 1);
     .cta-text {
         font-size: @font-size * 4.5;
         text-align: center;
@@ -128,6 +141,7 @@ header {
         :hover {
             background: black;
             color: white;
+            background-color: extract(@color-array, 2);
         }
     }
 
@@ -137,23 +151,22 @@ header {
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+    background-color: extract(@color-array, 4);
+   border-top: @dble-border-black; 
+   border-bottom: @dble-border-black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: @font-size;
    line-height: 18px;
     .top-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-around;
     }
      .middle-img {
         display: block;
         margin: 30px auto;
     }
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-around;
     }
     .bottom-content p {
         padding-right: 20px;
@@ -163,14 +176,13 @@ header {
 
 
 /* Contact Styles */
-
 .contact p {
     margin: 15px 0;
 }
 
 /* Footer Styles */
-
 footer {
+    background-color: extract(@color-array, 5);
     text-align: center;
     margin: 40px 0 20px;
 }
