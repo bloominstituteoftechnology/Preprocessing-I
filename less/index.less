@@ -53,6 +53,47 @@ table {
     box-sizing: border-box;
 }
 
+
+// ===========================
+
+// Variables 
+
+@margin10: 10px;
+@txtred: #DB1F1F;
+@txtorange: #DB9C1F;
+@txtyellow: #D5DB1F;
+@txtgreen: #19A623;
+@txtblue: dodgerblue;
+@txtpurple: #C621CB;
+
+// Mixins
+
+.flex() {
+    display: flex;
+}
+
+.jcsa() {
+    justify-content: space-around;
+}
+
+.tch4() {
+    color: black;
+    position: relative;
+}
+
+.tch4after() {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    mix-blend-mode: darken;
+}
+
+.bgc(@color) {
+    background-color: @color;
+}
+
+// ===========================
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -65,7 +106,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -73,104 +114,372 @@ h1, h2, h3, h4, h5 {
 
 header {
     width: 100%;
-    display: flex;
-}
+    .flex;
+    padding: 0 1.5% 10px 1.5%;
 
-header nav {
-    margin-top: 40px; 
+    // SVG Gradient Function
+    background-image: svg-gradient(to right, @txtred, @txtorange 10%, @txtyellow 20%, @txtgreen 40%, @txtblue 50%, @txtpurple);
+
+    @media(max-width: 768px) {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    @media(max-width: 400px) {
+        padding-bottom: 0;
+    }
+
+    nav {
+    margin-top: @margin10 * 4; 
     width: 610px;
     justify-content: space-between;
-    display: flex;
-}
+    .flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        @media(max-width: 768px) {
+            width: 100%;
+            padding: 0 2.5%;
+        }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media(max-width: 400px) {
+            .bgc(#555);
+            width: 100vw;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+                @media(max-width: 400px) {
+                    color: white;
+                }
+            }
+
+            @media(max-width: 400px) {
+                width: 100vw;
+                height: 50px;
+                border-top: 1px solid white;
+                font-size: 1.4rem;
+                padding-top: 10px;
+            }
+
+            &:last-child {
+                @media(max-width: 400px) {
+                    border-bottom: 1px solid white;
+                }
+            }
+
+        }
+
+        .link0 {
+            position: relative;
+            color: @txtred;
+            z-index: 0;
+            @media(max-width: 400px) {
+                .bgc(#000);
+            }
+        }
+        .link0:after {
+            content: "Services";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+            @media(max-width: 400px) {
+                display: none;
+            }
+        }
+
+        .link1 {
+            position: relative;
+            color: @txtorange;
+        }
+        .link1:after {
+            content: "Product";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+            @media(max-width: 400px) {
+                display: none;
+            }
+        }
+
+        .link2 {
+            position: relative;
+            color: @txtyellow;
+            @media(max-width: 400px) {
+                .bgc(#000);
+            }
+        }
+        .link2:after {
+            content: "Vision";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+            @media(max-width: 400px) {
+                display: none;
+            }
+        }
+
+        .link3 {
+            position: relative;
+            color: @txtgreen;
+        }
+        .link3:after {
+            content: "Features";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+            @media(max-width: 400px) {
+                display: none;
+            }
+        }
+
+        .link4 {
+            position: relative;
+            color: @txtblue;
+            @media(max-width: 400px) {
+                .bgc(#000);
+            }
+        }
+        .link4:after {
+            content: "About";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+            @media(max-width: 400px) {
+                display: none;
+            }
+        }
+
+        .link5 {
+            position: relative;
+            color: @txtpurple;
+        }
+        .link5:after {
+            content: "Contact";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            color: #000;
+            mix-blend-mode: multiply;
+            @media(max-width: 400px) {
+                display: none;
+            }
+        }
+
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+
+        @media(max-width: 768px) {
+            order: -1;
+            align-self: center;
+            margin: 28px auto 0 auto;
+        }
+    }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 72px;
+        text-align: center;
+        letter-spacing: 5px;
+        .flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        @media(max-width: 876px) {
+            margin: 0 auto;
+        }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+        @media(max-width: 768px) {
+            margin: 0 auto;
+        }
+
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: @margin10;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: black;
+            color: white;
+        }
+    }
+
+    img {
+        @media(max-width: 768px) {
+            display: none;
+        }
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin: (@margin10 * 7.5) 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    @media(max-width: 768px) {
+        padding: 10px 1.5%;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .top-content {
+        .flex;
+        .jcsa;
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        @media(max-width: 400px) {
+            flex-flow: row wrap;
+        }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
+        .text-content {
+            width: 45vw;
+
+            @media(max-width: 400px) {
+                width: 100vw;
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .middle-img {
+        display: block;
+        margin: (@margin10 + 20) auto;
+
+        @media(max-width: 876px) {
+            width: 95vw;
+        }
+        @media(max-width: 768px) {
+            width: 95vw;
+            padding: 0;
+        }
+    }
+    
+    .bottom-content {
+        .flex;
+        .jcsa;
+
+        @media(max-width: 400px) {
+            flex-flow: row wrap;
+        }
+                
+        p {
+            padding-right: 20px;
+        }
+
+        .text-content {
+            @media(max-width: 400px) {
+                width: 100vw;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .tc0 h4,
+    .tc1 h4,
+    .tc2 h4,
+    .tc3 h4,
+    .tc4 h4 {
+        .tch4;
+    }
+
+    .tc0 h4:after {
+        content: "Features";
+        color: @txtred;
+        .tch4after;
+    }
+
+    .tc1 h4:after {
+        content: "About";
+        color: @txtorange;
+        .tch4after;
+    }
+
+    .tc2 h4:after {
+        content: "Services";
+        color: @txtyellow;
+        .tch4after;
+    }
+
+    .tc3 h4:after {
+        content: "Product";
+        color: @txtgreen;
+        .tch4after;
+    }
+
+    .tc4 h4:after {
+        content: "Vision";
+        color: @txtblue;
+        .tch4after;
+        
+    }
+    
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    @media(max-width: 768px) {
+        padding: 10px 1.5%;
+    }
+
+    p {
+        margin: (@margin10 * 1.5) 0;
+    }
+
+    h4 {
+        .tch4;
+    }
+
+    h4:after {
+        content: "Contact";
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        color: @txtpurple;
+        mix-blend-mode: multiply;
+    }
 }
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: (@margin10 * 4) 0 (@margin10 * 2);
 }
