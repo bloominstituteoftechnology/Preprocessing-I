@@ -72,6 +72,25 @@ table {
 		display: none;
 	}
 }
+.cta-button(@btn-width, @btn-height, btn-color){
+	width: @btn-width;
+	height: @btn-height;
+	background: @btn-color;
+}
+.button-fontSize(@fontSize){
+	font-size: @fontSize;
+	cursor:pointer;
+}
+.cta-flex(@justify, @align, @flow){
+	justify-content: @justify;
+	align-items: @align;
+	flex-flow: @flow;
+}
+.cta-font(@fontSize){
+	font-size: @fontSize;
+	text-align: center;
+	letter-spacing: 5px;
+}
 
 
 
@@ -86,11 +105,13 @@ html, body {
 
 h1, h2, h3, h4, h5 {
   	.hfont;
+		color: red;
 }
 
 .container {
     width: 880px;
     margin: auto;
+		background-color: blue;
 }
 
 /* Header Styles */
@@ -128,25 +149,18 @@ header .logo {
     margin-top: 72px;
     justify-content: flex-end;
 		.cta-text {
-		    font-size: 72px;
-		    text-align: center;
-		    letter-spacing: 5px;
+		   .cta-font(72px)
 		    display: flex;
-		    justify-content: center;
-		    flex-flow: column;
-		    align-items: center;
+				.cta-flex(center, center, column);
 		    margin: 0 82px 0 0;
 		}
 }
 
 button {
     border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
+    .button-fontSize(16px)
+		.cta-button(170px, 32px, white);
     margin-top: 10px;
-    cursor: pointer;
 }
 button:hover {
     background: black;
