@@ -54,6 +54,7 @@ table {
 @body-font: 'Titillium Web', sans-serif;
 @h-font: 'Bangers', cursive;
 @nonActive: #b0b0b0;
+@fontColor: lightblue;
 
 /*mixins*/
 .bodyFont{
@@ -103,6 +104,13 @@ table {
 	border-color: black;
 }
 
+.topCont(@fontSize){
+	font-style: @fontSize;
+	margin: 75px 0 35px 0;
+	padding: 35px 0;
+	line-height: 18px;
+}
+
 
 
 * {
@@ -119,9 +127,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
+		max-width: 1000px;
     width: 880px;
-    margin: auto;
-
+    margin: auto
 }
 
 /* Header Styles */
@@ -151,7 +159,6 @@ a:hover {
 header .logo {
 	.img-logo
 }
-
 /* Call To Action (CTA) Styles */
 
 .cta {
@@ -172,7 +179,7 @@ button {
     .button-fontSize(16px);
 		.cta-button(170px; 32px; white);
 	}
-	
+
 
 button:hover {
     background: black;
@@ -184,12 +191,13 @@ button:hover {
 .main-content {
 		.borderT(2px);
 		.borderB(2px);
+		.topCont(16px);
    // border-top: 2px solid black;
    // border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
+   // margin: 75px 0 35px 0;
+   // padding: 35px 0;
+   // font-size: 16px;
+   // line-height: 18px;
 
 	 .top-content {
 	     display: flex;
@@ -206,6 +214,7 @@ button:hover {
     justify-content: space-around;
 		p {
 		    padding-right: 20px;
+				color: @fontColor;
 		}
 }
 
@@ -214,6 +223,7 @@ button:hover {
 
 .contact p {
     margin: 15px 0;
+		color: @fontColor
 }
 
 /* Footer Styles */
