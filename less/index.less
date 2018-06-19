@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,13 +52,13 @@ table {
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
-}
-
-html {
-    font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -68,150 +67,140 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-    max-width: 880px;
+
+//================= Variables ======================//
+
+
+
+
+
+.wrap {
+    max-width:880px;
     width: 100%;
     margin: auto;
+    border: 1px solid red;    
 }
 
-//========================= Variables ======================//
-@letters-size: 1.6rem;
-@h1-size: 1.6rem * 4;
-@border-radius: 20px;
 
-@background: grey;
-@color: navy;
-@border: 2px solid orange;
-
-//=================== Mixins ===============================//
-.layout1() {
+.header-nav {
     display: flex;
-    justify-content: space-around;
-}
-.color-scheme (){
-    background: @background;
-    color: @color;
-    border: @border;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
 
-}
-
-
-
-
-
-/* Header Styles */
-
-header {
-    width: 100%;
-    display: flex;
-
-    nav {
-        margin-top: 40px; 
+    .navigation {
         width: 85.58%;
-        justify-content: space-between;
         display: flex;
-        font-size: @letters-size;
+        justify-content: space-between;
 
         a {
             text-decoration: none;
-            color: #b0b0b0;
+            font-size: 1.6rem;
+            color: grey;
+            padding: 0;
         }
         a:hover {
             text-decoration: underline;
-            color: black;
+            color: blue;
         }
-    }
 
-    .logo {
-        align-self: flex-end;
-        margin: 28px 0 0 91px;
+    }
+    .logo-container {
+        margin-left: 10%;
     }
 }
 
 
 
-/* Call To Action (CTA) Styles */
 
-.cta {
-    display: flex;
-    margin-top: 72px;
+/*Index.html CSS code starts here-->*/
+
+.call-to-action {
+	display: flex;
+    align-items: center;
     justify-content: flex-end;
-    .cta-text {
-        font-size: @h1-size;
+    margin: 70px 0 80px;
+
+    button {
+        padding: 5px 4rem;
+        font-size: 1.6rem;
+        background: white;
+        border: 1px solid black;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background: black;
+        color: white;
+    }
+    .cta-inner-content {
+        
         text-align: center;
-        letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
-        margin: 0 82px 0 0;
+        padding: 30px 0 30px;
+        width: 50%;
+     }
 
-        button {
-            border: 1px*2 double black;
-            border-radius: @border-radius;
-            font-size: @letters-size;
-            background: white;
-            width: 35%;
-            height: 32px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background: black;
-            color: white;
-            }
-    
-    }
-    
-}
-/* Main Content Styles */
+    .cta-image {
+        display: inline-block;
+     }
 
-.main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: @letters-size;
-   line-height: 18px;
-   .color-scheme();
-
-    .top-content {
-        .layout1();
-    }
-
-    .middle-img {
-        display: block;
-        margin: 30px auto;
-    }
-
-    .bottom-content {
-        
-        .layout1();
-    
-        p {
-            padding-right: 20px;
-        }
-    
-    }
+     h1 {
+        font-size: 7rem;
+     }
 }
 
-/* Contact Styles */
+.features-about {
+	display: flex;
+	margin: 30px 0 30px 0;
+	padding-top: 35px;
+    border-top: 2px solid black;
+    width:100%;
 
+    .fa {
+        text-align: left;
+        padding: 0 5px 0 0;
+        font-size: 1.6rem;
+        width: 50%;
+        line-height: 1.2em;
+    }
+
+}
+
+.middle-img {
+    display: inline-block;
+	text-align: center;
+    width: 100%;
+}
+
+.services-product-vision {
+	display: flex;
+	margin: 25px 0 30px 0;
+	border-bottom: 1px solid black;
+    padding-bottom: 30px;
+    
+    .spv {
+        text-align:left;
+        padding: 0 1.66% 0 0;
+        min-width: 33.33%;
+        font-size: 1.6rem;
+        line-height: 1.2em;
+        
+    }
+}
 .contact {
-    p {
-    margin: 15px 0;
-    font-size: @letters-size;
-    }
-    h4 {
-        font-size: @h1-size / 3;
-    }
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 0;
+    font-size: 1.6rem;
+    width:100%;
 }
 
-/* Footer Styles */
+.copyright {
 
-footer {
-    text-align: center;
-    margin: 40px 0 20px;
-    font-size: @letters-size;
+	display:flex;
+	justify-content: center;
+    margin-top:40px;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    width:100%;
 }
