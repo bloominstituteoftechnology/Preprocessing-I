@@ -1,7 +1,47 @@
+// === Variables === //
+
+// Background Colors
+@background: @TanHide;
+@ctabg: @CreamCan;
+@headerbg: @CreamCan;
+@contentbg: @CatalinaBlue;
+@contactbg: @CreamCan;
+@footerbg: @TanHide;
+
+// Tablet BG Colors
+// Font Colors
+@fontcolor: black;
+
+// Color Bank
+@Olive: #c7d59f;
+@SoftGreen: #b7ce63;
+@CalmGreen: #8fb339;
+@DarkGreen: #4b5842;
+@TanHide: #f78764;
+@CreamCan: #f4d35e;
+@Cabaret: #da4167;
+@WhiteRock: #ebebd3;
+@CatalinaBlue: #083d77;
+
+
+// === Mixins === //
+
+// Enter desired pixel size in parameter
+// mixin will convert to rems
+.fontsizeConverter(@pixsize) {
+    @remsize: (@pixsize/10);
+    font-size: ~"@{remsize}rem";
+}
+
+// .navTablet() {
+// }
+
+
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+    v2.0 | 20110126
+    License: none (public domain) 
 */
 
 html, body, div, span, applet, object, iframe,
@@ -58,6 +98,20 @@ html, body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+/* adding my universal font-size, so I can use rems */
+html {
+    font-size: 62.5%;
+    background: @background;
+    // Spin take two args, color and angle, then moves 
+    // that color 10 degrees on the color wheel.
+    @media (max-width: 800px) {
+        background: spin(saturate(@background, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@background, 10%), 20);
+    }
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -66,111 +120,143 @@ h1, h2, h3, h4, h5 {
 
 .container {
     width: 880px;
-    margin: auto;
+    margin: 0 auto;
 }
 
+/* My CSS starts here */
 /* Header Styles */
-
 header {
     width: 100%;
+    padding-bottom: 1.5vh;
     display: flex;
-}
-
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
+    background: @headerbg;
+    .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@headerbg, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@headerbg, 10%), 20);
+    }
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: @fontcolor;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+    } 
+    .logo {
     align-self: flex-end;
-    margin: 28px 0 0 91px;
+    margin: 28px 5px 0 91px;
+    }
 }
-
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    background: @ctabg;
+    @media (max-width: 800px) {
+        background: spin(saturate(@ctabg, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@ctabg, 10%), 20);
+    }
+    .cta-text {
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        .fontsizeConverter(72);
+        button {
+            border: 1px double black;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            .fontsizeConverter(16);
+        }
+        button:hover {
+            background: black;
+            color: white;
+        }
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin-top: 75px;
+    padding: 35px 0;
+    line-height: 18px;
+    background: @contentbg;
+    color: white;
+    .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@contentbg, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@contentbg, 10%), 20);
+    }
+    .top-content {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 1vw;
+    }
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+    }
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 1vw;
+        p {
+            padding-right: 20px;
+        }
+    }
 }
 
 /* Contact Styles */
 
-.contact p {
-    margin: 15px 0;
+.contact {
+    padding: 15px 1vw;
+    background: @contactbg;
+    .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@contactbg, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@contactbg, 10%), 20);
+    }
 }
 
 /* Footer Styles */
 
 footer {
     text-align: center;
-    margin: 40px 0 20px;
+    padding: 40px 0 20px;
+    background: @footerbg;
+    .fontsizeConverter(16);
+    @media (max-width: 800px) {
+        background: spin(saturate(@footerbg, 10%), 10);
+    }
+    @media (max-width: 400px) {
+        background: spin(saturate(@footerbg, 10%), 20);
+    }
 }
