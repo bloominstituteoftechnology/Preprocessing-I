@@ -65,229 +65,278 @@ h1, h2, h3, h4, h5 {
 }
 
 
-// =============================== MY MIXINS
-
-.space-around-content() {
+* {
+    box-sizing: border-box;
+  }
+  
+  // Theme Variables
+  @header-color: @blue-chill;
+  @text-color: @big-stone;
+  @link-color: @malibu;
+  
+  // I picked my colors here: http://chir.ag/projects/name-that-color/#109CB2
+  
+  @blue-chill: #109CB2;
+  @big-stone: #12243B;
+  @malibu: #5DA4FE;
+  
+  // Mixins go here
+  .display-flex-space-around {
     display: flex;
     justify-content: space-around;
-}//display:flex + justify-content:space-around
-
-
-//================================ VARIABLES
-
-@text-link: #b0b0b0;
-@text-link-hover-color: black;
-@text-link-hover-decor: underline;
-
-
-
-.container {
-    width: 880px;
+  }
+  
+  
+  html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    color: @text-color;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: @header-color;
+  }
+  
+  
+  
+  .container {
+    // Added this to make it fully responsive
+    width: 100%;
+    max-width: 880px;
     margin: auto;
-
-    /* Header Styles */
-    header {
+  }
+  
+  // Header Styles
+  
+  header {
+    width: 100%;
+    display: flex;
+  
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    @media (max-width: 400px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    nav {
+      margin-top: 40px; 
+      width: 610px;
+      justify-content: space-between;
+      display: flex;
+  
+      @media (max-width: 768px) {
+        width: 59%;
+        margin-left: 3%;
+      }
+  
+      @media (max-width: 750px) {
+        width: 100%;
+      }
+  
+      @media (max-width: 400px) {
         width: 100%;
         display: flex;
-    
-        nav {
-            margin-top: 40px; 
-            width: 610px;
-            justify-content: space-between;
-            display: flex;  
-    
-            a {
-                text-decoration: none;
-                color: @text-link;
-    
-                &:hover {
-                    text-decoration: @text-link-hover-decor;
-                    color: @text-link-hover-color;
-                }
-            }//Using @text-link variable for color
-        }
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+      }
+  
+      &:first-child {
         
-        .logo {
-            align-self: flex-end;
-            margin: 28px 0 0 91px;
+        @media (max-width: 400px) {
+          border-top: 1px solid gray;
         }
-    } //======================== NAVIGATION MENU
-    
-    /* Call To Action (CTA) Styles */
-    .cta {
-        display: flex;
-        margin-top: 72px;
-        justify-content: flex-end;
-    
-        .cta-text{
-            font-size: 72px;
-            text-align: center;
-            letter-spacing: 5px;
-            display: flex;
-            justify-content: center;
-            flex-flow: column;
-            align-items: center;
-            margin: 0 82px 0 0;
-    
-            button {
-                border: 1px double black;
-                font-size: 16px;
-                background: white;
-                width: 170px;
-                height: 32px;
-                margin-top: 10px;
-                cursor: pointer;
-    
-                &:hover {
-                    background: black;
-                    color: white;
-                }
-            }//Button
-        }//Font Styling
-    }
-    
-    /* Main Content Styles */
-    .main-content {
-       border-top: 2px solid black; 
-       border-bottom: 2px solid black;
-       margin: 75px 0 35px 0;
-       padding: 35px 0;
-       font-size: 16px;
-       line-height: 18px;
-    
-       .top-content {
-            .space-around-content;
-        }//Using space-around-content mixin
-    
-       .middle-image {
-            display: block;
-            margin: 30px auto;
+      }
+  
+      a {
+        text-decoration: none;
+        color: @link-color;
+  
+        @media (max-width: 400px) {
+          width: 100%;
+          display: block;
+          text-align: center;
+          padding: 20px 0;
+          border-bottom: 1px solid gray;
         }
-    
-        .bottom-content {
-            .space-around-content;
-            
-            p {
-                padding-right: 10px * 2;  
-            }//USING MATH OPERATOR
-        }//Using space-around-content mixin
+  
+        &:hover {
+            text-decoration: underline;
+            color: black;
+  
+            @media (max-width: 400px) {
+              background: gray;
+            }
+        }
+      }
     }
-    
-    /* Contact Styles */
-    .contact p {
-        margin: 15px 0;
+  
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+  
+        @media (max-width: 768px) {
+          margin: 28px 0 0 8%;
+        }
+  
+        @media (max-width: 750px) {
+          order: -1;
+          display: block;
+          margin: 30px auto 0;
+        }
+  
+        @media (max-width: 400px) {
+          margin: 20px 0;
+        }
     }
-    
-    /* Footer Styles */
-    footer {
-        text-align: center;
-        margin: 40px 0 20px;
+  }// header 
+  
+  // Call To Action (CTA) Styles
+  
+  .cta {
+    display: flex;
+    margin-top: 72px;
+    justify-content: flex-end;
+  
+    @media (max-width: 750px) {
+      justify-content: center;
     }
-}//======================DESKTOP VIEW
-
-
-/* ------------ T A B L E T   M O D E --------------- */
-@media(max-width: 768px){
-
-    .container {
+  
+    @media (max-width: 400px) {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cta-text {
+      // Using a - operator to reduce the text by 10px
+      font-size: 72px - 10;
+      text-align: center;
+      letter-spacing: 5px;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      align-items: center;
+      margin: 0 82px 0 0;
+  
+      @media (max-width: 768px) {
+        margin: 0 5% 0 0;
+      }
+  
+      @media (max-width: 400px) {
+        margin: 0;
+      }
+  
+      h1 {
+        
+        @media (max-width: 768px) {
+          letter-spacing: 0;
+        }
+      }
+  
+      button {
+        border: 1px double black;
+        font-size: 16px;
+        background: white;
+        // Using a * operator to double the size of a button
+        width: 170px * 2;
+        height: 32px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      
+    }// cta-text
+  
+    img {
+      @media (max-width: 768px) {
+        max-width: 100%;
+        margin-right: 2%;
+      }
+  
+      @media (max-width: 750px) {
+        display: none;
+      }
+  
+      @media (max-width: 400px) {
+        display: block;
+        max-width: 80%;
+        margin: 55px 0 0 0;
+      }
+    }
+  } // cta
+  
+  // Main Content Styles
+  
+  .main-content {
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
+  
+    @media (max-width: 768px) {
+      margin: 75px 2% 35px;
+    }
+  
+    .top-content {
+      .display-flex-space-around;
+  
+      @media (max-width: 400px) {
+        flex-wrap: wrap;
+        height: 300px;
+      }
+    }
+  
+    .middle-img {
+      display: block;
+      margin: 30px auto;
+  
+      @media (max-width: 768px) {
         width: 100%;
-
-        header {
-            display: flex;
-            flex-direction: column-reverse;
-            /* border: 1px solid red; */
-
-            .logo {
-                /* border: 1px solid blue; */
-                margin: auto;
-                margin-bottom: 30px;
-            }
-        }
-
-        .cta .circleImage {
-            display: none;
-        }
-
-        .main-content {
-            .top-content {
-                padding: 20px 0px 20px 0px;
-    
-                div {
-                    padding: 20px 1.302%;
-                    /* border: 1px solid blue; */
-                }
-            }
-        
-            .middle-image {
-                max-width: 80%;
-            }
-
-            .bottom-content div {
-                width: 33.3%;
-                padding: 0 1.302%;
-            }
-
-            .contact {
-                display: flex;
-                justify-content: flex-start;
-                /* border: 1px solid red; */
-                margin-top: 30px;
-                padding: 0 1.302%;
-            }
-        }//main-content
-    }//container
-}// media query for 768px
-
-
-/* ------------ SMARTPHONE  M O D E --------------- */
-@media(max-width: 400px){
-    .container {
-        header nav{
-            /* border: 1px solid blue; */
-            flex-direction: column;
-            text-align: center;
-    
-            a {
-                width: 100%;
-                justify-content: center;
-                padding: 15px 0 15px 0;
-                border-bottom: 1px solid black;
-            }
-        }
-
-        .cta {
-            flex-direction: column;
-        }
-
-        .middle-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: auto;
-
-            .middle-img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        .bottom-content {
-            flex-direction: column;
-            padding-bottom: 20px;
-
-            div {
-                /* border: 1px solid blue; */
-                flex-direction: column;
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-
-        .contact {
-            /* border: 1px solid green; */
-            padding-left: 2.5%;
-            padding-top: 10px;
-        }
-        
-    }// container
-}// media query for 400px
+        margin: 25px auto;
+      }
+    }
+  
+    .bottom-content {
+      .display-flex-space-around;
+  
+      @media (max-width: 400px) {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 440px;
+      }
+  
+      p {
+        padding-right: 20px;
+      }
+    }
+  } // main-content
+  
+  // Contact Styles
+  
+  .contact{
+    @media (max-width: 768px) {
+      margin: 20px 2%;
+    }
+  
+    p {
+      margin: 15px 0;
+    }
+  }
+  
+  // Footer Styles
+  
+  footer {
+      text-align: center;
+      margin: 40px 0 20px;
+  }
+  
