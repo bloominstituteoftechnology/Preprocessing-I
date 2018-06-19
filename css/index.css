@@ -151,7 +151,18 @@ h5 {
   max-width: 880px;
   width: 100%;
   margin: auto;
-  border: 1px solid red;
+}
+@media (max-width: 768px) {
+  .wrap {
+    background: grey;
+    color: white;
+  }
+}
+@media (max-width: 400px) {
+  .wrap {
+    background: yellow;
+    color: #1900ff;
+  }
 }
 .header-nav {
   display: flex;
@@ -159,10 +170,45 @@ h5 {
   align-items: center;
   margin-top: 20px;
 }
+@media (max-width: 768px) {
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0 2% 0;
+  }
+}
+@media (max-width: 400px) {
+  .header-nav {
+    width: 100%;
+    text-align: center;
+  }
+}
 .header-nav .navigation {
   width: 85.58%;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .header-nav .navigation {
+    order: 1;
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+  }
+}
+@media (max-width: 400px) {
+  .header-nav .navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .header-nav .navigation a:first-child {
+    border-top: 1px solid black;
+  }
 }
 .header-nav .navigation a {
   text-decoration: none;
@@ -170,19 +216,49 @@ h5 {
   color: grey;
   padding: 0;
 }
+@media (max-width: 400px) {
+  .header-nav .navigation a {
+    font-size: 3.2rem;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+    width: 100%;
+  }
+}
 .header-nav .navigation a:hover {
   text-decoration: underline;
   color: blue;
 }
-.header-nav .logo-container {
-  margin-left: 10%;
+@media (max-width: 400px) {
+  .header-nav .navigation a:hover {
+    text-decoration: none;
+    color: grey;
+  }
 }
-/*Index.html CSS code starts here-->*/
+.header-nav .logo-container {
+  margin-right: 10%;
+}
+@media (max-width: 768px) {
+  .header-nav .logo-container {
+    margin: 0;
+  }
+}
 .call-to-action {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin: 70px 0 80px;
+}
+@media (max-width: 768px) {
+  .call-to-action {
+    margin: 10px 0 45px;
+  }
+}
+@media (max-width: 400px) {
+  .call-to-action {
+    display: flex;
+    align-items: center;
+    margin: 0 0 45px;
+  }
 }
 .call-to-action button {
   padding: 5px 4rem;
@@ -198,13 +274,29 @@ h5 {
 .call-to-action .cta-inner-content {
   text-align: center;
   padding: 30px 0 30px;
-  width: 50%;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .call-to-action .cta-inner-content {
+    pading: 20px 0;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .call-to-action .cta-inner-content {
+    padding: 20px 0 30px;
+  }
 }
 .call-to-action .cta-image {
   display: inline-block;
 }
+@media (max-width: 768px) {
+  .call-to-action .cta-image {
+    display: none;
+  }
+}
 .call-to-action h1 {
-  font-size: 7rem;
+  font-size: 6.4rem;
 }
 .features-about {
   display: flex;
@@ -213,12 +305,33 @@ h5 {
   border-top: 2px solid black;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .features-about {
+    padding: 35px 2% 0;
+  }
+}
+@media (max-width: 400px) {
+  .features-about {
+    flex-direction: column;
+    margin: 0 0 30px 0;
+    padding-top: 0;
+  }
+}
 .features-about .fa {
   text-align: left;
-  padding: 0 5px 0 0;
+  padding: 0 1.66% 0 0;
   font-size: 1.6rem;
-  width: 50%;
+  min-width: 50%;
   line-height: 1.2em;
+}
+@media (max-width: 400px) {
+  .features-about .fa {
+    text-align: left;
+    padding-top: 40px;
+    font-size: 1.6rem;
+    width: 100%;
+    line-height: 1.2em;
+  }
 }
 .middle-img {
   display: inline-block;
@@ -231,12 +344,35 @@ h5 {
   border-bottom: 1px solid black;
   padding-bottom: 30px;
 }
+@media (max-width: 768px) {
+  .services-product-vision {
+    padding: 0 2% 30px;
+  }
+}
+@media (max-width: 400px) {
+  .services-product-vision {
+    flex-direction: column;
+    border-bottom: 2px solid black;
+    width: 100%;
+  }
+}
 .services-product-vision .spv {
   text-align: left;
-  padding: 0 1.66% 0 0;
+  padding: 0 1.66% 0 0 ;
   min-width: 33.33%;
   font-size: 1.6rem;
   line-height: 1.2em;
+}
+@media (max-width: 400px) {
+  .services-product-vision .spv {
+    padding: 40px 1.66% 0 0;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .services-product-vision :first-child {
+    padding-top: 0;
+  }
 }
 .contact {
   display: flex;
@@ -245,6 +381,11 @@ h5 {
   font-size: 1.6rem;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .contact {
+    padding: 0 2% 0;
+  }
+}
 .copyright {
   display: flex;
   justify-content: center;
@@ -252,4 +393,9 @@ h5 {
   font-size: 1.6rem;
   margin-bottom: 40px;
   width: 100%;
+}
+@media (max-width: 768px) {
+  .copyright {
+    padding: 0 2% 0;
+  }
 }
