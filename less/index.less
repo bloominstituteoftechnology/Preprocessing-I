@@ -48,6 +48,17 @@ table {
 	border-spacing: 0;
 }
 
+//Parametric Mixin for Flex and Justify
+.flex-justify(@justifyVal) {
+    display: flex;
+    justify-content: @justifyVal;
+}
+
+.color-scheme(@newBGColor, @newFontColor) {
+    background: @newBGColor;
+    color: @newFontColor;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -56,6 +67,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    .color-scheme(#1E1F24, #65D6FB);
 }
 
 h1, h2, h3, h4, h5 {
@@ -67,6 +79,10 @@ h1, h2, h3, h4, h5 {
 .container {
     width: 880px;
     margin: auto;
+    .color-scheme(#1E1F24, #65D6FB);
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 /* Header Styles */
@@ -74,98 +90,176 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
-
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+    @media (max-width: 768px) { /*tablet*/
+        flex-wrap: wrap;
+    }
+    @media (max-width: 400px) { /*phone*/
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav {
+        margin-top: 40px; 
+        width: 610px;
+        .flex-justify(space-between);
+        nav a {
+            text-decoration: none;
+            color: #65D6FB;
+            @media (max-width: 400px) { /*phone*/
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 2rem;
+                border-bottom: 1px solid gray;
+            }
+        }
+        nav:first-child {
+            @media (max-width: 400px) { /*phone*/
+                border-top: 1px solid gray;
+            }
+        }
+        a:hover {
+            text-decoration: underline;
+            color: black;
+            @media (max-width: 400px) { /*phone*/
+                background: gray;
+            }
+        }
+        @media (max-width: 768px) { /*tablet*/
+            width: 100%;
+            margin: 38px 3%;
+        }
+        @media (max-width: 400px) { /*phone*/
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            align-items: center;
+        }
+    }
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+        @media (max-width: 768px) { /*tablet*/
+            order: -1;
+            display: block;
+            margin: 30px auto 0;
+        }
+        @media (max-width: 400px) { /*phone*/
+            order: -1;
+            margin: 20px 0;
+        }
+    }
 }
 
 /* Call To Action (CTA) Styles */
 
 .cta {
-    display: flex;
+    .flex-justify(flex-end);
     margin-top: 72px;
-    justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+    @media (max-width: 768px) { /*tablet*/
+        justify-content: center;
+    }
+    @media (max-width: 400px) { /*phone*/
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-text {
+        font-size: 72px + 8;
+        text-align: center;
+        letter-spacing: 5px;
+        .flex-justify(center);
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
+        h1 {
+            @media (max-width: 768px) { /*tablet*/
+                letter-spacing: 0;
+            }
+        }
+        button {
+            border: 1px double black;
+            font-size: 16px;
+            background: white;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: black;
+            color: white;
+        }
+        img {
+            @media (max-width: 768px) { /*tablet*/
+                display: none;
+            }
+            @media (max-width: 400px) { /*phone*/
+                display: block;
+                max-width: 80%;
+                margin: 55px 0 0 0;
+            }
+        }
+        @media (max-width: 768px) { /*tablet*/
+            margin: 0 5% 0 0;
+        }
+        @media (max-width: 400px) { /*phone*/
+            margin: 0;
+        }
+    }
 }
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
-   margin: 75px 0 35px 0;
-   padding: 35px 0;
-   font-size: 16px;
-   line-height: 18px;
-}
-
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+    border-top: 2px + 1 solid black; 
+    border-bottom: 2px - 1 solid black;
+    margin: 75px 0 35px 0;
+    padding: 35px 0;
+    font-size: 16px;
+    line-height: 18px;
+    .top-content {
+        .flex-justify(space-around);
+        @media (max-width: 400px) { /*phone*/
+            flex-wrap: wrap;
+            height: 300px;
+        }
+    }
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        @media (max-width: 768px) { /*tablet*/
+            width: 100%;
+            margin: 25px auto;
+        }
+    }
+    .bottom-content {
+        .flex-justify(space-around);
+        p {
+            padding-right: 20px;
+        }
+        @media (max-width: 400px) { /*phone*/
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 440px;
+        }
+    }
+    @media (max-width: 768px) { /*tablet*/
+        font-size: 1.4rem;
+        margin: 75px 2% 35px;
+    }
 }
 
 /* Contact Styles */
-
-.contact p {
-    margin: 15px 0;
+.contact {
+    .contact p {
+        margin: 15px 0;
+    }
+    @media (max-width: 768px) { /*tablet*/
+        margin: 20px 2%;
+    }
 }
 
 /* Footer Styles */
@@ -174,3 +268,5 @@ footer {
     text-align: center;
     margin: 40px 0 20px;
 }
+
+
