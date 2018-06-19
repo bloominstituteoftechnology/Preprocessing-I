@@ -140,13 +140,18 @@ header {
             }
         }
         a:hover { 
+            color: @btn-color; 
+            @media(max-width: 400px) {
             background: @btn-color + 000;
             color: white;
+            }
         }
     } // Nav
+    
     .logo {
         align-self: flex-end;
         margin: 28px 0 0 91px;
+        background: transparent url("img/logo.svg") no-repeat 0 0;
         @media(max-width: 768px) {
             .center-everything;
             margin-top: 40px;
@@ -154,9 +159,17 @@ header {
         @media(max-width: 400px) {
             margin-top: 15px;
             }
-         
-        
-    } // Logo
+        }
+        .logo:hover {
+           background-position: -50;       
+        } 
+        .logo:hover {
+            background-position: -50;
+        }   
+          
+     // Logo
+ 
+
 } // Header
 
 
@@ -188,6 +201,16 @@ header {
         h1 {
             @media(max-width: 400px) {
                 font-size: 6rem;
+                display: flex;
+                
+            }
+            @media(max-width: 350px) {
+                font-size: 5rem;
+                display: flex;
+                
+            }
+            @media(max-width: 300px) {
+                font-size: 4rem;
                 display: flex;
                 
             }
