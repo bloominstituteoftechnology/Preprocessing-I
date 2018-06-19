@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    max-width: 880px;
     margin: auto;
 }
 
@@ -74,29 +74,74 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
-
-header nav {
-    margin-top: 40px; 
-    width: 610px;
+		@media(max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			padding-top: 0;
+		}
+	nav {
+    margin-top: 40px;
+    width: 69.32%;
     justify-content: space-between;
     display: flex;
-}
+		@media(max-width: 768px) {
+			order: 1;
+			margin-right: 0;
+			padding: 40px 0;
+		}
+		@media(max-width: 400px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+		a {
+	    text-decoration: none;
+	    color: #b0b0b0;
+			@media(max-width: 400px) {
+				height: 100px;
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
 
-header nav a:hover {
+		a:hover {
     text-decoration: underline;
     color: black;
-}
+		}
+	}//nav
 
-header .logo {
+	.logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
-}
+		img {
+			@media(max-width: 400px){
+				width: auto;
+				height: auto;
+			}
+		}
+		@media( max-width: 768px ) {
+			padding: 40px 0;
+			margin: 0;
+			align-self: center;
+		}
+		@media(max-width: 400px) {
+			border-bottom: 1px solid black;
+			width: 100%;
+			height: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}//header
 
 /* Call To Action (CTA) Styles */
 
@@ -104,68 +149,102 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+		@media(max-width: 768px) {
+			justify-content: center;
+		}
 
-.cta .cta-text {
-    font-size: 72px;
+		img {
+			@media(max-width: 768px) {
+				display: none;
+			}
+		}
+
+	.cta-text {
+    font-size: 36px * 2;
     text-align: center;
-    letter-spacing: 5px;
+    letter-spacing: 5px +5;
     display: flex;
     justify-content: center;
     flex-flow: column;
     align-items: center;
     margin: 0 82px 0 0;
-}
+		@media(max-width: 768px) {
+			margin: 0;
+		}
+		@media(max-width: 400px) {
+			width: 100%;
+		}
+		button {
+	    border: 1px double black;
+	    font-size: 16px;
+	    background: white;
+	    width: 170px;
+	    height: 32px;
+	    margin-top: 10px;
+	    cursor: pointer;
+			@media(max-width: 768px) {
+					width: 30%;
+			}
+			@media(max-width: 400px) {
+				width: 70%;
+				height: 50px;
+			}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+		}
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+		button:hover {
+	    background: black;
+	    color: white;
+		}
+	}// .cta-text
+}//cta
 
 /* Main Content Styles */
 
 .main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
 
-.main-content .top-content {
+	.top-content {
     display: flex;
     justify-content: space-around;
-}
+		@media(max-width: 400px) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
 
-.main-content .middle-img {
+	.middle-img {
     display: block;
     margin: 30px auto;
-}
+		width: 100%;
+		height: auto;
+	}
 
-.main-content .bottom-content {
+	.bottom-content {
     display: flex;
     justify-content: space-around;
-}
+		@media(max-width: 400px) {
+			flex-direction: column;
+			align-items: center;
+		}
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+		p {
+    	padding-right: 20px;
+		}
+	}// bottom-content
+} // main-content
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+	p {
     margin: 15px 0;
+	}
 }
 
 /* Footer Styles */
