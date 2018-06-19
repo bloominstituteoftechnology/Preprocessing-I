@@ -48,6 +48,23 @@ table {
 	border-spacing: 0;
 }
 
+//=========================
+@button-color: #5A9393;
+@button-text: white;
+//=============================
+.newfont(){
+    color: indianred;
+    font-family: 'Shrikhand';
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+.newbutton() {
+    background-color: @button-color;
+    color: @button-text;
+    border: double;
+    font-family: 'Shrikhand'
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -59,9 +76,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    .newfont
 }
 
 .container {
@@ -74,28 +89,28 @@ h1, h2, h3, h4, h5 {
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    nav {
+        margin-top: 60px; 
+        width: 610px;
+        justify-content: space-between;
+        display: flex;
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+        a {
+            text-decoration: none;
+            color: @button-color;
+            
+                &:hover {
+                    text-decoration: underline;
+                    color: black;
+                }
+        
+        }
+    }.logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+    }
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
 }
 
 /* Call To Action (CTA) Styles */
@@ -104,62 +119,63 @@ header .logo {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
 
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
+    .cta-text {
+        font-size: 55px;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 82px 0 0;
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+            button {
+            .newbutton;
+            font-size: 16px;
+            width: 170px;
+            height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+                
+                 &:hover {
+                background: black;
+                color: white;
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
+            }
+        } 
+    }
 }
 
 /* Main Content Styles */
+// Added operaters to change border size, lines 139, 140
 
 .main-content {
-   border-top: 2px solid black; 
-   border-bottom: 2px solid black;
+   border-top: 2px + 2 solid black;   
+   border-bottom: 2px * 2 solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
    font-size: 16px;
    line-height: 18px;
-}
+   
 
-.main-content .top-content {
+
+    .top-content {
     display: flex;
     justify-content: space-around;
+    
 }
-
-.main-content .middle-img {
+    .middle-img {
     display: block;
     margin: 30px auto;
-}
-
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content .bottom-content p {
-    padding-right: 20px;
+    }
+    .bottom-content {
+        display: flex;
+        justify-content: space-around;
+        p {
+            padding-right: 20px;
+        }
+    }
 }
 
 /* Contact Styles */
