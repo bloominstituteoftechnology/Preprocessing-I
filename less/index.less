@@ -191,6 +191,17 @@ h5 {
 	border-top: 2px solid black;
 	border-bottom: 2px solid black;
 }
+// parametric variables can have default values for their parameters
+.border-radius(@radius: 5px) {
+	border-radius: @radius;
+}
+// this works, just testing out parametric
+// .flexy(@justify, @align, @direction, @wrap) {
+// 	display: flex;
+// 	justify-content: @align;
+// 	flex-direction: @direction;
+// 	flex-wrap: @wrap;
+// }
 /* Header Styles */
 header {
 	width: 100%;
@@ -286,7 +297,7 @@ header {
 			height: 32px;
 			margin-top: 10px;
 			cursor: pointer;
-
+			.border-radius(20px);
 			&:hover {
 				background: black;
 				color: white;
@@ -315,9 +326,10 @@ header {
 				padding-bottom: 20px;
 			}
 		}
-		
+
 		p {
 			color: @p-text-color;
+			padding-right: 20px;
 		}
 	}
 
@@ -326,7 +338,7 @@ header {
 		margin: 30px auto;
 		max-width: 100%;
 		@media (max-width: 768px) {
-		margin: 10px 0 30px auto;
+			margin: 10px 0 30px auto;
 		}
 	}
 
