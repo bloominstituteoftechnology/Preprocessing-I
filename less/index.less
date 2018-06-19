@@ -94,11 +94,10 @@ html {
 /* Container Styles */
 
 .container {
-    width: 880px;
+    
+    max-width: 880px;
+    width: 100%;
     margin: auto;
-    @media( max-width: 768px ) {
-        width: 100%;
-    }
 }
 
 /* Header Styles */
@@ -106,6 +105,7 @@ html {
 header {
     width: 100%;
     display: flex;
+    border: 1px double black;
    
     @media( max-width: 768px ) {
         flex-wrap: wrap;
@@ -117,21 +117,22 @@ header {
 
    nav {
       margin-top: 40px; 
-      width: 610px;
+      width: 100%;
       .flexbox-justify(space-between);
       
       @media( max-width: 768px ) {
         margin-top: 0;  
         width: 100%;
+        flex-wrap: wrap;
         }
       
      a {
         text-decoration: none;
         color: #b0b0b0 + #111111;
-        font-size: @font-size-primary + 1rem;
+        font-size: @font-size-primary + .2rem;
         
         @media ( max-width: 768px ) {
-            .custom-font();
+            font-size: 1rem;
         }
         
     } // header nav a   
@@ -162,28 +163,30 @@ header {
 .cta {
     margin-top: 72px;
     .flexbox-justify(flex-end);
+    border: 1px double black;
   
     @media( max-width: 768px ) {
         .flexbox-justify(center);  
     } 
 
   .cta-text {
-      font-size: 7.2rem;
+      font-size: 5rem;
       text-align: center;
      letter-spacing: 5px;
     .flexbox-justify(center);
       flex-flow: column;
       align-items: center;
       margin: 0 9.3181818182% 0 0;
-      @media( max-width: 768px ) {
-          width: 100%;
-      }
+      width: 100%;
+    //   @media( max-width: 768px ) {
+    //       width: 100%;
+    //   }
       
       button {
         border: 1px double black;
         font-size: 1.6rem;
         background: white;
-        width: 170px;
+        width: 40%;
         height: 32px;
         margin-top: 10px;
         cursor: pointer;
@@ -208,6 +211,7 @@ header {
 .main-content {
     border-top: 2px solid black; 
     border-bottom: 2px solid black;
+    border: 1px double black;
     margin: 75px 0 35px 0;
     padding: 35px 0;
     font-size: 1.6rem;
@@ -244,6 +248,7 @@ header {
 
 .contact {
     font-size: 1.6rem;
+    border: 1px double black;
 
     @media ( max-width: 768px ) {
         .custom-font();
@@ -261,6 +266,7 @@ footer {
     font-size: 1.6rem;
     text-align: center;
     margin: 40px 0 20px;
+    border: 1px double black;
     @media ( max-width: 768px ) {
         .custom-font();
     }
