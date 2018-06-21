@@ -53,6 +53,14 @@ table {
     box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
@@ -65,108 +73,238 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
-    margin: auto;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    
+    @media (max-width: 768px) {
+            padding: 2%;
+        }
 }
+
+// ===================  Variables ==============
+
+@button-color: @new-midnight-blue;
+@heading-color: @persian-blue;
+@new-midnight-blue: #2B00A3;
+@persian-blue: #272BE7;
+
+/* ============= Mixins ============ */
+
+.content-paragraph-display (){
+    display: flex;
+    justify-content: space-around;
+}
+
 
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
-}
 
-header nav {
-    margin-top: 40px; 
-    width: 610px;
-    justify-content: space-between;
-    display: flex;
-}
+    @media (max-width: 768px) {
+        display: flex;
+		flex-direction: column-reverse;
+        align-items: center;
+    }
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-}
+    nav {
+        margin-top: 40px;
+        width: 70%;
+        justify-content: space-between;
+        display: flex;
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
 
-header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
-}
+        @media (max-width: 400px) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: @button-color;
+
+            @media (max-width: 400px) {
+                width: 100%;
+		        border-bottom: 1px solid black;
+		        padding: 20px 0;
+            }
+
+            &:first-child {
+                @media (max-width: 400px) {
+                    border-top: 1px solid black;
+                }
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+
+            } // &:hover
+        } // a
+    } // nav
+
+    .logo {
+        margin: 28px 0 0 5%;
+    
+        @media (max-width: 768px) {
+            align-items: center;
+		    margin: 28px 0 0 0;
+        }
+    } //.logo
+} // header
+
 
 /* Call To Action (CTA) Styles */
 
 .cta {
     display: flex;
     margin-top: 72px;
-    justify-content: flex-end;
-}
-
-.cta .cta-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
     justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
 
-.cta .cta-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+    }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
+    .cta-text {
+        font-size: 7.2rem + 1;
+        text-align: center;
+        letter-spacing: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 0 0 0;
+
+        @media (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7.2rem;
+        }
+        
+        button {
+            border: 1px double black;
+            font-size: 1.6rem * 2;
+            background: @button-color;
+            width: 40% * 2;
+            height: 32px * 2;
+            margin-top: 10px * 2;
+            cursor: pointer;
+            color: white;
+
+            &:hover {
+                background: black;
+                color: white;
+            
+            } // &:hover
+        } //button
+    } //cta-text
+
+    img {
+        @media (max-width: 768px) {
+            display: none;
+        }//media
+    }//img
+} //cta
 
 /* Main Content Styles */
+
+h4 {
+    color: @button-color;
+}
 
 .main-content {
    border-top: 2px solid black; 
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
-   font-size: 16px;
+   font-size: 1.6rem;
    line-height: 18px;
-}
+   width: 100%;
 
-.main-content .top-content {
-    display: flex;
-    justify-content: space-around;
-}
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 
-.main-content .middle-img {
-    display: block;
-    margin: 30px auto;
-}
+    .top-content {
+        .content-paragraph-display;
+    
+        @media (max-width: 768px) {
+            display: flex;
+		    justify-content: space-between;
+        }
+   
+        @media (max-width: 400px) {
+            display: flex;
+		    flex-direction: column;
+        }
 
-.main-content .bottom-content {
-    display: flex;
-    justify-content: space-around;
-}
+        .text-content {
+        @media (max-width: 400px) {
+            padding: 20px 0;
+            }
 
-.main-content .bottom-content p {
-    padding-right: 20px;
-}
+        }
+
+    }   //top-content
+    
+    .middle-img {
+        display: block;
+        margin: 30px auto;
+        width: 100%;
+    
+        @media (max-width: 768px) {
+            margin-top: 45px;
+		    width: 100%;
+        }
+    
+    }   //middle-img
+    
+    .bottom-content {
+        .content-paragraph-display;
+    
+        @media (max-width: 768px) {
+            display: flex;
+		    flex-direction: space-between;
+        }
+
+        @media (max-width: 400px) {
+            display: flex;
+		    flex-direction: column;
+        }
+
+        .text-content {
+
+            @media (max-width: 400px) {
+                padding: 20px 0;
+            }
+
+            p {
+                padding-right: 10%;
+            } //p
+        }  //text-content
+    }   //bottom-content
+}   //main-content
 
 /* Contact Styles */
 
-.contact p {
+.contact {
+    
+    p {
     margin: 15px 0;
-}
+ } //p
+} //contact
 
 /* Footer Styles */
 
