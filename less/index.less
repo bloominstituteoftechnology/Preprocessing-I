@@ -54,8 +54,12 @@ table {
 }
 
 // Less variables
-@h1-font-color: rgb(10, 248, 228);
 @link-color: rgb(75, 75, 75);
+
+.main-font-style() {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+}
 
 .link-style() {
 	font-family: 'Montserrat', sans-serif;
@@ -72,6 +76,12 @@ html {
 .container {
 	max-width: 80%;
 	margin: 0 auto;
+	font-size: 1.6rem;
+	.main-font-style();
+
+	* {
+		padding: 1%;
+	}
 
 	header {
 		.main-nav {
@@ -79,19 +89,59 @@ html {
 			justify-content: flex-end;
 			width: 100%;
 			font-size: 2rem;
-			margin: 2.5% auto;
+			margin: 0 auto;
 
 			 a {
 				 text-decoration: none;
 				 margin-left: 5%;
 				 .link-style();
 			 }
-		}
-	}
+		} // .main-nav
+	} // header
 
-	h1 {
-		background: gray;
-		color: @h1-font-color;
-		font-size: 3rem;
-	}
-}
+	.intro {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		background: rgb(207, 239, 241);
+		padding-bottom: 5%;
+
+		.img-div {
+			.intro-img {
+				width: 100%;
+				height: auto;
+				border-radius: 50%;
+			}
+		}
+
+		h1 {
+			text-align: center;
+			width: 100%;
+			font-size: 3rem;
+		}
+
+		h2 {
+			width: 100%;
+			font-size: 2rem;
+		}
+
+		p {
+			width: 100%;
+		}
+
+		.lets-team-up-btn:hover {
+			background: black;
+			color: white;
+			cursor: pointer;
+		}
+	} // .intro
+
+	.skills-section {
+		display: flex;
+
+		div {
+			width: 50%;
+		}
+	} // .skills-section
+	
+} // .container
