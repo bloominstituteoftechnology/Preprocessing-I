@@ -55,6 +55,151 @@ table {
 
 html, body {
 	height: 100%;
+	font-size: 62.5%;
+	display: flex;
+	justify-content: center;
+	width:100%
+	
+}
+
+@border-color: black;
+@border-font: 1.8rem;
+@h3: 1.7rem;
+@pfontsize: 1.2rem;
+@navfont: 1.4rem;
+@introfont:1.3rem;
+
+.mixinAttempt{
+	width: 90%;
+		border: 1px solid @border-color;
+		display: flex;
+		justify-content: space-between;
+		
+		padding: 40px;
+}
+
+.mixinAttemptDos{
+	display:flex;
+	justify-content: center;
+	font-size: @h3;
+}
+
+.container{
+	width:800px;
+	border: 1px solid @border-color;
+	@media (max-width: 500px){
+		border: 1px dashed teal;
+	}
+
+	header{
+
+		width: 100%;
+		border: 1px solid @border-color;
+		padding: 10px;
+		
+		
+		nav{
+			width:100%;
+			border: 1px solid @border-color;
+			display: flex;
+			justify-content: space-between;
+			padding: 5px;
+			font-size: @navfont;
+			
+			
+
+			@media (max-width: 500px){
+				color:red;
+			}
+		}
+
+		.info{
+			width:100%;
+			border: 1px solid @border-color;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			padding: 2.5%;
+			font-size: @navfont;
+		}
+
+	}	
+
+	.topContent{
+		.mixinAttempt;
+		margin-left: 5%;
+
+		.tCfuel h3{
+			.mixinAttemptDos;
+		}
+
+		.tCfuel .iCtext{
+			font-size: @pfontsize;
+			margin-top: 10px;
+			
+			
+
+		}
+
+		.tCimage img{
+			width:60%;
+			margin-left: 40%;
+		}
+
+	}
+
+	.skills{
+		.mixinAttempt;
+		margin-left: 5%;
+
+		h3{
+			.mixinAttemptDos;
+		}
+
+		.skillsFuel{
+			border: 0px solid black;
+			display: center;
+			flex-wrap: wrap;
+			width:50%;
+			padding-right: 10px;
+			
+		}
+
+		.historyFuel{
+			display: center;
+			flex-wrap: wrap;
+			width: 50%;
+		}
+
+		.bullets{
+			font-size: @pfontsize;
+			padding: 10px;
+			
+		}
+	
+	}
+
+	.contact{
+		
+		font-size: 1.5rem;
+		width: 90%;
+		
+		text-align: center;
+		
+		.finalcontact{
+			
+			margin-top: 30px;
+			margin-bottom:30px;
+			
+			
+			.finalcontact h3{
+				text-align: center;
+				color: red;
+			}
+		}
+		
+
+	}
 	
 }
 
