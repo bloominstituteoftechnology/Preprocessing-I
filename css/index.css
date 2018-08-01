@@ -145,6 +145,7 @@ body {
   /* Work section */
 }
 .container header {
+  font-family: 'Nanum Gothic', sans-serif;
   position: absolute;
   top: 0;
   left: 0;
@@ -158,7 +159,10 @@ body {
   color: white;
 }
 .container header nav {
+  margin: 0 auto;
   display: flex;
+  padding: 40px;
+  font-size: 1.5rem;
 }
 .container header header h2 {
   min-width: 30px;
@@ -185,6 +189,9 @@ body {
   .container header {
     justify-content: center;
   }
+  .container header nav {
+    font-size: 1.2rem;
+  }
 }
 .container .landing {
   display: flex;
@@ -207,9 +214,12 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-size: cover;
-  background-color: gray;
   z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/background.jpeg) no-repeat 0px 0px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
 }
 .container .landing .main-section h1 {
   opacity: 0;
@@ -217,6 +227,8 @@ body {
   font-weight: 400;
   margin: 5px;
   animation: appears_in 1s ease-in forwards;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.2rem;
 }
 .container .landing .main-section h4 {
   opacity: 0;
@@ -257,7 +269,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 40px;
   color: #414a4f;
 }
 .container .recent-work .middle-content {
@@ -267,6 +279,7 @@ body {
   margin: auto;
   width: 60%;
   line-height: 40px;
+  padding-bottom: 40px;
 }
 .container .recent-work hr {
   background-color: #2196F3;
@@ -288,13 +301,25 @@ body {
   justify-content: space-around;
   align-content: space-around;
 }
+.container .recent-work .main-work .project1 {
+  background-image: url('../img/project1.jpeg');
+}
+.container .recent-work .main-work .project2 {
+  background-image: url('../img/project2.jpeg');
+}
+.container .recent-work .main-work .project3 {
+  background-image: url('../img/project3.jpeg');
+}
+.container .recent-work .main-work .project4 {
+  background-image: url('../img/project4.jpeg');
+}
 .container .recent-work .work-box {
   height: 45%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   flex-basis: 55%;
-  background-color: red;
+  background-color: gray;
 }
 .container .recent-work .work-box:nth-child(4n+0),
 .container .recent-work .work-box:nth-child(4n+1) {
@@ -320,11 +345,11 @@ body {
   }
 }
 .container table {
-  border: 1px solid #ccc;
+  border: 4px solid gray;
   border-collapse: collapse;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  width: 100%;
+  width: 80%;
   table-layout: fixed;
 }
 .container table caption {
@@ -383,6 +408,102 @@ body {
   .container table td:last-child {
     border-bottom: 0;
   }
+}
+.container footer {
+  background-color: gray;
+  margin-top: 40px;
+}
+.container footer #contact input[type="text"],
+.container footer #contact input[type="email"],
+.container footer #contact input[type="tel"],
+.container footer #contact input[type="url"],
+.container footer #contact textarea,
+.container footer #contact button[type="submit"] {
+  font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+}
+.container footer #contact {
+  background: none;
+  padding: 25px;
+  margin: 50px 0;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.container footer #contact h3 {
+  color: #fff;
+  display: block;
+  font-size: 30px;
+  font-weight: 400;
+}
+.container footer fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+.container footer #contact input[type="text"],
+.container footer #contact input[type="email"],
+.container footer #contact input[type="tel"],
+.container footer #contact input[type="url"],
+.container footer #contact textarea {
+  width: 100%;
+  border: 1px solid #CCC;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+.container footer #contact input[type="text"]:hover,
+.container footer #contact input[type="email"]:hover,
+.container footer #contact input[type="tel"]:hover,
+.container footer #contact input[type="url"]:hover,
+.container footer #contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #AAA;
+}
+.container footer #contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+.container footer #contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #2196f3;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.container footer #contact button[type="submit"]:hover {
+  background: #09C;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.container footer #contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.container footer #contact input:focus,
+.container footer #contact textarea:focus {
+  outline: 0;
+  border: 1px solid #999;
+}
+.container footer ::-webkit-input-placeholder {
+  color: #888;
+}
+.container footer :-moz-placeholder {
+  color: #888;
+}
+.container footer ::-moz-placeholder {
+  color: #888;
+}
+.container footer :-ms-input-placeholder {
+  color: #888;
 }
 @keyframes appears_in {
   0% {
