@@ -60,9 +60,12 @@ html, body {
 
 // Variables:
 
-@color-gray: gray;
-@color-lightgray: lightgray;
-@color-darkgray: darkgray;
+@color-gray: #808080;
+@color-lightgray: #D3D3D3;
+@color-darkgray: #A9A9A9;
+@color-darkblue: #00008B;
+@color-white: #FFFFFF;
+
 
 // Mixins:
 
@@ -71,7 +74,18 @@ html, body {
 	margin: 2% 0;
 }
 
+.mobile-style() {
+	background: @color-darkblue;
+	color: @color-white;
+}
+
+
+
 .container {
+
+	@media (max-width: 500px) {
+		.mobile-style;
+	}
 
 	max-width: 880px;
     margin: 0 auto;
@@ -87,6 +101,13 @@ html, body {
 			color: @color-gray;
 			margin: 2%;
 		}
+
+		@media (max-width: 500px) {
+			display: flex;
+			justify-content: center;
+		}
+
+
 	}
 
 	.header-main {
@@ -96,6 +117,9 @@ html, body {
 			width: 4
 			height: 40%;
 			width: 50%;
+			@media (max-width: 500px) {
+				display: none;
+			}
 		}
 
 		h1 {
@@ -108,12 +132,16 @@ html, body {
 			border-bottom: 1px solid @color-gray;
 		}
 
+		@media (max-width: 500px) {
+			.mobile-style
+		}
+
 
 
 		button {
 			background: darkgray;
 			margin: 2% 0 4% 0;
-			color: white;
+			color: @color-white;
 		}
 	}
 
@@ -122,7 +150,11 @@ html, body {
 		div {
 			width: 50%;
 			h3 {
-				.h3style
+				.h3style;
+			}
+
+			@media (max-width: 500px) {
+				width: 100%;
 			}
 
 			div {
@@ -130,16 +162,18 @@ html, body {
 				border: 1px solid @color-lightgray;
 				width: 100%;
 			}
+		
+		}
+
+		@media (max-width: 500px) {
+				display: block;
 		}
 	}
 
-	.block2 {
-		h3 {
-				.h3style
-		}
+	
 
 
-	}
+	
 
 	footer {
 		background: @color-darkgray;
