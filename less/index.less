@@ -48,7 +48,18 @@ table {
 	border-spacing: 0;
 }
 
+@main-color: #333;
+
+@header-text: #afafb4;
+@header-background: rgba(51, 51, 51, 0.9);
+
+@contact-form-background: #EDEEEF;
+@footer-background: #333;
+
 /* Set every element's box-sizing to border-box */
+html {
+	font-size: 62.5%;
+}
 * {
     box-sizing: border-box;
 }
@@ -57,3 +68,331 @@ html, body {
     height: 100%;
 }
 
+.head() {
+	background: @header-background;
+	color: @header-text;
+}
+
+.container {
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 1rem;
+}
+
+.resume {
+	header {
+		.head;
+		height: 60px;
+		margin-bottom: 40px;
+		position: fixed;
+		top: 0;
+	}
+
+	.main-nav {
+		width: 100%;
+		display: flex;
+
+		@media (max-width: 500px) {
+			// top: 44px;
+			position: relative;
+			height: 250px;
+			margin-bottom: 0;
+			border-bottom: 1px solid black;
+			align-items: center;
+			background: #333;
+		}
+
+		nav{
+			width: 100%;
+			font-size: 1.8em;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-top: 20px;
+			display: flex;
+			justify-content: flex-end;
+
+			@media (max-width: 500px) {
+				margin: 0;
+				padding: 0;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			a {
+				text-decoration: none;
+				color: @header-text;
+				display: flex;
+				margin-left: 1%;
+				margin-right: 3%;
+
+				@media (max-width: 500px) {
+					width: 100%;
+					height: 50px;
+					justify-content: center;
+					align-items: center;
+					border-top: 1px solid black;
+				}
+			}
+
+			a:hover {
+				color: #fff;
+			}
+		} // nav
+
+		nav:hover {
+			color: #3f4349;
+		}
+	} // main-nav
+
+	h2 {
+		font-size: 2.3rem;
+		font-weight: bold;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		font-size: 1.8rem;
+		font-weight: bold;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+
+	h4 {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+
+	.cta {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	.main-content {
+		font-size: 1.8rem;
+		display: flex;
+		flex-direction: column;
+		padding: 3%;
+		align-items: center;
+	
+		h1 {
+			font-size: 4rem;
+			text-transform: uppercase;
+		}
+	
+		.top-content {
+			max-width: 1110px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+	
+			.text-content {
+				display: flex;
+				width: 100%;
+				text-align: center;
+				padding: 3%;
+			}
+	
+			h3 {
+				text-align: center;
+			}
+		}
+	} // main-content
+	
+	.middle-content {
+		max-width: 1110px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	
+		.top-content {
+			flex-direction: row;
+			align-items: flex-start;
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+
+				h2 {
+					text-align: center;
+				}
+			}
+	
+			.column {
+				width: 100%;
+		
+				ul {
+					list-style: disc;
+					margin-left: 30%;
+					padding: 2%;
+					line-height: 4rem;
+				}
+			}
+		}
+	
+		.middle {
+			margin-top: 120px;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+
+				h2, h3 {
+					text-align: center;
+				}
+			}
+	
+			.column {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+	
+				.box {
+					width: 100%;
+					margin-bottom: 70px;
+				}
+			}
+	
+			.column-header {
+				width: 100%;
+				margin-right: 17%;
+			}
+		}
+	
+		.bottom-content {
+			margin-top: 120px;
+			display: flex;
+			flex-direction: row;
+			
+			@media (max-width: 500px) {
+				flex-direction: column;
+
+				h2, h3 {
+					text-align: center;
+				}
+			}
+	
+			.work-column {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+			}
+	
+			.column {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+	
+				.box {
+					width: 100%;
+					margin-bottom: 70px;
+				}
+			}
+	
+			.column-header {
+				width: 60%;
+			}
+		}
+	} // middle-content
+
+	.contact {
+		background: @contact-form-background;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 2rem;
+		padding: 3%;
+
+		h1 {
+			font-size: 5rem;
+
+			@media (max-width: 500px) {
+				text-align: center;
+			}
+		}
+
+		.text-content {
+			width: 60%;
+			text-align: center;
+			margin: 60px 0 60px 0;
+		}
+
+		/* Style inputs with type="text", select elements and textareas */
+		input[type=text], select, textarea {
+			width: 100%; /* Full width */
+			padding: 12px; /* Some padding */  
+			border: 1px solid #ccc; /* Gray border */
+			border-radius: 4px; /* Rounded borders */
+			box-sizing: border-box; /* Make sure that padding and width stays in place */
+			margin-top: 6px; /* Add a top margin */
+			margin-bottom: 16px; /* Bottom margin */
+			resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+		}
+
+		/* Style the submit button with a specific background color etc */
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		/* When moving the mouse over the submit button, add a darker green color */
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+	}
+	
+	footer {
+		width: 100%;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: @footer-background;
+		font-size: 2rem;
+		padding-top: 40px;
+		color: #fff;
+	
+		h1 {
+			font-size: 3rem;
+
+			@media (max-width: 500px) {
+				text-align: center;
+			}
+		}
+	
+		.footer-nav {
+			width: 100%;
+			font-size: 1.6rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 30px 0 30px 0;
+			display: flex;
+			justify-content: center;
+	
+			a {
+				text-decoration: none;
+				color: #afafb4;
+				display: flex;
+				margin-left: 1%;
+				margin-right: 3%;
+			}
+	
+			a:hover {
+				color: #fff;
+			}
+		}
+	}
+
+} // resume
