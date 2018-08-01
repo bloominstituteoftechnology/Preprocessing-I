@@ -70,6 +70,12 @@ table {
 	font-size: 1.6rem;
 }
 
+.hover-style() {
+	background: @dark-gray-color;
+	color: @white-color;
+	cursor: pointer;
+}
+
 // Less code
 
 html {
@@ -87,20 +93,36 @@ html {
 
 	h2 {
 		font-size: 2.2rem;
+
+		@media ( max-width: 500px ) {
+			font-size: 2rem;
+		}
 	}
 
 	header {
 		.main-nav {
 			display: flex;
-			justify-content: flex-end;
 			width: 100%;
 			font-size: 2rem;
 			margin: 0 auto;
+			justify-content: flex-end;
+			
+			@media ( max-width: 500px ) {
+				justify-content: center;
+			}
 
 			 a {
 				 text-decoration: none;
 				 margin-left: 5%;
 				 .link-style();
+
+				 &:hover {
+					 font-weight: bolder;
+				 }
+
+				 @media ( max-width: 500px ) {
+					 margin-left: auto;
+				 }
 			 }
 		} // .main-nav
 	} // header
@@ -111,12 +133,23 @@ html {
 		justify-content: center;
 		background: @gray-color;
 		padding-bottom: 5%;
+		border-radius: 10%;
+
+		* {
+			@media ( max-width: 500px ) {
+				margin: 1% auto;
+			}
+		}
 
 		.img-div {
 			.intro-img {
 				width: 100%;
 				height: auto;
 				border-radius: 50%;
+			}
+
+			@media ( max-width: 500px ) {
+				display: none;
 			}
 		}
 
@@ -127,12 +160,22 @@ html {
 
 		h1, h2, p {
 			width: 100%;
+
+			@media ( max-width: 500px ) {
+				text-align: center;
+			}
+		}
+
+		.show-on-mobile {
+			display: none;
+
+			@media ( max-width: 500px ) {
+				display: block;
+			}
 		}
 
 		.lets-team-up-btn:hover {
-			background: @dark-gray-color;
-			color: @white-color;
-			cursor: pointer;
+			.hover-style();			
 		}
 	} // .intro-section
 
@@ -141,6 +184,14 @@ html {
 
 		div {
 			width: 50%;
+		}
+
+		.listen-up-div {
+			.hide-on-mobile {
+				@media ( max-width: 500px ) {
+					display: none;
+				}
+			}
 		}
 
 		.stuff-im-good-at-div {
@@ -157,8 +208,7 @@ html {
 				}
 
 				&:hover {
-					background: @dark-gray-color;
-					color: @white-color;
+					.hover-style();
 				}
 			}
 		} // .stuff-im-good-at-div
@@ -184,8 +234,7 @@ html {
 				background-color: @gray-color;
 			}
 			.body-rows:hover {
-				background: @dark-gray-color;
-				color: @white-color;
+				.hover-style();
 			}
 		}
 	} // .work-history-section

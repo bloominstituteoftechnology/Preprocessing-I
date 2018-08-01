@@ -145,12 +145,22 @@ html {
 .container h2 {
   font-size: 2.2rem;
 }
+@media (max-width: 500px) {
+  .container h2 {
+    font-size: 2rem;
+  }
+}
 .container header .main-nav {
   display: flex;
-  justify-content: flex-end;
   width: 100%;
   font-size: 2rem;
   margin: 0 auto;
+  justify-content: flex-end;
+}
+@media (max-width: 500px) {
+  .container header .main-nav {
+    justify-content: center;
+  }
 }
 .container header .main-nav a {
   text-decoration: none;
@@ -159,17 +169,36 @@ html {
   color: #4b4b4b;
   font-size: 1.6rem;
 }
+.container header .main-nav a:hover {
+  font-weight: bolder;
+}
+@media (max-width: 500px) {
+  .container header .main-nav a {
+    margin-left: auto;
+  }
+}
 .container .intro-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background: #dddddd;
   padding-bottom: 5%;
+  border-radius: 10%;
+}
+@media (max-width: 500px) {
+  .container .intro-section * {
+    margin: 1% auto;
+  }
 }
 .container .intro-section .img-div .intro-img {
   width: 100%;
   height: auto;
   border-radius: 50%;
+}
+@media (max-width: 500px) {
+  .container .intro-section .img-div {
+    display: none;
+  }
 }
 .container .intro-section h1 {
   text-align: center;
@@ -179,6 +208,21 @@ html {
 .container .intro-section h2,
 .container .intro-section p {
   width: 100%;
+}
+@media (max-width: 500px) {
+  .container .intro-section h1,
+  .container .intro-section h2,
+  .container .intro-section p {
+    text-align: center;
+  }
+}
+.container .intro-section .show-on-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .intro-section .show-on-mobile {
+    display: block;
+  }
 }
 .container .intro-section .lets-team-up-btn:hover {
   background: #323232;
@@ -190,6 +234,11 @@ html {
 }
 .container .skills-section div {
   width: 50%;
+}
+@media (max-width: 500px) {
+  .container .skills-section .listen-up-div .hide-on-mobile {
+    display: none;
+  }
 }
 .container .skills-section .stuff-im-good-at-div div {
   border-left: 1px solid #dddddd;
@@ -204,6 +253,7 @@ html {
 .container .skills-section .stuff-im-good-at-div div:hover {
   background: #323232;
   color: white;
+  cursor: pointer;
 }
 .container .work-history-section .work-history-table {
   font-family: 'Raleway', sans-serif;
@@ -226,6 +276,7 @@ html {
 .container .work-history-section .work-history-table .body-rows:hover {
   background: #323232;
   color: white;
+  cursor: pointer;
 }
 .container .contact-section {
   text-align: center;
