@@ -85,6 +85,7 @@ html, body {
 	justify-content: center;
 }
 
+//LESS Styles 
 
 .container {
 	max-width: 880px;
@@ -92,6 +93,10 @@ html, body {
     margin: 0 auto;
 	font-size: 2rem;
 	line-height: 25px;
+
+	@media(max-width: 500px){
+		.flex-center;
+	}
  }
 
 .home {
@@ -100,11 +105,21 @@ html, body {
 		flex-wrap: wrap;
 		justify-content: flex-end;
 
+		@media(max-width: 500px) {
+			.flex-center;
+			width: 100%;
+		}
+
 		a {
 			padding: 20px 3%;
 			text-decoration: none;
 			font-family: @font; 
 			color: @font-color;
+
+			@media(max-width: 500px) {
+				padding-right: 30px;
+				padding-left: 30px;
+			}
 		}
 	}//.navigation
 
@@ -120,6 +135,11 @@ html, body {
 			width: 30%;
 			height: 300px;
 			margin-bottom: 30px;
+
+			@media(max-width: 500px) {
+				width: 100%;
+				height: 520px;
+			}
 		}
 
 		h1 {
@@ -137,7 +157,7 @@ html, body {
 		.button {
 			.button-style;
 			margin-top: 20px;
-			width: 15%;
+			width: 132px;
 			padding: 10px 1%;
 		}
 	}//.main-content
@@ -148,6 +168,12 @@ html, body {
 		.about{
 			width: 40%;
 			padding: 30px 0;
+
+			@media(max-width: 500px) {
+				padding-left: 3%;
+				padding-right: 3%;
+				width: 47%;
+				}
 
 			h2 {
 				font-family: @font;
@@ -165,7 +191,45 @@ html, body {
 				padding-left: 5%;
 				padding-top: 20px;
 			}
+		}//.about
+	}//.first-section
+
+	.work-history {
+		h2 {
+			font-family: @font;
+			color: @font-color;
+			font-size: 2.3rem;
+			margin-bottom: 20px;
 		}
+		width: 100%;
+		.p-font-style;
+
+		@media(max-width: 500px) {
+			padding-left: 3%;
+			padding-right: 3%;
+		}
+		.table {
+			width: 100%;
+			border: 1px solid @main-color;
+			margin-bottom: 30px;
+
+			tr {
+				border: 1px solid @main-color;
+			}
+
+			th {
+				border: 1px solid @main-color;
+			}
+		}//.table
+	}//.work-history
+
+	footer {
+		.p-font-style;
+		.flex-center;
+		padding: 20px 0;
+		width: 100%;
+		background-color: @accent-color;
+		color: white;
 	}
 } //.home
 
