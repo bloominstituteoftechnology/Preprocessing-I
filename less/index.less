@@ -55,11 +55,172 @@ table {
 
 html, body {
     height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+}
+
+//variables//
+
+@title-font: 'Lobster';
+@title-color: #1C6B9B;
+@secondary-color: gray;
+
+
+//mixins//
+
+.button() {
+	font-family: 'Titillium Web', sans-serif;
+	border: 1px solid black;
+	background: @secondary-color;
+	color: black;
+	width: 20%;
+	padding: 10px 2.27%;
+	text-align: center;
+}
+
+.table-style() {
+	border: 1px solid gray;
+	padding-left: 2.27%;
+	padding-top: 10px;
+	padding-right: 2.27%;
+	padding-bottom: 10px;
+	background: lightgray;
+}
+
+.border() {
+	border: 1px solid gray;
+}
+
+//styles//
+
+.container {
+	width: 100%;
+	max-width: 880px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: space-evenly;
+	margin: 0 auto;
+
+	.nav-bar {
+		padding-bottom: 20px;
+		padding-top: 20px;
+
+		@media (max-width: 500px) {
+			width: 90%;
+			margin-left: 5%;
+		}
+
+		a {
+			text-decoration: none;
+			color: @secondary-color;
+			margin-right: 2.27%;
+
+			@media (max-width: 500px) {
+				margin-right: 10%;
+			}
+	}
+	
+	.intro {
+		background: lightgray;
+		padding: 20px 2.27%;
+		margin-bottom: 40px;
+		border: 1px solid gray;
+
+		@media (max-width: 500px) {
+			width: 90%;
+			margin-left: 5%;
+		}
+
+		h1 {
+			font-family: @title-font;
+			font-size: 60px;
+			color: @title-color;
+			
+			@media (max-width: 500px) {
+				text-align: center;
+			}
+		}
+		h2 {
+			font-family: @title-font;
+			font-size: 40px;
+			color: @secondary-color;
+			padding-bottom: 20px;
+
+			@media (max-width: 500px) {
+				text-align: center;
+			}
+		}
+		p {
+			padding-bottom: 20px;
+		}
+		h3 {
+			.button;
+		}
+	}
+
+	.work-skills {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 40px;
+
+		@media (max-width: 500px) {
+			width: 90%;
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+
+		.skills {
+			margin-right: 4.54%;
+
+			@media (max-width: 500px) {
+				padding-bottom: 20px;
+				margin-right: 0%;
+			}
+
+			h3 {
+				font-family: @title-font;
+				color: @title-color;
+				font-size: 24px;
+			}
+			ul {
+				list-style-type: circle;
+				line-height: 2;
+			}	
+		}
+		.work-history {
+
+			@media (max-width: 500px) {
+				margin-left: 10%;
+			}
+			table, th, td {
+				.table-style;
+			}
+		}
+	}
+
+	.contact {
+		.border;
+		background: lightgray;
+		width: 60%;
+		padding: 20px 2.27%;
+		margin-bottom: 40px;
+
+		h3 {
+			.button;
+		}
+	}
+
+	footer {
+		text-align: center;
+		background: lightgray;
+		.border;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
