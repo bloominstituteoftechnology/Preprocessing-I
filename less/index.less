@@ -56,6 +56,7 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+    background: #E8FFFF;
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,25 +66,63 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-    width: 880px;
+    width: 45% + 45%;
+    max-width: 880px;
     margin: auto;
+    background: white;
 }
 
+
 /* Header Styles */
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
 
 header {
     width: 100%;
     display: flex;
+    background: #E8FFFF;
 
     nav{
         margin-top: 40px; 
-        width: 610px;
-        justify-content: space-between;
-        display: flex;
+        width: 305px * 2;
+        margin-bottom: 20px;
+        .flex-between();
+        @media (max-width: 768px){
+            width: 100%;
+        }
+
+        @media (max-width: 600px){
+            flex-flow: column nowrap;
+            text-align: center;
+            margin-top: 80px;
+            padding: 0px;
+        }
 
         a{
             text-decoration: none;
             color: #b0b0b0;
+            @media (max-width: 768px){
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 600px){
+                border-bottom: 1px solid black;
+                margin-top: 0px;
+            }
         }
 
         a:hover {
@@ -94,7 +133,19 @@ header {
 
     .logo {
         align-self: flex-end;
-        margin: 28px 0 0 91px;
+        margin: 28px 0 20px 91px;
+        @media (max-width: 768px){
+            position: absolute;
+            top: 0;
+            align-self: center;
+            text-align: center;
+            width: 90%;
+            margin: 0px;
+            padding: 20px;
+        }
+        @media (max-width: 600px){
+            border-bottom: 1px solid black;
+        }
     }
 }
 /* Call To Action (CTA) Styles */
@@ -103,16 +154,29 @@ header {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    @media (max-width: 768px){
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    img {
+        @media (max-width: 768px){
+            display: none;
+        }
+    }
 
     .cta-text {
-        font-size: 72px;
+        font-size: 4rem;
         text-align: center;
         letter-spacing: 5px;
-        display: flex;
-        justify-content: center;
+        .flex-center();
         flex-flow: column;
         align-items: center;
         margin: 0 82px 0 0;
+        @media (max-width: 768px){
+            margin: 0px;
+        }
 
         button {
             border: 1px double black;
@@ -141,21 +205,33 @@ header {
    line-height: 18px;
 
    .top-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-around();
+        @media (max-width: 600px){
+            flex-flow: column wrap;
+            p {
+                margin-bottom: 20px;
+            }
+        }
     }
 
     .middle-img {
         display: block;
         margin: 30px auto;
+        max-width: 100%;
     }
 
     .bottom-content {
-        display: flex;
-        justify-content: space-around;
+        .flex-around();
 
         p {
             padding-right: 20px;
+        }
+
+        @media (max-width: 600px){
+            flex-flow: column wrap;
+            p {
+                margin-bottom: 20px;
+            }
         }
     }
 }
