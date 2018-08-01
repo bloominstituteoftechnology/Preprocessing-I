@@ -61,6 +61,8 @@ html, body {
 //Variables
 @normal-size: 1.6rem;
 @head-size: 2.5rem;
+@phone-norm-size: 2rem;
+@head-phone-size: 3rem;
 
 @nav-back-color: dodgerblue;
 @main-color: black;
@@ -91,10 +93,19 @@ html {
 
 p, tr, a {
 	font-size: @normal-size;
+
+	@media (max-width: 500px) {
+		font-size: @phone-norm-size;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-size: @head-size;
+
+	@media (max-width: 500px) {
+		font-size: @head-phone-size;
+	}
+
 }
 
 // Top of page
@@ -107,10 +118,23 @@ header {
 		.flex;
 		justify-content: space-around;
 
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+
 		a {
 			padding: 10px 0;
 			text-decoration: none;
 			color: @nav-color;
+
+			@media (max-width: 500px) {
+				width: 100%;
+				padding: 15px 0;
+				text-align: center;
+				font-size: 2rem;
+				border-top: 1px solid @nav-color;
+			}
+			
 		}
 	}
 }
@@ -127,11 +151,20 @@ header {
 	flex-direction: column;
 	align-items: flex-start;
 
+	@media (max-width: 500px) {
+		background-image: none;
+		background-color: #D8D9DE; 
+	}
+
 	.jumbo-content {
 		text-align: center;
 		color: @heading-color;
-		padding: 0 33px 2%;
+		padding: 0 0 33px 2%;
 		line-height: 1.2;
+
+		@media (max-width:500px) {
+			line-height: 1.4;
+		}
 
 		h1 {
 			font-size: 5rem;
@@ -159,12 +192,18 @@ header {
 		margin-bottom: 10px;
 	}
 	table {
+		text-align: center;
+
 		tr {
 			border: 1px solid @main-color;
 			font-size: 1.7rem;
 
 			td {
 				padding: 10px 60px;
+
+				@media (max-width: 500px) {
+					padding: 20px 30px;
+				}
 			}
 		}
 	} //table end
@@ -175,11 +214,20 @@ header {
 	justify-content: space-between;
 	height: 300px;
 
+	@media (max-width:500px) {
+		flex-direction: column;
+		height: 100%;
+	}
+
 	.involvement {
 		width: 70%;
 		height: 100%;
 		padding: 15px 0;
 		border: 1px solid @main-color;
+
+		@media (max-width:500px) {
+			.width-full
+		}
 	
 		.task {
 			padding: 10px 0;
@@ -195,6 +243,10 @@ header {
 		height: 100%;
 		border: 1px solid @main-color;
 		text-align: center;
+
+		@media (max-width:500px) {
+			.width-full
+		}
 
 		h2 {
 			padding: 15px 0;
@@ -212,7 +264,7 @@ header {
 } //Middle-container end
 
 
-
+//Contact Section
 .contact {
 	.width-full;
 	border: 1px solid @main-color;
@@ -220,6 +272,10 @@ header {
 	.flex;
 	justify-content: space-between;
 	padding: 20px;
+	
+	@media (max-width:500px) {
+		flex-direction: column;
+	}
 
 	.info {
 		.flex;
