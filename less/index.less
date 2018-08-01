@@ -57,14 +57,16 @@ table {
 @h1-font-color: rgb(10, 248, 228);
 @link-color: rgb(75, 75, 75);
 
+.link-style() {
+	font-family: 'Montserrat', sans-serif;
+	color: @link-color;
+	font-size: 1.6rem;
+}
+
 // Less code
 
 html {
 	font-size: 62.5%;
-}
-
-html, body {
-	height: 100%;
 }
 
 .container {
@@ -72,14 +74,17 @@ html, body {
 	margin: 0 auto;
 
 	header {
-		display: flex;
-		justify-content: flex-end;
-
 		.main-nav {
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
 			font-size: 2rem;
+			margin: 2.5% auto;
+
 			 a {
 				 text-decoration: none;
-				 color: @link-color;
+				 margin-left: 5%;
+				 .link-style();
 			 }
 		}
 	}
