@@ -55,14 +55,35 @@ table {
 
 // Less variables
 @h1-font-color: rgb(10, 248, 228);
+@link-color: rgb(75, 75, 75);
 
 // Less code
-html, body {
-	height: 100%;
+
+html {
 	font-size: 62.5%;
 }
 
+html, body {
+	height: 100%;
+}
+
 .container {
+	max-width: 80%;
+	margin: 0 auto;
+
+	header {
+		display: flex;
+		justify-content: flex-end;
+
+		.main-nav {
+			font-size: 2rem;
+			 a {
+				 text-decoration: none;
+				 color: @link-color;
+			 }
+		}
+	}
+
 	h1 {
 		background: gray;
 		color: @h1-font-color;
