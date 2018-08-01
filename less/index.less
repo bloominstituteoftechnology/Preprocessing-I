@@ -59,15 +59,26 @@ html, body {
 
 
 //Variables
-@normal-size: 1.6rem;
+//Font-size
+@normal-size: 1.7rem;
 @head-size: 2.5rem;
 @phone-norm-size: 2rem;
 @head-phone-size: 3rem;
 
-@nav-back-color: dodgerblue;
-@main-color: black;
+//Color
+@main-color: #32465C;
 @heading-color: #5c5a5a;
-@nav-color: white;
+@paragraph-color: black;
+
+//Background color
+@nav-back: #2D4249;
+@web-back: #99C0BC;
+@work-back: #FFE5C8;
+@table-back: #689DB2;
+@involve-back: #E7F6F9;
+@skills-back: #DFCBD3;
+@skill-back: #937782;
+@contact-back: #EB9385;
 
 //Mixins
 .width-full() {
@@ -80,9 +91,15 @@ html, body {
 	justify-content: center;
 }
 
+.border() {
+	border: 1px solid @paragraph-color;
+	box-shadow: 2px;
+}
+
 //Global
 html {
-	font-size: 62.5%
+	font-size: 62.5%;
+	background-color: @web-back;
 }
 
 .container {
@@ -93,6 +110,7 @@ html {
 
 p, tr, a {
 	font-size: @normal-size;
+	color: @paragraph-color;
 
 	@media (max-width: 500px) {
 		font-size: @phone-norm-size;
@@ -101,6 +119,8 @@ p, tr, a {
 
 h1, h2, h3, h4, h5, h6 {
 	font-size: @head-size;
+	font-weight: bold;
+	color: @main-color;
 
 	@media (max-width: 500px) {
 		font-size: @head-phone-size;
@@ -112,7 +132,8 @@ h1, h2, h3, h4, h5, h6 {
 //Nav and header
 header {
 	.width-full;
-	background-color: @nav-back-color;
+	background-color: @nav-back;
+	padding: 15px 0;
 
 	nav {
 		.flex;
@@ -125,14 +146,15 @@ header {
 		a {
 			padding: 10px 0;
 			text-decoration: none;
-			color: @nav-color;
+			color: @main-color;
+			color: white;
 
 			@media (max-width: 500px) {
 				width: 100%;
 				padding: 15px 0;
 				text-align: center;
 				font-size: 2rem;
-				border-top: 1px solid @nav-color;
+				border-top: 1px solid @main-color;
 			}
 			
 		}
@@ -181,9 +203,10 @@ header {
 //Main Area
 .work {
 	.width-full;
-	padding: 15px 0;
+	padding: 25px 0;
 	border-bottom: 1px solid @main-color;
-	border: 1px solid @main-color;
+	.border;
+	background-color: @work-back;
 
 	.flex;
 	flex-direction: column;
@@ -195,8 +218,10 @@ header {
 		text-align: center;
 
 		tr {
-			border: 1px solid @main-color;
+			border: 1px solid @paragraph-color;
 			font-size: 1.7rem;
+			background-color: @table-back; 
+			color: #FFFCF7;
 
 			td {
 				padding: 10px 60px;
@@ -222,8 +247,9 @@ header {
 	.involvement {
 		width: 70%;
 		height: 100%;
-		padding: 15px 0;
-		border: 1px solid @main-color;
+		padding: 15px 1%;
+		.border;
+		background-color: @involve-back;
 
 		@media (max-width:500px) {
 			.width-full
@@ -241,8 +267,9 @@ header {
 	.skills {
 		width: 30%;
 		height: 100%;
-		border: 1px solid @main-color;
+		.border;
 		text-align: center;
+		background-color: @skills-back;
 
 		@media (max-width:500px) {
 			.width-full
@@ -256,7 +283,7 @@ header {
 		
 			p {
 				padding: 13px 0;
-				background-color: red; 
+				background-color: @skill-back; 
 				border: 1px black solid;
 			}
 		}
@@ -267,11 +294,12 @@ header {
 //Contact Section
 .contact {
 	.width-full;
-	border: 1px solid @main-color;
+	.border;
 	text-align: center;
 	.flex;
 	justify-content: space-between;
-	padding: 20px;
+	padding: 30px 20px;
+	background-color: @contact-back;
 	
 	@media (max-width:500px) {
 		flex-direction: column;
@@ -281,6 +309,7 @@ header {
 		.flex;
 		flex-direction: column;
 		padding: 10px;
+		line-height: 1.2;
 
 		h6 {
 			font-size: 1.8rem;
