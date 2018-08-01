@@ -48,12 +48,138 @@ table {
 	border-spacing: 0;
 }
 
+// Variables
+@header-color: blue;
+@main-content-color: grey;
+
+// Mixins
+.text-content {
+	h2 {
+		font-size: 2.5rem;
+	}
+	p {
+		font-size: 1.6rem;
+	}
+}
+
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
+
+
 html, body {
-    height: 100%;
+	height: 100%;
+}
+html {
+	font-size: 62.4%;
+}
+
+.container {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+}
+
+header {
+	width: 100%;
+	margin: 30px auto 30px auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		width: 50%;
+		a {
+			font-size: 1.6rem;
+			text-decoration: none;
+			color: @header-color;
+		}
+		a:hover {
+			color: red;
+		}
+	}
+
+	h1 {
+		font-size: 5rem;
+		color: @header-color;
+	}
+}
+
+.home {
+
+	.main-content {
+		margin-top: 20px;
+		color: @main-content-color;
+
+		.intro {
+
+			margin-bottom: 30px;
+
+			.text-content;
+
+			// h2 {
+			// 	font-size: 2.5rem;
+			// }
+			// p {
+			// 	font-size: 1.6rem;
+			// }
+		}
+
+		.skills {
+
+			margin-top: 20px;
+
+			.text-content;
+
+			// h2 {
+			// 	font-size: 2.5rem;
+			// }
+			// p {
+			// 	font-size: 1.6rem;
+			// }
+		}
+
+		.work-history {
+
+			margin-top: 20px;
+
+			.text-content;
+
+			// h2 {
+			// 	font-size: 2.5rem;
+			// }
+			// p {
+			// 	font-size: 1.6rem;
+			// }
+		}
+
+	}
+
+	.contact {
+		margin-top: 20px;
+		h2 {
+			font-size: 2rem;
+			margin-bottom: 10px;
+		}
+	
+		p {
+			font-size: 1.6rem;
+		}
+	}
+
+	@media (max-width: 500px) {
+		header {
+			.flex-wrap;
+		}
+	}
 }
 
