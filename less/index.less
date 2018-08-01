@@ -56,3 +56,180 @@ table {
 html, body {
     height: 100%;
 }
+
+
+//Variables
+@normal-size: 1.6rem;
+@head-size: 2.5rem;
+
+@nav-back-color: dodgerblue;
+@main-color: black;
+@heading-color: #5c5a5a;
+@nav-color: white;
+
+//Mixins
+.width-full() {
+	width: 100%;
+}
+
+.flex() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+//Global
+html {
+	font-size: 62.5%
+}
+
+.container {
+	.width-full;
+	max-width: 880px;
+	margin: 0 auto;
+}
+
+p, tr, a {
+	font-size: @normal-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: @head-size;
+}
+
+// Top of page
+//Nav and header
+header {
+	.width-full;
+	background-color: @nav-back-color;
+
+	nav {
+		.flex;
+		justify-content: space-around;
+
+		a {
+			padding: 10px 0;
+			text-decoration: none;
+			color: @nav-color;
+		}
+	}
+}
+
+//Jumbotron
+
+.jumbotron {
+	.width-full;
+	height: 360px;
+	background-image: url(../images/Jumbo.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	.flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	.jumbo-content {
+		text-align: center;
+		color: @heading-color;
+		padding: 0 33px 2%;
+		line-height: 1.2;
+
+		h1 {
+			font-size: 5rem;
+		}
+
+		p {
+			font-size: 2rem;
+		}
+
+	} //main-content end
+} //jumbotron end
+
+
+//Main Area
+.work {
+	.width-full;
+	padding: 15px 0;
+	border-bottom: 1px solid @main-color;
+	border: 1px solid @main-color;
+
+	.flex;
+	flex-direction: column;
+
+	h2 {
+		margin-bottom: 10px;
+	}
+	table {
+		tr {
+			border: 1px solid @main-color;
+			font-size: 1.7rem;
+
+			td {
+				padding: 10px 60px;
+			}
+		}
+	} //table end
+} //work end
+
+.middle-container {
+	.flex;
+	justify-content: space-between;
+	height: 300px;
+
+	.involvement {
+		width: 70%;
+		height: 100%;
+		padding: 15px 0;
+		border: 1px solid @main-color;
+	
+		.task {
+			padding: 10px 0;
+
+			h3 {
+				font-size: 1.8rem;
+			}
+		}
+	}
+	
+	.skills {
+		width: 30%;
+		height: 100%;
+		border: 1px solid @main-color;
+		text-align: center;
+
+		h2 {
+			padding: 15px 0;
+		}
+		
+		.skill {
+		
+			p {
+				padding: 13px 0;
+				background-color: red; 
+				border: 1px black solid;
+			}
+		}
+	}
+} //Middle-container end
+
+
+
+.contact {
+	.width-full;
+	border: 1px solid @main-color;
+	text-align: center;
+	.flex;
+	justify-content: space-between;
+	padding: 20px;
+
+	.info {
+		.flex;
+		flex-direction: column;
+		padding: 10px;
+
+		h6 {
+			font-size: 1.8rem;
+		}
+	}
+
+
+}
