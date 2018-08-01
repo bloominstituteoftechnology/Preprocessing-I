@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -50,10 +50,196 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
+
+@main-content-color: #f5f5f5;
+@hover: @main-content-color;
+@home-h1-size: 3.5rem;
+@home-p-size: 1.2rem;
+
+@button-background-color: grey;
+@button-font-size: 1.2rem;
+@button-color: white;
+@button-border: solid black 2px;
+@padding: 1.705%;
+
+@h2font: 1.8rem;
+
+@lifont: 1.5rem;
+
+@contact-size: 1.3rem;
+
+@h3-size: 1.2rem;
+
+@mobile-a: 2rem;
+
+.mobile-a(){
+	font-size: @mobile-a;
+	text-align:center;
+}
+
+.big-button() {
+	.margins;
+	background-color: @button-background-color;
+	font-size: @button-font-size;
+	color: @button-color;
+	border: @button-border;
+	padding: @padding;
+}
+
+.flex(){
+	display: flex;
+	margin-top: 10px;
+}
+
+.margins(){
+	margin-top: 20px;
+	margin-left: 2.27%;
+	margin-right: 2.27%;
+	margin-bottom: 10px;
+}
+
+.mobile(){
+	@media(max-width: 500px){
+		flex-direction: column;
+	}
+}
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+
+	nav {
+		.flex;
+		.mobile;
+		justify-content: flex-end;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		@media(max-width: 500px){
+			margin: 0px 0px 0px 0px;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			padding-right: 1.36%;
+			padding-left: 1.36%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			.mobile-a;
+		}
+		a:hover {
+			background-color: @hover;
+		}
+	}
+
+	.home-main-content {
+			p {
+				font-size: @home-p-size;
+				padding: 15px 2.4% 15px 2.4%;
+			}
+
+		.intro {
+			@media(max-width: 500px){
+				text-align: center;
+			}
+			background-color: @main-content-color;
+
+			h1 {
+				font-size: @home-h1-size;
+				margin-left: 2.27%;
+			}
+
+			hr {
+				.margins;
+			}
+
+			.me {
+				width: 34%;
+				.margins;
+				@media(max-width: 500px){
+					width: 100%;
+					margin: 0px 0px 0px 0px;
+				}
+			}
+
+			button {
+				.big-button;
+				margin-bottom: 40px;
+			}
+			button:hover {
+				background-color: @button-color;
+				color: @button-background-color;
+			}
+
+		} //end of intro section
+
+		.skills {
+			.flex;
+			.mobile;
+			justify-content: center;
+			
+			div {
+				margin-bottom: 10px;
+				padding-right: 18.18%;
+				@media(max-width: 500px){
+					text-align: center;
+					p {
+						margin-left: 13%;
+					}
+				}
+
+			}
+			h2 {
+				font-size: @h2font;
+				padding: 15px 2.4% 15px 2.4%;
+			}
+			ul {
+				padding: 10px 2.4% 15px 2.4%;
+				li {
+					font-size: @lifont;
+				}
+			}
+		} //end of skills section
+
+		.history {
+			.flex;
+			.mobile;
+			h2 {
+				font-size: @h2font;
+				padding: 15px 2.4% 15px 2.4%;
+			}
+			div {
+				border: solid black 1px;
+				margin-right: 1.4%;
+				padding: 10px 2.4% 10px 2.4%;
+				@media(max-width: 500px){
+					margin: 0px 0px 0px 0px;
+				}
+			}
+			h3 {
+				padding: 5px 2.4% 5px 2.4%;
+				font-size: @h3-size;
+			}
+		} // enf of history section
+
+		.contact {
+			.flex;
+			justify-content: center;
+			margin-top: 20px;
+			margin-bottom: 40px;
+			font-size: @contact-size;
+		}
+
+	} // end of main-content
+} //end of container
+
+
+
 
