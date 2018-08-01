@@ -49,11 +49,181 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@blue-background: rgb(129, 241, 241);
+
+@white-background: white;
+
+.center {
+	text-align: center;
+	align-self: center;
+}
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
+html, body {
+	height: 100%;
+}
+
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	margin: auto;
+
+
+	
+
+	strong {
+		font-weight: 700;
+		margin: 15px 0;
+	}
+
+	li {
+		padding: 1%;
+		list-style-position: outside;
+		text-indent: -0.5rem;
+	}
+
+   .head {
+	 
+	   nav {
+			display: flex;
+			justify-content: space-between;
+			
+		
+			@media(max-width: 500px) {
+				display: flex;
+				flex-direction: column;		
+			  }
+			
+
+			a {
+				
+				width: 100%;
+				text-decoration: none;
+				border: 1px solid gray;
+				margin: 3%;
+				border-radius: 10%;
+				font-size: 1.6rem;
+				padding: 1%;
+				text-align: center;
+
+				@media(max-width: 500px) {
+					display: block;	
+					width: 75%;
+					align-self: center;
+					border-radius: 0;	
+				  }
+			}
+		}
+	}
+
+	
+
+	.main-content {
+		display: flex;
+		flex-direction: row;
+		font-size: 1.6em;
+
+		@media(max-width: 500px) {
+			flex-direction: column;	
+		  }
+		
+	   .left {
+		   display: flex;
+		   flex-direction: column;
+		   width: 40%;
+		   padding: 3%;
+
+		   @media(max-width: 500px) {
+			width: 100%;
+		  }
+		  
+
+			p {
+				padding: 3%;
+
+			 @media(max-width: 500px) {
+				text-align: justify;
+			 }	
+
+			}
+
+		    h1 {
+			color: @blue-background;
+			font-size: 3rem;
+			.center();
+			margin: 15px auto;
+		   }
+
+
+		    h2 {
+			font-size: 2rem;
+			padding: 0 3% 10% 0;
+			text-align: center;
+			margin-top: 0;
+			
+		   }
+
+		   h3 {
+			 
+			 font-size: 2.4rem;
+			 background: @blue-background;
+			 margin: 3% 0;
+			 text-align: center;
+		    }
+
+			
+		    img {
+			    .center();
+		    }
+	    }	
+	  .right {
+		  width: 60%;
+		  background:@blue-background;
+		  padding: 3%;
+			 
+		   @media(max-width: 500px) {
+			  width: 100%;		
+			}
+			
+			li {	
+				@media(max-width: 500px) {
+					text-align: justify;
+				}	
+			}
+			.title {
+				margin-bottom: 5px;
+			}
+
+		  .skills {
+			  display: flex;
+			  flex-direction: row;
+			  flex-wrap: wrap;
+			  
+
+			  .skills1{
+				width: 50%;
+			  }
+
+			  .skills2{
+				width: 50%;
+			  }
+		  }
+
+		  h3 {
+			.center();
+			 font-size: 2.4rem;
+			 background: @white-background;
+			 margin: 3% auto;
+			 
+		    }
+	  }
+	}
+} //container
