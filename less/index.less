@@ -54,6 +54,137 @@ table {
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
 }
 
+// html {
+// 	font-size: 62.5%;
+// }
+
+//Variables
+@main-color: darkcyan;
+@secondary-color: cadetblue;
+@h1-color: teal;
+
+//Mixins
+.align-left() {
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 0 1.25%;
+}
+.font-style() {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.align-center() {
+	justify-content: center;
+}
+.h2-font() {
+	color: @main-color;
+	.font-style();
+	font: bold 20px;
+	margin: 20px 0 10px;
+}
+.h3-font() {
+	color: @secondary-color;
+	font: italic bold 18px;
+}
+.border-style() {
+	border-left: 3px dotted @secondary-color;
+	padding-left: 3%;
+}
+
+//container resume//
+.resume {
+	max-width: 800px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.resume header {
+	h1 {
+		text-align: center;
+		color: @h1-color;
+		font-size: 50px;
+		.font-style();
+	}
+}
+
+header {
+	nav {
+		display: flex;
+		justify-content: space-between;
+		margin: 30px auto;
+		@media (max-width: 500px) {
+			width: 100%;
+			flex-direction: column;
+		}
+		a {
+			padding: 10px 5%;
+			border: 1px solid @h1-color;
+			text-decoration: none;
+			color: @main-color;
+			.font-style();
+			@media (max-width: 500px) {
+				text-align: center;
+				border: none;
+				border-top: 3px dotted @h1-color;
+			}
+		}
+	}
+}
+
+.content {
+	display: flex;
+	.align-center();
+	width: 100%;
+	@media (max-width: 500px) {
+		flex-direction: column-reverse;
+	}
+	
+	.left-column {
+		width: 30%;
+		.border-style();
+		.align-left();
+		h2 {
+			.h2-font();
+		}
+		span {
+			.h3-font();
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			margin: 0 auto;
+			padding-right: 1%;
+			border: none;
+		}
+	}
+	.right-column {
+		width: 70%;
+		.border-style();
+		.align-left();
+		h2 {
+			.h2-font();
+		}
+		h3 {
+			.h3-font();
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			margin: 0 auto;
+			padding-right: 1%;
+			border: none;
+		}
+	}
+} //content
+
+footer {
+	p {
+		text-align: center;
+		.font-style();
+		color: @h1-color;
+		margin: 40px auto;
+	}
+}
