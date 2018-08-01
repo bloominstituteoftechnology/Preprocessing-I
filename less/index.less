@@ -55,46 +55,61 @@ table {
 
 /* Variables */
 @main-color: @wildsand;
-// @headers: ;
-
 @wildsand: #f4f4f4;
+
 /* Mixin */
 .flex-center() {
 	display: flex;
 	align-items: center;
+}
+.font-bold() {
+	font-weight: bold;
 }
 
 /* Main CSS */
 html, body {
 	height: 100%;
 	font-size: 62.5%; // rem sizing
+	background: @main-color;
 }
 
 .home-page {
 	.flex-center();
-	background: @main-color;
-	// padding: 0 1.5rem;
 	flex-direction: column;
 	width: 63rem;
-	margin: 1.5rem auto;
+	margin: 0 auto;
 	font-family: Arial, Helvetica, sans-serif;
+	@media( max-width: 500px ) {
+		width: 45rem;
+	 }
 	p {
 		font-size:2.2rem;
 	}
+
 	h1 {
-		font-size:6rem;
+		font-size:5rem;
 		margin: .9rem 0;
-		font-weight: bold;
+		.font-bold()
 	}
+
 	h2 {
 		font-size:3rem;
-		font-weight: bold;
+		.font-bold()
 	}
+
 	h3 {
-		font-size: 5rem;
-		margin: .9rem 0;
-		font-weight: bold;
+		font-size: 4rem;
+		margin: .2rem 0;
+		.font-bold()
 	}
+
+	h4 {
+		font-size: 2.5rem;
+		@media( max-width: 500px ) {
+			font-size: 2rem;
+		 }
+	}
+
 	a {
 		font-size: 1.9rem;
 	}
@@ -102,7 +117,6 @@ html, body {
 	.top-content {
 		.flex-center();
 		flex-direction: row;
-		
 		.left-intro {
 			width: auto;
 			flex-direction: column;
@@ -110,6 +124,9 @@ html, body {
 		
 		.right-intro {
 			width: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			img {
 				border-radius: 50%;
 				width: 20rem;
@@ -128,8 +145,11 @@ html, body {
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
-		p {
-			margin-bottom: 1.4rem;
+		a {
+			font-size: 2.5rem;
+			@media( max-width: 500px ) {
+				font-size: 1.9rem;
+			 }
 		}
 	}
 }
