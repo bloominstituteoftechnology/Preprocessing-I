@@ -51,10 +51,27 @@ table {
 @main-color: #333;
 
 @header-text: #afafb4;
+@header-text-hover: #fff;
 @header-background: rgba(51, 51, 51, 0.9);
+@header-text-back-hover: #61666d;
 
 @contact-form-background: #EDEEEF;
+
+@footer-text: #fff;
 @footer-background: #333;
+
+
+.head() {
+	background: @header-background;
+	color: @header-text;
+}
+
+.heading() {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
 
 /* Set every element's box-sizing to border-box */
 html {
@@ -66,11 +83,6 @@ html {
 
 html, body {
     height: 100%;
-}
-
-.head() {
-	background: @header-background;
-	color: @header-text;
 }
 
 .container {
@@ -136,34 +148,35 @@ html, body {
 			}
 
 			a:hover {
-				color: #fff;
+				color: @header-text-hover;
 			}
 		} // nav
 
 		nav:hover {
-			color: #3f4349;
+			a {
+				color: @header-text-back-hover;
+			}
+
+			a:hover {
+				color: @header-text-hover;
+			}
+			
 		}
 	} // main-nav
 
 	h2 {
+		.heading;
 		font-size: 2.3rem;
-		font-weight: bold;
-		margin-bottom: 20px;
-		text-transform: uppercase;
 	}
 
 	h3 {
+		.heading;
 		font-size: 1.8rem;
-		font-weight: bold;
-		margin-bottom: 20px;
-		text-transform: uppercase;
 	}
 
 	h4 {
+		.heading;
 		font-size: 1.5rem;
-		font-weight: bold;
-		margin-bottom: 20px;
-		text-transform: uppercase;
 	}
 
 	.cta {
@@ -362,7 +375,7 @@ html, body {
 		background: @footer-background;
 		font-size: 2rem;
 		padding-top: 40px;
-		color: #fff;
+		color: @footer-text;
 	
 		h1 {
 			font-size: 3rem;
@@ -383,15 +396,20 @@ html, body {
 	
 			a {
 				text-decoration: none;
-				color: #afafb4;
+				color: @header-text;
 				display: flex;
 				margin-left: 1%;
 				margin-right: 3%;
 			}
 	
 			a:hover {
-				color: #fff;
+				color: @header-text-hover;
 			}
+			
+		}
+
+		p {
+			font-size: 1.4rem;
 		}
 	}
 
