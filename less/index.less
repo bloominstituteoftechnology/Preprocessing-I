@@ -54,6 +54,296 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+
+/* my code goes below */
+
+//variables
+@green-color: #12f0be;
+
+@roboto: 'Roboto', sans-serif;
+
+//mixins
+.center() {
+	justify-content: center;
+	align-self: center;
+	text-align: center;
+}
+
+.header-style() {
+		font-family: 'Bubblegum Sans', regular;
+		font-size: 6rem;
+		padding: 1rem 0;	
+}
+
+.p-style {
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
+	padding: 1rem 0;
+	
+}
+
+.hover-style() {
+	background-color: @green-color;
+	color: white;
+}
+
+
+.container {
+	max-width: 880px;
+
+	margin: 0 auto;
+
+	.header {
+		width: 100%;
+		height: 8rem;
+		display: flex;
+		justify-content: flex-end;
+
+	}
+
+	.nav {
+		font-size: 1.8rem;
+		font-family: @roboto;
+		display: flex;
+		justify-content: space-evenly;
+		width: 45%;
+
+		@media(max-width: 800px) {
+			width: 100%;
+			justify-content: center;
+		}
+
+		a { 
+			/* make it look like a button */
+			font-size: 1.6rem;
+			color: black;
+			text-decoration: none;
+			width: 25rem;
+			height: 5rem;
+			padding-top: 1.4rem;
+			margin: 0 1rem;
+			border-bottom: 3px solid @green-color;
+			.center();
+		}
+
+		a:hover {
+			.hover-style();
+		}
+	}
+
+	.intro {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 40rem;
+		margin: 3rem 0;
+		font-size: 1.6rem;
+
+
+		img {
+			width: 25rem;
+			height: 25rem;
+
+			@media(max-width: 500px) {
+				display: none;
+			}
+		}
+	}
+
+	.social {
+		margin: 1em auto;
+		width: 80%;
+		display: flex;
+		justify-content: space-evenly;
+
+		a {
+			color: @green-color;
+		}
+	}
+
+	.intro .intro-text {
+		width: 40rem;
+		height: 25rem;
+		margin-left: 5%;
+	
+
+		h2 {
+			width: 18rem;
+			.header-style();
+		}
+
+		h2:hover {
+			.hover-style();
+		}
+
+		p {
+			.p-style();
+
+			a {
+				text-decoration: none;
+				color: @green-color;
+			}
+	
+		}
+
+		
+	}
+
+	.divider {
+		border: 1px dashed black;
+		margin: 1rem auto;
+		width: 80%;
+
+	}
+
+
+	.work-experience {
+		width: 100%;
+		height: 45rem;
+
+
+	}
+
+	.work-experience .work-text {
+		width: 75%;
+		height: 20rem;
+
+	
+	}
+
+	.work-experience .work-text h2 {
+		.header-style();
+
+	}
+
+	.work-experience .work-text h2:hover {
+		.hover-style();
+
+	}
+
+	.work-experience .work-text p {
+		.p-style();
+	}
+
+
+	.work-experience .timeline {
+		width: 80%;
+		height: 15rem;
+		display: flex;
+		justify-content: space-evenly;
+		margin: 6rem auto;
+		width: 80%;
+
+	}
+
+	table {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.6rem;
+		border-collapse: collapse;
+		width: 80%;
+		margin: 5rem auto;
+		
+	}
+
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+
+
+	.work-experience .timeline .dot {
+
+		height: 15px;
+		width: 15px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+
+	}
+
+	.more-info {
+		display: flex;
+		flex-direction: column;
+
+		.work-text {
+			width: 75%;
+			height: 20rem;
+			justify-content: flex-end;
+			margin-left: 20%; // need to fix with flexbox
+
+		
+			h2 {
+				.header-style();
+				text-align: right;
+			}
+
+			h2:hover {
+				.hover-style();
+			}
+
+			p {
+				.p-style();
+				text-align: right;
+			}
+		
+		} // work-text closing tag
+
+
+		.blocks {
+		font-size: 1.8rem;
+		font-family: @roboto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 3rem 0;
+		justify-content: space-between;
+		}
+		.content-block {
+			width: 30%;
+
+			h1 {
+				text-align:center;
+				.header-style();
+				font-size: 4rem;
+			
+			}
+
+			h1:hover {
+				.hover-style;
+			}
+
+			p {
+				.p-style();
+				font-size: 1.6rem;
+			}
+		}
+		
+		
+	
+		
+	
+		
+	} //more-info closing tag
+
+	.footer {
+		width: 100%;
+		height: 10rem;
+		font-size: 1.6rem;
+		font-family: @roboto;
+		text-align: center;
+		background-color: white;
+		color: black;
+	}
+	
+
+} // container closing tag
