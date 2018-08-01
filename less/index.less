@@ -50,12 +50,140 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
 }
+
+.container	{
+	width: 80%;
+	max-width: 1200px;
+	margin: auto;
+	// background: @sanddune;
+	height: 100%;
+	.center-horizontal;
+}
+
+html {
+	font-size: 62.5%; 
+}
+
+// variables below
+@sunglo: #E7717D;
+@lobolly: #C2CAD0;
+@tea: #C2B9B0;
+@sanddune:#7E685A;
+@wild-willow: #AFD275;
+
+// mixins below
+.center-horizontal()	{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.align-right-side()	{
+	display: flex;
+	justify-content: flex-end;
+}
+// home page CSS below
+.home		{
+	.center-horizontal;
+	header	{
+		.align-right-side;
+		width: 100%;
+		background: @tea;
+		height: 40px;
+
+		nav	{
+			width: 100%;
+			.align-right-side;
+			align-items: center;
+			margin-right: 3%;
+
+			a	{
+				text-decoration: none;
+				margin-left: 10%;
+				color: black;
+				font-size: 1.6rem;
+			}
+		} //nav
+	} //header
+
+	.intro	{
+		display: flex;
+		background: @wild-willow;
+		width: 100%;
+		height: 400px;
+		justify-content: space-around;
+		border-bottom: 2px solid;
+		border-top: 2px solid;
+		border-color: @sanddune;
+
+			img{
+				width: 30%;
+				margin: 20px;
+				height: auto;
+			}
+
+			.text-content	{
+				margin: 20px;
+				width: 46%;
+				border-left: 2px solid;
+				border-color: @sanddune;
+				padding-left: 7%;
+				
+				h2	{
+					font-size: 3.6rem;
+				}
+
+				h3 	{
+					font-size: 2.4rem;
+					border-bottom: 1px solid;
+					border-color: @sanddune;
+					padding: 10px 0 20px;
+				}
+
+				p	{
+					font-size: 1.6rem;
+					margin: 20px 0;
+					line-height: 1.2;
+				}
+			}
+	}	//intro
+
+	.main-content	{
+		display: flex;
+		justify-content: space-between;
+		background: @lobolly;
+
+			.about-me	{
+				width: 48%;
+				padding: 20px 1.2%;
+
+				h2 	{
+					font-size: 2.4rem;
+					font-weight: 600;
+					color: black;
+					border-bottom: 1px solid;
+					border-color: @sanddune;
+				}
+
+				p 	{
+					font-size: 1.6rem;
+					line-height: 1.2;
+					color: black;
+					margin-top: 7px;
+				}
+			} //about me
+
+			.skills	{
+				
+			}
+	} //main content
+}	//home
 
 
 
