@@ -55,5 +55,96 @@ table {
 
 html, body {
     height: 100%;
+    font-size: 62.5%;
 }
 
+// Variables:
+
+@color-gray: gray;
+@color-lightgray: lightgray;
+@color-darkgray: darkgray;
+
+// Mixins:
+
+.h3style() {
+	font-size: 2rem;
+	margin: 2% 0;
+}
+
+.container {
+
+	max-width: 880px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    padding: 2%;
+
+	.nav-block {
+		display: flex;
+		justify-content: flex-end;
+		a {
+			text-decoration: none;
+			font-size: 2rem;
+			color: @color-gray;
+			margin: 2%;
+		}
+	}
+
+	.header-main {
+		background: @color-lightgray;
+		padding: 1%;
+		img {
+			width: 4
+			height: 40%;
+			width: 50%;
+		}
+
+		h1 {
+			font-size: 4rem;
+			padding: 1% 0;
+		}
+
+		p {
+			padding: 1% 0;
+			border-bottom: 1px solid @color-gray;
+		}
+
+
+
+		button {
+			background: darkgray;
+			margin: 2% 0 4% 0;
+			color: white;
+		}
+	}
+
+	.block1 {
+		display: flex;
+		div {
+			width: 50%;
+			h3 {
+				.h3style
+			}
+
+			div {
+				padding: 1%;
+				border: 1px solid @color-lightgray;
+				width: 100%;
+			}
+		}
+	}
+
+	.block2 {
+		h3 {
+				.h3style
+		}
+
+
+	}
+
+	footer {
+		background: @color-darkgray;
+		margin: 2% 0;
+		text-align: center;
+		padding: 2% 0;
+	}
+}
