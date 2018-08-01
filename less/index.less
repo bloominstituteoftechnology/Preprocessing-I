@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	// border: 1px solid red;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -50,10 +51,89 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
+}
+
+html{
+	font-size: 62.5%;
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
 }
 
+@light-gray: #EAECEF;
+@medium-gray: #808080;
+@light-black: #222529;
+
+.container{
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 1%;
+}
+
+.flexbox-centered(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	@media(max-width: 500px){
+		flex-direction: column;
+	}
+}
+
+.nav{
+	.flexbox-centered;
+	margin: 20px 0;
+	
+	.nav-ul{
+		.flexbox-centered;
+		width: 100%;
+		justify-content: flex-end;
+		
+		.nav-ul-li{
+			margin: 0 3%;
+			font-size: 1.6rem;
+			font-weight: bold;
+			
+			.nav-ul-li-a{
+				color: @light-black;
+				text-decoration: none;
+			}
+		} //nav ul li
+	} //nav ul
+} // nav
+
+.main-content{
+	// margin: 5%;
+	background: @light-gray;
+	.flexbox-centered;
+
+	.upper-content{
+		.content-img{
+			width: calc(100% - 300px);
+			margin: 100px 0 0;
+		}
+		.content-header{
+			font-size: 4.4rem;
+			font-weight: bold;
+			margin: 20px 0;
+			padding: 10px 0;
+			border-bottom: 2px solid rgba(66,66,66, 0.2)
+		}
+		.content-text{
+			font-size: 1.6rem;
+		}
+		.content-button{
+			background: @medium-gray;
+			color: #fff;
+			padding: 10px 40px;
+			font-size: 2.0rem;
+			font-weight: bold;
+			margin: 20px 0;
+			border-radius: 5px;
+		}
+	}
+}
