@@ -94,6 +94,10 @@ html, body {
 	margin: 10px;
 }
 
+.para-font-mobile {
+	font-size: 1.6rem;
+}
+
 .centered {
 	display: flex;
 	flex-wrap: wrap;
@@ -101,6 +105,15 @@ html, body {
 	align-items: center;
 	margin: 2px;
 }
+
+
+	.centered-mobile {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: column;
+		margin: 2px;
+	}
+
 
 .sectiondesign {
 	background: @section-bg-color;
@@ -116,11 +129,12 @@ html, body {
 
 
 .container {
-	// max-width: 800px;
-	// width: 100%;
+	max-width: 800px;
+	width: 100%;
 	// border: 5px solid black;
+	margin: 0 auto;
 
-	
+
 
 	// h1 {
 
@@ -151,10 +165,21 @@ html, body {
 			.centered();
 			width: 65%;
 
+			@media (max-width: 500px) {
+				.centered-mobile();
+			}
+
 			a {
 				.para-font();
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
+	
+
 				.links();
 				text-decoration: none;
+
 			}
 
 			a:hover {
@@ -167,6 +192,11 @@ html, body {
 		background-color: orangered;
 		.centered();
 		.sectiondesign();
+
+		@media (max-width: 500px) {
+			.centered-mobile();
+		}
+
 
 		img {
 			width: 150px;
@@ -185,6 +215,10 @@ html, body {
 			p {
 				.para-font;
 
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
+
 				text-align: center;
 			}
 		}
@@ -198,6 +232,10 @@ html, body {
 
 		p {
 			.para-font();
+
+			@media (max-width: 500px) {
+				.para-font-mobile();
+			}
 		}
 	} //intro
 
@@ -205,10 +243,19 @@ html, body {
 		// background-color: yellow;
 		.centered();
 
+		@media (max-width: 500px) {
+			.centered-mobile();
+		}
+
+
 		.header-font();
 
 		p {
 			.para-font();
+
+			@media (max-width: 500px) {
+				.para-font-mobile();
+			}
 		}
 
 
@@ -218,8 +265,16 @@ html, body {
 			width: 30%;
 			.header-font();
 
+			@media (max-width: 500px) {
+				width: 80%;
+			}
+
 			li {
 				.para-font();
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
 			}
 
 			.skills {
@@ -238,12 +293,21 @@ html, body {
 			// background-color: pink;
 			.sectiondesign();
 
+			@media (max-width: 500px) {
+				width: 80%;
+			}
+
+
 			h2 {
 				.header2-font;
 			}
 			
 			p {
 				.para-font();
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
 			}
 		}
 
@@ -257,6 +321,11 @@ html, body {
 
 		p {
 			.para-font();
+
+			@media (max-width: 500px) {
+				.para-font-mobile();
+			}
+
 			text-align: center;
 		}
 
