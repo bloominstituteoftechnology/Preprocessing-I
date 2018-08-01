@@ -64,15 +64,36 @@ html, body {
 //Variables
 @main-color: darkcyan;
 @secondary-color: cadetblue;
-@font-color: teal;
-@h1-font: bold 50px Impact, sans-serif;
-@h2-font: italic bold 20px/30px Futura, sans-serif;
-@h3-font: 18px Geneva, sans-serif;
-@p-font: 16px Calibri, sans-serif;;
+@h1-color: teal;
 
 //Mixins
+.align-left() {
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 0 1.25%;
+}
+.font-style() {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.align-center() {
+	justify-content: center;
+}
+.h2-font() {
+	color: @main-color;
+	.font-style();
+	font: bold 20px;
+	margin: 20px 0 10px;
+}
+.h3-font() {
+	color: @secondary-color;
+	font: italic bold 18px;
+}
+.border-style() {
+	border-left: 3px dotted @secondary-color;
+	padding-left: 3%;
+}
 
-
+//container resume//
 .resume {
 	max-width: 800px;
 	width: 100%;
@@ -80,4 +101,66 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 auto;
+}
+
+.resume header {
+	h1 {
+		text-align: center;
+		color: @h1-color;
+		font-size: 50px;
+		.font-style();
+	}
+}
+
+header {
+	nav {
+		display: flex;
+		justify-content: space-between;
+		margin: 30px auto;
+		a {
+			padding: 10px 5%;
+			border: 1px solid @h1-color;
+			text-decoration: none;
+			color: @main-color;
+			.font-style();
+		}
+	}
+}
+
+.content {
+	display: flex;
+	.align-center();
+	width: 100%;
+	
+	.left-column {
+		width: 30%;
+		.border-style();
+		.align-left();
+		h2 {
+			.h2-font();
+		}
+		span {
+			.h3-font();
+		}
+	}
+	.right-column {
+		width: 70%;
+		.border-style();
+		.align-left();
+		h2 {
+			.h2-font();
+		}
+		h3 {
+			.h3-font();
+		}
+	}
+} //content
+
+footer {
+	p {
+		text-align: center;
+		.font-style();
+		color: @h1-color;
+		margin: 40px auto;
+	}
 }
