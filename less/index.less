@@ -62,9 +62,28 @@ html, body {
 @main-color: lightgray;
 @accent-color: gray;
 @font: Arial, Helvetica, sans-serif;
+@font-color: #212326;
 
 //Mixins
+.p-font-style() {
+	font-size: 1.6rem;
+	font-family: @font;
+	color: @font-color;
+}
 
+.button-style() {
+	font-family: @font;
+	color: white;
+	background-color: @accent-color;
+	font-size: 1.6rem;
+	border-radius: 5px;
+}
+
+.flex-center {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
 
 
 .container {
@@ -77,18 +96,62 @@ html, body {
 .home {
 	.navigation{
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: flex-end;
 
 		a {
 			padding: 20px 3%;
 			text-decoration: none;
 			font-family: @font; 
-			color: @accent-color;
+			color: @font-color;
 		}
 	}//.navigation
-	{
-		.main-content {
-			
+
+	.main-content {
+		background-color: @main-color;
+		color: @font-color;
+		.flex-center;
+		flex-direction: column;
+		padding: 30px 3.41%;
+		.p-font-style;
+
+		.my-photo {
+			width: 30%;
+			height: 300px;
+			margin-bottom: 30px;
+		}
+
+		h1 {
+			font-size: 3rem;
+			margin-bottom: 10px;
+		}
+
+		h2 {
+			font-size: 2rem;
+			margin-bottom: 25px;
+			padding-bottom: 25px;
+			border-bottom: 2px solid @accent-color;
+		}
+
+		.button {
+			.button-style;
+			margin-top: 20px;
+			width: 15%;
+			padding: 10px 1%;
+		}
+	}//.main-content
+	.first-section {
+		.flex-center;
+		justify-content: space-between;
+		.p-font-style;
+		.about{
+			width: 40%;
+			padding: 30px 3.41%;
+			h2 {
+				font-family: @font;
+				color: @font-color;
+				font-size: 2.3rem;
+			}
 		}
 	}
 } //.home
