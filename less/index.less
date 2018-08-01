@@ -53,9 +53,83 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-		height: 100%;
-		// background: red;
+/* Variables */
+@main-color: @wildsand;
+// @headers: ;
+
+@wildsand: #f4f4f4;
+/* Mixin */
+.flex-center() {
+	display: flex;
+	align-items: center;
 }
 
-// LESS TEST
+/* Main CSS */
+html, body {
+	height: 100%;
+	font-size: 62.5%; // rem sizing
+}
+
+.home-page {
+	.flex-center();
+	background: @main-color;
+	// padding: 0 1.5rem;
+	flex-direction: column;
+	width: 63rem;
+	margin: 1.5rem auto;
+	font-family: Arial, Helvetica, sans-serif;
+	p {
+		font-size:2.2rem;
+	}
+	h1 {
+		font-size:6rem;
+		margin: .9rem 0;
+		font-weight: bold;
+	}
+	h2 {
+		font-size:3rem;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 5rem;
+		margin: .9rem 0;
+		font-weight: bold;
+	}
+	a {
+		font-size: 1.9rem;
+	}
+	
+	.top-content {
+		.flex-center();
+		flex-direction: row;
+		
+		.left-intro {
+			width: auto;
+			flex-direction: column;
+		}
+		
+		.right-intro {
+			width: auto;
+			img {
+				border-radius: 50%;
+				width: 20rem;
+				opacity: .6;
+			}
+		}
+	}
+	nav {
+		.flex-center();
+		padding: 1.5rem;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.middle-content {
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		p {
+			margin-bottom: 1.4rem;
+		}
+	}
+}
