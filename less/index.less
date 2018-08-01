@@ -60,12 +60,17 @@ html, body {
 }
 
 ////////////
-// Variables
+// Variables, Mixins
 ////////////
 @regent-blue: #AAD3EA;
 @dodger-blue: #0AA7FF;
 @kirang: 'Kirang Haerang', cursive;
 @montserrat: 'Montserrat', sans-serif;
+
+.doubleHighlight {
+  text-decoration: underline;
+  font-weight: bold;
+}
 
 ////////////
 // Container
@@ -76,6 +81,7 @@ html, body {
   margin: 2% auto;
   font-size: 1.6rem;
   font-family: @montserrat;
+  line-height: 1.5;
 
   > * {
     margin: 3%;
@@ -149,9 +155,24 @@ header {
 /////////
 // Skills
 /////////
+.skills {
+  ul {
+    list-style-type: square;
+    list-style-position: inside;
+
+    li {
+      padding: 1%;
+
+      .highlight {
+        .doubleHighlight
+      }
+    }
+  }
+
+}
 
 /////////
-// History
+// Resume
 /////////
 
 /////////
