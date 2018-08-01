@@ -52,8 +52,10 @@ table {
 
 @header-text: #afafb4;
 @header-text-hover: #fff;
-@header-background: rgba(51, 51, 51, 0.9);
+@header-background: rgba(0, 0, 0, 0.7);
 @header-text-back-hover: #61666d;
+
+@cta-text: #fff;
 
 @contact-form-background: #EDEEEF;
 
@@ -71,6 +73,10 @@ table {
 	font-weight: bold;
 	margin-bottom: 20px;
 	text-transform: uppercase;
+}
+
+.darken() {
+	background: rgba(0, 15, 200, .5);
 }
 
 /* Set every element's box-sizing to border-box */
@@ -180,9 +186,42 @@ html, body {
 	}
 
 	.cta {
-		img {
-			width: 100%;
-			height: auto;
+		background-image: 
+			linear-gradient(
+				rgba(0, 0, 0, 0.7),
+				rgba(0, 0, 0, 0.7)
+			),
+			url("../img/cta-img.jpg");
+		background-size: cover;
+		width: 100%;
+		height: 1000px;
+		color: @cta-text;
+
+		.cta-text {
+			display: flex;
+			flex-direction: column;
+			padding: 20%;
+
+			p {
+				.heading;
+				text-align: center;
+			}
+
+			h1 {
+				.heading;
+				text-align: center;
+				font-size: 8rem;
+			}
+
+			button {
+				width: 200px;
+				height: 70px;
+				color: white;
+				margin-left: 40%;
+				font-size: 2rem;
+				cursor: pointer;
+				background: rgba(0, 0, 0, 0)
+			}
 		}
 	}
 	
