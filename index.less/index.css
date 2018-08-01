@@ -143,35 +143,38 @@ body {
 }
 .container {
   max-width: 880px;
-  border: 1px solid blue;
   margin: 0 auto;
 }
-.header {
+.container .header {
   width: 100%;
   height: 8rem;
   display: flex;
   justify-content: flex-end;
-  border: 1px solid red;
 }
-.nav {
+.container .nav {
   font-size: 1.8rem;
   display: flex;
   justify-content: space-evenly;
-  width: 30%;
+  width: 45%;
 }
-.nav a {
-  background-color: yellow;
-  border: 1px solid blue;
+@media (max-width: 800px) {
+  .container .nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.container .nav a {
   font-size: 1.6rem;
+  color: black;
   text-decoration: none;
-  width: 15rem;
+  width: 25rem;
   height: 5rem;
   padding-top: 1.4rem;
   justify-content: center;
   align-self: center;
   text-align: center;
 }
-.intro {
+.container .intro {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,63 +182,136 @@ body {
   height: 40rem;
   margin: 3rem 0;
   font-size: 1.6rem;
-  border: 1px solid green;
 }
-.intro img {
+.container .intro img {
   width: 25rem;
   height: 25rem;
 }
-.intro .intro-text {
+@media (max-width: 500px) {
+  .container .intro img {
+    display: none;
+  }
+}
+.container .intro .intro-text {
   width: 40rem;
   height: 25rem;
   margin-left: 5%;
-  border: 2px solid lightgreen;
 }
-.intro .intro-text h2 {
+.container .intro .intro-text h2 {
   font-family: 'Bubblegum Sans', regular;
   font-size: 6rem;
   padding: 1rem 0;
 }
-.intro .intro-text p {
+.container .intro .intro-text p {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   padding: 1rem 0;
 }
-.work-experience {
-  width: 100%;
-  height: 40rem;
-  border: 2px solid pink;
+.container .divider {
+  border: 1px dashed black;
+  margin: 1rem auto;
+  width: 80%;
 }
-.work-experience .work-text {
+.container .work-experience {
+  width: 100%;
+  height: 45rem;
+}
+.container .work-experience .work-text {
   width: 75%;
   height: 20rem;
-  border: 2px solid orangered;
 }
-.work-experience .work-text h2 {
+.container .work-experience .work-text h2 {
   font-family: 'Bubblegum Sans', regular;
   font-size: 6rem;
   padding: 1rem 0;
 }
-.work-experience .work-text p {
+.container .work-experience .work-text p {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   padding: 1rem 0;
 }
-.work-experience .timeline {
+.container .work-experience .timeline {
+  height: 15rem;
   display: flex;
   justify-content: space-evenly;
   margin: 6rem auto;
   width: 80%;
-  border: 2px solid orange;
 }
-.work-experience .timeline .dot {
+.container table {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 5rem auto;
+}
+.container td,
+.container th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.container tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.container .work-experience .timeline .dot {
   height: 15px;
   width: 15px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
 }
-.work-experience .timeline .dot:hover {
-  background-color: red;
-  color: black;
+.container .more-info {
+  display: flex;
+  flex-direction: column;
+}
+.container .more-info .work-text {
+  width: 75%;
+  height: 20rem;
+  justify-content: flex-end;
+  margin-left: 20%;
+}
+.container .more-info .work-text h2 {
+  font-family: 'Bubblegum Sans', regular;
+  font-size: 6rem;
+  padding: 1rem 0;
+  text-align: right;
+}
+.container .more-info .work-text p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: right;
+}
+.container .more-info .blocks {
+  font-size: 1.8rem;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  justify-content: space-between;
+}
+.container .more-info .content-block {
+  width: 30%;
+}
+.container .more-info .content-block h1 {
+  font-family: 'Bubblegum Sans', regular;
+  font-size: 6rem;
+  padding: 1rem 0;
+  font-size: 4rem;
+}
+.container .more-info .content-block p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+}
+.container .footer {
+  width: 100%;
+  height: 10rem;
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: black;
+  color: white;
 }

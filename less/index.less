@@ -63,6 +63,7 @@ html, body {
 
 //variables
 
+@roboto: 'Roboto', sans-serif;
 //mixins
 .center() {
 	justify-content: center;
@@ -77,131 +78,219 @@ html, body {
 	
 }
 
-.dot-bubble() {
-	color: black;
-}
-
 .p-style {
 	font-family: 'Roboto', sans-serif;
 	font-size: 2rem;
 	padding: 1rem 0;
 }
 
+
 .container {
 	max-width: 880px;
-	border: 1px solid blue;
+
 	margin: 0 auto;
-}
 
-.header {
-	width: 100%;
-	height: 8rem;
-	display: flex;
-	justify-content: flex-end;
+	.header {
+		width: 100%;
+		height: 8rem;
+		display: flex;
+		justify-content: flex-end;
 
-	border: 1px solid red;
-}
+	}
 
-.nav {
-	font-size: 1.8rem;
-	display: flex;
-	justify-content: space-evenly;
-	width: 30%;
+	.nav {
+		font-size: 1.8rem;
+		display: flex;
+		justify-content: space-evenly;
+		width: 45%;
 
-	a { 
-		background-color: yellow;
-		border: 1px solid blue;
+		@media(max-width: 800px) {
+			width: 100%;
+			justify-content: center;
+		}
+
+		a { 
+	
+			font-size: 1.6rem;
+			color: black;
+			text-decoration: none;
+			width: 25rem;
+			height: 5rem;
+			padding-top: 1.4rem;
+			.center();
+		}
+	}
+
+	.intro {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 40rem;
+		margin: 3rem 0;
 		font-size: 1.6rem;
-		text-decoration: none;
-		width: 15rem;
-		height: 5rem;
-		padding-top: 1.4rem;
-		.center();
+
+
+		img {
+			width: 25rem;
+			height: 25rem;
+
+			@media(max-width: 500px) {
+				display: none;
+			}
+		}
 	}
-}
 
-.intro {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 40rem;
-	margin: 3rem 0;
-	font-size: 1.6rem;
-
-	border: 1px solid green;
-
-	img {
-		width: 25rem;
+	.intro .intro-text {
+		width: 40rem;
 		height: 25rem;
+		margin-left: 5%;
+	
+
+		h2 {
+			.header-style();
+		}
+
+		p {
+			.p-style();
+		}
+
+
 	}
-}
 
-.intro .intro-text {
-	width: 40rem;
-	height: 25rem;
-	margin-left: 5%;
-	border: 2px solid lightgreen;
+	.divider {
+		border: 1px dashed black;
+		margin: 1rem auto;
+		width: 80%;
 
-	h2 {
+	}
+
+	.work-experience {
+		width: 100%;
+		height: 45rem;
+
+
+	}
+
+	.work-experience .work-text {
+		width: 75%;
+		height: 20rem;
+
+	
+	}
+
+	.work-experience .work-text h2 {
 		.header-style();
 	}
 
-	p {
+	.work-experience .work-text p {
 		.p-style();
 	}
 
 
-}
+	.work-experience .timeline {
+		width: 80%;
+		height: 15rem;
+		display: flex;
+		justify-content: space-evenly;
+		margin: 6rem auto;
+		width: 80%;
 
-.work-experience {
-	width: 100%;
-	height: 40rem;
+	}
 
-	border: 2px solid pink;
+	table {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.6rem;
+		border-collapse: collapse;
+		width: 80%;
+		margin: 5rem auto;
+		
+	}
 
-}
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
 
-.work-experience .work-text {
-	width: 75%;
-	height: 20rem;
-
-	border: 2px solid orangered;
-}
-
-.work-experience .work-text h2 {
-	.header-style();
-}
-
-.work-experience .work-text p {
-	.p-style();
-}
-
-
-.work-experience .timeline {
-	display: flex;
-	justify-content: space-evenly;
-	margin: 6rem auto;
-	width: 80%;
-	border: 2px solid orange;
-}
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
 
 
+	.work-experience .timeline .dot {
 
-.work-experience .timeline .dot {
+		height: 15px;
+		width: 15px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
 
-	height: 15px;
-	width: 15px;
-	background-color: #bbb;
-	border-radius: 50%;
-	display: inline-block;
+	}
 
-}
+	.more-info {
+		display: flex;
+		flex-direction: column;
 
-.work-experience .timeline .dot:hover {
+		.work-text {
+			width: 75%;
+			height: 20rem;
+			justify-content: flex-end;
+			margin-left: 20%; // need to fix with flexbox
 
-	background-color: red;
-	.dot-bubble();
+		
+			h2 {
+				.header-style();
+				text-align: right;
+			}
+
+			p {
+				.p-style();
+				text-align: right;
+			}
+		
+		} // work-text closing tag
 
 
-}
+		.blocks {
+		font-size: 1.8rem;
+		font-family: @roboto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 3rem 0;
+		justify-content: space-between;
+		}
+		.content-block {
+			width: 30%;
+
+			h1 {
+				.header-style();
+				font-size: 4rem;
+			}
+
+			p {
+				.p-style();
+				font-size: 1.6rem;
+			}
+		}
+		
+		
+	
+		
+	
+		
+	} //more-info closing tag
+
+	.footer {
+		width: 100%;
+		height: 10rem;
+		font-size: 1.6rem;
+		font-family: @roboto;
+		text-align: center;
+		background-color: black;
+		color: white;
+	}
+	
+
+} // container closing tag
