@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -54,6 +55,125 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+@mainfont: 'Montserrat', sans-serif;
+@pfont: 1.6rem;
+@titlefont: 2rem;
+@h1font: 3rem;
+@introcolor: salmon;
+@aboutcolor: sandybrown;
+@careercolor: whitesmoke;
+@maincolor: greenyellow;
+@subtlefont: dimgrey;
+
+.center-it() {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+
+  .column(){
+	  flex-direction: column;
+  }
+
+.wrapper  {
+	font-family:@mainfont;
+	.container {
+		.center-it;
+		max-width: 900px;
+		margin: auto;
+		font-size: @pfont;
+		h1{
+			font-size: @h1font;
+			margin-bottom: 30px;
+		}
+		h3{
+			font-size: @titlefont;
+		}
+	}
+
+	section {
+		padding: 30px 0;
+	}
+
+	header {
+		background: @maincolor;
+		.container {
+		.center-it;
+			.logo {
+			width: 30%;
+		img {
+		 height: 60px;
+		 clip-path: circle(47%);
+		 margin-right: 10%;
+	  }
+	  	a {
+			.center-it;
+			justify-content: flex-start;
+			font-size: @titlefont;
+			padding: 0;
+	  }
+	}//logo
+	
+	nav {
+		width: 60%;
+		.center-it;
+		a {
+			padding: 40px 0;
+			width: 20%;
+			text-align: center;
+		}
+	}
+  }
+} //Header
+
+	.introduction {
+		background-color: @introcolor;
+		.container{
+			.column;
+			padding: 150px 0;
+		}
+		a {
+			margin-top: 90px;
+			padding: 30px 90px;
+			background-color: @maincolor;
+		}
+	}
+	.about-me {
+		background-color: @aboutcolor;
+		.container{
+			.column;
+			padding: 40px 0;
+		}
+	}
+	.career{
+		background-color: @careercolor;
+		.container{
+			.column;
+			.container{
+				flex-direction: row;
+				align-items: flex-start;
+				flex-wrap: wrap;
+			}
+			.employer{
+				width: 49%;
+				span {
+					color: @subtlefont;
+				}
+			}
+		}
+	}
+	footer {
+		background-color: @maincolor;
+		.container{
+			justify-content: center;
+			padding: 40px 0;
+  	 }
+  }
+}//wrapper
