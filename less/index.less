@@ -53,8 +53,11 @@ table {
     box-sizing: border-box;
 }
 
-// Less variables
+// Less variables and mixins
 @link-color: rgb(75, 75, 75);
+@gray-color: #dddddd;
+@dark-gray-color: rgb(50, 50, 50);
+@white-color: white;
 
 .main-font-style() {
 	font-family: 'Raleway', sans-serif;
@@ -76,7 +79,6 @@ html {
 .container {
 	max-width: 80%;
 	margin: 0 auto;
-	font-size: 1.6rem;
 	.main-font-style();
 
 	* {
@@ -107,7 +109,7 @@ html {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		background: rgb(207, 239, 241);
+		background: @gray-color;
 		padding-bottom: 5%;
 
 		.img-div {
@@ -120,21 +122,16 @@ html {
 
 		h1 {
 			text-align: center;
-			width: 100%;
 			font-size: 3rem;
 		}
 
-		h2 {
-			width: 100%;
-		}
-
-		p {
+		h1, h2, p {
 			width: 100%;
 		}
 
 		.lets-team-up-btn:hover {
-			background: black;
-			color: white;
+			background: @dark-gray-color;
+			color: @white-color;
 			cursor: pointer;
 		}
 	} // .intro-section
@@ -148,18 +145,60 @@ html {
 
 		.stuff-im-good-at-div {
 			div {
-				border-left:1px solid lightgray;
-				border-right:1px solid lightgray;
-				border-bottom: 1px solid lightgray;
+				border-left:1px solid @gray-color;
+				border-right:1px solid @gray-color;
+				border-bottom: 1px solid @gray-color;
 				width: 100%;
 				padding: 2.5%;
 
 				// I know I need to be careful w/ nth-child
 				&:nth-child(2) {
-					border-top: 1px solid lightgray;
+					border-top: 1px solid @gray-color;
+				}
+
+				&:hover {
+					background: @dark-gray-color;
+					color: @white-color;
 				}
 			}
 		} // .stuff-im-good-at-div
 	} // .skills-section
-	
+
+	.work-history-section {
+		.work-history-table {
+			.main-font-style();
+			border-collapse: collapse;
+			width: 100%;
+
+			th {
+				font-weight: bold;
+			}
+
+			td, th {
+				border: 1px solid @gray-color;
+				text-align: left;
+				padding: 1%;
+			}
+			
+			tr:nth-child(even) {
+				background-color: @gray-color;
+			}
+			.body-rows:hover {
+				background: @dark-gray-color;
+				color: @white-color;
+			}
+		}
+	} // .work-history-section
+
+	.contact-section {
+		text-align:center;
+	}
+
+	footer {
+		background: @dark-gray-color;
+		color: @white-color;
+		text-align: center;
+		padding-top: 2.5%;
+		padding-bottom: 5%;
+	}
 } // .container
