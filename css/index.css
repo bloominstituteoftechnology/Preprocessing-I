@@ -145,24 +145,61 @@ body {
   max-width: 880px;
   font-size: 1.6rem;
 }
+@media screen and (max-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    justify-content: center;
+  }
+}
 header nav {
   display: flex;
   justify-content: space-evenly;
 }
-nav a {
+@media screen and (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    border-top: 1px solid lightgray;
+  }
+}
+header nav a {
   text-decoration: none;
   font-size: 1.8rem;
 }
-nav a:link {
+@media screen and (max-width: 500px) {
+  header nav a {
+    width: 100%;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    font-size: 1.2rem;
+    background: lightblue;
+  }
+}
+header nav a:link {
   color: red;
 }
-nav a:visited {
+header nav a:visited {
   color: red;
+}
+@media screen and (max-width: 500px) {
+  header nav a:hover {
+    background: #FFFFF0;
+  }
 }
 .top-content {
   display: flex;
   justify-content: space-evenly;
   background: lightgray;
+}
+@media screen and (max-width: 500px) {
+  .top-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .top-content .text-container {
   width: 50%;
@@ -170,24 +207,30 @@ nav a:visited {
   margin: 5px 30px;
   font-size: 1.3rem;
 }
-.top-content h1 {
+.top-content .text-container h1 {
   font-size: 2.25rem;
   padding-bottom: 5px;
   border-bottom: 1px solid black;
   margin-bottom: 16px;
+}
+.top-content .text-container img {
+  width: 60%;
 }
 .top-content .text-container button {
   border: 1px solid black;
   margin-top: 5px;
   background: #FF0000;
 }
-.top-content img {
-  width: 60%;
-}
 .middle-content {
   display: flex;
   border: 1px solid #dddddd;
   background: #FFFFF0;
+}
+@media screen and (max-width: 500px) {
+  .middle-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .middle-content .text-container {
   border: 1px solid #dddddd;
@@ -216,7 +259,7 @@ nav a:visited {
   width: 100%;
 }
 .bottom-content table tr,
-td {
+.bottom-content table td {
   border-top: 1px solid #dddddd;
   padding: 8px;
 }
@@ -224,35 +267,4 @@ footer {
   background: gray;
   text-align: center;
   padding: 20px;
-}
-@media (max-width: 500px) {
-  .container {
-    max-width: 500px;
-  }
-  header {
-    justify-content: center;
-  }
-  header nav {
-    flex-direction: column;
-    border-top: 1px solid lightgray;
-  }
-  header nav a {
-    width: 100%;
-    padding: 20px 0 20px 0;
-    text-align: center;
-    border-bottom: 1px solid lightgray;
-    font-size: 1.2rem;
-    background: lightblue;
-  }
-  header nav a:hover {
-    background: #FFFFF0;
-  }
-  .top-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .middle-content {
-    flex-direction: column;
-    align-items: center;
-  }
 }
