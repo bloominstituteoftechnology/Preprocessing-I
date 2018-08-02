@@ -139,6 +139,7 @@ body {
   height: 100%;
   font-size: 62.5%;
   font-family: 'Titillium Web', sans-serif;
+  //   background-color: black;
 }
 
 .container {
@@ -147,8 +148,8 @@ body {
   margin: 0 auto;
 }
 
-@main-color: black;
-@main-font-size: 1.6rem;
+@main-color: white;
+@main-font-size: 1.8rem;
 @mobile-font-size: 2.4rem;
 
 // Desktop version
@@ -165,7 +166,6 @@ header {
   }
 
   nav {
-    max-width: 880px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -173,8 +173,8 @@ header {
     position: fixed;
 
     @media (max-width: 500px) {
-      height: 300px;
-      flex-direction: column;
+      height: 20px;
+      flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
     }
@@ -192,7 +192,7 @@ header {
 
   nav a:hover {
     text-decoration: underline;
-    color: black;
+    color: @main-color;
     cursor: pointer;
   }
 }
@@ -203,6 +203,7 @@ header {
 
   .personal-info {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 60px 5.68% 0 5.68%;
@@ -212,8 +213,10 @@ header {
   }
 
   .personal-img {
-    width: 25.64%;
-    height: 33.3%;
+    max-width: 32.05%;
+    max-height: 300px;
+    width: auto;
+    height: auto;
     margin: 0 5.68% 0 5.68%;
     border-radius: 10px;
   }
@@ -231,11 +234,72 @@ header {
 
   .personal-info button {
     border: 2px double black;
+    border-radius: 5px;
     font-size: 1.8rem;
     background: white;
     width: 150px;
     height: 40px;
     margin: 30px 5.68% 0 5.68%;
     cursor: pointer;
+  }
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 100%;
+  height: auto;
+  margin: 30px 5.68%;
+  background-color: lightgrey;
+  border-radius: 10px;
+
+  .about-me {
+    max-width: 33%;
+    height: auto;
+    margin: 50px 5.68%;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin-top: 20px;
+      line-height: 20px;
+    }
+  }
+
+  .skills {
+    max-width: 33%;
+    height: auto;
+    margin: 20px 5.68%;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    ul li {
+      font-size: 1.6rem;
+      margin-top: 30px;
+      margin-left: 4.56%;
+      list-style: square;
+    }
+  }
+
+  .work-experience {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 5.68% 25px 5.68%;
+
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 15px;
+      font-size: @main-font-size;
+      text-align: center;
+    }
   }
 }
