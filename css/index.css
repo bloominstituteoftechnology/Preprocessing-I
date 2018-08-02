@@ -129,6 +129,7 @@ table {
 /* Set every element's box-sizing to border-box */
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 * {
   box-sizing: border-box;
@@ -158,13 +159,14 @@ h4 {
   font-size: 1.5rem;
 }
 .container {
+  font-family: 'Sunflower', sans-serif;
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
   font-size: 1rem;
 }
 .resume header {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   color: #afafb4;
   height: 60px;
   margin-bottom: 40px;
@@ -174,6 +176,14 @@ h4 {
 .resume .main-nav {
   width: 100%;
   display: flex;
+}
+.resume .main-nav .left-space {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .resume .main-nav .left-space {
+    display: none;
+  }
 }
 @media (max-width: 500px) {
   .resume .main-nav {
@@ -192,7 +202,8 @@ h4 {
   text-transform: uppercase;
   margin-top: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
+  transition-duration: 0.3s;
 }
 @media (max-width: 500px) {
   .resume .main-nav nav {
@@ -208,6 +219,7 @@ h4 {
   display: flex;
   margin-left: 1%;
   margin-right: 3%;
+  transition-duration: 0.3s;
 }
 @media (max-width: 500px) {
   .resume .main-nav nav a {
@@ -238,52 +250,73 @@ h4 {
   cursor: pointer;
   background: #1d1a1a;
   border-radius: 30px;
+  transition-duration: 0.3s;
+}
+@media (max-width: 500px) {
+  .resume .fixed-button {
+    display: none;
+  }
+}
+.resume .fixed-button:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
 }
 .resume .cta {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/cta-img.jpg");
   background-size: cover;
   width: 100%;
-  height: 1000px;
+  height: 990px;
   color: #fff;
+}
+@media (max-width: 500px) {
+  .resume .cta {
+    height: 400px;
+  }
 }
 .resume .cta .cta-text {
   display: flex;
   flex-direction: column;
   padding: 20%;
+  align-items: center;
 }
 .resume .cta .cta-text p {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
-  text-align: center;
+}
+@media (max-width: 500px) {
+  .resume .cta .cta-text p {
+    font-size: 1.2rem;
+  }
 }
 .resume .cta .cta-text h1 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
-  text-align: center;
   font-size: 8rem;
 }
 @media (max-width: 500px) {
   .resume .cta .cta-text h1 {
-    font-size: 6rem;
+    font-size: 3.2rem;
   }
 }
 .resume .cta .cta-text button {
-  width: 200px;
+  font-family: 'Sunflower', sans-serif;
+  width: 250px;
   height: 70px;
-  color: white;
-  margin-left: 40%;
+  color: #fff;
   font-size: 2rem;
   cursor: pointer;
+  border: 1px solid #fff;
   background: rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
 }
-@media (max-width: 500px) {
-  .resume .cta .cta-text button {
-    margin-left: 15%;
-  }
+.resume .cta .cta-text button:hover {
+  background: #fff;
+  color: #000;
 }
 .resume .main-content {
   display: flex;
@@ -302,6 +335,7 @@ h4 {
   max-width: 1110px;
   width: 100%;
   align-items: center;
+  margin-bottom: 20px;
 }
 .resume .main-content .top-content .text-content {
   display: flex;
@@ -325,6 +359,7 @@ h4 {
 @media (max-width: 500px) {
   .resume .middle-content .top-content {
     flex-direction: column;
+    align-items: center;
   }
   .resume .middle-content .top-content h2 {
     text-align: center;
@@ -348,6 +383,7 @@ h4 {
 @media (max-width: 500px) {
   .resume .middle-content .middle {
     flex-direction: column;
+    margin-top: 20px;
   }
   .resume .middle-content .middle h2,
   .resume .middle-content .middle h3 {
@@ -363,6 +399,11 @@ h4 {
   width: 100%;
   margin-bottom: 70px;
 }
+@media (max-width: 500px) {
+  .resume .middle-content .middle .column .box {
+    text-align: center;
+  }
+}
 .resume .middle-content .middle .column-header {
   width: 100%;
   margin-right: 17%;
@@ -374,6 +415,7 @@ h4 {
 }
 @media (max-width: 500px) {
   .resume .middle-content .bottom-content {
+    margin-top: 20px;
     flex-direction: column;
   }
   .resume .middle-content .bottom-content h2,
@@ -394,6 +436,11 @@ h4 {
 .resume .middle-content .bottom-content .column .box {
   width: 100%;
   margin-bottom: 70px;
+}
+@media (max-width: 500px) {
+  .resume .middle-content .bottom-content .column .box {
+    text-align: center;
+  }
 }
 .resume .middle-content .bottom-content .column-header {
   width: 46%;
@@ -462,6 +509,11 @@ h4 {
   padding-top: 40px;
   color: #fff;
 }
+@media (max-width: 500px) {
+  .resume footer {
+    padding: 40px 1%;
+  }
+}
 .resume footer h1 {
   font-size: 3rem;
 }
@@ -490,6 +542,7 @@ h4 {
   display: flex;
   margin-left: 1%;
   margin-right: 3%;
+  transition-duration: 0.3s;
 }
 .resume footer .footer-nav a:hover {
   color: #fff;

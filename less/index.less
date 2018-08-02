@@ -53,10 +53,12 @@ table {
 
 @header-text: @bombay;
 @header-text-hover: @white;
-@header-background: rgba(0, 0, 0, 0.7);
+@header-background: rgba(0, 0, 0, 0.9);
 @header-text-back-hover: @shuttle-gray;
 
 @cta-text: @white;
+@cta-btn-bg-hover: @white;
+@cta-btn-txt-hover: @black;
 
 @contact-form-background: @porcelain;
 
@@ -69,8 +71,13 @@ table {
 @bombay: #afafb4;
 @porcelain: #EDEEEF;
 @white: #fff;
+@black: #000;
 
 // Mixins
+
+.default-font() {
+	font-family: 'Sunflower', sans-serif;
+}
 .head() {
 	background: @header-background;
 	color: @header-text;
@@ -100,6 +107,7 @@ table {
 /* Set every element's box-sizing to border-box */
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 * {
@@ -127,6 +135,7 @@ h4 {
 
 // Main wrapper around entire page
 .container {
+	.default-font;
 	max-width: 1920px;
 	width: 100%;
 	margin: 0 auto;
@@ -149,6 +158,15 @@ h4 {
 		width: 100%;
 		display: flex;
 
+		.left-space {
+			width: 100%;
+
+			@media (max-width: 500px)
+			{
+				display: none;
+			}
+		}
+
 		// Mobile
 		@media (max-width: 500px) {
 			// top: 44px;
@@ -167,7 +185,8 @@ h4 {
 			text-transform: uppercase;
 			margin-top: 20px;
 			display: flex;
-			justify-content: flex-end;
+			justify-content: space-evenly;
+			transition-duration: 0.3s;
 
 			// Mobile
 			@media (max-width: 500px) {
@@ -183,6 +202,7 @@ h4 {
 				display: flex;
 				margin-left: 1%;
 				margin-right: 3%;
+				transition-duration: 0.3s;
 
 				// Mobile
 				@media (max-width: 500px) {
@@ -222,6 +242,17 @@ h4 {
 		cursor: pointer;
 		background: rgba(29, 26, 26, 1);
 		border-radius: 30px;
+		transition-duration: 0.3s;
+
+		@media (max-width: 500px) {
+			display: none;
+		}
+	}
+
+	.fixed-button:hover {
+		background: @cta-btn-bg-hover;
+		color: @cta-btn-txt-hover;
+		border: 1px solid @cta-btn-bg-hover;
 	}
 
 	// Call To Action
@@ -234,43 +265,52 @@ h4 {
 			url("../img/cta-img.jpg");
 		background-size: cover;
 		width: 100%;
-		height: 1000px;
+		height: 990px;
 		color: @cta-text;
+
+		@media (max-width: 500px) {
+			height: 400px;
+		}
 
 		// CTA overlay heading
 		.cta-text {
 			.flex-column;
 			padding: 20%;
+			align-items: center;
 
 			p {
 				.heading;
-				text-align: center;
+
+				@media (max-width: 500px) {
+					font-size: 1.2rem;
+				}
 			}
 
 			h1 {
 				.heading;
-				text-align: center;
 				font-size: 8rem;
 
 				// Mobile
 				@media (max-width: 500px) {
-					font-size: 6rem;
+					font-size: 3.2rem;
 				}
 			}
 
 			button {
-				width: 200px;
+				.default-font;
+				width: 250px;
 				height: 70px;
-				color: white;
-				margin-left: 40%;
+				color: @cta-text;
 				font-size: 2rem;
 				cursor: pointer;
+				border: 1px solid @white;
 				background: rgba(0, 0, 0, 0);
+				transition-duration: 0.3s;
+			}
 
-				// Mobile
-				@media (max-width: 500px) {
-					margin-left: 15%;
-				}
+			button:hover {
+				background: @cta-btn-bg-hover;
+				color: @cta-btn-txt-hover;
 			}
 		} // cta-text
 	} // cta
@@ -293,6 +333,7 @@ h4 {
 			max-width: 1110px;
 			width: 100%;
 			align-items: center;
+			margin-bottom: 20px;
 	
 			.text-content {
 				display: flex;
@@ -321,6 +362,7 @@ h4 {
 			// Mobile
 			@media (max-width: 500px) {
 				flex-direction: column;
+				align-items: center;
 
 				h2 {
 					text-align: center;
@@ -348,6 +390,7 @@ h4 {
 			// Mobile
 			@media (max-width: 500px) {
 				flex-direction: column;
+				margin-top: 20px;
 
 				h2, h3 {
 					text-align: center;
@@ -361,6 +404,10 @@ h4 {
 				.box {
 					width: 100%;
 					margin-bottom: 70px;
+
+					@media (max-width: 500px) {
+						text-align: center;
+					}
 				}
 			}
 	
@@ -377,6 +424,7 @@ h4 {
 			
 			// Mobile
 			@media (max-width: 500px) {
+				margin-top: 20px;
 				flex-direction: column;
 
 				h2, h3 {
@@ -396,6 +444,10 @@ h4 {
 				.box {
 					width: 100%;
 					margin-bottom: 70px;
+
+					@media (max-width: 500px) {
+						text-align: center;
+					}
 				}
 			}
 	
@@ -476,6 +528,10 @@ h4 {
 		font-size: 2rem;
 		padding-top: 40px;
 		color: @footer-text;
+
+		@media (max-width: 500px) {
+			padding: 40px 1%;
+		}
 	
 		h1 {
 			font-size: 3rem;
@@ -507,6 +563,7 @@ h4 {
 				display: flex;
 				margin-left: 1%;
 				margin-right: 3%;
+				transition-duration: 0.3s;
 			}
 	
 			a:hover {
