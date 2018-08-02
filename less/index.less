@@ -57,3 +57,176 @@ html, body {
     height: 100%;
 }
 
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Arial';
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+// Variables
+@smoke: whitesmoke;
+@whitetext: white;
+
+
+// For Mixin
+.flex-end() {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-center() {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.general-font-style(){
+    font-size: 1.6rem;
+ }
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    .general-font-style();
+
+    @media( max-width: 500px ) {
+    }
+
+    header {
+        .flex-end();
+        margin-top: 2.5rem;
+
+        nav {
+            a {
+                margin-left: 4rem;
+            }
+        }
+    }
+
+    .main-content {
+
+        .top-content {
+            max-width: 100%;
+            background-color: @smoke;
+            padding-bottom: 7.5rem;
+
+            img {
+                width: 25%;
+                margin: 5.2rem 0 .5rem 2.4%;
+            }
+
+            .name {
+                border-bottom: 1.2px solid lightgray;
+                margin: 0 2.4%;
+                padding-bottom: 1.2rem;
+
+                h1 {
+                    font-size: 4.35rem;
+                    letter-spacing: .1rem;
+                    margin-bottom: 1.2rem;
+                }
+
+                h2 {
+                    letter-spacing: .01rem;
+                    font-size: 1.7rem;
+                }
+            }
+
+            .intro {
+                margin: 2.4rem 0 .5rem 2.4%;
+                letter-spacing: .1rem;
+
+                p {
+                    margin-bottom: 3rem;
+                }
+
+                .btn {
+                    margin: 20rem 0 15rem;
+                    background-color: gray;
+                    color: @whitetext;
+                    text-decoration: none;
+                    font-weight: bold;
+                    padding: .9rem 1.3rem;
+                    letter-spacing: .07rem;
+                    border-radius: .5rem;
+                }
+            }
+        }
+
+        .middle-content {
+            display: flex;
+            max-width: 100%;
+            flex-direction: row;
+
+
+            .elevator {
+                flex: .5;
+
+                .blurb-title {
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                    margin: 2.7rem 0 1rem 0;
+                }
+
+                .blurb-content {
+                    line-height: 2.4rem;
+                }
+            }
+
+            .skills {
+                .elevator();
+                margin-left: 3rem;
+
+                .skills-title {
+                    font-weight: bold;
+                    margin: 2.7rem 0 1rem 0;
+                    font-size: 2rem;
+                }
+
+                .skills-content {
+
+                    p {
+                        width: 100%;
+                        border: 1px solid lightgray;
+                        margin-top: -1px;
+                        margin-bottom: -1px;
+                        padding: 1.3rem 0 1.3rem 2.6%;
+                    }
+                }
+            }
+        }
+
+        .bottom-content {
+            max-width: 100%;
+
+            .history {
+            }
+        }
+    }
+
+    .contact {
+        display: flex;
+        align-items: center;
+        background-color: @smoke;
+        flex-direction: column;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-top: 3rem;
+        margin: 3rem 35% 0 35%;
+    }
+
+    footer {
+        .contact();
+        width: 100%;
+        padding-bottom: 4rem;
+        background-color: gray;
+        color: @whitetext;
+        margin: 3rem 0 0 0;
+    }
+}
