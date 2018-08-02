@@ -54,6 +54,204 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+/* Start Lessing here */
+
+/* Variables */
+
+@bone: #FFFFF0;
+
+@bright-red: #FF0000;
+
+@header-font: 2.25rem;
+
+/* Mixins */
+
+.flex-space-evenly() {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flex-direction-column() {
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+
+	@media screen and (max-width:500px) {
+		max-width: 500px;
+	}
+
+	width: 100%;
+	margin: auto;
+	max-width: 880px;
+	font-size: 1.6rem;
+
+
+header {
+
+	@media screen and (max-width:500px) {
+		justify-content: center;
+	}
+
+	nav {
+
+		@media screen and (max-width:500px) {
+			.flex-direction-column();
+			border-top: 1px solid lightgray;
+			margin: 0 0;
+		}
+
+		.flex-space-evenly();
+		margin: 15px 0 15px 0;
+
+		a {
+
+			@media screen and (max-width:500px) {
+				width: 100%;
+				padding: 20px 0 20px 0;
+				text-align: center;
+				border-bottom: 1px solid lightgray;
+				font-size: 1.2rem;
+				background: @bone;
+			}
+
+			text-decoration: none;
+			font-size: 1.8rem;
+		}
+
+		a:link {
+
+			color: @bright-red;
+		}
+
+		a:visited {
+
+			color: @bright-red;
+		}
+
+		a:hover {
+
+			@media screen and (max-width:500px) {
+			background: @bone;
+			}
+		}
+	}
+}
+
+.top-content {
+
+	@media screen and (max-width:500px) {
+		.flex-direction-column();
+	}
+
+	.flex-space-evenly();
+	background: lightgray;
+
+	.text-container {
+
+		width: 50%;
+		padding: 20px;
+		margin: 5px 30px;
+		font-size: 1.3rem;
+
+		h1 {
+
+			font-size: @header-font;
+			padding-bottom: 5px;
+			border-bottom: 1px solid black;
+			margin-bottom: 16px;	
+		}
+
+		img {
+
+			width: 60%;
+		}
+
+		button {
+
+			border: 1px solid black;
+			margin-top: 5px;
+			background: @bright-red;
+		}
+	}
+}
+
+.middle-content {
+
+	@media screen and (max-width:500px) {
+		.flex-direction-column();
+	}
+
+	display: flex;
+	border: 1px solid #dddddd;
+	background: @bone;
+
+	.text-container {
+
+		border: 1px solid #dddddd;
+		border-radius: 4px;
+		padding: 20px;
+		margin: 10px;
+		width: 50%;
+		line-height: 2.2rem;
+
+		h2 {
+
+			font-size: @header-font;
+			padding-bottom: 10px;
+		}
+	}
+}
+
+.bottom-content {
+
+	border: 1px solid #dddddd;
+	background: @bone;
+
+	h2 {
+
+		font-size: @header-font;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+
+	table {
+
+		background: @bone;
+		width: 100%;
+
+		tr, td {
+
+			border-top: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+
+	}
+
+}
+
+footer {
+
+	background: #dddddd;
+	text-align: center;
+	padding: 20px;
+}
+
+}
+
+
+
+
+
+
+
+
 
