@@ -90,6 +90,18 @@ html {
 	display: flex;
 	justify-content: flex-end;
 }
+
+.center-column()	{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.center-all()	{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 // home page CSS below
 .home		{
 	.center-horizontal;
@@ -100,7 +112,6 @@ html {
 		height: 40px;
 
 		@media (max-width:500px)	{
-			justify-content: center;
 			height: auto;
 		}
 
@@ -113,7 +124,6 @@ html {
 			@media (max-width:500px)	{
 				flex-direction: column;
 				width: 100%;
-				justify-content: center;
 				margin: 0;
 			}
 			
@@ -124,14 +134,12 @@ html {
 				font-size: 1.6rem;
 
 				@media (max-width:500px)	{
+					.center-all;
 					margin: 0;
 					width: 100%;
-					display: flex;
-					justify-content: center;
 					border-bottom: 1px solid;
 					border-color: @sanddune;
 					height: 100px;
-					align-items: center;
 				}
 			}
 		} //nav
@@ -149,9 +157,7 @@ html {
 
 		@media (max-width: 500px){
 			order: -1;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+			.center-column;
 			height: auto;
 			border-top: none;
 		}
@@ -213,8 +219,7 @@ html {
 		border-color: @sanddune;
 
 		@media (max-width: 500px)	{
-			flex-direction: column;
-			align-items: center;
+			.center-column;
 		}
 			.about-me	{
 				width: 48.3%;
@@ -320,8 +325,9 @@ html {
 		height: 50px;
 		background: @sanddune;
 		width: 100%;
-		.center-horizontal;
-		justify-content: center;
+		// .center-horizontal;
+		// justify-content: center;
+		.center-all;
 
 		h3 	{
 			font-size: 1.6rem;
