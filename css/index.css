@@ -1,1 +1,385 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
+html {
+  font-size: 62.5%;
+}
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.home header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background: #C2B9B0;
+  height: 40px;
+}
+@media (max-width: 500px) {
+  .home header {
+    height: auto;
+  }
+}
+.home header nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 3%;
+}
+@media (max-width: 500px) {
+  .home header nav {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+}
+.home header nav a {
+  text-decoration: none;
+  margin-left: 10%;
+  color: black;
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .home header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid;
+    border-color: #7E685A;
+    height: 100px;
+  }
+}
+.home .intro {
+  display: flex;
+  background: #AFD275;
+  width: 100%;
+  height: 400px;
+  justify-content: space-around;
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  border-color: #7E685A;
+}
+@media (max-width: 500px) {
+  .home .intro {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    border-top: none;
+  }
+}
+.home .intro img {
+  width: 30%;
+  margin: 20px;
+  height: auto;
+}
+@media (max-width: 500px) {
+  .home .intro img {
+    display: none;
+  }
+}
+.home .intro .text-content {
+  margin: 20px;
+  width: 46%;
+  border-left: 2px solid;
+  border-color: #7E685A;
+  padding-left: 7%;
+}
+@media (max-width: 500px) {
+  .home .intro .text-content {
+    border: none;
+    width: 100%;
+    padding: 30px 3%;
+    margin: 0;
+  }
+}
+.home .intro .text-content h2 {
+  font-size: 3.6rem;
+}
+.home .intro .text-content h3 {
+  font-size: 2.4rem;
+  border-bottom: 1px solid;
+  border-color: #7E685A;
+  padding: 10px 0 20px;
+}
+.home .intro .text-content p {
+  font-size: 1.6rem;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+@media (max-width: 500px) {
+  .home .intro .text-content span {
+    display: none;
+  }
+}
+.home .main-content {
+  display: flex;
+  justify-content: space-between;
+  background: #C2CAD0;
+  border-bottom: 2px solid;
+  border-color: #7E685A;
+}
+@media (max-width: 500px) {
+  .home .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.home .main-content .about-me {
+  width: 48.3%;
+  margin: 20px 0;
+  padding: 0 2% 0 1%;
+  border-right: 2px solid;
+  border-color: #7E685A;
+}
+@media (max-width: 500px) {
+  .home .main-content .about-me {
+    width: 95%;
+    border: none;
+  }
+}
+.home .main-content .about-me h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: black;
+  border-bottom: 1px solid;
+  border-color: #7E685A;
+}
+.home .main-content .about-me p {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: black;
+  margin-top: 7px;
+}
+.home .main-content .skills {
+  width: 48%;
+  padding: 20px 1.2%;
+}
+@media (max-width: 500px) {
+  .home .main-content .skills {
+    width: 95%;
+    padding: 0px 1.2% 10px;
+  }
+}
+.home .main-content .skills h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: black;
+}
+.home .main-content .skills table {
+  border-spacing: 5px;
+  height: 90%;
+}
+.home .main-content .skills table,
+.home .main-content .skills td {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #7E685A;
+  font-size: 1.6rem;
+}
+.home .main-content .skills td {
+  vertical-align: middle;
+  padding-left: 20px;
+}
+@media (max-width: 500px) {
+  .home .main-content .skills td {
+    padding: 10px 0 10px 10px;
+  }
+}
+.home .bottom-content {
+  background-color: #C2B9B0;
+  width: 100%;
+  padding: 0 1.2%;
+}
+.home .bottom-content h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: black;
+  padding: 10px 0;
+}
+.home .bottom-content table {
+  border-spacing: 5px;
+  height: 100px;
+}
+.home .bottom-content table,
+.home .bottom-content td,
+.home .bottom-content th {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #7E685A;
+  font-size: 1.6rem;
+}
+.home .bottom-content td {
+  vertical-align: middle;
+  padding-left: 20px;
+}
+.home .bottom-content th {
+  text-align: left;
+  padding-left: 20px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.home footer {
+  height: 50px;
+  background: #7E685A;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home footer h3 {
+  font-size: 1.6rem;
+  color: #AFD275;
+}
