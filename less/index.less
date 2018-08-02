@@ -48,6 +48,8 @@ table {
 	border-spacing: 0;
 }
 
+// Import for google fonts
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -80,6 +82,7 @@ html {
 @size-p: 2rem;
 @size-nav: 2.5rem;
 @size-h2: 2.5rem;
+@size-button: 1rem;
 
   // Padding and margin values
 @padding-text: 1rem 0.5rem 1rem 0.5rem;
@@ -101,6 +104,7 @@ html {
 
 .container {
 	.flex;
+	.center;
 	flex-direction: column;
 	max-width: 800px;
 	width: 100%;
@@ -110,18 +114,29 @@ html {
 		width: 100%;
 
 	}
+	header {
+  width: 100%;
+	justify-content: space-between;
+	align-self: center;
+	}
 	nav {
+		width: 75%;
 		font-size: @size-nav;
 		font-family: @style-main;
-		margin: @margin-nav;
+		margin: auto;
 		.flex;
-		.center;
-		justify-content: space-around;
+    .center;
+		justify-content: space-between;
 
 		@media ( max-width: 500px ) {
 		 flex-flow: column nowrap;
 		 justify-content: center;
 		 align-items: center;
+		}
+		a {
+    padding: @padding-text;
+		text-decoration: none;
+    color: @headers;
 		}
 
 	} //nav container
@@ -133,10 +148,10 @@ html {
 		.center;
 		width: 100%;
 		flex-direction: column;
-		align-items: flex-end;
-		flex-wrap: wrap-reverse;
+		align-self: center;
+		justify-content: center;
 		padding: @padding-box;
-		margin: @margin-box;
+		margin: 3rem auto;
 
 		img {
 			width: 20%;
@@ -144,19 +159,33 @@ html {
 		}
 
 		.button {
-			.flex;
+			display: inline-flex;
 			border: 2px solid black;
 			background-color: @button-color;
 			width: 30%;
+			min-width: 20rem;
+			height: 5rem;
 			align-self: center;
-			align-items: center;
+
+
+			@media ( max-width: 500px ) {
+			width: 100%;
+			margin: auto;
+
+			}
+
       :hover {
 				color: white;
 				cursor: pointer;
 			}
 			p {
+      width: 100%;
+			text-align: center;
 			padding: @padding-text;
 			margin: @margin-text;
+      @media ( max-width: 500px ) {
+
+			}
 			}
 		} // button container
 
@@ -174,6 +203,7 @@ html {
 		p {
 			font-size: @size-p;
 			padding: @padding-text;
+			text-align: center;
 		}
     ul {
 			font-size: @size-p;
@@ -183,10 +213,6 @@ html {
 		li {
 			padding: @padding-text;
 		}
-		.lower {
-			.home {
-				flex-flow: column-reverse;
-			}
-		}
-	} //all divs inside .container
-} //container
+
+		} //all divs inside .container
+	} //container

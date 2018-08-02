@@ -147,6 +147,8 @@ html {
 }
 .container {
   display: flex;
+  align-items: center;
+  align-content: center;
   flex-direction: column;
   max-width: 800px;
   width: 100%;
@@ -158,14 +160,20 @@ html {
     width: 100%;
   }
 }
+.container header {
+  width: 100%;
+  justify-content: space-between;
+  align-self: center;
+}
 .container nav {
+  width: 75%;
   font-size: 2.5rem;
   font-family: EB Garamond;
-  margin: 2rem 3rem 2rem 3rem;
+  margin: auto;
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 @media (max-width: 500px) {
   .container nav {
@@ -173,6 +181,11 @@ html {
     justify-content: center;
     align-items: center;
   }
+}
+.container nav a {
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  text-decoration: none;
+  color: #2D3956;
 }
 .container div {
   font-family: EB Garamond;
@@ -182,28 +195,37 @@ html {
   align-content: center;
   width: 100%;
   flex-direction: column;
-  align-items: flex-end;
-  flex-wrap: wrap-reverse;
+  align-self: center;
+  justify-content: center;
   padding: 1rem;
-  margin: 1rem;
+  margin: 3rem auto;
 }
 .container div img {
   width: 20%;
   align-self: center;
 }
 .container div .button {
-  display: flex;
+  display: inline-flex;
   border: 2px solid black;
   background-color: #A0001E;
   width: 30%;
+  min-width: 20rem;
+  height: 5rem;
   align-self: center;
-  align-items: center;
+}
+@media (max-width: 500px) {
+  .container div .button {
+    width: 100%;
+    margin: auto;
+  }
 }
 .container div .button :hover {
   color: white;
   cursor: pointer;
 }
 .container div .button p {
+  width: 100%;
+  text-align: center;
   padding: 1rem 0.5rem 1rem 0.5rem;
   margin: 1rem;
 }
@@ -220,6 +242,7 @@ html {
 .container div p {
   font-size: 2rem;
   padding: 1rem 0.5rem 1rem 0.5rem;
+  text-align: center;
 }
 .container div ul {
   font-size: 2rem;
@@ -228,7 +251,4 @@ html {
 }
 .container div li {
   padding: 1rem 0.5rem 1rem 0.5rem;
-}
-.container div .lower .home {
-  flex-flow: column-reverse;
 }
