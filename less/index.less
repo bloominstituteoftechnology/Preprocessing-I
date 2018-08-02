@@ -66,7 +66,8 @@ html, body {
 @third-color: #fff;
 
 @main-font: 'Nanum Gothic', sans-serif;
-@secondary-font:'Anton', sans-serif;
+@secondary-font: 'Montserrat', sans-serif;
+@third-font:'Anton', sans-serif;
 
 //Mixins
 .flex-style-1(){
@@ -75,6 +76,13 @@ html, body {
 		align-items:center;
 		justify-content: space-between;
 }
+
+// .flexbox-centered(){
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	flex-wrap: wrap;
+// }
 
 .font-style-1() {
  font-size: 1.5rem;
@@ -98,13 +106,13 @@ html, body {
 				/* Flexbox */
 				.flex-style-1;
 
-				z-index:10;
+				z-index:99;
 				color:white;
 
 					nav{
 						margin: 0 auto;
 						display:flex;
-						padding: 40px;
+						padding: 20px;
 						.font-style-1;
 
 				
@@ -158,6 +166,8 @@ html, body {
 				justify-content:center;
 				position:relative;
 				height:100vh;
+				width: 100%;
+				font-family: @main-font;
 
 				.main-section{
 					margin:auto;
@@ -222,18 +232,16 @@ html, body {
 						border-radius:10px;
 						padding:20px 40px 20px 40px;
 						background-color: @secondary-color;
+						font-family: @main-font;
 						text-transform:uppercase;
 						cursor:pointer;
 						animation: appears_in 1s ease-in 1s forwards;
 						transition: filter 0.5s ease-in;
-					}
-				}
-			
-			
-				button{
-					a{
-						text-decoration:none;
-						color:white;
+
+						a{
+							text-decoration:none;
+							color:white;
+						}
 					}
 				}
 			
@@ -256,6 +264,7 @@ html, body {
 
 				.middle-content{
 					text-align:center;
+					margin-top: 40px;
 				}
 
 
@@ -281,6 +290,7 @@ html, body {
 					h1{
 					font-weight:400;
 					font-size: 30px;
+					margin-top: 50px;
 					}
 				}
 
@@ -324,7 +334,7 @@ html, body {
 					flex-basis:35%;
 				}
 
-				@media all and (max-width: 800px){
+				@media(max-width: 800px){
 					.main-work{
 						flex-direction:column;
 						align-items: center;
@@ -345,77 +355,81 @@ html, body {
 			}//Work section end
 
 			// Table section
-			table {
-				border: 4px solid @main-color;
-				border-collapse: collapse;
-				margin: 0 auto;
-				padding: 0;
-				width: 80%;
-				table-layout: fixed;
-
-				caption {
-					font-size: 1.5em;
-					margin: .5em 0 .75em;
-				}
-				
-				tr {
-					background-color: #f8f8f8;
-					border: 1px solid #ddd;
-					padding: .35em;
-				}
-				
-				th,
-				td {
-					padding: .625em;
-					text-align: center;
-				}
-				
-				th {
-					font-size: .85em;
-					letter-spacing: .1em;
-					text-transform: uppercase;
-				}
-				
-				@media screen and (max-width: 600px) {
-						border: 0;
-				
+			.table{
+				table {
+					border: 4px solid @main-color;
+					font-family: @main-font;
+					margin: 0 auto;
+					padding: 0;
+					table-layout: fixed;
+					color: #414a4f;
+					width: 75%;
+					
+					tr:nth-child(even), th {background: #CCC}
 					caption {
-						font-size: 1.3em;
+						font-size: 2rem;
+						margin: 5% 10%;
+
 					}
-				
-					thead {
-						border: none;
-						clip: rect(0 0 0 0);
-						height: 1px;
-						margin: -1px;
-						overflow: hidden;
-						padding: 0;
-						position: absolute;
-						width: 1px;
-					}
-				
+					
 					tr {
-						border-bottom: 3px solid #ddd;
-						display: block;
-						margin-bottom: .625em;
+						background-color: #f8f8f8;
+						border: 1px solid #ddd;
+						padding: .35em;
 					}
-				
+					
+					th,
 					td {
-						border-bottom: 1px solid #ddd;
-						display: block;
-						font-size: .8em;
-						text-align: right;
+						padding: .625em;
+						text-align: center;
 					}
-				
-					td::before {
-						content: attr(data-label);
-						float: left;
-						font-weight: bold;
+					
+					th {
+						font-size: .85em;
+						letter-spacing: .1em;
 						text-transform: uppercase;
 					}
-				
-					td:last-child {
-						border-bottom: 0;
+					
+					@media (max-width: 600px) {
+							border: 0;
+					
+						caption {
+							font-size: 1.3em;
+						}
+					
+						thead {
+							border: none;
+							height: 1px;
+							margin: -1px;
+							overflow: hidden;
+							padding: 0;
+							position: absolute;
+							width: 1px;
+						}
+					
+						tr {
+							border-bottom: 3px solid #ddd;
+							display: block;
+							margin-bottom: .625em;
+						}
+					
+						td {
+							border-bottom: 1px solid #ddd;
+							display: block;
+							font-size: .8em;
+							text-align: right;
+						}
+					
+						td::before {
+							content: attr(data-label);
+							float: left;
+							font-weight: bold;
+							text-transform: uppercase;
+						}
+					
+						td:last-child {
+							border-bottom: 0;
+						}
 					}
 				}
 			}//table section end
@@ -424,17 +438,18 @@ html, body {
 			footer{
 				background-color: @main-color;
 				margin-top:40px;
+				padding: 40px;
 
 					#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
-
 					#contact {
 						background:none;
 						padding:25px;
-						margin:50px 0;
 						max-width:400px;
 						width:100%;
+
 						margin:0 auto;
 						position:relative;
+
 					}
 
 					#contact {
@@ -447,7 +462,7 @@ html, body {
 					}
 
 					fieldset {
-						border: medium none !important;
+						border: medium none;
 						margin: 0 0 10px;
 						min-width: 100%;
 						padding: 0;
@@ -463,9 +478,6 @@ html, body {
 					}
 
 					#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
-						-webkit-transition:border-color 0.3s ease-in-out;
-						-moz-transition:border-color 0.3s ease-in-out;
-						transition:border-color 0.3s ease-in-out;
 						border:1px solid #AAA;
 					}
 
@@ -490,9 +502,6 @@ html, body {
 
 					#contact button[type="submit"]:hover {
 						background:#09C;
-						-webkit-transition:background 0.3s ease-in-out;
-						-moz-transition:background 0.3s ease-in-out;
-						transition:background-color 0.3s ease-in-out;
 					}
 
 					#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
@@ -515,6 +524,7 @@ html, body {
 					}
 				
 			}
+
 
 
 			
