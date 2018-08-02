@@ -162,7 +162,7 @@ html {
 }
 .wrapper header {
   position: fixed;
-  background: #3c96ff;
+  background: #34495e;
   width: 100%;
 }
 .wrapper header .container {
@@ -171,8 +171,14 @@ html {
   justify-content: space-between;
   align-items: stretch;
 }
+@media (max-width: 500px) {
+  .wrapper header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .wrapper header .container .logo {
-  width: 30%;
+  width: 60%;
 }
 .wrapper header .container .logo img {
   height: 66px;
@@ -186,6 +192,7 @@ html {
   justify-content: flex-start;
   font-size: 2rem;
   padding: 0;
+  color: whitesmoke;
 }
 .wrapper header .container nav {
   display: flex;
@@ -194,6 +201,12 @@ html {
   width: 60%;
   align-items: stretch;
 }
+@media (max-width: 500px) {
+  .wrapper header .container nav {
+    width: 90%;
+    padding-bottom: 33px;
+  }
+}
 .wrapper header .container nav a {
   display: flex;
   align-items: center;
@@ -201,64 +214,96 @@ html {
   justify-content: center;
   height: 100%;
   width: 20%;
-}
-.wrapper .introduction {
-  background-color: salmon;
-}
-.wrapper .introduction .container {
-  flex-direction: column;
-  padding: 66px 0;
-}
-.wrapper .introduction .container a {
-  margin-top: 99px;
-  padding: 33px 99px;
-  background-color: #2fffb9;
-}
-.wrapper .introduction .container img {
-  height: 264px;
-  margin-bottom: 33px;
-  margin-top: 99px;
-  border: solid 10px sandybrown;
-  outline: solid 5px rgba(244, 164, 96, 0.7);
-}
-.wrapper .about-me {
-  background-color: sandybrown;
-}
-.wrapper .about-me .container {
-  flex-direction: column;
-  padding: 66px 0;
-}
-.wrapper .career {
-  background-color: whitesmoke;
-}
-.wrapper .career .container {
-  flex-direction: column;
-}
-.wrapper .career .container .container {
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.wrapper .career .container .employer {
-  width: 47%;
-}
-.wrapper .career .container .employer h3 {
-  border-bottom: 1px dotted dimgrey;
-}
-.wrapper .career .container .employer span {
-  display: inline-block;
-  color: dimgrey;
-  margin-right: 1rem;
-}
-.wrapper .career .container .employer .position {
-  color: salmon;
   font-weight: bold;
-  margin-bottom: 16.5px;
+  color: whitesmoke;
 }
 .wrapper footer {
-  background-color: #3c96ff;
+  background-color: #34495e;
 }
 .wrapper footer .container {
   justify-content: center;
   padding: 33px 0;
+  color: whitesmoke;
+}
+.home .introduction {
+  background-color: #9b59b6;
+}
+.home .introduction .container {
+  flex-direction: column;
+  align-items: center;
+  padding: 66px 0;
+}
+.home .introduction .container a {
+  margin-top: 99px;
+  padding: 33px 99px;
+  background-color: #2fffb9;
+  cursor: pointer;
+}
+.home .introduction .container a:hover {
+  background: #34495e;
+  color: whitesmoke;
+}
+.home .introduction .container img {
+  height: 264px;
+  margin-bottom: 33px;
+  margin-top: 99px;
+  border: solid 10px #1abc9c;
+  outline: solid 5px rgba(47, 255, 185, 0.3);
+}
+.home .introduction .container p {
+  text-align: center;
+}
+.home .about-me {
+  background-color: #1abc9c;
+}
+.home .about-me .container {
+  flex-direction: column;
+  align-items: center;
+  padding: 66px 0;
+}
+.home .about-me .container p {
+  text-align: center;
+}
+.home .career {
+  background-color: whitesmoke;
+}
+.home .career .container {
+  flex-direction: column;
+  align-items: center;
+}
+.home .career .container .container {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .home .career .container .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.home .employer {
+  width: 47%;
+}
+@media (max-width: 500px) {
+  .home .employer {
+    width: 90%;
+  }
+}
+.home .employer h3 {
+  border-bottom: 1px dotted dimgrey;
+}
+.home .employer span {
+  display: inline-block;
+  color: dimgrey;
+  margin-right: 1rem;
+}
+.home .employer .position {
+  color: #9b59b6;
+  font-weight: bold;
+  margin-bottom: 16.5px;
 }
