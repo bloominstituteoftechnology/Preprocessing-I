@@ -49,6 +49,7 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
 }
@@ -56,4 +57,203 @@ table {
 html, body {
     height: 100%;
 }
+
+
+/* Your code starts here! */
+
+/* Variables!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+@main-color: purple;
+@secon-color: blue;
+@tri-color: grey;
+
+/* Mixins!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.topImgSize {
+	width: 45%;
+	height: 45%;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.hoverImgSize {
+	width: 15%;
+	position: absolute;
+	top: 0px;
+}
+.h2 {
+	font-size: 2rem;
+	color: @main-color;
+}
+.botImgSize {
+	width: 30%;
+	height: 30%;
+}
+
+.border2ndColor {
+	 border: 3px double @secon-color;
+}
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.rightColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.leftColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+/* My CSS Starts Here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+* {
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+html {
+	font-size: 62.5%;
+}
+
+.main-content {
+	max-width: 880px;
+	border: 1px solid @main-color;
+}
+	
+.section0 {
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		a {
+			font-size: 1.3rem;
+			color: @tri-color;
+		}
+		.logo {
+			width: 5%;
+			height: 5%;
+		}
+	}
+	h1 {
+		font-size: 7rem;
+		.center
+	}
+}
+
+
+.section1 {
+	border: 3px double red;
+	margin: 0 auto;
+	height: 325px;
+
+	.banner {
+		display: flex;
+		flex-direction: row;
+
+		.topImgOverlayBox1 {
+			.center;
+			
+			.topImg1 {
+				.topImgSize;
+			}
+
+			.botImg1 {
+				.hoverImgSize;
+					left: 0px;
+					opacity: .2;
+				
+
+				.topImg1:hover {
+				
+				}
+			}	
+	
+		}
+	}
+
+	.topImgOverlayBox2 {
+		.center;
+		
+		.topImg2 {
+				.topImgSize;
+			}
+
+			.botImg2 {
+				.hoverImgSize;
+					left: 15%;
+					opacity: .2;
+				
+
+				.topImg2:hover {
+			
+				}
+			}
+	}
+	.topImgOverlayBox3 {
+		.center;
+		
+		.topImg3 {
+				.topImgSize;
+			}
+
+			.botImg3 {
+				.hoverImgSize;
+					left: 30%;
+					opacity: .2;
+				
+				.topImg3:hover {
+				
+				}
+			}
+	}
+}	
+
+.section2 {
+	.parts1 {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid blue;
+		width: 75%;
+		height: 45%;
+	
+		.box {
+			
+			h2 {
+				.h2;
+			}
+			.bottomImg {
+				.botImgSize;
+			}
+		}
+	}
+	.parts2 {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid blue;
+		width: 75%;
+		height: 45%;
+
+		.box {
+
+			.bottomImg {
+				.botImgSize;
+			}
+		}
+	}
+}
+
+
+} /*end of Main-content*/
+
+
 
