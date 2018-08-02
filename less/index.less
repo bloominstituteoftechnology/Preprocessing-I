@@ -63,9 +63,23 @@ html, body {
 
 /* Variables */
 
+@bone: #FFFFF0;
+
+@bright-red: #FF0000;
+
+@header-font: 2.25rem;
 
 /* Mixins */
 
+.flex-space-evenly() {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flex-direction-column() {
+	flex-direction: column;
+	align-items: center;
+}
 
 .container {
 
@@ -77,7 +91,7 @@ html, body {
 	margin: auto;
 	max-width: 880px;
 	font-size: 1.6rem;
-}
+
 
 header {
 
@@ -88,12 +102,13 @@ header {
 	nav {
 
 		@media screen and (max-width:500px) {
-			flex-direction: column;
+			.flex-direction-column();
 			border-top: 1px solid lightgray;
+			margin: 0 0;
 		}
 
-		display: flex;
-		justify-content: space-evenly;
+		.flex-space-evenly();
+		margin: 15px 0 15px 0;
 
 		a {
 
@@ -103,7 +118,7 @@ header {
 				text-align: center;
 				border-bottom: 1px solid lightgray;
 				font-size: 1.2rem;
-				background: lightblue;
+				background: @bone;
 			}
 
 			text-decoration: none;
@@ -112,18 +127,18 @@ header {
 
 		a:link {
 
-			color: red;
+			color: @bright-red;
 		}
 
 		a:visited {
 
-			color: red;
+			color: @bright-red;
 		}
 
 		a:hover {
 
 			@media screen and (max-width:500px) {
-			background: #FFFFF0;
+			background: @bone;
 			}
 		}
 	}
@@ -132,12 +147,10 @@ header {
 .top-content {
 
 	@media screen and (max-width:500px) {
-		flex-direction: column;
-		align-items: center;
+		.flex-direction-column();
 	}
 
-	display: flex;
-	justify-content: space-evenly;
+	.flex-space-evenly();
 	background: lightgray;
 
 	.text-container {
@@ -149,7 +162,7 @@ header {
 
 		h1 {
 
-			font-size: 2.25rem;
+			font-size: @header-font;
 			padding-bottom: 5px;
 			border-bottom: 1px solid black;
 			margin-bottom: 16px;	
@@ -164,7 +177,7 @@ header {
 
 			border: 1px solid black;
 			margin-top: 5px;
-			background: #FF0000;
+			background: @bright-red;
 		}
 	}
 }
@@ -172,13 +185,12 @@ header {
 .middle-content {
 
 	@media screen and (max-width:500px) {
-		flex-direction: column;
-		align-items: center;
+		.flex-direction-column();
 	}
 
 	display: flex;
 	border: 1px solid #dddddd;
-	background: #FFFFF0;
+	background: @bone;
 
 	.text-container {
 
@@ -191,7 +203,7 @@ header {
 
 		h2 {
 
-			font-size: 2.25rem;
+			font-size: @header-font;
 			padding-bottom: 10px;
 		}
 	}
@@ -200,11 +212,11 @@ header {
 .bottom-content {
 
 	border: 1px solid #dddddd;
-	background: #FFFFF0;
+	background: @bone;
 
 	h2 {
 
-		font-size: 2.25rem;
+		font-size: @header-font;
 		padding-bottom: 10px;
 		padding-top: 10px;
 		padding-left: 10px;
@@ -212,7 +224,7 @@ header {
 
 	table {
 
-		background: #FFFFF0;
+		background: @bone;
 		width: 100%;
 
 		tr, td {
@@ -226,10 +238,20 @@ header {
 
 }
 
-
 footer {
 
-	background: gray;
+	background: #dddddd;
 	text-align: center;
 	padding: 20px;
 }
+
+}
+
+
+
+
+
+
+
+
+
