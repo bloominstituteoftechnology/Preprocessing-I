@@ -49,6 +49,8 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@font: 5rem;
+
 
 .center() {
 	display: flex;
@@ -75,8 +77,9 @@ table {
     font-family: 'Bangers';
     letter-spacing: 1rem;
 	margin-bottom: 10px;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	outline: none;
+	
 	
 }
 
@@ -97,7 +100,7 @@ html, body {
     max-width: 880px;
     width: 100%;
 	margin: auto;
-	border: 1px solid red;
+	
 	.nav {
 		.center();
 		.header-font-style();
@@ -133,7 +136,75 @@ html, body {
 	
 	.bottom-content{
 		display:flex;
+		font: @font;
 	}
-			
 	
+	#customers {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+	
+	#customers td, #customers th {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
+	
+	#customers tr:nth-child(even){background-color: #f2f2f2;}
+	
+	#customers tr:hover {background-color: #ddd;}
+	
+	#customers th {
+		padding-top: 12px;
+		padding-bottom: 12px;
+		text-align: left;
+		background-color: lightblue
+		;
+		color: white;
+	}
+	
+	footer {
+		.center();
+		background: lightcyan
+	}
+	
+}
+
+// Phone
+
+@media (max-width: 500px) {
+
+  header {
+    justify-content: space-between;
+  }
+
+  header nav {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  header nav a {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2rem;
+      border-bottom: 1px solid gray;
+  }
+
+  .main-content {
+    padding-top: 55px;
+  }
+
+  .main-content {
+      flex-wrap: wrap;
+      height: 300px;
+  }
+  
+
+  .main-content .bottom-content {
+      flex-wrap: wrap;
+      align-content: space-between;
+      height: 440px;
+  }
 }
