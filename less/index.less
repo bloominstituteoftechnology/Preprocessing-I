@@ -68,20 +68,20 @@ html, body {
 
 
 .container {
-	display: flex;
-	flex-direction: column;
 	width: 100%;
-	margin: 0 auto;
+	margin: auto;
 	max-width: 880px;
 	font-size: 1.6rem;
 }
 
 header nav {
-	margin: 20px;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 nav a {
-	padding: 15px;
+	// padding: 10px;
+
 	text-decoration: none;
 	font-size: 1.8rem;
 }
@@ -96,57 +96,52 @@ nav a:visited {
 
 .top-content {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-evenly;
 	background: lightgray;
-	margin: 20px;
-	padding: 10px;
-	width: 80%;
-	border-radius: 3px;
+	// padding: 10px;
+	// width: 80%;
+	// border-radius: 3px;
+}
+
+.top-content .text-container {
+	width: 50%;
+	padding: 20px;
+	margin: 5px 30px;
+	font-size: 1.3rem;
 }
 
 .top-content h1 {
-	// padding: 10px 0 10px 20px;
 	font-size: 2.25rem;
-}
-
-.top-content .text-container h2 {
-	font-size: 0.5rem;
-}
-
-.top-content .text-container p {
-	padding-top: 4px;
-	font-size: 0.5rem;
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+	margin-bottom: 16px;	
 }
 
 .top-content .text-container button {
 	border: 1px solid black;
-	padding: 10px;
-	margin-top: 20px;
+	// padding: 10px;
+	margin-top: 5px;
 	background: #FF0000;
 }
 
 .top-content img{
-	width: 30%;
-}
-
-.top-content .text-container {
-	padding: 10px 0 10px 20px;
+	width: 60%;
 }
 
 .middle-content {
 	display: flex;
 	border: 1px solid #dddddd;
-	margin: 20px;
 	background: #FFFFF0;
-	width: 80%;
+
 }
 
 .middle-content .text-container {
 	border: 1px solid #dddddd;
 	border-radius: 4px;
-	padding: 16px;
+	padding: 20px;
 	margin: 10px;
-	width: 100%;
+	width: 50%;
+	line-height: 2.2rem;
 }
 
 .middle-content .text-container h2 {
@@ -155,12 +150,15 @@ nav a:visited {
 }
 
 .bottom-content {
-	margin: 20px;
-	width: 80%;
+	border: 1px solid #dddddd;
+	background: #FFFFF0;
 }
 
 .bottom-content h2 {
 	font-size: 2.25rem;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
 }
 
 .bottom-content table {
@@ -169,19 +167,50 @@ nav a:visited {
 }
 
 .bottom-content table tr,td {
-	border: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
 	padding: 8px;
 
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
 footer {
-	width: 80%;
 	background: gray;
 	text-align: center;
 	padding: 20px;
-	margin: 20px;
+}
+
+@media (max-width: 500px) {
+	.container {
+		max-width: 500px;
+	}
+	header {
+		justify-content: center;
+	}
+
+	header nav {
+		flex-direction: column;
+		border-top: 1px solid lightgray;
+	}
+
+	header nav a {
+		width: 100%;
+		padding: 20px 0 20px 0;
+		text-align: center;
+		border-bottom: 1px solid lightgray;
+		font-size: 1.2rem;
+		background: lightblue;
+	}
+
+	header nav a:hover {
+		background: #FFFFF0;
+	}
+
+	.top-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.middle-content {
+		flex-direction: column;
+		align-items: center;
+	}
 }
