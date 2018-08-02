@@ -88,13 +88,25 @@ header nav {
 	margin: 2% 0%;
 	justify-content: space-between;
 	padding: 1% 5%;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
 
   a {
 		display: flex;
 		justify-content: space-between;
 		text-decoration: none;
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			font-size: 1.2rem;
+			border-bottom: 1px solid gray;
+			padding: 1.8%;
 	}
-
+}
 	a:hover {
 		color: gray;
 		background-color: white;
@@ -115,6 +127,9 @@ header nav {
 		padding: 5%;
 		font-size: 1.7rem;
 		font-style: oblique;
+		@media (max-width: 500px) {
+			text-align: center;
+		}
 	}
 
 	h3 {
@@ -133,6 +148,9 @@ header nav {
 		width: 80%;
 		.center;
 		padding-top: 3%;
+		@media (max-width: 500px) {
+			display: none;
+		}
 	}
 
 	button {
@@ -177,13 +195,35 @@ header nav {
 
 }
 
-/* .experience {
-	display: flex;
-	justify-content: space-between;
-	background: red;
-	margin: 0 auto;
-	text-align: center;
-} */
+.experience {
+	.center;
+
+	table {
+		.center;
+		border-collapse: collapse;
+    width: 100%;
+		padding-top: 3%;
+		padding-bottom: 5%;
+
+		@media (max-width: 500px) {
+			width: 80%;
+		}
+		td, th {
+		    border: 1px solid grey;
+		    text-align: center;
+		    padding: 2%;
+				width: 50%;
+		}
+
+		th {
+			font-weight: bold;
+		}
+
+		tr:nth-child(even) {
+		    background-color: #dddddd;
+		}
+	} // table
+} //experience
 
 footer {
 	margin: 0 auto;
