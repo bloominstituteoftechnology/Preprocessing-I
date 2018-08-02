@@ -135,36 +135,46 @@ body {
   height: 100%;
   background: black;
 }
+.border-no-sides {
+  border: 1px solid black;
+  border-left: 0px;
+  border-right: 0px;
+}
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
 .container {
   width: 90%;
   margin: 0 auto;
   max-width: 800px;
   background: white;
 }
-.border-div {
+.container .border-div {
   border: 1px solid white;
 }
-header nav {
+.container header nav {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   background: black;
   margin: 0 auto;
   font-family: 'Josefin Slab', serif;
 }
-header nav a {
+.container header nav a {
   padding: 20px;
   color: white;
   text-decoration: none;
   outline: none;
   transition: 300ms ease-in-out;
 }
-header nav a:hover {
+.container header nav a:hover {
   transform: scale(1.15, 1.15);
 }
-header img {
+.container header img {
   max-width: 100%;
 }
-header h1 {
+.container header h1 {
   font-size: 5rem;
   position: absolute;
   z-index: 10;
@@ -177,12 +187,12 @@ header h1 {
   font-family: 'Special Elite', cursive;
 }
 @media (max-width: 500px) {
-  header h1 {
+  .container header h1 {
     font-size: 3rem;
     margin-top: -100px;
   }
 }
-header h2 {
+.container header h2 {
   font-size: 2rem;
   position: absolute;
   z-index: 10;
@@ -195,11 +205,11 @@ header h2 {
   font-family: 'Special Elite', cursive;
 }
 @media (max-width: 500px) {
-  header h2 {
+  .container header h2 {
     font-size: 1.5rem;
   }
 }
-header .cta {
+.container header .cta {
   padding: 20px;
   background: #AABED8;
   margin-top: -5px;
@@ -208,7 +218,7 @@ header .cta {
   color: white;
   font-family: 'Josefin Slab', serif;
 }
-header .cta button {
+.container header .cta button {
   color: black;
   background: white;
   border-radius: 10px;
@@ -219,11 +229,11 @@ header .cta button {
   font-family: 'Josefin Slab', serif;
   transition: 300ms ease-in-out;
 }
-header .cta button:hover {
+.container header .cta button:hover {
   cursor: pointer;
   transform: scale(1.15, 1.15);
 }
-.special-skills {
+.container .special-skills {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -232,73 +242,80 @@ header .cta button:hover {
   font-family: 'Josefin Slab', serif;
 }
 @media (max-width: 500px) {
-  .special-skills {
+  .container .special-skills {
     flex-flow: column nowrap;
   }
 }
-.special-skills h2 {
+.container .special-skills h2 {
   text-align: center;
   font-size: 2rem;
   padding: 5px;
 }
-.special-skills .skills-text {
+.container .special-skills .skills-text {
   text-align: justify;
   max-width: 45%;
   margin: 5%;
 }
 @media (max-width: 500px) {
-  .special-skills .skills-text {
+  .container .special-skills .skills-text {
     max-width: 100%;
+    margin-top: 40px;
   }
 }
-.special-skills .skills-list {
+.container .special-skills .skills-list {
   max-width: 45%;
   margin: 5%;
   text-align: center;
 }
 @media (max-width: 500px) {
-  .special-skills .skills-list {
+  .container .special-skills .skills-list {
     max-width: 100%;
   }
 }
-.special-skills .skills-list h2 {
+.container .special-skills .skills-list h2 {
   border-bottom: 1px solid black;
 }
-.special-skills .skills-list li {
-  border-bottom: 1px solid black;
-  padding: 20px;
+.container .special-skills .skills-list li {
+  border: 1px solid black;
   border-left: 0px;
   border-right: 0px;
+  padding: 20px;
+  border-top: 0px;
 }
-.work-history {
+.container .work-history {
   font-family: 'Josefin Slab', serif;
   text-align: center;
   height: 400px;
   overflow: auto;
 }
-.work-history h2 {
+@media (max-width: 500px) {
+  .container .work-history {
+    margin-top: 20px;
+  }
+}
+.container .work-history h2 {
   font-size: 2rem;
 }
-.work-history table {
+.container .work-history table {
   width: 90%;
   text-align: center;
   margin: 0 auto;
   overflow: auto;
 }
-.work-history table th {
+.container .work-history table th {
   padding: 20px 0px;
   font-size: 1.5rem;
   font-weight: bold;
 }
-.work-history table tr {
+.container .work-history table tr {
   border: 1px solid black;
   border-left: 0px;
   border-right: 0px;
 }
-.work-history table td {
+.container .work-history table td {
   padding: 20px 5px;
 }
-footer {
+.container footer {
   font-family: 'Josefin Slab', serif;
   text-align: center;
   padding: 50px;

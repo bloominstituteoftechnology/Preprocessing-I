@@ -59,12 +59,23 @@ html, body {
 }
 
 
+.border-no-sides {
+	border: 1px solid black;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.flex-row {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
 .container {
 	width: 90%;
 	margin: 0 auto;
 	max-width: 800px;
 	background: white;
-}
+
 
 .border-div {
 	border: 1px solid white;
@@ -72,7 +83,7 @@ html, body {
 
 header {
 	nav {
-		display: flex;
+		.flex-row();
 		justify-content: center;
 		background: black;
 		margin: 0 auto;
@@ -159,8 +170,7 @@ header {
 }
 
 .special-skills {
-	display: flex;
-	flex-flow: row nowrap;
+	.flex-row();
 	justify-content: space-between;
 	width: 100%;
 	margin-top: -20px;
@@ -183,6 +193,7 @@ header {
 
 		@media (max-width: 500px){
 			max-width: 100%;
+			margin-top: 40px;
 		}
 	}
 
@@ -199,10 +210,9 @@ header {
 		}
 
 		li {
-			border-bottom: 1px solid black;
+			.border-no-sides();
 			padding: 20px;
-			border-left: 0px;
-			border-right: 0px;
+			border-top: 0px;
 		}
 	}
 }
@@ -212,6 +222,10 @@ header {
 	text-align: center;	
 	height: 400px;
 	overflow: auto;
+
+	@media (max-width: 500px){
+		margin-top: 20px;
+	}
 	
 	h2 {
 		font-size: 2rem;
@@ -229,9 +243,7 @@ header {
 		}
 
 		tr {
-			border: 1px solid black;
-			border-left: 0px;
-			border-right: 0px;
+			.border-no-sides();
 		}
 
 		td {
@@ -246,4 +258,6 @@ footer {
 	font-family: 'Josefin Slab', serif;
 	text-align: center;
 	padding: 50px;
+}
+
 }
