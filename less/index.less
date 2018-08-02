@@ -61,11 +61,21 @@ html, body {
 
 @border-bottom-design: 1px solid lightgray;
 
+.column() {
+	display: flex;
+	flex-direction: column;
+}
+
+.row() {
+	display: flex;
+	flex-direction: row;
+}
+
+
 .container {
 	width: 880px;
 	margin: auto;
-	display: flex;
-	flex-direction: column;
+	.column;
 
 	// Header
 	section,header {
@@ -87,8 +97,7 @@ html, body {
 	
 	// Intro
 	.intro {
-		display: flex;
-		flex-direction: column;
+		.column;
 		align-items: center;
 		background-color: aliceblue;
 		width: 100%;
@@ -129,8 +138,11 @@ html, body {
 	
 	// Skills
 	.skills {
-		display: flex;
-		flex-direction: row;
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+		}
+		.row;
 		justify-content: space-evenly;
 		border-bottom: @border-bottom-design;
 		padding-bottom: 4rem;
