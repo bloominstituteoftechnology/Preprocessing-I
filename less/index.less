@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -50,10 +50,237 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
+
+
+
+@h1-font: 3.5rem;
+@h2-h3-font: 1.8rem;
+
+@home-p-size: 1.5rem;
+
+@button-background-color: grey;
+@button-font-size: 1.2rem;
+@button-color: white;
+@button-border: solid black 2px;
+@button-hover-color: black;
+
+@border-block-color: black;
+@outline-block-color: #5d5d5d;
+
+@padding: 1.705%;
+
+@lifont: 1.5rem;
+
+@contact-section-size: 1.3rem;
+
+@mobile-a: 2rem;
+
+.mobile-a(){
+	font-size: @mobile-a;
+	text-align:center;
+}
+
+.big-button() {
+	.margins;
+	background-color: @button-background-color;
+	font-size: @button-font-size;
+	color: @button-color;
+	border: @button-border;
+	padding: @padding;
+}
+
+.flex(){
+	display: flex;
+	margin-top: 10px;
+}
+
+.margins(){
+	margin: 20px 2.27% 10px 2.27%;
+}
+
+.mobile(){
+	@media(max-width: 500px){
+		flex-direction: column;
+	}
+}
+
+.block-styling(){
+	border: solid @border-block-color 1px;
+  background-color: #f5f5f5;
+  background-image: url("../white.png");
+  border-radius: 5%;
+  box-shadow: 5px 10px @outline-block-color;
+}
+
+.home-pics() {
+	.margins;
+	@media(max-width: 500px){
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+		border-radius: 0%;
+		border: none;
+	}
+}
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+ 	
+	nav {
+		.flex;
+		.mobile;
+		justify-content: flex-end;
+		margin-top: 20px;
+		font-family: 'Montserrat', sans-serif;
+		@media(max-width: 500px){
+			margin: 0px 0px 0px 0px;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			padding: 10px 1.36% 10px 1.36%;
+			.mobile-a;
+		}
+		a:hover {
+			background-color: @button-background-color;
+			color: @button-color;
+		}
+	}
+
+		h3 {
+			font-size: @h2-h3-font;
+			margin-left: 1.5%;
+			@media(max-width: 500px){
+				text-align: center;
+				margin: 0;
+			}
+		}
+
+	//everything related to home page
+	.home-main-content {
+			p {
+				font-size: @home-p-size;
+				padding: 15px 2.4% 15px 2.4%;
+			}
+
+		.intro {
+			.block-styling;
+			@media(max-width: 500px){
+				text-align: center;
+				border-radius: 0%;
+  			box-shadow: none;
+			}
+
+
+			h1 {
+				margin-top: 10px;
+				font-size: @h1-font;
+				margin-left: 2.27%;
+				font-family: 'Roboto Mono', monospace;
+			}
+
+			hr {
+				.margins;
+			}
+
+			.me {
+				width: 35%;
+				.home-pics;
+				border-radius: 8%;
+    		border: solid grey 1px;
+			}
+
+			.lambda{
+				width: 35%;
+				.home-pics;
+				margin-left: 22.27%;
+				border-radius: 8%;
+    		border: solid black 1px;
+			}
+
+			button {
+				.big-button;
+				margin-bottom: 40px;
+			}
+			button:hover {
+				background-color: @button-color;
+				color: @button-hover-color;
+			}
+
+		} //end of intro section
+
+		.skills {
+			.flex;
+			.mobile;
+			@media(max-width: 500px){
+				text-align: center;
+			}
+			
+			div {
+				margin-bottom: 10px;
+				padding-right: 18.18%;
+				@media(max-width: 500px){
+					padding: 0px 0px 0px 0px;
+				}
+			}
+			h2 {
+				font-size: @h2-h3-font;
+				padding: 15px 2.4% 15px 2.4%;
+			}
+			ul {
+				padding: 10px 2.4% 15px 2.4%;
+				li {
+					font-size: @lifont;
+				}
+			}
+		} //end of skills section
+
+		.history {
+			.flex;
+			.mobile;
+			@media(max-width: 500px){
+				text-align: center;
+			}
+			h2 {
+				font-size: @h2-h3-font;
+				padding: 15px 2.4% 15px 2.4%;
+			}
+			div {
+				border: solid black 1px;
+				margin-right: 1.4%;
+				padding: 10px 2.4% 10px 2.4%;
+				.block-styling;
+				@media(max-width: 500px){
+					margin: 0px 0px 0px 0px;
+					box-shadow: none;
+					border-radius: 0%;
+				}
+			}
+			h3 {
+				padding: 5px 2.4% 5px 2.4%;
+				font-size: @h2-h3-font;
+			}
+		} // enf of history section
+
+		.contact {
+			.flex;
+			justify-content: center;
+			margin-top: 20px;
+			margin-bottom: 40px;
+			font-size: @contact-section-size;
+		}
+
+	} // end of main-content
+} //end of container
+
+
+
 
