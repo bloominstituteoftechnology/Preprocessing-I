@@ -53,7 +53,125 @@ table {
     box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 html, body {
     height: 100%;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+//Variables
+
+//max-widths
+@desktop-max-width: 880px;
+@mobile-max-width: 500px;
+
+//margin-widths
+@section-margin: 5%;
+
+//paddings
+@section-padding: 5%;
+
+//colors
+@bonjour: #E9E3E6;
+@background-color: @bonjour;
+@fedora: #736F72;
+@text-color: @fedora;
+@venus: #9A8F97;
+@highlight-color: @venus;
+@silver-chalice: #B2B2B2;
+@support-color-1: @silver-chalice;
+@pink-swan: #C3BABA;
+@support-color-2: @pink-swan;
+
+//flexbox stuff
+@display-flexbox: flex;
+@flexbox-wrap: wrap;
+
+//mixins
+.border-and-padding {
+	
+}
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	border: 1px solid @support-color-1;
+	margin: 0 auto;
+	background: @background-color;
+
+	.header-section {
+		display: @display-flexbox;
+		margin: @section-margin;
+		justify-content: center;
+		
+		nav {
+			width: 90%;
+			vertical-align: top;
+			
+			a {
+				padding: @section-padding;
+				color: @highlight-color;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.top-content {
+		display: @display-flexbox;
+		justify-content: center;
+		
+		.intro {
+			margin: @section-margin;	
+			border: 1px solid @support-color-1;
+			padding: @section-padding;
+		}
+		
+		.skills {
+			margin: @section-margin;
+			border: 1px solid @support-color-1;
+			padding: @section-padding;
+		}
+	}
+	
+	.bottom-content {
+		display: @display-flexbox;
+		justify-content: center;
+		
+		.work-history {
+			margin: @section-margin;
+			padding: @section-padding;
+			justify-content: center;
+			
+			.work-history-listing {
+				margin: @section-margin;
+				flex-wrap: @flexbox-wrap;
+				border: 1px solid @support-color-1;
+				padding: @section-padding;
+			}
+		}
+	}
+
+	.contact {
+		display: @display-flexbox;
+		flex-wrap: @flexbox-wrap;
+		margin: @section-margin;
+		border: 1px solid @support-color-1;
+		padding: @section-padding;
+		justify-content: center;
+	}
+	
+	footer {
+		margin: @section-margin;
+		display: @display-flexbox;
+		justify-content: center;
+	}
 }
 
