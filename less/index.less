@@ -48,21 +48,29 @@ table {
 	border-spacing: 0;
 }
 
-@main-color: #333;
+// Variables
+@main-color: @mine-shaft;
 
-@header-text: #afafb4;
-@header-text-hover: #fff;
+@header-text: @bombay;
+@header-text-hover: @white;
 @header-background: rgba(0, 0, 0, 0.7);
-@header-text-back-hover: #61666d;
+@header-text-back-hover: @shuttle-gray;
 
-@cta-text: #fff;
+@cta-text: @white;
 
-@contact-form-background: #EDEEEF;
+@contact-form-background: @porcelain;
 
-@footer-text: #fff;
-@footer-background: #333;
+@footer-text: @white;
+@footer-background: @mine-shaft;
 
+// colors
+@mine-shaft: #333;
+@shuttle-gray: #61666d;
+@bombay: #afafb4;
+@porcelain: #EDEEEF;
+@white: #fff;
 
+// Mixins
 .head() {
 	background: @header-background;
 	color: @header-text;
@@ -79,10 +87,21 @@ table {
 	background: rgba(0, 15, 200, .5);
 }
 
+.flex-row() {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-column() {
+	display: flex;
+	flex-direction: column;
+}
+
 /* Set every element's box-sizing to border-box */
 html {
 	font-size: 62.5%;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -91,6 +110,22 @@ html, body {
     height: 100%;
 }
 
+h2 {
+	.heading;
+	font-size: 2.3rem;
+}
+
+h3 {
+	.heading;
+	font-size: 1.8rem;
+}
+
+h4 {
+	.heading;
+	font-size: 1.5rem;
+}
+
+// Main wrapper around entire page
 .container {
 	max-width: 1920px;
 	width: 100%;
@@ -98,19 +133,23 @@ html, body {
 	font-size: 1rem;
 }
 
+// Resume page
 .resume {
+	// Header
 	header {
 		.head;
 		height: 60px;
 		margin-bottom: 40px;
 		position: fixed;
 		top: 0;
-	}
+	} // header
 
+	// Main Navigation
 	.main-nav {
 		width: 100%;
 		display: flex;
 
+		// Mobile
 		@media (max-width: 500px) {
 			// top: 44px;
 			position: relative;
@@ -130,6 +169,7 @@ html, body {
 			display: flex;
 			justify-content: flex-end;
 
+			// Mobile
 			@media (max-width: 500px) {
 				margin: 0;
 				padding: 0;
@@ -144,6 +184,7 @@ html, body {
 				margin-left: 1%;
 				margin-right: 3%;
 
+				// Mobile
 				@media (max-width: 500px) {
 					width: 100%;
 					height: 50px;
@@ -166,25 +207,10 @@ html, body {
 			a:hover {
 				color: @header-text-hover;
 			}
-			
 		}
 	} // main-nav
 
-	h2 {
-		.heading;
-		font-size: 2.3rem;
-	}
-
-	h3 {
-		.heading;
-		font-size: 1.8rem;
-	}
-
-	h4 {
-		.heading;
-		font-size: 1.5rem;
-	}
-
+	// Button at the bottom right that takes you back to top page
 	.fixed-button {
 		position: fixed;
 		height: 50px;
@@ -198,6 +224,7 @@ html, body {
 		border-radius: 30px;
 	}
 
+	// Call To Action
 	.cta {
 		background-image: 
 			linear-gradient(
@@ -210,14 +237,10 @@ html, body {
 		height: 1000px;
 		color: @cta-text;
 
+		// CTA overlay heading
 		.cta-text {
-			display: flex;
-			flex-direction: column;
+			.flex-column;
 			padding: 20%;
-
-			@media (max-width: 500px) {
-				
-			}
 
 			p {
 				.heading;
@@ -229,6 +252,7 @@ html, body {
 				text-align: center;
 				font-size: 8rem;
 
+				// Mobile
 				@media (max-width: 500px) {
 					font-size: 6rem;
 				}
@@ -243,17 +267,18 @@ html, body {
 				cursor: pointer;
 				background: rgba(0, 0, 0, 0);
 
+				// Mobile
 				@media (max-width: 500px) {
 					margin-left: 15%;
 				}
 			}
-		}
-	}
+		} // cta-text
+	} // cta
 	
+	// Main content of page
 	.main-content {
+		.flex-column;
 		font-size: 1.8rem;
-		display: flex;
-		flex-direction: column;
 		padding: 3%;
 		align-items: center;
 	
@@ -262,11 +287,11 @@ html, body {
 			text-transform: uppercase;
 		}
 	
+		// Top content
 		.top-content {
+			.flex-column;
 			max-width: 1110px;
 			width: 100%;
-			display: flex;
-			flex-direction: column;
 			align-items: center;
 	
 			.text-content {
@@ -279,19 +304,21 @@ html, body {
 			h3 {
 				text-align: center;
 			}
-		}
-	} // main-content
-	
+		} // top-content
+	}  // main-content
+
+	// Middle content
 	.middle-content {
+		.flex-column;
 		max-width: 1110px;
 		width: 100%;
-		display: flex;
-		flex-direction: column;
-	
+
+		// Top section
 		.top-content {
 			flex-direction: row;
 			align-items: flex-start;
 
+			// Mobile
 			@media (max-width: 500px) {
 				flex-direction: column;
 
@@ -310,14 +337,15 @@ html, body {
 					line-height: 4rem;
 				}
 			}
-		}
-	
+		} // top-content
+		
+		// Middle section
 		.middle {
+			.flex-row;
 			margin-top: 120px;
-			display: flex;
-			flex-direction: row;
 			align-items: flex-start;
 
+			// Mobile
 			@media (max-width: 500px) {
 				flex-direction: column;
 
@@ -327,8 +355,7 @@ html, body {
 			}
 	
 			.column {
-				display: flex;
-				flex-direction: column;
+				.flex-column;
 				width: 100%;
 	
 				.box {
@@ -341,13 +368,14 @@ html, body {
 				width: 100%;
 				margin-right: 17%;
 			}
-		}
+		} // middle
 	
+		// Bottom section
 		.bottom-content {
+			.flex-row;
 			margin-top: 120px;
-			display: flex;
-			flex-direction: row;
 			
+			// Mobile
 			@media (max-width: 500px) {
 				flex-direction: column;
 
@@ -357,14 +385,12 @@ html, body {
 			}
 	
 			.work-column {
-				display: flex;
-				flex-direction: column;
+				.flex-column;
 				width: 100%;
 			}
 	
 			.column {
-				display: flex;
-				flex-direction: column;
+				.flex-column;
 				width: 100%;
 	
 				.box {
@@ -376,53 +402,55 @@ html, body {
 			.column-header {
 				width: 46%;
 
+				// Mobile
 				@media (max-width: 500px) {
 					margin-left: 30%;
 				}
 			}
-		}
+		} // bottom-content
 	} // middle-content
 
+	// Contact Section
 	.contact {
+		.flex-column;
 		background: @contact-form-background;
 		width: 100%;
-		display: flex;
-		flex-direction: column;
 		align-items: center;
 		font-size: 2rem;
 		padding: 3%;
 
-		address {
-			margin-top: 30px;
-		}
-
 		h1 {
 			font-size: 5rem;
 
+			// Mobile
 			@media (max-width: 500px) {
 				text-align: center;
 			}
 		}
 
+		// Address section
+		address {
+			margin-top: 30px;
+		}
 		.text-content {
 			width: 60%;
 			text-align: center;
 			margin: 60px 0 60px 0;
 		}
 
-		/* Style inputs with type="text", select elements and textareas */
+		// Contact Form
 		input[type=text], select, textarea {
-			width: 100%; /* Full width */
-			padding: 12px; /* Some padding */  
-			border: 1px solid #ccc; /* Gray border */
-			border-radius: 4px; /* Rounded borders */
-			box-sizing: border-box; /* Make sure that padding and width stays in place */
-			margin-top: 6px; /* Add a top margin */
-			margin-bottom: 16px; /* Bottom margin */
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-top: 6px;
+			margin-bottom: 16px;
 			resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 		}
 
-		/* Style the submit button with a specific background color etc */
+		// Button
 		input[type=submit] {
 			background-color: #4CAF50;
 			color: white;
@@ -432,17 +460,17 @@ html, body {
 			cursor: pointer;
 		}
 
-		/* When moving the mouse over the submit button, add a darker green color */
+		// When moving the mouse over the submit button, add a darker green color 
 		input[type=submit]:hover {
 			background-color: #45a049;
 		}
-	}
+	} // contact
 	
+	// Footer
 	footer {
+		.flex-column;
 		width: 100%;
 		height: 200px;
-		display: flex;
-		flex-direction: column;
 		align-items: center;
 		background: @footer-background;
 		font-size: 2rem;
@@ -452,11 +480,13 @@ html, body {
 		h1 {
 			font-size: 3rem;
 
+			// Mobile
 			@media (max-width: 500px) {
 				text-align: center;
 			}
 		}
 	
+		// Footer nav bar
 		.footer-nav {
 			width: 100%;
 			font-size: 1.6rem;
@@ -466,6 +496,7 @@ html, body {
 			display: flex;
 			justify-content: center;
 
+			// Mobile
 			@media (max-width: 500px) {
 				font-size: 1.3rem;
 			}
@@ -482,11 +513,10 @@ html, body {
 				color: @header-text-hover;
 			}
 			
-		}
+		} // footer-nav
 
 		p {
 			font-size: 1.4rem;
 		}
-	}
-
+	} // footer
 } // resume
