@@ -66,6 +66,17 @@ h1, h2, h3, h4, h5 {
 /* Variables & Maxins......................................................................................................................*/
 @main-color:@blue-black;
 @blue-black:#101B7B;
+
+.button-template(){
+	background: darkgrey;
+    padding: 10px 11px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8%;
+}
+
+
 /*My code starts here.......................................................................................................................*/
 .container {
 	border:1px solid black;
@@ -75,11 +86,11 @@ h1, h2, h3, h4, h5 {
 
 	//Navigation
 	header{
-		display:flex;
 		nav {
 			display:flex;
 			margin-top:32px;
-			margin-left:550px;
+			justify-content: flex-end;
+			margin-right: -6px;
 			a {
 				text-decoration: none;
 				color: @main-color;
@@ -88,29 +99,61 @@ h1, h2, h3, h4, h5 {
 		}
 	}//header
 
-	//CTA
-	.cta{
-		display:flex;
+	//Top Content
+	.top-content{
+		background:lightgrey;
+		margin: 33px 8px 33px 0;
+		padding:61px 34px;
 
 		.self-picture{
-
+			width:37.5%;	
 		}
-
+	
 		h1{
-			.sub-text{
-
+			color:@main-color;
+			font-family: sans-serif;
+			font-size: 54px;
+			margin: 5px 0;
+		}
+		
+		p{
+			margin: 25px 0 20px 0;
+			font-size: 17px;
+			line-height: 24.5px;;
+		}
+		.sub-text{
+			border-bottom: 1px solid grey;
+    		margin-top: 17px;
+    		font-size: 19px;
+    		padding-bottom: 25px;
+		}
+		button{
+			.button-template;
+			margin: -4px 0 0 -2px;
+		}
+	}//top content
+	
+	//Middle Content
+	.middle-content{
+		display: flex;
+		flex-direction: row;
+		margin-top:56px;
+		.left-content{
+			width:50%;
+			padding-right:30px;
+			h2{
+				font-size: 29px;
+				font-weight: bold;
 			}
 			p{
-
+				margin-top:19px;
 			}
 		}
-
-		button{
-
+		.right-content{
+			width:50%;
 		}
 
-	}//cta
-	
+	}//middle content
 	
 }//container 
 
