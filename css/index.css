@@ -152,14 +152,27 @@ html {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+    width: 100%;
+  }
+}
 .container nav {
   font-size: 2.5rem;
   font-family: EB Garamond;
-  margin: 5% 10%;
+  margin: 2rem 3rem 2rem 3rem;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .container nav {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .container div {
   font-family: EB Garamond;
@@ -170,46 +183,52 @@ html {
   width: 100%;
   flex-direction: column;
   align-items: flex-end;
-}
-.container div .headline .button {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap-reverse;
+  padding: 1rem;
+  margin: 1rem;
 }
 .container div img {
   width: 20%;
+  align-self: center;
 }
 .container div .button {
   display: flex;
   border: 2px solid black;
   background-color: #A0001E;
   width: 30%;
+  align-self: center;
   align-items: center;
-  justify-content: center;
-  align-content: center;
 }
 .container div .button :hover {
   color: white;
   cursor: pointer;
 }
 .container div .button p {
-  padding: 5% 2%;
-  margin: 2% 2%;
-  text-align: center;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  margin: 1rem;
 }
 .container div h1 {
   font-size: 3rem;
   color: #2D3956;
-  padding: 5% 2%;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
 .container div h2 {
   font-size: 2.5rem;
   color: #2D3956;
-  padding: 5% 2%;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
 .container div p {
   font-size: 2rem;
-  padding: 5% 2%;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
-.container div .headline {
-  align-items: flex-end;
+.container div ul {
+  font-size: 2rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  list-style: disc inside;
+}
+.container div li {
+  padding: 1rem 0.5rem 1rem 0.5rem;
+}
+.container div .lower .home {
+  flex-flow: column-reverse;
 }
