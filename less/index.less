@@ -64,86 +64,243 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
 }
 
-.container {
-	width: 900px;
-}
+@color: gray;
+@light: lightgray; 
+@font: sans-serif;
 
-.main-content {
+.flexbox-spacearound() {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
 
-.main-content .text-content {
-	// border: 1px solid black;
-	padding: 25px 0;
-	width: 400px;
-}
-
-.main-content h3 {
-	font-size: 20px;
-	font-family: sans-serif;
-	margin-left: 0px;
-}
-
-.main-content p {
-	font-size: 15px;
-	line-height: 1.2;
-	margin-left: 0px;
-	width: 350px;
-	// border: 1px solid black;
-}
-
-.main-content table {
-	border-collapse: collapse;
-	width: 380px;
-	margin-left: 0px;
-}
-
-.main-content td, th {
-	border: 1px solid lightgray;
-	text-align: left;
-	padding: 8px;
-}
-
-.sub-content h3 {
-	font-size: 20px;
-	font-family: sans-serif;
-	margin-left: 16px;
-}
-
-.sub-content table {
-	border-collapse: collapse;
-	width: 95%;
-	margin-left: 16px;
-}
-
-.sub-content td, th {
-	border: 1px solid lightgray;
-	text-align: left;
-	padding: 8px;
-}
-
-.sub-content tr:first-child {
-	font-weight: bold;
-}
-
-.sub-content tr:nth-child(even) {
-	background-color: lightgray;
-}
-
-footer {
-	margin-top: 30px;
-	margin-left: 16px;
-	width: 95%;
-	height: 50px;
-	background-color: gray;
+.center() {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-footer p {
-	color: white;
-	font-size: 12px;
+.ml-16() {
+	margin-left: 16px;
 }
+
+.ml-0() {
+	margin-left: 0;
+}
+
+.collapse() {
+	border-collapse: collapse;
+}
+
+.border() {
+	border: 1px solid lightgray;
+}
+
+.container {
+	width: 900px;
+	margin: 0 auto;
+}
+
+header {
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+
+		a { 
+			padding: 15px;
+			color: @color;
+			text-decoration: none;
+		}
+		a:hover {
+			color: black;
+			cursor: pointer;
+		}
+	}
+}
+
+.header {
+	background-color: gainsboro;
+	height: 600px;
+	opacity: 0.9;
+
+	.top-text {
+		border-bottom: 1px solid gray;
+		margin-bottom: 20px;
+
+		img {
+			// border: 1px solid black;
+			padding: 35px 25px;
+			padding-bottom: 0px;
+			width: 320px;
+			height: 280x;
+		}
+		h1 {
+			font-family: @font;
+			font-size: 45px;
+			.ml-16;
+			margin-top: 10px;
+		}
+		p {
+			.ml-16;
+			font-size: 17px;
+			.border;
+			line-height: 1.2;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.header {
+
+	.bottom-text {
+		.ml-16;
+
+		button {
+			margin-top: 20px;
+			width: 120px;
+			height: 35px;
+			background-color: @color;
+			opacity: 0.9;
+			color: white;
+			font-size: 12px;
+		}
+	}
+}
+
+
+
+
+.main-content {
+	.flexbox-spacearound;
+
+	.text-content {
+		padding: 25px 0;
+		width: 400px;
+		  
+		h3 {
+			font-size: 20px;
+			font-family: @font;
+			.ml-0;
+
+			p {
+				font-size: 15px;
+				line-height: 1.2;
+				.ml-0;
+				width: 350px;
+			}
+		}
+	}
+}
+
+.main-content {
+
+	table {
+		.collapse;
+		width: 380px;
+		.ml-0;
+
+		td, th {
+			.border;
+			text-align: left;
+  			padding: 8px;
+		}
+	}
+}
+
+.sub-content {
+
+	h3 {
+		font-size: 20px;
+		font-family: @font;
+		.ml-16;
+	}
+}
+
+.sub-content {
+
+	table {
+		.collapse;
+		width: 95%;
+		.ml-16;
+
+		td, th {
+			.border;
+			text-align: left;
+			padding: 8px;
+		}
+	}
+}
+
+.sub-content {
+	
+	tr:first-child {
+		font-weight: bold;
+	}
+}
+
+.sub-content {
+	
+	tr:nth-child(even) {
+		background-color: @light;
+	}
+}
+
+.row {
+
+	h1 {
+		font-size: 30px;
+		font-family: @font;
+		margin-top: 50px;
+	}
+}
+
+.form-group {
+
+	input {
+		width: 650px;
+		height: 50px;
+		padding-left: 15px;
+		font-size: 13px;
+		margin-bottom: 10px;
+		.border;
+	}
+	textarea {
+		width: 650px;
+		height: 150px;
+		padding-left: 15px;
+		padding-top: 10px;
+		font-size: 13px;
+		margin-bottom: 15px;
+		.border;
+	}
+	button {
+		.border;
+		width: 70px;
+		height: 30px;
+		font-size: 12px;
+		margin-right: 20px;
+		border-radius: 3px;
+		margin-bottom: 50px;
+	}
+	button:hover {
+		color: @color;
+		cursor: pointer;
+	}
+}
+
+footer {
+	margin-top: 40px;
+	.ml-16;
+	width: 95%;
+	height: 50px;
+	background-color: @color;
+	.center;
+
+	p {
+		color: white;
+		font-size: 12px;
+	}
+}
+
+
