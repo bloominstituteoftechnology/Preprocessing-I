@@ -63,8 +63,7 @@ html, body {
 	@main-color: black;
 	@2nd-color: white;
 	@main-margins: 0 9%;
-	@h-mid: 3rem;
-	@h-sm: 2rem;
+	// @h-font-sm: 2rem;
 
 
 //Mixins
@@ -78,7 +77,14 @@ html, body {
 		flex-wrap: wrap;
 	}
 
+	.h-font-sm {
+		font-size: 2rem;
+		font-weight: bold;
+	}
+
 // Styles Start Here
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 html {
 	font-size: 62.5%;
@@ -92,6 +98,8 @@ html {
 	max-width: 880px;
 	width: 100%;
 	margin: 0 auto;
+	font-family: 'Lato', sans-serif; 
+	//sans-serif
 	font-size: 1.6rem;
 	border: 1px solid black;
 }
@@ -113,37 +121,112 @@ nav {
 		background: lightgray;
 
 		img {
-			width: 30%;
+			width: 50%;
 			margin: 60px 30px 30px 30px;
 		}
 
 		h1 {
 			margin: 0 4%; 
-			font-size: 3.5rem;
+			font-size: 3.76rem;
+			//font-weight: bold;
 
 		}
 
 		p {
-			margin: 0px 4.25%
+			margin: 12px 4.25%
 		}
+	}//intro
 
 	.invite {
 		border-top: 1px solid gray;
 		height: auto;
 
 		p {
-			margin-top: 30px;
-			margin-bottom: 30px;
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 
 		button {
-			margin-bottom: 60px;
+			margin-bottom: 50px;
 			margin-left: 30px;
 		}
-	.skills {
-		margin: 60px;
-	}//skills	
 	}//invite
-	}//intro
+	.skills {
+			margin: @main-margins;
+			display: flex;
+			
+			.skills-listen {
+					width: 48%;
+					margin: 40px 40px 40px 0;
+
+					h2 {
+						font-size: 2.5rem;
+						font-weight: bold;
+					}
+
+					p {
+						margin: 23px 0;
+						line-height: 1.1;
+					}
+			}
+
+			.skills-stuff {
+					margin: 40px 40px 40px 0;
+
+					h3 {
+						.h-font-sm;
+						margin: 10px 0;
+					}
+
+					ul {
+						list-style-type: disc;
+						line-height: 2;
+					}
+			}
+	}//skills	
+
+	.history {
+			margin: @main-margins;
+
+			h3 {
+				.h-font-sm;
+			}
+
+			table {
+				margin: 10px 0;
+				
+				th, td {
+					padding: 8px;
+					text-align: left;
+					border-bottom:	1px solid #ddd;
+				}
+
+				tr:nth-child(even){
+					background-color: #f2f2f2
+				}
+
+				th {
+					font-weight: bold;
+					border-top: 1px solid #ddd;
+				}
+
+			}
+
+			}//history
+
+	footer {
+		margin-top: 30px;
+		display: flex;
+    justify-content: center;
+		background: darkgray;
+		
+			p {
+				margin-top: 30px;
+    		margin-bottom: 30px;
+    		color: white;
+			}
+	}
+	
+
 }//home
 	
