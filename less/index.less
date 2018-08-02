@@ -52,11 +52,26 @@ table {
 * {
     box-sizing: border-box;
 }
-
+@font:1.6rem;
 html, body {
     height: 100%;
     font-size: 62.5%;
     
+}
+.flexbox-centered(){
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flexbox-end(){
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.flexbox-between(){
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .Container{
     max-width: 900px;
@@ -73,8 +88,7 @@ html, body {
     
 }
 nav{
-    display:flex;
-    justify-content: flex-end;
+    .flexbox-end;
     margin-bottom: 30px;
     margin-top: 30px;
     @media(max-width:500px){
@@ -83,7 +97,7 @@ nav{
     
 a {
      margin-left:2%; 
-     font-size: 1.6rem;
+     font-size: @font;
      text-decoration: none;
     color: gray;
     }
@@ -99,7 +113,7 @@ a {
     }
     p{
         margin-top: 15px; 
-        font-size: 1.5rem;
+        font-size: @font;
     }
     button{
         margin-top: 10px;
@@ -111,8 +125,7 @@ a {
 }
 .listen-Good{
     
-    display: flex;
-    justify-content: space-between;
+    .flexbox-between;
     margin-bottom: 20px; 
     
     @media(max-width:500px){
@@ -152,7 +165,7 @@ a {
             
         
         li{
-            font-size: 1.6rem;
+            font-size: @font;
             border: 1px solid gray;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -186,7 +199,7 @@ margin-bottom: 30px;
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    font-size: 1.6rem;
+    font-size: @font;
 
     }
 
@@ -200,7 +213,7 @@ margin-bottom: 30px;
     
 footer{
 background-color: #808080;
-font-size: 1.6rem;
+font-size: @font;
 color: white;
 padding-top: 10px;
 padding-bottom: 30px;
