@@ -61,20 +61,19 @@ html, body {
 
 //Variables
 	@main-color: black;
-	@2nd-color: white;
+	@color-white: white;
+	@color-dgray: darkgray;
+	@color-tlgray: #ddd;
 	@main-margins: 0 9%;
+	@main-font-size: 1.6rem;
 	// @h-font-sm: 2rem;
 
 
 //Mixins
 	.center() {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
-	}
-
-	.wrap() {
-		display: flex;
-		flex-wrap: wrap;
 	}
 
 	.h-font-sm {
@@ -99,9 +98,7 @@ html {
 	width: 100%;
 	margin: 0 auto;
 	font-family: 'Lato', 'Roboto', sans-serif; 
-	//sans-serif
-	font-size: 1.6rem;
-	//border: 1px solid black;
+	font-size: @main-font-size;
 }
 
 nav {
@@ -109,25 +106,23 @@ nav {
 	justify-content: flex-end; 
 
 	@media( max-width: 500px ) {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		.center;
     margin: 0;
     padding: 0;
 	}
 }
 
 	a {
-		color: black;
+		color: @main-color;
 		text-decoration: none;
 		margin: 20px 2%;
 
 		@media( max-width: 500px ) {
-			color: black;
+			color: @main-color;
     	text-decoration: none;
     	padding: 27px 0;
     	margin: 0;
-    	border-bottom: 1px solid black;
+    	border-bottom: 1px solid @main-color;
     	display: block;
 			text-align: center;
 			font-size: 2rem;
@@ -159,18 +154,20 @@ nav {
 		h1 {
 			margin: 0 4%; 
 			font-size: 3.76rem;
-			//font-weight: bold;
-
 		}
 
 		p {
 			margin: 12px 4.25%
 		}
+
+		pre {
+			margin: 12px 4.25%;
+		}
 	}//intro
 
 	.invite {
 		border-top: 1px solid gray;
-		height: 130px;
+		height: 165px;
 
 		p {
 			margin-top: 20px;
@@ -181,8 +178,6 @@ nav {
 			margin-bottom: 50px;
 			margin-left: 30px;
 			text-decoration: underline;
-			//border: 1px double black;	
-			//background: white;
 			width: 23%;
 			cursor: pointer;
 
@@ -191,14 +186,14 @@ nav {
 				margin: 0;
     		border-bottom: none;
     		display: block;
-    		text-align: left;
+				text-align: left;
+				font-size: @main-font-size;
 			}
 		}
 
 			a:hover {
-			//background: black;
-				color: white;
-	}
+				color: @color-white;
+			}
 	}//invite
 	.skills {
 			margin: @main-margins;
@@ -247,7 +242,7 @@ nav {
 				th, td {
 					padding: 8px;
 					text-align: left;
-					border-bottom:	1px solid #ddd;
+					border-bottom:	1px solid @color-tlgray;
 				}
 
 				tr:nth-child(even){
@@ -256,7 +251,7 @@ nav {
 
 				th {
 					font-weight: bold;
-					border-top: 1px solid #ddd;
+					border-top: 1px solid @color-tlgray;
 				}
 
 			}
@@ -272,7 +267,7 @@ nav {
 			p {
 				margin-top: 30px;
     		margin-bottom: 30px;
-    		color: white;
+    		color: @color-white;
 			}
 	}
 	
