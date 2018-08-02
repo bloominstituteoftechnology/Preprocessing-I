@@ -57,24 +57,29 @@ html, body {
   height: 100%;
 }
 
+
+
 @main-content-color: #f5f5f5;
-@hover: @main-content-color;
-@home-h1-size: 3.5rem;
+
+@h1-font: 3.5rem;
+@h2-h3-font: 1.8rem;
+
 @home-p-size: 1.2rem;
 
 @button-background-color: grey;
 @button-font-size: 1.2rem;
 @button-color: white;
 @button-border: solid black 2px;
-@padding: 1.705%;
+@button-hover-color: black;
 
-@h2font: 1.8rem;
+@border-block-color: #ccc9c9;
+@outline-block-color: #5d5d5d;
+
+@padding: 1.705%;
 
 @lifont: 1.5rem;
 
-@contact-size: 1.3rem;
-
-@h3-size: 1.2rem;
+@contact-section-size: 1.3rem;
 
 @mobile-a: 2rem;
 
@@ -98,10 +103,7 @@ html, body {
 }
 
 .margins(){
-	margin-top: 20px;
-	margin-left: 2.27%;
-	margin-right: 2.27%;
-	margin-bottom: 10px;
+	margin: 20px 2.27% 10px 2.27%;
 }
 
 .mobile(){
@@ -110,17 +112,35 @@ html, body {
 	}
 }
 
+.block-styling(){
+	border: solid @border-block-color 5px;
+  background-color: #f5f5f5;
+  background-color: @main-content-color;
+  border-radius: 5%;
+  box-shadow: 5px 10px @outline-block-color;
+}
+
+.home-pics() {
+	.margins;
+	@media(max-width: 500px){
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+		border-radius: 0%;
+		border: none;
+	}
+}
+
 .container {
 	max-width: 880px;
 	width: 100%;
 	margin: 0 auto;
-
+ 	
 	nav {
 		.flex;
 		.mobile;
 		justify-content: flex-end;
 		margin-top: 20px;
-		margin-bottom: 20px;
+		font-family: 'Montserrat', sans-serif;
 		@media(max-width: 500px){
 			margin: 0px 0px 0px 0px;
 		}
@@ -128,17 +148,25 @@ html, body {
 		a {
 			text-decoration: none;
 			color: black;
-			padding-right: 1.36%;
-			padding-left: 1.36%;
-			padding-top: 10px;
-			padding-bottom: 10px;
+			padding: 10px 1.36% 10px 1.36%;
 			.mobile-a;
 		}
 		a:hover {
-			background-color: @hover;
+			background-color: @button-background-color;
+			color: @button-color;
 		}
 	}
 
+		h3 {
+			font-size: @h2-h3-font;
+			margin-left: 1.5%;
+			@media(max-width: 500px){
+				text-align: center;
+				margin: 0;
+			}
+		}
+
+	//everything related to home page
 	.home-main-content {
 			p {
 				font-size: @home-p-size;
@@ -146,13 +174,15 @@ html, body {
 			}
 
 		.intro {
+			.block-styling;
 			@media(max-width: 500px){
 				text-align: center;
+				border-radius: 0%;
+  			box-shadow: none;
 			}
-			background-color: @main-content-color;
 
 			h1 {
-				font-size: @home-h1-size;
+				font-size: @h1-font;
 				margin-left: 2.27%;
 			}
 
@@ -161,12 +191,18 @@ html, body {
 			}
 
 			.me {
-				width: 34%;
-				.margins;
-				@media(max-width: 500px){
-					width: 100%;
-					margin: 0px 0px 0px 0px;
-				}
+				width: 35%;
+				.home-pics;
+				border-radius: 8%;
+    		border: solid grey 1px;
+			}
+
+			.lambda{
+				width: 35%;
+				.home-pics;
+				margin-left: 22.27%;
+				border-radius: 8%;
+    		border: solid black 1px;
 			}
 
 			button {
@@ -175,7 +211,7 @@ html, body {
 			}
 			button:hover {
 				background-color: @button-color;
-				color: @button-background-color;
+				color: @button-hover-color;
 			}
 
 		} //end of intro section
@@ -185,7 +221,6 @@ html, body {
 			.mobile;
 			@media(max-width: 500px){
 				text-align: center;
-
 			}
 			
 			div {
@@ -196,7 +231,7 @@ html, body {
 				}
 			}
 			h2 {
-				font-size: @h2font;
+				font-size: @h2-h3-font;
 				padding: 15px 2.4% 15px 2.4%;
 			}
 			ul {
@@ -210,21 +245,27 @@ html, body {
 		.history {
 			.flex;
 			.mobile;
+			@media(max-width: 500px){
+				text-align: center;
+			}
 			h2 {
-				font-size: @h2font;
+				font-size: @h2-h3-font;
 				padding: 15px 2.4% 15px 2.4%;
 			}
 			div {
 				border: solid black 1px;
 				margin-right: 1.4%;
 				padding: 10px 2.4% 10px 2.4%;
+				.block-styling;
 				@media(max-width: 500px){
 					margin: 0px 0px 0px 0px;
+					box-shadow: none;
+					border-radius: 0%;
 				}
 			}
 			h3 {
 				padding: 5px 2.4% 5px 2.4%;
-				font-size: @h3-size;
+				font-size: @h2-h3-font;
 			}
 		} // enf of history section
 
@@ -233,7 +274,7 @@ html, body {
 			justify-content: center;
 			margin-top: 20px;
 			margin-bottom: 40px;
-			font-size: @contact-size;
+			font-size: @contact-section-size;
 		}
 
 	} // end of main-content
