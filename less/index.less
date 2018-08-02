@@ -77,7 +77,12 @@ h1, h2, h3, h4, h5 {
 
 .display-flex(){
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+
+}
+
+.flex-direction(){
+	flex-direction: column;
 	align-items: center;
 }
 
@@ -88,7 +93,7 @@ html {
   }
   
   .container {
-	max-width: 900px;
+	max-width: 1024px;
 	width: 100%;
 	height: 150%;
 	border: 1px solid red;
@@ -96,11 +101,11 @@ html {
 	padding: 0 5%;
 	font-size: @container-font-size;
 
-		@media (max-width: 800){
-			max-width:720px;
+		@media (max-width: 800px){
+			max-width:800px;
 		}
 
-		@media (max-width: 500){
+		@media (max-width: 500px){
 			max-width: 480px;
 		}
 	
@@ -111,23 +116,29 @@ html {
 	justify-content: flex-end;  
 	padding: 20px 0;
 
+	
+
 	.nav-link{
 		margin-left:10px;
+		color: @balak;
 	}
 
-	@media (max-width: 800){
-		.display-flex;
+	@media screen and (max-width: 800px){
+		.display-flex();
+		background-color: dodgerblue;
 
+	}
+
+	@media screen and (max-width: 500px) {
+		.flex-direction();
 	}
   }
 
-  nav a {
-	color: @balak;
-  }
+  
 
   .cta {
 	  margin: 20px 3px;
-	  background-color: @litegaray ;
+	  background-color: @litegaray;
 
 	  .divider{
 		  color: @darakgaray;
@@ -152,6 +163,14 @@ html {
 
 	.introduction{
 		width: 50%;
+	}
+
+	@media screen and (max-width: 800px) {
+		
+	}
+
+	@media screen and (max-width: 500px) {
+		.flex-direction();
 	}
 }
 
