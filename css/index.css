@@ -159,6 +159,8 @@ html {
 }
 @media (max-width: 500px) {
   .container header .main-nav {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
@@ -175,7 +177,21 @@ html {
 }
 @media (max-width: 500px) {
   .container header .main-nav a {
-    margin-left: auto;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 5% 0 5% 0;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 10px;
+  }
+  .container header .main-nav a:nth-child(1) {
+    border-top: 1px solid black;
+  }
+  .container header .main-nav a:hover {
+    background: #323232;
+    color: #dddddd;
   }
 }
 .container .intro-section {
@@ -195,11 +211,6 @@ html {
   width: 100%;
   height: auto;
   border-radius: 50%;
-}
-@media (max-width: 500px) {
-  .container .intro-section .img-div {
-    display: none;
-  }
 }
 .container .intro-section h1 {
   text-align: center;
