@@ -57,3 +57,69 @@ html, body {
     height: 100%;
 }
 
+body { 
+	font-size:62.5%; 
+}
+
+// Variables 
+
+@main-color: #008073;
+
+// Mix-ins
+
+.sidebar-padding{
+	padding-left: 10px;
+}
+
+// Navigation Menu Sidebar
+
+.sidebar {
+	display: grid;
+	position: fixed;
+	width: 190px;
+	@media (max-width:500px){
+		display:none;
+	}
+	
+	
+
+	ul{
+		.header{
+			border-bottom: 2px solid lightgray;
+		}
+
+		h1{
+			color: @main-color;
+			font-size: 2.4rem;
+			font-weight: 100;
+			margin: 10px 0;
+			.sidebar-padding;
+		
+		}
+		span{
+			font-size: 1.0rem;
+			font-style: italic;
+			.sidebar-padding;
+
+		}
+		li {
+			font-size: 1.2rem;
+			padding-top: 20px;
+			.sidebar-padding
+		}
+	}
+}
+
+// Main Content
+
+.content{
+	display: grid;
+	grid-template-columns:  190px 1fr;
+	@media (max-width:500px){
+		grid-template-columns: 1fr;
+	}
+}
+
+.about {
+	grid-column-start: 2;
+}
