@@ -65,6 +65,14 @@ body {font-size: 62.5%
 @main-color: black;
 @secondary-color: white;
 
+.main-font{
+	font-family: 'Oswald', sans-serif;
+}
+
+.secondary-font{
+	font-family: sans-serif;
+}
+
 .centered{
 	align-items: center;
 	justify-content: center;
@@ -83,7 +91,18 @@ body {font-size: 62.5%
 
 p {
 	font-size: 1.0rem;
+	.secondary-font;
+	margin-top: 10px;
 }
+
+h1, h2, h3, h4, h5, h6, span {
+	.main-font;
+}
+
+.italics{
+	font-style: italic;
+}
+
 
 /*MAIN CODE*/
 
@@ -119,7 +138,7 @@ p {
 
 .main-container {
 	width: 88%;
-	height: 1750px;
+	height: 1795px;
 	margin-top: 93px;
 	border: 1px solid @main-color;
 }
@@ -178,6 +197,10 @@ p {
 	color: @secondary-color;
 }
 
+.header3 {
+	font-size: 1.3rem;
+}
+
 /*PORTFOLIO SECTION*/
 
 .portfolio-section {
@@ -218,6 +241,12 @@ p {
 	margin-top: 14px;
 }
 
+/*WHAT I CAN DO SECTION */
+
+#what-I-can-do{
+	margin-top: 45px;
+}
+
 /*SKILLS AND EDUCATION SECTION*/
 
 .skills-and-education-section{
@@ -233,6 +262,52 @@ p {
 	width: 47%;
 	height: 170px;
 	border: 1px solid purple;
+}
+
+.skills-education-contents {
+	height: 135px;
+	width: 100%;
+	border: 1px solid green;
+	display: flex;
+	align-items: space-around;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+
+.education-section{
+	width: auto;
+	height: 110px;
+	border: 1px solid black;
+}
+
+.education-span2 {
+	.secondary-font;
+	font-size: 1rem;
+	font-style: bold;
+}
+
+.education-header {
+	.main-font;
+	font-size: 1.2rem;
+}
+
+.list-text{
+	font-size: .9rem;
+	.secondary-font;
+	.italics;
+}
+
+#skills-image-container{
+	border: 1px solid black;
+	width: 325px;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.skills-image{
+	height: 50px;
+	width: 50px;
 }
 
 /*ABOUT SECTION*/
@@ -256,15 +331,21 @@ p {
 #work-together-text{
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .contact-button {
 	height: 30px;
-	width: 50px;
+	width: 200px;
 	background-color: @main-color;
 	font-size: 1.0rem;
 	color: @secondary-color;
 	text-decoration: none;
+	margin-top: 10px;
+}
+
+#work-together-text-container{
+	margin-top: 20px;
 }
 
 /*FOOTER SECTION*/
