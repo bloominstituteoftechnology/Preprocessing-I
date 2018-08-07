@@ -57,7 +57,7 @@ html, body {
     height: 100%;
 }
 
-/*RESUABLE CODE*/
+/*VARIABLES AND MIX-INS*/
 
 body {font-size: 62.5%
 }
@@ -74,6 +74,7 @@ body {font-size: 62.5%
 }
 
 .centered{
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
@@ -103,89 +104,9 @@ h1, h2, h3, h4, h5, h6, span {
 	font-style: italic;
 }
 
-
-/*MAIN CODE*/
-
-.container {
-	width: 100%;
-	justify-content: center;
-	.column;
-	.centered;
-}
-
-/*HEADER SECTION*/
-
-.header-box {
-	background-color: @main-color;
-	width: 100%;
-	height: 300px;
-	display: flex;
-	.centered;
-	flex-direction: column;
-  }
-
-.designer-logo {
-	border-radius: 100px;
-	width: 100px;
-	height: 100px;
-	background-color: @secondary-color;
-}
-
-.my-name {
-	color: @secondary-color;
-	font-size: 1.6rem;
-}
-
-.main-container {
-	width: 88%;
-	height: 1795px;
-	margin-top: 93px;
-	border: 1px solid @main-color;
-}
-
-.symbol-container {
-	height: 90px;
-	width: 37%;
-	border: 1px solid blue;
-	.nowrap;
-	.centered;
-	justify-content: space-around;
-}
-
-.symbol-container2 {
-	height: 90px;
-	width: 87%;
-	border: 1px solid green;
-	.nowrap;
-	.centered;
-	justify-content: space-around;
-}
-
-/*INTRO SECTION*/
-
-.intro-section{
-	width: 100%;
-	height: 90px;
-	border: 1px solid @main-color;
-	.nowrap;
-}
-
-.intro-symbol {
-	border-radius: 80px;
-	height: 80px;
-	width: 80px;
-	background-color: @main-color;
-}
-
-.intro-text-container {
-	width: 63%;
-	height: 90px;
-	border: 1px solid red;
-}
-
-.intro-text {
-	height: 48px;
-	width: 100%;
+.coming-soon {
+	width: 150px;
+	height: 32px;
 }
 
 .header1 {
@@ -201,28 +122,154 @@ h1, h2, h3, h4, h5, h6, span {
 	font-size: 1.3rem;
 }
 
+/*MAIN CODE*/
+
+.container {
+	width: 100%;
+	justify-content: center;
+	.column;
+	.centered;
+}
+
+.main-container {
+	width: 88%;
+	height: 2300px;
+	margin-top: 93px;
+}
+
+/*HEADER SECTION*/
+
+.header-box {
+	background-color: @main-color;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	.centered;
+	flex-direction: column;
+
+	.designer-logo {
+		border-radius: 100px;
+		width: 100px;
+		height: 100px;
+		background-color: @secondary-color;
+	}
+	
+	.my-name {
+		color: @secondary-color;
+		font-size: 1.6rem;
+	}
+  }
+
+/*INTRO SECTION*/
+
+.intro-section{
+	width: 100%;
+	height: 90px;
+	.nowrap;
+
+	.intro-text-container {
+		width: 63%;
+		height: 90px;
+	}
+
+	.intro-text {
+		height: 48px;
+		width: 100%;
+	}
+
+	.symbol-container {
+		height: 90px;
+		width: 37%;
+		.nowrap;
+		.centered;
+		justify-content: space-around;
+
+		.symbol-container2 {
+			height: 90px;
+			width: 87%;
+			.nowrap;
+			.centered;
+			justify-content: space-around;
+			
+			.intro-symbol {
+				border-radius: 80px;
+				height: 80px;
+				width: 80px;
+				background-color: @main-color;
+			}
+		
+		}
+	}
+}
+
 /*PORTFOLIO SECTION*/
 
 .portfolio-section {
 	height: 447px;
 	width: 100%;
 	margin-top: 45px;
-	border: 1px solid @main-color;
+
+	.portfolio-header {
+		width: 100%;
+		height: 35px;
+		border-top: 1px solid black;
+		
+		.section-label {
+			height: 35px;
+			width: 31%;
+			background-color: @main-color;
+			display: flex;
+			align-items: center;
+			padding-left: 3%;
+		}
+	}
+
+	.portfolio-content-container {
+		height: 395px;
+		width: 100%;
+		margin-top: 14px;
+		display: flex;
+		justify-content: space-between;
+		
+		.portfolio-piece {
+			height: 395px;
+			width: 30%;
+			border: 1px solid black;
+			.centered;
+		}
+	}
 }
 
-.portfolio-header {
+/*WHAT I CAN DO SECTION */
+
+#what-I-can-do{
+	margin-top: 45px;
+}
+
+/*PROFESSIONAL EXPERIENCE*/
+
+.experience-content-container{
+	height: 395px;
 	width: 100%;
-	height: 35px;
-	border-top: 1px solid black;
+	margin-top: 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.work-experience{
+		width: 100%;
+		height: 120px;
+		border: 1px solid black;
+		.centered;
+	}
 }
 
-.section-label {
-	height: 35px;
-	width: 31%;
-	background-color: @main-color;
-	display: flex;
-	align-items: center;
-	padding-left: 3%;
+/*SKILLS AND EDUCATION SECTION*/
+
+.list-text{
+	font-size: .9rem;
+	.secondary-font;
+	.italics;
 }
 
 .section-label2 {
@@ -234,118 +281,126 @@ h1, h2, h3, h4, h5, h6, span {
 	padding-left: 3%;
 }
 
-.portfolio-content-container {
-	height: 395px;
-	width: 100%;
-	border: 1px solid red;
-	margin-top: 14px;
-}
-
-/*WHAT I CAN DO SECTION */
-
-#what-I-can-do{
-	margin-top: 45px;
-}
-
-/*SKILLS AND EDUCATION SECTION*/
-
 .skills-and-education-section{
 	width: 100%;
 	height: 170px;
 	margin-top: 50px;
-	border: 1px solid blue;
 	display: flex;
 	justify-content: space-between;
-}
-
-.skills-and-education {
-	width: 47%;
-	height: 170px;
-	border: 1px solid purple;
-}
-
-.skills-education-contents {
-	height: 135px;
-	width: 100%;
-	border: 1px solid green;
-	display: flex;
-	align-items: space-around;
-	flex-wrap: wrap;
-	padding: 10px;
-}
-
-.education-section{
-	width: auto;
-	height: 110px;
-	border: 1px solid black;
-}
-
-.education-span2 {
-	.secondary-font;
-	font-size: 1rem;
-	font-style: bold;
-}
-
-.education-header {
-	.main-font;
-	font-size: 1.2rem;
-}
-
-.list-text{
-	font-size: .9rem;
-	.secondary-font;
-	.italics;
-}
-
-#skills-image-container{
-	border: 1px solid black;
-	width: 325px;
-	height: 50px;
-	display: flex;
-	justify-content: space-between;
-}
-
-.skills-image{
-	height: 50px;
-	width: 50px;
+	
+	.skills-and-education {
+		width: 47%;
+		height: 170px;
+		border-top: 1px solid black;
+		
+		#education-section-container {
+			display: flex;
+			flex-direction: column;
+			height: 135px;
+			width: 100%;
+			display: flex;
+			align-items: space-around;
+			padding: 10px;
+			
+			.education-section{
+				width: auto;
+				height: 60px;
+				border: 1px solid black;
+			}
+			
+			.education-span2 {
+				.secondary-font;
+				font-size: 1rem;
+				font-style: bold;
+			}
+			
+			.education-header {
+				.main-font;
+				font-size: 1.2rem;
+			}
+		}
+		
+		#skills-section-container {
+			height: 135px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: space-around;
+			padding: 10px;
+			
+			#skills-image-container{
+				width: 325px;
+				height: 50px;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.skills-image{
+				height: 50px;
+				width: 50px;
+			}
+		}
+	}
 }
 
 /*ABOUT SECTION*/
 
 .about-section {
 	width: 100%;
-	height: 420px;
+	height: 325px;
 	margin-top: 45px;
 	border: 1px solid purple;
+	
+	#about-content{
+		display: flex;
+		height: 290px;
+		width: 100%;
+		align-items: center;
+		
+		#about-picture-container{
+			height: 210px;
+			width: 160px;
+			border: 1px solid black;
+			margin-left: 3%;
+		}
+		
+		#about-text{
+			height: 210px;
+			width: 634px;
+			display: flex;
+			flex-direction: column;
+			border: 1px solid black;
+			margin-left: 3%;
+		}
+	}	
 }
 
 /*CONTACT SECTION*/
 
 .contact-section {
 	width: 100%;
-	height: 420px;
+	height: 325px;
 	margin-top: 45px;
 	border: 1px solid purple;
-}
 
-#work-together-text{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-}
-
-.contact-button {
-	height: 30px;
-	width: 200px;
-	background-color: @main-color;
-	font-size: 1.0rem;
-	color: @secondary-color;
-	text-decoration: none;
-	margin-top: 10px;
-}
-
-#work-together-text-container{
-	margin-top: 20px;
+	#work-together-text{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		
+		#work-together-text-container{
+			margin-top: 20px;
+		}
+		.contact-button {
+			height: 30px;
+			width: 200px;
+			background-color: @main-color;
+			font-size: 1.0rem;
+			color: @secondary-color;
+			text-decoration: none;
+			margin-top: 10px;
+		}
+	}
 }
 
 /*FOOTER SECTION*/
