@@ -10,216 +10,240 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, strong, sub, sup, tt,
+var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font - size: 100 % ;
 	font: inherit;
-	vertical-align: baseline;
+	vertical - align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line - height: 1;
 }
 ol, ul {
-	list-style: none;
+	list - style: none;
 }
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
+blockquote: before, blockquote: after,
+	q: before, q: after {
+		content: '';
+		content: none;
+	}
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	border - collapse: collapse;
+	border - spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
-*, *:before, *:after {
+*, *: before, *: after {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
-  }
+	box - sizing: border - box;
+}
 html, body {
-    height: 100%;
+	height: 100 % ;
+	font - size: 62.5 %
 }
 
 // Variables
-@background-color: #eee;
-@container-background-color: #fff;
-@primary-font-family: 'Roboto', sans-serif;
-@secondary-font-family: 'Montserrat', sans-serif;
-@primary-color: #3b5998;
-@secondary-color: #20B2AA;
-@tab-color:rgb(241, 100, 6);
-@line-height: 1em + 1em;
-
+@background - color: #eee;
+@container - background - color: #fff;
+@primary - font - family: 'Roboto', sans - serif;
+@secondary - font - family: 'Montserrat', sans - serif;
+@primary - color: #3b5998;
+@secondary-color: # 20 B2AA;
+@tab - color: rgb(241, 100, 6);
+@font - size: 1.6 rem;
+@line - height: 1e m + 1e m;
+/* Index.CSS starts here */
 body {
-	max-width: 880px;
-	width: 100%;
-	background-color: @background-color;
-	font-family:@primary-font-family;
+	max - width: 880 px;
+	width: 100 % ;
+	background - color: @background - color;
+	font - family: @primary - font - family;
 	margin: 0 auto;
-	
+
 }
-.container{
+.container {
 	display: flex;
-	flex-wrap: wrap;
-	background-color: @container-background-color;
-	padding: 20px;
-	margin: 10px;
-	border: .5px solid lightgray;
+	flex - wrap: wrap;
+	background - color: @container - background - color;
+	padding: 20 px;
+	margin: 10 px;
+	border: .5 px solid lightgray;
 }
 
 header {
-	width: 100%;
+	width: 100 % ;
 
- nav {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	margin: 15px 5px;
-}
- nav li {
-	list-style-type: none;
+	nav {
+		display: flex;
+		justify - content: space - evenly;
+		align - items: center;
+		margin: 15 px 5 px;
+	}
+	nav li {
+		list - style - type: none;
 
-}
- nav li a{
+	}
+	nav li a {
+
+		font - size: @font - size;
+		color: #333;
 	text-decoration: none;
 }
 
 }
 .header-info {
-	width: 100%;
-	height: 500px;
-	border: 2px solid red;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+
+
+ width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
 
 	.header-whoami{ 
-		
-		align-items:center;
-		border: 2px solid goldenrod;
-		
-	 		h1 {font-size: 3rem; }
+   margin: 5%;
+	text-align: center;
+	
+			 h1 {font-size: 4rem; }
+			 
+ .primary-btn:extend(.btn){
+		 .border-radius;
+		 font-size: 1.4rem;
+		 vertical-align: top;
+		 width: 40%;
+		 margin:10%;
+		background: @primary-color;
+	}
 }
 
 	.img-container {
+	  padding: 45px;
+		align-items: center;
 		width: 24.9%;
-		margin: 5% 5px;
-		border: 1px solid red;
+		margin:0 auto;
+		
         
        img {width: 250px;}
 	   }
-
-	   .primary-btn:extend(.btn){
-	
-		background: @primary-color;
-	}
-	
 	
 }
-
-
-
+/* Main Tabbed Section starts here */
 main {
 	min-width: 320px;
 	max-width: 800px;
 	padding: 50px;
 	margin: 0 auto;
-	background: #fff;
-  }
-  
-  section {
-	display: none;
-	padding: 20px 0 0;
-	border-top: 1px solid #ddd;
-  }
-  
-  input {
-	display: none;
-  }
-  
-  label {
-	display: inline-block;
-	margin: 0 0 -1px;
-	padding: 15px 25px;
-	font-weight: 600;
-	text-align: center;
-	color: #bbb;
-	border: 1px solid transparent;
-  }
-  
-  label:before {
-	font-family: fontawesome;
-	font-weight: normal;
-	margin-right: 10px;
-  }
-  
-  label[for*='1']:before { content: '\f1cb'; }
-  label[for*='2']:before { content: '\f09b'; }
-  label[for*='3']:before { content: '\f0e1'; }
-  
-  label:hover {
-	color: #888;
+	background: # fff;
+	}
+
+	section {
+		display: none;
+		padding: 20 px 0 0;
+		border - top: 1 px solid# ddd;
+	}
+
+	input {
+		display: none;
+	}
+
+	label {
+		display: inline - block;
+		margin: 0 0 - 1 px;
+		padding: 15 px 25 px;
+		font - size: @font - size;
+		font - weight: 600;
+		text - align: center;
+		color: #bbb;
+		border: 1 px solid transparent;
+	}
+
+	label: before {
+		font - family: fontawesome;
+		font - weight: normal;
+		margin - right: 10 px;
+	}
+
+	label[
+		for *= '1']: before {
+		content: '\f1cb';
+	}
+	label[
+		for *= '2']: before {
+		content: '\f09b';
+	}
+	label[
+		for *= '3']: before {
+		content: '\f0e1';
+	}
+
+	label: hover {
+		color: #888;
 	cursor: pointer;
   }
   
   input:checked + label {
-	color: #555;
-	border: 1px solid #ddd;
-	border-top: 2px solid orange;
-	border-bottom: 1px solid #fff;
-  }
-  
-  #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3 {
-	display: block;
-  }
-  
-.bordered {
-	border: 1px solid transparent;
-}
-
-.btn {
-	padding: 10px 15px;
-	border: 0;
-    color: #fff;
-}
-
-
-
-@media screen and (max-width: 650px) {
-	label {
-	  font-size: 0;
+	color: # 555;
+		border: 1 px solid# ddd;
+		border - top: 2 px solid orange;
+		border - bottom: 1 px solid# fff;
 	}
-	label:before {
-	  margin: 0;
-	  font-size: 18px;
-	}
-  }
-  
-  @media screen and (max-width: 400px) {
-	label {
-	  padding: 15px;
-	}
-  }
 
+	#tab1: checked~#content1,
+	#tab2: checked~#content2,
+	#tab3: checked~#content3 {
+			display: block;
+			font - size: @font - size;
+		}
+// Button Mix-in
+		.bordered {
+			border: 1 px solid transparent;
+		}
+		.border - radius {
+			border - radius: 5 % ;
+			padding: 20 px;
+		}
+
+		.btn {
+			padding: 10 px 15 px;
+			border: 0;
+			color: #fff;
+		}
+	// End Button Mix-in
+
+/* Tab Section Ends here */
+
+	@media screen and(max - width: 650 px) {
+		label {
+			font - size: 0;
+		}
+		label: before {
+			margin: 0;
+			font - size: @font - size;
+		}
+	}
+
+	@media screen and(max - width: 400 px) {
+		label {
+			padding: 15 px;
+		}
+	}
