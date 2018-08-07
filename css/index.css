@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -138,7 +138,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -176,12 +176,17 @@ body {
   border: 0;
   color: #fff;
 }
+.background {
+  background: linear-gradient(rgba(12, 12, 134, 0.582), rgba(8, 8, 65, 0.5)), url(/imgs/webdesign-header-bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
 /* Main Body CSS */
 body {
   max-width: 880px;
   width: 100%;
   background-color: #eee;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0 auto;
 }
 /* Container starts here */
@@ -210,7 +215,12 @@ body {
   text-decoration: none;
 }
 .container .header-container {
-  background-image: url(/imgs/webdesign-header-bg.jpg);
+  background: linear-gradient(rgba(12, 12, 134, 0.582), rgba(8, 8, 65, 0.5)), url(/imgs/webdesign-header-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  /*Index CSS Starts Here*/
+  /*Contact CSS Starts Here */
 }
 .container .header-container .header-info {
   display: flex;
@@ -231,7 +241,7 @@ body {
 .container .header-container .header-info .header-whoami {
   margin: 5%;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .container .header-container .header-info .header-whoami h1 {
   font-size: 3rem;
@@ -243,7 +253,7 @@ body {
 }
 .container .header-container .header-info .header-whoami h1 #name {
   font-weight: lighter;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .container .header-container .header-info .header-whoami h2 {
   font-size: 3em;
@@ -264,6 +274,73 @@ body {
 }
 .container .header-container .header-info .img-container img {
   width: 250px;
+}
+.container .header-container .contact_form--fielddata {
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+.container .header-container .contact_form--fielddata #contact {
+  background: #eee;
+  padding: 25px;
+  margin: 150px;
+  color: #f16406;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.container .header-container .contact_form--fielddata #contact h1 {
+  display: block;
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.container .header-container .contact_form--fielddata #contact h2 {
+  font-size: 1.6rem;
+  margin: 5px 0 15px;
+  display: block;
+  font-weight: 400;
+}
+.container .header-container .contact_form--fielddata #contact fieldset {
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0px;
+  width: 100%;
+}
+.container .header-container .contact_form--fielddata #contact input[type="text"],
+.container .header-container .contact_form--fielddata #contact input[type="email"],
+.container .header-container .contact_form--fielddata #contact input[type="tel"],
+.container .header-container .contact_form--fielddata #contact input[type="url"],
+.container .header-container .contact_form--fielddata #contact button[type="submit"],
+.container .header-container .contact_form--fielddata #contact textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 50px;
+  font: 400 1.2rem/1.6rem "Roboto", sans-serif;
+}
+.container .header-container .contact_form--fielddata #contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+.container .header-container .contact_form--fielddata #contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #333;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.container .header-container .contact_form--fielddata #contact button[type="submit"]:hover {
+  background: #3a4549;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.container .header-container .contact_form--fielddata #contact input:focus,
+.container .header-container .contact_form--fielddata #contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
 }
 .container main {
   min-width: 320px;
@@ -295,14 +372,14 @@ body {
   font-weight: normal;
   margin-right: 10px;
 }
-.container label[for*='1']:before {
-  content: '\f1cb';
+.container label[for*="1"]:before {
+  content: "\f1cb";
 }
-.container label[for*='2']:before {
-  content: '\f09b';
+.container label[for*="2"]:before {
+  content: "\f09b";
 }
-.container label[for*='3']:before {
-  content: '\f0e1';
+.container label[for*="3"]:before {
+  content: "\f0e1";
 }
 .container label:hover {
   color: #888;
