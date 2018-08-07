@@ -137,82 +137,162 @@ body {
 /*My code starts here*/
 html {
   font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
 }
 .container {
   width: 90%;
   max-width: 850px;
   margin: 0 auto;
 }
-.container .header {
+@media (max-width: 500px) {
+  .container {
+    width: 80%;
+    max-width: 450px;
+  }
+}
+.container .navigation {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  border: 1px solid black;
   padding: 20px;
   background-color: black;
 }
-.container .header .header__div--name {
+.container .navigation .navigation__div--name {
   width: 50%;
   font-size: 3rem;
   color: darkgrey;
   text-align: center;
 }
-.container .header .header__nav {
+@media (max-width: 500px) {
+  .container .navigation .navigation__div--name {
+    padding: 15px 2%;
+  }
+}
+.container .navigation .navigation__nav {
   display: flex;
   justify-content: space-around;
   width: 50%;
 }
-.container .header .header__nav .header__nav__a {
+@media (max-width: 500px) {
+  .container .navigation .navigation__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .container .navigation .navigation__nav .navigation__nav__a {
+    align-self: stretch;
+    border: 1px solid darkgrey;
+    height: 50px;
+    padding-top: 12px;
+    text-align: center;
+  }
+}
+.container .navigation .navigation__nav .navigation__nav__a {
   text-decoration: none;
   font-size: 2rem;
   color: darkgrey;
 }
-.container .sections {
+@media (max-width: 500px) {
+  .container .navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 25px;
+  }
+  .container .navigation .navigation__div--name {
+    width: 100%;
+  }
+}
+.sections {
   display: flex;
   width: 100%;
   margin: 20px 0%;
 }
-.container .sections .main-section__img {
+@media (max-width: 500px) {
+  .sections {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+.sections .main-section__img {
   width: 50%;
   height: 300px;
 }
-.container .sections .main-section__div {
+@media (max-width: 500px) {
+  .sections .main-section__img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.sections .main-section__div {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 300px;
 }
-.container .sections .main-section__div .main-section__div__p--description {
-  font-size: 1.9rem;
+@media (max-width: 500px) {
+  .sections .main-section__div {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+.sections .main-section__div .main-section__div__p--description {
+  font-size: 1.78rem;
   text-align: start;
   padding: 10%;
 }
-.container .sections .middle-section__divs {
+.sections .middle-section__divs {
   width: 50%;
   padding: 20px;
 }
-.container .sections .middle-section__divs .list {
+@media (max-width: 500px) {
+  .sections .middle-section__divs {
+    width: 100%;
+    text-align: center;
+  }
+}
+.sections .middle-section__divs .list {
   display: flex;
   flex-direction: column;
 }
-.container .sections .middle-section__divs .middle-secion__div__ul--experience {
+.sections .middle-section__divs .middle-secion__div__ul--experience {
   margin-top: 30px;
+  list-style: square;
 }
-.container .sections .middle-section__divs .middle-secion__div__ul--experience .middle-secion__ul__p {
+.sections .middle-section__divs .middle-secion__div__ul--experience .middle-secion__ul__p {
   margin: 10px 0%;
   font-size: 1.6rem;
 }
-.container .sections .middle-section__divs .middle-secion__div__ul--skills {
+.sections .middle-section__divs .middle-secion__div__ul--skills {
   margin-top: 30px;
   font-size: 1.6rem;
 }
-.container .sections .middle-section__divs .middle-secion__div__ul--skills .middle-section__ul__strong {
+.sections .middle-section__divs .middle-secion__div__ul--skills .middle-section__ul__strong {
   margin: 3px 0%;
 }
-.container .sections .sections__h1 {
-  font-size: 2.6rem;
+.sections .sections__h1 {
+  font-size: 3rem;
   color: darkgrey;
   margin-bottom: 20px 10px;
+}
+.sections .contact-section__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.sections .contact-section__div .contact-section__div__h1 {
+  margin-bottom: 30px;
+}
+.sections .contact-section__div .contact-section__div__strong {
+  font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  .navigation.footer {
+    display: none;
+  }
 }
