@@ -84,11 +84,12 @@ html, body {
 .paragraphText(){
 	font-size: @other-font;
 	font-family: 'Kirang Haerang', cursive;
+	text-align: center;
 }
 
 .container {
 	width: 100%;
-	max-width: 800px;
+	max-width: 700px;
 	margin: 0px auto;
 	background-color: @background-color;
 
@@ -108,11 +109,17 @@ html, body {
 	}
 	.intro{
 		.flexAround();
-		border: 2px dotted @secondary-color; 
+		border-bottom: 2px dotted @secondary-color; 
 		.introtext{
 			.flexCenter();
 			display: inline-flex;
 			width: 50%;
+		}
+		@media (max-width: 500px){
+			flex-direction: column-reverse;
+			.introtext {
+				width: 80%;
+			}
 		}
 	}
 
@@ -121,7 +128,7 @@ html, body {
 		flex-wrap: wrap;
 		margin: 10px;
 		.skills {
-			width: 40%;
+			width: 49%;
 			h2{
 				margin-bottom: 10px;
 			}
@@ -131,7 +138,7 @@ html, body {
 			}
 		}
 		.work{
-			width: 40%;
+			width: 49%;
 			h2{
 				margin-bottom:10px;
 			}
@@ -140,10 +147,26 @@ html, body {
 				text-align: center;
 			}
 		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			.skills{
+				width: 90%;
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+				border-bottom: 2px dotted @secondary-color; 
+			}
+			.work{
+				width: 90%;
+				justify-content: flex-end;
+			}
+		}
 	}
 
 	.contact{
 		.flexCenter();
+		border-top: 2px dotted @secondary-color; 
 		margin-top: 20px;
 		address {
 			font-size: @other-font;
@@ -163,6 +186,7 @@ html, body {
 	}
 	h2{
 		font-size: @h2-font;
+		text-align: center;
 	}
 	h3{
 		font-size: @h3-font;
