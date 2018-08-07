@@ -137,9 +137,6 @@ body {
 body {
   font-size: 62.5%;
 }
-.sidebar-padding {
-  padding-left: 10px;
-}
 .sidebar {
   display: grid;
   position: fixed;
@@ -147,11 +144,19 @@ body {
 }
 @media (max-width: 500px) {
   .sidebar {
-    display: none;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 .sidebar ul .header {
   border-bottom: 2px solid lightgray;
+}
+@media (max-width: 500px) {
+  .sidebar ul .header {
+    display: flex;
+  }
 }
 .sidebar ul h1 {
   color: #008073;
@@ -160,15 +165,31 @@ body {
   margin: 10px 0;
   padding-left: 10px;
 }
+@media (max-width: 500px) {
+  .sidebar ul h1 {
+    font-size: 1.5rem;
+  }
+}
 .sidebar ul span {
   font-size: 1rem;
   font-style: italic;
   padding-left: 10px;
 }
+@media (max-width: 500px) {
+  .sidebar ul span {
+    font-size: 0.8rem;
+    padding-top: 45px;
+  }
+}
 .sidebar ul li {
   font-size: 1.2rem;
   padding-top: 20px;
   padding-left: 10px;
+}
+@media (max-width: 500px) {
+  .sidebar ul li:last-child {
+    padding-bottom: 30px;
+  }
 }
 .content {
   display: grid;
@@ -176,9 +197,10 @@ body {
 }
 @media (max-width: 500px) {
   .content {
-    grid-template-columns: 1fr;
+    display: flex;
   }
 }
 .about {
   grid-column-start: 2;
+  background-image: url("../image/portfolio-background.png");
 }

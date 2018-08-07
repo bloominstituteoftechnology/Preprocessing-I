@@ -67,7 +67,7 @@ body {
 
 // Mix-ins
 
-.sidebar-padding{
+.sidebar-padding(){
 	padding-left: 10px;
 }
 
@@ -78,7 +78,11 @@ body {
 	position: fixed;
 	width: 190px;
 	@media (max-width:500px){
-		display:none;
+		display: flex;
+		position: relative;
+		justify-content: space-between;
+		width: 100%;
+		
 	}
 	
 	
@@ -86,6 +90,9 @@ body {
 	ul{
 		.header{
 			border-bottom: 2px solid lightgray;
+			@media (max-width:500px){
+				display: flex;
+			}
 		}
 
 		h1{
@@ -94,21 +101,36 @@ body {
 			font-weight: 100;
 			margin: 10px 0;
 			.sidebar-padding;
+			@media (max-width:500px){
+				font-size: 1.5rem;
+			}
 		
 		}
 		span{
 			font-size: 1.0rem;
 			font-style: italic;
 			.sidebar-padding;
+			@media (max-width:500px){
+				font-size: 0.8rem;
+				padding-top: 45px;
+			}
 
 		}
 		li {
 			font-size: 1.2rem;
 			padding-top: 20px;
 			.sidebar-padding
+			}
+		
+			@media (max-width: 500px) {
+				li:last-child {
+					padding-bottom: 30px;
+				}
 		}
 	}
+	
 }
+
 
 // Main Content
 
@@ -116,10 +138,11 @@ body {
 	display: grid;
 	grid-template-columns:  190px 1fr;
 	@media (max-width:500px){
-		grid-template-columns: 1fr;
+		display: flex;
 	}
 }
 
 .about {
 	grid-column-start: 2;
+	background-image: url("../image/portfolio-background.png");
 }
