@@ -121,10 +121,10 @@ li{
 	.main-width();
 	.flex-col-center();
 	margin: 0px auto;
-	.testBorder();
 
 	.upper-nav{
 		position: fixed;
+		top: 0px;
 		display: flex;
 		justify-content: flex-end;
 		.main-width();
@@ -178,7 +178,10 @@ li{
 	.about-skills{
 		width: 100%;
 		.flex-row-between();
-		padding: 20px 2.5%;
+		// NOTE: add 50px to top padding of page position links
+		    //   then -50px to margin top
+		margin-top: -50px;
+		padding: 70px 2.5% 20px 2.5%;
 
 		.about{
 			width: 65%;
@@ -191,6 +194,15 @@ li{
 			text-align: center;
 			border: 2px solid black;
 			border-radius: 10px;
+
+			h3{
+				margin: 5px 0% 10px 0%;
+				border-bottom: 1px solid black;
+			}
+
+			li{
+				margin-bottom: 2px;
+			}
 		}
 	}
 
@@ -207,6 +219,51 @@ li{
 	}
 
 	.portfolio{
-		
+		width: 100%;
+		margin: 20px 0%;
+		.flex-col-center();
+
+		h2{
+			padding: 10px 0%;
+		}
+
+		div{
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+			margin: 20px 0%;
+
+			img{
+				width: 100%;
+				max-width: 350px;
+				height: auto;
+				margin: 20px 0%;
+				border: 3px solid black;
+				border-radius: 16px;
+			}
+		}
+	}
+
+	.work-history{
+		width: 100%;
+		align-self: flex-start;
+		background-color: @bgColorLight;
+		padding: 20px 20%;
+		border-radius: 10px;
+		margin-bottom: 30px;
+
+		h2{
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		h3{
+			margin: 5px 0%;
+		}
+
+		p{
+			line-height: 1.8rem;
+		}
 	}
 }
