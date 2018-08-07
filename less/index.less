@@ -55,9 +55,121 @@ table {
 
 html, body {
 	height: 100%;
+	font-size: 62.5%;
+}
+
+@main-color: #000000;
+@secondary-color: #FF00F0;
+@background-color: lightgrey;
+@h1-font: 3.2rem;
+@h2-font: 2.4rem;
+@h3-font: 2.0rem;
+@other-font: 1.6rem;
+
+.flexCenter(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.flexAround(){
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.headerText() {
+	font-family: 'Modern Antiqua', cursive;
+}
+.paragraphText(){
+	font-size: @other-font;
+	font-family: 'Kirang Haerang', cursive;
 }
 
 .container {
-	margin: 0, auto;
-}
+	width: 100%;
+	max-width: 800px;
+	margin: 0px auto;
+	background-color: @background-color;
 
+	nav{
+		.flexAround();
+		padding-bottom: 10px;
+		background-color: @main-color;
+		:hover{
+			color: @main-color;
+			background-color: @secondary-color;
+		}
+	}
+	.navi{
+		font-size: @h3-font;
+		text-decoration: none;
+		color: @secondary-color;
+	}
+	.intro{
+		.flexAround();
+		border: 2px dotted @secondary-color; 
+		.introtext{
+			.flexCenter();
+			display: inline-flex;
+			width: 50%;
+		}
+	}
+
+	.middleinfo{
+		.flexAround();
+		flex-wrap: wrap;
+		margin: 10px;
+		.skills {
+			width: 40%;
+			h2{
+				margin-bottom: 10px;
+			}
+			li{
+				.paragraphText();
+				margin-bottom: 5px;
+			}
+		}
+		.work{
+			width: 40%;
+			h2{
+				margin-bottom:10px;
+			}
+			p{
+				.paragraphText();
+				text-align: center;
+			}
+		}
+	}
+
+	.contact{
+		.flexCenter();
+		margin-top: 20px;
+		address {
+			font-size: @other-font;
+			text-align: center;
+			margin: 10px;
+			a{
+				text-decoration: none;
+				color: @main-color;
+			}
+		}
+	}
+
+	h1{
+		.headerText();
+		font-size: @h1-font;
+		margin: 15px 1%;
+	}
+	h2{
+		font-size: @h2-font;
+	}
+	h3{
+		font-size: @h3-font;
+		.paragraphText();
+	}
+	p{
+		font-size: @other-font;
+		margin: 10px 1%;
+	}
+}
