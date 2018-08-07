@@ -55,10 +55,15 @@ table {
 
 html, body {
 	height: 100%;
+	font-size: 62.5%;
 }
 
 body {
 	background-color: @white;
+}
+
+h1 {
+	font-size: 2.3rem;
 }
 
 // Variables - colors & fonts
@@ -66,7 +71,7 @@ body {
 @blue: #3d5f96;
 @dark: black;
 
-// Mixin
+// start Mixin
 .dimensions() {
 	border: 1px solid @dark;
 	width: 100%;
@@ -74,11 +79,47 @@ body {
 }
 
 .dimensions2() {
-	border: 1px solid @dark;
+	border: 1px solid red;
 	width: 100%;
 	height: 300px;
 	flex-grow: 1;
 }
+
+
+
+
+
+
+
+.head {
+	display: flex;
+	border: 1px solid goldenrod;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 100%;
+
+	
+	.img {
+			width: 5%;
+			height: 25px;
+			border: 1px solid @blue;
+			border-radius: 50%;
+			margin: 5px 5% 5px 5%;
+		}
+
+
+	.line {
+		border-bottom: 3px solid @blue;
+		width: 80%;
+		display: flex;
+
+		h1 {
+			align-self: center;
+		}
+	}
+}
+
+// end Mixin
 
 
 .main-container {
@@ -120,26 +161,29 @@ body {
 
 
 		.logohead {
+			
 			.dimensions2;
+
+			
 		}
 
 		.awards {
 			height: 100px;
 		}
 
-			.footer {
-				display: flex;
-				flex-direction: row;
-				.skills {
-					width: 49%;
-					height: 300px;
-				}
-		
-				.references {
-					width: 49%;
-					height: 300px;
-				}
-			} // .footer
+		.footer {
+			display: flex;
+			flex-direction: row;
+			.skills {
+				width: 49%;
+				height: 300px;
+			}
+	
+			.references {
+				width: 49%;
+				height: 300px;
+			}
+		} // .footer
 	} // .right-container
 } // main container
 
