@@ -158,6 +158,25 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
+.flex-box-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bordered {
+  border: 1px solid transparent;
+}
+.border-radius {
+  border-radius: 5%;
+  padding: 10px;
+}
+.btn,
+.container .header-container .header-info .header-whoami .primary-btn {
+  padding: 5px 5px;
+  border: 0;
+  color: #fff;
+}
+/* Main Body CSS */
 body {
   max-width: 880px;
   width: 100%;
@@ -165,11 +184,11 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
 }
+/* Container starts here */
 .container {
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
-  padding: 20px;
   margin: 10px;
   border: 0.5px solid lightgray;
 }
@@ -190,35 +209,60 @@ body {
   color: #333;
   text-decoration: none;
 }
-.container .header-info {
-  width: 100%;
+.container .header-container {
+  background-image: url(/imgs/webdesign-header-bg.jpg);
+}
+.container .header-container .header-info {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  background-color: white;
+  opacity: 0.8;
+  margin-top: 3%;
+  justify-content: center;
+  height: 90%;
 }
-.container .header-info .header-whoami {
+.container .header-container .header-info p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 20px;
+  margin: 5%;
+}
+.container .header-container .header-info .header-whoami {
   margin: 5%;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
-.container .header-info .header-whoami h1 {
-  font-size: 4rem;
+.container .header-container .header-info .header-whoami h1 {
+  font-size: 3rem;
+  font-weight: bold;
 }
-.container .header-info .header-whoami .primary-btn {
+.container .header-container .header-info .header-whoami h1 :nth-child(1n) {
+  color: #f16406;
+  text-shadow: -1px -1px 0.5px #333;
+}
+.container .header-container .header-info .header-whoami h1 #name {
+  font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
+}
+.container .header-container .header-info .header-whoami h2 {
+  font-size: 3em;
+}
+.container .header-container .header-info .header-whoami .primary-btn {
   border-radius: 5%;
-  padding: 20px;
+  padding: 10px;
   font-size: 1.4rem;
   vertical-align: top;
-  width: 40%;
-  margin: 10%;
+  width: 80%;
+  margin-top: 40%;
   background: #3b5998;
 }
-.container .header-info .img-container {
-  padding: 45px;
-  align-items: center;
+.container .header-container .header-info .img-container {
+  padding: 15px;
+  margin: 2%;
   width: 24.9%;
-  margin: 0 auto;
 }
-.container .header-info .img-container img {
+.container .header-container .header-info .img-container img {
   width: 250px;
 }
 .container main {
@@ -267,7 +311,7 @@ body {
 .container input:checked + label {
   color: #555;
   border: 1px solid #ddd;
-  border-top: 2px solid orange;
+  border-top: 2px solid #f16406;
   border-bottom: 1px solid #fff;
 }
 .container #tab1:checked ~ #content1,
@@ -276,19 +320,6 @@ body {
   display: block;
   font-size: 1.6rem;
 }
-.bordered {
-  border: 1px solid transparent;
-}
-.border-radius {
-  border-radius: 5%;
-  padding: 20px;
-}
-.btn,
-.container .header-info .header-whoami .primary-btn {
-  padding: 10px 15px;
-  border: 0;
-  color: #fff;
-}
 @media screen and (max-width: 650px) {
   label {
     font-size: 0;
@@ -296,6 +327,10 @@ body {
   label:before {
     margin: 0;
     font-size: 1.6rem;
+  }
+  .img-container img {
+    margin-left: 68.5px;
+    background-color: #3b5998;
   }
 }
 @media screen and (max-width: 400px) {
