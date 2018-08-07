@@ -54,11 +54,13 @@ table {
 }
 
 html, body {
-    text-align: center;
+    .myflex();
     margin: 0 auto;
     color: @color;
     background-color: @background-color;
-    height: 100%;
+    width: 1920px;
+    align-items: center;
+    text-align: center;
 }
 
 // Variables //
@@ -67,15 +69,24 @@ html, body {
 @font-size: 62.5%;
 @color: black;
 
+.myflex() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
 .container {
-    width: 100%;
-    max-width: 880px;
-    border: 1px solid dodgerblue;
+    width: 800px;
+    border: 1px solid black;
+    .myflex();
 }
 
 
 // Navigation & header //
 header {
+    margin-bottom: 20px;
     display: flex;
     justify-content: flex-end;
 }
@@ -83,17 +94,33 @@ nav {
     display: flex;
     font-size: 1.5rem;
     width: 50%;
-    border: 1px solid green;
     color: gray;
     align-items: center;
-    justify-content: flex-end;
     margin: 10px 2%;
     padding: 5px 1%;
+    margin-bottom: 20px;
+    position: relative;
+    left: -170px;
 }
-nav {
+nav a {
     text-decoration: none;
-}
+    color: @color;
 
+&:hover {
+    color: gray;
+    text-decoration: underline;
+}
+}
+button {
+    margin-top: 15px;
+	border: solid black 1px;
+    padding: 10px 50px;
+
+&:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+}
 
 // Intro text //
 h1 {
@@ -101,5 +128,31 @@ h1 {
     font-size: 2.2rem;
     margin-bottom: 9px;
 }
+  
+.top p {
+        .myflex();
+    }
+
+    .self {
+        width: 25%;
+        display: inline-block;
+    }
+
+// Skills //
+
+// Employment //
+h1 {
+    margin-bottom: 20px;
+}
 
 
+// Contact //
+h1 {
+    margin-top: 20px;
+    magin-bottom: 20px;
+    font-family: @font-family;
+}
+.contact p {
+    margin-bottom: 20px;
+    .myflex();
+}
