@@ -58,3 +58,150 @@ html, body {
 	
 }
 
+@sidebar-color: #008080;
+@background-color: #ded9df;
+@border-color: #b0b0b0;
+@heading-color: #292929;
+@text-color: #3a3a3a;
+@side-text-color: #ffffff;
+@side-border-color: #93b7d5;
+@baskerville-font-stack: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+.sidebar-margin() {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.sidebar-box () {
+	display: flex;
+			flex-direction: column;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding-bottom: 5%;
+			.sidebar-margin;
+			font-family: @baskerville-font-stack;
+			font-size: 1.4rem;
+			color: @side-text-color;
+			border-bottom: 1px solid @side-border-color;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: @baskerville-font-stack;
+}
+
+body { 
+	background-color: @background-color;
+}
+
+.main-container {
+	width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+	height: 100%;
+
+	
+
+	.sidebar {
+		height: 100%;
+		background-color: @sidebar-color;
+		width: 22.3%;
+		max-width: 223px;
+		display: flex;
+		flex-direction: column;
+		
+
+		.photoAndName {
+			position: relative;
+			// text-align: center;
+			color: white;
+
+			img {
+				width: 100%;
+				height: auto;
+				margin-top: 10px;
+				
+			}
+
+			.bottom-center {
+				position: absolute;
+				bottom: 5px;
+				left: 10%;
+			}
+		}
+
+		nav {
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+			.sidebar-margin;
+
+			a {
+				font-family: @baskerville-font-stack;
+				font-size: 1.2rem;
+				text-decoration: none;
+				color: @side-text-color;
+				flex-wrap: wrap;
+			}
+		}
+
+		.intro {
+			.sidebar-box;
+		}
+
+		.education {
+			.sidebar-box;
+		}
+
+		.contact {
+			.sidebar-box;
+		}
+
+	}
+
+	.bottom-center {
+
+		h1 {
+			font-size: 1.4rem;
+		}
+
+		p {
+			font-size: 1.2rem;
+		}
+	}
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 10px 1.5%;
+		
+
+
+		.skills {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			background-color: @side-text-color;
+			margin-bottom: 15px;
+			border: 1px solid @border-color;
+			height: 50%;
+
+			
+		}
+
+		.work-history {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			background-color: @side-text-color;
+			border: 1px solid @border-color;
+			height: 50%;
+		}
+	}
+}
