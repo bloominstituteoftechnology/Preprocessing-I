@@ -54,10 +54,88 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+/* Variables */
+@header-font-color: white;
+@header-background: #393737;
+@accent-color: indigo;
+
+/* Mixins */
+.flex-column() {
+	display: flex;
+	flex-direction: column;
 }
 
 /* Start here */
-body {
-	background-color: red;
+div.main{
+	display: flex;
+}
+
+header {
+	background-color: @header-background;
+	width: 20%;
+	padding: 25px 1%;
+	.flex-column;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.6rem;
+		color: @accent-color;
+
+		a {
+			text-decoration: none;
+			color: @header-font-color;
+		}
+	}
+
+	section {
+		h1 {
+			text-align: center;
+			font-size: 5.2rem;
+			margin: 35px 0px;
+			color: @header-font-color;
+			text-transform: uppercase;
+		}
+
+		.title {
+			border: 3px solid @accent-color;
+			font-size: 1.8rem;
+			color: @header-font-color;
+			text-align: center;
+			padding: 10px;
+			text-transform: uppercase;
+			margin: 35px 0px;
+		}
+
+		h2 {
+			color: @header-font-color;
+			text-transform: uppercase;
+			font-size: 1.8rem;
+			text-align: center;
+			border-bottom: 3px solid @accent-color;
+			width: 80%;
+			margin: 0px auto;
+			padding: 10px;
+		}
+		
+		p {
+			padding: 10px 0px 30px;
+			color: @header-font-color;
+			font-size: 1.6rem;
+		}
+
+		address {
+			padding: 10px 0px 30px;
+			color: @header-font-color;
+			font-size: 1.6rem;
+		}
+	}
+}
+
+content {
+	width: 60%;
+	border: 1px solid black;
 }
