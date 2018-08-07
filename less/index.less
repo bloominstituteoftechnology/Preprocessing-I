@@ -92,24 +92,29 @@ p {
 
 .address {       // ask '.address()' vs '.address'
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: center;
 	width: 100%;
 	border: 1px solid blue;
 	
 	.img {
 		width: 10%;
 		height: 25px;
-		border: 3px solid orange;
 		border-radius: 50%;
 		margin: 5px 5% 5px 5%;
 	}
 
 	.content {
-		border: 1px solid @white;
 		width: 70%;
-
+		align-self: center;
+		border: 1px solid @white;
 		h1 {
 			font-size: 1.8rem;
+			color: @white;
+		}
+
+		p {
+			color: @white;
 		}
 	}
 } // .address
@@ -167,6 +172,15 @@ p {
 
 		.nav {
 			.dimensions;
+			display: flex;
+			justify-content: space-around;
+			border: 1px solid @white;
+			a {
+				text-decoration: none;
+				font-size: 1.2rem;
+				color: @white;
+				margin: 10px 0 0 0;
+			}
 		}
 
 		.intro {
@@ -190,9 +204,12 @@ p {
 		}
 
 		.contact {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
 			.dimensions;
-			.address;
-			border: 3px solid red;
+			// .address;
+			// border: 3px solid orange;
 		}
 	} // .left-container
 
