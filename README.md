@@ -5,13 +5,13 @@ For this project you will be building a digital resume from scratch. You will be
 ## Task 1: Set Up The Project With Git
 
 * [x] Fork the project into your GitHub user account
-* [x ] Clone the forked project into a directory on your machine
-* [x ] You are now ready to build this project with your preferred IDE
+* [x] Clone the forked project into a directory on your machine
+* [x] You are now ready to build this project with your preferred IDE
 
 ## Task 2: Set up your preprocessor
-* [x ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
-* [x ] Open your terminal and navigate to your preprocessing project by using the `cd` command
-* [x ] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
+* [x] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
+* [x] Open your terminal and navigate to your preprocessing project by using the `cd` command
+* [x] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
 * [ ] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red`
 * [ ] Once you see the red screen, you can delete that style and you're ready to start on the next task
 
