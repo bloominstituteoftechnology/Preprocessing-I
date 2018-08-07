@@ -47,13 +47,41 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+@font-size: 2.6rem;
+@link-color: black;
+@hover-color: blue;
+@nav-color: lightslategrey;
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
+html {
+	font-size: 62.5%;
+}
 
 html, body {
 	height: 100%;
+}
+.main-container {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: @font-size;
+		nav {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			background-color: @nav-color;
+			height: 40px;
+			border-radius: 5px;
+			a {
+				text-decoration: none;
+				color: @link-color;
+				&:hover {
+						color: @hover-color;
+						text-decoration: underline;
+					}
+			}
+		}
 }
 
