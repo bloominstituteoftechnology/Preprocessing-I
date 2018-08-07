@@ -61,6 +61,23 @@ body {
 	background-color: ghostwhite;
 }
 
+// Mixin
+.dimensions() {
+	border: 1px solid black;
+	width: 100%;
+	background: lightblue;
+	height: 300px;
+}
+
+.dimensions2() {
+	border: 1px solid black;
+	width: 100%;
+	background: lightpink;
+	height: 300px;
+	flex-grow: 1;
+}
+
+
 .main-container {
 	border: 1px solid black;
 	width: 100%;
@@ -72,14 +89,54 @@ body {
 	.left-container {
 		width: 30%;
 		height: 1000px;
-		background-color: lightcyan;
-	}
+		background-color: lightgray;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.nav {
+			.dimensions;
+		}
+
+		.picture {
+			.dimensions;
+			
+		}
+
+		.contact {
+			.dimensions;
+		}
+	} // .left-container
 
 	.right-container {
 		width: 70%;
 		height: 1000px;
 		background-color: whitesmoke;
-	}
+		display: flex;
+		flex-direction: column;
 
-}
+
+		.logohead {
+			.dimensions2;
+		}
+
+		.awards {
+			height: 100px;
+		}
+
+		.footer {
+			display: flex;
+			flex-direction: row;
+			.skills {
+				width: 49%;
+				height: 300px;
+			}
+	
+			.references {
+				width: 49%;
+				height: 300px;
+			}
+		} // .footer
+	} // .right-container
+} // main container
 
