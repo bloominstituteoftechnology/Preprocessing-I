@@ -57,3 +57,119 @@ html, body {
     height: 100%;
 }
 
+/*My code starts here*/
+
+html {
+	font-size: 62.5%;
+}
+
+.fx-layout-row() {
+	display: flex;
+}
+.fx-layout-column() {
+	display: flex;
+	flex-direction: column;
+}
+@border-common: 1px solid black;
+@px-20: 20px;
+@font-s: 1.6rem;
+@width: 100%;
+@primary-color: black;
+@secondary-color: darkgrey;
+
+
+.container {
+
+	width: 90%;
+	max-width: 850px;
+	margin: 0 auto;
+
+
+	.header {
+		.fx-layout-row;
+		justify-content: flex-end;
+		align-items: center;
+		width: @width;
+		border: @border-common;
+		padding: @px-20;
+		background-color: @primary-color;
+		.header__div--name {
+			width: @width/2;
+			font-size: @font-s + 1.4rem;
+			color: @secondary-color;
+			text-align: center;
+		}
+
+		.header__nav {	
+			.fx-layout-row;		
+			justify-content: space-around;
+			width: @width/2;
+
+
+			.header__nav__a {
+				text-decoration: none;
+				font-size: @font-s + 0.4rem;
+				color: @secondary-color;
+			}
+		}
+	}
+	
+	.sections {
+		.fx-layout-row;
+		width: @width;
+		margin: @px-20 0%;
+
+		.main-section__img {
+			width: @width/2;
+			height: 300px;
+		}
+		.main-section__div {
+			width: @width/2;
+			.fx-layout-column;
+			align-items: center;
+			height: 300px;
+			
+			.main-section__div__p--description {
+				font-size: @font-s + 0.3rem;
+				text-align: start;
+				padding: 10%;
+			}			
+		}
+		.middle-section__divs {
+			width: @width/2;
+			padding: @px-20;
+
+			.list {
+				.fx-layout-column;
+			}
+			.middle-secion__div__ul--experience {
+				margin-top: @px-20+10px;
+
+				.middle-secion__ul__p {
+					margin: @px-20/2 0%;
+					font-size: @font-s;
+				}
+			}
+			.middle-secion__div__ul--skills {
+				margin-top: @px-20+10px;
+				font-size: @font-s;
+
+				.middle-section__ul__strong {
+					margin: 3px 0%;
+				}
+			}
+		}
+		.sections__h1 {
+			font-size: @font-s + 1rem;
+			color: @secondary-color;
+			margin-bottom: @px-20 +10px;
+		}		
+
+	}	
+	
+}
+
+
+
+
+
