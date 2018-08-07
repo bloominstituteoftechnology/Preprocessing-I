@@ -58,28 +58,31 @@ html, body {
 }
 
 body {
-	background-color: ghostwhite;
+	background-color: @white;
 }
+
+// Variables - colors & fonts
+@white: whitesmoke;
+@blue: #3d5f96;
+@dark: black;
 
 // Mixin
 .dimensions() {
-	border: 1px solid black;
+	border: 1px solid @dark;
 	width: 100%;
-	background: lightblue;
 	height: 300px;
 }
 
 .dimensions2() {
-	border: 1px solid black;
+	border: 1px solid @dark;
 	width: 100%;
-	background: lightpink;
 	height: 300px;
 	flex-grow: 1;
 }
 
 
 .main-container {
-	border: 1px solid black;
+	border: 1px solid @dark;
 	width: 100%;
 	max-width: 800px;
 	height: 1000px;
@@ -89,7 +92,7 @@ body {
 	.left-container {
 		width: 30%;
 		height: 1000px;
-		background-color: lightgray;
+		background-color: @blue;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -98,7 +101,7 @@ body {
 			.dimensions;
 		}
 
-		.picture {
+		.intro {
 			.dimensions;
 			
 		}
@@ -111,7 +114,7 @@ body {
 	.right-container {
 		width: 70%;
 		height: 1000px;
-		background-color: whitesmoke;
+		background-color: @white;
 		display: flex;
 		flex-direction: column;
 
@@ -124,19 +127,19 @@ body {
 			height: 100px;
 		}
 
-		.footer {
-			display: flex;
-			flex-direction: row;
-			.skills {
-				width: 49%;
-				height: 300px;
-			}
-	
-			.references {
-				width: 49%;
-				height: 300px;
-			}
-		} // .footer
+			.footer {
+				display: flex;
+				flex-direction: row;
+				.skills {
+					width: 49%;
+					height: 300px;
+				}
+		
+				.references {
+					width: 49%;
+					height: 300px;
+				}
+			} // .footer
 	} // .right-container
 } // main container
 
