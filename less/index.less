@@ -55,6 +55,157 @@ table {
 
 html, body {
 	height: 100%;
-	background: red;
+	font-size: 62.5%
+}
+
+// Variables
+@dark-blue-color: #13334C;
+@light-blue-color: #005792;
+@tan-color: #f6f6e9;
+@orange-color: #fd5f00;
+
+// Portfolio mixins
+
+.portfolio_block() {
+	height: auto;
+	min-height: 660px;
+}
+
+// Begin LESS
+body {
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	// width: 1000px;
+	margin: auto;
+}
+
+.portfolio_block_1 {
+	.portfolio_block();
+	background: @tan-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	padding: 25px 50px;
+
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		margin-bottom: 100px;
+
+		a {
+			color: @light-blue-color;
+			display: inline-block;
+			font-size: 1.8rem;
+			text-decoration: none;
+			margin: 0px 25px;
+		}
+	}
+
+	.statement {
+		padding: 0px 50px;
+		flex-wrap: nowrap;
+
+		p {
+			color: @dark-blue-color;
+			font-size: 6.0rem;
+			text-align: center;
+		}
+
+		strong {
+			color: @orange-color;
+		}
+	}
+
+	.currently {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: 25px;
+		font-size: 2.0rem;
+
+		.currently_block {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 75%;
+		}
+	}
+}
+
+.portfolio_block_2 {
+	.portfolio_block();
+	background: @light-blue-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	padding: 50px 50px;
+
+	.illustrations {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+
+		img {
+			width: 20%;
+			height: 18%;
+			padding: 20px;
+		}
+	}
+
+	.skills {
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+
+		.skills_box {
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			width: 25%;
+			font-size: 2.0rem;
+			padding: 10px 50px 0px 50px;
+		}
+	}
+}
+
+.portfolio_block_3 {
+	.portfolio_block();
+	background: @tan-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	padding: 25px 100px;
+
+	p {
+		color: @dark-blue-color;
+		font-size: 4.8rem;
+		text-align: center;
+	}
+
+	strong {
+		color: @orange-color;
+	}
+}
+
+.portfolio_block_4 {
+	.portfolio_block();
+	display: flex;
+	justify-content: center;
+	background: @light-blue-color;
+	opacity: 0.3;
+	height: 660px;
+
+	img {
+		object-fit: contain;
+	}
+}
+
+.portfolio_block_5 {
+	.portfolio_block();
+	background: @tan-color;
 }
 
