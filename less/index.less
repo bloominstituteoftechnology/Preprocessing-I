@@ -134,8 +134,7 @@ table {
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
   width: 100%;
   max-width: 800px;
@@ -144,14 +143,19 @@ body {
 }
 
 @color1: #333333;
-@color2: #5e5e5e;
+@color2: #8b8b8b;
 @color3: #7395ae;
 @color4: #557a95;
-@color5: #b1a296;
+@color5: #c08758;
+
+.referenceB() {
+  border: 1px solid black;
+}
 
 .navbar {
-  border: 1px solid black;
   background-color: @color3;
+  margin-bottom: 20px;
+  border-radius: 10px;
 
   .nav-items {
     display: flex;
@@ -167,5 +171,60 @@ body {
 }
 
 .intro {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  // background-color: @color2;
+
+  .intro-top {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    .img {
+      height: 300px;
+      width: 25%;
+      background-color: lightblue;
+      border-radius: 25px;
+    }
+
+    .intro-text {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      background-color: @color2;
+      border-radius: 25px;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2.4rem;
+        color: black;
+      }
+
+      p {
+        font-size: 1.6rem;
+        text-align: center;
+        padding-top: 20px;
+      }
+
+      .button {
+        background: @color2;
+        padding: 10px 25px;
+        border-radius: 5px;
+        margin-top: 15px;
+        a {
+          text-decoration: none;
+          color: #333333;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+.skills {
 }
