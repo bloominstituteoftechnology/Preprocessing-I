@@ -49,11 +49,196 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@mainColor: #21c6ce;
+@navColor: #bdc3c7;
+@borderColor: #bdc3c7;
+@anchorFontSize: 2.0em;
+@h1FontSize: 3.5em;
+@h2FontSize: 3.0em;
+@h3FontSize: 2.8em;
+@h4FontSize: 2.6em;
+@paragraphFontSize: 1.8em;
+
+.generalMargin() {
+	margin: 20px 0;
+}
+
+.generalPadding() {
+	padding: 20px 0;
+}
+
+.backgroundProperties() {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
 * {
     box-sizing: border-box;
+	font-family: 'Playfair Display', serif;
+}
+
+html {
+	font-size: 62.5%;
 }
 
 html, body {
     height: 100%;
 }
+
+h1 {
+	font-size: @h1FontSize;
+}
+
+h2 {
+	font-size: @h2FontSize;
+}
+
+h3 {
+	font-size: @h3FontSize;
+}
+
+h4 {
+	font-size: @h4FontSize;
+}
+
+p {
+	font-size: @paragraphFontSize
+}
+
+a {
+	font-size: @anchorFontSize;
+	text-decoration: none;
+}
+
+ul {
+	width: 100%;
+}
+
+li {
+	font-size: @h4FontSize;
+	border: 2px solid @borderColor;
+}
+
+table, th, td {
+	border: 1px solid @borderColor;
+	padding: 20px;
+}
+
+th, td {
+	font-size: @h4FontSize;
+}
+
+header {
+	display: flex;
+	height: 70px;
+	background-color: #bdc3c7;
+
+	img {
+		width: 100%;
+		height: 70px;
+	}
+
+	nav {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	a {
+		color: white;
+	}
+}
+
+.section-design {
+	width: 100%;
+	max-width: 1568px;
+	margin: 0 auto;
+}
+
+#intro {
+	background-image: url("../img/city.jpeg");
+	.backgroundProperties();
+
+	color: white;
+
+	h1, h2{
+		text-align: center;
+		.generalPadding();
+	}
+
+	#profile {
+		height: 350px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#about-me {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.generalMargin();
+		p {
+			width: 90%;
+			max-width: 1300px;
+		}
+	}
+
+	#pixel-art {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.generalPadding();
+	}
+}
+
+#skills-work-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	text-align: center;
+
+	li {
+		text-align: left;
+	}
+
+	h2 {
+		.generalPadding();
+	}
+
+	h3 {
+		.generalMargin();
+		border-top: 2px solid @borderColor;
+	}
+
+	#skills, #work {
+		width: 40%;
+		.generalPadding();
+	}
+
+	@media (max-width:800px){
+		flex-direction: column;
+		justify-content: center;
+
+		#skills, #work {
+			width: 100%;
+			.generalPadding();
+		}
+	}
+}
+
+footer {
+	color: white;
+	background-image: url("../img/air.jpg");
+	.backgroundProperties();
+	text-align: center;
+
+	h2, h3, h4, p {
+		.generalPadding();
+	}
+}
+
 
