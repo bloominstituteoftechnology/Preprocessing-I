@@ -54,36 +54,36 @@ table {
 }
 
 html, body {
-    .myflex();
+    .flex-direction-column();
     margin: 0 auto;
     color: @color;
-    background-color: @background-color;
-    width: 1920px;
+    width: 880px;
     align-items: center;
     text-align: center;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
 // Variables //
-@background-color: white;
+@background: lightgray;
 @font-family: Modern Antiqua, Kirang Haerang;
 @font-size: 62.5%;
 @color: black;
 
-.myflex() {
+// Mixins //
+.flex-direction-column() {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-
+// Container //
 .container {
+    background-color: @background;
     max-width: 880px;
     width: 90%;
     border: 1px solid black;
-    .myflex();
+    .flex-direction-column();
 }
 
 
@@ -107,7 +107,7 @@ nav {
 }
 nav a {
     text-decoration: none;
-    color: @color;
+    color: white;
 
 &:hover {
     color: gray;
@@ -115,13 +115,13 @@ nav a {
 }
 }
 button {
+    background-color: black;
     margin-top: 15px;
 	border: solid black 1px;
     padding: 10px 50px;
 
 &:hover {
-    background-color: dodgerblue;
-    color: white;
+    color: lightblue;
 }
 }
 
@@ -133,12 +133,14 @@ h1 {
 }
   
 .top p {
-        .myflex();
+    .flex-direction-column();
     }
 
     .self {
+        position: relative;
         width: 25%;
         display: inline-block;
+        top: 20px;
       }
 
 // Skills //
@@ -152,13 +154,13 @@ h1 {
 // Contact //
 h1 {
     margin-top: 20px;
-    magin-bottom: 20px;
+    margin-bottom: 20px;
     font-family: @font-family;
 }
 
 .contact p {
     margin-bottom: 20px;
-    .myflex();
+    .flex-direction-column();
 }
 
 footer {
