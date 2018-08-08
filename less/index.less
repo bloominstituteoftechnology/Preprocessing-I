@@ -71,7 +71,6 @@ table {
 	border: 3px solid crimson;
 }
 
-
 .flexDat {     // mixin
 	display: flex;
 	align-items: center;
@@ -80,6 +79,14 @@ table {
 
 .pad_1rem {    // mixin
   padding: 1rem 0;
+}
+
+.marginCenter {  // mixin
+  margin: 0 auto;
+}
+
+.fullWidth {   // mixin
+  width: 100%;
 }
 
 html, body {
@@ -102,72 +109,64 @@ html, body {
 }
 #container {
 	#navigation{
-	    .flexDat();
-        width: 100%;
+      .flexDat();
+      .fullWidth();
       #navbar {
-          margin: 0 auto;
+        .marginCenter();
          a {
-           border: 1px solid firebrick;
            font-size: @2rem;
            color: lightseagreen;
            text-decoration: none;
            padding: 0 @2-2rem;
          }
 
-        }
+      }
 
 	}
 
-
 	#banner {
-        .TB();
-        .flexDat();
-        width: 90%;
+    //.TB();
+      .flexDat();
+      width: 90%;
       #nerd {
-			.DBB();
-			width: 30%;
-         //   flex: 1 2 auto;
-		    }
+	//.DBB();
+	  width: 30%;
+	  }
       #info {
-		  .HPB();
-          .flexDat();
-          width: 70%;
-          flex: 1 1 auto;
-          flex-direction: column;
+	 //   .HPB();
+        .flexDat();
+        width: 70%;
+        flex-direction: column;
 
-          h1 {
-            font-size: @2rem;
-            .pad_1rem();
+        h1 {
+         font-size: @2rem;
+         .pad_1rem();
+
+         }
+         h2 {
+          font-size: 1.3rem;
+          .pad_1rem;
 
           }
-          h2 {
-            font-size: 1.3rem;
-            .pad_1rem;
-
-            }
-            #quote {
-              font-size: @3rem;
-              .prettyText();
-
-
+          #quote {
+            font-size: @3rem;
+            .prettyText();
           }
           input {
             .pad_1rem();
           }
 		}
-
 	}
 
     .main {
       .flexDat();
       margin: 0 2rem;
       padding: 1rem;
-        .about{
-          .DBB();
+      .about{
 
         }
         h2 {
-          .HPB();
+          text-align: center;
           font-size: @3rem;
         }
         p {
@@ -176,16 +175,9 @@ html, body {
         }
     }
 
-
-
-	.top{
-		border: 4px solid blue;
-	}
-
 	.bottom{
-		border: 4px solid maroon;
         aside {
-        .DBB();
+        padding-right: 1rem;
         }
       p{
         border: 1px solid lightgrey;
@@ -194,11 +186,10 @@ html, body {
 
 	.jobs{
 	  font-size: @2rem;
-      border: 4px solid darkblue;
 	}
 
     table {
-      width: 100%;
+      .fullWidth();
       th, td {
         font-size: @1-5rem;
       }
@@ -209,58 +200,51 @@ html, body {
         text-align: left;
         font-weight: bold;
       }
+
+      .firstCol {
+        padding-top: @1-5rem;
+        width: 10%;
+      }
+
       tr:nth-child(even) {
         background-color: silver;
       }
 
-
-
-
-	#copyright{
-		border: 10px solid khaki;
-        text-align: center;
-        font-size: @1rem;
+	#contact{
+      text-align: center;
+      font-size: @1rem;
 	}
 
 	@media (max-width: 500px) {
-		width: 100%;
-		background-color: peachpuff;
+      .fullWidth();
+      background-color: ghostwhite;
 
 
-        #navigation {
-          .DBB();
+      #navigation {
+        .marginCenter();
+        #navbar a {
+        font-size: @1-3rem;
 
-          #navbar a {
-          .DBB();
-          font-size: @1-3rem;
+        }
+      }
 
-          }
+      #banner {
+        .marginCenter();
+        flex-direction: column;
+
+        #nerd {
+          display: none;
         }
 
-        #banner {
-          // margin: 0 auto;
-          flex-direction: column;
-
-          #nerd {
-            display: none;
-          }
-
-          #info {
-            width: 100%;
-          }
-
-
+        #info {
+          width: 100%;
+        }
 
         }
         .bottom {
-          border: 3px solid aliceblue;
           flex-direction: column;
         }
 
-        th {
-          padding-top: @1rem;
-          width: 1%;
-        }
 
     }
 }
