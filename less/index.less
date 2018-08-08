@@ -88,7 +88,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -138,16 +137,48 @@ html,
 body {
   height: 100%;
 }
+
+body {
+  font-size: 62.5%;
+  background-color: @backgroundColor;
+}
+
 /* Variables */
 
+
 @so-border: 1px solid red;
+@backgroundColor: #839788;
+@linkColor: #B7B5B3;
+@linkBackground: rgb(45,45,45);
+@sectBkGndOne: rgb(69, 80, 128);
+@sectBkGndTwo: #C9D7F8;
+@shadowTintOne: rgb(102, 102, 163);
+@shadowTintTwo: #272e29;
+@margin-standard: 15px 0%;
+// #000000
+// #C9D7F8
+// #94A0CE
 
 /* Mixins */
 
+.section-gradient() {
+  background: linear-gradient(0deg, @sectBkGndOne, @sectBkGndTwo);
+  box-shadow: 7px 7px 4px @linkBackground, 3px 3px 20px @shadowTintOne, 4px 4px 25px @shadowTintTwo;
+  padding: 30px;
+}
+
 .flex-rowSpaceAround() {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.header-and-footer() {
+  .flex-rowSpaceAround;
+  width: 100%;
+  background-color: @linkBackground;
+  margin: @margin-standard;
+  padding: 5px 0%;
 }
 
 .flex-columnCenter() {
@@ -157,47 +188,164 @@ body {
   flex-direction: column;
 }
 
+.link-setup() {
+  color: @linkColor;
+  text-decoration: none;
+  padding: 0px 1%;
+  font-size: 1.2rem;
+}
+
+.list-titles() {
+  font-size: 2rem;
+  list-style: none;
+}
+
 /* LESS code */
+
 
 .container {
   .flex-columnCenter;
   width: 90%;
   max-width: 880px;
   margin: auto;
+  font-size: 1rem;
 
   header {
+    .header-and-footer;
+
+    p {
+      .link-setup;
+      font-size: 2rem;
+    }
+  }
+  
+  nav {
+    width: 60%;
+    .flex-rowSpaceAround()
+  }
+  
+  a {
+    .link-setup;
+  }
+  
+  address {
     .flex-rowSpaceAround;
+    width: 100%;
+    margin: @margin-standard;
+
+    a {
+      color: black;
+    }
+  }
+  
+  footer {
+    .header-and-footer;
   }
 
-  .intro {
-    .flex-rowSpaceAround;
+}
 
-    img {
-      width: 50%;
-    }
+
+.intro {
+  .flex-rowSpaceAround;
+  margin: @margin-standard;
+  .section-gradient;
+
+  img {
+    width: 50%;
+    height: auto;
+    padding: 10px 2%;
   }
 
   .titleSection {
     .flex-columnCenter;
   }
 
-  p {
+  .title{
+    font-size: 3.5rem;
+  }
+
+  .subTitle {
+    font-size: 1.8rem;
+  }
+}
+
+.goodHire {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: @margin-standard;
+}
+
+.middleSection {
+  .flex-rowSpaceAround;
+  width: 90%;
+  margin: @margin-standard;
+
+  .quote {
+    .section-gradient;
+    width: 370px;
+    height: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    position: relative;
+    
+    .quotationMark {
+      font-size: 4rem;
+      position: absolute;
+    }
+
+    .markOne {
+      left: 15px;
+      top: 20px;
+    }
+
+    .markTwo {
+      right: 35px;
+      top: 45px;
+      transform: rotate(180deg);
+    }
+  }
+
+  .skillSet {
+    .section-gradient;
+  }
+
+  .listHeading {
+    .list-titles;
+  }
+
+  li {
+    list-style: circle inside;
+    padding: 3px 0%;
+  }
+}
+
+.workHistory {
+  .section-gradient;
+  .flex-columnCenter;
+  align-items: initial;
+  width: 50%;
+  margin: @margin-standard;
+
+  .jobDescr {
+    .flex-rowSpaceAround;
+    justify-content: space-between;
+  }
+
+  .listHeading {
+    .list-titles;
+    text-decoration-line: underline;
     margin: auto;
   }
 
-  .middleSection {
-    .flex-rowSpaceAround;
+  .jobTitle {
+    font-size: 1.4rem;
+    padding-top: 5px;
+    
   }
 
-  .quote {
-    width: 40%;
-  }
-
-  .workHistory {
-    .flex-columnCenter;
-
-    .inner {
-      .flex-columnCenter;
-    }
+  .jobInner {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    text-align: right
   }
 }
