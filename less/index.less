@@ -72,13 +72,13 @@ table {
 }
 
 
-.flexDat {
+.flexDat {     // mixin
 	display: flex;
 	align-items: center;
 	margin: 5rem auto;
 }
 
-.pad_1rem {
+.pad_1rem {    // mixin
   padding: 1rem 0;
 }
 
@@ -86,6 +86,12 @@ html, body {
     font-size: 62.5%;
 	// .HPB();
 }
+// ************  variables
+@1rem: 1rem;
+@1-25rem: 1.25rem;
+@1-5rem: 1.5rem;
+@2rem: 2rem;
+@3rem: 3rem;
 
 
 .prettyText {
@@ -101,7 +107,7 @@ html, body {
 		a {
 			color: lightseagreen;
 			padding: 2rem;
-			font-size: 2rem;
+			font-size: @2rem;
 			text-decoration: none;
 		}
 	}
@@ -123,17 +129,17 @@ html, body {
           flex-direction: column;
 
           h1 {
-            font-size: 3rem;
+            font-size: @3rem;
             .pad_1rem();
 
           }
           h2 {
-            font-size: 2rem;
+            font-size: @2rem;
             .pad_1rem;
 
             }
             #quote {
-              font-size: 3rem;
+              font-size: @3rem;
               .prettyText();
 
 
@@ -155,10 +161,10 @@ html, body {
         }
         h2 {
           .HPB();
-          font-size: 3rem;
+          font-size: @3rem;
         }
         p {
-          font-size: 1.5rem;
+          font-size: @1-5rem;
           padding: 0 1rem;
         }
     }
@@ -180,14 +186,14 @@ html, body {
 	}
 
 	.jobs{
-	  font-size: 2rem;
+	  font-size: @2rem;
       border: 4px solid darkblue;
 	}
 
     table {
       width: 100%;
       th, td {
-        font-size: 1.5rem;
+        font-size: @1-5rem;
       }
 
       }
@@ -206,7 +212,7 @@ html, body {
 	#copyright{
 		border: 10px solid khaki;
         text-align: center;
-        font-size: 1rem;
+        font-size: @1rem;
 	}
 
 	@media (max-width: 500px) {
@@ -216,7 +222,7 @@ html, body {
 
         #navbar a {
 
-          font-size: 1.25rem;
+          font-size: @1-25rem;
         }
 
 }
