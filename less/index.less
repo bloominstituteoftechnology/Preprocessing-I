@@ -54,6 +54,146 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	margin: 0; 
+}
+
+.flex(){
+	display: flex; 
+	flex-wrap: wrap;  
+}
+
+nav{
+	justify-content: flex-end; 
+	width:85%; 
+	.flex;
+
+	a{
+	  padding: 4%;  
+	  text-decoration: none; 
+	  color: black;  
+	  font-size: 1.1rem; 
+
+	  &:hover{
+		  font-size: 1.2rem; 
+		  transition: 0.5s;
+		  font-weight: bold; 
+	  }
+	}
+}
+
+.container{
+	.flex; 
+	justify-content: center;
+	padding-bottom: 25px; 
+
+    header{
+		.flex;  
+		width: 75%; 
+		border: 1px solid rgb(179, 179, 179); 
+		padding: 30px; 
+		flex-direction: column; 
+		background-color: rgb(177, 177, 177); 
+		line-height: 1.4; 
+	 
+	  h1{
+		font-size: 3rem; 
+
+		@media(max-width: 500px){
+			font-size: 2rem; 
+		}
+	  }
+	  h3{
+		font-size: 1.7rem; 
+		padding: 15px 0%; 
+	  }
+	  .button{
+		  border: 1px solid black; 
+		  padding: 8px;  
+		  width: 140px; 
+		  border-radius: 15px; 
+		  text-align: center; 
+		  margin-top: 10px; 
+		  font-size: 1.1rem; 
+	  }
+      img{
+		height: 250px; 
+		width: 35%;
+		padding-bottom: 30px; 
+
+		@media(max-width: 500px){
+			width: 90%; 
+		}
+	  }
+    }
+}
+
+@h2-fontsize: 1.8rem; 
+@border: 1px solid grey; 
+
+.row1{
+	width: 40%; 
+	padding: 25px; 
+	line-height: 1.2;
+
+	h2{
+		font-size:@h2-fontsize; 
+		padding-bottom: 20px; 
+	}
+}
+
+.row2{
+	width: 35%; 
+	padding: 25px;
+
+	h2{
+		font-size:@h2-fontsize; 
+		text-align: center; 
+		padding-bottom: 10px; 
+	}
+	.list{
+		.flex; 
+		flex-direction: column; 
+		text-align: center; 
+		padding: 10px; 
+
+		a{
+			padding: 10px; 
+			border-top: @border; 
+			border-right: @border; 
+			border-left: @border; 
+			text-decoration: none; 
+			color: black; 
+			
+		}
+	}
+}
+
+#space{
+	border-bottom: @border;  
+}
+
+
+.lowerImg{
+	width: 40%; 
+	height: 270px; 
+}
+
+address{
+  width: 35%;
+  .flex; 
+  justify-content: center; 
+  flex-direction: column; 
+  padding-left: 12.5%; 
+  line-height: 1.3; 
+	
+    h2{
+		font-size: 1.8rem; 
+		padding-bottom: 15px; 
+	}
+    p{
+		font-size: 1.1rem;  
+		line-height: 1.4; 
+	}
 }
 
