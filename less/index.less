@@ -62,14 +62,20 @@ html, body {
 
 // Mix-ins
 
-@paragraph-font-size: 1.4rem;
-@header-font-size: 1.6rem;
-@test-border-mixin: 1px solid purple;
+@paragraph-font-size: 1.6rem;
+@header-font-size: 1.8rem;
+@test-border: 1px solid purple;
 
 
 .flex-row-mixin {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.flex-column-mixin {
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 }
 
@@ -93,7 +99,6 @@ header{
 	.flex-row-mixin;
 	width: 100%;
 	height: 200px;
-	margin-bottom:50px;
 
 	.name{
 		.flex-row-mixin;
@@ -140,19 +145,38 @@ header{
 
 }
 
+.center-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.left-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 500px;
+	width: 50%;
+}
+
 .intro{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	margin-bottom: 25px;
 
 	img{
 		height: 200px;
 		margin: 0px 3%;
+		align-self: center;
 	}
 
 	.intro-text{
 		height: 200px;
-		width: 25%;
+		width: 60%;
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	h2{
@@ -168,3 +192,99 @@ header{
 	}
 }
 
+.work-history{
+	width: 100%;
+	height: 300px;
+	margin-left: 4%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	img{
+		height: 100px;
+		width: 25%;
+	}
+
+	.school{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	.work{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	h2{
+		font-size: @header-font-size;
+		font-weight: bold;
+		padding: 10px 5%;
+	}
+
+	p{
+		font-size: @paragraph-font-size;
+		padding: 5px 5%;
+	}
+
+	.work p:nth-of-type(1){
+		margin-bottom: 10px;
+	}
+
+	.work p::nth-of-type(2){
+		line-height: 1.5;
+	}
+
+	.work img{
+		height: 85px;
+		width: 90px;
+		margin-right: 10px;
+		margin-left: 10px;	
+		margin-top: 10px;
+	}
+
+	section{
+		margin-left: 2%;
+	}
+}
+
+
+.right-section{
+	width: 50%;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+
+	h2 {
+		font-size: 2.2rem;
+		font-weight: bold;
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.skills{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.checkmarks{
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	.checkmarks img{
+		height: 40px;
+		width: 40px;
+	}
+
+	.skills-text{
+		width: 70%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly
+	}
+}

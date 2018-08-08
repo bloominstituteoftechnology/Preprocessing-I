@@ -140,6 +140,11 @@ body {
   flex-flow: row wrap;
   justify-content: center;
 }
+.flex-column-mixin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 body {
   background-color: cornsilk;
 }
@@ -154,7 +159,6 @@ header {
   justify-content: center;
   width: 100%;
   height: 200px;
-  margin-bottom: 50px;
 }
 header .name {
   display: flex;
@@ -190,26 +194,123 @@ header .icons img {
 header .icons img:hover {
   opacity: 1;
 }
+.center-container {
+  display: flex;
+  flex-direction: row;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  width: 50%;
+}
 .intro {
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin-bottom: 25px;
 }
 .intro img {
   height: 200px;
   margin: 0px 3%;
+  align-self: center;
 }
 .intro .intro-text {
   height: 200px;
-  width: 25%;
+  width: 60%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .intro h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
   padding: 10px 5%;
 }
 .intro p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding: 5px 5%;
   line-height: 1.5;
+}
+.work-history {
+  width: 100%;
+  height: 300px;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.work-history img {
+  height: 100px;
+  width: 25%;
+}
+.work-history .school {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.work-history .work {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.work-history h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px 5%;
+}
+.work-history p {
+  font-size: 1.6rem;
+  padding: 5px 5%;
+}
+.work-history .work p:nth-of-type(1) {
+  margin-bottom: 10px;
+}
+.work-history .work p::nth-of-type(2) {
+  line-height: 1.5;
+}
+.work-history .work img {
+  height: 85px;
+  width: 90px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.work-history section {
+  margin-left: 2%;
+}
+.right-section {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.right-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+.right-section .skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.right-section .checkmarks {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.right-section .checkmarks img {
+  height: 40px;
+  width: 40px;
+}
+.right-section .skills-text {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
