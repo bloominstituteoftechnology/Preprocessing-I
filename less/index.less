@@ -54,6 +54,140 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+/* Variables */
+@header-font-color: white;
+@header-background: radial-gradient( rgba(115,116,120,1) 10%, rgba(17,17,17,1) 100%);
+@header-color: #393737;
+@accent-color: rebeccapurple;
+
+/* Mixins */
+.flex-column() {
+	display: flex;
+	flex-direction: column;
 }
 
+.h2() {
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	text-align: center;
+	border-bottom: 3px solid @accent-color;
+	width: 80%;
+	margin: 0px auto;
+	padding: 10px;
+}
+
+/* Start here */
+div.main{
+	display: flex;
+	max-width: 1100px;
+}
+
+header {
+	background: @header-background;
+	width: 25%;
+	padding: 25px 1%;
+	.flex-column;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.6rem;
+		color: @accent-color;
+
+		a {
+			text-decoration: none;
+			color: @header-font-color;
+		}
+	}
+
+	section {
+		h1 {
+			text-align: center;
+			font-size: 3.2rem;
+			margin: 35px 0px;
+			color: @header-font-color;
+			text-transform: uppercase;
+		}
+
+		.title {
+			border: 3px solid @accent-color;
+			font-size: 1.8rem;
+			color: @header-font-color;
+			text-align: center;
+			padding: 10px;
+			text-transform: uppercase;
+			margin: 35px 0px;
+		}
+
+		h2 {
+			color: @header-font-color;
+			.h2;
+		}
+		
+		p {
+			padding: 10px 0px 30px;
+			color: @header-font-color;
+			font-size: 1.6rem;
+		}
+
+		address {
+			padding: 10px 0px 30px;
+			color: @header-font-color;
+			font-size: 1.6rem;
+		}
+	}
+}
+
+main {
+	width: 80%;
+	color: @header-color;
+	padding: 25px 5%;
+	.flex-column;
+
+	h2 {
+		.h2;
+		margin: 0px auto 25px;
+	}
+
+	h3 {
+		font-size: 2.7em;
+		font-weight: bold;
+		margin: 5px 0px;
+	}
+
+	h4 {
+		font-size: 2.2em;
+		color: @accent-color;
+		font-style: italic;
+	}
+
+	p {
+		padding: 10px 0px 30px;
+		font-size: 1.6rem;
+	}
+
+	.boxes {
+		display: flex;
+		justify-content: space-evenly;
+		font-size: 2.2em;
+
+		.box {
+			border: 1px solid black;
+			height: 100px;
+			width: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: @header-font-color;
+			background-color: @accent-color;
+		}
+	}
+
+	footer {
+		text-align: center;
+		padding-top: 50px;
+	}
+}
