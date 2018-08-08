@@ -52,8 +52,155 @@ table {
 * {
     box-sizing: border-box;
 }
+// div	{
+// 	border: 2px solid aqua;
+// }
 
-html, body {
-    height: 100%;
+body, html {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: 62.5%;  
 }
+@y-space: 2.5%;
+@x-space: 15px;
+@color1: whitesmoke;
+@color2: lightgrey;
+@color3: #3F3F3F;
+@border: 1px solid @color2;
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.curved {
+	border-radius: 10px;
+}
+.margin-height {
+	margin-top: @x-space;
+	margin-bottom: @x-space;
+}
+.flex-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.navbar {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto; 
+	.flex-row();
+	background-color: @color3;
+	padding: @x-space @y-space;
+	a {
+		color: @color1;
+		text-decoration: none;
+		font-size: 1.3rem;
+
+	}
+}
+
+.container {
+	width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    color: @color3;
+    .curved();
+	.intro {
+		.flex-column();
+		background-color: @color1;
+		border-radius: 0px 0px 10px 10px;
+		h1 {
+			.margin-height();
+			font-size: 4.2rem;
+			padding-left: @y-space;
+		}
+		.image {
+			width: 35%;
+			margin-top: 40px;
+			margin-left: @y-space;
+			margin-bottom: 30px;
+			.curved();
+		}
+		p {
+			margin-left: @y-space;
+			font-size: 1.6rem;
+			margin-bottom: 40px;
+		}
+	}
+	.mid-content {
+		.mid-upper{
+			.flex-row();
+
+			.mid-title {
+					font-size: 2rem;
+					padding-top: @x-space;
+					padding-bottom: @x-space;
+			}
+			.skill-set {
+				width: 40%;
+				justify-content: flex-end;
+				ul li {
+					border-top: @border;
+					border-left: @border;
+					border-right: @border;
+					padding: @x-space @y-space;
+					font-size: 1.5rem;
+				}
+				ul li:first-child {
+					border-radius: 10px 10px 0px 0px;
+				}
+				ul li:last-child {
+					border-bottom: @border;
+					border-radius: 0px 0px 10px 10px;
+				}
+
+			}
+			.about-me {
+				width: 50%;
+				p {
+					font-size: 1.5rem;
+				}
+			}
+				
+		}
+		.work {
+			font-size: 1.8rem;
+			margin-top: 30px;
+			margin-bottom: @x-space;
+		}
+		.work-history {
+			.flex-row();
+			width: 100%;
+			.years, .company, .job-title {
+				width: 33.33%;
+				ul {
+					li {
+						border-top: @border;
+						font-size: 1.2rem;
+						padding: @x-space @y-space
+						
+					}
+					li:nth-child(2), li:last-child {
+						background-color: @color1;
+					}
+					li:last-child {
+						border-bottom: @border;
+					}
+				}
+			}
+		}
+	}
+	.social {
+		display: flex;
+		justify-content: center;
+		background-color: @color3;
+		a {
+			margin: @x-space @y-space;
+		}
+		i {
+			color: @color1;
+			font-size: 3.6rem;
+		}
+	}
+}
+
 
