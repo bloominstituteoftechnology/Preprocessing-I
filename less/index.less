@@ -243,6 +243,12 @@ body {
       color: #333;
       text-decoration: none;
     }
+    nav li a:hover {
+      padding: 8px 0;
+      margin: 10px 0;
+      text-decoration: underline;
+      text-decoration-color: @tab-color;
+    }
   }
   .header-container {
     .background;
@@ -296,10 +302,16 @@ body {
         width: 24.9%;
         img {
           width: 250px;
+        @media @tablets {
+          img {
+            width: 100px;
+          }
+        }
+
         }
       }
-      @media @smartphones,
-      @tablets {
+      @media @smartphones
+      {
         .img-container {
           display: none;
         }
