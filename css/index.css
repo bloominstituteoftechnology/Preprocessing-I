@@ -159,6 +159,14 @@ body {
   margin: 15px 0%;
   padding: 5px 0%;
 }
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .container header p {
   color: #b7b5b3;
   text-decoration: none;
@@ -172,6 +180,11 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .container nav {
+    width: 100%;
+  }
+}
 .container a {
   color: #b7b5b3;
   text-decoration: none;
@@ -184,6 +197,15 @@ body {
   align-items: center;
   width: 100%;
   margin: 15px 0%;
+}
+@media (max-width: 500px) {
+  .container address {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 25px;
+  }
 }
 .container address a {
   color: black;
@@ -211,11 +233,22 @@ body {
   height: auto;
   padding: 10px 2%;
 }
+@media (max-width: 500px) {
+  .intro img {
+    display: none;
+  }
+}
 .intro .titleSection {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 500) {
+  .intro .titleSection {
+    width: 90%;
+  }
 }
 .intro .title {
   font-size: 3.5rem;
@@ -232,36 +265,54 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: 15px 0%;
 }
-.middleSection .quote {
+@media (max-width: 500px) {
+  .middleSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.middleSection .fullQuotation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: linear-gradient(0deg, #455080, #c9d7f8);
   box-shadow: 7px 7px 4px #2d2d2d, 3px 3px 20px #6666a3, 4px 4px 25px #272e29;
   padding: 30px;
-  width: 370px;
+  width: 55%;
   height: 100%;
   font-size: 1.6rem;
   text-align: center;
-  position: relative;
 }
-.middleSection .quote .quotationMark {
-  font-size: 4rem;
-  position: absolute;
+@media (max-width: 500px) {
+  .middleSection .fullQuotation {
+    width: 95%;
+  }
 }
-.middleSection .quote .markOne {
-  left: 15px;
-  top: 20px;
+.middleSection .marks {
+  width: 20%;
+  transform: rotatex(180deg);
+  align-self: flex-start;
 }
-.middleSection .quote .markTwo {
-  right: 35px;
-  top: 45px;
-  transform: rotate(180deg);
+.middleSection .quote {
+  width: 75%;
 }
 .middleSection .skillSet {
   background: linear-gradient(0deg, #455080, #c9d7f8);
   box-shadow: 7px 7px 4px #2d2d2d, 3px 3px 20px #6666a3, 4px 4px 25px #272e29;
   padding: 30px;
+  width: 40%;
+}
+@media (max-width: 500px) {
+  .middleSection .skillSet {
+    width: 95%;
+    padding-left: 13%;
+    margin-bottom: 15px;
+  }
 }
 .middleSection .listHeading {
   font-size: 2rem;
@@ -280,8 +331,18 @@ body {
   align-items: center;
   flex-direction: column;
   align-items: initial;
-  width: 50%;
+  width: 70%;
   margin: 15px 0%;
+}
+@media (max-width: 700px) {
+  .workHistory {
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .workHistory {
+    width: 95%;
+  }
 }
 .workHistory .jobDescr {
   display: flex;
@@ -293,14 +354,16 @@ body {
   font-size: 2rem;
   list-style: none;
   text-decoration-line: underline;
-  margin: auto;
+  margin: 7px auto;
 }
 .workHistory .jobTitle {
   font-size: 1.4rem;
   padding-top: 5px;
+  width: 40%;
 }
-.workHistory .jobInner {
+.workHistory .jobDetail {
   font-size: 1.1rem;
   padding-bottom: 10px;
   text-align: right;
+  width: 59%;
 }

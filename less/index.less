@@ -212,16 +212,23 @@ body {
 
   header {
     .header-and-footer;
-
+    @media (max-width: 500px) {
+      .flex-columnCenter;
+    }
+    
     p {
       .link-setup;
       font-size: 2rem;
     }
+
   }
   
   nav {
     width: 60%;
-    .flex-rowSpaceAround()
+    .flex-rowSpaceAround;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
   
   a {
@@ -232,6 +239,10 @@ body {
     .flex-rowSpaceAround;
     width: 100%;
     margin: @margin-standard;
+    @media (max-width:500px) {
+      .flex-columnCenter;
+      line-height: 25px;
+    }
 
     a {
       color: black;
@@ -254,10 +265,17 @@ body {
     width: 50%;
     height: auto;
     padding: 10px 2%;
+    @media (max-width: 500px) {
+     display: none; 
+    }
   }
 
   .titleSection {
     .flex-columnCenter;
+    text-align: center;
+    @media (max-width: 500) {
+      width: 90%;
+    }
   }
 
   .title{
@@ -277,36 +295,42 @@ body {
 
 .middleSection {
   .flex-rowSpaceAround;
-  width: 90%;
+  width: 100%;
   margin: @margin-standard;
+  @media (max-width: 500px) {
+    .flex-columnCenter;
+  }
 
-  .quote {
+  .fullQuotation {
+    .flex-rowSpaceAround;
     .section-gradient;
-    width: 370px;
+    width: 55%;
     height: 100%;
     font-size: 1.6rem;
     text-align: center;
-    position: relative;
-    
-    .quotationMark {
-      font-size: 4rem;
-      position: absolute;
+    @media (max-width: 500px) {
+      width: 95%;
     }
+  }
 
-    .markOne {
-      left: 15px;
-      top: 20px;
-    }
+  .marks {
+    width: 20%;
+    transform: rotatex(180deg);
+    align-self: flex-start;
+  }
 
-    .markTwo {
-      right: 35px;
-      top: 45px;
-      transform: rotate(180deg);
-    }
+  .quote {
+    width: 75%;
   }
 
   .skillSet {
     .section-gradient;
+    width: 40%;
+    @media (max-width: 500px) {
+      width: 95%;
+      padding-left: 13%;
+      margin-bottom: 15px;
+    }
   }
 
   .listHeading {
@@ -323,8 +347,14 @@ body {
   .section-gradient;
   .flex-columnCenter;
   align-items: initial;
-  width: 50%;
+  width: 70%;
   margin: @margin-standard;
+  @media (max-width: 700px) {
+    width: 80%;
+  }
+  @media (max-width: 500px) {
+    width: 95%;
+  }
 
   .jobDescr {
     .flex-rowSpaceAround;
@@ -334,18 +364,20 @@ body {
   .listHeading {
     .list-titles;
     text-decoration-line: underline;
-    margin: auto;
+    margin: 7px auto;
   }
 
   .jobTitle {
     font-size: 1.4rem;
     padding-top: 5px;
+    width: 40%;
     
   }
 
-  .jobInner {
+  .jobDetail {
     font-size: 1.1rem;
     padding-bottom: 10px;
-    text-align: right
+    text-align: right;
+    width: 59%
   }
 }
