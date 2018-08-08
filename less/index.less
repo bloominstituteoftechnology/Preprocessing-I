@@ -70,6 +70,18 @@ html, body {
 @fontSize3: 1.6rem;
 @color1: #f0b549;
 
+.bordered (@width) {
+    border: @width solid green;
+
+    &:hover {
+        border-color: darkgreen;
+    }
+}
+
+.blackletters () {
+	color: black;
+}
+
 
 .container {
 	max-width: 880px;
@@ -90,7 +102,7 @@ html, body {
 			color: @fontColor2;
 			padding: 0 15px 0 0;
 			text-decoration: none;
-			border: solid 1px green;
+			.bordered(1px);
 			border-radius: 15%;
 			margin: 0 15px 0 0;
 		}
@@ -156,7 +168,7 @@ html, body {
 		}
 		.lorem {
 			font: @fontSize3 @fontType2;
-			color: black;
+			.blackletters();
 		}
 		.contact {
 			display: flex;
