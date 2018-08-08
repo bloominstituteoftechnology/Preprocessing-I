@@ -55,29 +55,106 @@ table {
 
 html, body {
 	height: 100%;
-	background-color:#fff;
+	background-color:@light;
 	font-size:62.5%;
 }
 /* css Styles */
-@greenlight{
-	background-color:#4DA4A4;
+.font{
+	font-family:'Montserrat', sans-serif;
 }
 
-@navyblue{
-	background-color:#1D3350;
+.h1{
+	font-size:5.2rem;
+	color:@primary;
+	.font();
 }
 
-@highgreen{
-	background-color:#D0E075;
+.h3{
+	font-size:2rem;
+	color:@secondary;
+	.font();
 }
+
+.width{
+	width:100%;
+	max-width: 1080px;
+}
+
+@primary :rgb(208, 224, 117);
+@secondary:rgb(77, 164, 164);
+@accent: rgb(29, 51, 80);
+@light:#fff;
 
 
 .container{
 	display:flex;
 	flex-direction: column;
-	width:100%;
-	max-width: 1080px;
+	.width();
 	border:1px solid grey;
 	margin:0 auto;
-	padding:20px 2.5%;
+	padding:0px 2.5%;
+}
+
+.header{
+	display:flex;
+	flex-direction: row;
+	.width();
+	height:320px;
+	border-top:8px solid @primary;
+	border-bottom:8px solid @primary;
+	.photo{
+		display:flex;
+		flex-direction:column;
+		align-items: center;
+		width:40%;
+		height:auto;
+		padding:50px 6.7%;
+		background-color:@secondary;
+		img{
+		  width: 100%;
+		  max-width:200px;
+		  height: 200px;
+		  border-radius: 50%;
+		  border:4px solid @primary;
+		}
+	}
+	.header-info{
+		display:flex;
+		flex-direction:column;
+		width:60%;
+		height:auto;
+		padding:60px 4.7%;
+		background-color:@accent;
+		nav{
+			width:auto;
+			position: relative;
+			top: -30px;
+			justify-content: space-between;
+			display: flex;
+			a{
+				font-family:'Montserrat', sans-serif;
+				font-size: 1.3rem;
+				text-transform:uppercase;
+				color:@light;
+				text-decoration: none;
+				letter-spacing: 2px;
+			}
+		}
+		h1{
+			font-weight:bold;
+			text-transform:uppercase;
+			margin-bottom:20px;
+			.h1();
+		}
+		p{
+			font-size:2.6rem;
+			color:#fff;
+			letter-spacing:2px;
+			text-transform:capitalize;
+			font-weight:lighter;
+			font-style: italic;
+			font-family: 'Libre Baskerville', serif;
+		}
+	}
+	
 }
