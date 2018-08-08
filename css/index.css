@@ -135,14 +135,6 @@ html {
   height: 100%;
   font-size: 62.5%;
 }
-.main-container {
-  width: 90%;
-}
-@media only screen (max-device-width: 800px) {
-  .main-container {
-    background-color: red;
-  }
-}
 header {
   display: flex;
   justify-content: flex-end;
@@ -155,9 +147,19 @@ header nav {
   width: 100%;
   align-items: center;
 }
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+  }
+}
 header img {
   display: inline-block;
   height: 50px;
+}
+@media (max-width: 500px) {
+  header img {
+    height: 30px;
+  }
 }
 header a {
   display: inline-block;
@@ -166,6 +168,12 @@ header a {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
+}
+@media (max-width: 500px) {
+  header a {
+    padding-top: 20px;
+    font-size: 2rem;
+  }
 }
 .main-container {
   width: 100%;
@@ -177,9 +185,27 @@ header a {
   font-family: 'Poppins', sans-serif;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+}
 .header img {
   width: 30%;
   height: 30%;
+}
+@media (max-width: 500px) {
+  .header img {
+    height: 50%;
+    width: 50%;
+    align-items: center;
+    padding-top: 20px;
+  }
 }
 .header h1 {
   font-size: 7.5rem;
@@ -187,11 +213,22 @@ header a {
   font-family: 'Homemade Apple', cursive;
   color: #FF8484;
 }
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 5.5rem;
+    margin-top: 40px;
+  }
+}
 .header h2 {
   font-size: 2.5rem;
   padding: 10px;
   text-transform: uppercase;
   color: #231651;
+}
+@media (max-width: 500px) {
+  .header h2 {
+    font-size: 2.5rem;
+  }
 }
 .header p {
   font-size: 2rem;
@@ -212,6 +249,13 @@ header a {
   margin-top: 25px;
   color: #FF8484;
 }
+@media (max-width: 500px) {
+  .top .quotation-mark {
+    font-size: 15rem;
+    margin-bottom: -180px;
+    text-align: right;
+  }
+}
 .top .quotation-mark2 {
   font-weight: bold;
   font-size: 30rem;
@@ -222,12 +266,29 @@ header a {
   transform: rotate(180deg);
   color: #FF8484;
 }
+@media (max-width: 500px) {
+  .top .quotation-mark2 {
+    font-size: 15rem;
+    margin-bottom: -180px;
+    text-align: right;
+  }
+}
 .top .quotation {
   font-size: 5rem;
   font-family: 'Montserrat', sans-serif;
-  margin-top: -65px;
-  padding-top: -120px;
   color: #4BC1C1;
+}
+@media (max-width: 500px) {
+  .top .quotation {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .top blockquote {
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
 }
 .about-me {
   display: flex;
@@ -239,6 +300,12 @@ header a {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 500px) {
+  .about-me {
+    font-size: 1rem;
+    width: 80%;
+  }
+}
 .about-me p {
   font-size: 1.8rem;
   width: 60%;
@@ -246,13 +313,25 @@ header a {
   color: white;
   line-height: 22px;
 }
+@media (max-width: 500px) {
+  .about-me p {
+    font-size: 1rem;
+    line-height: 12px;
+  }
+}
 .about-me button {
   background: #D6FFF6;
   vertical-align: top;
-  padding: 0px 44px;
+  padding: 0 44px;
   font-size: 1.7rem;
   cursor: pointer;
   margin-left: 20px;
+}
+@media (max-width: 500px) {
+  .about-me button {
+    font-size: 1rem;
+    padding: 0 4px;
+  }
 }
 .about-me button:hover {
   background: #4BC1C1;
@@ -262,9 +341,7 @@ header a {
   display: flex;
   justify-content: space-around;
   width: 80%;
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
   flex-wrap: wrap;
   margin-top: 40px;
 }
@@ -302,9 +379,7 @@ header a {
   margin-top: 40px;
 }
 .experience td {
-  padding: 8px;
-  padding-top: 12px;
-  padding-bottom: : 12px;
+  padding: 12px 8px :;
   text-align: left;
   border-bottom: 1px solid #231651;
   color: #231651;
@@ -312,8 +387,7 @@ header a {
   font-size: 1.5rem;
 }
 .experience th {
-  padding: 8px;
-  padding-top: 12px;
+  padding: 12px 8px 8px;
   text-align: left;
   border-bottom: 1px solid #231651;
   color: #4BC1C1;
@@ -322,14 +396,4 @@ header a {
 }
 .experience tr:hover {
   background-color: #D6FFF6;
-}
-footer {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Homemade Apple', cursive;
-  font-size: 2.7rem;
-  padding: 30px;
-  text-align: center;
-  color: #FF8484;
 }
