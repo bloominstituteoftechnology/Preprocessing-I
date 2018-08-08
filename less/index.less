@@ -135,23 +135,55 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
 	box-sizing: border-box;
+	border: 1px solid purple;
 }
 // MY COLORS //
-@my_color_1: aqua;
+@main-color: aqua;
+
+html, body {
+	font-size: 62.5%;
+	height: 1000px;
+	// background-color: red;
+}
 
 .container {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
-	max-width: 880px;
-	margin: 0 auto;
-	background-color: @my_color_1;
+	max-width: 700px;
+	margin: 10px auto;
+	padding: 15px;
+	border: 3px solid blue;
+	justify-content: flex-end;
 
-	body,
-	html {
-		height: 100%;
+	.top-section {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		.header {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			border: 1px solid red;
+		}
 	}
 
-	.header {
+	.nav {
+		width: 20%;
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
+	}
+
+	h1 {
+		font-size: 2.4rem;
+		margin-bottom: 10px;
+		border: 2px solid green;
+	}
+	h2 {
+		font-size: 1.6rem;
+		margin-bottom: 10px;
+		border: 2px solid orange;
 	}
 }
