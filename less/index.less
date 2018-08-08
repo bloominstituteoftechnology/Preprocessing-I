@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -58,6 +57,73 @@ html, body {
 }
 
 /* My Code */
+
+/* variables */
+/* colors */
+@text-color-header: whitesmoke;
+@text-color-header-hover: lightgray;
+
+@background-color-header: black;
+
+/* font-sizes */
+@font-size-h1: 2.4rem;
+@font-size-h2: 2rem;
+@font-size-normal: 1.6rem;
+
+/* margins & paddings */
+@margin-normal: 15px;
+@padding-normal: 15px;
+
+
 html {
-	background: red;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: @font-size-normal;
+}
+
+h1 {
+	font-size: @font-size-h1;
+}
+
+h2 {
+	font-size: @font-size-h2;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	padding: @padding-normal 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: @background-color-header;
+	color: @text-color-header;
+
+	h1 {
+		a {
+			color: @text-color-header;
+		}
+
+		a:hover {
+			color: @text-color-header-hover;
+		}
+	}
+
+	nav {
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			color: @text-color-header;
+		}
+
+		a:hover {
+			color: @text-color-header-hover;
+		}
+	}
 }
