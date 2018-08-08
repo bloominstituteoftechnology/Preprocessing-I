@@ -53,11 +53,156 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body {
+	font-size: 62.5%;
+	max-width: 880px;
+	margin: 0 auto;
 }
 
-html {
-	background: red;
+html, body {
+	height: 100%;
+}
+
+@body-font: 'Open Sans', sans-serif;
+
+@display-font: 'Syncopate', sans-serif;
+
+p {
+	font-family: @body-font;
+	font-size: 1.2rem;
+}
+
+h2 {
+	font-family: @display-font;
+	font-size: 2.4rem;
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: white;
+	position: fixed;
+	width: 100%;
+	max-width: 880px;
+	top: 0px;
+	height: 150px;
+
+	h1 {
+		font-family: @display-font;
+		font-size: 3.2rem;
+		transform: rotate(-10deg);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		width: 50%;
+	}
+
+	.nav-item {
+		font-family: @body-font;
+		font-size: 1.8rem;
+
+	}
+}
+
+.about {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-bottom: 30px;
+	margin-top: 150px;
+
+	img {
+		width: 40%;
+		height: 40%;
+	}
+
+	.about__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+	}
+
+}
+
+.skills {
+	padding: 10px;
+	margin-bottom: 30px;
+
+	ul {
+	display: flex;
+	justify-content: space-around;
+	list-style-type: disc;
+	font-family: @body-font;
+	font-size: 1.6rem;
+	}
+}
+
+.work {
+	padding: 10px;
+	margin-bottom: 30px;
+	
+	.work__item {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: 20px 10px;
+
+		.job-title {
+			font-family: @display-font;
+			font-size: 1.6rem;
+			width: 40%;
+		}
+
+		.work-years {
+			font-family: @display-font;
+			font-size: 1.2rem;
+			font-style: italic;
+			width: 40%;
+			text-align: right;
+		}
+	}
+
+	.work__item:nth-child(even) {
+		background: lightgrey;
+		border-radius: 10px;
+	}
+}
+
+.contact {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		font-family: @display-font;
+		font-size: 2.4rem;
+		transform: rotate(1deg);
+		width: 100%;
+		text-align: center;
+		padding-top: 30px;
+	}
+
+	p {
+		text-align: center;
+		width: 100%;
+	}
+}
+
+footer {
+	margin-top: 20px;
+	font-family: @display-font;
+	font-size: 1.2rem;
+	color: white;
+	background: black;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
 }
 
