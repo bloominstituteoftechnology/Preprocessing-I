@@ -1,4 +1,4 @@
-// Is this working?
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -53,7 +53,124 @@ table {
     box-sizing: border-box;
 }
 
+@backgroundcolor: lightgrey;
+@bordercolor: aqua;
+
+.containerborder() {
+	border-top: dotted 1px gold;
+	border-bottom: solid 2px gold;
+}
+
+.li_a_formatting() {
+	padding: 2px;
+	border: 1px solid black;
+}
+
 html, body {
     height: 100%;
 }
 
+.nav {
+	display: flex;
+	justify-content: space-around;
+
+	a {
+		text-decoration: none;
+		padding: 5px;
+		text-align: center;
+		margin: 20px;
+}
+}
+
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+
+h1 {
+	font-size: 2.4em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+}
+
+
+#headshot { 
+	width: 300px;
+	height: 300px;
+	margin: 20px;
+ }
+
+.top_section {
+	background-color: @backgroundcolor;
+	border: 5px solid @bordercolor;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+
+		h1 {
+			display: flex;
+			justify-content: flex-end;		
+}
+		p {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+}
+
+
+
+.main_content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.background {
+
+	width: 49%;
+	padding: 5px;
+	.containerborder
+	
+}
+
+.list {
+	width: 49%;
+	padding: 20px;
+	.containerborder;
+
+	li {
+		.li_a_formatting;
+	}
+}
+
+
+
+
+.WorkHistory {
+	margin-top: 20px;
+	
+	li {
+		.li_a_formatting;
+	}
+}
+
+footer p {
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+@media (max-width:500px) {
+
+#headshot {
+	display: none;
+}
+
+}
