@@ -84,7 +84,7 @@ body, html {
 }
 
 .navbar {
-	width: 100%;
+	width: 98.75%;
 	max-width: 800px;
 	margin: 0 auto; 
 	.flex-row();
@@ -101,7 +101,7 @@ body, html {
 .container {
 	width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
     color: @color3;
     .curved();
 	.intro {
@@ -129,7 +129,10 @@ body, html {
 	.mid-content {
 		.mid-upper{
 			.flex-row();
-
+			@media (max-width: 500px) {
+				.flex-column();
+				align-items: center;
+			}
 			.mid-title {
 					font-size: 2rem;
 					padding-top: @x-space;
@@ -170,13 +173,17 @@ body, html {
 		.work-history {
 			.flex-row();
 			width: 100%;
+			
 			.years, .company, .job-title {
 				width: 33.33%;
 				ul {
 					li {
 						border-top: @border;
 						font-size: 1.2rem;
-						padding: @x-space @y-space
+						padding: @x-space @y-space;
+						@media (max-width: 500px) {
+							font-size: 1rem;
+						}
 						
 					}
 					li:nth-child(2), li:last-child {
@@ -187,6 +194,7 @@ body, html {
 					}
 				}
 			}
+
 		}
 	}
 	.social {
