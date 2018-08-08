@@ -159,7 +159,7 @@ body {
 @font-size: 1.6rem;
 .site-container {
 	width: 100%;
-	max-width: 950px;
+	max-width: 850px;
 	height: 100%;
 }
 
@@ -167,14 +167,18 @@ body {
 // 	border: 1px solid #000 !important;
 // }
 .name-styling {
+	
 	font-size: 2.5rem;
+	width: 100% ;
+	
 	.name-styling__name {
 		font-weight: bold;
 		font-style: italic;
+		font-family: 'Righteous';
 	}
 	.name-styling__title {
 		.name-styling__name;
-		font-family: 'Caveat';
+		
 	}
 }
 
@@ -182,7 +186,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin-bottom: 10px ;
+	margin-bottom: 10px;
 	.header-flex__nav {
 		width: 100%;
 		max-width: 950px;
@@ -190,39 +194,41 @@ body {
 		justify-content: flex-end;
 		align-content: space-around;
 		height: 60px;
-		background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url(/home/le94/Desktop/LSP/Preprocessing-I/img/pattern.png);
+		background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url('../img/code-background.jpg');
 		a {
 			text-decoration: none;
-			
 			button {
 				background: transparent;
 				font-size: 2.2rem;
-				font-family: Caveat;
-				font-weight: bold;
+				font-family: Righteous;
 				border: none;
 				border: 1px solid black;
 				margin-left: 5px;
-				color: white ;
+				color: rgb(118, 109, 109);
+				text-shadow: 2px 2px 2px rgba(247, 247, 247, 0.796);
 			}
 		}
 		a:link {
-			color: white;
+			color: rgb(186, 167, 167);
 		}
 		a:visited {
-			color: white;
+			color: rgb(206, 190, 190);
 		}
 	}
 }
 
 .personal-information {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	align-content: space-between;
 	flex-direction: column;
-	background: rgb(74, 72, 111);
-	background: linear-gradient(137deg, rgba(74, 72, 111, 0.405) 0%, rgba(86, 86, 96, 0.693) 31%, rgba(170, 178, 180, 1) 100%, rgb(182, 182, 189));
-	margin-bottom: 20px ;
+	margin-bottom: 20px;
+
+	.name-styling__bio {
+	
+		font-size: @font-size ;
+	}
 }
 
 hr {
@@ -232,32 +238,38 @@ hr {
 
 .name-styling {
 	.personal-information;
-	background: none ;
-
+	background: none;
 	p {
-		margin-bottom: 5px ;
+		margin-bottom: 5px;
+		border: 1px solid black ;
+		padding: 5px 5px ;
 	}
 }
 
+.gradient-overlay {
+	background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url('../img/code-background.jpg');
+}
+
 .personal-img-container {
+	width: 100%;
+	max-width: 950px;
 	.personal-information;
 	.self-photo {
 		width: 100%;
 		max-width: 300px;
-		border-radius: 60% 60% 60% 60% ;
-		opacity: 0.7;
+		opacity: 0.6;
 	}
 	width: 100%;
 	height: 500px;
 	max-width: 750px;
 	margin: 10px 0;
-	background: transparent ;
-
-	display: flex ;
-	justify-content: space-evenly ;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .personal-content {
+	border-top: 2px solid black ;
+	border-bottom: 2px solid black ;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -265,11 +277,17 @@ hr {
 	width: 100%;
 	max-width: 950px;
 	align-content: center;
-	background: transparent ;
+	padding-top: 5px ;
+	padding-bottom: 5px ;
 	.personal-content__text {
 		font-size: @font-size ;
 		width: 100%;
 		max-width: 375px;
+
+		h2 {
+			font-size: 2.7rem ;	
+			font-family: 'Caveat';
+		}
 	}
 	.personal-content__skills {
 		.personal-content__text;
@@ -293,12 +311,15 @@ hr {
 	align-content: center;
 	width: 100%;
 	max-width: 950px;
-	margin-top: 15px ;
+	margin-top: 15px;
+	border-top: 2px solid slategray;
 	.work-history__table {
+		margin-top: 10px;
 		text-align: center;
 		th,
 		td {
 			padding: 5px 5px;
+			background-color: aliceblue;
 		}
 	}
 	.work-history__logo {

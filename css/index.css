@@ -143,26 +143,28 @@ body {
 }
 .site-container {
   width: 100%;
-  max-width: 950px;
+  max-width: 850px;
   height: 100%;
 }
 .name-styling {
   font-size: 2.5rem;
+  width: 100% ;
 }
 .name-styling .name-styling__name {
   font-weight: bold;
   font-style: italic;
+  font-family: 'Righteous';
 }
 .name-styling .name-styling__title {
   font-weight: bold;
   font-style: italic;
-  font-family: 'Caveat';
+  font-family: 'Righteous';
 }
 .header-flex {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 10px ;
+  margin-bottom: 10px;
 }
 .header-flex .header-flex__nav {
   width: 100%;
@@ -171,7 +173,7 @@ body {
   justify-content: flex-end;
   align-content: space-around;
   height: 60px;
-  background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url(/home/le94/Desktop/LSP/Preprocessing-I/img/pattern.png);
+  background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url('../img/code-background.jpg');
 }
 .header-flex .header-flex__nav a {
   text-decoration: none;
@@ -179,28 +181,29 @@ body {
 .header-flex .header-flex__nav a button {
   background: transparent;
   font-size: 2.2rem;
-  font-family: Caveat;
-  font-weight: bold;
+  font-family: Righteous;
   border: none;
   border: 1px solid black;
   margin-left: 5px;
-  color: white ;
+  color: #766d6d;
+  text-shadow: 2px 2px 2px rgba(247, 247, 247, 0.796);
 }
 .header-flex .header-flex__nav a:link {
-  color: white;
+  color: #baa7a7;
 }
 .header-flex .header-flex__nav a:visited {
-  color: white;
+  color: #cebebe;
 }
 .personal-information {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: space-between;
   flex-direction: column;
-  background: #4a486f;
-  background: linear-gradient(137deg, rgba(74, 72, 111, 0.405) 0%, rgba(86, 86, 96, 0.693) 31%, #aab2b4 100%, #b6b6bd);
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
+}
+.personal-information .name-styling__bio {
+  font-size: 1.6rem;
 }
 hr {
   border: 1px solid black;
@@ -208,42 +211,49 @@ hr {
 }
 .name-styling {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: space-between;
   flex-direction: column;
-  background: #4a486f;
-  background: linear-gradient(137deg, rgba(74, 72, 111, 0.405) 0%, rgba(86, 86, 96, 0.693) 31%, #aab2b4 100%, #b6b6bd);
-  margin-bottom: 20px ;
-  background: none ;
+  margin-bottom: 20px;
+  background: none;
+}
+.name-styling .name-styling__bio {
+  font-size: 1.6rem;
 }
 .name-styling p {
-  margin-bottom: 5px ;
+  margin-bottom: 5px;
+  border: 1px solid black ;
+  padding: 5px 5px ;
+}
+.gradient-overlay {
+  background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url('../img/code-background.jpg');
 }
 .personal-img-container {
-  display: flex;
-  justify-content: center;
+  max-width: 950px;
+  justify-content: flex-start;
   align-items: center;
   align-content: space-between;
   flex-direction: column;
-  background: #4a486f;
-  background: linear-gradient(137deg, rgba(74, 72, 111, 0.405) 0%, rgba(86, 86, 96, 0.693) 31%, #aab2b4 100%, #b6b6bd);
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
   width: 100%;
   height: 500px;
   max-width: 750px;
   margin: 10px 0;
-  background: transparent ;
-  display: flex ;
+  display: flex;
   justify-content: space-evenly;
+}
+.personal-img-container .name-styling__bio {
+  font-size: 1.6rem;
 }
 .personal-img-container .self-photo {
   width: 100%;
   max-width: 300px;
-  border-radius: 60% 60% 60% 60% ;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 .personal-content {
+  border-top: 2px solid black ;
+  border-bottom: 2px solid black ;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -251,17 +261,26 @@ hr {
   width: 100%;
   max-width: 950px;
   align-content: center;
-  background: transparent ;
+  padding-top: 5px ;
+  padding-bottom: 5px ;
 }
 .personal-content .personal-content__text {
   font-size: 1.6rem;
   width: 100%;
   max-width: 375px;
 }
+.personal-content .personal-content__text h2 {
+  font-size: 2.7rem;
+  font-family: 'Caveat';
+}
 .personal-content .personal-content__skills {
   font-size: 1.6rem;
   width: 100%;
   max-width: 375px;
+}
+.personal-content .personal-content__skills h2 {
+  font-size: 2.7rem;
+  font-family: 'Caveat';
 }
 .personal-content .personal-content__skills ul li {
   padding: 12px 12px;
@@ -278,14 +297,17 @@ hr {
   align-content: center;
   width: 100%;
   max-width: 950px;
-  margin-top: 15px ;
+  margin-top: 15px;
+  border-top: 2px solid slategray;
 }
 .work-history .work-history__table {
+  margin-top: 10px;
   text-align: center;
 }
 .work-history .work-history__table th,
 .work-history .work-history__table td {
   padding: 5px 5px;
+  background-color: aliceblue;
 }
 .work-history .work-history__logo img {
   width: 100%;
