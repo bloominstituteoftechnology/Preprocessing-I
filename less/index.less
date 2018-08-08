@@ -164,6 +164,11 @@ body {
 @tab-color: rgb(241, 100, 6);
 @font-size: 1.6rem;
 @line-height: 1rem+1rem;
+@font-size--large: 2.4rem;
+@font-size--medium: 1.2rem;
+
+@smartphones: ~"only screen and (max-width: 479px)";
+@tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)";
 
 //Mix-in Flex Box
 .flex-box-center {
@@ -289,6 +294,14 @@ body {
         img {
           width: 250px;
         }
+          }
+    @media @smartphones, @tablets {
+           .img-container {
+             display: none;
+           }
+          
+            }      
+        }
       }
     }
     /*Contact CSS Starts Here */
@@ -368,24 +381,7 @@ button[type="submit"]:hover {
     
     }
 
-    // Media starts here
-@media screen and (max-width: 650px) {
-  label {
-    font-size: 0;
-  }
-  label:before {
-    margin: 0;
-    font-size: @font-size;
-  }
 
-  .img-container {
-    img {
-      
-      margin-left: 48.5px;
-      background-color: @primary-color;
-    }
-  }
-}
 
 @media screen and (max-width: 400px) {
   label {
@@ -393,7 +389,7 @@ button[type="submit"]:hover {
   }
 }
 
-  }
+  
 /*Tabs for Index Page Starts Here*/
   main {
     min-width: 320px;
@@ -420,6 +416,18 @@ button[type="submit"]:hover {
       text-align: center;
       color: #bbb;
       border: 1px solid transparent;
+          // Media starts here
+@media @smartphones, @tablets {
+  
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: @font-size--medium;
+  }
+}
+      
     }
   
     label:before {
@@ -457,6 +465,7 @@ button[type="submit"]:hover {
     #tab3:checked ~ #content3 {
       display: block;
       font-size: @font-size;
+      
     }
   }
 /*  Main-Skill Starts here.
@@ -515,5 +524,4 @@ element but it was nice to use it */
     }
   }
   }
-}
 

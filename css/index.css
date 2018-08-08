@@ -201,11 +201,6 @@ body {
   background-color: #fff;
   margin: 10px;
   border: 0.5px solid lightgray;
-  /*Tabs for Index Page Starts Here*/
-  /*  Main-Skill Starts here.
-I know it is not good to use our own created 
-element but it was nice to use it */
-  /* Work History - Main-Work */
 }
 .container header {
   width: 100%;
@@ -230,7 +225,6 @@ element but it was nice to use it */
   background-position: center;
   width: 100%;
   /*Index CSS Starts Here*/
-  /*Contact CSS Starts Here */
 }
 .container .header-container .header-info {
   display: flex;
@@ -285,54 +279,60 @@ element but it was nice to use it */
 .container .header-container .header-info .img-container img {
   width: 250px;
 }
-.container .header-container .contact_form--fielddata {
+@media only screen and (max-width: 479px), only screen and (min-width: 768px) and (max-width: 959px) {
+  .container .header-container .header-info .img-container {
+    display: none;
+  }
+}
+/*Contact CSS Starts Here */
+.contact_form--fielddata {
   margin: 0 auto;
   font-size: 1.6rem;
 }
-.container .header-container .contact_form--fielddata #contact {
+.contact_form--fielddata #contact {
   background: #eee;
   padding: 25px;
   margin: 150px;
   color: #f16406;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.container .header-container .contact_form--fielddata #contact h1 {
+.contact_form--fielddata #contact h1 {
   display: block;
   font-size: 3rem;
   font-weight: 300;
   margin-bottom: 10px;
 }
-.container .header-container .contact_form--fielddata #contact h2 {
+.contact_form--fielddata #contact h2 {
   font-size: 1.6rem;
   margin: 5px 0 15px;
   display: block;
   font-weight: 400;
 }
-.container .header-container .contact_form--fielddata #contact fieldset {
+.contact_form--fielddata #contact fieldset {
   border: 1px solid lightgray;
   margin: 0 0 10px;
   min-width: 100%;
   padding: 0;
   width: 100%;
 }
-.container .header-container .contact_form--fielddata #contact input[type="text"],
-.container .header-container .contact_form--fielddata #contact input[type="email"],
-.container .header-container .contact_form--fielddata #contact input[type="tel"],
-.container .header-container .contact_form--fielddata #contact input[type="url"],
-.container .header-container .contact_form--fielddata #contact button[type="submit"],
-.container .header-container .contact_form--fielddata #contact textarea {
+.contact_form--fielddata #contact input[type="text"],
+.contact_form--fielddata #contact input[type="email"],
+.contact_form--fielddata #contact input[type="tel"],
+.contact_form--fielddata #contact input[type="url"],
+.contact_form--fielddata #contact button[type="submit"],
+.contact_form--fielddata #contact textarea {
   width: 100%;
   border: 1px solid #eee;
   background: #fff;
   padding: 10px;
   font: 400 1.2rem/1.6rem "Roboto", sans-serif;
 }
-.container .header-container .contact_form--fielddata #contact textarea {
+.contact_form--fielddata #contact textarea {
   height: 100px;
   max-width: 100%;
   resize: none;
 }
-.container .header-container .contact_form--fielddata #contact button[type="submit"] {
+.contact_form--fielddata #contact button[type="submit"] {
   cursor: pointer;
   width: 100%;
   border: none;
@@ -342,51 +342,39 @@ element but it was nice to use it */
   padding: 10px;
   font-size: 15px;
 }
-.container .header-container .contact_form--fielddata #contact button[type="submit"]:hover {
+.contact_form--fielddata #contact button[type="submit"]:hover {
   background: #3a4549;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
-.container .header-container .contact_form--fielddata #contact input:focus,
-.container .header-container .contact_form--fielddata #contact textarea:focus {
+.contact_form--fielddata #contact input:focus,
+.contact_form--fielddata #contact textarea:focus {
   outline: 0;
   border: 1px solid #aaa;
 }
-@media screen and (max-width: 650px) {
-  .container .header-container label {
-    font-size: 0;
-  }
-  .container .header-container label:before {
-    margin: 0;
-    font-size: 1.6rem;
-  }
-  .container .header-container .img-container img {
-    margin-left: 48.5px;
-    background-color: #3b5998;
-  }
-}
 @media screen and (max-width: 400px) {
-  .container .header-container label {
+  label {
     padding: 15px;
   }
 }
-.container main {
+/*Tabs for Index Page Starts Here*/
+main {
   min-width: 320px;
   max-width: 800px;
   padding: 50px;
   margin: 0 auto;
   background: #fff;
 }
-.container main section {
+main section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
 }
-.container main input {
+main input {
   display: none;
 }
-.container main label {
+main label {
   display: inline-block;
   margin: 0 0 -1px;
   padding: 15px 25px;
@@ -396,73 +384,86 @@ element but it was nice to use it */
   color: #bbb;
   border: 1px solid transparent;
 }
-.container main label:before {
+@media only screen and (max-width: 479px), only screen and (min-width: 768px) and (max-width: 959px) {
+  main label label {
+    font-size: 0;
+  }
+  main label label:before {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+main label:before {
   font-family: fontawesome;
   font-weight: normal;
   margin-right: 10px;
 }
-.container main label[for*="1"]:before {
+main label[for*="1"]:before {
   content: "\f1cb";
 }
-.container main label[for*="2"]:before {
+main label[for*="2"]:before {
   content: "\f09b";
 }
-.container main label[for*="3"]:before {
+main label[for*="3"]:before {
   content: "\f0e1";
 }
-.container main label:hover {
+main label:hover {
   color: #888;
   cursor: pointer;
 }
-.container main input:checked + label {
+main input:checked + label {
   color: #555;
   border: 1px solid #ddd;
   border-top: 2px solid #f16406;
   border-bottom: 1px solid #fff;
 }
-.container main #tab1:checked ~ #content1,
-.container main #tab2:checked ~ #content2,
-.container main #tab3:checked ~ #content3 {
+main #tab1:checked ~ #content1,
+main #tab2:checked ~ #content2,
+main #tab3:checked ~ #content3 {
   display: block;
   font-size: 1.6rem;
 }
-.container main-skill {
+/*  Main-Skill Starts here.
+I know it is not good to use our own created 
+element but it was nice to use it */
+main-skill {
   width: 100%;
   padding: 10px;
   margin: 0 auto;
   background: #fff;
 }
-.container main-skill .skills-info {
+main-skill .skills-info {
   display: flex;
   flex-wrap: wrap;
   font-size: 1.6rem;
   padding: 10px 0 0;
   width: 100%;
 }
-.container main-skill .skills-info .skill {
+main-skill .skills-info .skill {
   margin: 20px;
   padding: 2px;
   color: black;
   align-items: center;
 }
-.container main-skill .skills-info .skill h1 {
+main-skill .skills-info .skill h1 {
   font-weight: bolder;
   color: #f16406;
 }
-.container main-skill .skills-info .skill span {
+main-skill .skills-info .skill span {
   line-height: 2rem;
   font-weight: 600;
   color: black;
 }
-.container main-work .history-work img {
+/* Work History - Main-Work */
+main-work .history-work img {
   width: 100%;
 }
-.container main-work .history-work h1 {
+main-work .history-work h1 {
   font-family: "Roboto", sans-serif;
   font-size: 4rem;
   padding: 10px;
 }
-.container main-work .history-work p {
+main-work .history-work p {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   padding: 20px;
