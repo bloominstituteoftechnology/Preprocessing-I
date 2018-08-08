@@ -184,10 +184,22 @@ html {
     justify-content: space-around;
     padding: 10px 0;
 
+    @media (max-width: 500px) {
+      align-items: center;
+      flex-direction: column;
+    }
+
     a {
       text-decoration: none;
       font-size: 2.5rem;
       color: @color1;
+
+      @media (max-width: 500px) {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5px;
+        width: 100%;
+      }
     }
   }
 }
@@ -197,8 +209,12 @@ html {
   justify-content: space-around;
   margin-bottom: 20px;
   margin-top: 20px;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
   .img {
-    height: 300px;
+    height: 200px;
     width: 25%;
     background-color: lightblue;
     border-radius: 25px;
@@ -226,10 +242,11 @@ html {
 .skills {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 20px;
 
   .left-container {
     width: 60%;
-    .referenceB(MA);
+    .referenceB();
     .text-container();
   }
   .right-container {
@@ -250,5 +267,76 @@ html {
   .referenceB();
   .text-container();
   width: 92%;
-  table-layout: auto;
+  margin-bottom: 20px;
+  table {
+    margin-top: 10px;
+    width: 80%;
+    font-size: 1.6rem;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
+  tr {
+    border-bottom: 1px solid grey;
+    font-size: 2rem;
+    border-radius: 10px;
+    th {
+      padding: 10px;
+      background-color: #8b8b8b;
+    }
+    td {
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  .contact-form {
+    .referenceB();
+    .text-container();
+    width: 60%;
+    label {
+      font-size: 1.6rem;
+    }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #afafaf;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3f3f3f;
+    }
+
+    .container {
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+  .contact-info {
+    .referenceB();
+    .text-container();
+    width: 25%;
+    text-align: left;
+  }
 }
