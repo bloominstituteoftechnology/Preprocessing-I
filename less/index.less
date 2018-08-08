@@ -91,7 +91,7 @@ body, header, a, p, button, h1, h2, h3 {
 	font-size: 1.8rem;
 }
 
-.p-spacing {
+.p-line-height {
 	line-height: 22px;
 }
 
@@ -128,6 +128,11 @@ body, header, a, p, button, h1, h2, h3 {
 .footer-padding {
 	padding-top: 20px;
 	padding-bottom: 38px;
+}
+
+.p-spacing-middle-and-bottom-content {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 /* Styling below here */
@@ -209,6 +214,7 @@ body, header, a, p, button, h1, h2, h3 {
 	.middle-content {
 		display: flex;
 		flex-flow: row-nowrap;
+		justify-content: space-between;
 		padding-top: 35px;
 
 		.lefttext {
@@ -219,18 +225,35 @@ body, header, a, p, button, h1, h2, h3 {
 			}
 
 			p {
-				padding-top: 10px;
-				padding-bottom: 10px;
+				.p-spacing-middle-and-bottom-content;
 				font-size: @p-font-standard;
-				.p-spacing;
+				.p-line-height;
+			}
+		}
+
+		.righttext {
+
+			h3 {
+				font-size: @h-font-standard;
+			}
+
+			p {
+				.p-spacing-middle-and-bottom-content;
+				font-size: @p-font-standard;
 			}
 		}
 	}
 
 	.bottom-content {
+		padding: 30px 0px;
 
 		h3 {
+			font-size: @h-font-standard;
+			.p-spacing-middle-and-bottom-content;
+		}
 
+		p {
+			.p-spacing-middle-and-bottom-content;
 		}
 	}
 
