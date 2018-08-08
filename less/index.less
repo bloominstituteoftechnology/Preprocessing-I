@@ -90,9 +90,9 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font - size: 100 % ;
   font: inherit;
-  vertical-align: baseline;
+  vertical - align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -112,12 +112,12 @@ section {
 }
 
 body {
-  line-height: 1;
+  line - height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+  list - style: none;
 }
 
 blockquote,
@@ -125,115 +125,115 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
+blockquote: before,
+  blockquote: after,
+  q: before,
+  q: after {
+    content: "";
+    content: none;
+  }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  border - collapse: collapse;
+  border - spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 
 *,
-*:before,
-*:after {
+*: before,
+*: after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box - sizing: border - box;
 }
 
 html,
 body {
-  height: 100%;
-  font-size: 62.5%;
+  height: 100 % ;
+  font - size: 62.5 % ;
 }
 
 // Variables
-@background-color: #eee;
-@container-background-color: #fff;
-@primary-font-family: "Roboto", sans-serif;
-@secondary-font-family: "Montserrat", sans-serif;
-@primary-color: #3b5998;
-@secondary-color: #e9e9e9, 0.3;
-@tab-color: rgb(241, 100, 6);
-@font-size: 1.6rem;
-@line-height: 1rem+1rem;
-@font-size--large: 2.4rem;
-@font-size--medium: 1.2rem;
+@background - color: #eee;
+@container - background - color: #fff;
+@primary - font - family: "Roboto", sans - serif;
+@secondary - font - family: "Montserrat", sans - serif;
+@primary - color: #3b5998;
+@secondary-color: # e9e9e9, 0.3;
+@tab - color: rgb(241, 100, 6);
+@font - size: 1.6 rem;
+@line - height: 1 rem + 1 rem;
+@font - size--large: 2.4 rem;
+@font - size--medium: 1.2 rem;
 
 @smartphones: ~"only screen and (max-width: 479px)";
 @tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)";
 
 //Mix-in Flex Box
-.flex-box-center {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.flex-column-align {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-//Mix-ins start here
-.bordered {
-  border: 1px solid transparent;
-}
+.flex - box - center {
+    display: flex;
+    flex - wrap: wrap;
+    align - items: center;
+  }
+  .flex - column - align {
+    display: flex;
+    flex - direction: column;
+    align - items: center;
+  }
+  //Mix-ins start here
+  .bordered {
+    border: 1 px solid transparent;
+  }
 
-.border-radius {
-  border-radius: 5%;
-  padding: 10px;
-}
+  .border - radius {
+    border - radius: 5 % ;
+    padding: 10 px;
+  }
 
-.btn {
-  padding: 5px 5px;
-  border: 0;
-  color: #fff;
-}
-.background {
-  background: linear-gradient(rgba(12, 12, 134, 0.582), rgba(8, 8, 65, 0.5)),
-    url(/imgs/webdesign-header-bg.jpg);
-  background-size: cover;
-  background-position: center;
-}
+  .btn {
+    padding: 5 px 5 px;
+    border: 0;
+    color: #fff;
+  }
+  .background {
+    background: linear - gradient(rgba(12, 12, 134, 0.582), rgba(8, 8, 65, 0.5)),
+    url(/imgs/webdesign - header - bg.jpg);
+    background - size: cover;
+    background - position: center;
+  }
 // Mix-in stops here
 
 /* Main Body CSS */
 body {
-  max-width: 880px;
-  width: 100%;
-  background-color: @background-color;
-  font-family: @primary-font-family;
+  max - width: 880 px;
+  width: 100 % ;
+  background - color: @background - color;
+  font - family: @primary - font - family;
   margin: 0 auto;
 }
 
 /* Container starts here */
 .container {
   display: flex;
-  flex-wrap: wrap;
-  background-color: @container-background-color;
-  margin: 10px;
-  border: 0.5px solid lightgray;
+  flex - wrap: wrap;
+  background - color: @container - background - color;
+  margin: 10 px;
+  border: 0.5 px solid lightgray;
 
   header {
-    width: 100%;
+    width: 100 % ;
     nav {
       display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin: 15px 5px;
+      justify - content: space - evenly;
+      align - items: center;
+      margin: 15 px 5 px;
     }
     nav li {
-      list-style-type: none;
+      list - style - type: none;
     }
     nav li a {
-      font-size: @font-size;
+      font - size: @font - size;
       color: #333;
       text-decoration: none;
     }
@@ -266,107 +266,107 @@ body {
           font-weight: bold;
           :nth-child(1n) {
             color: @tab-color;
-            text-shadow: -1px -1px 0.5px #333;
-          }
-          #name {
-            font-weight: lighter;
-            font-family: @primary-font-family;
-          }
-        }
-        h2 {
-          font-size: 3em;
-        }
-        .primary-btn:extend(.btn) {
-          .border-radius;
-          font-size: 1.4rem;
-          vertical-align: top;
-          width: 80%;
-          margin-top: 40%;
-          background: @primary-color;
-        }
-      }
-      .img-container {
-        padding: 15px;
-        margin: 2%;
-
-        width: 24.9%;
-
-        img {
-          width: 250px;
-        }
-          }
-    @media @smartphones, @tablets {
-           .img-container {
-             display: none;
-           }
-          
-            }      
-        }
-      }
+            text-shadow: -1px -1px 0.5px # 333;
+    }#
+    name {
+      font - weight: lighter;
+      font - family: @primary - font - family;
     }
-    /*Contact CSS Starts Here */
-    .contact_form--fielddata {
-      margin: 0 auto;
-      font-size: @font-size;
+  }
+  h2 {
+    font - size: 3e m;
+  }
+  .primary - btn: extend(.btn) {
+    .border - radius;
+    font - size: 1.4 rem;
+    vertical - align: top;
+    width: 80 % ;
+    margin - top: 40 % ;
+    background: @primary - color;
+  }
+}
+.img - container {
+  padding: 15 px;
+  margin: 2 % ;
 
-      #contact {
-        background: #eee;
-        padding: 25px;
-        margin: 150px;
-        color: @tab-color;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
-          0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 24.9 % ;
 
-        h1 {
-          display: block;
-          font-size: 3rem;
-          font-weight: 300;
-          margin-bottom: 10px;
-        }
-        h2 {
-          font-size: @font-size;
-          margin: 5px 0 15px;
-          display: block;
-          font-weight: 400;
-        }
+  img {
+    width: 250 px;
+  }
+}
+@media @smartphones, @tablets {
+  .img - container {
+    display: none;
+  }
 
-        fieldset {
+}
+}
+}
+}
+/*Contact CSS Starts Here */
+.contact_form--fielddata {
+  margin: 0 auto;
+  font - size: @font - size;
 
-          border: 1px solid lightgray;
-          margin: 0 0 10px;
-          min-width: 100%;
-          padding: 0;
-          width: 100%;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="url"],
-        button[type="submit"],
-        textarea {
-          width: 100%;
-          border: 1px solid #eee;
-          background: #fff;
-          padding: 10px;
-          font: 400 1.2rem/1.6rem @primary-font-family;
-        }
-        textarea {
-          height: 100px;
-          max-width: 100%;
-          resize: none;
-        }
-        button[type="submit"] {
-          cursor: pointer;
-          width: 100%;
-          border: none;
-          background: #333;
-          color: #fff;
-          margin: 0 0 5px;
-          padding: 10px;
-          font-size: 15px;
-		}
-button[type="submit"]:hover {
- background: #3a4549;
+  #contact {
+    background: #eee;
+    padding: 25 px;
+    margin: 150 px;
+    color: @tab - color;
+    box - shadow: 0 0 20 px 0 rgba(0, 0, 0, 0.2),
+    0 5 px 5 px 0 rgba(0, 0, 0, 0.24);
+
+    h1 {
+      display: block;
+      font - size: 3 rem;
+      font - weight: 300;
+      margin - bottom: 10 px;
+    }
+    h2 {
+      font - size: @font - size;
+      margin: 5 px 0 15 px;
+      display: block;
+      font - weight: 400;
+    }
+
+    fieldset {
+
+      border: 1 px solid lightgray;
+      margin: 0 0 10 px;
+      min - width: 100 % ;
+      padding: 0;
+      width: 100 % ;
+    }
+    input[type = "text"],
+    input[type = "email"],
+    input[type = "tel"],
+    input[type = "url"],
+    button[type = "submit"],
+    textarea {
+      width: 100 % ;
+      border: 1 px solid# eee;
+      background: #fff;
+      padding: 10 px;
+      font: 400 1.2 rem / 1.6 rem @primary - font - family;
+    }
+    textarea {
+      height: 100 px;
+      max - width: 100 % ;
+      resize: none;
+    }
+    button[type = "submit"] {
+      cursor: pointer;
+      width: 100 % ;
+      border: none;
+      background: #333;
+          color: # fff;
+      margin: 0 0 5 px;
+      padding: 10 px;
+      font - size: 15 px;
+    }
+    button[type = "submit"]: hover {
+      background: #3a4549;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
@@ -375,153 +375,155 @@ button[type="submit"]:hover {
 		input:focus,
 		textarea:focus {
 			outline:0;
-			border: 1px solid #aaa;
-		}
-      }
-    
+			border: 1px solid # aaa;
     }
+  }
+
+}
 
 
 
-@media screen and (max-width: 400px) {
+@media screen and(max - width: 400 px) {
   label {
-    padding: 15px;
+    padding: 15 px;
   }
 }
 
-  
+
 /*Tabs for Index Page Starts Here*/
-  main {
-    min-width: 320px;
-    max-width: 800px;
-    padding: 50px;
-    margin: 0 auto;
-    background: #fff;
-    section {
-      display: none;
-      padding: 20px 0 0;
-      border-top: 1px solid #ddd;
-    }
-  
-    input {
-      display: none;
-    }
-  
-    label {
-      display: inline-block;
-      margin: 0 0 -1px;
-      padding: 15px 25px;
-      font-size: @font-size;
-      font-weight: 600;
-      text-align: center;
-      color: #bbb;
-      border: 1px solid transparent;
-          // Media starts here
-@media @smartphones, @tablets {
-  
+main {
+  min - width: 320 px;
+  max - width: 800 px;
+  padding: 50 px;
+  margin: 0 auto;
+  background: #fff;
+  section {
+    display: none;
+    padding: 20 px 0 0;
+    border - top: 1 px solid# ddd;
+  }
+
+  input {
+    display: none;
+  }
+
   label {
-    font-size: 0;
+    display: inline - block;
+    margin: 0 0 - 1 px;
+    padding: 15 px 25 px;
+    font - size: @font - size;
+    font - weight: 600;
+    text - align: center;
+    color: #bbb;
+    border: 1 px solid transparent;
+    // Media starts here
+    @media @smartphones,
+    @tablets {
+
+      label {
+        font - size: 0;
+      }
+      label: before {
+        margin: 0;
+        font - size: @font - size--medium;
+      }
+    }
+
   }
-  label:before {
-    margin: 0;
-    font-size: @font-size--medium;
+
+  label: before {
+    font - family: fontawesome;
+    font - weight: normal;
+    margin - right: 10 px;
   }
-}
-      
-    }
-  
-    label:before {
-      font-family: fontawesome;
-      font-weight: normal;
-      margin-right: 10px;
-    }
-  
-    label[for*="1"]:before {
-      content: "\f1cb";
-    }
-  
-    label[for*="2"]:before {
-      content: "\f09b";
-    }
-  
-    label[for*="3"]:before {
-      content: "\f0e1";
-    }
-  
-    label:hover {
-      color: #888;
+
+  label[
+    for *= "1"]: before {
+    content: "\f1cb";
+  }
+
+  label[
+    for *= "2"]: before {
+    content: "\f09b";
+  }
+
+  label[
+    for *= "3"]: before {
+    content: "\f0e1";
+  }
+
+  label: hover {
+    color: #888;
       cursor: pointer;
     }
   
     input:checked + label {
-      color: #555;
-      border: 1px solid #ddd;
-      border-top: 2px solid @tab-color;
-      border-bottom: 1px solid #fff;
-    }
-  
-    #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2,
-    #tab3:checked ~ #content3 {
-      display: block;
-      font-size: @font-size;
-      
-    }
+      color: # 555;
+    border: 1 px solid# ddd;
+    border - top: 2 px solid @tab - color;
+    border - bottom: 1 px solid# fff;
   }
+
+  #
+  tab1: checked~#content1, #tab2: checked~#content2, #tab3: checked~#content3 {
+    display: block;
+    font - size: @font - size;
+
+  }
+}
 /*  Main-Skill Starts here.
 I know it is not good to use our own created 
 element but it was nice to use it */
-  main-skill {
- 
-   width: 100%;
-    padding: 10px;
-    margin: 0 auto;
-    background: #fff;
+main - skill {
 
-    .skills-info{
-      display: flex;
-     flex-wrap: wrap;
-      font-size: @font-size;
-      padding: 10px 0 0;
-      width: 100%;
+  width: 100 % ;
+  padding: 10 px;
+  margin: 0 auto;
+  background: #fff;
+
+  .skills - info {
+    display: flex;
+    flex - wrap: wrap;
+    font - size: @font - size;
+    padding: 10 px 0 0;
+    width: 100 % ;
 
     .skill {
-   
-      margin:20px;
-      padding:2px;
-      color: black;
-      align-items: center;
-      
-     h1 {
-        font-weight: bolder;
-        color: @tab-color;
-     }
-     span {
-       line-height: @line-height;
-       font-weight:600;
-       color: black;
 
-     }
+      margin: 20 px;
+      padding: 2 px;
+      color: black;
+      align - items: center;
+
+      h1 {
+        font - weight: bolder;
+        color: @tab - color;
+      }
+      span {
+        line - height: @line - height;
+        font - weight: 600;
+        color: black;
+
+      }
     }
   }
-  }
+}
 /* Work History - Main-Work */
-  main-work {
-   .history-work {
-       img {
-      width:100%;
+main - work {
+  .history - work {
+    img {
+      width: 100 % ;
     }
     h1 {
-      font-family: @primary-font-family;
-      font-size: 4rem;
-      padding: 10px;
+      font - family: @primary - font - family;
+      font - size: 4 rem;
+      padding: 10 px;
     }
     p {
-      font-family: @primary-font-family;
-      font-size: @font-size;
-      padding: 20px;
-      margin:20px;
+      font - family: @primary - font - family;
+      font - size: @font - size;
+      padding: 20 px;
+      margin: 20 px;
     }
   }
-  }
-
+}
