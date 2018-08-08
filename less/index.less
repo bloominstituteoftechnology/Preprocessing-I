@@ -64,6 +64,7 @@ html, body {
 @margin: 35px;
 @h1-margin: 15px;
 @full-width: 100%;
+@half-width: 50%;
 
 .flex-center-mixin() {
 	display: flex;
@@ -113,6 +114,9 @@ html, body {
 	width: @full-width;
 	.flex-center-mixin;
 	align-items: center;
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
 
 
 	img {
@@ -120,6 +124,10 @@ html, body {
 		height: 200px;
 		border-radius: 50%;
 		margin-right: 5rem;
+		@media (max-width: 500px) {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
 	}
 
 	.name {
@@ -136,6 +144,10 @@ html, body {
 	width: 95%;
 	.flex-center-mixin;
 	margin: @margin 2.5%;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
 
 	h1 {
 		margin-bottom: @h1-margin; 
@@ -143,11 +155,14 @@ html, body {
 	}
 
 	.about {		
-		width: 50%;
+		width: @half-width;
+		@media (max-width: 500px) {
+			margin-bottom: @margin;
+		}
 	}
 
 	.skills {
-		width: 50%;
+		width: @half-width;
 		.flex-center-mixin;
 		flex-direction: column;
 
@@ -169,11 +184,10 @@ html, body {
 }
 
 .work {
-	width: @full-width;
+	width: 95%;
 	display: flex;
 	flex-direction: column;
 	margin: @margin 2.5%;
-	border: @border;
 	
 	h1 {
 		text-align: center;
@@ -186,7 +200,13 @@ html, body {
 }
 
 .contact {
+	width: 95%;
 	margin: @margin 2.5%;
+	@media (max-width: 500px) {
+		.flex-center-mixin;
+		flex-direction: column;
+		align-items: center;
+	}
 
 	h1 {
 		margin-bottom: @h1-margin;
