@@ -66,6 +66,11 @@ html, body {
 @normal-color: #000;
 @overview-color: #686868;
 @padding: 20px 2.5%;
+@section-margin: 15px 0;
+
+.normal-font() {
+	font-size: @normal-font;
+}
 
 
 html {
@@ -98,7 +103,7 @@ body {
 		padding-right: 1.25%;
 
 		a {
-			font-size: @normal-font;
+			.normal-font();
 			padding-left: 2.84%;
 			text-decoration: none;
 			color: @normal-color;
@@ -129,7 +134,7 @@ body {
 	}
 
 	p {
-		font-size: @normal-font;
+		.normal-font();
 		padding: 15px 0;
 	}
 
@@ -144,7 +149,7 @@ body {
 	border: 2px solid red;
 	display: flex;
 	justify-content: space-between;
-	margin: 15px 0;
+	margin: @section-margin;
 
 	.intro {
 		width: 47%;  //376px
@@ -155,7 +160,7 @@ body {
 		}
 
 		p {
-			font-size: @normal-font;
+			.normal-font();
 		}
 
 	}  //.intro
@@ -171,7 +176,7 @@ body {
 		ul {
 
 			li {
-				font-size: @normal-font;
+				.normal-font();
 				border: 1px solid #bebebe;
 				border-bottom: none;
 				padding: 5px 0 5px 3%;
@@ -187,4 +192,48 @@ body {
 
 
 } //.intro-skills
+
+h2.experience-header {
+	font-size: @h2-font;
+}
+
+.experience {
+	margin: @section-margin;
+	// display: flex;
+	// justify-content: space-evenly;
+	border: 2px solid blue;
+
+	.experience-table {
+		display: flex;
+		.normal-font();
+
+		.col-1 {
+			flex: 1 1 10%;
+		}
+		.col-2 {
+			flex: 1 1 25%;
+		}
+		.col-3 {
+			flex: 1 1 40%;
+		}
+		.col-4 {
+			flex: 1 1 25%;
+		}
+
+
+
+
+	} //.experience-table
+
+	.headers {
+		font-weight: bolder;
+	}
+
+	.row-1, .row-3 {
+		background: @overview-color;
+	}
+
+
+} //.experience
+
 
