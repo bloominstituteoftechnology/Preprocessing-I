@@ -58,6 +58,25 @@ table {
 @h4FontSize: 1.6em;
 @paragraphFontSize: 1.5em;
 
+.sectionDesign() {
+	width: 100%;
+	max-width: 1568px;
+	margin: 0 auto;
+}
+
+.generalMargin() {
+	margin: 20px 0 20px 0;
+}
+
+.generalPadding() {
+	padding: 20px 0 20px 0;
+}
+
+.contentGeneralWidth {
+	width: 90%;
+	max-width: 1300px;
+}
+
 
 * {
     box-sizing: border-box;
@@ -118,8 +137,47 @@ header {
 	}
 }
 
-section {
+#intro {
+	background-image: url("../img/city.jpeg");
+	background-position: center;
+}
 
+#intro-container {
+	.sectionDesign();
+	color: white;
+
+	h1{
+		text-align: center;
+		.generalPadding();
+	}
+
+	h2 {
+		text-align: center;
+		.generalMargin();
+	}
+
+	#profile {
+		height: 350px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#about-me {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.generalMargin();
+		p {
+			.contentGeneralWidth();
+		}
+	}
+
+	#pixel-art {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.generalPadding();
+	}
 }
 
 
