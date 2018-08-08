@@ -107,7 +107,18 @@ html, body {
 	nav {
 		display: flex;
 		justify-content: flex-end;
+
 		ul {
+			@media (max-width: 500px) {
+				flex-direction: column;
+				width: 100%;
+				li {
+					border-bottom: 1px solid @alt-color2;
+					padding: 2%;
+					text-align: center;
+					width: 100%;
+				}
+			}
 			min-height: 50px;
 		}
 	}
@@ -131,6 +142,15 @@ main {
 	.center-col-flex;
 	width: 80%;
 	header {
+		@media (max-width: 500px) {
+			font-size: 1rem;
+			h1 {
+				.x4;
+			}
+			button {
+				font-size: 1rem;
+			}
+		}
 		section {
 			flex-direction: column;
 		}
