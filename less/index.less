@@ -1,22 +1,89 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,35 +92,347 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+@font-family: 'Poppins', sans-serif;
+@boldfont-family: 'Montserrat', sans-serif;
+@handfont-family: 'Homemade Apple', cursive;
+@text-color: #231651;
+@main-color: #4BC1C1;
+@accent-color: #FF8484;
+@complimentary-color: #D6FFF6;
+
+body,
+html {
+	height: 100%;
+	font-size: 62.5%;
 }
 
-html, body {
-    height: 100%;
+header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 25px;
+
+	nav {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		align-items: center;
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+	}
+
+	img {
+		display: inline-block;
+		height: 50px;
+		@media (max-width: 500px) {
+			height: 30px;
+		}
+	}
+
+	a {
+		display: inline-block;
+		font-size: 1.5rem;
+		color: @text-color;
+		text-decoration: none;
+		font-family: @font-family;
+		text-transform: uppercase;
+		@media (max-width: 500px) {
+			padding-top: 20px;
+				font-size: 2.0rem;
+		}
+	}
 }
 
+.main-container {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	font-family: @font-family;
+	align-items: center;
+	@media (max-width: 500px) {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		flex-direction: column-reverse;
+		justify-content: center;
+		text-align: center;
+	}
+
+	img {
+		width: 30%;
+		height: 30%;
+		@media (max-width: 500px) {
+			height: 50%;
+			width: 50%;
+			align-items: center;
+			padding-top: 20px;
+		}
+	}
+
+	h1 {
+		font-size: 7.5rem;
+		padding-left: 10px;
+		font-family: @handfont-family;
+		color: @accent-color;
+		@media (max-width: 500px) {
+			font-size: 5.5rem;
+			margin-top: 40px;
+		}
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		padding: 10px;
+		text-transform: uppercase;
+		color: @text-color;
+		@media (max-width: 500px) {
+			font-size: 2.5rem;
+
+		}
+	}
+
+	p {
+		font-size: 2.0rem;
+		padding: 10px;
+	}
+}
+
+.top {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	@media (max-width: 500px) {
+
+
+	}
+
+	.quotation-mark {
+		font-weight: bold;
+		font-size: 30rem;
+		color: grey;
+		font-family: @font-family;
+		padding: 0;
+		margin-bottom: -185px;
+		margin-top: 25px;
+		color: @accent-color;
+		@media (max-width: 500px) {
+			font-size: 15rem;
+			margin-bottom: -180px;
+			text-align: right;
+
+		}
+	}
+
+	.quotation-mark2 {
+		font-weight: bold;
+		font-size: 30rem;
+		color: grey;
+		font-family: @font-family;
+		padding: 0;
+		margin-top: -185px;
+		transform: rotate(180deg);
+		color: @accent-color;
+		@media (max-width: 500px) {
+			font-size: 15rem;
+			margin-bottom: -180px;
+			text-align: right;
+
+		}
+	}
+
+	.quotation {
+		font-size: 5rem;
+		font-family: @boldfont-family;
+
+		color: @main-color;
+		@media (max-width: 500px) {
+			font-size: 3rem;
+			text-align: center;
+
+
+
+		}
+	}
+
+	blockquote{
+		@media (max-width: 500px) {
+		margin-top: 80px;
+			margin-bottom: 50px;
+
+
+		}
+	}
+}
+
+.about-me {
+	display: flex;
+	justify-content: center;
+	margin-top: 80px;
+	background-color: @text-color;
+	padding: 20px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	@media (max-width: 500px) {
+		font-size: 1rem;
+	width: 80%;
+
+	}
+
+
+	p {
+		font-size: 1.8rem;
+		width: 60%;
+		font-family: @boldfont-family;
+		color: white;
+		line-height: 22px;
+		@media (max-width: 500px) {
+			font-size: 1rem;
+		line-height: 12px;
+
+		}
+	}
+
+	button {
+		background: @complimentary-color;
+		vertical-align: top;
+		padding: 0 44px;
+		font-size: 1.7rem;
+		cursor: pointer;
+		margin-left: 20px;
+		@media (max-width: 500px) {
+			font-size: 1rem;
+				padding: 0 4px;
+
+
+		}
+	}
+
+	button:hover {
+		background: @main-color;
+		color: white;
+	}
+}
+
+.middle {
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+	margin: 20px auto;
+	flex-wrap: wrap;
+	margin-top: 40px;
+
+	.listen {
+		width: 30%;
+	}
+
+	.stuff-list {
+		width: 30%;
+	}
+
+	h1 {
+		font-size: 3.0rem;
+		line-height: 32px;
+		font-family: @boldfont-family;
+		color: @accent-color;
+		font-family: @handfont-family;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	p {
+		font-size: 1.7rem;
+		line-height: 32px;
+		color: @text-color;
+		font-family: @font-family;
+	}
+}
+
+.experience {
+	display: flex;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		margin-bottom: 80px;
+		margin-top: 40px;
+	}
+
+	td {
+		padding: 12px 8px :;
+		text-align: left;
+		border-bottom: 1px solid @text-color;
+		color: @text-color;
+		font-family: @font-family;
+		font-size: 1.5rem;
+	}
+
+	th {
+		padding: 12px 8px 8px;
+		text-align: left;
+		border-bottom: 1px solid @text-color;
+		color: @main-color;
+		font-family: @boldfont-family;
+		font-size: 2.7rem;
+	}
+
+	tr:hover {
+		background-color: @complimentary-color;
+	}
+}
+
+footer {
+	.middle h1 {}
+}
