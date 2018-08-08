@@ -65,6 +65,12 @@ html, body {
 
 @background-color-header: black;
 
+@border-color-button: darkblue;
+@background-color-button: blue;
+@text-color-button: whitesmoke;
+
+@border-color-accent: gray;
+
 /* font-sizes */
 @font-size-h1: 2.4rem;
 @font-size-h2: 2rem;
@@ -72,8 +78,10 @@ html, body {
 
 /* margins & paddings */
 @margin-normal: 15px;
-@padding-normal: 15px;
+@margin-large: 30px;
 
+@padding-normal: 15px;
+@padding-large: 30px;
 
 html {
 	font-size: 62.5%;
@@ -95,7 +103,20 @@ a {
 	text-decoration: none;
 }
 
+.content-large {
+	width: 100%;
+}
+
+.content-medium {
+	width: 49%;
+}
+
+.content-small {
+	width: 32%
+}
+
 header {
+	width: 100%;
 	padding: @padding-normal 0;
 	display: flex;
 	justify-content: space-around;
@@ -125,5 +146,48 @@ header {
 		a:hover {
 			color: @text-color-header-hover;
 		}
+	}
+}
+
+main {
+	width: 60%;
+	margin: @margin-large auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.content-large {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: @padding-normal;
+		border-bottom: 1px solid @border-color-accent;
+
+		h1 {
+			font-size: 3.6rem;
+		}
+
+		p {
+			margin: @margin-normal 0;
+			font-size: 2.4rem;
+			text-align: center;
+		}
+
+		a {
+			margin: @margin-normal 0;
+			padding: @padding-normal @padding-large;
+			color: @text-color-button;
+			border: 1px solid @border-color-button;
+			border-radius: 5px;
+			background: @background-color-button;
+		}
+
+		a:hover {
+			background: @border-color-button;
+		}
+	}
+
+	.content-medium {
+		
 	}
 }
