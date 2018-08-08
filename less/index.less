@@ -77,7 +77,6 @@ html, body {
 	justify-content: space-around;
 	align-items: center;
 }
-
 .headerText() {
 	font-family: 'Modern Antiqua', cursive;
 }
@@ -87,6 +86,9 @@ html, body {
 	text-align: center;
 	margin-bottom: 5px;
 	padding: 5px 0%;
+}
+.roundedBorder(){
+	border-radius: 5px;
 }
 
 .container {
@@ -103,10 +105,12 @@ html, body {
 		:hover{
 			color: @main-color;
 			background-color: @secondary-color;
+			.roundedBorder();
 		}
 	}
 	.navi{
 		font-size: 2rem;
+		padding: 5px 2%;
 		text-decoration: none;
 		color: @secondary-color;
 	}
@@ -151,6 +155,7 @@ html, body {
 		}
 		li {
 			.paragraphText();
+			.roundedBorder();
 		}
 		@media (max-width: 500px) {
 			flex-direction: column;
@@ -168,7 +173,6 @@ html, body {
 			}
 		}
 	}
-
 	.contact{
 		.flexCenter();
 		border-top: 2px dotted @secondary-color; 
@@ -183,7 +187,6 @@ html, body {
 			}
 		}
 	}
-
 	h1{
 		.headerText();
 		font-size: @h1-font;
@@ -196,5 +199,9 @@ html, body {
 	p{
 		font-size: @other-font;
 		margin: @pixel-size-10 1%;
+	}
+	img{
+		.roundedBorder();
+		margin-top: 20px;
 	}
 }
