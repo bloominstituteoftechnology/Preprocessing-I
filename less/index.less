@@ -77,16 +77,22 @@ p {
 
 // start Mixin
 .dimensions() {
-	border: 1px solid @dark;
+	// border: 1px solid @dark;
 	width: 100%;
 	height: 300px;
+
 }
 
 .dimensions2() {
-	border: 1px solid red;
+	// border: 1px solid red;
 	width: 100%;
 	height: 300px;
 	flex-grow: 1;
+
+	@media (max-width: 500px) {
+		border: 1px solid red;
+		height: 600px;
+	}
 }
 
 
@@ -95,7 +101,7 @@ p {
 	flex-direction: row;
 	justify-content: center;
 	width: 100%;
-	border: 1px solid blue;
+	// border: 1px solid blue;
 	
 	.img {
 		width: 10%;
@@ -107,7 +113,7 @@ p {
 	.content {
 		width: 70%;
 		align-self: center;
-		border: 1px solid @white;
+		// border: 1px solid @white;
 		h1 {
 			font-size: 1.8rem;
 			color: @white;
@@ -117,6 +123,19 @@ p {
 			color: @white;
 		}
 	}
+
+	@media (max-width: 500px) {
+		// border: 1px solid blue;
+
+		.content {
+			// border: 1px solid white;
+			width: 50%;
+		}
+
+		.img {
+			height: 35px;
+		}
+	} // @media
 } // .address
 
 
@@ -124,7 +143,7 @@ p {
 
 .head {
 	display: flex;
-	border: 1px solid goldenrod;
+	// border: 1px solid goldenrod;
 	flex-direction: row;
 	justify-content: flex-start;
 	width: 100%;
@@ -158,9 +177,14 @@ p {
 	display: flex;
 	flex-wrap: wrap;
 
+	@media (max-width: 500px) {
+		border: 1px solid orange;
+		flex-direction: column;
+	}
+
 	.box {
 		width: 49%;
-		border: 1px solid pink;
+		// border: 1px solid pink;
 		height: 200px;
 
 		h2 {
@@ -177,6 +201,12 @@ p {
 			font-size: 1.2rem;
 			margin: 10px 5%;
 		}
+
+		@media (max-width: 500px) {
+			border: 1px solid aqua;
+			width: 100%;
+			height: 150px;
+		}
 	}
 }
 
@@ -185,12 +215,18 @@ p {
 
 
 .main-container {
-	border: 1px solid @dark;
+	// border: 1px solid @dark;
 	width: 100%;
 	max-width: 800px;
 	height: 1000px;
 	margin: 0 auto;
 	display: flex;
+
+	@media (max-width: 500px) {
+		border: 5px solid goldenrod;
+		flex-direction: column;
+		height: 2500px;
+	}
 
 	.left-container {
 		width: 30%;
@@ -199,6 +235,10 @@ p {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 
 		.nav {
 			.dimensions;
@@ -210,8 +250,20 @@ p {
 				font-size: 1.2rem;
 				color: @white;
 				margin: 10px 0 0 0;
+
+				@media (max-width: 500px) {
+					align-self: center;
+					font-size: 2.4rem;
+					// border: 1px solid @white;
+				}
 			}
-		}
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+				// border: 1px solid white;
+				height: 500px;
+			} // @media
+		}// .nav
 
 		.intro {
 			display: flex;
@@ -225,12 +277,22 @@ p {
 				border: 1px solid @white;
 				border-radius: 50%;
 				align-self: center;
+
+				@media (max-width: 500px) {
+					height: 200px;
+				}
 			}
 			
 			h1 {
 				color: @white;
 				font-size: 3rem;
 				align-self: center;
+			}
+
+			@media (max-width: 500px) {
+				height: 500px;
+				// border: 1px solid white;
+
 			}
 		}
 
@@ -241,6 +303,12 @@ p {
 			.dimensions;
 			// .address;
 			// border: 3px solid orange;
+
+			@media (max-width: 500px) {
+				height: 500px;
+				// border: 1px solid white;
+				justify-content: space-around;
+			}
 		}
 	} // .left-container
 
@@ -251,6 +319,12 @@ p {
 		display: flex;
 		flex-direction: column;
 
+		@media (max-width: 500px) {
+			width: 100%;
+			height: 1500px;
+			// border: 3px solid red;
+		}
+
 
 		.logohead {
 			.dimensions2;	
@@ -258,19 +332,22 @@ p {
 
 		.education {
 			height: 100px;
+			@media (max-width: 500px) {
+				height: 400px;
+			}
 		}
 
 
 		.skills {
 			width: 100%;
 			height: 300px;
-			border: 3px solid goldenrod;
+			// border: 3px solid goldenrod;
 			
 			.box {
 				width: 100%;
 			}
 		}
-		
+
 	} // .right-container
 } // main container
 
