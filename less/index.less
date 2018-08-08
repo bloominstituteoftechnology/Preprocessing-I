@@ -193,7 +193,7 @@ body {
 }
 .background {
   background: linear-gradient(rgba(12, 12, 134, 0.582), rgba(8, 8, 65, 0.5)),
-    url(imgs/webdesign-header-bg.jpg);
+    url(/imgs/webdesign-header-bg.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -365,7 +365,34 @@ button[type="submit"]:hover {
 			border: 1px solid #aaa;
 		}
       }
+    
     }
+
+    // Media starts here
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: @font-size;
+  }
+
+  .img-container {
+    img {
+      
+      margin-left: 48.5px;
+      background-color: @primary-color;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+
   }
 /*Tabs for Index Page Starts Here*/
   main {
@@ -469,7 +496,7 @@ element but it was nice to use it */
     }
   }
   }
-
+/* Work History - Main-Work */
   main-work {
    .history-work {
        img {
@@ -490,26 +517,3 @@ element but it was nice to use it */
   }
 }
 
-// Media starts here
-@media screen and (max-width: 650px) {
-  label {
-    font-size: 0;
-  }
-  label:before {
-    margin: 0;
-    font-size: @font-size;
-  }
-
-  .img-container {
-    img {
-      margin-left: 68.5px;
-      background-color: @primary-color;
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  label {
-    padding: 15px;
-  }
-}
