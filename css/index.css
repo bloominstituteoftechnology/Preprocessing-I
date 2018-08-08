@@ -201,6 +201,12 @@ h3 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.flex-column-center {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
 /* Styling below here */
 .container {
   max-width: 880px;
@@ -234,11 +240,22 @@ h3 {
   padding-top: 10px;
   padding-bottom: 80px;
 }
+@media (max-width: 500px) {
+  .container .top-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .container .top-content .toptext {
   width: 94%;
   padding-top: 54px;
   padding-bottom: 35px;
   border-bottom: 1px solid black;
+}
+.container .top-content .toptext img {
+  width: 100%;
 }
 .container .top-content .toptext h1 {
   font-size: 6rem;
@@ -276,8 +293,22 @@ h3 {
   justify-content: space-between;
   padding-top: 35px;
 }
+@media (max-width: 500px) {
+  .container .middle-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .container .middle-content .lefttext {
   width: 48%;
+}
+@media (max-width: 500px) {
+  .container .middle-content .lefttext {
+    width: 90%;
+    padding-bottom: 15px;
+  }
 }
 .container .middle-content .lefttext h3 {
   font-size: 3.5rem;
@@ -299,12 +330,30 @@ h3 {
 .container .bottom-content {
   padding: 30px 0px;
 }
-.container .bottom-content h3 {
+@media (max-width: 500px) {
+  .container .bottom-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  .container .bottom-content .text-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+  }
+}
+.container .bottom-content .text-content h3 {
   font-size: 3.5rem;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.container .bottom-content p {
+.container .bottom-content .text-content p {
   padding-top: 10px;
   padding-bottom: 10px;
 }
