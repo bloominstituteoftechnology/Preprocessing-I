@@ -167,6 +167,12 @@ body {
   margin: 1% auto;
   padding-bottom: 5px;
 }
+@media (max-width: 570px) {
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -179,14 +185,28 @@ body {
 .nav-bar nav {
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 44%;
 }
 .nav-bar nav a {
   font-size: 1.6rem;
+  margin-left: 1%;
+}
+@media (max-width: 570px) {
+  .nav-bar {
+    flex-flow: column;
+    align-items: center;
+  }
+  .nav-bar nav {
+    width: 98%;
+    margin: 30px 0;
+  }
+  .nav-bar nav a {
+    font-size: 2rem;
+  }
 }
 .banner-section {
   display: flex;
-  height: 500px;
+  justify-content: space-between;
 }
 .banner-section .intro {
   display: flex;
@@ -230,6 +250,23 @@ body {
 .banner-section .skills li {
   font-size: 1.6rem;
 }
+@media (max-width: 570px) {
+  .banner-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .banner-section .intro {
+    margin: 5px 1%;
+    width: 98%;
+    padding: 5px 1%;
+  }
+  .banner-section .skills {
+    margin: 5px 1%;
+    width: 98%;
+    padding: 5px 1%;
+  }
+}
 .work {
   font-size: 1.6rem;
   margin: 5px 1%;
@@ -239,6 +276,11 @@ body {
 .work h2 {
   font-size: 2.4rem;
   margin: 3px 0;
+}
+@media (max-width: 570px) {
+  .work h2 {
+    text-align: center;
+  }
 }
 .work span {
   display: flex;
@@ -263,6 +305,29 @@ body {
 }
 .work .work-row .description {
   width: 55%;
+}
+@media (max-width: 500px) {
+  .work .work-row {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+  .work .work-row .column-headers {
+    display: none;
+  }
+  .work .work-row .years {
+    width: 98%;
+  }
+  .work .work-row .company {
+    width: 98%;
+  }
+  .work .work-row .role {
+    width: 98%;
+  }
+  .work .work-row .description {
+    width: 98%;
+  }
 }
 address {
   display: flex;
