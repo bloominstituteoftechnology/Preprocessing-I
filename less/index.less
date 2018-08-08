@@ -59,6 +59,10 @@ html, body {
 		background: @main-color;
 }
 
+/* Font added for p tags */
+h1, h3, p {
+	font-family: 'Share Tech', sans-serif;
+}
 /* Colors */
 @main-color: #708C76; // slate gray
 @alt-color1: #104346; //midnight blue light color
@@ -142,15 +146,6 @@ main {
 	.center-col-flex;
 	width: 80%;
 	header {
-		@media (max-width: 500px) {
-			font-size: 1rem;
-			h1 {
-				.x4;
-			}
-			button {
-				font-size: 1rem;
-			}
-		}
 		section {
 			flex-direction: column;
 		}
@@ -173,13 +168,13 @@ main {
 			padding: 2% 3%;
 			margin: 2%;
 			.x2;
-			transition: border 1s, background-color 1s;
+			transition: border 1s, background-color 1s, color 1s;
 		}
 		button:hover {
 			background-color: @cta-border;
 			border: 3px solid @cta-color;
 			color: @alt-color2;
-			transition: border 1s ease, background-color 1s ease;
+			transition: border 1s ease, background-color 1s ease, color 1s ease;
 		}
 		p {
 			.pad2;
@@ -189,6 +184,20 @@ main {
 			border: 1px solid @alt-color2;
 			border-radius: 40%;
 			margin: 5% auto;
+		}
+		@media (max-width: 500px) {
+			img {
+				border: 1px solid transparent;
+				display: flex;
+				margin: 3% auto;
+				width: 70%;
+			}
+			h1 {
+				font-size: 3rem;
+			}
+			button {
+				font-size: 1rem;
+			}
 		}
 	}
 	section {
@@ -232,6 +241,13 @@ main {
 		.panel:first-child {
 			width: 65%;
 		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+			width: 100%;
+			.panel:first-child {
+				width: 100%;
+			}
+		}
 	}
 	div {
 		.x2;
@@ -254,6 +270,13 @@ main {
 				border-right: 1px solid @alt-color1;
 				width: auto;
 				text-align: center;
+			}
+		}
+		@media (max-width: 500px) {
+			table {
+				font-size: 1.5rem;
+				margin: 5% 0;
+				width: 100%;
 			}
 		}
 	}
@@ -286,6 +309,11 @@ main {
 				figcaption {
 					.pad2;
 				}
+			}
+		}
+		@media (max-width: 500px) {
+			section {
+				flex-direction: column;
 			}
 		}
 	}

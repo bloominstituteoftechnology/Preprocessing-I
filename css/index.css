@@ -136,6 +136,12 @@ body {
   font-size: 62.5%;
   background: #708C76;
 }
+/* Font added for p tags */
+h1,
+h3,
+p {
+  font-family: 'Share Tech', sans-serif;
+}
 /* Colors */
 /* Layout */
 /* remove underline for a */
@@ -216,17 +222,6 @@ main {
 main header {
   font-size: 2rem;
 }
-@media (max-width: 500px) {
-  main header {
-    font-size: 1rem;
-  }
-  main header h1 {
-    font-size: 4rem;
-  }
-  main header button {
-    font-size: 1rem;
-  }
-}
 main header section {
   flex-direction: column;
 }
@@ -248,13 +243,13 @@ main header button {
   padding: 2% 3%;
   margin: 2%;
   font-size: 2rem;
-  transition: border 1s, background-color 1s;
+  transition: border 1s, background-color 1s, color 1s;
 }
 main header button:hover {
   background-color: #c12625;
   border: 3px solid #DA403F;
   color: #CDC69B;
-  transition: border 1s ease, background-color 1s ease;
+  transition: border 1s ease, background-color 1s ease, color 1s ease;
 }
 main header p {
   padding: 0 2%;
@@ -264,6 +259,20 @@ main header hr {
   border: 1px solid #CDC69B;
   border-radius: 40%;
   margin: 5% auto;
+}
+@media (max-width: 500px) {
+  main header img {
+    border: 1px solid transparent;
+    display: flex;
+    margin: 3% auto;
+    width: 70%;
+  }
+  main header h1 {
+    font-size: 3rem;
+  }
+  main header button {
+    font-size: 1rem;
+  }
 }
 main section {
   display: flex;
@@ -307,6 +316,15 @@ main section .panel ul ul {
 main section .panel:first-child {
   width: 65%;
 }
+@media (max-width: 500px) {
+  main section {
+    flex-direction: column;
+    width: 100%;
+  }
+  main section .panel:first-child {
+    width: 100%;
+  }
+}
 main div {
   font-size: 2rem;
   width: 100%;
@@ -331,6 +349,13 @@ main div table th {
   border-right: 1px solid #104346;
   width: auto;
   text-align: center;
+}
+@media (max-width: 500px) {
+  main div table {
+    font-size: 1.5rem;
+    margin: 5% 0;
+    width: 100%;
+  }
 }
 main #portfolio {
   display: block;
@@ -371,6 +396,11 @@ main #portfolio section figure .img:hover {
 }
 main #portfolio section figure figcaption {
   padding: 0 2%;
+}
+@media (max-width: 500px) {
+  main #portfolio section {
+    flex-direction: column;
+  }
 }
 footer {
   margin: 0 auto;
