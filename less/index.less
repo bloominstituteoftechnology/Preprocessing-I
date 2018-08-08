@@ -65,6 +65,7 @@ table {
 .link () {
 	text-decoration: none;
 	color: gray;
+	font-size: 1.6rem;
 
 	&:hover {
 		color: black;
@@ -74,25 +75,39 @@ table {
 
 @back-color: #536DFE;
 
+html {
+	font-size: 62.5%;
+}
 
 body {
 	display: flex;
 	justify-content: center;
 }
-.container {
 
+.container {
+	max-width: 1000px;
+}
+
+h2 {
+	font-size: 2.5rem;
+}
+
+p {
+	font-size: 1.8rem;
 }
 
 header {
-	max-width: 800px;
 	width: 100%;
 	nav {
 		display: flex;
 		justify-content: space-around;
-		margin: 20px 0;
+		align-items: center;
+		height: 50px;
+		background-color: lightgray;
 
 		a {
 			.link();
+			
 		}
 	}
 }
@@ -103,8 +118,7 @@ header {
 }
 
 section {
-	max-width: 800px;
-	height: 300px;
+	height: 400px;
 	width: 100%;
 }
 
@@ -114,14 +128,21 @@ section {
 
 	.content {
 		display: flex;
-		justify-content: space-around;;
+		justify-content: space-evenly;
 		align-items: center;
+		height: 90%;
 	}
 	.about-img {
-		width: 175px;
-		height: 175px;
+		// width: 47.5%;
+		// height: 190px;
 		border-radius: 50%;
-		background-image: url('../img/abdiel.jpg')
+
+		img {
+			width: 240px;
+			height: 240px;
+			border-radius: 50%;
+			// padding: 40px 50px;
+		}
 	}
 
 	.bio {
@@ -147,6 +168,7 @@ section {
 	a {
 		align-self: center;
 		.link();
+		font-size: 2.5rem;
 	}
 }
 
@@ -181,5 +203,8 @@ section {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+	a {
+		.link();
 	}
 }
