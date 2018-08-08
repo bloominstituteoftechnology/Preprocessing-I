@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -57,3 +56,284 @@ html, body {
     height: 100%;
 }
 
+/* My Code */
+
+/* variables */
+/* colors */
+@text-color-header: whitesmoke;
+@text-color-header-hover: lightgray;
+@text-color-footer: whitesmoke;
+@text-color-button: whitesmoke;
+
+@background-color-header: black;
+@background-color-footer: black;
+@background-color-button: blue;
+
+@border-color-nav-a-mobile: whitesmoke;
+@border-color-accent: gray;
+@border-color-button: darkblue;
+
+/* font-sizes & line-heights */
+@font-size-h1: 2.4rem;
+@font-size-h1-cta: 3.6rem;
+@font-size-h2: 2rem;
+@font-size-p-cta: 2.4rem; 
+@font-size-h3: 1.8rem;
+@font-size-normal: 1.6rem;
+@font-size-nav-a-mobile: 1.8rem;
+
+@line-height-p: 1.8rem;
+@line-height-p-cta: 2.6rem;
+
+/* margins & paddings */
+@margin-small: 8px;
+@margin-normal: 15px;
+@margin-large: 30px;
+
+@padding-small: 8px;
+@padding-normal: 15px;
+@padding-large: 30px;
+
+/* screen breakpoints */
+@max-width-tablet: 800px;
+@max-width-mobile: 500px;
+
+/* mixins */
+.flex-row-wrap-space-between() {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.top-border-accent-padding() {
+	border-top: 1px solid @border-color-accent;
+	padding-top: @padding-large;
+}
+
+/* default styles */
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: @font-size-normal;
+}
+
+h1 {
+	font-size: @font-size-h1;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: @font-size-h2;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: @font-size-h3;
+}
+
+p {
+	line-height: @line-height-p;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* content sizes */
+.content-large {
+	width: 100%;
+}
+
+.content-medium {
+	width: 49%;
+}
+
+.content-small {
+	width: 32%
+}
+
+/* header */
+header {
+	width: 100%;
+	padding: @padding-normal 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: @background-color-header;
+	color: @text-color-header;
+
+	@media (max-width: @max-width-tablet) {
+		padding: @padding-normal @padding-normal;
+		justify-content: space-between;
+	}
+
+	@media (max-width: @max-width-mobile) {
+		padding: 0 0;
+		flex-direction: column;
+	}
+
+	h1 {
+
+		@media (max-width: @max-width-mobile) {
+			padding: @padding-normal 0;
+			width: 100%;
+			text-align: center;
+		}
+
+		a {
+			color: @text-color-header;
+
+			@media (max-width: @max-width-mobile) {
+				width: 100%;
+			}
+		}
+
+		a:hover {
+			color: @text-color-header-hover;
+		}
+	}
+
+	nav {
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: @max-width-mobile) {
+			width: 100%;
+			flex-direction: column;
+		}
+
+		a {
+			color: @text-color-header;
+
+			@media (max-width: @max-width-mobile) {
+				padding: @padding-normal 0;
+				width: 100%;
+				border-top: 1px solid @border-color-nav-a-mobile;
+				text-align: center;
+				font-size: @font-size-nav-a-mobile;
+			}
+		}
+
+		a:hover {
+			color: @text-color-header-hover;
+		}
+	}
+}
+
+/* main */
+main {
+	width: 70%;
+	margin: @margin-large auto;
+	.flex-row-wrap-space-between();
+
+	@media (max-width: @max-width-tablet) {
+		width: 95%;
+	}
+
+	.call-to-action {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: @padding-normal;
+
+		h1 {
+			font-size: @font-size-h1-cta;
+			text-align: center;
+		}
+
+		p {
+			width: 85%;
+			line-height: @line-height-p-cta;
+			margin: @margin-normal 0;
+			font-size: @font-size-p-cta;
+			text-align: center;
+		}
+
+		a {
+			margin: @margin-normal 0;
+			padding: @padding-normal @padding-large;
+			color: @text-color-button;
+			border: 1px solid @border-color-button;
+			border-radius: 5px;
+			background: @background-color-button;
+		}
+
+		a:hover {
+			background: @border-color-button;
+		}
+	}
+
+	.about-me {
+		.flex-row-wrap-space-between();
+		.top-border-accent-padding();
+		padding-bottom: @padding-large;
+
+		@media (max-width: @max-width-mobile) {
+			flex-direction: column-reverse;
+		}
+
+		.intro {
+			@media (max-width: @max-width-mobile) {
+				width: 100%;
+			}
+
+			h2 {
+				margin-bottom: @margin-normal;
+			}
+		}
+
+		.image {
+			@media (max-width: @max-width-mobile) {
+				width: 100%;
+				margin-bottom: @margin-normal;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+		}
+	}
+
+	.work-history {
+		.top-border-accent-padding();
+		
+		h2 {
+			margin-bottom: @margin-large;
+		}
+
+		.work-item {
+			.flex-row-wrap-space-between();
+			margin-bottom: @margin-large;
+
+			h3 {
+				margin-bottom: @margin-small;
+			}
+
+			.workplace {
+				width: 70%;
+			}
+
+			p {
+				width: 100%;
+
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+/* footer */
+footer {
+	width: 100%;
+	padding: @padding-normal 0;
+	background: @background-color-footer;
+	color: @text-color-footer;
+	text-align: center;
+}
