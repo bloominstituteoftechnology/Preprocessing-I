@@ -58,15 +58,16 @@ html, body {
 }
 
 /*****************MY CODE STARTS HERE ***********************/
-@main-background: #ffffff;
+@main-background: #56BBFF;
 @normal-font: 1.6rem;
 @h1-font: 3.0rem;
 @h2-font: 2.6rem;
 @h3-font: 2.2rem;
-@normal-color: #000;
-@overview-color: #686868;
+@normal-color: #4F3003;
+@overview-color: #3498DB;
 @padding: 20px 2.5%;
 @section-margin: 15px 0;
+@button-color: #613B04;
 
 .normal-font() {
 	font-size: @normal-font;
@@ -79,23 +80,25 @@ html {
 
 body {
 	background-color: #bebebe;
+	color: @normal-color;
 }
 
 #container {
-	// width: 100%;
+	width: 100%;
 	min-height: 100vh;
-	max-width: 800px;
+	max-width: 840px;
 	background-color: @main-background;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .index-header {
-	width: 100%;  //800px
+	width: 95.23%;  //800px
 	display: flex;
 	justify-content: flex-end;
-	padding: 5px 0;
+	padding: 15px;
 
 	.index-nav {
 		width: 100%;
@@ -116,9 +119,8 @@ body {
 } //.index-header
 
 .overview {
-	width: 100%; //800px
+	width: 95.23%; //800px
 	background-color: @overview-color;
-	border: 2px solid green;
 	padding: @padding;
 
 
@@ -139,14 +141,18 @@ body {
 	}
 
 	button {
-		font-size: @h3-font;
+		font-size: @normal-font;
+		color: #DB9634;
 		margin-bottom: 30px;
+		background: @button-color;
+		border: 1px solid @normal-color;
+		border-radius: 5px;
+		height: 32px;
 	}
 } //.overview
 
 .intro-skills {
-	width: 100%;  //800px;
-	border: 2px solid red;
+	width: 95.23%;  //800px;
 	display: flex;
 	justify-content: space-between;
 	margin: @section-margin;
@@ -177,12 +183,12 @@ body {
 
 			li {
 				.normal-font();
-				border: 1px solid #bebebe;
+				border: 1px solid #DB9634;
 				border-bottom: none;
 				padding: 5px 0 5px 3%;
 
 				&:last-child {
-					border-bottom: 1px solid #bebebe;
+					border-bottom: 1px solid #DB9634;
 				}
 			}
 
@@ -198,14 +204,16 @@ h2.experience-header {
 }
 
 .experience {
+	width: 95.23%; //800px
 	margin: @section-margin;
 	// display: flex;
 	// justify-content: space-evenly;
-	border: 2px solid blue;
 
 	.experience-table {
 		display: flex;
 		.normal-font();
+		border-top: 1px solid #DB9634;
+
 
 		.col-1 {
 			flex: 1 1 10%;
@@ -227,13 +235,33 @@ h2.experience-header {
 
 	.headers {
 		font-weight: bolder;
+		padding: 5px .625% 5px .625%;
 	}
 
 	.row-1, .row-3 {
 		background: @overview-color;
+		padding: 5px .625% 5px .625%;
 	}
+	.row-2 {
+		padding: 5px .625% 5px .7%;
+
+	}
+
+
 
 
 } //.experience
 
+.index-footer {
+	width: 95.23%;
+	margin-top: 30px;
+	padding-top: 10px;
+	background: @button-color;
+	text-align: center;
+	height: 70px;
+	color: #DB9634;
 
+	p {
+		font-size: 1.5rem;
+	}
+}
