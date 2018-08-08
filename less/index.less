@@ -57,6 +57,12 @@ html, body {
     height: 100%;
 }
 
+//My Variables
+@primaryColor: aqua;
+@secondaryColor: darkgrey;
+@thirdColor: pink;
+
+
 
 // MY CODE STARTS HERE
 html {
@@ -65,7 +71,7 @@ html {
 
 .Container {
 	display: flex;
-	width: 50%;
+	width: 45.8%;
 	margin: 0 auto;
 	flex-direction: column;
 }
@@ -79,6 +85,7 @@ section {
 		justify-content: space-around;
 		flex-direction: row;
 		margin: 2% 0;
+		z-index: +1;
 		a {
 			text-decoration: none;
 			color: black;
@@ -94,7 +101,7 @@ section {
 		}
 
 		.links:hover {
-			background-color: aqua;
+			background-color: @primaryColor;
 			color: white;
 			padding-left: 3%;
 			padding-right: 3%;
@@ -107,7 +114,7 @@ section {
 
 header {
 	width: 100%;
-	border-bottom: 1px solid darkgrey;
+	border-bottom: 1px solid @thirdColor;
 	display: flex;
 	align-content: center;
 	margin-top: 3%;
@@ -118,4 +125,14 @@ header {
 		text-emphasis: bold;
 		margin: 0 auto;
 	}
+}
+
+.portrait {
+	margin-top: 5%;
+	border: 2px solid black;
+	width: 450px;
+	height: 350px;
+	background-image: url(../img/me.jpg);
+	background-size: 4px50 350px;
+	background-repeat: none;
 }
