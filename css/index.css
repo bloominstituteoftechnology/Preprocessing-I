@@ -139,6 +139,7 @@ body {
 /* colors */
 /* font-sizes & line-heights */
 /* margins & paddings */
+/* screen breakpoints */
 /* mixins */
 /* default styles */
 html {
@@ -184,8 +185,32 @@ header {
   background: black;
   color: whitesmoke;
 }
+@media (max-width: 800px) {
+  header {
+    padding: 15px 15px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    padding: 0 0;
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  header h1 {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
 header h1 a {
   color: whitesmoke;
+}
+@media (max-width: 500px) {
+  header h1 a {
+    width: 100%;
+  }
 }
 header h1 a:hover {
   color: lightgray;
@@ -195,15 +220,30 @@ header nav {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  header nav {
+    width: 100%;
+    flex-direction: column;
+  }
+}
 header nav a {
   color: whitesmoke;
+}
+@media (max-width: 500px) {
+  header nav a {
+    padding: 15px 0;
+    width: 100%;
+    border-top: 1px solid whitesmoke;
+    text-align: center;
+    font-size: 1.8rem;
+  }
 }
 header nav a:hover {
   color: lightgray;
 }
 /* main */
 main {
-  width: 60%;
+  width: 70%;
   margin: 30px auto;
   display: flex;
   justify-content: space-between;
@@ -222,8 +262,11 @@ main .call-to-action {
 }
 main .call-to-action h1 {
   font-size: 3.6rem;
+  text-align: center;
 }
 main .call-to-action p {
+  width: 85%;
+  line-height: 2.6rem;
   margin: 15px 0;
   font-size: 2.4rem;
   text-align: center;
@@ -247,8 +290,28 @@ main .about-me {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+@media (max-width: 500px) {
+  main .about-me {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 500px) {
+  main .about-me .intro {
+    width: 100%;
+  }
+}
 main .about-me .intro h2 {
   margin-bottom: 15px;
+}
+@media (max-width: 500px) {
+  main .about-me .image {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+main .about-me .image img {
+  width: 100%;
+  height: auto;
 }
 main .work-history {
   border-top: 1px solid gray;
