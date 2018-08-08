@@ -62,14 +62,14 @@ html{
 }
 
 @primaryFontSize: 1.6rem;
-@largeFontSize: 2.0rem;
-@mediumFontSize: 1.8rem;
+@largeFontSize: 3.5rem;
+@mediumFontSize: 2.2rem;
 @smallFontSize: 1.4rem;
 
-@bgColorDark: #AC8A7B;
-@bgColorLight: #007569;
-@anchorColor1: #FFEEE7;
-@anchorColor2: #655148;
+@bgColorDark: #ff808c;
+@bgColorLight: #6ca8e8;
+@anchorColor1: #d5fffa;
+@anchorColor2: #e8e3b3;
 
 .testBorder(){
 	border: 1px solid black;
@@ -98,15 +98,15 @@ a{
 }
 
 h1{
-	font-size: 2.2rem;
+	font-size: @largeFontSize;
 }
 
 h2{
-	font-size: 1.9rem;
+	font-size: 2.2rem;
 }
 
 h3{
-	font-size: 1.8rem;
+	font-size: 2.0rem;
 }
 
 p{
@@ -130,6 +130,7 @@ li{
 		.main-width();
 		background-color: @bgColorDark;
 		border-radius: 0px 0px 10px 10px;
+		z-index: 2;
 
 
 		a{
@@ -138,7 +139,7 @@ li{
 			background-color: @anchorColor2;
 			margin: 10px 1%;
 			padding: 5px 2%;
-			border: 1px solid @anchorColor2;
+			border: 1px solid black;
 			border-radius: 5px;
 		}
 
@@ -169,6 +170,14 @@ li{
 
 		img{
 			width: 50%;
+		}
+		
+		h1{
+			padding: 10px 0%;
+		}
+
+		p{
+			font-size: @mediumFontSize;
 		}
 
 		.header-links{
@@ -210,6 +219,9 @@ li{
 
 		.about{
 			width: 65%;
+			h2{
+				margin-bottom: 5px;
+			}
 		}
 		
 		.skills{
@@ -244,7 +256,6 @@ li{
 		height: 200px;
 		margin-top: -50px;
 		padding: 20px 0% 20px 0%;
-		z-index: -1;
 		
 		div{
 			position: relative;
@@ -267,7 +278,7 @@ li{
 				background-color: @anchorColor2;
 				margin: 10px 1%;
 				padding: 5px 2%;
-				border: 1px solid @anchorColor2;
+				border: 1px solid black;
 				border-radius: 5px;
 			}
 
@@ -294,6 +305,7 @@ li{
 
 		h2{
 			padding: 10px 0%;
+			font-size: 3.0rem;
 		}
 
 		div{
@@ -333,6 +345,10 @@ li{
 
 		p{
 			line-height: 1.8rem;
+		}
+
+		@media(max-width: 500px){
+			border-radius: 0;
 		}
 	}
 }
