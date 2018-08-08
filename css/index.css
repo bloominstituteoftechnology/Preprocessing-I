@@ -140,6 +140,7 @@ html {
 .container {
   display: flex;
   justify-content: center;
+  background-size: cover;
   height: 1300px;
 }
 .container .main-content {
@@ -148,15 +149,19 @@ html {
   width: 100%;
   border: solid 2px black;
   flex-direction: column;
+  background-image: url("../img/2144.jpg");
+  background-size: no-repeat;
+  background-position: absolute;
 }
-.container .main-content .header-container {
+.container .header-container {
   display: flex;
   justify-content: center;
+  height: 10%;
 }
 .container nav {
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 100%;
 }
 .container nav ul {
   display: flex;
@@ -164,25 +169,32 @@ html {
   flex-direction: row;
   border: solid 2px black;
   justify-content: space-around;
-  height: 75%;
+  height: 100%;
   align-items: center;
+}
+.container nav li {
+  font-size: 2.4rem;
 }
 .container .headline {
   display: flex;
   border: solid 2px black;
-  height: 600px;
+  height: 100%;
   flex-direction: column;
   justify-content: space-around;
 }
 .container .headline .headline-container-img {
   display: flex;
   border: solid 2px black;
-  width: 50%;
-  height: 50%;
+  width: 55%;
+  height: 55%;
+}
+.container .headline img {
+  width: 100%;
+  height: 100%;
 }
 .container .headline .main-headline {
   display: flex;
-  border: solid 2px black;
+  border-top: solid 2px black;
   width: 100%;
   height: 25%;
   font-size: 2.7rem;
@@ -192,15 +204,30 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 450px;
+  height: 1000px;
+}
+@media (max-width: 500px) {
+  .container .about {
+    height: 2500px;
+  }
 }
 .container .about .top-about {
   border: solid 2px black;
   display: flex;
   flex-direction: row;
-  height: 250px;
+  height: 50%;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.5rem;
+}
+.container .about .top-about h1 {
+  font-size: 2.5rem;
+}
+@media (max-width: 500px) {
+  .container .about .top-about {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .container .about .intro {
   border: solid 2px black;
@@ -209,12 +236,22 @@ html {
   width: 45%;
   height: 90%;
 }
+@media (max-width: 500px) {
+  .container .about .intro {
+    width: 100%;
+  }
+}
 .container .about .skills {
   border: solid 2px black;
   display: flex;
   flex-direction: column;
   width: 45%;
   height: 90%;
+}
+@media (max-width: 500px) {
+  .container .about .skills {
+    width: 100%;
+  }
 }
 .container .about .work-history {
   display: flex;

@@ -66,11 +66,14 @@ html {
 	font-size: 62.5%;
 }
 
+body {
+
+}
 .container {
 	display: flex;
 	
 	justify-content: center;
-	
+	background-size: cover;
 	height: 1300px;
 	
 	
@@ -81,16 +84,23 @@ html {
 	width: 100%;
 	border: @solid-black-border;
 	flex-direction: column;
+	background-image: url("../img/2144.jpg");
+	background-size: no-repeat;
+	background-position: absolute;
+	
+	
 	
 	
 		
-		.header-container {
-			display: flex;
-			justify-content: center;
-			
 
-		
-		}
+
+}
+
+.header-container {
+	display: flex;
+	justify-content: center;
+	height: 10%;
+
 
 }
 	
@@ -98,7 +108,7 @@ html {
 	nav {
 		display: flex;
 		width: 100%;
-		height: 100px;
+		height: 100%;
 		
 		
 
@@ -108,10 +118,14 @@ html {
 			flex-direction: row;
 			border: @solid-black-border;
 			justify-content: space-around;
-			height: 75%;
+			height: 100%;
 			align-items: center;
 			
 			
+		}
+
+		li {
+			font-size: 2.4rem;
 		}
 
 	}
@@ -119,20 +133,26 @@ html {
 	.headline {
 		display: flex;
 		border: @solid-black-border;
-		height: 600px;
+		height: 100%;
 		flex-direction: column;
 		justify-content: space-around;
 		
 		.headline-container-img {
 			display: flex;
 			border: @solid-black-border;
-			width: 50%;
-			height: 50%;
+			width: 55%;
+			height: 55%;
+			
+
 		}
+		img {
+			width: 100%;
+			height:100%;
+		}		
 		
 		.main-headline {
 			display: flex;
-			border: @solid-black-border;
+			border-top: @solid-black-border;
 			width: 100%;
 			height: 25%;
 			font-size: 2.7rem;
@@ -149,16 +169,32 @@ html {
 		flex-direction: column;
 		justify-content: space-between;
 		
-		height: 450px;
+		height: 1000px;
+		@media (max-width: 500px) {
+			height: 2500px;
+			
+		}
 		
 		
 		.top-about {
 			border: @solid-black-border;
 			display: flex;
 			flex-direction: row;
-			height: 250px;
+			height: 50%;
 			justify-content: space-between;
 			align-items: center;
+			font-size: 1.5rem;
+
+			h1 {
+				font-size: 2.5rem;
+			}
+
+
+
+			@media (max-width: 500px){
+				flex-direction: column;
+				width: 100%;
+			}
 		}
 		
 		.intro {
@@ -167,6 +203,10 @@ html {
 			flex-direction: column;
 			width: 45%;
 			height: 90%;
+			@media (max-width: 500px){
+				
+				width: 100%;
+			}			
 		}
 		
 		.skills {
@@ -175,6 +215,10 @@ html {
 			flex-direction: column;
 			width: 45%;
 			height: 90%;
+			@media (max-width: 500px){
+				
+				width: 100%;
+			}			
 		}
 		
 		.work-history {
@@ -185,6 +229,8 @@ html {
 			height: 70%;
 			align-items: center;
 			justify-content: space-around;
+
+
 			
 			h1 {
 				align-self: start;
