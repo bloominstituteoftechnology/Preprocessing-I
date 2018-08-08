@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,290 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
+		background: @main-color;
 }
 
+/* Font added for p tags */
+h1, h3, p {
+	font-family: 'Share Tech', sans-serif;
+}
+/* Colors */
+@main-color: #708C76; // slate gray
+@alt-color1: #104346; //midnight blue light color
+@alt-color2: #CDC69B; //tan
+@alt-color3: #041325; //midnght blue dark color
+@cta-color: #DA403F; // brick red
+@cta-border: darken(@cta-color, 10%);
+/* Layout */
+
+/* remove underline for a */
+.a {
+	text-decoration: none;
+}
+
+/* space-evenly/center flex */
+.space-center-flex {
+	align-items: center;
+	display: flex;
+	justify-content: space-evenly;
+}
+.center-col-flex {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+.x6 {
+	font-size: 6rem;
+}
+.x4 {
+	font-size: 4rem;
+}
+.x2 {
+	font-size: 2rem;
+}
+.fiftyWidth {
+	width: 50%;
+}
+.pad2 {
+	padding: 0 2%;
+}
+
+.main-nav {
+	background-color: @alt-color1;
+	nav {
+		display: flex;
+		justify-content: flex-end;
+
+		ul {
+			@media (max-width: 500px) {
+				flex-direction: column;
+				width: 100%;
+				li {
+					border-bottom: 1px solid @alt-color2;
+					padding: 2%;
+					text-align: center;
+					width: 100%;
+				}
+			}
+			min-height: 50px;
+		}
+	}
+}
+/* set up both nav areas */
+.ul-setup {
+	.space-center-flex;
+	.x2;
+	.fiftyWidth;
+	li {
+		a {
+			.a;
+			color: @alt-color2;
+		}
+	}
+}
+
+/* Main Section */
+
+main {
+	.center-col-flex;
+	width: 80%;
+	header {
+		section {
+			flex-direction: column;
+		}
+		.x2;
+		img {
+			margin: 5% 2% 1% 2%;
+		}
+		h1 {
+			.x6;
+			.pad2;
+		}
+		h3 {
+			.pad2;
+			width: 60%;
+		}
+		button {
+			background-color: @cta-color;
+			border: 3px solid @cta-border;
+			border-radius: 1%;
+			padding: 2% 3%;
+			margin: 2%;
+			.x2;
+			transition: border 1s, background-color 1s, color 1s;
+		}
+		button:hover {
+			background-color: @cta-border;
+			border: 3px solid @cta-color;
+			color: @alt-color2;
+			transition: border 1s ease, background-color 1s ease, color 1s ease;
+		}
+		p {
+			.pad2;
+			padding-right: 4%;
+		}
+		hr {
+			border: 1px solid @alt-color2;
+			border-radius: 40%;
+			margin: 5% auto;
+		}
+		@media (max-width: 500px) {
+			img {
+				border: 1px solid transparent;
+				display: flex;
+				margin: 3% auto;
+				width: 70%;
+			}
+			h1 {
+				font-size: 3rem;
+			}
+			button {
+				font-size: 1rem;
+			}
+		}
+	}
+	section {
+		display: flex;
+		flex-direction: row;
+		.x2;
+		margin: 3% auto;
+		.panel{
+			flex-direction: column;
+			h1 {
+				padding: 3% 0;
+				.x6;
+			}
+			h3 {
+				font-size: 2.4rem;
+				padding: 5% 0;
+			}
+			p {
+				padding-right: 10%;
+				text-align: justify;
+			}
+			ul {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				margin: 0 auto;
+				padding-left: 5%;
+				list-style-type: circle;
+				width: 100%;
+				li {
+					margin: 5% 0;
+				}
+				ul {
+					padding-left: 5%;
+					justify-content: space-around;
+					list-style-type: square;
+				}
+			}
+		}
+		.panel:first-child {
+			width: 65%;
+		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+			width: 100%;
+			.panel:first-child {
+				width: 100%;
+			}
+		}
+	}
+	div {
+		.x2;
+		width: 100%;
+		h1 {
+			.x6;
+		}
+		table {
+			background-color: @alt-color2;
+			border: 1px solid @alt-color1;
+			margin: 5% auto;
+			.pad2;
+			width: 80%;
+			tr {
+				border-bottom: 1px solid @alt-color1;
+				line-height: 2;
+				margin: 5% 0;
+			}
+			td, th {
+				border-right: 1px solid @alt-color1;
+				width: auto;
+				text-align: center;
+			}
+		}
+		@media (max-width: 500px) {
+			table {
+				font-size: 1.5rem;
+				margin: 5% 0;
+				width: 100%;
+			}
+		}
+	}
+	#portfolio {
+		display: block;
+		h1 {
+			.x6;
+			padding: 3% 0;
+		}
+		section {
+			.center-col-flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			 figure {
+				.center-col-flex;
+				.fiftyWidth;
+				padding: 5% 0;
+				.img {
+					border: 2px solid @alt-color2;
+					border-radius: 5%;
+					width: 300px;
+					height: 225px;
+					transition: 1.5s ease;
+				}
+				.img:hover {
+					border-color: @alt-color3;
+					border-radius: 0;
+					transition: 1.5s ease;
+				}
+				figcaption {
+					.pad2;
+				}
+			}
+		}
+		@media (max-width: 500px) {
+			section {
+				flex-direction: column;
+			}
+		}
+	}
+}
+
+footer {
+	margin: 0 auto;
+	width: 80%;
+	p {
+		.x2;
+		.pad2;
+		text-align: center;
+	}
+	section {
+		p {
+			.x2;
+			padding: 1%;
+			text-align: left;
+		}
+		h1 {
+			.x6;
+			.pad2;
+		}
+		ul {
+			margin: 3% auto;
+		}
+		}
+	}

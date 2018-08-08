@@ -1,4 +1,4 @@
-# Preprocessing I: Digital Resume
+# Preprocessing I: Digital Resume--Joseph Thompson
 
 For this project you will be building a digital resume from scratch. You will be required to use specific preprocessing skills to accomplish your tasks.  
 
@@ -17,7 +17,7 @@ For this project you will be building a digital resume from scratch. You will be
 
 ## Task 3: Project Objectives
 
-* [ ] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
+* [ ] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file.
 **Note: you are only required to build one page, anything more than that would be stretch.**
 * [ ] The resume content will be provided by you. The content can be about you or a fictional character.  
 * [ ] Content: Navigation - Build a simple navigation with 4 items of your choosing
@@ -28,12 +28,9 @@ For this project you will be building a digital resume from scratch. You will be
 * [ ] Variables: Incorporate variables in your project for color and font stacks.  
 * [ ] Nesting: Every selector should be nested inside the main container.  Avoid having global styles unless they are element level.
 * [ ] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
-* [ ] Mobile: Use nested-at rules to provide a mobile version of your resume.  Use `500px` as a `max-width` for mobile. 
+* [ ] Mobile: Use nested-at rules to provide a mobile version of your resume.  Use `500px` as a `max-width` for mobile.
 
-## Stretch Goals: 
+## Stretch Goals:
 * [ ] Incorporate a google font of your choosing
-* [ ] Convert the great idea CSS into LESS.  Introduce variables, mixins, nesting, etc. 
+* [ ] Convert the great idea CSS into LESS.  Introduce variables, mixins, nesting, etc.
 * [ ] Create a link to the portfolio page and create a layout that would allow users to see your work.  A good idea is to link projects back to their github repos so employers can see your code.
-
-
-
