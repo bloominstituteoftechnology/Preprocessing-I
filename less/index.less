@@ -60,9 +60,13 @@ html, body {
 
 // variables 
 
+@header1size: 5.4rem;
 @header2size: 2.4rem;
 @header2margin: 3px 0;
 @bodytext: 1.6rem;
+@mobilelinksize: 2.0rem;
+@lightcolor: #cac3bf;
+@darkcolor: #58432e;
 
 // mixins
 
@@ -74,6 +78,7 @@ html, body {
 .h2-size-margin {
 	font-size: @header2size;
 	margin: @header2margin;
+	color: @darkcolor;
 }
 
 .banner-section-box {
@@ -83,7 +88,8 @@ html, body {
 	justify-content: center;
 	margin: 0 1%;
 	padding: 5px 1%;
-	border: 1px solid black;
+	border: 1px solid @darkcolor;
+	background-color: @lightcolor;
 
 	h2 {
 		.h2-size-margin();
@@ -94,12 +100,16 @@ html, body {
 	}
 }
 
+.mobile-text-margin {
+	width: 98%;
+	margin: 2px 0;
+}
+
 //plain CSS
 
 .container {
 	max-width: 880px;
 	width: 98%;
-	border: 1px solid black;
 	margin: 1% auto;
 	padding-bottom: 5px;
 
@@ -115,7 +125,7 @@ html, body {
 	align-items: baseline;
 
 	h1 {
-		font-size: 5.4rem;
+		font-size: @header1size;
 	}
 
 	nav {
@@ -123,8 +133,10 @@ html, body {
 		width: 44%;
 
 		a {
-			font-size: 1.6rem;
+			font-size: @bodytext;
 			margin-left: 1%;
+			text-decoration: none;
+			color: @darkcolor;
 		}
 	}
 
@@ -137,7 +149,7 @@ html, body {
 			margin: 30px 0;
 
 			a {
-				font-size: 2.0rem;
+				font-size: @mobilelinksize;
 			}
 		}
 
@@ -157,6 +169,7 @@ html, body {
 		width: 100%;
 		max-width: 377.53px;
 		height: 500px;
+		border: 1px solid @darkcolor;
 	}
 
 	.skills {
@@ -180,6 +193,10 @@ html, body {
 			width: 98%;
 			padding: 5px 1%;
 
+			li {
+				margin: 2px 0;
+			}
+
 		}
 	}
 }
@@ -190,7 +207,6 @@ html, body {
 	font-size: @bodytext;
 	margin: 5px 1%;
 	padding: 5px 1%;
-	border: 1px solid black;
 
 	h2 {
 		.h2-size-margin();
@@ -213,7 +229,8 @@ html, body {
 		height: 50px;
 		margin: 5px 1%;
 		padding: 5px 1%;
-		border: 1px solid black; 
+		border: 1px solid @darkcolor; 
+		background-color: @lightcolor;
 
 		.years {
 			width: 15%;
@@ -233,31 +250,31 @@ html, body {
 
 		@media(max-width: 500px) {
 			flex-flow: column nowrap;
-			align-items: center;
 			justify-content: center;
-			height: 100px;
-
-			.column-headers {
-				display: none;
-			}
+			height: 120px;
 
 			.years {
-				width: 98%;
+				.mobile-text-margin();
 			}
 	
 			.company {
-				width: 98%;
+				.mobile-text-margin();
 			}
 	
 			.role {
-				width: 98%;
+				.mobile-text-margin();
 			}
 	
 			.description {
-				width: 98%;
+				.mobile-text-margin();
 			}
 		}
+	}
 
+	@media (max-width: 500px) {
+		.column-headers {
+			display: none;
+		}
 	}
 }
 
@@ -270,6 +287,17 @@ address {
 		justify-content: space-between;
 		width: 100%;
 		padding-bottom: 5px;
+
+		@media (max-width: 500px) {
+			flex-flow: column nowrap;
+			align-items: center;
+
+			li {
+				margin: 2px 0;
+			}
+		}
 	}
+
+
 }
 
