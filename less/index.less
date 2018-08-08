@@ -140,6 +140,7 @@ body {
 
 body {
   font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
   background-color: @backgroundColor;
 }
 
@@ -155,9 +156,10 @@ body {
 @shadowTintOne: rgb(102, 102, 163);
 @shadowTintTwo: #272e29;
 @margin-standard: 15px 0%;
-// #000000
-// #C9D7F8
-// #94A0CE
+@h1FontSize: 3.5rem;
+@h2FontSize: 1.8rem;
+@stanTextSize: 1.2rem;
+@jobTitleSize: 1.4rem;
 
 /* Mixins */
 
@@ -192,11 +194,11 @@ body {
   color: @linkColor;
   text-decoration: none;
   padding: 0px 1%;
-  font-size: 1.2rem;
+  font-size: @stanTextSize;
 }
 
 .list-titles() {
-  font-size: 2rem;
+  font-size: @h2FontSize;
   list-style: none;
 }
 
@@ -218,7 +220,7 @@ body {
     
     p {
       .link-setup;
-      font-size: 2rem;
+      font-size: @h2FontSize;
     }
 
   }
@@ -235,6 +237,135 @@ body {
     .link-setup;
   }
   
+  .intro {
+    .flex-rowSpaceAround;
+    margin: @margin-standard;
+    .section-gradient;
+  
+    img {
+      width: 50%;
+      height: auto;
+      padding: 10px 2%;
+      @media (max-width: 500px) {
+       display: none; 
+      }
+    }
+  
+    .titleSection {
+      .flex-columnCenter;
+      text-align: center;
+      @media (max-width: 500) {
+        width: 90%;
+      }
+    }
+  
+    .title{
+      font-size: @h1FontSize;
+    }
+  
+    .subTitle {
+      padding: 10px;
+      border-top: 1px dotted @shadowTintTwo;
+      font-size: @h2FontSize;
+    }
+  }
+  
+  .goodHire {
+    font-size: @stanTextSize;
+    text-align: center;
+    margin: @margin-standard;
+  }
+  
+  .middleSection {
+    .flex-rowSpaceAround;
+    width: 100%;
+    margin: @margin-standard;
+    @media (max-width: 500px) {
+      .flex-columnCenter;
+    }
+  
+    .fullQuotation {
+      .flex-rowSpaceAround;
+      .section-gradient;
+      width: 55%;
+      height: 100%;
+      font-size: @stanTextSize;
+      text-align: center;
+      @media (max-width: 500px) {
+        width: 95%;
+      }
+    }
+  
+    .marks {
+      width: 20%;
+      transform: rotatex(180deg);
+      align-self: flex-start;
+    }
+  
+    .quote {
+      width: 75%;
+    }
+  
+    .skillSet {
+      .section-gradient;
+      width: 40%;
+      @media (max-width: 500px) {
+        width: 95%;
+        padding-left: 13%;
+        margin-bottom: 15px;
+      }
+    }
+  
+    .listHeading {
+      .list-titles;
+    }
+  
+    li {
+      list-style: circle inside;
+      padding: 3px 0%;
+    }
+  }
+  
+  .workHistory {
+    .section-gradient;
+    .flex-columnCenter;
+    align-items: initial;
+    width: 70%;
+    margin: @margin-standard;
+    @media (max-width: 700px) {
+      width: 80%;
+    }
+    @media (max-width: 500px) {
+      width: 95%;
+    }
+  
+    .jobDescr {
+      .flex-rowSpaceAround;
+      justify-content: space-between;
+    }
+  
+    .listHeading {
+      .list-titles;
+      text-decoration-line: underline;
+      margin: 7px auto;
+    }
+  
+    .jobTitle {
+      font-size: @jobTitleSize;
+      padding-top: 5px;
+      width: 40%;
+      
+    }
+  
+    .jobDetail {
+      font-size: @stanTextSize;
+      padding-bottom: 10px;
+      text-align: right;
+      width: 59%
+    }
+  }
+  
+
   address {
     .flex-rowSpaceAround;
     width: 100%;
@@ -256,128 +387,3 @@ body {
 }
 
 
-.intro {
-  .flex-rowSpaceAround;
-  margin: @margin-standard;
-  .section-gradient;
-
-  img {
-    width: 50%;
-    height: auto;
-    padding: 10px 2%;
-    @media (max-width: 500px) {
-     display: none; 
-    }
-  }
-
-  .titleSection {
-    .flex-columnCenter;
-    text-align: center;
-    @media (max-width: 500) {
-      width: 90%;
-    }
-  }
-
-  .title{
-    font-size: 3.5rem;
-  }
-
-  .subTitle {
-    font-size: 1.8rem;
-  }
-}
-
-.goodHire {
-  font-size: 1.2rem;
-  text-align: center;
-  margin: @margin-standard;
-}
-
-.middleSection {
-  .flex-rowSpaceAround;
-  width: 100%;
-  margin: @margin-standard;
-  @media (max-width: 500px) {
-    .flex-columnCenter;
-  }
-
-  .fullQuotation {
-    .flex-rowSpaceAround;
-    .section-gradient;
-    width: 55%;
-    height: 100%;
-    font-size: 1.6rem;
-    text-align: center;
-    @media (max-width: 500px) {
-      width: 95%;
-    }
-  }
-
-  .marks {
-    width: 20%;
-    transform: rotatex(180deg);
-    align-self: flex-start;
-  }
-
-  .quote {
-    width: 75%;
-  }
-
-  .skillSet {
-    .section-gradient;
-    width: 40%;
-    @media (max-width: 500px) {
-      width: 95%;
-      padding-left: 13%;
-      margin-bottom: 15px;
-    }
-  }
-
-  .listHeading {
-    .list-titles;
-  }
-
-  li {
-    list-style: circle inside;
-    padding: 3px 0%;
-  }
-}
-
-.workHistory {
-  .section-gradient;
-  .flex-columnCenter;
-  align-items: initial;
-  width: 70%;
-  margin: @margin-standard;
-  @media (max-width: 700px) {
-    width: 80%;
-  }
-  @media (max-width: 500px) {
-    width: 95%;
-  }
-
-  .jobDescr {
-    .flex-rowSpaceAround;
-    justify-content: space-between;
-  }
-
-  .listHeading {
-    .list-titles;
-    text-decoration-line: underline;
-    margin: 7px auto;
-  }
-
-  .jobTitle {
-    font-size: 1.4rem;
-    padding-top: 5px;
-    width: 40%;
-    
-  }
-
-  .jobDetail {
-    font-size: 1.1rem;
-    padding-bottom: 10px;
-    text-align: right;
-    width: 59%
-  }
-}
