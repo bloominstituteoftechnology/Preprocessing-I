@@ -70,7 +70,7 @@ html, body {
 }
 
 .h3{
-	font-size:2rem;
+	font-size:3rem;
 	color:@secondary;
 	.font();
 }
@@ -78,6 +78,20 @@ html, body {
 .width{
 	width:100%;
 	max-width: 1080px;
+}
+
+.next_col{
+	display: flex;
+	flex-direction: column;
+	width:100%;
+}
+
+.p{
+	.font();
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 1.3rem;
+	text-transform: capitalize;
 }
 
 @primary :rgb(208, 224, 117);
@@ -90,7 +104,7 @@ html, body {
 	display:flex;
 	flex-direction: column;
 	.width();
-	border:1px solid grey;
+	// border:1px solid grey;
 	margin:0 auto;
 	padding:0px 2.5%;
 }
@@ -157,4 +171,128 @@ html, body {
 		}
 	}
 	
+}
+
+.main{
+	display:flex;
+	.width();
+	flex-direction: row;
+	flex-wrap: wrap;
+	border-right:1px solid @primary;
+	border-left:1px solid @primary;
+	.box{
+	  width:50%;
+	  padding:20px 3.7%;
+	  h3{
+		.h3();
+		margin-bottom:20px;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: 2px;
+	  }
+	}
+	.about p{
+		font-size:1.6rem;
+		text-align: justify;
+		line-height:1.6;
+		.font();
+	}
+	.box{
+		.box-info{
+			display:inline-flex;
+			justify-content: center;
+			width:100%;
+			span{
+			  .font();
+			  font-size: 1.6rem;
+			  margin-right:60px;
+			  font-weight: 400;
+			  color:@primary;
+			}
+			.next_col{
+				.next_col();
+				h4{
+					font-family: 'Libre Baskerville', serif;
+					font-size:1.6rem;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					margin-bottom:5px;
+				}
+				p{
+					.font();
+					font-size:1.4rem;
+					font-style: italic;
+					letter-spacing: 2px;
+					text-transform: capitalize;
+					margin-bottom:3.5%;
+				}
+				ul{
+					list-style-type:square;
+					li{
+						.font();
+						font-style:normal;
+						font-size:1.3rem;
+						margin:0px 0px 8px 5.5%;
+						text-transform: capitalize;
+						font-weight: 300;
+					}
+				}
+			}
+		}
+		.references{
+			h4{
+				.font();
+				font-size:1.6rem;
+				letter-spacing: 2px;
+				margin-bottom: 8px;
+				text-transform: capitalize;
+			}
+
+			p.title{
+				.p();
+				margin-bottom:3px;
+			}
+
+			p.info{
+				.p();
+				font-style: italic;
+				span{
+					margin-left:5px;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+
+}
+
+footer{
+	background-color:@primary;
+	height:120px;
+	padding:20px 5.5%;
+	display:flex;
+	justify-content: center;
+	ul{
+		display: inline-flex;
+		list-style-type: square;
+		li{
+		  .font();
+		  font-style:italic;
+		  font-size:1.6rem;
+		  margin-right:30px;
+		  align-self: center;
+		  text-transform:uppercase;
+		  letter-spacing:2px;
+		}
+
+		li:nth-child(1){
+			list-style-type: none;
+		}
+		
+	}
+	
+}
+
+@media(max-width:500px){
+  
 }
