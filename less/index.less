@@ -171,7 +171,7 @@ sans-serif;
 @line-height: 1rem+1rem;
 @font-size--large: 2.4rem;
 @font-size--medium: 1.2rem;
-@smartphones: ~"only screen and (max-width: 479px)";
+@smartphones: ~"only screen and (max-width: 500px)";
 @tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)";
 //Mix-in Flex Box
 .flex-box-center {
@@ -312,12 +312,15 @@ body {
 .contact_form--fielddata {
   margin: 0 auto;
   font-size: @font-size;
+ 
+   
   #contact {
     background: #eee;
     padding: 25px;
     margin: 150px;
     color: @tab-color;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  
     h1 {
       display: block;
       font-size: 3rem;
@@ -336,6 +339,13 @@ body {
       min-width: 100%;
       padding: 0;
       width: 100%;
+
+      @media @smartphones {
+        fieldset {
+          width:50%;
+          height: 20%;
+        }
+      }
     }
     input[type="text"],
     input[type="email"],
@@ -348,6 +358,19 @@ body {
       background: #fff;
       padding: 10px;
       font: 400 1.2rem/1.6rem @primary-font-family;
+       @media @smartphones {
+         input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    button[type="submit"],
+    textarea {
+      width: 50%;
+      height: 20%;
+    }
+       }
+
+
     }
     textarea {
       height: 100px;
@@ -375,14 +398,15 @@ body {
       outline: 0;
       border: 1px solid #aaa;
     }
+    
+  }
+  @media @smartphones {
+    #contact{
+      margin: 20px;
+    }
   }
 }
 
-@media screen and (max-width: 400px) {
-  label {
-    padding: 15px;
-  }
-}
 
 /*Tabs for Index Page Starts Here*/
 
