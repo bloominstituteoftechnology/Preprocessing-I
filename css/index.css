@@ -133,6 +133,7 @@ table {
 html,
 body {
   height: 100%;
+  font-family: 'Poor Story', cursive;
 }
 /* End of Reset*/
 html {
@@ -157,9 +158,22 @@ header nav {
   justify-content: space-around;
   font-size: 1.8rem;
 }
+@media (max-width: 500) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
 header a {
   text-decoration: none;
   padding: 3%;
+}
+@media (max-width: 500px) {
+  header a {
+    width: 99%;
+    font-size: 2.2rem;
+  }
 }
 .top-container {
   background-color: blanchedalmond;
@@ -172,7 +186,12 @@ header a {
 .top-container img {
   border-radius: 10%;
   margin: 10px 1.5%;
-  padding-top: 15px;
+  padding-top: 1.7%;
+}
+@media (max-width: 500px) {
+  .top-container img {
+    display: none;
+  }
 }
 .top-container h1 {
   font-size: 4.5rem;
@@ -186,7 +205,7 @@ header a {
 }
 .top-container button {
   padding: 10px 7%;
-  font-size: 2rem;
+  font-size: 2.2rem;
   border-radius: 20%;
   background-color: teal;
   color: indigo;
@@ -194,12 +213,25 @@ header a {
 }
 .middle-container {
   display: flex;
+  width: 100%;
   font-size: 1.8rem;
   margin-top: 25px;
   color: black;
 }
+@media (max-width: 500px) {
+  .middle-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .middle-container section {
   width: 49%;
+}
+@media (max-width: 500px) {
+  .middle-container section {
+    width: 100%;
+    margin-bottom: 2%;
+  }
 }
 .middle-container section h2 {
   font-size: 2.2rem;
@@ -222,6 +254,7 @@ header a {
   padding: 5px;
 }
 .bottom-container {
+  width: 100%;
   font-size: 1.6rem;
   color: black;
 }
@@ -246,8 +279,30 @@ header a {
 .bottom-container table tr:nth-child(even) {
   background-color: darkgray;
 }
+@media (max-width: 500px) {
+  .bottom-container table {
+    width: 100%;
+  }
+}
 .bottom-container footer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 3.2%;
+}
+.bottom-container footer .contact-option {
+  padding: 1.7%;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.bottom-container footer p {
+  border: 5px double darkgoldenrod;
+  margin: 1.2%;
+}
+.bottom-container footer a {
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  .bottom-container footer {
+    width: 100%;
+  }
 }
