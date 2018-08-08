@@ -70,7 +70,7 @@ html, body {
 }
 
 .h3{
-	font-size:3rem;
+	font-size:2.3rem;
 	color:@secondary;
 	.font();
 }
@@ -120,8 +120,9 @@ html, body {
 		display:flex;
 		flex-direction:column;
 		align-items: center;
-		width:40%;
-		height:auto;
+		width:100%;
+		max-width:432px;
+		height:305px;
 		padding:50px 6.7%;
 		background-color:@secondary;
 		img{
@@ -135,8 +136,9 @@ html, body {
 	.header-info{
 		display:flex;
 		flex-direction:column;
-		width:60%;
-		height:auto;
+		width:100%;
+		max-width: 648px;
+		height:305px;
 		padding:60px 4.7%;
 		background-color:@accent;
 		nav{
@@ -166,8 +168,9 @@ html, body {
 			letter-spacing:2px;
 			text-transform:capitalize;
 			font-weight:lighter;
-			font-style: italic;
-			font-family: 'Libre Baskerville', serif;
+			font-style: oblique;
+			.font();
+
 		}
 	}
 	
@@ -262,11 +265,30 @@ html, body {
 				}
 			}
 		}
+		.social{
+			display:flex;
+			flex-direction:column;
+			span{
+				.font();
+				font-size:1.6rem;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				color:@secondary;
+				margin-bottom:15px;
+				display:inline-block;
+				p{
+					color:#000;
+					font-size:1.3rem;
+					margin-top:3px;
+				}
+			}
+		}
 	}
 
 }
 
 footer{
+	.width();
 	background-color:@primary;
 	height:120px;
 	padding:20px 5.5%;
@@ -278,11 +300,12 @@ footer{
 		li{
 		  .font();
 		  font-style:italic;
-		  font-size:1.6rem;
+		  font-size:1.2rem;
 		  margin-right:30px;
 		  align-self: center;
 		  text-transform:uppercase;
 		  letter-spacing:2px;
+		  
 		}
 
 		li:nth-child(1){
@@ -294,5 +317,72 @@ footer{
 }
 
 @media(max-width:500px){
+
+	.width{
+		max-width:500px;
+		width:100%;
+	}
+
+	.container{
+		display:flex;
+		flex-direction: column;
+		.width();
+		// border:1px solid grey;
+		margin:0 auto;
+		padding:0px 2.5%;
+	}
+
+	.container{
+		.container();
+		.header{
+			display:flex;
+			flex-direction:column;
+			height: 295px;
+			.width();
+			.photo{
+				display:none;
+			}
+			.header-info{
+				.width();
+				h1{
+					font-size:4.0rem;
+					margin-top:30px;
+				}
+			}
+		}
+	}
+
+   .container{
+		.container();
+	   .main{
+		   .width();
+		   display:flex;
+		   flex-direction:column;
+		   justify-content: center;
+
+		   .box{
+			   .width();
+		   }
+
+	   }
+   }
+
+   .container{
+	   .container();
+	   footer{
+		   .width();
+		   display:flex;
+		   flex-direction: column;
+		   justify-content: center;
+		   ul{
+			   list-style-type: none;
+			   display:flex;
+			   flex-direction: column;
+			   li{
+				 margin-bottom:8px;
+			   }
+		   }
+	   }
+   }
   
 }
