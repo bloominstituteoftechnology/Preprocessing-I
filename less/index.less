@@ -59,7 +59,8 @@ html, body {
 }
 /* Variables */
 @header-font-color: white;
-@header-background: #393737;
+@header-background: radial-gradient( rgba(115,116,120,1) 10%, rgba(17,17,17,1) 100%);
+@header-color: #393737;
 @accent-color: indigo;
 
 /* Mixins */
@@ -68,13 +69,23 @@ html, body {
 	flex-direction: column;
 }
 
+.h2() {
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	text-align: center;
+	border-bottom: 3px solid @accent-color;
+	width: 80%;
+	margin: 0px auto;
+	padding: 10px;
+}
+
 /* Start here */
 div.main{
 	display: flex;
 }
 
 header {
-	background-color: @header-background;
+	background: @header-background;
 	width: 20%;
 	padding: 25px 1%;
 	.flex-column;
@@ -112,13 +123,7 @@ header {
 
 		h2 {
 			color: @header-font-color;
-			text-transform: uppercase;
-			font-size: 1.8rem;
-			text-align: center;
-			border-bottom: 3px solid @accent-color;
-			width: 80%;
-			margin: 0px auto;
-			padding: 10px;
+			.h2;
 		}
 		
 		p {
@@ -135,7 +140,19 @@ header {
 	}
 }
 
-content {
+main {
 	width: 60%;
 	border: 1px solid black;
+	color: @header-color;
+	padding: 25px 1%;
+	.flex-column;
+
+	h2 {
+		.h2;
+	}
+
+	p {
+		padding: 10px 0px 30px;
+		font-size: 1.6rem;
+	}
 }
