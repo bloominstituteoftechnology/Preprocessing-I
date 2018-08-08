@@ -73,6 +73,16 @@ html, body {
 	min-height: 660px;
 }
 
+.regular_font() {
+	font-style: normal;
+	font-weight: 400;
+}
+
+.bold_font() {
+	font-style: normal;
+	font-weight: 700;
+}
+
 // Begin LESS
 body {
 	display: flex;
@@ -89,6 +99,41 @@ h2 {
 	font-family: "halyard-display",sans-serif;
 	font-style: normal;
 	font-weight: 200;
+
+	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 3s; /* Firefox < 16 */
+	 -ms-animation: fadein 3s; /* Internet Explorer */
+	  -o-animation: fadein 3s; /* Opera < 12.1 */
+		 animation: fadein 3s;
+
+		@keyframes fadein {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+		}
+
+		/* Firefox < 16 */
+		@-moz-keyframes fadein {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+		}
+
+		/* Safari, Chrome and Opera > 12.1 */
+		@-webkit-keyframes fadein {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+		}
+
+		/* Internet Explorer */
+		@-ms-keyframes fadein {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+		}
+
+		/* Opera < 12.1 */
+		@-o-keyframes fadein {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+		}
 }
 
 .portfolio_block_1 {
@@ -105,7 +150,7 @@ h2 {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		margin-bottom: 100px;
+		margin-bottom: 75px;
 
 		a {
 			color: @light-blue-color;
@@ -113,6 +158,14 @@ h2 {
 			font-size: 1.8rem;
 			text-decoration: none;
 			margin: 0px 25px;
+		}
+
+		a:hover {
+			color: @orange-color;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
 		}
 	}
 
@@ -126,8 +179,7 @@ h2 {
 		p {
 			color: @dark-blue-color;
 			font-size: 6.0rem;
-			font-style: normal;
-			font-weight: 700;
+			.bold_font(); 
 			text-align: center;
 		}
 
@@ -153,8 +205,7 @@ h2 {
 		}
 
 		h2 {
-			font-style: normal;
-			font-weight: 400;
+			.regular_font(); 
 		}
 
 		a {
@@ -200,16 +251,18 @@ h2 {
 				padding-bottom: 10px;
 				color: @grey-color;
 				text-decoration: underline;
+				.regular_font();
 			}
 
 			ul {
 				color: #ffffff;
+				list-style-type: circle;
+				padding-left: 10%;
 			}
 
 			.what-skills {
 				font-size: 3.2rem;
-				font-style: normal;
-				font-weight: 400;
+				.regular_font();
 				line-height: 3.4rem;
 				text-decoration: none;
 				color: @grey-color;
@@ -237,8 +290,7 @@ h2 {
 		p {
 			color: @dark-blue-color;
 			font-size: 4.2rem;
-			font-style: normal;
-			font-weight: 400;
+			.regular_font();
 			text-align: left;
 			line-height: 5.8rem;
 		}
@@ -250,6 +302,14 @@ h2 {
 		a {
 			text-decoration: none;
 			color: hsl(349, 99%, 31%);
+		}
+
+		a:hover {
+			color: @orange-color;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
 		}
 	}
 }
@@ -304,14 +364,12 @@ h2 {
 			}
 			
 			strong {
-				font-style: normal;
-				font-weight: 700;
+				.bold_font();
 			}
 
 			.experience_header {
 				font-size: 4.2rem;
-				font-style: normal;
-				font-weight: 400;
+				.regular_font();
 				text-decoration: none;
 				color: @light-blue-color;
 			}
