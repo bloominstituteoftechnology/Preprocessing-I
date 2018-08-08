@@ -54,6 +54,147 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+/* Variable Declarations */
+@defaultFontSize: 1.6rem;
+@h1FontSize: 2.4rem;
+@h3FontSize: 2rem;
+@raleWayFont: 'Raleway', sans-serif;
+@robotoSlabFont: 'Roboto Slab', serif;
+@mobileBreakpoint: 500px;
+/* End Variables */
+
+/* Mixin Declarations */
+.flexRowAligned() {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.flexColumn() {
+	display: flex;
+	flex-direction: column;
+}
+.testBorder() {
+	border: 2px solid red;
+}
+/* End Mixins */
+
+.container {
+	font-family: @raleWayFont;
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-size: @defaultFontSize;
+	h1 {
+		font-size: @h1FontSize;
+		font-weight: bold;
+	}
+	.navigationHeader {
+		
+		.navigation {
+			.flexRowAligned();
+			width: 100%;
+			background-color: slategrey;
+			border: 2px inset grey;
+			@media (max-width: 500px){
+				width: 100%;
+				.flexColumn();
+			}
+
+		.navLink {
+			margin: 2% 2%;
+			text-align: center;
+			width: 12%;
+			padding: 5px;
+			border: 2px outset transparent;
+			align-self: center;
+			@media (max-width: 500px){
+				width: 100%;
+			}
+			}
+		a {
+			color: aliceblue;
+			font-family: @robotoSlabFont;
+			text-decoration: none;
+		}
+		a:hover {
+			background-color: grey;
+			border: 2px outset black;
+		}
+		
+	}
+}
+	
+	.meContainer {
+		margin: 2% 0;
+		.flexRowAligned();
+		//.testBorder();
+	
+		.aboutMeContent {
+			margin: 0 auto;
+		}
+
+		h1 {
+			padding: 5%;
+			text-align: center;
+		}
+	}
+	
+	.skillSetProjectsContainer {
+		width: 100%;
+		.flexRowAligned();
+		//.testBorder();
+		
+		.skillSetFont {
+			font-size: @h3FontSize;
+		}
+		.currentProjectsFont {
+			font-size: @h3FontSize;
+		}
+		.skillSetContent {
+			margin: 5% 0;
+			width: 30%;
+		}
+		.currentProjectsContainer {
+			margin: 5% 0;
+			width: 30%;
+		}
+		
+		.skillSetList {
+			list-style-type: upper-roman;
+			margin: 10px 0;
+		}
+		@media (max-width: @mobileBreakpoint) {
+			.flexColumn();
+		}
+		
+	}
+	.workHistoryContainer {
+		display: flex;
+
+		h1 {
+			padding: 5%;
+			text-align: center;
+		}
+		ul {
+			list-style-type: upper-roman;
+			margin: 10px 0;
+		}
+	}
+	.copyrightFooter {
+		bottom: 0;
+		margin: 5% 0 0 0;
+		height: 50px;
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		background-color: darkgrey;
+		border: 1px solid black;
+	}
+}
