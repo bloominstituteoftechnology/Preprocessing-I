@@ -59,8 +59,8 @@ html, body {
 
 @font-size: 1.6rem;
 @font-color: rgb(58, 58, 58);
-@main-color: rgba(167, 167, 167, 0.74);
-@secondary-color: rgba(255, 255, 255, 0.705);
+@main-color: rgba(209, 209, 209, 0.74);
+@secondary-color: rgb(239, 243, 255);
 
 .section-title {
 	font-size: 2rem;
@@ -89,7 +89,7 @@ body {
 }
 
 .main-container {
-	width: 98%;
+	width: 96%;
 	max-width: 800px;
 	margin: 0 auto;
 
@@ -98,6 +98,10 @@ body {
 		justify-content: flex-end;
 		background-color: @main-color;
 		margin-bottom: 30px;
+
+		@media (max-width:500px){
+			justify-content: space-around;
+		}
 
 		a {
 			padding: 20px 2%;
@@ -110,6 +114,13 @@ body {
 			text-decoration: underline;
 			color: rgb(250, 244, 255);
 		}
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+		border-radius: 20px;
+		margin-bottom: 30px;
 	}
 
 	h1 {
@@ -246,6 +257,21 @@ body {
 	input {
 		padding: 5px 0;
 		margin: 5px 0;
+	}
+
+	.submit-btn {
+		width: 40%;
+		padding: 8px;
+		margin: 5px 0;
+		border-radius: 5px;
+
+		@media(max-width:500px){
+			width: 100%;
+		}
+	}
+	.submit-btn:hover{
+		cursor: pointer;
+		background-color: rgba(90, 90, 90, 0.404);
 	}
 }
 
