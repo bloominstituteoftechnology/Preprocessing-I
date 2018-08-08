@@ -63,8 +63,8 @@ html, body {
 @background-color: lightgrey;
 @h1-font: 3.2rem;
 @h2-font: 2.4rem;
-@h3-font: 2.0rem;
 @other-font: 1.6rem;
+@pixel-size-10: 10px;
 
 .flexCenter(){
 	display: flex;
@@ -85,6 +85,8 @@ html, body {
 	font-size: @other-font;
 	font-family: 'Kirang Haerang', cursive;
 	text-align: center;
+	margin-bottom: 5px;
+	padding: 5px 0%;
 }
 
 .container {
@@ -95,7 +97,7 @@ html, body {
 
 	nav{
 		.flexAround();
-		padding-bottom: 10px;
+		padding-bottom: @pixel-size-10;
 		background-color: @main-color;
 		:hover{
 			color: @main-color;
@@ -103,7 +105,7 @@ html, body {
 		}
 	}
 	.navi{
-		font-size: @h3-font;
+		font-size: 2rem;
 		text-decoration: none;
 		color: @secondary-color;
 	}
@@ -126,26 +128,27 @@ html, body {
 	.middleinfo{
 		.flexAround();
 		flex-wrap: wrap;
-		margin: 10px;
+		margin: @pixel-size-10;
 		.skills {
 			width: 49%;
 			h2{
-				margin-bottom: 10px;
+				margin-bottom: @pixel-size-10;
 			}
 			li{
-				.paragraphText();
-				margin-bottom: 5px;
+				border: 2px solid @main-color;
 			}
 		}
 		.work{
 			width: 49%;
 			h2{
-				margin-bottom:10px;
+				margin-bottom:@pixel-size-10;
 			}
-			p{
-				.paragraphText();
-				text-align: center;
-			}
+			li:nth-child(2n-1){
+					background-color: whitesmoke;
+				}
+		}
+		li {
+			.paragraphText();
 		}
 		@media (max-width: 500px) {
 			flex-direction: column;
@@ -153,8 +156,8 @@ html, body {
 			align-items: center;
 			.skills{
 				width: 90%;
-				padding-bottom: 10px;
-				margin-bottom: 10px;
+				padding-bottom: @pixel-size-10;
+				margin-bottom: @pixel-size-10;
 				border-bottom: 2px dotted @secondary-color; 
 			}
 			.work{
@@ -171,7 +174,7 @@ html, body {
 		address {
 			font-size: @other-font;
 			text-align: center;
-			margin: 10px;
+			margin: @pixel-size-10;
 			a{
 				text-decoration: none;
 				color: @main-color;
@@ -188,12 +191,8 @@ html, body {
 		font-size: @h2-font;
 		text-align: center;
 	}
-	h3{
-		font-size: @h3-font;
-		.paragraphText();
-	}
 	p{
 		font-size: @other-font;
-		margin: 10px 1%;
+		margin: @pixel-size-10 1%;
 	}
 }
