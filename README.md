@@ -21,7 +21,7 @@ For this project you will be building a digital resume from scratch. You will be
 **Note: you are only required to build one page, anything more than that would be stretch.**
 * [X] The resume content will be provided by you. The content can be about you or a fictional character.  
 * [X] Content: Navigation - Build a simple navigation with 4 items of your choosing
-* [ ] Content: Intro - Have a short introduction as to why you would be a good hire
+* [X] Content: Intro - Have a short introduction as to why you would be a good hire
 * [ ] Content: Skills - Showcase a list of skills you have somewhere on your resume
 * [ ] Content: Work History - Showcase your work history somewhere on your resume
 * [ ] Content: Contact - Provide some way a potential employer could contact you.  Phone number, email, or a full on contact form (doesn't have to work)
@@ -34,6 +34,3 @@ For this project you will be building a digital resume from scratch. You will be
 * [ ] Incorporate a google font of your choosing
 * [ ] Convert the great idea CSS into LESS.  Introduce variables, mixins, nesting, etc. 
 * [ ] Create a link to the portfolio page and create a layout that would allow users to see your work.  A good idea is to link projects back to their github repos so employers can see your code.
-
-
-
