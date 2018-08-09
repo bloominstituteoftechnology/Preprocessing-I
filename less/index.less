@@ -167,10 +167,8 @@ body {
 // 	border: 1px solid #000 !important;
 // }
 .name-styling {
-	
 	font-size: 2.5rem;
-	width: 100% ;
-	
+	width: 100%;
 	.name-styling__name {
 		font-weight: bold;
 		font-style: italic;
@@ -178,7 +176,6 @@ body {
 	}
 	.name-styling__title {
 		.name-styling__name;
-		
 	}
 }
 
@@ -188,9 +185,18 @@ body {
 	flex-wrap: wrap;
 	margin-bottom: 10px;
 	width: 100%;
-		max-width: 950px;
+	max-width: 950px;
 	.header-flex__nav {
-		width: 100% ;
+		border-width: 0px 12px 0px 12px;
+		border-style: double;
+		border-color: rgba(158, 158, 158, 0.255);
+		border-radius: 40px 40px 60px 60px;
+		-moz-border-radius: 40px 40px 60px 60px;
+		-webkit-border-radius: 40px 40px 60px 60px;
+
+		/* Full disclosure: I stole the above code for the design on the sides of the nav-bar */
+	
+		width: 100%;
 		display: flex;
 		justify-content: flex-end;
 		align-content: space-around;
@@ -203,7 +209,6 @@ body {
 				font-size: 2.2rem;
 				font-family: Righteous;
 				border: none;
-				border: 1px solid black;
 				margin-left: 5px;
 				color: rgb(118, 109, 109);
 				text-shadow: 2px 2px 2px rgba(247, 247, 247, 0.796);
@@ -215,6 +220,13 @@ body {
 		a:visited {
 			color: rgb(206, 190, 190);
 		}
+
+		@media (max-width: 500px) {
+			flex-direction: column ;
+			flex-wrap: wrap ;
+			background: none ;
+	
+		}
 	}
 }
 
@@ -225,9 +237,7 @@ body {
 	align-content: space-between;
 	flex-direction: column;
 	margin-bottom: 20px;
-
 	.name-styling__bio {
-	
 		font-size: @font-size ;
 	}
 }
@@ -242,8 +252,12 @@ hr {
 	background: none;
 	p {
 		margin-bottom: 5px;
-		border: 1px solid black ;
-		padding: 5px 5px ;
+		border: 1px solid black;
+		padding: 5px 5px;
+	}
+
+	.name-styling__bio {
+		color: rgb(254, 255, 255) ;
 	}
 }
 
@@ -269,10 +283,10 @@ hr {
 }
 
 .personal-content {
-	border-top: 2px solid black ;
-	border-bottom: 2px solid black ;
-	border-left: 3px groove gray ;
-	border-right: 3px groove gray ;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 3px groove gray;
+	border-right: 3px groove gray;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -280,20 +294,22 @@ hr {
 	width: 100%;
 	max-width: 950px;
 	align-content: center;
-	padding-top: 5px ;
-	padding-bottom: 5px ;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	.personal-content__text {
 		font-size: @font-size ;
 		width: 100%;
 		max-width: 375px;
-
 		h2 {
-			font-size: 2.7rem ;	
+			font-size: 2.7rem;
 			font-family: 'Caveat';
 		}
 	}
 	.personal-content__skills {
 		.personal-content__text;
+
+		background: linear-gradient(rgb(140, 139, 139), rgb(87, 79, 79), rgb(34, 25, 25)) ;
+		font-style: italic ;
 		ul {
 			li {
 				padding: 12px 12px;
@@ -327,18 +343,23 @@ hr {
 			padding: 10px 10px;
 			background-color: lavenderblush;
 		}
-
 		tbody {
 			padding: 10px 10px;
-			background-color: honeydew ;
+			background-color: honeydew;
 		}
 	}
 	.work-history__logo {
 		img {
-			width: 100%; 
+			width: 100%;
 			max-width: 250px;
-			border: 1px solid black ;
-			margin-top: 2px ;
+			border: 1px solid black;
+			margin-top: 2px;
+		}
+
+		@media (max-width: 500px) {
+			img {
+				display: none ;
+			}
 		}
 	}
 }
