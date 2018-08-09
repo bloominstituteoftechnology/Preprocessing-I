@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,206 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
 }
 
+body {
+
+	// Variables
+	@gray: #e2e1e0;
+	@white: #FFFFFF;
+	@inactive-shadow: 0 0px 2px rgba(0,0,0,0.3), 0 0px 2px rgba(0,0,0,0.22);
+	@font-stack: 'Roboto', sans-serif;
+	@border: 1px solid black;
+	@padding: 0px 100px;
+	@text-size: 1.9rem;
+
+	// Mixins
+	.flex-row {
+		display: flex;
+		flex-direction: row;
+	}
+	.flex-column {
+		display: flex;
+		flex-direction: column;
+	}
+	.section-heading {
+		font-size: 2.4rem;
+		font-weight: bold;
+		margin: 0px 0;
+		margin-bottom: 4px;
+	}
+	.hr-lg {
+		display: block;
+		height: 4px;
+		background-color: black;
+	}
+	.hr-sm {
+		.hr-lg();
+		height: 2px;
+	}
+	.section {
+		margin-bottom: 30px;
+		padding-top: 10px;
+		h2 {
+			.section-heading();
+		}
+
+		span {
+			.hr-sm();
+		}
+
+		.sub-ctr-one {
+			div {
+				.flex-row();
+				justify-content: space-between;
+				margin-top: 10px;
+				margin-bottom: 8px;
+				h3 {
+					font-size: 2.1rem;
+					font-weight: bold;
+				}
+				p {
+					font-size: @text-size;
+				}
+			}
+			em {
+				font-size: @text-size;
+				font-style: italic;
+			}
+		}
+
+		ul {
+			font-size: 2rem;
+			margin: 10px 0px 40px 0px;
+			padding-left: 30px;
+			list-style-type: square;
+
+			li {
+				margin: 8px 0;
+			}
+
+			p {
+				font-size: @text-size;
+				line-height: 1.4;
+				padding-left: 20px;
+			}
+		}
+	}
+
+	background: @gray;
+	font-family: @font-stack;
+
+	#navbar {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		position: fixed;
+		box-shadow: @inactive-shadow;
+		background-color: @white;
+
+		.navbar-items {
+			width: 600px;
+			.flex-row();
+			justify-content: space-between;
+			// border: 1px solid black;
+
+			a {
+				display: block;
+				// border: 1px solid black;
+				border-radius: 2px;
+				padding: 18px 18px;
+				font-size: 1.8rem;
+				color: black;
+				text-decoration: none;
+
+				&:hover {
+					background-color: @gray;
+				}
+			}
+		}
+	}
+	#header {
+
+
+		#name {
+			font-size: 5rem;
+			text-align: center;
+		}
+
+		#contact {
+			.flex-row();
+			font-size: 2rem;
+			// border: @border;
+			// justify-content: space-between;
+			margin: 10px 0;
+
+			p {
+				flex: 1;
+
+				&:nth-child(2) {
+					flex: 2;
+					text-align: center;
+				}
+
+				&:nth-child(3) {
+					text-align: right;
+				}
+			}
+		}
+
+		span {
+			.hr-lg();
+		}
+	}
+	#main {
+		width: 1200px;
+		padding: 30px;
+		margin: 0 auto;
+		margin-top: 75px;
+		background-color: @white;
+		box-shadow: @inactive-shadow;
+		#name {
+			font-size: 5rem;
+			text-align: center;
+		}
+
+		#contact {
+			.flex-row();
+			font-size: 2rem;
+			// border: @border;
+			// justify-content: space-between;
+			margin: 10px 0;
+
+			p {
+				flex: 1;
+
+				&:nth-child(2) {
+					flex: 2;
+					text-align: center;
+				}
+
+				&:nth-child(3) {
+					text-align: right;
+				}
+			}
+		}
+
+		#hr-lg {
+			.hr-lg();
+			margin-bottom: 10px;
+		}
+		.section();
+	}
+
+	@media (max-width: 1250px) {
+		@text-size: 1.4rem;
+		#main {
+			width: 800px;
+
+			#contact {
+
+			}
+		}
+	}
+}
