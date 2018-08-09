@@ -20,8 +20,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -54,6 +52,154 @@ table {
 }
 
 html, body {
-    height: 100%;
+    height: auto;
+}
+//VARIABLES
+@gold-block: 	#FFD700;
+@bgc:	#808080;
+@border-color: 	#000000;
+@textcolor: #000000;
+
+body{
+background-color: @bgc;
+width: 800px;
 }
 
+header{
+background-color: @gold-block;
+border: 5px solid @border-color;
+display: flex;
+flex-direction:row;
+justify-content: space-around;
+align-content: center;
+margin-left:3%
+
+}
+
+a{
+	font-size: 25px;
+}
+
+h1{
+	font-size: 45px;
+}
+
+
+p{
+font-size: 20px;
+}
+
+li{
+	font-size:20px;
+}
+
+
+.container{
+	display: flex;
+	flex-direction: column;
+	width:800px;
+	height: auto;
+	margin: 0 auto;
+
+}
+
+.gold-block{
+	display:flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-content: center;
+	margin-left: 5%;
+	margin-top: 5%;
+	.blocks-css;
+	
+img{
+	height: 200px;
+	width: 200px;
+	justify-content: center;
+}
+
+}
+
+.middle-content{
+	display:flex;
+	flex-direction: row;
+	width:100%;
+	text-align: center;
+}
+
+button{
+	width:25%;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 3px solid purple;
+	.blocks-css;
+  }
+  
+  thead th:nth-child(1) {
+	width: 30%;
+  }
+  
+  thead th:nth-child(2) {
+	width: 20%;
+  }
+  
+  thead th:nth-child(3) {
+	width: 15%;
+  }
+  
+  thead th:nth-child(4) {
+	width: 35%;
+  }
+  
+  th, td {
+	padding: 20px;
+  }
+  
+  .work-history{
+	  text-align: center;
+  }
+
+  .work{
+	  display: flex;
+	  .blocks-css;
+	  text-align: center;
+	  justify-content: center;
+	  margin: 3%;
+	
+  }
+
+.greeting{
+display:flex;
+width: 50%;
+.blocks-css;
+margin-left: 5%;
+margin-top: 5%;
+align-items: center;
+flex-direction: column;
+
+}
+
+.list{
+	display:flex;
+	width:50%;
+.blocks-css;
+margin-left: 5%;
+margin-top: 5%;
+flex-direction: column;
+}
+	
+
+
+
+
+
+//Mix-Ins
+.blocks-css(){
+	background-color: @gold-block;
+border: 5px solid @border-color;
+display: flex;
+}
