@@ -59,34 +59,43 @@ html, body {
 	font-family: sans-serif;
 }
 
-.flexRow {
+.flexRow() {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.flexColumn {
+.flexColumn() {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-
+@title-fontsize: 1.8rem;
 @theme-color: #a0001e;
 
+p {
+	font-size: @title-fontsize;
+	line-height:2;
+	font-weight: 100;
+}
 
+body {
+	.flexColumn;
+	height: auto;
+}
 header {
 	width: 100%;
 	.flexRow;
 	height: 80px;
 
 	h1 {
-		font-size: 2rem;
+		font-size: @title-fontsize;
 		margin-left: 30px;
 	}
 
 	nav {
-		font-size: 1.8rem;
+		font-size: @title-fontsize;
 		width: 30%;
 		.flexRow;
 		margin-right: 50px;
@@ -99,35 +108,85 @@ header {
 
 .container1 {
 	width: 100%;
-	height: 853px;
-	background: #a0001e;
+	background: @theme-color;
 	.flexRow;
 	
 	.profPic {
-		height: auto;
 		width: 50%;
 	}
 	
-	child1 {
+	.child1 {
 		width: 50%;
-		height: 853px;
+		height: 100%;
 		.flexColumn;
 		color: white;
 		.title {
 			text-transform: uppercase;
-			font-size: 1.8rem;
+			font-size: @title-fontsize;
 			.flexColumn;
 			justify-content: space-evenly;
 			height: 120px;
-			margin-bottom: 60px;
+			margin-bottom: 40px;
 		}
 		.name {
 			font-size: 5rem;
 			font-weight: 800;
+			margin-bottom: 40px;
 		}
+
+		.contact {
+			.flexRow;
+			width: 15%;
+		}
+
 		.logo {
-			width:20px;
+			width: 25px;
+			border-radius: 15px;
 		}
 	}
 
+}
+
+.container2 {
+	width: 80%;
+	.flexRow();
+	margin-top: 100px;
+
+	.mainContent {
+		.flexColumn();
+		width: 50%;
+		p {
+			margin: 20px;
+			padding-left: 180px;
+			font-weight: 100;
+		}
+		.strong {
+			font-size: 3rem;;
+			color: @theme-color;
+			padding: 0;
+			font-weight: 100;
+			margin: 50px;
+		}
+	}
+
+	@sidebar-fontsize: 1.5rem;
+	@font-weight: 100;
+	
+	.sidebar {
+		margin: 150px;
+		padding-left: 50px;
+		h2 {
+			font-size: @sidebar-fontsize;
+			font-weight: 800;
+			line-height: 2;
+		}
+		p {
+			font-size: @sidebar-fontsize;
+			font-weight: 100;
+			line-height: 2;
+		}
+			
+		width: 33%;
+		align-self: flex-start;
+	}
 }
