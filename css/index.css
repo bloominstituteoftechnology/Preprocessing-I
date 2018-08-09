@@ -170,6 +170,13 @@ header nav a:hover {
   color: black;
   text-decoration: underline;
 }
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+  }
+}
 .background-a200 {
   width: 100%;
   background-color: #536DFE;
@@ -180,6 +187,11 @@ header nav a:hover {
 section {
   height: 400px;
   width: 100%;
+}
+@media (max-width: 500px) {
+  section {
+    height: 700px;
+  }
 }
 .about {
   width: 100%;
@@ -194,6 +206,12 @@ section {
   justify-content: space-evenly;
   align-items: center;
   height: 90%;
+}
+@media (max-width: 500px) {
+  .about .content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .about .about-img {
   border-radius: 50%;
@@ -219,9 +237,25 @@ section {
   justify-content: space-evenly;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .tech .content {
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    height: 80%;
+    width: 100%;
+  }
+}
 .tech .content img {
   height: 80%;
   width: 10%;
+}
+@media (max-width: 500px) {
+  .tech .content img {
+    flex-direction: column;
+    height: 15%;
+    width: 20%;
+  }
 }
 .tech a {
   align-self: center;
@@ -248,9 +282,21 @@ section {
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .exp .content {
+    height: 70%;
+  }
+}
 .exp .job {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .exp .job {
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    padding: 2%;
+  }
 }
 .exp .job p {
   width: 20%;
@@ -278,4 +324,11 @@ section {
 .contact a:hover {
   color: black;
   text-decoration: underline;
+}
+footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
 }
