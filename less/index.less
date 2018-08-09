@@ -67,6 +67,7 @@ table {
 
 .underlinedSpacer{
 	border-bottom: 2px solid @accentColor;
+
 }
 
 html, body {
@@ -79,15 +80,32 @@ html, body {
 .container{
 	max-width: 880px;
 	margin: 5px auto;
+	@media(max-width: 500px){
+		max-width: 500px;		
+	}
 
 
 	header{
 		display: flex;
 		justify-content: flex-end;
 		font-family: @headerFont;
-		padding-bottom: 5px;
+		padding: 10px 0px;
 		.underlinedSpacer();
 		background-color: @backgroundColor2;
+		@media(max-width:500px){
+			border-bottom: 0px solid @accentColor;
+		}
+
+
+		nav{
+			display:flex;
+
+			@media(max-width:500px){
+				flex-direction: column;
+				justify-content: center;
+				width: 100%;
+			}
+		}
 
 		a{
 			font-size: 1.5rem;
@@ -95,6 +113,11 @@ html, body {
 			text-decoration: none;
 			color: black;
 			border-radius: 15px;
+			@media(max-width:500px){
+				padding: 15px;
+				.underlinedSpacer();
+				text-align: center;
+			}
 		}
 
 	}
@@ -108,6 +131,14 @@ html, body {
 		.introbox{
 			width: 49%;
 			margin: 40px auto;
+			@media(max-width:500px){
+				width: 0%;
+			}
+		}
+		.text{
+			@media(max-width:500px){
+				width: 100%;
+			}
 		}
 			h1{
 				font-size: 4rem;
@@ -117,6 +148,9 @@ html, body {
 			img{
 				width: 100%;
 				margin: 1px auto; 
+				@media(max-width:500px){
+					display: none;
+				}
 			}
 
 			p{
