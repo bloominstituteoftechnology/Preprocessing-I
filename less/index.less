@@ -55,64 +55,118 @@ table {
 
 html, body {
 	height: 100%;
+	font-size: 62.5%;
+
 }
 
+@border-color: darkred;
+@h2-font-size: 2.2rem;
+@regular-font-size: 1.6rem;
+
 .container {
+	background-color: lightsteelblue;
 	width: 100%;
 	max-width: 800px;
 	margin: auto;
 }
 
 header {
-	border: 1px solid blue;
-	margin: 40px 0;
+	margin-bottom: 40px;
 
 	nav {
-		margin: 20px 0;
+		background-color: whitesmoke;
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 20px;
+		padding: 20px 0;
+		font-size: 1.8rem;
+
+		a {
+			margin: 0 5%;
+		}
 	}
 
 	h1 {
-		margin: 30px 0;
+		margin: 30px 0  30px 10px;;
+		font-size: 3.6rem;
 	}
 }
 
 .personal_info {
-	border: 1px solid red;
+	border: 3px solid @border-color;
+	background-color: lightgrey;
+	width: 90%;
 	display: flex;
 	justify-content: space-between;
-	margin: 30px auto;
+	margin: 5% 5%;
 
 	.about {
-		border: 1px solid green;
 		width: 50%;
-		padding: 30px;
+		padding: 5%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h2{
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid black;
+			font-size: @h2-font-size;
+		}
+
+		p {
+			font-size: @regular-font-size;
+		}
+
+		.headshot {
+			margin: 20%;
+			border-radius: 10px;
+
+
+		}
 	}
 
 	.skills {
-		border: 1px solid purple;
+		border: 2px solid @border-color;
+		background-color: whitesmoke;
 		margin-right: 25%;
+		padding: 5%;
+		margin: 40px 5% 220px 5%;
+
+		h2 {
+			border-bottom: 1px solid black;
+			margin-bottom: 35px;
+			font-size: @h2-font-size;
+		}
+
+		li {
+			margin: 10px 0;
+			font-size: @regular-font-size;
+		}
 	}
 }
 
 .contact {
-	border: 1px solid gold;
+	border-bottom: 1px solid black;
 	display: flex;
 	flex-direction: column;
-	margin: 20px auto;
+	padding: 20px 0 20px 2%;
 
 	h2 {
 		margin: 15px 0;
+		font-size: @h2-font-size;
 	}
 
 	p {
 		margin: 5px;
+		font-size: @regular-font-size;
 	}
 }
 
 .footer {
-	border: 1px solid brown;
 	display: flex;
 	justify-content: center;
-	margin: 80px auto;
+	margin-top: 40px;
 	padding: 40px;
+	font-size: @regular-font-size;
 }
