@@ -89,6 +89,7 @@ html, body {
 .p-styling {
 	font-family: @body-font;
 	font-size: 1.2rem;
+	line-height: 1.5rem;
 }
 
 .header {
@@ -185,7 +186,7 @@ html, body {
 	.about__img {
 		width: 50%;
 
-		@media (max-width:500px) {
+		@media (max-width: 500px) {	
 			order: 2;
 			width: 250px;
 			height: 250px;
@@ -198,22 +199,54 @@ html, body {
 .skills {
 	.block-padding-margin();
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+
 
 	.skills__title {
 		.block-titles();
 	}
 
-	.skills__icon {
-		width: 25%;
-	}
+	.skills__wrapper {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		margin-top: 20px;
+
+		@media (max-width:500px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.skills__block {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 30%;
+			
+			.skills__icon {
+				width: 75%;
+			}
+
+			.skills__description {
+				text-align: center;
+				margin-top: 20px;
+			}
+		}
+}
+
+
 
 	.skills__ul {
-		background-color: orange;
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
 	}
 
 	.skills__description {
-		background-color: yellow;
+		font-family: @body-font;
+		font-size: 1.4rem;
 	}
 }
 
@@ -222,22 +255,42 @@ html, body {
 
 	.work__title {
 		.block-titles();
+		margin-bottom: 20px;
 	}
 
 	.work__entry {
-		background-color: blue;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 10px;
+
+		&:nth-child(even) {
+			background-color: lightgray;
+			border-radius: 10px;
+		}
 	}
 
+
 	.work__job-title {
-		background-color: indigo;
+		width: 50%;
+		font-family: @display-font;
+		font-size: 1.4rem;
 	}
 
 	.work__years {
-		background-color: violet;
+		width: 50%;
+		.p-styling();
+		font-style: italic;
+		text-align: right;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			text-align: left;
+		}
 	}
 
 	.work__description {
-		background-color: red;
+		width: 100%;
+		.p-styling();
 	}
 }
 
