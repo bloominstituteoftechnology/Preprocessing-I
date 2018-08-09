@@ -20,8 +20,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -56,38 +54,104 @@ table {
 html, body {
     height: auto;
 }
-
-@grey-block: 	#FFD700;
+//VARIABLES
+@gold-block: 	#FFD700;
 @bgc:	#808080;
 @border-color: 	#000000;
 @textcolor: #000000;
 
 body{
 background-color: @bgc;
+width: 800px;
 }
 
 header{
-background-color: @grey-block;
+background-color: @gold-block;
 border: 5px solid @border-color;
 display: flex;
-flex-direction: column;
-justify-content: flex-end;
+flex-direction:row;
+justify-content: space-around;
+align-content: center;
 
 }
 
-a// h1{
-	font-size: 100px;
+a{
+	font-size: 25px;
 }
 
+h1{
+	font-size: 45px;
+}
+
+p{
+font-size: 20px;
+}
+
+li{
+	font-size:20px;
+}
 
 .container{
+	display: flex;
+	flex-direction: column;
 	width:800px;
 	height: auto;
+	margin: auto;
 
 }
 
-.grey-block{
+.gold-block{
 	display:flex;
-	justify-content: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-content: center;
+	margin-left: 5%;
+	margin-top: 5%;
+	background-color: @gold-block;
+	border: 5px solid @border-color;
 
+}
+
+.middle-content{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width:100%;
+	text-align: center;
+}
+
+button{
+	width:25%;
+}
+
+.greeting{
+display:flex;
+width: 50%;
+background-color: @gold-block;
+border: 5px solid @border-color;
+margin-left: 5%;
+margin-top: 5%;
+align-items: center;
+
+}
+
+.list{
+	display:flex;
+	width:50%;
+	background-color: @gold-block;
+border: 5px solid @border-color;
+margin-left: 5%;
+margin-top: 5%;
+}
+	
+
+
+
+
+
+//Mix-Ins
+.blocks{
+	background-color: @gold-block;
+border: 5px solid @border-color;
+display: flex;
 }
