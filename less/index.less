@@ -60,12 +60,13 @@ html, body {
 }
 
 html {
-	font-size: 63.5%;
+	font-size: 62.5%;
 	margin: 0 auto;
 }
 
 
-
+@caveat: 'Caveat', cursive;
+@Titillium: 'Titillium Web' sans-serif;
 @font-size: 2.0rem;
 @height: 60px;
 
@@ -119,20 +120,23 @@ div.top-header a:hover {
 
 .cta h2 {
 	
-	font-size: 2.5rem;
-	color: white;
+	font-size: 4rem;
+	color: whitesmoke;
 	text-align: center;
 	padding-bottom: 400px;
 	margin-bottom: 20px;
+	font-family: @caveat;
+
 }
 
 .cta h1 {
 	
 	font-size: 4.2rem;
-	color: white;
+	color: whitesmoke;
 	text-align: center;
 	margin-top: 15px;
 	margin-bottom: 30px;
+	font-family: @Titillium;
 }
 
 button {
@@ -152,7 +156,7 @@ button {
 
 
 button:hover {
-	background-color: goldenrod;
+	background-color: gray;
 	color: orangered;
 }
 
@@ -285,7 +289,7 @@ button:hover {
 .work-history1 h1 {
 	color: lightgreen;
 	font-size: 3.7rem;
-	margin-top: 25px;
+	margin-top: 50px;
 	margin-bottom: 50px;
 	text-align: center;
 	border-bottom: 1px solid white;
@@ -432,3 +436,194 @@ button:hover {
 	margin-top: 25px;
 	
 }
+
+/* END OF WORK HISTORY */
+
+/*BEGINNING OF CONTACT FORM */
+
+#contact {
+	display: flex;
+	justify-content: space-around;
+	justify-items: flex-start;
+	flex-wrap: nowrap;
+	width: 800px;
+	height: 500px;
+	background-color: whitesmoke;
+	border: 1px solid goldenrod;
+}
+
+#contact-form {
+    background-color: whitesmoke;
+    width:465px;
+    padding:20px;
+    margin: 50px auto;    
+    border: 6px solid goldenrod;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    position:relative;
+}
+ 
+#contact-form h1 {
+	font-size:4.2rem;
+	text-align: center;
+}
+ 
+#contact-form h2 {
+    margin-bottom:15px;
+    font-style:italic;
+	font-weight:normal;
+	font-size: 1.5rem;
+}
+ 
+#contact-form input, 
+#contact-form select, 
+#contact-form textarea, 
+#contact-form label {
+    font-size:15px;
+    margin-bottom:2px;
+}
+ 
+#contact-form input, 
+#contact-form select, 
+#contact-form textarea {
+    width:410px;
+    border: 1px solid #CEE1E8;
+    margin-bottom:20px;
+    padding:4px;
+}
+ 
+#contact-form input:focus, 
+#contact-form select:focus, 
+#contact-form textarea:focus {
+    border: 1px solid #AFCDD8;
+    background-color: #EBF2F4;
+}
+ 
+#contact-form textarea {
+    height:150px;
+    resize: none;
+}
+ 
+#contact-form label {
+    display:block;
+}
+ 
+#contact-form .required {
+    font-weight:bold;
+    color:#F00;    
+}
+ 
+#contact-form #submit-button {
+    width: 100px;
+    background-color:#333;
+    color:#FFF;
+    border:none;
+    display:block;
+    float:right;
+    margin-bottom:0px;
+    margin-right:6px;
+    background-color:#8FB5C1;
+    -moz-border-radius:8px;
+}
+ 
+#contact-form #submit-button:hover {
+    background-color: #A6CFDD;
+}
+ 
+#contact-form #submit-button:active {
+    position:relative;
+    top:1px;
+}
+ 
+#contact-form #loading {
+    width:32px;
+    height:32px;
+    background-image:url(../img/loading.gif);
+    display:block;
+    position:absolute;
+    right:130px;
+    bottom:16px;
+    display:none;
+}
+ 
+#errors {
+    border:solid 1px #E58E8E;
+    padding:10px;
+    margin:25px 0px;
+    display:block;
+    width:437px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    background:#FFE6E6 url(../img/cancel_48.png) no-repeat 405px center;
+    display:none;
+}
+ 
+#errors li {
+    padding:2px;
+    list-style:none;    
+}
+ 
+#errors li:before {
+    content: ' - ';    
+}
+ 
+#errors #info {
+    font-weight:bold;
+}
+ 
+#errors #info:before {
+    content: '';    
+}
+ 
+#success {
+    border:solid 1px #83D186;
+    padding:25px 10px;
+    margin:25px 0px;
+    display:block;
+    width:437px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    background:#D3EDD3 url(../img/accepted_48.png) no-repeat 405px center;
+    font-weight:bold;
+    display:none;
+}
+ 
+#errors.visible, #success.visible {
+    display:block;    
+}
+ 
+#req-field-desc {
+    font-style:italic;
+}
+ 
+/* Remove box shadow firefox, chrome and opera put around required fields. It looks rubbish. */
+input:required, textarea:required {
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    -o-box-shadow:none;
+    box-shadow:none;
+}
+ 
+/* Normalize placeholder styles */
+ 
+/* chrome, safari */
+::-webkit-input-placeholder {
+    color:#CCC;
+    font-style:italic;
+}
+ 
+/* mozilla */
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#CCC;
+    font-style:italic;
+}
+ 
+/* ie (faux placeholder) */
+input.placeholder-text, textarea.placeholder-text  { 
+    color:#CCC;
+    font-style:italic;
+}
+
