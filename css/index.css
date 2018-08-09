@@ -144,16 +144,25 @@ body {
   justify-content: center;
   background: cream;
 }
+/*******************
+  container styles
+********************/
 .container {
-  width: 800px;
-  width: 100%
-	display:flex;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
   justify-content: center;
-  background: white;
+  background: #D3D3D3;
   color: black;
 }
+@media (max-width: 500px) {
+  .container {
+    background: lightgray;
+  }
+}
 .container .header {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: 80px;
   display: flex;
   flex-direction: column;
@@ -170,8 +179,16 @@ body {
   font-size: 1.8rem;
   color: black;
 }
+@media (max-width: 500px) {
+  .container .header .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .container .top {
-  width: 800px;
+  width: 100%;
   background: #D3D3D3;
   padding: 6.25%;
 }
@@ -202,7 +219,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  borcer: 1px solid red;
   margin-bottom: 25px;
 }
 .container .middle .content {
@@ -233,6 +249,7 @@ body {
 }
 .container .history {
   font-size: 1.6rem;
+  margin-bottom: 15px;
 }
 .container .history .work {
   font-size: 2.4rem;
@@ -261,8 +278,8 @@ body {
   height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   font-size: 1.8rem;
   line-height: 1.1;
 }
