@@ -176,15 +176,25 @@ html body {
   margin: auto;
   width: 80%;
 }
+html body p {
+  font-size: 2rem;
+  font-family: 'Acme', sans-serif;
+  font-style: italic;
+  background: #e2e267;
+  padding: 1.4rem;
+  height: 100%;
+  line-height: 2.5rem;
+  width: 90%;
+  order: 1;
+}
 html body .container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 html body .container header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -193,8 +203,11 @@ html body .container header .splashimg {
   height: 100%;
   margin-top: 4rem;
   margin-right: 6rem;
+  flex-shrink: 1;
+  order: 2;
+  align-self: center;
 }
-html body .container header p:first-child {
+html body .container p:first-child {
   font-size: 2rem;
   font-family: 'Acme', sans-serif;
   font-style: italic;
@@ -202,29 +215,101 @@ html body .container header p:first-child {
   padding: 1.4rem;
   height: 100%;
   line-height: 2.5rem;
-  position: relative;
-  left: -1.2rem;
-  top: 10rem;
+  width: 45%;
+  order: 1;
+  text-align: center;
+  align-self: flex-start;
 }
-html body .container header p {
+html body .container p {
   font-size: 3rem;
   background: lightgray;
   margin-top: 3rem;
-  padding: 2rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-shrink: 1;
+  order: 4;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: acme;
+  line-height: 3rem;
 }
-html body .container header h1 {
+html body .container p a {
+  margin: 1.8rem;
+  border-right: 0.4rem solid #360101;
+  border-top: 0.4rem solid #360101;
+  border-bottom: 0.6rem solid #360101;
+  border-left: 0.6rem solid #360101;
+  text-decoration: none;
+  font-style: italic;
+  color: #f9f7f7;
+  padding: 1.4rem;
+  background-color: #ad601d;
+  font-size: 4rem;
+  font-family: 'Mouse Memoirs', sans-serif;
+  margin: 1.6rem;
+}
+html body h1 {
   font-size: 5.4rem;
-  height: 100%;
+  height: 9%;
+  width: 45%;
   color: #eb1a1a;
   padding: 0.5rem;
   background: #724848;
-  position: relative;
-  top: 576px;
-  left: 164px;
   padding: 1.5rem;
   font-family: 'Bangers', cursive;
+  flex-shrink: 1;
+  order: 3;
+  align-self: flex-end;
+  margin-top: 3rem;
 }
-html body .container nav {
+html body h2 {
+  font-size: 4rem;
+  margin: 1.6rem;
+  color: yellow;
+  background: linear-gradient(to bottom right, red, yellow);
+  font-family: bangers;
+}
+html body h3 {
+  font-size: 3rem;
+  font-family: bangers;
+}
+html body li {
+  font-size: 3rem;
+  font-family: acme;
+  margin: 2rem;
+}
+html body .portfolio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  width: 90%;
+}
+@media (max-width: 500px) {
+  html body .portfolio {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+}
+html body .portfolio img {
+  width: 21%;
+  height: 305px;
+  margin: 2rem;
+}
+@media (max-width: 500px) {
+  html body .portfolio img {
+    width: 60%;
+    align-self: center;
+  }
+}
+html body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html body nav {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -234,7 +319,7 @@ html body .container nav {
   width: 90%;
   background: linear-gradient(to bottom right, red, yellow);
 }
-html body .container nav a {
+html body nav a {
   margin: 1.8rem;
   border-right: 0.4rem solid #360101;
   border-top: 0.4rem solid #360101;
@@ -249,18 +334,18 @@ html body .container nav a {
   font-family: 'Mouse Memoirs', sans-serif;
 }
 @media (max-width: 655px) {
-  html body .container nav {
+  html body nav {
     justify-content: center;
   }
-  html body .container nav a {
+  html body nav a {
     font-size: 2rem;
   }
 }
 @media (max-width: 500px) {
-  html body .container nav {
+  html body nav {
     flex-direction: column;
   }
-  html body .container nav a {
+  html body nav a {
     width: 100%;
     text-align: center;
   }
