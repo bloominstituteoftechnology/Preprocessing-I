@@ -53,7 +53,378 @@ table {
     box-sizing: border-box;
 }
 
+@backround-color-1:rgb(0, 0, 0);
+@background-color-2:rgba(36, 39, 36, 0.712);
+@font-color:rgba(246, 252, 247, 0.932);
+@font-size:1.6rem;
+@font-fam-1: 'Crimson Text', serif;
+@border-color:rgba(207, 179, 20, 0.815);
+.border{
+	border:1.5px solid @border-color;
+}
+.container-rules{
+	display:flex;
+	justify-content:space-around;
+	margin:0px 1.7%;
+}
+.content-rules	{
+	width:48%;
+	font-size:@font-size;
+	background-color:@background-color-2;
+	padding:10px 1.1%;
+}
+.h2-rules{
+	font-size:2.4rem;
+	text-align:center;
+	font-family:'Headland One', serif;
+	
+}
+.flex-between{
+	display:flex;
+	justify-content:space-between;
+}
+.flex-around{
+	display:flex;
+	justify-content:space-around;
+}
+
+html{
+	font-size:62.5%;
+}
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color:@backround-color-1;
+	color:@font-color;
+	max-width:880px;
+	margin:0 auto;
+
+	header{
+		width:100%;
+		
+		
+		nav{
+			.flex-around;
+			.border;
+			width:95%;
+			background-color:@background-color-2;
+			margin:15px auto;
+			padding:10px;
+			
+			@media(max-width:500px){
+				flex-direction:column;
+				align-items:center;
+				border:none;
+				padding:0px;
+				
+				
+			}
+			a{
+				text-decoration:none;
+				font-size:1.8rem;
+				color:@font-color;
+				padding:10px 1.1%;
+				text-decoration:underline;
+				text-decoration-color:@border-color;
+
+				@media(max-width:500px){
+					font-size:2rem;
+					border-bottom:1.5px solid @border-color;
+					border-right:1.5px solid @border-color;
+					text-decoration:none;
+					width:100%;
+					text-align:center;
+					margin-top:5px;
+					
+				}
+			}
+			
+			a:hover{
+				color:rgb(207, 180, 24);
+			}
+		}
+	}
+	.intro-sec{
+		.border;
+		width:95%;
+		background-color:@background-color-2;
+		margin:15px auto;
+
+		@media(max-width:500px){
+			height:600px;
+		}
+
+		.top-info{
+			.flex-between;
+			width:100%;
+			height:275px;
+			padding:15px 2.2%;
+			
+			@media(max-width:500px){
+				flex-direction:column-reverse;
+				height:420px;
+				margin:20px auto;
+				margin-bottom:0px;
+			}
+			#firstpic{
+				width:36rem;
+				padding-bottom:5px;
+				border-bottom:0.75px solid @border-color;
+				padding-right:.56%;
+				border-right:0.75px solid @border-color;
+				@media(max-width:710px){
+					width:30rem;
+					height:200px;
+				}
+				@media(max-width:550px){
+					width:25rem;
+					height:180px;
+				}
+				@media(max-width:500px){
+					width:32rem;
+					height:200px;
+					margin:30px auto;
+					margin-bottom:0px;
+				}
+			}
+			h1{
+				font-size:6rem;
+				font-family:'Headland One', serif;
+				padding-bottom:10px;
+				padding-left:20%;
+				color:rgb(230, 197, 15);
+				text-shadow: 1px 1px @backround-color-1;
+				
+				@media (max-width:710px){
+					font-size:5.2rem;
+					padding-left:15%;
+				}
+				@media(max-width:550px){
+					font-size:4.9rem;
+					padding-left:10%;
+				}
+				
+				@media(max-width:500px){
+					font-size:6.4rem;
+					padding-left:0%;
+				}
+			
+			}
+
+			h3{
+				font-size:2.2rem;
+				font-family:@font-fam-1;
+				@media (max-width:710px){
+					font-size:2rem;
+				}
+			}	
+			.name-sec{
+				width:47%;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				justify-content:center;
+				
+				@media(max-width:500px){
+					width:100%;
+					text-align:center;
+				}
+			}
+		}		
+		.bottom-info{
+			.flex-between;
+			width:100%;
+			height:270px;
+			padding:15px 2.2%;
+			
+			@media(max-width:500px){
+				flex-direction:column;
+				align-items:center;
+				padding-top:0px;
+			}
+			.buffett{
+				width:48%;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				justify-content:center;
+				font-family:@font-fam-1;
+
+				@media(max-width:500px){
+					width:96%;
+				}
+			}
+
+			p{
+				font-size:2.4rem;
+				padding-bottom:20px;
+
+				@media(max-width:500px){
+					font-size:1.6rem;
+					text-align:center;
+				}
+			}
+			#everest{
+				width:36rem;
+				padding-top:5px;
+				border-top:0.75px solid @border-color;
+				padding-left:.56%;
+				margin-left:2%;
+				border-left:0.75px solid @border-color;
+				@media(max-width:710px){
+					width:26rem;
+					height:200px;
+				}
+				@media(max-width:500px){
+					display:none;
+				}
+			}
+			button{
+				background-color: @backround-color-1;
+				border:1px solid rgb(230, 197, 15);
+				border-radius:10px;
+				font-size:1.4rem;
+				height:40px;
+				width:35%;
+				font-family:'Headland One', serif;
+				
+				
+				a{
+					text-decoration: none;
+					color:@font-color;
+				}
+
+				@media (max-width:710px){
+					font-size:1rem;
+				}
+			}
+			button:hover{
+				cursor:pointer;
+				a{
+					color:rgb(207, 180, 24);
+				}
+			}
+		}		
+	}
+	.mid-tent{
+		.container-rules;
+		@media(max-width:500px){
+			display:block;
+			width:96%;
+		}
+		.left-tent{
+			.content-rules;
+			.h2-rules;
+			.border;
+			h2{
+				color:rgb(230, 197, 15)
+			}
+			p{
+				padding:10px;
+				text-align:left;
+				font-size:@font-size;
+				font-family:@font-fam-1;
+			}
+			@media(max-width:500px){
+				width:100%;
+				magin:0px auto;
+				margin-bottom:15px;
+			}
+		
+		}
+		.skills{
+			.content-rules;
+			.h2-rules;
+			.border;
+			h2{
+				color:rgb(230, 197, 15);
+			}
+			ul{
+				padding:25px 7%;
+				list-style-type:square;
+				text-align:left;
+				font-size:@font-size;
+				font-family:@font-fam-1;
+			}
+			@media(max-width:500px){
+				width:100%;
+				magin:0px auto;
+			}
+		}	
+	}
+	.bottom-tent{
+		.container-rules;
+		margin:15px 1.7%;
+		.flex-around;
+		
+		h2{
+			color:rgb(230, 197, 15);
+		}
+		.work-exp{
+			.content-rules;
+			.h2-rules;
+			.border;
+			@media(max-width:500px){
+				width:100%;
+				magin:0px auto;
+			}
+		}	
+			table{
+				.flex-around;
+				margin:15px 1.7%;
+				font-family:@font-fam-1;
+			}
+			.col1{
+				width:25%;
+			}
+			tr{
+				border:1px solid @border-color;
+				
+			}
+			th{
+				font-size:1.8rem;
+				font-weight:200;
+				width:35%;
+				text-align:center;
+				padding:5px .56%;
+			}
+			td{
+				width:30%;
+				font-size:@font-size;
+				text-align:center;
+				padding:5px;
+			
+		
+
+		.contact{
+			.content-rules;
+			.h2-rules;
+			.border;
+			address{
+				
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:flex-start;
+				font-size:@font-size;
+				font-family:@font-fam-1;
+				p{
+					padding:5px 1.7%;
+					a{
+						text-decoration:none;
+						color:@font-color;
+					}
+					@media (max-width:700px){
+						font-size:1.4rem;
+					}
+				}
+			}
+			@media(max-width:500px){
+				width:100%;
+				magin:0px auto;	
+			}		
+		}
+	}
+}
+	
 }
 
