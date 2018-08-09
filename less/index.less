@@ -1,4 +1,4 @@
-// Is this working?
+// Is this working??
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,8 +52,313 @@ table {
 * {
     box-sizing: border-box;
 }
-
+	@color-scheme1:#FEF7D5;
+	@color-scheme2: burlywood;
+	@color-scheme3:bisque;
 html, body {
-    height: 100%;
+	height: 100%;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 62.5%;
+    background-color: @color-scheme1;
+    background-blend-mode: saturation;
+  }
+  
+  .nav-bar{
+	max-width: 62.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.1rem;
+    margin-top: 15px;
+		a{
+			text-decoration: none;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			color: #6E6D6D;
+		}
+  
+	}
+  .name-title{
+    max-width: 880px;
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+	border-bottom: 1px solid black;
+	background-color: @color-scheme2;
+	
+	.img{
+		max-width: 37.5%;
+		align-self: flex-end;
+		border: 2px solid black;
+		box-shadow: 5px 5px #A53535;
+		margin-right: 25px;
+		margin-top: 11px;
+	}
+	.title{
+		font-size: 3rem;
+		padding-top: 10%;
+	}
+	.name{
+		max-width: 400px;
+		width: 22%;
+		height: 74px;
+		font-size: 3.6rem;
+		margin-top: 50px;
+		margin-right: 10%;
+		border-bottom: double;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.motto{
+		max-width: 100px;
+		width: 100%;
+		align-self:flex-end;
+		font-size: 2.3rem;
+		text-align: center;
+		font-family: monospace;
+		display: flex;
+		margin-right: 15.36%;
+	}
 }
 
+  .call-to-action{
+	font-size: 1.8rem;
+    display: flex;
+    
+    background-color: @color-scheme2;
+    flex-direction: column;
+
+	 .call{
+		font-size: 2rem;
+   		justify-content: center;
+   		width: 58%;
+    	padding-bottom: 1%;
+   		padding-top: 3%;
+    	text-align: center;
+    	align-self: center;
+	}
+	
+	.button{
+		width: 24%;
+		padding: 1%;
+		margin-bottom: 15px;
+		margin-top:15px;
+		border: 1px solid grey;
+		border-radius: 65%;
+		background-color: grey;
+		color: white;
+		border-style: groove;
+		align-self: center;
+		padding-bottom: 6px;
+	}
+	.button span{
+		-webkit-transition: 0.6s;
+		-moz-transition: 0.6s;
+		-o-transition: 0.6s;
+		transition: 0.6s;
+		-webkit-transition-delay: 0.2s;
+		-moz-transition-delay: 0.2s;
+		-o-transition-delay: 0.2s;
+		transition-delay: 0.2s;
+	}
+	.button:before{
+		content: '';
+   		 position: absolute;
+    	top: 0.67em;
+    	left: 0;
+    	width: 100%;
+    	text-align: center;
+    	opacity: 0;
+    	-webkit-transition: .4s,opacity .6s;
+    	-moz-transition: .4s,opacity .6s;
+    	-o-transition: .4s,opacity .6s;
+    	transition: .4s,opacity .6s;
+	}
+	.button:after {
+   		 content: attr(data-hover);
+   		 position: absolute;
+    	top: 0.67em;
+    	left: 0;
+    	width: 100%;
+    	text-align: center;
+    	opacity: 0;
+    	-webkit-transition: .4s,opacity .6s;
+    	-moz-transition: .4s,opacity .6s;
+    	-o-transition: .4s,opacity .6s;
+    	transition: .4s,opacity .6s;}
+	.button:before{
+		content: attr(data-hover);
+		-webkit-transform: translate(-150%,0);
+		-moz-transform: translate(-150%,0);
+		-ms-transform: translate(-150%,0);
+		-o-transform: translate(-150%,0);
+		transform: translate(-150%,0);
+		
+	}
+	.button:after{
+		content: attr(data-active);
+		-webkit-transform: translate(150%,0);
+		-moz-transform: translate(150%,0);
+		-ms-transform: translate(150%,0);
+		-o-transform: translate(150%,0);
+		transform: translate(150%,0);
+	}
+	.button:hover span{
+		opacity: 0;
+		-webkit-transform: scale(0.3);
+		-moz-transform: scale(0.3);
+		-ms-transform: scale(0.3);
+		-o-transform: scale(0.3);
+		transform: scale(0.3);
+	}
+	.button:active span{
+		opacity: 0;
+		-webkit-transform: scale(0.3);
+		-moz-transform: scale(0.3);
+		-ms-transform: scale(0.3);
+		-o-transform: scale(0.3);
+		transform: scale(0.3);
+	}
+	.button:hover:before{
+		opacity: 1;
+		-webkit-transform: translate(0,0);
+		-moz-transform: translate(0,0);
+		-ms-transform: translate(0,0);
+		-o-transform: translate(0,0);
+		transform: translate(0,0);
+		-webkit-transition-delay: .4s;
+		-moz-transition-delay: .4s;
+		-o-transition-delay: .4s;
+		transition-delay: .4s;
+	}
+	.button:active:after {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: .4s;
+    -moz-transition-delay: .4s;
+    -o-transition-delay: .4s;
+    transition-delay: .4s;
+	}
+	.button:active:before {
+		-webkit-transform: translate(-150%,0);
+		-moz-transform: translate(-150%,0);
+		-ms-transform: translate(-150%,0);
+		-o-transform: translate(-150%,0);
+		transform: translate(-150%,0);
+		-webkit-transition-delay: 0s;
+		-moz-transition-delay: 0s;
+		-o-transition-delay: 0s;
+		transition-delay: 0s;}
+
+}
+.listen{
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-around;
+	background-color: @color-scheme3;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	.listen-up{
+		width: 45%;
+	}
+	.listen-title{
+		text-align: center;
+		padding: 3%;
+		font-size: 2.4rem;
+	}
+	.listen-paragraph{
+		font-size:2rem;
+	}
+	.stuff{
+		width: 45%;
+	.good-stuff{
+		padding: 3%;
+		font-size: 2.4rem;
+		text-align:center;
+	}
+	.good-list{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		text-align: center;
+		max-width: 400px;
+		width: 100%;
+		padding: 3%;
+	}
+	ul{
+		list-style: none;
+   		padding: 4%;
+    	border: 1px solid grey;
+	}
+}
+}
+.work-history{
+	font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+	flex-wrap: wrap;
+	.work-title{
+		max-width: 880px;
+		width: 100%;
+		padding-bottom: 15px;
+		margin-left: 6%;
+		font-size:2.6rem;
+	}
+	.work-list{
+		max-width: 880px;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		border-bottom: 1px solid;
+		   
+	}
+	h2{
+		border-left:1px solid;
+		border-right:1px solid;
+		max-width: 181px;
+		width:100%;
+		padding-left:5px;
+		
+	}
+	.work-info{
+		max-width:880px;
+		width:100%;
+		display:flex;
+		justify-content: space-around;
+		padding-top: 11px;
+	}
+	p{
+		font-size: 2rem;
+		max-width:181px;
+		width: 100%;
+		border-right: 1px solid;
+		border-left: 1px solid;
+		text-align: center;
+		padding-top:10px;
+		
+	}
+	.warehouse{
+		padding-top: 10px;
+	}
+}
+.contact{
+	font-size: 2rem;
+	font-style: italic;
+	padding-bottom: 27px;
+	background-color:@color-scheme3;
+	.contact-me{
+		text-align: center;
+		margin-top: 27px;
+	}
+	.contact-info{
+		display: flex;
+		justify-content: space-around;
+		
+	}
+}
