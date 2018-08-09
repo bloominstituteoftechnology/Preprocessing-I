@@ -56,10 +56,11 @@ table {
 //Variables
 @head-foot-height: 50px;
 @main-content-padding: 10px;
-@head-foot-color: #4f0000;
-@left-color: #012727;
-@right-color: #005D5D;
-
+@head-foot-color: linear-gradient(to right, #FFA100 1%, #32343e);
+@left-color: #32343e;
+@right-color: #32343e;
+@html-background: #202124;
+@text-color: #ffe7bf;
 //Mix ins!
 
 .flex-column {
@@ -89,13 +90,19 @@ table {
 	border-radius: 20px;
 	padding: 10px;
 }
+
+.left-right-mobile {
+	@media (max-width: 500px) {
+		margin: 10px 0;
+	}
+}
 //Main stuff
 
 html, body {
 	height: 100%;
 	font-size: 62.5%;
-	background: #410202;
-	color: white;
+	background: @html-background;
+	color: @text-color;
 }
 
 h1 {
@@ -123,13 +130,31 @@ header {
 	height: @head-foot-height;
 	display: flex;
 	align-items: center;
-	padding-left: 10px;
+	padding-left: 1.11%;
 	background: @head-foot-color;
+
+	@media (max-width: 500px) {
+		width: 70%;
+		max-width: 350px;
+		.flex-column;
+		margin: 0 auto;
+		height: 125px;
+		padding: 5px 0;
+		background: linear-gradient(#FFA100 1%, #32343e);
+	}
 	
 	nav {
-		width: 40%;
+		width: 55%;
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			max-width: 250px;
+			height: 115px;
+			.flex-column;
+		}
+		
 
 	}
 
@@ -144,13 +169,28 @@ header {
 	justify-content: space-between;
 	flex-direction: row-reverse;
 	width: 100%;
-	height: 1000px;
+	height: 800px;
+
+	@media (max-width: 500px){
+		height: 100%;
+		max-width: 500px;
+		flex-wrap: wrap;
+		align-items: center;
+	
+	}
 
 	.left-content {
 		.flex-column;
 		justify-content: space-around;
 		width: 30%;
 		padding: @main-content-padding;
+
+		@media (max-width: 500px){
+			width: 100%;
+			max-width: 500px;
+			flex-wrap: wrap;
+		
+		}
 		
 	}
 
@@ -160,12 +200,21 @@ header {
 		width: 70%;
 		padding: @main-content-padding;
 
+		@media (max-width: 500px){
+			width: 100%;
+			max-width: 500px;
+			flex-wrap: wrap;
+		
+		}
+
 	}
 
 }
 
 .skills {
 	.left-styling;
+
+	.left-right-mobile;
 
 	ul {
 		.flex-column;
@@ -187,6 +236,8 @@ header {
 .contact {
 	.left-styling;
 
+	.left-right-mobile;
+
 	h2{
 		margin-bottom: 10px;
 	}
@@ -203,6 +254,8 @@ header {
 	.right-styling;
 	width: 100%;
 	height: 200px;
+
+	.left-right-mobile;
 	
 }
 
@@ -228,6 +281,8 @@ header {
 	.flex-column;
 	align-items: flex-start;
 	justify-content: space-between;
+
+	.left-right-mobile;
 }
 
 .about-content1 {
@@ -262,6 +317,8 @@ header {
 	.flex-column;
 	justify-content: space-between;
 
+	.left-right-mobile;
+
 	ul {
 		.flex-column;
 		justify-content: space-between;
@@ -283,5 +340,6 @@ footer {
 	background: @head-foot-color;
 }
 
+	
 
 
