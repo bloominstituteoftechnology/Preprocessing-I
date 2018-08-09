@@ -81,52 +81,124 @@ html, body {
 
 .block-titles {
 	font-family: @display-font;
-	font-size: 2.4rem;
+	font-size: 1.8rem;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+
+.p-styling {
+	font-family: @body-font;
+	font-size: 1.2rem;
 }
 
 .header {
 	.block-padding-margin();
 	.flex-spacebetween-row();
-
+	height: 120px;
 
 	.header__title {
 		.block-titles();
+		font-size: 2.4rem;
+		width: 70%;
+		transform: rotate(-10deg);
+		border-bottom: none;
+
+		@media (max-width:500px) {
+			transform: rotate(0deg);
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	.header__nav {
-		width: 60%;
+		width: 100%;
 		.flex-spacebetween-row();
+
+		@media (max-width:500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	.header__nav-item {
-		background-color: yellow;
+		font-family: @body-font;
+		font-size: 1.4rem;
+		margin: 0 1%;
+
+		@media (max-width:500px) {
+			margin: 10px 0;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+
+	a:hover {
+		@media (max-width:500px) {
+			background: black;
+			color: white;
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	@media (max-width:500px) {
-		.header {
-		background-color: aqua;
-		}
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: auto;
 	}
 }
 
 .about {
 	.block-padding-margin();
+	.flex-spacebetween-row();
+	flex-wrap: wrap;
+	align-items: flex-start;
+	@media (max-width:500px) {
+		flex-direction: column;
+		align-items: center;
+	}
 
 	.about__title {
-		.block-titles();	
+		.block-titles();
+		
+		@media (max-width:500px) {
+			order: 1;
+		}
 	}
 
 	.about__text {
-		background-color: indigo;
+		width: 45%;
+		.p-styling();
+		margin-top: 20px;
+
+		@media (max-width:500px) {
+			width: 100%;
+			order: 3;
+		}
 	}
 
 	.about__img {
 		width: 50%;
+
+		@media (max-width:500px) {
+			order: 2;
+			width: 250px;
+			height: 250px;
+			border-radius: 50%;
+			margin-top: 20px;
+		}
 	}
 }
 
 .skills {
 	.block-padding-margin();
+	display: flex;
+	flex-direction: column;
 
 	.skills__title {
 		.block-titles();
