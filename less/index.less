@@ -67,8 +67,12 @@ html {
     width: 100%;
     max-width: 1080px;
 	height: 1460px;
-}
 
+	@media only screen and (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
 
 @desktop-width: 1080px;
 @fill-container: 100%;
@@ -78,6 +82,12 @@ html {
 @headline-font-size: 3rem;
 @h2-font-size: 2rem;
 
+.flex-rules-center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 nav {
 	display: block;
 	float: right;
@@ -85,6 +95,11 @@ nav {
 	padding: 10px;
 	background-color: black;
 	margin: 10px;
+
+	@media only screen and (max-width: 900px) {
+		.flex-rules-center();
+		float: none;
+	}
 	
 	a {
 		margin: 0px 5px 0px 5px;
@@ -97,6 +112,17 @@ nav {
 	max-width: @desktop-width;
 	width: @fill-container;
 	border: @border;
+
+	@media only screen and (max-width:900px) {
+		.flex-rules-center();
+		flex-direction: column;
+		height: auto;
+	}
+
+	@media only screen and (max-width:500px) {
+		display: block;
+	}
+
   
     .title {
 		font-family: 'Ruslan Display', cursive;
@@ -106,6 +132,15 @@ nav {
 		width: 50%;
 		margin: 5px 0px 0px 10px;
 		border: @border;
+
+		@media only screen and (max-width:900px) {
+			margin: 5px 200px 0px 0px;
+		}
+
+		@media only screen and (max-width:500px) {
+			width: 80%;
+			margin: 0 auto;
+		}
 	}
 
 	h2 {
@@ -116,6 +151,10 @@ nav {
 		width: 40%;
 		margin: 5px 0px 0px 15px;
 		border: @border;
+
+		@media only screen and (max-width:500px) {
+			margin: 0 auto;
+		}
 	}
 
 	p {
@@ -126,12 +165,35 @@ nav {
 		width: 35%;
 		background-color: @head-block-bg-color;
 		border: @border;
+
+		@media only screen and (max-width:900px) {
+			margin: 5px 150px 0px 0px;
+		}
+
+		@media only screen and (max-width:500px) {
+			margin: 0 auto;
+			width: 90%;
+		}
 	}
 
 	img {
 		width: 40%;
 		margin: 35px 0px 0px 25px;
 		border: @border;
+
+		@media only screen and (max-width:900px) {
+			margin: 294px 464px 5px 0px;
+		}
+
+		@media only screen and (max-width: 790px) {
+			width: 40%;
+			margin: 294px 0 5px 0px;
+		}
+
+		@media only screen and (max-width: 500px) {
+			width: 55%;
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -146,6 +208,20 @@ button {
 	background-color: #e50422;
 	font-family: 'Arvo', serif;
 	margin-top: 3px;
+
+	@media only screen and (max-width:900px) {
+		margin-left: 155px;
+	}
+
+	@media only screen and (max-width:500px) {
+    	margin: 0 auto;
+    	width: 70%;
+        right: 0px;
+    	padding: 20px;
+    	font-size: 1.4rem;
+		line-height: 0;
+		text-align: justify
+	}
 }
 
 .discaimer {
@@ -157,6 +233,16 @@ button {
 	width: 45%;
 	margin: 30px 10px 0px 0px;
 	border: @border;
+
+	@media only screen and (max-width: 900px) {
+		margin: 310px 65px 0px 0px;
+		width: 55%;
+	}
+
+	@media only screen and (max-width:500px) {
+		width: 95%;
+		margin: 334px auto 20px auto;
+	}
 
 	h2 {
 		font-size: 2rem;
@@ -172,6 +258,7 @@ button {
 		font-family: 'Arvo', serif;
 		line-height: 125%;
 	}
+
 }
 
 .decorative-middle-container {
@@ -183,6 +270,15 @@ button {
 	z-index: -1;
 	margin-top: 15px;
 	border: @border;
+
+	@media only screen and (max-width: 900px) {
+		width: 80%;
+		display: table-row; //needed it to be invisable.
+	}
+
+	@media only screen and (max-width: 500px) {
+		display: none;
+	}
 }
 
 .skills {
@@ -195,6 +291,24 @@ button {
 	margin: auto;
 	border: @border;
 	background-color: #172323;
+
+	@media only screen and (max-width: 900px) {
+		margin: 302px 0px 0px 109px;
+	}
+
+	@media only screen and (max-width: 686px) {
+		margin: 352px 0px 0px 115px;
+	}
+
+	@media only screen and (max-width: 686px) {
+		margin: 400px 0px 0px 115px;
+	}
+	//needed multiple breaks to maintain spacing
+	
+	@media only screen and (max-width: 500px) {
+		margin: 655px auto 0px auto;
+		width: 95%;
+	}
 	
 	h2 {
 		font-family: 'Abril Fatface', cursive;
@@ -225,6 +339,14 @@ table {
 	margin: auto;
 	font-size: 1.8rem;
 
+	@media only screen and (max-width: 580px) {
+		margin-top: 50px;
+	}
+
+	@media only screen and (max-width: 500px) {
+		margin-top: 200px;
+	}
+
 	.tr-top {
 		background-color: #4f3c0e;
 		color: white;
@@ -248,6 +370,11 @@ footer {
 	left: 210px;
 	background-color: #d8d1be;
 	border: @border;
+
+	@media only screen and (max-width: 500px) {
+		margin: 0 auto;
+		left: 0px;
+	}
 	
 	h2 {
 		padding: 5px;
@@ -271,5 +398,5 @@ footer {
     position: relative;
     top: -535px;
     border: @border;
-    z-index: -1;
+	z-index: -1;
 }
