@@ -53,15 +53,24 @@ table {
     box-sizing: border-box;
 }
 
+@fontSize: 1.4rem;
+
+
+
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: arial;
+}
+
+html {
+    font-size: 62.5%
 }
 
 .mainContainer {
 	display: flex;
+	flex-direction: column;
 	width: 880px;
 	padding-left: 1%;
-	border: 2px solid blue;
 }
 
 .mainHeader {
@@ -69,24 +78,84 @@ html, body {
 	max-width: 880px;
 	display: flex;
 	flex-direction: column;
-	border: 2px solid red;
 	height: 200px;
-}
 
-.navBar {
-	display: flex;
-	flex-direction: row;
-	flex-flow: no-wrap;
-	width: 100%;
-	border: 2px solid green;
-	background-color: lightgray;
+	.navBar {
+		display: flex;
+		flex-direction: row;
+		flex-flow: no-wrap;
+		width: 100%;
+		height: 34px;
+		border: 2px solid darkgray;
+		background-color: lightgray;
+	}
+
 }
 
 .headerText {
-	border: 2px solid orange;
-
+	padding-top: 10px;
+	font-family: arial;
+	font-size: @fontSize;
 }
+
 .navItemFlex {
+	padding: 8px;
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	font-size: @fontSize;
+}
+
+#hTitle {
+	font-size: 2.0rem;
+	font-family: arial;
+}
+
+section {
+	
+	font-size: @fontSize;
+}
+
+.sectionContainer {
+	
+}
+
+.sectionList {
+	
+}
+
+.sectionTitle {
+	font-size: 1.8rem;
+}
+
+.sectionText {
+	
+}
+
+h2 {
+	font-size: 1.8rem;
 
 }
 
+@media (max-width: 800px) {
+	.mainContainer {
+		display: flex;
+		flex-direction: column;
+		width: 800px;
+		padding-left: 1%;
+		
+	}
+
+}
+
+
+@media (max-width: 500px) {
+	.mainContainer {
+		display: flex;
+		flex-direction: column;
+		width: 500px;
+		padding-left: 1%;
+	}
+
+}
+ 
