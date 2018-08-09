@@ -56,35 +56,78 @@ table {
 html, body {
 	height: 100%;
 	font-size: 62.5%;
+	font-family: sans-serif;
 }
 
-body {
-	margin: auto;
-	max-width: 1000px;
-}
-
-.flexCenter {
+.flexRow {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-@theme-color: #a0001e;
-@theme-font: "Gotham SSm A","Gotham SSm B",Helvetica,Arial,"Microsoft Yahei",SimSun;
-
-
-h1 {
-	font-size: 2rem;
-	font-family: @theme-font;
-	color: @theme-color;
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
+@theme-color: #a0001e;
+
+
 header {
 	width: 100%;
-	.flexCenter;
+	.flexRow;
+	height: 80px;
+
+	h1 {
+		font-size: 2rem;
+		margin-left: 30px;
+	}
+
+	nav {
+		font-size: 1.8rem;
+		width: 30%;
+		.flexRow;
+		margin-right: 50px;
+		a {
+			text-decoration: none;
+			color: black;
+		}
+	}
 }
 
-nav {
-	font-family: @theme-font;
-	font-size: 1.8rem;
-	.flexCenter;
+.container1 {
+	width: 100%;
+	height: 853px;
+	background: #a0001e;
+	.flexRow;
+	
+	.profPic {
+		height: auto;
+		width: 50%;
+	}
+	
+	child1 {
+		width: 50%;
+		height: 853px;
+		.flexColumn;
+		color: white;
+		.title {
+			text-transform: uppercase;
+			font-size: 1.8rem;
+			.flexColumn;
+			justify-content: space-evenly;
+			height: 120px;
+			margin-bottom: 60px;
+		}
+		.name {
+			font-size: 5rem;
+			font-weight: 800;
+		}
+		.logo {
+			width:20px;
+		}
+	}
+
 }
