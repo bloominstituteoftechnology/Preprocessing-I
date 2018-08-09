@@ -54,7 +54,8 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	max-height: 1460px;
 }
 
 html {
@@ -63,8 +64,9 @@ html {
 
 .container {
 	margin: auto;
-	width:100%;
-	max-width: @desktop-width;
+    width: 100%;
+    max-width: 1080px;
+	height: 1460px;
 }
 
 
@@ -72,11 +74,14 @@ html {
 @fill-container: 100%;
 @head-block-bg-color: #f2e3e3;
 @border: 2px solid black;
+@standard-font-size: 1.6rem;
+@headline-font-size: 3rem;
+@h2-font-size: 2rem;
 
 nav {
 	display: block;
 	float: right;
-	font-size: 1.6rem;
+	font-size: @standard-font-size;
 	padding: 10px;
 	background-color: black;
 	margin: 10px;
@@ -95,7 +100,7 @@ nav {
   
     .title {
 		font-family: 'Ruslan Display', cursive;
-		font-size: 3rem;
+		font-size: @headline-font-size;
 		background-color: @head-block-bg-color;
 		padding: 10px;
 		width: 50%;
@@ -105,7 +110,7 @@ nav {
 
 	h2 {
 		font-family: 'Anton', sans-serif;
-		font-size: 2rem;
+		font-size: @h2-font-size;
 		background-color: @head-block-bg-color;
 		padding: 10px;
 		width: 40%;
@@ -115,7 +120,7 @@ nav {
 
 	p {
 		font-family: 'Arvo', serif;
-		font-size: 1.6rem;
+		font-size: @standard-font-size;
 		padding: 10px;
 		margin: 5px 0px 0px 20px;
 		width: 35%;
@@ -212,4 +217,59 @@ button {
 	}
 }
 
+table {
+	background-color: #f2ae04;
+	border: @border;
+	position: relative;
+	top: -500px;
+	margin: auto;
+	font-size: 1.8rem;
 
+	.tr-top {
+		background-color: #4f3c0e;
+		color: white;
+	}
+
+	.middle-tr {
+		background-color: #e2a206;
+	}
+
+	td {
+		border: @border;
+		text-align: center;
+	}
+}
+
+footer {
+	Font-size: 1.6rem;
+    width: 50%;
+    position: relative;
+    top: -474px;
+	left: 210px;
+	background-color: #d8d1be;
+	border: @border;
+	
+	h2 {
+		padding: 5px;
+		text-decoration: underline;
+	}
+
+	h3 {
+		padding: 5px;
+	}
+
+	p {
+		padding: 5px;
+	}
+}
+
+.footer-img {
+	width: 100%;
+    max-width: 1080px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    top: -535px;
+    border: @border;
+    z-index: -1;
+}
