@@ -56,12 +56,15 @@ table {
 html, body {
     height: 100%;
 }
+@screen: flex;
+@bg-color: yellow;
+
 body {
-	background-color: gray;
+	background-color: whitesmoke;
 }
 header{
-	border: 6px solid pink;
-	background-color: yellow;
+	border: 6px solid red;
+	background-color:@bg-color;
 	margin-bottom: 2%;
 	#navigation {
 		display: flex;
@@ -69,39 +72,59 @@ header{
 		justify-content: space-between;
 	}
 }
-img {
-	display: block;
-	margin: 0 auto;
-}
-p {
-	display: block;
-    text-align: center;
-    font-size: 100%;
-    padding: 2%;
-    font-weight: bold;
-    color: yellow;
+.Introduction {
+	display: @screen;
+	flex-direction: row;
+	align-items: center;
+	margin-right: 15%;
+	img {
+		display: block;
+		margin: 0 auto;
+	p {
+		display: block;
+		text-align: center;
+		font-size: 100%;
+		padding: 2%;
+		font-weight: bold;
+		color: red;
 	}
+}
 .midddle {
-	display: flex;
+	display: @screen;
 	justify-content: row;
-}
-.Skills {
-	border: 2px solid pink;
-	text-align: center;
-	padding: 12px 0px 12px 0px;
-	margin-bottom: 2%;
-}
-.Work-History {
-	border: 2px solid pink;
-	text-align: center;
-	padding: 12px 0px 12px 0px;
-	margin-bottom: 2%;
+	.Skills {
+		text-align: center;
+		padding: 12px 0px 12px 0px;
+		margin-bottom: 2%;
+		margin-left: 65%;
+		display: inline-flex;
+		flex-direction: column-reverse;
+	.Work-History {
+		text-align: center;
+		padding: 12px 0px 12px 0px;
+		margin-bottom: 2%;
+		width: 500px;
+		display: @screen;
+		flex-direction: column-reverse;
+		}
+	}
 }
 h1 {
 	font-weight: bold;
-	color: yellow;
+	color: red;
+	font-size: 35px;
+	text-decoration: overline;
+	margin: 12px;
 }
-
+footer {
+	display: @screen;
+	justify-content: space-evenly;
+	border: 6px solid red;
+	background-color:@bg-color;
+	margin-bottom: 2%;
+	padding: 15px;
+    word-spacing: 80px;
+}
 
 @media(max-width: 500px) {
 	body {
