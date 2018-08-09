@@ -1,1 +1,568 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+/* ##### VARIABLES ###### */
+/* ##### END VARIABLES ###### */
+/* ##### MIXINS ###### */
+.hTwo {
+  font-size: 2rem;
+  margin: 5px 5%;
+  text-align: center;
+  font-weight: 600;
+}
+.hThree {
+  font-size: 1.5rem;
+  margin: 5px 5%;
+  font-weight: 400;
+}
+.ionIcon-Skill {
+  height: 25px;
+  width: 25px;
+  font-family: 'Raleway';
+  padding: 10px;
+  color: #5a5d5e;
+  background: #145070;
+  border-radius: 50px;
+  margin: 10px auto;
+  border: 2px solid  ;
+}
+.underLine1 {
+  width: 8%;
+  height: 5px;
+  margin: 5px auto;
+  background: #9e0523;
+  margin-bottom: 20px;
+}
+.underLine2 {
+  width: 8%;
+  height: 5px;
+  margin: 5px auto;
+  background: #9e0523;
+  margin-bottom: 20px;
+  background: #145070;
+}
+/* ##### END  MIXINS ###### */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  color: #555;
+  font-family: 'roboto';
+  line-height: 2;
+  letter-spacing: 1.5px;
+}
+header {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 501px) {
+  header {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 500px) {
+  header nav {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+header nav .menuTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 1%;
+}
+@media all and (min-width: 500px) {
+  header nav .menuTop {
+    flex: 1 0 20%;
+  }
+}
+header nav .menuTop img {
+  height: 60px;
+}
+header nav .menuTop ion-icon {
+  height: 45px;
+  width: 45px;
+  color: #9e0523;
+}
+@media all and (min-width: 501px) {
+  header nav .menuTop ion-icon {
+    display: none;
+  }
+}
+header .links {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+@media all and (min-width: 501px) {
+  header .links {
+    flex: 1 0 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+header .links li {
+  display: block;
+  flex: 1 0 100%;
+}
+@media all and (min-width: 501px) {
+  header .links li {
+    display: inline-block;
+    flex: 1 0 0;
+  }
+}
+header .links li a {
+  padding: 5px ;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #9e0523;
+  background: #e9ecef;
+  font-family: 'Lato';
+  transition: color 1s ease, background 1s ease, padding-left 1s ease;
+  border-bottom: 2px solid  transparent;
+}
+@media all and (min-width: 501px) {
+  header .links li a {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 5px;
+    background: #fff;
+    border: 0;
+    color: #22292c;
+    transition: none;
+  }
+}
+header .links li a:hover {
+  color: #e9ecef;
+  background: #9e0523;
+  padding-left: 8%;
+  border-bottom: 2px solid  ;
+}
+@media all and (min-width: 501px) {
+  header .links li a:hover {
+    color: #333;
+    background: #fff;
+    padding-left: 0%;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  background: #145070;
+  color: #e9ecef;
+  padding: 20px 2%;
+}
+@media all and (min-width: 500px) {
+  .section {
+    width: 100vw;
+  }
+}
+.section h1 {
+  font-size: 3.7rem;
+  margin: 8px 5%;
+  text-align: center;
+  font-weight: 600;
+}
+.section .underLine {
+  width: 8%;
+  height: 5px;
+  margin: 5px auto;
+  background: #9e0523;
+  margin-bottom: 20px;
+}
+.section p {
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.hero {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 50px 2%;
+}
+@media all and (min-width: 501px) {
+  .hero {
+    flex: 1 0 100%;
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+.hero img {
+  height: 30%;
+  width: 30%;
+  margin: 2px auto;
+  border-radius: 10px;
+}
+@media all and (min-width: 501px) {
+  .hero img {
+    margin: 2px auto;
+    height: 100%;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 0px;
+    border: 0px solid #145070;
+    -webkit-clip-path: polygon(10% 0, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(10% 0, 100% 0%, 92% 100%, 0% 100%);
+  }
+}
+.hero h1 {
+  font-size: 3.7rem;
+  margin: 8px 5%;
+  text-align: center;
+  font-weight: 600;
+}
+.hero h2 {
+  font-size: 2rem;
+  margin: 5px 5%;
+  text-align: center;
+  font-weight: 600;
+}
+.hero p {
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.hero a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #9e0523;
+  background: #e9ecef;
+  font-family: 'Lato';
+  transition: color 1s ease, background 1s ease, padding-left 1s ease;
+  padding: 10px 10px;
+  margin: 20px 5%;
+  border-radius: 4px;
+  border: 2px solid #145070;
+}
+.hero a:hover {
+  color: #e9ecef;
+  background: #9e0523;
+  padding-left: 8%;
+}
+@media all and (min-width: 501px) {
+  .listenUp {
+    display: flex;
+    align-items: center;
+  }
+  .listenUp p {
+    width: 50%;
+    text-align: center;
+  }
+}
+.skills {
+  align-content: center;
+  background: #22292c;
+}
+.skills .articlesSkills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills article {
+  width: 21%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #5a5d5e;
+  background: #181f22;
+  margin: 10px 2%;
+  padding: 10px 5%;
+  font-family: 'Lato';
+  border-radius: 8px;
+}
+@media all and (min-width: 501px) {
+  .skills article {
+    width: 45%;
+  }
+}
+.skills article p {
+  display: none;
+}
+@media all and (min-width: 501px) {
+  .skills article p {
+    display: block;
+  }
+}
+.skills ion-icon {
+  height: 25px;
+  width: 25px;
+  font-family: 'Raleway';
+  padding: 10px;
+  color: #5a5d5e;
+  background: #145070;
+  border-radius: 50px;
+  margin: 10px auto;
+  border: 2px solid  ;
+}
+.skills h2 {
+  font-size: 2rem;
+  margin: 5px 5%;
+  text-align: center;
+  font-weight: 600;
+  color: #5a5d5e;
+  font-size: 1rem;
+}
+.eXperience {
+  background: #fff;
+  color: #333;
+  font-family: 'Lato';
+}
+.eXperience ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.eXperience ul li {
+  display: flex;
+  align-items: center;
+  margin: 10px 2%;
+  padding: 0 2%;
+  background: #dfdfdf;
+}
+@media all and (min-width: 501px) {
+  .eXperience ul li {
+    width: 29%;
+    min-width: 300px;
+    max-width: 400px;
+  }
+}
+.eXperience ul li .job {
+  width: 100%;
+  padding: 10px 2%;
+}
+.eXperience ul li .job h3 {
+  font-size: 1.5rem;
+  margin: 5px 5%;
+  font-weight: 400;
+  color: black;
+  margin: 1px 0;
+}
+.eXperience ul li .job p {
+  text-align: left;
+  color: #5a5d5e;
+  margin: 0 0;
+  border-left: 20px solid #fff;
+  padding-left: 4%;
+  font-weight: 200;
+  border-radius: 10px;
+}
+.contact {
+  padding: 0;
+  background: #9e0523;
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 500px) {
+  .contact {
+    width: 100vw;
+    margin: 20px auto;
+  }
+}
+.contact .underLine {
+  width: 8%;
+  height: 5px;
+  margin: 5px auto;
+  background: #9e0523;
+  margin-bottom: 20px;
+  background: #145070;
+}
+.contact ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact ul li {
+  display: flex;
+  flex-direction: column;
+}
+.contact ul li a {
+  display: flex;
+  align-items: center;
+  font-family: 'Lato';
+  font-weight: 600;
+  text-decoration: none;
+  color: #22292c;
+  font-size: 1.5rem;
+}
+.contact ul ion-icon {
+  height: 25px;
+  width: 25px;
+  font-family: 'Raleway';
+  padding: 10px;
+  color: #5a5d5e;
+  background: #145070;
+  border-radius: 50px;
+  margin: 10px auto;
+  border: 2px solid  ;
+  margin: 2px 5px;
+  width: 15px;
+  height: 15px;
+  background: #22292c;
+  padding: 2px;
+}
+.contact .footer-end {
+  background: #22292c;
+  margin-top: 20px;
+  padding: 30px 2%;
+  font-family: 'Lato';
+  font-weight: 600;
+  text-decoration: none;
+  color: #5a5d5e;
+  font-size: 1.5rem;
+  text-align: center;
+}
