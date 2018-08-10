@@ -66,6 +66,8 @@ html, body {
 @header-font-size: 1.8rem;
 @test-border: 1px solid purple;
 
+@mobile: ~"(max-width: 500px)";
+
 
 .flex-row-mixin {
 	display: flex;
@@ -100,28 +102,60 @@ header{
 	width: 100%;
 	height: 200px;
 
+	@media @mobile {
+		height: 180px;
+	}
+
+	@media @mobile {
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+
 	.name{
 		.flex-row-mixin;
 		margin-top: 30px;
 		width: 66%;
+
+		@media @mobile {
+			width: 90%;
+			align-self: center;
+			margin-top: 0;
+		}
 	}
 
 	.julie img:nth-of-type(4){
 		margin-left: -15px;
 		margin-right: -15px;
+
+		@media @mobile {
+			margin-left: -10px;
+			margin-right: -8px;
+		}
 	}
 
 	.julie{
 		margin-right: 1.2%;
+
+		@media @mobile {
+			margin-right: 0;
+		}
 	}
 
 	.jonak{
 		margin-left: 1.2%;
+
+		@media @mobile {
+			margin-right: 0;
+		}
 	}
 
 
 	img {
 		height: 50px;
+		@media @mobile {
+			height: 40px;
+		}
 	}
 
 	.icons{
@@ -130,6 +164,11 @@ header{
 		height: 40px;
 		display: flex;
 		justify-content: space-between;
+
+		@media @mobile {
+			align-self: center;
+			margin-top: 15px;
+		}
 	}
 
 	.icons img{
@@ -147,6 +186,11 @@ header{
 .center-container{
 	display: flex;
 	flex-direction: row;
+
+	@media @mobile {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .left-section{
@@ -156,6 +200,12 @@ header{
 	align-items: center;
 	height: 500px;
 	width: 50%;
+
+	@media @mobile {
+		width: 90%;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .intro{
@@ -168,6 +218,11 @@ header{
 		height: 200px;
 		margin: 0px 3%;
 		align-self: center;
+
+		@media @mobile {
+			width: 25%;
+			margin-left: 8%;
+		}
 	}
 
 	.intro-text{
@@ -177,6 +232,10 @@ header{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		@media @mobile {
+			width: 75%;
+		}
 	}
 
 	h2{
