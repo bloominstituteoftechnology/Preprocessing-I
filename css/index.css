@@ -138,75 +138,113 @@ html {
   font-size: 62.5%;
   font-family: 'Montserrat', sans-serif;
 }
-header {
+.container {
   display: flex;
-  justify-content: flex-end;
-  overflow: hidden;
-  background-color: black;
-  position: fixed;
-  top: 0;
+  flex-direction: column;
+  height: 100%;
+}
+.container header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
+  background-color: black;
   padding: 25px 0;
   box-shadow: 0 0 30px 0;
 }
-header a {
+.container header nav {
+  display: flex;
+}
+.container header nav a {
   color: white;
   font-size: 1.8rem;
   text-decoration: none;
-  padding: 0 1%;
+  margin: 0 5%;
 }
-header a:hover {
+.container header nav a:hover {
   text-decoration: underline;
 }
-header a:last-child {
-  margin-right: 15%;
+.container .body {
+  display: flex;
+  flex-grow: 1;
 }
-.side-bar {
+.container .body .side-bar {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  left: 0;
+  width: 100%;
+  max-width: 400px;
   background-color: firebrick;
-  height: 100%;
-  width: 25%;
 }
-.side-bar .avatar {
+.container .body .side-bar .avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.side-bar .avatar .avatar-img {
+.container .body .side-bar .avatar .avatar-img {
   margin: 130px 0 40px 0;
 }
-.side-bar .avatar h1 {
+.container .body .side-bar .avatar h1 {
   font-size: 3.8rem;
   text-align: center;
   color: white;
   margin-top: 15px;
 }
-.side-bar .avatar h2 {
+.container .body .side-bar .avatar h2 {
   font-size: 1.8rem;
   text-align: center;
   color: white;
   margin-top: 15px;
 }
-.side-bar .get-in-touch {
+.container .body .side-bar .get-in-touch {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.side-bar .get-in-touch h3 {
+.container .body .side-bar .get-in-touch h3 {
   font-size: 1.4rem;
   color: white;
   margin: 100px 0 10px 0;
 }
-.side-bar .get-in-touch .git-icons {
+.container .body .side-bar .get-in-touch .git-icons {
   display: flex;
   flex-direction: row;
   margin: 10px 0;
 }
-.side-bar .get-in-touch .git-icons .contact-icon {
+.container .body .side-bar .get-in-touch .git-icons .contact-icon {
   height: 50px;
   width: 50px;
   padding: 5px;
+}
+.container .body .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px 70px;
+}
+.container .body .content .section-content h1 {
+  font-size: 4.2rem;
+  color: firebrick;
+  font-weight: bold;
+}
+.container .body .content .section-content h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 25px 0 8px 0;
+}
+.container .body .content .section-content h3 {
+  font-size: 1.4rem;
+  margin: 8px 0;
+}
+.container .body .content .section-content p {
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
+.container .body .content .section-content .section-h1 {
+  margin-top: 70px;
+}
+.container .body .content .section-content ul li {
+  list-style-type: square;
+  list-style-position: inside;
+  font-size: 1.4rem;
 }
