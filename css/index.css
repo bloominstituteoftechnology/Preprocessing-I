@@ -1,1 +1,447 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 62.5%;
+  max-width: 880px;
+  margin: 0 auto;
+}
+html,
+body {
+  height: 100%;
+}
+.block-padding-margin {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+}
+.flex-spacebetween-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.block-titles {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.p-styling {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+ul {
+  list-style-type: disc;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  padding: 20px;
+}
+.header {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+.header .header__title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+  font-size: 2.4rem;
+  width: 70%;
+  transform: rotate(-10deg);
+  border-bottom: none;
+}
+@media (max-width: 500px) {
+  .header .header__title {
+    transform: rotate(0deg);
+    width: 100%;
+    text-align: center;
+  }
+}
+.header .header__nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .header .header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.header .header__nav-item {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  margin: 0 1%;
+}
+@media (max-width: 500px) {
+  .header .header__nav-item {
+    margin: 10px 0;
+  }
+}
+.header a {
+  text-decoration: none;
+  color: black;
+}
+@media (max-width: 500px) {
+  .header a:hover {
+    background: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+}
+.header a:hover:nth-child(odd) {
+  transform: rotate(-5deg);
+}
+.header a:hover:nth-child(even) {
+  transform: rotate(5deg);
+}
+@media (max-width: 500px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
+.about {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+@media (max-width: 500px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.about .about__title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+@media (max-width: 500px) {
+  .about .about__title {
+    order: 1;
+  }
+}
+.about .about__text {
+  width: 45%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  .about .about__text {
+    width: 100%;
+    order: 3;
+  }
+}
+.about .about__img {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .about .about__img {
+    order: 2;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+}
+.skills {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills .skills__title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.skills .skills__wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  .skills .skills__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.skills .skills__wrapper .skills__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.skills .skills__wrapper .skills__block .skills__icon {
+  width: 70%;
+  fill: white;
+  stroke: black;
+  stroke-width: 0.7%;
+  stroke-dasharray: 1px;
+}
+.skills .skills__wrapper .skills__block .skills__icon:hover {
+  fill: black;
+  stroke: none;
+}
+@media (max-width: 500px) {
+  .skills .skills__wrapper .skills__block .skills__icon {
+    margin: 20px auto;
+  }
+}
+.skills .skills__wrapper .skills__block .skills__description {
+  text-align: center;
+  margin-top: 20px;
+}
+.skills .skills__ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.skills .skills__description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+}
+.work {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+}
+.work .work__title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+.work .work__entry {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.work .work__entry:nth-child(even) {
+  background-color: lightgray;
+  border-radius: 10px;
+}
+.work .work__job-title {
+  width: 50%;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.4rem;
+}
+.work .work__years {
+  width: 50%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-style: italic;
+  text-align: right;
+}
+@media (max-width: 500px) {
+  .work .work__years {
+    width: 100%;
+    text-align: left;
+  }
+}
+.work .work__description {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+.contact {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact__title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.contact .contact__name {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  border-bottom: 1px solid black;
+  font-size: 2.4rem;
+  width: 100%;
+  transform: rotate(2deg);
+  border-bottom: none;
+  margin-top: 40px;
+  text-align: center;
+}
+.contact .contact__email {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding: 10px;
+}
