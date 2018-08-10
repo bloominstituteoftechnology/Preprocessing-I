@@ -116,10 +116,18 @@ body {
 	justify-content: flex-end;
 	padding: 15px;
 
+
+
 	.index-nav {
 		width: 100%;
 		text-align: right;
 		padding-right: 1.25%;
+
+		@media (max-width: 500px){
+			display: flex;
+			justify-content: space-evenly;
+
+		}
 
 		a {
 			.normal-font();
@@ -140,6 +148,9 @@ body {
 	padding: @padding;
 	color: @background-color;
 
+	@media (max-width: 500px) {
+		text-align: center;
+	}
 
 	h1 {
 		font-size: @h1-font;
@@ -166,6 +177,10 @@ body {
 		border-radius: 5px;
 		cursor: pointer;
 		.flex-centered();
+
+			@media (max-width:500px){
+				margin: 0 auto;
+			}
 
 			&:hover {
 				border-color: @font-color;
@@ -194,6 +209,11 @@ body {
 			.normal-font();
 		}
 
+		@media (max-width:500px){
+			width: 95.25%;
+			margin-bottom: 20px;
+		}
+
 	}  //.intro
 
 	.skills {
@@ -218,10 +238,15 @@ body {
 			}
 
 		}
+		@media (max-width:500px){
+			width: 95.25%;
+		}
 
 	} //.skills
 
-
+	@media(max-width: 500px){
+		flex-direction: column;
+	}
 } //.intro-skills
 
 h2.experience-header {
