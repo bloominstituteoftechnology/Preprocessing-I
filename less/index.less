@@ -65,6 +65,7 @@ html, body {
 @background : #D3D3D3;
 @fontcolor: black;
 @mobile: 500px;
+@padding: 40px;
 
 .centered-column() {
 	display:flex;
@@ -72,82 +73,63 @@ html, body {
 	align-items:center;
 	justify-content:center;
 }
-.max-width(@max-width:800px) {
+.max-width(@max-width:880px) {
 	width:100%;
 	max-width: @max-width
 }
-body {
-	width:100%;
-	display:flex;
-	justify-content:center;
-	background:cream;
-}
+
 /*******************
   container styles
-********************/  
+********************/
 .container {
     .max-width();
-    display:flex;
-	justify-content:center;
-	background: @background;
-	color: @fontcolor;
-    @media(max-width:@mobile) {
-        background: lightgray;
-       }   
-    .header {
-      .max-width();
-      height: 80px;
-      display:flex;
-      flex-direction: column;
-      justify-content:center;
-      align-items:flex-end;
-      @media(max-width:@mobile) {
-         
-      }
-      .nav {
-        width:35%;
-        display: flex;
-        justify-content:space-between; 
-           .a {
-           text-decoration:none;
-           font-size: 1.8rem;
-           color:@fontcolor;
-            }
+	 margin:0 auto;
+}  
 
-	            @media(max-width:@mobile) {
-	                   
-	                  .centered-column();
-	             }
-         }
+.home {
+    padding: @padding;
+	background: #FFFAFA;
+	
+    .main-header {
+       display:flex;
+       justify-content: flex-end;
+       align-items:center;
+       padding: 20px;
+       padding-right:0px;
       
+    }
+    .nav {
+       .a {
+           padding:20px;
+           font-size:1.8rem;
+           color:@fontcolor;
+           text-decoration:none;
+
+           &:last-child {
+            padding-right:0px;
+           }
+        }
+       
     }
 
     .top {
-       width:100%;
-       
-       background:@background;
-       padding: 6.25%;
-       @media(max-width:@mobile) {
-       
-      }
+       padding:@padding;
+       background: @background;
+
        .name {
-          margin:20px 0px;
-          font-size: 4.6rem;
-        }
-
+         font-size: 4.5rem;
+         margin-bottom: 20px;
+       }
        .tech {
-          font-size: 2.6rem;
+         font-size: 2.4rem;
        }
-
-        .hr {
-          margin: 30px 0px;
-
+       hr {
+          margin: 20px 0;
        }
-       .choose {
-          font-size: 1.8rem;
+       .choose{
+          font-size:1.8rem;
           margin-bottom: 20px;
        }
-      
        .team {
           text-decoration:none;
           font-size: 1.8rem;
@@ -157,14 +139,14 @@ body {
           margin-top: 20px;
           border-radius: 5px;
        }
-
     }
 
+    /***************
+      Middle section
+    *****************/
     .middle {
-       width:100%;
        display:flex;
        justify-content:space-between;
-       
        margin-bottom: 25px;
 	       .content {
 	         width: 48%;
@@ -173,15 +155,15 @@ body {
 	         justify-content:flex-start;
 	         align-items:flex-start;
 	         font-size: 1.6rem;
-              borcer:1px solid blue;
+             
 	         .aside-h2 {
 	            font-size:2.6rem;
 	            margin: 15px 0px;
-	         }
+	           }
 	         .content-summary {
 	            line-height: 1.2;
 	            font-size:1.6rem;
-	         }
+	           }
 	         .un-ordered  {
 	            width:100%;
 	            .list {
@@ -193,10 +175,11 @@ body {
 	           }
 	       }
     }
-
+    /******************
+      History section
+    *******************/
     .history {
        font-size: 1.6rem;
-       margin-bottom:15px;
        .work {
          font-size: 2.4rem;
          margin: 10px 0px;
@@ -204,7 +187,7 @@ body {
        .table {
            border: 1px solid black;
            border-collapse: collapse;
-           
+
            .tr:nth-child(odd) {
 			   background-color: #d3d3d3;
 			}
@@ -223,14 +206,24 @@ body {
        }
 
     }
+
+}
+
+/**********************
+      Footer section
+    ***********************/
+
     .footer {
-      
+       .max-width();
+	     margin:0 auto;
+       padding:20px;
        background: gray;
        width:100%;
        height: 100px;
        .centered-column();
        font-size:1.8rem;
        line-height:1.1;
-    }
-}
+       
+    }    
+
 
