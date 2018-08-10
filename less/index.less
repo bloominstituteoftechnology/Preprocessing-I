@@ -70,10 +70,23 @@ html, body {
 @section-margin: 15px 0;
 
 
-.normal-font() {
-	font-size: @normal-font;
+/******************  MIXINS  ****************/
+.button-creator(@color, @width, @height, @bgColor) {
+  color: @color;
+  width: @width;
+  height: @height;
+  background-color: @bgColor;
 }
 
+.flex-centered(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.normal-font(){
+	font-size: @normal-font;
+}
 
 html {
 	font-size: 62.5%;
@@ -145,17 +158,17 @@ body {
 	}
 
 	button {
+		.button-creator(@font-color, 120px, 40px, @accent-color);
 		font-size: @normal-font;
-		color: @font-color;
 		margin-bottom: 30px;
-		background: @accent-color;
 		border: 1px solid @background-color;
 		border-radius: 5px;
-		height: 32px;
 		cursor: pointer;
-		&:hover {
-			color: #E7FAFF;
-		}
+		.flex-centered();
+
+			&:hover {
+				color: #E7FAFF;
+			}
 
 	}
 } //.overview
