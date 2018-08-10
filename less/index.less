@@ -122,7 +122,6 @@ header{
 
 	img {
 		height: 50px;
-		// width: 19.3%;
 	}
 
 	.icons{
@@ -249,10 +248,15 @@ header{
 	}
 }
 
-
 .right-section{
 	width: 50%;
 	height: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.right-top-section{
+	height: 300px;
 	display: flex;
 	flex-direction: column;
 
@@ -260,31 +264,76 @@ header{
 		font-size: 2.2rem;
 		font-weight: bold;
 		text-align: center;
-		margin-top: 30px;
+		margin-top: 20px;
+		margin-bottom: 5px;
 	}
 
 	.skills{
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		margin-left: 5.7%;
+		margin-top: 25px;
+		
+		.checkmarks {
+			border: @test-border;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+
+		.checkmark-div{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			margin-bottom: 15px;
+			padding-left: 21%;
+
+			img{
+				height: 40px;
+				width: 40px;
+				margin-bottom: 5px;
+			}
+
+			p {
+				font-size: 1.6rem;
+				margin-left: 3%;
+			}
+		}
+	}
+}
+
+.contact-form{
+	display: flex;
+	justify-content: center;
+
+	form{
+		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
-	}
+		width: 50%;
 
-	.checkmarks{
-		width: 30%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-	}
+		label{
+			font-size: 1.6rem;
+			padding: 5px 0%;
+		}
 
-	.checkmarks img{
-		height: 40px;
-		width: 40px;
-	}
+		input[type=text], select, textarea {
+			border: 1px solid green;
+			border-radius: 4px;
+			width: 50%;
+		}
 
-	.skills-text{
-		width: 70%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly
-	}
+		input[type=submit]{
+			width: 25%;
+			border-radius: 4px;
+			cursor: pointer;
+			color: white;
+			background-color: green;
+		}
+
+		input[type=submit]:hover{
+			background-color: gold;
+		}
+}
 }
