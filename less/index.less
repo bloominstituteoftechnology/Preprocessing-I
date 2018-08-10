@@ -66,6 +66,7 @@ html, body {
 @fontcolor: black;
 @mobile: 500px;
 @padding: 40px;
+@mobile: 500px;
 
 .centered-column() {
 	display:flex;
@@ -89,34 +90,60 @@ html, body {
 .home {
     padding: @padding;
 	background: #FFFAFA;
-	
-    .main-header {
-       display:flex;
-       justify-content: flex-end;
-       align-items:center;
-       padding: 20px;
-       padding-right:0px;
-      
-    }
+													@media(max-width:@mobile) {
+													   background: #F5F5F5;
+													   padding:15px 5px;
+													}
+	    .main-header {
+	       display:flex;
+	       justify-content: flex-end;
+	       align-items:center;
+	       padding: 20px;
+	       padding-right:0px;
+
+	                       @media(max-width:@mobile) {
+													   justify-content:center;
+													   padding:0
+													}
+	 
     .nav {
+                   
        .a {
            padding:20px;
            font-size:1.8rem;
            color:@fontcolor;
            text-decoration:none;
 
-           &:last-child {
-            padding-right:0px;
-           }
-        }
-       
-    }
+	           &:last-child {
+	            padding-right:0px;
+	           }
 
+	           @media(max-width:@mobile) {
+                 width:100%;
+                 border-bottom: 1px solid #D3D3D3;
+                 display:flex;
+                 justify-content:center;
+                 padding:15px;
+						}
+          }
+
+           @media(max-width:@mobile) {
+              width:100%;
+              display:flex;
+							flex-direction:column;
+						}
+       
+       }
+    }
     .top {
        padding:@padding;
        background: @background;
 
        .name {
+		          @media(max-width:@mobile) {
+							   font-size: 2.4rem;
+							   margin: 10px 0;
+							}
          font-size: 4.5rem;
          margin-bottom: 20px;
        }
@@ -128,7 +155,8 @@ html, body {
        }
        .choose{
           font-size:1.8rem;
-          margin-bottom: 20px;
+          margin-bottom: 28px;
+           
        }
        .team {
           text-decoration:none;
@@ -139,6 +167,11 @@ html, body {
           margin-top: 20px;
           border-radius: 5px;
        }
+
+   @media(max-width:@mobile) {
+			   padding:0px;
+			   padding-bottom:25px;		
+			}
     }
 
     /***************
@@ -163,6 +196,9 @@ html, body {
 	         .content-summary {
 	            line-height: 1.2;
 	            font-size:1.6rem;
+	               @media(max-width:@mobile) {
+                text-align:justify;
+               }
 	           }
 	         .un-ordered  {
 	            width:100%;
@@ -174,6 +210,16 @@ html, body {
 	             }
 	           }
 	       }
+
+	                                    @media(max-width:@mobile) {
+													              flex-direction:column;
+													              justify-content:center;
+													              align-items:center;
+													              .content {
+													                 width:100%;
+													                 margin: 20px 0px;
+													              }
+													         }
     }
     /******************
       History section
@@ -185,12 +231,12 @@ html, body {
          margin: 10px 0px;
        }
        .table {
+
            border: 1px solid black;
            border-collapse: collapse;
-
            .tr:nth-child(odd) {
-			   background-color: #d3d3d3;
-			}
+			        background-color: #d3d3d3;
+			     }
 			.tr {
            .th {
              text-align:left;
@@ -199,7 +245,7 @@ html, body {
            .th, .td {
                border: 1px solid black;
                border-collapse: collapse;
-               padding: 12px;
+               padding: 9px;
            }
 
            }
@@ -211,7 +257,7 @@ html, body {
 
 /**********************
       Footer section
-    ***********************/
+***********************/
 
     .footer {
        .max-width();
