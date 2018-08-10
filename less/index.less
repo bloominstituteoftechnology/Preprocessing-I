@@ -153,111 +153,76 @@ html, body {
 		border-style: groove;
 		align-self: center;
 		padding-bottom: 6px;
-	}
-	.button span{
-		-webkit-transition: 0.6s;
-		-moz-transition: 0.6s;
-		-o-transition: 0.6s;
-		transition: 0.6s;
-		-webkit-transition-delay: 0.2s;
-		-moz-transition-delay: 0.2s;
-		-o-transition-delay: 0.2s;
-		transition-delay: 0.2s;
-	}
-	.button:before{
+		
+		}
+}
+.button div{
+	
+	transition: 0.6s;
+	
+	transition-delay: 0.2s;
+}
+.button:before{
 		content: '';
-   		 position: absolute;
-    	top: 0.67em;
-    	left: 0;
-    	width: 100%;
-    	text-align: center;
-    	opacity: 0;
-    	-webkit-transition: .4s,opacity .6s;
-    	-moz-transition: .4s,opacity .6s;
-    	-o-transition: .4s,opacity .6s;
-    	transition: .4s,opacity .6s;
+		position: absolute;
+		top: 0.67em;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		opacity: 0;
+		transition: .4s,opacity .6s;
+}
+.button:after {
+		content: attr(data-hover);
+		position: absolute;
+		top: 0.67em;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		opacity: 1;
+		transition: .4s,opacity .6s;
 	}
-	.button:after {
-   		 content: attr(data-hover);
-   		 position: absolute;
-    	top: 0.67em;
-    	left: 0;
-    	width: 100%;
-    	text-align: center;
-    	opacity: 0;
-    	-webkit-transition: .4s,opacity .6s;
-    	-moz-transition: .4s,opacity .6s;
-    	-o-transition: .4s,opacity .6s;
-    	transition: .4s,opacity .6s;}
 	.button:before{
 		content: attr(data-hover);
-		-webkit-transform: translate(-150%,0);
-		-moz-transform: translate(-150%,0);
-		-ms-transform: translate(-150%,0);
-		-o-transform: translate(-150%,0);
 		transform: translate(-150%,0);
+		font-size: 2rem;
+		margin-top:55.25%;
 		
+	 	
+		
+	
 	}
-	.button:after{
-		content: attr(data-active);
-		-webkit-transform: translate(150%,0);
-		-moz-transform: translate(150%,0);
-		-ms-transform: translate(150%,0);
-		-o-transform: translate(150%,0);
-		transform: translate(150%,0);
-	}
-	.button:hover span{
-		opacity: 0;
-		-webkit-transform: scale(0.3);
-		-moz-transform: scale(0.3);
-		-ms-transform: scale(0.3);
-		-o-transform: scale(0.3);
-		transform: scale(0.3);
-	}
-	.button:active span{
-		opacity: 0;
-		-webkit-transform: scale(0.3);
-		-moz-transform: scale(0.3);
-		-ms-transform: scale(0.3);
-		-o-transform: scale(0.3);
-		transform: scale(0.3);
-	}
-	.button:hover:before{
-		opacity: 1;
-		-webkit-transform: translate(0,0);
-		-moz-transform: translate(0,0);
-		-ms-transform: translate(0,0);
-		-o-transform: translate(0,0);
-		transform: translate(0,0);
-		-webkit-transition-delay: .4s;
-		-moz-transition-delay: .4s;
-		-o-transition-delay: .4s;
-		transition-delay: .4s;
-	}
-	.button:active:after {
-    opacity: 1;
-    -webkit-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    transform: translate(0,0);
-    -webkit-transition-delay: .4s;
-    -moz-transition-delay: .4s;
-    -o-transition-delay: .4s;
-    transition-delay: .4s;
-	}
-	.button:active:before {
-		-webkit-transform: translate(-150%,0);
-		-moz-transform: translate(-150%,0);
-		-ms-transform: translate(-150%,0);
-		-o-transform: translate(-150%,0);
-		transform: translate(-150%,0);
-		-webkit-transition-delay: 0s;
-		-moz-transition-delay: 0s;
-		-o-transition-delay: 0s;
-		transition-delay: 0s;}
 
+.button:after{
+		content: attr(data-active);
+		transform: translate(150%,0);
+		margin-top:55.25%;
 }
+.button:hover div{
+		
+		opacity: 0;
+		transform: scale(0.3);
+}
+.button:active div{
+		opacity: 0;
+		transform: scale(0.3);
+}
+.button:hover:before{
+		opacity: 1;
+		transform: translate(0,0);
+		transition-delay: .4s;
+}
+
+.button:active:after {
+		opacity: 1;
+		transform: translate(0,0);
+		transition-delay: .4s;
+}
+.button:active:before {
+		transform: translate(-150%,0);
+		transition-delay: 0s;
+}
+
 .listen{
 	font-size: 2rem;
 	display: flex;
