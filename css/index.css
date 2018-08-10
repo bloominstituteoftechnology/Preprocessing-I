@@ -1,1 +1,328 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/*****************MY CODE STARTS HERE ***********************/
+/******************  MIXINS  ****************/
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #bebebe;
+  color: #09121C;
+  font-family: 'Roboto', sans-serif;
+}
+#container {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 840px;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-header {
+  width: 95.23%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+.index-header .index-nav {
+  width: 100%;
+  text-align: right;
+  padding-right: 1.25%;
+}
+@media (max-width: 500px) {
+  .index-header .index-nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+.index-header .index-nav a {
+  font-size: 1.6rem;
+  padding-left: 2.84%;
+  text-decoration: none;
+  color: #09121C;
+}
+.index-header .index-nav a:hover {
+  font-weight: bold;
+}
+.overview {
+  width: 95.23%;
+  background-color: #3E677F;
+  padding: 20px 2.5%;
+  color: #FFFFFF;
+}
+@media (max-width: 500px) {
+  .overview {
+    text-align: center;
+  }
+}
+.overview h1 {
+  font-size: 3rem;
+  padding: 5px 0;
+  margin-top: 15px;
+}
+.overview .tagline {
+  font-size: 2rem;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid #7F7F7F;
+}
+.overview p {
+  font-size: 1.6rem;
+  padding: 15px 0;
+}
+.overview button {
+  color: #FFFFFF;
+  width: 120px;
+  height: 40px;
+  background-color: #7F7F7F;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .overview button {
+    margin: 0 auto;
+  }
+}
+.overview button:hover {
+  border-color: #09121C;
+}
+.intro-skills {
+  width: 95.23%;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3E677F;
+}
+.intro-skills .intro {
+  width: 47%;
+}
+.intro-skills .intro h2 {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+}
+.intro-skills .intro p {
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .intro-skills .intro {
+    width: 95.25%;
+    margin-bottom: 20px;
+  }
+}
+.intro-skills .skills {
+  width: 47%;
+}
+.intro-skills .skills h3 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+.intro-skills .skills ul li {
+  font-size: 1.6rem;
+  border: 1px solid #7F7F7F;
+  border-bottom: none;
+  padding: 5px 0 5px 3%;
+}
+.intro-skills .skills ul li:last-child {
+  border-bottom: 1px solid #7F7F7F;
+}
+@media (max-width: 500px) {
+  .intro-skills .skills {
+    width: 95.25%;
+  }
+}
+@media (max-width: 500px) {
+  .intro-skills {
+    flex-direction: column;
+  }
+}
+h2.experience-header {
+  font-size: 2.6rem;
+  margin: 15px 0;
+}
+.experience {
+  width: 95.23%;
+  margin: 15px 0;
+}
+.experience .experience-table {
+  display: flex;
+  font-size: 1.6rem;
+  border-top: 1px solid #7F7F7F;
+}
+.experience .experience-table .col-1 {
+  flex: 1 1 10%;
+}
+.experience .experience-table .col-2 {
+  flex: 1 1 25%;
+}
+.experience .experience-table .col-3 {
+  flex: 1 1 40%;
+}
+.experience .experience-table .col-4 {
+  flex: 1 1 25%;
+}
+.experience .headers {
+  font-weight: bolder;
+  padding: 5px 0.625% 5px 0.625%;
+}
+.experience .row-1,
+.experience .row-3 {
+  background: #3E677F;
+  padding: 5px 0.625% 5px 0.625%;
+}
+.experience .row-2 {
+  padding: 5px 0.625% 5px 0.7%;
+}
+.index-footer {
+  width: 95.23%;
+  margin-top: 30px;
+  padding-top: 10px;
+  background: #7F7F7F;
+  text-align: center;
+  height: 70px;
+  color: #FFFFFF;
+}
+.index-footer p {
+  font-size: 1.5rem;
+}
