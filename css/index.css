@@ -142,12 +142,23 @@ div.main {
   display: flex;
   max-width: 1100px;
 }
+@media (max-width: 600px) {
+  div.main {
+    flex-direction: column;
+  }
+}
 header {
   background: radial-gradient(#737478 10%, #111111 100%);
-  width: 25%;
+  width: 275px;
   padding: 25px 1%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 600px) {
+  header {
+    width: 100%;
+    padding: 25px 3%;
+  }
 }
 header nav {
   display: flex;
@@ -175,6 +186,12 @@ header section .title {
   text-transform: uppercase;
   margin: 35px 0px;
 }
+@media (max-width: 600px) {
+  header section .title {
+    width: 300px;
+    margin: 35px auto;
+  }
+}
 header section h2 {
   color: white;
   text-transform: uppercase;
@@ -195,12 +212,27 @@ header section address {
   color: white;
   font-size: 1.6rem;
 }
+@media (max-width: 600px) {
+  header section address {
+    text-align: center;
+  }
+}
 main {
   width: 80%;
   color: #393737;
   padding: 25px 5%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 700px) {
+  main {
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
 }
 main h2 {
   text-transform: uppercase;
@@ -229,6 +261,7 @@ main p {
 main .boxes {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   font-size: 2.2em;
 }
 main .boxes .box {
