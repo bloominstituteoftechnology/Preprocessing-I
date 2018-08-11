@@ -73,8 +73,10 @@ h1 {
 @white: whitesmoke;
 @blue: #3d5f96;
 @dark: black;
-
-
+@font-size-h2: 1.6rem;
+@font-size-h3: 1.4rem;
+@margin-h2-mixin: 10px 0 0 5%;
+@margin-h3-mixin: 0 0 0 5%;
 
 // start Mixin
 .left-dimensions() {
@@ -169,15 +171,17 @@ h1 {
 	}
 }
 
-.h2-mixin (@font-size: 1.6rem, @margin: 10px 0 0 5%) {
-	font-size: @font-size;
-	margin: @margin;
+.h2-mixin (@font-size-h2, @margin-h2-mixin) {
+	font-size: @font-size-h2;
+	margin: @margin-h2-mixin;
 }
 
-.h3-mixin (@font-size: 1.4rem, @margin: 0 0 0 5%) {
-	font-size: @font-size;
-	margin: @margin;
+.h3-mixin (@font-size-h3, @margin-h3-mixin) {
+	font-size: @font-size-h3;
+	margin: @margin-h3-mixin;
 }
+
+// end Mixin
 
 .text {
 	width: 100%;
@@ -197,11 +201,11 @@ h1 {
 		height: 150px;
 
 		h2 {
-			.h2-mixin();
+			.h2-mixin(@font-size-h2, @margin-h2-mixin);
 		}
 
 		h3 {
-			.h3-mixin();
+			.h3-mixin(@font-size-h3, @margin-h3-mixin);
 		}
 
 		p {
@@ -215,10 +219,7 @@ h1 {
 			height: 150px;
 		}
 	}
-}
-
-
-// end Mixin
+} //.text
 
 
 .main-container {
