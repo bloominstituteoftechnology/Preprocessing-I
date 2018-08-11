@@ -98,13 +98,15 @@ p {
 }
 
 
-.address {       // ask '.address()' vs '.address'
+
+.address-mixin() {       // ask '.address()' vs '.address'
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	width: 100%;
 	// border: 1px solid blue;
 	
+
 	.img {
 		width: 20%;
 		height: 50px;
@@ -138,7 +140,7 @@ p {
 
 		.img {
 			height: 35px;
-			width: 40%;
+			width: 10%;
 		}
 	} // @media
 } // .address
@@ -243,6 +245,10 @@ p {
 
 		@media (max-width: 500px) {
 			width: 100%;
+			height: 1200px;
+			// border: 3px solid red;
+			justify-content: space-around;
+			flex-direction: column;
 		}
 
 		.nav {
@@ -250,24 +256,25 @@ p {
 			display: flex;
 			justify-content: space-around;
 			
-			a {
-				text-decoration: none;
-				font-size: 1.2rem;
-				color: @white;
-				margin: 10px 0 0 0;
+				a {
+					text-decoration: none;
+					font-size: 1.2rem;
+					color: @white;
+					margin: 10px 0 0 0;
+
+					@media (max-width: 500px) {
+						align-self: center;
+						font-size: 2.4rem;
+						// border: 1px solid @white;
+					}
+				} // a
+
 
 				@media (max-width: 500px) {
-					align-self: center;
-					font-size: 2.4rem;
-					// border: 1px solid @white;
-				}
-			}
-
-			@media (max-width: 500px) {
-				flex-direction: column;
-				// border: 1px solid white;
-				height: 500px;
-			} // @media
+					flex-direction: column;
+					// border: 1px solid white;
+					height: 500px;
+				} // @media
 		}// .nav
 
 		.intro {
@@ -299,24 +306,23 @@ p {
 				// border: 1px solid white;
 
 			}
-		}
+		} //.intro
 
 		.contact {
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			.dimensions;
-			// .address;
-			// border: 3px solid orange;
-
+			.address {
+				.address-mixin;
+				}
+			
 			@media (max-width: 500px) {
-				height: 500px;
 				// border: 1px solid white;
 				justify-content: space-around;
-				flex-direction: row;
-
+				}
 			}
-		}
+		
 	} // .left-container
 
 	.right-container {
@@ -361,5 +367,5 @@ p {
 		}
 
 	} // .right-container
-} // main container
+} // .main-container
 
