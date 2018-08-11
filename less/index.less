@@ -68,14 +68,13 @@ h1 {
 	font-size: 2.3rem;
 }
 
-p {
-	font-size: 1.4rem;
-}
 
 // Variables - colors & fonts
 @white: whitesmoke;
 @blue: #3d5f96;
 @dark: black;
+
+
 
 // start Mixin
 .left-dimensions() {
@@ -170,6 +169,16 @@ p {
 	}
 }
 
+.h2-mixin (@font-size: 1.6rem, @margin: 10px 0 0 5%) {
+	font-size: @font-size;
+	margin: @margin;
+}
+
+.h3-mixin (@font-size: 1.4rem, @margin: 0 0 0 5%) {
+	font-size: @font-size;
+	margin: @margin;
+}
+
 .text {
 	width: 100%;
 	// border: 1px solid green;
@@ -188,13 +197,11 @@ p {
 		height: 150px;
 
 		h2 {
-			font-size: 1.6rem;
-			margin: 10px 0 0 5%;
+			.h2-mixin();
 		}
 
 		h3 {
-			font-size: 1.4rem;
-			margin: 0 0 0 5%;
+			.h3-mixin();
 		}
 
 		p {
@@ -279,12 +286,13 @@ p {
 			.profile {
 				width: 60%;
 				height: 130px;
-				border: 2px solid @white;
+				border: 3px solid @white;
 				border-radius: 50%;
 				align-self: center;
 
 				@media (max-width: 500px) {
 					height: 200px;
+					width: 55%;
 				}
 			}
 			
