@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -52,8 +55,202 @@ table {
 * {
     box-sizing: border-box;
 }
+// **************************************
+.HPB {       // hot pink border
+	border: 2px solid hotpink;
+}
+
+.DBB {       // dodgerblue border
+	border: 1px solid dodgerblue;
+}
+.DGB {       // greenish border
+	border: 1px solid mediumseagreen;
+}
+
+.TB {
+	border: 3px solid crimson;
+}
+
+.flexDat {     // mixin
+	display: flex;
+	align-items: center;
+	margin: 5rem auto;
+}
+
+.pad_1rem {    // mixin
+  padding: 1rem 0;
+}
+
+.marginCenter {  // mixin
+  margin: 0 auto;
+}
+
+.fullWidth {   // mixin
+  width: 100%;
+}
 
 html, body {
-    height: 100%;
+    font-size: 62.5%;
+	// .HPB();
 }
+// ************  variables
+@1rem: 1rem;
+@1-25rem: 1.25rem;
+@1-3rem: 1.3rem;
+@1-5rem: 1.5rem;
+@2rem: 2rem;
+@2-2rem: 2.2rem;
+@3rem: 3rem;
+
+
+.prettyText {
+  font-family: 'Tangerine', serif;
+  text-shadow: .4rem .4rem .4rem #aaa;
+}
+#container {
+	#navigation{
+      .flexDat();
+      .fullWidth();
+      #navbar {
+        .marginCenter();
+         a {
+           font-size: @2rem;
+           color: lightseagreen;
+           text-decoration: none;
+           padding: 0 @2-2rem;
+         }
+
+      }
+
+	}
+
+	#banner {
+    //.TB();
+      .flexDat();
+      width: 90%;
+      #nerd {
+	//.DBB();
+	  width: 30%;
+	  }
+      #info {
+	 //   .HPB();
+        .flexDat();
+        width: 70%;
+        flex-direction: column;
+
+        h1 {
+         font-size: @2rem;
+         .pad_1rem();
+
+         }
+         h2 {
+          font-size: 1.3rem;
+          .pad_1rem;
+
+          }
+          #quote {
+            font-size: @3rem;
+            .prettyText();
+          }
+          input {
+            .pad_1rem();
+          }
+		}
+	}
+
+    .main {
+      .flexDat();
+      margin: 0 2rem;
+      padding: 1rem;
+      .about{
+
+        }
+        h2 {
+          text-align: center;
+          font-size: @3rem;
+        }
+        p {
+          font-size: @1-5rem;
+          padding: 0 1rem;
+        }
+    }
+
+	.bottom{
+        aside {
+        padding-right: 1rem;
+        }
+      p{
+        border: 1px solid lightgrey;
+      }
+	}
+
+	.jobs{
+	  font-size: @2rem;
+	}
+
+    .table {
+      .fullWidth();
+      .flexDat();
+      justify-content: space-evenly;
+      th, td {
+        font-size: @1-5rem;
+      }
+
+      }
+      th {
+        width: 20%;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .firstCol {
+        padding-top: @1-5rem;
+        width: 10%;
+      }
+
+      tr:nth-child(even) {
+        background-color: silver;
+      }
+
+	#contact{
+      text-align: center;
+      font-size: @1rem;
+	}
+
+	@media (max-width: 500px) {
+      .fullWidth();
+      background-color: ghostwhite;
+
+
+      #navigation {
+        .marginCenter();
+        #navbar a {
+          font-size: @1-3rem;
+
+        }
+      }
+    }
+      #banner {
+        .marginCenter();
+        flex-direction: column;
+
+        #nerd {
+          display: none;
+        }
+
+        #info {
+          width: 100%;
+        }
+
+        }
+        .bottom {
+          flex-direction: column;
+        }
+
+
+    }
+}
+
+
+
 

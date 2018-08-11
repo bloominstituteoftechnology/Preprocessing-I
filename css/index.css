@@ -1,1 +1,295 @@
-/* Compile your LESS file! */
+@font-face {
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Tangerine Regular'), local('Tangerine-Regular'), url(https://fonts.gstatic.com/s/tangerine/v9/IurY6Y5j_oScZZow4VOxCZZJ.ttf) format('truetype');
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+.HPB {
+  border: 2px solid hotpink;
+}
+.DBB {
+  border: 1px solid dodgerblue;
+}
+.DGB {
+  border: 1px solid mediumseagreen;
+}
+.TB {
+  border: 3px solid crimson;
+}
+.flexDat {
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+}
+.pad_1rem {
+  padding: 1rem 0;
+}
+.marginCenter {
+  margin: 0 auto;
+}
+.fullWidth {
+  width: 100%;
+}
+html,
+body {
+  font-size: 62.5%;
+}
+.prettyText {
+  font-family: 'Tangerine', serif;
+  text-shadow: 0.4rem 0.4rem 0.4rem #aaa;
+}
+#container #navigation {
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+  width: 100%;
+}
+#container #navigation #navbar {
+  margin: 0 auto;
+}
+#container #navigation #navbar a {
+  font-size: 2rem;
+  color: lightseagreen;
+  text-decoration: none;
+  padding: 0 2.2rem;
+}
+#container #banner {
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+  width: 90%;
+}
+#container #banner #nerd {
+  width: 30%;
+}
+#container #banner #info {
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+  width: 70%;
+  flex-direction: column;
+}
+#container #banner #info h1 {
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+#container #banner #info h2 {
+  font-size: 1.3rem;
+  padding: 1rem 0;
+}
+#container #banner #info #quote {
+  font-size: 3rem;
+  font-family: 'Tangerine', serif;
+  text-shadow: 0.4rem 0.4rem 0.4rem #aaa;
+}
+#container #banner #info input {
+  padding: 1rem 0;
+}
+#container .main {
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+  margin: 0 2rem;
+  padding: 1rem;
+}
+#container .main h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+#container .main p {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+#container .bottom aside {
+  padding-right: 1rem;
+}
+#container .bottom p {
+  border: 1px solid lightgrey;
+}
+#container .jobs {
+  font-size: 2rem;
+}
+#container .table {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 5rem auto;
+  justify-content: space-evenly;
+}
+#container .table th,
+#container .table td {
+  font-size: 1.5rem;
+}
+#container th {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+}
+#container .firstCol {
+  padding-top: 1.5rem;
+  width: 10%;
+}
+#container tr:nth-child(even) {
+  background-color: silver;
+}
+#container #contact {
+  text-align: center;
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  #container {
+    width: 100%;
+    background-color: ghostwhite;
+  }
+  #container #navigation {
+    margin: 0 auto;
+  }
+  #container #navigation #navbar a {
+    font-size: 1.3rem;
+  }
+  #container #banner {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  #container #banner #nerd {
+    display: none;
+  }
+  #container #banner #info {
+    width: 100%;
+  }
+  #container .bottom {
+    flex-direction: column;
+  }
+}
