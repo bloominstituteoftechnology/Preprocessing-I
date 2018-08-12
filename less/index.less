@@ -62,108 +62,138 @@ html, body {
 @border-color: darkred;
 @h2-font-size: 2.2rem;
 @regular-font-size: 1.6rem;
+@bottom-margin: 20px;
+
+.flexMixin(@jc, @ai) {
+	display: flex;
+	justify-content: @jc;
+	align-items: @ai
+}
+
+.btnMixin(@border, @background) {
+	border: 1px solid midnightblue;
+	border-radius: 10px;
+	background-color: midnightblue;
+	color: white;
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	width: 45%;
+}
 
 .container {
-	background-color: lightsteelblue;
+	background-color: white;
 	width: 100%;
-	max-width: 800px;
+	max-width: 880px;
 	margin: auto;
 }
 
 header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 	margin-bottom: 40px;
+	background-color: whitesmoke;
+	@media(max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	h1 {
+		margin: 30px 0  30px 10px;;
+		font-size: 3.6rem;
+	}
 
 	nav {
-		background-color: whitesmoke;
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 20px;
 		padding: 20px 0;
 		font-size: 1.8rem;
+		@media(max-width: 500px) {
+			
+		}
 
 		a {
-			margin: 0 5%;
+			text-decoration: none;
+			color: black;
+			margin: 0 10%;
 		}
-	}
-
-	h1 {
-		margin: 30px 0  30px 10px;;
-		font-size: 3.6rem;
 	}
 }
 
+h2 {
+	font-size: 2.2rem;
+	margin-bottom: @bottom-margin;
+}
+
+p {
+	font-size: 1.6rem;
+	margin-bottom: @bottom-margin;
+}
+
+
 .personal_info {
-	border: 3px solid @border-color;
 	background-color: lightgrey;
-	width: 90%;
 	display: flex;
-	justify-content: space-between;
-	margin: 5% 5%;
-
+	justify-content: space-around;
+	padding: 40px;
+	
 	.about {
-		width: 50%;
-		padding: 5%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		h2{
-			margin-bottom: 20px;
-			padding-bottom: 10px;
-			border-bottom: 1px solid black;
-			font-size: @h2-font-size;
-		}
-
-		p {
-			font-size: @regular-font-size;
-		}
-
-		.headshot {
-			margin: 20%;
+		width: 50%;	
+		img {
 			border-radius: 10px;
-
-
+			width: 80%;
 		}
 	}
 
 	.skills {
-		border: 2px solid @border-color;
-		background-color: whitesmoke;
-		margin-right: 25%;
-		padding: 5%;
-		margin: 40px 5% 220px 5%;
-
-		h2 {
-			border-bottom: 1px solid black;
-			margin-bottom: 35px;
-			font-size: @h2-font-size;
-		}
+		width: 30%;
 
 		li {
-			margin: 10px 0;
-			font-size: @regular-font-size;
+			border-bottom: 1px solid gray;
+			font-size: 1.6rem;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
 		}
+
+		.btn {
+			.btnMixin(midnightblue, midnightblue);
+
+			&:hover {
+				box-shadow: 5px 5px black;
+			}
+
+		}
+	}
+}
+
+.work {
+	margin-top: 20px;
+
+	h2 {
+		padding-left: 5%;
+	}
+	
+	.p2{
+		padding-left: 5%;
+	}
+
+	.p1 {
+		background-color: whitesmoke;
+		padding: 15px 0 15px 5%;
 	}
 }
 
 .contact {
-	border-bottom: 1px solid black;
 	display: flex;
 	flex-direction: column;
-	padding: 20px 0 20px 2%;
-
-	h2 {
-		margin: 15px 0;
-		font-size: @h2-font-size;
-	}
-
-	p {
-		margin: 5px;
-		font-size: @regular-font-size;
-	}
+	padding: 60px 0 20px 2%;
 }
 
 .footer {
+	background-color: whitesmoke;
 	display: flex;
 	justify-content: center;
 	margin-top: 40px;

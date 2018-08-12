@@ -136,16 +136,30 @@ body {
   font-size: 62.5%;
 }
 .container {
-  background-color: lightsteelblue;
+  background-color: white;
   width: 100%;
-  max-width: 800px;
+  max-width: 880px;
   margin: auto;
 }
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   margin-bottom: 40px;
+  background-color: whitesmoke;
+}
+@media (max-width: 500px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+header h1 {
+  margin: 30px 0  30px 10px;
+  font-size: 3.6rem;
 }
 header nav {
-  background-color: whitesmoke;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
@@ -153,71 +167,73 @@ header nav {
   font-size: 1.8rem;
 }
 header nav a {
-  margin: 0 5%;
+  text-decoration: none;
+  color: black;
+  margin: 0 10%;
 }
-header h1 {
-  margin: 30px 0  30px 10px;
-  font-size: 3.6rem;
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }
 .personal_info {
-  border: 3px solid darkred;
   background-color: lightgrey;
-  width: 90%;
   display: flex;
-  justify-content: space-between;
-  margin: 5% 5%;
+  justify-content: space-around;
+  padding: 40px;
 }
 .personal_info .about {
   width: 50%;
-  padding: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-.personal_info .about h2 {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid black;
-  font-size: 2.2rem;
-}
-.personal_info .about p {
-  font-size: 1.6rem;
-}
-.personal_info .about .headshot {
-  margin: 20%;
+.personal_info .about img {
   border-radius: 10px;
+  width: 80%;
 }
 .personal_info .skills {
-  border: 2px solid darkred;
-  background-color: whitesmoke;
-  margin-right: 25%;
-  padding: 5%;
-  margin: 40px 5% 220px 5%;
-}
-.personal_info .skills h2 {
-  border-bottom: 1px solid black;
-  margin-bottom: 35px;
-  font-size: 2.2rem;
+  width: 30%;
 }
 .personal_info .skills li {
-  margin: 10px 0;
+  border-bottom: 1px solid gray;
   font-size: 1.6rem;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.personal_info .skills .btn {
+  border: 1px solid midnightblue;
+  border-radius: 10px;
+  background-color: midnightblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 45%;
+}
+.personal_info .skills .btn:hover {
+  box-shadow: 5px 5px black;
+}
+.work {
+  margin-top: 20px;
+}
+.work h2 {
+  padding-left: 5%;
+}
+.work .p2 {
+  padding-left: 5%;
+}
+.work .p1 {
+  background-color: whitesmoke;
+  padding: 15px 0 15px 5%;
 }
 .contact {
-  border-bottom: 1px solid black;
   display: flex;
   flex-direction: column;
-  padding: 20px 0 20px 2%;
-}
-.contact h2 {
-  margin: 15px 0;
-  font-size: 2.2rem;
-}
-.contact p {
-  margin: 5px;
-  font-size: 1.6rem;
+  padding: 60px 0 20px 2%;
 }
 .footer {
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   margin-top: 40px;
