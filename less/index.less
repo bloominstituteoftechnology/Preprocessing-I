@@ -59,7 +59,6 @@ html, body {
 
 }
 
-@border-color: darkred;
 @h2-font-size: 2.2rem;
 @regular-font-size: 1.6rem;
 @bottom-margin: 20px;
@@ -109,10 +108,12 @@ header {
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 20px;
+		margin-left: 20%;
 		padding: 20px 0;
 		font-size: 1.8rem;
 		@media(max-width: 500px) {
-			
+			justify-content: space-around;
+			margin-left: 0;
 		}
 
 		a {
@@ -124,12 +125,12 @@ header {
 }
 
 h2 {
-	font-size: 2.2rem;
+	font-size: @h2-font-size2rem;
 	margin-bottom: @bottom-margin;
 }
 
 p {
-	font-size: 1.6rem;
+	font-size: @regular-font-size;
 	margin-bottom: @bottom-margin;
 }
 
@@ -139,6 +140,9 @@ p {
 	display: flex;
 	justify-content: space-around;
 	padding: 40px;
+	@media(max-width: 500px) {
+		flex-direction: column;
+	}
 	
 	.about {
 		width: 50%;	
@@ -146,10 +150,17 @@ p {
 			border-radius: 10px;
 			width: 80%;
 		}
+		@media(max-width: 500px) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
 	}
 
 	.skills {
 		width: 30%;
+		@media(max-width: 500px) {
+			width: 100%;
+		}
 
 		li {
 			border-bottom: 1px solid gray;
