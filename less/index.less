@@ -342,6 +342,11 @@ body {
     .jobDescr {
       .flex-rowSpaceAround;
       justify-content: space-between;
+
+      @media (max-width: 500px) {
+        .flex-columnCenter;
+        width: 90%;
+      }
     }
   
     .listHeading {
@@ -354,14 +359,27 @@ body {
       font-size: @jobTitleSize;
       padding-top: 5px;
       width: 40%;
-      
+
+      @media (max-width: 500px) {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 13px;
+      }
     }
   
     .jobDetail {
       font-size: @stanTextSize;
       padding-bottom: 10px;
       text-align: right;
-      width: 59%
+      width: 59%;
+
+      @media (max-width: 500px) {
+        .flex-columnCenter;
+        text-align: center;
+        padding-top: 10px;
+        width: 90%;
+        border: 1px solid @linkBackground;
+      }
     }
   }
   
