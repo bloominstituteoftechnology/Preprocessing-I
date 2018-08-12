@@ -88,9 +88,7 @@ html, body {
 }
 
 header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	.flexMixin(space-between, center);
 	width: 100%;
 	margin-bottom: 40px;
 	background-color: whitesmoke;
@@ -105,8 +103,7 @@ header {
 	}
 
 	nav {
-		display: flex;
-		justify-content: flex-end;
+		.flexMixin(flex-end);
 		margin-bottom: 20px;
 		margin-left: 20%;
 		padding: 20px 0;
@@ -130,15 +127,14 @@ h2 {
 }
 
 p {
-	font-size: @regular-font-size;
+	font-size: 1.6rem;
 	margin-bottom: @bottom-margin;
 }
 
 
 .personal_info {
 	background-color: lightgrey;
-	display: flex;
-	justify-content: space-around;
+	.flexMixin(space-around);
 	padding: 40px;
 	@media(max-width: 500px) {
 		flex-direction: column;
@@ -205,9 +201,7 @@ p {
 
 .footer {
 	background-color: whitesmoke;
-	display: flex;
-	justify-content: center;
-	margin-top: 40px;
+	.flexMixin(center);
 	padding: 40px;
 	font-size: @regular-font-size;
 }
