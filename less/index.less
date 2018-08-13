@@ -186,6 +186,13 @@ sans-serif;
   align-items: center;
 }
 
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
 //Mix-ins start here
 .bordered {
   border: 1px solid transparent;
@@ -194,7 +201,6 @@ sans-serif;
 .border-radius {
   border-radius: 5px;
   padding: 10px;
-
 }
 
 .btn {
@@ -206,7 +212,7 @@ sans-serif;
 }
 
 .background {
-  background: linear-gradient(rgba(12, 12, 134, 0.6), rgba(8, 8, 65, 0.6)),url("../imgs/webdesign-header-bg.jpg");
+  background: linear-gradient(rgba(12, 12, 134, 0.6), rgba(8, 8, 65, 0.6)), url("../imgs/webdesign-header-bg.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -304,16 +310,14 @@ body {
         width: 24.9%;
         img {
           width: 250px;
-        @media @tablets {
-          img {
-            width: 100px;
+          @media @tablets {
+            img {
+              width: 100px;
+            }
           }
         }
-
-        }
       }
-      @media @smartphones
-      {
+      @media @smartphones {
         .img-container {
           display: none;
         }
@@ -327,15 +331,12 @@ body {
 .contact_form--fielddata {
   margin: 0 auto;
   font-size: @font-size;
- 
-   
   #contact {
     background: #eee;
     padding: 25px;
     margin: 150px;
     color: @tab-color;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  
     h1 {
       display: block;
       font-size: 3rem;
@@ -354,10 +355,9 @@ body {
       min-width: 100%;
       padding: 0;
       width: 100%;
-
       @media @smartphones {
         fieldset {
-          width:50%;
+          width: 50%;
           height: 20%;
         }
       }
@@ -373,19 +373,17 @@ body {
       background: #fff;
       padding: 10px;
       font: 400 1.2rem/1.6rem @primary-font-family;
-       @media @smartphones {
-         input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="url"],
-    button[type="submit"],
-    textarea {
-      width: 50%;
-      height: 20%;
-    }
-       }
-
-
+      @media @smartphones {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        button[type="submit"],
+        textarea {
+          width: 50%;
+          height: 20%;
+        }
+      }
     }
     textarea {
       height: 100px;
@@ -413,15 +411,13 @@ body {
       outline: 0;
       border: 1px solid #aaa;
     }
-    
   }
   @media @smartphones {
-    #contact{
+    #contact {
       margin: 20px;
     }
   }
 }
-
 
 /*Tabs for Index Page Starts Here*/
 
@@ -496,29 +492,49 @@ I know it is not good to use our own created
 element but it was nice to use it */
 
 main-skill {
-  width: 100%;
-  padding: 10px;
-  margin: 0 auto;
   background: #fff;
   .skills-info {
-    display: flex;
-    flex-wrap: wrap;
+    .flex-wrap;
+  
     font-size: @font-size;
-    padding: 10px 0 0;
     width: 100%;
+  
     .skill {
+      width: 43.66%;
+      max-height: 300px;
       margin: 20px;
-      padding: 2px;
+      padding: 30px;
+        @media @smartphones {
+      width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+    
+    }
       color: black;
-      align-items: center;
+      border: 1px solid black;
+      background: @secondary-color;
+      box-shadow: 1px 1px 1px 1px #333;
+    
       h1 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         font-weight: bolder;
         color: @tab-color;
       }
       span {
+      
+        align-self: center;
+        margin:12px;
         line-height: @line-height;
         font-weight: 600;
         color: black;
+        @media @smartphones {
+          margin: 14px;
+        }
+      
       }
     }
   }

@@ -168,6 +168,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
 .bordered {
   border: 1px solid transparent;
 }
@@ -487,32 +493,53 @@ main #tab3:checked ~ #content3 {
 I know it is not good to use our own created 
 element but it was nice to use it */
 main-skill {
-  width: 100%;
-  padding: 10px;
-  margin: 0 auto;
   background: #fff;
 }
 main-skill .skills-info {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   font-size: 1.6rem;
-  padding: 10px 0 0;
   width: 100%;
 }
 main-skill .skills-info .skill {
+  width: 43.66%;
+  max-height: 300px;
   margin: 20px;
-  padding: 2px;
+  padding: 30px;
   color: black;
-  align-items: center;
+  border: 1px solid black;
+  background: #e9e9e9, 0.3;
+  box-shadow: 1px 1px 1px 1px #333;
+}
+@media only screen and (max-width: 500px) {
+  main-skill .skills-info .skill {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 main-skill .skills-info .skill h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   font-weight: bolder;
   color: #f16406;
 }
 main-skill .skills-info .skill span {
+  align-self: center;
+  margin: 12px;
   line-height: 2rem;
   font-weight: 600;
   color: black;
+}
+@media only screen and (max-width: 500px) {
+  main-skill .skills-info .skill span {
+    margin: 14px;
+  }
 }
 /* Work History - Main-Work */
 main-work .history-work img {
