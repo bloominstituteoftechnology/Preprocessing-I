@@ -1,1 +1,570 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+.flex-box-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex-column-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-wrap-even {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.bordered {
+  border: 1px solid transparent;
+}
+.border-radius {
+  border-radius: 5px;
+  padding: 10px;
+}
+.btn,
+#container #header-container #header-info .header-whoami #primary-btn {
+  padding: 5px 5px;
+  border: 1px solid rgba(51, 51, 51, 0.8);
+  background: #435c8f;
+  box-shadow: 1px 1px 1px 2px #333333;
+  color: #fff;
+}
+.background {
+  background: linear-gradient(rgba(12, 12, 134, 0.6), rgba(8, 8, 65, 0.6)), url("../imgs/webdesign-header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+/* Main Body CSS */
+body {
+  max-width: 880px;
+  width: 100%;
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+}
+/* Container starts here */
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin: 10px;
+  border: 0.5px solid lightgray;
+}
+#container header {
+  width: 100%;
+}
+#container header nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 5px;
+}
+#container header nav li {
+  list-style-type: none;
+}
+#container header nav li a {
+  font-size: 1.6rem;
+  color: #333;
+  text-decoration: none;
+}
+#container header nav li a:hover {
+  padding: 8px 0;
+  margin: 10px 0;
+  text-decoration: underline;
+  text-decoration-color: #f16406;
+}
+#container #header-container {
+  background: linear-gradient(rgba(12, 12, 134, 0.6), rgba(8, 8, 65, 0.6)), url("../imgs/webdesign-header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  /*Index CSS Starts Here*/
+}
+#container #header-container #header-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgba(230, 230, 241, 0.815);
+  margin-top: 3%;
+  justify-content: center;
+  height: 90%;
+}
+#container #header-container #header-info p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 20px;
+  margin: 5%;
+}
+#container #header-container #header-info .header-whoami {
+  margin: 5%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+#container #header-container #header-info .header-whoami h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+#container #header-container #header-info .header-whoami h1 :nth-child(1n) {
+  color: #f16406;
+  text-shadow: -1px -1px 0.5px #333;
+}
+#container #header-container #header-info .header-whoami h1 #name {
+  font-weight: lighter;
+  font-family: "Roboto", sans-serif;
+}
+#container #header-container #header-info .header-whoami h2 {
+  font-size: 3rem;
+}
+#container #header-container #header-info .header-whoami #primary-btn {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.4rem;
+  vertical-align: top;
+  width: 70%;
+  margin-top: 40%;
+  cursor: pointer;
+}
+#container #header-container #header-info .img-container {
+  padding: 15px;
+  margin: 2%;
+  width: 24.9%;
+}
+#container #header-container #header-info .img-container img {
+  width: 250px;
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #container #header-container #header-info .img-container img img {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #container #header-container #header-info .img-container {
+    display: none;
+  }
+}
+/*Contact CSS Starts Here */
+.contact_form--fielddata {
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+.contact_form--fielddata #contact {
+  background: #eee;
+  padding: 25px;
+  margin: 150px;
+  color: #f16406;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.contact_form--fielddata #contact h1 {
+  display: block;
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.contact_form--fielddata #contact h2 {
+  font-size: 1.6rem;
+  margin: 5px 0 15px;
+  display: block;
+  font-weight: 400;
+}
+.contact_form--fielddata #contact fieldset {
+  border: 0px solid lightgray;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+@media only screen and (max-width: 500px) {
+  .contact_form--fielddata #contact fieldset fieldset {
+    width: 50%;
+    height: 20%;
+  }
+}
+.contact_form--fielddata #contact input[type="text"],
+.contact_form--fielddata #contact input[type="email"],
+.contact_form--fielddata #contact input[type="tel"],
+.contact_form--fielddata #contact input[type="url"],
+.contact_form--fielddata #contact button[type="submit"],
+.contact_form--fielddata #contact textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 10px;
+  font: 400 1.2rem/1.6rem "Roboto", sans-serif;
+}
+@media only screen and (max-width: 500px) {
+  .contact_form--fielddata #contact input[type="text"] input[type="text"],
+  .contact_form--fielddata #contact input[type="email"] input[type="text"],
+  .contact_form--fielddata #contact input[type="tel"] input[type="text"],
+  .contact_form--fielddata #contact input[type="url"] input[type="text"],
+  .contact_form--fielddata #contact button[type="submit"] input[type="text"],
+  .contact_form--fielddata #contact textarea input[type="text"],
+  .contact_form--fielddata #contact input[type="text"] input[type="email"],
+  .contact_form--fielddata #contact input[type="email"] input[type="email"],
+  .contact_form--fielddata #contact input[type="tel"] input[type="email"],
+  .contact_form--fielddata #contact input[type="url"] input[type="email"],
+  .contact_form--fielddata #contact button[type="submit"] input[type="email"],
+  .contact_form--fielddata #contact textarea input[type="email"],
+  .contact_form--fielddata #contact input[type="text"] input[type="tel"],
+  .contact_form--fielddata #contact input[type="email"] input[type="tel"],
+  .contact_form--fielddata #contact input[type="tel"] input[type="tel"],
+  .contact_form--fielddata #contact input[type="url"] input[type="tel"],
+  .contact_form--fielddata #contact button[type="submit"] input[type="tel"],
+  .contact_form--fielddata #contact textarea input[type="tel"],
+  .contact_form--fielddata #contact input[type="text"] input[type="url"],
+  .contact_form--fielddata #contact input[type="email"] input[type="url"],
+  .contact_form--fielddata #contact input[type="tel"] input[type="url"],
+  .contact_form--fielddata #contact input[type="url"] input[type="url"],
+  .contact_form--fielddata #contact button[type="submit"] input[type="url"],
+  .contact_form--fielddata #contact textarea input[type="url"],
+  .contact_form--fielddata #contact input[type="text"] button[type="submit"],
+  .contact_form--fielddata #contact input[type="email"] button[type="submit"],
+  .contact_form--fielddata #contact input[type="tel"] button[type="submit"],
+  .contact_form--fielddata #contact input[type="url"] button[type="submit"],
+  .contact_form--fielddata #contact button[type="submit"] button[type="submit"],
+  .contact_form--fielddata #contact textarea button[type="submit"],
+  .contact_form--fielddata #contact input[type="text"] textarea,
+  .contact_form--fielddata #contact input[type="email"] textarea,
+  .contact_form--fielddata #contact input[type="tel"] textarea,
+  .contact_form--fielddata #contact input[type="url"] textarea,
+  .contact_form--fielddata #contact button[type="submit"] textarea,
+  .contact_form--fielddata #contact textarea textarea {
+    width: 50%;
+    height: 20%;
+  }
+}
+.contact_form--fielddata #contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+.contact_form--fielddata #contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #333;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.contact_form--fielddata #contact button[type="submit"]:hover {
+  background: #3a4549;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact_form--fielddata #contact input:focus,
+.contact_form--fielddata #contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+@media only screen and (max-width: 500px) {
+  .contact_form--fielddata #contact {
+    margin: 20px;
+  }
+}
+/*Tabs for Index Page Starts Here*/
+main {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+main section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+main input {
+  display: none;
+}
+main label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+@media only screen and (max-width: 500px), only screen and (min-width: 768px) and (max-width: 959px) {
+  main label label {
+    font-size: 0;
+  }
+  main label label:before {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+main label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+main label[for*="1"]:before {
+  content: "\f1cb";
+}
+main label[for*="2"]:before {
+  content: "\f09b";
+}
+main label[for*="3"]:before {
+  content: "\f0e1";
+}
+main label:hover {
+  color: #888;
+  cursor: pointer;
+}
+main input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid #f16406;
+  border-bottom: 1px solid #fff;
+}
+main #tab1:checked ~ #content1,
+main #tab2:checked ~ #content2,
+main #tab3:checked ~ #content3 {
+  display: block;
+  font-size: 1.6rem;
+}
+/*  Main-Skill Starts here.
+I know it is not good to use our own created 
+element but it was nice to use it */
+main-skill {
+  background: #fff;
+}
+main-skill .skills-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.6rem;
+  width: 100%;
+}
+main-skill .skills-info .skill {
+  width: 43.66%;
+  height: 300px;
+  border-top: 3px solid #ff6600;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+  background: #e9e9e9, 0.3;
+  box-shadow: 1px 1px 1px 1px rgba(41, 41, 41, 0.541);
+}
+@media only screen and (max-width: 500px) {
+  main-skill .skills-info .skill {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main-skill .skills-info .skill h1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-weight: bolder;
+  color: #f16406;
+}
+@media only screen and (max-width: 500px) {
+  main-skill .skills-info .skill h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main-skill .skills-info .skill span {
+  margin: 12px;
+  line-height: 2rem;
+  font-weight: 600;
+  color: black;
+}
+@media only screen and (max-width: 500px) {
+  main-skill .skills-info .skill span {
+    margin: 14px;
+  }
+}
+/* Work History - Main-Work */
+main-work .history-work img {
+  width: 100%;
+}
+main-work .history-work h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 4rem;
+  padding: 10px;
+}
+main-work .history-work p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  padding: 20px;
+  margin: 20px;
+}
