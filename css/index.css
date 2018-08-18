@@ -156,7 +156,10 @@ html {
   flex-direction: row;
   flex-flow: no-wrap;
   max-width: 100%;
-  background-color: lightgray;
+  background-color: #c9f7ef;
+}
+.navBar:hover {
+  animation: moveIt 3s infinite;
 }
 .headerText {
   padding-top: 10px;
@@ -291,6 +294,20 @@ footer {
   padding-left: 10px;
   padding-top: 8px;
 }
+@keyframes moveIt {
+  0% {
+    background-color: #c9f7ef;
+  }
+  25% {
+    background-color: #30b7c9;
+  }
+  50% {
+    background-color: #1b8af8;
+  }
+  100% {
+    background-color: #c9f7ef;
+  }
+}
 @media (max-width: 800px) {
   .mainContainer {
     display: flex;
@@ -376,5 +393,8 @@ footer {
   }
   .mainHeader .navBar a:last-child {
     border-bottom: 1px solid gray;
+  }
+  .navBar:hover {
+    animation: moveIt;
   }
 }
