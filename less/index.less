@@ -53,6 +53,16 @@ table {
 @main-font: Arial, Helvetica, sans-serif;
 @border-color: #dee2e6;
 
+.contact-info-mixin {
+	padding-top: 8px;
+	padding-left: 5px;
+}
+
+.display-flex-height-mixin {
+	display: flex;
+	height: auto;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -69,15 +79,13 @@ html, body {
 
 .container {
 	width: 880px;
-	height: auto;
 	margin: 0 auto;
-	display: flex;
 	flex-direction: column;
 	background: white;
+	.display-flex-height-mixin;
 
 	.navigation nav {
-		display: flex;
-		height: auto;
+		.display-flex-height-mixin;
 		width: 100%;
 		align-items: center;
 		justify-content: flex-end;
@@ -98,13 +106,12 @@ html, body {
 
 	.header {
 		width: 99%;
-		height: auto;
 		background: #e9ecef;
-		display: flex;
 		flex-direction: column;
 		padding-bottom: 61px;
 		border-radius: 5px;
 		margin-left: 5px;
+		.display-flex-height-mixin;
 
 		.header-top {
 			border-bottom: 1px solid #d1d4d7;
@@ -134,11 +141,10 @@ html, body {
 
 		.header-bottom {
 			margin-top: 28px;
-			display: flex;
 			flex-direction: column;
-			height: auto;
 			width: 90%;
 			margin-left: 32px;
+			.display-flex-height-mixin;
 
 			p {
 				font-size: 1.7rem;
@@ -166,10 +172,9 @@ html, body {
 
 	.middle-content {
 		width: 100%;
-		height: auto;
-		display: flex;
 		justify-content: space-between;
 		margin-top: 30px;
+		.display-flex-height-mixin;
 
 		.middle-content-first {
 			flex: 1;
@@ -232,11 +237,10 @@ html, body {
 		.custom-table {
 			background: white;
 			width: 99%;
-			height: auto;
-			display: flex;
 			flex-direction: column;
 			margin-top: 9px;
 			margin-left: 5px;
+			.display-flex-height-mixin;
 
 			.cti-top-row {
 				border-bottom: 2px solid @border-color;	
@@ -253,12 +257,11 @@ html, body {
 
 			.custom-table-item {
 				width: 100%;
-				height: auto;
-				display: flex;
 				flex-direction: row;
 				border-top: 1px solid @border-color;
 				padding-top: 17px;
 				padding-left: 12px;
+				.display-flex-height-mixin;
 
 				p {
 					font-size: 1.6rem;
@@ -289,30 +292,26 @@ html, body {
 
 		h2 {
 			font-size: 2.4rem;
-			padding-top: 8px;
-			padding-left: 5px;
+			.contact-info-mixin;
 		}
 
 		h4 {
 			font-size: 1.8rem;
-			padding-top: 8px;
-			padding-left: 5px;
+			.contact-info-mixin;
 		}
 
 		p {
 			font-size: 1.4rem;
-			padding-top: 4px;
-			padding-left: 5px;
+			.contact-info-mixin;
 		}
 	}
 
 	footer {
 		width: 100%;
-		height: auto;
-		display: flex;
 		justify-content: center;
 		padding-top: 5px;
 		background: #797b86;
+		.display-flex-height-mixin;
 
 		p {
 			font-size: 1.6rem;
