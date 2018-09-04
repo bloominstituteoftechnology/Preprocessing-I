@@ -49,6 +49,18 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+//variables
+@lightgrey: lightgrey;
+@grey: grey;
+//mixins
+.flex {
+	display: flex;
+}
+.backgroundGrey {
+	background: @lightgrey;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -56,6 +68,7 @@ table {
 html, body {
 	height: 100%;
 	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -64,7 +77,7 @@ html, body {
 	font-size: 1.6rem;
 
 	nav {
-		display: flex;
+		.flex;
 		justify-content: flex-end;
 		margin: 25px 0;
 
@@ -75,7 +88,7 @@ html, body {
 		}
 	}
 	header {
-		background: lightgrey;
+		.backgroundGrey;
 		padding: 4%;
 
 		h1 {
@@ -92,13 +105,14 @@ html, body {
 		button {
 			padding: 12.5px 2%;
 			font-size: 2rem;
-			background: grey;
+			background: @grey;
 			color: white;
 			border-radius: 10px;
+			outline: none;
 		}
 	}
 	.top-content {
-		display: flex;
+		.flex;
 		margin-top: 30px;
 
 		.summary {
@@ -123,19 +137,19 @@ html, body {
 			li {
 				width: 100%;
 				padding: 15px;
-				border: 1px solid grey;
+				border: 1px solid @grey;
 			}
 		}
 	}
 	.work {
-		margin: 20px 0;
+		margin: 20px 0 40px;
 
 		h2 {
 			font-size: 2.5rem;
 		}
 		table {
 			width: 100%;
-			border-top: 1px solid grey;
+			border-top: 1px solid @grey;
 
 			th {
 				font-weight: bold;
@@ -143,7 +157,7 @@ html, body {
 				background: white;
 			}
 			tr:nth-child(odd) {
-				background: lightgrey;
+				.backgroundGrey;
 			}
 			th, td {
 				padding: 10px;
@@ -155,7 +169,7 @@ html, body {
 	}
 	footer {
 		text-align: center;
-		background: grey;
+		background: @grey;
 		color: white;
 		padding: 20px 0;
 	}
