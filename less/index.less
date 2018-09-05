@@ -54,6 +54,201 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: sans-serif;
 }
 
+.flexRow() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flexColumn() {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@title-fontsize: 1.8rem;
+@theme-color: #a0001e;
+
+.underline-hover {
+	position:relative;
+	&:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: -4px;
+	background: @theme-color;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: .25s;
+	}
+
+	&:hover:before {
+	visibility: visible;
+	transform: scaleX(1);
+	}
+
+	&:hover {
+	color:@theme-color;
+	}
+}
+
+p {
+	font-size: @title-fontsize;
+	line-height:2;
+	font-weight: 100;
+}
+
+body {
+	.flexColumn;
+	height: auto;
+}
+header {
+	width: 100%;
+	.flexRow;
+	height: 80px;
+
+	h1 {
+		font-size: @title-fontsize;
+		margin-left: 30px;
+	}
+
+	nav {
+		font-size: @title-fontsize;
+		width: 30%;
+		.flexRow;
+		margin-right: 50px;
+		a {
+			text-decoration: none;
+			color: black;
+			.underline-hover;
+		}	
+	}
+}
+
+.container1 {
+	width: 100%;
+	background: @theme-color;
+	.flexRow;
+	
+	.profPic {
+		width: 50%;
+	}
+	
+	.child1 {
+		width: 50%;
+		height: 100%;
+		.flexColumn;
+		color: white;
+		.title {
+			text-transform: uppercase;
+			font-size: @title-fontsize;
+			.flexColumn;
+			justify-content: space-evenly;
+			height: 120px;
+			margin-bottom: 40px;
+		}
+		.name {
+			font-size: 5rem;
+			font-weight: 800;
+			margin-bottom: 40px;
+		}
+
+		.contact {
+			.flexRow;
+			width: 15%;
+		}
+
+		.logo {
+			width: 25px;
+			border-radius: 15px;
+		}
+	}
+
+}
+
+.container2 {
+	width: 80%;
+	.flexRow();
+	margin-top: 100px;
+
+	.mainContent {
+		.flexColumn();
+		width: 60%;
+		p {
+			margin: 20px;
+			padding-left: 20%;
+			font-weight: 100;
+		}
+		.strong {
+			font-size: 3rem;
+			color: @theme-color;
+			padding: 0;
+			width:120%;
+			font-weight: 100;
+		}
+	}
+
+	@sidebar-fontsize: 1.5rem;
+	@font-weight: 100;
+	
+	.sidebar {
+		margin: 150px;
+		display: flex;
+		flex-direction: column;
+		h2 {
+			font-size: @sidebar-fontsize;
+			font-weight: 800;
+			line-height: 2;
+		}
+
+		div {
+			font-size: @sidebar-fontsize;
+			font-weight: 100;
+			line-height: 2;
+		}
+		
+		.experience {
+			position:relative;
+			display: inline-block;
+			&:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: 1px;;
+			background: @theme-color;
+			visibility: hidden;
+			transform: scaleX(0);
+			transition: .25s;
+			}
+		
+			&:hover:before {
+			visibility: visible;
+			transform: scaleX(1);
+			}
+		
+			&:hover {
+			color:@theme-color;
+			// text-decoration: underline;
+			// text-underline-position: unset;
+			}
+		}
+			
+		width: 33%;
+		align-self: flex-start;
+	}
+}
+
+footer {
+	width: 100%;
+	font-style: italic;
+	.flexRow();
+	justify-content: center;
+	height: 150px;
+}
