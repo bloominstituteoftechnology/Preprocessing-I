@@ -48,12 +48,37 @@ table {
 	border-spacing: 0;
 }
 
+/* Preprocessor Stuff */
+@bottom-background: limegreen;
+@left-background: skyblue;
+@right-background: coral;
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html {
 	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	background: linear-gradient(
+			90deg,
+			@left-background,
+			transparent
+		),
+		linear-gradient(
+			-90deg,
+			@right-background,
+			transparent
+		),
+		linear-gradient(
+			transparent,
+			@bottom-background,
+		);
+	background-blend-mode: screen;
 }
 
