@@ -54,11 +54,24 @@ table {
 }
 
 @fontSize: 1.6rem;
+@colorGray: gray;
+@colorWhite: white;
 
 html, body {
 	height: 100%;
 	font-size: 62.5%;
 }
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .colorScheme() {
+	  background-color: @colorGray;
+	  color:@colorWhite;
+  }
 
 .container {
 	width: 880px;
@@ -66,6 +79,11 @@ html, body {
 	border: solid black;
 	height: 100%;
 
+	hr {
+		width: 75%;
+		height: 1px;
+		color: black;
+	}
 	header {
 
 		width: 100%;
@@ -109,8 +127,7 @@ html, body {
 
 		width: 150px;
 		height: 35px;
-		background-color: gray;
-		color: white;
+		.colorScheme;
 		
 	}
 }
@@ -178,11 +195,6 @@ html, body {
 		
 		font-size: @fontSize;
 
-		table {
-
-			
-		}
-
 		.row {
 
 			font-weight: bold;
@@ -199,21 +211,16 @@ html, body {
 
 }
 
-footer {
+footer h1 {
 
 	font-size: @fontSize;
 	width: 770px;
-	background-color: grey;
+	.colorScheme;
 	height: 50px;
 	margin: 25px 25px 0 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	.center;
 
-	h1 {
-
-		color: white;
-	}
+	
 }
 
 
