@@ -167,6 +167,10 @@ body {
   border-radius: 1rem;
   cursor: pointer;
   font-size: inherit;
+  transition: all 300ms;
+}
+.btn:hover {
+  background-color: #3ac3e0;
 }
 @media (max-width: 500px) {
   .btn {
@@ -193,6 +197,7 @@ body {
   color: #000;
   text-decoration: none;
   text-transform: uppercase;
+  position: relative;
   transition: all 300ms;
 }
 @media (max-width: 500px) {
@@ -201,11 +206,28 @@ body {
     margin: 0;
   }
 }
-.nav__link:hover {
-  border-bottom: 2px solid #92deee;
+.nav__link::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: #92deee;
+  position: absolute;
+  top: 23px;
+  left: 0;
+  transition: width 300ms;
 }
-.nav .active {
-  border-bottom: 2px solid #92deee;
+.nav__link:hover::after {
+  width: 100%;
+}
+.nav .active::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #92deee;
+  position: absolute;
+  top: 23px;
+  left: 0;
+  transition: width 300ms;
 }
 /* HEADER */
 .header {
@@ -269,6 +291,7 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   margin-bottom: 5rem;
+  /* CONTACT */
 }
 .sub-header .skills {
   width: 65%;
@@ -344,6 +367,15 @@ body {
   padding-bottom: 2rem;
   border-bottom: 2px solid #000;
 }
+.sub-header .contact__body a,
+.sub-header .contact__body a:visited {
+  color: #000;
+  font-weight: 700;
+  transition: all 300ms;
+}
+.sub-header .contact__body a:hover {
+  color: #666666;
+}
 @media (max-width: 500px) {
   .sub-header .contact__body {
     font-size: 2rem;
@@ -357,7 +389,12 @@ body {
 .sub-header .contact__footer a,
 .sub-header .contact__footer a:visited {
   color: #000;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
+  transition: all 300ms;
+}
+.sub-header .contact__footer a:hover,
+.sub-header .contact__footer a:visited:hover {
+  color: #666666;
 }
 @media (max-width: 500px) {
   .sub-header .contact__footer a,
@@ -366,6 +403,9 @@ body {
   }
 }
 /* EXPERIENCE & EDUCATION */
+.experience:last-child {
+  text-align: right;
+}
 .experience,
 .education {
   margin-bottom: 5rem;
