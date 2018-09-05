@@ -137,9 +137,16 @@ table {
 html,
 body {
   height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-// custom styles
+// variables
+@main-color: #34b3a0;
+// html font size for rem
+html {
+  font-size: 62.5%;
+}
+// landing container
 .landing-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("https://images.pexels.com/photos/548084/pexels-photo-548084.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
@@ -148,4 +155,48 @@ body {
   width: 100vw;
   background-position: center;
   background-size: cover;
+}
+
+// nav component
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin: auto;
+  a {
+    color: white;
+    margin: 40px 10px;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: 300ms;
+    &:hover {
+      color: @main-color;
+      transition: 300ms;
+    }
+  }
+}
+
+.landing-content {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  text-align: center;
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 2.5rem;
+  }
+  .btn {
+    background-color: @main-color;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 25px;
+    font-size: 2rem;
+    text-decoration: none;
+  }
 }
