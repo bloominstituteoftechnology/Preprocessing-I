@@ -70,12 +70,23 @@ html, body {
 @highlight: lightgrey;
 @fontsize: 2rem;
 @marginsize: 30px;
-@leftmargin: 5%;
+@sidemargin: 5%;
 
 // Mixins
 .flexRow() {
 	display: flex;
 	flex-direction: row;
+}
+
+.sectionmargins() {
+	margin-bottom: @marginsize;
+	margin-left: @sidemargin;
+	margin-right: @sidemargin;
+}
+
+.topBorder() {
+	border-top: 1px solid orange;
+	padding-top: 10px;
 }
 
 .testBox() {
@@ -85,6 +96,7 @@ html, body {
 .h2 {
 	h2 {
 		font-size: 3rem;
+		padding-bottom: 15px;
 	}
 }
 
@@ -99,7 +111,6 @@ html {
 
 .container {
 	background: @background;
-	height: 100%;
 	max-width: 880px;
 	margin: 0 auto;
 
@@ -115,11 +126,12 @@ html {
 		h1 {
 			color: @standard;
 			font-size: 3.8rem;
+			margin-left: @sidemargin;
 		}
 
 		ul {
 			.flexRow;
-			width: 70%;
+			width: 60%;
 			justify-content: stretch;
 			align-content: center;
 			font-size: 2.4rem;
@@ -131,34 +143,71 @@ html {
 				a {
 					text-decoration: none;
 					color: @standard;
-
-					&:hover {
-						background: @standard;
+				}
+				&:hover {
+					background: @standard;
+					a {
 						color: @highlight;
 					}
 				}
-
 			}
 		}
 	}
 
 	.intro {
 		.h2;
-		margin-bottom: @marginsize;
-		margin-left: @leftmargin;
+		.sectionmargins;
+		.flexRow;
+
+		.intro-content {
+			padding-right: 2%;
+		}
+
+		.intro-img {
+			img {
+				border-radius: 5px;
+			}
+		}
 	}
 
 	.skills {
+		.topBorder;
 		.h2;
-		margin-bottom: @marginsize;
+		.sectionmargins;
+
+		ul {
+			padding-top: 20px;
+			padding-left: 10%;
+		}
 	}
 
 	.history {
+		.topBorder;
 		.h2;
-		margin-bottom: @marginsize;
+		.sectionmargins;
+
+		.history-contents {
+			.flexRow;
+			div {
+				width: 30%;
+				margin-bottom: 20px;
+				padding-right: 2%;
+
+					h3 {
+						font-size: 2rem;
+						padding-bottom: 10px;
+					}
+					p {
+						font-size: 1.4rem;
+					}
+				}
+			}
 	}
 
 	.contact {
+		.topBorder;
 		.h2;
+		.sectionmargins;
+		padding-bottom: 20px;
 	}
 }
