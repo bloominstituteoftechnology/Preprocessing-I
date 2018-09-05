@@ -4,56 +4,257 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+// VARIABLES
+
+// Colors
+@color-black: #000;
+@color-white: #f2f2f2;
+@color-grey: #eee;
+@color-main: @blizzard-blue;
+@blizzard-blue: #92deee;
+
+// Font
+@main-font-family: 'Montserrat', sans-serif;
+@main-font-size: 1.6rem;
+
+// Margins
+@mb-small: 2rem;
+@mb-medium: 5rem;
+@mb-large: 9rem;
+
+// Media Queries
+@tablet: ~'(max-width: 800px;)';
+@phone: ~'(max-width: 500px;)';
+
+// Mixins
+
+body {
+  background-color: @color-white;
+  font-family: @main-font-family;
+  font-size: @main-font-size;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.btn {
+  color: @color-white;
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: @color-main;
+  padding: 1rem 2rem;
+  border: transparent;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+/* NAVIGATION */
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: @mb-small 0;
+
+  &__link,
+  &__link:visited {
+    margin: 0 2.4rem;
+    padding-bottom: 2px;
+    color: @color-black;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 300ms;
+  }
+
+  &__link:hover {
+    border-bottom: 2px solid @color-main;
+  }
+
+  .active {
+    border-bottom: 2px solid @color-main;
+  }
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__img {
+    width: 40%;
+    margin-right: 5%;
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  &__intro {
+    width: 55%;
+
+    .heading-primary {
+      display: flex;
+      flex-direction: column;
+      font-weight: 300;
+      margin-bottom: @mb-small;
+      line-height: 1.2;
+
+      &--top {
+        font-size: 3.2rem;
+      }
+
+      &--bottom {
+        font-size: 4.8rem;
+      }
+    }
+  }
+
+  &__lead {
+    margin-bottom: @mb-medium;
+  }
+}
