@@ -82,7 +82,7 @@ html, body {
 }
 
 .box(@width, @height) {
-	width: @width;
+	max-width: @width;
 	height: @height;
 	background: @boxColor;
 	padding: @boxPadding;
@@ -112,6 +112,12 @@ html, body {
 			background: black;
 			font-size: @extraLargeFont;
 			.flex(nowrap, space-around, center);
+			@media (max-width:500px) {
+				display: flex;
+				flex-direction: column;
+				margin-top: 0px;
+				height: 300px;
+			}
 			a {
 				text-decoration: none;
 				color: @fontColor;
@@ -120,10 +126,16 @@ html, body {
 }
 	.intro {
 		.flex(nowrap, space-evenly, center);
+		@media (max-width:500px) {
+			display: flex;
+			flex-direction: column;
+			max-width: 100%;
+		}
 		.image {
 			margin-top: 30px;
 		}
 		.introText{
+			max-width: 100%;
 			color: black;
 			.flex(wrap, space-around, center);
 			h1 {
@@ -135,18 +147,33 @@ html, body {
 		}
 	}
 	.top {
+		@media (max-width:500px) {
+			display: flex;
+			flex-direction: column;
+		}
 		.flex(nowrap, space-between, center);
 		margin-bottom: 50px;
 		.skills {
+			@media (max-width:500px) {
+				.box(90%, 320px);
+				margin-top: 50px;
+			}
 			.box(48%, 300px);
 			ul {
 				font-size: @mediumFont;
 				line-height: @lineSpace;
 				list-style-type: circle;
 				margin-left: 3%;
+				@media (max-width:500px) {
+						margin-left: 5%;
+					}
 			}
 		}
 		.accomplishments {
+			@media (max-width:500px) {
+				.box(90%, 300px);
+				margin-top: 50px;
+			}
 			.box(48%, 300px);
 			ul {
 				line-height: @lineSpace;
@@ -154,19 +181,27 @@ html, body {
 					font-size: @mediumFont;
 					list-style-type: circle;
 					margin-left: 3%;
+					@media (max-width:500px) {
+						margin-left: 5%;
+					}
 				}
 				.smallLi {
 					font-size: @smallFont;
 					list-style-type: square;
 					margin-left: 8%;
+					@media (max-width:500px) {
+						margin-left: 10%;
+					}
 				}
 			}
 		}
 	}
 	.bottom {
-		.flex(nowrap, center, center);
 		margin-bottom: 50px;
 		.workHistory {
+			@media (max-width:500px) {
+				.box(100%, 850px);
+			}
 			.box(100%, 800px);
 			.job1 {
 				.job;
@@ -191,12 +226,21 @@ html, body {
 				list-style-type: circle;
 				margin-left: 3%;
 				margin-bottom: @jobSpace;
+				@media (max-width:500px) {
+					margin-left: 5%;
+				}
 			}
 		}
 	}
-	.contact {
-		p {
-
+	#contact {
+		.box(50%, 210px);
+		margin: 0 auto;
+		line-height: @lineSpace;
+		@media (max-width:500px) {
+			.box(80%, 210px);
+		}
+		.contactInfo {
+			text-align: center;
 		}
 	}
 }
