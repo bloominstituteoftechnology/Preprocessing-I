@@ -64,9 +64,9 @@ html, body {
 @font-h2: 3rem;
 @font-stack: Arial;
 @desktop-width: 880px;
-@primary-color: ;
-@secondary-color: ;
-@steeler-yellow: #FDB31D;
+@primary-color: #333;
+@light-gray: #ddd;
+@steeler-gold: #FDB31D;
 
 
 
@@ -97,6 +97,16 @@ html {
 	font-family: @font-stack;
 }
 
+.btn {
+	background: @steeler-gold;
+	border: none;
+	border-radius: 15px;
+	width: 175px;
+	padding: 10px;
+	cursor: pointer;
+	margin: 0 auto;
+}
+
 // NAV
 
 header {
@@ -109,13 +119,58 @@ nav {
 	.flex(row, space-between);
 
 	a {
-		// margin: 0 10px;
+		padding: 10px;
 		text-decoration: none;
-		color: #888;
+		color: @primary-color;
 
 		&:hover {
 			color: black;
 			font-weight: bold;
+			border-bottom: 2px solid @steeler-gold;
 		}
 	}
 }
+
+// HOME
+
+#home {
+	background: @primary-color;
+	width: 100%;
+	padding: 5%;
+	.flex(row, space-between);
+	// flex-wrap: wrap;
+	color: @light-gray;
+
+	.intro {
+		width: 55%;
+		.flex(column, flex-start);
+
+		h1 {
+			color: @steeler-gold;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 5rem;
+			margin-bottom: 50px;
+
+			small {
+				color: @light-gray;
+				font-size: 2rem;
+			}
+		}
+
+		p {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+	}
+
+	.picture {
+		width: 40%;
+		height: auto;
+
+		img {
+			width: 100%;
+		}
+	}
+} // #home
