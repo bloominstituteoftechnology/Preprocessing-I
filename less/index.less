@@ -72,17 +72,33 @@ html {
 	margin: 0 auto;
 	font-size: 1.6rem;
 	font-family: @fontStack;
-  }
-  
-  header {
+
+	@media ( max-width: 500px ){
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	header {
 	display: flex;
 	justify-content: center;
 	margin: 1% 2% 0;
-  
+
+	@media (max-width: 500px ) {
+		flex-wrap: wrap;
+		
+		margin: 0; 
+	}
 	
 	nav {
 	  display: flex;
 	  
+	  @media ( max-width: 500px)  {
+		width: 99%;
+		flex-flow: column;
+		margin-top: 7% 0;
+		border-bottom: 1px solid black;
+		border-bottom: 1px solid black;
+	  }
 	  
 	  a { 
 		margin: 10px;
@@ -92,7 +108,13 @@ html {
 		  color: @accentColor;
 		}
 		
-		
+		@media ( max-width: 500px ){
+			text-align: center;
+      		font-size: 2rem;
+      		margin: 0;
+      		padding: 5% 0;
+      		border-top: 1px solid black;
+		}
 		}
 	  }
 	}
@@ -103,7 +125,10 @@ html {
 	  background-color: @mainColor;
 	  padding-bottom: 9%;
 	
-  
+	@media ( max-width: 500px ) {
+		flex-flow: column;
+		align-items: center;
+	}
 	.name .name-text {
 		margin-top: 5%;
 		text-align: center;
@@ -139,6 +164,9 @@ html {
 		  font-size: 1.8rem;
 		 padding-bottom: 3%;
 	  }
+	  &:last-child {
+		margin-right: 0;
+	  }
   }
   
   .main-content .bottom-content {
@@ -152,6 +180,9 @@ html {
 	  h4 {
 		  font-size: 1.8rem;
 		  margin-bottom: 3%;
+	  }
+	  &:last-child {
+		margin-right: 0;
 	  }
   }
   
@@ -175,6 +206,9 @@ html {
 	margin: 4% 0;
 	font-size: 1.4rem;
   }
+  }
+  
+  
 
 
 
