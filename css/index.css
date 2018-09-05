@@ -134,6 +134,14 @@ html,
 body {
   height: 100%;
 }
+@keyframes jump-in {
+  from {
+    margin-right: 500%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
 /* variables */
 /* mixins */
 html {
@@ -189,6 +197,11 @@ header nav a:hover {
   height: auto;
   margin-bottom: 10px;
   border-radius: 50%;
+  animation-name: jump-in;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in;
 }
 .cta h1 {
   font-size: 3rem;
@@ -196,7 +209,7 @@ header nav a:hover {
   margin-bottom: 15px;
 }
 .cta h2 {
-  color: red;
+  color: blue;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -231,9 +244,16 @@ header nav a:hover {
   padding-top: 15px;
   margin: 20px;
   display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .main-content {
+    align-items: flex-start;
+    display: flex-inline;
+  }
 }
 .main-content .text-block {
-  width: 60%;
+  width: 50%;
   margin-right: 7%;
 }
 .main-content .text-block h2 {
@@ -241,19 +261,26 @@ header nav a:hover {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 15px;
+  margin-left: 2%;
 }
 .main-content p {
   line-height: 1.5;
   margin: 5px 2%;
 }
 .attributes {
-  background: red;
+  width: 50%;
+  background: #465977;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .attributes h2 {
-  color: pink;
+  color: black;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 15px;
+  padding-top: 10%;
 }
 .attributes ul {
   padding-left: 10%;
@@ -266,24 +293,33 @@ header nav a:hover {
 .work-history {
   margin-top: 10px;
 }
+.work-history h2 {
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
 .work-history table {
-  border: 1px solid black;
   width: 100%;
-  margin-bottom: 20px;
+  background-color: #aaa0a0;
 }
 .work-history table tr {
-  padding: 2rem;
+  padding-top: 2rem;
   border: 1px solid lightgray;
+  height: 40px;
+  valign: bottom;
 }
 .work-history table tr th {
   font-weight: bold;
   font-size: 1.8rem;
+  vertical-align: bottom;
 }
 .work-history table tr td {
   text-align: center;
+  vertical-align: bottom;
 }
 footer {
-  border: 1px solid black;
   text-align: center;
   font-size: 1rem;
   color: blue;

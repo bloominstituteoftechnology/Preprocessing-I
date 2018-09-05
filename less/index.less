@@ -57,9 +57,18 @@ html, body {
     height: 100%;
 }
 
+@keyframes jump-in {
+    from {
+        margin-right: 500%;
+    }
+
+    to {
+        margin-right: 0%;
+    }
+}
 /* variables */
 @backgroundColor: lightgray;
-@secondaryColor: red;
+@secondaryColor: #465977;
 
 
 /* mixins */
@@ -133,6 +142,11 @@ header {
         height: auto;
         margin-bottom: 10px;
         border-radius: 50%;
+        animation-name: jump-in;
+        animation-duration: 1s;
+        animation-delay: .5s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease-in;
     }
 
     h1 {
@@ -142,7 +156,7 @@ header {
     }
 
     h2 {
-        .header2(red);
+        .header2(blue);
         text-align: center;
     }
 
@@ -179,13 +193,20 @@ header {
     padding-top: 15px;
     margin: 20px;
     display: flex;
+    justify-content: space-between;
+
+    @media(max-width: 500px) {
+        align-items: flex-start;
+        display: flex-inline;
+    }
 
     .text-block {
-        width: 60%;
+        width: 50%;
         margin-right: 7%;
 
         h2 {
             .header2(blue);
+            margin-left: 2%;
         }
     }
 
@@ -196,9 +217,16 @@ header {
 }
 
 .attributes {
+    width: 50%;
     background: @secondaryColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
     h2 {
-        .header2(pink);
+        .header2(black);
+        padding-top: 10%;
     }
 
     ul {
@@ -211,33 +239,44 @@ header {
         }
 
     }
+    
+    img {
+        
+    }
 }
 
 .work-history {
     margin-top: 10px;
 
+    h2 {
+        .header2(black);
+        text-align: center;
+    }
+
     table {
-    border: 1px solid black;
     width: 100%;
-    margin-bottom: 20px;
+    background-color:#aaa0a0;
 
     tr {
-        padding: 2rem;
+        padding-top: 2rem;
         border: 1px solid lightgray;
+        height: 40px;
+        valign: bottom;
 
         th {
             font-weight: bold;
             font-size: 1.8rem;
+            vertical-align: bottom;
         }
         td {
             text-align: center;
+            vertical-align: bottom;
         }
     }
 }
 }
 
 footer {
-    border: 1px solid black;
     text-align: center;
     font-size: 1rem;
     color: blue;
