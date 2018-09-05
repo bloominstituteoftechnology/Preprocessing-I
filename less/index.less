@@ -54,6 +54,151 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+}
+html{
+	font-size:62.5%;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+.flex-position(@display, @position){
+	display:@display;
+	justify-content: @position;
+}
+
+.padding(@top, @bottom){
+	padding-top:@top;
+	padding-bottom: @bottom;
+}
+
+
+.container{
+	width:880px;
+	margin:0 auto;
+	padding:0 3%;
+	font-family: 'Roboto Condensed', sans-serif;
+	line-height: 2rem;
+	header{
+		padding:2% 0;
+		nav{
+			.flex-position(flex, flex-end);
+			flex-flow:row-wrap;
+			a{
+				text-decoration: none;
+				padding:1%;
+				color:black;
+				font-size:1.6rem;
+			}	
+		}
+	}
+	.intro-content{
+		background:rgb(243, 243, 243);
+		padding:5% 3%;
+		border-radius:1%;
+		margin-bottom:2%;
+
+		&__top{
+			border-bottom:2px solid rgb(205, 205, 205);
+			padding-bottom:2%;
+		
+			h1{
+				padding-top:1%;
+				font-size:2.6rem;
+			}
+			p{
+				font-size:1.5rem;
+			}
+		}
+		&__bottom{
+			padding-top:2%;
+			p{
+				font-size:1.5rem;
+				padding-bottom:1.3%; 
+			}
+			a{
+				.flex-position(flex, center);
+				text-decoration:none;
+				background:gray;
+				color:white;
+				font-size:1.7rem;
+				font-weight:bold;
+				padding:1% ;
+				width:20%;
+				border-radius:5%;
+			}
+		}
+
+	}
+
+	.main-content{
+		display: flex;
+		margin-bottom:2%;
+		&__intro{
+			width:50%;
+			h2{
+				font-size:2.6rem;
+				padding-bottom:2%; 
+			}
+			p{
+				font-size:1.5rem;
+				padding-bottom:1.3%; 
+				
+			}
+		}
+		&__skills{
+			width:50%;
+			h3{
+				font-size:2.6rem;
+				padding-bottom:2%; 
+			}
+			ul{
+				border:1px solid rgb(215, 215, 215);
+				border-radius:3%;
+				li{
+					border:1px solid rgb(215, 215, 215);
+					padding:2% 3.5%;
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+	.work-history h3{
+		font-size: 2.6rem;
+		margin-bottom: 2%;
+	}
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		font-size: 1.5rem;
+		margin-bottom:2%;
+		td,th{
+			padding: 2%;
+		}
+		th{
+			.padding(1.2%, 1.2%);
+			border-top:1px solid #f2f2f2;
+			text-align: left;
+			color: black;
+			font-weight: bold;
+		}
+
+		tr{
+			&:nth-child(even){
+				background-color: #f2f2f2;
+			}
+			&:hover {
+				background-color: #ddd;
+			}
+		}
+		
+	}
+
+	footer{
+		.flex-position(flex, center);
+		padding:3%;
+		background:gray;
+		font-size:1.4rem;
+		color:white;
+	}
+}
