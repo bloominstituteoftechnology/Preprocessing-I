@@ -133,50 +133,64 @@ table {
 html,
 body {
   height: 100%;
-  background-color: lightslategrey;
 }
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.customText {
+  text-decoration: none;
+  color: #311619;
+}
 html {
   font-size: 62.5%;
+  font-family: arial, 'Times New Roman', Times, serif;
+  background-color: lightslategrey;
 }
 .container {
-  max-width: 880px;
+  max-width: 700px;
   margin: 0 auto;
   font-size: 1.6rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: lightgray;
 }
+.container header {
+  margin: 0 5%;
+}
 .container header nav {
+  height: 40px;
   margin: 20px 40px 5%;
   display: flex;
   justify-content: space-around;
+  align-items: flex-end;
 }
 .container header nav a {
   margin: 0 5%;
   text-decoration: none;
-  color: black;
+  color: #311619;
 }
 .container header nav a:hover {
   color: grey;
   text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .container .intro {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50%;
 }
 .container .intro h1 {
   font-size: 4rem;
   margin: 5px 0;
+  color: #152827;
 }
 .container .intro h2 {
   font-size: 3rem;
@@ -184,22 +198,79 @@ html {
   border-bottom: black solid;
 }
 .container .intro p {
-  margin: 20px 0;
+  margin: 20px 5%;
 }
-.container .skills h2 {
+.container .skills-about {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+}
+.container .skills-about .about-me {
+  width: 25%;
+  margin: 10px 0;
+}
+.container .skills-about .about-me h2 {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  .container .skills-about .about-me {
+    width: 100%;
+  }
+}
+.container .skills-about .skills {
+  width: 70%;
+}
+.container .skills-about .skills h2 {
   font-size: 3rem;
   margin: 10px 0;
 }
-.container .skills p {
+.container .skills-about .skills p {
   margin-top: 5px;
+}
+@media (max-width: 500px) {
+  .container .skills-about .skills {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .container .skills-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.container .job-history {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 .container .job-history h2 {
   font-size: 3rem;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 .container .job-history .job {
   margin: 40px 0;
 }
 .container .job-history .job h3 {
   font-size: 2rem;
+  margin: 5px 0;
+}
+.container .job-history .job h4 {
+  font-size: 1.8rem;
+  margin: 5px 0;
+}
+.container .job-history .job ul {
+  list-style: circle inside;
+}
+.container footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container footer button a {
+  text-decoration: none;
+  color: black;
 }
