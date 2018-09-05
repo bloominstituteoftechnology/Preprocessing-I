@@ -63,11 +63,16 @@ html, body {
 @header-font-size: 1.6rem;
 //
 
-//MIXIN
+//MIXINS
 .custom-layout(@flex-direction, @justify-content){
 	display: flex;
 	flex-direction: @flex-direction;
 	justify-content: @justify-content;
+}
+
+.custom-font(@font-size, @text-decoration){
+	font-size: @font-size;
+	text-decoration: @text-decoration;
 }
 //
 
@@ -76,8 +81,7 @@ html, body {
 }
 
 header{
-	display:flex;
-	justify-content: flex-end;
+	.custom-layout(row, flex-end);
 	margin: 20px 0;
 	nav{
 		display: flex;
@@ -89,15 +93,12 @@ header{
 
 .intro{
 	.custom-layout(column, flex-start);
-	//display: flex;
-	//flex-direction: column;
 	background-color: @shade-color;
 	padding: 0 20px;
 	margin: 0 20px;
 	h2{
 		margin: 10px auto;
-		font-size: 3rem;
-		text-decoration: underline;
+		.custom-font(3rem, underline);
 	}
 	p{
 		margin: 10px auto;
@@ -107,15 +108,12 @@ header{
 
 .main-content{
 	.custom-layout(row, space-around);
-	//display: flex;
-	//justify-content: space-around;
 	margin: 0 20px;
 	padding: 20px;
 	.skills{
 		h2{
 			margin: 10px auto;
-			font-size: @header-font-size;
-			text-decoration: underline;
+			.custom-font(@header-font-size, underline);
 		}
 		ol{
 			background-color: @shade-color;
@@ -126,8 +124,7 @@ header{
 	.work-history{
 		h2{
 			margin: 10px auto;
-			font-size: @header-font-size;
-			text-decoration: underline;
+			.custom-font(@header-font-size, underline);
 		}
 		ol{
 			background-color: @shade-color;
@@ -138,14 +135,11 @@ header{
 
 .contact{
 	.custom-layout(column, flex-start);
-	//display: flex;
-	//flex-direction: column;
 	margin: 0 20px;
 	padding: 20px;
 	h2{
 		margin: 10px 0;
-		font-size: @header-font-size;
-		text-decoration: underline;
+		.custom-font(@header-font-size, underline);
 	}
 	address{
 		line-height: 2;
@@ -158,7 +152,6 @@ footer{
 
 @media (max-width: 500px) {
 	.main-content{
-		display: flex;
-		flex-direction: column;
+		.custom-layout(column; flex-start);
 	}
 }
