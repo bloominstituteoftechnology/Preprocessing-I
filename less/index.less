@@ -62,6 +62,8 @@ html, body {
 
 @mainColor: @alto;
 
+@fontStack: Arial, Helvetica, Times, sans-serif;
+
 @alto: #DDDADA;
 
 //mixin
@@ -79,6 +81,7 @@ html, body {
 	max-width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	font: @fontStack;
 }
 
 //Header and Nav
@@ -144,14 +147,14 @@ header {
 		h2{
 			font-size: 2rem;
 			.bottomPadding;
+			font-weight: bold;
 		}
 
 		p {
 			line-height: 1.25;
 		}
 
-		table {
-			border: 1px solid blue;
+		.work {
 			width: 100%;
 			.bottomPadding;
 
@@ -177,3 +180,40 @@ header {
 	}
 }
 
+.work-experience {
+	.bottomPadding;
+	margin-bottom: 30px;
+
+	h2 {
+		font-size: 2rem;
+		.bottomPadding;
+		font-weight: bold;
+		border-bottom: 1px solid @mainColor;
+		margin-bottom: 20px;
+	}
+	.work-1 {
+		width: 100%;
+		.bottomPadding;
+
+		tr {
+			border-bottom: 1px solid @mainColor;
+			text-align: center;
+
+			th {
+				.bottomPadding;
+				padding-top: 10px;
+				font-weight: bold;
+			}
+			
+			td {
+				.bottomPadding;
+				padding-top: 10px;
+			}
+		}
+		.shade-table {
+				background-color: @mainColor;
+		}
+
+
+	}
+}
