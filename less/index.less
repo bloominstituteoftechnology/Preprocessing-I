@@ -63,7 +63,7 @@ table {
 
 // colors
 @main-color: #323232;
-@white: white; //this is a var because designers might ask for a different white
+@white: white; // this is a variable because designers might ask for a different white
 @yellow: #ffbb00;
 @gradient-start: #115599;
 @gradient-end: crimson;
@@ -85,21 +85,24 @@ table {
 	}
 }
 
-.h2-styling() {
+.h2-styling(@color) {
 	font-size: 4.5rem;
 	font-style: italic;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
+	color: @color;
+	border-bottom: 1px dashed @color;
 }
 
-.tagline-styling() {
+.tagline-styling(@color) {
+	color: @color;
 	font-size: 2rem;
 	padding-bottom: 20px;
 	line-height: 1.3;
 	margin: 0 auto;
 }
 
-// Plain CSS to follow:
+// Standard CSS to follow:
 h1, h2, h3, h4, h5, h6 {
 	font-family: @header-font;
 	font-size: 62.5%;
@@ -154,7 +157,6 @@ html, body, a {
 				width: 80%;		
 			}
 		} // header media query end
-
 	} // header end
 
 	#about-me {
@@ -164,14 +166,11 @@ html, body, a {
 		height: 759px;
 
 		h2 {
-			.h2-styling;
-			color: @white;
-			border-bottom: 1px dashed @white;
+			.h2-styling(@white);
 		}
 
 		.tagline {
-			.tagline-styling;
-			color: @white;
+			.tagline-styling(@white);
 			width: 60%;
 		}
 
@@ -179,9 +178,10 @@ html, body, a {
 			height: 100%;
 			padding: 40px 0;
 		} // About Me media query end
-
 	}	// end About Me section
 
+
+	//start of Experience section
 	#experience {
 		.flex(row,wrap,space-around,center);
 		background-image: linear-gradient(to bottom right, @gradient-start, @gradient-end);
@@ -190,15 +190,12 @@ html, body, a {
 		padding-bottom: 20px;
 
 		h2 {
-			.h2-styling;
-			color: @white;
-			border-bottom: 1px dashed @white;
+			.h2-styling(@white);
 			margin-top: 100px;
 		}
 
 		.tagline {
-			.tagline-styling;
-			color: @white;
+			.tagline-styling(@white);
 			text-align: center;
 			width: 90%;
 		}
@@ -240,31 +237,27 @@ html, body, a {
 				width: 90%;
 			}
 		} // Experience media query end
+	} // End Experience section
 
-	} // end Experience section
 
+	// Start of Skills section
 	#skills {
-
 		.flex(row, wrap, center, flex-start);
 		padding-bottom: 100px;
 		background-image: url(../img/stripes.png);
 
 		h2 {
-			.h2-styling;
-			color: @main-color;
-			border-bottom: 1px dashed @main-color;
+			.h2-styling(@main-color);
 			margin-top: 100px;
 			display: block;
 		}
 
 		.tagline {
-			.tagline-styling;
-			color: @main-color;
+			.tagline-styling(@main-color);
 			text-align: center;
 			width: 90%;
 			margin-bottom: 80px;
 		}
-
 
 		.col {
 			width: 20%;
@@ -288,9 +281,10 @@ html, body, a {
 				width: 90%;
 			}
 		} // Skills media query end
-
 	} // end Skills section
 
+
+	// Start of Contact Section
 	#contact {
 
 		.flex(row, wrap, center, center);
@@ -298,16 +292,13 @@ html, body, a {
 		background-color: @yellow;
 
 		h2 {
-			.h2-styling;
-			color: @main-color;
-			border-bottom: 1px dashed @main-color;
+			.h2-styling(@main-color);
 			margin-top: 100px;
 			display: block;
 		}
 
 		.tagline {
-			.tagline-styling;
-			color: @main-color;
+			.tagline-styling(@main-color);
 			text-align: center;
 			width: 90%;
 			margin-bottom: 20px;
@@ -318,7 +309,7 @@ html, body, a {
 		}
 
 		input[type=text], select, textarea {
-			width: 92%;
+			width: 100%;
 			padding: 12px;   
 			border: 1px solid @main-color; 
 			border-radius: 4px; 
@@ -334,26 +325,29 @@ html, body, a {
 			padding: 12px 20px;
 			border: 1px solid @main-color;
 			border-radius: 4px;
-		}
-		
-		input[type=submit]:hover {
-			background-color: @main-color;
-			color: @white;
+			&:hover {
+				background-color: @main-color;
+				color: @white;
+			}
 		}
 
 		@media (max-width:500px) {
 			form {
-				margin-left: 8%
+				margin-left: 8%;
 			}
+
+			input[type=text], select, textarea {
+				width: 92%;
+			}	
 		} // end Contact media query
 	} //end Contact section
 
+	// Footer section (just to format copyright at page bottom)
 	footer {
 		.flex(row, nowrap, center, center);
 		height: 40px;
 		font-size: 1.2rem;
 		background: @main-color;
 		color: @white;
-	}
-
+	} //end footer
 } // end container
