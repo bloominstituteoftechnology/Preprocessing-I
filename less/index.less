@@ -54,7 +54,8 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background: black;
 }
 html{
 	font-size: 62.5%
@@ -62,5 +63,126 @@ html{
 
 h1,h2,h3,h4,h5,h6{
 	font-family: "Permanent Marker", cursive;
+}
+
+p,a,ul,ol,li{
+	font-family: "Markazi Text", sans-serif;
+}
+
+@containerBG: #393535;
+@mainColor: red;
+@altColor: whitesmoke;
+@marker: "Permanent Marker", cursive;
+
+.full-flex(@dir, @align){
+	display: flex;
+	flex-direction: @dir;
+	width: 100%;
+	justify-content: space-between;
+	align-items: @align;
+}
+
+.container{
+	max-width: 800px;
+	padding: 40px 40px 10px;
+	margin: 10px auto;
+	background: @containerBG;
+	@media only screen and (max-width: 500px) {
+		width: 450px;
+	}
+}
+
+header{
+	.full-flex(row, flex-start);
+	.headline{
+		.full-flex(column, baseline);
+		h1{
+			font-size: 5rem;
+			color: @mainColor;
+			margin-bottom: 20px;
+		}
+		
+		img{
+			margin: 20px 0;
+			width: 95%;
+			height: auto;
+			@media only screen and (max-width: 500px){
+				display: none;
+			}
+		}
+	}
+	.links{
+		margin: 15px 0 0;
+		width: 35%;
+		.full-flex(column, flex-end);
+		h3{
+			font-size: 2.5rem;
+			color: @altColor;
+			margin-bottom: 40px;
+		}
+		a{
+			font-family: @marker;
+			font-size: 4rem;
+			margin-bottom: 18px;
+			text-decoration: none;
+			color: @altColor;
+			&:hover{
+				color: @mainColor;
+			}
+		}
+		.blurb{
+			padding-left: 50px;
+			color:@altColor;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.main-content{
+	.full-flex(row, flex-start);
+	flex-wrap: wrap;
+	.skills{
+		width:50%;
+		h4{
+			font-size:2rem;
+			color: @altColor;
+			margin-bottom: 10px;
+		}
+		ul{
+			color: @altColor;
+			font-size:1.8rem;
+		}
+	}
+	.contact{
+		width:50%;
+		padding-left: 7%;
+		color: @altColor;
+		h5{
+			font-size:2rem;
+		}
+	}
+	.work-history{
+		padding: 20px 0;
+		width:100%;
+		ul{
+			option:first-child{
+				p{
+				font-family: @marker;
+				}
+			}
+			li{
+				.full-flex(row, flex-start);
+				
+			}
+		}
+	}
+}
+footer{
+	border-top: 2px solid @altColor;
+	padding-top: 10px;
+	width: 100%;
+	text-align: center;
+	color: @mainColor;
+	font-size: 1.8rem;
 }
 
