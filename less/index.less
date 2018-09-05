@@ -1,4 +1,7 @@
-// Is this working?
+
+
+//== CSS Reset =================================================================
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,4 +59,67 @@ table {
 html, body {
     height: 100%;
 }
+
+
+//== Boilerplate ===============================================================
+a:link {
+	text-decoration: none;
+	color: inherit;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
+}
+
+
+//== Theme =====================================================================
+
+@color-primary: #670319;
+@color-secondary: #435937;
+
+
+//== Layout ====================================================================
+
+@layout-width-desktop: 800px;
+@layout-width-mobile: 500px;
+
+.container {
+	margin: 0 auto;
+	max-width: @layout-width-desktop;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	.main-nav {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		border: 2px solid @color-primary;
+		background: blue;
+		.main-nav__bar {
+			display: flex;
+			flex-direction: column;
+			background: red;
+			width: 100%;
+			nav {
+				display: flex;
+				justify-content: space-evenly;
+			}
+		}
+		.main-nav__profile {
+			order: -1;
+			width: 12.8rem;
+			height: 12.8rem;
+		}
+		.main-nav__bar-fragment {
+			display: inline-block;
+			order: -2;
+			width: 12.8rem / 2;
+			height: 3.2rem;
+			background: green;
+		}
+	}
+}
+
 
