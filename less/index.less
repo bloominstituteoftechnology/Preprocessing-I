@@ -70,6 +70,16 @@ html {
 @mainFont: 'Montserrat', sans-serif;
 @accentFont: 'Raleway', sans-serif;
 
+// mix-ins
+.display(@justify){
+	display: flex;
+	justify-content: @justify;
+}
+.dispAlign(@align){
+	display: flex;
+	align-items: @align;
+}
+
 
 // base styles
 
@@ -88,13 +98,12 @@ html {
 	header {
 	
 		nav {
-		display: flex;
-		justify-content: flex-end;
+			.display(flex-end);
 			a {
-			margin: 20px;
-			text-decoration: none;
-			font-size: 2rem;
-			color: @mainColor;
+				margin: 20px;
+				text-decoration: none;
+				font-size: 2rem;
+				color: @mainColor;
 			}
 		}
 	}
@@ -105,8 +114,9 @@ html {
 
 .container {
 	.intro {
-		display: flex;
-		align-items: center;
+		//display: flex;
+		//align-items: center;
+		.dispAlign(center);
 		img {
 			border-radius: 50%;
 			border: 3px solid @mainColor;
@@ -135,9 +145,8 @@ html {
 
 .container {
 	.skills-history {
-		display: flex;
+		.display(space-around);
 		flex-wrap: wrap;
-		justify-content: space-around;
 		margin: 45px 0px 20px 0px;
 		h2 {
 			text-transform: uppercase;
@@ -174,8 +183,7 @@ html {
 
 .container {
 	.contact {
-		display: flex;
-		justify-content: space-between;
+		.display(space-between);
 		margin: 30px 0px;
 		color: @accentColor;
 		font-size: 1.8rem;
