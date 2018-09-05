@@ -4,68 +4,175 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+
+// V A R I A B L E S 
+
 
 @color-primary: #EDB5BD;
 @color-secondary: #BCDFD5;
+@color-offwhite: #f1f1f1;
 
 @font-primary: 'Abhaya Libre';
 @font-secondary: 'Montserrat';
 
-html, body {
+
+
+// M I X I N S 
+
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+
+// C S S  &  L E S S
+
+html,
+body {
   height: 100%;
   font-size: 62.5%;
-  background-color: @color-primary;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: @color-offwhite;
 }
 
 .nav {
@@ -74,39 +181,75 @@ html, body {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-}
-
-.nav__item {
-  font-family: @font-secondary;
-  font-size: 2.5rem;
-  padding: 0 3rem;
-  text-decoration: none;
-  color: @color-secondary;
   background-color: #000;
-}
 
-.nav__item:hover {
-  color: #fff;
+  .nav__item {
+    font-family: @font-secondary;
+    font-size: 2.5rem;
+    padding: 0 3rem;
+    text-decoration: none;
+    color: @color-secondary;
+    background-color: #000;
+  }
+  
+  .nav__item:hover {
+    color: @color-offwhite;
+  }
 }
 
 .hero {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 8rem;
+  flex-direction: row;
+  padding-top: 6rem;
+  height: 90vh;
+  background-color: @color-primary;
+  padding: 10rem;
+
+  .hero__textBox {
+    display: flex;
+    flex-direction: column;
+
+    .hero__textBox--headline {
+      font-family: @font-primary;
+      font-size: 14rem;
+      color: @color-secondary;
+      text-shadow: 2px 2px 5px black;
+    }
+    
+    .hero__textBox--subheadline {
+      font-family: @font-secondary;
+      font-size: 3rem;
+      color: @color-offwhite;
+      text-transform: uppercase;
+    }
+  }
+
+
+  .hero__imgBox {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5rem;
+
+    .hero__imgBox--img {
+      filter: grayscale(1);
+      height: 320px;
+      width: 263px;
+    }
+   
 }
 
-.hero__headline {
-  font-family: @font-primary;
-  font-size: 14rem;
-  color: @color-secondary;
-  text-shadow: 2px 2px 5px black;
-}
 
-.hero__subheadline {
-  font-family: @font-secondary;
-  font-size: 5rem;
-  color: #fff;
-  text-transform: uppercase;
-}
+.about {
+  background-color: @color-offwhite;
+  .flexCenter();
 
+  .about__headline {
+    font-size: 5rem;
+    color: #000;
+    font-family: @font-secondary;
+    text-transform: uppercase;
+  }
+}
+}
