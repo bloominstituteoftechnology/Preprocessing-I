@@ -142,30 +142,19 @@ table {
   box-sizing: border-box;
 }
 
-
 // V A R I A B L E S 
-
-
 @color-primary: #EDB5BD;
 @color-secondary: #BCDFD5;
 @color-offwhite: #f1f1f1;
-
 @font-primary: 'Abhaya Libre';
 @font-secondary: 'Montserrat';
-
-
-
 // M I X I N S 
-
-
 .flexCenter {
   display: flex;
   justify-content: center;
 }
 
-
 // C S S  &  L E S S
-
 html,
 body {
   height: 100%;
@@ -182,7 +171,8 @@ body {
   align-items: center;
   width: 100%;
   background-color: #000;
-
+  position: fixed;
+  
   .nav__item {
     font-family: @font-secondary;
     font-size: 2.5rem;
@@ -191,11 +181,12 @@ body {
     color: @color-secondary;
     background-color: #000;
   }
-  
   .nav__item:hover {
     color: @color-offwhite;
   }
 }
+
+
 
 .hero {
   display: flex;
@@ -206,50 +197,60 @@ body {
   height: 90vh;
   background-color: @color-primary;
   padding: 10rem;
-
   .hero__textBox {
     display: flex;
     flex-direction: column;
-
     .hero__textBox--headline {
       font-family: @font-primary;
       font-size: 14rem;
       color: @color-secondary;
       text-shadow: 2px 2px 5px black;
     }
-    
     .hero__textBox--subheadline {
       font-family: @font-secondary;
       font-size: 3rem;
       color: @color-offwhite;
       text-transform: uppercase;
+      align-self: flex-end;
+      text-shadow: 1px 1px 1px black;
     }
   }
-
-
   .hero__imgBox {
     display: flex;
     flex-direction: row;
     padding: 0 5rem;
-
     .hero__imgBox--img {
       filter: grayscale(1);
       height: 320px;
       width: 263px;
     }
-   
-}
-
-
-.about {
-  background-color: @color-offwhite;
-  .flexCenter();
-
-  .about__headline {
-    font-size: 5rem;
-    color: #000;
-    font-family: @font-secondary;
-    text-transform: uppercase;
   }
 }
-}
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: @color-offwhite;
+
+    .about__headline {
+      font-size: 5rem;
+      color: #000;
+      font-family: @font-secondary;
+      text-transform: uppercase;
+      padding-top: 5rem;
+    }
+
+    .about__text {  
+      font-family: @font-primary;
+      font-size: 3rem;
+      line-height: 2;
+      padding: 7rem 20rem;
+    }
+
+    .about__text--italic {
+      font-style: italic;
+      font-size: 3.2rem;
+    }
+  }
