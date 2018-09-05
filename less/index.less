@@ -59,4 +59,66 @@ html, body {
 html {
 	font-size: 62.5%;
 }
+.container {
+		width: 100%;
+}
+//mixins
+.divPreset(@padding-top) {
+	width: 95%;
+	padding-top: @padding-top;
+	margin: 0 auto;
+}
+//header
+header {
+	border: 1px solid red;
+	height: 7rem;
+	width: 90%;
+	margin: 0 auto;
+	nav {
+		height: 7rem;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		a {
+			padding: 2rem;
+			font-size: 1.7rem;
+			text-decoration: none;
+			color: black;
+		}
+	}
+}
+//first-visual
+.first-visual {
+	width: 90%;
+	margin: 0 auto;
+	border: 1px solid red;
+	height: 70rem;
+	background-color: lightgray;
+		.div1 {
+			.divPreset(5rem);
+				h4 {
+					font-size: 8.4rem;
+				}
+					h5 {
+						padding-bottom: 4rem;
+						font-size: 2.8rem;
+						border-bottom: 1px solid grey;
+					}
+		}
+		.div2 {
+			.divPreset(3rem);
+			p {
+				font-size: 3rem;
+			}
+			button {
+				border: 1px solid grey;
+				border-radius: 4%;
+				background-color: grey;
+				color: white;
+				font-size: 4rem;
+				padding: 1rem 2rem 1rem 2rem;
+			}
+		} 
+	}
+
 
