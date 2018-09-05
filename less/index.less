@@ -57,5 +57,83 @@ html, body {
     height: 100%;
 }
 /* initial commit */
+@myColor: black;
+@h1Size: 2.4rem;
+@pSize: 1.6rem;
+@titleSize: 3.6rem;
+@favColor: gray;
+@mobileValue: 500px;
+@defaultPercent: 100%;
+@defaultMargin: 2%;
+@defaultPadding: 2%;
+@fontStack: Helvetica, Arial, sans-serif;
+@borderBox: solid red 1px;
+.custom-layout(@direction,@justify, @align) {
+	display: flex;
+	justify-content: @justify;
+	flex-direction: @direction;
+	align-items: @align;
+  }
+html{
+	font-size: 62.5%;
+}
+.container{
+	max-width: 880px;
+	  margin: 0 auto;
+	  font-family: @fontStack;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+	padding-left: @defaultPadding;
+	padding-right: @defaultPadding;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: left;
+	font-size: @pSize;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color: #fff;
+}
+table th {
+    background-color: black;
+    color: white;
+}
+h1{
+	margin-top: 15px;
+	font-size: @h1Size;
+}
+p{
+	margin-top: 15px;
+	font-size: @pSize;
+}
+header {
+	.custom-layout(column,none, none);
+	width: 100%;
+	border: @borderBox;
+	h1 {
+	  font-size: @titleSize;	  
+	}
+  
+	nav {
+	  .custom-layout(row,space-between,none);
+	  align-self: flex-end;	  
+	  a {
+		font-size: 1.6rem;
+		margin: 10px;
+		text-decoration: none;
+
+		
+		&:hover {
+		  color: @favColor;
+		}
+	  }
+	}
+  }
 
 
