@@ -4,56 +4,252 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+.bordered() {
+  border: 1px solid blue;
+}
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+  font-size: 62.5%;
 }
 
+html,
+body {
+  height: 100%;
+}
+.container {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  background: lightgrey;
+}
+header {
+  display: flex;
+  justify-content: flex-end;
+  nav {
+    display: flex;
+    a {
+      margin: 10px;
+      color: grey;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      } 
+    } // a
+  } // nav
+} // header
+.cta {
+	.center();
+	width: 80%;
+	display: flex;
+	margin-top: 10px;
+	flex-direction: column;
+	background: lightcyan;
+	padding: 20px;
+	margin: 0 auto;
+	.top-cta {
+		margin-bottom: 10px;
+		line-height: 2;
+		h1 {
+			font-size: 3rem;
+		}
+	}
+}
+.cta {
+	.bot-cta {
+		padding-top: 20px;
+		display: flex;
+		border-top: 1px solid grey;
+		margin-top: 5px;
+		margin-bottom: 30px;
+		flex-direction: column;
+		p {
+			width: 80%;
+		}
+		button {
+			width: 120px;
+			height: 35px;
+			margin-top: 20px;
+			background: darkgray;
+			color: white;
+			margin-left: 20px;
+			&:hover {
+				background: black;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.main-content {
+	margin-top: 20px;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	.top-content {
+		width: 40%;
+		line-height: 1.4;
+		h2 {
+			font-size: 3rem;
+			
+		}
+	}
+	.bot-content {
+		width: 38%;
+		
+		line-height: 1.4;
+		h2 {
+			text-align: center;
+			font-size: 3rem;
+			
+		}
+		ul {
+			li {
+				
+				text-align: center;
+				padding: 10px 0;
+				border-bottom: 1px solid grey;
+				border-left: 1px solid grey;
+				border-right: 1px solid grey;
+				&:first-child {
+					border-top: 1px solid grey;
+				}
+			}
+		}
+	}
+}
