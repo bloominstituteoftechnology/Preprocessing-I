@@ -147,7 +147,12 @@ html {
   justify-content: flex-start;
   align-items: center;
 }
-.header {
+@media (max-width: 500px) {
+  .container {
+    width: 450px;
+  }
+}
+.container .header {
   width: 100%;
   height: 82px;
   display: flex;
@@ -155,43 +160,57 @@ html {
   justify-content: flex-end;
   align-items: center;
 }
-.header nav {
+.container .header nav {
   width: 35%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.header nav a {
+.container .header nav a {
   text-decoration: none;
   font-size: 1.7rem;
   color: black;
 }
-.cta {
+@media (max-width: 500px) {
+  .container .header nav {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .container .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+  }
+}
+.container .cta {
   background: #E6E9ED;
   padding: 62px 31px 80px;
 }
-.cta img {
+.container .cta img {
   width: 300px;
   height: auto;
 }
-.cta h1 {
+.container .cta h1 {
   font-size: 5.099rem;
   margin-top: 10px;
 }
-.cta h3 {
+.container .cta h3 {
   margin-top: 20px;
   font-size: 1.9rem;
 }
-.cta .title {
+.container .cta .title {
   padding-bottom: 27px;
   border-bottom: 1px solid lightgray;
   margin-bottom: 30px;
 }
-.cta .action p {
+.container .cta .action p {
   line-height: 20px;
 }
-.cta .action button {
+.container .cta .action button {
   width: 157px;
   height: 48px;
   background: #757575;
@@ -201,7 +220,7 @@ html {
   color: white;
   font-size: 2.1rem;
 }
-.main-content {
+.container .main-content {
   width: 100%;
   padding-top: 36px;
   display: flex;
@@ -209,73 +228,92 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.main-content div {
+@media (max-width: 500px) {
+  .container .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.container .main-content div {
   width: 50%;
   height: 321px;
 }
-.main-content .listen h2 {
+@media (max-width: 500px) {
+  .container .main-content .listen {
+    width: 100%;
+  }
+}
+.container .main-content .listen h2 {
   font-size: 3.2rem;
   font-weight: 400;
 }
-.main-content .listen p {
+.container .main-content .listen p {
   padding-top: 15px;
   line-height: 24px;
 }
-.main-content .stuff {
+.container .main-content .stuff {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding-left: 15px;
 }
-.main-content .stuff h2 {
+@media (max-width: 500px) {
+  .container .main-content .stuff {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+.container .main-content .stuff h2 {
   font-size: 2.4rem;
   font-weight: 300;
 }
-.main-content .stuff ul {
+.container .main-content .stuff ul {
   width: 100%;
   margin-top: 8px;
   border: 1px solid #757575;
   border-bottom: none;
   border-radius: 3px;
 }
-.main-content .stuff ul li {
+.container .main-content .stuff ul li {
   height: 49px;
   padding-left: 20px;
   padding-top: 17px;
   border-bottom: 1px solid #757575;
 }
-.history {
+.container .history {
   width: 100%;
 }
-.history h2 {
+.container .history h2 {
   font-size: 2.4rem;
   font-weight: 400;
 }
-.history table {
+.container .history table {
   width: 100%;
   margin-top: 10px;
 }
-.history table tr {
+.container .history table tr {
   border-top: solid 1px #F0F0F0;
 }
-.history table th {
+.container .history table th {
   height: 49px;
   padding-top: 16px;
   padding-left: 11px;
   text-align: left;
   font-weight: 600;
 }
-.history table td {
+.container .history table td {
   height: 49px;
   padding-top: 16px;
   padding-left: 11px;
   width: 25%;
 }
-.history table tbody tr:nth-child(odd) {
+.container .history table tbody tr:nth-child(odd) {
   background-color: #F0F0F0;
 }
-.footer {
+.container .footer {
   width: 100vw;
   text-align: center;
   margin-top: 35px;
