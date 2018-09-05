@@ -95,6 +95,7 @@ header{
 	h1{
 		font-size: 3.8rem;
 		color: @accentColor;
+		padding-left:5%;
 
 	}
 	nav{
@@ -119,6 +120,7 @@ header{
 			margin:10px;
 			text-decoration: none;
 			color: #c9c9c9;
+			
 			
 
 			&:hover {
@@ -153,7 +155,10 @@ header{
 	border-radius: 8%;
 	background-attachment: scroll;
 	@media (max-width: 500px){
-		align-items: center;}
+		align-items: center;
+		.flex-layout(flex, 5%);
+	
+	}
 
 	.img-holder{ 
 
@@ -193,8 +198,9 @@ header{
 	.flex-layout(flex, 5%);
 	
 	background-attachment: scroll;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	// justify-content: space-between;
+	
+	
 	max-width: 600px;
 
 	@media (max-width: 500px){
@@ -216,17 +222,20 @@ header{
 
 	
 	.skills{
-		max-width: 40%;
+		max-width: 50%;
 		background: #69e0c0;
 		padding: 5%;
-		margin-left: -5%;
+		// margin-left: -5%;
 		border-radius:8%;
+
+
 		@media (max-width: 500px){
 
 			.flex-layout(flex, 5%);
 			background: @accentColor;
 			flex-flow: column wrap;
 			width: 100%;
+			max-width:100%;
 			border-radius: 8%;
 			background-attachment: scroll;
 			justify-content: center;
@@ -237,12 +246,31 @@ header{
 		ul{
 			padding-top: 10%;
 			color: #878787;
+
+			@media(max-width:500px){
+				flex-flow: column wrap;
+				max-width: 100%;
+				justify-content: center;
+				align-items: center;
+			}
 		}	
 	}
 
 	.work-history{
-		max-width: 60%;
+		.flex-layout(flex, 5%);
+		justify-content: center;
+		flex-flow: column wrap;
+		align-items: center;
+		width: 60%;
 		background: #F2F2F2;
+		border-radius: 8%;
+		margin-left: 10%;
+
+		@media (max-width:500px){
+			width: 100%;
+			margin-left: 0;
+		}
+
 	}
 
 }
