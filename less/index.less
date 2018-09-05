@@ -180,12 +180,22 @@ html {
 
 header {
 	display: flex;
-	margin: 20px 0;
+	padding: 20px 0;
+	background: @boxColor;
 	
 	nav {
 		width: 100%;
 		display: flex;
 		justify-content: space-around;
+
+		@media (max-width: 500px) {
+			.center;
+			flex-direction: column;
+		}
+	a {
+		font-size: 1.5rem;
+		padding: 1%;
+	}
 	}
 }
 
@@ -193,6 +203,11 @@ header {
 	display: flex;
 	background: @mainColor;
 	padding: 5%;
+
+	@media (max-width: 500px) {
+		.center;
+		flex-direction: column;
+	}
 
 	.photo {
 		.center;
@@ -206,14 +221,35 @@ header {
 	background: @boxColor;
 	padding: 2.5%;
 
+	@media (max-width: 500px) {
+		.center;
+		flex-direction: column;
+		padding: 5% 0;		
+	}
+
+	.skills {
+		.center;
+		flex-direction: column;
+		margin-bottom: 2%;
+
+		h3 {
+			border-bottom: 1px solid black; 
+		}
+	}
+
+	.workhistory {
+		.center;
+		flex-direction: column;
+
+		h3 {
+			border-bottom: 1px solid black;
+		}
+	}
+
 	li {
 		font-size: 2.4rem;
 	}
 
-	h3 {
-		display: inline;
-		// border-bottom: 1px solid black;
-	}
 }
 
 address {
