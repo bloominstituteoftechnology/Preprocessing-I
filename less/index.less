@@ -153,109 +153,158 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 nav {
-  .flexLayout(space-evenly);
-  max-width: 100%;
-  background-color: black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: solid black 1px;
-  a {
-    width: 100%;
-    color: white;
-    font-size: @fontSize;
-    font-weight: bold;
-    text-decoration-line: none;
-    border: solid black 1px;
-    padding: 10px 4%;
-
-    &:hover {
-      color: blue;
-    }
-  }
+	.flexLayout(space-evenly);
+	max-width: 100%;
+	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: solid black 1px;
+	a {
+	  color: white;
+	  font-size: @fontSize;
+	  font-weight: bold;
+	  text-decoration-line: none;
+	  border: solid black 1px;
+	  padding: 10px 4%;
+  
+	  &:hover {
+		color: blue;
+	  }
+	}
 }
+  .container {
+    .profile {
+      .flexLayout(space-between);
+      margin-top: 30px;
 
-.container {
-  .profile {
-    .flexLayout(space-between);
-    align-items: center;
-    margin-top: 50px;
-
-    p {
-      font-size: @fontSize;
-      padding: 5%;
-      border: solid black 2px;
-      margin: 0 5%;
-    }
-
-    img {
-      max-width: 100%;
-	  height: auto;
-	  border: solid black 4px;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 4rem;
-      font-weight: bold;
-    }
-
-    h3 {
-      text-align: center;
-      font-size: 3rem;
-    }
-
-    .about-me h2 {
-      .flexLayout(center);
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      margin-top: 170px;
-      text-decoration-line: underline;
-    }
-  }
-
-  .skills {
-    .flexLayout(space-around);
-    margin-top: 50px;
-
-    h2 {
-      font-size: 3rem;
-      text-decoration-line: underline;
-      margin-bottom: 10px;
-    }
-    ol {
-      .flexLayout(center);
-      flex-direction: column;
-      align-items: center;
-      padding: s0px 20%;
-
-      li {
-        font-style: italic;
+      p {
         font-size: @fontSize;
-        line-height: 1.5;
+        padding: 5%;
+        border: solid black 2px;
+        margin: 0 5%;
       }
-    }
 
-    table {
-      width: 500px;
-      height: 100px;
-      th {
+      img {
+        max-width: 100%;
+        height: auto;
+        border: solid black 4px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 3rem;
+      }
+
+      .about-me h2 {
+        .flexLayout(center);
         font-size: 2rem;
         font-weight: bold;
-		border: 2px solid black;
-		text-decoration-line: underline;
+        margin-bottom: 20px;
+        margin-top: 37px;
+        text-decoration-line: underline;
+      }
+      @media (max-width: 650px) {
+        background-color: #45a049;
+      }
+    }
+
+    .skills {
+      border-top: black solid 1px;
+      padding-top: 50px;
+      .flexLayout(space-around);
+      margin-top: 50px;
+
+      h2 {
+        font-size: 3rem;
+        text-decoration-line: underline;
+        margin-bottom: 10px;
+      }
+      ol {
+        .flexLayout(center);
+        flex-direction: column;
+        align-items: center;
+        padding: s0px 20%;
+
+        li {
+          font-style: italic;
+          font-size: @fontSize;
+          line-height: 1.5;
+        }
       }
 
-      td {
-        text-align: center;
-        font-size: @fontSize;
-        border: 2px solid black;
+      .work {
+        h2 {
+          margin-left: 32%;
+        }
+
+        table {
+          width: 500px;
+          height: 100px;
+          th {
+            font-size: 2rem;
+            font-weight: bold;
+            border: 2px solid black;
+            text-decoration-line: underline;
+          }
+
+          td {
+            text-align: center;
+            font-size: @fontSize;
+            border: 2px solid black;
+          }
+        }
+      }
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 10%;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .column {
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px 5% 0 0;
+    }
+
+    .contact {
+      margin-top: 50px;
+      border-top: black solid 1px;
+
+      h2 {
+        text-decoration-line: underline;
+        margin-top: 30px;
+        font-size: 3rem;
       }
     }
   }
-}
