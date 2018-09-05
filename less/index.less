@@ -53,10 +53,10 @@ table {
 @lightgrey: lightgrey;
 @grey: grey;
 //mixins
-.flex {
+.flex() {
 	display: flex;
 }
-.backgroundGrey {
+.backgroundGrey() {
 	background: @lightgrey;
 }
 
@@ -85,6 +85,10 @@ html, body {
 			text-decoration: none;
 			color: black;
 			margin-left: 3%;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 		@media (max-width: 500px) {
 			flex-direction: column;
@@ -130,7 +134,7 @@ html, body {
 				display: block;
 				margin: 0 auto;
 			}
-			h1, h3 {
+			h1, h3, p {
 				text-align: center;
 			}
 			button {
@@ -174,6 +178,7 @@ html, body {
 			.summary,
 			.strengths {
 				width: 100%;
+				padding: 0 2%;
 			}
 			.summary {
 				margin-bottom: 20px;
@@ -204,6 +209,9 @@ html, body {
 			strong {
 				font-weight: bold;
 			}
+		}
+		@media (max-width: 500px) {
+			padding: 0 2%;
 		}
 	}
 	footer {
