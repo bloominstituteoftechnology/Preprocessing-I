@@ -133,9 +133,14 @@ table {
 * {
 	box-sizing: border-box;
 }
+@sinbad: #a6d9d2;
+@fontz: 1.6rem;
 
 .padding() {
 	padding: 3.40%;
+}
+.radius() {
+	border: 1px solid lightgrey;
 }
 
 html {
@@ -151,7 +156,7 @@ body {
 .container {
 	width: 880px;
 	margin: 0 auto;
-	font-size: 1.6rem;
+	font-size: @fontz;
 	@media (max-width: 500px) {
 		width: 100%;
 	}
@@ -181,7 +186,8 @@ body {
 }
 .introduction-section {
 	.padding();
-	background: lightseagreen;
+	background: @sinbad;
+	border-radius: 5px;
 	h2 {
 		font-size: 3.5rem;
 		padding: 15px 0;
@@ -189,6 +195,7 @@ body {
 	img {
 		width: 48%;
 		height: auto;
+		border-radius: 5px;
 	}
 
 	p {
@@ -203,7 +210,7 @@ body {
 		padding: 16px 3.63rem;
 		text-align: center;
 		text-decoration: none;
-		font-size: 1.6rem;
+		font-size: @fontz;
 		margin: 40px 0 20px;
 		-webkit-transition-duration: 0.4s; /* Safari */
 		transition-duration: 0.4s;
@@ -261,14 +268,14 @@ body {
 		margin-bottom: 40px;
 	}
 	table {
-		border: 1px solid grey;
+		.radius();
 		width: 100%;
 		margin-top: 20px;
 		tr {
-			border: 1px solid grey;
+			.radius();
 
 			th {
-				border: 1px solid grey;
+				.radius();
 				padding: 5px;
 				font-size: 2rem;
 				padding: 10px 0px;
