@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -169,32 +169,42 @@ header {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  align-items: flex-start;
-}
-header .headline {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-between;
-  align-items: baseline;
-}
-header .headline h1 {
-  font-size: 5rem;
-  color: red;
+  align-items: center;
   margin-bottom: 20px;
 }
-header .headline img {
+header h1 {
+  font-size: 5rem;
+  color: red;
+}
+header h3 {
+  font-size: 2.5rem;
+  color: whitesmoke;
+}
+@media only screen and (max-width: 500px) {
+  header {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+.headline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.headline img {
   margin: 20px 0;
-  width: 95%;
+  width: 60%;
   height: auto;
 }
 @media only screen and (max-width: 500px) {
-  header .headline img {
+  .headline img {
     display: none;
   }
 }
-header .links {
-  margin: 15px 0 0;
+.headline .links-and-blurb {
+  margin: 20px 0;
   width: 35%;
   display: flex;
   flex-direction: column;
@@ -202,25 +212,50 @@ header .links {
   justify-content: space-between;
   align-items: flex-end;
 }
-header .links h3 {
-  font-size: 2.5rem;
-  color: whitesmoke;
-  margin-bottom: 40px;
+@media only screen and (max-width: 500px) {
+  .headline .links-and-blurb {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
-header .links a {
+.headline .links-and-blurb .links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 500px) {
+  .headline .links-and-blurb .links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+}
+.headline .links-and-blurb .links a {
   font-family: "Permanent Marker", cursive;
   font-size: 4rem;
   margin-bottom: 18px;
   text-decoration: none;
   color: whitesmoke;
 }
-header .links a:hover {
+.headline .links-and-blurb .links a:hover {
   color: red;
 }
-header .links .blurb {
+.headline .links-and-blurb .blurb {
   padding-left: 50px;
   color: whitesmoke;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+@media only screen and (max-width: 500px) {
+  .headline .links-and-blurb .blurb {
+    padding: 0;
+    border-top: 2px solid whitesmoke;
+    padding-top: 20px;
+  }
 }
 .main-content {
   display: flex;
@@ -248,25 +283,62 @@ header .links .blurb {
   color: whitesmoke;
 }
 .main-content .contact h5 {
-  font-size: 2rem;
+  font-size: 2.3rem;
+}
+@media only screen and (max-width: 500px) {
+  .main-content .contact h5 {
+    font-family: "Markazi Text", sans-serif;
+    font-size: 1.8rem;
+  }
+}
+.main-content .contact p {
+  margin-top: 10px;
 }
 .main-content .work-history {
   padding: 20px 0;
   width: 100%;
 }
-.main-content .work-history ul option:first-child p {
-  font-family: "Permanent Marker", cursive;
+.main-content .work-history ul {
+  border-top: 2px solid whitesmoke;
+  padding-top: 20px;
 }
-.main-content .work-history ul li {
+.main-content .work-history li {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
 }
+@media only screen and (max-width: 500px) {
+  .main-content .work-history li {
+    border-bottom: whitesmoke 1px dashed;
+  }
+}
+.main-content .work-history li p {
+  width: 33%;
+  color: whitesmoke;
+  font-size: 1.6rem;
+}
+.main-content .work-history li .table-heading {
+  font-family: "Permanent Marker", cursive;
+  padding-bottom: 10px;
+}
+.main-content .work-history li .year {
+  text-align: right;
+  width: 10%;
+}
+.main-content .work-history li .role {
+  padding-left: 50px;
+  width: 59%;
+}
+@media only screen and (max-width: 500px) {
+  .main-content .work-history li .role {
+    padding-left: 20px;
+  }
+}
 footer {
   border-top: 2px solid whitesmoke;
-  padding-top: 10px;
+  padding-top: 20px;
   width: 100%;
   text-align: center;
   color: red;
