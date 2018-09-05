@@ -115,8 +115,13 @@ header{
 	margin : 10px 0 20px 0;
 	.layout(space-around, center);
 
+	@media( max-width: @mobileValue ) {
+		flex-direction:  column;
+	  }
+
+
 	.bio{
-.border(1px, red);
+
 margin-top : 30px;
 		width : 45%;
 		.layout (space-around, center);
@@ -132,12 +137,14 @@ margin-top : 30px;
 	}
 
 	.skill{
-		.border(1px, red);
+
 		.layout(center, center);
 		flex-direction : column; 
 		align-items: center;
 		width : 45%;
-
+		@media( max-width: @mobileValue ) {
+			margin-top : 10px;
+		}
 		h2 {
 			margin-bottom : 10px;
 		}
@@ -150,12 +157,20 @@ margin-top : 30px;
 			padding-top : 10px;
 			background : lightblue;
 			color : red;
+			@media( max-width: @mobileValue ) {
+				width : 60%;
+			}
 		}
 	}
 }
 
 .bottom{
 	.layout(space-between, center);
+
+	@media( max-width: @mobileValue ) {
+		flex-direction : column;
+	}
+
 	h2{
 		margin-bottom : 10px;
 	}
@@ -164,7 +179,9 @@ margin-top : 30px;
 		width : 45%;
 		.layout(space-between, center);
 		flex-direction:column;
-		
+		@media( max-width: @mobileValue ) {
+			margin-top : 10px;
+		}
 	
 		li{
 			list-style-type: square;
@@ -180,6 +197,10 @@ margin-top : 30px;
 		align-items: center;
 
 		width : 45%;
+
+		@media( max-width: @mobileValue ) {
+			margin-top : 10px;
+		}
 		p {margin : 5px 5px 5px 0;}
 	}
 }
