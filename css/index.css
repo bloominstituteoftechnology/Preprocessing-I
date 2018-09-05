@@ -175,14 +175,15 @@ h1 {
 p {
   margin-top: 15px;
   font-size: 1.6rem;
+  line-height: 2;
 }
 header {
   display: flex;
   justify-content: none;
   flex-direction: column;
   align-items: none;
+  flex-wrap: nowrap;
   width: 100%;
-  border: solid red 1px;
 }
 header h1 {
   font-size: 3.6rem;
@@ -192,7 +193,13 @@ header nav {
   justify-content: space-between;
   flex-direction: row;
   align-items: none;
+  flex-wrap: nowrap;
   align-self: flex-end;
+}
+@media (max-width: 500px) {
+  header nav {
+    align-self: center;
+  }
 }
 header nav a {
   font-size: 1.6rem;
@@ -201,4 +208,123 @@ header nav a {
 }
 header nav a:hover {
   color: gray;
+}
+.header-content {
+  background-color: #F5F4F3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+.header-content .header-top {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px gray;
+}
+.header-content .header-top img {
+  width: 30%;
+  height: auto;
+  border-radius: 8px;
+}
+.header-content .header-top h2 {
+  font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  .header-content .header-bottom {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.header-content .header-bottom p {
+  width: 80%;
+}
+@media (max-width: 500px) {
+  .header-content .header-bottom p {
+    width: 100%;
+  }
+}
+.header-content .header-bottom button {
+  background-color: darkgray;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+}
+.main-content {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+  align-items: none;
+  flex-wrap: wrap;
+}
+.main-content .top-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: none;
+  flex-wrap: nowrap;
+}
+@media (max-width: 500px) {
+  .main-content .top-content {
+    flex-wrap: wrap;
+  }
+}
+.main-content .top-content div {
+  width: 45%;
+}
+@media (max-width: 500px) {
+  .main-content .top-content div {
+    width: 100%;
+  }
+}
+.main-content .bottom-content {
+  width: 100%;
+}
+.container footer {
+  text-align: center;
+  width: 100%;
+  background-color: darkgray;
+}
+.container-contact {
+  /* Style inputs with type="text", select elements and textareas */
+  /* Style the submit button with a specific background color etc */
+  /* When moving the mouse over the submit button, add a darker green color */
+  /* Add a background color and some padding around the form */
+}
+.container-contact input[type=text],
+.container-contact select,
+.container-contact textarea {
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */;
+}
+.container-contact input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container-contact input[type=submit]:hover {
+  background-color: #45a049;
+}
+.container-contact .container-contact {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.container-contact label {
+  font-size: 3.6rem;
 }
