@@ -4,6 +4,7 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Source+Serif+Pro');
 html,
 body,
 div,
@@ -152,9 +153,10 @@ html {
 }
 
 // variables
-@font-stack: Georgia,
-Helvetica,
-Arial;
+@font-stack: 'Roboto',
+serif;
+@title-font: 'Source Serif Pro',
+serif;
 @font-color: #444;
 @font-size: 1.6rem;
 @border-color: #666;
@@ -173,8 +175,8 @@ Arial;
 
 body {
     font-family: @font-stack;
-	color: @font-color;
-	height: 100%;
+    color: @font-color;
+    height: 100%;
 }
 
 .container {
@@ -184,121 +186,114 @@ body {
     background: @background-color;
     border: solid @border-color;
     border-width: 8px 0 2px 0;
-	a {
+    a {
         color: @link-color;
         &:hover {
             text-decoration: none;
         }
     }
-
-
-header {
-    nav {
-        margin: 0 3%;
-		.flex;
-	
-		@media (max-width: 500px) {
-			flex-direction: column;
-			a {
-			text-align:center;
-			padding: 10px 0;
-			flex-wrap: wrap;
-			.bor-bot();
-			}  
-		}
-	
-	}
-	
-}
-
-.main-content {
-	h2 {
-        font-size: 2rem;
-    }
-    .italicized {
-        font-style: italic;
-    }
-    h3 {
-        font-size: 1.8rem;
-    }
-    p {
-        font-size: 1.4rem;
-        padding: 10px 0;
-    }
-    div {
-        padding: 20px 2.5%;
-    }
-    .intro {
-        .flex;
-        justify-content: space-between;
-        .bor-bot;
-        margin: 30px 0;
-		@media (max-width: 500px) {
-			flex-direction: column;
-			text-align:center;
-			flex-wrap: wrap;
-		   }
-		
-		.left {
-            h1 {
-                font-size: 3.5rem;
-                text-transform: uppercase;
-                letter-spacing: 3px;
-            }
-            h2 {
-                text-transform: uppercase;
-                letter-spacing: 2px;
+    header {
+        nav {
+            margin: 0 3%;
+            .flex;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                a {
+                    text-align: center;
+                    padding: 10px 0;
+                    flex-wrap: wrap;
+                    .bor-bot();
+                }
             }
         }
     }
-    .profile {
-        .flex;
-        .bor-bot;
-		@media (max-width: 500px) {
-			flex-direction: column;
-			text-align:center;
-			flex-wrap: wrap;
-		   }
-	}
-    .skills {
-        .bor-bot;
-        .flex;
-        p {
-            font-size: 1.2rem;
-		}
-		
-		@media (max-width: 500px) {
-			flex-direction: column;
-			text-align:center;
-			flex-wrap: wrap;
-		   }
-    }
-    .work-history {
-        .bor-bot;
-		.flex;
-		@media (max-width: 500px) {
-			flex-direction: column;
-			text-align:center;
-			flex-wrap: wrap;
-		   }
-    }
-    .education {
-        .bor-bot();
-        display: flex;
+    .main-content {
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: @title-font;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-family: @title-font;
+        }
         .italicized {
-            justify-content: flex-start;
-		}
-		@media (max-width: 500px) {
-			flex-direction: column;
-			text-align:center;
-			flex-wrap: wrap;
-		   }
+            font-style: italic;
+        }
+        h3 {
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1.4rem;
+            padding: 10px 1%;
+        }
+        div {
+            padding: 20px 2.5%;
+        }
+        .intro {
+            .flex;
+            justify-content: space-between;
+            .bor-bot;
+            margin: 30px 0;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+            .left {
+                h2 {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .profile {
+            .flex;
+            .bor-bot;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+        .skills {
+            .bor-bot;
+            .flex;
+            p {
+                font-size: 1.2rem;
+            }
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+        .work-history {
+            .bor-bot;
+            .flex;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+        .education {
+            .bor-bot();
+            display: flex;
+            .italicized {
+                justify-content: flex-start;
+            }
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+    }
+    footer {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 1.6rem;
     }
 }
-footer {
-	padding: 10px 0;
-	text-align: center;
-	font-size: 1.6rem;
-}
-}
-
