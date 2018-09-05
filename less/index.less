@@ -95,6 +95,12 @@ header {
         border-bottom: 1px solid gray;
         padding-bottom: 10px;
 
+        @media (max-width: 500px){
+            flex-direction: column;
+            align-items: center;
+            border-bottom: none;
+        }
+
         a {
             color: gray;
             text-decoration: none;
@@ -102,7 +108,15 @@ header {
             &:hover {
                 color: purple;
             }
+
+            @media (max-width: 500px){
+                margin-bottom: 10px;
+                border-bottom: 1px solid black;
+                width: 100%;
+                text-align: center;
+            }
         }
+
     }
 }
 
@@ -118,6 +132,7 @@ header {
         width: 20%;
         height: auto;
         margin-bottom: 10px;
+        border-radius: 50%;
     }
 
     h1 {
@@ -133,6 +148,8 @@ header {
 
     p {
         .p();
+        width: 80%;
+        margin: 0 auto;
     }
 
     .button-div {
@@ -148,6 +165,10 @@ header {
             color: blue;
             margin-top: 20px;
 
+            @media(max-width: 500px) {
+                width: 40%;
+            }
+
         }
     }
 
@@ -155,6 +176,7 @@ header {
 
 .main-content {
     border-top: 1px solid gray;
+    padding-top: 15px;
     margin: 20px;
     display: flex;
 
@@ -174,7 +196,6 @@ header {
 }
 
 .attributes {
-    border: 1px dashed black;
     background: @secondaryColor;
     h2 {
         .header2(pink);

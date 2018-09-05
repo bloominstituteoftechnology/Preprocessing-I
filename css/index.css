@@ -154,12 +154,27 @@ header nav {
   border-bottom: 1px solid gray;
   padding-bottom: 10px;
 }
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+  }
+}
 header nav a {
   color: gray;
   text-decoration: none;
 }
 header nav a:hover {
   color: purple;
+}
+@media (max-width: 500px) {
+  header nav a {
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+  }
 }
 .cta {
   background-color: lightgray;
@@ -173,6 +188,7 @@ header nav a:hover {
   width: 20%;
   height: auto;
   margin-bottom: 10px;
+  border-radius: 50%;
 }
 .cta h1 {
   font-size: 3rem;
@@ -189,6 +205,8 @@ header nav a:hover {
 .cta p {
   line-height: 1.5;
   margin: 5px 2%;
+  width: 80%;
+  margin: 0 auto;
 }
 .cta .button-div {
   display: flex;
@@ -203,8 +221,14 @@ header nav a:hover {
   color: blue;
   margin-top: 20px;
 }
+@media (max-width: 500px) {
+  .cta .button-div button {
+    width: 40%;
+  }
+}
 .main-content {
   border-top: 1px solid gray;
+  padding-top: 15px;
   margin: 20px;
   display: flex;
 }
@@ -223,7 +247,6 @@ header nav a:hover {
   margin: 5px 2%;
 }
 .attributes {
-  border: 1px dashed black;
   background: red;
 }
 .attributes h2 {
