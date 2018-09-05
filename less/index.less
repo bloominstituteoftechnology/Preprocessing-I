@@ -121,11 +121,11 @@ header{
 
 
 	.bio{
-
-margin-top : 30px;
+		margin-top : 30px;
 		width : 45%;
-		.layout (space-around, center);
+		.layout(space-around, center);
 		flex-direction: column;
+		
 		img {
 			width : 50%;
 			height : auto;
@@ -202,5 +202,38 @@ margin-top : 30px;
 			margin-top : 10px;
 		}
 		p {margin : 5px 5px 5px 0;}
+	}
+}
+
+// PORTFOLIO Section
+
+.portfolios{
+	width : 100%;
+	.layout(flex-start, space-around);
+	flex-wrap : wrap;
+	margin-top : 15px;
+
+	@media( max-width: @mobileValue ) {
+		flex-direction : column;
+		align-items: center;
+	}
+
+	.item{
+		.border(1px;red);
+		width : 31%;
+		height : 300px;
+		margin : 10px 1%;
+		.layout(center, center);
+		flex-direction : column;
+		text-align:center;
+	
+		@media( max-width: @mobileValue ) {
+			width : 50%;
+		}
+		h3, p{
+			margin : 10px 0;
+		}
+
+		
 	}
 }
