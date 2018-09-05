@@ -95,23 +95,34 @@ body {
 }
 
 .container {
+
 	nav {
 		.justify(flex-end, no-wrap);
 		.bgDecorate(@fireBrick, 0px 2px 4px gray);
 		padding: 20px 0px;
 		width: 100%;
+		@media (max-width: 500px) {
+			flex-direction: column;
+			justify-content: center;
+		}
 
 		a{
 			margin-left: 20px;
 			margin-right: 10px;
 			.fontDecorate(none, 2rem, lightgray, none);
+			@media (max-width: 500px) {
+				display:flex;
+				justify-content: center;
+				padding: 10px 0px;
+				border-top: 1px solid lightgray;
+				border-bottom: 1px solid lightgray;
+				margin: 0px;
+			}
 		}
 
 
 	}
-}
 
-.container {
 	header {
 		.justify(space-evenly, wrap);
 		margin: 2% 2%;
@@ -127,6 +138,11 @@ body {
 			h1 {
 				.fontDecorate(bold, 4rem, black, underline);
 				margin-bottom: 15px;
+
+				@media (max-width: 500px) {
+					display: flex;
+					align-text: center;
+				}
 			}
 
 			p {				
@@ -142,10 +158,21 @@ body {
 
 			}
 		}
+
+		.profile {
+			@media (max-width:500px) {
+				width: 100%;
+			}
+			
+		}
 	}
 	.fit-skills {
 		.justify(space-between, wrap);
 		margin: 2% 2%;
+		@media (max-width: 500px) {
+			display: no-flex;
+	}
+
 
 		.intro {
 			
@@ -153,6 +180,9 @@ body {
 			width: 48%;
 			.bgDecorate(white, 0px 2px 4px gray);
 			
+			@media (max-width: 500px) {
+					width: 100%;
+			}
 
 			h2 {
 				.headerDecorate(10%, 10%, 2%, 2%);
@@ -173,6 +203,11 @@ body {
 			height: 90%;
 			.bgDecorate(white, 0px 2px 4px gray);
 
+			@media (max-width: 500px) {
+				width: 100%;
+				margin-top: 5%;
+			}
+
 			h3 {
 				.headerDecorate(10%, 10%, 2%, 2%);
 			}
@@ -181,6 +216,9 @@ body {
 				padding: 10px 0px;
 				border-bottom: 1px solid gray;
 				border-top: 1px solid gray;
+				@media (max-width: 500px) {
+					margin: 2% 2%;
+				}
 			}
 
 		}
