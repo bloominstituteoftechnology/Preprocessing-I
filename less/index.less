@@ -53,7 +53,37 @@ table {
     box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 html, body {
     height: 100%;
 }
 
+//variables
+@fontStack: Helvetica, Arial, sans-serif;
+
+.flex(@direction, @justify, @align) {
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+	align-items: @align;
+	margin: 0 auto;
+}
+
+.container {
+	font-family: @fontStack;
+	width: 800px;
+	.flex(column, center, center);
+	header {
+		width: 100%;
+		h1 {
+			font-weight: 600;
+			font-size: 3.0rem;
+		}
+		img {
+			width: 44%;
+		}
+	}
+}
