@@ -58,6 +58,13 @@ table {
 @medium-grey: #a0a0a0;
 @royal: #870101;
 
+.center(@direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: @direction;
+}
+
 html, body {
   height: 100%;
 }
@@ -108,7 +115,7 @@ header {
 
   a {
     color: black;
-    font-size: 1.6em;
+    font-size: 2rem;
     text-decoration: none;
 
     &:hover {
@@ -118,9 +125,36 @@ header {
 }
 
 .page-content {
+  .center(column);
+
   img {
     max-width: 300px;
     border: 1px solid @medium-grey;
+    margin: 10px;
+  }
+
+  section {
+    margin-top: 15px;
+    max-width: 80%;
+
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1.6rem;
+    }
+
+    ul {
+      list-style: inside;
+      margin-left: 15px;
+    }
+
+    li {
+      font-size: 1.6rem;
+    }
   }
 }
 
