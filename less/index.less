@@ -60,13 +60,8 @@ table {
 
 .center(@direction) {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: @direction;
-}
-
-html, body {
-  height: 100%;
 }
 
 html {
@@ -126,6 +121,7 @@ header {
 
 .page-content {
   .center(column);
+  max-width: 80%;
 
   img {
     max-width: 300px;
@@ -135,7 +131,8 @@ header {
 
   section {
     margin-top: 15px;
-    max-width: 80%;
+    
+    align-self: flex-start;
 
     h2 {
       font-weight: bold;
@@ -149,12 +146,24 @@ header {
 
     ul {
       list-style: inside;
+      margin-top: 10px;
       margin-left: 15px;
     }
 
     li {
       font-size: 1.6rem;
     }
+
+    i {
+      font-style: italic;
+    }
   }
 }
 
+footer {
+  h3 {
+    font-size: 1.6em;
+    margin: 20px 0 10px;
+    color: @medium-grey;
+  }
+}
