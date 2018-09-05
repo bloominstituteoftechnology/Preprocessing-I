@@ -54,6 +54,72 @@ table {
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
+		font-size: 62.5%;
 }
+
+//Start of own code// 
+
+// Variables Here
+@mainColor: @tall-poppy;
+@accentColor: blue;
+
+@tall-poppy: #C42727;
+@fontSize: 1.6rem;
+@fontStack: Helvetica, Arial, sans-serif;
+
+@mobileValue: 500px;
+
+// Mixin
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-font() {
+  .center;
+  font-size: 6.7rem;
+}
+
+// Parametric Mixin
+// .custom-layout(center, flex-start);
+.custom-layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+//.container {
+//  max-width: 600px;
+//  margin: 0 auto;
+//  color: @mainColor;
+//  font-size: @fontSize;
+//  font-family: @fontStack;
+//}
+
+// NESTING: Avoid nesting more than 1 section deep
+//header {
+//  display: flex;
+//  justify-content: space-between;
+//  margin: 20px 0;
+//
+h1 {
+		.center;
+    font-size: 3rem;
+    color: @accentColor;
+    
+    @media( max-width: 800px ) {
+     color: green;
+    }
+    
+    @media( max-width: @mobileValue ) {
+      color: red;
+    }
+  }
+
+
+
+
+
 
