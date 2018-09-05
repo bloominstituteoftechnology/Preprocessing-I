@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -50,10 +50,172 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
+// Variables
+@fontFamily: 'Lato', sans-serif;
+@fontHeading: 'Roboto Slab', serif;
+@defaultFontSize: 1.6rem;
+@spaceBottom: 20px;
+
+// Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+html {
+	font-family: @fontFamily;
+	font-size: 62.5%;
+}
+
+p, li {
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @fontHeading;
+}
+
+strong {
+	font-weight: 900;
+}
+
+.container {
+	font-size: @defaultFontSize;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+// Header
+header {
+	.main-nav {
+		width: 100%;
+		.center;
+
+		a {
+			margin: 10px 0;
+			padding: 10px 5%;
+			text-decoration: none;
+			color: #000;
+			font-weight: 400;
+
+			&:hover {
+				background-color: #fbfbfb;
+				color: #555;
+			}
+		}
+	}
+}
+
+// Headline
+.headline {
+	.center;
+	flex-direction: column;
+	padding: 60px 0;
+	margin-bottom: @spaceBottom;
+	background: linear-gradient( #f4e6c7, #fbfbfb);
+
+	img {
+		width: 20%;
+		height: auto;
+		border:3px solid #555;
+		border-radius: 50%;
+		margin-bottom: @spaceBottom;
+	}
+
+	h1 {
+		font-size: 4rem;
+		margin-bottom: @spaceBottom;
+	}
+
+	p {
+		font-size: 2rem;
+	}
+}
+
+// Main content
+.main-content {
+	margin: 40px 2%;
+
+	h2 {
+		font-size: 3rem;
+	}
+}
+
+.background-info {
+	margin-bottom: @spaceBottom;
+
+	.background-content {
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		img {
+			width: 35%;
+			height: auto;
+			margin-right: 5%;
+			border: 3px solid #d0d0d0;
+		}
+	}
+}
+
+.skills {
+	margin: 40px 0;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+	padding-top: 40px;
+}
+
+.skills-content {
+	padding: 20px;
+	.center;
+
+	ul {
+		// border: 1px solid #d0d0d0;
+		margin-right: 9%;
+		margin-left: 2%;
+		padding: 20px;
+
+		list-style-image: url(../img/icon-golden-snitch.png);
+
+		li {
+			font-size: 2rem;
+			margin-bottom: @spaceBottom;
+			padding-left: 3%;
+			padding-bottom: 5px;
+		}
+	}
+
+	img {
+		width: 30%;
+		height: auto;
+	}
+}
+
+.contact {
+	.center;
+	flex-direction: column;
+
+	* {
+		margin-bottom: @spaceBottom;
+	}
+
+	img {
+		width: 25%;
+		height: auto;
+	}
+}
+
+footer {
+	.center;
+	margin-bottom: @spaceBottom;
+}
