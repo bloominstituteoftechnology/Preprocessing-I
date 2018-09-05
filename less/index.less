@@ -148,11 +148,22 @@ table {
 @color-offwhite: #f1f1f1;
 @font-primary: 'Abhaya Libre';
 @font-secondary: 'Montserrat';
+
+
+
 // M I X I N S 
 .flexCenter() {
   display: flex;
   justify-content: center;
 }
+
+.footerMix() {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
 
 // C S S  &  L E S S
 html,
@@ -299,19 +310,78 @@ body {
     }
   }
 
+
+  .history {
+    background-color: @color-primary;
+    .flexCenter;
+    flex-direction: column;
+    align-items: center;
+
+    .history__headline {
+      font-family: @font-secondary;
+      text-transform: uppercase;
+      font-size: 5rem;
+      padding-top: 15rem;
+    }
+
+    .history__bothBoxes {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-family: @font-primary;
+      font-size: 3rem;
+      padding: 2rem 10rem;
+    }
+
+    .history__box {
+      padding: 4rem 12rem;
+    }
+
+    .history__box2 {
+      padding: 4rem 12rem;
+    }
+
+    .history__text {
+      font-family: @font-primary;
+      font-size: 3rem;
+      padding-top: 2rem;
+    }
+
+    .history__text--title {
+      font-family: @font-primary;
+      font-size: 4rem;
+      padding-top: 1rem;
+      text-transform: uppercase;
+    }
+
+    .history__text--item {
+      font-family: @font-primary;
+      font-size: 2.5rem;
+      padding-top: 2rem;
+    }
+
+    .history__text--date {
+      font-family: @font-secondary;
+      font-style: italic;
+      font-size: 1.8rem;
+    }
+
+  }
+
+
   .contact {
     background-color: black;
     color: @color-primary;
     .flexCenter;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    // height: 100vh;
 
     .contact__headline {
       font-family: @font-secondary;
       text-transform: uppercase;
       font-size: 5rem;
-      padding-top: 5rem;
+      padding-top: 15rem;
     }
 
     .contact__text {
@@ -323,5 +393,18 @@ body {
     .contact__text--email {
       padding-top: 5rem;
       font-size: 6rem;
+      padding-bottom: 9rem;
+    }
+  }
+
+  .footer {
+    .footerMix();
+    background-color: @color-offwhite;
+    font-family: @font-secondary;
+    color: black;
+
+    .footer__text {
+      padding: 1rem 1rem;
+      font-size: 2rem;
     }
   }
