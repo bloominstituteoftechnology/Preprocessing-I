@@ -17,6 +17,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+	
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -62,6 +63,8 @@ html {
 }
 
 
+
+
 // ________________________________________Reset_______________________________________________________________________________________________
 
 @main: black;
@@ -87,10 +90,6 @@ html {
 
 // ________________________________________Variables/Mixins_______________________________________________________________________________________________
 
-// .accentback {
-// 	background-image: url(https://i.pinimg.com/originals/70/0e/31/700e31457abd063b4f04a72c7f6bd5aa.jpg);
-// 	height: 100%;
-// }
 
 .container {
 	max-width: 1080px;
@@ -112,12 +111,9 @@ html {
 	.h1 {
 		color: @accent;
 		font-size: 5.6rem;
+		font-family: 'Permanent Marker', cursive;
 	}
 
-	.h1-2 {
-		color: @accent;
-		font-size: 5.6rem;
-	}
 
 	nav {
 		display: flex;
@@ -126,6 +122,7 @@ html {
 		a {
 			.atag();
 			margin-right: 15px;
+			font-family: 'Permanent Marker', cursive;
 
 			&:hover{
 				color: @hover;
@@ -138,6 +135,8 @@ html {
 		color: @accent;
 		font-size: @h2;
 		padding-left: 20px;
+		font-family: 'Permanent Marker', cursive;
+		padding-bottom: 5px;
 	}
 
 	.accent {
@@ -154,6 +153,7 @@ html {
 		p {
 			font-size: 2.0rem;
 			padding: 25px;
+			
 		}
 	}
 
@@ -175,6 +175,7 @@ html {
 		p {
 			font-size: 2.0rem;
 			padding-left: 20px;
+			font-family: 'Permanent Marker', cursive;
 		}
 
 	}
@@ -197,4 +198,46 @@ html {
 			padding-bottom: 5px;
 		}
 	}
+
+	.contact {
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		margin-bottom: 20px;
+		height: 700px;
+		
+		p {
+			font-size: 3.0rem;
+			padding-left: 20px;
+			font-family: 'Permanent Marker', cursive;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+
+		.information {
+			
+			border-top: 2px @main solid;
+		
+			p {
+				font-size: 2.0rem;
+			}
+		}
+	}
+
+	@media (max-width: @mobile) {
+
+		.navbar {
+			flex-direction: column;
+		}
+
+		nav {
+			flex-direction: column;
+
+			a {
+				padding-top: 25px;
+				border-bottom: 2px @nav solid;
+				width: 250px;
+			}
+		}
+	}
+
 }
