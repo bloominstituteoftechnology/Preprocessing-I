@@ -54,6 +54,147 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+
+// ________________________________________Reset_______________________________________________________________________________________________
+
+@main: black;
+@accent: white;
+@nav: grey;
+@hover: darkgrey;
+@mobile: 500px;
+@h2: 3.6rem;
+
+.center() {
+	display: flex;
+	flex-direction: column;
+	margin: 0px auto;
+}
+
+.atag() {
+	text-decoration: none;
+	font-size: 2.6rem;
+	color: @nav;
+}
+
+
+
+// ________________________________________Variables/Mixins_______________________________________________________________________________________________
+
+// .accentback {
+// 	background-image: url(https://i.pinimg.com/originals/70/0e/31/700e31457abd063b4f04a72c7f6bd5aa.jpg);
+// 	height: 100%;
+// }
+
+.container {
+	max-width: 1080px;
+	width: 100%;
+	.center();
+	background-color: @accent;
+
+	.navbar {
+		width: 100%;
+		background-color: @main;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		border-bottom: 15px solid @accent;
+		padding: 25px;
+		
+	}
+
+	.h1 {
+		color: @accent;
+		font-size: 5.6rem;
+	}
+
+	.h1-2 {
+		color: @accent;
+		font-size: 5.6rem;
+	}
+
+	nav {
+		display: flex;
+		flex-direction: space-evenly;
+		
+		a {
+			.atag();
+			margin-right: 15px;
+
+			&:hover{
+				color: @hover;
+			}
+		}
+	
+	}
+
+	h2 {
+		color: @accent;
+		font-size: @h2;
+		padding-left: 20px;
+	}
+
+	.accent {
+		background-color: @main;
+	}
+
+	.intro {
+
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		width: 100%;
+		margin-bottom: 20px;
+
+		p {
+			font-size: 2.0rem;
+			padding: 25px;
+		}
+	}
+
+
+	.skills {
+		
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		margin-bottom: 20px;
+		width: 100%;
+
+		ul {
+			font-size: 2.0rem;
+			padding: 25px;
+			padding-left: 40px;
+			list-style-type: square;
+		}
+
+		p {
+			font-size: 2.0rem;
+			padding-left: 20px;
+		}
+
+	}
+
+	.work {
+
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		margin-bottom: 20px;
+
+		h3 {
+			font-size: 2.6rem;
+			padding: 10px;
+			border-top: 1px solid @nav;
+		}
+
+		p {
+			font-size: 2.0rem;
+			padding-left: 20px;
+			padding-bottom: 5px;
+		}
+	}
+}
