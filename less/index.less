@@ -134,6 +134,8 @@ table {
   display: flex;
   justify-content: @justify;
 }
+// Variables
+@fontSize: 1.6rem;
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -147,6 +149,7 @@ html {
 html,
 body {
   height: 100%;
+  background-color: lightgrey;
 }
 
 .container {
@@ -156,18 +159,19 @@ body {
 
 nav {
   .flexLayout(space-evenly);
+  max-width: 100%;
   background-color: black;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: solid black 1px;
   a {
-    max-width: 100%;
+    width: 100%;
     color: white;
-    font-size: 1.6rem;
+    font-size: @fontSize;
     font-weight: bold;
     text-decoration-line: none;
     border: solid black 1px;
-    padding: 10px 5% 10px 5%;
+    padding: 10px 4%;
 
     &:hover {
       color: blue;
@@ -180,36 +184,78 @@ nav {
     .flexLayout(space-between);
     align-items: center;
     margin-top: 50px;
-    border: solid red 1px;
 
     p {
-      font-size: 1.6rem;
+      font-size: @fontSize;
       padding: 5%;
-      border: solid black 1px;
-      margin: 0 5% 0 5%;
+      border: solid black 2px;
+      margin: 0 5%;
     }
 
     img {
-      width: 200px;
-      height: auto;
+      max-width: 100%;
+	  height: auto;
+	  border: solid black 4px;
     }
 
     h1 {
+      text-align: center;
       font-size: 4rem;
       font-weight: bold;
     }
 
     h3 {
+      text-align: center;
       font-size: 3rem;
-	}
-	
-	.about-me h2 {
-		.flexLayout(center);
-		font-size: 2rem;
-		font-weight: bold;
-		margin-bottom: 20px;
-		margin-top: 170px;
+    }
+
+    .about-me h2 {
+      .flexLayout(center);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: 170px;
+      text-decoration-line: underline;
+    }
+  }
+
+  .skills {
+    .flexLayout(space-around);
+    margin-top: 50px;
+
+    h2 {
+      font-size: 3rem;
+      text-decoration-line: underline;
+      margin-bottom: 10px;
+    }
+    ol {
+      .flexLayout(center);
+      flex-direction: column;
+      align-items: center;
+      padding: s0px 20%;
+
+      li {
+        font-style: italic;
+        font-size: @fontSize;
+        line-height: 1.5;
+      }
+    }
+
+    table {
+      width: 500px;
+      height: 100px;
+      th {
+        font-size: 2rem;
+        font-weight: bold;
+		border: 2px solid black;
 		text-decoration-line: underline;
-	}
+      }
+
+      td {
+        text-align: center;
+        font-size: @fontSize;
+        border: 2px solid black;
+      }
+    }
   }
 }
