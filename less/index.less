@@ -50,8 +50,9 @@ table {
 
 /* Set every element's box-sizing to border-box */
 
-@mainColor: gray;
+@mainColor: lightgray;
 @accentColor: black;
+@fontStack: Helvetica, Arial;
 
 * {
     box-sizing: border-box;
@@ -69,6 +70,8 @@ html {
 	max-width: 1000px;
 	/* TB LR */
 	margin: 0 auto;
+	font-size: 1.6rem;
+	font-family: @fontStack;
   }
   
   header {
@@ -82,9 +85,8 @@ html {
 	  
 	  
 	  a { 
-		font-size: 1.6rem;
 		margin: 10px;
-		color: @mainColor;
+		color: gray;
 		
 		&:hover {
 		  color: @accentColor;
@@ -98,7 +100,7 @@ html {
   .name {
 	  display: flex;
 	  justify-content: center;
-	  background-color: lightgray;
+	  background-color: @mainColor;
 	  padding-bottom: 9%;
 	
   
@@ -111,10 +113,7 @@ html {
 		h1 {
 			font-size: 4rem;
 			margin-bottom: 5%;
-		}
-		p {
-			font-size: 1.6rem;
-		}
+		}	
   	}
   
   
@@ -122,9 +121,10 @@ html {
 	display: flex;
 	flex-flow: row wrap;
 	border-top: 1px solid black;
+	background-color: @mainColor;
 	margin-top: 1%;
-    padding-top: 4%;
-	font-size: 1.6rem;
+	padding-top: 4%;
+	padding-bottom: 4%;
   }
   
   .main-content .top-content {
@@ -132,17 +132,12 @@ html {
 	padding: 0 1%;
 
 	.main-content .top-content .text-content {
-		width: 50%;
+		width: 100%;
 		margin-right: 8%;
-		background-color: @mainColor;
 	  }
 	  h4 {
 		  font-size: 1.8rem;
-		  margin-bottom: 4%;
-	  }
-
-	  p {
-		  font-size: 1.6rem;
+		 padding-bottom: 3%;
 	  }
   }
   
@@ -150,28 +145,28 @@ html {
 	display: flex;
 	margin-top: 4%;
 	padding: 0 1%;
-  }
-  
-  .main-content .bottom-content .text-content {
-	width: 100;
-  }
-  
-  .main-content .bottom-content .text-content:last-child {
-	margin-right: 0;
+
+	.main-content .bottom-content .text-content {
+		width: 100;
+	  }
+	  h4 {
+		  font-size: 1.8rem;
+		  margin-bottom: 3%;
+	  }
   }
   
   .contact {
 	display: flex;
 	flex-flow: column;
 	justify-content: space-evenly;
-	margin-top: 6%;
+	margin-top: 3%;
 	border-top: 1px solid black;
     padding: 4% 1% 0;
-    font-size: 1.6rem;
-  }
-  
-  .contact p {
-	margin: 2% 0;
+	font-size: 1.6rem;
+	
+	 p {
+		margin: 2% 0;
+  	}
   }
   
   footer {
