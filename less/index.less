@@ -234,7 +234,7 @@ p, li {
 	.introduction {
 		.flexbox(center, center);
 		width: 80%;
-		margin: -50px auto;
+		margin: 0 auto;
 
 		@media @mobile {
 			flex-direction: column-reverse;
@@ -274,8 +274,8 @@ p, li {
 
 			img {
 				border-radius: 50%;
-				height: 250px;
-				width: 200px;
+				height: auto;
+				width: 80%;
 
 				@media @mobile {
 					height: 160px;
@@ -329,30 +329,27 @@ p, li {
 		border: 2px dotted @dark-base;
 		border-radius: 5%;
 		padding: 30px;
-
-		@media @mobile {
-			width: 95%;
-		}
 			h2 {
 				text-align: center;
 				width: 100%;
 			}
 		.flexbox(space-between, center);
+		@media @mobile {
+			width: 95%;
+			flex-direction: column;
+		}
 			.project {
 				width: 30%;
 				text-align: center;
 					img {
-						transform: scale(.5);
-						margin: -35% 0 -30% -20%;
+						width: 50%;
 
-						@media @mobile {
-							display: block;
-							transform: scale(.4);
-							margin: -30% 0 -30% -40%;
 						}
+				@media @mobile {
+					width: 100%;
+				}
 					}
 			}
-	}
 
 	.work {
 		.flexbox(space-between, center);
