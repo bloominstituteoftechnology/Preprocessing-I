@@ -53,9 +53,6 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
 
 // Variables
 @font-family: Arial, Helvetica, serif;
@@ -63,6 +60,8 @@ html, body {
 @skills-color: #5cc4c0;
 @work-color: #e5b116;
 @border-color: #528239;
+@text-color: white;
+
 
 // Mixins
 
@@ -75,23 +74,119 @@ html, body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	line-height: 1.25;
+	@media (max-width: 500px) {
+		flex-wrap: wrap;
+	}
 }
 
 .border {
 	border: 2px solid @border-color;
 }
 
-// main-container selectors
+// main selectors
+
+
+html, body {
+	height: 100%;
+	font-size: 62.5%;
+	font-family: @font-family
+}
+
 
 .container {
 	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.6rem;
 	
-	@media
+	@media (max-width: 500px) {
+		min-width: 300px;
+	}
 
-header nav {
-	display: flex;
-	justify-content: space-around;
-}
+	header {
+		display: flex;
+		justify-content: center;
+	}
+
+	header nav {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		font-size: 2rem;
+		margin: 20px 0px;
+		background-color: #efefef;
+		padding: 20px 5px;
+		
+
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		a {
+			text-align: center;
+			text-decoration: none;
+			color: @background-color;
+			@media (max-width: 500px) {
+				padding: 5% 0;
+				border-bottom: 1px solid gray;
+			}
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	}
+
+
+	.main-content{
+		min-width: 350px;
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.about-column {
+			display: flex;
+			width: 48%;
+			background-color: @background-color;
+			color: @text-color;
+			.border;
+			.format-section;
+
+
+		}
+
+	.column-two {
+			width: 48%;
+		
+
+		.skills {
+			background-color: @skills-color;
+			color: @text-color;
+			.format-section;
+			.border;
+			
+		}
+
+		.view-work {
+			display: flex;
+			justify-content: center;
+			margin: 20px 0px;
+		}
+
+		.work-history {
+			background-color: @work-color;
+			.format-section;
+			.border;
+			color: @text-color;
+		}
+	}
+	}
 }
 
 
