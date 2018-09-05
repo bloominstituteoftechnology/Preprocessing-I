@@ -154,12 +154,30 @@ header {
   margin: 40px 0;
   align-items: center;
 }
+@media (max-width: 500px) {
+  header {
+    flex-flow: column;
+  }
+}
 header h1 {
   font-size: 3.8rem;
   color: #69e0c0;
 }
 header nav {
   display: flex;
+}
+@media (max-width: 500px) {
+  header nav {
+    margin-top: 5%;
+    height: auto;
+    flex-flow: column;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    color: #B0B0B0;
+    width: 100%;
+  }
 }
 header nav a {
   margin: 10px;
@@ -169,23 +187,55 @@ header nav a {
 header nav a:hover {
   color: #878787;
 }
+@media (max-width: 500px) {
+  header nav a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid gray;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    color: #B0B0B0;
+    font-size: 1.5rem;
+    margin: 0;
+    font-size: 3.2rem;
+    padding: 7%;
+  }
+}
 .main-content {
   display: flex;
+  padding: 5%;
   background: #F2F2F2;
   flex-flow: column wrap;
-  padding: 5%;
   border-radius: 8%;
   background-attachment: scroll;
+}
+@media (max-width: 500px) {
+  .main-content {
+    align-items: center;
+  }
 }
 .main-content .img-holder .profile-img {
   max-width: 40%;
   height: auto;
   border-radius: 8%;
 }
+@media (max-width: 500px) {
+  .main-content .img-holder .profile-img {
+    max-width: 100%;
+  }
+}
 .main-content .main-info {
   display: flex;
   flex-flow: column wrap;
   margin: 5% 0;
+}
+@media (max-width: 500px) {
+  .main-content .main-info {
+    align-items: center;
+  }
 }
 .main-content .main-info h2 {
   font-size: 3.2rem;
@@ -201,7 +251,13 @@ header nav a:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   max-width: 600px;
-  border: 1px solid red;
+}
+@media (max-width: 500px) {
+  .bottom-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .bottom-content h3 {
   font-size: 2.4rem;
@@ -213,6 +269,19 @@ header nav a:hover {
   margin-left: -5%;
   border-radius: 8%;
 }
+@media (max-width: 500px) {
+  .bottom-content .skills {
+    display: flex;
+    padding: 5%;
+    background: #69e0c0;
+    flex-flow: column wrap;
+    width: 100%;
+    border-radius: 8%;
+    background-attachment: scroll;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .bottom-content .skills ul {
   padding-top: 10%;
   color: #878787;
@@ -223,11 +292,11 @@ header nav a:hover {
 }
 .contact {
   display: flex;
+  padding: 10%;
   background-attachment: scroll;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 600px;
-  padding: 10%;
   border-top: 1px solid gray;
   flex-direction: column;
   align-items: center;
