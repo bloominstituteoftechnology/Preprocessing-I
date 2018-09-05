@@ -130,17 +130,23 @@ table {
 * {
   box-sizing: border-box;
 }
-html,
-body {
-  height: 100%;
-}
 html {
   font-size: 62.5%;
+  line-height: 1.3;
+}
+body {
+  height: 100%;
+  font-family: 'Amiko';
 }
 .container {
   width: 880px;
   margin: 0 auto;
   font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
 }
 .container .resume-header {
   display: flex;
@@ -148,20 +154,25 @@ html {
   justify-content: space-between;
   padding: 20px;
 }
+@media (max-width: 500px) {
+  .container .resume-header {
+    flex-direction: column;
+  }
+}
 .container .resume-header h1 {
   font-size: 4rem;
 }
 .container .resume-header .resume-navigation a {
-  margin: 10px;
+  margin: 10px 20px;
   text-decoration: none;
   color: grey;
 }
 .container .resume-header .resume-navigation a:hover {
-  color: yellow;
+  color: purple;
 }
 .introduction-section {
   padding: 30px;
-  background: salmon;
+  background: wheat;
 }
 .introduction-section h2 {
   font-size: 3.5rem;
@@ -170,4 +181,101 @@ html {
 .introduction-section img {
   width: 48%;
   height: auto;
+}
+.introduction-section p {
+  padding: 10px 0 30px;
+  border-bottom: 1px solid black;
+}
+.introduction-section button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  border-radius: 5px;
+  color: purple;
+  padding: 16px 3.63rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin: 40px 0 20px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.introduction-section button:hover {
+  background-color: orange;
+  font-color: brown;
+}
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+@media (max-width: 500px) {
+  .main-content {
+    flex-flow: column wrap;
+  }
+}
+.main-content .main-content-left {
+  width: 45%;
+}
+.main-content .main-content-left h2 {
+  font-size: 3.5rem;
+  padding-bottom: 20px;
+}
+.main-content .main-content-left p {
+  line-height: 1.3;
+}
+.main-content .main-content-right {
+  width: 45%;
+}
+@media (max-width: 500px) {
+  .main-content .main-content-right {
+    margin-top: 30px;
+  }
+}
+.main-content .main-content-right h3 {
+  font-size: 3.5rem;
+  padding-bottom: 20px;
+}
+.main-content .main-content-right ul {
+  list-style: disc inside;
+}
+.main-content .main-content-right ul li {
+  line-height: 3;
+}
+.work-history {
+  width: 100%;
+  padding: 0 30px;
+}
+.work-history h2 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+}
+.work-history table {
+  border: 1px solid grey;
+  width: 100%;
+  margin-top: 20px;
+}
+.work-history table tr {
+  border: 1px solid grey;
+}
+.work-history table tr th {
+  border: 1px solid grey;
+  padding: 5px;
+  font-size: 2rem;
+  padding: 10px 0px;
+}
+.work-history table tr td {
+  text-align: center;
+  padding: 5px;
+  padding: 10px 0px;
+}
+.resume-footer {
+  display: flex;
+  justify-content: center;
+}
+.resume-footer p {
+  font-weight: bold;
+  padding: 50px 0 5px;
 }

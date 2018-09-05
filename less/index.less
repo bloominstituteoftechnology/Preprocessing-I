@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,21 +93,34 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
@@ -50,45 +131,55 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
-html{
+html {
 	font-size: 62.5%;
+	line-height: 1.3;
 }
+
+body {
+	height: 100%;
+	font-family: 'Amiko';
+}
+
 
 .container {
 	width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	@media( max-width: 500px){
+	width:100%;
+	}
 	
+
 	.resume-header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 20px;
+		@media (max-width:500px){
+			flex-direction: column;
+		}
 		h1 {
 			font-size: 4rem;
-			
 		}
-		.resume-navigation{
+		.resume-navigation {
 			a {
-				margin: 10px;
+				margin: 10px 20px;
 				text-decoration: none;
 				color: grey;
 			}
 			a:hover {
-				color: yellow;
+				color: purple;
 			}
 		}
 	}
 }
 .introduction-section {
 	padding: 30px;
-	background: salmon;
+	background: wheat;
 	h2 {
 		font-size: 3.5rem;
 		padding: 15px 0;
@@ -96,9 +187,104 @@ html{
 	img {
 		width: 48%;
 		height: auto;
-
 	}
-	p {
 
+	p {
+		padding: 10px 0 30px;
+		border-bottom: 1px solid black;
+	}
+	button {
+		background-color: #4CAF50; /* Green */
+		border: none;
+		border-radius: 5px;
+		color: purple;
+		padding: 16px 3.63rem;
+		text-align: center;
+		text-decoration: none;
+		font-size: 1.6rem;
+		margin: 40px 0 20px;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+		cursor: pointer;
+
+
+		&:hover {
+			background-color: orange;
+			font-color: brown;
+		}
+	}
+}
+.main-content{
+	display: flex;
+	justify-content: space-between;
+	padding: 30px;
+	@media( max-width: 500px){
+		flex-flow: column wrap
+	}
+	.main-content-left{
+		width: 45%;
+		
+		h2{
+			font-size: 3.5rem;
+			padding-bottom: 20px;
+		}
+		p{
+			line-height: 1.3;
+		}
+	}
+	.main-content-right {
+		@media(max-width:500px){
+			margin-top:30px;
+		}
+
+		width: 45%;
+		h3{
+			font-size: 3.5rem;
+			padding-bottom: 20px;
+		}
+		ul{
+			list-style: disc inside;
+			li{
+				line-height: 3;
+			}
+		}
+	}					
+}
+.work-history {
+	width: 100%;
+	padding: 0 30px;
+
+	h2{
+		font-size: 3.5rem;
+		margin-bottom: 40px;
+	}
+	table{
+		border: 1px solid grey;
+		width: 100%;
+		margin-top: 20px;
+		tr{
+			border: 1px solid grey;
+			
+			th{
+				border: 1px solid grey;
+				padding: 5px;
+				font-size: 2rem;
+				padding: 10px 0px;
+			}
+			td{
+				text-align: center;
+				padding:5px;
+				padding: 10px 0px;
+			}
+		}
+	}
+}
+.resume-footer{
+	display: flex;
+	justify-content: center;
+	
+	p{
+		font-weight: bold;
+		padding: 50px 0 5px;
 	}
 }
