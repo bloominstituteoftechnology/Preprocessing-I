@@ -1,8 +1,8 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+v2.0 | 20110126
+License: none (public domain)
+ */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -17,35 +17,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -57,6 +57,23 @@ html, body {
     height: 100%;
 }
 
+/* variables */
+@backgroundColor: lightgray;
+@secondaryColor: red;
+
+
+/* mixins */
+
+.header2(@color) {
+    color: @color;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.p() {
+    line-height: 1.5;
+}
 html {
     font-size: 62.5%;
 }
@@ -85,6 +102,57 @@ header {
                 color: purple;
             }
         }
+    }
+}
+
+.cta {
+    background-color: @backgroundColor;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+
+    img {
+        width: 20%;
+        height: auto;
+        border: 1px solid red;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+}
+
+.main-content {
+    border-top: 1px solid gray;
+    margin: 20px;
+    display: flex;
+
+    .text-block {
+        width: 60%;
+        margin-right: 7%;
+
+        h2 {
+            .header2(blue);
+        }
+    }
+
+    p { //probably not necessary, just confusing, but i'm messing around w/ mixins
+        .p();
+    } 
+
+}
+
+.attributes {
+    border: 1px dashed black;
+    background: @secondaryColor;
+    h2 {
+        .header2(pink);
     }
 }
 
