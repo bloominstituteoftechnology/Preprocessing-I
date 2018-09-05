@@ -55,8 +55,9 @@ table {
 
 
 // Variables
-@font-family: Arial, Helvetica, serif;
-@background-color: #08003a;
+//@font-family: Arial, Helvetica, serif;
+@font-family: 'Cormorant', serif;
+@background-color: black;
 @skills-color: #5cc4c0;
 @work-color: #e5b116;
 @border-color: #528239;
@@ -74,8 +75,11 @@ table {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	line-height: 1.25;
+	h2 {
+		font-size: 2rem;
+	}
 	@media (max-width: 500px) {
 		flex-wrap: wrap;
 	}
@@ -114,6 +118,7 @@ html, body {
 		justify-content: space-evenly;
 		width: 100%;
 		font-size: 2rem;
+		font-weight: 600;
 		margin: 20px 0px;
 		background-color: #efefef;
 		padding: 20px 5px;
@@ -161,6 +166,18 @@ html, body {
 			.border;
 			.format-section;
 
+			.personal-header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+
+				.name {
+					font-size: 3.5rem;
+				}
+
+			}
+
 
 		}
 
@@ -173,20 +190,45 @@ html, body {
 			background-color: @skills-color;
 			color: @text-color;
 			.format-section;
-			.border;
 			
 		}
 
 		.view-work {
 			display: flex;
 			justify-content: center;
+
+			button {
+			background-color: @border-color;
+			color: @text-color;
+			padding: 10px 5%;
+			}
+
 		}
 
 		.work-history {
 			background-color: @work-color;
-			.format-section;
-			.border;
 			color: @text-color;
+			.format-section;
+
+			.job {
+				margin: 20px 0px;
+				border-bottom: gray;
+
+				h3 {
+					font-size: 2.5rem;
+				}
+
+				h4 {
+					font-size: 2rem;
+					margin-bottom: 10px;
+					color: #efefef;
+					font-style: italic;
+				}
+
+				p {
+					font-size: 1.3rem;
+				}
+			}
 		}
 	}
 	}
