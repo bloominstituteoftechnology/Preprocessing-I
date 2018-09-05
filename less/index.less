@@ -163,7 +163,7 @@ Arial;
 // mixins
 .flex() {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .bor-bot() {
@@ -184,18 +184,18 @@ body {
     background: @background-color;
     border: solid @border-color;
     border-width: 8px 0 2px 0;
+    a {
+        color: @link-color;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 header {
     nav {
         margin: 0 3%;
         .flex;
-        a {
-            color: @link-color;
-            &:hover {
-                text-decoration: none;
-            }
-        }
     }
 }
 
@@ -209,16 +209,13 @@ header {
     h3 {
         font-size: 1.8rem;
     }
-	
-	
-	p {
+    p {
         font-size: 1.4rem;
         padding: 10px 0;
-	
-	}
-	div {
-	padding: 10px 2.5%;
-	}
+    }
+    div {
+        padding: 20px 2.5%;
+    }
     .intro {
         .flex;
         justify-content: space-between;
@@ -235,43 +232,32 @@ header {
                 letter-spacing: 2px;
             }
         }
-        .right {
-            a {
-                color: @link-color;
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
     }
     .profile {
         .flex;
-		.bor-bot;
-	.italicized {
-	width: 20%;
-	}
+        .bor-bot;
     }
     .skills {
         .bor-bot;
         .flex;
-		.italicized {
-			width: 20%;
-			}
-		
+        p {
+            font-size: 1.2rem;
+        }
     }
     .work-history {
         .bor-bot;
-		.flex;
-		.italicized {
-			width: 20%;
-			}
+        .flex;
     }
-
+    .education {
+        .bor-bot();
+        display: flex;
+        .italicized {
+            justify-content: flex-start;
+        }
+    }
 }
 
 footer {
-	text-align:center;
-	padding: 20px 0;
-	font-size: 1.6rem;
-	}
-	
+    text-align: center;
+    font-size: 1.6rem;
+}
