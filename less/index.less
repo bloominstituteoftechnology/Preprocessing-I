@@ -64,6 +64,7 @@ html, body {
 //variables
 @fontStack: Helvetica, Arial, sans-serif;
 
+//mixins
 .flex(@direction, @justify, @align) {
 	display: flex;
 	flex-direction: @direction;
@@ -72,18 +73,60 @@ html, body {
 	margin: 0 auto;
 }
 
+.border(@color) {
+	border: 1px solid @color;
+}
+
 .container {
 	font-family: @fontStack;
 	width: 800px;
-	.flex(column, center, center);
+	font-size: 1.6rem;
+	.flex(row, center, center);
+	flex-wrap: wrap;
+	.border(red);
+	h3 {
+		font-weight: 600;
+		font-size: 2rem;
+	}
 	header {
 		width: 100%;
+		background: lightgray;
 		h1 {
 			font-weight: 600;
 			font-size: 3.0rem;
+			margin: 10px 0 20px 0;
+			width: 100%;
+			text-align: center;
+			.border(blue);
 		}
-		img {
-			width: 44%;
+		div {
+			.flex(column, space-between, center);
+			border-bottom: 2px solid black;
+			img {
+				width: 50%;
+				margin: 10px 0 20px 0;
+				.border(black);
+			}
+			ul {
+				list-style: disc;
+				width: 50%;
+				margin: 10px 0 20px 0;
+				li {
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+	section {
+		width: 100%;
+		.flex(row, center, center);
+		.left {
+			width: 50%;
+			.border(green);
+		}
+		.right {
+			width: 50%;
+			.border(orange);
 		}
 	}
 }
