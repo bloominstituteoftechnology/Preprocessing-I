@@ -57,22 +57,38 @@ table {
 @emperor: #505050;
 @gallery: #EEEEEE;
 
+
+.headings (@fontSize, @PadBottom) {
+	font-size: @fontSize;
+	padding-bottom: @PadBottom;
+}
+// padding-bottom: 20px;
+// font-size: 3rem;
+
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
+	font-size: 62.5%;
+	font-family: 'Montserrat', 'Titillium Web',  'Futura PT', Arial, sans-serif;
 	height: 100%;
-	font-family: 'Montserrat', 'Titillium Web',  'Futura PT', 'Cambria', 'Georgia', 'Times', 'Times New Roman', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	padding: 0 20px;
+}
+
+strong {
+	color: @accentColor;
 }
 
 .container {
-	max-width: 800px;
+	max-width: 1000px;
 	margin: 0 auto;
   padding: 20px;
 	font-size: 1.6rem;
+	height: 100%;
 	background-color: @backgroundColor;
-}
+} 
 
 .top-nav {
 
@@ -82,9 +98,9 @@ html, body {
 	}
 
 	a {
-		text-decoration: none;
+		text-decoration-color: @accentColor;
 		color: @mainColor;
-		padding: 0 2% 20px 2%;
+		padding: 0 0 20px 4%;
 
 		&:hover {
 			color: @accentColor;
@@ -94,70 +110,93 @@ html, body {
 
 .top-content {
 	display: flex;
-
+	padding-bottom: 50px;
 	img {
-		width: 10%;
-		height: auto;
+		width: 30%;
+		height: 30%;
+		padding-right: 3%;
 	}
 
 	.summary {
-		padding-bottom: 20px; 
-		h1 {
+		width: 60%;
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 0px; 
 
+		h1 {
+			.headings(3rem, 20px);
+			text-decoration: underline @accentColor;
 		}
 
 
 		p {
-
+			padding-bottom: 10px;
+			line-height: 2rem;
 		}
 
 		button {
+			border: 1px solid @accentColor;
+			background: white;
+			font-size: 1.5rem;
+			width: 30%;
+			height: 32px;
+			margin: 10px 2% 10px 2%;
+			cursor: pointer;
 
+			&:hover {
+				color: @accentColor;
+			}
 		}
 	}
 } // .top-content
 
 .middle-content {
-
-	img {
-
-	}
+	padding-bottom: 100px;
 
 	h2 {
-
+		.headings(2rem, 10px);
+		text-decoration: underline @accentColor;
 	}
 
-
 	.table {
-
-
 		p {
+			padding-bottom: 10px;
+			line-height: 2rem;
 			
 		}
 	}
 }
 
 .contact {
-
+	display: flex;
+	justify-content: flex-end;
 	h4 {
-
+		padding: 10px 1% 10px 0%;
 	}
 
-	address {
-
+	p {
+		padding: 10px 0% 10px 2%;
 	}
 }
 
 
 .bottom-nav {
-
-	nav {
 	
+	nav {
+		display: flex;
+		justify-content: flex-end;
+
 	}
 	
 	a {
+		display: flex;
+		align-items: flex-end;
+		text-decoration: none;
+		color: @mainColor;
+		padding: 0 0 20px 4%;
 	
 		&:hover {
+			color: @accentColor;
 			
 		}
 	
