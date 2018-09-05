@@ -57,3 +57,65 @@ html, body {
     height: 100%;
 }
 
+// My Code Starts Here 
+
+// VARIABLES
+@font-size: 1.6rem;
+@font-h2: 3rem;
+@font-stack: Arial;
+@desktop-width: 880px;
+@primary-color: ;
+@secondary-color: ;
+@steeler-yellow: #FDB31D;
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+// MIXINS
+.flex(@direction, @justify) {
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+}
+
+.align(@items, @content) {
+	align-items: @items;
+	align-content: @content;
+}
+
+.container {
+	font-size: @font-size;
+	width: @desktop-width;
+	margin: 0 auto;
+	font-family: @font-stack;
+}
+
+// NAV
+
+header {
+	.flex(row, flex-end);
+}
+
+nav {
+	width: 350px;
+	margin: 20px 0;
+	.flex(row, space-between);
+
+	a {
+		// margin: 0 10px;
+		text-decoration: none;
+		color: #888;
+
+		&:hover {
+			color: black;
+			font-weight: bold;
+		}
+	}
+}
