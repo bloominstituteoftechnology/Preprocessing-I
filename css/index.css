@@ -136,10 +136,9 @@ body {
   font-size: 62.5%;
 }
 .container {
-  width: 880px;
-  margin: 0 auto;
-  border: solid black;
-  height: 100%;
+  max-width: 880px;
+  width: 100%;
+  margin: auto;
 }
 .container hr {
   width: 75%;
@@ -154,20 +153,53 @@ body {
   justify-content: flex-end;
   font-size: 1.6rem;
 }
+@media (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+    align-items: center;
+    border: solid black;
+    font-size: 3.5rem;
+  }
+}
 .container header nav a {
   margin: 15px 20px 0px 20px;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    text-decoration: none;
+  }
 }
 .orc-img {
   display: flex;
   width: 770px;
   margin: 20px 0 10px 50px;
 }
+@media (max-width: 500px) {
+  .orc-img {
+    display: none;
+  }
+}
 .intro-info {
   font-size: 1.6rem;
   margin: 25px 0 15px 50px;
 }
+@media (max-width) {
+  .intro-info {
+    flex-flow: column;
+    flex-wrap: wrap;
+  }
+}
 .intro-info .my-name {
   font-size: 5rem;
+}
+@media (max-width) {
+  .intro-info .my-name {
+    flex-flow: column;
+    flex-wrap: wrap;
+  }
 }
 .intro-info p {
   margin-top: 15px;
@@ -179,12 +211,32 @@ body {
   background-color: gray;
   color: white;
 }
+@media (max-width: 500px) {
+  .intro-info button {
+    width: 75%;
+    justify-items: center;
+  }
+}
 .my-info {
   display: flex;
+}
+@media (max-width: 500px) {
+  .my-info {
+    flex-flow: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 .my-info .my-intro {
   font-size: 1.6rem;
   margin: 25px 25px 10px 20px;
+}
+@media (max-width: 500px) {
+  .my-info .my-intro {
+    flex-flow: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 .my-info .my-intro h1 {
   font-size: 3.5rem;
@@ -196,6 +248,13 @@ body {
   flex-wrap: wrap;
   line-height: 120%;
 }
+@media (max-width: 500px) {
+  .my-info .my-intro p {
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
 .my-info .my-skills {
   font-size: 1.6rem;
   margin-top: 35px;
@@ -203,6 +262,13 @@ body {
 .my-info .my-skills h1 {
   display: flex;
   font-size: 2.5rem;
+}
+@media (max-width: 500px) {
+  .my-info .my-skills h1 {
+    flex-flow: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 .my-info .my-skills ul {
   margin-left: 25px;
@@ -214,6 +280,14 @@ body {
 .work-history {
   font-size: 2.5rem;
   margin-left: 25px;
+}
+@media (max-width: 500px) {
+  .work-history {
+    flex-flow: column;
+    flex-wrap: wrap;
+    text-align: center;
+    border-top: 1px solid gray;
+  }
 }
 .work-history .my-table {
   font-size: 1.6rem;
@@ -237,4 +311,9 @@ footer h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 500px) {
+  footer h1 {
+    width: 75%;
+  }
 }

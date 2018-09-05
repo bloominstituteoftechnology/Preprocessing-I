@@ -74,10 +74,11 @@ html, body {
   }
 
 .container {
-	width: 880px;
-	margin: 0 auto;
-	border: solid black;
-	height: 100%;
+	max-width: 880px;
+    width: 100%;
+    margin: auto;
+
+
 
 	hr {
 		width: 75%;
@@ -87,14 +88,30 @@ html, body {
 	header {
 
 		width: 100%;
-		
+
 		nav {
 
 			display: flex;
 			justify-content: flex-end;
 			font-size: @fontSize;
+			@media (max-width:500px) {
+				
+				flex-direction: column;
+				align-items: center;
+				border: solid black;
+				font-size: 3.5rem;
+				
+			}	
+
+
 			a {
 				margin: 15px 20px 0px 20px;
+				@media (max-width:500px) {
+					text-align: center;
+					border-bottom: 1px solid gray;
+					width: 100%;
+					text-decoration: none;
+				}
 			}
 		}
 	}		
@@ -105,17 +122,29 @@ html, body {
 	display: flex;
 	width: 770px;
 	margin: 20px 0 10px 50px;
-
+	@media (max-width:500px) {
+		display: none;
+	}
 }
 
 .intro-info {
 
 	font-size: @fontSize;
 	margin: 25px 0 15px 50px;
+	@media (max-width) {
+
+		flex-flow: column;
+		flex-wrap: wrap;
+	}
 
 	.my-name {
 
 		font-size: 5rem;
+		@media (max-width) {
+
+			flex-flow: column;
+			flex-wrap: wrap;
+		}
 	}
 
 	p {
@@ -128,18 +157,33 @@ html, body {
 		width: 150px;
 		height: 35px;
 		.colorScheme;
-		
+		@media (max-width:500px) {
+			width: 75%;
+			justify-items: center;
+		}
 	}
 }
 
 .my-info {
 
 	display: flex;
+
+	@media (max-width:500px) {
+		flex-flow: column;
+		flex-wrap: wrap;
+		text-align: center;
+	}
 	
 	.my-intro {
 
 		font-size: @fontSize;
 		margin: 25px 25px 10px 20px;
+		@media (max-width:500px) {
+
+			flex-flow: column;
+			flex-wrap: wrap;
+			text-align: center;
+		}
 	
 		h1 {
 	
@@ -154,8 +198,18 @@ html, body {
 			width: 400px;
 			flex-wrap: wrap;
 			line-height: 120%;
+			@media (max-width:500px) {
+				
+				width: 100%;
+				flex-wrap: wrap;
+				text-align: center;
+			}
+		
 	
 		}
+
+	
+	
 	
 	}
 	
@@ -169,7 +223,11 @@ html, body {
 	
 			display: flex;
 			font-size: 2.5rem;
-			
+			@media (max-width:500px) {
+				flex-flow: column;
+				flex-wrap: wrap;
+				text-align: center;
+			}
 		}
 
 		ul {
@@ -189,7 +247,12 @@ html, body {
 
 	font-size: 2.5rem;
 	margin-left: 25px;
-	
+	@media (max-width:500px) {
+		flex-flow: column;
+		flex-wrap: wrap;
+		text-align: center;
+		border-top: 1px solid gray;
+	}
 	
 	.my-table {
 		
@@ -219,7 +282,10 @@ footer h1 {
 	height: 50px;
 	margin: 25px 25px 0 50px;
 	.center;
-
+	@media (max-width:500px) {
+		width: 75%;
+	}
+	 
 	
 }
 
