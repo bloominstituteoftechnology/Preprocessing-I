@@ -54,6 +54,95 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
+//Variables Here
+@imgWidth: 20%;
+@imgHeight: 100%;
+@navFontColor: gray;
+
+
+
+// Parametric Mixin
+.borderS(@color){
+	border: 1px solid @color;
+}
+.justifyContent(@where){
+	display: flex;
+	justify-content: @where;
+}
+.paddingSides(@left, @right){
+	padding-left: @left ;
+	padding-right: @right;
+}
+
+
+//LESS
+.container{
+	margin: 0 auto;
+	width: 900px;
+	height: 100%;
+	.borderS(red);
+
+	header{
+		display: flex;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		padding-right: 3rem;
+	
+		padding-bottom: 10rem;
+	}
+
+
+	.main-nav{
+		display: flex;
+		justify-content: space-between;
+		padding-top: 5rem;
+		width: 60%;
+		
+	
+		a{
+			font-size: 2rem;
+			color: @navFontColor;
+			text-decoration: none;	
+			
+		}
+	}
+.bodyContainer{
+	padding-left: 5rem;
+}
+	.top-content{
+		padding-top: 10rem;
+		padding-left: 5rem;
+		background-color: rgb(233, 233, 233);
+		.borderS(black);
+		display: flex;
+		
+		flex-flow: column;
+		width: 90%;
+		height: 50%;
+
+		.top-content-img{
+			display: flex;
+			justify-content: flex-start;
+		 	
+		.contentImg{
+			width: 20rem;
+			height: 20rem;
+		}
+	
+	}
+		 .name h1{
+			 font-size: 3rem;
+			 font-family: 'Roboto Slab', serif;
+
+		 }
+		 .name p{
+			 font-size: 2rem;
+			 font-family: 'Gloria Hallelujah', cursive;
+		 }
+	}
+}
+
 
