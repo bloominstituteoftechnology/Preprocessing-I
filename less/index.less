@@ -48,13 +48,70 @@ table {
 	border-spacing: 0;
 }
 
+// Mixins
+.flexLayout(@justify) {
+	display: flex;
+	justify-content: @justify;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
 }
 
 html, body {
     height: 100%;
 }
 
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+nav {
+	.flexLayout(space-evenly);
+	background-color: black;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: solid black 1px; 
+	a {
+		max-width: 100%;
+		color: white;
+		font-size: 1.6rem;
+		font-weight: bold;
+		text-decoration-line: none;
+		border: solid black 1px;
+		padding: 10px 5% 10px 5%;
+
+		&:hover{
+			color: blue;
+		}
+	}
+}
+
+.container {
+	.profile {
+		.flexLayout(space-between);
+		align-items: center;
+		margin-top: 50px;
+	}
+
+	img {
+		width: 200px;
+		height: auto;
+	}
+
+	h1 {
+		font-size: 4rem;
+		font-weight: bold;
+	}
+
+	h3 {
+		font-size: 3rem;
+	}
+}
 
