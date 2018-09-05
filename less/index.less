@@ -63,6 +63,7 @@ html, body {
 
 //variables
 @fontStack: Helvetica, Arial, sans-serif;
+@color1: black;
 
 //mixins
 .flex(@direction, @justify, @align) {
@@ -73,9 +74,16 @@ html, body {
 	margin: 0 auto;
 }
 
+.spaceTop() {
+	padding-top: 20px;
+}
+
+//Used for making easier to see for layout
 .border(@color) {
 	border: 1px solid @color;
 }
+
+
 
 .container {
 	font-family: @fontStack;
@@ -83,10 +91,28 @@ html, body {
 	font-size: 1.6rem;
 	.flex(row, center, center);
 	flex-wrap: wrap;
-	.border(red);
+	border-left: 1px solid @color1;
+	border-right: 1px solid @color1;
+	//.border(red);
 	h3 {
 		font-weight: 600;
 		font-size: 2rem;
+	}
+	ul {
+		list-style-type: disc;
+		margin: 10px 0 20px 0;
+		li {
+			margin-top: 5px;
+			margin-left: 10%;
+		}
+	}
+	ol {
+		list-style-type: upper-roman;
+		margin: 10px 0 20px 0;
+		li {
+			margin-top: 5px;
+			margin-left: 10%;
+		}
 	}
 	header {
 		width: 100%;
@@ -97,36 +123,43 @@ html, body {
 			margin: 10px 0 20px 0;
 			width: 100%;
 			text-align: center;
-			.border(blue);
+			//.border(blue);
 		}
 		div {
 			.flex(column, space-between, center);
-			border-bottom: 2px solid black;
+			border-bottom: 2px solid @color1;
 			img {
 				width: 50%;
 				margin: 10px 0 20px 0;
-				.border(black);
-			}
-			ul {
-				list-style: disc;
-				width: 50%;
-				margin: 10px 0 20px 0;
-				li {
-					margin-top: 5px;
-				}
+				.border(@color1);
 			}
 		}
 	}
-	section {
+	section.main-content {
 		width: 100%;
-		.flex(row, center, center);
+		.spaceTop;
+		.flex(row, center, flex-start);
+		border-bottom: 2px solid @color1;
 		.left {
 			width: 50%;
-			.border(green);
+			height: 100%;
+			.flex(column, center, center);
+			border-right: 2px solid @color1;
+			//.border(green);
 		}
 		.right {
 			width: 50%;
-			.border(orange);
+			.flex(column, center, center);
+			//.border(orange);
+		}
+	}
+	footer {
+		.flex(column, center, center);
+		height: auto;
+		width: 100%;
+		padding-bottom: 20px;
+		p {
+			.spaceTop;
 		}
 	}
 }
