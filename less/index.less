@@ -61,6 +61,8 @@ html, body {
 @fontFamily: 'Lato', sans-serif;
 @fontHeading: 'Roboto Slab', serif;
 @defaultFontSize: 1.6rem;
+@defaultFontColor: #1d1d1d;
+@borderColor: #dedede;
 @spaceBottom: 20px;
 
 // Mixins
@@ -70,9 +72,16 @@ html, body {
 	align-items: center;
 }
 
+.customLayout(@jusitfy) {
+	display: flex;
+	justify-content: @jusitfy;
+}
+
+// Styling starts here
 html {
 	font-family: @fontFamily;
 	font-size: 62.5%;
+	color: @defaultFontColor;
 }
 
 p, li {
@@ -121,12 +130,12 @@ header {
 	flex-direction: column;
 	padding: 60px 0;
 	margin-bottom: @spaceBottom;
-	background: linear-gradient( #f4e6c7, #fbfbfb);
+	background: linear-gradient(#f4e6c7, #fbfbfb);
 
 	img {
 		width: 20%;
 		height: auto;
-		border:3px solid #555;
+		border:3px solid @borderColor;
 		border-radius: 50%;
 		margin-bottom: @spaceBottom;
 	}
@@ -134,6 +143,10 @@ header {
 	h1 {
 		font-size: 4rem;
 		margin-bottom: @spaceBottom;
+
+		@media (max-width: 800px) {
+			font-size: 3.5rem;
+		}
 	}
 
 	p {
@@ -155,8 +168,7 @@ header {
 
 	.background-content {
 		padding: 20px;
-		display: flex;
-		justify-content: space-between;
+		.customLayout(space-between);
 		align-items: center;
 
 		img {
@@ -170,8 +182,8 @@ header {
 
 .skills {
 	margin: 40px 0;
-	border-top: 1px solid #dedede;
-	border-bottom: 1px solid #dedede;
+	border-top: 1px solid @borderColor;
+	border-bottom: 1px solid @borderColor;
 	padding-top: 40px;
 }
 
@@ -184,7 +196,6 @@ header {
 		margin-right: 9%;
 		margin-left: 2%;
 		padding: 20px;
-
 		list-style-image: url(../img/icon-golden-snitch.png);
 
 		li {
