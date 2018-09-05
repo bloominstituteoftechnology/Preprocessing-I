@@ -57,4 +57,129 @@ html, body {
     height: 100%;
 }
 
-// less
+// Variable
+@fontSize: 1.6rem;
+@fontStack: Helvetica, Arial, sans-serif;
+
+@mobileValue: 500px;
+@mainColor: @Chambray	;
+@accentColor: orange;
+@Chambray : #3A5C98;
+
+// Maxin
+.layout(@justi, @align) {
+	display: flex;
+	justify-content: @justi;
+	align-items: @align;
+  }
+
+.border(@size, @color) {
+	border : @size solid @color;
+}
+
+html {
+	font-size: 62.5%;
+	color : @mainColor;
+
+	font-family: @fontStack;
+  }
+
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size : @fontSize;
+  }
+
+  h1 {
+	font-size : @fontSize *2;
+	text-align: center;
+	margin : 10px 0;
+}
+
+  h2 {
+	  font-size : @fontSize *1.7;
+  }
+header{
+	width : 30%;
+	margin-left : 65%;
+ 
+	
+	 nav {
+	.layout(space-around, center);
+	}
+
+}
+
+.intro{
+	margin : 10px 0 20px 0;
+	.layout(space-around, center);
+
+	.bio{
+.border(1px, red);
+margin-top : 30px;
+		width : 45%;
+		.layout (space-around, center);
+		flex-direction: column;
+		img {
+			width : 50%;
+			height : auto;
+		}
+
+		h1{
+			margin : 5px 0;
+		}
+	}
+
+	.skill{
+		.border(1px, red);
+		.layout(center, center);
+		flex-direction : column; 
+		align-items: center;
+		width : 45%;
+
+		h2 {
+			margin-bottom : 10px;
+		}
+		p{
+			margin : 5px 0 5px 10%;
+			.border(2px, blue);
+			width : 40%;
+			text-align : center;
+			height : 40px;
+			padding-top : 10px;
+			background : lightblue;
+			color : red;
+		}
+	}
+}
+
+.bottom{
+	.layout(space-between, center);
+	h2{
+		margin-bottom : 10px;
+	}
+	.work{
+
+		width : 45%;
+		.layout(space-between, center);
+		flex-direction:column;
+		
+	
+		li{
+			list-style-type: square;
+			margin : 5px 0;
+		}
+	}
+
+	
+
+	.contact{
+		.layout(center, center);
+		flex-direction : column; 
+		align-items: center;
+
+		width : 45%;
+		p {margin : 5px 5px 5px 0;}
+	}
+}
