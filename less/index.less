@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -54,6 +54,104 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+//VARIABLES
+@shade-color: #F0FFFF;
+@body-font-size: 1.2rem;
+@header-font-size: 1.6rem;
+//
+
+//MIXINS
+.custom-layout(@flex-direction, @justify-content){
+	display: flex;
+	flex-direction: @flex-direction;
+	justify-content: @justify-content;
+}
+
+.custom-font(@font-size, @text-decoration){
+	font-size: @font-size;
+	text-decoration: @text-decoration;
+}
+//
+
+.container{
+	max-width: 880px;
+}
+
+header{
+	.custom-layout(row, flex-end);
+	margin: 20px 0;
+	nav{
+		display: flex;
+		a{
+			margin: 10px;
+		}
+	}	
+}//header
+
+.intro{
+	.custom-layout(column, flex-start);
+	background-color: @shade-color;
+	padding: 0 20px;
+	margin: 0 20px;
+	h2{
+		margin: 10px auto;
+		.custom-font(3rem, underline);
+	}
+	p{
+		margin: 10px auto;
+		font-size: @body-font-size;
+	}
+}//intro
+
+.main-content{
+	.custom-layout(row, space-around);
+	margin: 0 20px;
+	padding: 20px;
+	.skills{
+		h2{
+			margin: 10px auto;
+			.custom-font(@header-font-size, underline);
+		}
+		ol{
+			background-color: @shade-color;
+			list-style-type: disc;
+			line-height: 2;
+		}
+	}
+	.work-history{
+		h2{
+			margin: 10px auto;
+			.custom-font(@header-font-size, underline);
+		}
+		ol{
+			background-color: @shade-color;
+			line-height: 2;
+		}
+	}
+}//main content
+
+.contact{
+	.custom-layout(column, flex-start);
+	margin: 0 20px;
+	padding: 20px;
+	h2{
+		margin: 10px 0;
+		.custom-font(@header-font-size, underline);
+	}
+	address{
+		line-height: 2;
+	}
+}
+
+footer{
+	text-align: center;
+}
+
+@media (max-width: 500px) {
+	.main-content{
+		.custom-layout(column; flex-start);
+	}
+}
