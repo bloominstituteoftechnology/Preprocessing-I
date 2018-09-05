@@ -143,6 +143,8 @@ html {
 	height: 100%;
 	font-size: 62.5%;
 }
+
+@mobile: ~"(max-width: 500px)";
 @dark-base: #004b4b;
 @base-color: #23b4b4;
 @accent-orange: #ffa75e;
@@ -174,11 +176,19 @@ html {
 
 h2 {
 	.sectionHeading;
+
+	@media @mobile {
+		font-size: 2rem;
+	}
 }
 
 h3 {
 	.sectionHeading;
 	font-size: 1.4rem;
+
+	@media @mobile {
+		font-size: 1.2rem;
+	}
 }
 
 p, li {
@@ -191,45 +201,87 @@ p, li {
 	background-color: @base-color;
 	margin: 0 auto;
 
+	@media @mobile{
+		max-width: 500px;
+	}
+
+
 	header {
 		.flexbox(space-around, center);
 
 		h1 {
 			.sectionHeading;
 			padding: 20px;
+
+			}
 		}
 
 		nav {
 			.flexbox(center, center);
 
 			a {
-				.link();
-				.sectionHeading();
+				.link;
+				.sectionHeading;
 				font-size: 1.6rem;
 				padding: 10px;
+
+				@media @mobile {
+					font-size: 1.4rem;
+				}
 			}
 		}
-	}
 
 	.introduction {
 		.flexbox(center, center);
 		width: 80%;
 		margin: -50px auto;
 
+		@media @mobile {
+			flex-direction: column-reverse;
+			width: 95%;
+			margin: 0 auto;
+		}
+
 		.intro-text {
 			width: 50%;
 			padding: 13%;
 			text-align: center;
+
+			@media @mobile {
+				width: 100%;
+				padding: 7%;
+
+				a {
+					.link;
+					.sectionHeading;
+					font-size: 1.6rem;
+					padding: 20px;
+
+					@media @mobile {
+						font-size: 1.4rem;
+					}
+				}
+			}
 		}
 
 		.intro-photo {
 			width: 50%;
 			padding: 5% 0 10% 3%;
 
+			@media @mobile {
+				width: 100%;
+			}
+
 			img {
 				border-radius: 50%;
 				height: 250px;
 				width: 200px;
+
+				@media @mobile {
+					height: 160px;
+					width: 130px;
+					margin-left: 30%;
+				}
 			}
 		}
 	}
@@ -238,6 +290,10 @@ p, li {
 		.flexbox (space-between, center);
 		width: 80%;
 		margin: 2% auto;
+
+		@media @mobile {
+			width: 100%;
+		}
 
 		.skills {
 			width: 48%;
@@ -273,6 +329,10 @@ p, li {
 		border: 2px dotted @dark-base;
 		border-radius: 5%;
 		padding: 30px;
+
+		@media @mobile {
+			width: 95%;
+		}
 			h2 {
 				text-align: center;
 				width: 100%;
@@ -283,7 +343,13 @@ p, li {
 				text-align: center;
 					img {
 						transform: scale(.5);
-						margin: -35% 0 -30% -20%; 
+						margin: -35% 0 -30% -20%;
+
+						@media @mobile {
+							display: block;
+							transform: scale(.4);
+							margin: -30% 0 -30% -40%;
+						}
 					}
 			}
 	}
@@ -297,6 +363,10 @@ p, li {
 		border-radius: 5%;
 		opacity: 0.9;
 
+		@media @mobile {
+			width: 95%;
+		}
+
 			h2 {
 				text-align: center;
 				width: 100%;
@@ -304,7 +374,7 @@ p, li {
 
 		.work-history {
 			width: 50%;
-			margin: 20 px 10px;
+			padding: 10px;
 			text-align: center;
 		}
 	}
