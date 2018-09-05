@@ -53,7 +53,150 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
+html, body {
+	height: 100%;
+	background: yellow;
+}
+
+// variables
+@smallFont: 1.6rem;
+@mediumFont: 2rem;
+@largeFont: 2.5rem;
+@extraLargeFont: 4rem;
+@boxColor: black;
+@boxPadding: 20px 2% 20px 2%;
+@fontColor: white;
+@lineSpace: 1.7;
+@jobSpace: 20px;
+
+// mixins
+.flex(@wrap, @justify, @align) {
+	display: flex;
+	flex-wrap: @wrap;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+.box(@width, @height) {
+	width: @width;
+	height: @height;
+	background: @boxColor;
+	padding: @boxPadding;
+}
+
+.job() {
+	line-height: @lineSpace;
+	margin-bottom: @jobSpace;
+	border-bottom: 1px solid @fontColor;
+}
+
+
+.container {
+	font-size: @smallFont;
+	max-width: 1000px;
+	margin: 0 auto;
+	color: @fontColor;
+	h2 {
+		font-size: @extraLargeFont;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	header {
+		nav {
+			margin-top: 30px;
+			height: 50px;
+			background: black;
+			font-size: @extraLargeFont;
+			.flex(nowrap, space-around, center);
+			a {
+				text-decoration: none;
+				color: @fontColor;
+			}
+		}
+}
+	.intro {
+		.flex(nowrap, space-evenly, center);
+		.image {
+			margin-top: 30px;
+		}
+		.introText{
+			color: black;
+			.flex(wrap, space-around, center);
+			h1 {
+				font-size: 7rem;
+			}
+			p {
+				font-size: @extraLargeFont;
+			}
+		}
+	}
+	.top {
+		.flex(nowrap, space-between, center);
+		margin-bottom: 50px;
+		.skills {
+			.box(48%, 300px);
+			ul {
+				font-size: @mediumFont;
+				line-height: @lineSpace;
+				list-style-type: circle;
+				margin-left: 3%;
+			}
+		}
+		.accomplishments {
+			.box(48%, 300px);
+			ul {
+				line-height: @lineSpace;
+				li {
+					font-size: @mediumFont;
+					list-style-type: circle;
+					margin-left: 3%;
+				}
+				.smallLi {
+					font-size: @smallFont;
+					list-style-type: square;
+					margin-left: 8%;
+				}
+			}
+		}
+	}
+	.bottom {
+		.flex(nowrap, center, center);
+		margin-bottom: 50px;
+		.workHistory {
+			.box(100%, 800px);
+			.job1 {
+				.job;
+			}
+			.job2 {
+				.job;
+			}
+			.job3 {
+				.job;
+				border-bottom: none;
+			}
+			h4 {
+				font-size: @mediumFont;
+			}
+			h3 {
+				font-size: @largeFont;
+			}
+			h5 {
+				font-size: @mediumFont;
+			}
+			ul {
+				list-style-type: circle;
+				margin-left: 3%;
+				margin-bottom: @jobSpace;
+			}
+		}
+	}
+	.contact {
+		p {
+
+		}
+	}
+}
