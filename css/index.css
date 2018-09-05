@@ -129,6 +129,7 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 h1,
 h2,
@@ -185,9 +186,27 @@ a {
 .container header nav a:hover {
   color: #ffbb00;
 }
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+  }
+  .container header .logo {
+    margin-left: 0;
+    display: none;
+  }
+  .container header nav {
+    margin-right: 0;
+    width: 80%;
+  }
+}
 .container #about-me {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-image: url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdff4c62302fd44491d4850202323d11&auto=format&fit=crop&w=3900&q=80");
@@ -195,7 +214,7 @@ a {
   height: 759px;
 }
 .container #about-me h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-style: italic;
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -210,6 +229,12 @@ a {
   color: white;
   width: 60%;
 }
+@media (max-width: 500px) {
+  .container #about-me {
+    height: 100%;
+    padding: 40px 0;
+  }
+}
 .container #experience {
   display: flex;
   flex-flow: row wrap;
@@ -221,7 +246,7 @@ a {
   padding-bottom: 20px;
 }
 .container #experience h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-style: italic;
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -239,7 +264,7 @@ a {
   width: 90%;
 }
 .container #experience .box {
-  height: 33%;
+  height: 30%;
   width: 32%;
   padding: 20px;
   margin: 10px ;
@@ -261,16 +286,29 @@ a {
 .container #experience .box li {
   padding-bottom: 10px;
 }
+@media (max-width: 500px) {
+  .container #experience {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 40px 0;
+  }
+  .container #experience .box {
+    width: 90%;
+  }
+}
 .container #skills {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
   padding-bottom: 100px;
-  background-image: url(/img/stripes.png);
+  background-image: url(../img/stripes.png);
 }
 .container #skills h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-style: italic;
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -299,16 +337,29 @@ a {
   padding-bottom: 10px;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .container #skills {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 0 100px;
+  }
+  .container #skills .col {
+    width: 90%;
+  }
+}
 .container #contact {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: 100px;
   background-color: #ffbb00;
 }
 .container #contact h2 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-style: italic;
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -333,12 +384,11 @@ a {
 .container #contact input[type=text],
 .container #contact select,
 .container #contact textarea {
-  width: 100%;
+  width: 92%;
   padding: 12px;
   border: 1px solid #323232;
   border-radius: 4px;
-  margin-top: 6px;
-  margin-bottom: 30px;
+  margin: 6px 0 30px;
   resize: vertical;
   font-family: inherit;
   font-weight: 400;
@@ -353,15 +403,18 @@ a {
 .container #contact input[type=submit]:hover {
   background-color: #323232;
   color: white;
-  padding: 12px 20px;
-  border-radius: 4px;
+}
+@media (max-width: 500px) {
+  .container #contact form {
+    margin-left: 8%;
+  }
 }
 .container footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 40px;
   font-size: 1.2rem;
   background: #323232;
   color: white;

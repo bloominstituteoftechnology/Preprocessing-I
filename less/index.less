@@ -50,7 +50,8 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	scroll-behavior: smooth; // added this to make links to IDs smooth scroll.
 }
 
 // Variables and Mix-ins to follow:
@@ -64,6 +65,8 @@ table {
 @main-color: #323232;
 @white: white; //this is a var because designers might ask for a different white
 @yellow: #ffbb00;
+@gradient-start: #115599;
+@gradient-end: crimson;
 
 // parametric flexbox
 .flex(@direction, @wrap, @justify, @align) {
@@ -83,7 +86,7 @@ table {
 }
 
 .h2-styling() {
-	font-size: 5rem;
+	font-size: 4.5rem;
 	font-style: italic;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
@@ -134,12 +137,28 @@ html, body, a {
 				.link-styling;
 				font-size: 1.4rem;
 			}
-
 		} // nav end
+
+		@media (max-width:500px) {
+			.flex(column,nowrap,center,center);
+			height: 50px;
+			position: relative;
+
+			.logo {
+				margin-left: 0;
+				display:none;
+			}
+
+			nav {
+				margin-right: 0;
+				width: 80%;		
+			}
+		} // header media query end
+
 	} // header end
 
 	#about-me {
-		.flex(column,wrap,center,center);
+		.flex(column,nowrap,center,center);
 		background-image: url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdff4c62302fd44491d4850202323d11&auto=format&fit=crop&w=3900&q=80");
 		background-size: cover;
 		height: 759px;
@@ -155,11 +174,17 @@ html, body, a {
 			color: @white;
 			width: 60%;
 		}
+
+		@media (max-width:500px) {
+			height: 100%;
+			padding: 40px 0;
+		} // About Me media query end
+
 	}	// end About Me section
 
 	#experience {
 		.flex(row,wrap,space-around,center);
-		background-image: linear-gradient(to bottom right, #115599, crimson);
+		background-image: linear-gradient(to bottom right, @gradient-start, @gradient-end);
 		background-size: cover;
 		height: 1000px;
 		padding-bottom: 20px;
@@ -179,7 +204,7 @@ html, body, a {
 		}
 
 		.box {
-			height: 33%;
+			height: 30%;
 			width: 32%;
 			padding: 20px;
 			margin: 10px ;
@@ -205,13 +230,24 @@ html, body, a {
 				padding-bottom: 10px;
 			}
 		}  
+
+		@media (max-width:500px) {
+			.flex(column, nowrap, center, center);
+			height: 100%;
+			padding: 40px 0;
+
+			.box{
+				width: 90%;
+			}
+		} // Experience media query end
+
 	} // end Experience section
 
 	#skills {
 
 		.flex(row, wrap, center, flex-start);
 		padding-bottom: 100px;
-		background-image: url(/img/stripes.png);
+		background-image: url(../img/stripes.png);
 
 		h2 {
 			.h2-styling;
@@ -242,11 +278,22 @@ html, body, a {
 			padding-bottom: 10px;
 			text-align: center;
 		}
+
+		@media (max-width:500px) {
+			.flex(column, nowrap, center, center);
+			height: 100%;
+			padding: 0 0 100px;
+
+			.col{
+				width: 90%;
+			}
+		} // Skills media query end
+
 	} // end Skills section
 
 	#contact {
 
-		.flex(row, wrap, center, flex-start);
+		.flex(row, wrap, center, center);
 		padding-bottom: 100px;
 		background-color: @yellow;
 
@@ -271,12 +318,11 @@ html, body, a {
 		}
 
 		input[type=text], select, textarea {
-			width: 100%;
+			width: 92%;
 			padding: 12px;   
 			border: 1px solid @main-color; 
 			border-radius: 4px; 
-			margin-top: 6px;
-			margin-bottom: 30px;
+			margin: 6px 0 30px;
 			resize: vertical;
 			font-family: inherit;
 			font-weight: 400; 
@@ -293,14 +339,18 @@ html, body, a {
 		input[type=submit]:hover {
 			background-color: @main-color;
 			color: @white;
-			padding: 12px 20px;
-			border-radius: 4px;
 		}
+
+		@media (max-width:500px) {
+			form {
+				margin-left: 8%
+			}
+		} // end Contact media query
 	} //end Contact section
 
 	footer {
 		.flex(row, nowrap, center, center);
-		height: 30px;
+		height: 40px;
 		font-size: 1.2rem;
 		background: @main-color;
 		color: @white;
