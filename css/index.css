@@ -145,7 +145,6 @@ strong {
   margin: 0 auto;
   padding: 20px;
   font-size: 1.6rem;
-  height: 100%;
   background-color: #EEEEEE;
 }
 .top-nav nav {
@@ -164,16 +163,35 @@ strong {
   display: flex;
   padding-bottom: 50px;
 }
+@media (max-width: 800px) {
+  .top-content {
+    flex-direction: column;
+  }
+}
 .top-content img {
-  width: 30%;
-  height: 30%;
+  width: 37%;
+  height: 37%;
   padding-right: 3%;
 }
+@media (max-width: 800px) {
+  .top-content img {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 25%;
+    height: 25%;
+    padding: 0;
+  }
+}
 .top-content .summary {
-  width: 60%;
+  width: 58%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 0px;
+}
+@media (max-width: 800px) {
+  .top-content .summary {
+    width: 100%;
+  }
 }
 .top-content .summary h1 {
   font-size: 3rem;
@@ -188,10 +206,21 @@ strong {
   border: 1px solid #FF5099;
   background: white;
   font-size: 1.5rem;
-  width: 30%;
+  width: 40%;
   height: 32px;
-  margin: 10px 2% 10px 2%;
+  margin: 10px 2% 10px 0;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .top-content .summary button {
+    border: 1px solid #FF5099;
+    background: white;
+    font-size: 1.5rem;
+    width: 40%;
+    height: 48px;
+    margin: 10px 2% 10px 0;
+    cursor: pointer;
+  }
 }
 .top-content .summary button:hover {
   color: #FF5099;
@@ -212,11 +241,31 @@ strong {
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 800px) {
+  .contact {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
 .contact h4 {
   padding: 10px 1% 10px 0%;
 }
+@media (max-width: 800px) {
+  .contact h4 {
+    display: none;
+  }
+}
 .contact p {
+  font-size: 1.65rem;
   padding: 10px 0% 10px 2%;
+}
+@media (max-width: 800px) {
+  .contact p {
+    font-size: 1.35rem;
+    line-height: 1.75rem;
+    flex-direction: column;
+    padding: 0;
+  }
 }
 .bottom-nav nav {
   display: flex;
@@ -227,7 +276,7 @@ strong {
   align-items: flex-end;
   text-decoration: none;
   color: #505050;
-  padding: 0 0 20px 4%;
+  padding: 20px 0 20px 4%;
 }
 .bottom-nav a:hover {
   color: #FF5099;
