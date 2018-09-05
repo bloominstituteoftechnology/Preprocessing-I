@@ -68,6 +68,7 @@ p {
 #colors() {
 	primary: red;
 	secondary: black;
+	tertiary: blue;
 	accent: grey;
 }
 
@@ -76,44 +77,148 @@ p {
 	width: 92%;
 	margin: 0 auto;
 }
+.indent(@rems) {
+	padding-left: @rems;
+}
+.center {
+	margin: 0 auto;
+}
+.flex-center {
+	display: flex;
+	justify-content: center
+}
 
+@keyframes cross-out {
+	0% {
+		text-decoration: underline;
+	}
+	100% {
+		text-decoration: line-through;
+	}
+}
 nav {
+	// margin-top: 2rem;
 	display: flex;
 	justify-content: space-around;
 	align-content: stretch;
 	div {
+		padding: 1rem 0;
 		width: 25%;
 		flex-grow: 1;
+		border-right: 0.1rem dashed black;
+		.flex-center;
 		a {
+			text-decoration: none;
 			font-size: 2.4rem;
-			&:hover {
-				background-color: #colors[primary];
-				color: @secondaryColor;
-			}
+		}
+		&:last-child {
+			border-right: none;
+		}
+		&:hover {
+			text-decoration: line-through;
+			animation: cross-out 0.1s;
+			background-color: #colors[primary];
+			color: #colors[secondary];
+		}
+	}
+	@media (max-width: 500px) {
+		flex-direction: column;
+		div {
+			width: 100%;
+			border-right: 0;
+			border-bottom: 0.1rem dashed black;
 		}
 	}
 }
 
 header {
-	margin: 2rem 4rem;
-	.upper-text {
-		padding: 1.5rem 6rem;
-	}
+	margin-top: 4rem;
+	margin-bottom: 8rem;
+	flex-wrap: wrap;
 	h1 {
 		font-size: 3.6rem;
 		color: #colors[primary];
-		.upper-text();
+		.indent(4rem)
 	}
 	h4 {
+		margin: 1.5rem;
 		font-size: 1.8rem;
 		color: #colors[accent];
-		.upper-text();
+		letter-spacing: 2rem;
+		.indent(6rem);
 	}
 	p {
 		font-size: 7.2rem;
+		// line-height: 3.6rem;
 	}
 	div.cta {
-		color: 
+		padding: 2rem;
+		color: #colors[secondary];
+		background-color: #colors[tertiary];
 		font-size: 14.4rem;
+		border: 0.5rem dashed #colors[accent];
+		&:hover {
+			color: white;
+			border: 0.5rem solid #colors[accent];
+			background-color: #colors[secondary];
+		}
+	}
+}
+
+.info-container {
+	display: flex;
+	justify-content: space-between;
+	.info-padding {
+		padding-top: 2rem;
+	}
+	section.bio {
+		width: 50%;
+
+		h2 {
+			font-size: 2.4rem;
+		}
+		p {
+			// .info-padding();
+			margin: 1rem 0rem 2rem 1.5rem;
+			// max-width: 30%;
+		}
+	}
+	section.skills {
+		height: 100%;
+		h3 {
+			font-size: 2.4rem;
+			text-align: right;
+		}
+		ul.skills-list {
+			// .info-padding();
+			li {
+				font-size: 2.4rem;
+				margin: 1rem 0;
+			}
+		}
+	}
+}
+
+
+section.work-history {
+	display: flex;
+	flex-direction: column;
+	h3 {
+		font-size: 3.6rem;	
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	font-size: 2.4rem;
+	margin: 2rem 0;
+}
+div.table {	
+	div.row {
+		.row();
+		&:first-child {
+			font-weight: bold;
+		}
 	}
 }
