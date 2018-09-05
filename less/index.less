@@ -58,9 +58,9 @@ table {
 //@font-family: Arial, Helvetica, serif;
 @font-family: 'Cormorant', serif;
 @background-color: black;
-@skills-color: #5cc4c0;
+@skills-color: #39ce81;
 @work-color: #e5b116;
-@border-color: #528239;
+@border-color: #c12242;
 @text-color: white;
 
 
@@ -78,7 +78,7 @@ table {
 	justify-content: space-between;
 	line-height: 1.25;
 	h2 {
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 	@media (max-width: 500px) {
 		flex-wrap: wrap;
@@ -102,7 +102,7 @@ html, body {
 .container {
 	max-width: 800px;
 	margin: 0 auto;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	background-color: #fcfcfc;
 	
 	@media (max-width: 500px) {
@@ -112,6 +112,7 @@ html, body {
 	header {
 		display: flex;
 		justify-content: center;
+		border-bottom: 2px solid @border-color;
 	}
 
 	header nav {
@@ -119,7 +120,7 @@ html, body {
 		justify-content: space-evenly;
 		width: 100%;
 		font-size: 2rem;
-		font-weight: 600;
+		font-weight: 400;
 		margin: 20px 0px;
 		background-color: #efefef;
 		padding: 20px 5px;
@@ -142,7 +143,8 @@ html, body {
 		}
 
 			a:hover {
-				text-decoration: underline;
+				font-weight: 600;
+				cursor: pointer;
 			}
 	}
 
@@ -189,6 +191,8 @@ html, body {
 				}
 
 				.location {
+					display: flex;
+					align-content: center;
 					margin-bottom: 10px;
 				}
 
@@ -200,12 +204,20 @@ html, body {
 
 			.contact {
 				.format-section;
+				li {
+					margin: 10px 0px;
+					display: flex;
+					align-items: center;
+					 i {
+						margin-right: 5%;
+					 }
+				}
 			}
 
 
 		}
 
-	.column-two {
+.column-two {
 			width: 48%;
 			min-width: 300px;
 		
@@ -214,6 +226,19 @@ html, body {
 			background-color: @skills-color;
 			color: @text-color;
 			.format-section;
+
+			h2 {
+				color: black;
+				font-weight: 600;
+			}
+
+			ul {
+				list-style-type: circle;
+
+				li {
+					margin: 5px 0px;
+				}
+			}
 			
 		}
 
@@ -225,8 +250,14 @@ html, body {
 			button {
 			background-color: @border-color;
 			color: @text-color;
-			padding: 5px 0px;
+			padding: 10px 0px;
 			width: 100%;
+			border: 0;
+			}
+
+			button:hover {
+				background-color: #89172e;
+				cursor: pointer;
 			}
 
 		}
@@ -235,6 +266,11 @@ html, body {
 			background-color: @work-color;
 			color: @text-color;
 			.format-section;
+
+			h2 {
+				color: black;
+				font-weight: 600;
+			}
 
 			.job {
 				margin: 20px 0px;
@@ -252,7 +288,7 @@ html, body {
 				}
 
 				p {
-					font-size: 1.3rem;
+					font-size: 1.6rem;
 				}
 			}
 		}
