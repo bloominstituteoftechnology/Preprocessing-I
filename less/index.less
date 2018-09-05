@@ -56,7 +56,11 @@ table {
 //variables....
 
 @mobileBreakPoint:800px;
-
+@splashBackGroundColor:#E6F9AF;
+@textColor:#384E77;
+@buttonColor:#18314F;
+@navColor:#8BBEB2;
+@accentColor:#E6F9AF;
 
 
 
@@ -64,22 +68,32 @@ table {
 //main css body
 html, body {
 	height: 100%;
-	font-size: 62.5%
+	font-size: 62.5%;
+	color:@textColor;
 }
 .spacer{
 	margin-top:15px;
 	width: 100%;
 	margin-bottom:15px;
 }
+.accentColor{
+	background-color:@accentColor
+}
 .pageContainer{
 	max-width: 1050px;
 	margin:0 auto;
-	border: 1px solid black;
 	font-size: 1.6rem;
 }
 .header{
 	font-size:3rem;
 	font-weight:bold;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+footer{
+	margin-top:30px;
+	height:30px;
+	background-color: @accentColor;
 }
 header {
 	display:flex;
@@ -99,11 +113,13 @@ header {
 
 	nav a{
 		padding:10px;
+		text-decoration: none;
+		color: @navColor;
 	}
 }
 
 .photoSection{
-	background-color: aliceblue;
+	background-color:@splashBackGroundColor;
 
 	.photoContainer{
 		padding:20px;
@@ -131,7 +147,9 @@ header {
 			margin-top: 15px;
 			align-self: center;
 			padding:10px;
-			background: gray;
+			background:@buttonColor;
+			font-size: 2rem; 
+			color:white;
 			margin-bottom:30px;
 		
 			@media(min-width:@mobileBreakPoint){
