@@ -147,6 +147,16 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+@media (max-width: 960px) {
+  .container {
+    width: 95%;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+}
 .btn {
   color: #f2f2f2;
   font-weight: 300;
@@ -158,12 +168,23 @@ body {
   cursor: pointer;
   font-size: inherit;
 }
+@media (max-width: 500px) {
+  .btn {
+    width: 100%;
+  }
+}
 /* NAVIGATION */
 .nav {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   margin: 2rem 0;
+}
+@media (max-width: 500px) {
+  .nav {
+    margin-bottom: 5rem;
+    justify-content: space-between;
+  }
 }
 .nav__link,
 .nav__link:visited {
@@ -173,6 +194,12 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   transition: all 300ms;
+}
+@media (max-width: 500px) {
+  .nav__link,
+  .nav__link:visited {
+    margin: 0;
+  }
 }
 .nav__link:hover {
   border-bottom: 2px solid #92deee;
@@ -184,6 +211,7 @@ body {
 .header {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 5rem;
 }
@@ -191,12 +219,27 @@ body {
   width: 40%;
   margin-right: 5%;
 }
+@media (max-width: 500px) {
+  .header__img {
+    display: none;
+  }
+}
 .header__img img {
   width: 100%;
   border-radius: 50%;
 }
+@media (max-width: 500px) {
+  .header__img img {
+    width: 50%;
+  }
+}
 .header__intro {
   width: 55%;
+}
+@media (max-width: 500px) {
+  .header__intro {
+    width: 100%;
+  }
 }
 .header__intro .heading-primary {
   display: flex;
@@ -214,16 +257,29 @@ body {
 .header__lead {
   margin-bottom: 5rem;
 }
+@media (max-width: 500px) {
+  .header__lead {
+    margin-bottom: 2rem;
+  }
+}
 /* SUB HEADER */
 .sub-header {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: flex-start;
+  align-items: stretch;
   margin-bottom: 5rem;
 }
 .sub-header .skills {
   width: 65%;
   margin-right: 10%;
+}
+@media (max-width: 500px) {
+  .sub-header .skills {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
 }
 .sub-header .skills .heading-secondary {
   font-size: 3.6rem;
@@ -244,8 +300,18 @@ body {
 .sub-header .skills__container .label {
   font-size: 1.8rem;
 }
+@media (max-width: 500px) {
+  .sub-header .skills__container .label {
+    font-size: 1.6rem;
+  }
+}
 .sub-header .skills__container .contents {
   font-size: 2.4rem;
+}
+@media (max-width: 500px) {
+  .sub-header .skills__container .contents {
+    font-size: 2rem;
+  }
 }
 .sub-header .skills__container:last-of-type {
   margin-bottom: 5rem;
@@ -257,6 +323,11 @@ body {
   padding: 2rem;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 500px) {
+  .sub-header .contact {
+    width: 100%;
+  }
 }
 .sub-header .contact .heading-tertiary {
   text-align: center;
@@ -270,6 +341,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #000;
+}
+@media (max-width: 500px) {
+  .sub-header .contact__body {
+    font-size: 2rem;
+    align-items: center;
+  }
 }
 .sub-header .contact__footer {
   display: flex;
@@ -279,6 +358,12 @@ body {
 .sub-header .contact__footer a:visited {
   color: #000;
   font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  .sub-header .contact__footer a,
+  .sub-header .contact__footer a:visited {
+    font-size: 4rem;
+  }
 }
 /* EXPERIENCE & EDUCATION */
 .experience,
@@ -291,8 +376,8 @@ body {
   border-radius: 1rem;
 }
 .card .heading-tertiary {
-  text-transform: uppercase;
   font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: 2rem;
 }
 .card__item {
@@ -304,6 +389,16 @@ body {
 .card__item--left h4 {
   text-transform: uppercase;
   font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  .card__item--left h4 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 500px) {
+  .card__item--left {
+    font-size: 1.4rem;
+  }
 }
 .card__item--right {
   text-align: right;
