@@ -4,87 +4,221 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-		height: 100%;
+html,
+body {
+	height: 100%;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 //VARIABLES
-@gascolor: #6A5;
-@abdicatecolor: #abd1c8;
-
-
-@mainColor: @abdicatecolor;
-@boxColor: @gascolor;
-
-
+@eiffelColor: #e1ffe1;
+@abdicateColor: #abd1c8;
+@mainColor: @abdicateColor;
+@boxColor: @eiffelColor;
 @defaultFontSize: 1.6rem;
-//MIXIN
+
+//MIXINs
+.center() {
+	display: flex;
+	align-items: center;
+}
 
 .container {
-	max-width: 800px;
-	margin: 0 auto;
-	background: @maincolor;
+  max-width: 880px;
+  margin: 0 auto;
 	font-size: @defaultFontSize;
+
+	h1 {
+		font-size: 6rem;
+	}
+	h3 {
+		font-size: 3rem;
+		margin-bottom: 1%;
+	}
 }
 
 header {
 	display: flex;
-	justify-content: space-between;
-	margin: 0 20px;
-
-
+	margin: 20px 0;
+	
+	nav {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
 }
 
+.intro {
+	display: flex;
+	background: @mainColor;
+	padding: 5%;
+
+	.photo {
+		.center;
+		margin-right: 2%;
+	}
+}
+
+.skillswork {
+	display: flex;
+	justify-content: space-evenly;
+	background: @boxColor;
+	padding: 2.5%;
+
+	li {
+		font-size: 2.4rem;
+	}
+
+	h3 {
+		display: inline;
+		// border-bottom: 1px solid black;
+	}
+}
+
+address {
+	.center;
+	flex-direction: column;
+	padding: 5% 0;
+	background: @mainColor;
+}
