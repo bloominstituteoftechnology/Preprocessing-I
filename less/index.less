@@ -134,6 +134,11 @@ table {
   display: flex;
   justify-content: @justify;
 }
+
+.fontStyle(@fontSize, @fontFamily) {
+  font-size: @fontSize;
+  font-family: @fontFamily;
+}
 // Variables
 @fontSize: 1.6rem;
 
@@ -158,115 +163,153 @@ body {
 }
 
 nav {
-	.flexLayout(space-evenly);
-	max-width: 100%;
-	background-color: black;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-bottom: solid black 1px;
-	a {
-	  color: white;
-	  font-size: @fontSize;
-	  font-weight: bold;
-	  text-decoration-line: none;
-	  border: solid black 1px;
-	  padding: 10px 4%;
-  
-	  &:hover {
-		color: blue;
-	  }
-	}
+  .flexLayout(space-evenly);
+  max-width: 100%;
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid black 1px;
+  a {
+    color: white;
+    font-size: @fontSize;
+    font-weight: bold;
+    text-decoration-line: none;
+    border: solid black 1px;
+    padding: 10px 4%;
+
+    &:hover {
+      color: blue;
+    }
+  }
 }
-  .container {
-    .profile {
-      .flexLayout(space-between);
-      margin-top: 30px;
+.container {
+  .profile {
+    .flexLayout(space-between);
+    margin-top: 30px;
 
-      p {
-        font-size: @fontSize;
-        padding: 5%;
-        border: solid black 2px;
-        margin: 0 5%;
-      }
+    p {
+      .fontStyle(1.6rem, serif);
+      padding: 5%;
+      border: solid black 2px;
+      margin: 0 5%;
+    }
 
-      img {
-        max-width: 100%;
-        height: auto;
-        border: solid black 4px;
-      }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: solid black 4px;
 
-      h1 {
-        text-align: center;
-        font-size: 4rem;
-        font-weight: bold;
-      }
-
-      h3 {
-        text-align: center;
-        font-size: 3rem;
-      }
-
-      .about-me h2 {
-        .flexLayout(center);
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-        margin-top: 37px;
-        text-decoration-line: underline;
-      }
-      @media (max-width: 650px) {
-        background-color: #45a049;
+      @media (max-width: 800px) {
+        width: 80%;
+        margin-left: 11%;
       }
     }
 
-    .skills {
-      border-top: black solid 1px;
-      padding-top: 50px;
-      .flexLayout(space-around);
-      margin-top: 50px;
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .about-me h2 {
+      .flexLayout(center);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: 37px;
+      text-decoration-line: underline;
+    }
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .skills {
+    border-top: black solid 1px;
+    padding-top: 50px;
+    .flexLayout(space-around);
+    margin-top: 50px;
+
+    h2 {
+      font-size: 3rem;
+      text-decoration-line: underline;
+      margin-bottom: 10px;
+    }
+    ol {
+      .flexLayout(center);
+      flex-direction: column;
+      align-items: center;
+      padding: s0px 20%;
+
+      li {
+        font-style: italic;
+        font-size: @fontSize;
+        line-height: 1.5;
+      }
+    }
+
+    .work {
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
 
       h2 {
-        font-size: 3rem;
-        text-decoration-line: underline;
-        margin-bottom: 10px;
-      }
-      ol {
-        .flexLayout(center);
-        flex-direction: column;
-        align-items: center;
-        padding: s0px 20%;
+        margin-left: 33%;
+        margin-bottom: 20px;
 
-        li {
-          font-style: italic;
+        @media (max-width: 500px) {
+          margin-top: 25px;
+        }
+      }
+
+      table {
+        
+        width: 500px;
+        //max-width: 100%;
+
+        height: 100px;
+        th {
+          font-size: 2rem;
+          font-weight: bold;
+          border: 2px solid black;
+          text-decoration-line: underline;
+        }
+
+        td {
+          text-align: center;
           font-size: @fontSize;
-          line-height: 1.5;
-        }
-      }
-
-      .work {
-        h2 {
-          margin-left: 32%;
+          border: 2px solid black;
         }
 
-        table {
-          width: 500px;
-          height: 100px;
-          th {
-            font-size: 2rem;
-            font-weight: bold;
-            border: 2px solid black;
-            text-decoration-line: underline;
-          }
-
-          td {
-            text-align: center;
-            font-size: @fontSize;
-            border: 2px solid black;
-          }
+        @media (max-width: 500px) {
+          width: 100%;
         }
       }
     }
 
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .line {
+    border-top: black solid 1px;
+    margin-top: 40px;
+  }
+
+  #contact {
+    margin-top: 50px;
     input[type="text"],
     select,
     textarea {
@@ -295,16 +338,27 @@ nav {
       width: 50%;
       margin-top: 6px;
       padding: 20px 5% 0 0;
-    }
 
-    .contact {
-      margin-top: 50px;
-      border-top: black solid 1px;
-
-      h2 {
-        text-decoration-line: underline;
-        margin-top: 30px;
-        font-size: 3rem;
+      @media (max-width: 800px) {
+        width: 80%;
       }
     }
+
+    h2 {
+      text-decoration-line: underline;
+      margin-top: 30px;
+      font-size: 3rem;
+
+      @media (max-width: 800px) {
+        margin-left: 25%;
+      }
+      @media (max-width: 500px) {
+        margin-left: 20%;
+      }
+    }
+
+    @media (max-width: 800px) {
+      margin-left: 20%;
+    }
   }
+}

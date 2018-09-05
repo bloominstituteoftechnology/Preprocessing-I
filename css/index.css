@@ -169,6 +169,7 @@ nav a:hover {
 }
 .container .profile p {
   font-size: 1.6rem;
+  font-family: serif;
   padding: 5%;
   border: solid black 2px;
   margin: 0 5%;
@@ -178,14 +179,21 @@ nav a:hover {
   height: auto;
   border: solid black 4px;
 }
+@media (max-width: 800px) {
+  .container .profile img {
+    width: 80%;
+    margin-left: 11%;
+  }
+}
 .container .profile h1 {
   text-align: center;
   font-size: 4rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .container .profile h3 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .container .profile .about-me h2 {
   display: flex;
@@ -196,9 +204,10 @@ nav a:hover {
   margin-top: 37px;
   text-decoration-line: underline;
 }
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .container .profile {
-    background-color: #45a049;
+    flex-direction: column;
+    align-items: center;
   }
 }
 .container .skills {
@@ -225,8 +234,23 @@ nav a:hover {
   font-size: 1.6rem;
   line-height: 1.5;
 }
+.container .skills .work {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .container .skills .work {
+    width: 100%;
+  }
+}
 .container .skills .work h2 {
-  margin-left: 32%;
+  margin-left: 33%;
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .container .skills .work h2 {
+    margin-top: 25px;
+  }
 }
 .container .skills .work table {
   width: 500px;
@@ -243,9 +267,27 @@ nav a:hover {
   font-size: 1.6rem;
   border: 2px solid black;
 }
-.container input[type="text"],
-.container select,
-.container textarea {
+@media (max-width: 500px) {
+  .container .skills .work table {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .container .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container .line {
+  border-top: black solid 1px;
+  margin-top: 40px;
+}
+.container #contact {
+  margin-top: 50px;
+}
+.container #contact input[type="text"],
+.container #contact select,
+.container #contact textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -253,7 +295,7 @@ nav a:hover {
   margin-bottom: 16px;
   resize: vertical;
 }
-.container input[type="submit"] {
+.container #contact input[type="submit"] {
   background-color: #4caf50;
   color: white;
   padding: 12px 10%;
@@ -261,20 +303,36 @@ nav a:hover {
   cursor: pointer;
   margin-bottom: 50px;
 }
-.container input[type="submit"]:hover {
+.container #contact input[type="submit"]:hover {
   background-color: #45a049;
 }
-.container .column {
+.container #contact .column {
   width: 50%;
   margin-top: 6px;
   padding: 20px 5% 0 0;
 }
-.container .contact {
-  margin-top: 50px;
-  border-top: black solid 1px;
+@media (max-width: 800px) {
+  .container #contact .column {
+    width: 80%;
+  }
 }
-.container .contact h2 {
+.container #contact h2 {
   text-decoration-line: underline;
   margin-top: 30px;
   font-size: 3rem;
+}
+@media (max-width: 800px) {
+  .container #contact h2 {
+    margin-left: 25%;
+  }
+}
+@media (max-width: 500px) {
+  .container #contact h2 {
+    margin-left: 20%;
+  }
+}
+@media (max-width: 800px) {
+  .container #contact {
+    margin-left: 20%;
+  }
 }
