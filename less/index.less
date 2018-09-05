@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -147,7 +149,9 @@ html {
 @mainColor: #4c4e51;
 @accentColor: #a6c4f7;
 @fontSize: 1.6rem;
-@fontStack: arial, times-new-roman, sans-serif;
+@fontStackDesktop: Dosis, times-new-roman, sans-serif;
+@fontStackMobile: Inconsolata, times-new-roman, sans-serif;
+
 //mixins
 .flex (@direction, @wrap, @justify, @align) {
   display: flex;
@@ -172,13 +176,17 @@ html {
 //all nested styles go in here
 .container {
   font-size: @fontSize;
-  font-family: @fontStack;
+  font-family: @fontStackDesktop;
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
   color: @mainColor;
   line-height: 1.2;
   background-color: @accentColor;
+
+  @media (max-width: 500px) {
+    font-family: @fontStackMobile;
+  }
   .navigation {
     .flex (row, no-wrap, space-around, center);
     padding: 20px 0;
