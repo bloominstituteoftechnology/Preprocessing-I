@@ -54,6 +54,114 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+
+//variables
+@royalty: purple;
+
+//mixins
+
+
+//parametric mixins
+.custom-layout(@justify, @align) {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+body {
+	background-image: url("../IMG_4483.JPG");
+}
+
+header {
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	justify-content: space-between;
+
+	.namediv {
+		flex-wrap: wrap;
+	}
+
+		h1 {
+			font-size: 4rem;
+			color: @royalty;
+			justify-content: flex-start;
+	}
+		p {
+			font-size: 2rem;
+		}
+
+	nav {
+		display: flex;
+		justify-content: flex-end; 
+	}
+		a {
+			margin: 10px;
+			font-size: 2rem;
+			color: @royalty;
+		}
+}
+
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 5%;
+	width: 45%;
+	margin: 10%;
+	border: 1px solid black;
+
+	.awesomeness {
+		font-size: 2rem;
+		border: 1px solid red;
+		.custom-layout(center, center);
+	}
+		.awesomeness h3 {
+			text-decoration: underline;
+		}
+
+		button {
+			background-color: black;
+			border-radius: 15px;
+			color: white;
+
+		}
+
+	.Duffy {
+		font-size: 2rem;
+		display: flex;
+		border: 1px solid red;
+		.custom-layout(center, center);
+
+		.pup {
+		height: 200px;
+		width: 300px;
+		margin: 20%;
+		}
+	}
+
+	footer {
+		font-size: 2rem;
+		color: pink;
+		.custom-layout(center, center);
+	}
+		h4 {
+			padding: 20px;
+		}
 }
 
