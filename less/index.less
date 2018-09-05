@@ -62,7 +62,7 @@ html, body {
 
 // Variables Here
 @mainColor: @tall-poppy;
-@accentColor: blue;
+@accentColor:solid purple;
 
 @tall-poppy: #C42727;
 @fontSize: 1.6rem;
@@ -91,7 +91,7 @@ html, body {
 }
 
 .container {
-	.center;
+	border: solid red;
   max-width: 880px;
   margin: 0 auto;
   color: @mainColor;
@@ -100,13 +100,18 @@ html, body {
 }
 
 // NESTING: Avoid nesting more than 1 section deep
-//header {
-//  display: flex;
-//  justify-content: space-between;
-//  margin: 20px 0;
-//
+header {
+	margin: 20px 0;
+	width: 100%;
+	border: solid blue;
+
+nav {
+	display: flex;
+  justify-content: space-between;
+}	
+
 h1 {
-		.center;
+		border: solid purple;
     font-size: 3rem;
     color: @accentColor;
     
@@ -117,10 +122,5 @@ h1 {
     @media( max-width: @mobileValue ) {
       color: red;
     }
-  }
-
-
-
-
-
-
+	}
+}
