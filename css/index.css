@@ -1,1 +1,9 @@
 /* Compile your LESS file! */
+@mixin box-emboss($outerOpacity, $innerOpacity) {
+  box-shadow:
+    rgba(white, $outerOpacity) 0 1px 0,
+    rgba(black, $innerOpacity) 0 1px 0 inset;
+}
+.module, header[role="banner"] {
+  @include box-emboss(0.3, 0.6);
+}
