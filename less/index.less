@@ -49,6 +49,10 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@mainColor: gray;
+@accentColor: black;
+
 * {
     box-sizing: border-box;
 }
@@ -67,39 +71,32 @@ html {
 	margin: 0 auto;
   }
   
-  /* header */
-  
   header {
-	  display: flex;
-	  align-items: space-around;
-  }
-
-  header nav {
 	display: flex;
-	width: 100%;
 	justify-content: center;
-	margin-top: 4%;
+	margin: 1% 2% 0;
+  
 	
-  }
+	nav {
+	  display: flex;
+	  
+	  
+	  a { 
+		font-size: 1rem;
+		margin: 10px;
+		color: @mainColor;
+		
+		&:hover {
+		  color: @accentColor;
+		}
+		
+		
+		}
+	  }
+	}
+
   
-  header nav a {
-	margin-right: 9%;
-	font-size: 1.4rem;
-	color: gray;
-	text-decoration: none;
-  }
   
-  header nav a:hover {
-	text-decoration: underline;
-  }
-  
-  header nav a:first-child {
-	margin-left: 0;
-  }
-  
-  header nav a:last-child {
-	margin-right: 0;
-  }
   
   
   /* cta */
@@ -107,6 +104,8 @@ html {
   .name {
 	  display: flex;
 	  justify-content: center;
+	  background-color: lightgray;
+	  padding-bottom: 10%;
 	
   }
   .name .name-text {
@@ -116,31 +115,12 @@ html {
 	padding: 0 9%;
   }
   
-  .cta .cta-text button {
-    background: white;
-    width: 60%;
-    height: 10%;
-	margin-top: 0.68%;
-	padding: 0.91% 5%;
-	font-size: 1.7rem;
-	border: 1px solid black;
-	cursor: pointer;
-  }
-  
-  .cta .cta-text button:hover {
-	background: black;
-	color: white;
-  }
-  
-  .cta img {
-	margin-top: 8%;
-  }
   
   .main-content {
 	display: flex;
 	flex-flow: row wrap;
 	border-top: 1px solid black;
-	margin-top: 9%;
+	margin-top: 1%;
     padding-top: 4%;
     font-size: 1.6rem;
   }
