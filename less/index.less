@@ -58,6 +58,16 @@ html, body {
 }
 
 
+//variables
+@sectionTitle: 3rem;
+
+// mixins
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -66,26 +76,81 @@ html {
 	max-width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	.center;
+	flex-direction: column;
+
 	
-}
+	header {
 
-header {
+		nav {
+			margin: 20px 40px 5%;
+			display: flex;
+			justify-content: space-around;
+			
+			a {
+				margin: 0 5%;
+				text-decoration: none;
+				color: black;
+	
+				&:hover {
+					color: grey;
+					text-decoration: underline;
+				}
+			}
+		}
+	
+	}
+	
+	.intro {
+		.center;
+		flex-direction: column;
+		// background-color: lightslategrey;
+		width: 50%;
+	
+		h1 {
+			font-size: 4rem;
+			margin: 5px 0;
+	
+		}
+	
+		h2 {
+			font-size: @sectionTitle;
+			padding-bottom: 5px;
+			border-bottom: black solid;
+		}
 
-	nav {
-		margin: 0 5%;
-		display: flex;
-		justify-content: space-around;
-		
-		a {
-			margin: 0 5%;
-			text-decoration: none;
-			color: black;
+		p {
+			margin: 20px 0;
+		}
+	}
+	
+	.skills {
+		h2 {
+			font-size: @sectionTitle;
+			margin: 10px 0;
+		}
+	
+		p {
+			margin-top: 5px;
+		}
+	
+	}
 
-			&:hover {
-				color: grey;
-				text-decoration: underline;
+	
+	.job-history {
+		h2 {
+			font-size: @sectionTitle;
+			margin: 20px 0;
+		}
+
+		.job {
+			margin: 40px 0;
+
+			h3 {
+				font-size: 2rem;
 			}
 		}
 	}
-
 }
+
+
