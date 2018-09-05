@@ -144,6 +144,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   color: #130A06;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 95%;
+  }
+}
 .container header {
   max-width: 95%;
   display: flex;
@@ -151,11 +156,23 @@ body {
   align-items: flex-start;
   margin: 1% 0;
 }
+@media (max-width: 500px) {
+  .container header {
+    max-width: 95%;
+    margin-bottom: 3%;
+  }
+}
 .container header nav {
-  width: 40%;
+  width: 100%;
+  max-width: 40%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    max-width: 100%;
+  }
 }
 .container header nav a {
   text-decoration: none;
@@ -171,11 +188,24 @@ body {
   padding: 5% 3%;
   margin: 3% 0 5% 0;
 }
+@media (max-width: 500px) {
+  .container .introduction {
+    height: auto;
+    border-radius: 10%;
+  }
+}
 .container .introduction img {
   max-width: 100%;
   height: auto;
   width: 40%;
   margin-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .container .introduction img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
 }
 .container .introduction h1 {
   color: #A3B0BD;
@@ -198,15 +228,27 @@ body {
 }
 .container .main-content {
   max-width: 95%;
-  height: 250px;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: default;
   margin-bottom: 5%;
 }
+@media (max-width: 500px) {
+  .container .main-content {
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
 .container .main-content .main-left {
-  width: 45%;
+  width: 50%;
   padding-right: 3%;
+}
+@media (max-width: 500px) {
+  .container .main-content .main-left {
+    width: 100%;
+    padding-bottom: 5%;
+  }
 }
 .container .main-content .main-left h2 {
   font-size: 2.4rem;
@@ -215,6 +257,11 @@ body {
 .container .main-content .main-right {
   width: 45%;
 }
+@media (max-width: 500px) {
+  .container .main-content .main-right {
+    width: 100%;
+  }
+}
 .container .main-content .main-right h2 {
   font-size: 2.4rem;
   padding-bottom: 2%;
@@ -222,6 +269,9 @@ body {
 .container .main-content .main-right ul li {
   border: 1px solid #A3B0BD;
   padding: 3.5%;
+}
+.container .main-content .main-right ul li:nth-child(odd) {
+  background-color: #E9ECEF;
 }
 .container .work-history {
   max-width: 95%;

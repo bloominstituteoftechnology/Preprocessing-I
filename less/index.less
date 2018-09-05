@@ -58,6 +58,7 @@ table {
 @cornflowerBlue: #6495ED;
 @asphalt: #130A06;
 @gullGray: #A3B0BD;
+@mobileView: 500px;
 
 //mixins
 .imgResponsive() {
@@ -97,12 +98,23 @@ html, body {
 	font-family: @fontStack;
 	color: @defaultTextColor;
 	
+	@media (max-width: 500px) {
+		max-width: 95%;
+	}
 	header {
 		max-width: @innerWidth;
 		.flex(flex-end, flex-start);
-		margin: 1% 0;;
+		margin: 1% 0;
+		@media (max-width: 500px) {
+			max-width: 95%;
+			margin-bottom: 3%;
+		}
 		nav {
-			width: 40%;
+			width: 100%;
+			max-width: 40%;
+			@media (max-width: 500px) {
+				max-width: 100%;
+			}
 			.flex(space-between, flex-start);
 			a{
 				text-decoration: none;
@@ -119,10 +131,19 @@ html, body {
 		height: 500px;
 		padding: 5% 3%;
 		margin: 3% 0 5% 0;
+		@media (max-width: 500px) {
+			height: auto;
+			border-radius: 10%;
+		}
 		img {
 			.imgResponsive();
 			width: 40%;
 			margin-bottom: 1%;
+			@media (max-width: 500px) {
+				display: block;
+				margin: 0 auto;
+				border-radius: 50%;
+			}
 		}
 		h1 {
 			color: @accentColor;
@@ -147,18 +168,29 @@ html, body {
 
 	.main-content {
 		max-width: @innerWidth;
-		height: 250px;
+		height: auto;
 		.flex(flex-start, default);
 		margin-bottom: 5%;
+		@media (max-width: 500px) {
+			flex-wrap: wrap;
+			height: auto;
+		}
 		.main-left {
-			width: 45%;
+			width: 50%;
 			padding-right: 3%;
+			@media (max-width: 500px) {
+				width: 100%;
+				padding-bottom: 5%;
+			}
 			h2 {
 				.h2Styling();
 			}
 		}
 		.main-right {
 			width: 45%;
+			@media (max-width: 500px) {
+				width: 100%;
+			}
 			h2 {
 				.h2Styling();
 			}
@@ -166,7 +198,9 @@ html, body {
 				li{
 					border: 1px solid @accentColor;
 					padding: 3.5%;
-					
+					}
+				li:nth-child(odd) {
+					background-color: @backgroundColor;
 				}
 			}
 		}
