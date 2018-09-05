@@ -60,11 +60,18 @@ html {
 	font-size: 62.5%;
 	background:url(../img/symphony.png) repeat;
 }
+
+
 // variables
 
 @mainColor: tomato;
 @textColor: DimGray;
 @accentColor: DarkSeaGreen;
+@mainFont: 'Montserrat', sans-serif;
+@accentFont: 'Raleway', sans-serif;
+
+
+// base styles
 
 .container {
 	font-size: 1.6rem;
@@ -72,92 +79,134 @@ html {
 	width: 100%;
 	margin: 0 auto;
 	color: @mainColor;
+	font-family: @accentFont;
 }
 
-header {
+//header
+
+.container {
+	header {
 	
-	nav {
+		nav {
 		display: flex;
 		justify-content: flex-end;
-		a {
+			a {
 			margin: 20px;
 			text-decoration: none;
 			font-size: 2rem;
 			color: @mainColor;
+			}
 		}
 	}
 }
 
-.intro {
-	display: flex;
-	align-items: center;
-	img {
-		border-radius: 50%;
-		border: 3px solid @mainColor;
-	}
-	.intro-text {
-		text-align: center;
+
+//intro
+
+.container {
+	.intro {
+		display: flex;
+		align-items: center;
+		img {
+			border-radius: 50%;
+			border: 3px solid @mainColor;
+		}
+		.intro-text {
+			text-align: center;
 		
-		h1 {
-			font-size: 4rem;
-		}
-		p {
-			font-size: 1.8rem;
-			padding: 40px;
-		}
-	}	
+			h1 {
+				font-size: 4rem;
+				font-family: @mainFont;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			p {
+				font-size: 1.8rem;
+				padding: 40px;
+			}
+		}	
 	
+	}
 }
 
-.skills-history {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin: 45px 0px 20px 0px;
-	h2 {
-		text-transform: uppercase;
-		border-bottom: 1px dotted gray;
-		margin: 20px 0px;
-		padding-bottom: 10px;
-		font-size: 2rem;
-	}
-	ul {
-		li {
-			color: @textColor;
+
+// skills and work history
+
+.container {
+	.skills-history {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin: 45px 0px 20px 0px;
+		h2 {
+			text-transform: uppercase;
+			border-bottom: 1px dotted gray;
 			margin: 20px 0px;
+			padding-bottom: 10px;
+			font-size: 2rem;
+			font-family: @mainFont;
 		}
-	}
-	.work-history {
+		ul {
+			li {
+				color: @textColor;
+				margin: 20px 0px;
+			}
+		}
+		.work-history {
 		width: 50%;
-		p {
-			color: @textColor;
-			padding: 0px 0px 20px 10px;
+			p {
+				color: @textColor;
+				padding: 0px 0px 20px 10px;
+			}
+			h4 {
+				margin: 20px 0px;
+			}
 		}
-		h4 {
-			margin: 20px 0px;
-		}
-	}
 	
 
-}
-.contact {
-	display: flex;
-	justify-content: space-between;
-	margin: 30px 0px;
-	color: @accentColor;
-	font-size: 1.8rem;
-	border-top: 1px dotted @textColor;
-	border-bottom: 1px dotted @textColor;
-	padding: 10px 0px;
-	h2 {
-		text-transform: uppercase;
-		
 	}
-	a{
+}
+
+
+//contact
+
+
+.container {
+	.contact {
+		display: flex;
+		justify-content: space-between;
+		margin: 30px 0px;
 		color: @accentColor;
-		text-decoration: none;
-		&:hover{
-			color: @mainColor;
-		} 
+		font-size: 1.8rem;
+		border-top: 1px dotted @textColor;
+		border-bottom: 1px dotted @textColor;
+		padding: 10px 0px;
+		h2 {
+			text-transform: uppercase;
+		
+		}
+		a {
+			color: @accentColor;
+			text-decoration: none;
+			&:hover{
+				color: @mainColor;
+			} 
+		}
 	}
 }
+
+//footer
+
+.container {
+	footer {
+		background: @mainColor;
+		width: 100%;
+		p {
+			color: @textColor;
+			text-align: center;
+			padding: 20px;
+		}
+	}
+}
+
