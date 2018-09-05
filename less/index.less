@@ -63,7 +63,8 @@ html, body {
 @font-size: 1.6rem;
 @font-h2: 3rem;
 @font-stack: Arial;
-@desktop-width: 880px;
+@desktop-view: 880px;
+@mobile-view: 500px;
 @primary-color: #333;
 @light-gray: #ddd;
 @steeler-gold: #FDB31D;
@@ -99,13 +100,33 @@ body {
 	padding: 2%;
 	background: white;
 	font-size: @font-size;
-	width: @desktop-width;
+	width: @desktop-view;
 	margin: 0 auto;
 	font-family: @font-stack;
+
+	@media (max-width: @mobile-view){
+		max-width: @mobile-view;
+		padding: 5%;
+	}
 
 	p {
 		margin-bottom: 20px;
 		line-height: 1.25;
+	}
+
+	strong {
+		font-weight: bold;
+		color: @primary-color;
+	}
+}
+
+
+.link {
+	text-decoration: none;
+	font-size: 1.6rem;
+
+	&:visited {
+		color: @primary-color;
 	}
 }
 
@@ -117,11 +138,10 @@ body {
 	padding: 10px;
 	cursor: pointer;
 	margin: 0 auto;
-}
 
-.link {
-	text-decoration: none;
-	font-size: 1.6rem;
+	a {
+		.link;
+	}
 }
 
 .box {
@@ -133,6 +153,7 @@ body {
 	margin-bottom: 15px;
 	line-height: 1.5;
 	padding-left: 7%;
+	padding-bottom: 5px;
 	border-bottom: 1px solid @light-gray;
 }
 
@@ -182,10 +203,20 @@ nav {
 	// flex-wrap: wrap;
 	color: @light-gray;
 	margin-bottom: @section-space;
+	border-bottom: 8px solid @steeler-gold;
+
+	@media (max-width: @mobile-view){
+		.flex(column, space-between);
+		padding: 8%;
+	}
 
 	.jumbotron {
 		width: 55%;
 		.flex(column, flex-start);
+
+		@media (max-width: @mobile-view){
+			width: 100%;
+		}
 
 		h1 {
 			color: @steeler-gold;
@@ -211,6 +242,11 @@ nav {
 		width: 40%;
 		height: auto;
 
+		@media (max-width: @mobile-view){
+			width: 100%;
+			margin-top: 30px;
+		}
+
 		img {
 			width: 100%;
 		}
@@ -223,11 +259,18 @@ nav {
 	.flex(row, space-between);
 	margin-bottom: @section-space + 25;
 	
+	@media (max-width: @mobile-view){
+		.flex(column, center);
+	}
 	.box1 {
 		width: 48.5%;
 		.box;
 		background: @light-gray;
 
+		@media (max-width: @mobile-view){
+			width: 100%;
+			margin-bottom: @section-space;
+		}
 	}
 
 	.box2 {
@@ -235,6 +278,10 @@ nav {
 		.box;
 		border: 3px solid @light-gray;
 		.flex(column, space-evenly);
+
+		@media (max-width: @mobile-view){
+			width: 100%;
+		}
 
 		p {
 			.list;
@@ -258,6 +305,10 @@ nav {
 		width: 50%;
 		margin: 0 auto;
 
+		@media (max-width: @mobile-view){
+			width: 80%;
+		}
+
 		h3 {
 			color: @steeler-gold;
 			text-transform: uppercase;
@@ -267,33 +318,49 @@ nav {
 
 		input {
 			width: 100%;
-			padding: 2%;
+			padding: 2% 5%;
 			.item-space;
+			background: @primary-color;
+			border: 1px solid @steeler-gold;
+			border-radius: 15px;
+			color: white;
 		}
 
 		textarea {
 			width: 100%;
 			.item-space;
+			background: @primary-color;
+			border: 1px solid @steeler-gold;
+			border-radius: 15px;
+			color: white;
 		}
 
 		button {
 			.btn;
+
+			a {
+				.link;
+			}
 		}
 	}
 }
 
 // #FOOTER
 footer {
-	.flex(row, center);
-	.align(center, center);
+	padding: 50px;
 	background: @steeler-gold;
 	text-align: center;
-	height: 100px;
+	// height: 100px;
+	width: 100%;
 
 	a {
 		.link;
 		font-family: @font-stack;
 		color:@primary-color;
 		font-weight: bold;
+
+		&:hover {
+			color: white;
+		}
 	}
 }

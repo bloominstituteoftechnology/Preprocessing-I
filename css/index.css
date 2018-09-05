@@ -151,9 +151,26 @@ body {
   margin: 0 auto;
   font-family: Arial;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+    padding: 5%;
+  }
+}
 .container p {
   margin-bottom: 20px;
   line-height: 1.25;
+}
+.container strong {
+  font-weight: bold;
+  color: #333;
+}
+.link {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+.link:visited {
+  color: #333;
 }
 .btn {
   background: #FDB31D;
@@ -164,9 +181,12 @@ body {
   cursor: pointer;
   margin: 0 auto;
 }
-.link {
+.btn a {
   text-decoration: none;
   font-size: 1.6rem;
+}
+.btn a:visited {
+  color: #333;
 }
 .box {
   padding: 3%;
@@ -176,6 +196,7 @@ body {
   margin-bottom: 15px;
   line-height: 1.5;
   padding-left: 7%;
+  padding-bottom: 5px;
   border-bottom: 1px solid #ddd;
 }
 h2 {
@@ -218,12 +239,26 @@ nav a:hover {
   justify-content: space-between;
   color: #ddd;
   margin-bottom: 40px;
+  border-bottom: 8px solid #FDB31D;
+}
+@media (max-width: 500px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8%;
+  }
 }
 #home .jumbotron {
   width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+@media (max-width: 500px) {
+  #home .jumbotron {
+    width: 100%;
+  }
 }
 #home .jumbotron h1 {
   color: #FDB31D;
@@ -245,6 +280,12 @@ nav a:hover {
   width: 40%;
   height: auto;
 }
+@media (max-width: 500px) {
+  #home .picture {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
 #home .picture img {
   width: 100%;
 }
@@ -255,10 +296,23 @@ nav a:hover {
   justify-content: space-between;
   margin-bottom: 65px;
 }
+@media (max-width: 500px) {
+  #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 #about .box1 {
   width: 48.5%;
   padding: 3%;
   background: #ddd;
+}
+@media (max-width: 500px) {
+  #about .box1 {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 #about .box2 {
   width: 48.5%;
@@ -268,11 +322,17 @@ nav a:hover {
   flex-direction: column;
   justify-content: space-evenly;
 }
+@media (max-width: 500px) {
+  #about .box2 {
+    width: 100%;
+  }
+}
 #about .box2 p {
   width: 100%;
   margin-bottom: 15px;
   line-height: 1.5;
   padding-left: 7%;
+  padding-bottom: 5px;
   border-bottom: 1px solid #ddd;
 }
 #contact {
@@ -291,6 +351,11 @@ nav a:hover {
   width: 50%;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  #contact form {
+    width: 80%;
+  }
+}
 #contact form h3 {
   color: #FDB31D;
   text-transform: uppercase;
@@ -299,12 +364,20 @@ nav a:hover {
 }
 #contact form input {
   width: 100%;
-  padding: 2%;
+  padding: 2% 5%;
   margin-bottom: 20px;
+  background: #333;
+  border: 1px solid #FDB31D;
+  border-radius: 15px;
+  color: white;
 }
 #contact form textarea {
   width: 100%;
   margin-bottom: 20px;
+  background: #333;
+  border: 1px solid #FDB31D;
+  border-radius: 15px;
+  color: white;
 }
 #contact form button {
   background: #FDB31D;
@@ -315,15 +388,25 @@ nav a:hover {
   cursor: pointer;
   margin: 0 auto;
 }
+#contact form button a {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+#contact form button a:visited {
+  color: #333;
+}
+#contact form button a {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+#contact form button a:visited {
+  color: #333;
+}
 footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  padding: 50px;
   background: #FDB31D;
   text-align: center;
-  height: 100px;
+  width: 100%;
 }
 footer a {
   text-decoration: none;
@@ -331,4 +414,10 @@ footer a {
   font-family: Arial;
   color: #333;
   font-weight: bold;
+}
+footer a:visited {
+  color: #333;
+}
+footer a:hover {
+  color: white;
 }
