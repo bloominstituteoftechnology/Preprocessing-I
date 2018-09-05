@@ -60,22 +60,36 @@ html{
 	font-size:62.5%;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+.flex-position(@display, @position){
+	display:@display;
+	justify-content: @position;
+}
+
+.padding(@top, @bottom){
+	padding-top:@top;
+	padding-bottom: @bottom;
+}
+
+
 .container{
 	width:880px;
 	margin:0 auto;
 	padding:0 3%;
+	font-family: 'Roboto Condensed', sans-serif;
+	line-height: 2rem;
 	header{
 		padding:2% 0;
 		nav{
-			display: flex;
+			.flex-position(flex, flex-end);
 			flex-flow:row-wrap;
-			justify-content: flex-end;
 			a{
 				text-decoration: none;
 				padding:1%;
 				color:black;
 				font-size:1.6rem;
-			}
+			}	
 		}
 	}
 	.intro-content{
@@ -103,7 +117,7 @@ html{
 				padding-bottom:1.3%; 
 			}
 			a{
-				display: flex;
+				.flex-position(flex, center);
 				text-decoration:none;
 				background:gray;
 				color:white;
@@ -111,7 +125,6 @@ html{
 				font-weight:bold;
 				padding:1% ;
 				width:20%;
-				justify-content: center;
 				border-radius:5%;
 			}
 		}
@@ -130,7 +143,7 @@ html{
 			p{
 				font-size:1.5rem;
 				padding-bottom:1.3%; 
-				line-height: 2rem;
+				
 			}
 		}
 		&__skills{
@@ -163,9 +176,8 @@ html{
 			padding: 2%;
 		}
 		th{
-			padding-top: 1.2%;
+			.padding(1.2%, 1.2%);
 			border-top:1px solid #f2f2f2;
-			padding-bottom: 1.2%;
 			text-align: left;
 			color: black;
 			font-weight: bold;
@@ -183,8 +195,7 @@ html{
 	}
 
 	footer{
-		display: flex;
-		justify-content: center;
+		.flex-position(flex, center);
 		padding:3%;
 		background:gray;
 		font-size:1.4rem;
