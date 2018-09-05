@@ -67,6 +67,7 @@ html, body {
 @primary-color: #333;
 @light-gray: #ddd;
 @steeler-gold: #FDB31D;
+@section-space: 40px;
 
 
 
@@ -76,6 +77,10 @@ html, body {
 
 html {
 	font-size: 62.5%;
+}
+
+body {
+	background: @light-gray;
 }
 
 // MIXINS
@@ -91,10 +96,17 @@ html {
 }
 
 .container {
+	padding: 2%;
+	background: white;
 	font-size: @font-size;
 	width: @desktop-width;
 	margin: 0 auto;
 	font-family: @font-stack;
+
+	p {
+		margin-bottom: 20px;
+		line-height: 1.25;
+	}
 }
 
 .btn {
@@ -107,6 +119,25 @@ html {
 	margin: 0 auto;
 }
 
+.box {
+	padding: 3%;
+}
+
+.list {
+	width: 100%;
+	margin-bottom: 15px;
+	line-height: 1.5;
+	padding-left: 7%;
+	border-bottom: 1px solid @light-gray;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	color: @primary-color;
+	margin-bottom: 20px;
+}
+
 // NAV
 
 header {
@@ -115,10 +146,11 @@ header {
 
 nav {
 	width: 350px;
-	margin: 20px 0;
+	// margin: 20px 0;
 	.flex(row, space-between);
 
 	a {
+		margin: 10px 0;
 		padding: 10px;
 		text-decoration: none;
 		color: @primary-color;
@@ -140,8 +172,9 @@ nav {
 	.flex(row, space-between);
 	// flex-wrap: wrap;
 	color: @light-gray;
+	margin-bottom: @section-space;
 
-	.intro {
+	.jumbotron {
 		width: 55%;
 		.flex(column, flex-start);
 
@@ -174,3 +207,27 @@ nav {
 		}
 	}
 } // #home
+
+// #ABOUT
+#about {
+	width: 100%;
+	.flex(row, space-between);
+	
+	.box1 {
+		width: 48.5%;
+		.box;
+		background: @light-gray;
+
+	}
+
+	.box2 {
+		width: 48.5%;
+		.box;
+		border: 3px solid @light-gray;
+		.flex(column, space-evenly);
+
+		p {
+			.list;
+		}
+	}
+}
