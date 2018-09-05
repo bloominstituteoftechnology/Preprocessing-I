@@ -57,7 +57,9 @@ html, body {
 	height: 100%;
 	width: 100%;
 	font-size: 62.5%;
-	.bg-gradient(@mainColor,@accentColor2,@accentColor);
+	.bg-gradient(@mainColor,@accentColor);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 	
 }
 
@@ -66,14 +68,14 @@ html, body {
 // Color
 
 
-@mainColor: #2877ED;
-@accentColor: #FFB2DC;
+@mainColor: #ffc3a0;
+@accentColor: #FFAFBD;
 @accentColor2: #C5C5FD;
-@blockColor: #AD947B;
+@blockColor: #FBF9FA;
 @textColor: #0E0E0E;
 
-.bg-gradient(@color1,@color2,@color3) {
-	background: linear-gradient(@color1,@color2,@color3)
+.bg-gradient(@color1,@color2) {
+	background: linear-gradient(@color1,@color2)
 }
 
 // Mix ins
@@ -84,23 +86,69 @@ html, body {
 	justify-content: flex-end;
 }
 
+.font-fam {
+	font-family: "Bungee","Righteous" , sans-serif; 
+}
+
 .font-med {
 	font-size: 1.7rem;
 }
 
+.font-large {
+	font-size: 3rem;
+}
+
+.move-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.move-column {
+	display: flex;
+	flex-direction: column;
+}
+
+
 // Desktop
 .container {
 	margin: 0 auto;
-	max-width: 880px;
 }
 
 .top-nav {
 	.move-right();
+	background: @textColor;
+	width: 100%;
 	a {
 		text-decoration: none;
 		padding: 2%;
-		color: @textColor;
+		color: @mainColor;
 		.font-med();
+		.font-fam();
+	}
+}
+
+.middle-box {
+	margin-top: 5%;
+	margin-left: 15%;
+	max-width: 70%;
+	background-color: @blockColor;
+	border-radius: 50px;
+	.move-column();
+	.move-center();
+	img {
+		width:50%;
+		height: auto;
+	}
+	h1 {
+		height: 35px;
+		.font-fam();
+		color: @accentColor;
+		.font-large();
+		.move-center();
+		border-bottom: 2px solid @mainColor;
+		padding: 5%;
+		margin-bottom: 5%;
 	}
 }
 
