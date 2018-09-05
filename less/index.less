@@ -65,9 +65,13 @@ html, body {
 
 //Variables
 @fontStack: Helvetica, Arial, sans-serif;
-
+@darkgray: #757575;
 //Mixins
-
+.tableFontStyles() {
+	height: 49px;
+	padding-top: 16px;
+	padding-left: 11px;
+}
 
 //Parametic Mixins
 .customFlex(@direction: row, @justify: center, @align: center) {
@@ -76,6 +80,7 @@ html, body {
 	justify-content: @justify;
 	align-items: @align;
 }
+
 
 
 html {
@@ -135,7 +140,7 @@ html {
 		button {
 			width: 157px;
 			height: 48px;
-			background: #757575;
+			background: @darkgray;
 			border: none;
 			border-radius: 7px;
 			margin-top: 20px;
@@ -203,17 +208,13 @@ html {
 			border-top: solid 1px #F0F0F0;
 		}
 		th {
-			height: 49px;
-			padding-top: 16px;
-			padding-left: 11px;
+			.tableFontStyles();
 			text-align: left;
 			font-weight: 600;
 		}
 		td {
-			height: 49px;
+			.tableFontStyles();
 			width: 25%;
-			padding-top: 16px;
-			padding-left: 11px;
 		}
 
 		tbody tr:nth-child(odd) {
@@ -228,7 +229,7 @@ html {
 	text-align: center;
 	margin-top: 35px;
 	height: 82px;
-	background: grey;
+	background: @darkgray;
 	color: white;
 	padding-top: 25px;
 	font-size: 1.8rem;
