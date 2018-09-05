@@ -99,11 +99,21 @@ html {
 	
 		nav {
 			.display(flex-end);
+			@media (max-width: 500px){
+				flex-direction: column;
+				text-align: center;
+				margin-bottom: 25px;
+			}
 			a {
 				margin: 20px;
 				text-decoration: none;
 				font-size: 2rem;
 				color: @mainColor;
+				@media (max-width: 500px){
+					border-bottom: 1px solid @mainColor;
+					padding: 20px;
+					margin: 0px;
+				}
 			}
 		}
 	}
@@ -114,9 +124,10 @@ html {
 
 .container {
 	.intro {
-		//display: flex;
-		//align-items: center;
 		.dispAlign(center);
+		@media (max-width: 500px){
+			flex-direction: column-reverse;
+		}
 		img {
 			border-radius: 50%;
 			border: 3px solid @mainColor;
@@ -127,6 +138,9 @@ html {
 			h1 {
 				font-size: 4rem;
 				font-family: @mainFont;
+				@media (max-width: 500px){
+					padding-top: 50px;
+				}
 			}
 			h2 {
 				font-size: 2rem;
@@ -148,6 +162,9 @@ html {
 		.display(space-around);
 		flex-wrap: wrap;
 		margin: 45px 0px 20px 0px;
+		@media (max-width: 500px){
+			flex-direction: column;
+		}
 		h2 {
 			text-transform: uppercase;
 			border-bottom: 1px dotted gray;
