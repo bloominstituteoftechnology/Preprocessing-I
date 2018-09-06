@@ -78,11 +78,21 @@ html {
 	padding: 20px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	@media(max-width: 500px) {
+		max-width: 500px;
+		padding: 0;
+	}
 }
 
 #nav {
 	margin: 25px;
 	width: 100%;
+			@media(max-width: 500px) {
+				width: 500px;
+				margin: 0;
+				padding: 0;
+
+		}
 	nav {
 		display: flex;
 		justify-content: space-around;
@@ -90,13 +100,28 @@ html {
 		padding: 25px;
 		border-radius: 55px;
 		margin-bottom: 5rem;
-		a {
-			font-size: 1.9rem;
-			text-decoration: none;
-			color: @textColor;
-			&:hover {
-				color: #000000;
+		@media(max-width: 500px) {
+				width: 100%;
+			  display: flex;
+			  border: 0;
+			  align-items: center;
+				flex-direction: column;
+				padding: 25px 0;
 			}
+			a {
+				font-size: 1.9rem;
+				text-decoration: none;
+				color: @textColor;
+				&:hover {
+					color: #000000;
+				}
+				@media (max-width: 500px) {
+					font-size: 2rem;
+					padding: 10px 0;
+					border-bottom: @borderStyle;
+					width: 100%;
+					text-align: center;
+				}
 		}
 	}
 }
@@ -108,6 +133,9 @@ html {
 		border-radius: 50%;
 		width: 320px;
 		height: 320px;
+		@media (max-width: 500px) {
+			display: none;
+		}
 		img {
 			border-radius: 50%;
 			border: 4px solid yellow;
@@ -120,6 +148,9 @@ html {
 		align-items: center;
 		padding: 25px;
 		margin: 0 auto;
+		@media (max-width: 500px) {
+			padding-top: 0px;
+		}
 		h1 {
 			font-size: 7rem;
 		}
@@ -165,25 +196,40 @@ html {
 #thingsAboutMe {
 	border-bottom: @borderStyle;
 	padding-bottom: 40px;
-	h4 {
-		font-size: 2rem;
-		font-weight: bold;
-		margin-bottom: 10px;
-	}
-	p {
-		line-height: 2.5rem;
-	}
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
+	@media (max-width: 500px) {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
 	.aboutme {
 		width: 70%;
 		margin-right:2%;
 		padding: 25px;
+			@media (max-width: 500px) {
+		display: block;
+		width: 100%;
+	}
+	}
+	h4 {
+		font-size: 2rem;
+		font-weight: bold;
+		margin-bottom: 10px;
+		@media (max-width: 500px) {
+			text-align: center;
+		}
+	}
+	p {
+		line-height: 2.5rem;
 	}
 	.aside {
 		width: 30%;
 		padding: 25px;
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 		p {
 			line-height: 4.2rem;
 			border-bottom: @borderStyle;
