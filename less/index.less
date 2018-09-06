@@ -57,6 +57,9 @@ html, body {
 		height: 100%;
 }
 
+body {
+	background-image: url("http://www.recordedtvhd.com/images/background-gray.jpg");
+}
 
 .container {
   max-width: 1024px;
@@ -88,10 +91,10 @@ html, body {
 	display:flex;
 	flex-direction: column;
 	justify-content: space-around;
+	align-items:center;
 }
 
 .bottomContent() {
-	width:1000px;
 	display:flex;
 	justify-content: space-between;
 }
@@ -103,23 +106,33 @@ html, body {
 	justify-content: space-between;
 }
 
-@backgroundColor:#DCDCDC;
+@backgroundColor:#696969;
 @navColor: #87CEEB;
-@fontSixteen:font-size:1.6rem;
+@hoverColor:#F0E68C;
+@fontSixteen:1.6rem;
+@fontTwelve:1.2rem;
+@fontThirteen:1.3rem;
+
 
 header {
 	.header;
+	font-family: 'Merriweather', serif;
 	margin: 20px 20px;
 	height:200px;
 	background-color:@backgroundColor;
+	border:solid dodgerblue 1px;
 	
 	.logo {
 		width:150px;
 		height:150px;
+		order:1;
 	}
 
   h1 {
 		font-size: 3rem;
+		background: -webkit-linear-gradient(#eee, #333);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
   }
 
   nav {
@@ -138,38 +151,41 @@ header {
 
 
 a:hover { 
-	background-color:@hoverColor;
+	color:@hoverColor;
+	text-decoration: underline;
 	border-radius:90%;
 }
 
 
 .contact {
 		height:100px;
-		@fontSixteen;
+		font-size:@fontSixteen;
+		color:#00008B;
 		margin-left:50px;
-		.contactInfo();
+		.contactInfo;
 }
 
 
 .main-content {
 	.main;
 	border-bottom:solid black 1px;
-	height:375px;
-	margin-bottom:100px;
+	margin-bottom:50px;
+	padding:30px;
 
 	h2 {
-		font-size:1.6rem;
+		font-size:@fontSixteen;
+		color:#5F9EA0;
 		border-bottom: solid black 1px;
 	}
 
 	p {
-		font-size:1.2rem;
+		font-size:@fontTwelve;
 		width:400px;
 		margin-top:10px;
 	}
 
 	ul {
-		font-size:1.2rem;
+		font-size:@fontTwelve;
 		width:400px;
 		height:200px;
 		margin-top:10px;
@@ -184,6 +200,8 @@ a:hover {
 	@media (max-width:500px) {
 		display:flex;
 		flex-direction: column;
+		margin:80px 0px;
+		
 	}
 
 } //Main Content
@@ -193,23 +211,35 @@ a:hover {
 	.bottomContent();
 	
 	h2 {
-		font-size:1.6rem;
+		font-size:@fontSixteen;
 		border-bottom:solid black 1px;
 	}
 
 	h3 {
-		font-size:1.3rem;
+		font-size:@fontThirteen;
+		color:#5F9EA0;
 		border-bottom:solid black 1px;
 	}
 
 	ul {
 		width:200px;
-		font-size:1.2rem;
-		.bottomUl();
+		font-size:@fontTwelve;
+		.bottomUl;
+
 	}
 
 	li {
 		border-bottom:solid black 1px;
 	}
+
+	@media (max-width:500px) {
+		display:flex;
+		flex-direction: column;
+		align-items:center;
+
+		ul {
+			padding:20px;
+		}
+	} 
 
 } //Bottom Content
