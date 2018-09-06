@@ -1,1 +1,344 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1%;
+}
+.container header {
+  width: 100%;
+}
+.container header nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  border-bottom: 4px solid black;
+  padding-bottom: 10px;
+}
+.container header nav a {
+  margin: 0 0 0 5%;
+  font-size: 2rem;
+}
+.container header nav a:link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "Acme", sans-serif;
+}
+.container header nav a:hover {
+  color: rgba(235, 15, 15, 0.6);
+}
+.container header section.intro-content {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0 50px 0;
+  border: 3px outset black;
+  border-radius: 5px;
+  background-color: rgba(53, 53, 53, 0.185);
+}
+@media only screen and (max-width: 800px) {
+  .container header section.intro-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+.container header section.intro-content .intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  max-width: 100%;
+}
+@media only screen and (max-width: 800px) {
+  .container header section.intro-content .intro-text {
+    order: 0;
+  }
+}
+.container header section.intro-content .intro-text h1 {
+  font-size: 7.2rem;
+  font-family: "Acme", sans-serif;
+}
+.container header section.intro-content .intro-text p {
+  font-size: 4.2rem;
+  font-family: "Acme", sans-serif;
+  padding-top: 20px;
+}
+.container header section.intro-content .intro-text p:last-child {
+  font-size: 1.6rem;
+}
+.container header section.intro-content button {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  border: 2px solid rgba(235, 15, 15, 0.6);
+  width: 10%;
+  font-size: 1.6rem;
+  font-family: "Acme", sans-serif;
+}
+@media only screen and (max-width: 800px) {
+  .container header section.intro-content button {
+    align-self: center;
+    order: 1;
+    width: 20%;
+  }
+}
+.container header section.intro-content img {
+  border: 5px outset black;
+  border-radius: 10px;
+  box-shadow: 15px -10px 50px 1px rgba(235, 15, 15, 0.6);
+  margin-left: 5%;
+}
+@media only screen and (max-width: 800px) {
+  .container header section.intro-content img {
+    margin-bottom: 20px;
+  }
+}
+.container section.top-content {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 50px auto;
+}
+@media only screen and (max-width: 800px) {
+  .container section.top-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+.container section.top-content .bio-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+.container section.top-content .bio-text h2 {
+  font-size: 2.5rem;
+  margin-left: 5%;
+  font-family: "Acme", sans-serif;
+}
+.container section.top-content .bio-text p {
+  font-size: 1.6rem;
+  font-family: "Acme", sans-serif;
+  margin-top: 20px;
+  padding: 10px 5%;
+  line-height: 1.4;
+}
+.container section.top-content .skills {
+  max-width: 50%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+.container section.top-content .skills ul.skill-photo {
+  margin: 0;
+  padding: 0;
+}
+.container section.top-content .skills li.skill-label {
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  border: solid 12px #fff;
+  background: #fff;
+  box-shadow: 0 0 15px 0px #555;
+  transition: all 1s ease;
+  top: 50px;
+  transform: rotate(-15deg);
+}
+.container section.top-content .skills li.skill-label:hover {
+  top: 0px;
+  opacity: 0.5;
+  transform: rotate(0deg);
+}
+.container section.top-content .skills ul.skill-list {
+  margin: 0;
+  padding: 0;
+}
+.container section.top-content .skills li.skill-item {
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  border: solid 12px #fff;
+  background: #fff;
+  box-shadow: 0 0 15px 0px #555;
+  transition: all 1s ease;
+  top: 50px;
+  transform: rotate(-15deg);
+}
+.container section.top-content .skills p {
+  font-size: 2rem;
+  padding: 10px 0 0 0;
+  font-family: "Acme", sans-serif;
+}
+.container section.bottom-content {
+  display: flex;
+  justify-content: center;
+  font-family: "Acme", sans-serif;
+  border: 3px outset black;
+  border-radius: 5px;
+  background-color: rgba(53, 53, 53, 0.185);
+  margin: 50px auto;
+  padding: 10px;
+}
+.container section.bottom-content h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container section.bottom-content h3 {
+  font-size: 1.8rem;
+  margin: 20px 0;
+}
+.container section.bottom-content p {
+  font-size: 1.6rem;
+  padding: 10px;
+}
+.container footer {
+  display: flex;
+  justify-content: center;
+}
+.container footer p {
+  font-size: 1.6rem;
+  font-family: "Acme", sans-serif;
+}
