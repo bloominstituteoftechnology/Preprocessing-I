@@ -167,15 +167,35 @@ html {
   border-width: 0 0 2px 0;
   margin-bottom: 4rem;
 }
+@media screen and (max-width: 500px) {
+  .container .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .container .main-nav .main-nav__bar {
   display: flex;
   flex-direction: column;
   width: 45.4rem;
+  padding-left: 2rem;
+}
+@media screen and (max-width: 500px) {
+  .container .main-nav .main-nav__bar {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 .container .main-nav h1 {
   font-family: 'Uncial Antiqua', sans-serif;
   font-size: 300%;
   color: #670319;
+}
+@media screen and (max-width: 500px) {
+  .container .main-nav h1 {
+    font-size: 250%;
+    align-self: center;
+  }
 }
 .container .main-nav nav {
   display: flex;
@@ -193,25 +213,35 @@ html {
 }
 .container .main-nav .main-nav__profile {
   order: -1;
-  width: 22.4rem;
+  width: 28%;
+  max-width: 22.4rem;
+  min-width: 19.2rem;
   height: 22.4rem;
   position: relative;
   top: 25%;
-  outline: 0.5rem solid #eceeeb;
   border-radius: 2rem 0;
+}
+@media screen and (max-width: 500px) {
+  .container .main-nav .main-nav__profile {
+    top: 0;
+    margin-top: 4rem;
+  }
+}
+.container .main-nav .main-nav__profile img {
+  width: 100%;
+  height: auto;
+  outline: 0.5rem solid #eceeeb;
 }
 .container main {
   display: flex;
   flex-flow: row wrap;
-  margin: 0 4rem;
+  margin: 0 5%;
   justify-content: space-between;
 }
 .container main section {
-  max-width: 34rem;
-  min-width: 34rem;
-  flex-grow: 1;
-  background: white;
   border-radius: 2rem 0;
+  width: 47.5%;
+  background: white;
   line-height: 1.2;
   padding: 1rem;
   text-align: justify;
@@ -219,13 +249,29 @@ html {
 .container main section h2 {
   font-size: 125%;
   font-weight: bold;
+  color: inherit;
   margin: 1em 0;
+}
+@media screen and (max-width: 500px) {
+  .container main section {
+    width: 100%;
+  }
 }
 .container main section:nth-child(2n-1) {
   margin-top: 4rem;
 }
+@media screen and (max-width: 500px) {
+  .container main section:nth-child(2n-1) {
+    margin: 2rem 0;
+  }
+}
 .container main section:nth-child(2n) {
   margin-bottom: 4rem;
+}
+@media screen and (max-width: 500px) {
+  .container main section:nth-child(2n) {
+    margin: 2rem 0;
+  }
 }
 .container main table {
   width: 100%;
@@ -233,6 +279,7 @@ html {
 .container main table caption {
   font-size: 125%;
   font-weight: bold;
+  color: inherit;
   margin: 1em 0;
 }
 .container main table tr {
@@ -249,7 +296,7 @@ html {
   margin-bottom: 1em;
 }
 .container footer {
-  margin: 4rem 4rem 0rem 4rem;
+  margin: 4rem 5% 0rem 5%;
   height: 10rem;
   display: flex;
   justify-content: center;
