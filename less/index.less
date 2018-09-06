@@ -63,6 +63,7 @@ html, body {
 @greyshade : #897171;
 @lightgrey : lighten(@greyshade, 45%);
 @darkgrey : darken(@greyshade, 30%);
+@mobile : 500px;
 
 //mixin to display in center main and cross axis considered.
 .center() {
@@ -82,6 +83,10 @@ html, body {
   max-width: 880px;
   margin: 0 auto;
   border : 1px solid @greyshade;
+
+  //@media(max-width : @mobile){
+  	//background : teal;
+  //}
 }
 
 .margin() {
@@ -95,6 +100,12 @@ header {
 	width : 90%;
 	justify-content : flex-end;
 	padding : 20px;
+
+	@media (max-width : @mobile) {
+		justify-content : center;
+		background : gold;
+		width : 80%;
+	}
 		
 	nav {
  		font-size : 1em;
@@ -103,10 +114,16 @@ header {
 			margin : 1em;
 			text-decoration : none;
 			color : @greyshade;
+
+			@media (max-width : @mobile){
+				margin : 0.9em;
+			}
 		}
+
 		a:hover {
 			color : red;
 		}
+
 	}
 }
 	
@@ -120,6 +137,10 @@ header {
 		
 		h1{
 			font-size : 2em;
+
+			@media (max-width : @mobile){
+				font-size : 1.75em;
+			}
 		}
 	}
 
@@ -141,16 +162,31 @@ header {
 	.margin();
 	padding : 1em;
 	display : flex;
+
+	@media (max-width : @mobile){
+		display : flex;
+		flex-wrap : wrap;	
+	}
+
   
 	.listen-div {
     	h3 {
     		font-size : 1.8em;
     		margin-bottom : 10px;
     		
+			@media (max-width : @mobile){
+				font-size : 1.6em;
+				background : @lightgrey;
+				width : 38%;
+			}
     	}
     	p{
      		width : 25em;
       		height : auto;   
+    	
+    		@media (max-width : @mobile){
+    			width : 100%;
+    		}
     	}
 	}
 
@@ -158,14 +194,21 @@ header {
     	h4 {
       		margin-left : 2em;
       		font-size : 2em;
-      		font-weight : bold;
       		margin-bottom : 15px;
+
+      		@media (max-width : @mobile){
+      			font-size : 1.4em;
+      			background : @lightgrey;
+				width : 78%;
+				margin-left : 0;
+				margin-top : 20px;
+      		}
     	}
     	p {
       		border-bottom : 1px dotted @greyshade;
       		margin-left : 3em;
       		padding : 0.35em;
-    }
+    	}
 
 	}
 }
@@ -182,12 +225,22 @@ header {
       		margin-bottom : 15px;
       		margin-top : 1.5em;
       		padding : 5px;
+
+      		@media (max-width : @mobile){
+      			font-size : 1.4em;
+      			background : @lightgrey;
+				width : 15%;
+				margin-top : 20px;
+      		}
  		}
 
  		  table{
     		border-collapse: collapse;
     		width : 70%;
     		
+    		@media (max-width : @mobile){
+      			width : 40%;
+      		}
     		td, th {
     			border-bottom: 1px solid #ddd;
       			padding: 15px;
