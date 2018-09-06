@@ -65,6 +65,7 @@ html, body {
 @marginCenter: 0 auto;
 @completeWidth: 100%;
 @halfWidth: 50%;
+@quarterWidth: 25%;
 
 
 //flexbox variables
@@ -76,13 +77,14 @@ html, body {
 
 
 //layout variables - color
-@linkColor: silver;
+@linkColor: #999;
 @linkHoverColor: teal;
 
 //styling variables - fonts
 @fontSize: 1.6rem;
 @mobileFontSize: 1.3rem;
 @contentFontFamily: 'PT Sans', sans-serif;
+@ctaFontFamily: 'Passion One', cursive;
 
 
 //mixins 
@@ -127,10 +129,10 @@ html, body {
 
 	nav{
 		.flexRowMixin(row wrap, flex-end, center);
+		.fontMixin(@contentFontFamily, 1.9rem);
 		width: @completeWidth;
-		margin: 0;
+		margin: 30px 0;
 		padding: 2%;
-		border-bottom: 1px solid black;
 		width: @completeWidth;
 
 		a{
@@ -141,6 +143,37 @@ html, body {
 			&:hover{
 				color: @linkHoverColor;
 			}
+		}
+	}
+
+	.header-cta{
+		width: @completeWidth;
+		margin: 1	0px 0;
+		padding: 5%;
+		background-color: #eee;
+		border-radius: 10px;
+		.flexRowMixin(row wrap, space-evenly, center);
+
+		img{
+			width: 30%;
+			align-self: flex-start;
+			border: 1px solid red;
+		}
+		
+		div{
+
+			h1{
+				width: 100%;
+				.fontMixin(@ctaFontFamily, 10rem);
+				border: 1px solid purple;
+			}
+			h2{
+				border: 1px solid blue;
+			}
+			button{
+				border: 1px solid yellow;
+			}
+
 		}
 	}
 }
