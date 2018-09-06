@@ -135,7 +135,7 @@ body {
   height: 100%;
 }
 body {
-  background-image: url("nyan.gif");
+  background-image: url("../nyan.gif");
   background-repeat: repeat;
 }
 html {
@@ -144,8 +144,8 @@ html {
 }
 .container {
   max-width: 880px;
-  margin: 0 auto;
-  background: rgba(234, 243, 246, 0.9);
+  margin: 0 auto 20px;
+  background: rgba(234, 243, 246, 0.5);
   color: #383838;
   border-radius: 10px;
 }
@@ -155,20 +155,34 @@ html {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 20px 2%;
+  box-shadow: 1px 1px 10px #888888;
+}
+@media (max-width: 500px) {
+  .container .nav-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .container .nav-bar a {
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-decoration: none;
   color: gray;
+  text-shadow: 1px 1px 5px #888888;
   margin: 20px 3%;
+}
+@media (max-width: 500px) {
+  .container .nav-bar a {
+    font-size: 3rem;
+  }
 }
 .container header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #e3e3e3;
+  background: rgba(227, 227, 227, 0.8);
   width: 95%;
-  margin: 20px auto;
+  margin: 20px auto 0;
   padding: 20px 2%;
   border-radius: 10px;
 }
@@ -188,6 +202,7 @@ html {
 }
 .container header p {
   font-size: 1.6rem;
+  line-height: 1.5;
   padding: 30px 10% 0 0;
   border-top: 2px solid lightgray;
   margin-bottom: 20px;
@@ -208,29 +223,49 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  width: 93%;
+  width: 95%;
   margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .container .main-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 .container .main-content .about-me {
   width: 50%;
-  padding: 22px 0;
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 20px 2%;
+  box-shadow: 1px 1px 10px #888888;
+}
+@media (max-width: 500px) {
+  .container .main-content .about-me {
+    width: 100%;
+  }
 }
 .container .main-content .about-me h5 {
   font-size: 3rem;
 }
 .container .main-content .about-me p {
   font-size: 1.6rem;
+  line-height: 1.5;
   margin-top: 20px;
 }
 .container .main-content .skills {
   width: 45%;
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 20px 2%;
+  box-shadow: 1px 1px 10px #888888;
   border: 2px solid #e3e3e3;
+}
+@media (max-width: 500px) {
+  .container .main-content .skills {
+    width: 100%;
+  }
 }
 .container .main-content .skills h5 {
   font-size: 3rem;
@@ -247,35 +282,43 @@ html {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 20px 2%;
+  box-shadow: 1px 1px 10px #888888;
 }
 .container .experience h5 {
   font-size: 3rem;
 }
 .container .experience table {
-  border-right: 2px solid #e3e3e3;
-  border-bottom: 2px solid #e3e3e3;
-  border-left: 2px solid #e3e3e3;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  border-left: 2px solid gray;
   margin-top: 20px;
 }
 .container .experience table .title-bar {
-  border-top: 2px solid #e3e3e3;
-  font-size: 2rem;
-  background-color: #e3e3e3;
+  border-top: 2px solid gray;
+  background-color: gray;
+}
+.container .experience table .title-bar .title {
+  font-size: 3rem;
+  text-align: start;
 }
 .container .experience table .title-bar tr {
-  padding: 20px 0;
+  padding: 20px 5%;
 }
 .container .experience table th {
-  border-top: 2px solid #e3e3e3;
+  border-top: 2px solid gray;
   font-size: 1.6rem;
-  padding: 20px 0;
+  text-align: start;
+  padding: 20px 5%;
 }
 .container footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 95%;
+  margin: 0 auto;
 }
 .container footer p {
   font-size: 1.6rem;
   margin: 20px 0 40px;
+  text-align: center;
 }
