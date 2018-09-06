@@ -78,6 +78,10 @@ html {
 	width: 100%;
 	margin: 0 auto;
 	font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+	// @media (max-width: 500px){
+	// 	background-color: red;
+	// }
 }
 
 header {
@@ -88,13 +92,29 @@ header {
 		a{
 			font-size: 3rem;
 			text-decoration: none;
+
+			@media (max-width: 500px) {
+				&:hover {
+					background-color: lightblue;
+				}
+
+			}
+			
+			@media (max-width: 500px) {
+				padding: 2% 0; 
+				border-bottom: 1px solid black;
+			}
+		}
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+			text-align: center;
+			border-top: 1px solid black;
 		}
 	}
 }
 
 .content {
-
-	margin: 3%;
 	.intro {
 		// margin: 3%;
 		background-color: lightgray;
@@ -103,17 +123,28 @@ header {
 		display: flex;
 		align-items: center;
 		
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
 		
 		.Intro-Pic {
 			max-width: 20%;
 			margin: 3%;
+
+			@media (max-width: 500px) {
+				max-width: 70%
+			}
 		}
 
 		.text-content {
 			
 			max-width: 70%;
-			
 			font-size: 2rem;
+
+			@media (max-width: 500px) {
+				max-width: 80%;
+			}
+
 			h4 {
 				text-align: center;
 				font-size: 4rem;
@@ -122,6 +153,10 @@ header {
 
 			p {
 				margin: 5% 0;
+
+				@media (max-width: 500px) {
+					text-align: center;
+				}
 			}
 		}
 	}
@@ -140,6 +175,7 @@ header {
 		}
 
 		ul {
+
 			margin: 2% 0;
 			.flex();
 			flex-wrap: wrap;
@@ -147,7 +183,15 @@ header {
 			li {
 				width: 30%;
 				.listFormat();
+
+				@media (max-width: 500px) {
+					width: 100%;
+					list-style: none;
+					text-align: center;
+					padding: 1% 0;
+				}
 			}
+			
 		}
 	}
 
@@ -176,8 +220,21 @@ header {
 				margin-bottom: 1%;
 			}
 
+			.deparment {
+
+				@media (max-width: 500px) {
+					text-align: center;
+				}
+			}
+
 			li {
 				.listFormat();
+
+				@media (max-width: 500px) {
+					list-style: none;
+					padding: 1% 0;
+					text-align: center;
+				}
 			}
 
 		}
