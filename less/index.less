@@ -56,4 +56,244 @@ table {
 html, body {
     height: 100%;
 }
+html {
+	font-size: 62.5%;
+	background:url(../img/symphony.png) repeat;
+}
 
+
+// variables
+
+@mainColor: tomato;
+@textColor: DimGray;
+@accentColor: DarkSeaGreen;
+@mainFont: 'Montserrat', sans-serif;
+@accentFont: 'Raleway', sans-serif;
+
+// mix-ins
+.display(@justify){
+	display: flex;
+	justify-content: @justify;
+}
+.dispAlign(@align){
+	display: flex;
+	align-items: @align;
+}
+
+
+// base styles
+
+.container {
+	font-size: 1.6rem;
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+	color: @mainColor;
+	font-family: @accentFont;
+}
+
+//header
+
+.container {
+	header {
+	
+		nav {
+			.display(flex-end);
+			@media (max-width: 500px){
+				flex-direction: column;
+				text-align: center;
+				margin-bottom: 25px;
+			}
+			a {
+				margin: 20px;
+				text-decoration: none;
+				font-size: 2rem;
+				color: @mainColor;
+				@media (max-width: 500px){
+					border-bottom: 1px solid @mainColor;
+					padding: 20px;
+					margin: 0px;
+				}
+			}
+		}
+	}
+}
+
+
+//intro
+
+.container {
+	.intro {
+		.dispAlign(center);
+		@media (max-width: 500px){
+			flex-direction: column-reverse;
+		}
+		img {
+			border-radius: 50%;
+			border: 3px solid @mainColor;
+		}
+		.intro-text {
+			text-align: center;
+		
+			h1 {
+				font-size: 4rem;
+				font-family: @mainFont;
+				@media (max-width: 500px){
+					padding-top: 50px;
+				}
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			p {
+				font-size: 1.8rem;
+				padding: 40px;
+				line-height: 1.50;
+			}
+		}	
+	
+	}
+}
+
+
+// skills and work history
+
+.container {
+	.skills-history {
+		.display(space-around);
+		flex-wrap: wrap;
+		margin: 45px 0px 20px 0px;
+		@media (max-width: 500px){
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		
+		}
+		h2 {
+			text-transform: uppercase;
+			border-bottom: 1px dotted gray;
+			margin: 20px 0px;
+			padding-bottom: 10px;
+			font-size: 2rem;
+			font-family: @mainFont;
+			@media(max-width: 500px){
+				text-align: center;
+			}
+		}
+		ul {
+			li {
+				color: @textColor;
+				margin: 20px 0px;
+			}
+		}
+		.work-history {
+		width: 50%;
+		@media(max-width: 500px){
+			width: 90%;
+		}
+			p {
+				color: @textColor;
+				padding: 0px 0px 20px 10px;
+				line-height: 1.45;
+			}
+			h4 {
+				margin: 20px 0px;
+			}
+		}
+	
+
+	}
+}
+
+
+//contact
+
+
+.container {
+	.contact {
+		.display(space-between);
+		margin: 30px 0px;
+		color: @accentColor;
+		border-top: 1px dotted @textColor;
+		border-bottom: 1px dotted @textColor;
+		padding: 20px 0px;
+		@media (max-width: 500px){
+			flex-direction: column;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		h2 {
+			text-transform: uppercase;
+			@media (max-width: 500px){
+				padding: 10px;
+			}
+		
+		}
+		a {
+			color: @accentColor;
+			text-decoration: none;
+			&:hover{
+				color: @mainColor;
+			} 
+			@media(max-width: 500px){
+				padding: 10px;
+			}
+		}
+		p {
+			@media(max-width:500px){
+				padding: 10px;
+			}
+		}
+	}
+}
+
+//footer
+
+.container {
+	footer {
+		background: @mainColor;
+		width: 100%;
+		p {
+			color: @textColor;
+			text-align: center;
+			padding: 20px;
+		}
+	}
+}
+
+.portfolio-container {
+	a {
+		text-decoration: none;
+
+		h1 {	
+			color: @textColor;
+			text-transform: uppercase;
+			font-family: @accentFont;
+			text-align: center;
+			margin: 25px;
+		}
+		
+	}
+	.portfolio {
+		.display(space-evenly);
+		flex-wrap: wrap;
+		h1 {
+
+		}
+		a {
+			margin: 20px;
+			text-decoration: none;
+			color: @accentColor;
+		}
+		p {
+			text-align: center;
+			padding-top: 20px;
+			
+		}
+		
+	}
+	footer {
+			margin-top: 40px;
+	}
+	
+}
