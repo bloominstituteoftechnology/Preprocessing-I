@@ -65,6 +65,7 @@ html, body {
 @marginCenter: 0 auto;
 @completeWidth: 100%;
 @halfWidth: 50%;
+@95Width: 95%;
 @mobileWidth: 90%;
 
 
@@ -87,6 +88,11 @@ html, body {
 @contactColor: #9b59b6;
 
 @mobileCtaColor: #428bca;
+@aboutColorMobile: #E0623E;
+@aboutColorTxtMobile: #fff;
+@skillsColorMobile: #24252a;
+@contactColorMobile: #049372;
+@contactColorMobileLink: #EF7860;
 
 
 //styling variables - fonts
@@ -221,13 +227,13 @@ html, body {
 		background-color: @skillsColor;
 		color: @white;
 		p{
-			width: @maxWidth;
-			.fontMixin(@h2Font, 2.5rem);
+			width: @completeWidth;
+			.fontMixin(@contentFontFamily, 3rem);
 		}
 	}
 
 	.main-work{
-		width: @maxWidth;
+		width: @completeWidth;
 		background-color: @workColor;
 		color: @white;
 		div{
@@ -263,7 +269,7 @@ html, body {
 	.main-contact{
 		background-color: @contactColor;
 		color: @white;
-		width: @maxWidth;
+		width: @completeWidth;
 
 		img{
 			width: 20%;
@@ -280,7 +286,7 @@ html, body {
 					text-decoration: none;
 
 					&:hover{
-						color: @linkHoverColor;
+						color: @contactColorMobileLink;
 					}
 				}		
 			}
@@ -289,7 +295,7 @@ html, body {
 }
 
 footer{
-	width: 100%;
+	width: @completeWidth;
 	max-width: @maxWidth;
 	margin: 0 auto;
 	padding:   20px 10%;
@@ -299,10 +305,62 @@ footer{
 	
 }
 
+@media(max-width: 880px){
+	.header{
+		width: @95Width;
+		nav{
+			.flexRowMixin(row wrap, space-evenly, center);
+		}
+	}
 
+	.container{
+		width: @95Width;
+	}
+
+	footer{
+		width: @95Width;
+	}
+}
+
+@media(max-width: 700px){
+
+	.header{
+		nav{
+			.flexRowMixin(row wrap, space-between, center);
+		}
+	}
+
+	.container{
+		
+		section{
+			width: 100%;
+	
+			img{
+				width: 25%;
+				align-self: flex-start;
+			}
+	
+			h1{
+				margin-left: 5%;
+				align-self: center;
+				width: 50%;
+				.fontMixin(@h1Font, 4.6rem);
+			}
+	
+			p{
+				margin: 20px 0;
+				.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+			}
+	
+		}
+	
+	}
+
+}
 
 @media(max-width: 500px){
 	.header{
+		width: @completeWidth;
 		nav{
 			.flexRowMixin(row wrap, space-evenly, center);
 		}
@@ -322,6 +380,61 @@ footer{
 				}
 			}
 		}
+	}
+	.container{
+		width: @completeWidth;
+		.flexRowMixin(@flexRowFlow, space-between, center);
+
+		
+		section{
+			width: 100%;
+			margin:0;
+			border-radius: 0;
+	
+			img{
+				width: 25%;
+				align-self: flex-start;
+			}
+	
+			h1{
+				margin-left: 5%;
+				align-self: center;
+				width: 50%;
+				.fontMixin(@h1Font, 4.6rem);
+			}
+	
+			p{
+				margin: 20px 0;
+				.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+			}
+	
+		}
+		.main-about{
+			background-color: @aboutColorMobile;
+			color: @aboutColorTxtMobile;
+		}
+
+		.main-skills{
+			background-color: @skillsColorMobile;
+			color: @white;
+			p{
+				width: @completeWidth;
+				.fontMixin(@contentFontFamily, 2rem);
+			}
+		}
+		.main-contact{
+			background-color: @contactColorMobile;
+			color: @white;
+			a{
+				color: @white;
+				text-decoration: none;
+
+				&:hover{
+					color: @linkHoverColor;
+				}
+			}	
+		}
+	
 	}
 }
 
