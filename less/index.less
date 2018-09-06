@@ -62,34 +62,75 @@ html, body {
 //layout variables
 @maxWidth: 880px;
 @tabWidth: 500px;
+@marginCenter: 0 auto;
+
+//flexbox variables
 @flexBox: flex;
+@flexRowFlow: row wrap;
+@flexRowJustify: center;
+@flexColumnFlow: column wrap;
+@flexColumnAlgnContent: center;
 
 
-//layout variables - colotd
+//layout variables - color
 
 
 //styling variables - fonts
 @fontSize: 1.6rem;
+@mobileFontSize: 1.3rem;
 @contentFontFamily: 'PT Sans', sans-serif;
 
 
-.container{
-	font-family: @contentFontFamily;
-	font-size: @fontSize;
+//mixins 
+.flexRowMixin(@flow, @justify: @flexRowJustify, @alignContent: @flexColumnAlgnContent){
+	display: @flexBox;
+	flex-flow: @flow;
+	justify-content: @justify;
+	align-content: @alignContent;
 }
+
+.flexColumnMixin(@flow, @justify: @flexRowJustify, @alignContent: @flexColumnAlgnContent){
+	display: @flexBox;
+	flex-flow: @flow;
+	justify-content: @justify;
+	align-content: @alignContent;
+}
+
+.fontMixin(@font-family, @font-size, @line-height: 1.5){
+	font-family: @font-family;
+	font-size: @font-size;
+	line-height: @line-height;
+}
+
+
+//layout CSS
+.container, footer{
+	max-width: @maxWidth;
+	margin: @marginCenter;
+	.flexRowMixin(@flexRowFlow, center ,flex-end);
+	.fontMixin(@contentFontFamily, @fontSize);
+	border: 1px solid red;
+}
+
+
+// .header{
+// 	max-width: @maxWidth;
+// 	border: 1px solid red;
+// 	.flexBoxMixin(row wrap, center);
+// }
 
 
 
 //media queries
-@media(@maxWidth){
-	//table
-	// font-family: @contentFontFamily;
-	// font-size: @fontSize;
-}
+// @media(max-width: @maxWidth){
+// 	//table
+// 	// font-family: @contentFontFamily;
+// 	// font-size: @fontSize;
+// }
 
-@media(@tabWidth){
-	.container{
-		font-family: @contentFontFamily;
-		font-size: @fontSize;
-	}
-}
+// @media(max-width: @tabWidth){
+// 	.container{
+// 		font-family: @contentFontFamily;
+// 		font-size: @mobileFontSize;
+// 	}
+// }
