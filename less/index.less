@@ -63,9 +63,15 @@ html, body {
 @textColor: #424242;
 @hCTextColor: white;
 @fontStack: Helvetica, Ariel, sans-serif;
+
 .greyMainFont(){
 	font-size: @mainFontSize;
 	color: @hCTextColor;
+	font-family: @fontStack;
+}
+.mainFont(){
+	font-size: @mainFontSize;
+	color: @textColor;
 	font-family: @fontStack;
 }
 .subjBoxes() {
@@ -106,9 +112,16 @@ html, body {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	width: 100%;
-
-
+	justify-content: space-around;
+	
+}
+.resumeContent {
+	width: 70%;
+	padding-top: 8%;
+	padding-left: 10%;
+	margin-right: 8%;
+	display:flex;
+	flex-direction:column;
 }
 
 .greySideBar {
@@ -116,15 +129,17 @@ html, body {
 	flex-direction: column;
 	justify-content:center;
 	align-items: center;
+	
 	background-color: #424242;
 	color: @hCTextColor;
 	width: 30%;
+	
 	padding-top: 20px;
 	padding-bottom: 20px;
 	
 	img {
-		height: 250px;
-		width: 250px;
+		height: auto;
+		width: 80%;
 		border-radius: 50%;
 		margin: 10px;
 	}
@@ -134,29 +149,65 @@ html, body {
 		p {
 			.greyMainFont();
 			line-height: 1.5;
-			padding: 5px;
+			padding: 15px;
+			text-align: center;
 		}
 
 	}
 
-	.contactItems{
-		.greyMainFont();
-		font-size: 2rem;
-		text-decoration: underline;
-		padding-top:20px;
-	}
-	.info1 {
-		background-color: #cf6e6e;
-		
-	}
+.contactItems{
+	.greyMainFont();
+	font-size: 2rem;
+	text-decoration: underline;
+	padding-top:20px;
+	
+}
+.info1 {
+	background-color: #cf6e6e;
+	
+}
 
-	.info2{
-		background-color: #6ecdcf;
-	}
+.info2{
+	background-color: #6ecdcf;
+}
 
-	.info3 {
-		background-color: #9ed16f;
-	}
+.info3 {
+	background-color: #9ed16f;
+}
 
+.nameContainer {
+	.mainFont();
+	h2 {
+		font-size: 3.2rem;
+		font-weight: bold; 
+	}
+	h1 {
+		font-size: 4.2rem;
+		font-weight: bolder;
+		line-height: 1.25;
+	}
+}
+.mainContent {
+	.mainFont();
+	line-height: 1.25;
+	padding-top: 50px;
+	h3 {
+		font-size: 2.8rem;
+		padding-top: 30px;
+		padding-bottom: 10px;
+		font-weight: bold;
+	}
+		h4 {
+			font-size: 2rem;
+			padding-top: 10px;
+			text-decoration: underline;
+		}
+		li {
+			list-style-type: circle;
+			list-style-position: inside;
+			line-height: 1.5;
+			font-size: 2rem;
+		}
+}
 
 
