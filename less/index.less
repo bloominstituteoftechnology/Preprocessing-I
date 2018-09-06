@@ -112,17 +112,11 @@ html, body {
 
 
 //layout CSS
-.container{
-	width: @completeWidth;
-	max-width: @maxWidth;
-	margin: @marginCenter;
-	.flexRowMixin(@flexRowFlow);
-	.fontMixin(@contentFontFamily, @fontSize);
-}
-
+//header 
 .header{
 	width: @completeWidth; 
 	max-width: @maxWidth;
+	margin: @marginCenter;
 	.flexRowMixin(row wrap, flex-start, center);
 
 	nav{
@@ -173,6 +167,22 @@ html, body {
 	}
 }
 
+//content/container
+
+.container{
+	width: @completeWidth;
+	max-width: @maxWidth;
+	margin: @marginCenter;
+	.flexRowMixin(@flexRowFlow, space-evenly, center);
+	.fontMixin(@contentFontFamily, @fontSize);
+	border: 1px solid blue;
+
+	section{
+		max-width: 40%;
+		border: 1px solid black;
+	}
+}
+
 
 // .header{
 // 	max-width: @maxWidth;
@@ -198,14 +208,15 @@ html, body {
 			background-color: #428bca;
 			color: white;
 			border-radius: 0;
-			
+
 			div{
+				margin-bottom: 20px;
 
 				h1{
 					.fontMixin(@h1Font, 7rem);
 				}
 				h2{
-					.fontMixin(@h2Font, 4.5rem);	
+					.fontMixin(@h2Font, 2.7rem);	
 				}
 			}
 		}
