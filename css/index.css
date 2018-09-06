@@ -1,1 +1,465 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "proxima nova", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 160%;
+}
+.container {
+  width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  font-family: "proxima nova", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+header {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0) 70%);
+  padding: 0.5rem 0 5rem;
+  font-size: 2rem;
+  text-align: Center;
+  animation: slideInDown 1.5s forwards;
+  width: 100%;
+}
+header .social {
+  width: 175px;
+  height: 40px;
+  display: inline-block;
+  text-indent: -9999px;
+  cursor: pointer;
+  padding: 0px;
+}
+header .social .social li {
+  border: 0px;
+  margin-top: 3%;
+  margin-left: 1rem;
+  height: 20px;
+  width: 2rem;
+}
+header .socialmedia {
+  margin-top: 2%;
+}
+header ul li {
+  display: inline-flex;
+  margin: 1rem;
+}
+header ul li:nth-child(1) {
+  padding-left: 15%;
+}
+ul.nav li:not(:nth-child(5)) a {
+  position: relative;
+  padding: 1rem 0 0.5rem;
+  margin: 0 1.5rem;
+  color: #d4d3d3;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+ul.nav li:not(:nth-child(5)) a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: 50% 50%;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: transform 250ms;
+}
+ul.nav li:not(:nth-child(5)) a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Permanent Marker Regular'), local('PermanentMarker-Regular'), url(https://fonts.gstatic.com/s/permanentmarker/v7/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Ceg.ttf) format('truetype');
+}
+.Animated-Logo {
+  display: flex;
+  box-sizing: border-box;
+  margin-left: 3%;
+  margin-top: -8%;
+}
+.Animated-Logo svg {
+  max-width: 45rem;
+  width: 30%;
+  height: auto;
+  stroke: white;
+  stroke-width: 4;
+}
+.Animated-Logo svg tspan > tspan {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 2000;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(1) {
+  animation: draw 10s 100ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(2) {
+  animation: draw 10s 500ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(3) {
+  animation: draw 10s 900ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(4) {
+  animation: draw 10s 1300ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(5) {
+  animation: draw 10s 1700ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(6) {
+  animation: draw 10s 2100ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(7) {
+  animation: draw 10s 2500ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(8) {
+  animation: draw 10s 2900ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(9) {
+  animation: draw 10s 3300ms forwards;
+  animation-iteration-count: infinite;
+}
+.Animated-Logo svg tspan > tspan:nth-of-type(10) {
+  animation: draw 10s 3500ms forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes draw {
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+.contact {
+  margin-top: 57px;
+  border-top: 1px solid black;
+  padding: 39px 1% 0;
+}
+.contact .contact p {
+  margin: 20px 2%;
+}
+footer {
+  margin: 32px 0;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.Main-Content {
+  line-height: 1.4;
+  word-spacing: 1px;
+  text-shadow: 0px 1px 0px #ffffff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 3rem;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 15%;
+  border: 10% 0 10% 0;
+}
+.Description {
+  padding-left: 6%;
+}
+.Main-Content img {
+  display: flex;
+  border-radius: 100px;
+}
+.effect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+  cursor: pointer;
+}
+.effect__heading {
+  font-size: 1.5em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+.effect__heading:after {
+  content: '';
+  position: absolute;
+}
+.effect__subheading {
+  font-family: 'Hindi', Avenir, sans-serif;
+  font-size: 1.2em;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+.Quote {
+  margin: 40% 0 40%;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.Quote .effect__heading:after {
+  opacity: 0;
+  content: '⎦';
+  font-size: 4em;
+  line-height: 1;
+  top: calc(100% + 20px);
+  left: calc(100% + 20px);
+  transform: translate(-50%, 50%) scale(0.8);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.Quote .effect__heading:before {
+  position: absolute;
+  opacity: 0;
+  content: '⎡';
+  font-size: 4em;
+  line-height: 1;
+  top: 20px;
+  left: -20px;
+  transform: translate(-50%, -150%) scale(0.8);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.Quote .effect__subheading {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.Quote:hover {
+  opacity: 1;
+}
+.Quote:hover .effect__subheading {
+  transform: translateY(0);
+  opacity: 1;
+}
+.Quote:hover .effect__heading:after,
+.Quote:hover .effect__heading:before {
+  opacity: 0.1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.highlight {
+  display: inline-block;
+  color: #343434;
+  transition: color 250ms, text-shadow 250ms;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+  position: relative;
+  z-index: 0;
+}
+.highlight::after {
+  position: absolute;
+  z-index: -1;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #343434;
+  transition: all 250ms;
+}
+.highlight:hover {
+  color: white;
+  text-shadow: 0px 1px 0px #000000;
+}
+.highlight:hover::after {
+  height: 110%;
+  width: 110%;
+}
+@media (max-width: 800px) {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  header {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+  nav {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  nav a {
+    display: flex;
+    font-size: 2rem;
+    color: lightgrey;
+    width: 100%;
+    justify-content: center;
+    height: 70px;
+    align-items: center;
+  }
+}
