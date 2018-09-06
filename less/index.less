@@ -57,3 +57,139 @@ html, body {
     height: 100%;
 }
 
+// CSS
+
+@color: black;
+
+@font: 1.8rem;
+
+.imageSize() {
+	width: 100%;
+	height: auto;
+}
+
+.navElements() {
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 2px;
+	text-decoration: none;
+	margin: 0 15px 15px;
+	color: @color;
+	&:hover {
+		background: black;
+		color: white;
+		transition: 0.2s;
+	}
+}
+
+.mobileNav() {
+	width: 130px;
+	align-self: center;
+	text-align: center;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	max-width: 750px;
+	margin: auto;
+	font-size: @font;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: @color;
+	padding: 15px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 40px 0;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
+	.photo {
+		width: 30%;
+		@media (max-width: 500px) {
+			margin-bottom: 20px;
+		}
+		.smile {
+			display: block;
+			.imageSize();
+		}
+		.shrug {
+			display: none;
+		}
+
+		&:hover {
+			.smile {
+				display: none;
+			}
+			.shrug {
+				display: block;
+				.imageSize();
+			}
+		}
+	}
+	nav {
+		display: flex;
+		padding-bottom: 70px;
+		@media (max-width: 500px) {
+			flex-direction: column;
+			padding-bottom: 10px;
+		}
+		.about {
+			align-self: flex-start;
+			.navElements();
+			@media (max-width: 500px) {
+				.mobileNav();
+			}
+		}
+		.portfolio {
+			align-self: center;
+			.navElements();
+			@media (max-width: 500px) {
+				.mobileNav();
+			}
+		}
+		.contact {
+			align-self: flex-end;
+			.navElements();
+			@media (max-width: 500px) {
+				.mobileNav();
+			}
+		}
+	}
+}
+
+.resume-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	.resume-section {
+		border-bottom: 4px double black;
+		margin-top: 20px;
+		padding-bottom: 20px;
+		h1 {
+			font-size: 3rem;
+			margin-bottom: 5px;
+		}
+		h2 {
+			font-size: 2.5rem;
+			margin-bottom: 10px;
+		}
+		p {
+			margin-bottom: 5px;
+		}
+		.desc {
+			margin-bottom: 15px;
+			padding: 0 15px;
+			font-size: 1.5rem;
+		}
+	}
+	.resume-section:last-child {
+		margin-bottom: 80px;
+	}
+}
