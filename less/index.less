@@ -91,6 +91,13 @@ body .resume-container {
 	font-family: @fontStack;
 	border-right: 0.3rem dotted @mainColor;
 	border-left: 0.3rem dotted @mainColor;
+
+	@media( max-width: 500px) {
+		width: 100%;
+		border-right: none;
+		border-left: none;
+		padding: 0;
+	}
 }
 
 
@@ -124,11 +131,19 @@ header {
 				font-size: 3.6rem;
 				.bigStrong;
 				width: 100%;
+
+				@media( width: 500px ) {
+					font-size: 2.8rem;
+				}
 			}
 
 			h2 {
 				font-size: 2.4rem;
 				font-weight: bold;
+
+				@media( width: 500px ) {
+					font-size: 1.75rem;
+				}
 			}
 		}
 	}
@@ -140,10 +155,51 @@ header {
 		justify-content: center;
 		margin-right: 2rem;
 
+		@media( width: 500px ) {
+			width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-right: 0;
+		}
+
+		.fas, .fab {
+			display: none;
+
+			@media( width: 500px ) {
+				display: inline-block;
+				padding: 1.5rem;
+
+			}
+		}
+
+		@media( width: 500px ) {
+			width: 100%;
+			text-align: left;
+		}
+
 		a {
 			color: @mainColor;
 			text-decoration: none;
 			padding: 0.25rem 0;
+
+			@media( width: 500px ) {
+				width: 50%;
+				font-size: 5rem;
+				text-align: center;
+				margin: 0 auto;
+				padding: 0;
+
+				&:hover {
+					background-color: @mainColor;
+					color: @accentColor;
+				}
+			}
+
+			span {
+				@media( width: 500px ) {
+					display: none;
+				}
+			}
 		}
 	}
 
@@ -158,10 +214,20 @@ header {
 .main-content {
 	display: flex;
 
+	@media( width: 500px ) {
+		width: 100%;
+		flex-direction: column;
+	}
+
 	.column {
 		max-width: 50%;
 		.columnSpace;
 		margin: 0 auto;
+
+		@media( width: 500px ) {
+			max-width: 100%;
+			margin: 0;
+		}
 
 		.section-head {
 			color: @mainColor;
