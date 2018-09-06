@@ -67,6 +67,7 @@ html, body {
 @fontStack: 'Roboto', Helvetica, Arial, sans-serif;
 @darkgray: #757575;
 @mobile: 500px;
+
 //Mixins
 .tableFontStyles() {
 	height: 49px;
@@ -79,7 +80,7 @@ html, body {
 }
 
 //Parametic Mixins
-.customFlex(@direction: row, @justify: center, @align: center) {
+.customFlex(@justify: center, @align: center, @direction: row) {
 	display: flex;
 	flex-direction: @direction;
 	justify-content: @justify;
@@ -96,7 +97,7 @@ html {
 	padding: 0px 20px;
 	font-size: 1.6rem;
 	font-family: @fontStack;
-	.customFlex(column, flex-start, center);
+	.customFlex(flex-start, center, column);
 
 	@media (max-width: @mobile) {
 		max-width: 450px;
@@ -104,10 +105,10 @@ html {
 	.header {
 		width: 100%;
 		height: 82px;
-		.customFlex(row, flex-end, center);
+		.customFlex(flex-end, center);
 		nav {
 			width: 100%;
-			.customFlex(row, flex-end, center);
+			.customFlex(flex-end, center);
 			a {
 				text-decoration: none;
 				font-size: 1.7rem;
@@ -118,7 +119,7 @@ html {
 		}
 
 		@media (max-width: @mobile) {
-			.customFlex(row, center, center);
+			.customFlex(center, center);
 			padding: 0px 20px;
 			nav {
 				width: 100%;
@@ -137,7 +138,7 @@ html {
 			height: auto;
 		}
 		h1 {
-			font-size: 5.099rem;
+			font-size: 5.1rem;
 			margin-top: 10px;
 		}
 		h3 {
@@ -165,6 +166,10 @@ html {
 				margin-top: 20px;
 				color: white;
 				font-size: 2.1rem;
+				outline: none;
+				&:hover {
+					cursor: pointer;
+				}
 			}
 		}
 	}
@@ -172,20 +177,13 @@ html {
 	.main-content {
 		width: 100%;
 		padding-top: 36px;
-		.customFlex(row, space-between, center);
-	
-		@media (max-width: @mobile) {
-			.customFlex(column, flex-start, center);
-		}
+		.customFlex(space-between, center);
+
 		div {
 			width: 50%;
-			height: 321px;
 		}
-	
+
 		.listen {
-			@media (max-width: @mobile) {
-				width: 100%;
-			}
 			h2 {
 				font-size: 3.2rem;
 				font-weight: 400;
@@ -197,12 +195,8 @@ html {
 		}
 	
 		.stuff {
-			.customFlex(column, flex-start, flex-start);
+			.customFlex(flex-start, flex-start, column);
 			padding-left: 15px;
-			@media (max-width: @mobile) {
-				width: 100%;
-				padding-left: 0;
-			}
 			h2 {
 				font-size: 2.4rem;
 				font-weight: 300;
@@ -220,6 +214,20 @@ html {
 					padding-top: 17px;
 					border-bottom: 1px solid @darkgray;
 				}
+			}
+		}
+
+		@media (max-width: @mobile) {
+			.customFlex(flex-start, center, column);
+			div {
+				padding-bottom: 40px;
+			}
+			.listen {
+				width: 100%;
+			}
+			.stuff {
+				width: 100%;
+				padding-left: 0;
 			}
 		}
 	}
