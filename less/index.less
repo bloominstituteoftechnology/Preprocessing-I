@@ -80,7 +80,7 @@ html, body {
     margin-bottom: 15px;
 }
 
-.p() {
+.par() {
     line-height: 1.5;
     margin: 5px 2%;
 }
@@ -162,7 +162,7 @@ header {
     }
 
     p {
-        .p();
+        .par();
         width: 80%;
         margin: 0 auto;
     }
@@ -211,8 +211,8 @@ header {
         }
     }
 
-    p { //probably not necessary, just confusing, but i'm messing around w/ mixins
-        .p();
+    p { //mixin probably not necessary, just confusing. just messing around
+        .par();
     } 
 
 }
@@ -252,15 +252,17 @@ header {
     h2 {
         .header2(black);
         text-align: center;
+        margin-bottom: 0;
+        background-color: #a39ea0;
     }
 
     table {
     width: 100%;
-    background-color:#aaa0a0;
+    background-color:@backgroundColor;
 
     tr {
         padding-top: 2rem;
-        border: 1px solid lightgray;
+        border: 1px solid black;
         height: 40px;
         valign: bottom;
 
@@ -278,6 +280,7 @@ header {
 }
 
 footer {
+    margin-top: 20px;
     text-align: center;
     font-size: 1rem;
     color: blue;
