@@ -62,7 +62,7 @@ html, body {
 @imgHeight: 100%;
 @navFontColor: orange;
 @backgroundColor: teal;
-
+@phone: ~'(max-width: 500px)';
 
 
 // Parametric Mixin
@@ -81,6 +81,7 @@ html, body {
 
 //LESS
 .container{
+
 	margin: 0 auto;
 	width: 1500px;
 	height: 100%;
@@ -88,19 +89,20 @@ html, body {
 
 	header{
 		display: flex;
-		justify-content: flex-end;
+		justify-content: flex-center;
 		flex-wrap: wrap;
-		padding-right: 3rem;
+		
 	
-		padding-bottom: 10rem;
+		padding-bottom: 7%;
 	}
 
 
 	.main-nav{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		padding-top: 4%;
-		width: 60%;
+		
+		width: 100%;
 		
 	
 		a{
@@ -113,22 +115,28 @@ html, body {
 		}
 	}
 .main-content-container {
-	
+	@media @phone{
+		width: 100%;
+	}
 	display: flex;
-	
-	justify-content: space-around;
+	flex-wrap: wrap;
+	justify-content: center;
 	
 	padding-left: 8%;
+	padding-right: 8%;
 	
 	
 	
 
 }
 	.top-content{
+		@media @phone{
+			width: 100%;
+		}
 		
 		width: 29.3%;
-		padding-top: 10rem;
-		padding-left: 5rem;
+		padding-top: 7%;
+		padding-left: 3%;
 		background-color: @backgroundColor;
 		margin-top: 10%;
 		margin-bottom: 10%;
@@ -204,6 +212,9 @@ html, body {
 		}
 	}
 	.bottom-content-container{
+		@media @phone{
+			width: 100%;
+		}
 		display: flex;
 		margin-top: 20%;
 		margin-bottom: 20%;
@@ -230,7 +241,9 @@ html, body {
 
 	}
 	.project-container{
-
+		@media @phone{
+		
+		}
 		display: flex;
 		align-content: flex-end;
 		flex-wrap: wrap;
@@ -246,6 +259,10 @@ html, body {
 		p{
 			font-size: 2rem;
 		}
+	}
+	@media @phone{
+		width: 500px;
+		
 	}
 }
 
