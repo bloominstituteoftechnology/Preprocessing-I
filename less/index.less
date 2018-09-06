@@ -64,7 +64,10 @@ html, body {
 //== Boilerplate ===============================================================
 a:link, a:visited {
 	text-decoration: none;
-	color: inherit;
+	color: @color-primary;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 html {
 	font-size: 62.5%;
@@ -79,6 +82,7 @@ body {
 @color-primary: #670319;
 @color-secondary: #435937;
 @color-primary-dark: shade(@color-primary);
+@color-secondary-light: tint(@color-secondary, 90%);
 
 
 //== Layout ====================================================================
@@ -86,13 +90,17 @@ body {
 @layout-width-desktop: 800px;
 @layout-width-mobile: 500px;
 
+html {
+	background: @color-secondary-light;
+}
+
 .container {
 	margin: 0 auto;
 	max-width: @layout-width-desktop;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-
+	//
 	.main-nav {
 		display: flex;
 		justify-content: space-evenly;
@@ -118,9 +126,9 @@ body {
 			a {
 				font-size: 125%;
 				font-weight: bold;
+				color: inherit;
 				&:hover {
 					color: @color-secondary;
-					text-decoration: underline;
 				}
 			}
 		}
@@ -130,7 +138,7 @@ body {
 			height: 22.4rem;
 			position: relative;
 			top: 25%;
-			outline: 0.5rem solid white;
+			outline: 0.5rem solid @color-secondary-light;
 			border-radius: 2rem 0;
 		}
 	}
@@ -140,26 +148,60 @@ body {
 		flex-flow: row wrap;
 		margin: 0 4rem;
 		justify-content: space-between;
-	}
-	section {
-		height: 20rem;
-		max-width: 34rem;
-		min-width: 34rem;
-		flex-grow: 1;
-		border: solid 1px green;
-		border-radius: 2rem 0;
-	}
-	section:nth-child(2n-1) {
-		margin-top: 4rem;
-	}
-	section:nth-child(2n) {
-		margin-bottom: 4rem;
+		//
+		section {
+			max-width: 34rem;
+			min-width: 34rem;
+			flex-grow: 1;
+			//border: solid 2px black;
+			background: white;
+			border-radius: 2rem 0;
+			line-height: 1.2;
+			padding: 1rem;
+			text-align: justify;
+			h2 {
+				font-size: 125%;
+				font-weight: bold;
+				margin: 1em 0;
+			}
+		}
+		section:nth-child(2n-1) {
+			margin-top: 4rem;
+		}
+		section:nth-child(2n) {
+			margin-bottom: 4rem;
+		}
+		//-- Work History --------------------------------
+		table {
+			width: 100%;
+			caption {
+				font-size: 125%;
+				font-weight: bold;
+				margin: 1em 0;
+			}
+			tr {
+				border-top: 1px solid black;
+			}
+			td {
+				padding: 1rem;
+			}
+		} 
+		//-- Contact -------------------------------------
+		.contact__details {
+			display: flex;
+			flex-direction: column;
+			span {
+				margin-bottom: 1em;
+			}
+		}
 	}
 	
 	footer {
-		margin: 4rem;
-		height: 20rem;
-		border: solid 1px red;
+		margin: 4rem 4rem 0rem 4rem;
+		height: 10rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
