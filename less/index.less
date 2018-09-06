@@ -457,9 +457,17 @@ body {
 
 /* EXPERIENCE & EDUCATION */
 
-.experience:last-child {
-  text-align: right;
+.experience {
+  display: flex;
+  flex-direction: column;
+  .card {
+    margin-bottom: @mb-small;
+  }
+  .btn {
+    align-self: flex-end;
+  }
 }
+
 .experience,
 .education {
   margin-bottom: @mb-medium;
@@ -469,6 +477,7 @@ body {
   background-color: @color-grey;
   padding: 2rem;
   border-radius: 1rem;
+  width: 100%;
   .heading-tertiary {
     .heading-bold;
     // text-transform: uppercase;
