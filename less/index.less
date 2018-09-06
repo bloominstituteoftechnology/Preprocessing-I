@@ -71,6 +71,8 @@ html, body {
 @fontsize: 2rem;
 @marginsize: 30px;
 @sidemargin: 5%;
+@midsize: 700px;
+@smallsize: 500px;
 
 // Mixins
 .flexRow() {
@@ -120,6 +122,7 @@ html {
 		.flexRow;
 		justify-content: space-between;
 		align-content: center;
+		flex-wrap: wrap;
 		height: 40px;
 		margin-bottom: @marginsize;
 
@@ -152,6 +155,15 @@ html {
 				}
 			}
 		}
+
+		@media( max-width: 700px ) {
+			justify-content: center;
+			align-content: center;
+			height: 90px;
+			ul {
+				width: 100%;
+			}
+		}
 	}
 
 	.intro {
@@ -164,8 +176,33 @@ html {
 		}
 
 		.intro-img {
-			img {
-				border-radius: 5px;
+			a{
+				img {
+					border-radius: 5px;
+					width: 90%;
+				}
+			}
+		}
+
+		@media(max-width: @midsize) {
+			flex-wrap: wrap;
+
+			.intro-img {
+				margin: 0 auto;
+				a {
+					margin: 0 auto;
+					img {
+						width: 100%;
+					}
+				}
+			}
+
+			.intro-content {
+				order: 1;
+				font-size: 1.8rem;
+				width: 100%;
+				text-align: center;
+				margin-top: 20px;
 			}
 		}
 	}
@@ -179,6 +216,13 @@ html {
 			padding-top: 20px;
 			padding-left: 10%;
 		}
+		@media( max-width: @midsize ) {
+			padding-top: 30px;
+
+			p, ul {
+				font-size: 1.8rem;
+			}
+		}
 	}
 
 	.history {
@@ -188,20 +232,44 @@ html {
 
 		.history-contents {
 			.flexRow;
+			justify-content: space-between;
 			div {
+				background: rgba(127, 127, 127, .6);
+				box-shadow: 0px 0px 15px rgba(127, 127, 107, .5);
+
 				width: 30%;
 				margin-bottom: 20px;
-				padding-right: 2%;
+				padding: 5px;
 
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				h3 {
+					font-size: 2rem;
+					padding-bottom: 10px;
+				}
+				p {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		@media( max-width:700px ){
+
+			margin-top: 30px;
+			.history-contents {
+				flex-wrap: wrap;
+
+				div {
+					padding: 5px;
+					width: 100%;
 					h3 {
-						font-size: 2rem;
-						padding-bottom: 10px;
-					}
-					p {
-						font-size: 1.4rem;
+						font-size: 1.8rem;
 					}
 				}
 			}
+		}
 	}
 
 	.contact {
