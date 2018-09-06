@@ -147,6 +147,19 @@ html {
 
 @font : "Acme", sans-serif;
 @ptext : 1.6rem;
+@mobile: ~"only screen and (max-width: 800px)";
+
+//mixins
+
+.flex-mixin() {
+  display: flex;
+}
+
+.border-mixin() {
+  border: 3px outset black;
+  border-radius: 5px;
+  background-color: rgba(53, 53, 53, 0.185);
+}
 
 //Page Styles
 .container {
@@ -158,7 +171,7 @@ html {
     width: 100%;
 
     nav {
-      display: flex;
+      .flex-mixin();
       justify-content: flex-end;
       margin-top: 30px;
       border-bottom: 4px solid black;
@@ -182,23 +195,34 @@ html {
     }
 
     section.intro-content {
-      display: flex;
+      @media @mobile {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .flex-mixin();
       max-width: 100%;
-      height: 400px;
-      background-color: rgba(53, 53, 53, 0.185);
       justify-content: space-evenly;
       align-items: center;
       margin: 20px 0 50px 0;
-      border: 3px outset black;
-      border-radius: 5px;
+      .border-mixin();
+    
 
       .intro-text {
-        display: flex;
+        @media @mobile {
+          order: 0;
+        }
+        .flex-mixin();
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 400px;
         max-width: 100%;
+
 
         h1 {
           font-size: 7.2rem;
@@ -217,6 +241,11 @@ html {
       }
 
       button {
+        @media @mobile {
+          align-self: center;
+          order: 1;
+          width: 20%;
+        }
         align-self: flex-end;
         margin-bottom: 20px;
         border: 2px solid rgba(235, 15, 15, 0.6);
@@ -226,6 +255,10 @@ html {
       }
       
       img {
+        @media @mobile {
+          margin-bottom: 20px;
+  
+        }
         border: 5px outset black;
         border-radius: 10px;
         box-shadow: 15px -10px 50px 1px rgba(235, 15, 15, 0.6);
@@ -235,14 +268,20 @@ html {
   }
 
   section.top-content {
-    display: flex;
+
+    @media @mobile {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+    .flex-mixin();
     flex-direction: row-reverse;
     margin: 50px auto;
     
     
 
     .bio-text {
-      display: flex;
+      .flex-mixin();
       flex-direction: column;
       max-width: 50%;
         
@@ -328,13 +367,13 @@ html {
   }
 
   section.bottom-content {
-    display: flex;
+    .flex-mixin();
     justify-content: center;
     font-family: @font;
+    .border-mixin();
     margin:  50px auto;
-    border: 4px outset black;
     padding: 10px;
-    background-color: rgba(53, 53, 53, 0.185);
+
 
     h2 {
       font-size: 2.0rem;
@@ -355,7 +394,7 @@ html {
   }
 
   footer {
-    display: flex;
+    .flex-mixin();
     justify-content: center;
 
     p {
@@ -363,6 +402,7 @@ html {
       font-family: @font;
     }
   }
-
-
 }
+
+
+
