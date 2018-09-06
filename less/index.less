@@ -82,6 +82,10 @@ html, body {
 //LESS
 .container{
 
+	@media @phone{
+		width: 500px;
+		
+	}
 	margin: 0 auto;
 	width: 1500px;
 	height: 100%;
@@ -89,20 +93,25 @@ html, body {
 
 	header{
 		display: flex;
-		justify-content: flex-center;
+		justify-content: flex-end;
 		flex-wrap: wrap;
 		
-	
+		width: 100;
 		padding-bottom: 7%;
+		
 	}
 
 
 	.main-nav{
+		@media @phone{
+			width: 100%;
+		}
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		padding-top: 4%;
 		
-		width: 100%;
+		width: 60%;
+		
 		
 	
 		a{
@@ -113,14 +122,21 @@ html, body {
 			text-decoration: none;	
 			
 		}
+		@media @phone{
+			width:100%;
+			padding-right: 7%;
+			
+		}
 	}
 .main-content-container {
 	@media @phone{
 		width: 100%;
+		flex-flow: column;
+		justify-content: space-between;
 	}
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-evenly;
 	
 	padding-left: 8%;
 	padding-right: 8%;
@@ -240,30 +256,8 @@ html, body {
 		}
 
 	}
-	.project-container{
-		@media @phone{
-		
-		}
-		display: flex;
-		align-content: flex-end;
-		flex-wrap: wrap;
-		
-		width: 30%;
-		
-		h1{
-			font-family: 'Roboto Slab', serif;
-			font-size: 3rem;
-			padding-bottom: 5%;
-
-		}
-		p{
-			font-size: 2rem;
-		}
-	}
-	@media @phone{
-		width: 500px;
-		
-	}
+	
+	
 }
 
 

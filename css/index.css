@@ -140,17 +140,28 @@ body {
   width: 1500px;
   height: 100%;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 500px;
+  }
+}
 .container header {
   display: flex;
-  justify-content: flex-center;
+  justify-content: flex-end;
   flex-wrap: wrap;
+  width: 100;
   padding-bottom: 7%;
 }
 .container .main-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 4%;
-  width: 100%;
+  width: 60%;
+}
+@media (max-width: 500px) {
+  .container .main-nav {
+    width: 100%;
+  }
 }
 .container .main-nav a {
   font-family: 'VT323', monospace;
@@ -158,16 +169,24 @@ body {
   color: orange;
   text-decoration: none;
 }
+@media (max-width: 500px) {
+  .container .main-nav {
+    width: 100%;
+    padding-right: 7%;
+  }
+}
 .container .main-content-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-left: 8%;
   padding-right: 8%;
 }
 @media (max-width: 500px) {
   .container .main-content-container {
     width: 100%;
+    flex-flow: column;
+    justify-content: space-between;
   }
 }
 .container .top-content {
@@ -262,23 +281,4 @@ body {
 .container .bottom-content-container p {
   font-size: 2rem;
   font-family: 'Indie Flower', cursive;
-}
-.container .project-container {
-  display: flex;
-  align-content: flex-end;
-  flex-wrap: wrap;
-  width: 30%;
-}
-.container .project-container h1 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 3rem;
-  padding-bottom: 5%;
-}
-.container .project-container p {
-  font-size: 2rem;
-}
-@media (max-width: 500px) {
-  .container {
-    width: 500px;
-  }
 }
