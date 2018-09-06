@@ -54,6 +54,387 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+
+
+//layout variables
+@maxWidth: 880px;
+@tabWidth: 500px;
+@marginCenter: 0 auto;
+@completeWidth: 100%;
+@halfWidth: 50%;
+@95Width: 95%;
+@mobileWidth: 90%;
+
+
+//flexbox variables
+@flexBox: flex;
+@flexRowFlow: row wrap;
+@flexRowJustify: center;
+@flexColumnFlow: column wrap;
+@flexColumnAlgnContent: center;
+
+
+//layout variables - color
+@linkColor: #999;
+@linkHoverColor: #428bca;
+@white: #fff;
+
+@aboutColor: #3a539b;
+@skillsColor:#1ba39c;
+@workColor: #2c3e50;
+@contactColor: #9b59b6;
+
+@mobileCtaColor: #428bca;
+@aboutColorMobile: #E0623E;
+@aboutColorTxtMobile: #fff;
+@skillsColorMobile: #24252a;
+@contactColorMobile: #049372;
+@contactColorMobileLink: #EF7860;
+
+
+//styling variables - fonts
+@fontSize: 1.6rem;
+@mobileFontSize: 1.3rem;
+@contentFontFamily: 'PT Sans', sans-serif;
+@h1Font: 'Passion One', cursive;
+@h2Font: 'Caveat', cursive;
+
+
+
+//mixins 
+.flexRowMixin(@flow, @justify: @flexRowJustify, @alignContent: @flexColumnAlgnContent){
+	display: @flexBox;
+	flex-flow: @flow;
+	justify-content: @justify;
+	align-content: @alignContent;
+}
+
+.flexColumnMixin(@flow, @justify: @flexRowJustify, @alignContent: @flexColumnAlgnContent){
+	display: @flexBox;
+	flex-flow: @flow;
+	justify-content: @justify;
+	align-content: @alignContent;
+}
+
+.fontMixin(@font-family, @font-size, @line-height: 1.5){
+	font-family: @font-family;
+	font-size: @font-size;
+	line-height: @line-height;
+}
+
+
+//layout CSS
+//header 
+.header{
+	width: @completeWidth; 
+	max-width: @maxWidth;
+	margin: @marginCenter;
+	.flexRowMixin(row wrap, flex-start, center);
+
+	nav{
+		.flexRowMixin(row wrap, flex-end, center);
+		.fontMixin(@contentFontFamily, 1.9rem);
+		width: @completeWidth;
+		margin: 30px 0;
+		padding: 2%;
+		width: @completeWidth;
+
+		a{
+			margin: 0 1% 0 2%;
+			color: @linkColor;
+			text-decoration: none;
+			
+			&:hover{
+				color: @linkHoverColor;
+			}
+		}
+	}
+
+	section{
+		width: @completeWidth;
+		margin: 1	0px 0;
+		padding: 5%;
+		background-color: #eee;
+		border-radius: 10px;
+		.flexRowMixin(row wrap, space-evenly, center);
+
+		img{
+			width: 40%;
+			align-self: flex-start;
+		}
+		
+		div{
+
+			h1{
+				width: @completeWidth;
+				.fontMixin(@h1Font, 9rem);
+				text-align: center;
+			}
+			h2{
+				width: @completeWidth;
+				.fontMixin(@h2Font, 4rem);
+				text-align: center;
+			}
+		}
+	}
+}
+
+//content/container
+
+.container{
+	width: @completeWidth;
+	max-width: @maxWidth;
+	margin: @marginCenter;
+	.flexRowMixin(@flexRowFlow, space-between, center);
+	.fontMixin(@contentFontFamily, @fontSize);
+
+	section{
+		width: 48%;
+		max-width: @maxWidth;
+		.flexRowMixin(@flexRowFlow, flex-start, center);
+		margin: 20px 0;
+		padding: 5%;
+		border-radius: 10px;
+
+		img{
+			width: 30%;
+			align-self: flex-start;
+		}
+
+		h1{
+			margin-left: 5%;
+			align-self: center;
+			width: 50%;
+			.fontMixin(@h1Font, 6rem);
+		}
+
+		p{
+			margin: 20px 0;
+			.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+		}
+
+	}
+
+	.main-about{
+		background-color: @aboutColor;
+		color: @white;
+	}
+
+	.main-skills{
+		background-color: @skillsColor;
+		color: @white;
+		p{
+			width: @completeWidth;
+			.fontMixin(@contentFontFamily, 3rem);
+		}
+	}
+
+	.main-work{
+		width: @completeWidth;
+		background-color: @workColor;
+		color: @white;
+		div{
+			margin: 30px 0 20px 0;
+
+			img{
+				width:30%;
+			}
+	
+			h1{
+				margin: 0;
+				align-self: center;
+				width: 50%;
+				.fontMixin(@h1Font, 4rem);
+			}
+
+			h2{
+				.fontMixin(@h2Font, 3rem);
+				color: #ED4927;
+			}
+	
+			.work-title{
+				margin-left: 5%;
+				.fontMixin(@h1Font, 8rem);
+			}
+	
+			p{
+				.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+			}
+
+		}
+	}
+	.main-contact{
+		background-color: @contactColor;
+		color: @white;
+		width: @completeWidth;
+
+		img{
+			width: 20%;
+			align-self: flex-start;
+		}
+		address{
+			width: @maxWidth;
+
+			p{
+				.fontMixin(@contentFontFamily, 3rem, 1.6);
+
+				a{
+					color: @white;
+					text-decoration: none;
+
+					&:hover{
+						color: @contactColorMobileLink;
+					}
+				}		
+			}
+		}
+	}
+}
+
+footer{
+	width: @completeWidth;
+	max-width: @maxWidth;
+	margin: 0 auto;
+	padding:   20px 10%;
+	.fontMixin(@contentFontFamily, 1.6rem, 1.6);
+	.flexRowMixin(@flexRowFlow, center, center);
+	color: #999
+	
+}
+
+@media(max-width: 880px){
+	.header{
+		width: @95Width;
+		nav{
+			.flexRowMixin(row wrap, space-evenly, center);
+		}
+	}
+
+	.container{
+		width: @95Width;
+	}
+
+	footer{
+		width: @95Width;
+	}
+}
+
+@media(max-width: 700px){
+
+	.header{
+		nav{
+			.flexRowMixin(row wrap, space-between, center);
+		}
+	}
+
+	.container{
+		
+		section{
+			width: 100%;
+	
+			img{
+				width: 25%;
+				align-self: flex-start;
+			}
+	
+			h1{
+				margin-left: 5%;
+				align-self: center;
+				width: 50%;
+				.fontMixin(@h1Font, 4.6rem);
+			}
+	
+			p{
+				margin: 20px 0;
+				.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+			}
+	
+		}
+	
+	}
+
+}
+
+@media(max-width: 500px){
+	.header{
+		width: @completeWidth;
+		nav{
+			.flexRowMixin(row wrap, space-evenly, center);
+		}
+		section{
+			background-color: @mobileCtaColor;
+			color:@white;
+			border-radius: 0;
+
+			div{
+				margin-bottom: 20px;
+
+				h1{
+					.fontMixin(@h1Font, 7rem);
+				}
+				h2{
+					.fontMixin(@h2Font, 2.7rem);	
+				}
+			}
+		}
+	}
+	.container{
+		width: @completeWidth;
+		.flexRowMixin(@flexRowFlow, space-between, center);
+
+		
+		section{
+			width: 100%;
+			margin:0;
+			border-radius: 0;
+	
+			img{
+				width: 25%;
+				align-self: flex-start;
+			}
+	
+			h1{
+				margin-left: 5%;
+				align-self: center;
+				width: 50%;
+				.fontMixin(@h1Font, 4.6rem);
+			}
+	
+			p{
+				margin: 20px 0;
+				.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+			}
+	
+		}
+		.main-about{
+			background-color: @aboutColorMobile;
+			color: @aboutColorTxtMobile;
+		}
+
+		.main-skills{
+			background-color: @skillsColorMobile;
+			color: @white;
+			p{
+				width: @completeWidth;
+				.fontMixin(@contentFontFamily, 2rem);
+			}
+		}
+		.main-contact{
+			background-color: @contactColorMobile;
+			color: @white;
+			a{
+				color: @white;
+				text-decoration: none;
+
+				&:hover{
+					color: @linkHoverColor;
+				}
+			}	
+		}
+	
+	}
 }
 
