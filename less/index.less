@@ -57,11 +57,14 @@ table {
 
 @header-font : 'Limelight', cursive;
 @header-font2: 'Lobster', cursive;
+@main-text: "Arvo", cursive;
+@main-color: #810019;
+@second-color: Ivory;
 html {
 	font-size: 62.5%;
   background: repeating-linear-gradient(
-      90deg,
-      white 0px,
+      45deg,
+      silver 0px,
       white 60px,
       blue 60px,
       darkblue 120px)
@@ -75,19 +78,19 @@ html, body {
   max-width: 680;
   margin: 0 auto;
   border: @border;
-  
-  header {
+} 
+ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     margin: 2rem;
     border: 1rem dotted gold;
-    background-color: #810019;
+    background-color: @main-color;
     box-shadow: 5px 5px 15px 5px #333300;
     h1 {
       font-size: 5rem;
       font-family: @header-font;
-      color: white;
+      color: @second-color;
       padding: 2rem;
     }
     nav {
@@ -98,15 +101,60 @@ html, body {
       align-items: center;
       a {
         font-family: @header-font2;
-        color: white;
+        color: @second-color;
         font-size: 2rem;
         text-decoration: none;
       }
-	  a:hover {
+      a:hover {
         color: goldenrod;
         text-shadow: 4px 2px 5px rgba(18,25,36,0.65);
         text-decoration: underline;
       }
+    }
+  }
+
+.main-content {
+  .container;
+  display: flex;
+  flex-flow: column;
+}
+
+.introduction {
+  .container;
+  display: flex;
+  background-image: url("https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a08f352f5829c74dc63969317fd278f&auto=format&fit=crop&w=1350&q=80");
+  width: 95%;
+  
+  img {
+    border-radius: 50%;
+    margin: 4%;
+  }
+  article {
+    .container;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    h2 {
+      color: @second-color;
+      font-family: @header-font2;
+      font-size: 5rem;
+      margin: 8%;
+      padding-right: 65px;
+      text-align: center;
+    }
+    p {
+      font-family: @main-text;
+      color: @second-color;
+      font-size: 2rem;
+      text-indent: 12px;
+      text-align: center;
+      letter-spacing: 2px;
+      text-shadow: 4px 2px 5px rgba(13,45,36,0.99);
+      margin-right: 14%;
+      margin-bottom: 14%;
+      background-color: rgba(60,161,2,0.55);
+      padding: 1%;
+      box-shadow: 5px 5px 55px 26px rgba(60,161,2,0.58);
     }
   }
 }
