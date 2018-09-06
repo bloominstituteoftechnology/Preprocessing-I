@@ -73,24 +73,38 @@ html, body {
 	color: black;
 }
 
+.mobileNav() {
+	width: 130px;
+	align-self: center;
+	text-align: center;
+}
+
 html {
 	font-size: 62.5%;
 }
 
 .container {
-	max-width: 800px;
+	max-width: 750px;
 	margin: auto;
 	font-size: 1.8rem;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: black;
+	padding: 15px;
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 40px 0;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
 	.photo {
 		width: 30%;
+		@media (max-width: 500px) {
+			margin-bottom: 20px;
+		}
 		.smile {
 			display: block;
 			.imageSize();
@@ -111,18 +125,31 @@ header {
 	}
 	nav {
 		display: flex;
-		padding-bottom: 60px;
+		padding-bottom: 70px;
+		@media (max-width: 500px) {
+			flex-direction: column;
+			padding-bottom: 10px;
+		}
 		.about {
 			align-self: flex-start;
 			.navElements();
+			@media (max-width: 500px) {
+				.mobileNav();
+			}
 		}
 		.portfolio {
 			align-self: center;
 			.navElements();
+			@media (max-width: 500px) {
+				.mobileNav();
+			}
 		}
 		.contact {
 			align-self: flex-end;
 			.navElements();
+			@media (max-width: 500px) {
+				.mobileNav();
+			}
 		}
 	}
 }
@@ -137,12 +164,12 @@ header {
 		margin-top: 20px;
 		padding-bottom: 20px;
 		h1 {
-			font-size: 2.5rem;
+			font-size: 3rem;
 			margin-bottom: 5px;
 		}
 		h2 {
-			font-size: 2rem;
-			margin-bottom: 5px;
+			font-size: 2.5rem;
+			margin-bottom: 10px;
 		}
 		p {
 			margin-bottom: 5px;

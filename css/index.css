@@ -138,19 +138,31 @@ html {
   font-size: 62.5%;
 }
 .container {
-  max-width: 800px;
+  max-width: 750px;
   margin: auto;
   font-size: 1.8rem;
   font-family: 'Source Sans Pro', sans-serif;
   color: black;
+  padding: 15px;
 }
 header {
   display: flex;
   justify-content: space-between;
   margin: 40px 0;
 }
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 header .photo {
   width: 30%;
+}
+@media (max-width: 500px) {
+  header .photo {
+    margin-bottom: 20px;
+  }
 }
 header .photo .smile {
   display: block;
@@ -170,7 +182,13 @@ header .photo:hover .shrug {
 }
 header nav {
   display: flex;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
+}
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
 }
 header nav .about {
   align-self: flex-start;
@@ -181,6 +199,13 @@ header nav .about {
   margin: 0 15px 15px;
   color: black;
 }
+@media (max-width: 500px) {
+  header nav .about {
+    width: 130px;
+    align-self: center;
+    text-align: center;
+  }
+}
 header nav .portfolio {
   align-self: center;
   padding: 20px;
@@ -190,6 +215,13 @@ header nav .portfolio {
   margin: 0 15px 15px;
   color: black;
 }
+@media (max-width: 500px) {
+  header nav .portfolio {
+    width: 130px;
+    align-self: center;
+    text-align: center;
+  }
+}
 header nav .contact {
   align-self: flex-end;
   padding: 20px;
@@ -198,6 +230,13 @@ header nav .contact {
   text-decoration: none;
   margin: 0 15px 15px;
   color: black;
+}
+@media (max-width: 500px) {
+  header nav .contact {
+    width: 130px;
+    align-self: center;
+    text-align: center;
+  }
 }
 .resume-content {
   width: 100%;
@@ -211,12 +250,12 @@ header nav .contact {
   padding-bottom: 20px;
 }
 .resume-content .resume-section h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 5px;
 }
 .resume-content .resume-section h2 {
-  font-size: 2rem;
-  margin-bottom: 5px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 .resume-content .resume-section p {
   margin-bottom: 5px;
