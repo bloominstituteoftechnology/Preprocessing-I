@@ -133,9 +133,12 @@ table {
 * {
 	box-sizing: border-box;
 }
+// Variables
 @sinbad: #a6d9d2;
 @fontz: 1.6rem;
 
+@mobile: ~'(max-width: 500px)';
+// Mixins
 .padding() {
 	padding: 3.40%;
 }
@@ -157,7 +160,7 @@ body {
 	max-width: 880px;
 	margin: 0 auto;
 	font-size: @fontz;
-	@media (max-width: 500px) {
+	@media @mobile {
 		width: 100%;
 	}
 
@@ -166,7 +169,7 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		padding: 20px;
-		@media (max-width: 500px) {
+		@media @mobile {
 			flex-direction: column;
 		}
 		h1 {
@@ -227,7 +230,7 @@ body {
 	justify-content: space-between;
 	.padding();
 
-	@media (max-width: 500px) {
+	@media @mobile {
 		flex-flow: column wrap;
 	}
 	.main-content-left {
@@ -242,7 +245,7 @@ body {
 		}
 	}
 	.main-content-right {
-		@media (max-width: 500px) {
+		@media @mobile {
 			margin-top: 30px;
 		}
 
