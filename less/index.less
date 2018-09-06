@@ -62,7 +62,7 @@ html, body {
 
 
 //== Boilerplate ===============================================================
-a:link {
+a:link, a:visited {
 	text-decoration: none;
 	color: inherit;
 }
@@ -78,6 +78,7 @@ body {
 
 @color-primary: #670319;
 @color-secondary: #435937;
+@color-primary-dark: shade(@color-primary);
 
 
 //== Layout ====================================================================
@@ -91,34 +92,74 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
+
 	.main-nav {
 		display: flex;
 		justify-content: space-evenly;
-		align-items: center;
+		align-items: flex-end;
 		border: 2px solid @color-primary;
-		background: blue;
+		border-width: 0 0 2px 0;
+		margin-bottom: 4rem;
 		.main-nav__bar {
 			display: flex;
 			flex-direction: column;
-			background: red;
-			width: 100%;
-			nav {
-				display: flex;
-				justify-content: space-evenly;
+			width: 45.4rem;
+		}
+		h1 {
+			font-family: 'Uncial Antiqua', sans-serif;
+			font-size: 300%;
+			color: @color-primary;
+		}
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 6.4rem;
+			a {
+				font-size: 125%;
+				font-weight: bold;
+				&:hover {
+					color: @color-secondary;
+					text-decoration: underline;
+				}
 			}
 		}
 		.main-nav__profile {
 			order: -1;
-			width: 12.8rem;
-			height: 12.8rem;
+			width: 22.4rem;
+			height: 22.4rem;
+			position: relative;
+			top: 25%;
+			outline: 0.5rem solid white;
+			border-radius: 2rem 0;
 		}
-		.main-nav__bar-fragment {
-			display: inline-block;
-			order: -2;
-			width: 12.8rem / 2;
-			height: 3.2rem;
-			background: green;
-		}
+	}
+
+	main {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 4rem;
+		justify-content: space-between;
+	}
+	section {
+		height: 20rem;
+		max-width: 34rem;
+		min-width: 34rem;
+		flex-grow: 1;
+		border: solid 1px green;
+		border-radius: 2rem 0;
+	}
+	section:nth-child(2n-1) {
+		margin-top: 4rem;
+	}
+	section:nth-child(2n) {
+		margin-bottom: 4rem;
+	}
+	
+	footer {
+		margin: 4rem;
+		height: 20rem;
+		border: solid 1px red;
 	}
 }
 

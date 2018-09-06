@@ -134,7 +134,8 @@ html,
 body {
   height: 100%;
 }
-a:link {
+a:link,
+a:visited {
   text-decoration: none;
   color: inherit;
 }
@@ -154,29 +155,66 @@ body {
 .container .main-nav {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
   border: 2px solid #670319;
-  background: blue;
+  border-width: 0 0 2px 0;
+  margin-bottom: 4rem;
 }
 .container .main-nav .main-nav__bar {
   display: flex;
   flex-direction: column;
-  background: red;
-  width: 100%;
+  width: 45.4rem;
 }
-.container .main-nav .main-nav__bar nav {
+.container .main-nav h1 {
+  font-family: 'Uncial Antiqua', sans-serif;
+  font-size: 300%;
+  color: #670319;
+}
+.container .main-nav nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.4rem;
+}
+.container .main-nav nav a {
+  font-size: 125%;
+  font-weight: bold;
+}
+.container .main-nav nav a:hover {
+  color: #435937;
+  text-decoration: underline;
 }
 .container .main-nav .main-nav__profile {
   order: -1;
-  width: 12.8rem;
-  height: 12.8rem;
+  width: 22.4rem;
+  height: 22.4rem;
+  position: relative;
+  top: 25%;
+  outline: 0.5rem solid white;
+  border-radius: 2rem 0;
 }
-.container .main-nav .main-nav__bar-fragment {
-  display: inline-block;
-  order: -2;
-  width: 6.4rem;
-  height: 3.2rem;
-  background: green;
+.container main {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 4rem;
+  justify-content: space-between;
+}
+.container section {
+  height: 20rem;
+  max-width: 34rem;
+  min-width: 34rem;
+  flex-grow: 1;
+  border: solid 1px green;
+  border-radius: 2rem 0;
+}
+.container section:nth-child(2n-1) {
+  margin-top: 4rem;
+}
+.container section:nth-child(2n) {
+  margin-bottom: 4rem;
+}
+.container footer {
+  margin: 4rem;
+  height: 20rem;
+  border: solid 1px red;
 }
