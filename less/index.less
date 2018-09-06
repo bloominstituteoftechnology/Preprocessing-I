@@ -49,11 +49,277 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// variables
+@fontStack: Helvetica, Arial, sans-serif;
+@textColor: #4F4F4F;
+@backGround: #D1FFFF;
+
+//mixins
+.devBox(@color) {
+	border: 1px solid @color;
+}
+.flex(){
+	display: flex;
+}
+
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
+		font-size: 62.5%
 }
 
+.container {
+	max-width: 880px;
+	// width:100%;
+	font-size: 1.6rem;
+	margin: 0 auto;
+	font-family: @fontStack;
+	color: @textColor; 
+}
+
+
+nav {
+	.flex;
+	justify-content: flex-end;
+	background: gray;
+	height: 40px;
+	align-items: center;
+	width: 100%;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		height: auto;
+	}
+	
+
+	a{
+		justify-content: flex-end;
+		margin-right: 30px;
+		text-decoration: none;
+		color: @textColor;
+		text-align: center;
+
+		&:hover {
+			color: white;
+
+		}
+		@media (max-width: 500px) {
+		padding: 20px;
+	}
+	}
+}
+
+.top-section { 
+	.flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background: @backGround;
+	align-items: center;
+	width: 100%;
+
+
+	.image {
+		width: 30%;
+
+		
+		
+		img {
+			border-radius: 50%;
+			width: 100%;
+			margin-top: 20px;
+		}
+		
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin: 20px 0;
+		font-family: Oswald;
+	}
+	h2{
+		font-size: 2rem;
+		margin-bottom: 20px;
+	}
+	p	{
+		margin-bottom: 20px;
+	}
+	button {
+		width: 200px;
+		height: 40px;
+		background: @textColor;
+		border: 2px solid @textColor;
+		border-radius: 10px;
+		font-size: 2rem;
+		margin-bottom: 20px;
+		color: white;
+		
+
+		&:hover {
+			background: white;
+			color: @textColor;
+		}
+	}
+} 
+
+.bottom-section {
+	.flex;
+	margin-top: 20px;
+	justify-content: space-between;
+
+	@media (max-width: 500px) {
+		.flex;
+		flex-direction: column; 
+	}
+
+	.about-me {
+		width: 48%;
+
+		@media (max-width: 500px) {
+			width: 95%;
+			margin: 0 3%;
+			margin-bottom: 20px;
+		}
+		
+			h2 {
+				font-size: 2rem;
+				margin-bottom: 20px; 
+			}
+
+			p {
+				line-height: 2rem;
+		}
+	}
+
+	.stuff {
+		width: 48%;
+
+		@media (max-width: 500px) {
+			width: 95%;
+			margin: 0 3%;
+		}
+	
+
+		h2 {
+			font-size: 2rem;
+			margin-bottom: 20px;
+		}
+
+		h3 { 
+			border-bottom: 1px solid @textColor;
+			text-align: center;
+			align-content: center;
+			height: 39px;
+			padding-top: 12px; 
+			
+		}
+			#top-border{
+				border-top: 1px solid @textColor;
+			}  
+		
+	}
+}
+
+.table {
+	width: 100%;
+
+
+	@media (max-width: 500px) {
+		width: 95%;
+		margin: 0 3%;
+	}
+
+
+	h2 {
+		font-size: 2rem;
+		margin: 20px 0;
+	}
+
+	table {
+	border-left: 1px solid @textColor;
+	border-right: 1px solid @textColor;
+	border-top: 1px solid @textColor;
+
+	width: 100%;
+
+	th {
+		font-weight: 600;
+		text-align: left;
+		border-bottom: 1px solid @textColor;
+	}
+
+	td {
+		border-bottom: 1px solid @textColor;
+
+	}
+	}
+}
+
+footer {
+	margin-top: 20px;
+	text-align: center; 
+}
+
+.portfolio {
+	.flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 20px;
+
+	@media (max-width: 500px) {
+		.flex;
+		flex-direction: column; 
+		align-items: center; 
+	}
+
+	.card {
+		.flex;
+		flex-direction: column; 
+		background: lightgray;
+		width: 32%;
+		padding: 0 20px;
+		align-items: center;
+		box-shadow: 1px 21px 121px -16px rgba(0,0,0,0.54);
+		
+		@media (max-width: 500px) {
+			width: 100%;
+			margin: 20px 0;
+			justify-content: center;
+
+		}
+	
+		h3 {
+		 margin: 10px 0;
+		 font-size: 2rem;
+	}
+		p {
+
+		}
+
+	.portfolio-buttons {
+		
+		button {
+			height: 30px;
+			width: 90px;
+			background: none;
+			margin: 20px 0;
+			border: 2px solid white;
+			border-radius: 5px; 
+
+			&:hover {
+				background: @textColor;
+		
+			}
+			
+			a {
+				text-decoration: none;
+			color: white;
+
+			}
+		}
+	} 
+}
+}
