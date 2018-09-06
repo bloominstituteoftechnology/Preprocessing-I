@@ -63,9 +63,9 @@ html, body {
 /*-- Variables ---------------------------------*/
 
 // Grayscale colors
-@Gray1: #C0C0C0; // Silver
-@Gray2: #E8E8E8; // Two shades lighter than Gainsboro
-@Gray3: #F5F5F5; // WhiteSmoke
+@gray-1: #C0C0C0; // Silver
+@gray-2: #F5F5F5; // WhiteSmoke
+@gray-3: #FAFAFA; // Gray98
 
 // font-sizes
 @baseline: 1.6rem;
@@ -89,8 +89,9 @@ html, body {
 
 // Card Mixin
 .card() {
-	background-color: @Gray2;
+	background-color: white;
 	border-radius: 10px;
+	box-shadow: 0 9px 19px 0 rgba(0,0,0,.05);
 	margin-bottom: 25px;
 	padding: 20px;
 }
@@ -106,6 +107,10 @@ html, body {
 
 html {
 	font-size: 62.5%;
+}
+
+body {
+	background-color: @gray-3;
 }
 
 .container {
@@ -156,11 +161,8 @@ main {
 
 		img {
 			border-radius: 10px;
-
-			@media (max-width: 500px) {
-				height: 100%;
-				max-width: 420px;
-			}
+			max-width: 500px;
+			width: 100%;
 		}
 	}
 
