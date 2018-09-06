@@ -63,6 +63,9 @@ html, body {
 @maxWidth: 880px;
 @tabWidth: 500px;
 @marginCenter: 0 auto;
+@completeWidth: 100%;
+@halfWidth: 50%;
+
 
 //flexbox variables
 @flexBox: flex;
@@ -73,7 +76,8 @@ html, body {
 
 
 //layout variables - color
-
+@linkColor: silver;
+@linkHoverColor: teal;
 
 //styling variables - fonts
 @fontSize: 1.6rem;
@@ -104,12 +108,41 @@ html, body {
 
 
 //layout CSS
-.container, footer{
+.container{
+	width: @completeWidth;
 	max-width: @maxWidth;
 	margin: @marginCenter;
-	.flexRowMixin(@flexRowFlow, center ,flex-end);
+	.flexRowMixin(@flexRowFlow);
 	.fontMixin(@contentFontFamily, @fontSize);
-	border: 1px solid red;
+
+	section{
+		border: 1px solid green;
+	}
+}
+
+.header{
+	width: @completeWidth; 
+	max-width: @maxWidth;
+	.flexRowMixin(row wrap, flex-start, center);
+
+	nav{
+		.flexRowMixin(row wrap, flex-end, center);
+		width: @completeWidth;
+		margin: 0;
+		padding: 2%;
+		border-bottom: 1px solid black;
+		width: @completeWidth;
+
+		a{
+			margin: 0 1% 0 2%;
+			color: @linkColor;
+			text-decoration: none;
+			
+			&:hover{
+				color: @linkHoverColor;
+			}
+		}
+	}
 }
 
 
