@@ -65,7 +65,7 @@ html, body {
 @marginCenter: 0 auto;
 @completeWidth: 100%;
 @halfWidth: 50%;
-@quarterWidth: 25%;
+@mobileWidth: 90%;
 
 
 //flexbox variables
@@ -84,7 +84,9 @@ html, body {
 @fontSize: 1.6rem;
 @mobileFontSize: 1.3rem;
 @contentFontFamily: 'PT Sans', sans-serif;
-@ctaFontFamily: 'Passion One', cursive;
+@h1Font: 'Passion One', cursive;
+@h2Font: 'Caveat', cursive;
+
 
 
 //mixins 
@@ -116,10 +118,6 @@ html, body {
 	margin: @marginCenter;
 	.flexRowMixin(@flexRowFlow);
 	.fontMixin(@contentFontFamily, @fontSize);
-
-	section{
-		border: 1px solid green;
-	}
 }
 
 .header{
@@ -146,7 +144,7 @@ html, body {
 		}
 	}
 
-	.header-cta{
+	section{
 		width: @completeWidth;
 		margin: 1	0px 0;
 		padding: 5%;
@@ -155,25 +153,22 @@ html, body {
 		.flexRowMixin(row wrap, space-evenly, center);
 
 		img{
-			width: 30%;
+			width: 40%;
 			align-self: flex-start;
-			border: 1px solid red;
 		}
 		
 		div{
 
 			h1{
-				width: 100%;
-				.fontMixin(@ctaFontFamily, 10rem);
-				border: 1px solid purple;
+				width: @completeWidth;
+				.fontMixin(@h1Font, 9rem);
+				text-align: center;
 			}
 			h2{
-				border: 1px solid blue;
+				width: @completeWidth;
+				.fontMixin(@h2Font, 4rem);
+				text-align: center;
 			}
-			button{
-				border: 1px solid yellow;
-			}
-
 		}
 	}
 }
@@ -194,9 +189,32 @@ html, body {
 // 	// font-size: @fontSize;
 // }
 
+@media(max-width: 500px){
+	.header{
+		nav{
+			.flexRowMixin(row wrap, space-evenly, center);
+		}
+		section{
+			background-color: #428bca;
+			color: white;
+			border-radius: 0;
+			
+			div{
+
+				h1{
+					.fontMixin(@h1Font, 7rem);
+				}
+				h2{
+					.fontMixin(@h2Font, 4.5rem);	
+				}
+			}
+		}
+	}
+}
+
 // @media(max-width: @tabWidth){
 // 	.container{
 // 		font-family: @contentFontFamily;
 // 		font-size: @mobileFontSize;
 // 	}
-// }
+// }s
