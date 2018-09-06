@@ -78,12 +78,15 @@ html, body {
 
 //layout variables - color
 @linkColor: #999;
-@linkHoverColor: teal;
+@linkHoverColor: #428bca;
 @white: #fff;
 
 @aboutColor: #3a539b;
 @skillsColor:#1ba39c;
 @workColor: #2c3e50;
+@contactColor: #9b59b6;
+
+@mobileCtaColor: #428bca;
 
 
 //styling variables - fonts
@@ -191,7 +194,6 @@ html, body {
 		border-radius: 10px;
 
 		img{
-		
 			width: 30%;
 			align-self: flex-start;
 		}
@@ -258,6 +260,43 @@ html, body {
 
 		}
 	}
+	.main-contact{
+		background-color: @contactColor;
+		color: @white;
+		width: @maxWidth;
+
+		img{
+			width: 20%;
+			align-self: flex-start;
+		}
+		address{
+			width: @maxWidth;
+
+			p{
+				.fontMixin(@contentFontFamily, 3rem, 1.6);
+
+				a{
+					color: @white;
+					text-decoration: none;
+
+					&:hover{
+						color: @linkHoverColor;
+					}
+				}		
+			}
+		}
+	}
+}
+
+footer{
+	width: 100%;
+	max-width: @maxWidth;
+	margin: 0 auto;
+	padding:   20px 10%;
+	.fontMixin(@contentFontFamily, 1.6rem, 1.6);
+	.flexRowMixin(@flexRowFlow, center, center);
+	color: #999
+	
 }
 
 
@@ -268,7 +307,7 @@ html, body {
 			.flexRowMixin(row wrap, space-evenly, center);
 		}
 		section{
-			background-color: #428bca;
+			background-color: @mobileCtaColor;
 			color:@white;
 			border-radius: 0;
 
