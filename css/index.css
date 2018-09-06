@@ -127,6 +127,10 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
+.column {
+  display: flex;
+  flex-direction: column;
+}
 * {
   box-sizing: border-box;
   color: #505050;
@@ -147,6 +151,7 @@ strong {
   padding: 20px;
   font-size: 1.6rem;
   background-color: #EEEEEE;
+  opacity: 0.86;
 }
 .top-nav nav {
   display: flex;
@@ -166,13 +171,15 @@ strong {
 }
 @media (max-width: 800px) {
   .top-content {
+    display: flex;
     flex-direction: column;
   }
 }
 .top-content img {
   width: 37%;
   height: 37%;
-  padding-right: 3%;
+  padding: 0%;
+  border-radius: 50%;
 }
 @media (max-width: 800px) {
   .top-content img {
@@ -182,10 +189,15 @@ strong {
     width: 25%;
     height: 25%;
     padding: 0;
+    opacity: 1;
   }
+}
+.top-content img:hover {
+  box-shadow: 0 2% 16px 0 rgba(0, 0, 0, 0.24), 0 2% 50px 0 rgba(0, 0, 0, 0.19);
 }
 .top-content .summary {
   width: 58%;
+  padding-left: 3%;
   display: flex;
   flex-direction: column;
 }
@@ -227,29 +239,29 @@ strong {
   color: #FF5099;
 }
 .middle-content {
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 .middle-content h2 {
   font-size: 2rem;
   padding-bottom: 10px;
   text-decoration: underline #FF5099;
 }
-.middle-content .table p {
+.middle-content .the-basics p {
   padding-bottom: 10px;
   line-height: 2rem;
 }
-.middle-content .table p a .github-badge {
+.middle-content .the-basics p a .github-badge {
   width: 3%;
   height: 3%;
 }
 @media (max-width: 800px) {
-  .middle-content .table p a .github-badge {
+  .middle-content .the-basics p a .github-badge {
     width: 4.5%;
     height: 4.5%;
   }
 }
 @media (max-width: 500px) {
-  .middle-content .table p a .github-badge {
+  .middle-content .the-basics p a .github-badge {
     width: 5.5%;
     height: 5.5%;
   }
@@ -260,6 +272,7 @@ strong {
 }
 @media (max-width: 800px) {
   .contact {
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
@@ -280,9 +293,36 @@ strong {
   .contact p {
     font-size: 1.35rem;
     line-height: 1.75rem;
+    display: flex;
     flex-direction: column;
     padding: 0;
   }
+}
+.project-table {
+  padding-bottom: 20px;
+}
+.project-table h2 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+  text-decoration: underline #FF5099;
+}
+.project-table table {
+  border: 1px solid #FF5099;
+  border-collapse: collapse;
+}
+.project-table table tr {
+  line-height: 2.5rem;
+}
+.project-table table tr th {
+  font-weight: bold;
+  border: 1px solid #FF5099;
+  border-collapse: collapse;
+  background-color: white;
+}
+.project-table table tr td {
+  border: 1px solid #FF5099;
+  border-collapse: collapse;
+  text-align: center;
 }
 .bottom-nav nav {
   display: flex;

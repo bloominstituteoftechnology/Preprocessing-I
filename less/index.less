@@ -57,6 +57,15 @@ table {
 @emperor: #505050;
 @gallery: #EEEEEE;
 
+.justified-end() {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
 
 .headings (@fontSize, @PadBottom) {
 	font-size: @fontSize;
@@ -87,15 +96,14 @@ strong {
 	margin: 0 auto;
   padding: 20px;
 	font-size: 1.6rem;
-	// height: 100%;
 	background-color: @backgroundColor;
+	opacity: 0.86;
 } 
 
 .top-nav {
 
 	nav {
-		display: flex;
-		justify-content: flex-end;
+		.justified-end;
 	}
 
 	a {
@@ -114,14 +122,14 @@ strong {
 	padding-bottom: 50px;
 
 	@media(max-width: 800px) {
-		flex-direction: column;		
+		.column	
 	}
 
 	img {
 		width: 37%;
 		height: 37%;
-		padding-right: 3%;
-
+		padding: 0;
+		border-radius: 50%;
 
 		@media(max-width: 800px) {
 			display: block;
@@ -131,12 +139,14 @@ strong {
 			height: 25%;
 			padding: 0;
 		}
+
+		}
 	}
 
 	.summary {
 		width: 58%;
-		display: flex;
-		flex-direction: column;
+		padding-left: 3%;
+		.column;
 
 		@media(max-width: 800px) {
 			width: 100%
@@ -185,14 +195,14 @@ strong {
 } // .top-content
 
 .middle-content {		// The Basics
-	padding-bottom: 100px;
+	padding-bottom: 20px;
 
 	h2 {
 		.headings(2rem, 10px);
 		text-decoration: underline @accentColor;
 	}
 
-	.table {
+	.the-basics {
 		p {
 			padding-bottom: 10px;
 			line-height: 2rem;
@@ -222,12 +232,11 @@ strong {
 }
 
 .contact {
-	display: flex;
-	justify-content: flex-end;
+	.justified-end;
 
 
 	@media(max-width: 800px) {
-		flex-direction: column;
+		.column;
 		align-items: flex-end;
 	}
 
@@ -247,18 +256,49 @@ strong {
 		@media(max-width: 800px) {
 			font-size: 1.35rem;
 			line-height: 1.75rem;
-			flex-direction: column;
+			.column;
 			padding: 0;
 		}
 	}
 }
 
+.project-table {
+	padding-bottom: 20px;
+
+	h2 {
+		.headings(2rem, 10px);
+		text-decoration: underline @accentColor;
+	}
+ 
+	table {
+		border: 1px solid @accentColor;
+    border-collapse: collapse;
+
+		tr {
+			line-height: 2.5rem;
+
+			th {
+				font-weight: bold;
+				border: 1px solid @accentColor;
+				border-collapse: collapse;
+				background-color: white;
+			}
+
+			td {
+				border: 1px solid @accentColor;
+				border-collapse: collapse;
+				text-align: center;
+
+			}
+		}	// table
+	}		// h2
+}			// .project-table
+
 
 .bottom-nav {
 	
 	nav {
-		display: flex;
-		justify-content: flex-end;
+		.justified-end;
 
 	}
 	
