@@ -61,6 +61,12 @@ html, body {
 @fontSizeMain: 1.6rem;
 @headerMainSize: 5rem;
 @mainFontColor: #fff;
+.headers() {
+	text-align: left;
+	font-size: 5rem;
+	border-bottom: 2px solid gray;
+	padding: 30px 0;
+}
 .container {
 	font-size: @fontSizeMain;
 	font-family: @fontStack;
@@ -76,7 +82,6 @@ html, body {
 		div {
 			align-self: center;
 			text-align: center;
-			border-radius: 20px;
 			width: 60%;
 			h1 {
 				font-size: 7rem;
@@ -97,6 +102,7 @@ html, body {
  header {
 	 width: 100%;
 	 position: fixed;
+	 background: rgba(0, 0, 0, .8);
 	 nav {
 		 padding: 20px;
 		 display: flex;
@@ -110,7 +116,7 @@ html, body {
 			font-weight: bold;
 			margin-right: 30px;
 			&:hover {
-				color: #fff;
+				color: #37E1E0;
 			}
 		 } // a end
 	 } // nav end
@@ -120,7 +126,7 @@ html, body {
 	 display: flex;
 	 align-items: center;
 	 padding: 50px 0;
-	 border-bottom: 1px solid #000;
+	//  border-bottom: 1px solid #000;
 	 justify-content: space-around;
 	 img {
 		 border-radius: 50%;
@@ -130,14 +136,30 @@ html, body {
 		//  border: 1px solid blue;
 		//  margin-left: 50px;
 		 line-height: 2.2rem;
-		 h1 {
-			 border-bottom: 2px solid gray;
-			 padding: 30px 0;
-			//  text-align: center;
-			 font-size: 5rem;
+		 h2 {
+			 .headers;
 		 }
 		 p {
 			 margin-top: 30px;
 		 }
+	 }
+ }
+
+ .work-skill-section {
+	 display: flex;
+	 justify-content: space-between;
+	 .work {
+		border: 1px solid blue;
+		width: 48%;
+		h2 {
+			.headers;
+		}
+	 }
+	 .skill {
+		border: 1px solid red;
+		width: 48%;
+		h2 {
+			.headers;
+		}
 	 }
  }
