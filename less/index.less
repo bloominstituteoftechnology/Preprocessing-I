@@ -61,29 +61,56 @@ html, body {
 
 
 // student stylings start here
+
+// variables start here
+@mainColor: teal;
+@accentColor: lightgray;
+@googleFont: 'Sawarabi Mincho';
+@fontStack: @googleFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// mixins start here
+.bigStrong() {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.columnSpace() {
+	padding: 1rem;
+	margin: 1rem;
+}
+.splitEm() {
+	display: flex;
+	justify-content: space-between;
+}
+
 body .resume-container {
-	width: 88rem;
+	max-width: 88rem;
 	font-size: 1.6rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
 	margin: 0 auto;
+	font-family: @fontStack;
+	border-right: 0.3rem dotted @mainColor;
+	border-left: 0.3rem dotted @mainColor;
 }
 
 
 header {
 	width: 100%;
-	display: flex;
+	.splitEm;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	padding: 1rem;
 
 	.my-info {
 		height: 100%;
 		display: flex;
 		justify-content: flex-start;
+		padding-bottom: 2rem;
 
 		.profile-pic {
 
 			.main-img {
 				border-radius: 50%;
+				border: 0.2rem solid @mainColor;
 			}
 		}
 
@@ -91,16 +118,16 @@ header {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			padding-left: 3.5rem;
+			padding-left: 2.5rem;
 
 			h1 {
-				font-size: 4.6rem;
-				font-weight: bold;
+				font-size: 3.6rem;
+				.bigStrong;
 				width: 100%;
 			}
 
 			h2 {
-				font-size: 3rem;
+				font-size: 2.4rem;
 				font-weight: bold;
 			}
 		}
@@ -114,8 +141,7 @@ header {
 		margin-right: 2rem;
 
 		a {
-			color: teal;
-			letter-spacing: 1.2px;
+			color: @mainColor;
 			text-decoration: none;
 			padding: 0.25rem 0;
 		}
@@ -125,6 +151,7 @@ header {
 		width: 100%;
 		padding: 2rem 1rem;
 		display: flex;
+		border-top: 1px solid @mainColor;
 	}
 }
 
@@ -133,20 +160,18 @@ header {
 
 	.column {
 		max-width: 50%;
-		padding: 1rem;
-		margin: 1rem;
+		.columnSpace;
 		margin: 0 auto;
 
 		.section-head {
-			color: teal;
+			color: @mainColor;
 			text-align: center;
 			font-size: 2.4rem;
-			font-weight: bold;
-			text-transform: uppercase;
+			.bigStrong;
 		}
 
 		.card-wrap {
-			background-color: lightgray;
+			background-color: @accentColor;
 			border-radius: 2rem;
 			border-bottom: 0.15rem solid darkgray;
 			border-right: 0.15rem solid darkgray;
@@ -154,7 +179,7 @@ header {
 			margin: 0 1rem 1.75rem 1rem;
 
 			h3 {
-				font-size: 2rem;
+				font-size: 1.8rem;
 				font-weight: bold;
 			}
 
@@ -164,38 +189,37 @@ header {
 				padding: 0.25rem 0 0.75rem;
 			}
 
-			p {
-				font-size: 1.6rem;
-			}
-
 			.date {
 				font-size: 1.2rem;
 				font-weight: bold;
-				padding-top: 0.25rem;
-				padding-bottom: 0.75rem;
-				color: teal;
+				padding: 0.25rem 0 0.75rem;
+				color: @mainColor;
 			}
 
-			.date-local {
-				font-size: 1.4rem;
-				padding-top: 0.5rem;
-				color: teal;
-				display: flex;
-				justify-content: space-between;
+			.split {
+				.splitEm;
 			}
 		}
+
+		.honorary-card {
+
+			.secondary {
+				font-size: 1.2rem;
+				color: @mainColor;
+			}
+		}
+
+		
 	}
 }
 
-
 .job-description {
-	padding: 1rem 0.25rem;
+	padding: 0 0.25rem;
 	list-style-type: disc;
 	list-style-position: inside;
 
 	li {
-		text-align: justify;
-		padding-top: 0.5rem;
+		padding: 0.5rem 1.5rem;
 	}
 }
 
@@ -205,10 +229,47 @@ header {
 	flex-wrap: wrap;
 
 	span {
+		color: white;
 		padding: 0.35rem 0.75rem;
 		border-radius: 1.5rem;
-		background-color: lightblue;
+		background-color: @mainColor;
 		border: 0.1rem solid black;
 		margin: 0.5rem 0.25rem;
+	}
+}
+
+.lang-card {
+	font-size: 1.8rem;
+
+	p {
+		text-align: right;
+		width: 80%;
+		padding: 0.25rem 0 0.75rem;
+		.splitEm;
+		margin: 0 auto;
+
+		span {
+			margin-left: 0.5rem;
+		}
+
+		span:first-child {
+			padding-right: 1rem;
+		}
+
+		.english {
+			background-color: @mainColor;
+		}
+		
+		.spanish {
+			background-image: linear-gradient(to right, @mainColor, @accentColor 50%, @accentColor);
+		}
+		
+		.french {
+			background-image: linear-gradient(to right, @mainColor, @mainColor 40%, @accentColor);
+		}
+
+		.fluentBox {
+			width: 100%;
+		}
 	}
 }
