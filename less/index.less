@@ -87,12 +87,22 @@ html, body {
     margin: 2rem;
     border: 1rem dotted gold;
     background-color: @main-color;
-    box-shadow: 5px 5px 15px 5px #333300;
+	box-shadow: 5px 5px 15px 5px #333300;
+	@media (max-width: 500px) {
+		flex-flow: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 380px;
+	}
     h1 {
       font-size: 5rem;
       font-family: @header-font;
       color: @second-color;
-      padding: 2rem;
+	  padding: 2rem;
+	  @media (max-width: 500px) {
+		  text-align: center;
+		  margin-bottom: 5px;
+	  }
     }
     nav {
       .container;
@@ -100,12 +110,25 @@ html, body {
       width: 45%;
       height: 80px;
       justify-content: space-around;
-      align-items: center;
+	  align-items: center;
+	  @media (max-width: 500px) {
+		  flex-direction: column;
+		  width: 50%;
+		  margin-top: 4px;
+
+	  }
       a {
         font-family: @header-font2;
         color: @second-color;
         font-size: 1.5rem;
-        text-decoration: none;
+		text-decoration: none;
+		@media (max-width: 500px) {
+			.container;
+			padding: 7px 50% 7px;
+			background-color: darkgreen;
+			border: 1px solid black;
+			margin: 2px;
+		}
       }
       a:hover {
         color: goldenrod;
@@ -126,16 +149,29 @@ html, body {
   display: flex;
   background-image: url("https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a08f352f5829c74dc63969317fd278f&auto=format&fit=crop&w=1350&q=80");
   width: 95%;
-  
+  @media (max-width: 500px) {
+	  flex-flow: column;
+	  justify-items: center;
+	  align-items: center;
+  }
   img {
     border-radius: 50%;
-    margin: 4%;
+	margin: 4%;
+	@media (max-width: 500px) {
+		width: 50%;
+		height: auto;
+		margin-top: 10px;
+	}
   }
   article {
     .container;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+	justify-content: center;
+	@media (max-width: 500px) {
+		margin-left: 12%;
+		padding-bottom: 10px;
+	}
     h2 {
       color: @second-color;
       font-family: @header-font2;
@@ -165,6 +201,10 @@ html, body {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  @media (max-width: 500px) {
+	  flex-flow: column;
+	  align-items: center;
+  }
 }
 .list {
   .container;
@@ -177,6 +217,9 @@ html, body {
   background-color: @main-color;
   box-shadow: 5px 5px 15px 5px #333300;
   width: 48%;
+  @media (max-width: 500px) {
+	  width: 80%;
+  }
   h3 {
     color: @second-color;
     font-size: 4rem;
@@ -208,10 +251,16 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-image: url("https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a08f352f5829c74dc63969317fd278f&auto=format&fit=crop&w=1350&q=80");
+  @media (max-width: 500px) {
+	  flex-flow: column;
+  }
   img {
     width: 16%;
     margin: 40px;
-    border-radius: 15%;
+	border-radius: 15%;
+	@media (max-width: 500px) {
+		width: 15%;
+	}
   }
   contact {
     .container;
