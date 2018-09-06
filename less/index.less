@@ -54,6 +54,288 @@ table {
 }
 
 html, body {
-    height: 100%;
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+
+// student stylings start here
+
+// variables start here
+@mainColor: teal;
+@accentColor: lightgray;
+@googleFont: 'Sawarabi Mincho';
+@fontStack: @googleFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// mixins start here
+.bigStrong() {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.columnSpace() {
+	padding: 1rem;
+	margin: 1rem;
+}
+.splitEm() {
+	display: flex;
+	justify-content: space-between;
+}
+
+body .resume-container {
+	max-width: 88rem;
+	font-size: 1.6rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	margin: 0 auto;
+	font-family: @fontStack;
+	border-right: 0.3rem dotted @mainColor;
+	border-left: 0.3rem dotted @mainColor;
+
+	@media( max-width: 500px) {
+		width: 100%;
+		border-right: none;
+		border-left: none;
+		padding: 0;
+	}
+}
+
+
+header {
+	width: 100%;
+	.splitEm;
+	flex-wrap: wrap;
+	padding: 1rem;
+
+	.my-info {
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		padding-bottom: 2rem;
+
+		.profile-pic {
+
+			.main-img {
+				border-radius: 50%;
+				border: 0.2rem solid @mainColor;
+			}
+		}
+
+		.profile-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-left: 2.5rem;
+
+			h1 {
+				font-size: 3.6rem;
+				.bigStrong;
+				width: 100%;
+
+				@media( width: 500px ) {
+					font-size: 2.8rem;
+				}
+			}
+
+			h2 {
+				font-size: 2.4rem;
+				font-weight: bold;
+
+				@media( width: 500px ) {
+					font-size: 1.75rem;
+				}
+			}
+		}
+	}
+	
+	.contact-list {
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-right: 2rem;
+
+		@media( width: 500px ) {
+			width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-right: 0;
+		}
+
+		.fas, .fab {
+			display: none;
+
+			@media( width: 500px ) {
+				display: inline-block;
+				padding: 1.5rem;
+
+			}
+		}
+
+		@media( width: 500px ) {
+			width: 100%;
+			text-align: left;
+		}
+
+		a {
+			color: @mainColor;
+			text-decoration: none;
+			padding: 0.25rem 0;
+
+			@media( width: 500px ) {
+				width: 50%;
+				font-size: 5rem;
+				text-align: center;
+				margin: 0 auto;
+				padding: 0;
+
+				&:hover {
+					background-color: @mainColor;
+					color: @accentColor;
+				}
+			}
+
+			span {
+				@media( width: 500px ) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.about-me {
+		width: 100%;
+		padding: 2rem 1rem;
+		display: flex;
+		border-top: 1px solid @mainColor;
+	}
+}
+
+.main-content {
+	display: flex;
+
+	@media( width: 500px ) {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.column {
+		max-width: 50%;
+		.columnSpace;
+		margin: 0 auto;
+
+		@media( width: 500px ) {
+			max-width: 100%;
+			margin: 0;
+		}
+
+		.section-head {
+			color: @mainColor;
+			text-align: center;
+			font-size: 2.4rem;
+			.bigStrong;
+		}
+
+		.card-wrap {
+			background-color: @accentColor;
+			border-radius: 2rem;
+			border-bottom: 0.15rem solid darkgray;
+			border-right: 0.15rem solid darkgray;
+			padding: 1.5rem;
+			margin: 0 1rem 1.75rem 1rem;
+
+			h3 {
+				font-size: 1.8rem;
+				font-weight: bold;
+			}
+
+			.secondary {
+				font-size: 1.6rem;
+				font-weight: normal;
+				padding: 0.25rem 0 0.75rem;
+			}
+
+			.date {
+				font-size: 1.2rem;
+				font-weight: bold;
+				padding: 0.25rem 0 0.75rem;
+				color: @mainColor;
+			}
+
+			.split {
+				.splitEm;
+			}
+		}
+
+		.honorary-card {
+
+			.secondary {
+				font-size: 1.2rem;
+				color: @mainColor;
+			}
+		}
+
+		
+	}
+}
+
+.job-description {
+	padding: 0 0.25rem;
+	list-style-type: disc;
+	list-style-position: inside;
+
+	li {
+		padding: 0.5rem 1.5rem;
+	}
+}
+
+.skills-blocks {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	span {
+		color: white;
+		padding: 0.35rem 0.75rem;
+		border-radius: 1.5rem;
+		background-color: @mainColor;
+		border: 0.1rem solid black;
+		margin: 0.5rem 0.25rem;
+	}
+}
+
+.lang-card {
+	font-size: 1.8rem;
+
+	p {
+		text-align: right;
+		width: 80%;
+		padding: 0.25rem 0 0.75rem;
+		.splitEm;
+		margin: 0 auto;
+
+		span {
+			margin-left: 0.5rem;
+		}
+
+		span:first-child {
+			padding-right: 1rem;
+		}
+
+		.english {
+			background-color: @mainColor;
+		}
+		
+		.spanish {
+			background-image: linear-gradient(to right, @mainColor, @accentColor 50%, @accentColor);
+		}
+		
+		.french {
+			background-image: linear-gradient(to right, @mainColor, @mainColor 40%, @accentColor);
+		}
+
+		.fluentBox {
+			width: 100%;
+		}
+	}
+}
