@@ -143,6 +143,11 @@ html {
   font-size: 62.5%;
 }
 
+//variables
+
+@font : "Acme", sans-serif;
+@ptext : 1.6rem;
+
 //Page Styles
 .container {
   max-width: 1000px;
@@ -168,7 +173,7 @@ html {
       a:link {
         text-decoration: none;
         color: rgba(0, 0, 0, 0.7);
-        font-family: "Acme", sans-serif;
+        font-family: @font;
       }
 
       a:hover {
@@ -197,17 +202,17 @@ html {
 
         h1 {
           font-size: 7.2rem;
-          font-family: "Acme", sans-serif;
+          font-family: @font;
         }
 
         p {
           font-size: 4.2rem;
-          font-family: "Acme", sans-serif;
+          font-family: @font;
           padding-top: 20px;
         }
 
         p:last-child {
-          font-size: 1.6rem;
+          font-size: @ptext;
         }
       }
       
@@ -235,10 +240,12 @@ html {
       h2 {
         font-size: 2.0rem;
         margin-left: 5%;
+        font-family: @font;
       }
 
       p {
-        font-size: 1.6rem;
+        font-size: @ptext;
+        font-family: @font;
         padding: 10px 5%;
         line-height: 1.4;
       }
@@ -248,13 +255,14 @@ html {
       max-width: 50%;
       margin: 0 auto;
       height: 300px;
+      
 
-      ul {
+      ul.skill-photo {
         margin: 0;
         padding: 0;
       }
     
-      li {
+      li.skill-label {
         text-align:center;
         display:inline-block;
         list-style:none;
@@ -263,24 +271,43 @@ html {
         background:#fff;
         box-shadow:0 0 15px 0px #555;
         transition:all 1s ease;
-        -o-transition:all 1s ease;
-        -moz-transition:all 1s ease;
-        -webkit-transition:all 1s ease;
         top:50px;
         transform: rotate(-15deg);
         
       }
 
-      li:hover {
+     
+      li.skill-label:hover {
         top:0px;
         opacity:0.5;
         transform: rotate(0deg);
        
+       
       }
+      ul.skill-list {
+        margin: 0;
+        padding: 0;
+      }
+
+      li.skill-item {
+        text-align:center;
+        display:inline-block;
+        list-style:none;
+        position:relative;
+        border:solid 12px #fff;
+        background:#fff;
+        box-shadow:0 0 15px 0px #555;
+        transition:all 1s ease;
+        top:50px;
+        transform: rotate(-15deg);
+        
+      }
+
 
       p {
         font-size: 2.0rem;
         padding: 10px 0 0 0;
+        font-family: @font;
       }
      
 
