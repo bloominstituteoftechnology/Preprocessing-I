@@ -145,7 +145,15 @@ body {
 @thirdColor: #e4fde1;
 @fourthColor: #f45b69;
 
-@smartphones: "only screen and (max-width: 479px)";
+//mixins
+.flexDisplay(@justify: center, @align: center, @direction: row) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+  flex-direction: @direction;
+}
+
+@smartphones: "(max-width: 479px)";
 
 html {
   font-size: 62.5%;
@@ -155,19 +163,21 @@ html {
   max-width: 880px;
   margin: 0 auto;
   background: @mainColor;
-  height: 100%;
+  // height: 100%;
 
   .nav {
     padding-top: 18px;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    .flexDisplay();
 
     nav {
-      @media (max-width: 500px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      @media @smartphones {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        .flexDisplay(center, center, column);
         width: 100%;
       }
       a {
@@ -188,7 +198,7 @@ html {
   }
 
   .header {
-    height: 35%;
+    // height: 100px;
     padding: 15px;
     @media (max-width: 500px) {
       display: flex;
@@ -216,9 +226,10 @@ html {
       }
     }
     .header-bottom {
-      display: flex;
+      // display: flex;
+      .flexDisplay();
       height: 45%;
-      align-items: center;
+      // align-items: center;
       background: @secondColor;
 
       @media (max-width: 500px) {
@@ -233,7 +244,8 @@ html {
   }
   .main-content {
     padding: 15px;
-    height: 55%;
+    //Changed height to pixels vs %
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
     background: @mainColor;
@@ -262,9 +274,10 @@ html {
         }
         ul {
           height: 80%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: space-between;
+          .flexDisplay(space-between, center, column);
           li {
             list-style: disc;
             margin-left: 40px;
@@ -281,9 +294,10 @@ html {
         }
         ul {
           height: 85%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          .flexDisplay(space-between, center, column);
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: space-between;
           li {
             margin-left: 40px;
             font-size: 6rem;
@@ -353,9 +367,10 @@ html {
   }
 }
 .contact {
-  display: flex;
+  // display: flex;
+  .flexDisplay(space-around);
   flex-wrap: wrap;
-  justify-content: space-around;
+  // justify-content: space-around;
   background: @thirdColor;
   margin: 10px;
   h2 {
