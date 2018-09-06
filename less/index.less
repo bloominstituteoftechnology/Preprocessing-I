@@ -21,7 +21,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -54,6 +53,195 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;	
 }
+
+
+//variables
+@sectionTitle: 3rem;
+@fontFam: 'Roboto', sans-serif;
+@Aztec: #152827;
+@Tamarind: #311619;
+
+// mixins
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.customText {
+	text-decoration: none;
+	color: @Tamarind;
+
+}
+
+//end mixins
+
+html {
+	font-size: 62.5%;
+	font-family: @fontFam;
+	background-color: lightslategrey;
+	
+}
+
+
+.container {
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	background-color: lightgray;
+
+	
+
+	
+	header {
+		margin:  0 5%;
+
+		nav {
+			height: 40px;
+			margin: 20px 40px 5%;
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-end;
+			
+			a {
+				margin: 0 5%;
+				text-decoration: none;
+				.customText;
+	
+				&:hover {
+					color: grey;
+					text-decoration: underline;
+				}
+			}
+		}
+	
+		@media ( max-width:500px ) {
+			.center;
+			flex-direction: column;
+		}
+	}
+	
+	.intro {
+		.center;
+		flex-direction: column;
+		
+	
+		h1 {
+			font-size: 6rem;
+			margin: 5px 0;
+			font-family: 'Gamja Flower', cursive;
+			color: @Aztec;
+	
+		}
+	
+		h2 {
+			font-size: @sectionTitle;
+			padding-bottom: 5px;
+			border-bottom: black solid;
+
+		}
+
+		p {
+			margin: 20px 5%;
+		}
+	}
+	
+
+
+
+	.skills-about {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 5%;
+
+		.about-me {
+			width: 25%;
+			margin: 10px 0;
+
+			h2 {
+				font-size: @sectionTitle;
+				padding-bottom: 10px;
+			}
+
+			@media ( max-width:500px ) {
+				width: 100%;
+			}
+		}
+
+		.skills {
+			width: 70%;
+			
+
+			h2 {
+				font-size: @sectionTitle;
+				margin: 10px 0;
+		}
+	
+			p {
+				margin-top: 5px;
+			}
+		
+			@media ( max-width:500px ) {
+				width: 100%;
+			}
+		}
+
+		@media ( max-width:500px ) {
+			.center;
+			flex-direction: column;
+		}
+	}
+	
+	.job-history {
+		width: 90%;
+		margin-left: 5%;
+		margin-top: 30px;
+		margin-bottom: 60px;
+		
+
+		h2 {
+			font-size: @sectionTitle;
+			margin-top: 20px;
+		}
+
+		.job {
+			margin: 40px 0;
+
+			h3 {
+				font-size: 2rem;
+				margin: 5px 0;
+			}
+
+			h4 {
+				font-size: 1.8rem;
+				font-style: italic;
+				font-weight: 50;
+				margin: 5px 0;
+			}
+
+			ul {
+				list-style: circle inside;
+			}
+		}
+	}
+
+	.contact {
+		h3 {
+			font-size: @sectionTitle;
+			.customText;
+			margin: 20px 5%;
+		}
+
+		address {
+			margin: 10px 5%;
+			padding-bottom: 50px;	
+		}
+
+
+
+	}
+}
+
 
