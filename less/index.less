@@ -83,7 +83,7 @@ html, body {
 
 @aboutColor: #3a539b;
 @skillsColor:#1ba39c;
-@workColor: #f4b350;
+@workColor: #2c3e50;
 
 
 //styling variables - fonts
@@ -185,7 +185,6 @@ html, body {
 	section{
 		width: 48%;
 		max-width: @maxWidth;
-		max-height: 550px;
 		.flexRowMixin(@flexRowFlow, flex-start, center);
 		margin: 20px 0;
 		padding: 5%;
@@ -229,8 +228,34 @@ html, body {
 		width: @maxWidth;
 		background-color: @workColor;
 		color: @white;
-		img{
-			width:30%;
+		div{
+			margin: 30px 0 20px 0;
+
+			img{
+				width:30%;
+			}
+	
+			h1{
+				margin: 0;
+				align-self: center;
+				width: 50%;
+				.fontMixin(@h1Font, 4rem);
+			}
+
+			h2{
+				.fontMixin(@h2Font, 3rem);
+				color: #ED4927;
+			}
+	
+			.work-title{
+				margin-left: 5%;
+				.fontMixin(@h1Font, 8rem);
+			}
+	
+			p{
+				.fontMixin(@contentFontFamily, 1.7rem, 1.6);
+			}
+
 		}
 	}
 }
