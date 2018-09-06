@@ -101,6 +101,7 @@ nav {
 		margin-right: 30px;
 		text-decoration: none;
 		color: @textColor;
+		text-align: center;
 
 		&:hover {
 			color: white;
@@ -263,31 +264,62 @@ footer {
 
 .portfolio {
 	.flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 20px;
 
 	@media (max-width: 500px) {
-		width: 95%;
-		margin: 0 3%;
 		.flex;
-		flex-direction: column;
+		flex-direction: column; 
+		align-items: center; 
 	}
 
 	.card {
 		.flex;
-		flex-direction: column;
+		flex-direction: column; 
 		background: lightgray;
-		width: 30%;
-		border-radius: 20px;
-		border: 1px solid black;
-		align-items: center;
+		width: 32%;
 		padding: 0 20px;
+		align-items: center;
+		box-shadow: 1px 21px 121px -16px rgba(0,0,0,0.54);
+		
+		@media (max-width: 500px) {
+			width: 100%;
+			margin: 20px 0;
+			justify-content: center;
+
+		}
 	
 		h3 {
-		 margin-bottom: 10px;
+		 margin: 10px 0;
 		 font-size: 2rem;
 	}
-	
-}
-}
-	portfolio-buttons {
-		.devBox(red);
+		p {
+
+		}
+
+	.portfolio-buttons {
+		
+		button {
+			height: 30px;
+			width: 90px;
+			background: none;
+			margin: 20px 0;
+			border: 2px solid white;
+			border-radius: 5px; 
+
+			&:hover {
+				background: @textColor;
+		
+			}
+			
+			a {
+				text-decoration: none;
+			color: white;
+
+			}
+		}
 	} 
+}
+}
