@@ -59,6 +59,10 @@ html, body {
 
 // CSS
 
+@color: black;
+
+@font: 1.8rem;
+
 .imageSize() {
 	width: 100%;
 	height: auto;
@@ -70,7 +74,12 @@ html, body {
 	border-radius: 2px;
 	text-decoration: none;
 	margin: 0 15px 15px;
-	color: black;
+	color: @color;
+	&:hover {
+		background: black;
+		color: white;
+		transition: 0.2s;
+	}
 }
 
 .mobileNav() {
@@ -86,9 +95,9 @@ html {
 .container {
 	max-width: 750px;
 	margin: auto;
-	font-size: 1.8rem;
+	font-size: @font;
 	font-family: 'Source Sans Pro', sans-serif;
-	color: black;
+	color: @color;
 	padding: 15px;
 }
 
