@@ -5,14 +5,8 @@
 */
 
 html, body, div, span, applet, object, iframe,
-h1{
-	font-family: 'Poppins', sans-serif;
-	font-size:10rem;
-}
-	h2{
-		font-family: 'Poppins', sans-serif;
-	font-size:4rem;
-	} h3, h4, h5, h6, p, blockquote, pre,
+
+	h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -63,13 +57,36 @@ table {
 html{
 font-size: 62.5%;
 } 
+
+h1{
+	font-family: 'Poppins', sans-serif;
+	font-size:17rem;
+}
+	h2{
+		font-family: 'Poppins', sans-serif;
+	font-size:4rem;
+	} 
 body {
 	height: 100%;
+	min-height: 100%;
 }
 
 //variables
 
 @mypink: #ffe5f9;
+
+
+//mixins
+
+.center(){
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	justify-self: center;
+	align-items: center;
+}
 
 
 .container{
@@ -80,27 +97,34 @@ width:100%;
 
 header{
 	display:flex;
-	order:1;
+	height:100vh;
 
-	border:solid brown 1px;
-	
 	.right{
 		flex:1;
 		order:2;
 		border:solid red 1px;
-		img{
-			width: 100%;
-		}
+		background: url('../images/Sabrina.jpg');
+		background-color: #ffe5f9;
+		background-position: center; 
+		background-repeat: no-repeat; 
+		background-size: cover; 
 	
 	}
 	.left{
 		flex:1;
+		order:1;
+		flex-direction: column;
 		text-align: center;
-		font-size: 5rem;
-		
+		.center;
 		border:solid blue 1px;
-		
-		
+	}
+	.bottom{
+		font-size:120rem;
+		display: flex;
+		flex-direction: row;
+		.card{
+			flex:1;
+		}
 	}
 }
 
