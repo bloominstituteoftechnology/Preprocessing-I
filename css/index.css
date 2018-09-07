@@ -140,9 +140,9 @@ body {
   font-size: 1.6rem;
 }
 .container {
-  width: 880px;
+  width: 100%;
   max-width: 800px;
-  min-width: 660px;
+  min-width: 550px;
   margin: 0 auto;
   border: 1px solid black;
 }
@@ -159,24 +159,30 @@ body {
   padding: 5px;
   margin-right: 2px;
 }
-.container .main-nav .nav-line .search-bar {
-  padding: 10px 250px 10px 150px;
+.container .main-nav .nav-line .allTog {
+  display: flex;
+  flex-flow: row wrap;
+  width: 83.9%;
+}
+.container .main-nav .nav-line .allTog .search-bar {
+  padding: 10px 200px 10px 250px;
   border: 1px solid black;
   background: white;
 }
-.container .main-nav .nav-line .search {
+.container .main-nav .nav-line .allTog .search {
   display: flex;
   align-items: baseline;
 }
-.container .main-nav .nav-line .search select {
+.container .main-nav .nav-line .allTog .search select {
   background: white;
   text-decoration: none;
   padding: 1px 10px 1px 10px;
   border: 1px solid black;
   color: black;
   margin-left: 2px;
+  margin-bottom: 1px;
 }
-.container .main-nav .nav-line .search button {
+.container .main-nav .nav-line .allTog .search button {
   border: 1px solid black;
   padding-bottom: 1px;
   border-radius: 3px;
@@ -185,13 +191,12 @@ body {
 .container .menu {
   display: flex;
   flex-wrap: wrap;
-  width: 802px;
+  width: 99.95%;
   align-items: center;
+  background: #93b9db;
 }
 .container .menu .nav-menu {
-  background: #93b9db;
   padding: 8px;
-  width: 99.75%;
 }
 .container .menu .nav-menu a {
   text-decoration: none;
@@ -204,15 +209,15 @@ body {
 }
 .container .content-page {
   background: white;
-  height: 80vh;
   padding: 20px;
   flex-flow: column wrap;
   display: flex;
 }
 .container .content-page .r-top-info {
   display: flex;
-  justify-content: space-between;
-  width: 325px;
+  flex-flow: row wrap;
+  justify-content: ;
+  width: 100%;
 }
 .container .content-page .r-top-info .pic-name .name {
   font-size: 3rem;
@@ -224,31 +229,247 @@ body {
   width: 23vh;
 }
 .container .content-page .r-top-info .side-info {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  margin: 0 5px 5px 5px;
-  padding-top: 13px;
+  padding-left: 10px;
+  padding-top: 35px;
+  width: 25%;
 }
 .container .content-page .r-top-info .side-info q {
-  padding-top: 15px;
-  font-size: 1.3rem;
-  margin: 5px;
+  quotes: inherit;
 }
 .container .content-page .r-top-info .side-info p {
-  padding-bottom: 100px;
+  padding-top: 45px;
 }
-.container .content-page .skills {
+.container .content-page .r-top-info .workHistory {
+  border: 1px solid black;
+  width: 40.74%;
+  margin-top: 25px;
+}
+.container .content-page .r-top-info .workHistory h2 {
+  width: 100%;
+  background: #93b9db;
+  color: white;
+  height: 25px;
+  padding-left: 10px;
+  padding-top: 3px;
+  border-bottom: 1px solid black;
+}
+.container .content-page .r-top-info .workHistory p {
+  padding: 5px 5px 0 10px;
+}
+.container .content-page .containInfo {
+  width: 94.75%;
   display: flex;
-  flex-flow: row wrap;
-  padding: 20px;
-  width: 230px;
+  justify-content: space-between;
+  margin-top: 50px;
 }
-.container .content-page .skills h2 {
-  text-align: center;
-  width: 100%;
+.container .content-page .containInfo .skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 31.25%;
+  border: 1px solid black;
 }
-.container .content-page .skills p {
-  text-align: center;
+.container .content-page .containInfo .skills h2 {
   width: 100%;
+  background: #93b9db;
+  color: white;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  padding-top: 5px;
+  height: 25px;
+}
+.container .content-page .containInfo .skills p {
+  text-align: center;
+  padding: 10px;
+}
+.container .content-page .containInfo .aboutMe {
+  width: 50%;
+}
+.container .content-page .containInfo .aboutMe h2 {
+  width: 100%;
+  padding-left: 10px;
+  background: #fad6a6;
+  color: #de7123;
+  font-weight: bold;
+}
+.container .content-page .containInfo .aboutMe h3 {
+  color: #de7123;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+.container .content-page .containInfo .aboutMe p {
+  padding: 0 10px 10px 10px;
+  line-height: 2.1rem;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    max-width: 500px;
+    min-width: 250px;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+  .container .main-nav {
+    background: #2071c8;
+    border: 1px solid black;
+    height: 13vh;
+  }
+  .container .main-nav .nav-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 13vh;
+    padding: 0.6%;
+    margin-right: 2px;
+  }
+  .container .main-nav .nav-line .allTog {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100.9%;
+  }
+  .container .main-nav .nav-line .allTog .search-bar {
+    padding: 10px 200px 10px 250px;
+    border: 1px solid black;
+    background: white;
+  }
+  .container .main-nav .nav-line .allTog .search {
+    display: flex;
+    align-items: baseline;
+  }
+  .container .main-nav .nav-line .allTog .search select {
+    background: white;
+    text-decoration: none;
+    padding: 1px 10px 1px 10px;
+    border: 1px solid black;
+    color: black;
+    margin-left: 2px;
+    margin-bottom: 1px;
+  }
+  .container .main-nav .nav-line .allTog .search button {
+    border: 1px solid black;
+    padding-bottom: 1px;
+    border-radius: 3px;
+    margin-left: 2px;
+  }
+  .container .menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 99.95%;
+    align-items: center;
+    background: #93b9db;
+  }
+  .container .menu .nav-menu {
+    flex-flow: column wrap;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    border: 1px solid white;
+  }
+  .container .menu .nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.6rem;
+    margin: 0;
+    color: white;
+    padding: 21px 100%;
+    border-bottom: 1px solid white;
+  }
+  .container .content-page {
+    background: white;
+    padding: 10px;
+    flex-flow: column wrap;
+    display: flex;
+  }
+  .container .content-page .r-top-info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: ;
+  }
+  .container .content-page .r-top-info .pic-name .name {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2px;
+  }
+  .container .content-page .r-top-info .pic-name img {
+    height: auto;
+    width: 23vh;
+    border-radius: 50%;
+  }
+  .container .content-page .r-top-info .side-info {
+    padding-left: 10px;
+    padding-top: 35px;
+  }
+  .container .content-page .r-top-info .side-info q {
+    quotes: inherit;
+  }
+  .container .content-page .r-top-info .side-info p {
+    padding-top: 45px;
+  }
+  .container .content-page .r-top-info .workHistory {
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 25px;
+  }
+  .container .content-page .r-top-info .workHistory h2 {
+    width: 100%;
+    background: #93b9db;
+    color: white;
+    height: 25px;
+    padding-left: 10px;
+    padding-top: 3px;
+    border-bottom: 1px solid black;
+  }
+  .container .content-page .r-top-info .workHistory p {
+    padding: 5px 5px 0 10px;
+  }
+  .container .content-page .containInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  .container .content-page .containInfo .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid black;
+  }
+  .container .content-page .containInfo .skills h2 {
+    width: 100%;
+    background: #93b9db;
+    color: white;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    padding-top: 5px;
+    height: 25px;
+  }
+  .container .content-page .containInfo .skills p {
+    text-align: center;
+    padding: 10px;
+  }
+  .container .content-page .containInfo .aboutMe {
+    width: 100%;
+  }
+  .container .content-page .containInfo .aboutMe h2 {
+    width: 100%;
+    padding-left: 10px;
+    background: #fad6a6;
+    color: #de7123;
+    font-weight: bold;
+  }
+  .container .content-page .containInfo .aboutMe h3 {
+    color: #de7123;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .container .content-page .containInfo .aboutMe p {
+    padding: 0 10px 10px 10px;
+    line-height: 2.1rem;
+  }
 }
