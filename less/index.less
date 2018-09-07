@@ -49,11 +49,249 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@fontStack: 'Open Sans', sans-serif;
+@darkestDark: rgb(47, 79, 79);
+@lightestLight: rgb(255, 255, 255);
+@darkestLight: rgb(119, 136, 153);
+@greyishGrey: rgb(233, 233, 233);
+@greyness: rgb(169,169, 169);
+@hardlyGrey: rgb(211, 211, 211);
+@prettyGrey:  rgb(214, 214, 214);
+
+.header-style(@size) {
+	font-size: @size;
+	padding-bottom: 1rem;
+	width: 100%;
+}
+
+.display-align-justify(@display, @align, @justify){
+	display: @display;
+	align-items: @align;
+	justify-content: @justify;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: @fontStack;
 }
+
+h1 {
+	.header-style(2.4rem);
+}
+
+h2 {
+	.header-style(1.8rem);
+}
+
+p {
+	font-size: 1.6rem;
+}
+
+ul {
+	font-size: 1.4rem;
+}
+
+.bold {
+	font-weight: 800;
+}
+
+hr {
+	border: 0;
+	margin: 0;
+	border-top: 10px solid @darkestDark;
+	padding: 0;
+	width: 100%;
+}
+
+footer {
+	width: 100%;
+	height: 5rem;
+	background: @darkestDark;
+	color: @lightestLight;
+	font-size: 1.6rem;
+	padding-top: 1.7rem;
+	text-align: center;
+}
+
+.page-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1%;
+
+	nav {
+		width: 100%;
+		height: 5rem;
+		.display-align-justify(flex, center, flex-end);
+		background: @darkestDark;
+
+		@media (max-width: 500px){
+			flex-wrap: wrap;
+			text-align: center;
+			height: auto;
+		}
+
+		a {
+			text-decoration: none;
+			padding: 0 2rem;
+			border-right: 1px solid @darkestLight;
+			color: @lightestLight;
+			font-size: 1.6rem;
+
+			@media (max-width: 500px){
+				width: 100%;
+				padding: 2rem;
+				border: 0;
+				border-bottom: 1px solid @darkestLight;
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
+		a:last-child {
+			border-right: none;
+		}
+
+		a:hover {
+			color: @darkestLight;
+		}
+	}
+
+	header {
+		.display-align-justify(flex, center, center);
+		background-image: url("https://images.unsplash.com/photo-1505547735609-676a8f04dc42?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=12e0f95dd66ca9b38639f3aae723e02e&auto=format&fit=crop&w=1934&q=80");
+		background-position: 75% 50%;
+		width: 100%;
+		height: auto;
+		padding: 5%;
+
+		@media (max-width: 500px){
+			flex-wrap: wrap;
+		}
+
+		.header-img {
+			width: 40%;
+			height: auto;
+			border-radius: 50%;
+		}
+
+		.header-info {
+			width: 40%;
+			margin: 0 2%;
+			padding: 0 5%;
+			text-shadow: 2px 0 0 @lightestLight, -2px 0 0 @lightestLight, 0 2px 0 @lightestLight, 0 -2px 0 @lightestLight, 1px 1px @lightestLight, -1px -1px 0 @lightestLight, 1px -1px 0 @lightestLight, -1px 1px 0 @lightestLight;
+		}
+	}
+
+	.content {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.content-section {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			width: 100%;
+			padding: 5% 0;
+
+			@media (max-width: 500px) {
+				padding: 5%;
+			}
+
+			table {
+				font-size: 1.6rem;
+				width: 100%;
+				height: auto;
+
+				.bg-color {
+					background: @greyishGrey;
+				}
+
+				tr{
+					&:first-child th {
+					border: none;
+					}
+
+					&:hover{
+						background: @prettyGrey;
+					}
+
+					td {
+						border: 1px solid @greyness;
+						padding: 3%;
+						vertical-align: middle;
+					}
+				}
+
+				th {
+					background: @lightestLight;
+					text-align: left;
+					border: 0;
+					border-bottom: 1px solid @greyness;
+					padding-bottom: 3%;
+				}
+			}
+
+			.featured-img {
+				height: 200px;
+				width: auto;
+				padding: 0 2% 2%;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+			.content-img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.center {
+			justify-content: center;
+			text-align: center;
+		}
+
+		.two-column {
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 100%;
+			}
+		}
+
+		.contact-style {
+			background: @hardlyGrey;
+			border: 1px solid @greyness;
+			margin: 5% 0;
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 100%;
+				margin: 5%;
+			}
+		}
+
+		.work-history-img-style {
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 100%;
+			}
+		}
+	}
+}
+
 
