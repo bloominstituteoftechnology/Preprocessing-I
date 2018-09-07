@@ -139,10 +139,12 @@ body {
 h1 {
   font-size: 2.4rem;
   padding-bottom: 1rem;
+  width: 100%;
 }
 h2 {
   font-size: 1.8rem;
   padding-bottom: 1rem;
+  width: 100%;
 }
 p {
   font-size: 1.6rem;
@@ -156,12 +158,19 @@ ul {
 hr {
   border: 0;
   margin: 0;
-  border-top: 10px solid darkslategrey;
+  border-top: 10px solid #2f4f4f;
   padding: 0;
   width: 100%;
 }
-/* ---------- VARIABLES ---------- */
-/* ---------- FULL SCREEN TO 800PX ---------- */
+footer {
+  width: 100%;
+  height: 5rem;
+  background: #2f4f4f;
+  color: #ffffff;
+  font-size: 1.6rem;
+  padding-top: 1.7rem;
+  text-align: center;
+}
 .page-container {
   display: flex;
   flex-direction: column;
@@ -174,31 +183,55 @@ hr {
   width: 100%;
   height: 5rem;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  background: darkslategrey;
+  justify-content: flex-end;
+  background: #2f4f4f;
+}
+@media (max-width: 500px) {
+  .page-container nav {
+    flex-wrap: wrap;
+    text-align: center;
+    height: auto;
+  }
 }
 .page-container nav a {
   text-decoration: none;
   padding: 0 2rem;
-  border-right: 1px solid lightslategrey;
-  color: white;
+  border-right: 1px solid #778899;
+  color: #ffffff;
   font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .page-container nav a {
+    width: 100%;
+    padding: 2rem;
+    border: 0;
+    border-bottom: 1px solid #778899;
+  }
+  .page-container nav a:last-child {
+    border-bottom: none;
+  }
 }
 .page-container nav a:last-child {
   border-right: none;
 }
 .page-container nav a:hover {
-  color: lightslategray;
+  color: #778899;
 }
 .page-container header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e6e6e6;
+  background-image: url("https://images.unsplash.com/photo-1505547735609-676a8f04dc42?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=12e0f95dd66ca9b38639f3aae723e02e&auto=format&fit=crop&w=1934&q=80");
+  background-position: 75% 50%;
   width: 100%;
   height: auto;
   padding: 5%;
+}
+@media (max-width: 500px) {
+  .page-container header {
+    flex-wrap: wrap;
+  }
 }
 .page-container header .header-img {
   width: 40%;
@@ -207,14 +240,95 @@ hr {
 }
 .page-container header .header-info {
   width: 40%;
+  margin: 0 2%;
   padding: 0 5%;
+  text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 2px 0 #ffffff, 0 -2px 0 #ffffff, 1px 1px #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
 }
 .page-container .content {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .page-container .content .content-section {
-  padding: 5%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5% 0;
+}
+@media (max-width: 500px) {
+  .page-container .content .content-section {
+    padding: 5%;
+  }
+}
+.page-container .content .content-section table {
+  font-size: 1.6rem;
+  width: 100%;
+  height: auto;
+}
+.page-container .content .content-section table .bg-color {
+  background: #e9e9e9;
+}
+.page-container .content .content-section table tr:first-child th {
+  border: none;
+}
+.page-container .content .content-section table tr:hover {
+  background: #d6d6d6;
+}
+.page-container .content .content-section table tr td {
+  border: 1px solid #a9a9a9;
+  padding: 3%;
+  vertical-align: middle;
+}
+.page-container .content .content-section table th {
+  background: #ffffff;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #a9a9a9;
+  padding-bottom: 3%;
+}
+.page-container .content .content-section .featured-img {
+  height: 200px;
+  width: auto;
+  padding: 0 2% 2%;
+}
+.page-container .content .content-section .featured-img:hover {
+  opacity: 0.7;
+}
+.page-container .content .content-section .content-img {
+  width: 100%;
+  height: auto;
 }
 .page-container .content .center {
+  justify-content: center;
   text-align: center;
+}
+.page-container .content .two-column {
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .page-container .content .two-column {
+    width: 100%;
+  }
+}
+.page-container .content .contact-style {
+  background: #d3d3d3;
+  border: 1px solid #a9a9a9;
+  margin: 5% 0;
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .page-container .content .contact-style {
+    width: 100%;
+    margin: 5%;
+  }
+}
+.page-container .content .work-history-img-style {
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .page-container .content .work-history-img-style {
+    width: 100%;
+  }
 }
