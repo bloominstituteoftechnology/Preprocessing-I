@@ -150,7 +150,7 @@ body {
 
 .bg-opacity() {
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 20px 2%;
   box-shadow: 1px 1px 10px #888888;
 }
@@ -170,7 +170,7 @@ html {
   margin: 0 auto 20px;
   background: rgba(234, 243, 246, 0.5);
   color: @mainColor;
-  border-radius: 10px;
+  border-radius: 5px;
   // border: 1px solid black;
 
   .nav-bar {
@@ -179,7 +179,7 @@ html {
     .bg-opacity();
     // border-bottom-left-radius: 0px;
     // border-bottom-right-radius: 0px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
 
     @media (max-width: 500px) {
       flex-direction: column;
@@ -208,7 +208,7 @@ html {
     width: 95%;
     margin: 20px auto 0;
     padding: 20px 2%;
-    border-radius: 10px;
+    border-radius: 5px;
 
     img {
       max-width: 550px;
@@ -245,7 +245,7 @@ html {
       background-color: gray;
       padding: 10px 40px;
       // border: 2px solid @mainColor;
-      border-radius: 10px;
+      border-radius: 5px;
       margin-bottom: 40px;
 
       &:hover {
@@ -294,7 +294,7 @@ html {
       // padding: 20px 0;
       margin-top: 20px;
       .bg-opacity();
-      border: 2px solid @headerBGColor;
+      // border: 2px solid @headerBGColor;
 
       @media (max-width: 500px) {
         width: 100%;
@@ -328,26 +328,68 @@ html {
       border-left: 2px solid @navColor;
       margin-top: 20px;
 
-      .title-bar {
+      tr {
         border-top: 2px solid @navColor;
-        background-color: @navColor;
 
-        .title {
-          font-size: 3rem;
+        td {
+          font-size: 1.6rem;
           text-align: start;
-        }
-        tr {
           padding: 20px 5%;
         }
       }
-      th {
-        border-top: 2px solid @navColor;
-        font-size: 1.6rem;
-        text-align: start;
-        padding: 20px 5%;
+
+      .title-bar {
+        background-color: @navColor;
+
+        th {
+          font-size: 3rem;
+          text-align: start;
+          padding: 20px 5%;
+        }
       }
     }
   }
+
+  .hit-me-up {
+    display: flex;
+    justify-content: flex-start;
+    width: 95%;
+    margin: 0 auto;
+
+    .sizing {
+      .bg-opacity();
+      max-width: 600px;
+      width: 100%;
+
+      h5 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        max-height: 500px;
+        width: 100%;
+        font-size: 1.6rem;
+
+        @media (max-width: 500px) {
+          flex-wrap: nowrap;
+          max-height: 1000px;
+        }
+
+        div {
+          margin: 20px 0 0;
+        }
+
+        .text-stuff {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
   footer {
     display: flex;
     justify-content: center;
