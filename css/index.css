@@ -137,6 +137,14 @@ body {
 html {
   font-size: 62.5%;
 }
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   background-color: #f2f2f2;
   font-family: 'Montserrat', sans-serif;
@@ -464,4 +472,47 @@ body {
 .footer {
   text-align: center;
   padding: 2rem;
+}
+.footer__links a,
+.footer__links a:visited {
+  color: #000;
+  font-size: 2rem;
+  margin: 0 1rem;
+  transition: color 300ms;
+}
+.footer__links a:hover,
+.footer__links a:visited:hover {
+  color: #666666;
+}
+.home .header {
+  height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadein 500ms ease-in-out 500ms forwards;
+}
+@media (max-width: 800px) {
+  .home .header {
+    height: calc(100vh - 210px);
+  }
+}
+@media (max-width: 500px) {
+  .home .header {
+    height: 100%;
+  }
+}
+.home .btn {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+@media (max-width: 500px) {
+  .home .btn {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+.home .btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
