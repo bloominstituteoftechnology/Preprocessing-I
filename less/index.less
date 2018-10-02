@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/* HTML5 display-role reset for older browsers ..*/
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -55,5 +55,649 @@ table {
 
 html, body {
     height: 100%;
+}
+
+/*VARIABLES AND MIX-INS*/
+
+body {font-size: 62.5%
+}
+
+@main-color: black;
+@secondary-color: white;
+
+.main-font{
+	font-family: 'Oswald', sans-serif;
+}
+
+.secondary-font{
+	font-family: sans-serif;
+}
+
+.centered{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.column{
+	flex-direction: column;
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.nowrap{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+p {
+	font-size: 1.0rem;
+	.secondary-font;
+	line-height: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+	.main-font;
+}
+
+.italics{
+	font-style: italic;
+}
+
+.coming-soon {
+	width: 150px;
+	height: 32px;
+}
+
+.header {
+	font-size: 2rem;
+}
+
+.header1 {
+	font-size: 1.6rem;
+}
+
+.header2 {
+	font-size: 1.6rem;
+	color: @secondary-color;
+}
+
+.header3 {
+	font-size: 1.3rem;
+}
+
+/*MAIN CODE*/
+
+.container {
+	width: 100%;
+	justify-content: center;
+	.column;
+	.centered;
+}
+
+.main-container {
+	width: 88%;
+	height: 2300px;
+	margin-top: 93px;
+}
+
+.section-header {
+	width: 100%;
+	height: 35px;
+	border-top: 1px solid black;
+}
+
+.section-label {
+	height: 35px;
+	width: 31%;
+	background-color: @main-color;
+	display: flex;
+	align-items: center;
+	padding-left: 3%;
+}
+
+/*HEADER SECTION*/
+
+.header-box {
+	background-color: @main-color;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	.centered;
+	flex-direction: column;
+
+	.designer-logo {
+		width: 300px;
+		height: 189px;
+
+		#header-logo {
+			width: 300px;
+			height: 189px;
+		}
+	}
+  }
+
+/*INTRO SECTION*/
+
+.intro-section{
+	width: 100%;
+	height: 125px;
+	align-items: space-evenly;
+	.nowrap;
+
+	.intro-text-container {
+		width: 63%;
+		height: 90px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.intro-text {
+		height: 48px;
+		width: 100%;
+	}
+
+	.symbol-container {
+		height: 90px;
+		width: 37%;
+		.nowrap;
+		.centered;
+		justify-content: space-around;
+
+		.symbol-container2 {
+			height: 90px;
+			width: 87%;
+			.nowrap;
+			.centered;
+			justify-content: space-around;
+			
+			.intro-symbol {
+				border-radius: 80px;
+				height: 80px;
+				width: 80px;
+				background-color: @main-color;
+				flex-shrink: 0;
+				.centered;
+
+				.symbol-image{
+					height: 50px;
+					height: 50px;
+				}
+			}
+		
+		}
+	}
+}
+
+/*PORTFOLIO SECTION*/
+
+.portfolio-section {
+	height: 447px;
+	width: 100%;
+	margin-top: 45px;
+
+	.portfolio-content-container {
+		height: 395px;
+		width: 100%;
+		margin-top: 14px;
+		display: flex;
+		justify-content: space-between;
+		
+		.portfolio-piece {
+			height: 395px;
+			width: 30%;
+			border: 1px solid black;
+			.centered;
+		}
+	}
+}
+
+/*WHAT I CAN DO SECTION */
+
+#what-I-can-do{
+	margin-top: 45px;
+}
+
+/*PROFESSIONAL EXPERIENCE*/
+
+.experience-content-container{
+	height: 395px;
+	width: 100%;
+	margin-top: 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.work-experience{
+		width: 100%;
+		height: 120px;
+		border: 1px solid black;
+		.centered;
+	}
+}
+
+/*SKILLS AND EDUCATION SECTION*/
+
+.list-text{
+	font-size: .9rem;
+	.secondary-font;
+	.italics;
+}
+
+.section-label2 {
+	height: 35px;
+	width: 67%;
+	background-color: @main-color;
+	display: flex;
+	align-items: center;
+	padding-left: 3%;
+}
+
+.skills-and-education-section{
+	width: 100%;
+	height: 180px;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	
+	.skills-and-education {
+		width: 47%;
+		height: 170px;
+		border-top: 1px solid black;
+		
+		#education-section-container {
+			display: flex;
+			flex-direction: column;
+			height: 145px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+			
+			.education-section{
+				width: auto;
+				height: 60px;
+			}
+			
+			.education-span2 {
+				.secondary-font;
+				font-size: 1rem;
+				font-style: bold;
+			}
+			
+			.education-header {
+				.main-font;
+				font-size: 1.2rem;
+			}
+		}
+		
+		#skills-section-container {
+			height: 145px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 10px;
+			
+			#skills-image-container{
+				width: 325px;
+				height: 50px;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.skills-image{
+				height: 50px;
+				width: 50px;
+			}
+		}
+	}
+}
+
+/*ABOUT SECTION*/
+
+.about-section {
+	width: 100%;
+	height: 325px;
+	margin-top: 45px;
+	
+	#about-content{
+		display: flex;
+		height: 290px;
+		width: 100%;
+		align-items: center;
+		
+		#about-picture-container{
+			height: 250px;
+			width: 191px;
+			margin-left: 3%;
+			
+			#about-picture {
+				height: 250px;
+				width: 191px;
+			}
+		}
+		
+		#about-text{
+			height: 250px;
+			width: 634px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-left: 3%;
+
+			#Shannon-Healy{
+				width: 175px;
+				height: 35px;
+				.centered;
+			}
+
+			#Web-Developer-and-Graphic-Designer{
+				width: 345px;
+				height: 35px;
+				.centered;
+			}
+		}
+	}	
+}
+
+/*CONTACT SECTION*/
+
+.contact-section {
+	width: 100%;
+	height: 325px;
+	margin-top: 45px;
+
+	#work-together-text{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 295px;
+
+		#lets-talk{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 63%;
+			height: 30px;
+		}
+			
+		#contact-body{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 80%;
+			height: 100px;
+		}
+
+	
+		#contact-button-container {
+			height: 150px;
+			width: 300px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+
+			.contact-button {
+				height: 30px;
+				width: 200px;
+				background-color: @main-color;
+				font-size: 1.0rem;
+				padding-left: 10px;
+				color: @secondary-color;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+
+/*FOOTER SECTION*/
+
+.footer-section {
+	background-color: @main-color;
+	width: 100%;
+	height: 150px;
+	display: flex;
+	.centered;
+}
+
+/*----------
+MOBILE VIEW
+-----------*/
+
+@media (max-width: 800px) {
+	
+	.main-container {
+		width: 88%;
+		height: 2450px;
+		margin-top: 46px;
+	}
+
+	.section-label {
+		height: 35px;
+		width: 62%;
+	}
+
+	/*HEADER SECTION*/
+
+	.header-box {
+		width: 100%;
+		height: 150px;
+		flex-shrink: 0;
+
+		.designer-logo {
+			width: 150px;
+			height: 95px;
+			
+			#header-logo {
+				width: 150px;
+				height: 95px;
+			}
+		}
+	}
+
+	/*INTRO SECTION*/
+
+	// .symbol-container {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	height: 250px;
+	// 	border: 1px solid red;
+
+	// 	.symbol-container2 {
+	// 		display: flex;
+	// 		flex-direction: column;
+	// 		height: 250px;
+	// 		flex-shrink: 0;
+	// 	}
+	// }
+
+	.intro-section{
+		height: 250px;
+
+		.intro-text-container {
+			width: 63%;
+			height: 250px;
+		}
+	
+		.intro-text {
+			height: 250px;
+			width: 100%;
+		}
+
+		.symbol-container {
+			display: flex;
+			flex-direction: column;
+			height: 250px;
+	
+			.symbol-container2 {
+				display: flex;
+				flex-direction: column;
+				height: 250px;
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	/*PORTFOLIO SECTION*/
+
+	.portfolio-section {
+		height: 302px;
+		margin-top: 20px;
+		.portfolio-content-container {
+			height: 250px;
+			.portfolio-piece {
+				height: 250px;
+				.centered;
+				
+				.coming-soon{
+					height: 66px;
+					.centered;
+					text-align: center;
+
+					.header1{
+						width: 77px;
+					}
+				}
+			}
+		}
+	}
+
+	#what-I-can-do {
+		margin-top: 40px;
+	}
+
+	/*SKILLS AND EDUCATION SECTION */
+
+	.skills-and-education-section{
+		height: 200px;
+		
+		.skills-and-education {
+			width: 47%;
+			height: 170px;
+			border-top: 1px solid black;
+			
+			#education-section-container {
+				height: 170px;
+				
+				.education-section{
+					width: auto;
+					height: 60px;
+				}
+				
+				.education-span2 {
+					.secondary-font;
+					font-size: 1rem;
+					font-style: bold;
+				}
+				
+				.education-header {
+					.main-font;
+					font-size: 1.2rem;
+				}
+			}
+			
+			#skills-section-container {
+				height: 170px;
+				.centered;
+				
+				#skills-image-container{
+					display: none;
+				}
+				
+				.skills-image{
+					display: none;
+				}
+			}
+		}
+	}
+
+	/*CONTACT SECTION*/
+	.contact-section {
+		height: 375px;
+		
+		#work-together-text{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			height: 375px;
+	
+			#lets-talk{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				width: 63%;
+				height: 30px;
+			}
+				
+			#contact-body{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				width: 80%;
+				height: 140px;
+			}
+		}
+	}
+
+	/*PROFESSIONAL EXPERIENCE*/ 
+	
+	.experience-content-container{
+		height: 395px;
+		width: 100%;
+		margin-top: 14px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	
+		.work-experience{
+			width: 100%;
+			height: 120px;
+			border: 1px solid black;
+			.centered;
+		}
+	}
+
+	.experience-section {
+		height: 425px;
+		margin-top: 20px;
+		.portfolio-content-container {
+			height: 250px;
+			.portfolio-piece {
+				height: 250px;
+			}
+		}
+	}
+
+	/*ABOUT ME*/
+
+	.about-section {
+		width: 100%;
+		height: 350px;
+		margin-top: 45px;
+		#about-content{
+			#about-picture-container{
+				display: none;
+				#about-picture {
+					display: none;
+				}
+			}
+		}
+	}
+
+	/*FOOTER SECTION*/
+	.footer-section {
+		height: 75px;
+		#footer-logo{
+			width: 79px;
+			height: 50px;
+		}
+	}
+
+/*END QUERY BRACKET*/
 }
 
