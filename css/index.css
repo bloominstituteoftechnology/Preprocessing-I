@@ -163,15 +163,36 @@ p {
   text-transform: uppercase;
   width: 100%;
   justify-content: flex-end;
-  text-align: right;
 }
 .nav__list {
   display: flex;
   width: 60%;
   padding: 1rem 0;
 }
+@media (max-width:500px) {
+  .nav__list {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
 .nav__item {
+  text-align: right;
   flex: 1 1 auto;
+}
+.nav__item a {
+  text-decoration: none;
+  color: black;
+}
+@media (max-width:500px) {
+  .nav__item {
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid #b3b8c5;
+  }
+  .nav__item:first-of-type {
+    border: none;
+  }
 }
 .bio {
   background: #e2e4ec;
@@ -206,6 +227,11 @@ p {
   display: flex;
   padding: 2rem 0 2rem;
 }
+@media (max-width:500px) {
+  .about {
+    flex-wrap: wrap;
+  }
+}
 .about h2 {
   font-size: 3rem;
   padding: 0 0 1rem;
@@ -217,6 +243,12 @@ p {
 .about__description {
   width: 50%;
 }
+@media (max-width:500px) {
+  .about__description {
+    width: 100%;
+    padding: 2rem 0;
+  }
+}
 .about__paragraph {
   font-size: 1.4rem;
   line-height: 1.7;
@@ -224,6 +256,12 @@ p {
 }
 .skills {
   width: 50%;
+}
+@media (max-width:500px) {
+  .skills {
+    width: 100%;
+    padding: 2rem 0;
+  }
 }
 .skills__list {
   width: 100%;
