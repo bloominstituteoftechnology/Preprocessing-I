@@ -3,6 +3,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
 
 html,
 body,
@@ -88,7 +90,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -130,11 +131,153 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html,
 body {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
   height: 100%;
+}
+
+p {
+  font-family: "Nato Sans", sans-serif;
+}
+
+// My Code
+@clr-white: white;
+@clr-highlight: rgb(36, 119, 187);
+@clr-main: rgb(226, 228, 236);
+@clr-dark: rgb(179, 184, 197);
+@full-size: 100%;
+
+.fullPage {
+  font-size: 1.3rem;
+  width: @full-size * 0.9;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  text-transform: uppercase;
+  width: @full-size;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  &__list {
+    width: @full-size * 0.6;
+    padding: 1rem 0;
+    display: flex;
+  }
+  &__item {
+    flex: 1 1 auto;
+  }
+}
+.bio {
+  background: @clr-main;
+  padding: 4rem 3rem 7rem;
+  &__name {
+    h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      padding: 1rem 0 2rem;
+    }
+  }
+  &__call-to {
+    border-top: 1px solid @clr-dark;
+  }
+  &__oneliner {
+    padding: 2rem 0;
+  }
+  &__button {
+    text-decoration: none;
+    border-radius: 4px;
+    background: @clr-highlight;
+    padding: 1rem;
+    color: @clr-white;
+  }
+  &__pic {
+    width: 50vmin;
+  }
+}
+.about {
+  padding: 2rem 0 2rem;
+  display: flex;
+  h2 {
+    font-size: 3rem;
+    padding: 0 0 1rem;
+  }
+  h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  &__description {
+    width: @full-size / 2;
+  }
+  &__paragraph {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    padding-right: 1rem;
+  }
+}
+.skills {
+  width: @full-size / 2;
+  &__list {
+    width: @full-size;
+    border-radius: 4px;
+    border-left: 1px solid @clr-dark;
+    border-right: 1px solid @clr-dark;
+    border-bottom: 1px solid @clr-dark;
+  }
+  &__item {
+    padding: 1rem;
+    border-top: 1px solid @clr-dark;
+    &:first-of-type {
+      border-radius: 4px;
+    }
+  }
+}
+
+.work {
+  margin: 1rem 0 2rem;
+  h3 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  &__table {
+    text-align: left;
+    width: @full-size;
+  }
+  &__row {
+    border-top: 1px solid @clr-dark;
+    &:nth-of-type(even) {
+      background: @clr-main;
+    }
+    &:last-of-type {
+      border-bottom: 1px solid @clr-dark;
+    }
+  }
+  &__header {
+    border-top: 1px solid @clr-dark;
+    font-weight: bold;
+  }
+  &__description {
+    padding: 1rem;
+    width: auto;
+  }
+}
+
+.footer {
+  text-align: center;
+  background: @clr-highlight;
+  padding: 3rem;
+  color: @clr-white;
 }
