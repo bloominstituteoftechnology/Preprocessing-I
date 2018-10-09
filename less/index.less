@@ -61,35 +61,32 @@ html, body {
     font-family: 'Roboto', sans-serif;
 }
 
-// variables
+// VARIABLES
 
-// mixins
+// MIXINS
 
-// main meat of the content
+// MAIN MEAT
 body {
 	display: flex;
 	justify-content: center;
-}
 
-.container {
-	max-width: 880px;
-	width: 100%;
-}
-
-// header & navbar
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 25px;
-	width: 100%;
-	max-width: 880px;
-
-		nav {
+	.container {
+		max-width: 880px;
+		width: 100%;
+		// HEADER
+		header {
 			display: flex;
-			align-items: center;
 			justify-content: space-between;
+			align-items: center;
+			margin-top: 25px;
 			width: 100%;
+			max-width: 880px;
+
+			nav {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
 
 				a {
 					padding: 20px 2.5%;
@@ -97,17 +94,67 @@ header {
 					color: #6B7070;
 					text-decoration: none;
 				}
+			}
 		}
 
+		.page-top {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			margin-top: 20px;
+			width: 100%;
+			height: 45vh;
+			background-color: #E6E6E7;
+
+			.cta-text {
+				display: flex;
+				font-size: 6rem;
+				flex-direction: column;
+				align-items: center;
+				color: #6B7070;
+
+				h1:nth-of-type(3) {
+					margin-top: 50px;
+				}
+			}
+
+			.cta-img {
+				max-width: 48%;
+				height: auto;
+				border-radius: 3%;
+			}
+		}
+
+		.page-middle {
+
+			.content-intro {
+
+				button {
+					background: white;
+					vertical-align: top;
+					margin-top: 35px;
+					padding: 8px 44px;
+					font-size: 1.7rem;
+					border: 1px solid #6B7070;
+					cursor: pointer;
+					border-radius: 10px;
+				}
+				button:hover {
+					background: #6B7070;
+					color: white;
+				}
+			}
+		}
+	}
 }
 
-.jumbotron {
-	width: 100%;
-	height: 20vh;
-	background-color: #9DE4FE;
-	color: white;
+// TABLET
+@media (max-width: 800px) {
+	.page-top .cta-img {
+		display: none;
+	}
 }
-
+// MOBILE
 @media (max-width: 500px) {
 	.container {
 		width: 95%;
@@ -116,13 +163,14 @@ header {
 	nav {
 		flex-direction: column;
 		width: 500px;
-		margin-top: -10px;
+		margin-top: -20px;
+		margin-bottom: -20px;
 
-			a {
-				text-align: center;
-				border-bottom: 2px solid grey;
-				width: 100%;
-			}
+		a {
+			text-align: center;
+			border-bottom: 2px solid #CACCD1;
+			width: 100%;
+		}
 	}
 
 

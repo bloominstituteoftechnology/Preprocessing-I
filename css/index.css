@@ -141,11 +141,11 @@ body {
   display: flex;
   justify-content: center;
 }
-.container {
+body .container {
   max-width: 880px;
   width: 100%;
 }
-header {
+body .container header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -153,23 +153,60 @@ header {
   width: 100%;
   max-width: 880px;
 }
-header nav {
+body .container header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-header nav a {
+body .container header nav a {
   padding: 20px 2.5%;
   font-size: 2rem;
   color: #6B7070;
   text-decoration: none;
 }
-.jumbotron {
+body .container .page-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
   width: 100%;
-  height: 20vh;
-  background-color: #9DE4FE;
+  height: 45vh;
+  background-color: #E6E6E7;
+}
+body .container .page-top .cta-text {
+  display: flex;
+  font-size: 6rem;
+  flex-direction: column;
+  align-items: center;
+  color: #6B7070;
+}
+body .container .page-top .cta-text h1:nth-of-type(3) {
+  margin-top: 50px;
+}
+body .container .page-top .cta-img {
+  max-width: 48%;
+  height: auto;
+  border-radius: 3%;
+}
+body .container .page-middle .content-intro button {
+  background: white;
+  vertical-align: top;
+  margin-top: 35px;
+  padding: 8px 44px;
+  font-size: 1.7rem;
+  border: 1px solid #6B7070;
+  cursor: pointer;
+  border-radius: 10px;
+}
+body .container .page-middle .content-intro button:hover {
+  background: #6B7070;
   color: white;
+}
+@media (max-width: 800px) {
+  .page-top .cta-img {
+    display: none;
+  }
 }
 @media (max-width: 500px) {
   .container {
@@ -178,11 +215,12 @@ header nav a {
   nav {
     flex-direction: column;
     width: 500px;
-    margin-top: -10px;
+    margin-top: -20px;
+    margin-bottom: -20px;
   }
   nav a {
     text-align: center;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid #CACCD1;
     width: 100%;
   }
 }
