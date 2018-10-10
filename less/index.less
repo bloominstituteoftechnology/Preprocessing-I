@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -54,6 +54,160 @@ table {
 }
 
 html, body {
-    height: 100%;
+	
+	height: 100%;
+	margin:0 auto;
+	display: flex;
+		@media (max-width:900px) {
+    flex-direction: column;
+		justify-content: space-evenly;
+		flex-wrap: nowrap;
+		}
+		}
+	
 }
 
+header, body, footer {
+.center-column();
+}
+
+/*header*/
+header{
+	@media (max-width: 500px) {
+			border: none;
+		}
+	width:90%;
+	border:1px solid @border-color;
+	.content-cube();
+	h1{
+			@media (max-width: 500px){
+				font-size: 2rem;
+			}
+		
+		@font-style;
+		padding: 10px;
+	}
+	nav{
+		.navbar()
+		}	
+		@media (max-width: 500px) {
+			.topnav {
+				border:none;
+				padding-top:0px;
+				padding-bottom:0px;
+			}
+			.topnav a{
+				display: flex;
+				flex-flow: column;
+				height: 40px;
+				width:100%;
+				justify-content: space-around;
+				align-items: center;
+			}
+			a:hover { 
+				background-color: yellow;
+		}
+}
+
+
+/*body */
+body{
+	width:100%;
+	
+}
+
+.content{
+	.center-column();
+	border:1px solid @border-color;
+	width: 90%;
+	@media (max-width: 500px) {
+		border: none;
+	}
+
+	h2, h3 {
+		font-size:2rem;
+		margin:2%;
+		}
+
+	p{
+		.content-cube();
+		margin:2%;
+		}
+	.about, .work, .skills {
+		.content-cube();
+		 transform: scale(1, 1);
+		transition: transform 0.5s ease;
+		}
+}
+
+/*footer*/
+footer {
+	width:90%;
+	border:1px solid @border-color;
+	.content-cube();
+	.contact{
+	
+		h4{
+			font-size:2rem;
+			margin:2%;
+			}
+	}
+	nav{
+		.navbar()
+	}
+	@media (max-width: 500px) {
+		border: none;
+		.bottomnav {
+			display: none;
+		}
+	}
+}
+
+
+
+/*Mix ins */
+.center-column(){
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.content-cube(){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin:1%;
+	
+}
+
+.navbar(){
+	display: flex;
+	flex-wrap: wrap;
+	width:95%;
+	justify-content: space-around;
+	align-items: center;
+	margin:10px auto;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: lightblue;
+	border:1px solid black;
+		a {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: row;
+			width: 20%;
+			text-decoration: none;
+			margin:0 auto;
+			padding:10px;
+		}
+	
+}
+
+/*variables */
+@border-color:black;
+@font-style: {
+	font-family: Courier;
+	font-size: 1rem;
+}
