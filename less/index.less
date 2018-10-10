@@ -70,6 +70,8 @@ p{
 @h3-size:2.5rem;
 @h-bottom-margin:1rem;
 @page-max-width:800px;
+@phone-size:500px;
+@phone-font-size:2.6rem;
 .button(){
 	font-weight: bold;
 	text-decoration: none;
@@ -97,7 +99,10 @@ p{
 	display: flex;
 	flex-direction: column;
 
-	position: relative; //I think I need this for setting my footer at the bottom
+	@media (max-width:@phone-size) {
+		margin: 0rem .5rem;
+	}
+	// position: relative; //I think I need this for setting my footer at the bottom
 	
 	 .nav{
 		  display: flex;
@@ -107,6 +112,19 @@ p{
 			  text-decoration:none;
 			  margin-left:2rem;
 			  color:@link-color;
+
+			  @media (max-width:@phone-size) {
+				  margin:0rem;
+				  padding:1rem 0rem;
+				  font-size: 3rem;
+				  width: 100%;
+				  text-align: center;
+			  }
+		  }
+		  @media (max-width:@phone-size) {
+			  flex-direction: column;
+			  justify-content: center;
+			  align-items: center;
 		  }
 	 }
 
@@ -116,6 +134,12 @@ p{
 		 display: flex;
 		 flex-direction: column;
 		 margin-bottom: 2rem;
+		 @media (max-width:@phone-size) {
+			text-align: center;	 
+			font-size: @phone-font-size;
+		}
+
+
 
 		 h1{
 			 font-size: 5.6rem;
@@ -125,26 +149,34 @@ p{
 		 .header__img{
 			  max-width:250px;
 			  width: 100%;
+			  @media (max-width:@phone-size) {
+				max-width: 500px;
+			}
 		 }
 
 		 hr{
 			 width:100%;
 			 margin:2rem 0rem;
-		 }
-
-		 a{
-			 .button
+			 @media (max-width:@phone-size) {
+				border-top-width: .6em;
+			}
 		 }
 	 }
 }
 
 .resume{
 	display: flex;
-
+	@media (max-width:@phone-size) {
+		flex-direction: column;
+	}
 	.about-me{
 	   max-width: 50%;
 	   width:100%;
 	   padding-right: 1rem;
+	   @media (max-width:@phone-size) {
+			max-width: 100%;
+			font-size: @phone-font-size;	 
+		}
 	   h2{
 		   font-size: @h2-size;
 		   margin-bottom: @h-bottom-margin;
@@ -153,11 +185,24 @@ p{
 	.skills{
 	   max-width: 50%;
 	   width:100%;
+
+	   @media (max-width:@phone-size) {
+			font-size: @phone-font-size;
+			max-width: 100%;	 
+		}
+
 	   h3{
 		   font-size: @h3-size;
 		   margin-bottom: @h-bottom-margin;
+
+		   @media (max-width:@phone-size) {
+			margin-top: 1rem; 
+			}
 	   }
 	   li{
+		@media (max-width:@phone-size) {
+			text-align: center;	 
+		}
 		   padding:1rem;
 		   .thin-border();
 		   &:not(:nth-of-type(1)):not(:nth-last-of-type(1)) {

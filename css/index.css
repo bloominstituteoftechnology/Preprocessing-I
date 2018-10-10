@@ -147,7 +147,11 @@ p {
   margin: 25px auto;
   display: flex;
   flex-direction: column;
-  position: relative;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0rem 0.5rem;
+  }
 }
 .container .nav {
   display: flex;
@@ -159,12 +163,34 @@ p {
   margin-left: 2rem;
   color: black;
 }
+@media (max-width: 500px) {
+  .container .nav a {
+    margin: 0rem;
+    padding: 1rem 0rem;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .container .nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .container .header {
   background-color: #e4e0e0;
   padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+}
+@media (max-width: 500px) {
+  .container .header {
+    text-align: center;
+    font-size: 2.6rem;
+  }
 }
 .container .header h1 {
   font-size: 5.6rem;
@@ -174,27 +200,38 @@ p {
   max-width: 250px;
   width: 100%;
 }
+@media (max-width: 500px) {
+  .container .header .header__img {
+    max-width: 500px;
+  }
+}
 .container .header hr {
   width: 100%;
   margin: 2rem 0rem;
 }
-.container .header a {
-  font-weight: bold;
-  text-decoration: none;
-  background-color: green;
-  color: white;
-  max-width: 15rem;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 4Ipx;
+@media (max-width: 500px) {
+  .container .header hr {
+    border-top-width: 0.6em;
+  }
 }
 .resume {
   display: flex;
+}
+@media (max-width: 500px) {
+  .resume {
+    flex-direction: column;
+  }
 }
 .resume .about-me {
   max-width: 50%;
   width: 100%;
   padding-right: 1rem;
+}
+@media (max-width: 500px) {
+  .resume .about-me {
+    max-width: 100%;
+    font-size: 2.6rem;
+  }
 }
 .resume .about-me h2 {
   font-size: 3.5rem;
@@ -204,13 +241,29 @@ p {
   max-width: 50%;
   width: 100%;
 }
+@media (max-width: 500px) {
+  .resume .skills {
+    font-size: 2.6rem;
+    max-width: 100%;
+  }
+}
 .resume .skills h3 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 500px) {
+  .resume .skills h3 {
+    margin-top: 1rem;
+  }
+}
 .resume .skills li {
   padding: 1rem;
   border: 1px solid #e4e0e0;
+}
+@media (max-width: 500px) {
+  .resume .skills li {
+    text-align: center;
+  }
 }
 .resume .skills li:not(:nth-of-type(1)):not(:nth-last-of-type(1)) {
   border-top: none;
