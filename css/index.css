@@ -130,16 +130,19 @@ table {
 * {
   box-sizing: border-box;
 }
+.box {
+  width: 48%;
+}
 html,
 body {
   height: 100%;
-  font-family: monospace;
 }
 html .wrapper,
 body .wrapper {
   width: 100%;
   max-width: 900px;
   margin: auto;
+  font-family: 'Anonymous Pro';
   /* Navigation */
   /* Header */
   /* Content */
@@ -148,10 +151,27 @@ body .wrapper {
 html .wrapper a,
 body .wrapper a {
   text-decoration: none;
+  font-weight: 600;
 }
 html .wrapper p,
 body .wrapper p {
-  font-size: 1.5em;
+  font-size: 1.4em;
+}
+html .wrapper h1,
+body .wrapper h1 {
+  font-size: 3rem;
+  padding: 20px 0px 15px;
+  font-weight: bold;
+}
+html .wrapper h2,
+body .wrapper h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+html .wrapper h3,
+body .wrapper h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 html .wrapper .nav,
 body .wrapper .nav {
@@ -174,7 +194,6 @@ body .wrapper .nav a:last-child {
 html .wrapper .nav a:hover,
 body .wrapper .nav a:hover {
   font-weight: bold;
-  transform: scale(2);
 }
 html .wrapper header,
 body .wrapper header {
@@ -188,28 +207,27 @@ html .wrapper header img,
 body .wrapper header img {
   height: 300px;
   width: 300px;
-}
-html .wrapper header h1,
-body .wrapper header h1 {
-  font-size: 3rem;
-  padding: 20px 0px 15px;
+  animation: spin 3.5s ease-in-out 2s infinite alternate;
+  transform: transformX(50%);
 }
 html .wrapper header .sub-heading,
 body .wrapper header .sub-heading {
   font-size: 1.7em;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   border-bottom: 1px solid ;
 }
 html .wrapper header .sub-about,
 body .wrapper header .sub-about {
   font-size: 1.3em;
-  padding: 10px 0px;
+  padding: 30px 0px 15px;
 }
 html .wrapper header .btn,
 body .wrapper header .btn {
   padding: 15px 30px;
   border: 1px solid #000;
   margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
@@ -234,9 +252,21 @@ body .wrapper header .btn:hover {
     border-color: #000;
   }
 }
+@keyframes spin {
+  0% {
+    align-self: flex-start;
+  }
+  50% {
+    align-self: center;
+  }
+  100% {
+    align-self: flex-end;
+  }
+}
 html .wrapper .content,
 body .wrapper .content {
   /*top-content */
+  /*middle-content */
   /*bottom-content */
 }
 html .wrapper .content #about,
@@ -246,20 +276,18 @@ body .wrapper .content #about {
 }
 html .wrapper .content #about h2,
 body .wrapper .content #about h2 {
-  font-size: 2.5rem;
   padding: 27px 0px 13px;
-  font-weight: 800;
 }
 html .wrapper .content #about h3,
 body .wrapper .content #about h3 {
   font-size: 2rem;
   padding-top: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   font-weight: 600;
 }
-html .wrapper .content #about .box,
-body .wrapper .content #about .box {
-  width: 48%;
+html .wrapper .content #about .box p,
+body .wrapper .content #about .box p {
+  letter-spacing: 1.3pt;
 }
 html .wrapper .content #about .box ul,
 body .wrapper .content #about .box ul {
@@ -281,7 +309,7 @@ body .wrapper .content #about .box ul li:hover {
     background-color: darkseagreen;
   }
   100.0% {
-    background-color: tomato;
+    background-color: CornflowerBlue;
   }
 }
 html .wrapper .content #work,
@@ -305,11 +333,12 @@ body .wrapper .content #work table {
 html .wrapper .content #work tr,
 body .wrapper .content #work tr {
   border-top: 1px solid #bebebe;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 html .wrapper .content #work tr:first-child,
 body .wrapper .content #work tr:first-child {
   font-weight: bold;
+  font-size: 1.4rem;
   border-top: none;
   border-bottom: 2px solid #bebebe;
 }
@@ -325,6 +354,63 @@ html .wrapper .content #work tr td:first-child,
 body .wrapper .content #work tr td:first-child {
   font-weight: bold;
 }
+html .wrapper .content #contact,
+body .wrapper .content #contact {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px 15px;
+}
+html .wrapper .content #contact h3,
+body .wrapper .content #contact h3 {
+  margin-bottom: 20px;
+}
+html .wrapper .content #contact form,
+body .wrapper .content #contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+}
+html .wrapper .content #contact form input,
+body .wrapper .content #contact form input,
+html .wrapper .content #contact form textarea,
+body .wrapper .content #contact form textarea {
+  padding: 10px;
+  border: 1.5px solid CornflowerBlue;
+}
+html .wrapper .content #contact form input,
+body .wrapper .content #contact form input {
+  margin-bottom: 20px;
+}
+html .wrapper .content #contact .social,
+body .wrapper .content #contact .social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+html .wrapper .content #contact .social ul,
+body .wrapper .content #contact .social ul {
+  width: 100%;
+  align-items: flex-start;
+}
+html .wrapper .content #contact .social ul li,
+body .wrapper .content #contact .social ul li {
+  padding: 10px 0px;
+}
+html .wrapper .content #contact .social ul li a,
+body .wrapper .content #contact .social ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+}
+html .wrapper .content #contact .social ul li a .fab,
+body .wrapper .content #contact .social ul li a .fab,
+html .wrapper .content #contact .social ul li a .fa,
+body .wrapper .content #contact .social ul li a .fa {
+  font-size: 24px;
+  padding-right: 15px;
+}
 html .wrapper footer,
 body .wrapper footer {
   background-color: rgba(22, 22, 22, 0.5);
@@ -332,16 +418,22 @@ body .wrapper footer {
   text-align: center;
   padding: 25px 0px 40px;
   color: #fff;
+  font-size: 0.8rem;
 }
-@media all and (max-width: 500px) {
+/* Mobile Query */
+@media (max-width: 500px) {
   html .wrapper .nav nav,
   body .wrapper .nav nav {
     display: flex;
     justify-content: space-between;
     padding: 16px 10px;
     position: fixed;
-    background-color: #fff;
+    background-color: #000;
     width: 100%;
+  }
+  html .wrapper .nav nav a,
+  body .wrapper .nav nav a {
+    color: #fff;
   }
   html .wrapper .nav nav a:last-child,
   body .wrapper .nav nav a:last-child {
@@ -352,6 +444,11 @@ body .wrapper footer {
     padding: 0px 15px;
     align-items: center;
     text-align: center;
+  }
+  html .wrapper header .sub-about,
+  body .wrapper header .sub-about {
+    font-size: 1.2rem;
+    padding-top: 20px;
   }
   html .wrapper header .btn,
   body .wrapper header .btn {
