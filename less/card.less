@@ -1,0 +1,42 @@
+.card {
+  background-color: @color-grey;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  .heading-tertiary {
+    .heading-bold;
+    // text-transform: uppercase;
+    // font-weight: 700;
+    // margin-bottom: @mb-small;
+  }
+  &__item {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: @mb-small;
+    &--left {
+      h4 {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        @media @phone {
+          font-size: @main-font-size;
+        }
+      }
+      @media @phone {
+        font-size: 1.4rem;
+      }
+    }
+
+    &--right {
+      text-align: right;
+      .city {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #bbb;
+  }
+}
