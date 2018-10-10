@@ -48,12 +48,162 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+/* End of Reset*/
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
+
+@main-font: 'Roboto', Arial, sans-serif;
+@secondary-font: 'Montserrat', Arial, sans-serif;
+@main-bgcolor: rgb(233, 245, 255);
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.flex() {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mainButton() {
+	border: 1px solid black;
+	border-radius: 2px;
+	background-color: rgb(88, 88, 88);
+	color: white;
+	padding: 10px 25px;
+	max-width: 200px;
+
+	&:hover {
+		background-color: white;
+		color: rgb(88, 88, 88);
+	}
+}
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	width: 880px;
+	margin: 0 auto;
+	font-family: @main-font;
+	font-size: 1.6rem;
+}
+
+.container a {
+	text-decoration: none;
+}
+
+.navContainer {
+	.flex;
+	width: 100%;
+	
+	img.logo {
+		justify-content: flex-start;
+		width: 176px;
+		height: 122px;
+	}
+
+	nav {
+		.center;
+		justify-content: flex-end;
+		align-items: flex-end;
+		width: 80%;
+		padding: 20px 0;
+
+		a {
+			color: black;
+			padding: 3px 5%;
+		}
+	}
+}
+
+.topContainer {
+	.flex;
+
+	header {
+		.center;
+		.flex;
+		justify-content: space-around;
+		flex-direction: column;
+		width: 100%;
+		background-color: @main-bgcolor;
+		border-bottom: 1px solid gray;
+
+		h1 {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 4rem;
+			width: 100%;
+			text-align: center;
+			padding: 20px;
+		}
+		img {
+			border: 3px solid black;
+			max-width: 220px;
+			max-height: 220px;
+			width: 30%;
+			height: auto;
+			margin: 1% auto;
+		}
+		a.button {
+			.center;
+			.mainButton;
+			margin: 20px auto;
+
+		}
+	}
+}
+
+.middleContainer {
+	.flex;
+	.center;
+	justify-content: space-between;
+	margin-top: 30px;
+
+	.aboutSnippet {
+		width: 50%;
+		background-color: lightgray;
+		padding: 2%;
+
+		h2 {
+			font-size: 1.8rem;
+			font-weight: bold;
+			font-family: @secondary-font;
+			padding: 10px 1%;
+		}
+		p {
+			padding: 10px 1%;
+		}
+	}
+
+	.skills {
+		width: 50%;
+		border: 1px dashed lightgray;
+		padding: 2%;
+
+		h2 {
+			font-size: 1.8rem;
+			font-weight: bold;
+			font-family: @secondary-font;
+			padding: 10px 1%;
+		}
+		ul {
+			padding: 0 1%;
+
+			li {
+				padding: 10px 1%;
+				border-bottom: 1px solid lightgray;
+			}
+		}
+	}
+}
+
+
 
