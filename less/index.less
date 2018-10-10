@@ -16,7 +16,8 @@
 }
 
 .center-block() {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body {
@@ -44,8 +45,10 @@ body {
 }
 
 .container {
+    height: 100%;
     width: 1024px;
     background: white;
+    margin-bottom: -50px;
     .center-block;
     main {
         width: 98%;
@@ -136,6 +139,8 @@ body {
 .work_experience {
     .center-block;
     width: 95%;
+    border-radius: 15px;
+    overflow: hidden;
     h3 {
         font-size: 1.4rem;
         height: 50px;
@@ -146,7 +151,6 @@ body {
         color: @highlight;
     }
     table {
-        .testing;
         background-color: @hit_gray;
         width: 100%;
         font-size: 0.9rem;
@@ -158,9 +162,33 @@ body {
             vertical-align: middle;
             background-color: @granny_smith;
         }
+        td {
+            vertical-align: middle;
+            padding: 0 5px;
+        }
         td:last-child {
             width: 425px;
         }
-        &: nth-child(2n+3);
+        &:nth-child(2n + 3) {
+            background-color: @submarine;
+        }
+    }
+}
+
+.push {
+    height: 50px;
+}
+
+.contact {
+    .center-block;
+    width: 1024px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: @hit_gray;
+    a {
+        text-decoration: none;
+        color: black;
     }
 }
