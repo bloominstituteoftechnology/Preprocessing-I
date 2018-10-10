@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1
 }
 ol, ul {
 	list-style: none;
@@ -55,83 +55,158 @@ table {
 
 html, body {
     height: 100%;
-	margin-left:5%;
-	margin-right:5%;
 	font-size: 62.5%;
+}
+.mixin-0{
+	width:100%;
+	margin: 0 auto;
 }
 
 
 .container{
-	width:100%;
+     .mixin-0();
 }
-.mixin-1{}
-
-.nav-container{
-	width:90%;
-	height:80px;
+.mixin-1{
 	display:flex;
 	flex-direction: row;
-   border:1px solid grey;
-   //color:@color-basic;
-	justify-content: space-between;
-	background-color:wheat;
-	margin-left: 2%;
-	margin-right: 2%;
-	font-size: 2.2rem;
-	text-align:center;
-
-
+	justify-content: center;
 
 }
+.mixin-2{
+	text-align: center;
+	font-size:2.2rem;
+}
+.mixin-3{
 
-.nav-container .nav-list{
-
-	text-decoration:none;
-	font-size: 2.2rem;
+	text-align: center;
+	font-size: 1.6rem;
 
 }
+.mixin-4{
+
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+
+.nav-container {
+	width: 100%;
+	height: 80px;
+	.mixin-1();
+	border: 1px solid grey;
+
+	justify-content: space-around;
+	background-color: darkred;
+	//margin-left: 0%;
+	//margin-right: 2%;
+	.mixin-2();
+
+
+	}
+
+
+
+
+.nav-container a {
+	text-decoration: none;
+	color: black;
+}
+
 
 .intro {
 
-	margin: 0 auto;
 
 	width: 60%;
-	height: 400px;
-	background-color: lightblue;
+	height: 450px;
+	background-color:black;
+	margin-left:20px;
 
 	h5 {
-		font-size: 2.2rem;
-		text-align: center
+		.mixin-2();
+		color:white;
 	}
 
 	h6 {
 		font-style: italic;
-		font-size: 2.2rem;
+		.mixin-2();
+		color:darkred;
 
 	}
-	p{
-        padding-top: 2%;
+	p {
+		padding-top: 2%;
 		font-size: 1.6rem;
-		font-family: Georgia;
+		font-family: "Arial Narrow";
+		margin-left: 1%;
+		color: white;
+
+	}
+	.image-1 {
+
+		width: 25%;
+
+		//margin-left: 25%;
+		width: 30%;
+
+	}
+
+		@media(max-width:500px){
+
+		width: 80%;
+		height: 400px;
+		background-color: darkblue;
+
+		h5 {
+			.mixin-2;
+			//font-style: italic;
+
+		}
+
+		h6 {
+			font-style: normal;
+			.mixin-2;
+			color: whitesmoke;
+			font-style: italic;
+
+		}
+		p {
+			padding-top: 2%;
+			font-size: 1.4rem;
+			font-family: "Arial Hebrew";
+			font-style: italic;
+			margin-left: 1%;
+		}
+
+		.image-1{
+
+		width:30%;
+
+
+
+
+				margin-left:200px;
+				width:40%;
+
+
+
+
+		}
+
 	}
 }
 
-.mixin-2{
-	text-align: left;
-}
 
 .middle {
-	margin : 0 auto;
+	//margin : 0 auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 
 
 	.table {
-		width: 49%;
-		height:20px;
+		width: 59%;
+		height:50px;
 
-		font-size: 1.6rem;
+		font-size: 2rem;
 		h4{
 			.mixin-2();
 		}
@@ -140,34 +215,55 @@ html, body {
 	.highlights {
 		padding-top: 2%;
 		width:40%;
-		font-size: 1.6rem;
+		font-size: 1.8rem;
+	}
+
+    @media(max-width:500px){
+
+		//margin : 0 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		.table {
+			//width: 59%;
+			//height:50px;
+
+			font-size: 2rem;
+			h4 {
+				.mixin-2();
+			}
+		}
+
+		.highlights {
+			padding-top: 2%;
+			width: 40%;
+			font-size: 1.8rem;
+		}
 	}
 }
 
-.lower {
-	font-size: 1.6rem;
-	padding-top: 2%;
-	width : 100%;
-}
-
-table {
-	font-size: 1.6rem;
-	width : 100%;
-}
 
 
 #technicalSkill {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	//border-collapse: collapse;
-	width: 40%;
+	width: 50%;
+	margin-top:2%;
 }
 
 #technicalSkill td, #technicalSkill th {
 	border: 1px solid #ddd;
-	padding: 8px;
+	padding: 1%;
+	font-size: 1.8rem;
 }
 
-#technicalSkill tr:nth-child(even){background-color: #f2f2f2;}
+#technicalSkill tr:nth-child(even){background-color:lightgrey;}
+     @media(max-width:500px) {
+	#technicalSkill tr:nth-child(even){background-color: #f2f2f2;}
+
+
+}
 
 #technicalSkill tr:hover {background-color: #ddd;}
 
@@ -175,15 +271,16 @@ table {
 	padding-top: 2%;
 	padding-bottom: 2%;
 	text-align: left;
-	background-color: gray;
+	background-color: darkred;
 	color: white;
 }
 
 
-.mixin-3{
 
-	text-align: center;
+.lower {
 	font-size: 1.6rem;
+	padding-top: 2%;
+	width: 100%;
 
 }
 
@@ -194,15 +291,18 @@ table {
 	width: 100%;
 
 	h3{
-
-		.mixin-3();
+        text-align: center;
+		.mixin-3;
 	}
 }
 
+h1,h2,h3,h4,h5,h6{
 
+	font-family: "Arial Black";
+}
 #workHistory td, #workHistory th {
 	border: 1px solid #ddd;
-	padding: 8px;
+	padding: 1%;
 }
 
 #workHistory tr:nth-child(even){background-color: #f2f2f2;}
@@ -210,13 +310,117 @@ table {
 #workHistory tr:hover {background-color: #ddd;}
 
 #workHistory th {
-	padding-top: 12px;
-	padding-bottom: 12px;
+	.mixin-4();
 	text-align: left;
-	background-color: gray;
+	background-color: darkred;
 	color: white;
 }
 .contact{
+	padding-top: 2%;
+	font-family:"Arial Black" ;
 
-.mixin-3();
+    .mixin-3();
+	font-size: 2rem;
+
+	@media(max-width:500px){
+
+		.contact{
+			padding-top: 2%;
+			font-family:"Arial Black" ;
+			background-color: dodgerblue;
+
+			.mixin-3;
+			font-size: 2rem;
+		}
+
+	}
 }
+
+
+@media(max-width:500px) {
+
+	.container {
+		width: 100%;
+		height: 100%;
+
+	}
+
+	.nav-container {
+
+		height: 120px;
+		flex-direction: column;
+		align-items: center;
+		border: 1px solid black;
+
+		justify-content: space-between;
+		background-color: dodgerblue;
+		color: black;
+		margin-left: 0;
+		margin-right: 0;
+
+		.mixin-2();
+
+	}
+
+	.nav-container a {
+		text-decoration: none;
+		color: white;
+	}
+
+
+	#technicalSkill {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		//border-collapse: collapse;
+		width: 50%;
+		height: 320px;
+		margin-top: 2%;
+	}
+
+	#technicalSkill td, #technicalSkill th {
+		border: 1px solid #ddd;
+		padding: 1%;
+		font-size: 1.8rem;
+	}
+
+	#technicalSkill tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	#technicalSkill tr:hover {
+		background-color: #ddd;
+	}
+
+	#technicalSkill th {
+
+		text-align: left;
+		background-color: dodgerblue;
+		color: white;
+	}
+
+	#workHistory td, #workHistory th {
+		border: 1px solid black;
+		padding: 1%;
+	}
+
+	#workHistory tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	#workHistory tr:hover {
+		background-color: gray();
+	}
+
+	#workHistory th {
+		.mixin-4();
+		text-align: left;
+		background-color: darkblue;
+		color: white;
+	}
+
+
+}
+
+
+
+
+
