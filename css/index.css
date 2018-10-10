@@ -153,6 +153,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.uncentered-column {
+  display: flex;
+  flex-direction: column;
+}
 body {
   width: 90%;
   max-width: 900px;
@@ -178,10 +182,6 @@ header {
   padding: 40px 3%;
   text-align: center;
 }
-header img {
-  height: 250px;
-  margin-right: 3%;
-}
 header h1,
 header p,
 header button {
@@ -190,6 +190,7 @@ header button {
 header h1 {
   font-size: 3rem;
   font-weight: 800;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.596);
 }
 header p {
   font-size: 2.2rem;
@@ -209,10 +210,6 @@ header button {
     flex-direction: column;
     align-items: center;
   }
-  header img {
-    height: 175px;
-    max-width: 60%;
-  }
   header .header-info {
     display: flex;
     flex-direction: column;
@@ -224,9 +221,57 @@ header button {
     margin: 15px 0;
   }
 }
-@media (max-width: 500px) {
-  header img {
-    height: 150px;
+@media (min-width: 800px) {
+  header .card {
+    max-height: 350px;
+    width: 40%;
+  }
+  header .card:hover .content {
+    transform: rotateY(-0.5turn);
+  }
+  header .card .content {
+    width: 100%;
+    padding: 8em;
+    position: relative;
+    background-image: url('../img/header-photo.jpg');
+    background-size: cover;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+  }
+  header .card .front,
+  header .card .back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  header .card .back {
+    background-color: #003adb;
+    transform: rotateY(0.5turn);
+    padding: 2em;
+  }
+  header .card .back h3 {
+    font-size: 2rem;
+    transform: translateZ(100px);
+  }
+  header .card .back p {
+    transform: translateZ(50px);
+  }
+  header .card .back .speaker {
+    font-size: 1.4rem;
+  }
+  header .card .back::before {
+    content: '';
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    bottom: 1em;
+    left: 1em;
+    border: 1px solid #000;
+    transform: translateZ(25px);
   }
 }
 .project-container {
@@ -309,6 +354,7 @@ header button {
   display: flex;
   justify-content: space-between;
   height: 50vw;
+  max-height: 675px;
 }
 .bio-container .bio-info {
   padding-left: 7%;
@@ -316,14 +362,15 @@ header button {
   max-height: 100%;
 }
 .bio-container .bio-info h2 {
-  font-size: calc(26px + (32 - 26) * ((100vw - 300px) / (1900 - 500)));
+  font-size: calc(26px + (36 - 26) * ((100vw - 500px) / (1900 - 500)));
   margin-bottom: 35px;
 }
 .bio-container .bio-info p {
-  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1900 - 500)));
+  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1900 - 500)));
 }
 .bio-container img {
   height: 100%;
+  max-width: 50%;
 }
 @media (max-width: 800px) {
   .bio-container {
@@ -382,7 +429,11 @@ header button {
 }
 .history table td,
 .history table th {
-  width: 25%;
+  width: 28%;
+}
+.history table td:nth-child(1),
+.history table th:nth-child(1) {
+  width: 15%;
 }
 .history table tr {
   height: 40px;
@@ -407,6 +458,9 @@ footer address {
   justify-content: space-between;
   width: 75%;
 }
+footer address a {
+  text-decoration: none;
+}
 @media (max-width: 800px) {
   footer {
     font-size: 1.6rem;
@@ -414,6 +468,14 @@ footer address {
 }
 @media (max-width: 500px) {
   footer {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+  }
+  footer address {
+    display: flex;
+    flex-direction: column;
   }
 }
