@@ -63,12 +63,29 @@ html, body {
 @tablet-size: 600px;
 @desktop-size: 900px;
 
+@header-font: 'VT323', monospace;
+@body-font: 'Arvo', serif;
+
+// mixins
+.flex(@direction, @justify, @align) {
+	display: flex;
+	flex-direction: @direction;
+	flex-wrap: wrap;
+	justify-content: @justify;
+	align-items: @align;
+}
+
 // Global Styles
 html {
 	font-size: 62.5%;
+	body {
+		font-family: @body-font;
+	}
 }
 
-body {
+#container {
+	margin: 0 auto;
 	max-width: 1200px;
 }
+
 
