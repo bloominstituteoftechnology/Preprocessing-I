@@ -57,3 +57,180 @@ html, body {
     height: 100%;
 }
 
+/////////////////////////////
+@btnFtrColor:gray;
+@paraFntStack: Georgia, serif;
+
+html {
+	font-size:62.5%;
+	font-family: @paraFntStack;
+}
+
+.fontSize() {
+	font-size:1.6rem;
+}
+
+.TBpadding() {
+	padding: 2% 0%;
+}
+
+.LRpadding() {
+	padding: 0% 2%;
+}
+
+.allPadding() {
+	padding: 2%;
+}
+
+h2 {
+	font-size:2rem;
+}
+
+
+.container {
+	max-width:1000px;
+	width:100%;
+	margin: 0 auto;
+	.LRpadding();
+	.fontSize();
+
+
+	.header {
+		.TBpadding();
+		display: flex;
+		justify-content: flex-end;
+		.nav {
+			width:40%;
+			display: flex;
+			justify-content: space-between;
+			a {
+				color:black;
+				text-decoration: none;
+			}
+		}
+	}
+	
+	.topSection {
+		.TBpadding();
+		display: flex;
+		flex-direction: column;
+		background:lightgray;
+		img {
+			.allPadding();
+			width: 300px;
+			height: 300px;
+		}
+		h1 {
+			.allPadding();
+			font-size: 3rem;
+		}
+	
+		h3 {
+			.allPadding();
+			font-size: 1.8rem;
+		}
+	
+		p {
+			.allPadding();
+		}
+		button {
+			.allPadding();
+			width: 155px;
+			height: 45px;
+			margin-left:2%;
+			background:@btnFtrColor;
+			color:white;
+		}
+	}
+	
+	.middleSection {
+		.TBpadding();
+		width:100%;
+		display:flex;
+		flex-direction: row;
+		.listenUp {
+			width:50%;
+			display:flex;
+			flex-direction: column;
+			padding-right: 2%;
+		}
+		.skills {
+			width:50%;
+			display:flex;
+			flex-direction: column;
+			h2 {
+				.TBpadding();
+			}
+			p {
+				border:1px solid black;
+				padding:7px 0px;
+				padding-left: 2%;
+			}
+		}
+	}
+	
+	.bottomSection {
+		.TBpadding();
+		table {
+			table-layout: auto;
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+		
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	}
+	
+	.footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background:@btnFtrColor;
+		width:100%;
+		p {
+			padding: 1% 0% 3%;
+			color:white;
+		}
+	}
+
+
+
+	@media(max-width:500px) {
+		.header .nav {
+			width:100%;
+			justify-content: space-around;
+		}
+		.topSection {
+			align-items: center;
+		}
+		.middleSection {
+			flex-direction: column;
+			.listenUp {
+				width:100%;
+				.TBpadding();
+				h2 {
+					.TBpadding();
+				}
+			}
+			.skills {
+				width:100%;
+				.TBpadding();
+				h2 {
+					.TBpadding();
+				}
+			}
+		}
+		.bottomSection h2{
+			.TBpadding();
+		}
+	}	
+}
+
