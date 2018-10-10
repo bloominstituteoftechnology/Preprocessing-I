@@ -51,8 +51,16 @@ table {
 /* Set every element's box-sizing to border-box */
 
 //@custom-font: 'Helvetica', Arial, sans-serif;
+
 @custom-fh1: darkred;
-@custom-fh2: ;
+
+@custom-fh2: #F77B36;
+
+// crusta = #F77B36 = Location:http://chir.ag/projects/name-that-color/#F77B36
+
+@custom-fh3: coral;
+
+@custom-fh4:white;
 
 .headerspacing () {
 	margin-top: 2.5rem;
@@ -109,7 +117,7 @@ h5 {
 h1 {
 	font-size: 4.2rem;
 	line-height: 2rem;
-	color: darkred;
+	color: @custom-fh1;
 	display: flex;
 	align-self: center;
 	padding: 2.5%;
@@ -138,7 +146,7 @@ div{
 	margin: 4px 1%;
 }
 
-font
+// font
 // *{
 // 	box-sizing: border-box;
 // }
@@ -151,7 +159,7 @@ font
 	font-size: 1.6rem;
 	padding: 5px;
 
-		header{
+	.headerAll {
 		 max-width: 65%;
 		 border: 1px solid pink;
 		 display:flex;
@@ -161,12 +169,12 @@ font
 		 align-items:flex-end;
 		 font-size: 1.9rem;
 
-		 nav {
+		 .nav1 {
 			 width: 75%;
 			 display: flex;
 			 justify-content: space-around;
 			 font-size: 1.4rem;
-			 color: white;
+			 color: @custom-fh4;
 			 text-decoration: none;
 			 align-items: flex-end;
 			 .headerspacing();
@@ -180,36 +188,42 @@ font
 
 	 }
 
-	 footer {
-		 max-width: 65%;
-		 .center();
-		 padding: 10px;
-		 .footerspacing();
-
-		 nav {
-			 width: 80%;
-			 display: flex;
-			 justify-content: space-around;
-			 font-size: 1.4rem;
-			 color: white;
-			 text-decoration: none;
-			 align-items: flex-end;
-
-		 }
-
-	 }
+	 // footer {
+		//  max-width: 65%;
+		//  .center();
+		//  padding: 10px;
+		//  .footerspacing();
+	 //
+		//  nav {
+		// 	 width: 80%;
+		// 	 display: flex;
+		// 	 justify-content: space-around;
+		// 	 font-size: 1.4rem;
+		// 	 color: @custom-fh4;
+		// 	 text-decoration: none;
+		// 	 align-items: flex-end;
+	 //
+		//  }
+	 //
+	 // }
 	 .btm-Sec{
 		 background-color: darkgray;
 		 .center();
 		 flex-direction: row;
+		 @media (max-width:500px) {
+			 display: none;
+		 }
 
 		 .logo {
-			 width: 50%;
+			 width: 100px;
 			 height: auto;
-			 width: 47%;
-	 		 height: auto;
+			 // width: 47%;
+	 		 // height: auto;
 	 		 border-radius: 10px;
-	 		 border: 2px line white;
+	 		 border: 2px line @custom-fh4;
+			 @media (max-width:500px) {
+				 display: none;
+			 }
 
 		 }
 
@@ -219,10 +233,31 @@ font
 		 line-height: 2rem;
 		 padding: 8px;
 		 border-top: 2%;
+		 color: @custom-fh3;
 	}
 
 }
+footer {
+	max-width: 95%;
+	.center();
+	padding: 10px;
+	.footerspacing();
 
+	nav {
+		width: 80%;
+		display: flex;
+		justify-content: space-around;
+		font-size: 1.4rem;
+		color: @custom-fh4;
+		text-decoration: none;
+		align-items: flex-end;
+
+	}
+	h2 {
+		order: -1;
+	}
+
+}
 
  .home{
 	background:lightgray;
@@ -238,7 +273,7 @@ font
 
   .techMe2{
 	  width: 50%;
-	  background-color: white;
+	  background-color: @custom-fh4;
 
    }
 	}
@@ -249,7 +284,7 @@ font
 	.brobox();
 	.Education3 {
 		width: 45%;
-		background-color: white;
+		background-color: @custom-fh4;
 	}
 	.workHistory4 {
 		width: 50%;
@@ -260,9 +295,9 @@ font
 .btm_Sec {
 	.logo1 {
 		width: 47%;
-		height: auto;
+		height: 32%;
 		border-radius: 10px;
-		border: 2px line white;
+		border: 2px line @custom-fh4;
 	}
 	.contact {
 		width: 50%
