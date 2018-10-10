@@ -4,70 +4,187 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.padding-for-h {
+  padding: 0 15px;
+}
+
+h1 {
+  font-size: 5.2rem;
+  .padding-for-h();
+}
+
+h2 {
+  font-size: 3.8rem;
+  .padding-for-h();
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: #555555;
+  border: 0;
+  border-radius: 10px;
+}
+
+.cta {
+  h2 {
+    padding: 0 70px;
+  }
 }
 
 header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: #333333;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: inset -10px 10px 23px -4px rgba(102,102,102,1);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333333;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: inset -10px 10px 23px -4px rgba(102, 102, 102, 1);
 
-}
-nav {
+  nav {
     align-self: center;
     justify-self: flex-start;
     padding: 10px 10px;
@@ -75,13 +192,37 @@ nav {
     border: 0;
     border-left: 0px;
     border-radius: 0 25px 25px 0;
-		a {
-			color: ghostwhite;
-			text-decoration: none;
-			padding: 20px 20px;
-		}
-
+    a {
+      color: ghostwhite;
+      text-decoration: none;
+      padding: 20px 20px;
+    }
+  }
 }
 
-
+article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  section {
+    width: 80%;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px 20px;
+    display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	&:nth-child(even) {
+		flex-direction: row-reverse;
+		border-left: 0;
+		border-right: 2px solid black;
+	  }
+  }
+  
+}
 
