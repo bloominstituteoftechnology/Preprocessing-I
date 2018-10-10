@@ -59,10 +59,12 @@ html, body {
 		font-family: 'Playfair Display', serif;
 }
 
+// --Variables--
 @projects: 4;
 @border-color: rgba(211, 211, 211, 0.644);
 @background-color:rgb(221, 221, 221);
 
+// --Mixins--
 .flex-center {
 	display: flex;
 	justify-content: center;
@@ -95,6 +97,7 @@ html, body {
 		background-image: url('../img/photo@{index}.jpg');
 	}
 }
+// ---------------
 
 body {
 	width: 90%;
@@ -123,11 +126,6 @@ header {
 	background-color: @background-color;
 	padding: 40px 3%;
 	text-align: center;
-
-	// img {
-	// 	height: 250px;
-	// 	margin-right: 3%;
-	// }
 
 	h1, p, button {
 		margin: 30px 0;
@@ -165,8 +163,8 @@ header {
 }
 }
 
+// Styles to control the Card, but only above 800px
 header {
-
 @media(min-width:800px) {
 
 .card {
@@ -206,7 +204,7 @@ header {
 		padding: 2em;
 	
 		h3 {
-			font-size: 2rem;
+			font-size: 2.2rem;
 			transform: translateZ(100px);
 		}
 
@@ -215,7 +213,7 @@ header {
 		}
 
 		.speaker {
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 		}
 
 		&::before {
@@ -225,7 +223,7 @@ header {
 			right: 1em;
 			bottom: 1em;
 			left: 1em;
-			border: 1px solid #000;
+			border: 3px solid #000;
 			transform: translateZ(25px);
 		}
 	}
@@ -233,8 +231,7 @@ header {
 }
 }
 
-
-
+// Project thumbnails and links
 .project-container {
 	width: 100%;
 	.flex-around();
@@ -303,6 +300,7 @@ header {
 }
 }
 
+// Brief biography
 .bio-container {
 	.flex-between();
 	height: 50vw;
@@ -368,6 +366,7 @@ header {
 }
 }
 
+// Table with work history
 .history {
 	margin: 40px 0;
 
@@ -412,6 +411,7 @@ header {
 	}
 }
 
+// Contact information
 footer {
 	.flex-between();
 	margin-bottom: 20px;
