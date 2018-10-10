@@ -60,6 +60,7 @@ html {
 
 @main-background: Gainsboro;
 @top-left-margin: 3%;
+@button-color: gray;
 
 .max-width() {
 	width: 100%;
@@ -69,6 +70,7 @@ html {
   .main-container {
 	.max-width();
 	border: 1px solid black;
+	font-family: 'Niramit', sans-serif;
   }
 
 .menu {
@@ -100,11 +102,10 @@ html {
 	height: 690px;
 	//margin r/l 50px 
 	margin: 10px 6.25%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	background-color: @main-background;
-
-	@media (max-width: 500px) {
-		height: 430px;
-	}
 
 	.photo {
 		width: 40%;
@@ -145,11 +146,14 @@ html {
 
 	.button {
 		margin-left: @top-left-margin;
+		margin-bottom: 6%;
+		width: 130px;
+		text-align: center;
 		font-size: 1.5rem;
 		text-decoration: none;
 		border: .8px solid black;
 		padding: 1%;
-		background-color: gray;
+		background-color: @button-color;
 		color: white;
 	}
 }
@@ -157,9 +161,8 @@ html {
 .middle-container {
 	//max-width: 700px
 	max-width: 87.5%;
-	height: 500px;
 	//margin r/l 50px 
-	margin: 10px 6.25%;
+	margin:  6.25%;
 	display: flex;
 }
 
@@ -171,26 +174,46 @@ html {
 
 .listen-up h2 {
 	font-size: 3rem;
+	font-weight: bold;
+	margin-bottom: 3%;
+
+	@media (max-width: 500px) {
+		font-size: 2rem;
+	}
 }
 
 .listen-up p {
 	font-size: 2rem;
+
+	@media (max-width: 500px) {
+		font-size: 1rem;
+	}
 }
 
 .stuff {
-	width: 50%;
+	width: 46%;
 	margin-top: 2%;
+	margin-left: 4%;
 }
 
 .stuff h3 {
 	font-size: 2.3rem;
 	margin-bottom: 3%;
+	font-weight: bold;
+
+	@media (max-width: 500px) {
+		font-size: 2rem;
+	}
 }
 
 .stuff ul {
 	font-size: 2rem;
 	padding-bottom: 3%;
 	border: .5px solid lightgray;
+
+	@media (max-width: 500px) {
+		font-size: 1rem;
+	}
 }
 
 .stuff li {
@@ -201,5 +224,59 @@ html {
 
 .stuff .list {
 	border-bottom: .5px solid lightgray;
+}
+
+.bottom-container {
+	//max-width: 700px
+	max-width: 87.5%;
+	//margin r/l 50px 
+	margin:  6.25%;
+}
+
+.bottom-container h2 {
+	font-size: 2.3rem;
+	padding-bottom: 2%;
+	font-weight: bold;
+
+	@media (max-width: 500px) {
+		font-size: 2rem;
+	}
+}
+
+table {
+	width: 100%;
+	border: .5px solid lightgray;
+}
+
+table th {
+	font-weight: bold;
+}
+
+td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+	padding: 8px;
+	font-size: 1.5rem;
+
+	@media (max-width: 500px) {
+		font-size: 1rem;
+	}
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+footer {
+	//max-width: 700px
+	max-width: 87.5%;
+	//margin r/l 50px 
+	margin:  6.25%;
+	height: 40px;
+	display: flex;
+	background-color: @button-color;
+	justify-content: center;
+	align-items: center;
+	color: white;
 }
 
