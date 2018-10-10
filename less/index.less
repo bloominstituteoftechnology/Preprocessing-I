@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -55,14 +55,13 @@ table {
 
 html, body {
 	height: 100%;
-	font-size: 62.5%;
 }
 
 // Variables
 
-@heading-font: 'Anton', sans-serif;
+@heading-font: 'Quantico', sans-serif;
 
-@content-font: 'Libre Baskerville', serif;
+@content-font: 'Khula', sans-serif;
 
 @shark: #26262A; 
 
@@ -70,13 +69,31 @@ html, body {
 
 @main-color: @shark;
 
-// Pixin
+// Mixin
 
 .flex(@justify-value, @align-value, @direction) {
 	display: flex;
 	justify-content: @justify-value;
 	align-items: @align-value;
 	flex-direction: @direction;
+}
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+.button(@width, @height, @background, @color){
+	width: @width;
+	height: @height;
+	background: @background;
+	color: @color;
+	font-size: 1.6rem;
+	border-radius: 10px;
+	border: 1px solid black;
+	.center;
+	cursor: pointer;
 }
 
 // My styling starts here
@@ -93,6 +110,7 @@ header {
 	background-color: @shark;
 	color: white;
 	.flex(space-around, center, column);
+	font-family: @heading-font;
 
 	nav {
 		width: 100%;
@@ -102,16 +120,49 @@ header {
 			color: white;
 			text-decoration: none;
 			padding: 3% 5% 0% 2%;
-			font-size: 1.6rem;
+			font-size: 1.2rem;
 		}
-	} // nav
+	} 
 
 	h1 {
-		font-size: 5rem;
+		font-size: 3.7rem;
 		text-align: center;
 		line-height: 1.2;
 		padding: 7% 0;
-	} // h1
+	} 
 
+} 
+
+// Introduction Section
+
+.introduction {
+	background: @porcelain;
+	.center();
+	flex-direction: column;
+	padding: 5% 2%;
+	justify-content: space-evenly;
+	height: 520px;
+	font-family: @content-font;
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	button {
+		.button(170px, 60px, black, white);
+		padding: 0 1%;
+
+		&:hover {
+			background: white;
+			color: black;
+			border: 1px solid black;
+		}
+	}
 }
 
