@@ -54,6 +54,73 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: 'Titillium Web', sans-serif;
 }
 
+/*	code starts here	*/
+
+@standard-padding: 4%;
+@font-color: black;
+@top-content-color: #D3D3D3;
+@title-font: 1.5rem;
+
+.side-by-side() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.highlights() {
+	font-weight: bold;
+	color: gray;
+	font-size: @title-font;
+}
+
+.content-margin() {
+	margin-bottom: 2%;
+}
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+
+	header {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+
+		nav {	
+			width: 50%;
+			display: flex;
+			justify-content: space-between;
+			padding: @standard-padding;
+	
+			a {
+				text-decoration: none;
+				color:  @font-color;
+			}
+		}//	nav
+	}
+
+	.top-content {
+		background-color: @top-content-color;
+		padding: @standard-padding;
+		.content-margin();	
+
+		.presentation {
+			.side-by-side();
+			.content-margin();
+			.top-left h1{
+				.highlights();
+			}
+		}//	presentation	
+	}//	top-content
+
+	.middle-content {
+		.side-by-side();
+		.content-margin();
+	}
+	
+}// container
