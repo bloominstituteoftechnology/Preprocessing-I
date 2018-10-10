@@ -49,11 +49,225 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+// Variables
+@custom-font-primary: 'Encode Sans Condensed', sans-serif;
+@custom-font-secondary: 'Roboto', sans-serif;
+
+@main-color: rgb(68, 174, 223);
+@secondary-color: rgb(42, 132, 173);
+@light-color: rgb(184, 255, 226);
+@dark-color: rgb(139, 199, 174);
+
+
+// Mixins
+.devBox() {
+	border: 1px solid red;
+}
+
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column() {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
 		height: 100%;
+		font-size: 62.5%;
 }
 
+.container {
+	font-family: @custom-font-primary;
+
+	header {
+		nav {
+			.center();
+			font-size: 1.4rem;
+			background: @main-color;
+			
+			a {
+				color: @light-color;
+				margin: 2% 8%;
+				text-decoration: none;
+				font-family: @custom-font-secondary;
+
+				&:hover {
+					color: @dark-color;
+				}
+
+			}
+
+			@media(max-width: 500px) {
+				.column
+			}
+
+		}
+	}
+
+	.intro {
+		background: @light-color;
+		padding: 3%;		
+		.column;
+
+		h1 {
+			font-size: 4rem;
+			margin-bottom: 2%; 
+		}
+		img { 
+			width: 30%;
+		}
+		h2 {
+			font-size: 2.4rem;
+			padding: 1% 0;
+		}
+
+		h3 {
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: 1.6rem;
+			line-height: 1.5;
+			margin: 2% auto;
+		}
+
+	}
+
+	.skills {		
+		text-align: center;
+		padding: 5% 0;
+		font-size: 2.6rem;
+		h2 {
+			font-size: 3.6rem;
+			margin: 2%;
+			&:hover {
+				color: @dark-color;
+			}
+		}
+		ul {
+			.center;
+			flex-wrap: wrap;
+			li {
+				padding: 4%;
+
+				&:hover {
+					color: @dark-color;
+				}
+			}
+			@media (max-width: 500px) {
+				flex-direction: column;
+				li {
+					border-bottom: 1px solid #000;
+					width: 100%;
+				}
+			}
+		}
+
+	}
+
+	.work-history {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		padding: 2%;
+		background: @main-color;
+		line-height: 1.5;
+		h2 {
+			font-size: 2rem;
+			margin: 3% 1%;
+			width: 100%;
+		}
+		.card {
+			width: 45%;
+			padding: 2%;
+			margin-bottom: 2%;
+			font-size: 1.6rem;
+			border: 5px double @secondary-color;
+		}
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+			h2 {
+				font-size: 3rem;
+			}
+			.card {
+				width: 100%;
+				font-size: 2rem;
+				margin-bottom: 3%;
+			}
+		}
+	}
+
+	.contact {
+		.devBox;
+		font-size: 1.6rem;
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-start;
+		.center;
+		background-color: @secondary-color;
+		padding: 3%;
+		color: @light-color;
+
+		address {
+			margin-bottom: 2%;
+			line-height: 2;
+			width: 33%;
+		}
+
+		p {
+			width: 33%;
+			align-self: flex-start;
+			padding-top: 1%;
+		}
+
+		.connect-right {
+			width: 33%;
+			text-align: center;
+			text-transform: uppercase;
+
+			h3 {
+				margin-bottom: 6%;
+			}
+
+			.btn {
+				padding: 3%;
+				border-radius: 3px;
+				background: @light-color;
+				color: #000;
+
+				&:hover {
+					background: #000;
+					color: @light-color;
+				}
+			}
+		}
+
+		@media (max-width: 500px){
+			flex-direction: column;
+			align-items: flex-start;
+			font-size: 2rem;
+
+			.connect-right {
+				width: 100%;
+				text-align: left;
+				margin-top: 3%;
+			}
+			
+		}
+	}
+
+
+}
