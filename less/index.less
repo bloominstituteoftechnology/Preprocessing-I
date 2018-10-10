@@ -57,3 +57,161 @@ html, body {
     height: 100%;
 }
 
+@bg-color: darkturquoise;
+@padd: 4%;
+@dottedborder: 2px dotted black;
+@txtcolor: whitesmoke;
+@txtali: center;
+@bdrtop: 2px solid black;
+
+.container {
+	width: 100%;
+	max-width: 800px;
+}
+
+.sections {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: @bg-color;
+	padding: @padd;
+	border-bottom: 3px dotted black;
+
+	a {
+		color: @txtcolor;
+		text-decoration: none;
+	}
+
+	a:hover {
+	background-color: white;
+    color: black;
+    border: 2px solid pink;
+    padding: 10px 20px;
+    text-align: @txtali;
+    text-decoration: none;
+	}
+}
+
+.name {
+	display: flex;
+	margin: 4% auto;
+	justify-content: space-evenly;
+
+	.penny {
+		margin-left: 8%;
+		width: 80%;
+		border: @dottedborder;
+	}
+
+	#objective {
+		font-size: 1.8rem;
+    	font-weight: bold;
+    	margin: 5%;
+    	padding: @padd;
+		font-style: italic;
+		text-align: @txtali;
+	}
+}
+
+#objective #name {
+	border-bottom: @dottedborder;
+}
+
+.top {
+	text-align: @txtali;
+	border: @bdrtop;
+	padding: 5%;
+
+	h2 {
+		margin-bottom: 2%;
+		font-weight: bold;
+		text-decoration: underline;
+		font-size: 1.3rem;
+	}
+}
+
+.education {
+	text-align: @txtali;
+	color: @txtcolor;
+	background-color: @bg-color;
+	font-size: 2rem;
+	padding: @padd;
+	border-top: @bdrtop;
+	border-bottom: @bdrtop;
+}
+
+#education {
+	display: flex;
+	margin: 2%;
+	justify-content: center;
+	flex-direction: column;
+	text-align: @txtali;
+
+	#lambda {
+		border: @dottedborder;
+		padding: @padd;
+		margin: 2%;
+	}
+
+	#stem {
+		#lambda;
+	}
+}
+
+.work {
+	.education;
+}
+
+#work {
+	#education;
+
+	#towson {
+		border:@dottedborder;
+		padding: @padd;
+		margin: 2%;
+	}
+
+	#best {
+		#towson;
+	}
+}
+
+.skills {
+	.education;
+}
+
+#skills {
+	#education;
+	border: @dottedborder;
+	padding: @padd;
+}
+
+.contact {
+	.education;
+
+	nav {
+		display: flex;
+    	justify-content: space-evenly;
+	}
+
+	a {
+		color: @txtcolor;
+		text-decoration: none;
+	}
+}
+
+.contact {
+	background-color: white;
+	padding: @padd;
+	border-top: 2px solid @bg-color;
+	margin-top: 8%;
+
+	.github {
+		width: 80px;
+	}
+
+	.gmail {
+		width: 80px;
+		height: 80px;
+	}
+}
+
