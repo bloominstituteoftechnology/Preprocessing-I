@@ -132,7 +132,7 @@ table {
 // Variables
 @heading-font: "Open Sans", sans-serif;
 @non-heading-font: "Niramit", sans-serif;
-@mustard: #ffdb58; // for top container
+@mustard: #ffdb58; // For container colors
 @mine-shaft: #333333; // Text Color
 @emperor: #555555; // Buttons and footer section
 @limegreen: #32cd32; // Button hovering
@@ -188,19 +188,27 @@ h2,
 h3,
 h4,
 h5 {
+  color: @mine-shaft;
   font-family: @heading-font;
 }
 
 p,
 li {
+  color: @mine-shaft;
   font-family: @non-heading-font;
+}
+
+a {
+  color: @mine-shaft;
+  font-family: @heading-font;
 }
 
 h1 {
   font-size: 3.2rem;
 }
 
-h2 {
+h2,
+legend {
   font-size: 2.4rem;
 }
 
@@ -209,9 +217,25 @@ a {
 }
 
 p,
-li {
+li,
+label {
   font-size: 1.6rem;
   line-height: 1.5;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  border: none;
+  font-size: 1.6rem;
+  padding: 15px;
+  width: 100%;
+  background-color: white;
+  color: @emperor;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
 }
 
 .container {
@@ -359,5 +383,40 @@ footer {
   p {
     text-align: center;
     color: white;
+  }
+}
+
+// Contact.html
+
+.contact {
+  h1,
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .contact-section {
+    background: @mustard;
+    border-radius: 2.5%;
+    padding: 20px 5%;
+    margin: 50px 0;
+    .form {
+      fieldset {
+        .custom-layout(center, center);
+        flex-direction: column;
+
+        input,
+        select,
+        textarea {
+          margin-bottom: 20px;
+        }
+
+        .btn {
+          margin: 0 auto;
+          margin-top: 20px;
+          .custom-btn(50%, 40px, @emperor, white);
+          .custom-layout(center, center);
+        }
+      }
+    }
   }
 }
