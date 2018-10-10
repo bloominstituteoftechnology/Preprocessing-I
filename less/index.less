@@ -64,6 +64,9 @@ p{
 @main-color: rgb(228, 224, 224);
 @button-color:green;
 @link-color: black;
+@h2-size:3.5rem;
+@h3-size:2.5rem;
+@h-bottom-margin:1rem;
 .button(){
 	font-weight: bold;
 	text-decoration: none;
@@ -75,6 +78,9 @@ p{
 } 
 .thin-border(){
 	border:1px solid @main-color;
+}
+.cell-padding(){
+	padding:1.6rem 0rem;
 }
 
 // all of my code
@@ -132,20 +138,44 @@ p{
 	   width:100%;
 	   padding-right: 1rem;
 	   h2{
-		   font-size: 3rem;
-		   margin-bottom: 1rem;
+		   font-size: @h2-size;
+		   margin-bottom: @h-bottom-margin;
 	   }
 	}
 	.skills{
 	   max-width: 50%;
 	   width:100%;
-	   h2{
-		   font-size: 2rem;
-		   margin-bottom: 1rem;
+	   h3{
+		   font-size: @h3-size;
+		   margin-bottom: @h-bottom-margin;
 	   }
 	   li{
 		   padding:1rem;
 		   .thin-border();
 	   }
 	}
+}
+
+.work-history{
+	margin-top:2rem;
+	display: flex;
+	flex-direction: column;
+	h3{
+		font-size: @h3-size;
+		margin-bottom: @h-bottom-margin;
+	}
+
+	.history-table{
+		border-top: 1px solid @main-color;
+		th{
+			.cell-padding();
+		}
+		tr{
+			.cell-padding();
+		}
+	}
+}
+
+.footer{
+	text-align: center;
 }
