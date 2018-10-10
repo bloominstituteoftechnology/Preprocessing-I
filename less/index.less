@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -54,6 +54,258 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+}
+a, a:visited {
+	text-decoration: none;
+	text-align: center;
+	line-height: 1.2;
 }
 
+// Variables
+
+@heading-font: 'Quantico', sans-serif;
+
+@content-font: 'Khula', sans-serif;
+
+@shark: #26262A; 
+
+@porcelain: #EDEEEF;
+
+@main-color: @shark;
+
+// Mixin
+
+.flex(@justify-value, @align-value, @direction) {
+	display: flex;
+	justify-content: @justify-value;
+	align-items: @align-value;
+	flex-direction: @direction;
+}
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+.button(@width, @height, @background, @color){
+	width: @width;
+	height: @height;
+	background: @background;
+	color: @color;
+	font-size: 1.6rem;
+	border-radius: 10px;
+	border: 1px solid black;
+	.center;
+	cursor: pointer;
+}
+
+// My styling starts here
+
+.container {
+	max-width: 1024px;
+	padding: .5% .5%;
+	margin: 0 auto;
+
+	h2 {
+		font-size: 3rem;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	h3 {
+		font-size: 2rem;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	p {
+		font-size: 1.4rem;
+		text-align: center;
+		line-height: 1.2;
+	}
+}
+
+header {
+	width: 100%;
+	background-color: @shark;
+	color: white;
+	.flex(space-around, center, column);
+	font-family: @heading-font;
+
+	nav {
+		width: 100%;
+		.flex(space-around, center, row);
+
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 3% 5% 0% 2%;
+			font-size: 1.2rem;
+		}
+	} 
+
+	h1 {
+		font-size: 3.7rem;
+		text-align: center;
+		line-height: 1.2;
+		padding: 7% 0;
+	} 
+
+	@media(max-width: 500px) {
+		height: 520px;
+	}
+} 
+
+// Introduction Section
+
+.introduction {
+	background: @porcelain;
+	.center();
+	flex-direction: column;
+	padding: 5% 2%;
+	justify-content: space-evenly;
+	height: 520px;
+	font-family: @content-font;
+
+	button {
+		.button(170px, 60px, black, white);
+		padding: 0 1%;
+
+		&:hover {
+			background: white;
+			color: black;
+			border: 1px solid black;
+		}
+	}
+
+	@media(max-width: 500px) {
+		height: 700px;
+		h2, h3 {
+			padding: 3% 0;
+		}
+	}
+}
+
+// Skills Section
+
+.skills {
+	font-family: @content-font;
+	height: 620px;
+	.center();
+	flex-wrap: wrap;
+	align-items: baseline;
+	padding: 6% 0 4%;
+
+	h2 {
+		width: 100%;
+	}
+
+	.skills-container {
+		width: 30%;
+
+		img {
+			width: 100%;
+			height: auto;
+			padding: 5%;
+		}
+	}
+
+	@media(max-width: 500px) {
+		.flex(space-evenly, center, column);
+		height: 1000px;
+		align-content: space-around;
+
+		.skills-container {
+			width: 50%;
+			padding: 3% 0;
+		}
+	}
+}
+
+// Work History Section
+
+.work-history {
+	height: 660px;
+	background: @porcelain;
+	padding: 6% 0;
+
+	h2 {
+		padding-bottom: 3%;
+	}
+
+	.jobs-container {
+		.center();
+		flex-direction: column;
+		padding: 4% 0;
+
+		h3 {
+			padding-bottom: 2%;
+		}
+
+		a, a:visited {
+			width: 100%;
+			text-decoration: none;
+			color: black;
+			font-size: 1.4rem;
+			text-align: center;
+		}
+	
+		a:hover {
+			font-size: 1.6rem;
+		}
+	}
+
+	@media(max-width: 500px) {
+		height: 460px;
+	}
+}
+
+// Contact Section
+
+.contact {
+	.flex(center, center, column);
+	height: 300px;
+	
+	h2 {
+		padding-bottom: 2%;
+	}
+
+	p {
+		padding: 1% 0;
+	}
+
+	a, a:visited {
+		width: 100%;
+		text-decoration: none;
+		color: black;
+		text-align: center;
+		.button(160px, 60px, black, white)
+	}
+	@media(max-width: 500px) {
+		.flex(space-evenly, center, column);
+		align-content: space-around;
+	}
+}
+
+// Footer
+
+footer {
+	background: @shark;
+	.flex(space-around, center, row);
+	font-family: @heading-font;
+
+	nav {
+		width: 100%;
+		.flex(space-around, center, row);
+		padding-bottom: 3%;
+
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 3% 5% 0% 2%;
+			font-size: 1.2rem;
+		}
+	} 
+}
