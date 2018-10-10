@@ -140,6 +140,8 @@ table {
 @medium-font: 2.8rem;
 @large-font: 4.2rem;
 @accent-color: #4f7fe9;
+@headline-type: 'Work Sans', sans-serif;
+@paragraph-type: 'Taviraj', serif;
 
 body,
 html {
@@ -173,12 +175,21 @@ html {
 	margin: 5px 0;
 }
 
-
 .page-container {
 	.visible-width;
 
 	p {
 		font-size: @normal-font;
+	}
+
+	p, a {
+		font-family: @paragraph-type;
+		font-weight:lighter;
+	}
+
+	h1, h2, h3 {
+		font-family: @headline-type;
+		font-weight: 700;
 	}
 
 	h1 {
@@ -204,20 +215,16 @@ html {
 		text-decoration: none;
 		font-size: @normal-font;
 
-
 		&:hover {
 			color: #FFFFFF;
 		}
 	}
-
-
 
 	nav {
 		background-color: @accent-color;
 		.flex-rows;
 		.visible-width;
 		padding: 10px 5%;
-
 	}
 
 	.about-me {
@@ -230,7 +237,7 @@ html {
 		.about-text {
 			width: 50%;
 			@media (max-width: 500px) {
-				width: 100%
+				width: 100%;
 			}
 			.text-box;
 			.flex-columns;
@@ -253,7 +260,6 @@ html {
 		img {
 			width: 45%;
 			border: 2px inset @accent-color;
-
 			@media (max-width: 500px) {
 				width: 100%;
 			}
@@ -272,7 +278,7 @@ html {
 		.text-box;
 
 		.job {
-			margin-bottom:5px;
+			margin-bottom: 5px;
 
 			h3 {
 				font-size: @normal-font;
@@ -283,12 +289,9 @@ html {
 				margin-bottom: 5px;
 			}
 		}
-
-
-
 	}
+
 	.contact {
 		.text-box;
 	}
-
 }
