@@ -134,6 +134,14 @@ html,
 body {
   height: 100%;
 }
+.flex_sbt {
+  display: flex;
+  justify-content: space-between;
+}
+.flex_center {
+  display: flex;
+  justify-content: center;
+}
 html {
   font-size: 62.5%;
 }
@@ -155,12 +163,19 @@ header .name {
 header p {
   text-align: center;
   color: #2a6592;
+  font-size: 1.3rem;
 }
 header nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 10%;
   width: 100%;
+}
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -172,14 +187,29 @@ header nav a {
   padding: 5px;
   border-radius: 10px;
 }
+@media (max-width: 500px) {
+  header nav a {
+    width: 100%;
+    margin: 3px 0;
+    padding: 15px 0;
+  }
+}
 .main-content {
   display: flex;
   flex-wrap: wrap;
   padding: 15px 10%;
+  font-size: 1.3rem;
   background-color: #f0f0f0;
+  width: 100%;
 }
 .main-content .contact {
   width: 25%;
+}
+@media (max-width: 500px) {
+  .main-content .contact {
+    width: 100%;
+    text-align: center;
+  }
 }
 .main-content .contact h2 {
   font-size: 2rem;
@@ -189,30 +219,45 @@ header nav a {
   border-radius: 10px;
   padding: 5px 2%;
 }
+@media (max-width: 500px) {
+  .main-content .contact h2 {
+    width: 100%;
+  }
+}
 .main-content .contact p {
   padding: 5px 0;
 }
 .main-content .profile {
   display: flex;
-  width: 70%;
+  width: 75%;
+  font-size: 1.3rem;
+}
+@media (max-width: 500px) {
+  .main-content .profile {
+    width: 100%;
+  }
 }
 .main-content .profile img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   padding-right: 2%;
   border-right: 7px solid #8ec3eb;
 }
+@media (max-width: 500px) {
+  .main-content .profile img {
+    display: none;
+  }
+}
 .main-content .profile p {
-  padding-left: 2%;
-  padding-top: 2%;
+  padding: 3px 2%;
   width: 100%;
   border-top: 2px solid #8ec3eb;
   border-bottom: 2px solid #8ec3eb;
 }
 .skills {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: space-around;
   width: 100%;
   padding-top: 20px;
 }
@@ -225,34 +270,59 @@ header nav a {
   margin-bottom: 5px;
   border-radius: 10px;
 }
-.skills div {
+.skills .skill_container {
+  width: 30%;
+}
+@media (max-width: 500px) {
+  .skills .skill_container {
+    width: 100%;
+  }
+}
+.skills .skill_container ul {
+  list-style: square;
+}
+.skills .skill_container ul li {
+  padding: 7px 0;
+}
+.skills .skill_container .skill_properties {
+  margin: 0 auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  font-size: 1.5rem;
   border: 5px solid #8ec3eb;
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  justify-content: center;
   align-items: center;
+  background-color: #f6d8ac;
   padding: 20px 0;
 }
-.skills div h3 {
+@media (max-width: 500px) {
+  .skills .skill_container .skill_properties {
+    border-radius: 0;
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+.skills .skill_container .skill_properties h3 {
   display: flex;
   justify-content: center;
   width: 51%;
 }
-.skills div p {
+.skills .skill_container .skill_properties p {
   display: flex;
-  width: 51%;
   justify-content: center;
+  width: 51%;
 }
 .experience h2 {
+  width: 100%;
   font-size: 4rem;
-  background-color: #d3d3d3;
-  color: #2a6592;
-  border-radius: 10px;
-  margin: 5px 0;
   text-align: center;
+  color: #2a6592;
+  background-color: #d3d3d3;
+  margin-bottom: 5px;
+  border-radius: 10px;
 }
 .experience ul {
   list-style: square;
@@ -266,9 +336,14 @@ header nav a {
 }
 .experience ul li .year {
   background-color: #f6d8ac;
-  width: 15%;
+  width: 20%;
   padding: 5px 0;
   margin-bottom: 5px;
   border-radius: 10px;
   text-align: center;
+}
+@media (max-width: 500px) {
+  .experience ul li .year {
+    width: 40%;
+  }
 }
