@@ -55,13 +55,27 @@ table {
 
 html, body {
 	height: 100%;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size:  62.5%;
 }
-@main-color: lightgray;
+p{
+	line-height: 2rem;
+}
+@main-color: rgb(228, 224, 224);
 @button-color:green;
+@link-color: black;
 .button(){
 	font-weight: bold;
+	text-decoration: none;
+	background-color:@button-color;
+	color:white;
+	max-width:15rem;
+	text-align: center;
+	padding:1rem;
 } 
+.thin-border(){
+	border:1px solid @main-color;
+}
 
 // all of my code
 .container {
@@ -73,9 +87,11 @@ html, body {
 	 .nav{
 		  display: flex;
 		  justify-content: flex-end;
+		  margin-bottom:2rem;
 		  a{
 			  text-decoration:none;
 			  margin-left:2rem;
+			  color:@link-color;
 		  }
 	 }
 
@@ -84,16 +100,52 @@ html, body {
 		 padding:5rem 2rem;
 		 display: flex;
 		 flex-direction: column;
+		 margin-bottom: 2rem;
 
 		 h1{
-			 font-size: 4.6rem;
+			 font-size: 5.6rem;
+			 margin: 1rem 0rem;
 		 }
 
 		 .header__img{
 			  max-width:250px;
 			  width: 100%;
 		 }
-	 }
 
+		 hr{
+			 width:100%;
+			 margin:2rem 0rem;
+		 }
+
+		 a{
+			 .button
+		 }
+	 }
 }
 
+.resume{
+	display: flex;
+
+   
+	.about-me{
+	   max-width: 50%;
+	   width:100%;
+	   padding-right: 1rem;
+	   h2{
+		   font-size: 3rem;
+		   margin-bottom: 1rem;
+	   }
+	}
+	.skills{
+	   max-width: 50%;
+	   width:100%;
+	   h2{
+		   font-size: 2rem;
+		   margin-bottom: 1rem;
+	   }
+	   li{
+		   padding:1rem;
+		   .thin-border();
+	   }
+	}
+}
