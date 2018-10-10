@@ -61,16 +61,30 @@ html {
 @main-background: Gainsboro;
 @top-left-margin: 3%;
 @button-color: gray;
+@font: 'Niramit', sans-serif;
 
 .max-width() {
 	width: 100%;
 	max-width: 800px;
 }
 
+.set-width-margin() {
+	//max-width: 700px
+	max-width: 87.5%;
+	//margin r/l 50px 
+	margin-right: 6.25%;
+	margin-left: 6.25%;
+}
+
+.set-top-bottom-margin() {
+	margin-top: 6.25%;
+	margin-bottom: 6.25%;
+}
+
   .main-container {
 	.max-width();
 	border: 1px solid black;
-	font-family: 'Niramit', sans-serif;
+	font-family: @font;
   }
 
 .menu {
@@ -98,10 +112,12 @@ html {
 
 .top-container {
 	//max-width: 700px
-	max-width: 87.5%;
+	//max-width: 87.5%;
 	height: 690px;
 	//margin r/l 50px 
-	margin: 10px 6.25%;
+	.set-width-margin();
+	margin-top: 10px;
+	margin-bottom: 10px;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -159,10 +175,8 @@ html {
 }
 
 .middle-container {
-	//max-width: 700px
-	max-width: 87.5%;
-	//margin r/l 50px 
-	margin:  6.25%;
+	.set-width-margin();
+	.set-top-bottom-margin();
 	display: flex;
 }
 
@@ -227,10 +241,8 @@ html {
 }
 
 .bottom-container {
-	//max-width: 700px
-	max-width: 87.5%;
-	//margin r/l 50px 
-	margin:  6.25%;
+	.set-width-margin();
+	.set-top-bottom-margin();
 }
 
 .bottom-container h2 {
@@ -268,10 +280,8 @@ tr:nth-child(even) {
 }
 
 footer {
-	//max-width: 700px
-	max-width: 87.5%;
-	//margin r/l 50px 
-	margin:  6.25%;
+	.set-width-margin();
+	.set-top-bottom-margin();
 	height: 40px;
 	display: flex;
 	background-color: @button-color;
