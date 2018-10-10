@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -53,7 +53,47 @@ table {
     box-sizing: border-box;
 }
 
+@normal-font: 1.6rem;
+@medium-font: 2.8rem;
+@large-font: 4.2rem;
+
+@accent-color: #4f7fe9;
+
 html, body {
     height: 100%;
+		background-color: #406de0;
+		font-size: 62.5%;
 }
 
+.visible-width() {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.page-container {
+	.visible-width;
+
+	nav {
+		font-size: @normal-font;
+		display: flex;
+		justify-content: space-between;
+		.visible-width;
+		background-color: @accent-color;
+		padding: 10px 5%;
+
+		a {
+			text-decoration: none;
+
+			&:hover {
+				color: #FFFFFF;
+			}
+		}
+
+	}
+
+	h1 {
+		font-size: @large-font;
+	}
+
+}
