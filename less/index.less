@@ -315,6 +315,9 @@
 	
 }
 
+.mobile_nav {
+	display: none;
+}
 .main_nav_contain {
   display: flex;
   justify-content: center;
@@ -435,21 +438,124 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	background-color: @site-color2;
-	padding: 40px 0px 20px 0px;
+	padding: 40px 0px 40px 0px;
 	
 	.work_history_title {
 		padding: 0px 0px 30px 0px;
+		font-size: @title-font-size;
+		font-family: @main-font;
 	}
+
 	.grid {
 		display:flex;
 		flex-wrap: wrap;
 
-		.1 {
-			font-family: @paragraph-fonts;
+		nav {
+			padding: 0px 60px 0px 0px;
+
+			.first {
+				font-size: @title-font-size;
+				padding-bottom: 10px;
+			}
+			p {
+				font-family: @paragraph-fonts;
+				padding: 5px 0px 0px 0px;
+			}
 		}
 	}
-
 
 }
 
 
+.first_contact_div {
+	display: flex;
+	justify-content:center;
+	background-color: @site-color3;
+	flex-wrap: wrap;
+	padding: 0px 0px 30px 0px;
+		.contact {
+
+			h3 {
+				padding: 40px 0px 40px 0px;
+				font-family: @main-font;	
+				font-size: @title-font-size;
+			}
+		}
+}
+
+.copyright {
+	display:flex;
+	justify-content:center;
+	padding: 30px 0px 30px 0px;
+	background-color: @site-color1;
+
+		p {
+			font-family: @main-font;
+			font-size: @title-font-size;
+		}
+}
+
+@media (max-width: 500px) {
+	.intro_contain {
+
+		#intro_pic {
+			display: none;
+		}
+		.right_side_intro {
+			display:flex;
+			flex-wrap: wrap;
+			justify-content:center;
+			padding: 0px;
+			width: 60%;
+		}
+			.intro {
+			display:none;
+			}
+			.team_up {
+			margin: 0px;
+			}
+	}
+
+
+	.main_nav_contain {
+		display: none;
+	}
+	.mobile_nav{
+		display: flex;
+		flex-direction: column;
+		margin:auto;
+		align-items: center;
+	  	background-color: @site-color2
+	}
+
+		.nav_buttons_mobile, .nav_logo_mobile {
+			padding: 20px 0px 20px 0px;
+		  	color: #d5d2cc;
+		  	text-decoration: none;
+
+		}
+			.border {
+			  width: 100%;
+			  border-bottom: 1px solid black;
+			}
+	
+	.second_contain {
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:center;
+
+			.about {
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:center;
+				margin: 0px 0px 30px 0px;
+				width: 70%;		
+			}
+	}
+
+	.another_work_div {
+		padding: 40px 30px 40px 30px;
+	}
+
+
+}
