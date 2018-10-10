@@ -66,6 +66,20 @@ html, body {
 @header-font: 'VT323', monospace;
 @body-font: 'Arvo', serif;
 
+// Colors
+@main-color: @burgandy;
+@light-shades: @dawn-pink;
+@light-accent: @copperfield;
+@dark-shades: @heavy-metal;
+@dark-accent: @celery;
+
+// Color Pool
+@burgandy: #a1002d;
+@dawn-pink: #f3ede3;
+@copperfield: #de9672;
+@celery: #aebf57;
+@heavy-metal: #2c312e;
+
 // mixins
 .flex(@direction, @justify, @align) {
 	display: flex;
@@ -86,6 +100,30 @@ html {
 #container {
 	margin: 0 auto;
 	max-width: 1200px;
+	// Header Styles
+	header {
+		.flex(row, center, center);
+		width: 100%;
+		nav {
+			.flex(column, center, center);
+			width: 100%;
+			background-color: @main-color;
+			@media(min-width: @tablet-size){
+				flex-direction: row;
+				justify-content: space-around;
+			}
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.4rem;
+				padding: 5%;
+			}
+			
+
+		}
+		
+	}
+	
 }
 
 
