@@ -86,8 +86,17 @@ html {
 	}
 }
 
+
+
 html, body {
 	height: 100%;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	font-family: @secondary-font;
+	padding: 10px 1%;
 }
 
 .container {
@@ -171,35 +180,100 @@ html, body {
 		width: 50%;
 		background-color: lightgray;
 		padding: 2%;
+		.flex;
 
 		h2 {
-			font-size: 1.8rem;
-			font-weight: bold;
-			font-family: @secondary-font;
-			padding: 10px 1%;
+		
 		}
+
 		p {
 			padding: 10px 1%;
 		}
+
+		a {
+			.mainButton;
+		}
+
 	}
 
 	.skills {
 		width: 50%;
 		border: 1px dashed lightgray;
+		border-left: 0;
 		padding: 2%;
 
 		h2 {
-			font-size: 1.8rem;
-			font-weight: bold;
-			font-family: @secondary-font;
-			padding: 10px 1%;
+			text-align: right;
 		}
+
 		ul {
 			padding: 0 1%;
+			text-align: right;
 
 			li {
 				padding: 10px 1%;
 				border-bottom: 1px solid lightgray;
+
+				&:hover {
+					background-color: lightgray;
+					border-bottom: 1px solid white;
+				}
+			}
+		}
+	}
+}
+
+.bottomContainer {
+	.flex;
+	.center;
+
+	width: 100%;
+	margin-top: 20px;
+	justify-content: space-between;
+	border-bottom: 1px solid lightgray;
+
+	h2 {
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid lightgray;
+	}
+
+	.case {
+		width: 33%;
+		padding: 20px 3%;
+		.flex;
+		align-content: flex-start;
+		
+		p {
+			padding: 10px 1%;
+		}
+
+		a {
+			color: black;
+			font-family: @secondary-font;
+			font-size: 2rem;
+		}
+	}
+}
+
+footer {
+	.flex;
+	.center;
+
+	nav {
+		.flex;
+		.center;
+		
+		width: 100%;
+
+		a {
+			width: 20%;
+			color: black;
+			text-align: center;
+			padding: 20px 0;
+
+			&:hover {
+				background-color: @main-bgcolor;
 			}
 		}
 	}
