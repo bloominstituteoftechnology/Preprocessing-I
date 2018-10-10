@@ -57,3 +57,241 @@ html, body {
     height: 100%;
 }
 
+// Variables
+@custom-font: 'Helvetica', Arial, sans-serif;
+@custom-serif: Georgia, serif;
+
+// Color names here:  http://chir.ag/projects/name-that-color/#F77B36
+@main-color: salmon;
+
+// Mixins
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-font-style() {
+  color: white;
+  font-size: 3.5rem;
+}
+
+.black-font-style() {
+	color: black;
+	font-size: 2.5rem;
+  }
+
+.border-test() {
+	border: 1px solid red;
+}
+
+// .flex-box() {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// }
+
+// main styling
+
+h1, h2, h3, p, ul, a {
+	font-family: @custom-font;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+
+	header {
+		.center;
+
+		
+		// justify-content: space-between;
+
+		nav {
+			.center;
+			justify-content: space-around;
+			// border: 1px solid red;
+			width: 95%;
+			padding: 10px 0;
+
+			@media(max-width: 500px) {
+				// border: 10px dashed red;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				padding: 0;
+
+				a {
+					border-bottom: 1px solid black;
+					padding: 10px;
+					width: 100%;
+					.center;
+				}
+			  } // mobile
+		} // nav
+	} // header
+
+	.jumbotron {
+		// border: 1px solid red;
+		// .center;
+		position: relative;
+		text-align: center;
+		// color: white;
+		// height: 200px;
+
+		.main-pic {
+			width: 100%;
+			// width: 500px;
+		} 
+
+		.title {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			.white-font-style;
+			text-shadow: 2px 2px 5px black;
+			// font-family: @custom-serif;
+		}
+	} // jumbotron
+
+	.intro {
+		padding: 10px;
+		.center;
+		justify-content: space-around;
+		border-bottom: 1px solid rgb(46, 43, 190);
+		width: 95%;
+		// .border-test;
+		// width: 100%;
+
+		.first-sentence {
+			.black-font-style;
+			// .border-test;
+			width: 20%;
+
+			@media(max-width: 500px) {
+				// padding-right: 30px;
+				font-size: 2rem;			
+			}
+		}
+
+		p {
+			// .border-test;
+			width: 75%;
+			// width: 0%;
+
+			@media(max-width: 500px) {
+				padding: 40px 0 40px 40px;
+						
+			}
+		}
+	} // intro
+
+	.skills {
+		.center;
+		justify-content: space-around;
+		// flex-direction: column;
+		// flex-wrap: wrap;
+		// .border-test;
+		width: 95%;
+		padding: 20px;
+
+		.skills-left {
+			flex-direction: column;
+			// flex-wrap: nowrap;
+			.border-test();
+			border: 1px dashed darkblue;
+			// width: 30%;
+
+			@media(max-width: 500px) {
+				width: 35%;			
+			}
+
+			h2 {
+				.black-font-style;
+				font-size: 2rem;
+				padding-left: 5px;
+				padding-top: 5px;
+			}
+
+			ul {
+				padding: 8px;
+				// list-style-type: none;
+				// .border-test();
+			}
+
+			li {
+				list-style-type: none;
+			}
+		} // skills-left
+
+		.snow-pic {
+			width: 50%;
+		}
+	} // skills
+
+	.work-history {
+		.center;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 95%;
+		border-top: 1px solid rgb(206, 133, 145);
+
+		h2 {
+			// .black-font-style;
+			font-size: 1.5rem;
+			// border: 1px dotted black;
+			padding: 10px 8px 8px;
+		}
+
+		h3 {
+			// .black-font-style;
+			font-size: 1.2rem;
+			padding-bottom: 5px;
+		}
+
+		.job {
+			padding: 10px;
+		}
+	} // work-history
+
+	.contact {
+		width: 95%;
+		border-top: 1px solid salmon;
+		.center;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 8px;
+
+		.contact-top {
+			.center;
+			justify-content: space-between;
+			// .border-test;
+			width: 95%;
+			padding: 8px 0;
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			.button {
+				border: 1px solid black;
+				padding: 12px;
+				border-radius: 7px;
+				@media(max-width: 500px) {
+					width: 20%;		
+				}
+			}
+		}
+
+		p {
+			font-size: .8rem;
+			padding: 8px 0;
+		}
+	} // contact
+} // container
