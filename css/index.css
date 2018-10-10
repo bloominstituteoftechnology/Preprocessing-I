@@ -3936,7 +3936,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: #444;
+  background-color: #444444;
   font-size: 1.8rem;
 }
 html,
@@ -3972,7 +3972,7 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: #333333;
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 10px;
   padding: 20px 0;
   box-shadow: inset -10px 10px 23px -4px #666666;
@@ -3981,7 +3981,7 @@ header nav {
   align-self: center;
   justify-self: flex-start;
   padding: 30px 10px;
-  background-image: linear-gradient(#333333, black, #333333);
+  background-image: linear-gradient(#333333, #000000, #333333);
   border: 0;
   border-left: 0px;
   border-radius: 0 25px 25px 0;
@@ -4000,8 +4000,8 @@ article {
 }
 article section {
   width: 80%;
-  border-left: 3px solid black;
-  border-bottom: 3px solid black;
+  border-left: 3px solid #000000;
+  border-bottom: 3px solid #000000;
   border-radius: 10px;
   margin: 20px 0;
   padding: 20px 20px;
@@ -4012,8 +4012,8 @@ article section {
   box-shadow: -10px 10px 30px 0px #808080;
 }
 article section h2 {
-  border-bottom: 3px solid black;
-  border-right: 3px solid black;
+  border-bottom: 3px solid #000000;
+  border-right: 3px solid #000000;
   box-shadow: 10px 10px 30px 0px #808080;
   border-radius: 10px;
   padding: 10px;
@@ -4120,20 +4120,56 @@ article section ul li span {
 article section:nth-child(even) {
   align-items: flex-end;
   border-left: 0;
-  border-right: 3px solid black;
+  border-right: 3px solid #000000;
   box-shadow: 10px 10px 30px 0px #808080;
 }
 article section:nth-child(even) h2 {
   border-right: 0;
-  border-left: 3px solid black;
+  border-left: 3px solid #000000;
   box-shadow: -10px 10px 30px 0px #808080;
+}
+.darkTable {
+  font-family: "Arial Black", sans-serif;
+  border: 2px solid #000000;
+  background-color: #4a4a4a;
+  width: 100%;
+  height: 200px;
+  margin: 20px 0;
+  text-align: center;
+  border-collapse: collapse;
+}
+.darkTable td,
+.darkTable th {
+  border: 1px solid #4a4a4a;
+  padding: 15px 2px;
+}
+.darkTable thead {
+  background: #000000;
+  border-bottom: 3px solid #005d5d;
+}
+.darkTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: ghostwhite;
+  text-align: center;
+  border-left: 2px solid #4a4a4a;
+}
+.darkTable thead th:first-child {
+  border-left: none;
+}
+.darkTable tbody td {
+  font-size: 13px;
+  color: ghostwhite;
+}
+.darkTable tr:nth-child(even) {
+  background: #888888;
 }
 footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: #333333;
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 10px;
   padding: 20px 0;
   box-shadow: inset 10px 10px 23px -4px #666666;
@@ -4142,7 +4178,7 @@ footer nav {
   align-self: center;
   justify-self: flex-end;
   padding: 30px 10px;
-  background-image: linear-gradient(#333333, black, #333333);
+  background-image: linear-gradient(#333333, #000000, #333333);
   border: 0;
   border-left: 0px;
   border-radius: 25px 0 0 25px;
@@ -4154,4 +4190,119 @@ footer nav a {
 }
 .glitch {
   font-family: "Charmonman", cursive;
+}
+@media (max-width: 800px) {
+  header {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  header nav {
+    width: 95%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border-radius: 25px;
+  }
+  header nav a {
+    padding: 10px 20px;
+  }
+  header img {
+    width: 30%;
+    align-self: center;
+  }
+  footer {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  footer nav {
+    width: 95%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border-radius: 25px;
+  }
+  footer nav a {
+    padding: 10px 20px;
+  }
+  footer img {
+    width: 30%;
+    align-self: center;
+  }
+  .cta {
+    padding: 20px 15px;
+  }
+  article {
+    width: 100%;
+  }
+  article section {
+    width: 95%;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  header nav {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background: none;
+    border-radius: 0;
+  }
+  header nav a {
+    width: 95%;
+    text-align: center;
+    padding: 10px 20px;
+    background-image: linear-gradient(#333333, #000000, #333333);
+    border-radius: 25px;
+  }
+  header img {
+    width: 30%;
+    align-self: center;
+  }
+  footer {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  footer nav {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background: none;
+    border-radius: 0;
+  }
+  footer nav a {
+    width: 95%;
+    text-align: center;
+    padding: 10px 20px;
+    background-image: linear-gradient(#333333, #000000, #333333);
+    border-radius: 25px;
+  }
+  footer img {
+    width: 30%;
+    align-self: center;
+  }
+  .cta {
+    padding: 20px 15px;
+  }
+  .cta h1 {
+    font-size: 4.2rem;
+  }
+  article {
+    width: 100%;
+  }
+  article section {
+    width: 95%;
+  }
 }
