@@ -2,86 +2,86 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html,
-body,
-div,
-span,
+a,
+abbr,
+acronym,
+address,
 applet,
-object,
-iframe,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
+header,
+hgroup,
+html,
+i,
+iframe,
 img,
 ins,
 kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
 q,
+ruby,
 s,
 samp,
+section,
 small,
+span,
 strike,
 strong,
 sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
 summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
 time,
-mark,
-audio,
+tr,
+tt,
+u,
+ul,
+var,
 video {
   margin: 0;
   padding: 0;
@@ -115,10 +115,10 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote:before,
 blockquote:after,
-q:before,
-q:after {
+blockquote:before,
+q:after,
+q:before {
   content: '';
   content: none;
 }
@@ -130,33 +130,128 @@ table {
 * {
   box-sizing: border-box;
 }
-html,
-body {
+body,
+html {
   height: 100%;
   background-color: #406de0;
   font-size: 62.5%;
 }
 .page-container {
-  max-width: 1000px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 2%;
 }
-.page-container nav {
+.page-container p {
   font-size: 1.6rem;
-  display: flex;
-  justify-content: space-between;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #4f7fe9;
-  padding: 10px 5%;
-}
-.page-container nav a {
-  text-decoration: none;
-}
-.page-container nav a:hover {
-  color: #FFFFFF;
 }
 .page-container h1 {
   font-size: 4.2rem;
+  margin-bottom: 10px;
+}
+.page-container h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+.page-container ul {
+  list-style: circle;
+  list-style-position: inside;
+}
+.page-container ul li {
+  font-size: 1.6rem;
+}
+.page-container a {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+.page-container a:hover {
+  color: #FFFFFF;
+}
+.page-container nav {
+  background-color: #4f7fe9;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2%;
+  padding: 10px 5%;
+}
+.page-container .about-me {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px 0;
+}
+@media (max-width: 500px) {
+  .page-container .about-me {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.page-container .about-me .about-text {
+  width: 50%;
+  background-color: #4f7fe9;
+  box-shadow: 3px 3px #00295e;
+  padding: 5px 2%;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media (max-width: 500px) {
+  .page-container .about-me .about-text {
+    width: 100%;
+  }
+}
+.page-container .about-me .about-text p {
+  margin-bottom: 5px;
+}
+.page-container .about-me .about-text img {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+@media (max-width: 500px) {
+  .page-container .about-me .about-text img {
+    display: none;
+  }
+}
+.page-container .about-me img {
+  width: 45%;
+  border: 2px inset #4f7fe9;
+}
+@media (max-width: 500px) {
+  .page-container .about-me img {
+    width: 100%;
+  }
+}
+.page-container .skills {
+  background-color: #4f7fe9;
+  box-shadow: 3px 3px #00295e;
+  padding: 5px 2%;
+  margin: 5px 0;
+}
+.page-container .work-history {
+  background-color: #4f7fe9;
+  box-shadow: 3px 3px #00295e;
+  padding: 5px 2%;
+  margin: 5px 0;
+}
+.page-container .work-history .job {
+  margin-bottom: 5px;
+}
+.page-container .work-history .job h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.page-container .work-history .job:first-child {
+  margin-bottom: 5px;
+}
+.page-container .contact {
+  background-color: #4f7fe9;
+  box-shadow: 3px 3px #00295e;
+  padding: 5px 2%;
+  margin: 5px 0;
 }
