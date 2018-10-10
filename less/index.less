@@ -79,6 +79,12 @@ table {
   justify-content: center;
   align-items: center;
 }
+.lineUp(){
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
 
 .brobox() {
 	display:flex;
@@ -119,7 +125,7 @@ h1 {
 	line-height: 2rem;
 	color: @custom-fh1;
 	display: flex;
-	align-self: center;
+	align-self: flex-end;
 	padding: 2.5%;
 	// border-top: 2%;
 	.center();
@@ -160,26 +166,46 @@ div{
 	padding: 5px;
 
 	.headerAll {
-		 max-width: 65%;
+		 max-width: 99%;
 		 border: 1px solid pink;
+		 border-radius: 10px;
 		 display:flex;
-		 justify-content: space-between;
+		 justify-content:space-around;
 		 color: lightgray;
-		 background-color: gray;
+		 // background-color: gray;
 		 align-items:flex-end;
-		 font-size: 1.9rem;
+		 // font-size: 2.9rem;
+		 @media (max-width:500px) {
+ 			.lineUp();
+			width: 98%;
+
+ 		 }
 
 		 .nav1 {
-			 width: 75%;
+			 width: 85%;
 			 display: flex;
-			 justify-content: space-around;
+			 justify-content: space-between;
 			 font-size: 1.4rem;
 			 color: @custom-fh4;
 			 text-decoration: none;
 			 align-items: flex-end;
 			 .headerspacing();
+			 @media (max-width:600px) {
+	 			.lineUp();
+	 		 }
 
 			 a {
+				 font-size: 1.5rem;
+				 display: flex;
+				 justify-content: space-between;
+				 @media (max-width:600px) {
+		 			.lineUp();
+					justify-content: space-around;
+					font-size: 1.8rem;
+					padding: 15px;
+					width: 97%;
+
+		 		 }
 
 			 }
 
@@ -214,16 +240,14 @@ div{
 			 display: none;
 		 }
 
-		 .logo {
-			 width: 100px;
-			 height: auto;
-			 // width: 47%;
-	 		 // height: auto;
-	 		 border-radius: 10px;
-	 		 border: 2px line @custom-fh4;
-			 @media (max-width:500px) {
-				 display: none;
-			 }
+		 // .logo {
+			//  width: 100px;
+			//  height: auto;
+	 		//  border-radius: 10px;
+	 		//  border: 2px line @custom-fh4;
+			//  @media (max-width:700px) {
+			// 	 display: none;
+			//  }
 
 		 }
 
@@ -236,12 +260,21 @@ div{
 		 color: @custom-fh3;
 	}
 
-}
+
+
 footer {
 	max-width: 95%;
 	.center();
 	padding: 10px;
 	.footerspacing();
+	@media (max-width:650px) {
+	 .lineUp();
+	 justify-content: space-around;
+	 font-size: 1.8rem;
+	 padding: 15px;
+	 width: 97%;
+
+	}
 
 	nav {
 		width: 80%;
@@ -251,10 +284,18 @@ footer {
 		color: @custom-fh4;
 		text-decoration: none;
 		align-items: flex-end;
+		@media (max-width:600px) {
+		 .lineUp();
+		 justify-content: space-around;
+		 font-size: 1.8rem;
+		 padding: 15px;
+		 width: 97%;
 
 	}
 	h2 {
+		line-height: 2.0;
 		order: -1;
+		display: none;
 	}
 
 }
@@ -298,13 +339,17 @@ footer {
 		height: 32%;
 		border-radius: 10px;
 		border: 2px line @custom-fh4;
+		.logo {
+			width: 100px;
+			height: auto;
+			border-radius: 10px;
+			border: 2px line @custom-fh4;
+			@media (max-width:700px) {
+				display: none;
+			}
 	}
-	.contact {
-		width: 50%
-		border: 2px line white;
-	}
-
-
 }
-
-	// .contact
+	// .contact {
+	// 	width: 50%
+	// 	border: 2px line white;
+	// }
