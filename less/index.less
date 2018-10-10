@@ -13,47 +13,191 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
+
+/* START CODE HERE--------------------------------------------------------------------*/
+html {
+  background-color: black;
+  color: white;
+}
+
+
+/* MIXINS/VARIABLES AND OVERALL RULES ---------------------------------*/
+.row {
+  display: flex;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flexJustify {
+  display: flex;
+  justify-content: center;
+}
+
+@marginVariable: 40px;
+
+@fontColor: white;
+
+
+
+
+
+#container {
+
+  max-width: 880px;
+  margin: 0 auto;
+/* START --------------------------------------------------------------*/
+
+  
+  #start {
+    margin-top: @marginVariable;
+    .flexJustify;
+    align-items: center;
+    flex-direction: column;
+
+    #survey-corps {
+      margin-top: @marginVariable;
+      font-size: 4rem;
+    }
+
+    #authorized {
+      margin-top: @marginVariable;
+      text-decoration: none;
+      border: 1px white solid;
+      color: @fontColor;
+      padding: 2.5% 5%;
+      font-size: 2rem;
+    }
+  }
+
+  /*NAVBAR ----------------------------------------------------------*/
+
+  nav {
+    .flexJustify;
+    background-color: #990000;;
+    margin: @marginVariable 0;
+    padding: 25px 0;
+
+    ul {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      li {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: @fontColor;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  #infobox:target, #skills:target, #military-history:target, #contact {
+    display: block;
+  }
+  /* INFOBOX -------------------------------------------------*/
+
+  #infobox {
+    #info {
+      .flexJustify;
+      flex-basis: 50%;
+      align-items: center;
+    }
+    #erwin-salute {
+      display: flex;
+      flex-basis: 50%;
+    }
+
+    #description {
+      margin-top: @marginVariable;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* SKILLS -------------------------------------------------------*/
+
+  #skills {
+    #erwin-stats {
+      .flexJustify;
+      align-items: center;
+      flex-basis: 100%;
+
+    }
+
+    #skills-div {
+      margin-top: @marginVariable
+    }
+  }
+}
+
+
+
+@media (max-width:500px) {
+  #survey-corps, #authorized, ul {
+    font-size: 1rem;
+  }
+  
+}
+
+
+
+
+
+
 
