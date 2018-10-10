@@ -98,6 +98,7 @@ body {
 	border: 1px solid @secondary;
 	border-radius: @corners;
 	background-color: @tertiary;
+	box-shadow: 0 -3px 20px @secondary;
 }
 
 .intro {
@@ -181,8 +182,8 @@ body {
 			margin: 15px;
 			border: 1px solid @secondary;
 		}
-
-		background-color: @tertiary;
+		border: 1px solid @secondary;
+		//background-color: @tertiary;
 		height: 75%;
 		width: 28%;
 		border-radius: @corners;
@@ -207,6 +208,7 @@ body {
 			height: 200px;
 			width: 65%;
 			border: 1px solid @secondary;
+			.boxTheme;
 
 			.center;
 			align-items: center;
@@ -226,7 +228,7 @@ body {
 
 	.centerColumn;
 	align-items: center;
-	.boxTheme;
+	border: 1px solid @secondary;
 	width: 90%;
 	margin: 25px auto;
 
@@ -236,13 +238,17 @@ body {
 		margin: 25px 0;
 
 		p {
-			margin: 10px 0;
-			margin-bottom: 20px;
+			margin: 10px 0 10px 33%;
+			letter-spacing: 3px;
 		}
 
 		.exp__job__title {
 			font-size: 2.6rem;
 			margin: 5px 0;
+			.boxTheme;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
 			span {
 				font-size: 2rem;
@@ -251,12 +257,9 @@ body {
 		}
 
 		.exp__job__resp {
-			ul {
-				@media(max-width: 500px) {
-					list-style-type: none;
-				}
-				list-style-type: disc;
+			border-top: 1px solid @secondary;
 
+			ul {
 				li {
 					padding: 7px;
 				}
