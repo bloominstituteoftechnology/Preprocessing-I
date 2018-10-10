@@ -56,6 +56,11 @@ table {
 html, body {
 	height: 100%;
 }
+a, a:visited {
+	text-decoration: none;
+	text-align: center;
+	line-height: 1.2;
+}
 
 // Variables
 
@@ -115,6 +120,12 @@ html, body {
 		text-align: center;
 		line-height: 1.2;
 	}
+
+	p {
+		font-size: 1.4rem;
+		text-align: center;
+		line-height: 1.2;
+	}
 }
 
 header {
@@ -126,7 +137,7 @@ header {
 
 	nav {
 		width: 100%;
-		.flex(flex-end, center, row);
+		.flex(space-around, center, row);
 
 		a {
 			color: white;
@@ -191,4 +202,83 @@ header {
 			padding: 5%;
 		}
 	}
+}
+
+// Work History Section
+
+.work-history {
+	height: 660px;
+	background: @porcelain;
+	padding: 6% 0;
+
+	h2 {
+		padding-bottom: 3%;
+	}
+
+	.jobs-container {
+		.center();
+		flex-direction: column;
+		padding: 4% 0;
+
+		h3 {
+			padding-bottom: 2%;
+		}
+
+		a, a:visited {
+			width: 100%;
+			text-decoration: none;
+			color: black;
+			font-size: 1.4rem;
+			text-align: center;
+		}
+	
+		a:hover {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+// Contact Section
+
+.contact {
+	.flex(center, center, column);
+	height: 300px;
+	
+	h2 {
+		padding-bottom: 2%;
+	}
+
+	h3 {
+		padding: 1% 0;
+	}
+
+	a, a:visited {
+		width: 100%;
+		text-decoration: none;
+		color: black;
+		font-size: 1.4rem;
+		text-align: center;
+		.button(160px, 60px, black, white)
+	}
+}
+
+// Footer
+
+footer {
+	background: @shark;
+	.flex(space-around, center, row);
+	font-family: @heading-font;
+
+	nav {
+		width: 100%;
+		.flex(space-around, center, row);
+		padding-bottom: 3%;
+
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 3% 5% 0% 2%;
+			font-size: 1.2rem;
+		}
+	} 
 }
