@@ -53,12 +53,13 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
+html {
 	height: 100%;
 	font-size: 62.5%;
 }
 
-@main-background: lightgrey;
+@main-background: Gainsboro;
+@top-left-margin: 3%;
 
 .max-width() {
 	width: 100%;
@@ -67,7 +68,7 @@ html, body {
 
   .main-container {
 	.max-width();
-	border: 1px solid red;
+	border: 1px solid black;
   }
 
 .menu {
@@ -81,7 +82,7 @@ html, body {
 .menu-item {
 	text-decoration: none;
 	font-size: 1.5rem;
-	color: gray;
+	color: dimgray;
 	text-align: right;
 	padding-right: 4%;
 	transition: 2s;
@@ -96,15 +97,109 @@ html, body {
 .top-container {
 	//max-width: 700px
 	max-width: 87.5%;
+	height: 690px;
 	//margin r/l 50px 
 	margin: 10px 6.25%;
-	border: 1px solid blue;
+	background-color: @main-background;
+
+	@media (max-width: 500px) {
+		height: 430px;
+	}
+
+	.photo {
+		width: 40%;
+		margin-left: @top-left-margin;
+		margin-top: 7%;
+	}
+
+	h1 {
+		font-size: 5rem;
+		margin-left: @top-left-margin;
+		margin-top: 1%;
+
+		@media (max-width: 500px) {
+			font-size: 3rem;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-left: @top-left-margin;
+		margin-right: 5%;
+		margin-top: 1%;
+		padding-bottom: 20px;
+		border-bottom: 1px solid gray;
+	}
+
+	p {
+		padding-top: 20px;
+		font-size: 1.5rem;
+		margin-left: @top-left-margin;
+		margin-right: 10%;
+		margin-bottom: 3%;
+
+		@media (max-width: 500px) {
+			margin-bottom: 7%;
+		}
+	}
+
+	.button {
+		margin-left: @top-left-margin;
+		font-size: 1.5rem;
+		text-decoration: none;
+		border: .8px solid black;
+		padding: 1%;
+		background-color: gray;
+		color: white;
+	}
 }
 
 .middle-container {
 	//max-width: 700px
 	max-width: 87.5%;
-	//margin r/l 50px
+	height: 500px;
+	//margin r/l 50px 
 	margin: 10px 6.25%;
-	border: 1px solid green;
+	display: flex;
 }
+
+.listen-up {
+	width: 48%;
+	margin-right: 2%;
+	margin-top: 2%;
+}
+
+.listen-up h2 {
+	font-size: 3rem;
+}
+
+.listen-up p {
+	font-size: 2rem;
+}
+
+.stuff {
+	width: 50%;
+	margin-top: 2%;
+}
+
+.stuff h3 {
+	font-size: 2.3rem;
+	margin-bottom: 3%;
+}
+
+.stuff ul {
+	font-size: 2rem;
+	padding-bottom: 3%;
+	border: .5px solid lightgray;
+}
+
+.stuff li {
+	padding-bottom: 3%;
+	padding-top: 3%;
+	padding-left: 4%;
+}
+
+.stuff .list {
+	border-bottom: .5px solid lightgray;
+}
+
