@@ -54,6 +54,64 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+
+// Variables
+
+@heading-font: 'Anton', sans-serif;
+
+@content-font: 'Libre Baskerville', serif;
+
+@shark: #26262A; 
+
+@porcelain: #EDEEEF;
+
+@main-color: @shark;
+
+// Pixin
+
+.flex(@justify-value, @align-value, @direction) {
+	display: flex;
+	justify-content: @justify-value;
+	align-items: @align-value;
+	flex-direction: @direction;
+}
+
+// My styling starts here
+
+.container {
+	max-width: 950px;
+	padding: .5% .5%;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+
+header {
+	width: 100%;
+	background-color: @shark;
+	color: white;
+	.flex(space-around, center, column);
+
+	nav {
+		width: 100%;
+		.flex(flex-end, center, row);
+
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 3% 5% 0% 2%;
+			font-size: 1.6rem;
+		}
+	} // nav
+
+	h1 {
+		font-size: 5rem;
+		text-align: center;
+		line-height: 1.2;
+		padding: 7% 0;
+	} // h1
+
 }
 
