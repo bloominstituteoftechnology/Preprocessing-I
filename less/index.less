@@ -1,59 +1,230 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+@font: 'Raleway', sans-serif;
+@primary-bgcolor: #fff;
+@secondary-bgcolor: #f3f3f3;
+@primary-fontcolor: #000;
+@blue: dodgerblue;
+@darkblue: #1B82E6;
+@gray: lightgrey;
+
+.border-radius (@radius: 8px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.box-shadow (@string: 0 1px 8px grey) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
 }
 
-html, body {
-    height: 100%;
+body{
+	font-family: @font;
 }
 
+h1{font-size: 2.4rem;}
+h2{font-size: 1.6rem;}
+p{font-size: 1rem;}
+
+.container{
+	width: 100%;
+
+	header{
+		width: 100%;
+		text-align: center;
+		padding: 20px 0;
+
+		a{
+			text-decoration: none;
+			color: black;
+			padding: 0 15px;
+			font-weight: 500;
+			transition: 0.2s;
+				&:hover{
+					color: @blue;
+				}
+		}
+	}
+
+	.bio{
+		width: 100%;
+		padding: 0 25px 25px 25px;
+
+		.img{
+			height: 300px;
+			background-image: url('../img/picMobile.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.bioText{
+			width: 100%;
+			padding: 0 25px 15px 25px;
+			text-align: center;
+
+			h1{
+				font-weight: 600;
+				padding: 30px 0 5px 0;
+			}
+
+			h2{
+				font-weight: 500;
+				padding: 0 0 25px 0;
+			}
+
+			p{line-height: 19px;}
+
+			button{
+				width: 45%;
+				height: 40px;
+				margin-top: 20px;
+				font-size: 1rem;
+				font-weight: 600;
+				color: white;
+				border: 1px solid white;
+				background-color: @blue;
+				cursor: pointer;
+				transition: 0.3s;
+				.border-radius;
+					&:hover{
+						background-color: @darkblue;
+					}
+			}
+		}
+	}
+
+	.top{
+		width: 100%;
+
+		.topLeft{
+			width: 100%;
+			padding: 30px;
+			background-color: @secondary-bgcolor;
+
+			h2{padding: 0 0 15px 0;}
+			p{line-height: 19px;}
+		}
+
+		.topRight{
+			width: 100%;
+			padding: 30px;
+
+			table{
+				width: 100%;
+				border: 2px solid @gray;
+				margin-top: 15px;
+				
+				tr{border: 2px solid @gray;}
+				td{padding: 7px;}
+			}
+		}
+	}
+
+	.bot{
+		width: 100%;
+
+		.botCont{
+			width: 100%;
+			padding: 30px;
+
+			h2{padding: 0 0 15px 0;}
+			li{padding: 7px 0 0 0;
+				span{font-weight: 500;}
+			}
+		}
+	}
+
+	footer{
+		width: 100%;
+		background-color: @secondary-bgcolor;
+
+		p{
+			padding: 15px 0 0 0;
+			text-align: center;
+		}
+
+		p:nth-child(2){
+			padding: 5px 0 15px 0;
+		}
+	}
+}
+
+@media (min-width: 500px){
+	.container{
+		.top{
+			display: flex;
+			justify-content: space-between;
+			background-color: @secondary-bgcolor;
+
+			.topLeft{
+				width: 48%;
+				background-color: none;
+			}
+
+			.topRight{width: 48%;}
+		}
+	}
+}
+
+@media (min-width: 850px){
+	.container{
+		header{
+			width: 850px;
+			margin: 0 auto;
+			padding: 25px 0 0 10px;
+			text-align: right;
+		}
+
+		.bio{
+			width: 850px;
+			margin: 0 auto;
+			padding: 0 0 35px 0;
+			display: flex;
+			flex-flow: row-reverse wrap;
+			justify-content: space-between;
+			align-items: center;
+
+			.img{
+				width: 46%;
+				margin-top: 30px;
+				height: 350px;
+				background-image: url('../img/pic.jpg');
+				.box-shadow;
+			}
+
+			.bioText{
+				width: 46%;
+
+				h2{padding: 0 0 35px 0;}
+				p{line-height: 21px;}
+			}
+		}
+
+		.top{
+			width: 850px;
+			margin: 0 auto;
+			padding: 30px 0;
+
+			.topLeft{
+				p{line-height: 21px;}
+			}
+		}
+
+		.bot{
+			width: 850px;
+			margin: 0 auto;
+			padding: 30px 0;
+		}
+
+		footer{
+			width: 850px;
+			margin: 0 auto;
+		}
+	}
+}
