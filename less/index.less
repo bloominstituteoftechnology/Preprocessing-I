@@ -4,6 +4,9 @@
     License: none (public domain)
 */
 
+/******************************************************
+ ******************** Reset Layout ********************
+ ******************************************************/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,7 +57,143 @@ table {
 }
 
 html, body {
-    background-color: red;
+    font-size: 62.5%;
+    font-family: @custom-font;
     height: 100%;
 }
 
+/******************************************************
+ *********************** Mixins ***********************
+ ******************************************************/
+// (example): .flex-position(center, center);
+.flex-position(@justifyContent, @alignItems) {
+  display: flex;
+  justify-content: @justifyContent;
+  align-items: @alignItems;
+}
+
+/******************************************************
+ ********************** Home Page *********************
+ ******************************************************/
+  // Fonts
+  @custom-font: 'Helvetica', Arial, sans-serif;
+  @custom-serif: Georgia, serif;
+  h1 {font-size: 5.32rem;}
+  h2 {font-size: 3.2rem;}
+  h3 {font-size: 2.08rem;}
+  h4 {font-size: 1.88rem;}
+  h5 {font-size: 1.63rem;}
+
+  //Colors -> http://chir.ag/projects/name-that-color/#E9ECEF
+  @Athens-Gray: #E9ECEF;
+  @Iron: #D1D4D7;
+
+  .container {
+    max-width: 870px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+  }
+
+  .home {
+    header {
+      .flex-position(flex-end, center);
+  
+      .main-nav {
+        padding: 3.6% 0;
+        text-decoration: none;
+        width: 34.9%;
+        .flex-position(space-between, center);
+  
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    } // header
+
+    .topContent {
+      flex-direction: column;
+      padding: 7.5% 3.9%;
+      background-color: @Athens-Gray;
+      padding-bottom: 10.8%;
+      margin-bottom: 4%;
+  
+      .selfie {
+        width: 37.3%;
+        margin-bottom: 1%;
+      }
+  
+      h1 {
+        margin-bottom: 2.3%;
+      }
+  
+      h4 {
+        padding-bottom: 3.7%;
+        border-bottom: 1px solid @Iron;
+        margin-bottom: 3%;
+      }
+  
+      h5 {
+        line-height: 1.5;
+        margin-bottom: 3.7%;
+      }
+  
+      .btnLetsTeamUp {
+        border: 1px solid gray;
+        border-radius: 3.5px;
+        background-color: gray;
+        padding: 1.3% 1.45%;
+        color: white;
+        text-decoration: none;
+        font-size: 2.1rem;
+      }
+    } // topContent
+
+    .midContent {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20%;
+      justify-content: space-between;
+      
+      .mid-left {
+        flex-direction: column;
+        max-width: 47.2%;
+
+        h2 {
+          margin-bottom: 2.3%;
+        }
+
+        p {
+          line-height: 153%;
+        }
+      }
+
+      .mid-right {
+        flex-direction: column;
+        width: 48.3%;
+        display: flex;
+
+        h3 {
+          font-size: 2.37rem;
+          margin-bottom: 2.3%;
+        }
+        
+        .goodStuff {
+          border: 1px solid gray;
+          border-radius: 5px;
+          display: flex;
+          height: 100%;
+          flex-direction: column;
+
+          li h4 {
+            padding: 3.86% 4.8%;
+            font-size: 1.64rem;
+          }
+
+          li .borderLineBetween {
+            border-bottom: 1px solid gray;
+          }
+        }
+      }
+    } // midContent
+  } 
