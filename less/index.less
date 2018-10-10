@@ -88,12 +88,21 @@ body {
 	font-family: 'Lato', sans-serif;
 	h2 {
 		font-size: 5rem;
+		@media (max-width: 500px) {
+			font-size: 3rem;
+		}
 	}
 	h4 {
 		font-size: 4rem;
+		@media (max-width: 500px) {
+			font-size: 2rem;
+		}
 	}	
 	p {
 		font-size: 2rem;
+		@media (max-width: 500px){
+			font-size: 1.6rem;
+		}
 	}
 	h1,
 	h2,
@@ -123,6 +132,9 @@ nav {
 		margin: 20px;
 		text-decoration: none;
 		transition: all 0.3s;
+		@media (max-width: 500px) {
+			margin: 20px 2%;
+		}
 		&:hover {
 			color: @green-color;
 		}
@@ -141,6 +153,9 @@ header {
 	margin-top: 55px;
 		h1 {
 			font-size: 8rem;
+			@media (max-width: 500px) {
+				font-size: 6rem;
+			}
 		}
 		
 }
@@ -159,7 +174,7 @@ header {
 		padding: 20px 0;
 	}
 
-	@media (max-width: 500px){
+	@media (max-width: 800px){
 		max-width: 100%;
 	}
 }
@@ -192,8 +207,24 @@ button:hover {
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
+		@media (max-width: 800px) {
+			padding: 2%;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			text-align: center;
+			padding: 5%;
+		}
 		h2 {
 			text-align: left;
+			@media (max-width: 500px) {
+				text-align: center;
+			}
+		}
+		p {
+			@media (max-width: 500px) {
+				padding-top: 20px;
+			}
 		}
 	}
 	
@@ -201,6 +232,9 @@ button:hover {
 		width: 50%;
 		display: flex;
 		align-items: center;
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 			img {
 				max-width: 100%;
 			}
@@ -212,18 +246,38 @@ button:hover {
 
 #experience {
 	.flex-row();
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
 	.experience__skills,
 	.experience__history {
 		width: 50%;
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 	}
 	.experience__skills {
 		text-align: right;
 		padding: 10%;
 		width: 50%;
+		@media (max-width: 800px) {
+			padding: 10% 5%;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 		ul li {
 			.table-list-space();
 			text-transform: none;
 			letter-spacing: 0;
+			@media (max-width: 500px) {
+				text-align: center;
+			}
+		}
+		h2 {
+			@media (max-width: 500px) {
+				text-align: center;
+			}
 		}
 	}
 	.experience__history {
