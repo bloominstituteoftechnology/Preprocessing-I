@@ -94,11 +94,15 @@ body {
 	flex-direction: column;
 }
 
+.boxTheme() {
+	border: 1px solid @secondary;
+	border-radius: @corners;
+	background-color: @tertiary;
+}
+
 .intro {
 	font-size: 1.6rem;
-
-	background-color: @tertiary;
-	border-radius: @corners;
+	.boxTheme;
 
 	margin: 50px 0;
 	.space-around;
@@ -169,7 +173,7 @@ body {
 
 		.skills_cat_list {
 			height: 200px;
-			width: 200px;
+			width: 65%;
 			border: 1px solid @secondary;
 
 			.centerColumn;
@@ -185,7 +189,7 @@ body {
 .exp {
 	.centerColumn;
 	align-items: center;
-	border: 1px solid red;
+	.boxTheme;
 	width: 80%;
 	margin: 25px auto;
 
@@ -218,5 +222,32 @@ body {
 				}
 			}
 		}
+	}
+}
+
+.contact {
+	.space-around;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 15px;
+	.boxTheme;
+
+	.contact__info {
+		font-size: 1.6rem;
+		margin-left: 7%;
+		.contact__info__head {
+			font-size: 2.4rem;
+			font-weight: bold;
+			padding: 10px;
+		}
+
+		.contact__info__text {
+			padding: 7px 0;
+		}
+	}
+
+	.contact__social {
+		.space-around;
+		width: 40%;
 	}
 }
