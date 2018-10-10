@@ -71,14 +71,58 @@ html, body {
 	align-items: center;
 }
 
-.highlights() {
-	font-weight: bold;
-	color: gray;
-	font-size: @title-font;
+.title-style() {
+	h1 {
+		font-weight: bold;
+		color: gray;
+		font-size: @title-font;
+		padding-bottom: 3%;
+	}	
 }
 
 .content-margin() {
-	margin-bottom: 2%;
+	margin-bottom: 4%;
+}
+
+.table-style(){
+	table {
+		font-family: arial, sans-serif;
+		width: 100%;
+	}
+	
+	td, th {
+		border: 1px solid black;
+		text-align: left;
+		padding: 2%;
+	}
+}
+
+.button-style() {
+	button{
+		margin-top: 2%;
+		padding: 1%;
+		border-radius: 15%;
+		border: 1px solid green;
+	}	
+}
+
+.nav-header-style() {
+	a {
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+}
+
+.footer-style() {
+	div {
+		width: 80%;
+		padding: 3%;
+		margin: 0 auto;
+		background-color: #99CCCC;
+		text-align: center;
+		font-size: 1.2rem;
+		margin-top: 4%;
+	}
 }
 
 .container {
@@ -101,8 +145,14 @@ html, body {
 				text-decoration: none;
 				color:  @font-color;
 			}
+
+			@media (max-width: 500px){
+				width: 100%;
+				.side-by-side();
+				.nav-header-style();
+			}//@media
 		}//	nav
-	}
+	}//	header
 
 	.top-content {
 		background-color: @top-content-color;
@@ -112,15 +162,75 @@ html, body {
 		.presentation {
 			.side-by-side();
 			.content-margin();
-			.top-left h1{
-				.highlights();
+			.top-left{
+				.title-style();
 			}
-		}//	presentation	
+
+			@media (max-width: 500px){
+				display: flex;
+				flex-wrap: wrap;
+				.top-right {
+				.content-margin();
+				}
+			}//	@media
+		}//	presentation
+		
+		.description {
+			h1 {
+				font-weight: bold;
+			}
+
+			.button-style();
+		}
 	}//	top-content
 
 	.middle-content {
 		.side-by-side();
 		.content-margin();
+
+		.middle-left {
+			width: 47%;
+			.title-style();
+		}
+
+		.middle-right {
+			width: 47%;
+			.title-style();
+			.table-style();
+		}
+
+		@media (max-width: 500px){
+			.middle-left {
+				width: 100%;
+				.content-margin();
+			}
+			.middle-right {
+				width: 100%;
+			}
+			display: flex;
+			flex-direction: column;
+		}//	@media
+	}//	middle-content
+
+	.bottom-content {
+		.content-margin();
+		.title-style();
+		.table-style();
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	}//	bottom-content
+
+	.contact {
+		.title-style();
+	}
+
+	footer {
+		.footer-style();
+	}
+
+	@media (max-width: 500px){
+		padding: @standard-padding;
 	}
 	
 }// container
