@@ -1,1 +1,423 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0 auto;
+  background-color: gainsboro;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+nav,
+h1,
+h2 {
+  font-family: 'Fahkwang', sans-serif;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.1rem;
+  padding-bottom: 2%;
+  font-weight: bold;
+}
+p {
+  font-size: 0.9rem;
+}
+section {
+  margin: 2.5% 0;
+  background-color: #fffbf4;
+}
+header {
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+header nav {
+  width: 34%;
+  position: fixed;
+  background-color: transparent;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav a {
+  text-decoration: none;
+  color: black;
+  background-color: #fffbf4;
+  text-align: left;
+  padding: 2% 1%;
+  width: 25%;
+}
+header nav a:hover {
+  text-decoration: underline;
+  color: #fffbf4;
+  background-color: black;
+}
+header nav a:first-child {
+  padding-left: 2%;
+}
+header nav a:last-child {
+  padding-right: 2%;
+}
+header nav:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 500px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0;
+  }
+  header nav {
+    width: 100%;
+    position: relative;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav a {
+    width: 100%;
+    text-align: center;
+  }
+  header nav a:first-child {
+    padding-left: 0;
+  }
+  header nav a:last-child {
+    padding-right: 0;
+  }
+}
+.introduction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 100%;
+  background-color: #fffbf4;
+  margin: 2% auto;
+  font-family: 'Fahkwang', sans-serif;
+}
+.introduction .brief-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 50%;
+  height: 100%;
+}
+.introduction .brief-intro .snow {
+  max-width: 100%;
+  margin: 0 auto;
+  opacity: 0.65;
+}
+.introduction .brief-intro .snow:hover {
+  opacity: 1;
+}
+.introduction .brief-intro div {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+.introduction .brief-intro h1 {
+  font-size: 2rem;
+  padding: 5% 0;
+}
+.introduction .brief-intro button {
+  border: none;
+  background: lightslategrey;
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  position: relative;
+  transition: all 500ms ease;
+  margin-top: 2.5%;
+}
+.introduction .brief-intro button:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transition: all 2s ease;
+}
+.introduction .brief-intro button:hover:before {
+  width: 100%;
+}
+.introduction .about-me {
+  height: 100%;
+  max-width: 50%;
+  padding: 0 1% 2% 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.introduction .about-me p {
+  padding: 1% 1% 0 1%;
+}
+@media screen and (max-width: 500px) {
+  .introduction {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .introduction .brief-intro {
+    max-width: 100%;
+    height: auto;
+  }
+  .introduction .brief-intro .snow {
+    display: none;
+  }
+  .introduction .brief-intro button {
+    padding: 5px;
+    text-align: center;
+  }
+  .introduction .about-me {
+    max-width: 100%;
+  }
+}
+.experience {
+  height: auto;
+  width: 100%;
+}
+.experience table {
+  height: 100%;
+  width: 100%;
+}
+.experience table .bold {
+  font-weight: bold;
+  padding-bottom: 1%;
+}
+.experience table tr {
+  border-bottom: 1px solid gainsboro;
+}
+.experience table td {
+  padding: 1% 0;
+  text-align: center;
+}
+.skills {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.skills .holden-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 45%;
+}
+.skills .holden-skills ul {
+  border: 1px solid gainsboro;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.skills .holden-skills ul li {
+  padding: 2% 0;
+  text-align: left;
+  padding-left: 0.5%;
+  width: 100%;
+}
+.skills .holden-skills ul .background {
+  background-color: #fffbf4;
+}
+.skills .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+  height: auto;
+}
+.skills .contact div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.skills .contact div label {
+  width: 100%;
+}
+.skills .contact div textarea {
+  width: 100%;
+  height: 100px;
+}
+@media screen and (max-width: 500px) {
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .skills .holden-skills {
+    width: 100%;
+  }
+  .skills .holden-skills ul {
+    width: 100%;
+  }
+  .skills .holden-skills ul li {
+    padding: 1% 0;
+  }
+  .skills .contact {
+    width: 100%;
+  }
+}
