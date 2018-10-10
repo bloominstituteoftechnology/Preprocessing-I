@@ -49,11 +49,209 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+// font-family: 'Libre Franklin', sans-serif;
+// font-family: 'Roboto Slab', serif;
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	max-width: 880px;
+	margin: 0 auto;
+	font-size: 62.5%;
+	font-family: 'Libre Franklin', sans-serif;
 }
+
+// Variables
+@grey-color: #808080;
+@default-font-size: 1.6rem;
+
+// Mixins
+.dev-mixin() {
+	border: 1px solid red;
+}
+
+.displayflex() {
+	display: flex;
+}
+
+
+
+.container {
+	width: 95%;
+	margin: 0 auto;
+
+	@media(max-width: 500px) {
+		
+	}
+
+	header {
+
+		nav {
+			.displayflex();
+			justify-content: flex-end;
+
+			@media(max-width: 500px) {
+				justify-content: center;
+		
+			}
+	
+			a {
+				padding: 3% 0 3% 3%;
+				text-decoration: none;
+				color: black;
+				font-size: 1.6rem;
+			}
+		}
+	}
+	
+	.top-content {
+		background-color: #e9ecef;
+		padding: 2%;
+		.displayflex();
+		flex-direction: column;
+	
+		img {
+			padding: 2%;
+			width: 30%;
+
+			@media(max-width: 500px) {
+				display: none;
+		
+			}
+	
+		}
+	
+		div {
+			width: 100%;
+			flex-wrap: wrap;
+			padding: 2%;
+			.displayflex();
+			flex-flow: column;
+	
+			h1 {
+				font-size: 4rem;
+				font-family: 'Roboto Slab', serif;
+			}
+	
+			h2 {
+				font-size: @default-font-size;
+				font-family: 'Roboto Slab', serif;
+			}
+	
+			p {
+				font-size: @default-font-size;
+				border-top: 1px solid lightgray;
+				padding-top: 3%;
+			}
+	
+			.button {
+				font-size: @default-font-size;
+				font-weight: bold;
+				color: white;
+				border: 1px solid @grey-color;
+				width: 18%;
+				height: 50px;
+				text-align: center;
+				margin: 2%;
+				background-color: darkgray;
+				border-radius: 4px;
+
+				@media(max-width: 500px) {
+					font-size: 1.3rem;
+					font-weight: none;
+					width: 50%;
+					height: 30px;
+		
+				}
+			}
+		}
+	}
+	
+	.middle-content {
+		.displayflex();
+		justify-content: space-between;
+	
+		div {
+			width: 50%;
+		}
+	
+	
+		div h3 {
+			font-size: 2rem;
+			padding-top: 4%;
+			font-family: 'Roboto Slab', serif;
+		}
+	
+		div p {
+			font-size: @default-font-size;
+			padding: 2% 4% 2% 0;
+			margin: 1% 5% 1% 0;
+		}
+	
+		div ul {
+			padding-top: 2%;
+		}
+	
+		div ul li {
+			border: 1px solid lightgrey;
+			padding: 2%;
+			font-size: @default-font-size;
+		}
+	}
+	
+	.bottom-content {
+		h3 {
+			font-size: 2.5rem;
+			padding-bottom: 2%;
+			font-family: 'Roboto Slab', serif;
+		}
+	
+		table {
+			width: 100%;
+	
+			tbody {
+				width: 100%;
+			}
+	
+			tr {
+				width: 100%;
+				border-top: 1px solid lightgrey;
+			}
+	
+			th {
+				font-size: @default-font-size;
+				font-weight: bold;
+				text-align: left;
+				padding: 2% 0;
+			}
+	
+			td {
+				font-size: @default-font-size;
+				padding: 2% 0;
+			}
+		}
+	}
+	
+	footer {
+		div {
+			background-color: @grey-color;
+			border: 1px solid red;
+			padding: 5%;
+			margin-top: 5%; 
+	
+			p {
+				font-size: 2rem;
+				color: white;
+				text-align: center; 
+				font-weight: bold;
+			}
+		}	
+	}
+}
+
+
 
