@@ -173,8 +173,19 @@ nav {
   margin-top: -55px;
   justify-content: flex-end;
 }
-nav div {
-  padding: 20px;
+nav a {
+  margin: 20px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+nav a:hover {
+  color: #9CA353;
+}
+@media (max-width: 500px) {
+  nav {
+    justify-content: space-around;
+    font-size: 20px;
+  }
 }
 header {
   background: url(../images/header-bg.jpg) no-repeat;
@@ -200,6 +211,11 @@ header h1 {
 .header__text h4 {
   padding: 20px 0;
 }
+@media (max-width: 500px) {
+  .header__text {
+    max-width: 100%;
+  }
+}
 button {
   max-width: 200px;
   width: 100%;
@@ -214,14 +230,14 @@ button:hover {
   color: #ffffff;
   border: 1px solid #ffffff;
 }
-.about {
+#about {
   display: flex;
   flex-direction: row;
 }
-.about div {
+#about div {
   width: 50%;
 }
-.about .about__desc {
+#about .about__desc {
   text-align: left;
   padding: 0 10%;
   display: flex;
@@ -229,65 +245,87 @@ button:hover {
   justify-content: center;
   align-items: flex-start;
 }
-.about .about__desc h2 {
+#about .about__desc h2 {
   text-align: left;
 }
-.about .about__img {
+#about .about__img {
   width: 50%;
   display: flex;
   align-items: center;
 }
-.about .about__img img {
+#about .about__img img {
   max-width: 100%;
 }
-.experience {
+@media (max-width: 500px) {
+  #about {
+    flex-direction: column;
+  }
+}
+#experience {
   display: flex;
   flex-direction: row;
 }
-.experience .experience__skills,
-.experience .experience__history {
+#experience .experience__skills,
+#experience .experience__history {
   width: 50%;
 }
-.experience .experience__skills {
+#experience .experience__skills {
   text-align: right;
   padding: 10%;
   width: 50%;
 }
-.experience .experience__skills ul li {
+#experience .experience__skills ul li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 5%;
+  padding: 5% 0;
   font-size: 2rem;
   text-transform: none;
   letter-spacing: 0;
 }
-.experience .experience__history {
+#experience .experience__history {
   color: #323232;
   background: #9CA353;
-  padding: 10%;
+  padding: 5%;
 }
-.experience .history-box {
+#experience .history-box {
   background: rgba(0, 0, 0, 0.2);
   color: #ffffff;
   height: 100%;
-  padding: 12%;
+  padding: 12% 7%;
   text-align: center;
 }
-.experience .history-box table {
+#experience .history-box table {
   margin-top: 40px;
   width: 100%;
 }
-.experience .history-box table th {
+#experience .history-box table th {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.experience .history-box table td {
+#experience .history-box table td {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 5%;
+  padding: 5% 0;
   font-size: 2rem;
+}
+#contact {
+  text-align: center;
+  padding: 5% 0;
+  background: #882145;
+  color: #ffffff;
+}
+#contact h4 {
+  font-size: 3rem;
+}
+#contact p {
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  #contact {
+    font-size: 100px;
+  }
 }
 footer {
   height: 100px;
-  background: rgba(50, 50, 50, 0.7);
+  background: #323232;
 }
 footer div {
   display: flex;
