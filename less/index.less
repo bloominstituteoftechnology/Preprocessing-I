@@ -135,7 +135,7 @@ table {
 @mustard: #ffdb58; // for top container
 @mine-shaft: #333333; // Text Color
 @emperor: #555555; // Buttons and footer section
-@limegreen: #32CD32; // Button hovering
+@limegreen: #32cd32; // Button hovering
 
 // Mixins
 .center() {
@@ -154,23 +154,23 @@ table {
   border: 1px solid red;
 }
 
-.custom-btn(@width, @height, @background, @color){
-	width: @width;
-	height: @height;
-	background: @background;
-	color: @color;
-	font-size: 2rem;
-	border-radius: 5px;
-	cursor: pointer;
-	
-	&:hover {
-	  background: @limegreen;
-	}
+.custom-btn(@width, @height, @background, @color) {
+  width: @width;
+  height: @height;
+  background: @background;
+  color: @color;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: @limegreen;
   }
+}
 
-
-
-
+.bottom-border() {
+  border-bottom: 1px solid @mine-shaft;
+}
 
 // CSS
 * {
@@ -220,6 +220,10 @@ li {
   margin: 0 auto;
 }
 
+.bold-text {
+  font-weight: 700;
+}
+
 .header {
   .custom-layout(flex-end, center);
   margin: 15px 0;
@@ -231,8 +235,8 @@ li {
     a {
       font-family: @heading-font;
       padding: 10px;
-	  text-decoration: none;
-	  color: @heading-font;
+      text-decoration: none;
+      color: @heading-font;
     }
   }
 }
@@ -241,8 +245,8 @@ li {
   .top-section {
     background: @mustard;
     border-radius: 2.5%;
-	padding: 20px 5%;
-	margin-bottom: 20px;
+    padding: 20px 5%;
+    margin-bottom: 20px;
 
     .resume-img {
       max-width: 200px;
@@ -256,7 +260,7 @@ li {
     h2 {
       padding-bottom: 30px;
       margin-bottom: 10px;
-      border-bottom: 1px solid @mine-shaft;
+      .bottom-border();
     }
     .qualifications-list {
       list-style: square inside none;
@@ -264,47 +268,58 @@ li {
       li {
         margin-bottom: 5px;
       }
-	}
-	
-	.btn {
-		margin-top: 20px;
-		.custom-btn(150px, 40px, @emperor, white);
-		.custom-layout(center, center);
-	}
+    }
+
+    .btn {
+      margin-top: 20px;
+      .custom-btn(150px, 40px, @emperor, white);
+      .custom-layout(center, center);
+    }
   }
 }
 
 .home {
-	.middle-section {
-		.custom-layout(space-between, flex-start);
-		margin-bottom: 20px;
+  .middle-section {
+    .custom-layout(space-between, flex-start);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    .bottom-border();
 
-		.skills-section, .education-section {
-			width: 49%;
-			padding: 15px 0;
+    .skills-section,
+    .education-section {
+      width: 49%;
+      padding: 15px 0;
 
-			h2 {
-				margin-bottom: 10px;
-			}
+      h2 {
+        margin-bottom: 10px;
+      }
 
-			ul {
-				padding-left: 10px;
-				list-style: disc inside none;
-			}
-
-			#bold-text {
-				font-weight: 700;
-			}
-		}
-	}
+      ul {
+        padding-left: 10px;
+        list-style: disc inside none;
+      }
+    }
+  }
 }
 
+.home {
+  .bottom-section {
+    margin-bottom: 40px;
+    .work-section {
+      margin-bottom: 20px;
+      ul {
+        padding-left: 10px;
+        list-style: disc inside none;
+      }
+    }
+  }
+}
 
 footer {
-	background: @emperor;
-	padding: 20px 0;
-	p {
-		text-align: center;
-		color: white;
-	}
+  background: @emperor;
+  padding: 20px 0;
+  p {
+    text-align: center;
+    color: white;
+  }
 }
