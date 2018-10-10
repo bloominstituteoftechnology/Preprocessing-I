@@ -1,22 +1,89 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,35 +92,206 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+@normal-font: 1.6rem;
+@medium-font: 2.8rem;
+@large-font: 4.2rem;
+@accent-color: #4f7fe9;
+@headline-type: 'Work Sans', sans-serif;
+@paragraph-type: 'Taviraj', serif;
+
+body,
+html {
+	height: 100%;
+	background-color: #406de0;
+	font-size: 62.5%;
 }
 
-html, body {
-    height: 100%;
+.flex-rows() {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
+.flex-columns() {
+	display: flex;
+	flex-direction: column;
+}
+
+.visible-width() {
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+
+.text-box() {
+	background-color: @accent-color;
+	box-shadow: 3px 3px #00295e;
+	padding: 5px 2%;
+	margin: 5px 0;
+}
+
+.page-container {
+	.visible-width;
+
+	p {
+		font-size: @normal-font;
+	}
+
+	p, a {
+		font-family: @paragraph-type;
+		font-weight:lighter;
+	}
+
+	h1, h2, h3 {
+		font-family: @headline-type;
+		font-weight: 700;
+	}
+
+	h1 {
+		font-size: @large-font;
+		margin-bottom: 10px;
+	}
+
+	h2 {
+		font-size: @medium-font;
+		margin-bottom: 10px;
+	}
+
+	ul {
+		list-style: circle;
+		list-style-position: inside;
+
+		li {
+			font-size: @normal-font;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		font-size: @normal-font;
+
+		&:hover {
+			color: #FFFFFF;
+		}
+	}
+
+	nav {
+		background-color: @accent-color;
+		.flex-rows;
+		.visible-width;
+		padding: 10px 5%;
+	}
+
+	.about-me {
+		.flex-rows;
+		padding: 5px 0;
+		@media (max-width: 500px) {
+			.flex-columns;
+		}
+
+		.about-text {
+			width: 50%;
+			@media (max-width: 500px) {
+				width: 100%;
+			}
+			.text-box;
+			.flex-columns;
+			justify-content: flex-end;
+
+			p {
+				margin-bottom: 5px;
+			}
+
+			img {
+				width: 100%;
+				margin-top: 5px;
+				margin-bottom: 10px;
+				@media (max-width: 500px) {
+					display: none;
+				}
+			}
+		}
+
+		img {
+			width: 45%;
+			border: 2px inset @accent-color;
+			@media (max-width: 500px) {
+				width: 100%;
+			}
+		}
+	}
+
+	.why {
+		.text-box;
+	}
+
+	.skills {
+		.text-box;
+	}
+
+	.work-history {
+		.text-box;
+
+		.job {
+			margin-bottom: 5px;
+
+			h3 {
+				font-size: @normal-font;
+				font-weight: bold;
+			}
+
+			&:first-child {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.contact {
+		.text-box;
+	}
+}
