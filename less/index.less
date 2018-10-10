@@ -180,11 +180,12 @@ h2 {
 		border-left: 120px solid rgb(217, 233, 247);
 		border-right: 120px solid rgb(217, 233, 247);
 		border-radius: 120px;
-		background-color: @main-bgcolor;
+		
 
 		@media (max-width:500px) {	
 			border: 0;
 			border-radius: 0;
+			background-color: @main-bgcolor;
 		}
 
 		h1 {
@@ -277,6 +278,11 @@ h2 {
 
 		h2 {
 			text-align: right;
+
+			@media(max-width:500px){
+				width: 100%;
+				text-align: center;
+			}
 		}
 
 		ul {
@@ -335,6 +341,54 @@ h2 {
 			color: black;
 			font-family: @secondary-font;
 			font-size: 2rem;
+		}
+	}
+}
+
+.contactForm {
+	.flex;
+	.center;
+	width: 80%;
+	margin: 40px auto;
+	border: 1px solid lightgray;
+	padding: 40px 10%;
+
+	@media(max-width:500px) {
+		width: 100%;
+		background-color: @main-bgcolor;
+	}
+
+	form {
+		.flex;
+		.center;
+		width: 80%;
+		
+		@media(max-width:500px) {
+			width: 100%;
+		}
+
+		label {
+			
+		}
+
+		input {
+			width: 100%;
+			padding: 5px 30px;
+			margin-bottom: 20px;
+		}
+
+		textarea {
+			width: 100%;
+			height: auto;
+			padding: 3px 25px;
+			margin-bottom: 20px;
+		}
+
+		a {
+			.mainButton;
+			width: 80%;
+			margin: 20px auto;
+			text-align: center;
 		}
 	}
 }
