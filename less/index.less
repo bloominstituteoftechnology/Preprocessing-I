@@ -232,11 +232,29 @@ li {
     width: 50%;
     .custom-layout(space-between, baseline);
 
+    /* Tablet */
+    @media (max-width: 800px) {
+		width: 100%;
+		.custom-layout(center, center);
+    }
+    /* Mobile */
+    @media (max-width: 500px) {
+		flex-direction: column;
+		
+    }
+
     a {
       font-family: @heading-font;
       padding: 10px;
       text-decoration: none;
-      color: @heading-font;
+	  color: @heading-font;
+
+	  /* Mobile */
+	  @media (max-width: 500px) {
+		text-align: center;
+		width: 100%;
+		border-bottom: 1px solid @emperor;
+    }
     }
   }
 }
@@ -246,7 +264,14 @@ li {
     background: @mustard;
     border-radius: 2.5%;
     padding: 20px 5%;
-    margin-bottom: 20px;
+	margin-bottom: 20px;
+	/* Tablet */
+
+    /* Mobile */
+    @media (max-width: 500px) {
+		.custom-layout(center, center);
+		flex-direction: column;	
+    }
 
     .resume-img {
       max-width: 200px;
@@ -283,12 +308,21 @@ li {
     .custom-layout(space-between, flex-start);
     margin-bottom: 30px;
     padding-bottom: 30px;
-    .bottom-border();
+	.bottom-border();
+	
+	@media (max-width: 500px) {
+		.custom-layout(center, center);
+		flex-direction: column;	
+    }
 
     .skills-section,
     .education-section {
       width: 49%;
-      padding: 15px 0;
+	  padding: 15px 0;
+	  
+	  @media (max-width: 500px) {
+		width: 100%;
+    }
 
       h2 {
         margin-bottom: 10px;
@@ -308,6 +342,7 @@ li {
     .work-section {
       margin-bottom: 20px;
       ul {
+		margin-top: 10px;
         padding-left: 10px;
         list-style: disc inside none;
       }
