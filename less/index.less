@@ -1,3 +1,6 @@
+@import url("fontawesome/fontawesome.less");
+@import url("fontawesome/solid.less");
+@import url("fontawesome/brands.less");
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -130,12 +133,19 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@18px: 1.8rem;
+
 * {
   box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  background-color: #444;
+  font-size: @18px;
 }
 
 html,
@@ -154,7 +164,6 @@ h1 {
 
 h2 {
   font-size: 3.8rem;
-  .padding-for-h();
 }
 
 .container {
@@ -204,7 +213,7 @@ article {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   flex-wrap: wrap;
   section {
     width: 80%;
@@ -214,15 +223,56 @@ article {
     margin: 20px 0;
     padding: 20px 20px;
     display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	&:nth-child(even) {
-		flex-direction: row-reverse;
-		border-left: 0;
-		border-right: 2px solid black;
+    flex-wrap: wrap;
+    flex-direction: column;
+	align-items: flex-start;
+	h2 {
+		border-bottom: 1px solid black;
+		border-right: 1px solid black;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 5px 0;
+	}
+	ul {
+		padding: 10px 0;
+		li{
+			padding: 5px 0;
+
+			&:before {
+				padding: 3px;
+			}
+			&:nth-child(1)::before {
+				.fa-icon;
+				.fab;
+				
+				content: @fa-var-html5;
+				
+			}
+			&:nth-child(2)::before {
+				.fa-icon;
+				.fab;
+				
+				content: @fa-var-css3;
+				
+			}
+			&:nth-child(3)::before {
+				.fa-icon;
+				.fab;
+				
+				content: @fa-var-less;
+				
+			}
+		}
+	}
+    &:nth-child(even) {
+      align-items: flex-end;
+      border-left: 0;
+      border-right: 2px solid black;
+	  h2 {
+		  border-right: 0;
+		  border-left: 2px solid black;
 	  }
+	}
   }
-  
 }
 
