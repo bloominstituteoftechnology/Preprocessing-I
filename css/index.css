@@ -1,1 +1,418 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  font-family: 'Playfair Display', serif;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+.centered-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.container {
+  font-size: 1.6rem;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+nav a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 3%;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dddddd;
+  padding: 40px 3%;
+  text-align: center;
+}
+header img {
+  height: 250px;
+  margin-right: 3%;
+}
+header h1,
+header p,
+header button {
+  margin: 30px 0;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+header p {
+  font-size: 2.2rem;
+}
+header button {
+  background: none;
+  background-color: #4e4e4e;
+  color: #fff;
+  border: 1px solid black;
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
+}
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header img {
+    height: 175px;
+    max-width: 60%;
+  }
+  header .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header h1,
+  header p,
+  header button {
+    margin: 15px 0;
+  }
+}
+@media (max-width: 500px) {
+  header img {
+    height: 150px;
+  }
+}
+.project-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.project-container .thumb-nail {
+  width: 23%;
+  height: 15vw;
+  background-size: cover;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-container .thumb-nail:nth-of-type(4) {
+  background-image: url('../img/photo4.jpg');
+}
+.project-container .thumb-nail:nth-of-type(3) {
+  background-image: url('../img/photo3.jpg');
+}
+.project-container .thumb-nail:nth-of-type(2) {
+  background-image: url('../img/photo2.jpg');
+}
+.project-container .thumb-nail:nth-of-type(1) {
+  background-image: url('../img/photo1.jpg');
+}
+.project-container .thumb-nail .project-info {
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  opacity: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.project-container .thumb-nail .project-info:hover {
+  opacity: 1;
+}
+.project-container .thumb-nail .project-info h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding: 7%;
+}
+.project-container .thumb-nail .project-info p {
+  font-size: 1.6rem;
+  padding: 7%;
+}
+@media (max-width: 800px) {
+  .project-container {
+    margin-bottom: 14vw;
+  }
+  .project-container .thumb-nail {
+    position: relative;
+  }
+  .project-container .thumb-nail .project-info {
+    opacity: 1;
+    position: absolute;
+    top: 112%;
+  }
+}
+@media (max-width: 500px) {
+  .project-container {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .project-container .thumb-nail {
+    width: 45%;
+    height: 25vw;
+  }
+  .project-container .thumb-nail .project-info {
+    left: 100%;
+    top: 0;
+  }
+}
+.bio-container {
+  display: flex;
+  justify-content: space-between;
+  height: 50vw;
+}
+.bio-container .bio-info {
+  padding: 0 10%;
+  line-height: 1.8;
+  max-height: 100%;
+}
+.bio-container .bio-info h2 {
+  font-size: 3.2vw;
+  margin-bottom: 35px;
+}
+.bio-container .bio-info p {
+  font-size: 2.3vw;
+}
+.bio-container img {
+  height: 100%;
+}
+@media (max-width: 800px) {
+  .bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 550px;
+  }
+  .bio-container .bio-info {
+    line-height: 1.5;
+  }
+  .bio-container .bio-info h2 {
+    font-size: 2rem;
+  }
+  .bio-container .bio-info p {
+    font-size: 1.8rem;
+  }
+  .bio-container img {
+    max-height: 300px;
+  }
+}
+@media (max-width: 500px) {
+  .bio-container {
+    height: 400px;
+    margin-bottom: 20px;
+  }
+  .bio-container img {
+    display: none;
+  }
+  .bio-container .bio-info h2 {
+    font-size: 2.4rem;
+  }
+  .bio-container .bio-info p {
+    font-size: 1.8rem;
+  }
+}
+.history {
+  margin: 40px 0;
+}
+.history h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.history table {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid rgba(211, 211, 211, 0.644);
+}
+.history table .list {
+  font-weight: 800;
+}
+.history table th {
+  font-weight: 800;
+}
+.history table td,
+.history table th {
+  width: 25%;
+}
+.history table tr {
+  height: 40px;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.644);
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+}
+.history table tr:nth-of-type(even) {
+  background-color: #dddddd;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px 2% 0;
+  font-size: 2rem;
+  border-top: 1px solid rgba(211, 211, 211, 0.644);
+}
+footer address {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+@media (max-width: 800px) {
+  footer {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 500px) {
+  footer {
+    font-size: 1.4rem;
+  }
+}
