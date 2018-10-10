@@ -4,56 +4,268 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+/////// CODE STARTS HERE!!!
+
+// VARIABLES
+@h1: 5.5rem;
+@big-h2: 3.3rem;
+@h2: 2.1rem;
+@h3: 2rem;
+@p: 1.6rem;
+@button: 2rem;
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 300px;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1000px;
+  width: 87%;
+  margin: 0 auto;
+
+  // HEADER
+
+  header {
+    margin: 3.3rem 0;
+
+    .main-nav {
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        margin-left: 3rem;
+        font-size: 1.5rem;
+        color: black;
+      }
+    }
+  }
+
+  // END OF HEADER
+
+  main {
+    background: lightgrey;
+    border-radius: 0.8rem;
+    padding: 6rem 3.3rem 9rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .upper-portfolio {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid black;
+      padding-bottom: 3rem;
+
+      img {
+        max-width: 29.9rem;
+      }
+
+      h1 {
+        margin: 1.4rem 0;
+        font-size: @h1;
+        font-weight: 300;
+      }
+
+      h3 {
+        font-size: @h3;
+        font-weight: 300;
+      }
+    } // END OF UPPER PORTFOLIO
+
+    .lower-portfolio {
+      padding-top: 3rem;
+
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: @p;
+      }
+
+      .btn {
+        font-size: @button;
+        color: white;
+        margin-top: 3rem;
+        background: grey;
+        width: 16rem;
+        padding: 1.4rem;
+        text-align: center;
+        border-radius: 0.6rem;
+      }
+    } // END OF LOWER PORTFOLIO
+  } // END OF MAIN
+
+  section.middle {
+    margin: 4rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+
+    article {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+    }
+
+    article.article-left {
+      padding-right: 3rem;
+      h2.big-h2 {
+        font-size: @big-h2;
+      }
+    }
+
+    article.article-right {
+      padding-left: 3rem;
+      h2 {
+        font-size: @h2;
+        font-weight: bold;
+      }
+    }
+  }
+}
