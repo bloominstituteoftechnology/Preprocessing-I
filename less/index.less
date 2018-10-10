@@ -101,6 +101,11 @@ body {
 }
 
 .intro {
+	@media(max-width: 500px) {
+		width:90%;
+		margin: 10px auto;
+	}
+
 	font-size: 1.6rem;
 	.boxTheme;
 
@@ -125,16 +130,20 @@ body {
 		}
 
 		.intro__profile__summary {
+			@media(max-width: 500px) {
+				display: none;
+			}
+
 			padding: 2%;
 			padding-bottom: 20px;
+			}
 		}
-	}
 
 	.intro__navigation {
 		.centerColumn;
 		align-items: center;
 		margin: 10px 0;
-
+		}
 		a {
 			color: @secondary;
 			text-decoration: none;
@@ -146,10 +155,14 @@ body {
 		a:hover {
 			text-decoration: underline;
 		}
-	}
 }
 
+
 .skills {
+	@media(max-width: 500px) {
+		flex-direction: column;
+	}
+
 	height: 350px;
 	background-color: @main-color;
 	border-radius: 15px;
@@ -157,6 +170,13 @@ body {
 	align-items: center;
 
 	.skills__cat {
+		@media(max-width: 500px) {
+			width: 90%;
+			font-size: 1.4rem;
+			margin: 15px;
+			border: 1px solid @secondary;
+		}
+
 		background-color: @tertiary;
 		height: 75%;
 		width: 28%;
@@ -168,29 +188,41 @@ body {
 		flex-direction: column;
 
 		.skills__cat__label {
+			@media(max-width: 500px) {
+				display: none;
+			}
 			font-size: 2.8rem;
 		}
 
 		.skills_cat_list {
+			@media(max-width: 500px) {
+				border: none;
+			}
+
 			height: 200px;
 			width: 65%;
 			border: 1px solid @secondary;
 
-			.centerColumn;
+			.center;
 			align-items: center;
+			flex-wrap: wrap;
 
 			li {
-				padding: 10px 0;
+				padding: 0px 10px;
 			}
 		}
 	}
 }
 
 .exp {
+	@media(max-width: 500px) {
+		padding: 10px;
+	}
+
 	.centerColumn;
 	align-items: center;
 	.boxTheme;
-	width: 80%;
+	width: 90%;
 	margin: 25px auto;
 
 	font-size: 1.6rem;
@@ -215,6 +247,9 @@ body {
 
 		.exp__job__resp {
 			ul {
+				@media(max-width: 500px) {
+					list-style-type: none;
+				}
 				list-style-type: disc;
 
 				li {
@@ -226,6 +261,12 @@ body {
 }
 
 .contact {
+	@media(max-width: 500px) {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
+
 	.space-around;
 	align-items: center;
 	margin-bottom: 30px;
