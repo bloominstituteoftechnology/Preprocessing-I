@@ -49,6 +49,8 @@ table {
 }
 @main-width:800px;
 @main-margin:0 auto;
+@margin-left:2%;
+
 @top-content-color:#DCDCDC;
 /* Set every element's box-sizing to border-box */
 * {
@@ -61,6 +63,140 @@ html, body {
 html { 
 	font-size: 62.5%;
 }
+.column() {
+	display: flex;
+	flex-direction:column;
 
+}
+.margin() {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.navigation() {
+	display:flex;
+	flex-direction: flex-end;
+	justify-content: space-between;
+	
+}
+.border() {
+	border-bottom: 1px solid lightgray;
+}
+.centered() {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrap() {
+   display:flex;
+   flex-wrap: wrap;
+}
+.space-between() {
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.container {
+	max-width: 800px;
+	width:100%;
+	margin:0 auto;
+}
+.container header {
+	width:100%;
+	nav  {
+		.navigation();
+		font-size:2.2rem;
+	}
+	nav a {
+		color:black;
+text-decoration: none;
+	}
+	
+}
+.top-img {
+	width:100%;
+	height:300px;
+}
+.top-content {
+	width:100%;
+	background-color: lightgray;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.name-job {
+	margin:@margin-left;
+	flex-direction:column;
+	h1 { 
+		font-size:6.5rem;
+	}
+	h2 {
+		font-size: 3.5rem;
+		margin-top:30px;
+		margin-bottom:50px;
+	}
+}
+.p-button {
+	margin:@margin-left;
+	flex-direction:column;
+	p {
+		font-size:2.5rem;
+		margin-bottom:20px;
+	}
+	button {
+		padding:1%;
+		font-size:2rem;
+		background-color: grey;
+		color:white;
+		margin-bottom:60px;
+	}
+}
 
+.left-content {
+	width:100%;
+	height:200px;
+	.border();
+	.margin();
 
+	h1 {
+		font-size:3rem;
+		margin-bottom:20px;
+	}
+	p {
+	
+		font-size:2rem;
+	}
+
+}
+.right-content { 
+	width:100%;
+	.margin();
+	height:300px;
+	h1 {
+		font-size:3rem;
+		margin-bottom:50px;
+		
+	}
+	ul li {
+        .border();
+		height:35px;
+		font-size:2rem;
+	}
+}
+.bottom-content {
+	height:300px;
+	h1 {
+		font-size:3.5rem;
+	}
+	.table {
+		font-size:2rem;
+
+	}
+	
+	
+}
+footer {
+	.centered();
+	font-size:3rem;
+	width:100%;
+	height:90px;
+	background-color: grey;
+}
