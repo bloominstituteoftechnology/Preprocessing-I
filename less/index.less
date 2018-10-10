@@ -85,9 +85,10 @@ img {
 }
 
 .marginFont {
-  margin-top:@marginVariable;
-  font-size:@fontSizeVariable;
+  margin-top: @marginVariable;
+  font-size: @fontSizeVariable;
 }
+
 @marginVariable: 40px;
 
 @fontSizeVariable: 2rem;
@@ -104,12 +105,12 @@ img {
     margin-top: @marginVariable;
     align-items: center;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
 
     #survey-corps {
       .marginFont;
-      @media (max-width:500px) {
-        font-size:1.3rem;
+      @media (max-width: 500px) {
+        font-size: 1.3rem;
       }
     }
 
@@ -119,9 +120,9 @@ img {
       color: @fontColor;
       border: 1px white solid;
       padding: 2.5% 5%;
-      
-      @media (max-width:500px) {
-        font-size:1.3rem;
+
+      @media (max-width: 500px) {
+        font-size: 1.3rem;
       }
     }
   }
@@ -140,9 +141,9 @@ img {
       justify-content: space-between;
       li {
         font-size: 1.5rem;
-        
-        @media (max-width:500px) {
-          font-size:1rem;
+
+        @media (max-width: 500px) {
+          font-size: 1rem;
         }
       }
     }
@@ -160,9 +161,7 @@ img {
   #infobox:target, #skills:target, #military-history:target, #contact:target {
     display: block;
   }
-  
-  
-  
+
   /* INFOBOX -------------------------------------------------*/
 
   #infobox {
@@ -207,10 +206,33 @@ img {
 }
 
 
+/* ANIMATIONS ---------------------------------------------*/
 
+#fire {
+  background-image: url(../images/fire.png);
+  animation-name: fireEffect;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  
+}
 
+#fire-image {
+  transform:scaleX(-1);
+  animation-name: fireEffect;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+}
 
-
-
-
-
+@keyframes fireEffect {
+  0% {
+    opacity:.4;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:.4;
+  }
+}
