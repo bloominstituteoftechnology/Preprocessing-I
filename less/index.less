@@ -119,28 +119,66 @@ html, body {
 	.intro {
 		background: @light-color;
 		padding: 3%;		
-		.column;
+		// .column;
+		display: flex;
 
-		h1 {
-			font-size: 4rem;
-			margin-bottom: 2%; 
-		}
-		img { 
-			width: 30%;
-		}
-		h2 {
-			font-size: 2.4rem;
-			padding: 1% 0;
+		.left {
+			width: 40%;
+			margin-right: 2%;
+			h1 {
+				font-size: 4rem;
+				margin-bottom: 2%; 
+			}
+			img { 
+				width: 100%;
+				margin: 2%;
+				margin-left: 0;
+				filter: blur(4px);
+				transition: all 0.6s ease-out;
+
+				&:hover {
+					transform: scale(1.5);
+					transform-origin: left top;
+					filter: blur(0);
+				}
+
+				@media (max-width: 500px) {
+					&:hover {
+						transform: none;
+					}
+				}
+			}
+			h2 {
+				font-size: 2.4rem;
+				padding: 1% 0;
+			}
+	
+			h3 {
+				font-size: 2rem;
+			}			
 		}
 
-		h3 {
-			font-size: 2rem;
+		.right {
+			width: 55%;
+
+			p {
+				font-size: 1.6rem;
+				line-height: 1.5;
+				margin: 2% auto;
+				align-self: center;
+			}
 		}
 
-		p {
-			font-size: 1.6rem;
-			line-height: 1.5;
-			margin: 2% auto;
+		@media (max-width: 500px) {
+			flex-direction: column; 
+			.left {
+				width: 100%;
+			}
+			.right {
+				width: 100%;
+			}
+
+			
 		}
 
 	}
@@ -166,6 +204,12 @@ html, body {
 					color: @dark-color;
 				}
 			}
+
+			.fab, .fas {
+				color: @secondary-color;
+				// margin-left: 1%;
+			}
+
 			@media (max-width: 500px) {
 				flex-direction: column;
 				li {
@@ -227,10 +271,31 @@ html, body {
 			width: 33%;
 		}
 
-		p {
+		.social {
 			width: 33%;
 			align-self: flex-start;
 			padding-top: 1%;
+			text-align: center;
+
+			p {
+				padding-bottom: 2%;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.fab {
+				font-size: 3rem;
+				color: @light-color;
+				margin: 2%;
+				transition: all 0.5s ease-in-out; 
+
+				&:hover {
+					color: #000;
+					transform: scale(1.5);
+				}
+			}
 		}
 
 		.connect-right {
@@ -247,9 +312,11 @@ html, body {
 				border-radius: 3px;
 				background: @light-color;
 				color: #000;
+				transition: all 0.5s ease-in-out; 
 
 				&:hover {
 					background: #000;
+					transform: scale(1.2);
 					color: @light-color;
 				}
 			}
