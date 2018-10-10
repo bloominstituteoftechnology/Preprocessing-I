@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -53,7 +53,145 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@header-link-font-size: 2rem;
+@blue-color: rgb(7,63,120);
+@normal-text-size: 1.6rem;
+@small-text-size: 1.4rem;
+
+.flexbox-general{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
+.page-width-content{
+	max-width: 880px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.section_header{
+	margin-top: 1%;
+	font-size: @header-link-font-size;
+	text-align: center;
+}
+
+html, body {
+    height: 100%;
+		font-size: 62.5%;
+
+		header{
+			.flexbox-general;
+		}
+
+		header nav{
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			border-top: 2px solid black;
+			padding: 2% 0px;
+			margin: 2% 0px 1%;
+		}
+
+		header nav a{
+			font-size: @header-link-font-size;
+			text-decoration: none;
+			color: @blue-color;
+
+		}
+
+		.info_section{
+			background: lightgrey;
+			.page-width-content;
+			height: 550px;
+
+			@media (max-width: 980){
+				height: 400px;
+			}
+			@media (max-width: 700px){
+				height: 350px;
+			}
+		}
+
+		.info_section div img{
+			width: 90%;
+			position: relative;
+			top: 20px;
+			left: -15px;
+		}
+
+		.info_section .info{
+			z-index: 10000;
+			color: #FFF;
+			position: relative;
+			top: -70px;
+		}
+
+		section h1{
+			font-size: 3.2rem;
+		}
+
+		.skills{
+			display: block;
+			font-size: @normal-text-size;
+			.page-width-content;
+			max-width: 1200px;
+			margin-top: 6%;
+		}
+
+		.work_history{
+			.page-width-content;
+			max-width: 1200px;
+			font-size: @normal-text-size;
+		}
+
+		.work_history h2{
+			.section_header;
+		}
+
+		.work_history table{
+			margin: 2% auto;
+			width: 90%;
+		}
+
+		.work_history table, th, td{
+			padding: 1% 0px;
+		}
+
+		.work_history table tr:nth-child(2n + 1){
+			background: lightgrey;
+		}
+
+
+		.skills_list{
+			.flexbox-general;
+			margin-top: 2%;
+			margin-bottom: 2%;
+		}
+
+		.skills_list h2{
+			.section_header;
+			margin-top: 2%;
+			margin-bottom: 2%;
+		}
+
+		.skills_list .tech{
+			display: flex;
+			.page-width-content;
+			justify-content: space-around;
+		}
+
+		.skills_list img{
+			width: 75px;
+			height: 75px;
+		}
+
+		footer{
+			background: lightgrey;
+			display: flex;
+			padding: 1% 0%;
+			justify-content: space-around;
+			font-size: @small-text-size;
+		}
+
+}
