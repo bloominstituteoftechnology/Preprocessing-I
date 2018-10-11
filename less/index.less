@@ -48,12 +48,120 @@ table {
 	border-spacing: 0;
 }
 
+// Variables 
+@custom-font: 'Helvetica', Arial, sans-serif;
+@custom-serif: Georgia, serif;
+
+@main-color: #A9A9A9;
+@secondary-color: black;
+
+// Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+	
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	/* 10px if the browser was 16px */
+	font-size: 62.5%;
+	height: 100%;
+	font-family: @custom-font;
+	color: @main-color;
 }
 
+.container {
+	max-width: 70%;
+	margin: 0 auto;
+	@media (max-width: 500px) {
+		background: red;
+	}
+}
+header {
+	background-color: #f7f7f7;
+}
+h1 {
+	font-size: 6rem;
+}
+h2 {
+	font-size: 2.5rem;
+	line-height: 4rem;
+}
+.profile {
+	width: 50%;
+}
+.nav {
+	.center;
+	justify-content: space-between; /* only doing this to test overwriting mixins */
+	a {
+		font-size: 1.6rem;
+		padding: 2% 0%;
+		text-decoration: none;
+		color: @main-color;
+	}
+}
+hr {
+	margin: 1.5% 0%;
+}
+h3 {
+	color: @secondary-color;
+	font-size: 3rem;
+	padding: 3% 0%;
+	.center;
+}
+p {
+	font-size: 1.6rem;
+	color: @secondary-color;
+	line-height: 150%;
+}
+.main-content {
+	display: flex;
+	.intro {
+		width: 48%;
+	}
+	.skills {
+		width: 48%;
+		.list {
+			width: 100%;
+			.center;
+			flex-direction: column;
+			line-height: 500%;
+			padding: 3% 0%;
+		}
+		ul {
+			font-size: 1.6rem;
+			width: 50%;
+			color: @secondary-color;
+			.center;
+		}
+	}
+}
+.work-history {
+	font-size: 1.6rem;
+	padding: 2% 0%;
+	color: @secondary-color;
+	.table {
+		width: 100%;
+		line-height: 200%;
+	}
+	th {
+		font-size: 2rem;
+	}
+	tr {
+		border: 1px solid black;
+	}
+	h3 {
+		justify-content: flex-start;
+		align-content: flex-start;
+	}
+}
+footer {
+	font-size: 1.6rem;
+	padding: 3%;
+	.center;
+}
