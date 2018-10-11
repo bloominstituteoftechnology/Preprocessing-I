@@ -68,7 +68,10 @@ table {
 	display:flex;
 	flex-wrap:wrap;
 }
-
+.custom-animation(@background,@color){
+	background:@color;
+	color:@background;
+}
 .custom-btn(@width, @height, @background, @color){
 	width: @width;
 	height: @height;
@@ -129,6 +132,7 @@ html, body {
 		border-radius:20px;
 		header{
 			nav{
+				
 				.center();
 				justify-content:flex-end;
 				@media(max-width: 500px){
@@ -144,8 +148,12 @@ html, body {
 						border: 1px solid @darkblue;
 						width:100%;
 						text-align:center;
-							border-radius:10px;
+						border-radius:10px;
+						&:hover{
+							.custom-animation(@lightgray, @darkblue);
+							}
 					}
+					
 				}
 			}
 		}
