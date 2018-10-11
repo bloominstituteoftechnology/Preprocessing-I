@@ -49,6 +49,19 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// Variables
+@background-color: lightgray;
+@font-family: Tahoma, Helvetica, serif;
+@height: 100%;
+@padding: 10px;
+@font-size: 2rem;
+@width: 45%;
+@flex-direction: column;
+@justify-content: center;
+@table-background-color: rgb(199, 196, 196);
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -58,9 +71,9 @@ html {
 }
 
 html, body {
-	height: 100%;
-	padding: 10px;	
-
+	height: @height;
+	padding: @padding;
+	font-family: @font-family;
 }
 
 
@@ -73,7 +86,7 @@ html, body {
 }
 nav {
 	display: flex;
-	border: 1px solid red;
+
 	// width: 100%;
 	// padding: 10px;
 	justify-content: flex-end;
@@ -82,11 +95,11 @@ nav {
 nav a {
 	text-decoration: none;
 	color: #b0b0b0;
-	font-size: 2rem;
+	font-size: @font-size;
 	display: flex;
 	// width: 10%;
 	justify-content: flex-end;
-	border: 1px solid blue;
+	
 
 }
 
@@ -108,18 +121,18 @@ div .navigation {
 }
 
 .top-container {
-	width: 45%;
+	width: @width;
 	display: flex;
-	justify-content: center;
+	justify-content: @justify-content;
 	flex-wrap: wrap;
-	flex-direction: column;
+	flex-direction: @flex-direction;
 }
 
 .list-container {
-	width: 45%;
+	width: @width;
 	display: flex;
-	justify-content: center;
-	flex-direction: column;
+	justify-content: @justify-content;
+	flex-direction: @flex-direction;
 }
 
 // .top-container .list-container {
@@ -133,7 +146,7 @@ h1, h2 {
 
 
 p {
-	font-size: 2rem;
+	font-size: @font-size;
 }
 
 .title-container {
@@ -142,10 +155,10 @@ p {
 
 div .background {
 	display: flex;
-	font-size: 2rem;
-	flex-direction: column;
-	border: 1px solid blue;
-	background-color: lightgray;
+	font-size: @font-size;
+	flex-direction: @flex-direction;
+	
+	background: @background-color;
 	padding: 20px;
 	height: 500px;
 	// align-items: start;
@@ -159,11 +172,11 @@ div .background {
 
 .list-container {
 	display: flex;
-	border: 1px solid blue;
+	
 }
 
 ul {
-	font-size: 2rem;
+	font-size: @font-size;
 	// display: flex;
 	// flex-direction: column;
 	// width: 80px;
@@ -172,11 +185,11 @@ ul {
 
 table, th, td {
 	border-top: 1px solid rgb(240, 236, 236);
-	font-size: 2rem;
-	border: 1px solid red;
+	font-size: @font-size;
+	// border: 1px solid red;
  }
 
 
  .d1, .d3 {
-	background-color: rgb(199, 196, 196);
+	background-color: @table-background-color;
  }
