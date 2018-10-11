@@ -139,11 +139,17 @@ body {
   margin: 0 auto;
   font-family: sans-serif;
   background-color: #ea22ea;
+  position: relative;
+  overflow: hidden;
 }
 @media (max-width: 600px) {
   .container {
     width: 500px;
   }
+}
+.container h1,
+.container h2 {
+  color: #464242;
 }
 .container footer {
   text-align: center;
@@ -205,9 +211,7 @@ body {
 .container .Intro img {
   width: 400px;
   height: auto;
-}
-.container .Intro .content-container {
-  background-image: url(http://i.imgur.com/o1a63.png);
+  opacity: 0.7;
 }
 .container .Intro .name {
   font-size: 2rem;
@@ -216,10 +220,11 @@ body {
 .container .Intro .quote {
   margin: 20px 20px;
   font-weight: bold;
+  font-style: italic;
 }
 .container .Intro p {
   margin: 20px;
-  color: #920a0a;
+  color: #e7f3a6;
   line-height: 1.4;
   font-size: 1.1rem;
 }
@@ -229,6 +234,10 @@ body {
   border: 1px solid black;
   background-color: white;
   padding: 5px 20px;
+  font-size: 2rem;
+}
+.container .Intro button a:hover {
+  background-color: black;
 }
 .container .content {
   display: flex;
@@ -241,13 +250,14 @@ body {
 .container .content section h2 {
   font-size: 2.3rem;
   margin-bottom: 20px;
+  color: #464242;
 }
 .container .content .brief-bio {
   width: 100%;
   padding: 0 20px;
 }
 .container .content .brief-bio p {
-  color: #920a0a;
+  color: #e7f3a6;
   line-height: 1.4;
   font-size: 1.1rem;
 }
@@ -256,14 +266,14 @@ body {
   padding-left: 20px;
   font-size: 1.6rem;
   list-style-type: circle;
-  color: rgba(92, 212, 92, 0.87);
+  color: rgba(188, 253, 188, 0.87);
 }
 .container .content .Work-History li {
   margin: 8px 0 8px 50px;
   padding-left: 20px;
   font-size: 1.6rem;
   list-style-type: decimal;
-  color: rgba(92, 212, 92, 0.87);
+  color: rgba(188, 253, 188, 0.87);
 }
 .container .content .hobbies {
   width: 100%;
@@ -282,5 +292,24 @@ body {
   padding: 0 20px;
   line-height: 1.5;
   font-size: 1.5rem;
-  color: rgba(92, 212, 92, 0.87);
+  color: rgba(188, 253, 188, 0.87);
+}
+.container:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.3;
+  background-image: url(http://i.imgur.com/o1a63.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
