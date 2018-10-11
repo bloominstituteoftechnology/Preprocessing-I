@@ -131,8 +131,9 @@ table {
   box-sizing: border-box;
 }
 li {
+  list-style-position: inside;
   font-size: 1.6rem;
-  margin: 20px 0;
+  margin: 20px 4%;
 }
 html,
 body {
@@ -283,8 +284,10 @@ body .container .main-content {
 @media (max-width: 500px) {
   html .container .main-content,
   body .container .main-content {
-    text-align: center;
-    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 html .container .main-content .intro,
@@ -293,6 +296,14 @@ html .container .main-content .skills,
 body .container .main-content .skills {
   width: 48%;
   margin: 4% 0 0 0;
+}
+@media (max-width: 500px) {
+  html .container .main-content .intro,
+  body .container .main-content .intro,
+  html .container .main-content .skills,
+  body .container .main-content .skills {
+    width: 100%;
+  }
 }
 html .container .bottom-content .work-img-wrapper,
 body .container .bottom-content .work-img-wrapper {

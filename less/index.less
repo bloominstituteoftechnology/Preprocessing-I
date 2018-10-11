@@ -95,8 +95,9 @@ table {
 	box-sizing: border-box;
 }
 li{
+	list-style-position:inside;
 	font-size:1.6rem;
-	margin:20px 0;
+	margin:20px 4%;
 }
 html, body {
 	max-width: 1080px;
@@ -193,15 +194,18 @@ html, body {
 		}
 		.main-content{
 			@media (max-width:500px){
-				text-align:center;
-				list-style-type: none;
+				.center();
+				flex-direction:column;
 			};
 			display:flex;
 			justify-content:space-between;
 			.intro, 
 			.skills{
+				@media (max-width:500px){
+					width:100%;
+				}
 				width:48%;
-				margin:4% 0 0 0;
+				margin: 4% 0 0 0;
 			}			
 		}
 		.bottom-content{
