@@ -1,59 +1,239 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import "less/reset.less";
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@page-background: #4a4d32;
+@content-background: #5c6c73;
+@highlight: #9de5f2;
+@notice: #f49b0b;
+@warning: #d12c1d;
+@hit_gray: #a2b4b6;
+@submarine: #b8c5c7;
+@granny_smith: #7e969a;
+
+.testing() {
+    * {
+        border: 1px solid red;
+    }
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+.center-block() {
+    margin-left: auto;
+    margin-right: auto;
 }
+
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    background-color: @page-background;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.custom-nav(@width: 100%;) {
+    display: flex;
+    width: @width;
+    list-style: none;
+    li {
+        background-color: @content-background;
+        flex-grow: 1;
+        display: flex;
+        a {
+            display: flex;
+            text-decoration: none;
+            color: @highlight;
+            height: 35px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }
 
-html, body {
-    height: 100%;
+.container {
+    max-width: 1024px;
+    background: white;
+    margin-bottom: -50px;
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+    .center-block;
+    main {
+        width: 98%;
+        .center-block();
+        @media (max-width: 500px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 
+.header-nav {
+    .custom-nav;
+}
+
+.me {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    h2 {
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+    figure {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        img {
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        figcaption {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.bio {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    height: 200px;
+    @media (max-width: 500px) {
+        justify-content: flex-start;
+        flex-direction: column;
+        height: auto;
+    }
+    h3 {
+        font-size: 1.4rem;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: @content-background;
+        color: @highlight;
+    }
+    .summary {
+        overflow: hidden;
+        border-radius: 15px;
+        flex-direction: column;
+        width: 70%;
+        display: flex;
+        height: 100%;
+        @media (max-width: 500px) {
+            width: auto;
+            height: 150px;
+        }
+        p {
+            height: 75%;
+            background-color: @hit_gray;
+            padding: 8px 5px;
+            @media (max-width: 500px) {
+            }
+        }
+    }
+    .hobbies {
+        overflow: hidden;
+        border-radius: 15px;
+        flex-direction: column;
+        width: 20%;
+        display: flex;
+        height: 100%;
+        @media (max-width: 500px) {
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+        }
+        ul {
+            background-color: @hit_gray;
+            height: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 8px 5px;
+        }
+    }
+}
+
+.work_experience {
+    .center-block;
+    width: 95%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+    h3 {
+        font-size: 1.4rem;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: @content-background;
+        color: @highlight;
+        width: 100%;
+    }
+    table {
+        background-color: @hit_gray;
+        width: 100%;
+        font-size: 0.9rem;
+        height: 250px;
+        @media (max-width: 500px) {
+            height: 500px;
+            margin-bottom: 20px;
+        }
+    }
+    tr {
+        th {
+            text-align: center;
+            vertical-align: middle;
+            background-color: @granny_smith;
+        }
+        td {
+            vertical-align: middle;
+            padding: 0 5px;
+        }
+        td:last-child {
+            width: 425px;
+            @media (max-width: 500px) {
+                width: auto;
+            }
+        }
+        &:nth-child(2n + 3) {
+            background-color: @submarine;
+        }
+    }
+}
+
+.push {
+    height: 50px;
+}
+
+.contact {
+    .center-block;
+    width: 1024px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: @hit_gray;
+    @media (min-width: 1024px) {
+        .call_button {
+            display: none;
+        }
+    }
+    @media (max-width: 500px) {
+        .phone_number {
+            display: none;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+}

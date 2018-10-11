@@ -1,1 +1,360 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    background-color: #4a4d32;
+}
+.container {
+    max-width: 1024px;
+    background: white;
+    margin-bottom: -50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+}
+.container main {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 500px) {
+    .container main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.header-nav {
+    display: flex;
+    width: 100%;
+    list-style: none;
+}
+.header-nav li {
+    background-color: #5c6c73;
+    flex-grow: 1;
+    display: flex;
+}
+.header-nav li a {
+    display: flex;
+    text-decoration: none;
+    color: #9de5f2;
+    height: 35px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.me {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.me h2 {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+.me figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.me figure img {
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.me figure figcaption {
+    width: 100%;
+    text-align: center;
+}
+.bio {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    height: 200px;
+}
+@media (max-width: 500px) {
+    .bio {
+        justify-content: flex-start;
+        flex-direction: column;
+        height: auto;
+    }
+}
+.bio h3 {
+    font-size: 1.4rem;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5c6c73;
+    color: #9de5f2;
+}
+.bio .summary {
+    overflow: hidden;
+    border-radius: 15px;
+    flex-direction: column;
+    width: 70%;
+    display: flex;
+    height: 100%;
+}
+@media (max-width: 500px) {
+    .bio .summary {
+        width: auto;
+        height: 150px;
+    }
+}
+.bio .summary p {
+    height: 75%;
+    background-color: #a2b4b6;
+    padding: 8px 5px;
+}
+.bio .hobbies {
+    overflow: hidden;
+    border-radius: 15px;
+    flex-direction: column;
+    width: 20%;
+    display: flex;
+    height: 100%;
+}
+@media (max-width: 500px) {
+    .bio .hobbies {
+        width: 100%;
+        height: 120px;
+        margin-top: 20px;
+    }
+}
+.bio .hobbies ul {
+    background-color: #a2b4b6;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 5px;
+}
+.work_experience {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 500px) {
+    .work_experience {
+        width: 100%;
+    }
+}
+.work_experience h3 {
+    font-size: 1.4rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5c6c73;
+    color: #9de5f2;
+    width: 100%;
+}
+.work_experience table {
+    background-color: #a2b4b6;
+    width: 100%;
+    font-size: 0.9rem;
+    height: 250px;
+}
+@media (max-width: 500px) {
+    .work_experience table {
+        height: 500px;
+        margin-bottom: 20px;
+    }
+}
+.work_experience tr th {
+    text-align: center;
+    vertical-align: middle;
+    background-color: #7e969a;
+}
+.work_experience tr td {
+    vertical-align: middle;
+    padding: 0 5px;
+}
+.work_experience tr td:last-child {
+    width: 425px;
+}
+@media (max-width: 500px) {
+    .work_experience tr td:last-child {
+        width: auto;
+    }
+}
+.work_experience tr:nth-child(2n + 3) {
+    background-color: #b8c5c7;
+}
+.push {
+    height: 50px;
+}
+.contact {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #a2b4b6;
+}
+@media (min-width: 1024px) {
+    .contact .call_button {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .contact .phone_number {
+        display: none;
+    }
+}
+.contact a {
+    text-decoration: none;
+    color: black;
+}
+@media (max-width: 1024px) {
+    .contact {
+        width: 100%;
+    }
+}
