@@ -70,13 +70,10 @@ html{
   }
 
 .flex-center{
-	width: 100%;
-	max-width: 1000px;
-	flex-wrap: wrap;
-	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
+	max-width: 1000px;
 }
 
 .aDecoration{
@@ -86,8 +83,9 @@ html{
 .container{
 	.centered();
 	.flex-center();
-	// width: 100%;
-	// max-width: 1000px;
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
 	background-color: gainsboro;
 	font-size: 2rem;
 
@@ -133,7 +131,6 @@ html{
 			padding-bottom: 2%;
 			justify-content: flex-start;
 			border-bottom: 3px solid lightgrey;
-			}
 		
 		//   .jamarDiv{
 			
@@ -143,48 +140,55 @@ html{
 				width: 350px;
 				height: 350px;
 			}
-		
+		}
 			.teamUpSection{
 			margin: 5%;
 			padding-bottom: 10%;
 			font-size: 4rem;
 			}
 		
-			.teamUpSection button{
+			button{
 				.pSize();
 				border-radius: 10px;
 				background-color: gray;
-				color: white;
-				padding: 1%;
-			}
-		
-			button a{
-				.aDecoration();
+				// color: white;
+				padding: 1%;  
+
+				&a:hover{
+					color: white;
+					background-color: black;
+				}
+
+				a{
+					.aDecoration();
+					color: white;
+				}
 			}
 	}
 
-  
+	
 
 	.aboutMe{
-		width: 85%;
-		// .centered();
-		// .flex-center();
-		justify-content: space-between;
-		width: 100%;
+		// background-color: ivory;
+    width: 85%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    // justify-content: center;
+    align-items: center;
+    justify-content: space-around;
 
 		.aboutMeBoxes{
-			flex-direction: column;
 			width: 43%;
-			max-width: 500px;
+			flex-direction: row;
+		}
 
 				.whoIAm{
 					.aboutMeBoxes();
 				}
-			
+		
 				.aboutMySkills{
 					.aboutMeBoxes();
 				}
-			}
 	}
 
 }
