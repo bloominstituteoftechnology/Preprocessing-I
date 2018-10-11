@@ -106,6 +106,9 @@ html {
 	font-size: 62.5%;
 	body {
 		font-family: @body-font;
+		h1, h2 {
+			color: @main-color;
+		}
 	}
 }
 
@@ -181,13 +184,12 @@ html {
 			// children
 			h1 {
 				font-size: 3rem;
-				color: @dark-accent;
 				font-family: @header-font;
 			}
 			#tagline {
 				font-size: 1.5rem;
 				text-align: center;
-				color: @light-accent;
+				color: @dark-accent;
 			}
 			p {
 				font-size: 1.2rem;
@@ -207,6 +209,7 @@ html {
 		
 	}
 
+	// intro styles
 	#intro {
 		background-color: @light-shades;
 		.fit-in();
@@ -219,7 +222,6 @@ html {
 
 		// children
 		h2 {
-			color: @light-accent;
 			font-size: 3rem;
 			font-family: @header-font;
 		}
@@ -230,6 +232,7 @@ html {
 		}
 	}
 
+	// Skill Styles
 	#skills {
 		background-color: @light-shades;
 		.fit-in();
@@ -239,8 +242,9 @@ html {
 		@media(min-width: @tablet-size){
 			width: 45%;
 		}
+
+		// Children
 		h2 {
-			color: @light-accent;
 			font-size: 3rem;
 			font-family: @header-font;
 			
@@ -253,6 +257,50 @@ html {
 				padding: 2% 0;
 				font-size: 1.2rem;
 			}
+		}
+	}
+
+	// Work History Styles
+	#work-history {
+		.fit-in();
+		background-color: @dark-shades;
+		border: 4px double @dark-accent;
+		color: white;
+		h2 {
+			font-size: 3rem;
+			font-family: @header-font;
+			text-align: center;
+		}
+		table {
+			width: 100%;
+			.flex(column, space-around, space-around);
+			flex-wrap: wrap;
+			border: 1px solid @dark-accent;
+			font-size: 1.6rem;
+
+			// children
+			thead {
+				text-align: center;
+				tr {
+					width: 100%;
+					// .flex(row, space-evenly, center);
+					td {
+						width: 33%;
+					}
+				}
+			}
+			tbody {
+				text-align: center;
+				tr {
+					width: 100%;
+					// .flex(row, space-evenly, center);
+					td {
+						width: 33%;
+					}
+				}
+			}
+
+			
 		}
 	}
 }
