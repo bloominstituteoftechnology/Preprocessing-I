@@ -158,6 +158,23 @@ body {
   align-items: @align-value;
 }
 
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-btn(@width, @height, @background, @color) {
+  width: @width;
+  height: @height;
+  background: @background;
+  color: @color;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  .center;
+  cursor: pointer;
+}
+
 .show-out(@margin, @padding) {
   padding: @padding;
   margin: @margin;
@@ -171,7 +188,7 @@ h1 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.25;
   padding: 10px 0;
 }
@@ -212,10 +229,35 @@ p {
     padding: 10px;
   }
 
+  .obj-stmnt {
+    margin-bottom: 20px;
+  }
+
+  .hire-btn {
+    .custom-btn(150px, 45px, gray, white);
+    // margin: 20px;
+  }
+
+  .why-me {
+    display: flex;
+    width: 48%;
+    flex-wrap: wrap;
+  }
+
+  .skills {
+    font-size: 2rem;
+
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+
   .employment {
     font-size: 1.6rem;
     padding: 20px;
+    border-top: 1px solid lightgray;
   }
+
   footer {
     text-align: center;
     background-color: gray;
