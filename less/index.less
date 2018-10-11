@@ -72,12 +72,17 @@ html, body {
   align-items: @alignItems;
 }
 
+// (example): .flex-dispDirection(column);
+.flex-dispDirection(@direction) {
+  display: flex;
+  flex-direction: @direction;
+}
+
 /******************************************************
  ********************** Home Page *********************
  ******************************************************/
   // Fonts
   @custom-font: 'Helvetica', Arial, sans-serif;
-  @custom-serif: Georgia, serif;
   h1 {font-size: 5.32rem;}
   h2 {font-size: 3.2rem;}
   h3 {font-size: 2.08rem;}
@@ -201,8 +206,7 @@ html, body {
     } // midContent
 
     .botContent {
-      display: flex;
-      flex-direction: column;
+      .flex-dispDirection(column);
       margin-bottom: 4.3%;
 
       h3 {
@@ -212,8 +216,7 @@ html, body {
       }
 
       .spreadsheet {
-        display: flex;
-        flex-direction: column;
+        .flex-dispDirection(column);
 
         nav {
           display: flex;
@@ -254,10 +257,8 @@ html, body {
     } // botContent
 
     footer {
-      display: flex;
+      .flex-position(center, center);
       background-color: gray;
-      justify-content: center;
-      align-content: center;
       padding: 2.8% 0;
       padding-bottom: 4.5%;
       color: white;
