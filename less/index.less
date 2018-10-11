@@ -1,5 +1,5 @@
 @import url("fontawesome/fontawesome.less");
-@import url("fontawesome/solid.less");
+@import url("fontawesome/@sol.less");
 @import url("fontawesome/brands.less");
 @import url("https://fonts.googleapis.com/css?family=Charmonman");
 // Is this working?
@@ -92,7 +92,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: @100;
   font: inherit;
   vertical-align: baseline;
 }
@@ -138,6 +138,8 @@ table {
 @b: #000000;
 @g-b3: #333333;
 @gw: ghostwhite;
+@sol: solid;
+@100: 100%;
 
 * {
   box-sizing: border-box;
@@ -154,7 +156,7 @@ body {
 
 html,
 body {
-  height: 100%;
+  height: @100;
 }
 
 .padding-for-h {
@@ -174,7 +176,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  width: @100;
   max-width: 1500px;
   margin: 0 auto;
   background-color: #555555;
@@ -189,11 +191,11 @@ h2 {
 }
 
 header {
-  width: 100%;
+  width: @100;
   display: flex;
   justify-content: space-between;
   background-color: @g-b3;
-  border: 1px solid @b;
+  border: 1px @sol @b;
   border-radius: 10px;
   padding: 20px 0;
   box-shadow: inset -10px 10px 23px -4px rgba(102, 102, 102, 1);
@@ -215,15 +217,15 @@ header {
 }
 
 article {
-  width: 100%;
+  width: @100;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
   section {
     width: 80%;
-    border-left: 3px solid @b;
-    border-bottom: 3px solid @b;
+    border-left: 3px @sol @b;
+    border-bottom: 3px @sol @b;
     border-radius: 10px;
     margin: 20px 0;
     padding: 20px 20px;
@@ -234,8 +236,8 @@ article {
     box-shadow: -10px 10px 30px 0px rgba(0, 93, 93, 1);
 
     h2 {
-      border-bottom: 3px solid @b;
-      border-right: 3px solid @b;
+      border-bottom: 3px @sol @b;
+      border-right: 3px @sol @b;
       box-shadow: 10px 10px 30px 0px rgba(0, 93, 93, 1);
       border-radius: 10px;
       padding: 10px;
@@ -292,12 +294,12 @@ article {
     &:nth-child(even) {
       align-items: flex-end;
       border-left: 0;
-      border-right: 3px solid @b;
+      border-right: 3px @sol @b;
       box-shadow: 10px 10px 30px 0px rgba(0, 93, 93, 1);
 
       h2 {
         border-right: 0;
-        border-left: 3px solid @b;
+        border-left: 3px @sol @b;
         box-shadow: -10px 10px 30px 0px rgba(0, 93, 93, 1);
       }
     }
@@ -306,27 +308,27 @@ article {
 
 .darkTable {
   font-family: "Arial Black", sans-serif;
-  border: 2px solid @b;
+  border: 2px @sol @b;
   background-color: #4a4a4a;
-  width: 100%;
+  width: @100;
   height: 200px;
   margin: 20px 0;
   text-align: center;
   border-collapse: collapse;
   td,
   th {
-    border: 1px solid #4a4a4a;
+    border: 1px @sol #4a4a4a;
     padding: 15px 2px;
   }
   thead {
     background: @b;
-    border-bottom: 3px solid #005d5d;
+    border-bottom: 3px @sol #005d5d;
     th {
       font-size: 15px;
       font-weight: bold;
       color: @gw;
       text-align: center;
-      border-left: 2px solid #4a4a4a;
+      border-left: 2px @sol #4a4a4a;
       &:first-child {
         border-left: none;
       }
@@ -346,11 +348,11 @@ article {
 }
 
 footer {
-  width: 100%;
+  width: @100;
   display: flex;
   justify-content: space-between;
   background-color: @g-b3;
-  border: 1px solid @b;
+  border: 1px @sol @b;
   border-radius: 10px;
   padding: 20px 0;
   box-shadow: inset 10px 10px 23px -4px rgba(102, 102, 102, 1);
@@ -377,7 +379,7 @@ footer {
 
 @media (max-width: 800px) {
   header {
-    width: 100%;
+    width: @100;
     flex-direction: column;
     padding: 10px 0;
     nav {
@@ -397,7 +399,7 @@ footer {
     }
   }
   footer {
-    width: 100%;
+    width: @100;
     flex-direction: column;
     padding: 10px 0;
 
@@ -421,7 +423,7 @@ footer {
     padding: 20px 15px;
   }
   article {
-    width: 100%;
+    width: @100;
     section {
       width: 95%;
     }
@@ -429,7 +431,7 @@ footer {
 }
 @media (max-width: 500px) {
   header {
-    width: 100%;
+    width: @100;
     flex-direction: column;
     padding: 10px 0;
     nav {
@@ -454,7 +456,7 @@ footer {
     }
   }
   footer {
-    width: 100%;
+    width: @100;
     flex-direction: column;
     padding: 10px 0;
 
@@ -489,7 +491,7 @@ footer {
 	}
   }
   article {
-    width: 100%;
+    width: @100;
     section {
       width: 95%;
     }
