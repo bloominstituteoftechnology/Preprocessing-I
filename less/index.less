@@ -109,6 +109,16 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+.content-styling-largest() {
+	width: 100%;
+	// height: 900px;
+	text-align: center;
+	
+	h2 {
+		padding-bottom: 5rem;
+	}
+}
+
 .font-small() {
 	font-size: 1.6rem; 	
 }
@@ -150,6 +160,17 @@ h1, h2, h3, h4, h5, h6 {
 	img {
 		padding-bottom: 3rem;
 	}
+}
+
+.divider() {
+	border-right: 3px solid @blue;
+	padding-right: 3rem;
+}
+
+.form-styles() {
+	width: 40rem;
+	height: 2.5rem;
+	border-radius: .4rem;
 }
 /*-----------------------------------------------------NAVIGATION*/
 
@@ -237,9 +258,9 @@ nav {
 }
 
 .experience {
-	.content-styling;
+	.content-styling-largest;
 	.font-large;
-	
+	margin-bottom: 4rem;
 }
 /*-----------------------------------------------------What Can I do?*/
 .text-wrapper {
@@ -285,8 +306,11 @@ nav {
 }
 
 .education-item:first-of-type {
-	border-right: 3px solid @blue;
-	padding-right: 1.8rem;
+	.divider
+}
+
+.education-item:last-of-type {
+	padding-left: 3rem;
 }
 
 .pipe {
@@ -304,12 +328,20 @@ nav {
 }
 
 .experience-title {
-	padding-bottom: 5rem;
+	border-bottom: 2px solid @blue;
+	padding-bottom: 3rem;
+	width: 50rem;
+	margin: 0 auto 5rem;
 }
 
 .experience-column {
 	width: 50%;
 	text-align: left;
+	line-height: 4rem; 
+}
+
+.experience-column:first-of-type {
+	.divider;
 }
 
 .experience-column:last-of-type {
@@ -317,10 +349,55 @@ nav {
 }
 
 
-
-
-
 /*-----------------------------------------------------Contact Me*/
+
+.form-wrapper {
+	
+	width: 100vw;
+	height: 420px;
+	background-color: @grey;
+}
+
+.form-container {
+	margin: 0 auto;
+	padding: 3rem 0;
+	.font-small;
+	.flex-column;
+	line-height: 4rem;
+
+	.form-title {
+		.font-large;
+		text-align: center;
+		color: @blue;
+	}
+}
+
+
+
+#fname {
+	.form-styles;
+}
+
+#email {
+	.form-styles;
+}
+
+#subject {
+	.form-styles;
+}
+
+#submit-button:hover {
+	color: @blue;
+}
 
 /*-----------------------------------------------------Footer*/
 
+footer {
+	width: 100%;
+	height: 5rem;
+	background-color: @black;
+	color: @white;
+	.flex-around;
+	.font-small;
+	border-bottom: 2px solid @blue;
+}
