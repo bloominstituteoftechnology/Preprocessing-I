@@ -4,56 +4,314 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+
+.center() {
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }
+
+
+@Alto: #d9d7d6;
+@secondary-color:@Alto;
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 30px;
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+	width: 50%;
+	padding-bottom: 15px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.mainGrey {
+  background:@secondary-color;
+  margin: 15px 30px 0 0;
+
+  img {
+    max-width: 200px;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .tech {
+    font-size: 1rem;
+    padding: 20px;
+  }
+  .Occasionally {
+    padding: 20px;
+    line-height: 1.25;
+    border-top: 1px solid black;
+  }
+  button {
+    background: darkgray;
+    color: white;
+    padding: 10px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    margin: 0px 0px 20px 20px;
+  }
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
+
+  .intro {
+    width: 48%;
+    margin-right: 15px;
+    .introHead {
+      font-size: 1.5rem;
+      padding-bottom: 10px;
+    }
+    .introP {
+      line-height: 1.25;
+    }
+  }
+
+  .skills {
+    width: 48%;
+    .skillHead {
+      font-size: 1.3rem;
+    }
+    .skillList {
+      li {
+        border: 1px solid black;
+        padding: 10px;
+      }
+    }
+  }
+}
+.workH {
+  .workHead {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+  table,
+  th,
+  td {
+    padding: 10px 0;
+    border-top: 1px solid @secondary-color;
+  }
+  td {
+	  text-align: center;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #d9d7d6;
+  }
+  table tr:nth-child(odd) {
+    background-color: white;
+  }
+  table th {
+    color: black;
+    background-color: white;
+  }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: gray;
+  margin-top: 30px;
+  padding: 25px;
+  h3 {
+    color: white;
+  }
+}
+}
+@media (max-width: 500px) {
+	.container {
+		margin:10px auto;
+		padding: 0 10px;
+
+	header nav {
+		width:100%;
+	}
+	.mainGrey {
+		margin: 15px 30px 0 0;
+		flex-direction: column;
+		align-items: center;
+		.center();
+		img {
+			width: 250px;
+			margin: 20px;
+			.center();
+			}
+		  
+		h1 {
+			padding: 20px;
+			width: 100%;
+			.center();
+			text-align: center;
+			}
+		  
+			.tech {
+			  padding: 20px;
+			  .center();
+			}
+			.Occasionally {
+			  padding: 20px;
+			  .center();
+			  text-align: center;
+			}
+			button {
+			  padding: 10px;
+			  margin: 0 0 20px 20px;
+			  .center();
+			}
+		  }
+		}
+	}
 
