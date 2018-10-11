@@ -135,6 +135,10 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+}
 .buttons {
   width: 25%;
   height: 39px;
@@ -174,11 +178,9 @@ header {
 header nav {
   width: 50%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 header nav a {
-  display: flex;
-  flex-direction: flex-end;
   text-decoration: none;
   color: gray;
 }
@@ -196,7 +198,7 @@ header nav a:hover {
   header nav {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 }
 .main-content {
@@ -209,12 +211,20 @@ header nav a:hover {
 }
 .main-content .top-content .text-content {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
 }
 .main-content .top-content .text-content .xena-img {
   width: 40%;
   margin-top: 6%;
+  transition: transform 0.2s;
+}
+.main-content .top-content .text-content .xena-img:hover {
+  -ms-transform: scale(1.5);
+  /* IE 9 */
+  -webkit-transform: scale(1.5);
+  /* Safari 3-8 */
+  transform: scale(1.5);
 }
 .main-content .top-content .text-content h1 {
   display: flex;
@@ -272,8 +282,8 @@ header nav a:hover {
 @media (max-width: 500px) {
   .main-content .bottom-content .box {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
     height: 250px;
@@ -290,9 +300,9 @@ header nav a:hover {
 }
 .main-content .bottom-content .box .skills ul {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   width: 100%;
-  justify-content: space-between;
   align-items: space-between;
   border-top: 1px solid gray;
   border-left: 1px solid gray;

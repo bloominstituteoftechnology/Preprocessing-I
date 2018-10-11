@@ -64,6 +64,11 @@ html, body {
 @font-family: 'Krub', sans-serif;
 
 //Mixings
+
+.flex-box {
+	display: flex;
+	justify-content: space-between;
+}
 .buttons {
 	width: 25%;
 	height: 39px;
@@ -110,12 +115,9 @@ header {
 	
 	nav {
 		width: 50%;
-		display: flex;
-		justify-content: space-evenly;
-		
+		.flex-box();
+
 			a {
-				display: flex;
-				flex-direction: flex-end;
 				text-decoration: none;
 				color: gray;
 
@@ -133,9 +135,8 @@ header {
 			}
 
 			@media (max-width: 500px) {
-				width: 100%;
-				display: flex;
-				justify-content: space-evenly;
+				width: @width;
+				.flex-box();
 			}
 
 			
@@ -145,28 +146,30 @@ header {
 
 .main-content {
 	width: @width;
-	// font-family: @font-family;
-	
-	
+
 	.top-content {
 		background: lightgray;
 		margin-top: 4.5%;
 		padding: 0 3%;
 		
 		.text-content {
-				display: flex;
+				.flex-box();
 				flex-direction: column;
-				justify-content: space-between;
 
 			.xena-img {
 				width: 40%;
 				margin-top: 6%;
-			
+				transition: transform .2s;
+
+				&:hover {
+					-ms-transform: scale(1.5); /* IE 9 */
+					-webkit-transform: scale(1.5); /* Safari 3-8 */
+					transform: scale(1.5);
+								}
 			}
 	
 			h1 {
-				display: flex;
-				justify-content: space-between;
+				.flex-box();
 				font-size: 4rem; } 
 				
 
@@ -207,9 +210,7 @@ header {
 } //top-content
 	
 	.bottom-content {
-		display: flex;
-		
-		justify-content: space-between;
+		.flex-box();
 		flex-wrap: wrap;
 
 		.box {
@@ -222,11 +223,10 @@ header {
 			margin-top: 3%;
 
 			@media (max-width: 500px) {
-				display: flex;
+				.flex-box();
 				flex-wrap: wrap;
-				justify-content: space-between;
 				flex-direction: row;
-				width: 100%;
+				width: @width;
 				height: 250px;
 				}
 			
@@ -241,10 +241,9 @@ header {
 					
 
 					ul {
-						display: flex;
+						.flex-box();
 						flex-direction: column;
 						width: @width;
-						justify-content: space-between;
 						align-items: space-between;
 						.no-bottom-border();
 
@@ -297,11 +296,7 @@ header {
 						td {
 							text-align: center;
 							border-left: 1px solid gray;
-						}
-
-						
-						
-
+						}		
 				} //table row
 		}//table
 } //work-history
