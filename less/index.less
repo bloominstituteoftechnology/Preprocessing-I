@@ -54,6 +54,276 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+// Custom Styles
+
+// variables
+@tablet-size: 600px;
+@desktop-size: 900px;
+
+@header-font: 'VT323', monospace;
+@body-font: 'Arvo', serif;
+
+// Colors
+@main-color: @burgandy;
+@light-shades: @dawn-pink;
+@light-accent: @copperfield;
+@dark-shades: @heavy-metal;
+@dark-accent: @celery;
+
+// Color Pool
+@burgandy: #a1002d;
+@dawn-pink: #f3ede3;
+@copperfield: #de9672;
+@celery: #aebf57;
+@heavy-metal: #2c312e;
+
+// mixins
+.flex(@direction, @justify, @align) {
+	display: flex;
+	flex-direction: @direction;
+	flex-wrap: wrap;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+.btn (@background, @color, @padding) {
+	background-color: @background;
+	color: @color;
+	padding: @padding;
+}
+
+.fit-in(){
+	width: 97%;
+	margin: 2% auto;
+	padding: 2%;
+}
+
+// Global Styles
+html {
+	font-size: 62.5%;
+	body {
+		background-color: @light-shades;
+		font-family: @body-font;
+		h1, h2 {
+			color: @main-color;
+		}
+	}
+}
+
+#container {
+	margin: 0 auto;
+	max-width: 1200px;
+	.flex(column, center, center);
+	flex-wrap: wrap;
+	background-color: @light-shades;
+
+	// Breakpoints
+	@media (min-width: @tablet-size){
+		flex-direction: row;
+		align-items: baseline;
+	}
+
+	// Children
+	// Header Styles
+	header {
+		.flex(row, center, center);
+		width: 100%;
+		nav {
+			.flex(column, center, center);
+			width: 100%;
+			background-color: @main-color;
+			@media(min-width: @tablet-size){
+				flex-direction: row;
+				justify-content: space-around;
+			}
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.4rem;
+				padding: 5%;
+				@media(min-width: @tablet-size){
+					padding: 3% 0;
+				}
+			}
+			
+
+		}
+		
+	}
+
+	//Hero Styles
+	#hero{
+		.flex(column, center, center);
+		background-color: @dark-shades;
+		.fit-in();
+		border: 4px double @dark-accent;
+
+		// Breakpoints
+		@media(min-width: @desktop-size) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		// children
+		img {
+			border-radius: 50%;
+			border: 4px double @dark-accent;
+			padding: 4%;
+			margin: 4%;
+			@media(min-width: @desktop-size){
+				width: 45%;
+			}
+		}
+		.text-box {
+			.flex(column, center, center);
+
+			// breakpoints
+			@media(min-width: @desktop-size){
+				width: 45%;
+			}
+
+			// children
+			h1 {
+				font-size: 3rem;
+				font-family: @header-font;
+			}
+			#tagline {
+				font-size: 1.5rem;
+				text-align: center;
+				color: @dark-accent;
+			}
+			p {
+				font-size: 1.2rem;
+				margin-top: 2%;
+				line-height: 2rem;
+				color: white;
+			}
+			button {
+				.btn(@dark-accent, @dark-shades, 4%);
+				margin: 4% 0;
+				&:hover{
+					.btn(@dark-shades, @dark-accent, 4%);
+					border: 1px solid @dark-accent;
+				}
+			}
+		}
+		
+	}
+
+	// intro styles
+	#intro {
+		background-color: @light-shades;
+		.fit-in();
+		border: 4px double @light-accent;
+		
+		// Breakpoints
+		@media(min-width: @tablet-size){
+			width: 45%;
+		}
+
+		// children
+		h2 {
+			font-size: 3rem;
+			font-family: @header-font;
+		}
+		p {
+			font-size: 1.2rem;
+			margin-top: 2%;
+			line-height: 2rem;
+		}
+	}
+
+	// Skill Styles
+	#skills {
+		background-color: @light-shades;
+		.fit-in();
+		.flex(column, center, center);
+		
+		// Breakpoints
+		@media(min-width: @tablet-size){
+			width: 45%;
+		}
+
+		// Children
+		h2 {
+			font-size: 3rem;
+			font-family: @header-font;
+			
+		}
+		
+		ul{
+			text-align: center;
+			padding: 2% 0;
+			li {
+				padding: 2% 0;
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	// Work History Styles
+	#work-history {
+		.fit-in();
+		background-color: @dark-shades;
+		border: 4px double @dark-accent;
+		color: white;
+		h2 {
+			font-size: 3rem;
+			font-family: @header-font;
+			text-align: center;
+		}
+		table {
+			width: 100%;
+			.flex(column, center, center);
+			flex-wrap: wrap;
+			border: 1px solid @dark-accent;
+			font-size: 1.6rem;
+			text-align: center;
+
+			// children
+			 thead {
+				 width: 100%;
+				 .flex(row, space-around, center);
+				 tr {
+					 width: 100%;
+					 .flex(row, space-around, center);
+					 th {
+						 width: 33%;
+						 padding: 2% 0;
+						 color: @dark-accent;
+					 }
+				 }
+			 }
+
+			 tbody {
+				width: 100%;
+				.flex(row, space-around, center);
+				flex-wrap: wrap;
+				tr {
+					width: 100%;
+					.flex(row, space-around, center);
+					td {
+						width: 33%;
+						padding: 2% 0;
+					}
+				}
+			}
+
+			
+		}
+	}
+
+	// Footer Styles
+	footer {
+		background-color: @main-color;
+		width: 100%;
+		text-align: center;
+		padding: 1% 0;
+		color: white;
+	}
+}
+
 
