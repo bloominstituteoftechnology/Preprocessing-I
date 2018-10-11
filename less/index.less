@@ -56,9 +56,8 @@ table {
 html, body {
     height: 100%;
 }
-@text-field-color{
-	background-color: darkslategray;
-}
+@text-field-color:white;
+
 .flex-center{
 	display: flex;
 	justify-content: center;
@@ -74,17 +73,29 @@ html, body {
 .heading-font{
 	font-family: 'Fahkwang', sans-serif;
 	color: white;
+	font-size: 2.4rem;
 }
 
 .paragraph-text{
 	font-size:1.6rem;
 	font-family: 'Playfair Display', serif;
-	color:white;
 	text-align: center;
+	padding: 20px;
 }
 @base-url: "C:/lamda/Preprocessing-I/images";
 
+.text-fields{
+	background-color: @text-field-color;
+		width: 45%;
+		border-radius: 5px;
+}
 
+.font-awesome{
+	color:white;
+	font-size: 2rem;
+}
+
+// end varibles and mixins 
 
 
 html{
@@ -98,6 +109,12 @@ body{
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-color: black;
+	background-attachment: fixed;
+
+	@media(max-width: 500px){
+		background-image: none;
+	}
+	
 }
 .container{
 .flex-center();
@@ -121,19 +138,73 @@ margin: auto;
 		}
 		h1{
 			.heading-font();
-			font-size: 2.4rem;
-			margin: -9px 0 0 0;
 		}
 	}
+	.top{
+		width: 100%;
+
+		@media(max-width:500px){
+			.flex-center();
+		}
 	.bio{
-		background-color: @text-field-color();
-		width: 45%;
+		.text-fields();
+		margin-top: 150px;
 
 		p{
 			.paragraph-text();
 		}
+		}
 	}
+	.skillsAndContact{
+		width: 100%;
+		margin-top: 50px;
+
+		@media(max-width: 500px){
+			.flex-center();
+		}
+
+		h1{
+			margin-top: 50px;
+			.heading-font();
+
+		}
+
+		.skills{
+			.text-fields();
+			margin-top: 50px;
+			
+			ul li{
+				.paragraph-text();
+			}
+			
+		}
 	
+		.contact{
+			.text-fields();
+			margin: 50px 0;
+
+			p{
+				.paragraph-text();
+			}
+		}
+		
+
+	}
+	footer{
+		.flex-between();
+		margin: 50px 0;
+		width: 100%;
+		
+		.fa-github{
+			.font-awesome();
+		}
+		.fa-twitter{
+			.font-awesome();
+		}
+		.fa-codepen{
+			.font-awesome();
+		}
+	}
 
 	
 }
