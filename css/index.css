@@ -152,9 +152,11 @@ html {
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
+  font-family: 'Nunito', sans-serif;
 }
 .header-container .navigation h1 {
   font-size: 4rem;
+  font-family: 'Permanent Marker', cursive;
   color: #FDFDFE;
 }
 .header-container .navigation nav {
@@ -163,12 +165,26 @@ html {
   justify-content: space-evenly;
 }
 .header-container .navigation nav a {
-  color: black;
+  color: #FDFDFE;
   text-decoration: none;
+}
+@media (max-width: 800px) {
+  .header-container .navigation h1 {
+    font-size: 3rem;
+  }
+  .header-container .navigation nav {
+    width: 60%;
+  }
+  .header-container .navigation nav a {
+    margin: 0 0 0 20px;
+  }
 }
 @media (max-width: 500px) {
   .header-container .navigation {
     flex-direction: column;
+  }
+  .header-container .navigation h1 {
+    font-size: 4rem;
   }
   .header-container .navigation nav {
     width: 100%;
@@ -186,15 +202,12 @@ html {
 }
 h3 {
   font-size: 2rem;
+  font-family: 'Permanent Marker', cursive;
 }
 p {
   font-size: 1.8rem;
   padding: 10px;
-}
-.maxed-width {
-  width: 80%;
-  padding: 20px 0;
-  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
 }
 .top-content {
   display: flex;
@@ -202,27 +215,37 @@ p {
   flex-wrap: wrap;
   background-color: #E1E0DB;
 }
-.top-content .ammy-main {
-  max-width: 40%;
-  border: 1px solid black;
-}
-.top-content .top-text {
-  width: 60%;
+.top-content .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
 }
-.top-content .top-text h2 {
-  font-size: 4rem;
+.top-content .container-restraint .ammy-main {
+  width: 40%;
+  max-width: 250px;
+  border: 1px solid black;
+  margin: 50px 0 20px 0;
 }
-.top-content .top-text p {
+.top-content .container-restraint .top-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
+}
+.top-content .container-restraint .top-text h2 {
+  font-size: 5rem;
+  font-family: 'Permanent Marker', cursive;
+}
+.top-content .container-restraint .top-text p {
   font-size: 3rem;
 }
 @media (max-width: 500px) {
-  .top-content {
+  .top-content .container-restraint {
     width: 100%;
-    align-content: center;
   }
 }
 .intro {
@@ -232,28 +255,58 @@ p {
   background-color: ##FFFDFE;
   height: 30%;
 }
+.intro .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
 .skills {
   justify-content: center;
   align-items: center;
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   background-color: #E1E0DB;
 }
-.skills ul {
+.skills .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.skills .container-restraint .skillset-details {
+  margin-top: 30px;
+}
+.skills .container-restraint .weapons-details {
+  margin-top: 30px;
+}
+.skills .container-restraint ul {
   padding-top: 10px;
   font-size: 1.6rem;
+  margin-bottom: 40px;
+  font-family: 'Nunito', sans-serif;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.skills ul li {
+.skills .container-restraint ul li {
   margin: 0 10px;
   list-style-type: disc;
 }
-.skills ul li:first-child {
-  list-style-type: none;
+.skills .container-restraint .sun {
+  width: 10%;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .skills .container-restraint .sun {
+    display: none;
+  }
 }
 .work-history {
   display: flex;
@@ -261,18 +314,28 @@ p {
   align-items: center;
   background-color: ##FFFDFE;
 }
-.work-history table {
+.work-history .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.work-history .container-restraint table {
   font-size: 1.6rem;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
   margin: 20px 0;
 }
-.work-history table tr:nth-child(even) {
+.work-history .container-restraint table tr:nth-child(even) {
   background-color: #E1E0DB;
 }
-.work-history table tr th {
+.work-history .container-restraint table tr th {
   padding: 10px 0;
   background-color: #DA3110;
 }
-.work-history table tr td {
+.work-history .container-restraint table tr td {
   padding: 5px 10px;
 }
 .contact {
@@ -281,27 +344,37 @@ p {
   align-items: center;
   background-color: #E1E0DB;
 }
-.contact form {
-  width: 60%;
+.contact .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
-.contact form div {
+.contact .container-restraint form {
+  width: 60%;
+  font-family: 'Nunito', sans-serif;
+  margin: 0 auto;
+}
+.contact .container-restraint form div {
   margin: 15px 0;
   display: flex;
   flex-direction: column;
 }
-.contact form div label {
+.contact .container-restraint form div label {
   margin: 5px 0;
   font-size: 1.6rem;
 }
-.contact form div input {
+.contact .container-restraint form div input {
   font-size: 1.6rem;
 }
-.contact form div textarea {
+.contact .container-restraint form div textarea {
   font-size: 1.8rem;
   height: 100px;
 }
 @media (max-width: 500px) {
-  .contact form {
+  .contact .container-restraint form {
     width: 100%;
   }
 }
