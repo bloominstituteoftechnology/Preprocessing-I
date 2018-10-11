@@ -273,29 +273,37 @@ html {
 		}
 		table {
 			width: 100%;
-			.flex(column, space-around, space-around);
+			.flex(column, center, center);
 			flex-wrap: wrap;
 			border: 1px solid @dark-accent;
 			font-size: 1.6rem;
+			text-align: center;
 
 			// children
-			thead {
-				text-align: center;
+			 thead {
+				 width: 100%;
+				 .flex(row, space-around, center);
+				 tr {
+					 width: 100%;
+					 .flex(row, space-around, center);
+					 th {
+						 width: 33%;
+						 padding: 2% 0;
+						 color: @dark-accent;
+					 }
+				 }
+			 }
+
+			 tbody {
+				width: 100%;
+				.flex(row, space-around, center);
+				flex-wrap: wrap;
 				tr {
 					width: 100%;
-					// .flex(row, space-evenly, center);
+					.flex(row, space-around, center);
 					td {
 						width: 33%;
-					}
-				}
-			}
-			tbody {
-				text-align: center;
-				tr {
-					width: 100%;
-					// .flex(row, space-evenly, center);
-					td {
-						width: 33%;
+						padding: 2% 0;
 					}
 				}
 			}
