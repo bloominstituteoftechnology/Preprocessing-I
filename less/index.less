@@ -45,14 +45,21 @@ body {
 }
 
 .container {
-    height: 100%;
-    width: 1024px;
+    max-width: 1024px;
     background: white;
     margin-bottom: -50px;
+    @media (max-width: 500px) {
+        width: 100%;
+    }
     .center-block;
     main {
         width: 98%;
         .center-block();
+        @media (max-width: 500px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
@@ -92,9 +99,14 @@ body {
     justify-content: space-around;
     padding: 20px 0;
     height: 200px;
+    @media (max-width: 500px) {
+        justify-content: flex-start;
+        flex-direction: column;
+        height: auto;
+    }
     h3 {
         font-size: 1.4rem;
-        height: 25%;
+        height: 35px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -104,27 +116,34 @@ body {
     .summary {
         overflow: hidden;
         border-radius: 15px;
-        justify-content: space-around;
         flex-direction: column;
         width: 70%;
         display: flex;
-        flex-wrap: wrap;
         height: 100%;
+        @media (max-width: 500px) {
+            width: auto;
+            height: 150px;
+        }
         p {
             height: 75%;
             background-color: @hit_gray;
             padding: 8px 5px;
+            @media (max-width: 500px) {
+            }
         }
     }
     .hobbies {
         overflow: hidden;
         border-radius: 15px;
         flex-direction: column;
-        justify-content: space-around;
         width: 20%;
         display: flex;
-        flex-wrap: wrap;
         height: 100%;
+        @media (max-width: 500px) {
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+        }
         ul {
             background-color: @hit_gray;
             height: 75%;
@@ -141,6 +160,11 @@ body {
     width: 95%;
     border-radius: 15px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 500px) {
+        width: 100%;
+    }
     h3 {
         font-size: 1.4rem;
         height: 50px;
@@ -149,12 +173,17 @@ body {
         justify-content: center;
         background-color: @content-background;
         color: @highlight;
+        width: 100%;
     }
     table {
         background-color: @hit_gray;
         width: 100%;
         font-size: 0.9rem;
         height: 250px;
+        @media (max-width: 500px) {
+            height: 500px;
+            margin-bottom: 20px;
+        }
     }
     tr {
         th {
@@ -168,6 +197,9 @@ body {
         }
         td:last-child {
             width: 425px;
+            @media (max-width: 500px) {
+                width: auto;
+            }
         }
         &:nth-child(2n + 3) {
             background-color: @submarine;
@@ -187,8 +219,21 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: @hit_gray;
+    @media (min-width: 1024px) {
+        .call_button {
+            display: none;
+        }
+    }
+    @media (max-width: 500px) {
+        .phone_number {
+            display: none;
+        }
+    }
     a {
         text-decoration: none;
         color: black;
+    }
+    @media (max-width: 1024px) {
+        width: 100%;
     }
 }
