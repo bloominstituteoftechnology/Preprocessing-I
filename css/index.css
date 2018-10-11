@@ -165,10 +165,21 @@ h5 {
   margin: 0 auto;
   font-size: 1.6rem;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+}
 .home header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+@media (max-width: 500px) {
+  .home header {
+    background-color: green;
+    justify-content: center;
+  }
 }
 .home header .main-nav {
   padding: 3.6% 0;
@@ -178,9 +189,27 @@ h5 {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .home header .main-nav {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+}
 .home header .main-nav a {
   text-decoration: none;
   color: black;
+}
+@media (max-width: 500px) {
+  .home header .main-nav a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid black;
+    padding: 2% 0;
+  }
 }
 .home .topContent {
   flex-direction: column;
@@ -189,12 +218,28 @@ h5 {
   padding-bottom: 10.8%;
   margin-bottom: 4%;
 }
-.home .topContent .selfie {
+.home .topContent div {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .home .topContent div {
+    display: flex;
+    justify-content: center;
+  }
+}
+.home .topContent div .selfie {
   width: 37.3%;
-  margin-bottom: 1%;
+  height: 37.3%;
+  margin-bottom: 3%;
 }
 .home .topContent h1 {
   margin-bottom: 2.3%;
+}
+@media (max-width: 500px) {
+  .home .topContent h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
 .home .topContent h4 {
   padding-bottom: 3.7%;
@@ -220,20 +265,36 @@ h5 {
   margin-bottom: 4.7%;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .home .midContent {
+    flex-direction: column;
+  }
+}
 .home .midContent .mid-left {
   flex-direction: column;
   max-width: 47.2%;
+}
+@media (max-width: 500px) {
+  .home .midContent .mid-left {
+    max-width: 100%;
+  }
 }
 .home .midContent .mid-left h2 {
   margin-bottom: 2.3%;
 }
 .home .midContent .mid-left p {
   line-height: 153%;
+  margin-bottom: 5%;
 }
 .home .midContent .mid-right {
   flex-direction: column;
   width: 48.3%;
   display: flex;
+}
+@media (max-width: 500px) {
+  .home .midContent .mid-right {
+    width: 100%;
+  }
 }
 .home .midContent .mid-right h3 {
   font-size: 2.37rem;

@@ -81,6 +81,7 @@ html, body {
 /******************************************************
  ********************** Home Page *********************
  ******************************************************/
+ @phoneScreen: 500px;
   // Fonts
   @custom-font: 'Helvetica', Arial, sans-serif;
   h1 {font-size: 5.32rem;}
@@ -100,21 +101,43 @@ html, body {
     max-width: 870px;
     margin: 0 auto;
     font-size: 1.6rem;
+
+    @media (max-width: @phoneScreen) {
+      max-width: @phoneScreen;
+    }
   }
 
   .home {
     header {
       .flex-position(flex-end, center);
+      @media (max-width: @phoneScreen) {
+        background-color: green;
+        justify-content: center;
+      }
   
       .main-nav {
         padding: 3.6% 0;
         text-decoration: none;
         width: 34.9%;
         .flex-position(space-between, center);
+        @media (max-width: @phoneScreen) {
+          width: 100%;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid black;
+        }
   
         a {
           text-decoration: none;
           color: black;
+          @media (max-width: @phoneScreen) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border: 1px solid black;
+            padding: 2% 0;
+          }
         }
       }
     } // header
@@ -125,14 +148,28 @@ html, body {
       background-color: @Athens-Gray;
       padding-bottom: 10.8%;
       margin-bottom: 4%;
-  
-      .selfie {
-        width: 37.3%;
-        margin-bottom: 1%;
+      
+      div {
+        width: 100%;
+        @media (max-width: @phoneScreen) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .selfie {
+          width: 37.3%;
+          height: 37.3%;
+          margin-bottom: 3%;
+        }
       }
-  
+
       h1 {
         margin-bottom: 2.3%;
+        
+        @media (max-width: @phoneScreen) {
+          font-size: 2rem;
+          font-weight: bold;
+        }
       }
   
       h4 {
@@ -162,10 +199,17 @@ html, body {
       flex-direction: row;
       margin-bottom: 4.7%;
       justify-content: space-between;
+
+      @media (max-width: @phoneScreen) {
+        flex-direction: column;
+      }
       
       .mid-left {
         flex-direction: column;
         max-width: 47.2%;
+        @media (max-width: @phoneScreen) {
+          max-width: 100%;
+        }
 
         h2 {
           margin-bottom: 2.3%;
@@ -173,6 +217,7 @@ html, body {
 
         p {
           line-height: 153%;
+          margin-bottom: 5%;
         }
       }
 
@@ -180,6 +225,9 @@ html, body {
         flex-direction: column;
         width: 48.3%;
         display: flex;
+        @media (max-width: @phoneScreen) {
+          width: 100%;
+        }
 
         h3 {
           font-size: 2.37rem;
