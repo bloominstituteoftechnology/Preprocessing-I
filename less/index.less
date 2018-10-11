@@ -49,6 +49,11 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+// Variables
+@custom-font: 'Helvetica', Arial, sans-serif;
+
+
 * {
     box-sizing: border-box;
 }
@@ -58,5 +63,39 @@ html, body {
 }
 
 html {
-	background-color: red;
+	background-color: #f0ead6;
+	font-size: 62.5%;
+  	font-family: @custom-font;
 }
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	border: 1px solid red;
+	
+	@media(max-width: 700px) {
+	  border: 10px dashed blue;
+	}
+	
+	@media(max-width: 600px) {
+	  border: 10px dashed red;
+	}
+	
+  }
+  
+  header {
+	  
+
+
+	nav {
+		width: 50%;
+		display: flex;
+		
+		justify-content: space-evenly;
+		
+		a {
+			font-size: 1.6rem;
+		}
+	}
+  }
+
