@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -132,5 +132,157 @@ table {
 }
 html,
 body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* MIXINS */
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+  /*  background-color:red; */
+}
+html,
+body {
   height: 100%;
+  background-color: white;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.container h1 {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 3rem;
+}
+.nav-bar {
+  display: flex;
+  margin-top: 2rem;
+  background: #211145;
+  color: white;
+  /* NAV BAR MEDIA QUERY */
+}
+.nav-bar a {
+  margin: auto;
+}
+.nav-bar a:hover {
+  color: red;
+}
+@media (max-width: 500px) {
+  .nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: #211145;
+  }
+  .nav-bar a {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border: 2px solid black;
+    width: 100%;
+    text-align: center;
+  }
+}
+.intro {
+  display: flex;
+  border: 2px solid black;
+  margin-top: 2rem;
+  background: darkblue;
+  color: white;
+}
+.intro img {
+  border: 2px solid black;
+  margin: 20px;
+}
+.intro p {
+  margin-top: 3rem;
+}
+.qualifications {
+  border: 2px solid black;
+  margin-top: 2rem;
+  display: flex;
+  flex-display: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  background: darkblue;
+  color: white;
+  /* QUALIFICATIONS MEDIA QUERY */
+}
+.qualifications h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border: 2px solid black;
+  padding: 0.3rem;
+  background: #211145;
+}
+.qualifications br {
+  margin-bottom: 0.6rem;
+}
+.qualifications .skills {
+  margin-right: 4.8rem;
+  max-width: 50%;
+}
+.qualifications .history {
+  margin-left: 4.8rem;
+  max-width: 50%;
+}
+@media (max-width: 500px) {
+  .qualifications {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .qualifications p {
+    border: 2px solid black;
+  }
+}
+.contact {
+  margin-top: 2rem;
+  border: 2px solid black;
+  background: darkblue;
+  text-align: center;
+  color: white;
+}
+.contact h2 {
+  border: 1px solid purple;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin: auto;
+  background: #211145;
+}
+.contact .spacer {
+  border: 2px solid black;
+  margin-bottom: 2rem;
+}
+.contact a {
+  display: flex;
+  margin-left: 2rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.contact #last-a-contact {
+  margin-bottom: 2rem;
 }
