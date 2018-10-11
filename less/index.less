@@ -89,6 +89,18 @@ html, body {
 	align-items: @align;
 }
 
+.btn (@background, @color, @padding) {
+	background-color: @background;
+	color: @color;
+	padding: @padding;
+}
+
+.fit-in(){
+	width: 97%;
+	margin: 2% auto;
+	padding: 2%;
+}
+
 // Global Styles
 html {
 	font-size: 62.5%;
@@ -100,6 +112,16 @@ html {
 #container {
 	margin: 0 auto;
 	max-width: 1200px;
+	.flex(column, center, center);
+	flex-wrap: wrap;
+	background-color: @light-shades;
+
+	// Breakpoints
+	@media (min-width: @tablet-size){
+		flex-direction: row;
+	}
+
+	// Children
 	// Header Styles
 	header {
 		.flex(row, center, center);
@@ -123,7 +145,115 @@ html {
 		}
 		
 	}
-	
+
+	//Hero Styles
+	#hero{
+		.flex(column, center, center);
+		background-color: @dark-shades;
+		.fit-in();
+		border: 4px double @dark-accent;
+
+		// Breakpoints
+		@media(min-width: @desktop-size) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		// children
+		img {
+			border-radius: 50%;
+			border: 4px double @dark-accent;
+			padding: 4%;
+			margin: 4%;
+			@media(min-width: @desktop-size){
+				width: 45%;
+			}
+		}
+		.text-box {
+			.flex(column, center, center);
+
+			// breakpoints
+			@media(min-width: @desktop-size){
+				width: 45%;
+			}
+
+			// children
+			h1 {
+				font-size: 3rem;
+				color: @dark-accent;
+				font-family: @header-font;
+			}
+			#tagline {
+				font-size: 1.5rem;
+				text-align: center;
+				color: @light-accent;
+			}
+			p {
+				font-size: 1.2rem;
+				margin-top: 2%;
+				line-height: 2rem;
+				color: white;
+			}
+			button {
+				.btn(@dark-accent, @dark-shades, 4%);
+				margin: 4% 0;
+				&:hover{
+					.btn(@dark-shades, @dark-accent, 4%);
+					border: 1px solid @dark-accent;
+				}
+			}
+		}
+		
+	}
+
+	#intro {
+		background-color: @light-shades;
+		.fit-in();
+		border: 4px double @light-accent;
+		
+		// Breakpoints
+		@media(min-width: @tablet-size){
+			width: 45%;
+		}
+
+		// children
+		h2 {
+			color: @light-accent;
+			font-size: 3rem;
+			font-family: @header-font;
+		}
+		p {
+			font-size: 1.2rem;
+			margin-top: 2%;
+			line-height: 2rem;
+		}
+	}
+
+	#skills {
+		background-color: @light-shades;
+		.fit-in();
+		.flex(column, center, center);
+		
+		// Breakpoints
+		@media(min-width: @tablet-size){
+			width: 45%;
+		}
+		h2 {
+			color: @light-accent;
+			font-size: 3rem;
+			font-family: @header-font;
+			
+		}
+		
+		ul{
+			text-align: center;
+			padding: 2% 0;
+			li {
+				padding: 2% 0;
+				font-size: 1.2rem;
+			}
+		}
+	}
 }
 
 
