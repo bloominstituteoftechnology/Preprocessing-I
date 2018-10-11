@@ -146,15 +146,22 @@ html{
 			padding-bottom: 10%;
 			font-size: 4rem;
 			}
+
+			.border-radius(@radius: 7px){
+				-webkit-border-radius: @radius;
+				-moz-border-radius: @radius;
+				border-radius: @radius;
+			}
 		
 			button{
 				.pSize();
-				border-radius: 10px;
+				// border-radius: 10px;
+				.border-radius();
 				background-color: gray;
 				// color: white;
 				padding: 1%;  
 
-				&a:hover{
+				& a:hover{
 					color: white;
 					background-color: black;
 				}
@@ -169,16 +176,25 @@ html{
 	
 
 	.aboutMe{
+		display: flex;
 		// background-color: ivory;
     width: 85%;
     flex-wrap: nowrap;
     flex-direction: row;
     // justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
+		h2 {
+			font-size: 3.5rem;
+		}
+
+		h3{
+			font-size: 2.5rem;
+		}
 		.aboutMeBoxes{
-			width: 43%;
+			width: 45%;
+			flex-wrap: nowrap;
 			flex-direction: row;
 		}
 
