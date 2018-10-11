@@ -126,6 +126,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@keyframes wiggle {
+  0% {
+    transform: rotate(2deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
@@ -203,7 +217,7 @@ body .container header .side-nav nav {
 }
 body .container header .side-nav nav a {
   font-size: 1.8rem;
-  text-decoration: none;
+  text-decoration: underline;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
@@ -221,6 +235,9 @@ body .container header .side-nav nav a {
     margin: 5% 1%;
     padding: 0;
   }
+}
+body .container header .side-nav nav a:hover {
+  font-weight: bold;
 }
 @media (max-width: 800px) {
   body .container header .side-nav nav {
@@ -282,9 +299,19 @@ body .container header .header-content .portfolio {
   text-align: center;
   border-bottom: 1px white solid;
 }
-body .container header .header-content .portfolio a {
+body .container header .header-content .portfolio h1 {
+  margin: 0 0 5%;
+  padding: 1%;
+  animation-name: wiggle;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+}
+body .container header .header-content .portfolio h1 a {
   text-decoration: none;
   color: #f8e8ff;
+}
+body .container header .header-content .portfolio h1 a:hover {
+  font-weight: bold;
 }
 body .container header .header-content .intro {
   margin: 0;
@@ -295,7 +322,7 @@ body .container header .header-content .intro {
 }
 body .container header .header-content .intro h2 {
   font-size: 1.8rem;
-  text-decoration: none;
+  text-decoration: underline;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
@@ -329,7 +356,7 @@ body .container main .skills {
 }
 body .container main .skills h2 {
   font-size: 1.8rem;
-  text-decoration: none;
+  text-decoration: underline;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
@@ -342,7 +369,7 @@ body .container main .skills h3 {
   font-family: 'Montserrat', sans-serif;
   text-align: left;
   margin: 1%;
-  text-decoration: underline;
+  border-bottom: 1px #f8e8ff dashed;
   margin: 2% 0;
   padding: 0;
 }
@@ -365,7 +392,7 @@ body .container main .work {
 }
 body .container main .work h2 {
   font-size: 1.8rem;
-  text-decoration: none;
+  text-decoration: underline;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
@@ -376,7 +403,7 @@ body .container main .work h3 {
   font-family: 'Montserrat', sans-serif;
   text-align: left;
   margin: 1%;
-  text-decoration: underline;
+  border-bottom: 1px #f8e8ff dashed;
   margin: 1% 0;
   padding: 0;
 }
@@ -406,7 +433,7 @@ body .container footer h1 {
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
-  margin: 10% 0 0;
+  margin: 10% 0 5%;
   padding: 0;
 }
 body .container footer .contact {
@@ -416,16 +443,25 @@ body .container footer .contact {
   justify-content: center;
   align-items: space-between;
   font-size: 1.8rem;
-  text-decoration: none;
+  text-decoration: underline;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
   margin: 1%;
   padding: 2%;
   border: 1px white solid;
+  text-decoration: none;
 }
 body .container footer .contact h2 {
   margin: 5% 0;
   padding: 0;
   text-align: left;
+}
+body .container footer .contact h2 a {
+  color: white;
+  text-decoration: none;
+}
+body .container footer .contact h2 a:hover {
+  font-size: 2rem;
+  font-weight: bold;
 }

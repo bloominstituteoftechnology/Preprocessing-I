@@ -99,7 +99,7 @@ table {
 
 .font-style-2() {
 	font-size: 1.8rem;
-	text-decoration: none;
+	text-decoration: underline;
 	color: @font-color;
 	font-family: @h-font;
 	text-align: center;
@@ -112,7 +112,7 @@ table {
 	font-family: @p-font;
 	text-align: left;
 	.margins-padding(1%, 0);
-	text-decoration: underline;
+	border-bottom: 1px @font-color dashed;
 }
 .font-style-4() {
 	font-size: 1.2rem;
@@ -134,6 +134,23 @@ table {
 	.flex-layout(flex-start, center);
 	.width-height(20%,100%);
 }
+
+@keyframes wiggle {
+		
+	0% {
+		transform: rotate(2deg);
+	}
+	25% {
+		transform: rotate(-2deg);
+	}
+	50% {
+		transform: rotate(2deg);
+	}
+	100% {
+		transform: rotate(0deg)
+	}
+}
+
 
 
 /* Set every element's box-sizing to border-box */
@@ -184,6 +201,9 @@ body
 						.margins-padding(5% 1%, 0)
 					}
 				}
+				a:hover {
+					font-weight: bold;
+				}
 				@media (max-width: 800px) {
 					.width-height(100%, auto);
 					.flex-layout-2();
@@ -213,11 +233,24 @@ body
 				.width-height(100%,auto);
 				.font-style-1();
 				.border-bottom();
+				
+				h1{
+				.margins-padding(0 0 5%, 1%);
+				animation-name: wiggle;
+				animation-duration: .4s; 
+				animation-iteration-count: infinite;
 
-				a{
-					text-decoration: none;
-					color: @font-color;
+					a{
+						text-decoration: none;
+						color: @font-color;
+						
+					}
+					a:hover {
+						font-weight: bold;
+					}
 				}
+
+				
 			}
 
 			.intro {
@@ -287,7 +320,7 @@ body
 
 		h1 {
 			.font-style-1();
-			.margins-padding(10% 0 0, 0);
+			.margins-padding(10% 0 5%, 0);
 		}
 
 		.contact {
@@ -295,10 +328,22 @@ body
 			.font-style-2();
 			.margins-padding(1%, 2%);
 			border: 1px white solid;
+			text-decoration: none;
 
+			
 			h2 {
 				.margins-padding( 5% 0, 0);
 				text-align: left;
+			
+
+				a {
+					color: white;	
+					text-decoration: none;
+				}
+				a:hover {
+					font-size: 2rem;
+					font-weight: bold;
+				}
 			}
 
 		}
