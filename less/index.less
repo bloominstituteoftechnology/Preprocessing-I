@@ -1,6 +1,6 @@
-@import url("fontawesome/fontawesome.less");
-@import url("fontawesome/@sol.less");
-@import url("fontawesome/brands.less");
+@import "fontawesome/fontawesome.less";
+@import "fontawesome/solid.less";
+@import "fontawesome/brands.less";
 @import url("https://fonts.googleapis.com/css?family=Charmonman");
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -175,6 +175,7 @@ h2 {
 .glitch {
   font-family: "Charmonman", cursive;
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -215,7 +216,16 @@ h2 {
     border-radius: 10px;
     padding: 20px 0;
     box-shadow: inset -10px 10px 23px -4px rgba(102, 102, 102, 1);
-
+    @media (max-width: 800px) {
+      width: @100;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+    @media (max-width: 500px) {
+      width: @100;
+      flex-direction: column;
+      padding: 10px 0;
+    }
     nav {
       align-self: center;
       justify-self: flex-start;
@@ -224,59 +234,44 @@ h2 {
       border: 0;
       border-left: 0px;
       border-radius: 0 25px 25px 0;
+      @media (max-width: 800px) {
+        width: 95%;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        padding: 15px 10px;
+        border-radius: 25px;
+      }
+      @media (max-width: 500px) {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        background: none;
+        border-radius: 0;
+      }
       a {
         color: @gw;
         text-decoration: none;
         padding: 20px 20px;
-      }
-    }
-    @media (max-width: 800px) {
-      header {
-        width: @100;
-        flex-direction: column;
-        padding: 10px 0;
-        nav {
+        @media (max-width: 800px) {
+          padding: 10px 20px;
+        }
+        @media (max-width: 500px) {
           width: 95%;
-          display: flex;
-          align-self: center;
-          justify-content: center;
-          padding: 15px 10px;
+          text-align: center;
+          padding: 10px 20px;
+          background-image: linear-gradient(@g-b3, @b, @g-b3);
           border-radius: 25px;
-          a {
-            padding: 10px 20px;
-          }
-        }
-        img {
-          width: 30%;
-          align-self: center;
         }
       }
     }
-    @media (max-width: 500px) {
-      header {
-        width: @100;
-        flex-direction: column;
-        padding: 10px 0;
-        nav {
-          width: 95%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          align-self: center;
-          background: none;
-          border-radius: 0;
-          a {
-            width: 95%;
-            text-align: center;
-            padding: 10px 20px;
-            background-image: linear-gradient(@g-b3, @b, @g-b3);
-            border-radius: 25px;
-          }
-        }
-        img {
-          width: 30%;
-          align-self: center;
-        }
+    img {
+      
+      @media (max-width: 800px) {
+        width: 30%;
+        align-self: center;
       }
     }
   }
@@ -437,7 +432,16 @@ h2 {
     border-radius: 10px;
     padding: 20px 0;
     box-shadow: inset 10px 10px 23px -4px rgba(102, 102, 102, 1);
-
+    @media (max-width: 800px) {
+      width: @100;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+    @media (max-width: 500px) {
+      width: @100;
+      flex-direction: column;
+      padding: 10px 0;
+    }
     nav {
       align-self: center;
       justify-self: flex-end;
@@ -446,61 +450,42 @@ h2 {
       border: 0;
       border-left: 0px;
       border-radius: 25px 0 0 25px;
+      @media (max-width: 800px) {
+        width: 95%;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        padding: 15px 10px;
+        border-radius: 25px;
+      }
+      @media (max-width: 500px) {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        background: none;
+        border-radius: 0;
+      }
       a {
         color: @gw;
         text-decoration: none;
         padding: 20px 20px;
-      }
-    }
-    @media (max-width: 800px) {
-      footer {
-        width: @100;
-        flex-direction: column;
-        padding: 10px 0;
-
-        nav {
+        @media (max-width: 800px) {
+          padding: 10px 20px;
+        }
+        @media (max-width: 500px) {
           width: 95%;
-          display: flex;
-          align-self: center;
-          justify-content: center;
-          padding: 15px 10px;
+          text-align: center;
+          background-image: linear-gradient(@g-b3, @b, @g-b3);
           border-radius: 25px;
-          a {
-            padding: 10px 20px;
-          }
-        }
-        img {
-          width: 30%;
-          align-self: center;
         }
       }
     }
-    @media (max-width: 500px) {
-      footer {
-        width: @100;
-        flex-direction: column;
-        padding: 10px 0;
-
-        nav {
-          width: 95%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          align-self: center;
-          background: none;
-          border-radius: 0;
-          a {
-            width: 95%;
-            text-align: center;
-            padding: 10px 20px;
-            background-image: linear-gradient(@g-b3, @b, @g-b3);
-            border-radius: 25px;
-          }
-        }
-        img {
-          width: 30%;
-          align-self: center;
-        }
+    img {
+      @media (max-width: 800px) {
+        width: 30%;
+        align-self: center;
       }
     }
   }
