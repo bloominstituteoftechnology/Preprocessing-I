@@ -67,6 +67,30 @@ html {
 
 // mix-ins
 
+.section-heading-content() {
+	h1 {
+		font-size: 4.2rem;
+		color: firebrick;
+		font-weight: bold;
+	}
+
+	h2 {
+		font-size: 2.0rem;
+		font-weight: bold;
+		margin: 25px 0 8px 0;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+		margin: 8px 0;
+	}
+
+	p {
+		font-size: 1.4rem;
+		margin: 20px 0;
+	}
+}
+
 // fixed header
 
 header {
@@ -111,7 +135,7 @@ main {
 		.avatar {
 			display: flex;
 			justify-content: center;
-			margin: 200px 0 40px 0;
+			margin: 140px 0 40px 0;
 
 			img {
 				height: 250px;
@@ -160,6 +184,47 @@ main {
 
 	.main-container {
 		width: 100%;
+		max-width: 600px;
 		height: 100%;
+		margin: 140px 70px;
+
+		.section-content {
+			.section-heading-content();
+
+			.section-h1 {
+					margin-top: 70px;
+			}
+
+			ul {
+
+				li {
+					list-style-type: square;
+					list-style-position: inside;
+					font-size: 1.4rem;
+				}
+			}
+		}
 	}
 }
+
+.content {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 600px;
+			margin: 40px 70px;
+
+			.section-content {
+				.section-heading-content();
+				.section-h1 {
+					margin-top: 70px;
+				}
+				ul {
+					li {
+						list-style-type: square;
+						list-style-position: inside;
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
