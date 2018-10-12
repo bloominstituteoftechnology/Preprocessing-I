@@ -137,75 +137,209 @@ body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
+.h2-style {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+.flex-preset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 body {
   display: flex;
   justify-content: center;
+  background-color: #F5F5F5;
 }
-body .container {
+.container {
   max-width: 880px;
   width: 100%;
 }
-body .container header {
+.get-to-know-me hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
+  padding-top: 25px;
   width: 100%;
   max-width: 880px;
 }
-body .container header nav {
+header nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
-body .container header nav a {
+header nav a {
   padding: 20px 2.5%;
   font-size: 2rem;
   color: #6B7070;
   text-decoration: none;
 }
-body .container .page-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 20px;
-  width: 100%;
-  height: 45vh;
-  background-color: #E6E6E7;
+header nav .navbar,
+header nav a:hover,
+header nav .dropdown:hover .dropbtn,
+header nav .dropbtn:focus {
+  background-color: #58C0F3;
 }
-body .container .page-top .cta-text {
-  display: flex;
-  font-size: 6rem;
-  flex-direction: column;
-  align-items: center;
-  color: #6B7070;
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
-body .container .page-top .cta-text h1:nth-of-type(3) {
-  margin-top: 50px;
-}
-body .container .page-top .cta-img {
-  max-width: 48%;
-  height: auto;
-  border-radius: 3%;
-}
-body .container .page-middle .content-intro button {
-  background: white;
-  vertical-align: top;
-  margin-top: 35px;
-  padding: 8px 44px;
-  font-size: 1.7rem;
-  border: 1px solid #6B7070;
+.dropdown .dropbtn,
+a {
   cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  color: #6B7070;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
   border-radius: 10px;
 }
-body .container .page-middle .content-intro button:hover {
-  background: #6B7070;
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.show {
+  display: block;
+}
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+}
+.cta .cta-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7rem;
+  flex-direction: column;
+  margin-right: 100px;
+  color: #292C34;
+}
+.cta .cta-img {
+  margin-right: 100px;
+  height: auto;
+  width: 400px;
+  border-radius: 20px;
+}
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 45px;
+}
+.intro h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+.intro p {
+  padding-top: 20px;
+  text-align: left;
+  font-size: 1.6rem;
+}
+.skills {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.4rem;
+}
+.skills h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+.skills td,
+.skills th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.skills tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.skills tr:hover {
+  background-color: #ddd;
+}
+.skills th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #58C0F3;
   color: white;
 }
+.experience h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+.experience h3 {
+  font-size: 2rem;
+}
+.experience ul {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.experience ul li {
+  font-size: 1.6rem;
+  list-style-type: circle;
+}
+.education h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+.education h3 {
+  font-size: 1.6rem;
+}
+.get-in-touch {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+.get-in-touch p {
+  font-size: 1.6rem;
+}
+.get-in-touch p a {
+  text-decoration: none;
+}
 @media (max-width: 800px) {
-  .page-top .cta-img {
-    display: none;
+  .container {
+    width: 90%;
+  }
+  .cta {
+    flex-direction: column;
+  }
+  .cta .cta-img {
+    margin-left: 100px;
+  }
+  .cta .cta-text {
+    margin-left: 100px;
   }
 }
 @media (max-width: 500px) {

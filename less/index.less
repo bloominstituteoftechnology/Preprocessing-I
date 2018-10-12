@@ -62,98 +62,242 @@ html, body {
 }
 
 // VARIABLES
+@the-blue: #58C0F3;
 
 // MIXINS
+.h2-style {
+	text-align: center;
+	font-size: 2.4rem;
+	margin-bottom: 15px;
+}
 
+.flex-preset {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 // MAIN MEAT
 body {
 	display: flex;
 	justify-content: center;
+	background-color: #F5F5F5;
+}
 
-	.container {
-		max-width: 880px;
+.container {
+	max-width: 880px;
+	width: 100%;
+}
+
+.get-to-know-me {
+	hr {
+		margin-top: 50px;
+		margin-bottom: 50px;
+    }
+	}
+
+
+// HEADER SECTION
+header {
+	.flex-preset;
+	padding-top: 25px;
+	width: 100%;
+	max-width: 880px;
+
+	nav {
+		.flex-preset;
 		width: 100%;
-		// HEADER
-		header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: 25px;
-			width: 100%;
-			max-width: 880px;
 
-			nav {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				width: 100%;
-
-				a {
-					padding: 20px 2.5%;
-					font-size: 2rem;
-					color: #6B7070;
-					text-decoration: none;
-				}
-			}
+		a {
+			padding: 20px 2.5%;
+			font-size: 2rem;
+			color: #6B7070;
+			text-decoration: none;
 		}
-
-		.page-top {
-			display: flex;
-			align-items: center;
-			justify-content: space-evenly;
-			margin-top: 20px;
-			width: 100%;
-			height: 45vh;
-			background-color: #E6E6E7;
-
-			.cta-text {
-				display: flex;
-				font-size: 6rem;
-				flex-direction: column;
-				align-items: center;
-				color: #6B7070;
-
-				h1:nth-of-type(3) {
-					margin-top: 50px;
-				}
-			}
-
-			.cta-img {
-				max-width: 48%;
-				height: auto;
-				border-radius: 3%;
-			}
+		.navbar, a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+		    background-color: @the-blue;
 		}
+	}
+}
+// DROPDOWN BUTTON IN NAVBAR
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
 
-		.page-middle {
+.dropdown .dropbtn, a {
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    color: #6B7070;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
 
-			.content-intro {
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+		border-radius: 10px;
+}
 
-				button {
-					background: white;
-					vertical-align: top;
-					margin-top: 35px;
-					padding: 8px 44px;
-					font-size: 1.7rem;
-					border: 1px solid #6B7070;
-					cursor: pointer;
-					border-radius: 10px;
-				}
-				button:hover {
-					background: #6B7070;
-					color: white;
-				}
-			}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+// CALL TO ACTION INTRO SECTION
+.cta {
+	.flex-preset;
+	margin-top: 45px;
+
+	.cta-text{
+		.flex-preset;
+		font-size: 7rem;
+		flex-direction: column;
+		margin-right: 100px;
+		color: #292C34;
+	}
+	.cta-img {
+		margin-right: 100px;
+		height: auto;
+		width: 400px;
+		border-radius: 20px;
+	}
+}
+
+// INTRO SECTION
+.intro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 45px;
+
+	h2 {
+		.h2-style;
+	}
+
+	p {
+		padding-top: 20px;
+		text-align: left;
+		font-size: 1.6rem;
+	}
+}
+
+// SKILLS SECTION
+.skills {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+	font-size: 1.4rem;
+
+	h2 {
+		.h2-style;
+	}
+
+	& td, & th {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	tr:hover {
+		background-color: #ddd;
+	}
+
+	th {
+		padding-top: 12px;
+		padding-bottom: 12px;
+		text-align: left;
+		background-color: @the-blue;
+		color: white;
+	}
+}
+
+// EXPERIENCE SECTION
+.experience {
+	h2 {
+		.h2-style;
+	}
+
+	h3{
+		font-size: 2rem;
+	}
+	ul {
+		margin-top: 10px;
+		margin-bottom: 25px;
+
+		li {
+			font-size: 1.6rem;
+			list-style-type: circle;
 		}
 	}
 }
 
+// EDUCATION SECTION
+.education {
+	h2 {
+		.h2-style;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+	}
+}
+
+// CONTACT BUTTON SECTION
+.get-in-touch {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	margin-bottom: 60px;
+
+	p {
+		font-size: 1.6rem;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+}
 // TABLET
 @media (max-width: 800px) {
-	.page-top .cta-img {
-		display: none;
+	.container {
+		width: 90%;
+	}
+	.cta {
+		flex-direction: column;
+		.cta-img {
+			margin-left: 100px;
+		}
+		.cta-text {
+			margin-left: 100px;
+		}
 	}
 }
+
 // MOBILE
 @media (max-width: 500px) {
 	.container {
@@ -172,6 +316,4 @@ body {
 			width: 100%;
 		}
 	}
-
-
 }
