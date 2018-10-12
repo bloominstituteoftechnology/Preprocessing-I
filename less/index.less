@@ -49,9 +49,29 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+//mixins
+.pretty-box(@disp, @just, @marg) {
+	display:@disp;
+	justify-content: @just;
+	margin:@marg;
+}
+
+
+
+
 
 // Variables
 @custom-font: 'Helvetica', Arial, sans-serif;
+@cool-color: red;
+//media query
+
+	@media(max-width: 700px) {
+	border: 10px dashed blue;
+  }
+  
+  @media(max-width: 600px) {
+	border: 10px dashed red;
+	}
 
 
 * {
@@ -68,35 +88,55 @@ html {
   	font-family: @custom-font;
 }
 
-  header {
-	  
+h1 {
+	font-size: 1.6rem;
+}
 
-
-	nav {
-		width: 50%;
-		display: flex;
-		
-		justify-content: space-evenly;
-		
-		a {
-			font-size: 1.6rem;
-		}
-	}
-  }
-
-
+p {
+	font-size: 1.6rem;
+}
 .container {
 	max-width: 800px;
 	margin: 0 auto;
 	border: 1px solid red;
-	
-	@media(max-width: 700px) {
-	  border: 10px dashed blue;
-	}
-	
+	//.pretty-box(flex, center, 20px);
+
 	@media(max-width: 600px) {
-	  border: 10px dashed red;
+		border: 10px dashed red;
+		background: teal;
+		}
+	header {
+		h1 {
+			font-size: 1.5rem;
+		}
+		nav {
+			width: 100%;
+			display: flex;
+			
+			justify-content: space-evenly;
+			a {
+				font-size: 1.6rem;
+			}// a
+		}//nav
+	}//header
+	.intro-content {
+		img {
+
+		}
+		h2 {
+			width: 50%;
+			background-color: @cool-color;
+		}
+		p {
+
+		}
+		.btn {
+			border: 1px solid black;
+			width: 150px;
+
+		}
 	}
 	
-  }
+
+}//container
   
