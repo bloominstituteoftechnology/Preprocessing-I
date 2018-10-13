@@ -1,0 +1,358 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+		height: 100%;
+		font-size: 62.5%
+}
+// varaibles
+@intable: lightgrey;  
+@head: black;  
+@font:Arial;
+
+
+//mixins
+
+.hov(){
+	&:hover{
+		font-size: 3rem;
+		@media (max-width: 500px){
+			&:hover{
+				font-size: 1.8rem;
+			}}
+		
+	}
+}
+
+.rad(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.container{
+	max-width: 880px;
+	width:100%;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	display: flex;
+	flex-wrap: wrap;
+	@media (max-width: 500px){
+		margin: 0% 0% 0% 0%;
+		padding: 0% 2% 0% 2%;
+		}
+	
+
+
+
+	header{
+		display: flex;
+		justify-content: space-evenly;
+		width:100%;
+		margin: 0% 0% 2% 0%;
+		padding: 3% 0% 3% 0%;
+		background-color: black;
+		font-size: 2rem;
+		
+		color: white;
+		h2{
+			margin: 0% 0% 0% 0%;
+			padding: 0% 0% 0% 0%;
+			width:35%;
+			.hov();
+			@media (max-width: 500px){
+				margin: 5% 10% 4% 10%;
+				padding: 0% 0% 0% 1%;
+				}
+
+		}
+		nav{
+			width: 65%;
+			margin: 5% 5% 0% 0%;
+			padding: 0% 0% 0% 1%;	
+			@media (max-width: 500px){
+				display: flex;
+				flex-direction: column;
+			}
+	
+			}
+			
+
+			a{
+			text-decoration: none;
+			color: white;
+			
+			margin: 0% 5% 0% 2%;
+			padding: 0% 0% 0% 1%;
+			.hov();
+			@media (max-width: 500px){
+			margin: 1% 0% 4% 11%;
+			padding: 0% 0% 0% 1%;
+			}
+			}
+
+		
+		border-bottom: 1px solid black;
+	}
+	
+ .intro{
+	 display: flex;
+	 justify-content: space-between;
+	 width: 100%;
+	 @media (max-width: 500px){
+		flex-direction: column;
+		}
+	 
+	 .myimg{
+		width: 48%;
+		height: 100%;
+		margin: 0% 0% 0% 0%;
+		padding: 0% 0% 0% 0%;
+		.rad(8px);
+		@media (max-width: 500px){
+			width: 100%;
+			height: 50%
+			}
+	 }
+	 .introcon{
+		background-color: lightcyan;
+		.hov();
+		.intro-h2{
+			font-size: 2.0rem;
+			margin: 10% 0% 6% 18%;
+			padding: 3% 4% 0% 15%;
+			font-family: @font; 
+			@media (max-width: 500px){
+				&:hover{
+					font-size: 1.8rem;
+				}
+				}
+
+	}
+
+		
+	p{
+		width: 100%;
+    margin: 0% 0% 0% 0%;
+		padding: 3% 5% 10% 10%;
+		
+	}
+}
+}
+
+ .ski{
+	 width:100%;
+	 padding: 0% 0% 0% 0%;
+		margin: 0% 0% 0% 0%;
+	 
+
+	.ski-h2{
+		background-color: lightblue;
+		font-size: 1.8rem;
+		padding: 2% 0% 2% 40%;
+		margin: 0% 0% 0% 0%;
+	}
+	.ski-table{
+		
+		.ski1strow th {
+			border-bottom: 1px solid black;
+			padding:2% 0% 2% 0%;
+		margin: 0% 0% 0% 0%;
+		background-color:@head;
+		color: white;
+		.rad(4px);
+		}
+		.ski2ndrow{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+
+		}
+		.ski3rdrow{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+		.ski4throw{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+	}
+}
+.edu{
+	width:100%;
+	padding: 0% 0% 0% 0%;
+	 margin: 0% 0% 0% 0%;
+	.edu-h2{
+		background-color: lightblue;
+		font-size: 1.8rem;
+		padding: 2% 0% 2% 40%;
+		margin: 0% 0% 0% 0%;
+	}
+	.edu-table{
+		.edu1strow th {
+			border-bottom: 1px solid black;
+			padding:2% 0% 2% 0%;
+		margin: 0% 0% 0% 0%;
+		background-color: @head;
+		color: white;
+		.rad(4px);
+		}
+		.edu2ndrow{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+		.edu3rdrow{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+		.edu4throw{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+	}
+}
+.exp{
+	width:100%;
+	padding: 0% 0% 0% 0%;
+	 margin: 0% 0% 0% 0%;
+	.exp-h2{
+		background-color: lightblue;
+		font-size: 1.8rem;
+		padding: 2% 0% 2% 40%;
+		margin: 0% 0% 0% 0%;
+	}
+	.exp-table{
+		.exp1strow th {
+			border-bottom: 1px solid black;
+			padding:2% 0% 2% 0%;
+		margin: 0% 0% 0% 0%;
+		background-color: @head;
+		color: white;
+		.rad(4px);
+		}
+		.exp2ndrow{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+		.exp3rdrow{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+		.exp4throw{
+			border-bottom: 1px solid black;
+			padding: 0% 0% 0% 0%;
+			margin: 0% 0% 0% 0%;
+			background-color: @intable;
+			.hov()
+		}
+	}
+}
+footer{
+	border-top: 1px solid black;
+	display: flex;
+	justify-content: space-evenly;
+	width:100%;
+	margin: 0% 0% 2% 0%;
+	padding: 3% 0% 3% 0%;
+	background-color: @head;
+	font-size: 2rem;
+	
+	color: white;
+	h2{
+		margin: 0% 0% 0% 0%;
+		padding: 0% 0% 0% 0%;
+		width:35%;
+		.hov()
+	}
+	nav{
+		width: 65%;
+		margin: 5% 5% 0% 0%;
+		padding: 0% 0% 0% 1%;
+		
+
+		a{
+		text-decoration: none;
+		color: white;
+		
+		margin: 0% 5% 0% 2%;
+		padding: 0% 0% 0% 1%;
+		.hov();
+	}
+	}
+}
+}
