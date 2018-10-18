@@ -176,7 +176,7 @@ p {
   width: 100%;
   height: 30px;
   background: #FFFFFF;
-  border-bottom: 2px solid #C0C0C0;
+  border-bottom: 2px solid #212529;
 }
 .container .navigation .container-nav-container {
   height: 80%;
@@ -211,37 +211,74 @@ p {
   background: #212529;
   color: #FFFFFF;
 }
-.container .top-section-div {
+.container .top-section {
   padding: 50px;
   border: 2px #212529;
-  width: 99%;
-  background: #FFFFFF;
+  width: 100%;
+  background: #C0C0C0;
+}
+@media (max-width: 500px) {
+  .container .top-section {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+.container .top-section .top-section-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .top-section .top-section-div img {
+  width: 50%;
+  height: 50%;
+  padding-bottom: 1rem;
+}
+.container .top-section .top-section-div button {
+  background: gray;
+  color: white;
+  font-size: 16px;
+  border: 1px solid black;
+  width: 50px;
+  height: 25px;
 }
 .container .middle-section {
-  border: 4px dashed black;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
   display: flex;
   flex: wrap;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px;
+}
+@media (max-width: 500px) {
+  .container .middle-section {
+    width: 100%;
+    justify-content: space-around;
+  }
 }
 .container .middle-section .more-about-me {
   display: flex;
   flex: wrap;
-  width: 45%;
-  justify-content: flex-end;
-  border: 2px dashed blue;
+  width: 47%;
+  justify-content: start;
+  padding: 20px;
 }
 .container .middle-section .my-skills {
   display: flex;
   flex: wrap;
+  flex-direction: column;
   width: 45%;
-  align-items: flex-end;
-  justify-content: space-between;
-  border: 2px dashed blue;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.container .bottom-section {
+  padding-top: 1.6rem;
 }
 .container footer {
   width: 100%;
-  border-top: 2px dashed #212529;
+  border-top: 2px solid #212529;
   background: #C0C0C0;
 }
 .container footer p {

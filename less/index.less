@@ -110,25 +110,25 @@ html {
 		width: 100%;
   		height: 30px;
   		background: @main-bg;
-  		border-bottom: 2px solid @navigation-border;
+  		border-bottom: 2px solid @shark;
   		// position: fixed;
 	
 
-	.container-nav-container {
+	  .container-nav-container {
 		height: 80%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	
 
-	@media @mobile {
+	  @media @mobile {
 		flex-wrap: wrap;
 		justify-content: center;
 		padding-top: 10px;
 	  }
 	
 
-	  .nav {
+	 .nav {
 		width: 350px;
 		display: flex;
 		justify-content: space-evenly;
@@ -146,23 +146,38 @@ html {
 			&:hover {
 				background: @font-color;
 				color: @white;
-			  }
+			}
 		  }
 		}
 	}
 
 }
 
-  .top-section-div {
+  .top-section {
 	padding: 50px;
     border: 2px @shark;
-    width: 99%;
-    background:@white;
- 
-
+    width: 100%;
+	background:@silver;
+	
+	@media @mobile {
+		width: 100%;
+		justify-content: space-around;
+	  }
+	
+	.top-section-div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  
+    img {
+		width: 50%;
+		height: 50%;
+		padding-bottom: 1rem;
+	}
 	.button-creator(@width, @height) {
 		width: @width;
 		height: @height;
+	}
 	
 	
 	button {
@@ -171,42 +186,56 @@ html {
 		font-size: 16px;
 		border: 1px solid black;
 		.button-creator(50px,25px);
+   }
   }
- }
 }
 
+
  	.middle-section {
-		border: 4px dashed black;
+		border-top: 4px solid black;
+		border-bottom: 4px solid black;
 		 display: flex;
 		 flex: wrap;
 		 width: 100%;
-		 flex-direction: column;
-		//  justify-content: flex-start;
-	
+		 flex-direction: row;
+		 justify-content: space-between;
+		 padding: 40px;
+		 
+		 
+		 @media @mobile {
+			width: 100%;
+			justify-content: space-around;
+		  }
+
 		 .more-about-me {
 		 display: flex;
 		 flex: wrap;
-		 width: 45%;
+		 width: 47%;
 		//  align-items: flex-end;
-		 justify-content: flex-end;
-		 border: 2px dashed blue;
+		 justify-content: start;
+		//  border: 2px dashed blue;
+		 padding: 20px;
 		 }
 
 		 .my-skills {
 		 display: flex;
 		 flex: wrap;
+		 flex-direction: column;
 		 width: 45%;
-		 align-items: flex-end;
-		 justify-content: space-between;
-		 border: 2px dashed blue;
+		 align-items: center;
+		 justify-content: space-evenly;
+		//  border: 2px dashed blue;
+		 padding: 20px;
 		}
 	 }
 
-
-
+    .bottom-section {
+		padding-top: 1.6rem;
+	}
+    
 	 footer {
 		width: 100%;
-		border-top: 2px dashed @shark;
+		border-top: 2px solid @shark;
 		background: @silver;
 		
 		p {
@@ -217,4 +246,4 @@ html {
 		}
 	}
 	
-}
+  }
