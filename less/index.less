@@ -4,7 +4,19 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -13,8 +25,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
@@ -26,7 +38,8 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before, blockquote:after,
+q:before, q:after {
 	content: '';
 	content: none;
 }
@@ -34,53 +47,251 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-* {
-	box-sizing: border-box;
-}
-/*Variables */
 
-@main-color: @botticelli;
-@alt-color: @gray-chateau;
-@font: @ebony;
-@botticelli: #C2D0E0;
-@gray-chateau: #9DA3AA;
-@ebony: #0E1925;
+/* Set every element's box-sizing to border-box */
+
+@fontStack: 'Abel', sans-serif;
+@darkestDark: #54637D;
+@lightestLight: #F4F6FB;
+@darkestLight: #EDF1F7;
+@greyishGrey: #E1E8F4;
+@greyness: #828C9B;
+@hardlyGrey: #F3F4F7;
+@prettyGrey: #484B51;
+
+.header-style(@size) {
+	font-size: @size;
+	padding-bottom: 1rem;
+	width: 100%;
+}
+
+.display-align-justify(@display, @align, @justify){
+	display: @display;
+	align-items: @align;
+	justify-content: @justify;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html, body {
 	height: 100%;
 	font-size: 62.5%;
+	font-family: @fontStack;
 }
-html {
-	background-color: @alt-color;
-	font-size: 62.5%;
-	font-family: 'Arsenal', Arial, Helvetica, sans-serif
+
+h1 {
+	.header-style(2.4rem);
 }
-h1, h2 {
-	margin: 20px;
-	font-size: 3rem;
+
+h2 {
+	.header-style(1.8rem);
 }
+
 p {
-	font-size: 1.5rem;
-	line-height: 1.25;
-	padding: 10px 20px;
+	font-size: 1.6rem;
 }
-table, th, td {
-	border: 1px solid black;
-	padding: 15px;
+
+ul {
+	font-size: 1.4rem;
 }
-.container {
-	max-width: 600px;
-	margin: 0 auto;
+
+.bold {
+	font-weight: 800;
 }
-header {
+
+hr {
+	border: 0;
+	margin: 0;
+	border-top: 10px solid @darkestDark;
+	padding: 0;
+	width: 100%;
+}
+
+footer {
+	width: 100%;
+	height: 5rem;
+	background: @darkestDark;
+	color: @lightestLight;
+	font-size: 1.6rem;
+	padding-top: 1.7rem;
+	text-align: center;
+}
+
+.page-container {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	align-items: center;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1%;
+
 	nav {
-		width: 50%;
-		display: flex;
-		justify-content: space-evenly;
+		width: 100%;
+		height: 5rem;
+		.display-align-justify(flex, center, flex-end);
+		background: @darkestDark;
+
+		@media (max-width: 500px){
+			flex-wrap: wrap;
+			text-align: center;
+			height: auto;
+		}
+
 		a {
+			text-decoration: none;
+			padding: 0 2rem;
+			border-right: 1px solid @darkestLight;
+			color: @lightestLight;
 			font-size: 1.6rem;
+
+			@media (max-width: 500px){
+				width: 100%;
+				padding: 2rem;
+				border: 0;
+				border-bottom: 1px solid @darkestLight;
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
+		a:last-child {
+			border-right: none;
+		}
+
+		a:hover {
+			color: @darkestLight;
+		}
+	}
+
+	header {
+		.display-align-justify(flex, center, center);
+		background-image: url("http://anband.spb.ru/images/500/DSC100569096.jpg");
+		background-position: 75% 50%;
+		width: 100%;
+		height: auto;
+		padding: 5%;
+
+		@media (max-width: 500px){
+			flex-wrap: wrap;
+		}
+
+		.header-img {
+			width: 40%;
+			height: auto;
+			border-radius: 50%;
+		}
+
+		.header-info {
+			width: 40%;
+			padding-bottom: 50%;
+			margin: 0 2%;
+			padding: 10%;
+			color: @darkestLight;
+			
+		}
+	}
+
+	.content {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.content-section {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			width: 100%;
+			padding: 5% 0;
+
+			@media (max-width: 500px) {
+				padding: 5%;
+			}
+
+			table {
+				font-size: 1.6rem;
+				width: 100%;
+				height: auto;
+
+				.bg-color {
+					background: @greyishGrey;
+				}
+
+				tr{
+					&:first-child th {
+					border: none;
+					}
+
+					&:hover{
+						background: @prettyGrey;
+					}
+
+					td {
+						border: 1px solid @greyness;
+						padding: 3%;
+						vertical-align: middle;
+					}
+				}
+
+				th {
+					background: @lightestLight;
+					text-align: left;
+					border: 0;
+					border-bottom: 1px solid @greyness;
+					padding-bottom: 3%;
+				}
+			}
+
+			.featured-img {
+				height: 200px;
+				width: auto;
+				padding: 0 2% 2%;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+			.content-img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.center {
+			justify-content: center;
+			text-align: center;
+		}
+
+		.two-column {
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 100%;
+			}
+		}
+
+		.contact-style {
+			background: @hardlyGrey;
+			border: 1px solid @greyness;
+			margin: 5% 0;
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 100%;
+				margin: 5%;
+			}
+		}
+
+		.work-history-img-style {
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 100%;
+			}
 		}
 	}
 }
