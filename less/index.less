@@ -55,15 +55,18 @@ table {
 @color-background: gainsboro;
 @color-card-background: whitesmoke;
 @color-text: #222222;
-@color-accent: dodgerblue;
+@color-accent: powderblue;
+@color-a: cadetblue;
 
 @size-font-default: 1.6rem;
 @size-font-h1: 3rem;
 @size-font-h2: 2.6rem;
 @size-font-h3: 2rem;
+@size-font-h4: 1.4rem;
 
 @font-main: 'Avenir', Arial, sans-serif;
 
+@border-radius: 10px;
 
 //MIXINS
 
@@ -74,8 +77,8 @@ table {
 	align-items: @a-items;
 }
 
-.padding-1p() {
-	padding: 1%;
+.padding-2p() {
+	padding: 2%;
 }
 
 // GLOBAL STYLES
@@ -99,22 +102,28 @@ html {
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
+
+
+h1, h2, h3 {
+	padding: 15px 0;
 }
 
 h1 {
 	font-size: @size-font-h1;
-	padding: 15px 0;
 }
 
 h2 {
 	font-size: @size-font-h2;
-	padding: 15px 0;
 }
 
 h3 {
 	font-size: @size-font-h3;
-	padding: 10px 0;
 }
+
+h4 {
+	font-size: @size-font-h4;
+}
+
 p {
 	font-size: @size-font-default;
 	color: @color-text;
@@ -124,7 +133,10 @@ p {
 
 a {
 	font-size: @size-font-default;
+	color: @color-a;
 }
+
+
 // RESUME STYLES
 
 header {
@@ -132,43 +144,86 @@ header {
 	
 	nav {
 		.flex-layout(space-between, center);
+		padding: 20px 40px 20px ;
 
-		a {
-			color: @color-accent;
+	    @media (max-width:500px) {
+			flex-wrap: wrap;
+		}
+
+		h1 {
+			@media (max-width: 500px) {
+				width: 100%;
+				text-align: center;
+				padding-bottom: 30px;
+			}
 		}
 	}
 }
 
 article {
 	width: 100%;
-	.flex-layout(space-between, center);
+	.flex-layout(space-between, space-evenly);
 
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
 	.left {
 		width: 50%;
 		height: 100%;
 		background: @color-accent;
-		.padding-1p;
+		.padding-2p;
+		border-radius: 0 @border-radius @border-radius 0;
+
+		@media (max-width: 500px) {
+			width: initial;
+			padding: 2% 40px;
+			margin: 0 40px 40px;
+			
+			border-radius: @border-radius;
+		}
 
 		a {
-			color: @color-card-background;
+			color: @color-a;
 		}
 	}
 
 	.right {
-		.padding-1p;
+		
 	}
 }
 
+.about {
+
+	
+	h2 {
+		text-align: center;
+	}
+
+	img {
+		display: block;
+		max-width: 200px;
+		width: 100%;
+		height: auto;
+		border-radius: 50%;
+		margin: 0 auto;
+		
+	}
+	p {
+		padding-left: 15px;
+	}
+}
 .work {
 	background: @color-card-background;
-	.padding-1p;
-	margin: 20px 0;
+	padding: 2% 40px;
+	margin: 0 40px;
+	border-radius: @border-radius;
 }
 
 .skills {
 	background: @color-card-background;
-	.padding-1p;
-	margin: 20px 0;
+	padding: 2% 40px;
+	margin: 40px;
+	border-radius: @border-radius;
 
 	ul {
 		.flex-layout(space-evenly, center);
@@ -214,4 +269,13 @@ article {
 			}
 		}
 	}
+}
+
+footer {
+	padding: 10px;
+
+	p {
+		text-align: center;
+	}
+}
 }

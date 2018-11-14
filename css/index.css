@@ -144,103 +144,152 @@ html {
   width: 100%;
   margin: 0 auto;
 }
-h1 {
+.container h1,
+.container h2,
+.container h3 {
+  padding: 15px 0;
+}
+.container h1 {
   font-size: 3rem;
-  padding: 15px 0;
 }
-h2 {
+.container h2 {
   font-size: 2.6rem;
-  padding: 15px 0;
 }
-h3 {
+.container h3 {
   font-size: 2rem;
-  padding: 10px 0;
 }
-p {
+.container h4 {
+  font-size: 1.4rem;
+}
+.container p {
   font-size: 1.6rem;
   color: #222222;
   line-height: 1.8rem;
   padding: 15px 0;
 }
-a {
+.container a {
   font-size: 1.6rem;
+  color: cadetblue;
 }
-header {
+.container header {
   width: 100%;
 }
-header nav {
+.container header nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 40px 20px ;
 }
-header nav a {
-  color: dodgerblue;
+@media (max-width: 500px) {
+  .container header nav {
+    flex-wrap: wrap;
+  }
 }
-article {
+@media (max-width: 500px) {
+  .container header nav h1 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+}
+.container article {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: space-evenly;
 }
-article .left {
+@media (max-width: 500px) {
+  .container article {
+    flex-direction: column;
+  }
+}
+.container article .left {
   width: 50%;
   height: 100%;
-  background: dodgerblue;
-  padding: 1%;
+  background: powderblue;
+  padding: 2%;
+  border-radius: 0 10px 10px 0;
 }
-article .left a {
-  color: whitesmoke;
+@media (max-width: 500px) {
+  .container article .left {
+    width: initial;
+    padding: 2% 40px;
+    margin: 0 40px 40px;
+    border-radius: 10px;
+  }
 }
-article .right {
-  padding: 1%;
+.container article .left a {
+  color: cadetblue;
 }
-.work {
+.container .about h2 {
+  text-align: center;
+}
+.container .about img {
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.container .about p {
+  padding-left: 15px;
+}
+.container .work {
   background: whitesmoke;
-  padding: 1%;
-  margin: 20px 0;
+  padding: 2% 40px;
+  margin: 0 40px;
+  border-radius: 10px;
 }
-.skills {
+.container .skills {
   background: whitesmoke;
-  padding: 1%;
-  margin: 20px 0;
+  padding: 2% 40px;
+  margin: 40px;
+  border-radius: 10px;
 }
-.skills ul {
+.container .skills ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
-.skills ul li {
+.container .skills ul li {
   width: 30%;
   margin: 10px 1%;
 }
-.skills ul .progress-border {
+.container .skills ul .progress-border {
   border: 1px solid gainsboro;
   width: 100%;
   height: 20px;
 }
-.skills ul .progress-border .progress-bar {
-  background: dodgerblue;
+.container .skills ul .progress-border .progress-bar {
+  background: powderblue;
   height: 18px;
 }
-.skills ul .progress-border .bar-html {
+.container .skills ul .progress-border .bar-html {
   width: 75%;
 }
-.skills ul .progress-border .bar-css {
+.container .skills ul .progress-border .bar-css {
   width: 50%;
 }
-.skills ul .progress-border .bar-js {
+.container .skills ul .progress-border .bar-js {
   width: 25%;
 }
-.skills ul .progress-border .bar-react {
+.container .skills ul .progress-border .bar-react {
   width: 5%;
 }
-.skills ul .progress-border .bar-sketch {
+.container .skills ul .progress-border .bar-sketch {
   width: 65%;
 }
-.skills ul .progress-border .bar-vs {
+.container .skills ul .progress-border .bar-vs {
   width: 45%;
+}
+.container footer {
+  padding: 10px;
+}
+.container footer p {
+  text-align: center;
 }
