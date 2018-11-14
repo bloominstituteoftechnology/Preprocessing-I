@@ -135,13 +135,30 @@ html {
   font-family: "Roboto", sans-serif;
 }
 @media (max-width: 920px) {
-  html {
-    background-color: yellow;
+  html .container {
+    width: 100%;
+  }
+  html header {
+    justify-content: center;
+  }
+  html header nav {
+    border-bottom: none;
+  }
+  html header a {
+    padding: 2rem;
   }
 }
 @media (max-width: 500px) {
-  html {
-    background-color: red;
+  html header,
+  html nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  html .about-and-skills section {
+    width: 100%;
+  }
+  html table {
+    border: none;
   }
 }
 .container {
@@ -190,6 +207,7 @@ header nav {
 }
 header a {
   margin: 1rem 0 1rem 2rem;
+  padding: 2rem;
   text-decoration: none;
   font-size: 2rem;
   color: black;
@@ -199,7 +217,7 @@ header a {
 header a:hover {
   transition-property: color;
   transition-duration: 0.5s;
-  background-color: gray;
+  background-color: #eeeeee;
 }
 .main-content {
   background-color: #e9ecef;
@@ -254,12 +272,11 @@ header a:hover {
   text-align: center;
 }
 table {
-  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   border: 3px solid black;
   text-align: center;
-  margin: 2rem;
+  margin: 2rem 0;
 }
 thead th:nth-child(1) {
   width: 30%;
@@ -287,5 +304,6 @@ tr:nth-child(4) {
 }
 footer {
   background-color: #e9ecef;
+  text-align: center;
   padding: 5rem;
 }

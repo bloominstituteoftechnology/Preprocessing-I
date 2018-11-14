@@ -136,6 +136,7 @@ body {
 //Variables
 @outline: 1px solid red;
 
+
 //Mixins
 .default-headings-style(@font-size, @font-weight) {
   font-size: @font-size;
@@ -144,10 +145,32 @@ body {
 .mobileDisplay() {
   // Mobile responsiveness for tablets and phones
   @media (max-width: 920px) {
-    background-color: yellow;
+	.container{
+		width: 100%;
+	}
+	header{
+		justify-content: center;
+		nav{
+			border-bottom: none;
+		}
+		a{
+			padding: 2rem;
+		}
+	}
+	
   }
   @media (max-width: 500px) {
-    background-color: red;
+
+	  header, nav{
+		  flex-direction: column;
+		  align-items: center;
+	  }
+	  .about-and-skills section{
+		  width: 100%;
+	  }
+	  table{
+		  border:none;
+	  }
   }
 }
 .anchorStyle() {
@@ -213,9 +236,10 @@ header {
     margin-bottom: 1rem;
   }
   a {
-    margin: 1rem 0 1rem 2rem;
+	margin: 1rem 0 1rem 2rem;
+	padding: 2rem;
     .anchorStyle;
-    .transitionBackground(color, 0.5s, gray);
+    .transitionBackground(color, 0.5s, rgb(238, 238, 238));
   }
 }
 // Main content
@@ -278,12 +302,11 @@ header {
 	}
 }
 table {
-  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   border: 3px solid black;
   text-align: center;
-  margin: 2rem;
+  margin: 2rem 0;
 }
 thead th:nth-child(1) {
   width: 30%;
@@ -313,5 +336,6 @@ tr:nth-child(2), tr:nth-child(4){
 // Footer
 footer{
 	background-color: rgb(233, 236, 239);
+	text-align: center;
 	padding: 5rem;
 }
