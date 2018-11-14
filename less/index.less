@@ -59,7 +59,7 @@ html, body {
 /*---end of reset---*/
 
 //Variables
-@main-font: 'Courier New', courier, helvetica;
+@main-font: 'Courier New', courier;
 @header-font: 'Permanent Marker', impact;
 @standard-border: 1px solid black;
 
@@ -71,8 +71,12 @@ html, body {
 	flex-direction: @f-direction;
 }
 
+.layout-short(@j-content, @a-items) {
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
 .center() {
-	display: flex;
 	justify-content: center;
 	align-items: center;
 }
@@ -98,7 +102,14 @@ img {
 	}
 }
 
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 15px 0;
+}
+
 footer {
+	display: flex;
 	.center;
 	width: 100%;
 	font-size: 1.2rem;
