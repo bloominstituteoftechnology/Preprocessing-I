@@ -60,7 +60,12 @@ html, body {
 @primary-color: #4C86A8;
 @black: #00241B;
 @white: #F3F8F2; 
+@primary-light: lighten(@primary-color, 45%);
+@base-size: 1.6rem;
 // Mixins
+.text-center(){
+  text-align: center;
+}
 .content-border(){
 	border: 1px red solid;
 } 
@@ -70,42 +75,65 @@ html, body {
 	align-items: @a-items;
 }
 .cards(){
-  text-align: center;
+  background: white;
   h3{
     font-size: 3rem;
     padding: 10px 0;
+  }
+  img{
+    border-top: 3px solid @black;
+    border-bottom: 3px solid @black;
   }
   p{
     padding: 10px 0;
     font-size: 1.8rem;
   }
-	border: 1px solid @black;
-	color: @primary-color;
+  text-align: center;
+  border: 3px solid @black;
+  border-radius: 15px;
+  color: @primary-color;
+}
+.h2(@size, @margin){
+ font-size: @size;
+ margin: @margin;
 }
 // General Styles
 html{
 	font-size: 62.5%;
+}
+body{
+  background: @primary-light;
+  color: @black;
 }
 img{
 	max-width: 100%;
 	height: auto;
 }
 .container{
-	font-size: 1.6rem;
+	font-size: @base-size;
 	margin: 0 auto;
 	max-width: 1100px;
 }
 // Page Styles
 // Navigation
 header {
-	.layout(space-between, baseline);
+  .layout(space-between, baseline);
+  @media (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+   .layout(center, center);
+  }
 	 background: @primary-color;
 	 padding: 20px 0;
  h2{ 
 		font-size: 3rem;
 		padding-left: 3%;
 		width: 50%;
-		color: @white;
+    color: @white;
+    @media (max-width: 600px) {
+      padding-left: 0;
+      .text-center();
+    }
 	}
 nav{
 	.layout(space-around, center);
@@ -114,11 +142,16 @@ nav{
 		text-decoration: none;
 		color: @white;
 		font-size: 2rem;
-	}
+  }
+  @media (max-width: 600px) {
+    padding-top: 20px;
+  }
 }
 }
 // Main Header
 .main-header{
+  width: 95%;
+  margin: 0 auto;
 	.layout(space-between, center);
 	border-bottom: 3px solid @black;
 	.column{
@@ -134,8 +167,7 @@ nav{
 		font-size: 5rem;
 	}
 	h2{
-		margin-top: 10px;
-		font-size: 1.8rem;
+		.h2(1.8rem, 10px 0);
 	}
 }
 }
@@ -148,10 +180,9 @@ nav{
 		margin: 0 3%;
 		// .layout(center, center);
 		// flex-direction: column;
-		width: 75%;
+		width: 50%;
 	h2{
-		font-size: 2.5rem;
-		margin-bottom: 10px;
+		.h2(2.5rem, 15px 0);
 	}
 	p{
 		line-height: 1.25;
@@ -162,9 +193,10 @@ nav{
 		border-radius: 12px;
 		background: @primary-color;
 		color: @white;
-		padding: 8px 5%;
-		margin: 20px auto;
-		display: inline-block;
+    display: inline-block;
+    padding: 8px 5%;
+    margin: 20px auto;
+    text-align: center;
 		text-decoration: none;
 		font-size: 1.6rem;
 		&:hover{
@@ -175,10 +207,11 @@ nav{
    }
 }	.skills{
 	h2{
-		font-size: 2.5rem;
-		margin-bottom: 10px;
+    .h2(2.5rem, 15px 0);
+	
 	}
-	width: 25%;
+  width: 25%;
+  margin: 0 auto;
 	ol li{
 		list-style: upper-roman;
 		list-style-position: inside;
@@ -189,11 +222,11 @@ nav{
 }	
 }
 // Resume
+
 .resume{
   h2{
+    .h2(2.5rem, 30px auto);
     text-align: center;
-    font-size: 2.5rem;
-    margin: 30px auto;
     }	
   flex-direction: column;
   flex-wrap: wrap;
@@ -210,10 +243,10 @@ nav{
 	  }
 	}
 .contact{
+  margin: 100px 0;
   h2{
+    .h2(2.5rem, 30px auto);
     text-align: center;
-    font-size: 2.5rem;
-    margin: 30px auto 15px;
     }	
     p{
       text-align: center;
@@ -223,4 +256,10 @@ nav{
         line-height: 2;
       }
     }
+}
+// Footer
+footer{
+  margin: 50px auto 25px;
+  text-align: center;
+  
 }
