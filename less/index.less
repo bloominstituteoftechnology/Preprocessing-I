@@ -101,7 +101,7 @@ table {
 }
 
 .bottom-space() {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 
@@ -123,6 +123,10 @@ body {
 	width: 1000px;
 	margin: 0 auto;
 	.main-font;
+
+	@media (max-width: 500px) {
+		width: 95%;
+	}
 }
 
 footer {
@@ -131,6 +135,14 @@ footer {
 	.vertical-space;
 	flex-direction: column;
 	bottom: 0;
+
+	.footer a {
+		.nav-style; 
+		.side-space;
+		@media (max-width: 500px) {
+			font-size: 1.4rem;
+		}
+	}
 
 	#copywrite {
 		font-size: 0.8rem;
@@ -146,10 +158,18 @@ footer {
 	.vertical-space;
 	justify-content: space-between;
 	border-bottom: 2px solid black;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
 	
 	.logo-container {
 		.side-space;
 		flex-direction: column;
+
+		@media (max-width: 500px) {
+			.bottom-space;
+		}
 
 		.logo {
 			font-size: 3.0rem;
@@ -174,14 +194,18 @@ footer {
 		justify-content: space-around;
 		width: 50%;
 		
-		
 		.current-selection {
 			color: @current-selection;
+			.heavy;
 		}
 
 		a {
 			.nav-style;
 			font-size: 1.6rem;
+			
+			@media (max-width: 500px) {
+				padding: 0 15px;
+			}
 		}
 	}
 }
@@ -191,7 +215,6 @@ footer {
 .resume-container {
 	// border: 1px solid red;
 	margin: 30px 3%;
-
 
 	h2 {
 		.uppercase;
@@ -211,7 +234,7 @@ footer {
 			.vertical-space;
 		}
 		p {
-			
+			max-width: 725px;
 		}
 	}
 
@@ -232,35 +255,59 @@ footer {
 	.education-section {
 		h2 {
 			.vertical-space;
+
 		}
 		p {
 			padding-bottom: 10px;
-			font-size: 1.5rem;
 		}
 	}
 }
 
-// CONTAINER AND CARD STYLING
+// CARD CONTAINERs AND CARD STYLING
 .card-container {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
 	.card {
-		border: 1px solid black;
-		padding: 10px;
-	}
-	
-	.skill-card {
+		// border: 1px solid black;
 		width: 30%;
+		margin-bottom: 25px;
+		
+		@media (max-width: 500px) {
+			width: 95%;
+		}
 	}
+
 
 	.project-card {
-		width: 45%;
-		padding: 10px;
-		margin-top: 20px;
+		border: 1px solid black;
 	}
+		.upper-card {
+			padding: 80px 0;
+			border-bottom: 1px solid black;
+		}
 
+		.lower-card {
+			padding: 20px 0;
+			.center-content;
+			justify-content: space-evenly;
 
+			button {
+				padding: 5px 10px;
+				background: white;
+				border-radius: 7px;
+				.uppercase;
+				letter-spacing: 0;
+
+				&:hover {
+					background-color: white;
+				}
+			}
+		}
 }
 
 

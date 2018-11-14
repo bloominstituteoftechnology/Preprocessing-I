@@ -141,6 +141,11 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.25;
 }
+@media (max-width: 500px) {
+  body {
+    width: 95%;
+  }
+}
 footer {
   display: flex;
   justify-content: center;
@@ -150,6 +155,22 @@ footer {
   padding: 15px 0;
   flex-direction: column;
   bottom: 0;
+}
+footer .footer a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  font-size: 1.8rem;
+  color: grey;
+  padding: 0 30px;
+}
+footer .footer a:hover {
+  color: black;
+}
+@media (max-width: 500px) {
+  footer .footer a {
+    font-size: 1.4rem;
+  }
 }
 footer #copywrite {
   font-size: 0.8rem;
@@ -165,9 +186,19 @@ footer #copywrite {
   justify-content: space-between;
   border-bottom: 2px solid black;
 }
+@media (max-width: 500px) {
+  .top-nav {
+    flex-direction: column;
+  }
+}
 .top-nav .logo-container {
   padding: 0 30px;
   flex-direction: column;
+}
+@media (max-width: 500px) {
+  .top-nav .logo-container {
+    margin-bottom: 15px;
+  }
 }
 .top-nav .logo-container .logo {
   font-size: 3rem;
@@ -195,6 +226,8 @@ footer #copywrite {
 }
 .top-nav nav .current-selection {
   color: black;
+  font-weight: 700;
+  letter-spacing: 1.25px;
 }
 .top-nav nav a {
   text-transform: uppercase;
@@ -206,6 +239,11 @@ footer #copywrite {
 }
 .top-nav nav a:hover {
   color: black;
+}
+@media (max-width: 500px) {
+  .top-nav nav a {
+    padding: 0 15px;
+  }
 }
 .resume-container {
   margin: 30px 3%;
@@ -225,19 +263,22 @@ footer #copywrite {
   font-size: 1.4rem;
 }
 .resume-container .about-section {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .resume-container .about-section h2 {
   padding: 15px 0;
 }
+.resume-container .about-section p {
+  max-width: 725px;
+}
 .resume-container .skills-section {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .resume-container .skills-section h2 {
   padding: 15px 0;
 }
 .resume-container .project-section {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .resume-container .project-section h2 {
   padding: 15px 0;
@@ -247,22 +288,48 @@ footer #copywrite {
 }
 .resume-container .education-section p {
   padding-bottom: 10px;
-  font-size: 1.5rem;
 }
 .card-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.card-container .card {
-  border: 1px solid black;
-  padding: 10px;
+@media (max-width: 500px) {
+  .card-container {
+    flex-direction: column;
+  }
 }
-.card-container .skill-card {
+.card-container .card {
   width: 30%;
+  margin-bottom: 25px;
+}
+@media (max-width: 500px) {
+  .card-container .card {
+    width: 95%;
+  }
 }
 .card-container .project-card {
-  width: 45%;
-  padding: 10px;
-  margin-top: 20px;
+  border: 1px solid black;
+}
+.card-container .upper-card {
+  padding: 80px 0;
+  border-bottom: 1px solid black;
+}
+.card-container .lower-card {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card-container .lower-card button {
+  padding: 5px 10px;
+  background: white;
+  border-radius: 7px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  letter-spacing: 0;
+}
+.card-container .lower-card button:hover {
+  background-color: white;
 }
