@@ -137,4 +137,81 @@ table {
 html,
 body {
 	height: 100%;
+	font-size: 62.5%;
+}
+
+// --------------------------General Styles
+@primary-color: #384651;
+@other-color: #e9ecef;
+@gray: #808080;
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+}
+
+header {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	padding-left: 40px;
+	color: @primary-color;
+}
+
+img {
+	width: 250px;
+	height: 250px;
+	transform: rotate(90deg);
+}
+
+// -----------------------------Mixin Styles
+.nav-styles() {
+	display: flex;
+	justify-content: flex-end;
+	padding: 20px 0;
+}
+
+.button() {
+	padding: 5px 10px;
+	background-color: @gray;
+	margin-top: 10px;
+	color: #fff;
+}
+
+// -----------------------------Specific Styles
+nav {
+	.nav-styles;
+}
+
+.container {
+	.portrait-section {
+		background-color: @other-color;
+		padding: 20px;
+
+		h1 {
+			margin: 10px 0;
+			font-size: 5rem;
+
+			span {
+				font-size: 3.5rem;
+			}
+		}
+
+		button {
+			.button;
+
+			&:hover {
+				background-color: #80ccff;
+			}
+		}
+
+		.lower-portrait {
+			margin: 15px 0 20px;
+			border-top: 1px solid @gray;
+			padding-top: 15px;
+		}
+	}
 }
