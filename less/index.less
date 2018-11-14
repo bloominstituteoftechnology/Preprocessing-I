@@ -55,8 +55,8 @@ html, body {
 }
 
 // =============================== Variables
-@persian-blue: #2324D7;
-@background-color: @persian-blue;
+@rick-hair-blue: #ACDBE7;
+@background-color: @rick-hair-blue;
 
 // =============================== Mixins
 .layout(@flex-dir, @j-content, @a-items) {
@@ -74,10 +74,8 @@ html {
 	font-size: 62.5%;
 }
 .container {
-	max-width: 1024px;
-	height: 100%;
+	max-width: 880px;
 	margin: 0 auto;
-	border: 2px solid yellowgreen;
 	font-size: 1.6rem;
 }
 
@@ -89,21 +87,20 @@ header {
 
 	nav {
 		.layout(row, space-between, center);
-		width: 75%;
+		width: 100%;
 	}	
 }
 
 // =============================== Top-Main
 
 .top-main {
-	width: 100%;
+	width: 98%;
 	height: 45%;
-	border: solid red 2px;
-	.layout(row, space-between, center);
+	.layout(row, space-around, center);
 
 	img.headshot {
 		width: 30%;
-		height: 100%;
+		height: 30%;
 	}
 	h1 {
 		font-size: 3rem;
@@ -112,9 +109,49 @@ header {
 	p {
 		margin-right: 20px;
 	}
+	@media (max-width: 500px) {
+		.layout(column, center, center);
+	}
 }
 // =============================== Bottom- Main
 
 .bottom-main {
+	img.endshot {
+		width: 100%;
+		height: 300px;
+	}
+	h2 {
+		font-size: 2rem;
+		margin: 20px 20px;
+	}
+	table {
+		th, td {
+		border: 1px solid black;
+		width: 75%;
+		height: 50px;
+		}
+	@media (max-width: 500px) {
+		.layout(column, center, center);
+		}
+	}
+}
 
+// =============================== Contact
+
+.contact {
+	width: 50%;
+	margin: 20px 20px;
+	flex-wrap: wrap;
+	h2 {
+		margin-bottom: 20px;
+	}
+	button {
+		margin-top: 20px;
+	}
+}
+
+footer {
+	.layout(row, center, center);
+	font-size: 1.2rem;
+	margin-bottom: 20px;
 }
