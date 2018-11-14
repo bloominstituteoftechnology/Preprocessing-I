@@ -59,12 +59,93 @@ html, body {
 
 //Variables
 @outline: 1px solid red;
-//Mixins
 
+//Mixins
+.default-headings-style(@font-size, @font-weight){
+	font-size: @font-size;
+	font-weight: @font-weight;
+}
+.mobileDisplay(){
+	// Mobile responsiveness for tablets and phones
+	@media(max-width:920px) {
+		background-color: yellow;
+	}
+	@media(max-width: 500px){
+		background-color:red;
+	}
+}	
+.anchorStyle(){
+	text-decoration: none;
+	font-size: 2rem;
+	color: black;
+}
+
+.hoverAnimation(@color){
+&:hover, &:focus {
+	color: @color;
+	}
+}
 
 // Global
+html{
+	.mobileDisplay(); //Call the mobile responsiveness mixin
+	font-size: 62.5%;
+	font-family: 'Roboto', sans-serif;
+}
+
 .container{
 	width: 900px;
 	margin: 0 auto;
 	border: @outline;
+	font-size: 1.6rem;
+}
+h1{
+	.default-headings-style(5rem, 500);
+}
+h2{
+	.default-headings-style(4rem, 400);
+}
+h3{
+	.default-headings-style(3rem, 300);
+}
+p{
+	.default-headings-style(2rem, 300);
+}
+
+// Navigation elements
+
+header{
+	display:flex;
+	justify-content: flex-end;
+
+	nav{
+		display:flex;
+	}
+	a{
+		margin: 1rem 0 1rem 2rem;
+		.anchorStyle;
+		.hoverAnimation(gray);
+	}
+}
+
+.main-content{
+	background-color: rgb(233, 236, 239);
+	width: 100%;
+	height: auto;
+	section{
+		width: 95%;
+		margin: 0 auto;
+	}
+	img{
+
+	}
+	h1{
+		margin: 2rem 0;
+	}
+	p{
+		margin: 1.5rem 0;
+	}
+	button{
+
+	}
 }
