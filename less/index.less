@@ -47,13 +47,171 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+// End CSS Reset
 
-/* Set every element's box-sizing to border-box */
+
+// VARIABLES
+
+@color-background: gainsboro;
+@color-card-background: whitesmoke;
+@color-text: #222222;
+@color-accent: dodgerblue;
+
+@size-font-default: 1.6rem;
+@size-font-h1: 3rem;
+@size-font-h2: 2.6rem;
+@size-font-h3: 2rem;
+
+@font-main: 'Avenir', Arial, sans-serif;
+
+
+//MIXINS
+
+.flex-layout(@j-content, @a-items) {
+	display:flex;
+	flex-direction: row;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
+.padding-1p() {
+	padding: 1%;
+}
+
+// GLOBAL STYLES
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background: white;
 }
 
+html {
+	font-size: 62.5%;
+	font-family: @font-main;
+}
+
+.container {
+    background: @color-background;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: @size-font-h1;
+	padding: 15px 0;
+}
+
+h2 {
+	font-size: @size-font-h2;
+	padding: 15px 0;
+}
+
+h3 {
+	font-size: @size-font-h3;
+	padding: 10px 0;
+}
+p {
+	font-size: @size-font-default;
+	color: @color-text;
+	line-height: 1.8rem;
+	padding: 15px 0;
+}
+
+a {
+	font-size: @size-font-default;
+}
+// RESUME STYLES
+
+header {
+	width: 100%;
+	
+	nav {
+		.flex-layout(space-between, center);
+
+		a {
+			color: @color-accent;
+		}
+	}
+}
+
+article {
+	width: 100%;
+	.flex-layout(space-between, center);
+
+	.left {
+		width: 50%;
+		height: 100%;
+		background: @color-accent;
+		.padding-1p;
+
+		a {
+			color: @color-card-background;
+		}
+	}
+
+	.right {
+		.padding-1p;
+	}
+}
+
+.work {
+	background: @color-card-background;
+	.padding-1p;
+	margin: 20px 0;
+}
+
+.skills {
+	background: @color-card-background;
+	.padding-1p;
+	margin: 20px 0;
+
+	ul {
+		.flex-layout(space-evenly, center);
+		flex-wrap: wrap;
+
+		li {
+			width: 30%;
+			margin: 10px 1%;
+		}
+
+		.progress-border {
+			border: 1px solid @color-background;
+			width: 100%;
+			height: 20px;
+
+			.progress-bar {
+				background: @color-accent;
+				height: 18px;
+			}
+
+			.bar-html {
+				width: 75%;
+			}
+
+			.bar-css {
+				width: 50%;
+			}
+
+			.bar-js {
+				width: 25%;
+			}
+
+			.bar-react {
+				width: 5%;
+			}
+
+			.bar-sketch {
+				width: 65%;
+			}
+
+			.bar-vs {
+				width: 45%;
+			}
+		}
+	}
+}
