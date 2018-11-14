@@ -56,4 +56,47 @@ table {
 html, body {
     height: 100%;
 }
+// Variables
+@primary-color: #4C86A8;
+@black: #00241B;
+@white: #F3F8F2; 
+// Mixins
+.content-border(){
+	border: 1px red solid;
+} 
+.layout(@j-content, @a-items){
+	display: flex;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+// General Styles
+html{
+	font-size: 62.5%;
+}
+.container{
+	margin: 0 auto;
+	max-width: 1100px;
+	.content-border;
+}
+header {
+	.layout(space-between, baseline);
+	.content-border;
+	 background: @primary-color;
+	 padding: 20px 0;
+ h2{ 
+		font-size: 3rem;
+		padding-left: 3%;
+		width: 50%;
+	}
+nav{
+	.layout(space-around, center);
+	width: 50%;
+	a{
+		text-decoration: none;
+		color: @white;
+		font-size: 2rem;
+	}
+}
 
+
+}
