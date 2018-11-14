@@ -78,6 +78,7 @@ table {
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -117,7 +118,7 @@ header {
   width: 100%;
   
   nav {
-    width: 50%;
+    width: 100%;
     .flex(flex, space-evenly, null);
     margin-left: 45%;
   
@@ -128,10 +129,17 @@ header {
     }
   }
 
+  //Nav Mobile
   @media (max-width: 500px) {
+  
     nav {
+      margin: 0;
       width: 100%;
       justify-content: space-evenly;
+
+      a {
+        margin: 0 10px;
+      }
     }
   }
 }
@@ -184,6 +192,15 @@ header {
   }
 }
 
+//Top Section Mobile
+@media (max-width: 500px) {
+
+  .top {
+    text-align: center;
+  }
+
+}
+
 .middle {
   .setup();
   margin-top: 30px;
@@ -215,6 +232,10 @@ header {
 
   h3 {
     margin-bottom: 20px;
+
+    @media (max-width: 500px) {
+      text-align: center;
+    }
   }
 }
 
@@ -226,7 +247,14 @@ table {
 
     th {
       padding: 20px 0px;
+      line-height: 1.25;
+      &:first-child{
+        font-weight: bold;
+      }
     }
+
+
+
   }  
 
   .top-row {
@@ -242,8 +270,19 @@ table {
       &:first-child{
         font-weight: bold;
       }
+
+      @media (max-width: 500px) {
+        &:last-child {
+          padding-right: 3%;
+        }
+      }
     }
   }
+
+  @media (max-width: 500px) {
+    text-align: center;
+  }
+
 }
 
 //Footer =====================================================

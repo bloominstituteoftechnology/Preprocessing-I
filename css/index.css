@@ -133,6 +133,7 @@ table {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 html {
   font-size: 62.5%;
@@ -161,7 +162,7 @@ header {
   width: 100%;
 }
 header nav {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: null;
@@ -174,8 +175,12 @@ header nav a {
 }
 @media (max-width: 500px) {
   header nav {
+    margin: 0;
     width: 100%;
     justify-content: space-evenly;
+  }
+  header nav a {
+    margin: 0 10px;
   }
 }
 .container {
@@ -217,6 +222,11 @@ header nav a {
   background-color: white;
   color: #A8AAA7;
 }
+@media (max-width: 500px) {
+  .top {
+    text-align: center;
+  }
+}
 .middle {
   width: 95%;
   margin: 0 auto;
@@ -245,6 +255,11 @@ header nav a {
 .bottom h3 {
   margin-bottom: 20px;
 }
+@media (max-width: 500px) {
+  .bottom h3 {
+    text-align: center;
+  }
+}
 table {
   width: 95%;
 }
@@ -255,6 +270,11 @@ table .row {
 table .top-row th,
 table .row th {
   padding: 20px 0px;
+  line-height: 1.25;
+}
+table .top-row th:first-child,
+table .row th:first-child {
+  font-weight: bold;
 }
 table .top-row {
   font-weight: bold;
@@ -264,6 +284,16 @@ table .row.accent {
 }
 table .row.accent th:first-child {
   font-weight: bold;
+}
+@media (max-width: 500px) {
+  table .row.accent th:last-child {
+    padding-right: 3%;
+  }
+}
+@media (max-width: 500px) {
+  table {
+    text-align: center;
+  }
 }
 footer {
   width: 95%;
