@@ -54,6 +54,68 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+// =============VARIABLES============= 
+// colors names from: http://chir.ag/projects/name-that-color/
+
+@color-outer-space: #35393C;
+@color-braker-bay: #5DA399;
+@main-font: 'Quicksand', sans-serif;
+
+// =============MIXINS============= 
+
+.default-link-styling(){
+	color: @color-braker-bay;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+  }
+// =============GENERAL STYLING============= 
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	font-family: @main-font;
+}
+
+h1{
+	font-size: 3.5rem;
+}
+
+// =============HEADER STYLING============= 
+
+.header {
+	background-color: @color-outer-space;
+	
+	&__nav {
+		.center;
+		a {
+			padding: 10px 4%;
+			.default-link-styling
+		}
+	}
+}
+
+// =============MAIN PAGE STYLING============= 
+.home {
+	height: 90vh;
+	.center;
+	flex-direction: column;
+
+	&__btn{
+		justify-content: flex-end;
+		.center;
+		flex-direction: column;
+	}
+
+}
