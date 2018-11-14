@@ -59,7 +59,7 @@ html, body {
 /*---end of reset---*/
 
 //Variables
-@main-font: cursive, arial;
+@main-font: arial;
 @header-font: 'Permanent Marker', cursive;
 
 //Mixins
@@ -68,6 +68,12 @@ html, body {
 	justify-content: @j-content;
 	align-items: @a-items;
 	flex-direction: @f-direction;
+}
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 //Global Styles
@@ -84,7 +90,38 @@ img {
 .container {
 	max-width: 880px;
 	margin: 0 auto;
+	font-size: 1.6rem;
+}
+
+footer {
+	.center;
+	width: 100%;
+	font-size: 1.2rem;
 }
 
 //Header Styles
+.top-nav {
+	width: 100%;
+	margin: 20px 0;
+	border-bottom: 2px solid black;
+	padding-bottom: 1%;
+	.layout(space-between, baseline, row);
 
+	h1 {
+		font-size: 3rem;
+		font-family: @header-font;
+	}
+	nav {
+		width: 50%;
+		.layout(space-between, center, row);
+		a {
+			text-decoration: none;
+			font-size: 1.8rem;
+			color: red;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+}
