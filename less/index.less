@@ -52,9 +52,9 @@ table {
 /* Variables */
 @background: lightgrey; 
 @nav-color: grey;
-@hover-color: black;
-@current-selection: black;
-@font-size: 1.6rem; // 16px with conversion
+@hover-color: teal;
+@current-selection: teal;
+@font-size: 1.7rem; // 17px with conversion
 @fonts: 'Roboto', sans-serif;
 
 // Mixins
@@ -104,9 +104,23 @@ table {
 	margin-bottom: 15px;
 }
 
+.button() {
+	.uppercase;
+	padding: 5px 10px;
+	background: white;
+	border-radius: 5px;
+	letter-spacing: 0;
+	.shadow;
 
+	&:hover {
+		background-color: @hover-color;
+		color: white;
+	}
+}
 
-
+.shadow () {
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
 
 // ======================= GENERAL STYLES
 
@@ -123,6 +137,7 @@ body {
 	width: 1000px;
 	margin: 0 auto;
 	.main-font;
+	background: #f2f2f2;
 
 	@media (max-width: 500px) {
 		width: 95%;
@@ -139,8 +154,10 @@ footer {
 	.footer a {
 		.nav-style; 
 		.side-space;
+		font-size: 1.6rem;
+		font-weight: 500;
 		@media (max-width: 500px) {
-			font-size: 1.4rem;
+			padding: 0 10px;
 		}
 	}
 
@@ -178,7 +195,11 @@ footer {
 
 				strong {
 					.heavy;
-				}
+				}	
+			span {
+				font-weight: 400;
+			}
+				
 		}
 
 		.sub-logo {
@@ -196,12 +217,12 @@ footer {
 		
 		.current-selection {
 			color: @current-selection;
-			.heavy;
 		}
 
 		a {
 			.nav-style;
-			font-size: 1.6rem;
+			font-size: 1.7rem;
+			font-weight: 500;
 			
 			@media (max-width: 500px) {
 				padding: 0 15px;
@@ -276,6 +297,7 @@ footer {
 		// border: 1px solid black;
 		width: 30%;
 		margin-bottom: 25px;
+
 		
 		@media (max-width: 500px) {
 			width: 95%;
@@ -285,6 +307,7 @@ footer {
 
 	.project-card {
 		border: 1px solid black;
+		.shadow;
 	}
 		.upper-card {
 			padding: 80px 0;
@@ -297,15 +320,7 @@ footer {
 			justify-content: space-evenly;
 
 			button {
-				padding: 5px 10px;
-				background: white;
-				border-radius: 7px;
-				.uppercase;
-				letter-spacing: 0;
-
-				&:hover {
-					background-color: white;
-				}
+				.button;
 			}
 		}
 }
