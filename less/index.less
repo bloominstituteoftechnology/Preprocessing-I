@@ -69,6 +69,11 @@ html, body {
 	justify-content: @j-content;
 	align-items: @a-items;
 }
+.cards(){
+	width: 100%;
+	border: 1px solid @black;
+	color: @primary-color;
+}
 // General Styles
 html{
 	font-size: 62.5%;
@@ -84,6 +89,8 @@ img{
 	max-width: 1100px;
 	.content-border;
 }
+// Page Styles
+// Navigation
 header {
 	.layout(space-between, baseline);
 	.content-border;
@@ -105,6 +112,7 @@ nav{
 	}
 }
 }
+// Main Header
 .main-header{
 	.content-border();
 	.layout(space-between, center);
@@ -127,6 +135,7 @@ nav{
 	}
 }
 }
+// Main Content: About - Skills
 .main-content{
 	width: 95%;
   	.layout(space-around, baseline);
@@ -175,6 +184,37 @@ nav{
 		line-height: 1.25;
 	}
 
+}	
 }
-	
+// Resume
+.resume{
+	margin: 0 auto;
+	.content-border();
+	h2{
+	text-align: center;
+	font-size: 2.5rem;
+	margin: 30px auto;
+	text-decoration: underline;
+	}	
+	table{
+		// .content-border();
+		width: 75%;
+    margin: 0 auto;
+  th{
+    padding: 15px 5%;
+    border: 3px solid @black;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+	tr{
+		.cards();
+		padding: 10px 0;
+		td { 
+				text-align: center;
+        padding: 10px 0;
+        border: 2px solid @black;
+		  }
+	  }
+	}
 }
+
