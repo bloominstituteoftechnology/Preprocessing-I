@@ -49,11 +49,314 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// ---- Variables ----
+
+@main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@gradient: linear-gradient(20deg, #ED4264, lightblue);
+@tableBlue: rgba(173, 216, 230, .5);
+@tableRed: rgba(237, 66, 100, .5);
+@font-color: rgb(83, 5, 83);
+
+// ---- Mixins ----
+
+.border (@radius: 15px 3px 15px 3px) {
+border-radius: @radius;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.shadow() {
+	margin: 5px 0;
+	box-shadow: 1px 1px 2px 2px #ccc;
+}
+
+.popouthover() {
+	transform: rotate3d(0, 0, 1, 1deg) translate3d(10px, -5px, 2px);
+}
+
+.popTransition() {
+	transition: transform 1s ease;
+}
+
+// General Styles
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%
 }
 
+h1 {
+	font-size: 5rem;
+	margin: 20px 0;
+}
+
+h2 {
+	font-size: 3rem;
+	margin: 15px 0;
+}
+
+p {
+	margin: 15px 0;
+}
+header {
+	display: flex;
+	justify-content: flex-end;
+	.border;
+	.shadow;
+	background: @gradient;
+
+	@media (max-width: 800px){
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		margin: 20px;
+		width: 50%;
+		.border;
+		background: @gradient;
+
+		@media (max-width: 800px){
+			width: 98%;
+			margin: 0 auto;
+		}
+
+		a {
+			color: grey;
+			text-decoration: none;
+			.border;
+			.popTransition;
+			background: @gradient;
+			color: @font-color;
+			font-weight: 700;
+			letter-spacing: 2px;
+			text-shadow:
+			-1px -1px 0 #000,  
+			 1px -1px 0 #000,
+			 -1px 1px 0 #000,
+			  1px 1px 0 #000;
+
+			  &:hover {
+				  .popouthover;
+			  }
+			
+			@media (max-width: 500px){
+				font-size: 1.8rem;
+				padding: 4px;
+				letter-spacing: .8px;
+			}
+		}
+	}
+}
+
+// 
+
+.container {
+	width: 92%;
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	font-family: @main-font;
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+
+	.top {
+		background: rgb(243, 240, 240);
+		.border;
+		.shadow;
+		padding: 30px 20px;
+
+		.imgform {
+			display: flex;
+			justify-content: space-around;
+
+			img {
+				max-width: 100%;
+				height: auto;
+
+				@media (max-width: 500px) {
+					display: none;
+				}
+			}
+
+			form {
+				background: darkgray;
+				.border;
+				.shadow;
+				width: 50%;
+				margin: 20px 40px;
+				display: flex;
+				flex-direction: column;
+
+				@media (max-width: 500px) {
+					width: 98%;
+					margin: 0 auto;
+
+					input, textarea {
+						font-size: 2rem;
+					}
+				}
+
+				input {
+					width: 50%;
+					margin: 5px 0;
+				}
+			}
+		}
+
+		p {
+			padding-top: 20px;
+			border-top: 2px solid rgb(199, 199, 199);
+		}
+
+		button {
+			background: rgb(61, 58, 58);
+			color: white;
+			border-radius: 5px;
+			border: 2px solid black;
+			padding: 10px;
+			cursor: help;
+		}
+	} // top
+
+	.bottom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@media (max-width: 500px){
+			flex-direction: column;
+		}
+
+		.blurb {
+			background: rgb(243, 240, 240);
+			width: 48%;
+			.border;
+			.shadow;
+
+			@media (max-width: 500px){
+				width: 98%;
+			}
+		}
+
+		.core-competent {
+			background: rgb(243, 240, 240);
+			width: 48%;
+			.border;
+			.shadow;
+
+			@media (max-width: 500px){
+				width: 98%;
+			}
+
+			li {
+				padding: 10px;
+				border: 1px solid black;
+				.shadow;
+			}
+
+			li:nth-child(odd){
+				background: @tableBlue;
+			}
+			li:nth-child(even){
+				background: @tableRed;
+			}
+		}
+
+		.work {
+			background: rgb(243, 240, 240);
+			width: 100%;
+			.border;
+			.shadow;
+			
+			@media (max-width: 500px){
+				width: 98%;
+			}
+			
+		}
+	} //bottom
+
+	footer {
+		text-align: center;
+		padding: 20px;
+		margin: 20px auto;
+		background: darkgray;
+	}
+}
+
+table {
+	border-collapse: collapse;
+
+	@media (max-width: 500px){
+		width: 100%;
+	}
+
+	thead {
+		background: @tableBlue;
+	}
+
+	tbody {
+		tr:nth-child(odd){
+			background: @tableRed
+		}
+
+		tr:nth-child(even){
+			background: @tableBlue;
+		}
+	}
+
+	td, th {
+		border: 1px solid #999;
+		padding: 15px;
+		text-align: left;
+
+		@media (max-width: 500px){
+			padding: 5px;
+		}
+	}
+}
+
+.portfolio {
+
+	.bottom {
+		perspective: 80px;
+
+		.project {
+			.border;
+			.shadow;
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 98%;
+			}
+
+			h2 {
+				text-decoration: underline;
+				padding: 5px;
+				border: 1px solid gray;
+				.shadow;
+			}
+
+			img {
+				width: 100%;
+				max-width: 400px;
+				height: auto;
+				border: 1px solid gray;
+				.shadow;
+				.popTransition;
+
+				&:hover {
+					.popouthover;
+				}
+			}
+		}
+	}
+}
