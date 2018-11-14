@@ -115,7 +115,7 @@ img{
 	max-width: 1100px;
 }
 // Page Styles
-// Navigation
+// Navigation // COMEBACK HERE
 header {
   .layout(space-between, baseline);
   @media (max-width: 600px) {
@@ -137,7 +137,11 @@ header {
 	}
 nav{
 	.layout(space-around, center);
-	width: 50%;
+  width: 50%;
+  @media (max-width: 600px) {
+    width: 100%
+  }
+  
 	a{
 		text-decoration: none;
 		color: @white;
@@ -148,16 +152,24 @@ nav{
   }
 }
 }
+
 // Main Header
 .main-header{
   width: 95%;
   margin: 0 auto;
 	.layout(space-between, center);
-	border-bottom: 3px solid @black;
+  border-bottom: 3px solid @black;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+    border-bottom: none;
+  }
 	.column{
 		.layout(center,center);
 		flex-direction: column;
-		width: 50%;
+    width: 50%;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
 	img{
 		margin: 40px;
 		border-radius: 25%;
