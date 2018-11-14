@@ -1,8 +1,3 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -80,12 +75,24 @@ html, body {
 	color: black;
 }
 
-.hoverAnimation(@color){
-&:hover, &:focus {
-	color: @color;
-	}
+.buttonStyle(){
+	padding: 1rem 3rem;
+	border: none;
+	color: white;
+	font-size: 2rem;
+	background-color: darkgray;
+	.transitionBackground(background-color, 0.5s, rgb(129, 129, 129));
 }
 
+.transitionBackground(@transitionType, @durationTime, @changeColorTo){
+	transition-property:@transitionType;
+	transition-duration: @durationTime;
+	&:hover{
+		transition-property:@transitionType;
+		transition-duration: @durationTime;
+		background-color: @changeColorTo;
+	}
+}
 // Global
 html{
 	.mobileDisplay(); //Call the mobile responsiveness mixin
@@ -96,7 +103,7 @@ html{
 .container{
 	width: 900px;
 	margin: 0 auto;
-	border: @outline;
+	
 	font-size: 1.6rem;
 }
 h1{
@@ -111,34 +118,44 @@ h3{
 p{
 	.default-headings-style(2rem, 300);
 }
-
+button{
+	.buttonStyle();
+}
 // Navigation elements
 
 header{
 	display:flex;
 	justify-content: flex-end;
-
 	nav{
 		display:flex;
+		border-bottom: solid 1px black;
+		margin-bottom: 1rem;
 	}
 	a{
 		margin: 1rem 0 1rem 2rem;
 		.anchorStyle;
-		.hoverAnimation(gray);
+		.transitionBackground(color, 0.5s, gray)
 	}
 }
-
+// Main content
 .main-content{
 	background-color: rgb(233, 236, 239);
+	border-radius: 1rem;
 	width: 100%;
 	height: auto;
 	section{
 		width: 95%;
 		margin: 0 auto;
 	}
-	img{
-
+	.img-container{
+		width: 30%;
+		img{
+			width: 100%;
+			height: auto;
+			margin-top: 3rem;
+		}
 	}
+
 	h1{
 		margin: 2rem 0;
 	}
@@ -146,6 +163,9 @@ header{
 		margin: 1.5rem 0;
 	}
 	button{
-
+		margin: 3rem 0;
+	}
+	hr{
+		margin: 3rem 0;
 	}
 }
