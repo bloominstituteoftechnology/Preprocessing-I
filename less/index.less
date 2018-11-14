@@ -54,6 +54,65 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: @main-font;
 }
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
+}
+// 	VARIABLES
+@main-blue:rgb(14, 18, 35);
+@main-font: 'Lato', sans-serif;
 
+
+//	MIXINS
+.nav-links() {
+	color: white;
+	text-decoration: none;
+	font-size: 2.5rem;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.center-of-page {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+//	GENERAL STYLES
+
+//	NAV & HEADER CONTENT
+.container {
+	max-width: 1000px;
+    width: 90%;
+	nav {
+		width: 100%;
+		background-color: @main-blue;
+		padding: 7px 0;
+		display: flex;
+		justify-content: space-evenly;
+		position: fixed;
+		a {
+			.nav-links();
+		}
+	}//nav
+	header {
+		.center-of-page;
+		background-color: @main-blue;
+		color: white;
+		h1 {
+			font-size: 3.5rem;
+    		margin-bottom: 10px;
+		}//header h1
+		p {
+			font-size: 2rem;
+		}
+	}//header
+
+}
