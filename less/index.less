@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: red;
+	
 }
 ol, ul {
 	list-style: none;
@@ -49,6 +49,29 @@ table {
 	border-spacing: 0;
 }
 
+// ==================== Variables
+
+@static-font: 'KoHo', sans-serif;
+@main-font: Arial, sans-serif;
+@static-color: #37455D;
+
+// ==================== Mixins
+
+.static-content() {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	flex-wrap: wrap;
+}
+
+.center() {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+// ==================== General Styles
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -58,3 +81,57 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	max-width: 880px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	border: 1px solid green;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+p {
+	font-family: 'KoHo', sans-serif;
+}
+
+
+// ==================== Header Styles
+
+header {
+
+	nav{
+		.center;
+		margin: 2%;
+		margin-top: 2%;
+	}
+
+		a {
+			color: @static-color;
+			font: @static-font;
+			font-weight: bold;
+		}		
+	
+}
+
+// ==================== Landing Info Styles
+
+.landing-info {
+	.center();
+}
+
+// ==================== Main Content Styles
+
+// ==================== Contact
+
+.contact {
+	.static-content();
+	color: @static-color;
+	font-weight: bold;
+}
