@@ -62,6 +62,11 @@ table {
 	justify-content: center;
 	align-items: center;
 }
+.h2-styles() {
+	font-size: @h2-font-size;
+	color: @h2-color;
+	font-family: @h2-font;
+}
 
 * {
     box-sizing: border-box;
@@ -85,6 +90,12 @@ html {
 		display: flex;
 		justify-content: flex-end;
 	
+		@media(max-width: 500px) {
+			.center;
+			background: lightblue;
+			
+		}
+
 	a {
 		margin: 1%;
 		text-decoration: none;
@@ -96,6 +107,10 @@ html {
 .top-section {
 	text-align: center;
 	background: lightgrey;
+	@media(max-width: 500px) {
+		
+		
+	}
 
  h1 {
 	font-size: 4rem;
@@ -111,44 +126,62 @@ html {
 	padding: 3%;
 	margin: 3%;
 	
+	@media(max-width: 500px) {
+		
+		background: lightgray;
+	}
 
   .text-content {
 	  width: 45%;
 	  flex-direction: column;
 	  .center;
+	  @media(max-width: 500px) {
+		width: 100%;
+		.center;
+		
+
+	}
 	
 	h2 {
-		font-size: @h2-font-size;
-		color: @h2-color;
-		font-family: @h2-font;	
+		.h2-styles;
+			
 	}
    	p {
 		margin-top: 5%;
-	   }
-	 }
+		@media(max-width: 500px) {
+		  margin-bottom: 5%;
+		}
 	}
+  }
+}
 
 
 .bottom-content {
 	padding: 3%;
 	margin: 3%;
-
+	
+	@media(max-width: 500px) {
+		
+		background: lightgray;
+	}
  .bottom-text h2 {
+	.h2-styles;
 	text-align: center;
-	font-size: @h2-font-size;
 	margin-bottom: 2%;
-	color: @h2-color;
-	font-family: @h2-font;
+	
 	
  }
 }
 .contact {
   .center;
   flex-direction: column;
-	
+  margin: 3%;
+		
+  @media(max-width: 500px) {
+		
+	background: lightgray;
+}
   h2 {
-	  font-family: @h2-font;
-	  color: @h2-color;
-	  font-size: @h2-font-size;
+	.h2-styles;
   }
 }
