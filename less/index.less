@@ -150,9 +150,42 @@ header {
 		.shadow;
 		padding: 30px 20px;
 
-		img {
-			max-width: 100%;
-			height: auto;
+		.imgform {
+			display: flex;
+			justify-content: space-around;
+
+			img {
+				max-width: 100%;
+				height: auto;
+
+				@media (max-width: 500px) {
+					display: none;
+				}
+			}
+
+			form {
+				background: darkgray;
+				.border;
+				.shadow;
+				width: 50%;
+				margin: 20px 40px;
+				display: flex;
+				flex-direction: column;
+
+				@media (max-width: 500px) {
+					width: 98%;
+					margin: 0 auto;
+
+					input, textarea {
+						font-size: 2rem;
+					}
+				}
+
+				input {
+					width: 50%;
+					margin: 5px 0;
+				}
+			}
 		}
 
 		p {

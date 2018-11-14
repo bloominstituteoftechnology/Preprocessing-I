@@ -216,9 +216,44 @@ header nav a {
   box-shadow: 1px 1px 2px 2px #ccc;
   padding: 30px 20px;
 }
-.container .top img {
+.container .top .imgform {
+  display: flex;
+  justify-content: space-around;
+}
+.container .top .imgform img {
   max-width: 100%;
   height: auto;
+}
+@media (max-width: 500px) {
+  .container .top .imgform img {
+    display: none;
+  }
+}
+.container .top .imgform form {
+  background: darkgray;
+  border-radius: 15px 3px 15px 3px;
+  border: 2px solid green;
+  padding: 10px;
+  margin: 5px 0;
+  box-shadow: 1px 1px 2px 2px #ccc;
+  width: 50%;
+  margin: 20px 40px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .container .top .imgform form {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .container .top .imgform form input,
+  .container .top .imgform form textarea {
+    font-size: 2rem;
+  }
+}
+.container .top .imgform form input {
+  width: 50%;
+  margin: 5px 0;
 }
 .container .top p {
   padding-top: 20px;
