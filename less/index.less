@@ -51,6 +51,9 @@ table {
 
 /* Variables */
 @background: lightgrey; 
+@nav-color: grey;
+@hover-color: black;
+@current-selection: black;
 @font-size: 1.6rem; // 16px with conversion
 @fonts: 'Roboto', sans-serif;
 
@@ -61,18 +64,37 @@ table {
 	align-items: center;
 }
 
+.nav-style(){
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 1.2px;
+	font-size: 1.8rem;
+	color: @nav-color;
+	
+	&:hover {
+		color: @hover-color;
+	}
+}
+
 .uppercase() {
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 }
 
 .vertical-space() {
-	padding: 20px 0;
+	padding: 10px 0;
 	margin: 20px 0;
+}
+
+.side-space() {
+	padding: 0 30px;
 }
 
 
 
+
+
+// ======================= GENERAL STYLES
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -98,29 +120,82 @@ footer {
 	bottom: 0;
 
 	#copywrite {
-		font-size: 1rem;
+		font-size: 0.8rem;
 		padding-top: 10px;
 	}
 }
 
+
+// ======================= NAVIGATION STYLES
 .top-nav {
 	.center-content;
+	.vertical-space;
 	justify-content: space-between;
+	border-bottom: 2px solid black;
+	
+	.logo-container {
+		.side-space;
+		flex-direction: column;
+
+		.logo {
+			font-size: 3.0rem;
+			letter-spacing: 4px;
+			.uppercase;
+
+				strong {
+					font-weight: 700;
+				}
+		}
+
+		.sub-logo {
+			.uppercase;
+			font-size: 1.2rem;
+			text-align: center;
+			letter-spacing: 10.5px;
+		}
+	}
 
 	nav {
 		.center-content;
 		justify-content: space-around;
 		width: 50%;
 		
+		
+		.current-selection {
+			color: @current-selection;
+		}
+
 		a {
-			text-decoration: none;
-			.uppercase;
+			.nav-style;
+		}
+	}
+}
+
+// ======================= RESUME CONTAINER STYLES
+
+.resume-container {
+	border: 1px solid red;
+	margin: 40px 3%;
+
+	.about-section {
+		h2 {
+			.vertical-space;
 		}
 	}
 
+	.skills-sections {
+		h2 {
+			.vertical-space;
+		}
+	}
+
+	.education-section {
+		
+		h2 {
+			.vertical-space;
+		}
+	}
 }
-
-
 
 
 
