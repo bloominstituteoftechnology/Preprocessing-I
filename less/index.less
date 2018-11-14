@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol ul {
+ol, ul {
 	list-style: none;
 }
 blockquote, q {
@@ -75,7 +75,7 @@ p {
 
 
 // mixins 
-.flex-item(@justify @align) {
+.flex-item(@justify: center; @align: center) {
 	display: flex;
 	justify-content: @justify;
 	align-items: @align;
@@ -85,7 +85,7 @@ header {
 	padding: 20px 5%;
 	border-bottom: 1px solid black;
 	background-color: @background-color;
-	.flex-item(space-between flex-start);
+	.flex-item(@justify: center; @align: flex-start);
 
 	img {
 		width: 200px;
@@ -95,7 +95,7 @@ header {
 	
 	nav {
 		width: 60%;
-		.flex-item(center center);
+		.flex-item(@justify: center; @align: center);
 		
 		a {
 			text-decoration: none;
@@ -112,21 +112,25 @@ header {
 	padding: 20px 5% 30px 5%;
 	background-color: @background-color;
 	
+	@media (max-width: 500px) {
+		width: 500px;
+		background-color: red;
+	}
+
 	h1 {
 		font-size: 2.6rem;
 	}
-
 	p {
 		padding-top: 10px;
 	}
 }
 
 .middle-content {
-	.flex-item(space-between center);
+	.flex-item(@justify: space-between; @align: center);
 	margin: 20px 0;
+
 	.intro {
 		width: 48%;
-
 		h2 {
 			margin-bottom: 10px;
 			font-size: 1.6rem;
@@ -134,7 +138,7 @@ header {
 	}
 
 	.skills {
-		width: 40%;
+		width: 48%;
 		ul {
 			font-size: 1.6rem;
 			li {
