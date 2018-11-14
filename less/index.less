@@ -64,6 +64,12 @@ table {
   margin: 0 auto;
 }
 
+.flex(@display-value, @justify-value, @align-value) {
+  display: @display-value;
+  justify-content: @justify-value;
+  align-items: @align-value
+}
+
 // Global Styles ===========================================================
 
 * {
@@ -112,14 +118,20 @@ header {
   
   nav {
     width: 50%;
-    display: flex;
-    justify-content: space-evenly;
+    .flex(flex, space-evenly, null);
     margin-left: 45%;
   
     a {
       margin-right: -40px;
       text-decoration: none;
       color: black;
+    }
+  }
+
+  @media (max-width: 500px) {
+    nav {
+      width: 100%;
+      justify-content: space-evenly;
     }
   }
 }
@@ -136,8 +148,7 @@ header {
   padding: 30px;
 
   .header-img {
-    display: flex;
-    justify-content: center;
+    .flex(flex, center, null);
 
     img {
       width: 40%;
@@ -153,7 +164,7 @@ header {
 
     h5 {
       margin-bottom: 20px;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
       border-bottom: 1px solid lightgray;
     }
 
@@ -176,9 +187,7 @@ header {
 .middle {
   .setup();
   margin-top: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
+  .flex(flex, space-around, baseline);
 
   .middle-section {
     width: 45%;
@@ -196,8 +205,59 @@ header {
       border: 1px solid lightgray;
     }
   }
+}
 
+//Bottom Section =========================================================
 
+.bottom {
+  margin: 20px 4% 40px;
+  width: 95%;
 
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+table {
+  width: 95%;
+
+  .top-row, .row {
+    border-top: 1px solid lightgray;
+
+    th {
+      padding: 20px 0px;
+    }
+  }  
+
+  .top-row {
+    font-weight: bold;
+  }
+
+  .row.accent{
+      background-color: @accent-color;
+  
+
+    th {
+
+      &:first-child{
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//Footer =====================================================
+
+footer {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: @bud;
+  padding: 20px 0 30px;
+  color: white;
+
+  p {
+    font-size: 1.2rem;
+  }
 
 }
