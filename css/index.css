@@ -183,13 +183,27 @@ td {
   border-bottom: 1px solid black;
   margin-bottom: 40px;
 }
+@media (max-width: 500px) {
+  .container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+}
 .container nav div:first-child {
   margin-top: 30px;
-  margin-right: 10%;
 }
 .container nav div:last-child {
   display: flex;
   justify-content: flex-end;
+}
+@media (max-width: 500px) {
+  .container nav div:last-child {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 .container nav div:last-child a {
   text-decoration: none;
@@ -201,6 +215,12 @@ td {
   color: #2ae4b4;
   text-decoration: underline;
 }
+@media (max-width: 500px) {
+  .container nav div:last-child a {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+}
 .container header {
   width: 100%;
   background-color: #2ae4b4;
@@ -210,6 +230,14 @@ td {
   align-items: flex-start;
   flex-direction: row;
   margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .container header div:first-child {
   max-width: 30%;

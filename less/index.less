@@ -233,18 +233,32 @@ td {
     border-bottom: 1px solid black;
     margin-bottom: 40px;
 
+    @media (max-width: 500px) {
+      .center(space-between, flex-end, row);
+    }
+
     div:first-child {
       margin-top: 30px;
-      margin-right: 10%;
     }
 
     div:last-child {
       display: flex;
       justify-content: flex-end;
+
+      @media (max-width: 500px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end;
+      }
       a {
         .link-styling();
         margin-left: 10%;
         font-size: 1.6rem;
+
+        @media (max-width: 500px) {
+          padding-top: 10px;
+          padding-bottom: 5px;
+        }
       }
     }
   }
@@ -255,6 +269,10 @@ td {
     padding: 20px 2%;
     .center(flex-start, flex-start, row);
     margin-bottom: 40px;
+
+    @media (max-width: 500px) {
+      .center(flex-start, center, column);
+    }
 
     div:first-child {
       .img(30%);
