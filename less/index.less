@@ -134,7 +134,7 @@ table {
   box-sizing: border-box;
 }
 
-/* General Styles */
+//============================ Genera Styles
 html {
   font-size: 62.5%;
 }
@@ -150,6 +150,63 @@ body {
   max-width: 880px;
 }
 
+h1 {
+  font-size: 6rem;
+}
+
 //============================ variables
+@header-font: black;
+@background-color: rgb(42, 228, 180);
+
+@header-font: Futura, Trebuchet MS, Arial, sans-serif;
 
 //============================ mixins
+.center(@justify, @align, @direction) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+  flex-direction: @direction;
+}
+
+.link-styling() {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: rgb(42, 228, 180);
+    text-decoration: underline;
+  }
+}
+
+.border() {
+  border: 1px solid black;
+}
+
+.divider-line() {
+  border-bottom: 1px solid black;
+}
+
+//============================ Home Page Styles
+nav {
+  .center(flex-start, baseline, row);
+  font-family: @header-font;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 40px;
+
+  div:first-child {
+    margin-top: 30px;
+  }
+
+  div:last-child {
+    margin-left: 31.9%;
+    a {
+      .link-styling();
+      margin-right: 10%;
+    }
+  }
+}
+
+header {
+  width: 100%;
+}
