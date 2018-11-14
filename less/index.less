@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 0;
 }
 ol, ul {
 	list-style: none;
@@ -49,11 +49,37 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+.divided() {
+	margin: 20px 0;
+	padding: 10px;
+}
+
+@flexed:flex;
+
+.header() {
+	.divided;
+	display: @flexed;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
 }
 
 html, body {
     height: 100%;
 }
+
+.container {
+	margin: 0 auto;
+	max-width: 900px;
+
+	header {
+		.header;
+	}
+}
+
 
