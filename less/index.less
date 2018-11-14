@@ -49,11 +49,106 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+//Variables
+@h2-color: purple;
+@h2-font: Century Gothic;
+@h2-font-size: 3rem;
+@waterloo: #848590;
+
+
+//Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
+}
+html {
+	font-size: 62.5%
+}
+.container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	border: 1px solid red;
+	font-size: 2rem;
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+	
+	a {
+		margin: 1%;
+		text-decoration: none;
+		color: @waterloo;
+  }
+ }
 }
 
+.top-section {
+	text-align: center;
+	background: lightgrey;
+
+ h1 {
+	font-size: 4rem;
+	color: black;
+ }
+}
+
+.middle-content {
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 3%;
+	margin: 3%;
+	
+
+  .text-content {
+	  width: 45%;
+	  flex-direction: column;
+	  .center;
+	
+	h2 {
+		font-size: @h2-font-size;
+		color: @h2-color;
+		font-family: @h2-font;	
+	}
+   	p {
+		margin-top: 5%;
+	   }
+	 }
+	}
+
+
+.bottom-content {
+	padding: 3%;
+	margin: 3%;
+
+ .bottom-text h2 {
+	text-align: center;
+	font-size: @h2-font-size;
+	margin-bottom: 2%;
+	color: @h2-color;
+	font-family: @h2-font;
+	
+ }
+}
+.contact {
+  .center;
+  flex-direction: column;
+	
+  h2 {
+	  font-family: @h2-font;
+	  color: @h2-color;
+	  font-size: @h2-font-size;
+  }
+}
