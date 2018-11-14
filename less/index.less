@@ -48,6 +48,23 @@ table {
 	border-spacing: 0;
 }
 
+//===========  variables  ===========
+
+@border-color: black;
+@main-font: Arial, sans-serif;
+
+//===========  mixins  ===========
+
+.flex-between() {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-end() {
+	display: flex;
+	justify-content: flex-end;
+}
+
 //===========  general Styles  ===========
 
 * {
@@ -57,7 +74,7 @@ table {
 html, body {
 	height: 100%;
 	font-size: 62.5%;
-	font-family: Arial, sans-serif;
+	font-family: @main-font;
 	line-height: 1.25;
 	margin: 0 10px;
 }
@@ -76,8 +93,7 @@ h2 {
 //===========  header Styles  ===========
 
 header {
-	display: flex;
-	justify-content: flex-end;
+	.flex-end;
 	padding-right: 20px;
 	
 	@media (max-width: 500px) {
@@ -87,8 +103,7 @@ header {
 
 	nav{
 		width: 300px;
-		display: flex;
-		justify-content: space-between;
+		.flex-between;
 		margin: 30px 0;
 
 		@media (max-width: 500px) {
@@ -96,7 +111,7 @@ header {
 		}
 
 		a {
-			color: black;
+			color: @border-color;
 			text-decoration: none;
 			font-size: 2rem;
 		}
@@ -123,7 +138,7 @@ header {
 	}
 
 	p {
-		border-top: 1px solid black;
+		border-top: 1px solid @border-color;
 		padding: 20px 0;
 	}
 
@@ -138,8 +153,7 @@ header {
 }
 
 .about-me {
-	display: flex;
-	justify-content: space-between;
+	.flex-between;
 	flex-wrap: wrap;
 
 	@media (max-width: 500px) {
@@ -160,7 +174,7 @@ header {
 
 			p {
 				padding: 10px 20px;
-				border: 1px solid black;
+				border: 1px solid @border-color;
 			}
 		}
 	}
