@@ -65,7 +65,10 @@ html, body {
 	justify-content: @j-content;
 	align-items: @a-items;
 }
-
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
 // =============================== General 
 * {
 	box-sizing: border-box;
@@ -81,8 +84,7 @@ html {
 
 // =============================== Header
 header {
-	height: 50px;
-	width: 100%;
+	.size(100%,150px);
 	.layout(row, center, center);
 
 	nav {
@@ -94,13 +96,11 @@ header {
 // =============================== Top-Main
 
 .top-main {
-	width: 98%;
-	height: 45%;
+	.size(98%, 45%);
 	.layout(row, space-around, center);
 
 	img.headshot {
-		width: 30%;
-		height: 30%;
+		.size(30%, 50%);
 	}
 	h1 {
 		font-size: 3rem;
@@ -117,8 +117,7 @@ header {
 
 .bottom-main {
 	img.endshot {
-		width: 100%;
-		height: 300px;
+		.size(100%, 300px);
 	}
 	h2 {
 		font-size: 2rem;
@@ -139,7 +138,7 @@ header {
 // =============================== Contact
 
 .contact {
-	width: 50%;
+	.size(30%, 30%);
 	margin: 20px 20px;
 	flex-wrap: wrap;
 	h2 {
