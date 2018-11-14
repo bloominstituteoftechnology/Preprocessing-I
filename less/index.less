@@ -57,3 +57,167 @@ html, body {
     height: 100%;
 }
 
+//Resume Code Begins Here
+
+//Variables
+
+@border-radius: 5%;
+@background-color: lightgrey;
+
+//mixins
+
+.center-horizontal () {
+	display: flex;
+	justify-content: center;
+}
+
+.center-vertical () {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%
+}
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+header {
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		margin: 2.5% 5%;
+		@media(max-width: 500px) {
+			.center-vertical;
+		}
+		a {
+			margin: 0 4%;
+			font-size: 1.6rem;
+			text-decoration: none;
+			color: grey;
+			&:hover {
+				text-decoration: underline;
+			}
+			@media(max-width: 500px) {
+				margin: 1.5% 0;
+				font-size: 2.5rem;
+			}
+		}
+	}
+
+}
+
+.introduction {
+	img {
+		width: 25%;
+	}
+	background: @background-color;
+	margin: 5%;
+	padding: 5% 2.5%;
+	border-radius: @border-radius;
+	h1 {
+		font-size: 6rem;
+		margin: 1% 0;
+	}
+	h5 {
+		font-size: 2rem;
+		margin: 1% 0;
+	}
+	p {
+		font-size: 1.8rem;
+		border-top: 2px solid silver;
+		margin-bottom: 1%;
+		padding-top: 1%;
+	}
+	button {
+		padding: 1.5% 2%;
+		border-radius: @border-radius;
+		font-weight: 500;
+		background: darkgrey;
+		color: white;
+		font-size: 2rem;
+		margin: 2% 0;
+	}
+	@media(max-width:500px) {
+		.center-vertical;
+		text-align: center;
+	}
+}
+
+.bio {
+	margin: 5%;
+	padding: 5% 0;
+	display: flex;
+	justify-content: space-between;
+	.left-content {
+		width: 50%;
+		h3 {
+			font-size: 3rem;
+			margin-bottom: 5%;
+		}
+		p {
+			font-size: 1.8rem;
+			line-height: 1.2;
+		}
+		@media(max-width: 500px) {
+			margin-bottom: 15%;
+			width: 100%;
+		}
+	}
+	.right-content {
+		width: 40%;
+		h4 {
+			font-size: 2.5rem;
+		}
+		ul {
+			font-size: 1.6rem;
+			margin: 10% 0;
+			li {
+				border: 1px solid silver;
+				padding: 2% 4%;
+			}
+		}
+		@media(max-width: 500px) {
+			width: 100%;
+		}
+	}
+	@media(max-width: 500px) {
+		.center-vertical;
+	}
+	
+}
+.work {
+	margin: 0 5%;
+	background: @background-color;
+	padding: 1% 2.5%;
+	h4 {
+		font-size: 2.5rem;
+		margin-bottom: 2%;
+	}
+	h5 {
+		font-size: 2rem;
+		margin-bottom: 1.5%;
+	}
+	p {
+		font-size: 1.8rem;
+		margin-bottom: 1%;
+	}
+}
+footer {
+	.center-horizontal;
+	margin: 2% 0;
+	font-size: 1.8rem;
+	@media(max-width: 500px) {
+		margin: 10% 0;
+	}
+}
