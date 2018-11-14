@@ -49,6 +49,25 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// ---- Variables ----
+
+@main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@gradient: linear-gradient(20deg, #ED4264, lightblue);
+
+
+// ---- Mixins ----
+
+.border (@radius: 15px 3px 15px 3px) {
+border-radius: @radius;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.shadow {
+	margin: 5px 0;
+	box-shadow: 1px 1px 2px 2px #ccc;
+}
+
 // General Styles
 
 * {
@@ -65,30 +84,108 @@ html, body {
 	max-width: 900px;
 	margin: 0 auto;
 	font-size: 1.6rem;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: @main-font;
 }
 
 h1 {
 	font-size: 5rem;
+	margin: 20px 0;
 }
 
+h2 {
+	font-size: 3rem;
+	margin: 15px 0;
+}
+
+p {
+	margin: 15px 0;
+}
 header {
 	display: flex;
 	justify-content: flex-end;
+	.border;
+	.shadow;
+	background: @gradient;
+
 	nav {
 		display: flex;
 		justify-content: space-between;
 		margin: 20px;
-		width: 30%;
+		width: 50%;
+		.border;
+		background: @gradient;
 
 		a {
 			color: grey;
 			text-decoration: none;
+			.border;
+			background: @gradient;
 		}
 	}
 }
 
 // 
+
+.container {
+	.top {
+		background: lightgray;
+		.border;
+		.shadow;
+		padding: 30px 20px;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		p {
+			padding-top: 20px;
+			border-top: 2px solid rgb(199, 199, 199);
+		}
+
+		button {
+			background: rgb(61, 58, 58);
+			color: white;
+			border-radius: 5px;
+			border: 2px solid black;
+			padding: 10px;
+			cursor: help;
+		}
+	} // top
+
+	.bottom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.blurb {
+			width: 48%;
+			.border;
+			.shadow;
+		}
+
+		.core-competent {
+			width: 48%;
+			.border;
+			.shadow;
+
+			li {
+				padding: 10px;
+				border: 1px solid black;
+				.shadow;
+			}
+		}
+
+		.work {
+			width: 100%;
+			.border;
+			.shadow
+
+			
+		}
+	}
+}
+
   td, th {
 	border: 1px solid #999;
 	padding: 15px;
