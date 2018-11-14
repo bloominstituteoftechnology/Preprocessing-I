@@ -51,8 +51,8 @@ table {
 
 // ==================== Variables
 
-@static-font: 'KoHo', sans-serif;
-@main-font: Arial, sans-serif;
+
+
 @static-color: #37455D;
 
 // ==================== Mixins
@@ -61,6 +61,7 @@ table {
 	display: flex;
 	justify-content: space-around;
 	align-content: center;
+	align-items: baseline;
 	flex-wrap: wrap;
 }
 
@@ -69,6 +70,20 @@ table {
 	justify-content: space-evenly;
 	align-items: center;
 }
+
+.border-line() {
+	border-bottom: 2px solid @static-color;
+	margin-bottom: 3%;
+}
+
+.special-font() {
+	font-family: 'KoHo', sans-serif;
+}
+
+.main-font() {
+	font-family: 'Raleway', sans-serif;
+}
+
 
 // ==================== General Styles
 
@@ -93,12 +108,27 @@ html {
 }
 
 img {
-	max-width: 100%;
+	max-width: 25%;
 	height: auto;
 }
 
+h1 {
+	font-size: 4rem;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+h3 {
+	font-size: 3rem;
+	padding-top: 1.5%;
+	padding-bottom: 2%;
+	.special-font();
+}
+
 p {
-	font-family: 'KoHo', sans-serif;
+	.main-font();
+	line-height: 1.25;
+	margin-bottom: 2%;
 }
 
 
@@ -106,32 +136,56 @@ p {
 
 header {
 
-	nav{
-		.center;
-		margin: 2%;
-		margin-top: 2%;
-	}
+	.border-line();
 
-		a {
-			color: @static-color;
-			font: @static-font;
-			font-weight: bold;
-		}		
-	
+		nav{
+			.center;
+			margin: 2%;
+			margin-top: 2%;
+		}
+
+			a {
+				color: @static-color;
+				.special-font();
+				font-weight: bold;
+			}		
+		
 }
 
 // ==================== Landing Info Styles
 
 .landing-info {
-	.center();
+	.static-content();
+	background-color: @static-color;
+
+	.close-up {
+		width: 30%;
+		height: 30%;
+	}
+
+	.name-title {
+		.special-font();
+		color: white;
+		font-weight: bold;
+	}
 }
 
 // ==================== Main Content Styles
+
+
 
 // ==================== Contact
 
 .contact {
 	.static-content();
+	flex-direction: column;
+	.special-font();
 	color: @static-color;
 	font-weight: bold;
+	.border-line();
+}
+
+// ==================== Footer
+footer {
+	.center;
 }
