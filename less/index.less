@@ -133,10 +133,11 @@ table {
 @main-font: @raleway;
 @raleway: "Raleway", Arial, sans-serif;
 
-@huge-font: 5.6rem;
-@big-font: 3.2rem;
-@med-font: 2.4rem;
-@small-font: 1.6rem;
+@huge-font: 56px;
+@big-font: 32px;
+@med-font: 24px;
+@small-font: 16px;
+@tiny-font: 10px;
 
 @light-gray: #f2f2f2;
 @dark-gray: darkslategray;
@@ -189,37 +190,71 @@ img {
 }
 
 .container {
-  font-size: 1.6rem;
   max-width: 1000px;
   margin: 0 auto;
+  font-size: 1.6rem;
 }
 
 header {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   .setIn(40px, 40px);
   nav {
     font-size: 2rem;
-    width: 35%;
+    width: 45%;
     .useFlex(row);
     justify-content: space-between;
+    @media (max-width: 800px) {
+      width: 60%;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 }
 
-h1 {
-  font-size: @huge-font;
+@media (min-width: 501px) {
+  h1 {
+    font-size: @huge-font;
+  }
+
+  h2 {
+    font-size: @big-font;
+  }
+
+  h3 {
+    font-size: @med-font;
+  }
+
+  h4 {
+    font-size: @small-font;
+  }
+
+  p {
+	  font-size: @small-font;
+  }
 }
 
-h2 {
-  font-size: @big-font;
-}
+@media (max-width: 500px) {
+  h1 {
+    font-size: @big-font;
+  }
 
-h3 {
-  font-size: @med-font;
-}
+  h2 {
+    font-size: @med-font;
+  }
 
-h4 {
-  font-size: @small-font;
+  h3 {
+    font-size: @med-font;
+  }
+
+  h4 {
+    font-size: @small-font;
+  }
+
+  p {
+    font-size: @small-font;
+  }
 }
 
 .view {
@@ -265,7 +300,7 @@ h4 {
   justify-content: space-between;
   .intro {
     .useFlex(column);
-    width: 70%;
+    width: 60%;
     align-items: center;
     h2 {
       .h2top();
@@ -276,7 +311,7 @@ h4 {
   }
   .skills {
     .useFlex(column);
-    width: 25%;
+    width: 35%;
     h2 {
       .h2top();
     }
