@@ -62,13 +62,18 @@ table {
 	justify-content: space-around;
 	align-content: center;
 	align-items: baseline;
-	flex-wrap: wrap;
+	
 }
 
 .center() {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+}
+
+.column() {
+	display: flex;
+	flex-direction: column;
 }
 
 .border-line() {
@@ -118,6 +123,10 @@ h1 {
 	padding-bottom: 3%;
 }
 
+h2 {
+	padding-bottom: 2%;
+}
+
 h3 {
 	font-size: 3rem;
 	padding-top: 1.5%;
@@ -131,12 +140,22 @@ p {
 	margin-bottom: 2%;
 }
 
+strong {
+	font-weight: bold;
+}
+
+ul {
+	list-style-position: inside;
+}
+
 
 // ==================== Header Styles
 
 header {
 
-	.border-line();
+	//.border-line();
+
+	
 
 		nav{
 			.center;
@@ -159,6 +178,7 @@ header {
 	background-color: @static-color;
 
 	.close-up {
+		padding-top: 6%;
 		width: 30%;
 		height: 30%;
 	}
@@ -172,7 +192,40 @@ header {
 
 // ==================== Main Content Styles
 
+.homepage-content {
+	//.static-content();
+	.border-line();
 
+	@media (max-width: 500px) {
+
+	}
+
+		h3 {
+			padding-right: 1%;
+			
+		}
+
+			P {
+				padding-right: 10%;
+				padding-left: 2%;
+				padding-bottom: 2%;
+				.border-line();
+			}
+
+			ul {
+				list-style-position: inside;
+				.main-font();
+				margin-bottom: 1%;
+				.border-line();
+			}
+
+				li {
+					line-height: 2;
+					padding-left: 2%;
+					padding-bottom: 3%;
+				}
+		
+}
 
 // ==================== Contact
 
