@@ -58,12 +58,19 @@ html, body {
 	height: 100%;
 	font-size: 62.5%;
 	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	margin: 0 10px;
 }
 
 .container {
 	max-width: 840px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+}
+
+h2 {
+	font-size: 2rem;
+	padding: 20px 0;
 }
 
 //===========  header Styles  ===========
@@ -73,12 +80,20 @@ header {
 	justify-content: flex-end;
 	padding-right: 20px;
 	
+	@media (max-width: 500px) {
+		padding: 0px 20px;
+	}
+	
 
 	nav{
 		width: 300px;
 		display: flex;
 		justify-content: space-between;
 		margin: 30px 0;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 
 		a {
 			color: black;
@@ -89,21 +104,69 @@ header {
 }
 
 .intro {
-	background-color: pink;
+	background-color: lightgray;
 	padding: 20px;
+	border-radius: 5px;
+
+	img {		
+		border-radius: 5px;
+		width: 100%;
+	}
 
 	h1 {
 		font-size: 3rem;
 		padding-top: 20px;
-	}
 
-	h2 {
-		font-size: 2rem;
-		padding: 20px 0;
+		@media (max-width: 500px) {
+			font-size: 2.5rem;		
+		}
 	}
 
 	p {
 		border-top: 1px solid black;
-		padding-top: 20px;
+		padding: 20px 0;
 	}
+
+	.button {
+		background-color: grey;
+		padding: 20px;
+		border-radius: 5px;
+		width: 175px;
+		text-align: center;
+		color: white;
+	}
+}
+
+.about-me {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
+	.stuff {
+		width: 48%;
+		margin-bottom: 20px;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+
+		.list {
+			display: flex;
+			flex-direction: column;
+
+			p {
+				padding: 10px 20px;
+				border: 1px solid black;
+			}
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	margin: 20px 0;
 }
