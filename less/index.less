@@ -4,56 +4,321 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+/* =================================================== Variables */
+
+@back-color: lightgrey;
+@blue-color: rgb(185, 209, 216);
+
+@font-family: "Open Sans", sans-serif;
+
+/* =================================================== Mixins */
+
+.column () {
+  flex-direction: column;
+}
+.space () {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------------------------ Global Styles ------------------------- */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: auto;
+  font-size: 62.5%;
+  font-family: @font-family;
 }
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: @back-color;
+  font-size: 1.6rem;
+  padding: 20px;
+
+  /* ------------------------ header Styles ------------------------- */
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    align-items: baseline;
+
+    nav {
+      a {
+        font-size: 1.6rem;
+        color: black;
+        text-decoration: none;
+        margin: 20px;
+      }
+      a:hover {
+        color: blue;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+        .space;
+      }
+    }
+  }
+  /* ------------------------ top content Styles ------------------------- */
+
+  .top-content {
+    border: 1px solid white;
+    margin-bottom: 1rem;
+    padding: 20px;
+    background: @blue-color;
+
+    h1 {
+      font-size: 3rem;
+      margin: 20px 0;
+    }
+
+    h4 {
+      margin: 20px 0;
+      font-size: 2rem;
+    }
+
+    button {
+      margin: 10px 0;
+      padding: 5px 30px;
+      font-size: 1.2rem;
+      transition: all 0.1s ease;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+      text-align: center;
+      h1 {
+        line-height: 1.25;
+      }
+    }
+  }
+  /* ------------------------ resume content Styles ------------------------- */
+
+  .main-content {
+    padding: 20px 10px;
+    background: white;
+
+    h2 {
+      font-size: 1.8rem;
+      padding: 10px;
+      background: @blue-color;
+    }
+
+    p {
+      font-size: 1.4rem;
+      padding: 20px 20px;
+      line-height: 1.5;
+    }
+
+    .intro_skills {
+      display: flex;
+      padding-bottom: 20px;
+
+      @media (max-width: 500px) {
+        .column;
+      }
+    }
+    .intro {
+      width: 50%;
+      margin-right: 10px;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+
+      p {
+        font-size: 1.6rem;
+        padding-left: 10px;
+      }
+    }
+    .skills {
+      padding-bottom: 10px;
+      width: 50%;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+
+      ul {
+        border: 1px solid grey;
+        margin-top: 20px;
+
+        li {
+          border-bottom: 1px solid grey;
+          padding: 10px;
+        }
+        li:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .work-history {
+      .companies {
+        .space;
+        flex-wrap: wrap;
+        padding: 20px 0;
+      }
+
+      h3 {
+        font-size: 1.6rem;
+        padding: 10px 20px 0;
+      }
+
+      .companies div {
+        width: 49%;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        margin: 10px 0;
+
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .contact {
+    p {
+      padding-left: 10px;
+    }
+  }
+  footer {
+    text-align: center;
+    margin: 10px;
+  }
+}
