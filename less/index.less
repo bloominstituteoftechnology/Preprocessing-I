@@ -154,11 +154,20 @@ h1 {
   font-size: 6rem;
 }
 
+p {
+  font-size: 1.6rem;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
 //============================ variables
 @header-font: black;
 @background-color: rgb(42, 228, 180);
 
-@header-font: Futura, Trebuchet MS, Arial, sans-serif;
+@main-font: Futura, Trebuchet MS, Arial, sans-serif;
 
 //============================ mixins
 .center(@justify, @align, @direction) {
@@ -186,10 +195,14 @@ h1 {
   border-bottom: 1px solid black;
 }
 
+.img(@size) {
+  max-width: @size;
+}
+
 //============================ Home Page Styles
 nav {
   .center(flex-start, baseline, row);
-  font-family: @header-font;
+  font-family: @main-font;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
   margin-bottom: 40px;
@@ -199,14 +212,32 @@ nav {
   }
 
   div:last-child {
-    margin-left: 31.9%;
+    margin-left: 20%;
     a {
       .link-styling();
       margin-right: 10%;
+      font-size: 1.6rem;
     }
   }
 }
 
 header {
   width: 100%;
+  background-color: @background-color;
+  padding: 20px 2%;
+  .center(flex-start, flex-start, column);
+
+  div:first-child {
+    .img(30%);
+  }
+
+  div:last-child {
+    p {
+      margin-top: 20px;
+      border-bottom: 1px solid black;
+      font-size: 2rem;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+  }
 }
