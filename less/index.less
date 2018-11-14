@@ -1,4 +1,4 @@
-// Is this working?
+/*Eric Meyer reset*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -59,21 +59,31 @@ html, body {
 /*---end of reset---*/
 
 //Variables
-@main-font: Arial;
+@main-font: cursive, arial;
+@header-font: 'Permanent Marker', cursive;
+
+//Mixins
+.layout(@j-content, @a-items, @f-direction) {
+	display: flex;
+	justify-content: @j-content;
+	align-items: @a-items;
+	flex-direction: @f-direction;
+}
 
 //Global Styles
 html {
 	font-size: 62.5%;
-	background: red;
+	font-family: @main-font;
 }
+
 img {
 	max-width: 100%;
 	height: auto;
 }
 
-h1 {
-	font-size: 3rem;
-	margin: 15px 0;
+.container {
+	max-width: 880px;
+	margin: 0 auto;
 }
 
 //Header Styles
