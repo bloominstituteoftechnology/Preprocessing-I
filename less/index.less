@@ -58,6 +58,11 @@ table {
 @athens-gray: #E9ECEF;
 @bud: #A8AAA7;
 
+// Mixins ===========================================================
+.setup() {
+  width: 95%;
+  margin: 0 auto;
+}
 
 // Global Styles ===========================================================
 
@@ -85,6 +90,18 @@ h1 {
   font-size: 4rem;
 }
 
+h3 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
 
 // Header ===========================================================
 
@@ -107,6 +124,80 @@ header {
   }
 }
 
+.container {
+  margin: 0 2%;
+}
+
 // Top Section ===========================================================
 
+.top {
+  .setup();
+  background: @accent-color;
+  padding: 30px;
 
+  .header-img {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 40%;
+      height: 40%;
+      margin-bottom: 30px;
+    }
+    
+  }
+  .top-section {
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid lightgray;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 30px;
+      color: white;
+      background-color: @bud;
+      font-size: 2rem;
+      font-weight: bold;
+
+      &:hover {
+        background-color: white;
+        color: @bud;
+      }
+    }
+  }
+}
+
+.middle {
+  .setup();
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  .middle-section {
+    width: 45%;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    li {
+      padding: 14px;
+      border: 1px solid lightgray;
+    }
+  }
+
+
+
+
+}
