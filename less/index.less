@@ -71,9 +71,10 @@ html, body {
 	flex-direction: @f-direction;
 }
 
-.layout-short(@j-content, @a-items) {
+.layout-short(@j-content, @a-items, @f-direction) {
 	justify-content: @j-content;
 	align-items: @a-items;
+	flex-direction: @f-direction;
 }
 
 .center() {
@@ -108,11 +109,17 @@ h2 {
 	margin: 15px 0;
 }
 
+ul {
+	list-style: square;
+	line-height: 1.25;
+}
+
 footer {
 	display: flex;
 	.center;
 	width: 100%;
 	font-size: 1.2rem;
+	margin: 2% 0;
 }
 
 //Header Styles
@@ -164,5 +171,39 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+//Main Resume Styles
+.resume-main {
+	h2 {
+		margin-top: 4%;
+	}
+
+	@media (max-width: 500px){
+		.layout(flex-start, flex-start, column);
+	}
+}
+.resume-top {
+	width: 100%;
+	p {
+		line-height: 1.25;
+	}
+}
+.resume-middle {
+	width: 100%;
+	.layout(space-between, flex-start, row);
+
+	section {
+		width: 50%;
+		.layout(flex-start, flex-start, column);
+	}
+
+	ul {
+		margin-left: 3%;
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
 	}
 }
