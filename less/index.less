@@ -53,7 +53,8 @@ table {
 
 @main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 @gradient: linear-gradient(20deg, #ED4264, lightblue);
-
+@tableBlue: rgba(173, 216, 230, .5);
+@tableRed: rgba(237, 66, 100, .5);
 
 // ---- Mixins ----
 
@@ -79,14 +80,6 @@ html, body {
 	font-size: 62.5%
 }
 
-.container {
-	width: 92%;
-	max-width: 900px;
-	margin: 0 auto;
-	font-size: 1.6rem;
-	font-family: @main-font;
-}
-
 h1 {
 	font-size: 5rem;
 	margin: 20px 0;
@@ -107,6 +100,11 @@ header {
 	.shadow;
 	background: @gradient;
 
+	@media (max-width: 800px){
+		flex-direction: column;
+		align-items: center;
+	}
+
 	nav {
 		display: flex;
 		justify-content: space-between;
@@ -115,11 +113,20 @@ header {
 		.border;
 		background: @gradient;
 
+		@media (max-width: 800px){
+			width: 98%;
+			margin: 0 auto;
+		}
+
 		a {
 			color: grey;
 			text-decoration: none;
 			.border;
 			background: @gradient;
+
+			@media (max-width: 500px){
+				font-size: 2rem;
+			}
 		}
 	}
 }
@@ -127,8 +134,18 @@ header {
 // 
 
 .container {
+	width: 92%;
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	font-family: @main-font;
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+
 	.top {
-		background: lightgray;
+		background: rgb(243, 240, 240);
 		.border;
 		.shadow;
 		padding: 30px 20px;
@@ -158,41 +175,94 @@ header {
 		flex-wrap: wrap;
 		justify-content: space-between;
 
+		@media (max-width: 500px){
+			flex-direction: column;
+		}
+
 		.blurb {
+			background: rgb(243, 240, 240);
 			width: 48%;
 			.border;
 			.shadow;
+
+			@media (max-width: 500px){
+				width: 98%;
+			}
 		}
 
 		.core-competent {
+			background: rgb(243, 240, 240);
 			width: 48%;
 			.border;
 			.shadow;
+
+			@media (max-width: 500px){
+				width: 98%;
+			}
 
 			li {
 				padding: 10px;
 				border: 1px solid black;
 				.shadow;
 			}
+
+			li:nth-child(odd){
+				background: @tableBlue;
+			}
+			li:nth-child(even){
+				background: @tableRed;
+			}
 		}
 
 		.work {
+			background: rgb(243, 240, 240);
 			width: 100%;
 			.border;
-			.shadow
-
+			.shadow;
+			
+			@media (max-width: 500px){
+				width: 98%;
+			}
 			
 		}
+	} //bottom
+
+	footer {
+		text-align: center;
+		padding: 20px;
+		margin: 20px auto;
+		background: darkgray;
 	}
 }
 
-  td, th {
-	border: 1px solid #999;
-	padding: 15px;
-	text-align: left;
-  }
-
 table {
 	border-collapse: collapse;
-	border: 1px solid red;
+
+	@media (max-width: 500px){
+		width: 100%;
+	}
+
+	thead {
+		background: @tableBlue;
+	}
+
+	tbody {
+		tr:nth-child(odd){
+			background: @tableRed
+		}
+
+		tr:nth-child(even){
+			background: @tableBlue;
+		}
+	}
+
+	td, th {
+		border: 1px solid #999;
+		padding: 15px;
+		text-align: left;
+
+		@media (max-width: 500px){
+			padding: 5px;
+		}
+	  }
 }

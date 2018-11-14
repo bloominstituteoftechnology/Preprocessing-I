@@ -139,13 +139,6 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
-.container {
-  width: 92%;
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 1.6rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 h1 {
   font-size: 5rem;
   margin: 20px 0;
@@ -167,6 +160,12 @@ header {
   box-shadow: 1px 1px 2px 2px #ccc;
   background: linear-gradient(20deg, #ED4264, lightblue);
 }
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 header nav {
   display: flex;
   justify-content: space-between;
@@ -177,6 +176,12 @@ header nav {
   padding: 10px;
   background: linear-gradient(20deg, #ED4264, lightblue);
 }
+@media (max-width: 800px) {
+  header nav {
+    width: 98%;
+    margin: 0 auto;
+  }
+}
 header nav a {
   color: grey;
   text-decoration: none;
@@ -185,8 +190,25 @@ header nav a {
   padding: 10px;
   background: linear-gradient(20deg, #ED4264, lightblue);
 }
+@media (max-width: 500px) {
+  header nav a {
+    font-size: 2rem;
+  }
+}
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
 .container .top {
-  background: lightgray;
+  background: #f3f0f0;
   border-radius: 15px 3px 15px 3px;
   border: 2px solid green;
   padding: 10px;
@@ -215,7 +237,13 @@ header nav a {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .container .bottom {
+    flex-direction: column;
+  }
+}
 .container .bottom .blurb {
+  background: #f3f0f0;
   width: 48%;
   border-radius: 15px 3px 15px 3px;
   border: 2px solid green;
@@ -223,13 +251,24 @@ header nav a {
   margin: 5px 0;
   box-shadow: 1px 1px 2px 2px #ccc;
 }
+@media (max-width: 500px) {
+  .container .bottom .blurb {
+    width: 98%;
+  }
+}
 .container .bottom .core-competent {
+  background: #f3f0f0;
   width: 48%;
   border-radius: 15px 3px 15px 3px;
   border: 2px solid green;
   padding: 10px;
   margin: 5px 0;
   box-shadow: 1px 1px 2px 2px #ccc;
+}
+@media (max-width: 500px) {
+  .container .bottom .core-competent {
+    width: 98%;
+  }
 }
 .container .bottom .core-competent li {
   padding: 10px;
@@ -237,7 +276,14 @@ header nav a {
   margin: 5px 0;
   box-shadow: 1px 1px 2px 2px #ccc;
 }
+.container .bottom .core-competent li:nth-child(odd) {
+  background: rgba(173, 216, 230, 0.5);
+}
+.container .bottom .core-competent li:nth-child(even) {
+  background: rgba(237, 66, 100, 0.5);
+}
 .container .bottom .work {
+  background: #f3f0f0;
   width: 100%;
   border-radius: 15px 3px 15px 3px;
   border: 2px solid green;
@@ -245,13 +291,43 @@ header nav a {
   margin: 5px 0;
   box-shadow: 1px 1px 2px 2px #ccc;
 }
-td,
-th {
+@media (max-width: 500px) {
+  .container .bottom .work {
+    width: 98%;
+  }
+}
+.container footer {
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  background: darkgray;
+}
+table {
+  border-collapse: collapse;
+}
+@media (max-width: 500px) {
+  table {
+    width: 100%;
+  }
+}
+table thead {
+  background: rgba(173, 216, 230, 0.5);
+}
+table tbody tr:nth-child(odd) {
+  background: rgba(237, 66, 100, 0.5);
+}
+table tbody tr:nth-child(even) {
+  background: rgba(173, 216, 230, 0.5);
+}
+table td,
+table th {
   border: 1px solid #999;
   padding: 15px;
   text-align: left;
 }
-table {
-  border-collapse: collapse;
-  border: 1px solid red;
+@media (max-width: 500px) {
+  table td,
+  table th {
+    padding: 5px;
+  }
 }
