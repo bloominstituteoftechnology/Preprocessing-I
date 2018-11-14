@@ -50,16 +50,74 @@ table {
 
 
 /* Variables */
-@background:  teal; 
+@background: lightgrey; 
+@font-size: 1.6rem; // 16px with conversion
+@fonts: 'Roboto', sans-serif;
+
+// Mixins
+.center-content() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.uppercase() {
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.vertical-space() {
+	padding: 20px 0;
+	margin: 20px 0;
+}
+
+
+
 
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
-		height: 100%;
-		background: @background;
+html {
+	font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+	width: 1000px;
+	margin: 0 auto;
+	font-size: @font-size;
+	font-family: @fonts;
+}
+
+footer {
+	.center-content;
+	.uppercase;
+	.vertical-space;
+	flex-direction: column;
+	bottom: 0;
+
+	#copywrite {
+		font-size: 1rem;
+		padding-top: 10px;
+	}
+}
+
+.top-nav {
+	.center-content;
+	justify-content: space-between;
+
+	nav {
+		.center-content;
+		justify-content: space-around;
+		width: 50%;
+		
+		a {
+			text-decoration: none;
+			.uppercase;
+		}
+	}
+
 }
 
 
