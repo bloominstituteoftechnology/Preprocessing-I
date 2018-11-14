@@ -72,8 +72,20 @@ body {
 	font-size: 1.4rem;
 }
 
+// Variables
+@list-style: circle;
+@h2-font-size: 2rem;
+@h3-font-size: 1.8rem;
+
+
 // Mixins
-// .ul-style() 
+.my-hover-mixin() {
+	&:hover {
+	  border: 1px solid black;
+	}
+  }
+
+
 
 // Header 
 
@@ -92,6 +104,7 @@ header {
 
 	a {
 	text-decoration: none;
+	.my-hover-mixin();
 	}
 }
 
@@ -124,7 +137,7 @@ header {
 		}
 
 		h3 {
-			font-size: 1.8rem;
+			font-size: @h3-font-size;
 			margin: 2% 3% 1% 3%;
 		}
 
@@ -137,6 +150,7 @@ header {
 			padding: 1%;
 			width: 15%;
 			background-color: gray;
+			.my-hover-mixin();
 		}
 
 	}
@@ -149,17 +163,17 @@ header {
 		max-width: 500px;
 
 		h2 {
-			font-size: 2rem;
+			font-size: @h2-font-size;
 			margin-bottom: 1%;
 		}
 
 		h3 {
 			margin-top: 1%;
-			font-size: 1.6rem;
+			font-size: @h3-font-size;
 		}
 
 		ul {
-			list-style-type: circle;
+			list-style-type: @list-style;
 			margin: 1% 2%;
 		}
 	}
@@ -167,11 +181,11 @@ header {
 	.work-history {
 		h3 {
 			margin-top: 1%;
-			font-size: 1.6rem;
+			font-size: @h3-font-size;
 		}
 
 		ul {
-			list-style-type: circle;
+			list-style-type: @list-style;
 			margin: 2%;
 		}
 	}
@@ -182,8 +196,10 @@ header {
 	address {
 		margin: 1%;
 		text-align: center;
+		font-size: 1.6rem;
+		
 		h2 {
-			font-size: 1.6rem;
+			font-size: @h2-font-size;
 			margin-bottom: 2%;
 			text-align: center;
 		}
