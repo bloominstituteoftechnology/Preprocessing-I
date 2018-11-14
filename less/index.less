@@ -143,14 +143,16 @@ body {
   height: 100%;
 }
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 880px;
-}
-
 h1 {
   font-size: 6rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 3rem;
 }
 
 p {
@@ -163,9 +165,7 @@ img {
 }
 
 //============================ variables
-@header-font: black;
 @background-color: rgb(42, 228, 180);
-
 @main-font: Futura, Trebuchet MS, Arial, sans-serif;
 
 //============================ mixins
@@ -199,64 +199,72 @@ img {
 }
 
 //============================ Home Page Styles
-nav {
-  .center(flex-start, baseline, row);
-  font-family: @main-font;
-  padding-bottom: 10px;
-  border-bottom: 1px solid black;
-  margin-bottom: 40px;
-
-  div:first-child {
-    margin-top: 30px;
-  }
-
-  div:last-child {
-    margin-left: 20%;
-    a {
-      .link-styling();
-      margin-right: 10%;
-      font-size: 1.6rem;
-    }
-  }
-}
-
-header {
+.container {
+  margin: 0 auto;
   width: 100%;
-  background-color: @background-color;
-  padding: 20px 2%;
-  .center(flex-start, flex-start, row);
-  margin-bottom: 40px;
+  max-width: 880px;
 
-  div:first-child {
-    .img(30%);
-  }
+  nav {
+    .center(flex-start, baseline, row);
+    font-family: @main-font;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 40px;
 
-  div:last-child {
-    p {
-      font-size: 2.3rem;
-      padding-bottom: 22px;
-      margin-left: 3%;
+    div:first-child {
+      margin-top: 30px;
     }
 
-    a {
-      .link-styling();
-      margin-left: 3%;
-      display: inline-block;
-      .border();
-      border-radius: 5px;
-      padding: 10px 5%;
-      font-size: 2.3rem;
-      background: white;
-
-      &:hover {
-        color: white;
-        background: black;
-        text-decoration: none;
+    div:last-child {
+      margin-left: 20%;
+      a {
+        .link-styling();
+        margin-right: 10%;
+        font-size: 1.6rem;
       }
     }
   }
-}
 
-.section__one {
-  border-top: 1px solid black;
+  header {
+    width: 100%;
+    background-color: @background-color;
+    padding: 20px 2%;
+    .center(flex-start, flex-start, row);
+    margin-bottom: 40px;
+
+    div:first-child {
+      .img(30%);
+    }
+
+    div:last-child {
+      p {
+        font-size: 2.3rem;
+        padding-bottom: 22px;
+        margin-left: 3%;
+      }
+
+      a {
+        .link-styling();
+        margin-left: 3%;
+        display: inline-block;
+        .border();
+        border-radius: 5px;
+        padding: 10px 5%;
+        font-size: 2.3rem;
+        background: white;
+
+        &:hover {
+          color: white;
+          background: black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .section__one {
+    border-top: 1px solid black;
+    padding-top: 40px;
+    .center(space-between, flex-start, row);
+  }
 }
