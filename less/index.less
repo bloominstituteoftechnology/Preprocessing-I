@@ -52,14 +52,178 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+	margin-top: 12px;
+	font-size: 62.5%;
+	box-shadow: 0px 0px 5px black;
+	font-family: @font-family;
 }
 
-html {
-	background-color: red;
+//Variables
+@mobile: 500px;
+@font-family: Arial, Helvetica, sans-serif;
+@nav-color: #992f2f;
+@header-background: #999999;
+
+//Mixins
+.center-content() {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.info-heading-rules() {
+	text-align: left;
+	padding: 12px;
+	margin: 12px 0;
+}
+
+.info-p-rules() {
+	font-size: 1.6rem;
+	padding: 12px;
+}
+
+.info-section-rules() {
+	border-top: 1px solid rgb(39, 39, 39);
+	margin-top: 12px;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	h2 {
+		.info-heading-rules();
+	}
+	p {
+		.info-p-rules();
+	}
+}
+
+//Styles
+hr {
+	border: 0;
+	width: 25%;
+	height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+header {
+	width: 100%;
+	height: 42px;
+	background-color: @header-background;
+	@media (max-width: @mobile) {
+		height: auto;
+	}
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-bottom: 12px;
+		font-size: 1.6rem;
+		width: 100%;
+		height: 100%;
+		@media (max-width: @mobile) {
+			flex-direction: column;
+		}
+		a {
+			margin: 0 8px;
+			text-decoration: none;
+			color: @nav-color;
+			&:visited {
+				text-decoration: none;
+			}
+			@media (max-width: @mobile) {
+				margin: 4px 0;
+			}
+		}
+	}
+}
+
+.main-content {
+	width: 65%;
+	@media (max-width: @mobile) {
+		width: 95%;
+	}
+	.center-content;
+	h1, h2 {
+		padding: 12px;
+		text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.3);
+	}
+	h1 {
+		font-size: 2.8rem;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+}
+
+#home {
+	.main-content {
+		.heading {
+			.center-content;
+			p {
+				font-size: 1.6rem;
+				padding: 12px;
+				letter-spacing: .3px;
+			}
+			img {
+				width: 100%;
+				margin: 8px 0;
+				@media (max-width: @mobile) {
+					width: 100%;
+				}
+			}
+		}
+
+		.about {
+			.info-section-rules();
+		}
+
+		.skills {
+			.info-section-rules();
+			.skills-list {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				.skill {
+					@media (max-width: @mobile) {
+						width: 95%;
+					}
+					margin: 12px 0;
+					box-shadow: 2px 2px 2px black;
+					h3 {
+						font-size: 2rem;
+						margin: 8px;
+					}
+					border: 1px solid black;
+					border-radius: 4px;
+					width: 45%;
+					font-size: 1.4rem;
+					li {
+						list-style-position: inside;
+						padding: 4px;
+					}
+				}
+			}
+		}
+
+		.experience {
+			.info-section-rules();
+			font-size: 1.6rem;
+			table {
+				width: 100%;
+				th {
+					font-weight: bold;
+					border: 1px solid gray;
+				}
+				td {
+					border: 1px solid gray;
+					border-radius: 2px;
+					padding: 4px;
+				}
+			}
+		}
+	}
 }
 
