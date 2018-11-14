@@ -55,6 +55,7 @@ table {
 @gradient: linear-gradient(20deg, #ED4264, lightblue);
 @tableBlue: rgba(173, 216, 230, .5);
 @tableRed: rgba(237, 66, 100, .5);
+@font-color: rgb(83, 5, 83);
 
 // ---- Mixins ----
 
@@ -64,9 +65,17 @@ border-radius: @radius;
   padding: 10px;
 }
 
-.shadow {
+.shadow() {
 	margin: 5px 0;
 	box-shadow: 1px 1px 2px 2px #ccc;
+}
+
+.popouthover() {
+	transform: rotate3d(0, 0, 1, 1deg) translate3d(10px, -5px, 2px);
+}
+
+.popTransition() {
+	transition: transform 1s ease;
 }
 
 // General Styles
@@ -122,10 +131,25 @@ header {
 			color: grey;
 			text-decoration: none;
 			.border;
+			.popTransition;
 			background: @gradient;
+			color: @font-color;
+			font-weight: 700;
+			letter-spacing: 2px;
+			text-shadow:
+			-1px -1px 0 #000,  
+			 1px -1px 0 #000,
+			 -1px 1px 0 #000,
+			  1px 1px 0 #000;
 
+			  &:hover {
+				  .popouthover;
+			  }
+			
 			@media (max-width: 500px){
-				font-size: 2rem;
+				font-size: 1.8rem;
+				padding: 4px;
+				letter-spacing: .8px;
 			}
 		}
 	}
@@ -297,24 +321,42 @@ table {
 		@media (max-width: 500px){
 			padding: 5px;
 		}
-	  }
+	}
 }
 
 .portfolio {
 
-.bottom {
-		
-	.project {
-		.border;
-		.shadow;
-		width: 48%;
+	.bottom {
+		perspective: 80px;
 
-		img {
-			width: 100%;
-			max-width: 400px;
-			height: auto;
+		.project {
+			.border;
+			.shadow;
+			width: 48%;
+
+			@media (max-width: 500px){
+				width: 98%;
+			}
+
+			h2 {
+				text-decoration: underline;
+				padding: 5px;
+				border: 1px solid gray;
+				.shadow;
+			}
+
+			img {
+				width: 100%;
+				max-width: 400px;
+				height: auto;
+				border: 1px solid gray;
+				.shadow;
+				.popTransition;
+
+				&:hover {
+					.popouthover;
+				}
+			}
 		}
-}
-}
-
+	}
 }

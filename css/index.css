@@ -127,10 +127,6 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
-.shadow {
-  margin: 5px 0;
-  box-shadow: 1px 1px 2px 2px #ccc;
-}
 * {
   box-sizing: border-box;
 }
@@ -188,11 +184,21 @@ header nav a {
   border-radius: 15px 3px 15px 3px;
   border: 2px solid green;
   padding: 10px;
+  transition: transform 1s ease;
   background: linear-gradient(20deg, #ED4264, lightblue);
+  color: #530553;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+header nav a:hover {
+  transform: rotate3d(0, 0, 1, 1deg) translate3d(10px, -5px, 2px);
 }
 @media (max-width: 500px) {
   header nav a {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    padding: 4px;
+    letter-spacing: 0.8px;
   }
 }
 .container {
@@ -366,6 +372,9 @@ table th {
     padding: 5px;
   }
 }
+.portfolio .bottom {
+  perspective: 80px;
+}
 .portfolio .bottom .project {
   border-radius: 15px 3px 15px 3px;
   border: 2px solid green;
@@ -374,8 +383,27 @@ table th {
   box-shadow: 1px 1px 2px 2px #ccc;
   width: 48%;
 }
+@media (max-width: 500px) {
+  .portfolio .bottom .project {
+    width: 98%;
+  }
+}
+.portfolio .bottom .project h2 {
+  text-decoration: underline;
+  padding: 5px;
+  border: 1px solid gray;
+  margin: 5px 0;
+  box-shadow: 1px 1px 2px 2px #ccc;
+}
 .portfolio .bottom .project img {
   width: 100%;
   max-width: 400px;
   height: auto;
+  border: 1px solid gray;
+  margin: 5px 0;
+  box-shadow: 1px 1px 2px 2px #ccc;
+  transition: transform 1s ease;
+}
+.portfolio .bottom .project img:hover {
+  transform: rotate3d(0, 0, 1, 1deg) translate3d(10px, -5px, 2px);
 }
