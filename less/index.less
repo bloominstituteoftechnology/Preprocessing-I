@@ -129,7 +129,7 @@ table {
   border-spacing: 0;
 }
 
-//============================ General Styles
+//===============================================  General Styles
 * {
   box-sizing: border-box;
 }
@@ -164,11 +164,33 @@ img {
   width: 100%;
 }
 
-//============================ variables
-@background-color: rgb(42, 228, 180);
-@main-font: Futura, Trebuchet MS, Arial, sans-serif;
+table {
+  font-size: 1.6rem;
+}
 
-//============================ mixins
+th {
+  padding: 10px 3%;
+  text-align: center;
+  background: lightgrey;
+}
+
+tr {
+  &:nth-child(odd) {
+    background: @shading-color;
+  }
+}
+
+td {
+  padding: 20px 3%;
+  border-top: 1px solid black;
+}
+
+//=============================================== variables
+@background-color: rgb(42, 228, 180);
+@shading-color: rgb(238, 238, 238);
+@heading-font: Futura, Trebuchet MS, Arial, sans-serif;
+
+//=============================================== mixins
 .center(@justify, @align, @direction) {
   display: flex;
   justify-content: @justify;
@@ -198,7 +220,7 @@ img {
   max-width: @size;
 }
 
-//============================ Home Page Styles
+//===============================================  Home Page Styles
 .container {
   margin: 0 auto;
   width: 100%;
@@ -206,7 +228,7 @@ img {
 
   nav {
     .center(flex-start, baseline, row);
-    font-family: @main-font;
+    font-family: @heading-font;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
     margin-bottom: 40px;
@@ -251,7 +273,7 @@ img {
         border-radius: 5px;
         padding: 10px 5%;
         font-size: 2.3rem;
-        background: white;
+        background: @shading-color;
 
         &:hover {
           color: white;
@@ -264,7 +286,8 @@ img {
 
   .section__one {
     border-top: 1px solid black;
-    padding-top: 40px;
+    border-bottom: 1px solid black;
+    padding: 40px 0;
     .center(center, flex-start, row);
     margin-bottom: 40px;
 
@@ -273,6 +296,7 @@ img {
 
       h2 {
         width: 80%;
+        font-family: @heading-font;
       }
 
       p {
@@ -285,6 +309,7 @@ img {
 
       h2 {
         padding-bottom: 20px;
+        font-family: @heading-font;
       }
       ul {
         li {
@@ -296,6 +321,7 @@ img {
           &:nth-child(even) {
             border-top: 0;
             border-bottom: 0;
+            background: @shading-color;
           }
         }
       }
@@ -304,6 +330,20 @@ img {
 
   .section__two {
     .center(flex-start, flex-start, row);
+
+    div {
+      width: 100%;
+
+      h2 {
+        font-family: @heading-font;
+        margin-bottom: 20px;
+      }
+
+      table {
+        .border();
+        width: 100%;
+      }
+    }
   }
 
   footer {
