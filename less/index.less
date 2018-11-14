@@ -141,15 +141,23 @@ body {
 }
 
 // --------------------------General Styles
+@import 'https://fonts.googleapis.com/css?family=Acme';
+
 @primary-color: #384651;
 @other-color: #e9ecef;
 @gray: #808080;
 @light-blue: #80ccff;
+@font-height: 2rem;
+@font-type: 'Acme', sans-serif;
 
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+
+	@media (max-width: 500px) {
+		max-width: 95%;
+	}
 }
 
 header {
@@ -165,19 +173,28 @@ img {
 	width: 250px;
 	height: 250px;
 	transform: rotate(90deg);
+
+	@media (max-width: 500px) {
+		margin-left: 19%;
+	}
 }
 
 h2 {
-	font-size: 2.5rem;
+	font-size: 2.8rem;
 	font-weight: 600;
 	padding: 20px 0 5px;
 	color: @light-blue;
 }
 
 footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 	text-align: center;
 	background-color: @gray;
 	padding: 20px 0;
+	margin: 0 auto;
 	font-size: 2rem;
 }
 
@@ -186,6 +203,11 @@ footer {
 	display: flex;
 	justify-content: flex-end;
 	padding: 20px 0;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .button() {
@@ -198,6 +220,7 @@ footer {
 
 	&:hover {
 		color: @primary-color;
+		background-color: @light-blue;
 	}
 }
 
@@ -208,6 +231,12 @@ nav {
 
 	a {
 		padding-left: 40px;
+		font-family: @font-type;
+
+		@media (max-width: 500px) {
+			padding: 30px 0;
+			font-size: 3rem;
+		}
 
 		&:hover {
 			color: @light-blue;
@@ -231,10 +260,6 @@ nav {
 
 		button {
 			.button;
-
-			&:hover {
-				background-color: @light-blue;
-			}
 		}
 
 		.lower-portrait {
@@ -247,8 +272,28 @@ nav {
 	.main-section {
 		padding: 20px 0;
 
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 		div {
 			width: 50%;
+
+			h2 {
+				font-family: @font-type;
+
+				span {
+					font-size: @font-height;
+				}
+			}
+
+			@media (max-width: 500px) {
+				p {
+					font-size: 2rem;
+				}
+			}
 		}
 
 		a {
@@ -258,6 +303,33 @@ nav {
 			&:hover {
 				color: @light-blue;
 			}
+		}
+	}
+}
+
+// -----------------------Contact Page
+#contact {
+}
+
+.form-section {
+	display: flex;
+	justify-content: center;
+	background-color: @light-blue;
+	font-size: 3rem;
+
+	form {
+		margin: 30rem 0;
+		font-family: @font-type;
+
+		div {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+
+		input {
+			width: 30rem;
+			height: 3rem;
 		}
 	}
 }
