@@ -62,12 +62,13 @@ body {
 	margin-top: 12px;
 	font-size: 62.5%;
 	box-shadow: 0px 0px 5px black;
-	font-family: @font-family;
+	font-family: @main-font;
 }
 
 //Variables
 @mobile: 500px;
-@font-family: Arial, Helvetica, sans-serif;
+@main-font: Arial, Helvetica, sans-serif;
+@accent-font: 'Shadows Into Light', cursive;
 @nav-color: #992f2f;
 @header-background: #999999;
 
@@ -77,10 +78,30 @@ body {
 	margin: 0 auto;
 }
 
+.input-style-rules() {
+	font-size: 1.4rem;
+	border: 1px solid black;
+	box-shadow: 0px 2px 2px black;
+	border-radius: 4px;
+	transition: all .25s;
+	padding: 8px;
+	margin: 12px 0;
+	&:focus {
+		outline: none;
+		background-color: #dddddd;
+	}
+	&[type="submit"]:hover {
+		cursor: pointer;
+		background-color: #999999;
+		transform: translateY(-4px);
+	}
+}
+
 .info-heading-rules() {
 	text-align: left;
 	padding: 12px;
 	margin: 12px 0;
+	font-family: @accent-font;
 }
 
 .info-p-rules() {
@@ -93,6 +114,7 @@ body {
 	margin-top: 12px;
 	padding-bottom: 12px;
 	margin-bottom: 12px;
+	width: 100%;
 	h2 {
 		.info-heading-rules();
 	}
@@ -189,6 +211,7 @@ header {
 				.skill {
 					@media (max-width: @mobile) {
 						width: 95%;
+						margin: 12px auto;
 					}
 					margin: 12px 0;
 					box-shadow: 2px 2px 2px black;
@@ -212,6 +235,7 @@ header {
 			.info-section-rules();
 			font-size: 1.6rem;
 			table {
+				box-shadow: 0px 2px 2px black;
 				width: 100%;
 				th {
 					font-weight: bold;
@@ -221,6 +245,30 @@ header {
 					border: 1px solid gray;
 					border-radius: 2px;
 					padding: 4px;
+				}
+			}
+		}
+
+		.contact {
+			.info-section-rules();
+			font-size: 1.6rem;
+			display: flex;
+			flex-wrap: wrap;
+
+			form {
+				width: 100%;
+				label {
+					width: 50%;
+					display: block;
+					text-align: center;
+				}
+				input {
+					width: 75%;
+					.input-style-rules();
+				}
+				textarea {
+					width: 75%;
+					.input-style-rules();
 				}
 			}
 		}
