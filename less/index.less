@@ -57,10 +57,17 @@ table {
 @med-font: 2.4rem;
 @small-font: 1.6rem;
 
+@light-gray: #f2f2f2;
+
 /* Mixins */
 .useFlex(@flexdirection) {
 	display: flex;
 	flex-direction: @flexdirection;
+}
+
+.setIn(@top, @bottom) {
+	max-width: 90%;
+	margin: @top 5% @bottom 5%;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -89,7 +96,7 @@ img {
 header {
 	display: flex;
 	justify-content: right;
-	margin: 40px 0 40px 0;
+	.setIn(40px,40px);
 	nav {
 		font-size: 2rem;
 		width: 35%;
@@ -116,13 +123,18 @@ h3 {
 .profile {
 	padding: 40px 0 40px 0;
 	.useFlex(column);
-	justify-content: center;
 	align-items: center;
+	.setIn(0,0);
+	background-color: @light-gray;
 	h1 {
 		text-align: center;
 	}
 	img {
 		margin: 50px 0 50px 0;
 		width: 35%;
+	}
+	.tagline {
+		text-align: center;
+		margin: 10px 0 10px 0;
 	}
 }
