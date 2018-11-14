@@ -69,7 +69,7 @@ body {
 @mobile: 500px;
 @main-font: Arial, Helvetica, sans-serif;
 @accent-font: 'Shadows Into Light', cursive;
-@nav-color: #992f2f;
+@maroon: #992f2f;
 @header-background: #999999;
 
 //Mixins
@@ -102,6 +102,7 @@ body {
 	padding: 12px;
 	margin: 12px 0;
 	font-family: @accent-font;
+	font-size: 3rem;
 }
 
 .info-p-rules() {
@@ -139,7 +140,7 @@ header {
 	}
 	nav {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-around;
 		align-items: center;
 		margin-bottom: 12px;
 		font-size: 1.6rem;
@@ -151,7 +152,7 @@ header {
 		a {
 			margin: 0 8px;
 			text-decoration: none;
-			color: @nav-color;
+			color: @maroon;
 			&:visited {
 				text-decoration: none;
 			}
@@ -162,10 +163,34 @@ header {
 	}
 }
 
+footer {
+	width: 100%;
+	border-top: 1px solid black;
+	box-shadow: 0px -1px 1px black;
+	text-align: center;
+	font-size: 1.8rem;
+	padding: 12px;
+}
+
 .main-content {
 	width: 65%;
 	@media (max-width: @mobile) {
 		width: 95%;
+	}
+	.heading {
+		.center-content;
+		p {
+			font-size: 1.6rem;
+			padding: 12px;
+			letter-spacing: .3px;
+		}
+		img {
+			width: 100%;
+			margin: 8px 0;
+			@media (max-width: @mobile) {
+				width: 100%;
+			}
+		}
 	}
 	.center-content;
 	h1, h2 {
@@ -182,21 +207,6 @@ header {
 
 #home {
 	.main-content {
-		.heading {
-			.center-content;
-			p {
-				font-size: 1.6rem;
-				padding: 12px;
-				letter-spacing: .3px;
-			}
-			img {
-				width: 100%;
-				margin: 8px 0;
-				@media (max-width: @mobile) {
-					width: 100%;
-				}
-			}
-		}
 
 		.about {
 			.info-section-rules();
@@ -273,5 +283,48 @@ header {
 			}
 		}
 	}
+
 }
 
+#portfolio {
+	.main-content {
+		.portfolio {
+			.info-section-rules();
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			h2 {
+				width: 100%;
+			}
+			.project {
+				text-align: center;
+				width: 45%;
+				padding: 8px;
+				border: 1px solid black;
+				border-radius: 4px;
+				@media (max-width: @mobile) {
+					width: 95%;
+					margin: 12px auto;
+				}
+				h3 {
+					font-size: 1.6rem;
+					width: 100%;
+				}
+				img {
+					width: 90%;
+					margin: 12px auto;
+					box-shadow: 0px 2px 2px black;
+				}
+				a {
+					text-decoration: none;
+					color: black;
+					&:visited {
+						text-decoration: none;
+						color: @maroon;
+					}
+				}
+			}
+			
+		}
+	}
+}
