@@ -29,7 +29,7 @@ For this project you will be building a digital resume from scratch. You will be
 - [x] Variables: Incorporate variables in your project for color and font stacks.
 - [x] Nesting: Every selector should be nested inside the main container. Avoid having global styles unless they are element level.
 - [x] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
-- [ ] Mobile: Use nested-at rules to provide a mobile version of your resume. Use `500px` as a `max-width` for mobile.
+- [x] Mobile: Use nested-at rules to provide a mobile version of your resume. Use `500px` as a `max-width` for mobile.
 
 ## Stretch Goals:
 
