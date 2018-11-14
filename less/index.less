@@ -63,8 +63,10 @@ html, body {
 
 @color-outer-space: #35393C;
 @color-braker-bay: #5DA399;
+@color-downy: #63CCCA;
 @main-font: 'Quicksand', sans-serif;
-
+@height-full-page: 95vh;
+@gutter-horizontal: 6rem;
 // =============MIXINS============= 
 
 .default-link-styling(){
@@ -79,6 +81,12 @@ html, body {
 	align-items: center;
 	text-align: center;
   }
+
+.col-1-of-2() {
+	width: calc((100% - @gutter-horizontal) / 2);
+	
+}
+
 // =============GENERAL STYLING============= 
 
 .container {
@@ -86,12 +94,17 @@ html, body {
 	margin: 0 auto;
 	font-size: 1.6rem;
 	font-family: @main-font;
+	
 }
 
 h1{
 	font-size: 3.5rem;
 }
 
+img{
+	max-width: 100%;
+	height: auto;
+}
 // =============HEADER STYLING============= 
 
 .header {
@@ -108,14 +121,28 @@ h1{
 
 // =============MAIN PAGE STYLING============= 
 .home {
-	height: 90vh;
+	height: @height-full-page;
 	.center;
 	flex-direction: column;
-
+	background-image: linear-gradient(to right, rgba(@color-outer-space, 0.5), rgba(@color-downy, 0.5)) ,url('https://images.unsplash.com/photo-1518655061710-5ccf392c275a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc1e4a8008463d053163dbfb80f9662d&auto=format&fit=crop&w=967&q=80');
+	background-size: cover;
 	&__btn{
-		justify-content: flex-end;
 		.center;
+		justify-content: flex-end;
 		flex-direction: column;
+		margin-top: -60px;
+		font-size: 2rem;
 	}
 
+}
+
+.about {
+	height: @height-full-page;
+	margin-top: 55px;
+	.center;
+
+	&__intro{
+		.col-1-of-2;
+		margin-right: @gutter-horizontal;
+	}
 }
