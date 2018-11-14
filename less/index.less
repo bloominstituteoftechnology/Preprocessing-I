@@ -49,11 +49,88 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// ==========================Variables
+@main-font: Times, Serif;
+@main-font-color: #434651;
+@decoration-color: #CFC06E;
+@hover-color: #F5F1DB;
+
+// ==========================Mixins
+.main-nav() {
+	display: flex;
+	width: 42%;
+	justify-content: space-between;
+} 
+
 * {
     box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: @main-font;
+	color: @main-font-color;
 }
 
 html, body {
     height: 100%;
 }
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: 1.8rem;
+}
+
+header {
+	padding: 2rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav {
+	.main-nav;
+}
+
+a{
+	color: @decoration-color;
+	text-decoration: none;
+}
+
+a:hover {
+	color: @hover-color;
+}
+
+.top-stuff {
+	width: 100%;
+	padding: 2rem;
+	background-color: #EFEACD;
+}
+
+.picture-headshot {
+	width: 200px;
+	padding: .25rem;
+}
+
+h1 {
+	font-size: 3rem;
+	padding-bottom: 1rem;
+}
+
+h2 {
+	font-size: 2rem;
+	padding: 1.5rem 0;
+}
+
+.top-blurb {
+	border-top: 1px solid @decoration-color;
+	padding: 2rem 0;
+}
+
+button {
+	color: white;
+	background-color: @decoration-color;
+	width: 15%;
+}
+
 
