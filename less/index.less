@@ -76,6 +76,12 @@ table {
 	}
 }
 
+.main-font() {
+	font-size: @font-size;
+	font-family: @fonts;
+	line-height: 1.25;
+}
+
 .uppercase() {
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
@@ -87,11 +93,15 @@ table {
 }
 
 .vertical-space() {
-	padding: 20px 0;
+	padding: 15px 0;
 }
 
 .side-space() {
 	padding: 0 30px;
+}
+
+.bottom-space() {
+	margin-bottom: 20px;
 }
 
 
@@ -112,8 +122,7 @@ html {
 body {
 	width: 1000px;
 	margin: 0 auto;
-	font-size: @font-size;
-	font-family: @fonts;
+	.main-font;
 }
 
 footer {
@@ -180,8 +189,8 @@ footer {
 // ======================= RESUME CONTAINER STYLES
 
 .resume-container {
-	border: 1px solid red;
-	margin: 40px 3%;
+	// border: 1px solid red;
+	margin: 30px 3%;
 
 
 	h2 {
@@ -189,8 +198,15 @@ footer {
 		.heavy;
 		font-size: 1.8rem;
 	}
+	
+	h3 {
+		.uppercase;
+		.heavy;
+		font-size: 1.4rem;
+	}
 
 	.about-section {
+		.bottom-space;
 		h2 {
 			.vertical-space;
 		}
@@ -200,20 +216,22 @@ footer {
 	}
 
 	.skills-section {
+		.bottom-space;
+		h2 {
+			.vertical-space;
+		}
+	}
+
+	.project-section {
+		.bottom-space;
 		h2 {
 			.vertical-space;
 		}
 	}
 
 	.education-section {
-		
 		h2 {
 			.vertical-space;
-			
-		}
-		h3 {
-			.uppercase;
-			.heavy;
 		}
 		p {
 			padding-bottom: 10px;
@@ -222,8 +240,28 @@ footer {
 	}
 }
 
+// CONTAINER AND CARD STYLING
+.card-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.card {
+		border: 1px solid black;
+		padding: 10px;
+	}
+	
+	.skill-card {
+		width: 30%;
+	}
+
+	.project-card {
+		width: 45%;
+		padding: 10px;
+		margin-top: 20px;
+	}
 
 
+}
 
 
 
