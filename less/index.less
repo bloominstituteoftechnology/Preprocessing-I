@@ -60,6 +60,7 @@ html, body {
 //Variables
 @main-color: #34495e;
 @accent-color: #e74c3c;
+@that-gray: #bdc3c7;
 
 //Mixins
 .flex(@just, @align){
@@ -127,7 +128,7 @@ header{
 	h2{
 		align-self: center;
 		font-size: 1.5rem;
-		color: #bdc3c7;
+		color: @that-gray;
 	}
 
 	.contact{
@@ -140,13 +141,18 @@ header{
 
 		h2{
 			font-size: 2rem;
-			color: @accent-color;
+			color: white;
 			margin-bottom: 2px;
+		}
+
+		i{
+			color: @accent-color;
 		}
 
 		p{
 			font-size: 1.6rem;
 			margin-bottom: 15px;
+			color: @that-gray;
 		}
 	}
 
@@ -158,10 +164,17 @@ header{
 		width: 100%;
 		height: 100%;
 
+		h2{
+			color: white;
+			font-size: 2rem;
+			margin-bottom: 10px;
+		}
+
 		.single-skill{
 			.flex(space-between, center);
 			margin-bottom: 10px;
-			border-bottom: 1px dashed #bdc3c7;
+			padding-bottom: 2px;
+			border-bottom: 1px dashed @that-gray;
 
 			.skill{
 				width: 80px;
@@ -182,7 +195,24 @@ header{
 }
 
 .main-section{
-	display: inline-block;
-	padding-left: 20%;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 50px 20px 350px;;
 	overflow: hidden;
+	font-size: 1.6rem;
+	align-items: center;
+	width: 100%;
+
+	h2{
+		font-size: 2.5rem;
+		margin-bottom: 10px;
+	}
+	
+	.intro{
+		max-width: 600px;
+		background-color: #ecf0f1;
+		padding: 30px;
+
+		
+	}
 }
