@@ -134,7 +134,7 @@ html,
 body {
   height: 100%;
   font-size: 62.5%;
-  font-family: Sans-serif, Courier, Arial;
+  font-family: 'Dosis', Courier, Arial, Sans-serif;
 }
 h1 {
   font-size: 7em;
@@ -154,19 +154,27 @@ h4 {
 }
 p {
   font-size: 2.2em;
+  line-height: 1.5em;
   margin-bottom: 2em;
 }
 table {
   font-size: 2.2em;
+  line-height: 1.5em;
   margin-bottom: 2em;
 }
 ul {
   font-size: 2.2em;
+  line-height: 1.5em;
   margin-bottom: 2em;
 }
 .container {
   margin: 2em auto;
   max-width: 90em;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0 auto;
+  }
 }
 header {
   display: flex;
@@ -184,6 +192,25 @@ header nav a {
   text-decoration: none;
   color: #4169E1;
   font-size: 3em;
+}
+@media (max-width: 500px) {
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header nav a {
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid grey;
+  }
 }
 .top-section {
   padding: 3em;
@@ -207,6 +234,11 @@ header nav a {
   font-size: 3em;
   font-weight: bold;
 }
+@media (max-width: 500px) {
+  .top-section img {
+    width: 100%;
+  }
+}
 .middle-section {
   margin-top: 2em;
   display: flex;
@@ -219,6 +251,16 @@ header nav a {
 .middle-section li {
   padding: 1em;
   border: solid 1px lightgrey;
+}
+@media (max-width: 500px) {
+  .middle-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .middle-section .middle-section-column {
+    width: 90%;
+  }
 }
 .bottom-section table {
   width: 100%;
@@ -234,6 +276,12 @@ header nav a {
 }
 .bottom-section table td {
   padding: 1em;
+}
+@media (max-width: 500px) {
+  .bottom-section {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 footer {
   font-size: 2.2em;
