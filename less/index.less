@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ol ul {
 	list-style: none;
 }
 blockquote, q {
@@ -62,26 +62,41 @@ p {
 	font-size: 1.6rem;
 }
 
+
 // my code starts here: 
 
 .container {
 	width: 80%;
 	margin: 0 auto;
-	background-color: lightgray;
+}
+
+// variables
+@background-color: rgb(236, 236, 236);
+
+
+// mixins 
+.flex-item(@justify @align) {
+	display: flex;
+	justify-content: @justify;
+	align-items: @align;
 }
 
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding: 20px 0;
+	padding: 20px 5%;
 	border-bottom: 1px solid black;
+	background-color: @background-color;
+	.flex-item(space-between flex-start);
 
+	img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+	}
 	
 	nav {
-		width: 70%;
-		display: flex;
-		justify-content: center;
+		width: 60%;
+		.flex-item(center center);
+		
 		a {
 			text-decoration: none;
 			font-size: 2rem;
@@ -91,13 +106,43 @@ header {
 		}
 	}
 
-	img {
-		width: 200px;
-		height: 200px;
-		border-radius: 50%;
+
+
+.top-content {
+	padding: 20px 5% 30px 5%;
+	background-color: @background-color;
+	
+	h1 {
+		font-size: 2.6rem;
 	}
 
-
-h1 {
-	font-size: 3rem;
+	p {
+		padding-top: 10px;
+	}
 }
+
+.middle-content {
+	.flex-item(space-between center);
+	margin: 20px 0;
+	.intro {
+		width: 48%;
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: 1.6rem;
+		}
+	}
+
+	.skills {
+		width: 40%;
+		ul {
+			font-size: 1.6rem;
+			li {
+				font-size: 1.6rem;
+				border: 1px solid black;
+				padding: 10px;
+			}
+		}
+	}
+}
+
