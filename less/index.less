@@ -59,8 +59,9 @@ html, body {
 /*---end of reset---*/
 
 //Variables
-@main-font: arial;
-@header-font: 'Permanent Marker', cursive;
+@main-font: 'Courier New', courier, helvetica;
+@header-font: 'Permanent Marker', impact;
+@standard-border: 1px solid black;
 
 //Mixins
 .layout(@j-content, @a-items, @f-direction) {
@@ -91,6 +92,10 @@ img {
 	max-width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	
+	@media (max-width: 500px) {
+		width: 90%;
+	}
 }
 
 footer {
@@ -111,6 +116,7 @@ footer {
 		font-size: 3rem;
 		font-family: @header-font;
 	}
+
 	nav {
 		width: 50%;
 		.layout(space-between, center, row);
@@ -120,8 +126,32 @@ footer {
 			color: red;
 			&:hover{
 				text-decoration: underline;
+				font-style: italic;
 			}
 		}
 	}
 
+	@media (max-width: 500px) {
+		.layout(center, center, column);
+		margin: 1% 0;
+
+		h1{
+			padding: 2% 0;
+		}
+
+		nav{
+			.layout(center, center, column);
+			a {
+				width: 100%;
+				padding: 2% 0;
+				border-top: @standard-border;
+				display: flex;
+				justify-content: center;
+				&:last-child {
+					border-bottom: @standard-border;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
 }
