@@ -53,7 +53,292 @@ table {
     box-sizing: border-box;
 }
 
+//Variables
+
+@font-main : 'Open Sans', sans-serif;
+
+@font-sub: 'Lato', sans-serif;
+
+@color-main:rgba(24, 24, 24, 1);
+
+@color-sub: rgba(0, 0, 225, 1);
+
+@color-sub-2: whitesmoke;
+
+@color-background: rgba(255, 255, 255, .5);
+
+@large-space: 5%;
+
+@small-space: 2%;
+
+//Mixins
+
+.background-img() {
+	background-image: url('../img/pexels-photo-97077.jpeg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: top; 
+
+	@media (max-width:500px) {
+		background-size: 100% 100%;
+	}
+}
+
+.flex-row-a-start() {
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
+}
+
+.flex-column-j-start () {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: space-between;
+}
+
+.outline-text(@choose-color) {
+    color: inherit;
+    text-shadow:
+    -1px -1px 0 @choose-color,
+    1px -1px 0 @choose-color,
+    -1px 1px 0 @choose-color,
+    1px 1px 0 @choose-color;  
+}
+
+.mobile-layout() {
+	position: relative;
+	width: 100%;
+	margin: 0;
+}
+
+
+//HTLM & Body
 html, body {
-    height: 100%;
+	font-size: 62.5%;
+	height: 100%;
+	width: 100%;
+	max-width: 1920px;
+	background-color: @color-main;
+	.background-img();
+	.flex-row-a-start();
+
+	@media (max-width:500px) {
+		.flex-column-j-start();
+		position: absolute;
+	}
+}
+
+html, body {
+	font-size: 62.5%;
+	height: 100%;
+	width: 100%;
+	max-width: 1920px;
+	background-color: @color-main;
+	.background-img();
+	.flex-row-a-start();
+
+	@media (max-width:500px) {
+		.flex-column-j-start();
+		position: absolute;
+		height: auto;
+	}
+}
+
+
+//Fonts
+
+h1, h2, h3, h4, h5, h6, a {
+	font-family: @font-main;
+	line-height: 1.1;
+}
+
+h1 {
+	font-size: 3.6rem;
+	text-align: center;
+	margin-bottom: @large-space;
+}
+
+h2 {
+	font-size: 4.8rem;
+}
+
+h3 {
+	font-size: 2.4rem;
+	margin-bottom: @small-space;
+}
+
+h4, a {
+	font-size: 1.8rem;
+}
+
+h5 {
+	font-size: 1.6rem;
+	text-decoration: underline;
+}
+
+p, ul, button {
+	font-family: @font-sub;
+	font-size: 1.6rem;
+}
+
+a {
+	text-decoration: none;
+	color: @color-sub-2;
+	line-height: .6;
+}
+
+.date {
+	font-style: italic;
+}
+
+.job {
+	font-weight: 700;
+	font-size: 1.7rem;
+}
+
+//Contact Container
+
+.contact {
+	width: 40%;
+	position: fixed;
+	bottom: @large-space;
+	left: @large-space;
+	padding: @small-space;
+	background-color: @color-background;
+	color: @color-sub;
+
+	@media (max-width:500px) {
+		.mobile-layout();
+		bottom: 0;
+		left: 0;
+		margin: @large-space 0;
+	}
+
+	h2 {
+		.outline-text(@color-sub-2);
+	}
+
+	address {
+		background: linear-gradient(90deg, @color-background, transparent);
+	}
+
+	p {
+		line-height: 1.1;
+		color: @color-main;
+		margin: @small-space;
+		font-weight: 900;
+		letter-spacing: .2rem;
+	}
+
+	span { 
+		visibility: hidden;
+		font-size: 1.2rem;
+		color: @color-sub-2;
+		text-align: center; 
+	}
+
+	button {
+		padding: @small-space;
+		cursor: pointer;
+		background: @color-sub;
+		border-radius: 5px;
+		border: none;
+		box-shadow: 2px 9px @color-main;
+		
+		&:hover {		
+			span { 
+				visibility: visible;
+			}	 
+		}
+
+		&:active {
+			box-shadow: 2px 5px @color-main;
+			transform: translateY(5px);
+		}
+
+	}
+
+}
+
+//Main Container
+  
+.container {
+	width: 45%;
+	height: 225%;	
+	margin-left: 50%;
+	padding: 0 @small-space;
+	background-color: @color-background;
+	color: @color-main;
+	.flex-column-j-start ();
+
+	@media (max-width:500px) {
+		.mobile-layout();
+		height: 300%;	
+	}
+		header {
+			width: 41%;
+			padding: @small-space 0;
+
+			background: @color-sub;
+			position: fixed;
+
+			@media (max-width:500px) {
+				.mobile-layout();
+				padding: @large-space 0;
+			}
+
+			nav {
+				.flex-row-a-start();
+				justify-content: space-evenly;
+				color: @color-main;
+
+				a:hover {
+					text-decoration: underline;
+				}
+
+				a:active {
+					transform: translateY(2px);
+				}
+			}
+		}
+
+		.main {
+			margin-top: 15%;
+			.flex-column-j-start();
+
+			@media (max-width:500px) {
+				margin-top: @large-space;
+			}
+
+			h1 {
+				.outline-text(@color-sub-2);
+			}
+
+			.text-block {
+				margin-bottom: @small-space;
+				padding: @small-space;
+				background: linear-gradient(90deg, @color-background, transparent);
+			}
+
+			.intro, .skills, .education, .work-history {
+				margin-bottom: @large-space;
+			}
+
+			.intro {
+				font-weight: 600;
+				line-height: 1.2;
+			}
+
+			.skills-lists {
+				.flex-row-a-start();
+
+				ul {
+					list-style-type: square;
+					margin-left: @large-space * 2;
+				}
+			}
+		}
 }
 
