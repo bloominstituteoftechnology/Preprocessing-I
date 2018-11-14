@@ -144,6 +144,7 @@ body {
 @primary-color: #384651;
 @other-color: #e9ecef;
 @gray: #808080;
+@light-blue: #80ccff;
 
 .container {
 	max-width: 1000px;
@@ -157,7 +158,6 @@ header {
 
 a {
 	text-decoration: none;
-	padding-left: 40px;
 	color: @primary-color;
 }
 
@@ -165,6 +165,20 @@ img {
 	width: 250px;
 	height: 250px;
 	transform: rotate(90deg);
+}
+
+h2 {
+	font-size: 2.5rem;
+	font-weight: 600;
+	padding: 20px 0 5px;
+	color: @light-blue;
+}
+
+footer {
+	text-align: center;
+	background-color: @gray;
+	padding: 20px 0;
+	font-size: 2rem;
 }
 
 // -----------------------------Mixin Styles
@@ -179,11 +193,26 @@ img {
 	background-color: @gray;
 	margin-top: 10px;
 	color: #fff;
+	cursor: pointer;
+	border-radius: 10px;
+
+	&:hover {
+		color: @primary-color;
+	}
 }
 
 // -----------------------------Specific Styles
+// -----------------Home Page
 nav {
 	.nav-styles;
+
+	a {
+		padding-left: 40px;
+
+		&:hover {
+			color: @light-blue;
+		}
+	}
 }
 
 .container {
@@ -204,7 +233,7 @@ nav {
 			.button;
 
 			&:hover {
-				background-color: #80ccff;
+				background-color: @light-blue;
 			}
 		}
 
@@ -212,6 +241,23 @@ nav {
 			margin: 15px 0 20px;
 			border-top: 1px solid @gray;
 			padding-top: 15px;
+		}
+	}
+
+	.main-section {
+		padding: 20px 0;
+
+		div {
+			width: 50%;
+		}
+
+		a {
+			text-decoration: underline;
+			color: @primary-color;
+
+			&:hover {
+				color: @light-blue;
+			}
 		}
 	}
 }
