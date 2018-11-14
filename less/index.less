@@ -63,6 +63,12 @@ html, body {
 @primary-light: lighten(@primary-color, 45%);
 @base-size: 1.6rem;
 // Mixins
+.header-font(){
+  font-family: 'Eczar', serif;
+}
+.base-font(){
+  font-family: 'Gentium Basic', serif;
+}
 .text-center(){
   text-align: center;
 }
@@ -77,6 +83,8 @@ html, body {
 .cards(){
   background: white;
   h3{
+    .header-font();
+    font-weight: semi-bold;
     font-size: 3rem;
     padding: 10px 0;
   }
@@ -85,13 +93,14 @@ html, body {
     border-bottom: 3px solid @black;
   }
   p{
+    .base-font();
     padding: 10px 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   text-align: center;
   border: 3px solid @black;
   border-radius: 15px;
-  color: @primary-color;
+  color: @black;
 }
 .h2(@size, @margin){
  font-size: @size;
@@ -118,6 +127,7 @@ img{
 // Navigation 
 header {
   .layout(space-between, baseline);
+  .header-font();
   @media (max-width: 600px) {
     flex-direction: column;
     width: 100%;
@@ -126,7 +136,7 @@ header {
 	 background: @primary-color;
 	 padding: 20px 0;
  h2{ 
-		font-size: 3rem;
+    font-size: 3rem;
 		padding-left: 3%;
 		width: 50%;
     color: @white;
@@ -175,16 +185,19 @@ nav{
 		border: 5px solid @black;
 	}
 	h1{
-		font-size: 5rem;
+    font-size: 7rem;
+    .header-font();
 	}
 	h2{
-		.h2(1.8rem, 10px 0);
+    .h2(3rem, 10px 0);
+    .base-font();
 	}
 }
 }
 // Main Content: About - Skills
 .main-content{
-	width: 95%;
+  width: 95%;
+  .base-font();
   .layout(space-around, baseline);
   margin: 20px auto;
   @media (max-width: 600px) {
@@ -201,14 +214,16 @@ nav{
       margin: 20px auto;
     }
 	h2{
-    .h2(2.5rem, 15px 0);
-    
+    .h2(4rem, 15px 0);
+    .header-font();
+    font-weight: bold;
 	}
 	p{
 		line-height: 1.25;
-		font-size: 1.6rem;
+		font-size: 2rem;
 	}
 	a{
+    .header-font();
 		border: 2px solid @black;
 		border-radius: 12px;
 		background: @primary-color;
@@ -233,14 +248,16 @@ nav{
     width: 100%;
   }
 	h2{
-    .h2(2.5rem, 15px 0);
-	
+    .h2(4rem, 15px 0);
+    .header-font();
+    font-weight: bold;
 	}
   
 	ol li{
+    .base-font();
 		list-style: upper-roman;
 		list-style-position: inside;
-		font-size: 1.8rem;
+		font-size: 2rem;
 		line-height: 1.25;
 	}
 
@@ -249,7 +266,9 @@ nav{
 // Resume
 .resume{
   h2{
-    .h2(2.5rem, 30px auto);
+    .header-font();
+    font-weight: bold;
+    .h2(4rem, 30px auto);
     text-align: center;
     }	
   flex-direction: column;
@@ -273,24 +292,32 @@ nav{
 }
 .contact{
   margin: 100px 0;
+  .base-font();
   @media (max-width: 600px) {
     margin: 0 auto;
   }
   h2{
-    .h2(2.5rem, 30px auto);
+    .header-font();
+    .h2(4rem, 30px auto);
+    font-weight: bold;
     text-align: center;
     }	
     p{
+      font-size: 2.5rem;
       text-align: center;
       a{
         text-decoration: none;
-        color: @primary-color;
+        color: spin(@primary-color, 30%);
         line-height: 2;
+        &:hover{
+          color: lighten(coral, 10%);
+        }
       }
     }
 }
 // Footer
 footer{
+  .base-font();
   margin: 50px auto 25px;
   text-align: center;
   
