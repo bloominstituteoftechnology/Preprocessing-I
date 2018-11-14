@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -130,7 +130,66 @@ table {
 * {
   box-sizing: border-box;
 }
-html,
+.flexbox {
+  display: flex;
+}
 body {
-  height: 100%;
+  font-size: 62.5%;
+  width: 880px;
+  margin: 0 auto 0 auto;
+}
+body .container nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  padding-top: 2%;
+}
+body .container nav a {
+  text-decoration: none;
+}
+body .container h2 {
+  font-size: 1.6rem;
+  margin-top: 5%;
+}
+body .container img {
+  display: block;
+  padding: 2rem;
+  width: 50%;
+  margin: 0 auto 0 auto;
+}
+body .container a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+body .container button {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  background: green;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+body .container button span {
+  cursor: pointer;
+  transition: 0.5s;
+  display: inline-block;
+  position: relative;
+}
+body .container span:after {
+  content: "\00bb";
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  position: absolute;
+}
+body .container button:hover span {
+  padding-right: 2rem;
+}
+body .container button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
