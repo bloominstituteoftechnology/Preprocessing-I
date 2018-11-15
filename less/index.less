@@ -60,7 +60,7 @@ html, body {
 }
 
 @main-color: black;
-@headings-font-size:2rem;
+@headings-font-size:2.5rem;
 @tile-font-size: 3rem;
 
 .nav-bar() {
@@ -69,7 +69,14 @@ html, body {
 	justify-content: flex-end;
 	margin: 20px 0;
 	margin-top: 20px;
-  }
+	
+	@media(max-width: 500px) {
+		flex-wrap:wrap;
+		border-bottom: 1px solid black;
+		
+		
+	  }
+}
 
 html {
 	font-size: 62.5%;
@@ -78,69 +85,155 @@ html {
 .container{
 	max-width: 880px;
 	margin: 0 auto;
-	border: 1px solid red;
 	font-size: 1.6rem;
-}
+
+	@media (max-width: 500px) {
+		.container {
+			width: 100%;
+			font-size: 20px;
+			
+		}
+	}
 
 header {
 	.nav-bar;
 
-
 	nav {
 	 display: flex;
-	 width: 100%;
-     justify-content: space-around;
+     width: 50%;
+	 justify-content: space-around;
+
+	 @media (max-width: 500px){
+		width: 100%;
+		margin-top: 20px;  
+		margin: 0;  
+		flex-wrap: wrap; 
+		 border-bottom: 1px solid black;
+		
+	 }
 	}
-}
+	 
+	 a {
+	  color:@main-color;
+	  text-decoration: none;	
+	 }
+
+	 a:hover{
+		text-decoration: underline; 
+	 }
+	}
 
 
-h1 {
+
+	h1 {
 	font-size:@tile-font-size;
-}
-
-h2 {
-	font-size:@headings-font-size;
+	border-bottom: 1px solid black;
 	
 }
 
+	h2 {
+	 font-size:@headings-font-size;
+	 border-bottom: 1px solid black;
+	
+	
+}
+	h3 {
+	 font-size: 2rem;
+	 margin-top: 10px;
+	 border-bottom: 1px solid black;
+}
+
+
+
 p{
 	font-size: 1.5rem;
+	
+}
+
+ul {
+	font-size: 1.5rem;
+	margin-left: 15%;
+	margin-top: 15px;
+
+	li{
+		line-height: 3rem;
+		width: 200px;
+	    margin-left:20%;
+		
+	}
+	
 }
 
 .intro {
 	flex-wrap: wrap;
 	text-align: center;
-    margin-right:35%;
-	border: 1px solid red;
+	margin-right:35%;
+	background-color: rgb(226, 222, 222);
+	border-bottom: 1px solid black;
+	
 }
 
 .main-content .text-content{ 
 	display: flex;
 	margin: 0%;
+	margin-top: 10%;
 	font-size:@headings-font-size;
-	border: 1px solid red;
 	justify-content: space-between;
+
+	
+	@media (max-width: 500px) {
+		display: flex;
+		justify-content: center;
+		border-bottom: 1px solid black;
+	}
 
 	.middle-content{
 	 margin-right:15%;
+	 line-height: 3rem;
+	 
 	}
 }
 
-.bottom-content{
-	display:flex;
-	margin-top: 5%;
-	justify-content: start;
-	// margin-bottom: 25%;
+
+	.bottom-content .work{
+	 display:flex;
+	 margin-top: 5%;
+	 justify-content: start;
+	 margin-bottom: 100px;
+	 justify-content: space-between;
+
+	 @media (max-width: 500px) {
+		flex-wrap: wrap;
+		border-bottom: 1px solid black;
+		
+	 }
+
+	
+	.work-text {
+	 	margin-top: 10%;
+	    margin-right:10%;
+	
+	}
+	@media (max-width: 500px) {
+		display: flex;
+		justify-content: center;
+		
+	}
+	
 }
 
 footer {
+	display:flex;
+	justify-content: center;
 	margin: 32px 0;
 	text-align: center;
+	align-items: center;
 	font-size: 1.5rem;
+	height: 100px;
+	background-color: gray;
   }
+ 
 
-
-
-
+}
 
 
