@@ -152,7 +152,18 @@ img {
 .container h3 {
   font-size: 2.5rem;
 }
-.container .contact-info {
+.container .top-page-content {
+  display: flex;
+  align-items: baseline;
+}
+@media (max-width: 500px) {
+  .container .top-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container .top-page-content .contact-info {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -160,13 +171,26 @@ img {
   font-size: 1.6rem;
   line-height: 1.35;
 }
-.container nav {
+@media (max-width: 500px) {
+  .container .top-page-content .contact-info {
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+.container .top-page-content nav {
   display: flex;
   justify-content: flex-end;
   height: 80px;
   align-items: center;
 }
-.container nav a {
+@media (max-width: 500px) {
+  .container .top-page-content nav {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.container .top-page-content nav a {
   padding-left: 35px;
   text-decoration: none;
   font-size: 1.7rem;
@@ -178,9 +202,23 @@ img {
   background-color: #E6E9EB;
   height: 710px;
 }
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: none;
+  }
+}
 .container header img {
   padding: 62px 0 5px 30px;
   height: 367px;
+}
+@media (max-width: 500px) {
+  .container header img {
+    padding: none;
+    height: auto;
+  }
 }
 .container header .header-text {
   padding: 0 30px;
