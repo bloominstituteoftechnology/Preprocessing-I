@@ -85,7 +85,12 @@ body {
 	}
   }
 
-
+  .my-nav-mixin() {
+	display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: flex-end;
+  }
 
 // Header 
 
@@ -95,11 +100,8 @@ header {
 	font-size: 1.2rem;
 
 	nav {
-	display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-content: flex-end;
-    width: 100%;
+	width: 100%;
+	.my-nav-mixin();
 	}
 
 	a {
@@ -152,7 +154,6 @@ header {
 			background-color: gray;
 			.my-hover-mixin();
 		}
-
 	}
 
 	.about-me {
@@ -197,11 +198,17 @@ header {
 		margin: 1%;
 		text-align: center;
 		font-size: 1.6rem;
-		
+
 		h2 {
 			font-size: @h2-font-size;
 			margin-bottom: 2%;
 			text-align: center;
+		}
+
+		a {
+			.my-hover-mixin();
+			text-decoration: underline;
+			color: black;
 		}
 	}
 }
