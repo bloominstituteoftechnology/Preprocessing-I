@@ -64,13 +64,33 @@ html, body {
 	max-width: 900px;
 }
 
+@fontcolor: rgb(22,44,93);
+
+.title() {
+	letter-spacing: 1;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: @fontcolor;
+}
+
+.section() {
+	display: flex;
+	margin: 20px 0;
+	flex-direction: column;
+	line-height: 1;
+}
+
+
+
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	border: 1px solid red;
 	margin: 20px 0;
 	padding: 40px 0;
+	background-color: lightgray;
+	color: @fontcolor;
 
 	nav {
 		display: flex;
@@ -88,49 +108,52 @@ header {
 		color: black;
 	
 		&:hover {
-			color: grey;
+			color: @fontcolor;
 			font-weight: bolder;
 		}
 	}
 }
 
 .intro-paragraph {
-	display: flex;
-	margin: 20px 0;
-	flex-direction: column;
-	line-height: 1;
+	.section;
 
 	h2 {
-	margin: 20px 0;
-	letter-spacing: 1;
+	.title;
 	}
 	p {
-	margin: 20px 0;
 	letter-spacing: 1;
 	}
 }
 
 .skills {
-	display: flex;
-	margin: 20px 0;
-	flex-direction: column;
-	line-height: 1;
+	.section;
 
 	h2 {
-		font-size: 1.5rem;
+		.title;
+	}
+	p {
+		letter-spacing: 1;
 	}
 }
 
 .contact {
-	display: flex;
-	margin: 20px 0;
-	flex-direction: column;
-	line-height: 1;
+	.section;
+
+	h2 {
+		.title;
+	}
+	p {
+		letter-spacing: 1;
+	}
 }
 
 .work-history {
-	display: flex;
-	margin: 20px 0;
-	flex-direction: column;
-	line-height: 1;
+	.section;
+
+	h2 {
+		.title;
+	}
+	p {
+		letter-spacing: 1;
+	}
 }
