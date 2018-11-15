@@ -17,7 +17,7 @@ For this project you will be building a digital resume from scratch. You will be
 
 ## Task 3: Project Objectives
 
-* [ ] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
+* [ X] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
 **Note: you are only required to build one page, anything more than that would be stretch.**
 * [X ] The resume content will be provided by you. The content can be about you or a fictional character.  
 * [ x] Content: Navigation - Build a simple navigation with 4 items of your choosing
