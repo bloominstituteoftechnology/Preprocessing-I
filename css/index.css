@@ -162,11 +162,26 @@ img {
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.25;
 }
+@media (max-width: 500px) {
+  .main-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
 header {
   display: flex;
   justify-content: flex-end;
   margin: 2% 0;
   align-items: center;
+}
+@media (max-width: 500px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10% 0;
+  }
 }
 header nav {
   display: flex;
@@ -175,9 +190,30 @@ header nav {
   align-items: flex-end;
   width: 40%;
 }
+@media (max-width: 500px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 header nav a {
   color: darkgrey;
   text-decoration: none;
+}
+@media (max-width: 500px) {
+  header nav a {
+    margin: 0;
+    padding: 10% 0;
+    border-bottom: 1px solid black;
+    width: 500px;
+    text-align: center;
+  }
+  header nav a:hover {
+    background: grey;
+    color: white;
+  }
 }
 .banner-content {
   display: flex;
@@ -204,7 +240,7 @@ header nav a {
 .intro {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   margin: 2% 0;
   padding: 3% 0;
@@ -215,20 +251,21 @@ header nav a {
   margin-bottom: 2.5%;
 }
 .intro .intro-item-1 {
-  width: 40%;
+  width: 45%;
   height: 100%;
 }
 .intro .skills {
-  width: 40%;
+  width: 20%;
   text-align: left;
   display: flex;
   flex-direction: column;
+  margin-right: 2%;
 }
 .intro .skills ul {
   border: 1px solid black;
 }
 .intro .skills ul li {
-  padding: 1% 1.5%;
+  padding: 2% 3%;
   font-size: 1.7rem;
 }
 .intro .skills ul li:nth-child(even) {

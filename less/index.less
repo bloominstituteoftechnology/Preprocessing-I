@@ -56,6 +56,7 @@ table {
 @main-font: Helvetica, Arial, sans-serif;
 @nav-color: darkgrey;
 
+
 html, body {
 	height: 100%;
 	font-size: 62.5%;
@@ -88,10 +89,16 @@ img {
 	margin: 0 auto;
 	.main-font;
 	
+	@media(max-width: 500px) {
+		max-width: 500px;
+		margin: 0 auto;
+	}
 }
 
 
 // MIXINS
+
+
 
 .main-font() {
 	font-size: 1.6rem;
@@ -129,6 +136,10 @@ img {
 	font-weight: bold;
 }
 
+.border() {
+	border: 1px solid black;
+}
+
 
 
 
@@ -150,14 +161,37 @@ img {
 	margin: 2% 0;
 	align-items: center;
 
+	@media(max-width: 500px) {
+		.center-column;
+		margin: 0 0 10% 0;
+	}
+
 	nav {
 		.layout(row, space-between, flex-end);
 		width: 40%;
+
+		@media(max-width: 500px) {
+			.center-column;
+			
+		}
 	}
 
 	nav a {
 		color: @nav-color;
 		text-decoration: none;
+
+		@media(max-width: 500px) {
+			margin: 0;
+			padding: 10% 0;
+			border-bottom: 1px solid black;
+			width: 500px;
+			text-align: center;
+
+			&:hover {
+				background: grey;
+				color: white;
+			}
+		}
 	}
   }
 
@@ -199,7 +233,7 @@ img {
 
 
 .intro {
-	.layout(row, space-between, flex-start);
+	.layout(row, space-around, flex-start);
 	
 	.section-divider;
 	
@@ -210,25 +244,27 @@ img {
 
 	.intro-item-1 {
 		// .layout(column,flex-start,space-evenly);
-		width: 40%;
+		width: 45%;
 		height: 100%;
 	}
 
 	
 
 	.skills {
-	width: 40%;
-    text-align: left;
-    display: flex;
-	flex-direction: column;
+		width: 20%;
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		margin-right: 2%;
 
 	
 		ul {
-			border: 1px solid black;
+			.border;
 
 			li {
-				padding: 1% 1.5%;
+				padding: 2% 3%;
 				font-size: 1.7rem;
+				
 			}
 
 			li:nth-child(even) {
