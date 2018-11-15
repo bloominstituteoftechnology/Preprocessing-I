@@ -136,11 +136,16 @@ body {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 h1 {
   font-size: 3rem;
 }
 h2 {
   font-size: 2.5rem;
+  margin-bottom: 25px;
 }
 h3 {
   font-size: 1.8rem;
@@ -245,9 +250,6 @@ header a:hover {
     width: 100%;
   }
 }
-.mid-content .mid-left h2 {
-  margin-bottom: 15px;
-}
 .mid-content .mid-right {
   width: 50%;
 }
@@ -266,32 +268,23 @@ header a:hover {
   border: 1px solid #313638;
   margin-bottom: -1px;
 }
-.bottom-content {
-  display: flex;
-  flex-direction: column;
-}
-.bottom-content h2 {
-  margin-bottom: 25px;
+.bottom-content .flex-column h2 {
   padding-left: 5px;
 }
-.bottom-content .table {
-  display: flex;
-  flex-direction: column;
-}
-.bottom-content .table .row {
+.bottom-content .table .flex-column .row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding-left: 25px;
 }
-.bottom-content .table .row:first-child {
+.bottom-content .table .flex-column .row:first-child {
   font-weight: 500;
   border-bottom: 2px solid #313638;
 }
-.bottom-content .table .row:nth-child(even) {
+.bottom-content .table .flex-column .row:nth-child(even) {
   background-color: #E0DFD5;
 }
-.bottom-content .table .row p {
+.bottom-content .table .flex-column .row p {
   width: 25%;
   padding-top: 10px;
 }
@@ -304,19 +297,12 @@ footer {
   text-align: center;
   font-size: 1.4rem;
 }
-.main-content-portfolio {
-  display: flex;
-  flex-direction: column;
-}
-.main-content-portfolio h2 {
-  margin-bottom: 25px;
-}
-.main-content-portfolio .git {
+.main-content-portfolio .flex-column .git {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.main-content-portfolio .git .project {
+.main-content-portfolio .flex-column .git .project {
   width: 24%;
   border: 1px solid #313638;
   border-radius: 6px;
@@ -324,11 +310,11 @@ footer {
   padding: 5px;
 }
 @media (max-width: 500px) {
-  .main-content-portfolio .git .project {
+  .main-content-portfolio .flex-column .git .project {
     width: 100%;
   }
 }
-.main-content-portfolio .git .project:hover {
+.main-content-portfolio .flex-column .git .project:hover {
   border-color: #B90021;
   background-color: #E8E9EB;
 }
