@@ -88,6 +88,7 @@ img {
 }
 
 .container {
+	overflow: hidden;
 	max-width: 873px;
 	margin: 0 auto;
 	font-size: 1.6rem;
@@ -158,16 +159,19 @@ img {
 			flex-direction: column;
 			margin: 0 auto;
 			padding: none;
+			height: 800px;
 		}
 
 		img {
 			padding: 62px 0 5px 30px;
 			height: 367px;
+			max-width: 100%;
 
 			@media(max-width:500px){
-				padding: none;
+				padding: 0 0 0 0;
+				max-width: 100%;
 				height: auto;
-			
+		
 			}
 		}
 
@@ -176,19 +180,34 @@ img {
 
 			.header-text-upper {
 
+				@media(max-width: 500px) {
+					text-align: center;
+				}
+
 				h1 {
 					font-size: 5.5rem;
 					padding-bottom: 18px;
+
+					@media(max-width: 500px){
+						font-size: 4.5rem;
+						padding-top: 10px;
+					}
 				}
 	
 				p {
 					font-size: 2.1rem;
 					padding-bottom: 20px;
 				}
+
+				
 			}
 
 			.header-text-lower {
 				padding-top: 20px;
+
+				@media(max-width: 500px) {
+					text-align: center;
+				}
 				p {
 					padding-bottom: 44px;
 				}
@@ -203,6 +222,11 @@ img {
 					font-weight: 600;
 					font-size: 2rem;
 					cursor: pointer;
+
+					@media(max-width: 500px) {
+						width: 40%;
+						margin-left: 135px;
+					}
 				}
 			}
 		}
@@ -214,13 +238,20 @@ img {
 		flex-wrap: wrap;
 		justify-content: space-between;
 
-		.upper-item {
-
-
+		@media(max-width: 500px){
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			padding: 0 20px;
 		}
 
 		.intro-content {
 			width: 51.5%;
+
+			@media(max-width:500px){
+				width: 100%;
+				padding-bottom: 15px;
+			}
 
 			h2 {
 				padding-bottom: 5px;
@@ -234,6 +265,10 @@ img {
 
 		.stuff-im-good-at {
 			width: 48.5%;
+
+			@media(max-width:500px){
+				width: 100%;
+			}
 
 			ul {
 				margin-top: 15px;
@@ -261,10 +296,15 @@ img {
 		.flex-column;
 		padding-bottom: 36px;
 
+		@media(max-width:500px){
+			padding: 0 20px;
+		}
+
 
 		.lower-table {
 			.flex-column;
 			margin-top: 10px;
+			margin-bottom: 30px;
 
 
 			.table-item {
@@ -279,48 +319,94 @@ img {
 				}
 				.company {
 					padding-left: 75px;
+
+					@media(max-width: 500px) {
+						padding-left: 50px;
+					}
 				}
 
 				.table-title {
 					padding-left: 115px;
+					@media(max-width: 500px) {
+						padding-left: 70px;
+					}
 				}
 
 				.tech-used {
 					padding-left: 305px;
+					@media(max-width: 500px) {
+						padding-left: 80px;
+					}
 				}
 
 				// individual styles for content
 				// company
 				.apple {
 					padding-left: 95px;
+
+					@media(max-width: 500px) {
+						padding-left: 70px;
+					}
 				}
 
 				.microsoft {
 					padding-left: 95px;
+
+					@media(max-width: 500px) {
+						padding-left: 70px;
+					}
 				}
 
 				.amazon {
 					padding-left: 95px;
+
+					@media(max-width: 500px) {
+						padding-left: 70px;
+					}
 				}
 				// title
 				.swe {
 					padding-left: 152px;
+
+					@media(max-width: 500px) {
+						padding-left: 60px;
+					}
 				}
 				.cs {
 					padding-left: 122px;
+
+					@media(max-width: 500px) {
+						padding-left: 30px;
+					}
 				}
 				.dev-ops {
 					padding-left: 133px;
+
+					@media(max-width: 500px) {
+						padding-left: 70px;
+					}
 				}
 				// tech used
 				.swift {
 					padding-left: 195px;
+
+					@media(max-width: 500px) {
+						padding-left: 30px;
+					}
 				}
 				.net {
 					padding-left: 187px;
+
+					@media(max-width: 500px) {
+						padding-left: 25px;
+					}
 				}
 				.aws {
 					padding-left: 271px;
+
+					@media(max-width: 500px) {
+						padding-left: 80px;
+					}
 				}
 			}
 
@@ -343,6 +429,10 @@ footer {
 	padding: 30px;
 	width: 90%;
 	background-color: grey;
+
+	@media(max-width:500px) {
+		width: 100%;
+	}
 
 	p {
 		color: white;
