@@ -56,7 +56,7 @@ html, body {
 
 // =============================== Variables
 @rick-hair-blue: #ACDBE7;
-@background-color: @rick-hair-blue;
+@font: Helvetica, Arial;
 
 // =============================== Mixins
 .layout(@flex-dir, @j-content, @a-items) {
@@ -80,11 +80,12 @@ html {
 	max-width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	font: @font;
 }
 
 // =============================== Header
 header {
-	.size(100%,150px);
+	.size(100%,100px);
 	.layout(row, center, center);
 
 	nav {
@@ -124,9 +125,13 @@ header {
 		margin: 20px 20px;
 	}
 	table {
+		background-color: silver;
 		th, td {
 		border: 1px solid black;
 		.size(75%, 40px);
+		}
+		th {
+			background-color: @rick-hair-blue;
 		}
 	@media (max-width: 500px) {
 		.layout(column, center, center);
