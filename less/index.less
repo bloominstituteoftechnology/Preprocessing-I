@@ -127,7 +127,7 @@ img {
 
 
 .section-divider() {
-	margin: 2% 0;
+	margin: 2% auto;
 	padding: 3% 0;
 	border-top: 1px solid black;
 }
@@ -167,7 +167,7 @@ img {
 	}
 
 	nav {
-		.layout(row, space-between, flex-end);
+		.layout(row, space-around, flex-end);
 		width: 40%;
 
 		@media(max-width: 500px) {
@@ -186,6 +186,7 @@ img {
 			border-bottom: 1px solid black;
 			width: 500px;
 			text-align: center;
+			font-size: 1.9rem;
 
 			&:hover {
 				background: grey;
@@ -198,13 +199,17 @@ img {
 
 
 .banner-content {
-	//.container(100%);
+	.container(90%);
 	// .layout(row, center, flex-start);
 	display: flex;
 	justify-content: space-evenly;
 	//border:@border;
 	align-items: center;
 
+	@media(max-width: 500px) {
+		flex-direction: column;
+	}
+	
 
 	.banner-item-2 {
 		//border:@border;
@@ -220,12 +225,33 @@ img {
 			text-align: center;
 			margin-top: 2%;
 		}  
+
+		@media(max-width: 500px) {
+			width: 90%;
+			.center-column;
+
+			h1 {
+				font-size: 2.8rem;
+			}
+
+			p {
+				margin-bottom: 3%;
+			}
+
+			button {
+				margin-bottom: 5%;
+			}
+		}
 	}
 
 	img {
 		width: 20%;
 		height: auto;
 		padding: 1% 0;
+
+		@media (max-width: 500px) {
+			display: none;
+		}
 	}
 
 
@@ -233,19 +259,35 @@ img {
 
 
 .intro {
+	.container(90%);
 	.layout(row, space-around, flex-start);
 	
 	.section-divider;
 	
+	@media(max-width: 500px) {
+		width: 95%;
+		margin: 7% auto 0 auto;
+		padding-top: 7%;
+
+		.center-column;
+	}
+
+
 	h2 {
 		font-weight: bold;
 		margin-bottom: 2.5%;
 	}
 
 	.intro-item-1 {
-		// .layout(column,flex-start,space-evenly);
+		.layout(column,flex-start,space-evenly);
 		width: 45%;
 		height: 100%;
+
+		@media(max-width: 500px) {
+			width: 95%;
+			align-items: flex-start;
+			justify-content: baseline;
+		}
 	}
 
 	
@@ -257,13 +299,22 @@ img {
 		flex-direction: column;
 		margin-right: 2%;
 
-	
+		@media(max-width: 500px) {
+			width: 30%;
+			margin-top: 5%;
+			justify-content: flex-start;
+			// align-items: flex-start;
+			
+		}
+		
 		ul {
 			.border;
 
 			li {
 				padding: 2% 3%;
 				font-size: 1.7rem;
+
+				
 				
 			}
 
@@ -280,7 +331,8 @@ img {
 
 
 .work-history-container {
-  
+  .container(85%);
+
   h2 {
     font-weight: bold;
     font-size: 1.8rem;
@@ -296,6 +348,10 @@ img {
 		padding: 2%;
 		width: .5%;
 		text-align: center;
+
+		@media(max-width: 500px) {
+			padding: 1%;
+		}
   	}
   
   	th {
@@ -307,16 +363,20 @@ img {
   
   	tr:nth-child(even){
     	background-color: #ECEAEA;
-  	}
+	  }
+	  
+
+	  
   }
   
   
 }
 
 .contact {
+
+	.container(90%);
+	.section-divider;
 	margin-top: 5%;
-	padding-top: 2%;
-	border-top: 1px solid black;
 
 	h2 {
 		.bold;
