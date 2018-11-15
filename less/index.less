@@ -63,17 +63,32 @@ html {
 }
 
 /* started writing code here */
+@gray-box-color: #e6e6e6;
+@whitecolor: #dddddd;
+@main-font: arial, sans-serif;
 
 .container {
 	max-width: 880px;
 	margin: 0 auto;
 }
 
+.layout(@j-content, @a-items) {
+	display: flex;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
+.margin(@top, @bottom) {
+	margin-top: @top;
+	margin-bottom: @bottom;
+}
+
 header {
 	font-size: 2rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
+	.layout(space-between, baseline);
+	// display: flex;
+	// justify-content: space-between;
+	// align-items: baseline;
 
 	h1 {
 		font-size: 3rem;
@@ -83,6 +98,10 @@ header {
 	nav a {
 		margin-left: 40px;
 		text-decoration: none;
+		
+		@media(max-width: 500px) {
+			display: flex;
+		}
 	}
 
 	nav a:hover {
@@ -92,14 +111,15 @@ header {
 
 .gray_box {
 	height: 60vh;
-	background: #e6e6e6;
+	background: @gray-box-color;
 	font-size: 2rem;
 	padding-left: 4.54%;
 	padding-right: 4.54%;
 
 	.selfie {
-		margin: 40px 0;
-		margin-bottom: 10px;
+		// margin: 40px 0;
+		// margin-bottom: 10px;
+		.margin(40px, 10px);
 	}
 
 	h1 {
@@ -121,8 +141,9 @@ header {
 }
 
 .middle-content {
-	display: flex;
-	justify-content: space-between;
+	// display: flex;
+	// justify-content: space-between;
+	.layout(space-between, flex-start);
 	
 	.div1 {
 		width: 50%;
@@ -130,8 +151,9 @@ header {
 	}
 	
 	.div1 h2 {
-		margin-top: 20px;
-		margin-bottom: 10px;
+		// margin-top: 20px;
+		// margin-bottom: 10px;
+		.margin(20px, 10px);
 		font-size: 3rem;
 	}
 
@@ -141,8 +163,9 @@ header {
 	}
 
 	.div2 h2 {
-		margin-top: 20px;
-		margin-bottom: 10px;
+		// margin-top: 20px;
+		// margin-bottom: 10px;
+		.margin(20px, 10px);
 		font-size: 3rem;
 	}
 
@@ -162,24 +185,26 @@ header {
 .work-history {
 	h3 {
 		font-size: 2.5rem;
-		margin-top: 20px;
-		margin-bottom: 10px;
+		// margin-top: 20px;
+		// margin-bottom: 10px;
+		.margin(20px, 10px);
 	}
 
 	table {
+		font-family: @main-font;
 		width: 100%;
 		font-size: 1.4rem;
 		margin-bottom: 20px;
 	}
 	
 	td, th {
-		border: 1px solid #dddddd;
+		border: 1px solid @whitecolor;
 		text-align: left;
 		padding: 8px;
 	}
 	
 	tr:nth-child(even) {
-		background-color: #dddddd;
+		background-color: @whitecolor;
 	}
 }
 
