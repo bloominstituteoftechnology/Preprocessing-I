@@ -65,10 +65,22 @@ table {
 	
 }
 
-.center() {
+.nav-centered() {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+}
+
+.centered-objects() {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.centered() {
+	display: block;
+	margin: auto 0;
 }
 
 .column() {
@@ -109,8 +121,7 @@ html {
 	max-width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
-	border: 1px solid green;
-}
+	}
 
 img {
 	max-width: 25%;
@@ -144,21 +155,27 @@ strong {
 	font-weight: bold;
 }
 
-ul {
-	list-style-position: inside;
+
+
+li {
+	line-height: 2;
+	padding-left: 2%;
+	padding-bottom: 3%;
 }
+
+
 
 
 // ==================== Header Styles
 
 header {
 
-	//.border-line();
+	
 
 	
 
 		nav{
-			.center;
+			.nav-centered;
 			margin: 2%;
 			margin-top: 2%;
 		}
@@ -188,43 +205,45 @@ header {
 		color: white;
 		font-weight: bold;
 	}
+
+	@media(max-width: 500px) {
+		.centered();
+	}
 }
 
 // ==================== Main Content Styles
 
 .homepage-content {
-	//.static-content();
+	
 	.border-line();
-
-	@media (max-width: 500px) {
-
+	
+	h3 {
+		padding-left: 2%;
 	}
 
-		h3 {
-			padding-right: 1%;
-			
+		p {
+			padding-right: 10%;
+			padding-left: 2%;
+			padding-bottom: 2%;
+			.border-line();
 		}
 
-			P {
-				padding-right: 10%;
+		ul {
+			list-style-position: inside;
+			.main-font();
+			margin-bottom: 1%;
+			.border-line();
+
+		}
+
+			li {
+				line-height: 2;
 				padding-left: 2%;
-				padding-bottom: 2%;
-				.border-line();
-			}
-
-			ul {
-				list-style-position: inside;
-				.main-font();
-				margin-bottom: 1%;
-				.border-line();
-			}
-
-				li {
-					line-height: 2;
-					padding-left: 2%;
-					padding-bottom: 3%;
+				padding-bottom: 3%;
 				}
-		
+
+	
+			
 }
 
 // ==================== Contact
@@ -240,5 +259,5 @@ header {
 
 // ==================== Footer
 footer {
-	.center;
+	.nav-centered();
 }
