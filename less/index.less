@@ -59,10 +59,18 @@ table {
 @main-font: Georgia;
 
 
+// Mixins
+.bottom-content () {
+	
+	display: flex;
+	justify-content: center;
 
+}
 
-
-
+.intro-content () {
+	font-size: 2rem;
+}
+// General Styles
 
 * {
     box-sizing: border-box;
@@ -74,20 +82,24 @@ html {
   }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	@media screen and (max-width: 500px) {
+		max-width: 100%;
+		
+		background-color: pink;
+		
+	}
 }
 
 .container {
 	
-	width: 1200px;
 	max-width: 100%;
-	
+	height: 100%;
 	padding: 20px 20px;
 	margin: 0 auto;
-	
-}
+	}
+
 .top-nav {
-	
 	width: 80%;
 	padding-bottom: .05%;
 	font-size: 2rem;
@@ -120,7 +132,7 @@ html, body {
 }
 
 .intro-content h2 {
-	font-size: 2rem;
+	.intro-content;
 	font-weight: bold;
 	padding-top: 5%;
 	padding-right: 10%;
@@ -155,9 +167,8 @@ html, body {
 
 }
 .contact-content {
-	
-	display: flex;
-	justify-content: center;
+	.bottom-content;
+
 	
 }
 .contact-content p {
