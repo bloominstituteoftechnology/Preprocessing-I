@@ -4,56 +4,321 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//Variables:
+
+@light-grey: lightgrey;
+@dark-grey: grey;
+
+
+
+
+//Mixins:
+
+.basic-flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
+.center-center-flex {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+html,
+body {
+    font-size: 62.5%;
+    .container {
+		font-family: Arial, Helvetica, sans-serif;
+		max-width: 890px;
+        margin: auto;
+        
+
+        .navBarContainer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 5.0rem;
+            .navContainer {
+                a {
+                    font-size: 2.0rem;
+                    padding-right: .8rem;
+                    color: black;
+                }
+                a:link {
+                    text-decoration: none;
+				}
+				a:hover{
+					color: @dark-grey;
+				}
+            }
+        }
+        .jumboContainer {
+            width: 99%;
+            background-color: @light-grey;
+            margin: auto;
+            .jumboImageContainer {
+                padding-top: 1.5rem;
+                padding-left: 1.5rem;
+                img {
+                    border-radius: 5px;
+                }
+            }
+            .jumboTextContainer {
+                width: 100%;
+                padding: 1.5rem;
+                h1 {
+                    font-size: 4.0rem;
+                }
+                h4 {
+                    font-size: 2.8rem;
+                    padding-top: 1.8rem;
+                    padding-bottom: 1.0rem;
+                }
+                p {
+                    font-size: 1.8rem;
+                    padding-top: 1.5rem;
+                    padding-bottom: 1.5rem;
+                }
+                button {
+                    width: 15.0rem;
+                    height: 5.0rem;
+                    font-size: 2.0rem;
+                    border-radius: 5px;
+                    background-color: @dark-grey;
+                    color: white;
+                    margin-bottom: 3.0rem;
+                }
+            }
+        }
+        .bodyContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 99%;
+            margin: auto;
+
+            @media (max-width: 500px) {
+             flex-direction: column;
+             align-items: center;
+
+                
+            }
+            .bodyTextContainer {
+                width: 50%;
+                
+                @media (max-width: 500px) {
+                    width: 98%;
+                }
+                    h2 {
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                    padding: 1.0rem;
+
+                    
+                }
+                p {
+                    width: 98%;
+                    font-size: 1.6rem;
+                    line-height: 2.0rem;
+                }
+            }
+            .bodyUlContainer {
+                width: 50%;
+
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
+                h3 {
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                    padding: 1.0rem;
+                }
+                ul {
+                    li {
+                        font-size: 2.0rem;
+                        padding: 1.0rem;
+                        border: 1px solid @light-grey;
+                    }
+                }
+            }
+        }
+        .bodyWorkhistoryContainer {
+            .basic-flex-column;
+            width: 100%;
+            font-size: 1.8rem;
+            padding-top: 3.0rem;
+            padding-bottom: 3.0rem;
+            .workhistoryRow {
+                display: flex;
+                min-height: 3.0rem;
+                padding-top: .6rem;
+                .years {
+                    min-width: 10%;
+                    padding-left: .4rem;
+                }
+                .company {
+                    min-width: 20%;
+                }
+                .title {
+                    min-width: 45%;
+                }
+                .techused {
+                    min-width: 25%;
+                }
+            }
+            .highlight {
+                background-color: @light-grey;
+            }
+            .header {
+                font-weight: bold;
+			}
+		}
+	}
+	footer {
+    .center-center-flex;
+	height: 5.0rem;		
+	width: 100%;
+	background-color: @dark-grey;
+	color: white;
+	font-size: 2.0rem;
+	}	
+}
