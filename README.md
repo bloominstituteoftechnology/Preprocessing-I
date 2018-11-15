@@ -17,7 +17,7 @@ For this project you will be building a digital resume from scratch. You will be
 
 ## Task 3: Project Objectives
 
-* [ ] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
+* [*] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
 **Note: you are only required to build one page, anything more than that would be stretch.**
 * [*] The resume content will be provided by you. The content can be about you or a fictional character.  
 * [*] Content: Navigation - Build a simple navigation with 4 items of your choosing
@@ -33,7 +33,7 @@ For this project you will be building a digital resume from scratch. You will be
 ## Stretch Goals: 
 * [*] Incorporate a google font of your choosing
 * [ ] Convert the great idea CSS into LESS.  Introduce variables, mixins, nesting, etc. 
-* [ ] Create a link to the portfolio page and create a layout that would allow users to see your work.  A good idea is to link projects back to their github repos so employers can see your code.
+* [*] Create a link to the portfolio page and create a layout that would allow users to see your work.  A good idea is to link projects back to their github repos so employers can see your code.
 
 
 
