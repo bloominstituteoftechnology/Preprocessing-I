@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -57,3 +57,413 @@ html, body {
     height: 100%;
 }
 
+
+@heading-color: #CD0007;
+@header-color:#008375;
+@Poppins: Poppins, @sans;
+@sans: sans-serif;
+.super-container{
+
+	.layout1(@f-direction){
+	display:flex;
+	flex-direction: @f-direction;
+
+}
+ .layout2(@f-direction, @j-content, @a-items){
+	 display:flex;
+	 flex-direction: @f-direction;
+	 justify-content: @j-content;
+	 align-items: @a-items;
+ }
+.container{
+
+	width:90%;
+	margin:0 auto;
+
+}
+
+header{
+
+	width:100%;
+	background: @header-color;
+	display: flex;
+	align-items: center;
+	img{
+
+		height:75px;
+		width:auto;
+		padding:5px 1% 5px 3%;
+
+
+	}
+	nav{
+		width:40%;
+		.layout2(row,space-around,center);
+
+	}
+		a{
+			font-family: Arial, @sans;
+			text-decoration: none;
+			color:white;
+		}
+	}
+
+.main{
+
+	h2,h3{
+
+		margin:10px 0;
+	}
+	p{
+		margin:10px 0;
+		font-family:@sans;
+		font-weight:lighter;
+		font-size:1.05rem;
+		line-height: 1.5;
+	}
+	.layout2(row,space-between,stretch);
+
+	.subheading1{
+		.layout2(row,space-between,baseline);
+
+
+	}
+
+	.subheading1 span{
+		font-size:1.1rem;
+		color:#383838;
+		font-family:@Poppins;
+		font-weight:300;
+
+	}
+
+
+
+	.summaryPic{
+		height:250px;
+
+		margin:20px 2% 10px 3%;
+	}
+	.buttonDiv{
+		margin-top:10px;
+		display: flex;
+
+		button{
+			width:35%;
+			margin: 0 2% 0 0 ;
+			height:40px;
+			font-family: @Poppins;
+			font-weight:400;
+			font-size:1.3rem;
+		}
+		.button1{
+			background: @heading-color;
+			color:white;
+		}
+		.button2{
+			border:2px solid @heading-color;
+			color: @heading-color;
+			a{
+				text-decoration: none;
+				color:@heading-color;
+			}
+
+
+		}
+	}
+	.leftSide{
+		h1{
+			padding-top:20px;
+			font-size:2.5rem;
+			font-family:@Poppins;
+			font-weight:600;
+			color: #4A857F;
+		}
+		h3{
+			font-size:1.3rem;
+			font-family:@Poppins;
+			font-weight:300;
+		}
+		.subheading1 h3{
+			margin:10px 0 5px 0;
+		}
+
+		.subheading2 h3{
+
+			font-family:@Poppins;
+			font-weight:lighter;
+			font-size:1.125rem;
+			color:#787878;
+			margin-bottom:12px;
+		}
+		.layout1(column);
+		width:65.6%;
+		.leftHeader{
+
+			font-family:@Poppins;
+			font-size:1.4rem;
+			font-weight: 600;
+			color:@heading-color;
+			padding:15px 0 35px 0;
+		}
+		.summary{
+			margin:10px 0;
+			padding-bottom: 50px;
+			border-bottom:1px solid #4A857F;
+			h2{
+				font-size:1.6rem;
+				font-family:@Poppins;
+				font-weight:700;
+				color: @header-color;
+			}
+
+			display: flex;
+
+
+			.summaryInfo{
+				.layout2(column,space-between,stretch);
+
+				padding: 10px 0;
+			}
+
+		}
+
+	}
+	.rightSide{
+		.layout1(column);
+
+
+		h3{
+			font-size:1.1rem;
+			font-family:@Poppins;
+			font-weight:500;
+
+		}
+		p{
+			margin-bottom:20px;
+		}
+		.contactTop{
+			display:flex;
+			flex-direction: column;
+		}
+		.contactInfo{
+			margin:15px 0 10px 0%;
+
+			display: flex;
+			align-items: center;
+
+			.fa-desktop{
+				color:@heading-color;
+				font-size:1.7rem;
+			}
+			.fa-at{
+				color:@heading-color;
+				margin-right:2%;
+				font-size:1.7rem;
+			}
+			.fa-square-o{
+				color:@heading-color;
+				margin-right:3%;
+				font-size:1.7rem;
+			}
+			.fa-phone{
+				color:@heading-color;
+				margin-right:2%;
+				font-size:1.7rem;
+
+			}
+			span{
+				margin: 0 20%;
+				font-family: @Poppins;
+				font-size:1rem;
+				a{
+					text-decoration: none;
+					color:@heading-color
+				}
+			}
+		}
+		.stars{
+			margin-bottom:10px;
+			display: flex;
+			.fa-star{
+				color:white;
+			}
+			.fa-star-half-o{
+				color:@heading-color;
+			}
+			.checked{
+
+				color:@heading-color;
+			}
+		}
+		.subheading1 h3{
+			margin:10px 0 10px 0;
+		}
+		width:24.4%;
+		.contactHeader{
+			margin-top:85px;
+			font-size:1.2rem;
+			font-family: @Poppins;
+			font-weight:600;
+			color:@header-color;
+
+		}
+	}
+}
+
+.section2{
+
+	.rightHeader{
+		text-align: center;
+		font-family:@Poppins;
+		font-size:2rem;
+		font-weight: 600;
+		color:#CD000F;
+		margin-top:20px;
+		padding:15px 0 35px 0;
+		z-index:0;
+	 -webkit-transition: -webkit-transform 0.6s ease-in-out;
+	 transition: transform 0.6s ease-in-out;
+	}
+
+	margin-top:20px;
+	border-top:1px solid #4A857F;
+	form{
+	width:50%;
+	margin:0 auto;
+
+	padding: 30px 0 50px 0;
+	display:flex;
+	flex-direction: column;
+	label{
+		margin: 10px 0;
+
+		font-family:@Poppins;
+	}
+	input
+	{border: 1px solid #383838;
+		 height:30px;
+		 font-family: @Poppins;
+		  font-weight:400;
+			color: #484848;
+			font-size:1.05rem;}
+	textarea{
+		font-size:1.05rem;
+		height:300px;
+		border: 1px solid #383838;
+		font-family: @Poppins;
+		 font-weight:400;
+		 color: #484848;
+		 font-size:1.05rem;
+	}
+	.form-button-div{
+		width:100%;
+		display: flex;
+		justify-content: flex-end;
+		.form-button{
+
+			width:25%;
+			margin: 20px  0 0 ;
+			height:40px;
+			font-family: @Poppins;
+			font-weight:400;
+			font-size:1.3rem;
+			border:2px solid @heading-color;
+			color: @heading-color;
+		}
+
+
+	}
+
+}
+
+}
+
+footer{
+	p{
+		text-align: center;
+		margin-bottom:20px;
+	}
+}
+
+@media(max-width: 500px){
+	display: flex;
+	flex-direction: column;
+	header{
+		.icon{
+			display:none;
+		}
+		nav{
+			width:100%;
+			display: flex;
+			flex-direction: column;
+			a{
+				border: 1px solid white;
+				padding: 20px 0;
+				width:100%;
+				text-align: center;
+			}
+		}
+	}
+	.main{
+		width:90%;
+		margin:0 auto;
+		display: flex;
+		flex-direction: column;
+		.leftSide{
+			width:100%;
+			margin: 0 auto;
+			.summary{
+				display: flex;
+				flex-direction: column;
+				img{
+					margin:0 auto;
+					width:150px;
+					height:150px;
+				}
+				.summaryInfo{
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					.buttonDiv{
+
+						display: flex;
+						flex-direction: column;
+						button{
+							width:100%;
+							margin:0 auto;
+						}
+
+					}
+				}
+
+				}
+		}
+		.rightSide{
+			width:100%;
+			.contactHeader{
+				margin:0 auto;
+				text-align: center;
+			}
+			.contactInfo{
+				width:100%;
+				margin-bottom:30px;
+			}
+
+		}
+
+
+
+
+
+
+	}
+.section2{
+	width:100%;
+	form{
+		margin:0 auto;
+		width:90%;
+	}}
+
+}
+}
