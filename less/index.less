@@ -49,11 +49,254 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+
+// Variables ===========================================================
+@font: 'Helvetica', Arial, san-serif;
+@accent-color: @athens-gray;
+@footer-color: @bud;
+@athens-gray: #E9ECEF;
+@bud: #A8AAA7;
+
+// Mixins ===========================================================
+.setup() {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.flex(@display-value, @justify-value, @align-value) {
+  display: @display-value;
+  justify-content: @justify-value;
+  align-items: @align-value
+}
+
+// Global Styles ===========================================================
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+    // height: 100%;
+    overflow-x: hidden;
 }
 
+
+html {
+  font-size: 62.5%;
+  font-family: @font;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  margin: 30px;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+
+// Header ===========================================================
+
+header {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  
+  nav {
+    width: 100%;
+    .flex(flex, space-evenly, null);
+    margin-left: 45%;
+  
+    a {
+      margin-right: -40px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  //Nav Mobile
+  @media (max-width: 500px) {
+  
+    nav {
+      margin: 0;
+      width: 100%;
+      justify-content: space-evenly;
+
+      a {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.container {
+  margin: 0 2%;
+}
+
+// Top Section ===========================================================
+
+.top {
+  .setup();
+  background: @accent-color;
+  padding: 30px;
+
+  .header-img {
+    .flex(flex, center, null);
+
+    img {
+      width: 40%;
+      height: 40%;
+      margin-bottom: 30px;
+    }
+    
+  }
+  .top-section {
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      margin-bottom: 20px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid lightgray;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 30px;
+      color: white;
+      background-color: @bud;
+      font-size: 2rem;
+      font-weight: bold;
+
+      &:hover {
+        background-color: white;
+        color: @bud;
+      }
+    }
+  }
+}
+
+//Top Section Mobile
+@media (max-width: 500px) {
+
+  .top {
+    text-align: center;
+  }
+
+}
+
+.middle {
+  .setup();
+  margin-top: 30px;
+  .flex(flex, space-around, baseline);
+
+  .middle-section {
+    width: 45%;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    li {
+      padding: 14px;
+      border: 1px solid lightgray;
+    }
+  }
+}
+
+//Bottom Section =========================================================
+
+.bottom {
+  margin: 20px 4% 40px;
+  width: 95%;
+
+  h3 {
+    margin-bottom: 20px;
+
+    @media (max-width: 500px) {
+      text-align: center;
+    }
+  }
+}
+
+table {
+  width: 95%;
+
+  .top-row, .row {
+    border-top: 1px solid lightgray;
+
+    th {
+      padding: 20px 0px;
+      line-height: 1.25;
+      &:first-child{
+        font-weight: bold;
+      }
+    }
+
+
+
+  }  
+
+  .top-row {
+    font-weight: bold;
+  }
+
+  .row.accent{
+      background-color: @accent-color;
+  
+
+    th {
+
+      &:first-child{
+        font-weight: bold;
+      }
+
+      @media (max-width: 500px) {
+        &:last-child {
+          padding-right: 3%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    text-align: center;
+  }
+
+}
+
+//Footer =====================================================
+
+footer {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: @bud;
+  padding: 20px 0 30px;
+  color: white;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+}
