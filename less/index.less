@@ -71,16 +71,14 @@ table {
 	align-items: center;
 }
 
-.centered-objects() {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
 
 .centered() {
-	display: block;
-	margin: auto 0;
+	display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .column() {
@@ -157,42 +155,42 @@ strong {
 
 
 
-li {
-	line-height: 2;
-	padding-left: 2%;
-	padding-bottom: 3%;
-}
-
-
-
 
 // ==================== Header Styles
 
 header {
-
 	
+	nav{
+		.nav-centered();
+		margin: 2%;
+		margin-top: 2%;
+	}
 
-	
-
-		nav{
-			.nav-centered;
-			margin: 2%;
-			margin-top: 2%;
-		}
-
-			a {
-				color: @static-color;
-				.special-font();
-				font-weight: bold;
-			}		
+		a {
+			color: @static-color;
+			.special-font();
+			font-weight: bold;
+		}		
 		
 }
 
 // ==================== Landing Info Styles
 
 .landing-info {
-	.static-content();
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: baseline;
 	background-color: @static-color;
+
+	@media (max-width: 500px) {
+		display: flex;
+    	justify-content: space-around;
+    	align-content: center;
+    	align-items: center;
+    	flex-direction: column;
+    	text-align: center;
+	}
 
 	.close-up {
 		padding-top: 6%;
@@ -206,9 +204,7 @@ header {
 		font-weight: bold;
 	}
 
-	@media(max-width: 500px) {
-		.centered();
-	}
+	
 }
 
 // ==================== Main Content Styles
@@ -216,16 +212,17 @@ header {
 .homepage-content {
 	
 	.border-line();
-	
+
 	h3 {
 		padding-left: 2%;
+		color: @static-color;
 	}
 
 		p {
-			padding-right: 10%;
-			padding-left: 2%;
-			padding-bottom: 2%;
-			.border-line();
+		padding-right: 10%;
+		padding-left: 3%;
+		padding-bottom: 2%;
+		.border-line();
 		}
 
 		ul {
@@ -238,7 +235,7 @@ header {
 
 			li {
 				line-height: 2;
-				padding-left: 2%;
+				padding-left: 3%;
 				padding-bottom: 3%;
 				}
 
@@ -255,6 +252,12 @@ header {
 	color: @static-color;
 	font-weight: bold;
 	.border-line();
+	padding-left: 2%;
+
+	@media(max-width: 500px) {
+		background-color: @static-color;
+		font-color: white;
+	}
 }
 
 // ==================== Footer
