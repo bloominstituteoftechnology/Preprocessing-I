@@ -48,12 +48,253 @@ table {
 	border-spacing: 0;
 }
 
+
+// Resume code below:
+
+// Variables
+@royalblue: #4169E1;
+@chetwodeblue: #90A3DA;
+@hawkesblue: #E3F1FC;
+@jaggedice: #CFE1ED;
+@link-color: @royalblue;
+@background-color-dark: @chetwodeblue;
+@background-color-medium: @hawkesblue;
+@background-color-light: @jaggedice;
+@main-font: Courier, Arial, Sans-serif;
+@google-font: 'Dosis';
+// set for h1 size, h4 will resolve to this - 4em
+@largest-font-size: 7em;
+@largest-header-padding-bottom: .5em;
+@content-font-size: 2.6em;
+
+// Mixins
+.right-align-flex() {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.space-between-flex() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-flex() {
+	  width: 100%;
+	  display: flex;
+    flex-direction: column;
+}
+
+.wrap-flex() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.content-size-and-margin-bottom() {
+    font-size: @content-font-size;
+    line-height: 1.5em;
+    margin-bottom: 2em;
+}
+
+.dark-background-light-color() {
+    background-color: @background-color-dark;
+    color: white;
+}
+
+// General Styles
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
+
 html, body {
     height: 100%;
+    font-size: 62.5%;
+    font-family: @google-font, @main-font;
 }
 
+h1 {
+    font-size: @largest-font-size;
+    padding-bottom: @largest-header-padding-bottom;
+}
+
+h2 {
+    font-size: @largest-font-size - 2;
+    padding-bottom: @largest-header-padding-bottom - .1;
+}
+
+h3 {
+    font-size: @largest-font-size - 3;
+    padding-bottom: @largest-header-padding-bottom - .2;
+}
+
+h4 {
+    font-size: @largest-font-size - 4;
+    padding-bottom: @largest-header-padding-bottom - .3;
+}
+
+p {
+    .content-size-and-margin-bottom();
+}
+
+table {
+    .content-size-and-margin-bottom();
+}
+
+ul {
+    .content-size-and-margin-bottom();
+}
+
+.container {
+    margin: 2em auto;
+    max-width: 90em;
+    @media (max-width: 500px) {
+        margin: 0 auto;
+    }
+}
+
+// header styles
+
+header {
+    .right-align-flex;
+    nav {
+        margin: 2em 0;
+        width: 35%;
+        // background-color: lightyellow;
+        .space-between-flex;
+        a {
+            text-decoration: none;
+            color: @link-color;
+            font-size: 3em;
+        }        
+    }
+    @media (max-width: 500px) {
+        .column-flex;
+        nav {
+            margin: 0 auto;
+            width: 100%;
+            .column-flex;
+            a {
+                width: 100%;
+                padding: 1em;
+                text-align: center;
+                border-bottom: 1px solid grey;
+            }
+        }
+    }
+}
+
+// top section styles
+
+.top-section {
+    padding: 3em;
+    background-color: @background-color-light;
+    img {
+        width: 35%;
+        max-width: 60em;
+        padding: 2em 0;
+    }
+    h4 {
+        border-bottom: solid 1px grey;
+    }
+    p {
+        margin-top: 2em;
+    }
+    button {
+        .dark-background-light-color;
+        padding: .5em;
+        font-size: 3em;
+        font-weight: bold;
+    }
+    @media (max-width: 500px) {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.middle-section {
+    margin-top: 2em;
+    .space-between-flex;
+    .middle-section-column {
+        width: 45%;
+    }
+    li {
+        padding: 1em;
+        border: solid 1px lightgrey;
+    }
+    @media (max-width: 500px) {
+        .column-flex;
+        .middle-section-column {
+            width: 90%;
+        }
+    }
+}
+
+.bottom-section {
+    table {
+        width: 100%;
+        tr:first-child {
+            font-weight: bold;
+        }
+        tr:nth-child(odd) {
+            background-color: @background-color-light;
+        }
+        tr:nth-child(even) {
+            background-color: @background-color-medium;
+        }
+        td {
+            padding: 1em;
+        }
+    }
+    @media (max-width: 500px) {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+// footer
+footer {
+    font-size: @content-font-size;
+    .dark-background-light-color;
+    text-align: center;
+    padding: 1.5em;
+}
+
+// portfolio page styling
+
+.portfolio-list {
+    .wrap-flex;
+    .portfolio-item {
+        background-color: @background-color-light;
+        img {
+          max-width: 100%;
+        }
+        padding: 2.5rem;
+        margin-bottom: 3rem;
+        width: 100%;
+        max-width: 35rem;
+  }
+  @media (max-width: 500px) {
+      .column-flex;
+          .portfolio-item {
+            margin: 0 auto;
+          }  
+  }
+}
+
+// contact page styling
+.contact-methods {
+  .wrap-flex;
+  .other-contact {
+    display: flex;
+    align-items: center;
+  }
+  .form-container {
+    font-size: 2em;
+  }
+}
