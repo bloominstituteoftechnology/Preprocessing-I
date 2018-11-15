@@ -86,30 +86,45 @@ html {
 // =============================== Header
 header {
 	.size(100%,100px);
-	.layout(row, center, center);
+	border-top: solid gray 1px;
+	.layout(row, space-between, center);
 
-	nav {
-		.layout(row, space-between, center);
+	nav a {
 		width: 100%;
+		padding: 20px;
 	}	
 }
 
 // =============================== Top-Main
 
 .top-main {
-	.size(98%, 45%);
+	.size(100%, 45%);
 	.layout(row, space-around, center);
+	margin-bottom: 20px;
 
 	img.headshot {
-		.size(30%, 50%);
+		.size(25%, 50%);
 	}
+
 	h1 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		margin-bottom: 20px;
+		align-self: center;
+		justify-items: flex-start;
 	}
-	p {
-		margin-right: 20px;
+	.text {
+		.layout(column, flex-start, flex-end);
+		.size(30%, 100%);
+		p {
+			margin-right: 20px;
+		}
 	}
+	.main-list {
+		.layout(column, center, flex-start);
+		height: 185px;
+	}
+
+
 	@media (max-width: 500px) {
 		.layout(column, center, center);
 	}
@@ -118,8 +133,10 @@ header {
 
 .bottom-main {
 	img.endshot {
-		.size(100%, 300px);
-	}
+		/* .size(33%, 300px);
+		.layout(row, flex-start, center); */
+		display: none;
+	} 
 	h2 {
 		font-size: 2rem;
 		margin: 20px 20px;
@@ -142,19 +159,25 @@ header {
 // =============================== Contact
 
 .contact {
-	.size(30%, 30%);
-	margin: 20px 20px;
+	.size(100%, 30%);
+	margin: 20px 20px 0 0;
 	flex-wrap: wrap;
 	h2 {
 		margin-bottom: 20px;
+		display: flex;
+		justify-content: center;
 	}
 	button {
-		margin-top: 20px;
+		margin: 20px 20px;
 	}
+	.text {
+		.size(100%, 100%);
+		.layout(column, flex-start, center);
+		}
 }
 
 footer {
-	.layout(row, center, center);
+	.layout(row, flex-start, center);
 	font-size: 1.2rem;
 	margin-bottom: 20px;
 }
