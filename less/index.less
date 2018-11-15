@@ -48,12 +48,470 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+/* variables */
+@Emperor: #545454;
+@Cararra: #F0EFEB;
+@Section-Side-Padding: 5%;
+
+
+/* mixins */
+.flexColumnAndCenter() {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-html, body {
-    height: 100%;
+.flexRow() {
+	display:flex;
+	flex-direction: row;
+}
+
+
+/* General Styles */
+
+
+
+/* Set every element's box-sizing to border-box */
+* {
+	box-sizing: border-box;
+	
+}
+
+html, body{
+	margin:0;
+	max-width: 100%;
+	min-height: 100%;
+	font-size: 62.5%;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Lora', serif;
+}
+
+h6,p,span {
+	font-family: 'Merriweather', serif;
+}
+
+
+h1 {
+	font-size:5.5rem;
+}
+
+h2 {
+	font-size:5rem;
+}
+
+h3 {
+	font-size: 4rem;
+}
+
+h4 {
+	font-size: 3rem;
+}
+
+h5 {
+	font-size: 1.8rem;
+}
+
+.container {
+	display:flex;
+	width: 95%;
+	min-height: 100%;
+	margin-left: 5%;
+
+	
+
+	font-size: 1.6rem;
+
+
+
+	.left-content {
+		background: @Emperor;
+		width: 35%;
+		height: 100%;
+		padding: 0 2%;
+
+		
+		.flexColumnAndCenter();
+
+		header {
+			width:100%;
+
+			nav {
+				display:flex;
+				justify-content: center;
+				width:100%;
+				
+				a {
+					text-decoration: none;
+					color:white;
+					margin: 0 3%;
+					font-size: 2rem;
+					
+
+					@media (max-width:800px) {
+						font-size: 1.5rem;
+						margin: 0 1.8%;
+					}
+					
+				}
+			}
+		}
+
+		.skills {
+			.flexColumnAndCenter();
+			width: 100%;
+
+			margin: 10px 0;
+
+			h4 {
+				display:block;
+				border: 2px solid white;
+				color:white;
+				text-align: center;
+				font-size: 2rem;
+
+				width: 45%;
+				height: 2.5rem;
+			}
+
+			.card {
+				margin: 2rem 0;
+				color:white;
+				height: 3rem;
+			}
+
+			.css {
+				width:100%;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					background: linear-gradient(to right, blue 80%, rgba(23, 23, 136, 0.459) 50px);
+					height: .5rem;
+					content: '';
+					bottom: 0;
+					right: 0;
+					left: 0;
+				}
+				h6{
+					text-align:center;
+					padding-bottom: 1 rem;
+				}
+			}
+
+			.html {
+				width:100%;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					background: linear-gradient(to right, blue 100%, rgba(23, 23, 136, 0.459) 50px);
+					height: .5rem;
+					content: '';
+					bottom: 0;
+					right: 0;
+					left: 0;
+				}
+				
+				
+				h6{
+					text-align:center;
+					padding-bottom: 1 rem;
+					
+				}
+			
+				
+			}
+
+			.design {
+				width:100%;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					background: linear-gradient(to right, blue 20%, rgba(23, 23, 136, 0.459) 50px);
+					height: .5rem;
+					content: '';
+					bottom: 0;
+					right: 0;
+					left: 0;
+				}
+				
+				
+				h6{
+					text-align:center;
+					padding-bottom: 1 rem;
+					
+				}
+			
+				
+			}
+
+			.python {
+				width:100%;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					background: linear-gradient(to right, blue 80%, rgba(23, 23, 136, 0.459) 50px);
+					height: .5rem;
+					content: '';
+					bottom: 0;
+					right: 0;
+					left: 0;
+				}
+				
+				
+				h6{
+					text-align:center;
+					padding-bottom: 1 rem;
+					
+				}
+			
+				
+			}
+
+			.javascript {
+				width:100%;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					background: linear-gradient(to right, blue 65%, rgba(23, 23, 136, 0.459) 50px);
+					height: .5rem;
+					content: '';
+					bottom: 0;
+					right: 0;
+					left: 0;
+				}
+				
+				
+				h6{
+					text-align:center;
+					padding-bottom: 1 rem;
+					
+				}
+			
+				
+			}
+		}
+
+		.education {
+			.flexColumnAndCenter();
+			color:white;
+			width:100%;
+
+			h4 {
+				display:block;
+				border: 2px solid white;
+				color:white;
+				text-align: center;
+				font-size: 2.5rem;
+
+				width: 55%;
+				height: 2.65rem;
+
+				@media (max-width: 500px) {
+					width: 89%;
+				}
+			}
+
+			.school {
+				.flexColumnAndCenter();
+				width: 100%;
+				margin: 2rem 0;
+
+				h5 {
+					font-size: 2rem;
+					font-weight: bolder;
+				}
+
+				h6 {
+					font-size: 1.7rem;
+					font-weight: bold;
+				}
+
+				p {
+					font-size: 1.7rem;
+				}
+				
+			}
+		}
+	}
+
+	.right-content {
+		width: 65%;
+
+
+		header {
+			background: @Cararra;
+			margin: 10% 0;
+
+			
+
+			h1 {
+				text-align: center;
+				letter-spacing: 2.5rem;
+
+				@media (max-width:800px) {
+					font-size: 4.2rem;
+					letter-spacing: 1rem;
+				}
+
+				@media (max-width: 500px) {
+					letter-spacing: 0rem;
+				}
+
+			}
+
+			hr {
+				width: 10%;
+				height: 1rem;
+				margin: 1rem auto;
+
+				background: black;
+			}
+
+			span {
+				display: block;
+				text-align: center;
+			}
+
+			
+		}
+
+		.profile {
+			.flexColumnAndCenter();
+			width: 90%;
+			margin: 0 auto;
+
+			@media (min-width: 1250px) {
+				margin: 25px auto;
+			}
+
+			h2 {
+				font-family: 'Lora', serif;
+				display: block;
+				border: 2px solid black;
+				color: black;
+				text-align: center;
+				font-size: 2rem;
+				width: 40%;
+				height: 2.5rem;
+
+				@media (min-width: 1250px) {
+					margin: 32px auto;
+				}
+			}
+
+			section {
+				.flexColumnAndCenter();
+				width:100%;
+				margin: 2rem 0;
+
+				@media (min-width: 1250px) {
+					width:80%;
+				}
+				
+
+				p {
+					font-family: 'Merriweather', serif;
+					text-indent: 2rem;
+					line-height: 1.4;
+
+					@media (min-width: 1250px) {
+						text-indent: 2.3rem;
+						line-height: 1.6;
+					}
+
+
+					@media (max-width:500px) {
+						font-size:1.4rem;
+					}
+				}
+
+				p:last-child {
+					margin: 10px 0;
+				}
+			}
+		}
+
+		.experience {
+			.flexColumnAndCenter();
+
+			width: 85%;
+			margin: 0 auto;
+
+			@media (min-width: 1250px) {
+				margin: 25px auto;
+			}
+
+			.experience-label{
+				font-family: 'Lora', serif;
+				display: block;
+				border: 2px solid black;
+				color: black;
+				text-align: center;
+				font-size: 2rem;
+				width: 42%;
+				height: 2.5rem;
+
+				@media (min-width: 1250px) {
+					margin: 32px auto;
+				}
+			}
+
+			.experience-card {
+				.flexColumnAndCenter();
+
+				margin: 10px 0;
+
+				@media (min-width:1200px) {
+					margin: 26px 0;
+				}
+
+				
+
+				h5 {
+					font-weight: bolder;
+					text-align:center;
+					margin-bottom:5px;
+					text-decoration: underline;
+
+					@media (min-width:1200px) {
+						margin-bottom:15px;
+					}
+				}
+
+				h6 {
+					font-weight: bold;
+					margin-bottom: 10px;
+
+					@media (min-width:1200px) {
+						margin-bottom:15px;
+					}
+				}
+
+				p {
+					text-align:center;
+				}
+			}
+		}
+	}
+}
+
+
+.personal-picture {
+	max-width: 100%;
+	height:auto;
+	padding: 0 5%;
+	margin: 20px 0;
+	border-radius: 100%;
+
+	@media (max-width: 500px) {
+		margin: 26px 0;
+	}
+	
 }
 
