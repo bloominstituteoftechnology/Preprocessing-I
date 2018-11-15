@@ -101,8 +101,10 @@ body {
 
 h1 {
 	font-size: 6rem;
-	
-	
+
+	@media (max-width: 800px) {
+		font-size: 5rem;
+	}
 }
 
 h2 {
@@ -148,56 +150,62 @@ a {
 	&:hover {
 		background: @darkgrey;
 		cursor: pointer;
-		
+		border: 1px solid @grey;
+		a {
+			color: @grey;
+		}
 	}
 }
-
 .container {
-	max-width: 1000px;
+	max-width: 1154px;
 	margin: 0 auto;
 	background: @white;
-	padding: 1rem 1%;
+	padding: 2.5rem 2.5rem;
 	.b;
 
 	header {
 		position: fixed;
-		@media (max-width: 500px) {
-			position: static;	
-		}
 		top: 0;
 		left: 0;
 		width: 100%;
 		background: @white;
 		.b;
 		z-index: 1500;
+		box-shadow: 0 0 5px @darkgrey;
+		@media (max-width: 500px) {
+			position: static;
+			box-shadow: unset;	
+		}
 
 		nav {
 			.b;
-			max-width: 1000px;
+			max-width: 1154px + 50;
 			margin: 0 auto;
 			height: 5rem;
 			display: flex;
 			justify-content: space-between;
-			padding: 1rem 1%;
+			align-items: center;
+			padding: 1rem 1rem;
 
 			@media (max-width: 500px) {
 				height: unset;
 			}
 
 			div {
-				width: 33.3333%;
+				width: 27.3333%;
+				.b;
 
-				@media (max-width: 500px) {
+				@media (max-width: 800px) {
 					width: 100%;
 				}
 			}
 			.nav-left {
-				@media (max-width: 500px) {
+				@media (max-width: 800px) {
 					display: none;
 				}
 			}
 			.nav-center {
-				@media (max-width: 500px) {
+				@media (max-width: 800px) {
 					display: none;
 				}
 			}
@@ -205,13 +213,17 @@ a {
 				display: flex;
 				justify-content: space-between;
 				align-items: flex-end;
+				
 
 				a {
 					font-size: 1.6rem;
-
 					@media (max-width: 500px) {
-						font-size: 5rem;
+					font-size: 5rem;
 					}
+				}
+
+				@media (max-width: 800px) {
+					justify-content: space-evenly;
 				}
 
 				@media (max-width: 500px) {
@@ -225,7 +237,7 @@ a {
 
 	.intro-content {
 		.sect-def;
-		margin-top: 3rem;
+		margin-top: 5rem;
 		padding-top: 1rem;
 		display: flex;
 		flex-wrap: wrap;
@@ -239,11 +251,15 @@ a {
 		.intro-img {
 			display: flex;
 			width: 33%;
-			padding: 0 1rem;
+			padding: 0 2%;
 			.b;
 
+			@media (max-width: 800px) {
+				width: 50%;
+			}
+
 			@media (max-width: 500px) {
-				width: 63.5%;
+				width: 81.5%;
 			}
 
 			img {
@@ -253,36 +269,56 @@ a {
 		}
 
 		.intro-text {
-			width: 63.5%;
+			width: 66.5%;	
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-end;
 			.b;
-			padding: 0 1%;
+			padding: 0 2%;
+			h1, h4, p {
+				width: 75%;
+
+				@media (max-width: 800px) {
+					width: 100%;
+				}
+			}
 			h1, h4 {
 				margin-bottom: 1rem;
-				width: 75%;
 			}
+			p {
+				text-align: justify;
+			}
+
+			@media (max-width: 800px) {
+				width: 49%;
+			}
+			
 			@media (max-width: 500px) {
 				margin-top: 3rem;
+				align-items: center;
+				width: 100%;
 			}
 		}
 
 		.intro-button {
-			width: 33%;
+			max-width: 33%;
 			margin: 2rem auto 0;
 		}
 	}
 
 	.skills-content {
-		.sect-def;
+		margin-top: 2rem;
 		display: flex;
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 		flex-wrap: wrap;
-
+		align-content: space-between;
+		
+		@media (max-width: 800px) {
+			justify-content: center;
+		}
+		
 		@media (max-width: 500px) {
-			flex-direction: column;
-			align-items: center;
+
 		}
 
 		.skills-item {
@@ -290,15 +326,22 @@ a {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			max-width: 300px;
-			padding: 3%;
+			width: 358px;
+			padding: 4.842rem;
 			border: 1px solid @darkgrey;
 			background: @white;
-			margin-right: 1%;
+			margin: .5rem;
 			box-shadow: 0 0 5px @darkgrey;
 
+			@media (max-width: 800px) {
+				width: 326px;
+				padding: 2.421rem;
+			}
+
 			@media (max-width: 500px) {
-				width: 300px;
+				width: 326px;
+				padding-top: 2.421rem;
+				padding-bottom: 2.421rem;
 			}
 
 			h2 {
@@ -326,24 +369,23 @@ a {
 
 	footer {
 		position: fixed;
-
-		
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		z-index: 1500;
+		border-top: 1px solid @darkgrey;
 	
 
 		.footer-content {
-			max-width: 1000px;
+			max-width: 1400px;
 			margin: 0 auto;
-			padding: 1rem 1%;
+			padding: .5rem;
 			background: @grey;
 			.b;
 
 			p {
 				text-align: center;
-				font-size: 1rem;
+				font-size: .7rem;
 			}
 		}
 	}
