@@ -91,6 +91,9 @@ html, body {
   img{
     border-top: 3px solid @black;
     border-bottom: 3px solid @black;
+    @media (max-width: 500px) {
+      width:100%;
+    }
   }
   p{
     .base-font();
@@ -101,6 +104,12 @@ html, body {
   border: 3px solid @black;
   border-radius: 15px;
   color: @black;
+  @media (max-width:800px) {
+    width: 40%;
+  }
+  @media (max-width: 500px) {
+    width:100%;
+  }
 }
 .h2(@size, @margin){
  font-size: @size;
@@ -281,7 +290,7 @@ nav{
   flex-wrap: wrap;
   margin: 0 auto;
   .row{
-    .layout(space-around, center);
+    .layout(space-around, stretch);
     margin: 30px auto 60px;
     flex-wrap: wrap;
     width: 75%;
@@ -358,8 +367,6 @@ footer{
           display: block;
           padding: 15px 0;
         }       
-        
-       
         }
       } 
     }
