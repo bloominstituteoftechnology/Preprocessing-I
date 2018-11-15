@@ -64,6 +64,8 @@ html, body {
 
 @main-font: arial,georgia,serif;
 @gainsboro: #DCDCDC;
+@slategray: darkslategray;
+
 
 
 //////// MIXINS /////////
@@ -77,6 +79,12 @@ html, body {
 	font-size: 3.5rem;
 }
 
+.media-flex(){
+	display: flex;
+	width:100%;
+	justify-content: center;
+	}
+
 // START OF RESUME 
 
 html {
@@ -89,6 +97,16 @@ html {
 	margin: 0 auto;
 	border: 1px solid black;
 	padding: 20px 40px;
+	
+
+
+	@media(max-width: 500px){
+		display: flex;
+		justify-content: column;	
+		flex-wrap: wrap;
+		width: 100%;
+		background: gray;
+	}
   }
 
 // HEADER 
@@ -99,11 +117,22 @@ header {
 	margin: 20px 2%;
 	margin-top: 20px;
 
+	 
+
 	a {
 		justify-content: space-evenly;
 		text-decoration: none;
 		color: grey;
 		padding: 0 10px;
+
+		 @media(max-width: 500px){
+			display: flex;
+			width:100%;
+			 justify-content: column;
+			 padding: 10px 120px;
+			align-items: center;
+			color: black;
+		 }
 
 	}
 	
@@ -117,6 +146,14 @@ header {
 	flex-direction: column;
 	padding: 20px 25px;
 	
+	 @media(max-width: 500px){
+		 display: flex;
+		 width:100%;
+		 justify-content: center;
+		 align-items: center;
+		 flex-wrap: wrap;
+
+	 }
 
 
 	.logo{
@@ -159,18 +196,17 @@ header {
 	flex-direction: row;
 	
 .middle{
-	display: flex;
+
 	flex-direction: column;
 	flex-wrap: wrap;
 	// border: 1px solid black;
 	width: 50%;
-
-
+}
 	h1{
 		font-size: 2.3rem;
 	}
 
-}
+
 .middle1{
 	display: flex;
 	flex-direction: column;
@@ -205,26 +241,35 @@ header {
 }
 }
 
+
 .end {
-
-
+	
 	h2{
+		margin-top: 20px;
 		border-bottom: 1px solid gray;
 		padding: 10px 0;
+		color: @slategray;
+		.font-sizes;
 
 	}
 
-	.history {
-		word-spacing: 60px;
-		
-	}
-	.end2{
-		background: lightgrey;
+	table, th, td {
+		margin: 30px 0;
+		border: 1px solid black;
 	}
 
-	.end4{
-		background: lightgrey;
+	th, td {
+		padding: 5px;
 	}
+
+	td {
+		text-align: center;
+	}
+
+	 .end1{
+	 	background: lightgrey;
+	 }
+	
 
 
 
@@ -233,13 +278,87 @@ header {
 
 
 footer{
-	display: flex;
-		justify-content: center;
+	.border-flex;
 		align-items: center;
-		margin: 32px 0;
+		align-content: flex-end;
 		height: 100px;
 		background: darkslategray;
 		color: white;
 		text-align: center;
 		font-size: 1.8rem;
-	  }
+
+		@media(max-width: 500px){
+			.media-flex;
+		}
+	  
+	}
+
+
+
+	////////// CONTACT PAGE /////////////
+
+	* {
+		box-sizing: border-box;
+	}
+	
+	/* Style inputs */
+	input[type=text], select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+	
+	input[type=submit] {
+		background-color: #4CAF50;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		cursor: pointer;
+	}
+	
+	input[type=submit]:hover {
+		background-color: #45a049;
+	}
+	
+	/* Style the container/contact section */
+	.container1 {
+		background-color: #f2f2f2;
+		font-size: 1.6rem;
+		width: 880px;
+		margin: 0 auto;
+		border: 1px solid black;
+		padding: 20px 40px;
+
+
+		@media (max-width: 500px) {
+			display: flex;
+			justify-content: column;	
+			flex-wrap: wrap;
+			width: 100%;
+		}
+	
+	}
+	
+
+	h2{
+		font-size: 3.5rem;
+	}
+	/* Create two columns that float next to eachother */
+	.column {
+		float: left;
+		width: 50%;
+		margin-top: 6px;
+		padding: 20px;
+	}
+	
+	/* Clear floats after the columns */
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	
+ 
