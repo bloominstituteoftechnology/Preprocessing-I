@@ -134,12 +134,24 @@ html,
 body {
   height: 100%;
   font-size: 62.5%;
+  background-color: black;
+}
+@keyframes jump {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  40% {
+    transform: translate3d(0, 30%, 0);
+  }
+  100% {
+    transform: translate3d(0, 40%, 0);
+  }
 }
 .container {
-  max-width: 1000px;
   margin: 0 auto;
   font-size: 1.6rem;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Lato', sans-serif;
+  color: white;
 }
 h1 {
   font-size: 3.5rem;
@@ -149,21 +161,30 @@ img {
   height: auto;
 }
 .header {
-  background-color: #35393C;
+  font-weight: 300;
+  height: 7vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .header__nav {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100%;
 }
 .header__nav a {
   padding: 10px 4%;
-  color: #5DA399;
+  color: white;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+.background_img1 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe6b92f88f55824e64a1bae15f5bf52a&auto=format&fit=crop&w=1300&q=80');
+  background-size: cover;
+  background-position: center;
 }
 .footer {
+  background-color: black;
   border: 1px black solid;
 }
 .footer__nav {
@@ -171,22 +192,30 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100%;
 }
 .footer__nav a {
   padding: 10px 4%;
-  color: #5DA399;
+  color: white;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .home {
-  height: 95vh;
+  height: 93vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  background-image: linear-gradient(to right, rgba(53, 57, 60, 0.5), rgba(99, 204, 202, 0.5)), url('https://images.unsplash.com/photo-1518655061710-5ccf392c275a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc1e4a8008463d053163dbfb80f9662d&auto=format&fit=crop&w=967&q=80');
-  background-size: cover;
+}
+.home img {
+  margin-top: -100px;
+}
+.home h1 {
+  font-size: 5.5rem;
+  letter-spacing: 2.2px;
+  line-height: 1.2;
+  font-weight: 700;
 }
 .home__btn {
   display: flex;
@@ -195,45 +224,180 @@ img {
   text-align: center;
   justify-content: flex-end;
   flex-direction: column;
-  margin-top: -60px;
-  font-size: 2rem;
+  margin-top: -65px;
+  transform-origin: 50% 50%;
+  animation: jump 0.5s linear alternate infinite;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 1.2px;
+}
+.home__btn p {
+  font-size: 1.7rem;
+}
+.home__btn a {
+  font-size: 2.2rem;
+  padding: 3px;
 }
 .about {
-  height: 95vh;
+  height: 100vh;
   margin-top: 20px;
   padding-top: 40px;
-  text-align: justify;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   line-height: 1.3;
   flex-direction: column;
-  border: 1px black solid;
+  text-align: justify;
+  font-size: 1.8rem;
+  font-weight: 300;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1532289608746-8aaaa40620f8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a4e7241451bb85a683d18da682fc875&auto=format&fit=crop&w=1650&q=80');
 }
 .about h2 {
-  font-weight: 500;
   padding-bottom: 20px;
   font-size: 2rem;
 }
 .about__intro {
-  width: calc((100% - 6rem) / 2);
-  margin-top: -90px;
-  margin-bottom: 30px;
+  width: 55%;
+  margin-bottom: 40px;
+}
+.about__intro h2 {
+  text-transform: uppercase;
+  font-weight: 200;
+}
+.about__skills {
+  width: 44%;
+}
+.about__skills h3 {
+  font-weight: 200;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.portfolio {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1536031477115-ef941507fea4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f624c9176e65b7fd4b0cf28b2893a696&auto=format&fit=crop&w=1050&q=80');
+  background-size: cover;
+  flex-wrap: wrap;
+}
+.portfolio h2 {
+  font-size: 3.7rem;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+@media (max-width: 500px) {
+  .portfolio h2 {
+    font-size: 2.7rem;
+  }
+}
+.portfolio__item {
+  width: 50%;
+  transition: all 0.5s ease-in;
+}
+@media (max-width: 500px) {
+  .portfolio__item {
+    width: 100%;
+  }
+}
+.portfolio__item:hover {
+  transform: scale(1.1);
+}
+.portfolio__item img {
+  width: 40%;
+}
+.portfolio__item h3 {
+  margin-bottom: 10px;
+}
+.portfolio__item h3 a {
+  color: white;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-size: 1.7rem;
+}
+.progressBar {
+  margin-bottom: 26px;
+  margin-bottom: 1.66em;
+}
+.progressBar .progressBarContainer {
+  width: 100%;
+  height: 2.6rem;
+  height: 3rem;
+  background: rgba(255, 127, 80, 0.6);
+  border-radius: 5px;
+}
+.progressBar .progressBarValue {
+  height: 3rem;
+  float: left;
+  background: rgba(99, 204, 202, 0.9);
+}
+.progressBar h4 {
+  text-transform: uppercase;
+  font-weight: 200;
+  margin-bottom: 7px;
+  margin-bottom: 0.33em;
 }
 .contact {
-  height: 95vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  border: 1px black solid;
-  font-weight: 300;
-  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1525422847952-7f91db09a364?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce6622924dae3b9be067e1778a6b8707&auto=format&fit=crop&w=1530&q=80');
 }
 .contact h2 {
   padding: 20px;
-  font-size: 4rem;
-  font-weight: 500;
+  font-size: 3.5rem;
+}
+.contact address {
+  line-height: 1.4;
+  color: white;
+  text-decoration: none;
+  font-size: 2.5rem;
+}
+/*///////////////////////////////////////////////////////
+	  // Progress Bars \\ 
+  ///////////////////////////////////////////////////////*/
+.contentContainer {
+  text-align: center;
+}
+.value-00 {
+  width: 0;
+}
+.value-10 {
+  width: 10%;
+}
+.value-20 {
+  width: 20%;
+}
+.value-30 {
+  width: 30%;
+}
+.value-40 {
+  width: 40%;
+}
+.value-50 {
+  width: 50%;
+}
+.value-60 {
+  width: 60%;
+}
+.value-70 {
+  width: 70%;
+}
+.value-80 {
+  width: 80%;
+}
+.value-90 {
+  width: 90%;
+}
+.value-100 {
+  width: 100%;
 }
