@@ -147,6 +147,9 @@ table {
 @light-grey: lightgrey;
 @dark-grey: grey;
 
+
+
+
 //Mixins:
 
 .basic-flex-column {
@@ -166,17 +169,19 @@ body {
     .container {
 		font-family: Arial, Helvetica, sans-serif;
 		max-width: 890px;
-		margin: auto;
+        margin: auto;
+        
+
         .navBarContainer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
             width: 100%;
-            height: 7.0rem;
+            height: 5.0rem;
             .navContainer {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
                 a {
-                    font-size: 2.5rem;
-                    padding-right: .5rem;
+                    font-size: 2.0rem;
+                    padding-right: .8rem;
                     color: black;
                 }
                 a:link {
@@ -230,12 +235,25 @@ body {
             flex-wrap: wrap;
             width: 99%;
             margin: auto;
+
+            @media (max-width: 500px) {
+             flex-direction: column;
+             align-items: center;
+
+                
+            }
             .bodyTextContainer {
                 width: 50%;
-                h2 {
+                
+                @media (max-width: 500px) {
+                    width: 98%;
+                }
+                    h2 {
                     font-size: 2.4rem;
                     font-weight: bold;
                     padding: 1.0rem;
+
+                    
                 }
                 p {
                     width: 98%;
@@ -245,6 +263,10 @@ body {
             }
             .bodyUlContainer {
                 width: 50%;
+
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
                 h3 {
                     font-size: 2.4rem;
                     font-weight: bold;

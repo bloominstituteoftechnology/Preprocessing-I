@@ -151,19 +151,16 @@ body .container {
 }
 html .container .navBarContainer,
 body .container .navBarContainer {
-  width: 100%;
-  height: 7rem;
-}
-html .container .navBarContainer .navContainer,
-body .container .navBarContainer .navContainer {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 5rem;
 }
 html .container .navBarContainer .navContainer a,
 body .container .navBarContainer .navContainer a {
-  font-size: 2.5rem;
-  padding-right: 0.5rem;
+  font-size: 2rem;
+  padding-right: 0.8rem;
   color: black;
 }
 html .container .navBarContainer .navContainer a:link,
@@ -227,9 +224,22 @@ body .container .bodyContainer {
   width: 99%;
   margin: auto;
 }
+@media (max-width: 500px) {
+  html .container .bodyContainer,
+  body .container .bodyContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 html .container .bodyContainer .bodyTextContainer,
 body .container .bodyContainer .bodyTextContainer {
   width: 50%;
+}
+@media (max-width: 500px) {
+  html .container .bodyContainer .bodyTextContainer,
+  body .container .bodyContainer .bodyTextContainer {
+    width: 98%;
+  }
 }
 html .container .bodyContainer .bodyTextContainer h2,
 body .container .bodyContainer .bodyTextContainer h2 {
@@ -246,6 +256,12 @@ body .container .bodyContainer .bodyTextContainer p {
 html .container .bodyContainer .bodyUlContainer,
 body .container .bodyContainer .bodyUlContainer {
   width: 50%;
+}
+@media (max-width: 500px) {
+  html .container .bodyContainer .bodyUlContainer,
+  body .container .bodyContainer .bodyUlContainer {
+    width: 100%;
+  }
 }
 html .container .bodyContainer .bodyUlContainer h3,
 body .container .bodyContainer .bodyUlContainer h3 {
