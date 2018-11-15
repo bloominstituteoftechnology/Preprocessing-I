@@ -58,22 +58,25 @@ table {
 
 //============================= Mixins
 .center() {
+	width: 100%;
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+  }
+
+  .header-center-rules() {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
   }
   
   .custom-font-rules() {
 	font-size: 16px;
 	font-family: @main-font;
 	color: @darkgrey;
+	line-height: 1.25;
   }
   
-  .center-font-rules() {
-	.center;
-	.custom-font-rules;
-	margin: 40px;
-  }
 
 
 
@@ -106,10 +109,7 @@ img {
 /* Header Styles */
 
 header {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	.center;
 	margin-top: 20px;
 	margin: 20px 0;
 
@@ -118,18 +118,14 @@ header {
 }
 
 nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
+	.header-center-rules;
 	width: 100%;
 	border-bottom: 1pt solid black;
 	margin-top: 40px;
 	margin-bottom: 40px;
 
 	a {
-		display: felx;
-		flex-direction: row;
-		justify-content: space-evenly;
+		.header-center-rules;
 		margin-bottom: 50px;
 		margin-left: -150px;
 		font-family: @main-font;
@@ -163,11 +159,10 @@ nav {
 		font-family: sans-serif;
 
 		p {
+			.custom-font-rules;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-			font-size: 16px;
-			font-family: sans-serif;
 			margin-top: 20px;
 			padding-bottom: 20px;
 			border-bottom: 1pt solid black;
@@ -203,13 +198,11 @@ display: flex;
 		font-family: sans-serif;
 
 		p {
+			.custom-font-rules;
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
-			font-size: 15px;
 			margin-top: 30px; 
-			font-family: sans-serif;
-			line-height: 1.25;
 
 			button {
 				width: 100px;
@@ -237,13 +230,12 @@ display: flex;
 }
 
 .bottom-text {
+	.custom-font-rules
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	margin-top: 10px;
 	padding: 0 10px;
-	line-height: 1.25;
-	font-family: @main-font;
 
 	h4 {
 		display: flex;
@@ -258,15 +250,13 @@ display: flex;
 		margin-bottom: 15px;
 
 		p {
+			.custom-font-rules
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: row;
 			width: 100%;
 			margin-right: 12px;
-			font-size: 15px;
 			margin-top: 10px; 
-			font-family: sans-serif;
-			line-height: 1.25;
 		}
 	}
 
@@ -289,53 +279,53 @@ footer {
 }
   
 
-@mobile (max-width: 500px) {
-	.container {
-		width: 500px;
-	}
+// @mobile (max-width: 500px) {
+// 	.container {
+// 		width: 500px;
+// 	}
 
-	header {
-		display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        height: 50%;
-        border-top: 1px solid gray; 
-        border-bottom: 1px solid gray;
-        text-decoration: none;
-	}
+// 	header {
+// 		display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         align-content: center;
+//         width: 100%;
+//         height: 50%;
+//         border-top: 1px solid gray; 
+//         border-bottom: 1px solid gray;
+//         text-decoration: none;
+// 	}
 
-	header nav {
-		display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        height: 50%;
-        border-top: 1px solid gray; 
-        border-bottom: 1px solid gray;
-        text-decoration: none;
-	}
+// 	header nav {
+// 		display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         align-content: center;
+//         width: 100%;
+//         height: 50%;
+//         border-top: 1px solid gray; 
+//         border-bottom: 1px solid gray;
+//         text-decoration: none;
+// 	}
 
-	header nav a {
-		display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        height: 50%;
-        border-top: 1px solid gray; 
-        border-bottom: 1px solid gray;
-        text-decoration: none;
-        padding-top: 2%;
-        padding-bottom: 2%;
-	}
+// 	header nav a {
+// 		display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         align-content: center;
+//         width: 100%;
+//         height: 50%;
+//         border-top: 1px solid gray; 
+//         border-bottom: 1px solid gray;
+//         text-decoration: none;
+//         padding-top: 2%;
+//         padding-bottom: 2%;
+// 	}
 
-	header .main-content h2 {
-		display: none;
-	}
-}
+// 	header .main-content h2 {
+// 		display: none;
+// 	}
+// }
 
 
 
