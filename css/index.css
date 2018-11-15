@@ -145,10 +145,17 @@ p {
 header {
   padding: 20px 5%;
   border-bottom: 1px solid black;
+  font-size: 1.6rem;
   background-color: #ececec;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+@media (max-width: 500px) {
+  header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 header img {
   width: 200px;
@@ -161,21 +168,29 @@ header nav {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    width: 100%;
+  }
+}
 header nav a {
   text-decoration: none;
   font-size: 2rem;
   margin-left: 7%;
   color: black;
 }
+@media (max-width: 500px) {
+  header nav a {
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
 .top-content {
   padding: 20px 5% 30px 5%;
   background-color: #ececec;
-}
-@media (max-width: 500px) {
-  .top-content {
-    width: 500px;
-    background-color: red;
-  }
 }
 .top-content h1 {
   font-size: 2.6rem;
@@ -189,8 +204,19 @@ header nav a {
   align-items: center;
   margin: 20px 0;
 }
+@media (max-width: 500px) {
+  .middle-content {
+    flex-direction: column;
+  }
+}
 .middle-content .intro {
   width: 48%;
+}
+@media (max-width: 500px) {
+  .middle-content .intro {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 .middle-content .intro h2 {
   margin-bottom: 10px;
@@ -199,11 +225,19 @@ header nav a {
 .middle-content .skills {
   width: 48%;
 }
+@media (max-width: 500px) {
+  .middle-content .skills {
+    width: 100%;
+  }
+}
 .middle-content .skills ul {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
 }
 .middle-content .skills ul li {
   font-size: 1.6rem;
   border: 1px solid black;
   padding: 10px;
+}
+.work-history {
+  font-size: 1.6rem;
 }
