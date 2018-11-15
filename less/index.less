@@ -65,6 +65,19 @@ html, body {
 @background: #E6E9EB;
 
 
+// mixins
+
+.flex-column() {
+	display:flex;
+	flex-direction: column;
+}
+
+.flex-center() {
+	display: flex;
+	justify-content: center;
+}
+// rulesets here
+
 html {
 	font-size: 62.5%;
 }
@@ -89,8 +102,7 @@ img {
 
 	.contact-info {
 		width: 100%;
-		display: flex;
-		flex-direction: column;
+		.flex-column;
 		justify-content: flex-start;
 		font-size: 1.6rem;
 		line-height: 1.35;
@@ -145,8 +157,7 @@ img {
 
 				.button {
 					width: 19.4%;
-					display: flex;
-					justify-content: center;
+					.flex-center;
 					padding: 13px 0;
 					border-radius: 5px;
 					background-color: grey;
@@ -188,8 +199,7 @@ img {
 
 			ul {
 				margin-top: 15px;
-				display: flex;
-				flex-direction: column;
+				.flex-column;
 				border-right: 1px solid @background;
 				border-left: 1px solid @background;
 				border-radius: 5px;
@@ -210,14 +220,12 @@ img {
 	.lower-content {
 		width: 100%;
 		margin-top: 40px;
-		display: flex;
-		flex-direction: column;
+		.flex-column;
 		padding-bottom: 36px;
 
 
 		.lower-table {
-			display: flex;
-			flex-direction: column;
+			.flex-column;
 			margin-top: 10px;
 
 
@@ -293,8 +301,7 @@ img {
 footer {
 	margin: 0 auto;
 	font-size: 1.7rem;
-	display: flex;
-	justify-content: center;
+	.flex-center;
 	padding: 30px;
 	width: 90%;
 	background-color: grey;
