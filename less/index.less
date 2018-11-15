@@ -142,9 +142,23 @@ table {
     box-sizing: border-box;
 }
 
+//Variables:
+
 @light-grey: lightgrey;
 @dark-grey: grey;
 
+//Mixins:
+
+.basic-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-center-flex {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 html,
 body {
@@ -246,8 +260,7 @@ body {
             }
         }
         .bodyWorkhistoryContainer {
-            display: flex;
-            flex-direction: column;
+            .basic-flex-column;
             width: 100%;
             font-size: 1.8rem;
             padding-top: 3.0rem;
@@ -279,9 +292,7 @@ body {
 		}
 	}
 	footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    .center-center-flex;
 	height: 5.0rem;		
 	width: 100%;
 	background-color: @dark-grey;
