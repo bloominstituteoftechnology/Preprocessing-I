@@ -1,1 +1,357 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* =================================================== Variables */
+/* =================================================== Mixins */
+/* ------------------------ Global Styles ------------------------- */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: auto;
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: lightgrey;
+  font-size: 1.6rem;
+  padding: 20px;
+  /* ------------------------ header Styles ------------------------- */
+  /* ------------------------ top content Styles ------------------------- */
+  /* ------------------------ resume content Styles ------------------------- */
+}
+.container header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+  align-items: baseline;
+}
+.container header nav a {
+  font-size: 1.6rem;
+  color: black;
+  text-decoration: none;
+  margin: 20px;
+}
+.container header nav a:hover {
+  color: blue;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.container .top-content {
+  border: 1px solid white;
+  margin-bottom: 1rem;
+  padding: 20px;
+  background: #b9d1d8;
+}
+.container .top-content h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+}
+.container .top-content h4 {
+  margin: 20px 0;
+  font-size: 1.8rem;
+}
+.container .top-content button {
+  margin: 10px 0;
+  padding: 5px 30px;
+  font-size: 1.2rem;
+  transition: all 0.1s ease;
+}
+.container .top-content button:hover {
+  background-color: black;
+  color: white;
+}
+@media (max-width: 500px) {
+  .container .top-content {
+    width: 100%;
+    text-align: center;
+  }
+  .container .top-content h1 {
+    line-height: 1.25;
+  }
+  .container .top-content h4 {
+    font-size: 1.5rem;
+  }
+}
+.container .top-content img {
+  width: 180px;
+  height: 150px;
+}
+.container .main-content {
+  padding: 20px 10px;
+  background: white;
+}
+.container .main-content h2 {
+  font-size: 1.8rem;
+  padding: 10px;
+  background: #b9d1d8;
+}
+.container .main-content p {
+  font-size: 1.4rem;
+  padding: 20px 20px;
+  line-height: 1.5;
+}
+.container .main-content .intro_skills {
+  display: flex;
+  padding-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .container .main-content .intro_skills {
+    flex-direction: column;
+  }
+}
+.container .main-content .intro {
+  width: 50%;
+  margin-right: 10px;
+}
+@media (max-width: 500px) {
+  .container .main-content .intro {
+    width: 100%;
+  }
+}
+.container .main-content .intro p {
+  font-size: 1.6rem;
+  padding-left: 10px;
+}
+.container .main-content .skills {
+  padding-bottom: 10px;
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .container .main-content .skills {
+    width: 100%;
+  }
+}
+.container .main-content .skills ul {
+  border: 1px solid grey;
+  margin-top: 20px;
+}
+.container .main-content .skills ul li {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+}
+.container .main-content .skills ul li:last-child {
+  border-bottom: 0;
+}
+.container .main-content .work-history .companies {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.container .main-content .work-history h3 {
+  font-size: 1.6rem;
+  padding: 10px 20px 0;
+}
+.container .main-content .work-history .companies div {
+  width: 49%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+@media (max-width: 500px) {
+  .container .main-content .work-history .companies div {
+    width: 100%;
+  }
+}
+.container .contact p {
+  padding-left: 10px;
+}
+.container footer {
+  text-align: center;
+  margin: 10px;
+}
+/* ========================================== contact page styles */
+.contact-info {
+  border: 1px solid white;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  padding: 20px;
+  background: #b9d1d8;
+}
+.contact-info h2 {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.contact-form {
+  padding: 20px;
+  background: white;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.contact-form h2 {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.contact-form label {
+  margin-bottom: 20px;
+}
+.contact-form input {
+  padding: 5px;
+  width: 500px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+@media (max-width: 500px) {
+  .contact-form input {
+    width: 100%;
+  }
+}
+.contact-form textarea {
+  margin-top: 10px;
+  width: 500px;
+  height: 200px;
+  font-size: 14px;
+  padding: 5px;
+}
+@media (max-width: 500px) {
+  .contact-form textarea {
+    width: 100%;
+  }
+}
+.contact-form button {
+  padding: 10px;
+  width: 150px;
+  font-size: 1.4rem;
+  transition-delay: all 0.1s ease;
+}
+.contact-form button:hover {
+  background-color: black;
+  color: white;
+}
