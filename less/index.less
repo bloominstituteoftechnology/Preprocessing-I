@@ -156,7 +156,10 @@ h3 {
 
 // general styles
 
-@background: rgb(43, 146, 194);
+@background: rgb(88, 169, 207);
+@progress-bar-bkground: rgba(214, 228, 231, 0.726);
+@progress-bar: rgb(48, 134, 173);
+@font-colors: aliceblue;
 
 .container {
 	font-size: 1.6rem;
@@ -172,21 +175,32 @@ h3 {
 	}
 
 	.left-content {
+		div,
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			color: @font-colors;
+		}
 		background-color: @background;
 		// border: 1px solid red;
 		max-width: 40%;
 		// display: flex;
 		// flex-direction: column;
 
-		.profile-pic {
-			margin-top: 20%;
-			border: 3px solid;
-			height: 200px;
-			border-radius: 50%;
-			display: block;
+		.profile-pic-container {
+			// height: 450px;
+			// padding: 5px; 
+		}
+		img {
+			// border: 5px solid rgb(207, 212, 216);
+			// border-radius: 50%;
+			// padding: 5px;
+			opacity: 0.6;
 			max-width: 100%;
 			height: auto;
-			transform: rotate(270deg);
 		}
 
 		.text-content {
@@ -234,12 +248,11 @@ h3 {
 			}
 
 			.meter {
-				height: 40px; /* Can be anything */
+				height: 30px;
 				position: relative;
-				background: @background;
+				background: @progress-bar-bkground;
 				border-radius: 25px;
-				padding: 10px;
-				box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+				padding: 5px;
 				span {
 					display: block;
 					height: 100%;
@@ -247,14 +260,7 @@ h3 {
 					border-bottom-right-radius: 8px;
 					border-top-left-radius: 20px;
 					border-bottom-left-radius: 20px;
-					background-color: rgb(144, 184, 202);
-					background-image: linear-gradient(
-						center bottom,
-						rgb(43, 194, 83) 37%,
-						rgb(84, 240, 84) 69%
-					);
-					box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
-						inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+					background-color: @progress-bar;
 					position: relative;
 					overflow: hidden;
 				}
