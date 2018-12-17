@@ -1,5 +1,6 @@
 @light-gray: #e9ecef;
 @dark-gray: #808080;
+@font-stack: Arial, Helvetica, sans-serif;
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -9,7 +10,7 @@
 html, body {
 	height: 100%;
 	font-size: 62.5%;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: @font-stack;
 	line-height: 1.2;
 }
 
@@ -17,18 +18,25 @@ html, body {
 	font-size: 1.8rem;
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 0 50px;
+	// use % and see if it works better on mobile.
+	// not sure of the purpose of this padding. guessing perfect pixel
+	// padding: 0 50px;
 	// border: 1px solid black;
 	
 	nav {
 		margin-top: 26px;
 		margin-left: auto;
-		width: 41%;
+		width: 34%;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			padding: 10px;
+		}
 	}
 
 	nav ul {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 
 	nav a {
@@ -44,6 +52,7 @@ html, body {
 	}
 
 	.intro-main img {
+		max-width: 100%;
 		margin-top: 30px;
 	}
 
@@ -78,11 +87,22 @@ html, body {
 		margin-top: 30px;
 		margin-bottom: 30px;
 		display: flex;	
+		// justify-content: space-between;
 		flex-wrap: wrap;	
+
+		@media (max-width: 500px) {
+			margin: 0;
+			padding: 20px;
+		}
 	}
 
 	.intro-detail-item {
 		width: 48.5%;		
+
+		@media (max-width: 500px) {
+			width: 100%;
+			margin-bottom: 10px;
+		}
 	}
 
 	.intro-detail-item:first-child {
@@ -108,6 +128,9 @@ html, body {
 
 	.work {
 		margin-bottom: 30px;
+		@media (max-width: 500px) {
+			display: none;
+		}	
 	}
 
 	table, th, td {
