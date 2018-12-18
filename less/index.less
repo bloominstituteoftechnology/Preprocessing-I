@@ -2,6 +2,15 @@
 @dark-gray: #808080;
 @font-stack: Arial, Helvetica, sans-serif;
 
+.space-between() {
+	display: flex;
+	justify-content: space-between;		
+}
+
+.dark-gray-back() {
+	background-color: @dark-gray;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -35,8 +44,7 @@ html, body {
 	}
 
 	nav ul {
-		display: flex;
-		justify-content: space-between;
+		.space-between;
 	}
 
 	nav a {
@@ -59,6 +67,10 @@ html, body {
 	.intro-main h1 {
 		font-size: 5rem;
 		margin-top: 10px;
+
+		@media (max-width: 500px) {
+			font-size: 4rem;
+		}
 	}
 
 	.intro-main h2 {
@@ -72,7 +84,7 @@ html, body {
 	}
 
 	.intro-main .btn {
-		background-color: @dark-gray;
+		.dark-gray-back;
 		margin-top: 20px;
 		font-size: 2rem;
     display: inline-block;
@@ -86,8 +98,7 @@ html, body {
 	.intro-detailed {
 		margin-top: 30px;
 		margin-bottom: 30px;
-		display: flex;	
-		// justify-content: space-between;
+		.space-between;
 		flex-wrap: wrap;	
 
 		@media (max-width: 500px) {
@@ -104,10 +115,6 @@ html, body {
 			margin-bottom: 10px;
 		}
 	}
-
-	.intro-detail-item:first-child {
-		margin-right: 3%;
-	}	
 
 	.intro-detail-item h2 {
 		font-size: 3.5rem;
@@ -134,7 +141,7 @@ html, body {
 	}
 
 	table, th, td {
-		border-top: 1px solid rgba(0,0,0,.125);;
+		border-top: 1px solid rgba(0,0,0,.125);
 		border-collapse: collapse;
 	}
 
@@ -154,7 +161,7 @@ html, body {
 	footer {
 		color: #fff;
 		font-weight: bold;
-		background-color: @dark-gray;
+		.dark-gray-back;
 		text-align: center;
 		padding: 20px 0 40px;
 	}
