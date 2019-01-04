@@ -188,7 +188,7 @@ body .container {
     padding: 0 5% 0 0;
   }
 }
-body .container header {
+body .container .header {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -197,7 +197,7 @@ body .container header {
   margin: 0% 10% 0 30%;
   padding: 1%;
 }
-body .container header .side-nav nav {
+body .container .header .header-nav {
   position: fixed;
   z-index: 1;
   top: 0;
@@ -215,7 +215,7 @@ body .container header .side-nav nav {
   width: 20%;
   height: 100%;
 }
-body .container header .side-nav nav a {
+body .container .header .header-nav .header-nav__link {
   font-size: 1.8rem;
   text-decoration: underline;
   color: #f8e8ff;
@@ -225,22 +225,22 @@ body .container header .side-nav nav a {
   padding: 0;
 }
 @media (max-width: 800px) {
-  body .container header .side-nav nav a {
+  body .container .header .header-nav .header-nav__link {
     margin: 5% 1%;
     padding: 0;
   }
 }
 @media (max-width: 500px) {
-  body .container header .side-nav nav a {
+  body .container .header .header-nav .header-nav__link {
     margin: 5% 1%;
     padding: 0;
   }
 }
-body .container header .side-nav nav a:hover {
+body .container .header .header-nav .header-nav__link:hover {
   font-weight: bold;
 }
 @media (max-width: 800px) {
-  body .container header .side-nav nav {
+  body .container .header .header-nav {
     width: 100%;
     height: auto;
     display: flex;
@@ -255,7 +255,7 @@ body .container header .side-nav nav a:hover {
   }
 }
 @media (max-width: 500px) {
-  body .container header .side-nav nav {
+  body .container .header .header-nav {
     width: 100%;
     height: auto;
     display: flex;
@@ -269,7 +269,8 @@ body .container header .side-nav nav a:hover {
     font-size: 1.2rem;
   }
 }
-body .container header .header-content {
+body .container .header .header-content {
+  border-bottom: 1px white solid;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -277,18 +278,18 @@ body .container header .header-content {
   align-items: center;
 }
 @media (max-width: 800px) {
-  body .container header .header-content {
+  body .container .header .header-content {
     margin: 30% 0 0;
     padding: 1%;
   }
 }
 @media (max-width: 500px) {
-  body .container header .header-content {
+  body .container .header .header-content {
     margin: 30% 0 0;
     padding: 1%;
   }
 }
-body .container header .header-content img {
+body .container .header .header-content .header-content__img {
   margin: 1% 0 0;
   padding: 1%;
   border-radius: 50%;
@@ -296,39 +297,35 @@ body .container header .header-content img {
   height: 70%;
   opacity: 0.9;
 }
-body .container header .header-content .portfolio {
+body .container .header .header-content .header-content__h1 {
   margin: 5% 0 10% 0;
-  padding: 1%;
   width: 100%;
   height: auto;
   font-size: 3rem;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
-  border-bottom: 1px white solid;
-}
-body .container header .header-content .portfolio h1 {
   margin: 0 0 5%;
   padding: 1%;
   animation-name: wiggle;
   animation-duration: 0.4s;
   animation-iteration-count: infinite;
 }
-body .container header .header-content .portfolio h1 a {
+body .container .header .header-content .header-content__h1 .h1__link {
   text-decoration: none;
   color: #f8e8ff;
 }
-body .container header .header-content .portfolio h1 a:hover {
+body .container .header .header-content .header-content__h1 .h1__link:hover {
   font-weight: bold;
 }
-body .container header .header-content .intro {
+body .container .header .header-content .header-intro {
   margin: 0;
   padding: 0 5% 5%;
   width: 100%;
   height: auto;
   border-bottom: 1px white solid;
 }
-body .container header .header-content .intro h2 {
+body .container .header .header-content .header-intro .intro__h2 {
   font-size: 1.8rem;
   text-decoration: underline;
   color: #f8e8ff;
@@ -337,7 +334,7 @@ body .container header .header-content .intro h2 {
   margin: 0 0 5% 0;
   padding: 0;
 }
-body .container header .header-content .intro p {
+body .container .header .header-content .header-intro .intro__p {
   font-size: 1.2rem;
   color: #f8e8ff;
   font-family: 'Montserrat', sans-serif;
@@ -345,7 +342,7 @@ body .container header .header-content .intro p {
   margin: 1%;
   padding: 0;
 }
-body .container main {
+body .container .main {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -354,7 +351,7 @@ body .container main {
   margin: 0 10% 0% 30%;
   padding: 1%;
 }
-body .container main .skills {
+body .container .main .skills-section {
   margin: 30% 0 0;
   border-bottom: 1px white solid;
   margin: 10% 0 15%;
@@ -362,7 +359,7 @@ body .container main .skills {
   width: 100%;
   height: auto;
 }
-body .container main .skills h2 {
+body .container .main .skills-section .skills-section__h2 {
   font-size: 1.8rem;
   text-decoration: underline;
   color: #f8e8ff;
@@ -371,7 +368,7 @@ body .container main .skills h2 {
   margin: 0;
   padding: 0;
 }
-body .container main .skills h3 {
+body .container .main .skills-section .skills-section__h3 {
   font-size: 1.4rem;
   color: #f8e8ff;
   font-family: 'Montserrat', sans-serif;
@@ -381,7 +378,7 @@ body .container main .skills h3 {
   margin: 2% 0;
   padding: 0;
 }
-body .container main .skills li {
+body .container .main .skills-section .skills-section__p {
   font-size: 1.2rem;
   color: #f8e8ff;
   font-family: 'Montserrat', sans-serif;
@@ -391,21 +388,21 @@ body .container main .skills li {
   margin: 0;
   padding: 3%;
 }
-body .container main .work {
+body .container .main .jobs-section {
   border-bottom: 1px white solid;
   margin: 0;
   padding: 1%;
   width: 100%;
   height: auto;
 }
-body .container main .work h2 {
+body .container .main .jobs-section .jobs-section__h2 {
   font-size: 1.8rem;
   text-decoration: underline;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
   text-align: center;
 }
-body .container main .work h3 {
+body .container .main .jobs-section .jobs-section__h3 {
   font-size: 1.4rem;
   color: #f8e8ff;
   font-family: 'Montserrat', sans-serif;
@@ -415,7 +412,7 @@ body .container main .work h3 {
   margin: 1% 0;
   padding: 0;
 }
-body .container main .work li {
+body .container .main .jobs-section .jobs-section__p {
   font-size: 1.2rem;
   color: #f8e8ff;
   font-family: 'Montserrat', sans-serif;
@@ -425,7 +422,7 @@ body .container main .work li {
   margin: 0;
   padding: 3%;
 }
-body .container footer {
+body .container .footer {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -436,7 +433,7 @@ body .container footer {
   width: 60%;
   height: auto;
 }
-body .container footer h1 {
+body .container .footer .footer__h1 {
   font-size: 3rem;
   color: #f8e8ff;
   font-family: 'Krub', sans-serif;
@@ -444,7 +441,7 @@ body .container footer h1 {
   margin: 10% 0 5%;
   padding: 0;
 }
-body .container footer .contact {
+body .container .footer .contact-section {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -460,16 +457,16 @@ body .container footer .contact {
   border: 1px white solid;
   text-decoration: none;
 }
-body .container footer .contact h2 {
+body .container .footer .contact-section .contact-section__h1 {
   margin: 5% 0;
   padding: 0;
   text-align: left;
 }
-body .container footer .contact h2 a {
+body .container .footer .contact-section .contact-section__h1 .h2__link {
   color: white;
   text-decoration: none;
 }
-body .container footer .contact h2 a:hover {
+body .container .footer .contact-section .contact-section__h1 .h2__link:hover {
   font-size: 2rem;
   font-weight: bold;
 }
