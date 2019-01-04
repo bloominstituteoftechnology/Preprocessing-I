@@ -56,12 +56,30 @@ table {
 html, body {
 	height: 100%;
 }
+
+html{
+	/* 1 rem === 10px based on the user setting of "medium" which is 16px */
+	font-size: 62.5%;
+}
 h1, h2, h3, h4, h5 {
 	font-family: 'Thasadith', sans-serif;
 	color: black;
 }
-
+/*VARIABLES*/
 @grey-background: #D3D3D3;
+@header-color: #132B5D;
+
+/*MIX-IN marginLmarginT(30px, 15px)*/
+.marginLmarginT(@margin-top; @margin-left;){
+	margin-top: @margin-top;
+	margin-left: @margin-left;
+}
+
+/*MIX-IN*/
+.listPadding{
+	padding: 13px 30px 18px 18px;
+}
+
 body{
 	// max-width: 870px;
 	// width: 100%;
@@ -93,12 +111,14 @@ body{
 	min-width: 300px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	color: @header-color;	
 	// margin-left: 500px;
 	// margin-right: 20px;
 }
 
 nav a{
 color: black;
+font-size: 1.8rem;
 }
 
 .topSection-container{
@@ -114,59 +134,71 @@ width: 870px;
 .topImage{
 	// margin-left: 25px;
 	margin-top: 65px;
-}
 
-.resPhoto{
-	width: 300px;
-	height: 300px;
-	margin-left: 30px;
+	.resPhoto{
+		width: 300px;
+		height: 300px;
+		margin-left: 30px;
+	}
 }
 
 h1{
-	font-size: 50px;
+	font-size: 5rem;
 	margin-left: 30px;
 	font-weight: 900;
+	color: @header-color;
 }
+
 
 .topContent{
 	// margin-left: 25px;
 	margin-top: 10px;
+	 .tech{
+		margin-top: 15px;
+		font-size: 2rem;
+		color: black;
+		margin-left: 30px;
+	
+	}
 }
- .tech{
-	margin-top: 15px;
-	font-size: 20px;
-	color: black;
-	margin-left: 30px;
-}
-
-h2.techp{
-	margin-left: 30px;
-	margin-top: 60px;
-}
+		 
+ 
+ h2.techp{
+		// margin-left: 30px;
+		// margin-top: 60px;
+		.marginLmarginT(60px, 30px);
+		font-size: 2rem;
+	}	
 
 button{
-	margin-top: 45px;
-	margin-left: 30px;
+	// margin-top: 45px;
+	// margin-left: 30px;
 	width: 155px;
 	height: 45px;
 	color: white;
-	font-size: 18px;
+	font-size: 1.8rem;
+	.marginLmarginT(45px, 30px);
+	
 }
 
 h2.listenUp{
-	font-size: 30px;
+	font-size: 3rem;
 	margin-top: 38px;
 }
 
 .listen p{
-	margin-top: 12px;
-}
+		margin-top: 12px;	
+		font-size: 2rem;
+	}
+
+
 
 h2.stufflist{
-	font-size: 25px;
-	 margin-top: 32px;
-	 margin-left: 15px;
+	font-size: 2.5rem;
+	//  margin-top: 32px;
+	//  margin-left: 15px;
 	 border: 1px solid red;
+	 .marginLmarginT(32px, 15px);
 }
 
 .midSection-container{
@@ -179,32 +211,39 @@ h2.stufflist{
 	margin-left: 15px;
 }
 
+.midSectionCss{
+	width: 435px;
+}
+
 div.listen {
-	width: 435px;
+	.midSectionCss;
 	border: 1px solid blue;
-}
-
+}	
+	
 div.stuff{
-	width: 435px;
-	border: 1px solid blue;
+	.midSectionCss;
+		border: 1px solid blue;
+	}
 
-}
 
 ul{
 	margin-top: 12px;
 }
 
+
 li{
 	// margin-top: 30px;
 	border: 1px solid green;
 	margin-left: 15px;
-	padding: 13px 30px 18px 18px;
+	.listPadding;
+	font-size: 1.8rem;
 }
 
 h2.work{
-	font-size: 25px;
-	margin-top: 30px;
-	margin-left: 15px;
+	font-size: 2.5rem;
+	// margin-top: 30px;
+	// margin-left: 15px;
+	.marginLmarginT(30px, 15px);
 }
 
 table, th, td{
@@ -242,32 +281,15 @@ th:nth-child(3){
 	background: lightyellow;
 }
 
-th:nth-child(1){
-	width: 100px;
-	background: lightyellow;
-}
-
-th:nth-child(1){
-	width: 100px;
-	background: lightyellow;
-}
-
-// footer{
-// 	display: flex;
-// 	width: 900px;
-// 	border: 1px solid green;
-// }
-
 .bottomMain{
 	border: 1px solid blue;
 	margin-top: 20px;
 	margin-left: 15px;
 
-}
-
-h2.contacth2{
-	font-size: 20px;
-}
+	h2.contacth2{
+		font-size: 2rem;
+	}
+}	
 .copyright{
 	border: 1px solid red;
 	width: 900px;
@@ -277,8 +299,8 @@ h2.contacth2{
 	text-align: center;
 	padding-top: 21px;
 	height: 80px;
-}
 
-.copyright p{
-	font-size: 19px;
+	.copyright p{
+		font-size: 1.9rem;
+	}
 }
