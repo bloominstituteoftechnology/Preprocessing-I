@@ -61,17 +61,21 @@ html, body {
 	max-width:900px;
 	margin: 0 auto;
 	font-size: 1.6rem;
+	@media (max-width:500px){
+		max-width:470px;
+		margin: 0 auto;
+	}
 }
 
 @very-lightgray: #EFEFF1;
 @lightgray: #C1C9D7;
 @gray: gray;
 @white: white;
-.mixin-ex (){
+.mixin-ex() {
 	display: flex;
 	justify-content: space-between;
 }
-	.mixin-ex2 (){
+	.mixin-ex2() {
 	display: flex;
     flex-wrap: wrap;
 	justify-content: flex-end;
@@ -87,8 +91,23 @@ nav {
 		text-decoration: none;
 		margin-left: 10%;
 		color:@gray;
-		font-size: 1.7rem;	
-		}	
+		font-size: 1.7rem;
+		@media (max-width: 500px){
+			text-align: center;
+			border-bottom: 1px solid @gray;
+			padding: 3% 0%;
+			margin-left: 0%;
+			font-size: 2.5rem;
+		}
+	}
+	@media (max-width: 500px){
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		
+	}
+				
 	}
 
 .main-content {
@@ -101,11 +120,17 @@ nav {
 		width:25%;
 		height: 40vh;
 		margin: 3% 0% 0% 3%;
+		@media (max-width: 500px) {
+			height: 30vh;
+		}
 		
 				}
 				h1 {
 					font-size: 6rem;
 					margin: 2% 0% 2% 2%;
+					@media (max-width: 500px) {
+						font-size: 4rem;
+					}
 				}
 				h3 {
 					font-size: 3rem;
@@ -113,6 +138,9 @@ nav {
 					width: 95%;
 					margin: 0% 0% 2% 2%;
 					padding-bottom: 3%;
+					@media (max-width: 500px) {
+						font-size: 2rem;
+					}
 				}
 				p {
 					margin-left: 3%;
@@ -127,7 +155,7 @@ nav {
 						background: gray;
 						cursor: pointer;
 						color: @white;
-						}	
+					}	
 				}
 			}
 		}
@@ -140,10 +168,14 @@ nav {
 			
 			h4 {
 				font-size: 2rem;
-				margin-bottom: 2%;
+				margin-bottom: 5%;
+				@media (max-width: 500px) {
+					margin-bottom: 10%;
+				}
 			}
 			p {
 				line-height: 1.4;
+				text-align: justify;
 			}
 		}
 		}
@@ -152,7 +184,10 @@ nav {
 			width: 45%;	
 			h4 {
 				font-size: 2rem;
-				margin-bottom: 2%;	
+				margin-bottom: 5%;
+				@media (max-width: 500px) {
+					margin-bottom: 10%;
+				}	
 			}
 			ul {
 				line-height: 1.4;
@@ -164,6 +199,9 @@ nav {
 			h4 {
 				font-size: 2rem;
 				margin-bottom: 2%;
+				@media (max-width: 500px) {
+					margin: 6% 0;
+				}
 			}
 			#work-history {
 				font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
