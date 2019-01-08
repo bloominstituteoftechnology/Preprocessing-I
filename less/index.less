@@ -143,6 +143,20 @@ html {
   font-size: 62.5%;
 }
 
+//Mixins
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow: @string;
+  box-shadow: @string;
+}
+
+.flex (@justify: "", @align: "") {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+  align-content: @align;
+}
+
 //Variables
 
 //Fonts
@@ -168,7 +182,7 @@ html {
 //Containers
 
 .container {
-  display: flex;
+  .flex;
   overflow: auto;
 
   @media (max-width: 1000px) {
@@ -193,7 +207,7 @@ html {
     margin-bottom: 15px;
 
     img {
-      box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+      .box-shadow(0px 0px 20px 5px rgba(0, 0, 0, 0.75));
       border-radius: 50%;
       width: 80%;
       max-width: 250px;
@@ -249,8 +263,7 @@ html {
   }
 
   nav {
-    display: flex;
-    justify-content: flex-end;
+    .flex(flex-end);
     padding-top: @mLg;
     margin-bottom: @mLg;
 
@@ -305,8 +318,7 @@ html {
       }
 
       .lists {
-        display: flex;
-        justify-content: space-between;
+        .flex(space-between);
         width: 80%;
 
         @media (max-width: 1000px) {
