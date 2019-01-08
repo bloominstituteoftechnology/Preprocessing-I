@@ -79,7 +79,73 @@ html, body {
 // End of Meyer's CSS reset
 
 
-// Hero CSS
+// Font Sizing
+
+html {
+	font-size: 62.5%;
+}
+
+// End of Font Sizing
+
+// Flex mixin
+
+.flex-class {
+	display: flex;
+	align-items: center;
+}
+
+
+// Header Styles
+
+header {
+	position: absolute;
+	width: 100%;
+	flex-class;
+	justify-content: space-between;
+	padding: 35px 100px 0;
+	animation: 1s fadein 0.5s forwards;
+	opacity: 0;
+	color: #fff;
+}
+
+@keyframes fadein {
+	100% {
+		opacity: 1;
+	}
+}
+
+header h2 {
+	font-family: @default-font-family, sans-serif;
+}
+
+header nav {
+	flex-class;
+	margin-right: -15px;
+}
+
+header nav li {
+	margin: 0 15px;
+}
+
+header>nav>li:hover {
+	background-color: white;
+	color: #80a3db;
+}
+
+@media (max-width: 800px) {
+	header {
+		padding: 20px 50px;
+		flex-direction: column;
+	}
+
+	header h2 {
+		margin-bottom: 15px;
+	}
+}
+
+// End of Header Styles
+
+// Hero Styles
 
 .hero {
 	font-family: @default_font_family;
@@ -171,3 +237,5 @@ html, body {
 	transform:rotate(20deg);
 	transform-origin: 100% 0%;
   }
+
+// End of Hero Styles

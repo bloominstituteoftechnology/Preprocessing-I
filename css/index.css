@@ -134,6 +134,52 @@ html,
 body {
   height: 100%;
 }
+html {
+  font-size: 62.5%;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 100px 0;
+  animation: 1s fadein 0.5s forwards;
+  opacity: 0;
+  color: #fff;
+}
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+header h2 {
+  font-family: "Quicksand", sans-serif;
+}
+header nav {
+  display: flex;
+  margin-right: -15px;
+}
+header nav li {
+  margin: 0 15px;
+}
+header > nav > li:hover {
+  background-color: white;
+  color: #80a3db;
+}
+@media (max-width: 800px) {
+  header {
+    padding: 20px 50px;
+    flex-direction: column;
+  }
+  header h2 {
+    margin-bottom: 15px;
+  }
+}
 .hero {
   font-family: 'Raleway';
   overflow: hidden;
