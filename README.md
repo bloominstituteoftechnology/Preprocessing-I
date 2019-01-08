@@ -35,5 +35,5 @@ For this project you will be building a digital resume from scratch. You will be
 * [ ] Convert the great idea CSS into LESS.  Introduce variables, mixins, nesting, etc. 
 * [ ] Create a link to the portfolio page and create a layout that would allow users to see your work.  A good idea is to link projects back to their github repos so employers can see your code.
 
-
+//test update
 
