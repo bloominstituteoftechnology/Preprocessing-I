@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -54,6 +54,141 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: @darkblue;
+	font-family: 'Lato', sans-serif;
 }
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Playfair Display', serif;
+}
+
+@darkblue: #283044;
+@lightblue: #78A1BB;
+@egg: #EBF5EE; 
+@tan:#BFA89E;
+@brown: #8B786D;
+@red: #A54657;
+@orange: #E88D67;
+
+.flex(@direction, @alignment) {
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @alignment;
+}
+
+.content(@alignment) {
+	align-content: @alignment;
+}
+
+.items(@alignment) {
+	align-items: @alignment;
+}
+
+.container {
+	width: 900px;
+	margin: 0 auto;
+	background-color: @egg;
+	padding: 0 20px;
+
+	header {
+		.flex(row, flex-end);
+
+		nav {
+			padding: 20px;
+
+			a {
+				text-decoration: none;
+				padding: 30px;
+				background-color: @darkblue;
+				color: @orange;
+			}
+			
+			a:hover {
+				color: @tan;
+			}
+		}
+	}
+
+	.intro {
+		.flex(row, space-between);
+
+		.aboutme {
+			.flex(column, center);
+			width: 300px;
+
+			img {
+				width: 100%;
+				height: 300px;
+			}
+
+			h1 {
+				font-weight: 700;
+				font-size: 3rem;
+			}
+
+		}
+
+		.skill-list {
+			.flex(column, space-between);
+
+			.skill {
+				border-left: 10px solid @lightblue;
+				border-right: 10px solid @lightblue;
+				padding: 22px;
+				background-color: @darkblue;
+				color: @egg;
+				text-decoration: none;
+			}
+			
+			width: 65%;
+			text-align: center;
+		}
+	}
+
+	.education {
+		.flex(row, space-evenly);
+
+		.school {
+			.flex(column, space-evenly);
+			.items(center);
+			width: 33%;
+			height: 200px;
+			background-color: @red;
+			color: @egg;
+			border-top: 10px solid @orange;
+			text-align: center;
+			margin: 20px 0;
+
+			i {
+				font-size: 4rem;
+			}
+		}
+	}
+
+	.employment {
+		.flex(column, flex-start);
+
+		.work {
+			.work-info {
+				.flex(row, space-between);
+
+				h5 {
+					width: 33%;
+				}
+
+			}
+
+			.work-description {
+				p {
+					margin: 10px 0;
+				}
+			}
+		}
+
+	}
+}
+
+
+
 
