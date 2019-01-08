@@ -66,11 +66,21 @@ header{
 	justify-content: space-between;
 	background-color: @banner-color;
 
+	@media(max-width:500px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
 	h1{
 		font-size: 3.5rem;
 		font-weight: bold;
 		// color: rgba(207, 207, 12, 0.87);
 		font-family: 'Merienda', cursive;
+
+		@media(max-width:500px) {
+			font-size: 3rem;
+			margin-bottom: 10px;
+		}
 	}
 
 	nav{
@@ -78,6 +88,12 @@ header{
 		width:35%;
 		justify-content: space-between;
 		align-items: center;	
+
+		@media(max-width:500px) {
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
+		}
 
 		a{
 			text-decoration: none;
@@ -93,8 +109,12 @@ header{
 }
 
 img{
-	height: 300px;
+	width: 300px;
 	margin-bottom: 10px;
+
+	@media(max-width:500px) {
+		border-radius: 25%;
+	}
 }
 .container{
 	max-width: 850px;
@@ -104,10 +124,21 @@ img{
 
 section{
 	padding: 20px;
+	
+	@media(max-width:500px) {
+		display: flex;
+		flex-direction: column;	
+		align-items: center;
+	}
+
 	h2{
 		font-size: 8rem;
 		font-weight: bold;
 		font-family: 'Merienda', cursive;
+
+		@media(max-width:500px) {
+			font-size: 3rem;
+		}
 	}
 
 	h3{
@@ -115,6 +146,10 @@ section{
 		margin-bottom: 10px;
 		font-weight: bold;
 		font-family: 'Merienda', cursive;
+
+		@media(max-width:500px) {
+			font-size: 3rem;
+		}
 	}
 
 	h4{
@@ -122,6 +157,10 @@ section{
 		margin-bottom: 10px;
 		font-weight: bold;
 		font-family: 'Merienda', cursive;
+
+		@media(max-width:500px) {
+			font-size: 3rem;
+		}
 	}
 
 	h5{
@@ -129,6 +168,10 @@ section{
 		margin-bottom: 5px;
 		font-weight: bold;
 		font-family: 'Merienda', cursive;
+
+		@media(max-width:500px) {
+			font-size: 1.6rem;
+		}
 	}
 
 	hr{
@@ -157,6 +200,11 @@ section{
 		border-radius: 5px;
 		border: 1px solid black;
 
+		@media(max-width:500px) {
+			width:60%;
+		}
+	
+
 		&:hover{
 			background-color: silver;
 			color:white;
@@ -177,12 +225,23 @@ section{
 	display:flex;
 	justify-content: space-between;
 
+	
 	.info-box{
 		.box(45%);
+
+		@media(max-width:500px) {
+			width:100%;
+		}
+	
 	}
 
 	.info-box2{
 		.box(45%);
+
+		@media(max-width:500px) {
+			width:100%;
+		}
+	
 
 		ol{
 			border: 0 solid lightgrey;
@@ -195,7 +254,6 @@ section{
 				height: 30px;
 				border:0 solid lightgrey;
 				border-width: 1px 1px 0 0;
-				border-collapse: collapse;
 			}
 		}
 	}
@@ -236,6 +294,12 @@ section{
 	background-color:rgb(206, 248, 206);
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+
+	@media(max-width:500px) {
+		display: flex;
+		flex-direction: column;	
+		align-items: center;
+	}
 }
 
 .box(@width){
