@@ -169,8 +169,7 @@ html {
 
 .container {
   display: flex;
-  min-height: 1300px;
-  height: 100%;
+  overflow: auto;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -178,10 +177,8 @@ html {
 }
 
 .left {
-  align-self: flex-start;
   background-color: @primary;
   width: 20%;
-  height: 100%;
   margin-left: 15%;
   text-align: center;
   padding: 10% 0 0 0;
@@ -222,6 +219,7 @@ html {
 
   ul {
     margin-top: @mXl;
+    font-size: @textMed + 0.3rem;
     li {
       color: @tertiary;
       margin-bottom: @mLg;
@@ -313,10 +311,17 @@ html {
 
         @media (max-width: 1000px) {
           width: 90%;
+
+          .list2 {
+            li {
+              padding-left: 0;
+            }
+          }
         }
 
         ul {
           list-style: circle inside;
+          width: 100%;
           li {
             display: list-item;
           }
