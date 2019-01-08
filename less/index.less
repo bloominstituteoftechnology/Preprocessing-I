@@ -55,5 +55,71 @@ table {
 
 html, body {
     height: 100%;
+	font-size: 62.5%;
 }
+
+@shadow-color: #404040;
+
+header {
+	img {
+		max-width: 250px;
+		width: 100%;
+		height: auto;
+		border-radius: 15%;
+		border: 2px solid white;
+		box-shadow: 2px 2px 2px @shadow-color;
+	}
+	.flexDefault;
+	h1 {
+		color: darkslategray;
+		font-family: 'Pacifico', cursive;
+		margin: -28px 0 15px -10px;
+		.strokeText(1px, #FFF, 3px 3px 2px @shadow-color);
+	}
+}
+
+.container {
+	.centerContent;
+	padding: 15px;
+	max-width: 600px;
+	font-size: 1.6rem;
+	background-color: lightgray;
+}
+
+.skills {
+	ul {
+		.flexDefault;
+		 list-style: circle inside;
+		flex-wrap: wrap;
+	}
+}
+
+h1 {
+	font-size: 3.2rem;
+}
+
+h2 {
+	font-size: 2.4rem;
+}
+
+// mixins
+.flexDefault() {
+	display: flex;
+	justify-content: space-between;
+}
+
+.centerContent() {
+	margin: 0 auto;
+}
+
+// Based on: https://css-tricks.com/adding-stroke-to-web-text/
+.strokeText(@thicc, @color, @extra: 0px 0px 0 #000) {
+	text-shadow:
+						-@thicc -@thicc 0 @color,
+							@thicc -@thicc 0 @color,
+					-@thicc @thicc 0 @color,
+							@thicc @thicc 0 @color,
+					@extra;
+}
+
 
