@@ -137,13 +137,15 @@ body {
 html {
   font-size: 62.5%;
 }
-body {
-  font-size: 1.6rem;
-}
 .container {
   display: flex;
   min-height: 1300px;
   height: 100%;
+}
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
 }
 .left {
   align-self: flex-start;
@@ -153,6 +155,13 @@ body {
   margin-left: 15%;
   text-align: center;
   padding: 10% 0 0 0;
+}
+@media (max-width: 1000px) {
+  .left {
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
 }
 .left .profile {
   margin-bottom: 15px;
@@ -198,17 +207,35 @@ body {
   height: 100%;
   margin-left: 5%;
 }
+@media (max-width: 1000px) {
+  .right {
+    width: 100%;
+    padding: 0 3%;
+    margin: 0;
+  }
+}
 .right nav {
   display: flex;
   justify-content: flex-end;
   padding-top: 25px;
   margin-bottom: 25px;
 }
+@media (max-width: 1000px) {
+  .right nav {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
 .right nav a {
   text-decoration: none;
   color: #ff471a;
   font-size: 1.9rem;
   margin-left: 25px;
+}
+@media (max-width: 1000px) {
+  .right nav a {
+    margin-left: 0;
+  }
 }
 .right section {
   margin-bottom: 40px;
@@ -217,6 +244,11 @@ body {
   color: #999999;
   font-size: 6rem;
   text-transform: uppercase;
+}
+@media (max-width: 1000px) {
+  .right section h2 {
+    font-size: 3.6rem;
+  }
 }
 .right section h2 span {
   color: #ff471a;
@@ -229,6 +261,13 @@ body {
   padding-left: 40px;
   margin-bottom: 5px;
 }
+@media (max-width: 1000px) {
+  .right section .section-details span,
+  .right section .section-details p,
+  .right section .section-details li {
+    font-size: 1.9rem;
+  }
+}
 .right section .section-details p {
   margin-bottom: 15px;
 }
@@ -236,6 +275,11 @@ body {
   display: flex;
   justify-content: space-between;
   width: 80%;
+}
+@media (max-width: 1000px) {
+  .right section .section-details .lists {
+    width: 90%;
+  }
 }
 .right section .section-details .lists ul {
   list-style: circle inside;

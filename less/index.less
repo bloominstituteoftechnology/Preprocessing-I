@@ -143,10 +143,6 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  font-size: 1.6rem;
-}
-
 //Variables
 
 //Fonts
@@ -175,6 +171,10 @@ body {
   display: flex;
   min-height: 1300px;
   height: 100%;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 }
 
 .left {
@@ -185,6 +185,12 @@ body {
   margin-left: 15%;
   text-align: center;
   padding: 10% 0 0 0;
+
+  @media (max-width: 1000px) {
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
 
   .profile {
     margin-bottom: 15px;
@@ -238,16 +244,31 @@ body {
   height: 100%;
   margin-left: 5%;
 
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 0 3%;
+    margin: 0;
+  }
+
   nav {
     display: flex;
     justify-content: flex-end;
     padding-top: @mLg;
     margin-bottom: @mLg;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      justify-content: space-evenly;
+    }
     a {
       text-decoration: none;
       color: @primary;
       font-size: @textMed + 0.3rem;
       margin-left: 25px;
+
+      @media (max-width: 1000px) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -257,6 +278,10 @@ body {
       color: @secondary;
       font-size: @textSuper;
       text-transform: uppercase;
+
+      @media (max-width: 1000px) {
+        font-size: @textXl;
+      }
 
       span {
         color: @primary;
@@ -271,6 +296,10 @@ body {
         font-size: @textLg;
         padding-left: @mXl;
         margin-bottom: @mSmall;
+
+        @media (max-width: 1000px) {
+          font-size: @textMed + 0.3rem;
+        }
       }
 
       p {
@@ -281,6 +310,10 @@ body {
         display: flex;
         justify-content: space-between;
         width: 80%;
+
+        @media (max-width: 1000px) {
+          width: 90%;
+        }
 
         ul {
           list-style: circle inside;
