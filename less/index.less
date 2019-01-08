@@ -55,34 +55,37 @@ table {
 
 html{
 	font-size: 62.5%;
+	color:rgba(0, 0, 0, 0.815);
 }
 
-@banner-color: #3E902C;
+@banner-color: rgba(62, 144, 44, 0.849);
 
 header{
 	display:flex;
-	padding:25px 0;
-	justify-content: space-around;
+	padding:25px;
+	justify-content: space-between;
 	background-color: @banner-color;
 
 	h1{
-		font-size: 3rem;
+		font-size: 3.5rem;
 		font-weight: bold;
+		// color: rgba(207, 207, 12, 0.87);
+		font-family: 'Merienda', cursive;
 	}
 
 	nav{
 		display:flex;
-		width:50%;
+		width:35%;
 		justify-content: space-between;
 		align-items: center;	
 
 		a{
 			text-decoration: none;
 			font-size: 1.6rem;
-			color: red;
+			color: black;
 
 			&:hover{
-				color:black;
+				color:rgba(207, 207, 12, 0.87);
 			}
 		}
 		
@@ -103,27 +106,43 @@ section{
 	padding: 20px;
 	h2{
 		font-size: 8rem;
+		font-weight: bold;
+		font-family: 'Merienda', cursive;
 	}
 
 	h3{
 		font-size: 4rem;
 		margin-bottom: 10px;
+		font-weight: bold;
+		font-family: 'Merienda', cursive;
 	}
 
 	h4{
 		font-size: 3rem;
 		margin-bottom: 10px;
+		font-weight: bold;
+		font-family: 'Merienda', cursive;
 	}
 
 	h5{
 		font-size: 2.5rem;
 		margin-bottom: 5px;
+		font-weight: bold;
+		font-family: 'Merienda', cursive;
+	}
+
+	hr{
+		height: 1px;
+		border: 0;
+		border-top: 1px solid rgb(17, 85, 0);
+		margin: 3rem 0;
+	
 	}
 
 
 	p{
 		font-size: 1.6rem;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 	
 	.button{
@@ -132,19 +151,24 @@ section{
 		align-items: center;
 		height: 50px;
 		width: 25%;
+		margin-bottom:50px;
 		background-color: @banner-color;
-		color: red;
+		color: rgba(207, 207, 12, 0.87);
 		border-radius: 5px;
+		border: 1px solid black;
 
-		p{
-			font-size:3rem;
-
-			&:hover{
-				color: white;
-			}
+		&:hover{
+			background-color: silver;
+			color:white;
 		}
 
-		border: 1px solid red;
+		p{
+			display:flex;
+			font-size:2rem;
+			margin:0;
+		}
+
+		
 	}
 
 }
@@ -177,10 +201,39 @@ section{
 	}
 }
 
+.work-history{
+	display:flex;
+	flex-direction:column;
+	width:100%;
 
+	table{
+		width:100%;
+		border-collapse: collapse;
+
+
+		tr{
+			font-size: 1.6rem;
+			text-align: left;
+			
+			&:nth-child(even){
+				background-color:rgb(225, 247, 225);
+			}
+
+			th{
+				font-size: 2rem;
+				font-weight: bold;
+				border: 1px solid lightgray;
+			}
+
+			td{
+				border: 1px solid lightgray;
+			}
+		}
+	}
+}
 
 .introInfo{
-	background-color:lightgreen;
+	background-color:rgb(206, 248, 206);
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
@@ -190,3 +243,17 @@ section{
 
 }
 
+.copyright{
+	display:flex;
+	justify-content: center;
+	margin:0;
+	background-color: @banner-color;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+	p{
+		font-size: 2rem;
+		color:rgba(207, 207, 12, 0.87);
+
+	}
+}
