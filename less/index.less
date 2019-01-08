@@ -4,6 +4,10 @@
    License: none (public domain)
 */
 
+// variables
+@grey: #f5f5f5;
+@line-color: #e0e0e0;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,6 +58,89 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
 }
 
+.container {
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 2rem;
+}
+
+nav {
+	ul {
+		display: flex;
+		justify-content: flex-end;
+
+		li {
+			margin-left: 3rem;
+		}
+	}
+}
+.intro {
+	background-color: @grey;
+	padding: 2.5rem 4.5rem 2rem 2rem;
+
+	hr {
+		border: 1px solid @line-color;
+	}
+	button {
+		color: white;
+		background-color: #2d3436;
+		padding: .5rem 1rem;
+		border-radius: 5px;
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+}
+
+.skills {
+	display: flex;
+	div {
+		width: 50%;
+	}
+}
+
+table {
+	width: 100%;
+	th {
+		text-align: left;
+		font-weight: bold;
+	}
+	tr {
+		border-top: 1px solid @line-color;
+	}
+	tr:nth-child(even){
+		background-color: @grey
+	}
+	td:nth-child(1) {
+		font-weight: bold;
+	}
+	td, th {
+		padding: .5rem .4rem;
+	}
+}
+
+footer {
+	width: 100%;
+	background-color: #2d3436;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 2rem;
+	height: 75px;
+
+}
+
+// Typography
+h1 {
+	font-size: 2.4rem;
+}
+
+h2 {
+	font-size: 1.6rem;
+}
+p {
+	line-height: 1.6;
+}
