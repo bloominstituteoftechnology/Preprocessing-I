@@ -33,7 +33,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style: circle;
 }
 blockquote, q {
 	quotes: none;
@@ -54,6 +54,118 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	background: @body-color;
+}
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+	background: @content-color;
+	
+	header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: @content-color;
+	margin-bottom: 1rem;
+	border-bottom: 1rem dashed @body-color;
+		h1 {
+			font-size: @main-header;
+			font-family: @main-family;
+			color: @body-color;
+			
+		}
+		nav {
+			padding: 1rem;
+			.nav-footer-mixin() {						//mixin 1 header&nav//
+			width: 100%;
+			font-size: @links-n-such;
+			display: flex;
+			justify-content: space-evenly;
+			}
+			.nav-footer-mixin;
+			a {
+				color: @a-color;
+				font-family: @main-family;
+				text-decoration: underline overline;
+			}
+		}
+  }
+  	article {
+		  border: 1rem dashed @body-color;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  width: 50%;
+		  padding: 1rem;
+		  margin: 0 auto;
+		  
+		  	h2 {
+				  .h2-mixin(){
+				  font-family: @main-family;
+				  font-size: @secondary-h;
+				  color: @body-color;
+				  padding: .5rem;
+				  }
+				  .h2-mixin;					//mixin 2 h2// 
+			  }
+			p {
+				.content-mixin() {					//mixin 3 content//
+					font-family: @main-family;
+					font-size: @secondary-p;
+					color: @p-color;
+				}
+				.content-mixin;
+			}
+			button {
+				width: 30%;
+				margin: .5rem;
+				align-self: flex-end;
+				background-color: @body-color;
+				font-family: @main-family;
+				font-weight: 800;
+				cursor: pointer;
+			}
+				.button:hover {background-color: @p-color}
+
+				.button:active {
+				background-color: @content-color;
+				box-shadow: 0 5px @body-color;
+				transform: translateY(4px);
+				}
+	  }
+	  section {
+		 display: flex;
+		 justify-content: space-evenly;
+		 margin: 1rem;
+		  	h2 {
+				  .h2-mixin;
+			  }
+			li {
+				.content-mixin;
+			}
+	  }
+	
+}
+
+@main-family: sans-serif;
+@main-header: 6rem; 
+@links-n-such: 2rem;
+@secondary-h: 2.2rem;
+@secondary-p: 1.4rem;
+
+
+@a-color: white;
+@p-color: white; 
+@content-color: lightblue;
+@body-color: lightcoral;
 
