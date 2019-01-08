@@ -160,18 +160,27 @@ body {
 
 //Colors
 @primary: #ff471a;
+@secondary: #999999;
+
+//Margins
+@mSmall: 5px;
+@mMed: 15px;
+@mLg: 25px;
+@mXl: 40px;
 
 //Containers
 
 .container {
   display: flex;
+  min-height: 1300px;
+  height: 100%;
 }
 
 .left {
   align-self: flex-start;
   background-color: @primary;
   width: 20%;
-  height: 950px;
+  height: 100%;
   margin-left: 15%;
   text-align: center;
   padding: 10% 0 0 0;
@@ -191,7 +200,7 @@ body {
   h1 {
     color: white;
     font-size: @textXxl;
-    margin-bottom: 15px;
+    margin-bottom: @mMed;
     span {
       display: block;
     }
@@ -208,25 +217,52 @@ body {
 
 .right {
   width: 40%;
-  height: 100vh;
+  height: 100%;
   margin-left: 5%;
 
   nav {
     display: flex;
     justify-content: flex-end;
+    padding-top: @mLg;
+    margin-bottom: @mLg;
     a {
       text-decoration: none;
       color: @primary;
+      font-size: @textMed + 0.3rem;
       margin-left: 25px;
     }
   }
 
   section {
+    margin-bottom: @mXl;
     h2 {
+      color: @secondary;
       font-size: @textSuper;
+      text-transform: uppercase;
 
       span {
         color: @primary;
+      }
+    }
+
+    .section-details {
+      span,
+      p,
+      li {
+        display: block;
+        font-size: @textLg;
+        padding-left: @mXl;
+        margin-bottom: @mSmall;
+      }
+
+      p {
+        margin-bottom: @mMed;
+      }
+
+      .lists {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
       }
     }
   }
