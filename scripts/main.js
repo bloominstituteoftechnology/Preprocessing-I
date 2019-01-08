@@ -28,3 +28,9 @@ function modifyComments() {
         els[i].parentElement.parentElement.insertBefore(after, els[i].parentElement.nextSibling);
     }
 }
+
+let skills = [
+    "Frontend",
+    "Backend",
+    "Everything in between",
+];
