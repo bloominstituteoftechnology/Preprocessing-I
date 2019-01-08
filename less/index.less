@@ -53,8 +53,14 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	font-size: 1.6rem;
 }
 
 // Mixins
@@ -73,8 +79,8 @@ html, body {
 
 // Variables
 
-@content: #E7E3B5;
-@attention: #793f0d;
+@content: #EEDFCC;
+@attention: #603311;
 
 // Styles
 
@@ -99,7 +105,7 @@ html, body {
 	.intro {
 		padding: 20px;
 		background: @content;
-		height: 400px;
+		height: 100%;
 		.flex(space-between, flex-start, center);
 		flex-direction: column;
 		border-radius: 5px;
@@ -108,11 +114,53 @@ html, body {
 			.flex(space-between,center,center);
 		}
 
+		.intro__self {
+			width: 100%;
+			border-bottom: 1px solid black;
+
+			h1 {
+				margin: 15px 0;
+				font-size: 3.4rem;
+			}
+
+			h2 {
+				margin: 15px 0;
+			}
+		}
+
+		p, a {
+			margin: 10px 0;
+		}
+
 		.intro__button {
 			.normalize(white);
 			background: @attention;
 			padding: 5px 20px;
-			border-radius: 5px;
+			border-radius: 3px;
+			font-size: 2rem;
+		}
+	}
+
+	.mid-content {
+		.flex(space-between,flex-start,center);
+		margin: 20px 0;
+
+		h1 {
+			margin-bottom: 10px;
+			font-size: 2rem;
+		}
+
+		.mid-content__story {
+			width: 48%;
+		}
+
+		.mid-content__strengths {
+			width: 48%;
+
+			li {
+				border: 1px solid lightgray;
+				padding: 5px 10px;
+			}
 		}
 	}
 
