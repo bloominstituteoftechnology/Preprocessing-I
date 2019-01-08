@@ -61,6 +61,7 @@ html {
 body {
 	height: 100%;
 	font-size: 1.6rem;
+	line-height: 20px;
 }
 
 // Mixins
@@ -79,8 +80,8 @@ body {
 
 // Variables
 
-@content: #EEDFCC;
-@attention: #603311;
+@content: #EEE5DE;
+@attention: #A78D84;
 
 // Styles
 
@@ -135,7 +136,7 @@ body {
 		.intro__button {
 			.normalize(white);
 			background: @attention;
-			padding: 5px 20px;
+			padding: 8px 20px;
 			border-radius: 3px;
 			font-size: 2rem;
 		}
@@ -143,11 +144,12 @@ body {
 
 	.mid-content {
 		.flex(space-between,flex-start,center);
-		margin: 20px 0;
+		margin: 30px 0;
 
 		h1 {
 			margin-bottom: 10px;
 			font-size: 2rem;
+			font-weight: bold;
 		}
 
 		.mid-content__story {
@@ -164,5 +166,47 @@ body {
 		}
 	}
 
+	.work-history {
+		h1 {
+			margin-bottom: 15px;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+		
+		.work-history__table {
+				border-collapse: collapse;
+				width: 100%;
+				margin-bottom: 30px;
+		
+				td, th {
+					border-top: 1px solid lightgrey;
+					border-bottom: 1px solid lightgrey;
+					padding: 8px;
+				}
+			
+				tr:nth-child(even){background-color: #f2f2f2;}
+			
+				tr:hover {background-color: #ddd;}
+			
+				th {
+					padding-top: 12px;
+					padding-bottom: 12px;
+					text-align: left;
+					background-color: @content;
+					font-weight: bold;
+				}
+		}
+	}
+
+	footer {
+		background: @attention;
+		color: white;
+		text-align: center;
+		height: 60px;
+		
+		.copyright {
+			padding-top: 20px;
+		}
+	}
 
 }
