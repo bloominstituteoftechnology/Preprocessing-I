@@ -52,6 +52,7 @@ html, body
 
 .container
     width: 75%
+    height: 100%
     margin: 0 auto   
 
 header
@@ -63,24 +64,55 @@ header
             padding: 0 1rem
 
 div
-    section
+    section.intro
         margin-top: 1rem
         background: lighten($primary, 70)
         padding: 1rem
+        display: flex
+        text-align: center
+        // justify-content: center
+        .intro-img
+          width: 50%
+        .intro-bio
+          padding: 0 10rem
+          width: 50%
+        img
+            border-radius: 2rem 0 2rem 10px
+            border: 3px solid $secondary
+        h1 
+            font-size: 3rem
+        h2 
+            font-style: italic
         p
-            margin-top: 1rem
-            &.btn-primary
-                @include easeOut
-                text-align: center
-                background: $info
-                border: 1px solid #000
-                box-shadow: #222 1px 2px 5px
-                border-radius: 12px
-                padding: .5rem
-                width: 15%
-                &:hover
-                    color: $secondary
-                    cursor: pointer
-                    @include scaleIn
+            margin: 1rem 0
+            span
+                margin-top: 11rem
+                &.btn-primary
+                        @include easeOut
+                        text-align: center
+                        background: $info
+                        border: 1px solid #000
+                        box-shadow: #222 1px 2px 5px
+                        border-radius: 12px
+                        padding: .5rem
+                        width: 100%
+                        &:hover
+                          color: $secondary
+                          cursor: pointer
+                          @include scaleIn
 
-    
+.landing
+    // background: green
+    background-image: url(../img/background.jpg)
+    height: 100vh
+    background-size: cover
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    h1
+        font-size: 4rem
+
+    h2
+      font-size: 3rem
