@@ -53,8 +53,55 @@ table {
     box-sizing: border-box;
 }
 
+//variabless 
+
+@default_color: black;
+@font_family: 'PT Mono', monospace;
+
 html, body {
 	height: 100%;
-	background-color: red;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 62.5%;
+	font-family: @font_family;
+	border: 1px solid black;
 }
 
+.flexmaster(@justify:"", @alignitem:"", @aligncontent:"") {
+	display: flex;
+	justify-content: @justify;
+	align-items: @alignitem;
+	align-content: @aligncontent;
+}
+
+.top-section {
+	
+	margin-top: 2%;
+	.flexmaster(center);
+	font-size: 1.6rem;
+	
+	img {
+		width: 30%;
+		align-self: flex-start;
+		padding-right: 10%;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	.nav-container {
+		.nav-bar {
+			.flexmaster(space-between);
+			a {
+				padding: 0, 10%;
+				text-decoration: none;
+				color: @default_color;
+			}
+		}
+		h1 {
+			margin-top: 5%;
+		}
+	}
+}
