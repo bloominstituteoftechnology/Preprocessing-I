@@ -57,3 +57,124 @@ html, body {
     height: 100%;
 }
 
+// -- ** -- **
+// VARIABLES
+@fontVariable: 'Cinzel', serif;
+@spacingMain: 50px;
+@spacing2: 10px;
+
+	//--colors
+	@colorMAIN: #708090;
+	@color2: #bebebe;
+
+// MIXIN 
+.borderMIXIN {
+	border: 1px solid black;
+}
+// -- ** -- **
+// -- ** -- **
+body {
+	border: 1px solid black;
+	margin: 50px;
+}
+
+.styleBlock-V {
+	background: black;
+	height: 800px;
+	width: 50px;
+	margin-left: @spacingMain;
+}
+
+.styleBlock-H {
+	background: grey;
+	height: 50px;
+	width: 200px;
+}
+
+// -- ** -- ** 
+.container-NAV {
+	display: flex;
+	flex-direction: row;
+	align-items: center; 
+
+	border: 1px solid black;
+
+	nav {
+		justify-content: space-around;
+		align-items: center;
+
+		display: flex;
+		flex-grow: 1;
+		// margin-top: @spacingMain;
+	}
+	
+		nav a {
+			text-decoration: none;
+			font-family: @fontVariable;
+			font-size: 25px;
+		}
+}
+
+.mainSummary {
+	display: flex;
+	flex-direction: column;
+	margin: @spacingMain;
+	background: @color2;
+	
+}
+
+.content {
+	display: flex;
+}
+
+.content-container {
+	display: flex;
+	margin: @spacing2 0px @spacing2 0px;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-grow:1;
+}
+
+.contentBottom {
+	text-align: center;
+}
+
+.personalIntro {
+	display: flex;
+	flex-direction: column;
+
+	.content-container {
+		text-align: center;
+	}
+
+	p {
+		display: flex;
+	}
+}
+
+.offtimeActivities {
+	flex-direction: column;
+	.content {
+		width: 33%;
+	}
+}
+
+.proudestAccomplishments {
+	flex-direction: column;
+	.content {
+		width: 50%;
+	}
+}
+
+// WHY DOES THIS NOT WORK
+// .offtimeActivities .accomplishments .proudestAccomplishments {
+// 	flex-direction: column;
+
+// 	.content-container {
+// 		display: flex;
+// 		margin: @spacing2 0px @spacing2 0px;
+// 		flex-direction: row;
+// 		justify-content: space-around;
+// 		flex-grow:1;
+// 	}
+// }
