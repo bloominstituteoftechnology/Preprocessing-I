@@ -57,3 +57,48 @@ html, body {
     height: 100%;
 }
 
+// Mixins
+
+.normalize(@color) {
+	text-decoration: none;
+	color: @color;
+}
+
+.flex(@justify,@aitems,@acontent) {
+	display: flex;
+	justify-content: @justify;
+	align-items: @aitems;
+	align-content: @acontent;
+}
+
+// Variables
+
+@content: #E7E3B5;
+@attention: #846D74;
+
+// Styles
+
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+	
+	.navigation-container {
+		.flex(flex-end,center,center);
+		padding: 20px 0;
+
+		nav {
+			.flex(space-between,center,center);
+			width: 35%;
+
+			.nav__button {
+				.normalize(black);
+			}
+		}
+	}
+	
+	.intro {
+		border: 1px solid black;
+	}
+
+
+}
