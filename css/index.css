@@ -140,6 +140,7 @@ html {
 .flex-class {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 * {
   margin: 0;
@@ -170,6 +171,7 @@ a.btn {
 section {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding: 100px 80px;
 }
@@ -217,11 +219,15 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: space-between;
   padding: 35px 100px 0;
   animation: 1s fadein 0.5s forwards;
   opacity: 0;
   color: #fff;
+}
+header .content .desc {
+  font-size: 1.8rem;
 }
 header a {
   color: white;
@@ -232,6 +238,7 @@ header h2 {
 header nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-right: -15px;
 }
 header nav li {
@@ -281,9 +288,9 @@ header nav li:hover {
   width: 70%;
   position: absolute;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin-top: 25vh;
 }
 h1.title {
@@ -295,7 +302,7 @@ h1.title {
 p.desc {
   position: relative;
   width: 100%;
-  font-size: 4vw;
+  font-size: 3vw;
   color: #ffffff;
   font-weight: 200;
   margin-bottom: 40px;
@@ -341,10 +348,49 @@ p.desc {
   transform: rotate(20deg);
   transform-origin: 100% 0%;
 }
-/*Footer Section*/
+.projects .grid li {
+  height: 350px;
+  padding: 20px;
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+  animation: 1s fadein 0.5s forwards;
+  opacity: 0;
+  color: #fff;
+}
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+.projects .grid li.small {
+  flex-basis: 30%;
+}
+.projects .grid li.large {
+  flex-basis: 70%;
+}
+#socialnetwork > a,
+#linux > a,
+#responsive > a,
+#loganalysis > a {
+  margin-top: 40px;
+}
+@media (max-width: 1100px) {
+  .projects .grid li.small,
+  .projects .grid li.large {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 800px) {
+  .projects .grid li.small,
+  .projects .grid li.large {
+    flex-basis: 100%;
+  }
+}
 footer {
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: space-around;
   background-color: hsl(218, 28%, 13%);
   color: #fff;
@@ -359,6 +405,7 @@ footer p {
 footer ul {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 footer ul li {
   margin-left: 16px;

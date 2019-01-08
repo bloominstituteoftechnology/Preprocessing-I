@@ -92,6 +92,8 @@ html {
 .flex-class {
 	display: flex;
 	align-items: center;
+
+	justify-content: center;
 }
 
 
@@ -197,6 +199,9 @@ header {
 	opacity: 0;
 	color: #fff;
 
+	.content .desc {
+	 font-size: 1.8rem;
+	}
 	a {
 	color: white;
 	}
@@ -271,10 +276,8 @@ header {
 	top:20%;
 	width:70%;
 	position: absolute;
-	display: flex;
+	.flex-class;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	margin-top: 25vh;
   }
   h1.title {
@@ -286,7 +289,7 @@ header {
   p.desc{
 	position:relative;
 	width:100%;
-	font-size:4vw;
+	font-size:3vw;
 	color:rgba(255,255,255,1);
 	font-weight: 200;
 	margin-bottom:40px;
@@ -335,9 +338,54 @@ header {
 
 // End of Hero Styles
 
-// Footer Styling
+// Projects Styling
 
-/*Footer Section*/
+.projects .grid li {
+	height: 350px;
+	padding: 20px;
+	background-clip: content-box;
+	background-size: cover;
+	background-position: center;
+	animation: 1s fadein 0.5s forwards;
+	opacity: 0;
+	color: #fff;
+}
+
+@keyframes fadein {
+	100% {
+		opacity: 1;
+	}
+
+}
+
+.projects .grid li.small {
+	flex-basis: 30%;
+}
+
+.projects .grid li.large {
+	flex-basis: 70%;
+}
+
+#socialnetwork>a, #linux>a, #responsive>a, #loganalysis>a {
+	margin-top: 40px;
+}
+
+@media (max-width: 1100px) {
+	.projects .grid li.small,
+	.projects .grid li.large {
+		flex-basis: 50%;
+	}
+}
+
+@media (max-width: 800px) {
+	.projects .grid li.small,
+	.projects .grid li.large {
+		flex-basis: 100%;
+	}
+}
+// End of Projects styling
+
+// Footer Styling
 
 footer {
 	.flex-class;
