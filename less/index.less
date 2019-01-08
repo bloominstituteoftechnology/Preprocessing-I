@@ -68,15 +68,37 @@ body {
 
 .container {
 	width: 800px;
+	height: 100%;
 	margin: 0 auto;
 	background: @content-color;
+	
+	//mixins
+	.nav-footer-mixin() {						//mixin 1 header&nav//
+		width: 100%;
+		font-size: @links-n-such;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.h2-mixin(){
+		font-family: @main-family;
+		font-size: @secondary-h;
+		color: @body-color;
+		padding: 2%;
+		text-decoration: underline;
+		display: flex;
+	}
+	.content-mixin() {					//mixin 3 content//
+		font-family: @main-family;
+		font-size: @secondary-p;
+		color: @p-color;
+	}
 	
 	header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background: @content-color;
-	margin-bottom: 1rem;
+	margin-bottom: 2%;
 	border-bottom: 1rem dashed @body-color;
 		h1 {
 			font-size: @main-header;
@@ -85,13 +107,7 @@ body {
 			
 		}
 		nav {
-			padding: 1rem;
-			.nav-footer-mixin() {						//mixin 1 header&nav//
-			width: 100%;
-			font-size: @links-n-such;
-			display: flex;
-			justify-content: space-evenly;
-			}
+			padding: 2%;
 			.nav-footer-mixin;
 			a {
 				color: @a-color;
@@ -106,29 +122,18 @@ body {
 		  flex-direction: column;
 		  align-items: center;
 		  width: 50%;
-		  padding: 1rem;
+		  padding: 2%;
 		  margin: 0 auto;
 		  
 		  	h2 {
-				  .h2-mixin(){
-				  font-family: @main-family;
-				  font-size: @secondary-h;
-				  color: @body-color;
-				  padding: .5rem;
-				  }
-				  .h2-mixin;					//mixin 2 h2// 
+				  .h2-mixin;					
 			  }
 			p {
-				.content-mixin() {					//mixin 3 content//
-					font-family: @main-family;
-					font-size: @secondary-p;
-					color: @p-color;
-				}
 				.content-mixin;
 			}
 			button {
 				width: 30%;
-				margin: .5rem;
+				margin: 3%;
 				align-self: flex-end;
 				background-color: @body-color;
 				font-family: @main-family;
@@ -143,17 +148,32 @@ body {
 				transform: translateY(4px);
 				}
 	  }
-	  section {
+	section {
 		 display: flex;
 		 justify-content: space-evenly;
-		 margin: 1rem;
+		 margin: 5%;
+		 padding: 2%;
+		 border: 1rem dashed @body-color;
+
 		  	h2 {
-				  .h2-mixin;
+				 .h2-mixin;
+				 
 			  }
 			li {
 				.content-mixin;
+				line-height: 1.6rem;
+			}
+			p {
+				.content-mixin();
+				line-height: 1.6rem;
 			}
 	  }
+	footer {
+		.nav-footer-mixin;
+		color: @a-color;
+		padding: 2%;
+		margin: 0%;
+	}
 	
 }
 
@@ -166,6 +186,6 @@ body {
 
 @a-color: white;
 @p-color: white; 
-@content-color: lightblue;
-@body-color: lightcoral;
+@content-color: rgb(61, 155, 187);
+@body-color: rgb(231, 142, 142);
 
