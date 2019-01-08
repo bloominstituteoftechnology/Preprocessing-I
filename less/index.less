@@ -53,27 +53,140 @@ table {
     box-sizing: border-box;
 }
 
+html{
+	font-size: 62.5%;
+}
 
+@banner-color: #3E902C;
 
 header{
 	display:flex;
 	padding:25px 0;
-	justify-content: space-between;
+	justify-content: space-around;
+	background-color: @banner-color;
 
 	h1{
-
+		font-size: 3rem;
+		font-weight: bold;
 	}
 
 	nav{
+		display:flex;
+		width:50%;
+		justify-content: space-between;
+		align-items: center;	
 
+		a{
+			text-decoration: none;
+			font-size: 1.6rem;
+			color: red;
+
+			&:hover{
+				color:black;
+			}
+		}
+		
 	}
 }
 
+img{
+	height: 300px;
+	margin-bottom: 10px;
+}
 .container{
 	max-width: 850px;
 	width:100%;
 	margin: 0 auto;
 }
 
+section{
+	padding: 20px;
+	h2{
+		font-size: 8rem;
+	}
 
+	h3{
+		font-size: 4rem;
+		margin-bottom: 10px;
+	}
+
+	h4{
+		font-size: 3rem;
+		margin-bottom: 10px;
+	}
+
+	h5{
+		font-size: 2.5rem;
+		margin-bottom: 5px;
+	}
+
+
+	p{
+		font-size: 1.6rem;
+		margin-bottom: 10px;
+	}
+	
+	.button{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		height: 50px;
+		width: 25%;
+		background-color: @banner-color;
+		color: red;
+		border-radius: 5px;
+
+		p{
+			font-size:3rem;
+
+			&:hover{
+				color: white;
+			}
+		}
+
+		border: 1px solid red;
+	}
+
+}
+
+.additional-info{
+	display:flex;
+	justify-content: space-between;
+
+	.info-box{
+		.box(45%);
+	}
+
+	.info-box2{
+		.box(45%);
+
+		ol{
+			border: 0 solid lightgrey;
+			border-width: 0 0 1px 1px;
+			li{
+				display:flex;
+				align-items: center;
+				font-size: 1.6rem;
+				padding-left: 5%;
+				height: 30px;
+				border:0 solid lightgrey;
+				border-width: 1px 1px 0 0;
+				border-collapse: collapse;
+			}
+		}
+	}
+}
+
+
+
+.introInfo{
+	background-color:lightgreen;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.box(@width){
+	width:@width;
+
+}
 
