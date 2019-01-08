@@ -8,8 +8,8 @@
 @cyan: hsl(176, 68%, 64%);
 @blue: hsl(198, 60%, 50%);
 
-@desktop-width: 1440px;
-@mobile-width: 500px;
+@desktop_width: 1440px;
+@mobile_width: 500px;
 
 @default_font_size: 1.4rem;
 @default_font_family: 'Raleway';
@@ -95,17 +95,127 @@ html {
 }
 
 
+// General Styles
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+ul, nav {
+	list-style: none;
+}
+
+
+
+
+a {
+	font-size: @default_font_size;
+	text-decoration: none;
+	opacity: 0.75;
+	color: #fff;
+}
+
+a:hover {
+	opacity: 1;
+}
+
+a.btn {
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	background-color:  @blue;
+	opacity: 1;
+}
+
+section {
+	.flex-class;
+	flex-direction: column;
+	padding: 100px 80px;
+
+	h3.title {
+	text-transform: capitalize;
+	font: bold 3.2rem "Open Sans", sans-serif;
+	margin-bottom: 30px;
+	text-align: center;
+	}
+
+	p {
+	max-width: 775px;
+	line-height: 2;
+	padding: 0 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	}
+}
+
+section:not(.hero):nth-child(even) {
+	background-color: @education_background;
+	color: white;
+}
+
+.grid {
+	width: 100%;
+	.flex-class;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+hr {
+	width: 250px;
+	height: 3px;
+	background-color: #3f51b5;
+	border: 0;
+	margin-bottom: 50px;
+	
+} 
+
+body {
+	width: 100%;
+}
+
+@media (max-width: 800px) {
+	section {
+		padding: 50px 20px;
+	}
+}
+
+// General Styles End
+
 // Header Styles
 
 header {
 	position: absolute;
 	width: 100%;
-	flex-class;
+	.flex-class;
 	justify-content: space-between;
 	padding: 35px 100px 0;
 	animation: 1s fadein 0.5s forwards;
 	opacity: 0;
 	color: #fff;
+
+	a {
+	color: white;
+	}
+	h2 {
+	font-family: @default_font_family, sans-serif;
+	}
+
+	nav {
+	.flex-class;
+	margin-right: -15px;
+
+	li {
+	margin: 0 15px;
+		}
+	li:hover {
+	font-weight: bold;
+	color: #80a3db;
+		}
+	}
 }
 
 @keyframes fadein {
@@ -114,33 +224,18 @@ header {
 	}
 }
 
-header h2 {
-	font-family: @default-font-family, sans-serif;
-}
 
-header nav {
-	flex-class;
-	margin-right: -15px;
-}
-
-header nav li {
-	margin: 0 15px;
-}
-
-header>nav>li:hover {
-	background-color: white;
-	color: #80a3db;
-}
 
 @media (max-width: 800px) {
 	header {
 		padding: 20px 50px;
 		flex-direction: column;
+
+		h2 {
+		margin-bottom: 15px;
+		}
 	}
 
-	header h2 {
-		margin-bottom: 15px;
-	}
 }
 
 // End of Header Styles

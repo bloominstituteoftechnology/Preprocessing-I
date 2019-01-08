@@ -137,39 +137,114 @@ body {
 html {
   font-size: 62.5%;
 }
-.flex {
+.flex-class {
   display: flex;
   align-items: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+nav {
+  list-style: none;
+}
+a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  opacity: 0.75;
+  color: #fff;
+}
+a:hover {
+  opacity: 1;
+}
+a.btn {
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  background-color: hsl(198, 60%, 50%);
+  opacity: 1;
+}
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 80px;
+}
+section h3.title {
+  text-transform: capitalize;
+  font: bold 3.2rem "Open Sans", sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+section p {
+  max-width: 775px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+section:not(.hero):nth-child(even) {
+  background-color: hsl(219, 30%, 18%);
+  color: white;
+}
+.grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+hr {
+  width: 250px;
+  height: 3px;
+  background-color: #3f51b5;
+  border: 0;
+  margin-bottom: 50px;
+}
+body {
+  width: 100%;
+}
+@media (max-width: 800px) {
+  section {
+    padding: 50px 20px;
+  }
 }
 header {
   position: absolute;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 35px 100px 0;
   animation: 1s fadein 0.5s forwards;
   opacity: 0;
   color: #fff;
 }
-@keyframes fadein {
-  100% {
-    opacity: 1;
-  }
+header a {
+  color: white;
 }
 header h2 {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 header nav {
   display: flex;
+  align-items: center;
   margin-right: -15px;
 }
 header nav li {
   margin: 0 15px;
 }
-header > nav > li:hover {
-  background-color: white;
+header nav li:hover {
+  font-weight: bold;
   color: #80a3db;
+}
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
 }
 @media (max-width: 800px) {
   header {
