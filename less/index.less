@@ -67,21 +67,43 @@ header {
 	left: 0;
 	height: 25px;
 	width: 100%;
+	@media (max-width: 500px) {
+		position: relative;
+		height: 100px;
+	}
 	nav {
 		height: 25px;
-		width: 600px;
+		width: 100%;
+		max-width: 600px;
 		margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		align-content: center;
-		padding: 0 20px;
+		padding: 0 5%;
+		@media (max-width: 500px) {
+			justify-content: space-around;
+			align-items: center;
+			align-content: center;
+			flex-direction: column;
+			height: 100px;
+			padding: 5px 0;
+		}
 		a {
 			text-decoration: none;
 			color: darkslategrey;
 			font-size: 1.4rem;
 			&:hover {
 				color: white;
+			}
+			@media (max-width: 500px) {
+				border-bottom: 1px solid darkgray;
+				width: 50%;
+				text-align: center;
+				padding-bottom: 5px;
+				&:last-of-type {
+					border-bottom: none;
+				}
 			}
 		}
 	}
@@ -97,6 +119,9 @@ header {
 		box-shadow: 2px 2px 2px @shadow-color;
 	}
 	.flexDefault;
+	 @media (max-width: 500px) {
+		 flex-direction: column;
+	 }
 	h1 {
 		color: darkslategray;
 		font-family: 'Pacifico', cursive;
@@ -107,6 +132,12 @@ header {
 		flex: 1;
 		h2 {
 			text-decoration: none;
+		}
+		h3 {
+			margin: 0;
+		}
+		@media (max-width: 500px) {
+			margin: 0 auto;
 		}
 	}
 	.right {
@@ -119,7 +150,7 @@ header {
 		margin: 15px 0;
 		ul {
 			.flexDefault;
-			list-style: circle inside;
+			list-style: disc inside;
 			flex-wrap: wrap;
 			margin-left: 10px;
 		}
@@ -146,6 +177,9 @@ header {
 	font-size: 1.6rem;
 	background-color: #E8E8E8;
 	margin-top: 25px;
+	@media (max-width: 500px) {
+		margin-top: 0;
+	}
 }
 
 .intro {
