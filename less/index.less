@@ -53,11 +53,126 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	height: 100%;
+	font-size: 62.5%;
+	body{
+		font-size: 1.6rem;
+	}
+    
 }
 
-html{
-	background-color: red;
+//Main Page Styling
+
+//Variables
+
+//Mixins
+.main-content-padding{
+	padding-top: 2.5%;
+	padding-bottom: 2.5%;
 }
+
+.h2-settings{
+	font-size: 2.5rem;
+	padding-bottom: 1.5%;
+}
+
+.h3-settings{
+	font-size: 2rem;
+	font-weight: bold;
+	padding-bottom: .5%;
+}
+
+.h4-settings{
+	font-size: 1.8rem;
+	font-style: italic;
+	padding-bottom: .5%;
+}
+
+.li-settings{
+	list-style: circle;
+	padding-bottom: .5%;
+	font-size: 1.7rem;
+}
+
+.history-settings{
+	display: flex;
+	flex-direction: column;		
+}
+
+
+.page{
+	max-width: 800px;
+	width: 100%;
+	padding: 25px 0;
+	margin: 0 auto;
+	.top-content{
+		display: flex;
+		justify-content: space-between;
+		border: 4px groove gold;
+		padding: 5px;
+		h1{
+			font-size: 3rem;		
+		}
+		img{
+			width: 60%;			
+		}
+		nav{
+			display: flex;
+			flex-direction: column;
+			padding-right: 10%;
+			justify-content: space-evenly;
+			a{
+				text-decoration: none;
+				border: 2px solid black;
+				border-radius: 15px 15px 15px 15px;
+				font-size: 2rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 5px;			
+			}			
+		}
+	}
+	.main-content{		
+		.opening{
+			font-size: 1.8rem;
+			.main-content-padding;
+		}		
+		.skills{
+			border: 1px solid blue;
+			height: 50%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			.main-content-padding;
+			h2{
+				.h2-settings;
+			}				
+			li{
+				.li-settings;		
+			}			
+		}
+
+		.history{			
+			.main-content-padding;
+			.history-settings;
+			h2{
+				.h2-settings;
+			}
+			
+			h3{
+				.h3-settings;
+			}
+			h4{
+				.h4-settings;
+			}
+			li{
+				.li-settings;
+			}
+
+		}
+	}
+}
+
 
