@@ -134,6 +134,9 @@ html,
 body {
   height: 100%;
 }
+html {
+  font-size: 62.5%;
+}
 /*-----Typography-----*/
 /* Montserrat & Lato */
 @font-face {
@@ -166,16 +169,6 @@ body {
   font-weight: 700;
   src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
 }
-.headingFont {
-  font-family: Montserrat, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.textFont {
-  font-family: Lato, Helvetica, Sans-Serif;
-}
-.emphasize-text {
-  color: var(--emphasis-text-color);
-  font-weight: bold;
-}
 /*-----Color Palette-----*/
 :root {
   --primary-color: #265077;
@@ -189,21 +182,35 @@ body {
   --secondary-text-color: #CCC;
   --bg-shading: #FCFCFC;
 }
-.banner-bg {
-  background-image: url(images/bg_code_corp_light.jpg);
-}
-.primary-contrast-color-scheme {
-  color: var(--primary-dark-color);
-  background: var(--light-text-color);
-}
-.accent-color-scheme {
+/*---- Header & Footer ----*/
+.header,
+.header *,
+.footer * {
+  background: var(--primary-dark-color);
+  font-family: Lato, Helvetica, Sans-Serif;
   color: var(--light-text-color);
-  background: var(--accent-color);
+  text-decoration: none;
 }
-.overlay-color-scheme {
-  color: var(--secondary-text-color);
-  background: var(--secondary-color);
+/*----- Header -----*/
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.15rem 0;
 }
-.divider-color {
-  border-color: var(--dark-primary-color);
+.navigation {
+  flex-basis: 45%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
+.navigation a {
+  font-size: 1.2rem;
+  letter-spacing: 0.24rem;
+  text-transform: uppercase;
+  margin: 0 2.5%;
+}
+.navigation a:hover {
+  text-decoration: underline;
+}
+/*----- Footer -----*/

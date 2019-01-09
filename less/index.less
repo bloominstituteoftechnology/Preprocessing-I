@@ -57,22 +57,39 @@ html, body {
 		height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 /*-----Typography-----*/
 /* Montserrat & Lato */
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:400,500,600,700');
 
-.headingFont {
+.headingFont() {
 	font-family: Montserrat, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-.textFont {
+.textFont() {
 	font-family: Lato, Helvetica, Sans-Serif;
 }
 
-.emphasize-text {
+.emphasize-text() {
   color: var(--emphasis-text-color);
   font-weight: bold;
 }
+
+.defaultText() {
+	.textFont();
+	size: 1.6rem;
+	color: var(--dark-text-color);
+}
+
+.lightText() {
+	.textFont();
+	color: var(--light-text-color);
+}
+
+
 
 /*-----Color Palette-----*/
 :root {
@@ -88,28 +105,78 @@ html, body {
 	--bg-shading: #FCFCFC;
 }
 
-.banner-bg {
+.banner-bg() {
 	background-image: url(images/bg_code_corp_light.jpg); 
 }
 
-.primary-contrast-color-scheme {
+.primary-color-scheme() {
+	color: var(--light-text-color);
+	background: var(--primary-dark-color);
+}
+
+.primary-neg-color-scheme() {
 	color: var(--primary-dark-color);
 	background: var(--light-text-color);
 }
 
-.accent-color-scheme {
+.accent-color-scheme() {
 	color: var(--light-text-color);
 	background: var(--accent-color);
 }
 
-.overlay-color-scheme {
+.overlay-color-scheme() {
 	color: var(--secondary-text-color);
 	background: var(--secondary-color);
 }
 
-.divider-color {
+.divider-color() {
 	border-color: var(--dark-primary-color);
 }
+
+// Page Template Settings
+.default-link-style() {
+	text-decoration: none;
+}
+
+/*---- Header & Footer ----*/
+.header, .header *, .footer * {
+	.primary-color-scheme();
+	.lightText();
+	.default-link-style();
+}
+
+/*----- Header -----*/
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	padding: 1.15rem 0;
+}
+
+.navigation {
+	flex-basis: 45%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
+.navigation a {
+	font-size: 1.2rem;
+  letter-spacing: .24rem;
+	text-transform: uppercase;
+	margin: 0 2.5%;
+}
+
+.navigation a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+/*----- Footer -----*/
+
+
 
 
 
