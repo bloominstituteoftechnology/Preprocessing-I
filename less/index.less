@@ -58,7 +58,26 @@ html, body {
 	font-size: 62.5%;
 }
 
+@mygreen: chartreuse;
 
+//first mixin specifically for the topmost content section for any page with multiple sections dedication to spacing from the top
+.resumeFirstSectionPositioning {
+	padding: 0 5% 2rem 5%;
+	border-bottom: 2px solid black;
+}
+
+//second mixin specifically for all other content that falls below the first so they're spaced out correctly from each other above and below
+.resumeAllOtherSectionPositioning {
+	padding: 2rem 5% 2rem 5%;
+	border-bottom: 2px solid black;
+}
+//third mixin specificlaly for setting content to a column and centering all of the text
+.mobileColumnCenter {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	line-height: 2rem;
+}
 .container {
 	max-width: 1000px;
 	width: 100%;
@@ -79,13 +98,17 @@ html, body {
 		.Ronny {
 			margin: 2rem 1rem 0 1rem;
 			h2 {
-				color: chartreuse;
+				color: @mygreen;
 			}
 		}
 		nav {
 			//border: 1px solid red;
 			display: flex;
 			align-items: center;
+			a:first-child {
+				color: @mygreen;
+				border-top: 2px solid @mygreen;
+			}
 			a {
 				//border: 1px solid red;
 				border-top: 2px solid grey;
@@ -96,8 +119,8 @@ html, body {
 				margin: 5rem 1rem 0 1rem;
 			}
 			a:hover {
-				color: chartreuse;
-				border-top: 2px solid chartreuse;
+				color: @mygreen;
+				border-top: 2px solid @mygreen;
 			}
 		}
 	}
@@ -127,27 +150,122 @@ html, body {
 	}
 
 	.educationSection {
-		padding: 0 5% 2rem 5%;
-		border-bottom: 2px solid black;
+		.resumeFirstSectionPositioning;
 		h3 {
 			font-size: 2.2rem;
-			color: chartreuse;
+			color: @mygreen;
 			padding-bottom: 1rem;
 		}
 		.schools {
 			display: flex;
 			justify-content: space-between;
-			.UHSchoolDate {
+			.schoolName {
 				h4 {
 					font-size: 2rem;
 				}
 			}
-			.UHSchoolInfo {
+			.schoolGraduationDate {
 				p {
 					font-size: 1.8rem;
 				}
 			}
 		}
 	}
+
+	.workExperience {
+		.resumeAllOtherSectionPositioning;
+		h3 {
+			font-size: 2.2rem;
+			color: @mygreen;
+			padding-bottom: 1rem;
+		}
+		.companies {
+			display: flex;
+			justify-content: space-between;
+			.companyName {
+				h4 {
+					font-size: 2rem;
+				}
+			}
+			.companyWorkStart {
+				p {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+	.technicalSkills {
+		.resumeAllOtherSectionPositioning;
+		h3 {
+			font-size: 2.2rem;
+			color: @mygreen;
+			padding-bottom: 1rem;
+		}
+		ul {
+			line-height: 2.5rem;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+@media(max-width: 500px){
+		.container {
+			header {
+				display: flex;
+				flex-direction: column;
+				nav {
+					display: flex;
+					flex-direction: column;
+					a:first-child {
+						margin-top: 2rem;
+					}
+					a {
+						text-align: center;
+						width: 100%;
+						margin-top: 1rem;
+					}
+				}
+				.Ronny {
+					margin: 0 auto;
+				}
+			}
+
+			section {
+				display: flex;
+				flex-direction: column;
+				img {
+					margin: 0 auto;
+					width: 50%;
+				}
+				.RonnyIntro {
+					text-align: center;
+				}
+			}
+
+			.educationSection {
+				h3 {
+					text-align: center;
+				}
+				.schools {
+					.mobileColumnCenter;
+				}
+			}
+			.workExperience {
+				h3 {
+					text-align: center;
+				}
+				.companies {
+					.mobileColumnCenter;
+				}
+			}
+			.technicalSkills {
+				h3 {
+					text-align: center;
+				}
+				ul {
+					.mobileColumnCenter;
+				}
+			}
+		}
 }
 
