@@ -105,8 +105,7 @@ section {
   display: block;
 }
 .flex-col {
-  flex-direction: column;
-  width: 40%;
+  width: 100%;
 }
 .container {
   background: #ffffff;
@@ -115,6 +114,8 @@ section {
   box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.25);
   font-family: 'Ubuntu', sans-serif;
   color: black;
+  display: flex;
+  flex-direction: column;
 }
 body {
   line-height: 1;
@@ -132,6 +133,8 @@ nav {
   box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.25);
   font-family: 'Ubuntu', sans-serif;
   color: black;
+  display: flex;
+  flex-direction: column;
 }
 nav ul {
   display: flex;
@@ -154,17 +157,20 @@ nav a {
 nav a:hover {
   color: #52c1d4;
 }
-content {
+.row {
   display: flex;
-  flex-direction: column;
+}
+content {
   width: 100%;
-  height: 800px;
+  height: 900px;
   background: #ffffff;
   /* Fallback */
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.25);
   font-family: 'Ubuntu', sans-serif;
   color: black;
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
 }
 content h1 {
@@ -175,22 +181,33 @@ content h1 {
   padding-top: 20px;
   padding-left: 50px;
 }
-content h2 {
+content .primary {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+content .primary h2 {
   font-size: 2.4em;
   text-align: center;
-  margin-left: 20px;
+  margin-top: 10px;
   padding-top: 15px;
-  flex-direction: column;
-  width: 40%;
+  height: 100px;
+  width: 100%;
 }
-content p {
+content .primary p {
   font-size: 1.6em;
   line-height: 25px;
   text-align: left;
-  margin-left: 20px;
+  height: 200px;
   padding-top: 15px;
-  flex-direction: column;
-  width: 40%;
+  width: 100%;
+}
+content .primary li {
+  height: 60px;
+  text-align: center;
+  font-size: 2.0em;
+  padding-top: 20px;
+  width: 100%;
 }
 .picture {
   height: 300px;
@@ -198,6 +215,76 @@ content p {
   margin-top: 30px;
   margin-left: 30px;
   border-radius: 20px;
+}
+.history {
+  width: 100%;
+  height: 400px;
+  background: #ffffff;
+  /* Fallback */
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.25);
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.history h1 {
+  font-size: 4.8em;
+  text-align: left;
+  width: 100%;
+  height: 75px;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.history p {
+  font-size: 2.4em;
+  line-height: 25px;
+  margin-left: 10px;
+  text-align: left;
+  height: 50px;
+  padding-top: 15px;
+}
+.workHistory {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 1.6em;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.workHistory td,
+.workHistory th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.workHistory tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.workHistory tr:hover {
+  background-color: #969090;
+}
+.workHistory th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #242424;
+  color: white;
+}
+footer {
+  text-align: center;
+  font-size: 1.6em;
+  padding-top: 20px;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  /* Fallback */
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 8px 1px rgba(0, 0, 0, 0.25);
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
 ol,
 ul {

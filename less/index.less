@@ -30,11 +30,21 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+
+// Variables that might pop up now and then
+
 @main-color: grey;
 
+@mediamobile (max-width: 500px) {
+
+}
+
+@mediatab (max-width: 768px) {
+
+}
+
 .flex-col {
-	flex-direction: column;
-	width: 40%;
+	width: 100%;
 }
 
 .container {
@@ -43,8 +53,11 @@ footer, header, hgroup, menu, nav, section {
 	box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.25);
 	font-family: 'Ubuntu', sans-serif;
 	color: black;
+	display: flex;
+	flex-direction: column;
 }
 
+// This is where the real work begins
 body {
 	line-height: 1;
 	font-size: 62.5%;
@@ -52,10 +65,11 @@ body {
 	margin: auto;
 	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
+
+// NavBar at the top of the screen
 nav {
 	font-size: 1.6em;
 	background: green;
-	font-family: 'Ubuntu', sans-serif;
 	.container();
 
 	ul {
@@ -82,17 +96,23 @@ nav {
 	a:hover {
 		color: rgb(82, 193, 212);
 	}
+} // End NavBar
+
+//Beginning of primary 
+
+
+.row {
+	display: flex;
 }
 
+// Setting up the big old shadow box for the content
 content {
-	display: flex;
-	flex-direction: column;
 	width: 100%;
-	height: 800px;
-	font-family: 'Ubuntu', sans-serif;
+	height: 900px;
 	.container();
 	margin-top: 10px;
 
+// This Includes my name
 	h1 {
 		font-size: 4.8em;
 		text-align: center;
@@ -103,11 +123,17 @@ content {
 
 	}
 
+	// These are the two columns below the h1
+	.primary { 
+		display: flex;
+		flex-direction: column;
+		width: 50%;
 	h2 {
 		font-size: 2.4em;
 		text-align: center;
-		margin-left: 20px;
+		margin-top: 10px;
 		padding-top: 15px;
+		height: 100px;
 		.flex-col();
 
 	}
@@ -116,13 +142,22 @@ content {
 		font-size: 1.6em;
 		line-height: 25px;
 		text-align: left;
-		margin-left: 20px;
+		height: 200px;
 		padding-top: 15px;
 		.flex-col();
-
 	}
+
+	li {
+		height: 60px;
+		text-align: center;
+		font-size: 2.0em;
+		padding-top: 20px;
+		.flex-col();
+		}
+}
 }
 
+// Manages the photograph
 .picture {
 	height: 300px;
 	width: 500px;
@@ -130,7 +165,77 @@ content {
 	margin-left: 30px;
 	border-radius: 20px;
 }
+// End of content
 
+// Beginning of Work history
+.history {
+
+	width: 100%;
+	height: 400px;
+	.container();
+	margin-top: 10px;
+
+	
+	h1 {
+		font-size: 4.8em;
+		text-align: left;
+		width: 100%;
+		height: 75px;
+		padding-top: 20px;
+		padding-left: 50px;
+
+	}
+
+	p {
+		font-size: 2.4em;
+		line-height: 25px;
+		margin-left: 10px;
+		text-align: left;
+		height: 50px;
+		padding-top: 15px;
+	}
+
+
+}
+
+.workHistory {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.6em;
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+  }
+  
+  .workHistory td, .workHistory th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  .workHistory tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .workHistory tr:hover {background-color: rgb(150, 144, 144);}
+  
+  .workHistory th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: rgb(36, 36, 36);
+	color: white;
+  }
+
+// End of Work History
+
+
+// Contact and Copyrights
+  footer {
+	  text-align: center;
+	  font-size: 1.6em;
+	  padding-top: 20px;
+	width: 100%;
+	height: 50px;
+	.container();
+	margin-top: 10px;
+  }
 ol, ul {
 	list-style: none;
 }
