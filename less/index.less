@@ -4,151 +4,273 @@
    License: none (public domain)
 */
 
-// variables
-@grey: #f5f5f5;
-@line-color: #e0e0e0;
-
 // Mixins
-.section-spacing(){
-	margin-bottom: 2rem;
+.section-spacing {
+  margin-bottom: 2rem;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+.flex-column {
+  flex-direction: column;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-	height: 100%;
-	
-}
-
 .container {
-	max-width: 960px;
-	width: 100%;
-	margin: 0 auto;
-	margin-top: 2rem;
-}
-header, section {
-	.section-spacing();
-}
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  // variables
+  @grey: #f5f5f5;
+  @line-color: #e0e0e0;
 
-nav {
-	ul {
-		display: flex;
-		justify-content: flex-end;
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
-		li {
-			margin-left: 3rem;
-		}
-	}
-}
-.intro {
-	background-color: @grey;
-	padding: 2.5rem 4.5rem 2rem 2rem;
+  /* Set every element's box-sizing to border-box */
+  * {
+    box-sizing: border-box;
+  }
 
-	hr {
-		border: 1px solid @line-color;
-	}
-	button {
-		color: white;
-		background-color: #2d3436;
-		padding: .5rem 1rem;
-		border-radius: 5px;
-		font-size: 1.2rem;
-		font-weight: bold;
-	}
-}
+  html,
+  body {
+    height: 100%;
+  }
 
-.skills {
-	display: flex;
-	div {
-		width: 50%;
-	}
-}
+  header,
+  section {
+    .section-spacing();
+  }
 
-table {
-	width: 100%;
-	th {
-		text-align: left;
-		font-weight: bold;
-	}
-	tr {
-		border-top: 1px solid @line-color;
-	}
-	tr:nth-child(even){
-		background-color: @grey
-	}
-	td:nth-child(1) {
-		font-weight: bold;
-	}
-	td, th {
-		padding: .5rem .4rem;
-	}
-}
+  nav {
+    display: flex;
+    justify-content: flex-end;
 
-footer {
-	width: 100%;
-	background-color: #2d3436;
-	color: #ffffff;
-	text-align: center;
-	padding-top: 2rem;
-	height: 75px;
+    a:link,
+    a:visited {
+      margin-left: 3rem;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .intro {
+    background-color: @grey;
+    padding: 2.5rem 4.5rem 2rem 2rem;
 
-}
+    hr {
+      border: 1px solid @line-color;
+      margin: 1rem 0;
+    }
+    button {
+      color: white;
+      background-color: #2d3436;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+  }
 
-// Typography
-h1 {
-	font-size: 2.4rem;
-}
+  .skills {
+    display: flex;
+    div {
+      width: 50%;
+    }
+    ul li {
+      padding: 0.8rem;
+      border: 1px solid @line-color;
+    }
+  }
 
-h2 {
-	font-size: 1.6rem;
-}
-p {
+  table {
+    width: 100%;
+    th {
+      text-align: left;
+      font-weight: bold;
+    }
+    tr {
+      border-top: 1px solid @line-color;
+    }
+    tr:nth-child(even) {
+      background-color: @grey;
+    }
+    td:nth-child(1) {
+      font-weight: bold;
+    }
+    td,
+    th {
+      padding: 0.5rem 0.4rem;
+    }
+  }
+
+  footer {
+    width: 100%;
+    background-color: #2d3436;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 1.5rem;
+    height: 75px;
+  }
+
+  // Typography
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
 	line-height: 1.6;
+	margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+	  .intro {
+		  text-align: center;
+		  padding: 2.5rem 0 2rem 0;
+		  img {
+			  margin: auto 0;
+		  }
+	  }
+    .skills {
+      .flex-column;
+      div {
+        width: 100%;
+      }
+    }
+
+    nav {
+      .flex-column;
+	  justify-content: flex-start;
+	  a:link {
+		  margin-left: 0;
+		  margin-bottom: .5rem;
+	  }
+    }
+  }
 }
