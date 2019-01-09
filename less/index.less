@@ -61,16 +61,19 @@ html, body {
 
 body {
 	background-color: #16161d;
-	background-image: url("https://i.imgur.com/SozOupP.jpg");
+	background-image: url("https://i.imgur.com/wcQIrA6.jpg");
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
 }
 
 .container {
 	width: 80%;
 	margin: 0 auto;
-	background-color: white
-}
-
+	@media (max-width: 800px) {
+		width: 100%;
+	}
+	
 nav { //nested
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -89,11 +92,12 @@ nav { //nested
 }
 
 header {
-	padding-left: 2%;
 	h1 {
+		color: white;
 		.text();
 		font-size: 1.84em;
 		margin-bottom: 15px;
+		margin-top: 15px;
 	}
 
 	h3 {
@@ -116,10 +120,15 @@ header {
 		width: 23.8%;
 		height: 30px;
 		margin-top: 15px;
+		margin-bottom: 20px;
 	}
 
 	button:hover {
 		background-color: #F5DA81;
+	}
+
+	img {
+		opacity: 1;
 	}
 }
 
@@ -129,15 +138,54 @@ header {
 	color: #16161d;
 }
 
-.container {
-	width: 90%;
-	margin: 0 auto;
+.section {
+	padding-left: 2%;
+	padding-right: 2%;
+	border: 1px solid #16161d;
+	background-color: white;
+	margin-bottom: 20px;
+	margin-left: 1%;
+	h2 {
+		.text();
+		font-size: 1.2em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		.text();
+		font-size: .9em;
+		margin-top: 10px;
+	}
+
+	ul {
+		li {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		margin-bottom: 15px;
+	}
+}
+
+table {
+	margin-bottom: 20px;
+	.text();
+	text-align: left;
+	th {
+		padding-right: 20px;
+		padding-bottom: 8px;
+	}
+	td {
+		// margin-bottom: 10px;
+		padding-top: 10px;
+		font-weight: 400;
+		padding-left: 10px;
+	}
 }
 
 .section {
-	background-color: white;
-	color: #16161d;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	p {
+		margin-bottom: 20px;
+	}
 }
-
+}
