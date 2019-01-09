@@ -55,6 +55,17 @@ table {
 
 @box-color: #9099A2;
 
+.flex-settings {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	margin-top: 3%;
+}
+
+.flex-settings-mobile {
+	flex-direction: column;
+}
+
 .box-content {
 	background-color: @box-color;
 	padding: 2%;
@@ -62,6 +73,7 @@ table {
 }
 
 .text-format-title {
+	font-weight: bold;
 	color: white;
 	font-size: 2.4rem;
 }
@@ -76,7 +88,11 @@ html {
 	max-width: 1080px;
 	height: 100%;
 	font-size: 1.6rem;
-	background-color: #D5D5D5
+	background-color: #D5D5D5;
+
+	@media (max-width: 500px) {
+		max-width: 500px;
+	}
 }
 
 header {
@@ -85,10 +101,18 @@ header {
 	background-color: #6D7993;
 	align-items: center;
 	
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
 	h1 {
 		.text-format-title;
 		padding: 1%;
 		width: 50%;
+
+		@media (max-width: 500px) {
+			text-align: center;
+		}
 	}
 	
 	nav {
@@ -96,9 +120,29 @@ header {
 		display: flex;
 		justify-content: space-evenly;
 
+		@media (max-width: 500px) {
+			margin-top: 3%;
+			flex-direction: column;
+			width: 100%;
+		}
+
 		a {
 			text-decoration: none;
 			color: white;
+
+			@media (max-width: 500px) {
+				padding: 5%;
+				border-bottom: solid 1px black;
+				text-align: center;
+				width: 100%;
+				font-size: 2rem;
+			}
+		}
+
+		a.home {
+			@media (max-width: 500px) {
+				border-top: solid 1px black;
+			}
 		}
 	}
 }
@@ -108,15 +152,16 @@ h2 {
 }
 
 section.bio {
-	display: flex;
-	justify-content: space-evenly;
-	width: 100%;
-	margin-top: 3%;
+	.flex-settings;
 
 	div.about {
 		display: flex;
 		flex-direction: row;
 		width: 95%;
+
+		@media (max-width: 500px) {
+			.flex-settings-mobile;
+		}
 
 		img {
 			height: 300px;
@@ -132,10 +177,11 @@ section.bio {
 }
 
 section.work-experience {
-	margin-top: 3%;
-	display: flex;
-	justify-content: space-evenly;
-	width: 100%;
+	.flex-settings;
+
+	@media (max-width: 500px) {
+	}
+
 	div.title {
 		.box-content;
 		width: 30%;
@@ -153,14 +199,16 @@ section.work-experience {
 }
 
 section.bottom-content {
-	margin-top: 3%;
-	width: 100%;
-	display: flex; 
-	justify-content: space-evenly;
+	.flex-settings;
 
 	div.skills {
 		.box-content;
 		width: 46.2%;
+
+		ul {
+			list-style-type: circle;
+			list-style-position: inside;
+		}
 	}
 
 	div.contact {
@@ -174,6 +222,7 @@ footer {
 	margin-top: 3%;
 	width: 100%;
 	padding: 2%;
+	
 	p {
 		text-align: center;
 	}

@@ -130,12 +130,22 @@ table {
 * {
   box-sizing: border-box;
 }
+.flex-settings {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 3%;
+}
+.flex-settings-mobile {
+  flex-direction: column;
+}
 .box-content {
   background-color: #9099A2;
   padding: 2%;
   line-height: 1.5;
 }
 .text-format-title {
+  font-weight: bold;
   color: white;
   font-size: 2.4rem;
 }
@@ -150,28 +160,66 @@ html {
   font-size: 1.6rem;
   background-color: #D5D5D5;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
   background-color: #6D7993;
   align-items: center;
 }
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+  }
+}
 header h1 {
+  font-weight: bold;
   color: white;
   font-size: 2.4rem;
   padding: 1%;
   width: 50%;
+}
+@media (max-width: 500px) {
+  header h1 {
+    text-align: center;
+  }
 }
 header nav {
   width: 50%;
   display: flex;
   justify-content: space-evenly;
 }
+@media (max-width: 500px) {
+  header nav {
+    margin-top: 3%;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 header nav a {
   text-decoration: none;
   color: white;
 }
+@media (max-width: 500px) {
+  header nav a {
+    padding: 5%;
+    border-bottom: solid 1px black;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  header nav a.home {
+    border-top: solid 1px black;
+  }
+}
 h2 {
+  font-weight: bold;
   color: white;
   font-size: 2.4rem;
 }
@@ -186,6 +234,11 @@ section.bio div.about {
   flex-direction: row;
   width: 95%;
 }
+@media (max-width: 500px) {
+  section.bio div.about {
+    flex-direction: column;
+  }
+}
 section.bio div.about img {
   height: 300px;
   width: auto;
@@ -199,10 +252,10 @@ section.bio div.about div.right-about {
   line-height: 1.5;
 }
 section.work-experience {
-  margin-top: 3%;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  margin-top: 3%;
 }
 section.work-experience div.title {
   background-color: #9099A2;
@@ -223,16 +276,20 @@ section.work-experience div.date {
   width: 30%;
 }
 section.bottom-content {
-  margin-top: 3%;
-  width: 100%;
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
+  margin-top: 3%;
 }
 section.bottom-content div.skills {
   background-color: #9099A2;
   padding: 2%;
   line-height: 1.5;
   width: 46.2%;
+}
+section.bottom-content div.skills ul {
+  list-style-type: circle;
+  list-style-position: inside;
 }
 section.bottom-content div.contact {
   background-color: #9099A2;
