@@ -67,6 +67,10 @@ html, body {
 	font-size: 25px;
 }
 
+.center {
+	margin: 0 auto;
+}
+
 .container {
 	background-color: @primary;
 	color: @secondary;
@@ -87,6 +91,15 @@ html, body {
 			padding: 0px 15px;
 		}
 
+		@media (max-width: 500px){
+				flex-wrap: wrap;
+				flex-direction: column;
+				
+				a{
+					width: 100%;
+
+				}
+				}
 	}
 
 	h1{
@@ -110,12 +123,21 @@ html, body {
 			}
 
 			p{
-				font-size: 15px;
+				font-size: 20px;
 				width: 60%;
 			}
 			
 			img {
 				width: 45%;
+			}
+
+			@media (max-width: 500px){
+				.center;
+				margin-bottom: 15px;
+
+				img{
+					display: none;
+				}
 			}
 		}
 
@@ -125,14 +147,17 @@ html, body {
 			width: 85%;
 			margin-left: 4%;
 
+			img{
+				width: 45%;
+			}
+
 			.skillsContent{
 				.flex;
 				margin-right: 50px;
 
-			h2 {
-				
+			h2 {	
 				.h2resize;
-				margin-right: 45px;
+				
 			}
 
 			li {
@@ -140,6 +165,12 @@ html, body {
 				list-style-type: disc;
 				width: 45%;
 			}}
+
+			@media (max-width: 500px){
+				img{
+					display: none;
+				}
+			}
 		}
 
 		.work {
@@ -155,6 +186,20 @@ html, body {
 				font-size: 20px;
 				text-align: center;
 				border-bottom: 2px solid @secondary;
+			}
+
+			@media (max-width: 500px){
+				flex-direction: column;
+				
+				div{
+					border: 2px solid @secondary;
+					flex-direction: row;
+					margin-top: 10px;
+				}
+
+				p {
+					border-bottom: 2px solid @primary;
+				}
 			}
 		}
 
@@ -172,6 +217,10 @@ html, body {
 			h3 {
 				font-size: 20px;
 				margin-top: 10px;
+			}
+
+			@media (max-width: 500px){
+				.center;
 			}
 		}
 	}

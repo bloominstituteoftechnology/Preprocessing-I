@@ -140,6 +140,9 @@ body {
 .h2resize {
   font-size: 25px;
 }
+.center {
+  margin: 0 auto;
+}
 .container {
   background-color: #203731;
   color: #FFB612;
@@ -159,6 +162,15 @@ body {
   border: 2px solid #FFB612;
   padding: 0px 15px;
 }
+@media (max-width: 500px) {
+  .container nav {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .container nav a {
+    width: 100%;
+  }
+}
 .container h1 {
   font-size: 50px;
   text-align: center;
@@ -177,11 +189,20 @@ body {
   margin-bottom: 15px;
 }
 .container .content .intro p {
-  font-size: 15px;
+  font-size: 20px;
   width: 60%;
 }
 .container .content .intro img {
   width: 45%;
+}
+@media (max-width: 500px) {
+  .container .content .intro {
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  .container .content .intro img {
+    display: none;
+  }
 }
 .container .content .skills {
   display: flex;
@@ -189,18 +210,25 @@ body {
   width: 85%;
   margin-left: 4%;
 }
+.container .content .skills img {
+  width: 45%;
+}
 .container .content .skills .skillsContent {
   display: flex;
   margin-right: 50px;
 }
 .container .content .skills .skillsContent h2 {
   font-size: 25px;
-  margin-right: 45px;
 }
 .container .content .skills .skillsContent li {
   margin-top: 15px;
   list-style-type: disc;
   width: 45%;
+}
+@media (max-width: 500px) {
+  .container .content .skills img {
+    display: none;
+  }
 }
 .container .content .work {
   display: flex;
@@ -215,6 +243,19 @@ body {
   text-align: center;
   border-bottom: 2px solid #FFB612;
 }
+@media (max-width: 500px) {
+  .container .content .work {
+    flex-direction: column;
+  }
+  .container .content .work div {
+    border: 2px solid #FFB612;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  .container .content .work p {
+    border-bottom: 2px solid #203731;
+  }
+}
 .container .content .contact {
   display: flex;
   flex-direction: column;
@@ -227,4 +268,9 @@ body {
 .container .content .contact h3 {
   font-size: 20px;
   margin-top: 10px;
+}
+@media (max-width: 500px) {
+  .container .content .contact {
+    margin: 0 auto;
+  }
 }
