@@ -185,7 +185,7 @@ html {
 /*---- Header & Footer ----*/
 .header,
 .header *,
-.footer * {
+.footer {
   background: var(--primary-dark-color);
   font-family: Lato, Helvetica, Sans-Serif;
   color: var(--light-text-color);
@@ -198,19 +198,78 @@ html {
   justify-content: flex-end;
   padding: 1.15rem 0;
 }
-.navigation {
+.header .navigation {
   flex-basis: 45%;
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
 }
-.navigation a {
+.header .navigation a {
   font-size: 1.2rem;
   letter-spacing: 0.24rem;
   text-transform: uppercase;
   margin: 0 2.5%;
 }
-.navigation a:hover {
+.header .navigation a:hover {
   text-decoration: underline;
 }
 /*----- Footer -----*/
+.footer {
+  bottom: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  align-items: center;
+}
+.footer .cta-info,
+.footer .copyright-info {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  align-items: center;
+}
+.footer .cta-info .cta-text {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  align-items: center;
+}
+.footer .cta-info .cta-text p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+.footer .cta-info .cta-btn {
+  color: var(--light-text-color);
+  background: var(--accent-color);
+  justify-self: center;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: 0;
+  border-radius: 25px;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+.footer .cta-info .cta-links {
+  width: 40%;
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer .cta-info .cta-links a {
+  font-family: Lato, Helvetica, Sans-Serif;
+  color: var(--light-text-color);
+  font-size: 2rem;
+}
+.footer .copyright-info * {
+  font-family: Lato, Helvetica, Sans-Serif;
+  color: var(--light-text-color);
+  text-decoration: none;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  word-spacing: 0.25rem;
+}
