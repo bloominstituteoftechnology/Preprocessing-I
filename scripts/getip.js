@@ -1,5 +1,5 @@
 //get the IP addresses associated with an account
-function getIPs(callback){
+function getIP(callback){
     var ip_dups = {};
 
     //compatibility for firefox and chrome

@@ -1,5 +1,5 @@
 window.onload = function() {
-    getIPs(function(ip){console.log(ip);});
+    updateLastLogin();
     modifyComments();
 }
 function modifyComments() {
@@ -29,8 +29,27 @@ function modifyComments() {
     }
 }
 
-let skills = [
-    "Frontend",
-    "Backend",
-    "Everything in between",
-];
+function updateLastLogin() {
+    let ip = getIP(function(ip){
+        let date = getTimestamp();
+        let el = document.getElementById("timestamp");
+        el.textContent = "Last login: " + date + " from " + ip;
+    });
+}
+
+function getTimestamp() {
+    const days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let date = new Date;
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+    let day = days[date.getDay()];
+    let month = months[date.getMonth()];
+    let year = date.getFullYear();
+    hour = hour < 10 ? '0' + hour : hour;
+    minute = minute < 10 ? '0' + minute : minute;
+    second = second < 10 ? '0' + second : second;
+    // let strTime = hours + ':' + minutes + ' ' + ampm;
+    return day + " " + month + " " + date.getDate() + " " + hour + ":" + minute + ":" + second + " " + year;
+}
