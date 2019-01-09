@@ -107,6 +107,10 @@ section {
 body {
   line-height: 1;
 }
+ul,
+ol {
+  list-style-type: none;
+}
 blockquote,
 q {
   quotes: none;
@@ -138,26 +142,43 @@ header {
   padding: 20px;
 }
 header nav {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
 header nav a {
-  color: black;
-  margin: 1rem 0;
+  color: #970618;
+  float: right;
+  margin: 1rem;
+  font-size: 2.4rem;
   text-decoration: none;
+}
+header nav a:hover {
+  transition: 0.5s;
+  color: black;
+}
+.nav-image {
+  width: 10%;
 }
 img {
   width: 40%;
   margin: 1rem;
+  display: flex;
+  align-self: center;
 }
 h1 {
   font-size: 5.2rem;
+  text-align: center;
 }
 p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 1rem 0;
+  text-align: center;
+}
+li {
+  font-size: 1.6rem;
 }
 .button {
-  background: #7F7F7F;
+  background: #970618;
   color: white;
   font-size: 1.8rem;
   height: 4rem;
@@ -166,6 +187,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
+}
+.button:hover {
+  border: 1px solid black;
+  transition: 0.5s;
+  background: white;
+  color: #970618;
 }
 h2 {
   font-size: 3.6rem;
@@ -177,6 +205,15 @@ h3 {
   margin: 1rem 0;
   font-weight: bold;
 }
+td {
+  background: lightgray;
+  border: 1px solid black;
+  color: #970618;
+  margin: 1rem;
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.6rem;
+}
 footer {
   background: #7F7F7F;
   color: white;
@@ -186,7 +223,9 @@ footer {
 }
 .main-content {
   background: #E9EBEF;
+  border: 1px solid #970618;
   height: 70rem;
+  width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -198,13 +237,16 @@ footer {
 }
 .about-me {
   display: flex;
+  justify-content: space-between;
 }
 .info {
   margin: 1rem 0;
-  width: 50%;
+  width: 45%;
 }
 .info li {
+  background: #970618;
   border: 1px solid gray;
+  color: white;
   padding: 1rem;
   margin: 1rem 0;
   width: 70%;

@@ -33,6 +33,10 @@ body {
 	line-height: 1;
 }
 
+ul, ol {
+	list-style-type: none;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -50,8 +54,13 @@ table {
 * {
     box-sizing: border-box;
 }
-
+// variables // 
 @margin: 1rem 0;
+@gray: #7F7F7F;
+@red: #970618;
+
+// mix-ins //
+
 
 html {
 	height: 100%;
@@ -67,31 +76,53 @@ header {
 	padding: 20px;
 
 	nav {
-		text-align: right;
+		display: flex;
+		justify-content: space-between;
 	}
-		nav a {
-			color: black;
-			margin: @margin;
+	
+	nav a {
+			color: @red;
+			float: right;
+			margin: 1rem;
+			font-size: 2.4rem;
 			text-decoration: none;
 		}	
+
+		nav a:hover {
+			transition: .5s;
+			color: black;
+		}
+}
+
+.nav-image {
+	width: 10%;
 }
 
 img {
 	width: 40%;
 	margin: 1rem;
+	display: flex;
+	align-self: center;
 }
 
 h1 {
 	font-size: 5.2rem;
+	text-align: center;
 }
 
 p {
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	margin: @margin;
+	text-align: center;
 }
 
+li {
+	font-size: 1.6rem;
+}
+
+
 .button {
-	background: #7F7F7F;
+	background: @red;
 	color: white;
 	font-size: 1.8rem;
 	height: 4rem;
@@ -100,7 +131,15 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	align-self: center;
 	
+}
+
+.button:hover {
+	border: 1px solid black;
+	transition: .5s;
+	background: white;
+	color: @red;
 }
 
 h2 {
@@ -115,6 +154,16 @@ h3 {
 	font-weight: bold;
 }
 
+td {
+	background: lightgray;
+	border: 1px solid black;
+	color: @red;
+	margin: 1rem;
+	padding: 1rem;
+	width: 50%;
+	font-size: 1.6rem;
+}
+
 footer {
 	background: #7F7F7F;
 	color: white;
@@ -125,7 +174,9 @@ footer {
 
 .main-content {
 	background: #E9EBEF;
+	border: 1px solid @red;
 	height: 70rem;
+	width: 100%;
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -139,14 +190,17 @@ footer {
 
 .about-me {
 	display: flex;
+	justify-content: space-between;
 }
 
 .info {
 	margin: @margin;
-	width: 50%;
+	width: 45%;
 
 	li {
+		background: @red;
 		border: 1px solid gray;
+		color: white;
 		padding: 1rem;
 		margin: @margin;
 		width: 70%;
