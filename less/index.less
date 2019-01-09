@@ -6,6 +6,8 @@
 
 @font: 1.6rem;
 @fontType: 2rem;
+@branding: #808080;
+
 
 
 html, body, div, span, applet, object, iframe,
@@ -95,12 +97,9 @@ header{
 	display: flex;
 	justify-content: center;
 }
+
 navigation a{
-	color: black;
-	text-decoration: none; 
-  	font-size: 1.8rem;
-	margin-left:10px;
-	margin-right:10px;
+	.links();
 	
 }
 .banner{
@@ -110,11 +109,6 @@ navigation a{
 	background: #e9ecef;
 	padding: 20px;
 	
-}
-
-img {
-	height:300px;
-	width: 300px;
 }
 
 section{
@@ -131,7 +125,7 @@ button{
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: white;
-	background: #808080;
+	background: @branding;
 	border-radius: 2px;
 }
 
@@ -156,17 +150,18 @@ li{
 }
 
 .bottomContent{ 
-	border: 1px solid black;
 	display: flex; 
 	justify-content: center;
 }
 
 .projects{ 
-	max-width: 860px;
 	display: flex; 
 	justify-content: space-around; 
 	font-size: 1.6rem; 
 	padding: 20px;
+}
+.projects a{
+	.links();
 }
 
 footer{ 
@@ -176,6 +171,14 @@ footer{
 	font-size: 1.6rem; 
 	font-weight: bold;
 	color: white;
-	background: #808080;
+	background: @branding;
 	height: 50px;
+}
+
+.links{ 
+	color: black;
+	text-decoration: none; 
+  	font-size: 1.6rem;
+	margin-left:10px;
+	margin-right:10px;
 }
