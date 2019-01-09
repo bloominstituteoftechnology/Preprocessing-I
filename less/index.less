@@ -56,6 +56,15 @@ table {
 html, body {
     height: 100%;
 }
+
+body {
+	font-size: 62.5%
+}
+
+html {
+	font-size: 20px;
+}
+
 // -- ** -- **
 // -- ** -- **
 // VARIABLES
@@ -73,22 +82,30 @@ html, body {
 			@color2: #bebebe;
 
 // MIXIN 
+.displayMIXIN-Flex-Row {
+	display: flex;
+	flex-direction: row;
+}
 
-
+.displayMIXIN-Flex-Column {
+	display: flex;
+	flex-direction: column;
+}
 
 // -- ** -- **
 // -- ** -- **
 img {
-	width: 125px;
+	width: 100px;
 	border-radius: 25px;
+	margin-bottom: 10px;
 }
 
 // -- ** -- **
 // HEADER
 // -- ** -- **
 .header-container {
-	display: flex;
-	flex-direction: row;
+	.displayMIXIN-Flex-Row;
+
 	align-items: center;
 
 	.header-container-Right {
@@ -102,8 +119,7 @@ img {
 }
 
 .nameAddress {
-	display: flex;
-	flex-direction: column;
+	.displayMIXIN-Flex-Column;
 	align-items: center;
 
 	h1 {
@@ -165,8 +181,7 @@ img {
 // -- ** -- **
 
 .summary-container {
-	display: flex;
-	flex-direction: column;
+	.displayMIXIN-Flex-Column;
 	padding: 10px;
 	background: @colorMAIN;
 
@@ -175,8 +190,11 @@ img {
 		justify-content: center;
 		font-family: @fontVariable;
 		margin-bottom: 15px;
+		font-size: 20px;
 
 		.summaryStatement{
+			display: flex;
+			justify-content: center;
 			font-family: @fontVariableSub;
 		}
 	}
@@ -188,8 +206,7 @@ img {
 
 .content {
 	background: @color2;
-	display: flex;
-	flex-direction: column;
+	.displayMIXIN-Flex-Column;
 	font-family: @fontVariableSub;
 
 	.cards-Container {
@@ -207,18 +224,24 @@ img {
 				align-items: center;
 				background: @colorMAIN;
 				border-radius:5px;
+				padding: 15px;
 
 				.contentTitle {
 					font-family: @fontVariable;
 					margin-top: 10px;
 					margin-bottom: 10px;
+					font-size: 12px;
 				}
 
 				.contentSummary {
 					flex-grow:1;
 					display: flex;
 					align-items: center;
-					text-align: center;
+
+					li {
+						list-style-type: disc;
+						list-style-position: inside;
+					}
 				}
 			}
 		}
@@ -230,12 +253,41 @@ img {
 // DOWN TIME
 // -- ** -- **
 .downTime .contentCard-Container {
-	width: 30%;
+	width: 33%;
 }
 
 // -- ** -- **
 // WORK EXPERIENCE
 // -- ** -- **
+
+.workExperience .contentTitle {
+	display: flex;
+	justify-content: center;
+}
+
 .workExperience .contentCard-Container {
-	width: 30%;
+	width: 33%;
+}
+
+// -- ** -- **
+// CONTACT
+// -- ** -- **
+
+.accomplishments .contentCard-Container {
+	width: 50%;
+}
+
+// -- ** -- **
+// CONTACT
+// -- ** -- **
+.contact {
+	margin: 20px 0px 20px 0px;
+	font-family: @fontVariable;
+	display: flex;
+	justify-content: center;
+
+	.contact address {
+		display: flex;
+		justify-content: center;
+	}
 }
