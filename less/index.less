@@ -49,6 +49,14 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+
+/* Variables */
+
+@background-light: darkgray;
+@background-dark: gray;
+
+
 * {
     box-sizing: border-box;
 }
@@ -69,29 +77,29 @@ html, body {
 header {
     width: 100%;
 	display: flex;
-}
 
-header nav {
-    margin-top: 20px; 
-    width: 69.32%; 
-    justify-content: space-between;
-	display: flex;
-	padding-left: 10px;
-}
+	nav {
+		margin-top: 20px; 
+		width: 69.32%; 
+		justify-content: space-between;
+		display: flex;
+		padding-left: 10px;
+	}
 
-header nav a {
-    text-decoration: none;
-    color: #b0b0b0;
-    font-size: 1.6rem; 
-}
+	a {
+		text-decoration: none;
+		color: #b0b0b0;
+		font-size: 1.6rem; 
+	}
 
-header nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
+	a:hover {
+		text-decoration: underline;
+		color: black;
+	}
 
-header .headshot {
-    margin: 28px 0 0 10%;
+	.headshot {
+		margin: 28px 0 0 10%;
+	}
 }
 
 img {
@@ -100,11 +108,11 @@ img {
   }
 
 .main-content {
-	background-color: gray;
+	background-color: @background-dark
 }
 
 .intro, .skills, .work-history {
-	background-color: darkgray;
+	background-color: @background-light;
 	padding: 20px;
 }
 
@@ -145,6 +153,8 @@ th, td {
 	text-align: center;
 }
 
-.contact p {
+.contact {
+	p {
 	padding-left: 10px;
+	}
 }
