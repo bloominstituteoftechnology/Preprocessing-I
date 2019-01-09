@@ -173,6 +173,12 @@ html {
   justify-content: center;
 }
 
+.media-flex {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 // Header
 header {
   display: flex;
@@ -192,7 +198,7 @@ header {
       justify-content: column;
       padding: 1rem 12rem;
       align-items: left;
-      text: white;
+      color: white;
     }
   }
 }
@@ -254,6 +260,11 @@ header {
     flex-wrap: wrap;
     width: 50%;
 
+    @media (max-width: 50rem) {
+      width: 100%;
+      color: white;
+    }
+
     h2 {
       .font-size;
       margin-bottom: 1rem;
@@ -266,6 +277,11 @@ header {
     flex-wrap: wrap;
     width: 50%;
     margin-left: 3rem;
+
+    @media (max-width: 50rem) {
+      width: 100%;
+      color: white;
+    }
 
     h2 {
       .font-size;
@@ -280,6 +296,11 @@ header {
 }
 
 .bottom {
+  @media (max-width: 50rem) {
+    width: 100%;
+    color: white;
+  }
+
   h2 {
     margin-top: 2rem;
     border-bottom: 0.1rem solid gray;
@@ -307,5 +328,24 @@ header {
 
   tr:nth-child(even) {
     background-color: @historyColor;
+  }
+}
+
+footer {
+  .border-flex;
+  align-items: center;
+  align-content: flex-end;
+  height: 100px;
+  background: darkgray;
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+
+  @media (max-width: 50rem) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
   }
 }
