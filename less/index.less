@@ -57,10 +57,18 @@ html, body {
 	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 //variables
-@background: #F9FBF2;
-@background-2: #B0C4B1;
+@background: #D9A6A1; //pastel pink
+@background-2: #f7f7f7; //white smoke
+@footer-color: #9B8E9E; //Spanish grey
+@head-3: #252323;   //raisin black
 @font-color: #040F0F;
+@size-font: 1.6rem;
+@heading-3: 1.9rem;
 
 //mixins
 .display-flex(){
@@ -72,19 +80,131 @@ html, body {
 
 .container{
 	.display-flex();
+	max-width: 1200px;
 	width: 100%;
 	height: 100%;
+	margin: 0 auto;
 }
 
 .left {
+	margin: 0 auto;
 	width: 30%;
 	height: 100%;
 	background-color: @background;
 
+	img{
+		width: 100%;
+		margin-bottom: 10%;
+	}
+
+	nav {
+		justify-content: center;
+	}
+	a {
+		text-decoration: none;
+		display: block;
+		font-size: 1.9rem;
+		color: @font-color;
+		width: 100%;
+		margin-bottom: 30%;
+		margin-left: 30%;
+	}
+
 }
 
 .right {
+	margin: 0 auto;
 	width: 70%;
 	height: 100%;
 	background-color: @background-2;
+
+	header{
+		border-bottom: 2px solid @font-color;
+		margin-bottom: 2% ;
+		h1 {
+			font-size: 5.0rem;
+			text-align: center;
+			color: @font-color;
+			margin-bottom: 2%;
+		}
+		h2{
+			color: @font-color;
+			font-size: 3.5rem;
+			text-align: center;
+			margin-bottom: 2%;
+		}
+		p {
+			color: @font-color;
+			font-size: 1.9rem;
+			text-align: center;
+		}
+
+	}
+
+	.contact {
+		.display-flex();
+		margin-bottom: 2%;
+
+		.col{
+			margin-left: 8%;
+
+			p{
+				font-size: @size-font;
+				color: @font-color;
+			}
+
+			h3{
+				font-size: @heading-3;
+				color: @head-3;
+				text-align: center;
+				margin: 2%;
+			}
+
+		}
+
+	}
+
+	.intro{
+		margin: 0 auto;
+		.display-flex();
+
+		p {
+			font-size: @size-font;
+			margin-top: 3%;
+			color: @font-color;
+		}
+	}
+
+	.skills{
+		margin-top: 7%;
+		.display-flex();
+		font-size: @size-font;
+
+		.col-4 {
+			margin: 0 10%;
+
+			li {
+			margin-top: 5%;
+			color: @font-color;
+			}
+		}
+
+		.col-5{
+			margin: 0 10%;
+
+			li {
+			margin-top: 5%;
+			color: @font-color;
+
+			}
+		}
+		
+	}
+}
+
+footer {
+	background-color: @footer-color;
+	width: 100%;
+	height: 10%;
+	margin: 0 auto;
 }
