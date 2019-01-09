@@ -57,10 +57,52 @@ html, body {
     height: 100%;
 }
 
+// end of original CSS code
+
+//set font size to 62.5% to allow easy use of 10-based rems
 html {
   font-size: 62.5%;
 }
 
+//set base font size to 16px
 body {
   font-size: 1.6rem;
+  background: black; //setting this only to see body that's not in container
+}
+
+// VAR VAR VAR
+@splash: #E9ECEF;
+
+//define flex() mixin
+.flex(@justify) {
+  display: flex;
+  justify-content: @justify;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px 4%;
+  .splash {
+    background: @splash;
+    width: 100%;
+  }
+}
+
+header {
+  .flex(flex-end);
+}
+
+nav {
+  width: 50%;
+  .flex(flex-end);
+  a {
+    margin-left: 10%;
+  }
 }
