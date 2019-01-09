@@ -1,3 +1,6 @@
+@import "variables.less";
+@import "mixins.less";
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -55,6 +58,40 @@ table {
 
 html, body {
 	height: 100%;
-	// background: red;
+	font-size: 62.5%;
+	font-family: @fontFamily;
+	// background:@jumboBgColor;
+}
+
+.container {
+	font-size: @pFontSize;
+	margin: 1%;
+
+	.header{
+		.flex-set(@justify:space-between);
+		.defaultMargin;
+		font-size: @h2FontSize;
+	}
+
+	.jumbotron {
+		.flex-set(@flexdir: column);
+		.defaultPadding();
+		background-color: @jumboBgColor;
+		
+		.img {
+			.defaultMargin();
+
+			img {
+				width: 30%;
+				max-width: 80px;
+				// height: 50px;
+			}
+		}
+
+		.name {
+			.defaultMargin();
+			font-size: @h1FontSize;
+		}
+	}
 }
 
