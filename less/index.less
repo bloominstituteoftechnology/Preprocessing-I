@@ -161,6 +161,17 @@ html {
 
 // Variables
 @lightGray: rgb(238, 238, 238);
+@historyColor: #dddddd;
+
+// Mixins
+.font-size {
+  font-size: 2.3rem;
+}
+
+.border-flex {
+  display: flex;
+  justify-content: center;
+}
 
 // Header
 header {
@@ -244,7 +255,7 @@ header {
     width: 50%;
 
     h2 {
-      font-size: 2.3rem;
+      .font-size;
       margin-bottom: 1rem;
     }
   }
@@ -257,7 +268,7 @@ header {
     margin-left: 3rem;
 
     h2 {
-      font-size: 2.3rem;
+      .font-size;
       margin-bottom: 1rem;
     }
 
@@ -265,5 +276,36 @@ header {
       border: 0.1rem solid rgb(211, 211, 211);
       padding: 0.5rem 0 0.5rem 1rem;
     }
+  }
+}
+
+.bottom {
+  h2 {
+    margin-top: 2rem;
+    border-bottom: 0.1rem solid gray;
+    padding: 1rem 0;
+    .font-size;
+  }
+
+  #history {
+    width: 100%;
+  }
+  table,
+  th,
+  td {
+    margin: 0.1rem 0 3rem 0;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: @historyColor;
   }
 }
