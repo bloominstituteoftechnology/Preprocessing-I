@@ -68,30 +68,29 @@ body {
 
 .container {
 	width: 800px;
-	height: 100%;
 	margin: 0 auto;
 	background: @content-color;
 	@media (max-width: 500px){
 		width: 80%;
-		background: blue;
 	}
 	//mixins
-	.nav-footer-mixin() {						//mixin 1 header&nav//
+	.nav-footer-mixin() {						
 		width: 100%;
 		font-size: @links-n-such;
+		font-family: @content-color, sans-serif;
 		display: flex;
 		justify-content: space-evenly;
 	}
 	.h2-mixin(){
-		font-family: @main-family;
+		font-family: @header-font, @main-family;
 		font-size: @secondary-h;
 		color: @body-color;
 		padding: 2%;
 		text-decoration: underline;
 		display: flex;
 	}
-	.content-mixin() {					//mixin 3 content//
-		font-family: @main-family;
+	.content-mixin() {					
+		font-family: @content-font, @main-family;
 		font-size: @secondary-p;
 		color: @p-color;
 	}
@@ -109,7 +108,7 @@ body {
 	}
 		h1 {
 			font-size: @main-header;
-			font-family: @main-family;
+			font-family: @header-font, @main-family;
 			color: @body-color;
 			
 		}
@@ -122,7 +121,7 @@ body {
 			}
 			a {
 				color: @a-color;
-				font-family: @main-family;
+				font-family: @content-font, @main-family;
 				text-decoration: underline overline;
 				@media (max-width: 500px) {
 					padding: 2%;
@@ -141,10 +140,15 @@ body {
 		  width: 50%;
 		  padding: 2%;
 		  margin: 0 auto;
-		  
+		  @media (max-width: 500px) {
+				border: 1rem double @body-color;
+				width: 90%;
+				h2 {
+					align-self: flex-start;
+				}
+		}
 		  	h2 {
-				  .h2-mixin;
-				  		  
+				  .h2-mixin;		  
 				}
 			p {
 				.content-mixin;
@@ -154,11 +158,16 @@ body {
 				margin: 3%;
 				align-self: flex-end;
 				background-color: @body-color;
-				font-family: @main-family;
+				font-family: @content-font, @main-family;
 				font-weight: 800;
 				cursor: pointer;
+				@media (max-width: 500px) {
+					align-self: center;
+				}
 			}
-				.button:hover {background-color: @p-color}
+				.button:hover {background-color: @p-color;
+							   text-transform: uppercase;
+				}
 
 				.button:active {
 				background-color: @content-color;
@@ -172,10 +181,14 @@ body {
 		 margin: 5%;
 		 padding: 2%;
 		 border: 1rem dashed @body-color;
-
+		 @media (max-width: 500px) {
+			border: 1rem double @body-color;
+			flex-direction: column;
+			width: 90%;		
+			padding: 2% 8%;
+		}
 		  	h2 {
 				 .h2-mixin;
-				 
 			  }
 			li {
 				.content-mixin;
@@ -191,10 +204,28 @@ body {
 		color: @a-color;
 		padding: 2%;
 		margin: 0%;
+		font-family: @content-font;
+		font-size: 1.6rem;
+		
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 5%;
+			h2{
+				text-decoration: underline;
+				padding: 2%;
+			}
+			p{
+				padding: 2%;
+			}
+		}
 	}
 	
 }
 
+@header-font: 'Coiny'; 
+@content-font: 'Roboto Condensed';
 @main-family: sans-serif;
 @main-header: 6rem; 
 @links-n-such: 2rem;
