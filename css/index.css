@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -127,6 +127,12 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
+.padding {
+  padding: 10px;
+}
+.bordered {
+  border-bottom: 1px solid lightskyblue;
+}
 * {
   box-sizing: border-box;
 }
@@ -143,105 +149,134 @@ body {
   max-width: 880px;
   margin: auto;
   font-size: 1.8rem;
-  background-color: blanchedalmond;
 }
 header {
-  width: 100%;
+  width: 95%;
   display: flex;
-}
-header h1 {
-  font-family: 'Bangers', cursive;
-  letter-spacing: 1px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 4rem;
-  width: 800px;
-  color: #ED61AD;
+  margin: 25px;
 }
 header nav {
   display: flex;
-  margin-top: 100px;
+  justify-content: flex-end;
+  width: 100%;
 }
 header nav a {
   text-decoration: none;
-  margin-bottom: 30px;
-  display: flex;
-  color: #ED61AD;
+  margin: 15px;
   font-size: 1.8rem;
-  justify-content: space-around;
-  text-align: right;
 }
 header nav a:hover {
   text-decoration: underline;
   color: orange;
 }
-.intro-content p {
-  font-family: 'Courier New', cursive;
+.intro {
+  background-color: #fafad2;
+  padding: 10px;
+  margin: 15px;
+  width: 95%;
+}
+.intro h1 {
+  padding: 10px;
+  font-size: 2.8rem;
+}
+.intro h1 h2 {
+  font-family: "Courier New", cursive;
   font-size: 1.8rem;
-  line-height: 1.3;
-  text-align: left;
-  padding: 0px;
-  justify-content: center;
-  margin: 0 82px 0 0;
+  padding: 10px;
 }
-.intro-content button {
-  border: 0.5px double orange;
-  justify-content: center;
-  font-size: 1rem;
-  background: white;
-  width: 100px;
-  height: 32px;
-  margin-top: 10px;
+.intro h1 h2 p {
+  font-size: 1.4rem;
+  padding: 10px;
+  line-height: 2;
+  font-family: cursive;
+}
+.intro button {
+  font-size: 1.2rem;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
-.skill-content h2 {
-  border-top: 2px solid blue;
-  border-bottom: 2px solid blue;
-  margin: 30px 0 35px 0;
-  padding: 15px 0;
-  font-size: 16px;
-  background-color: aliceblue;
-  color: #ED61AD;
+.main {
+  display: flex;
+  width: 98%;
 }
-.skill-content p {
-  padding-right: 20px;
-  margin: 30px auto;
-  font: 1 rem;
+.main .text {
+  width: 500px;
+  justify-content: space-between;
+  margin: 20px;
+  font-family: cursive;
+  font-size: 1.8rem;
 }
-.skill-content ul {
+.main .text p {
+  font-size: 1.4rem;
+  padding: 10px 10px 0;
+  line-height: 1.4;
+  font-family: cursive;
+}
+.main .text ul li {
+  border-bottom: 1px solid lightskyblue;
+  font-size: 1.3rem;
+  padding: 3px;
+  align-content: center;
+  margin-left: 10px;
+  list-style: square;
+}
+.work-history h2 {
+  margin: 10px;
+  width: 95%;
+  font-family: cursive;
+  font-size: 1.8rem;
+}
+.work-history table {
+  border-collapse: collapse;
+  width: 95%;
   margin: 20px;
 }
-.skill-content ul li {
-  list-style: square;
-  padding: 5px;
-  font: 1 rem;
+.work-history table th {
+  text-align: left;
+  padding: 10px;
+  font-size: 1.4rem;
+  color: red;
 }
-.work-content h2 {
-  border-top: 2px solid blue;
-  border-bottom: 2px solid blue;
-  margin: 30px 0 35px 0;
-  padding: 15px 0;
-  font-size: 16px;
-  background-color: aliceblue;
-  color: #ED61AD;
+.work-history table td {
+  text-align: left;
+  padding: 10px;
+  font-size: 1.3rem;
 }
-.work-content p {
-  padding-right: 20px;
-  margin: 10px auto;
-  font: 1 rem;
-}
-.contact-content h2 {
-  margin: 15px 0;
-  line-height: 1.3;
-  font-family: Arial, cursive;
-  color: blue;
+.work-history table tr:nth-child(odd) {
+  background-color: lightcyan;
 }
 footer {
+  margin-top: 40px;
   text-align: center;
-  margin: 40px 0 20px;
-  background-color: lightsalmon;
+  padding: 8px;
+  background-color: lightblue;
+  width: 98%;
 }
-/* phone */
-@media (max-width: 500px) {
-  background: blue;
+.team h2 {
+  color: rebeccapurple;
+  font-size: 2.8rem;
+  padding-left: 30px;
+}
+.team input {
+  width: 30%;
+  padding: 10px;
+  margin: 20px 10px 20px;
+}
+textarea {
+  width: 80%;
+  height: 200px;
+  margin-top: 10px;
+}
+.contact {
+  margin-top: 20px;
+  background-color: #fafad2;
+  width: 98%;
+}
+.contact p {
+  font-size: 1.6rem;
+  padding: 10px 10px 0;
+  line-height: 1.4;
+  font-family: cursive;
+  color: red;
 }
