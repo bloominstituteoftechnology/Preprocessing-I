@@ -8,16 +8,24 @@
 @color-var: #538DBD;
 // FONTS
 @font: 'Roboto Mono', monospace;
+// MIXINS
+.mixin-size(@height: initial, @width: initial) {
+    height: @height;
+    width: @width;
+}
+.mixin-font(@family, @size) {
+    font-family: @family;
+    font-size: @size;
+}
 // STYLE
 body {
     background-color: @color-background;
 }
 .container {
-    font-family: @font;
-    font-size: 1.75rem;
+    .mixin-font(@font, 1.75rem);
     .line {
         display: block;
-        height: 2rem;
+        .mixin-size(2rem);
         line-height: 2rem;
         //colors
         .color-comment    {color: @color-comment;}
@@ -53,6 +61,6 @@ body {
         }
     }
     .long-string {
-        height: fit-content;
+        .mixin-size(fit-content);
     }
 }
