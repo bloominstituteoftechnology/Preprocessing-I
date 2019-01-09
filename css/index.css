@@ -141,13 +141,21 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Staatliches', cursive;
 }
 .container {
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: #EBF5EE;
   padding: 0 20px;
+}
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px;
+  }
 }
 .container header {
   display: flex;
@@ -157,39 +165,94 @@ h5 {
 .container header nav {
   padding: 20px;
 }
+@media (max-width: 500px) {
+  .container header nav {
+    padding: 20px;
+  }
+}
 .container header nav a {
   text-decoration: none;
-  padding: 30px;
+  padding: 25px;
   background-color: #283044;
   color: #E88D67;
 }
+@media (max-width: 500px) {
+  .container header nav a {
+    padding: 8px;
+  }
+}
 .container header nav a:hover {
   color: #BFA89E;
+}
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 .container .intro {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .container .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .container .intro .aboutme {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 300px;
 }
+@media (max-width: 500px) {
+  .container .intro .aboutme {
+    width: 100%;
+  }
+}
 .container .intro .aboutme img {
-  width: 100%;
+  width: 300px;
   height: 300px;
 }
 .container .intro .aboutme h1 {
-  font-weight: 700;
-  font-size: 3rem;
+  font-weight: 900;
+  font-size: 3.5rem;
+  padding: 10px 0;
+}
+.container .intro .aboutme p {
+  text-align: center;
+}
+.container .intro .aboutme address {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.container .intro .aboutme address h4 {
+  width: 100%;
+  text-align: center;
+  margin: 5px;
+}
+.container .intro .aboutme address a {
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  margin: 5px;
+  color: #A54657;
 }
 .container .intro .skill-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 65%;
+  width: 60%;
+  padding: 10px;
   text-align: center;
 }
 .container .intro .skill-list .skill {
@@ -200,10 +263,32 @@ h5 {
   color: #EBF5EE;
   text-decoration: none;
 }
+@media (max-width: 500px) {
+  .container .intro .skill-list .skill {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 500px) {
+  .container .intro .skill-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
 .container .education {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  .container .education {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .container .education .school {
   display: flex;
@@ -218,13 +303,26 @@ h5 {
   text-align: center;
   margin: 20px 0;
 }
+@media (max-width: 500px) {
+  .container .education .school {
+    font-size: 0.8rem;
+  }
+}
 .container .education .school i {
   font-size: 4rem;
+}
+@media (max-width: 500px) {
+  .container .education .school i {
+    font-size: 3rem;
+  }
 }
 .container .employment {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.container .employment .work {
+  padding: 1rem 0;
 }
 .container .employment .work .work-info {
   display: flex;

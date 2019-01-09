@@ -60,7 +60,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Staatliches', cursive;
 }
 
 @darkblue: #283044;
@@ -86,10 +86,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-	width: 900px;
+	max-width: 900px;
 	margin: 0 auto;
 	background-color: @egg;
 	padding: 0 20px;
+
+	@media (max-width: 500px) {
+		.flex(column, center);
+		margin: 15px;
+	}
 
 	header {
 		.flex(row, flex-end);
@@ -97,40 +102,93 @@ h1, h2, h3, h4, h5 {
 		nav {
 			padding: 20px;
 
+			@media (max-width: 500px) {
+				padding: 20px;
+			}
+
 			a {
 				text-decoration: none;
-				padding: 30px;
+				padding: 25px;
 				background-color: @darkblue;
 				color: @orange;
+
+				@media (max-width: 500px) {
+					padding: 8px;
+				}
 			}
 			
 			a:hover {
 				color: @tan;
 			}
+
+			
 		}
+
+		@media (max-width: 500px) {
+			.flex(row, center);
+		  }
 	}
 
 	.intro {
 		.flex(row, space-between);
 
+		@media(max-width:500px) {
+			.flex(column, center);
+			.items(center);
+		}
+
 		.aboutme {
 			.flex(column, center);
+			.items(center);
 			width: 300px;
 
-			img {
+			@media (max-width: 500px) {
 				width: 100%;
+			}
+
+			img {
+				width: 300px;
 				height: 300px;
 			}
 
 			h1 {
-				font-weight: 700;
-				font-size: 3rem;
+				font-weight: 900;
+				font-size: 3.5rem;
+				padding: 10px 0;
+			}
+
+			p {
+				text-align: center;
+			}
+
+			address {
+				.flex(row, center);
+				flex-wrap: wrap;
+				padding: 10px 0;
+
+				h4 {
+					width: 100%;
+					text-align: center;
+					margin: 5px;
+				}
+
+				a {
+					width: 100%;
+					text-decoration: none;
+					text-align: center;
+					margin: 5px;
+					color: @red;
+				}
 			}
 
 		}
 
 		.skill-list {
 			.flex(column, space-between);
+
+			width: 60%;
+			padding: 10px;
+			text-align: center;
 
 			.skill {
 				border-left: 10px solid @lightblue;
@@ -139,15 +197,28 @@ h1, h2, h3, h4, h5 {
 				background-color: @darkblue;
 				color: @egg;
 				text-decoration: none;
+
+
+				@media (max-width: 500px) {
+					width: 100%;
+					margin-bottom: 5px;
+				}
 			}
-			
-			width: 65%;
-			text-align: center;
+
+			@media (max-width: 500px) {
+				.flex(row, flex-start);
+				width: 100%;
+				flex-wrap: wrap;
+			}
 		}
 	}
 
 	.education {
 		.flex(row, space-evenly);
+
+		@media (max-width: 500px) {
+			.flex(row, space-between);
+		}
 
 		.school {
 			.flex(column, space-evenly);
@@ -160,8 +231,16 @@ h1, h2, h3, h4, h5 {
 			text-align: center;
 			margin: 20px 0;
 
+			@media (max-width: 500px) {
+				font-size: .8rem;
+			}
+
 			i {
 				font-size: 4rem;
+
+				@media (max-width: 500px) {
+					font-size: 3rem;
+				}
 			}
 		}
 	}
@@ -170,6 +249,8 @@ h1, h2, h3, h4, h5 {
 		.flex(column, flex-start);
 
 		.work {
+			padding: 1rem 0;
+
 			.work-info {
 				.flex(row, space-between);
 
@@ -188,6 +269,7 @@ h1, h2, h3, h4, h5 {
 
 	}
 }
+
 
 
 
