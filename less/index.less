@@ -59,6 +59,98 @@ html, body {
 
 /* Start of CSS */
 
-html {
-	font-size: 62.5%;
+@borderColor: blue;
+
+.flexbox-mixin {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
+
+.secTwo-Mixin {
+	margin-top: 5%;
+			height: 300px;
+			width: 300px;
+			border: 2px solid @borderColor;
+}
+
+
+.container {
+	margin: 0 15% 0 15%;
+	height: 100%;
+
+	
+	html {
+		font-size: 62.5%;
+		
+	}
+
+	nav {
+		.flexbox-mixin();
+		justify-content: center;
+		flex-direction: row;
+		align-content: space-evenly;
+	}
+
+	 a{
+		.flexbox-mixin();
+		font-size: 1.2rem;
+		flex-direction: row;
+		margin: 1%;
+		
+	}
+
+	.pictureBlock {
+		.flexbox-mixin();		
+		flex-direction: row;
+		justify-content: space-between;
+		background-color: lightgrey;
+		margin-top: 5%;
+		height: 45%;
+		width: 100%;
+
+		.blackBox {
+			margin-top: 3%;
+			margin-left: 5%;
+			height: 300px;
+			width: 300px;
+			color: yellow;
+			.flexbox-mixin();
+			justify-content: center;
+			align-items: center;
+			background-color: black;
+		}
+
+		.intro {
+			height: 300px;
+			width: 300px;
+			margin-top: 5%;
+			margin-right: 5%;
+			
+			
+	
+		}
+	}
+
+	.sectionTwo {
+		.flexbox-mixin();
+		justify-content: space-evenly;
+		margin-top: 5%;
+		height: 50%;
+		width: 100%;
+		
+
+		.skills {
+			.secTwo-Mixin();
+		}
+
+		.workHistory {
+		.secTwo-Mixin();
+		}
+	}
+
+}
+
+
