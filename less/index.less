@@ -59,25 +59,28 @@ html, body {
 // -- ** -- **
 // -- ** -- **
 // VARIABLES
-@fontVariable: 'Cinzel', serif;
-@spacingMain: 50px;
-@spacing2: 10px;
+	//FONTS
+		// Main Font
+			@fontVariable: 'Cinzel', serif;
+		// Sub Font
+			@fontVariableSub: 'Raleway', serif;
 
-	//--colors
-	@colorMAIN: #708090;
-	@color2: #bebebe;
+
+	//COLORS
+		// Main
+			@colorMAIN: #708090;
+		// Sub
+			@color2: #bebebe;
 
 // MIXIN 
-.borderMIXIN {
-	border: 1px solid black;
-}
+
+
 
 // -- ** -- **
 // -- ** -- **
 img {
-	width: 150px;
+	width: 125px;
 	border-radius: 25px;
-
 }
 
 // -- ** -- **
@@ -91,7 +94,8 @@ img {
 	.header-container-Right {
 		flex-grow: 1;
 		display: flex;
-		flex-direction: row;
+
+		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
 	}
@@ -105,109 +109,133 @@ img {
 	h1 {
 		font-family: @fontVariable;
 		font-size: 30px;
-		margin-bottom: 15px;
 	}
 
 	address {
 		display: flex;
 		text-align: center;
+		font-family: @fontVariable;
 	}
 }
 
-.menu {
+// MENU
+.dropbtn {
+	font-family: @fontVariable;
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+
+.dropdown {
 	display: flex;
-
-	p {
-		display: flex; 
-		text-align: center;
-	}
+	// position: relative;
+	// display: inline-block;
 }
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 
 // -- ** -- **
 // PERSONAL SUMMARY
 // -- ** -- **
-.contentCard {
+
+.summary-container {
 	display: flex;
-	padding: 15px;
-	background: yellow;
-}
-
-.contentCard-Container {
-	background: blue;
-}
-
-
-.title {
-	display: inline-block;
-	font-family: @fontVariable;
-}
-
-.personalSummary {
-	display:flex;
 	flex-direction: column;
+	padding: 10px;
+	background: @colorMAIN;
+
+	.summaryTitle {
+		display: flex;
+		justify-content: center;
+		font-family: @fontVariable;
+		margin-bottom: 15px;
+
+		.summaryStatement{
+			font-family: @fontVariableSub;
+		}
+	}
 }
 
-.offtimeActivities, .proudestAccomplishments {
+// -- ** -- **
+// CONTENT
+// -- ** -- **
+
+.content {
+	background: @color2;
 	display: flex;
+	flex-direction: column;
+	font-family: @fontVariableSub;
+
+	.cards-Container {
+		display: flex;
+		justify-content: space-around;
+
+		.contentCard-Container {
+			display: flex;
+			padding: 10px;
+
+
+			.contentCard {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background: @colorMAIN;
+				border-radius:5px;
+
+				.contentTitle {
+					font-family: @fontVariable;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+
+				.contentSummary {
+					flex-grow:1;
+					display: flex;
+					align-items: center;
+					text-align: center;
+				}
+			}
+		}
+	}
 }
 
-	.offtimeActivities {
-		justify-content: space-between;
-	
-		.contentCard {
-			width: 30%;
-		}
-	}
 
-	.proudestAccomplishments {
-		justify-content: space-around;
-		
-		.contentCard {
-			width: 45%;
-		}
-	}
-	
+// -- ** -- **
+// DOWN TIME
+// -- ** -- **
+.downTime .contentCard-Container {
+	width: 30%;
+}
 
 // -- ** -- **
 // WORK EXPERIENCE
 // -- ** -- **
-
-.experience-container {
-	display:flex;
-	justify-content: space-around;
-}
-
-.experienceEntry {
-	display: flex;
-	flex-direction: column;
-
-	.time {
-		font-style: italic;
-		color: orange;
-
-	}
-}
-
-
-.workExperience {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-
-	.title {
-		text-align: center;
-		margin-bottom: 15px;
-	}
-}
-
-.subContainer-Experience-LEFT {
-	padding-top: 150px;
-}
-
-.subContainer-Experience-MIDDLE {
-	padding-top: 100px;
-}
-
-.subContainer-Experience-RIGHT {
-	padding-top: 50px;	
+.workExperience .contentCard-Container {
+	width: 30%;
 }

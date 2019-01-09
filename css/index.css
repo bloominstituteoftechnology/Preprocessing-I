@@ -134,11 +134,8 @@ html,
 body {
   height: 100%;
 }
-.borderMIXIN {
-  border: 1px solid black;
-}
 img {
-  width: 150px;
+  width: 125px;
   border-radius: 25px;
 }
 .header-container {
@@ -149,7 +146,7 @@ img {
 .header-container .header-container-Right {
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
@@ -161,78 +158,99 @@ img {
 .nameAddress h1 {
   font-family: 'Cinzel', serif;
   font-size: 30px;
-  margin-bottom: 15px;
 }
 .nameAddress address {
   display: flex;
   text-align: center;
-}
-.menu {
-  display: flex;
-}
-.menu p {
-  display: flex;
-  text-align: center;
-}
-.contentCard {
-  display: flex;
-  padding: 15px;
-  background: yellow;
-}
-.contentCard-Container {
-  background: blue;
-}
-.title {
-  display: inline-block;
   font-family: 'Cinzel', serif;
 }
-.personalSummary {
+.dropbtn {
+  font-family: 'Cinzel', serif;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown {
+  display: flex;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+.summary-container {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  background: #708090;
 }
-.offtimeActivities,
-.proudestAccomplishments {
-  display: flex;
-}
-.offtimeActivities {
-  justify-content: space-between;
-}
-.offtimeActivities .contentCard {
-  width: 30%;
-}
-.proudestAccomplishments {
-  justify-content: space-around;
-}
-.proudestAccomplishments .contentCard {
-  width: 45%;
-}
-.experience-container {
-  display: flex;
-  justify-content: space-around;
-}
-.experienceEntry {
-  display: flex;
-  flex-direction: column;
-}
-.experienceEntry .time {
-  font-style: italic;
-  color: orange;
-}
-.workExperience {
+.summary-container .summaryTitle {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-}
-.workExperience .title {
-  text-align: center;
+  font-family: 'Cinzel', serif;
   margin-bottom: 15px;
 }
-.subContainer-Experience-LEFT {
-  padding-top: 150px;
+.summary-container .summaryTitle .summaryStatement {
+  font-family: 'Raleway', serif;
 }
-.subContainer-Experience-MIDDLE {
-  padding-top: 100px;
+.content {
+  background: #bebebe;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', serif;
 }
-.subContainer-Experience-RIGHT {
-  padding-top: 50px;
+.content .cards-Container {
+  display: flex;
+  justify-content: space-around;
+}
+.content .cards-Container .contentCard-Container {
+  display: flex;
+  padding: 10px;
+}
+.content .cards-Container .contentCard-Container .contentCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #708090;
+  border-radius: 5px;
+}
+.content .cards-Container .contentCard-Container .contentCard .contentTitle {
+  font-family: 'Cinzel', serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.content .cards-Container .contentCard-Container .contentCard .contentSummary {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.downTime .contentCard-Container {
+  width: 30%;
+}
+.workExperience .contentCard-Container {
+  width: 30%;
 }
