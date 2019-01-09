@@ -48,7 +48,8 @@ table {
 	border-spacing: 0;
 }
 
-@highlight: rgb(200, 218, 42);
+@highlight: #65DEF1;
+@light-highlight: #F9B686;
 @font-color: black;
 @font-size: 14px;
 @spacing: 4px;
@@ -60,11 +61,13 @@ table {
 
 html, body {
 	height: 100%;
+	background-color: @highlight;
 	.font-class;
 	.flex-box-row;
 }
 
-// default font class for all areas with fonts.
+//mixins
+
 .font-class{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: @font-size;
@@ -72,20 +75,20 @@ html, body {
 	.links-class;
 }
 
-//all links colored highlight color
 .links-class{
 
 	a{
+		font-size: @font-size*2;
 		font-weight: bold;
 		color: rgb(26, 25, 25);
+		text-decoration: none;
+		border-bottom: 4px solid white;
 	}
 	a:hover{
-		text-decoration-color: @font-color;
-		color: white;
+		border-bottom: 4px solid @font-color;
+		color: @highlight;
 	}
 }
-
-//flex box creator
 
 .flex-box-row{
 	display: flex;
@@ -94,36 +97,101 @@ html, body {
 	flex-wrap: wrap;
 }
 
+.h2{
+		h2{
+			font-family: 'Roboto Slab', serif;
+		font-size: @font-size*2;
+		color: @highlight;
+		width: 100%;
+		padding-bottom: @spacing*2;
+		}
+}
+
 //normal css
 
 .container{
-	width: 600px;
-	border-left: @spacing*4 solid @highlight;
-	border-right: @spacing*4 solid @highlight;
+	width: 700px;
+	border-left: @spacing*10 solid @light-highlight;
+	border-right: @spacing*2 solid #F9D5BB;
 	padding: @spacing*4;
+	.flex-box-row;
+	align-content: flex-start;
+	justify-content: space-between;
+	background-color: white;
 
-	header navbar{
-		.flex-box-row;
-		font-size: @font-size*2;
-		justify-content: space-evenly;
-		
-		background-color: @highlight;
-		padding-top: @spacing*2;
+	@media(max-width: 700px){
+		width: 500px;
+	}
 
-		
-		img{
-			border-radius: 250px;
-			width: 100px;
-			height: 100px;
-			margin: @spacing*4 0 0 0;
-			box-shadow: 4px	4px 4px black;
+	@media(max-width: 500px){
+		width: 90%;
+	}
+
+	header {
+
+		margin-bottom: @spacing*2;
+		border-radius: 50px;
+
+		navbar{
+			.flex-box-row;
+			justify-content: flex-start;
+
+			a{
+				margin-left: @spacing*2;
+				font-size: @font-size*1.2;
+				margin-right: 15px;
+				padding-top: @spacing*2;
+			}
+
+			h1{
+				width: 100%;
+				font-family: 'Roboto Slab', serif;
+				font-size: @font-size*5;
+				color: black;
+				margin-top: @spacing*2;
+				padding-bottom: @spacing*2;
+				padding-left: @spacing*2;
+				background-color: @light-highlight;
+
+				@media(max-width:500px){
+					width: 95%;
+					font-size: 4.5rem;
+				}
+			}
 		}
+	}
 
-		h1{
-			font-family: 'Roboto Slab', serif;
-			font-size: @font-size*3;
-			color: black;
-			padding-top: @spacing*15;
+	.two-wide{
+		width: 47%;
+		margin-bottom: @spacing*4;
+		.h2;
+		line-height: 20px;
+
+		@media (max-width: 500px){
+			width: 100%;
+		}
+	}
+
+	.box{
+		ul{
+			li{
+				padding: @spacing;
+			}
+			li:nth-child(odd){
+				background-color: @light-highlight;
+			}
+			li:nth-child(even){
+				background-color: #F9D5BB;
+			}
+		}
+	}
+
+	.one-wide{
+		.h2;
+		margin-top: @spacing*4;
+		margin-bottom: @spacing*7;
+		ul{
+
 		}
 	}
 	
