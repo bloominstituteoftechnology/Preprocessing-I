@@ -134,128 +134,136 @@ html {
   font-size: 62.5%;
   color: rgba(0, 0, 0, 0.815);
 }
-header {
+.container {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+}
+.container header {
   display: flex;
   padding: 25px;
   justify-content: space-between;
   background-color: rgba(62, 144, 44, 0.849);
 }
 @media (max-width: 500px) {
-  header {
-    flex-direction: column;
+  .container header {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
-header h1 {
+.container header h1 {
   font-size: 3.5rem;
   font-weight: bold;
   font-family: 'Merienda', cursive;
 }
 @media (max-width: 500px) {
-  header h1 {
+  .container header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
   }
 }
-header nav {
+.container header nav {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 35%;
   justify-content: space-between;
-  align-items: center;
 }
 @media (max-width: 500px) {
-  header nav {
+  .container header nav {
     width: 100%;
-    flex-direction: column;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
-header nav a {
+.container header nav a {
   text-decoration: none;
   font-size: 1.6rem;
   color: black;
+  width: 25%;
 }
-header nav a:hover {
+.container header nav a:hover {
   color: rgba(207, 207, 12, 0.87);
+  font-weight: bold;
 }
-img {
+.container img {
   width: 300px;
   margin-bottom: 10px;
 }
 @media (max-width: 500px) {
-  img {
+  .container img {
     border-radius: 25%;
   }
 }
-.container {
-  max-width: 850px;
-  width: 100%;
-  margin: 0 auto;
-}
-section {
+.container section {
   padding: 20px;
 }
 @media (max-width: 500px) {
-  section {
+  .container section {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
-section h2 {
+.container section h2 {
   font-size: 8rem;
   font-weight: bold;
   font-family: 'Merienda', cursive;
 }
 @media (max-width: 500px) {
-  section h2 {
+  .container section h2 {
     font-size: 3rem;
   }
 }
-section h3 {
+.container section h3 {
   font-size: 4rem;
   margin-bottom: 10px;
   font-weight: bold;
   font-family: 'Merienda', cursive;
 }
 @media (max-width: 500px) {
-  section h3 {
+  .container section h3 {
     font-size: 3rem;
   }
 }
-section h4 {
+.container section h4 {
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: bold;
   font-family: 'Merienda', cursive;
 }
 @media (max-width: 500px) {
-  section h4 {
+  .container section h4 {
     font-size: 3rem;
   }
 }
-section h5 {
+.container section h5 {
   font-size: 2.5rem;
   margin-bottom: 5px;
   font-weight: bold;
   font-family: 'Merienda', cursive;
 }
 @media (max-width: 500px) {
-  section h5 {
+  .container section h5 {
     font-size: 1.6rem;
   }
 }
-section hr {
+.container section hr {
   height: 1px;
   border: 0;
   border-top: 1px solid #115500;
   margin: 3rem 0;
 }
-section p {
+.container section p {
   font-size: 1.6rem;
   margin-bottom: 20px;
 }
-section .button {
+.container section .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,97 +276,102 @@ section .button {
   border: 1px solid black;
 }
 @media (max-width: 500px) {
-  section .button {
+  .container section .button {
     width: 60%;
   }
 }
-section .button:hover {
+.container section .button:hover {
   background-color: silver;
   color: white;
 }
-section .button p {
+.container section .button p {
   display: flex;
   font-size: 2rem;
   margin: 0;
 }
-.additional-info {
+.container .additional-info {
   display: flex;
   justify-content: space-between;
 }
-.additional-info .info-box {
+.container .additional-info .info-box {
   width: 45%;
 }
 @media (max-width: 500px) {
-  .additional-info .info-box {
+  .container .additional-info .info-box {
     width: 100%;
   }
 }
-.additional-info .info-box2 {
+.container .additional-info .info-box2 {
   width: 45%;
 }
 @media (max-width: 500px) {
-  .additional-info .info-box2 {
+  .container .additional-info .info-box2 {
     width: 100%;
   }
 }
-.additional-info .info-box2 ol {
+.container .additional-info .info-box2 ol {
   border: 0 solid lightgrey;
   border-width: 0 0 1px 1px;
 }
-.additional-info .info-box2 ol li {
+.container .additional-info .info-box2 ol li {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.6rem;
   padding-left: 5%;
   height: 30px;
   border: 0 solid lightgrey;
   border-width: 1px 1px 0 0;
 }
-.work-history {
+.container .work-history {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
 }
-.work-history table {
+.container .work-history table {
   width: 100%;
   border-collapse: collapse;
 }
-.work-history table tr {
+.container .work-history table tr {
   font-size: 1.6rem;
   text-align: left;
 }
-.work-history table tr:nth-child(even) {
-  background-color: #e1f7e1;
+.container .work-history table tr:nth-child(even) {
+  background-color: #cef8ce;
 }
-.work-history table tr th {
+.container .work-history table tr th {
   font-size: 2rem;
   font-weight: bold;
   border: 1px solid lightgray;
 }
-.work-history table tr td {
+.container .work-history table tr td {
   border: 1px solid lightgray;
 }
-.introInfo {
+.container .introInfo {
   background-color: #cef8ce;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 @media (max-width: 500px) {
-  .introInfo {
+  .container .introInfo {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
-.copyright {
+.container .copyright {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin: 0;
   background-color: rgba(62, 144, 44, 0.849);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.copyright p {
+.container .copyright p {
   font-size: 2rem;
   color: rgba(207, 207, 12, 0.87);
 }
