@@ -6,48 +6,53 @@
 @color-comment:   #60854A;
 @color-string:    #87513B;
 @color-var: #538DBD;
-.line {
-    display: block;
-    height: 2rem;
-    line-height: 2rem;
-    //colors
-    .color-comment    {color: @color-comment;}
-    .color-keyword    {color: @color-keyword;}
-    .color-user       {color: @color-user;}
-    .color-vanilla    {color: @color-vanilla;}
-    .color-var        {color: @color-var;}
-    .color-string     {color: @color-string;}
-    .color-oporater   {color: @color-vanilla;}
-    //modifications
-    .tab {margin-left: 2rem;}
-    .tabtab {margin-left: 4rem;}
-    .tabtabtab {margin-left: 6rem;}
-    .arrayElement::after {
-        content: ",";
-        color: @color-vanilla;
-    }
-    // .tab {margin-left: 2rem;}
-    .comment {display: block;}
-    .comment::before {content: "*·";}
-    .comment::after {content: "·*";}
-    .link::before, .link::after {
-        content: '"';
-        text-decoration: underline;
-        text-decoration-color: @color-background;
-    }
-    .link:hover {
-        color: @color-user;
-    }
-    .long-string {
-        display: block;
-        width: 40vw;
-    }
-}
-.long-string {
-    height: fit-content;
-}
+// FONTS
+@font: 'Roboto Mono', monospace;
+// STYLE
 body {
     background-color: @color-background;
-    font-size: 2rem;
-    font-family: monospace;
+}
+.container {
+    font-family: @font;
+    font-size: 1.75rem;
+    .line {
+        display: block;
+        height: 2rem;
+        line-height: 2rem;
+        //colors
+        .color-comment    {color: @color-comment;}
+        .color-keyword    {color: @color-keyword;}
+        .color-user       {color: @color-user;}
+        .color-vanilla    {color: @color-vanilla;}
+        .color-var        {color: @color-var;}
+        .color-string     {color: @color-string;}
+        .color-oporater   {color: @color-vanilla;}
+        //modifications
+        .tab {margin-left: 2rem;}
+        .tabtab {margin-left: 4rem;}
+        .tabtabtab {margin-left: 6rem;}
+        .arrayElement::after {
+            content: ",";
+            color: @color-vanilla;
+        }
+        // .tab {margin-left: 2rem;}
+        .comment {display: block;}
+        .comment::before {content: "*·";}
+        .comment::after {content: "·*";}
+        .link::before, .link::after {
+            content: '"';
+            text-decoration: underline;
+            text-decoration-color: @color-background;
+        }
+        .link:hover {
+            color: @color-user;
+        }
+        .long-string {
+            display: block;
+            width: 40vw;
+        }
+    }
+    .long-string {
+        height: fit-content;
+    }
 }
