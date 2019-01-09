@@ -57,10 +57,19 @@ body {
         }
         .long-string {
             display: block;
-            width: 40vw;
+            .mixin-size(initial, 40vw);
         }
     }
     .long-string {
         .mixin-size(fit-content);
+    }
+}
+@media(max-width: 500px) {
+    .container {
+        .line {
+            .long-string {
+                .mixin-size(initial, 80vw);
+            }
+        }
     }
 }
