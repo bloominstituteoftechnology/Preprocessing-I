@@ -71,7 +71,10 @@ body {
 	height: 100%;
 	margin: 0 auto;
 	background: @content-color;
-	
+	@media (max-width: 500px){
+		width: 80%;
+		background: blue;
+	}
 	//mixins
 	.nav-footer-mixin() {						//mixin 1 header&nav//
 		width: 100%;
@@ -100,6 +103,10 @@ body {
 	background: @content-color;
 	margin-bottom: 2%;
 	border-bottom: 1rem dashed @body-color;
+	@media (max-width: 500px) {
+		border-bottom: 1rem double @body-color;
+		//color change			
+	}
 		h1 {
 			font-size: @main-header;
 			font-family: @main-family;
@@ -109,13 +116,23 @@ body {
 		nav {
 			padding: 2%;
 			.nav-footer-mixin;
+			@media (max-width: 500px) {
+				flex-direction: column;
+				align-items: center;
+			}
 			a {
 				color: @a-color;
 				font-family: @main-family;
 				text-decoration: underline overline;
+				@media (max-width: 500px) {
+					padding: 2%;
+				}
+			}
+			a:hover {
+				text-decoration: none;
 			}
 		}
-  }
+  }		
   	article {
 		  border: 1rem dashed @body-color;
 		  display: flex;
@@ -126,8 +143,9 @@ body {
 		  margin: 0 auto;
 		  
 		  	h2 {
-				  .h2-mixin;					
-			  }
+				  .h2-mixin;
+				  		  
+				}
 			p {
 				.content-mixin;
 			}
@@ -186,6 +204,6 @@ body {
 
 @a-color: white;
 @p-color: white; 
-@content-color: rgb(61, 155, 187);
-@body-color: rgb(231, 142, 142);
+@content-color: rgb(74, 122, 138);
+@body-color: lightcoral;
 
