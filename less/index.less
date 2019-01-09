@@ -51,6 +51,12 @@ table {
 /* Set every element's box-sizing to border-box */
   @brand-grey: #808080;
   @other-grey: #E9ECEF;
+
+  .table {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+  } 
    
 * {
     box-sizing: border-box;
@@ -150,6 +156,7 @@ img{
 .upperBottom{
 	display: flex;
 	justify-content: space-between;
+	padding-top: 3rem;
 	.listen{
     width: 74%;
 	padding-right: 2.7rem;
@@ -175,3 +182,55 @@ img{
 
 //lower bottom
 
+.lowerBottom {
+	display: block;
+	h2{
+		font-size: 3rem;
+		padding-bottom: 1rem;	
+	}
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		td{ 
+		.table();
+		}
+		th{
+          .table();
+		}
+		tr:nth-child(even) {
+			background-color: @other-grey;
+		  }
+	}
+}
+
+footer{
+	text-align: center;
+    padding-top: 4rem;
+    background-color: @brand-grey;
+	margin: 2.1rem;
+	color: white;
+	padding-bottom: 4rem;
+	p{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+      header{
+		  justify-content: center;
+		  a{
+			  border: .2rem solid @brand-grey;
+		  }
+	  
+       .rolled  {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		right: 1rem;
+
+    } 
+  }
+       
+
+}
