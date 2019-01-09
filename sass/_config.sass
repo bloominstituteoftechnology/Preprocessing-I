@@ -1,3 +1,18 @@
 $primary: #222
-$secondary: yellow
+$secondary: #000
+$highlight: yellow
 $info: aqua
+
+
+
+
+
+@mixin textShadow
+    text-shadow: #000 2px 3px 1px
+
+
+@function set-text-color($color)
+    @if (lightness($color) > 40)
+        @return #000000
+    @else
+        @return #ffffff
