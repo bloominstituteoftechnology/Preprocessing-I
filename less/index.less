@@ -35,14 +35,6 @@ footer, header, hgroup, menu, nav, section {
 
 @main-color: grey;
 
-@mediamobile (max-width: 500px) {
-
-}
-
-@mediatab (max-width: 768px) {
-
-}
-
 .flex-col {
 	width: 100%;
 }
@@ -64,7 +56,15 @@ body {
 	width: 1250px;
 	margin: auto;
 	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+
+	@media (max-width: 768px) {
+		width: 750px;
 }
+
+	@media (max-width: 500px) {
+			width: 500px;
+	}
+} 
 
 // NavBar at the top of the screen
 nav {
@@ -103,7 +103,15 @@ nav {
 
 .row {
 	display: flex;
+	@media (max-width: 768px) {
+		width: 100%;
 }
+
+	@media (max-width: 500px) {
+			width: 100%;
+	}
+} 
+
 
 // Setting up the big old shadow box for the content
 content {
@@ -111,6 +119,16 @@ content {
 	height: 900px;
 	.container();
 	margin-top: 10px;
+	@media (max-width: 768px) {
+		width: 750px;
+		height: 1000px;
+}
+
+	@media (max-width: 500px) {
+			width: 500px;
+			height: 1200px;
+	}
+} 
 
 // This Includes my name
 	h1 {
@@ -120,6 +138,7 @@ content {
 		height: 75px;
 		padding-top: 20px;
 		padding-left: 50px;
+		margin-bottom: 10px;
 
 	}
 
@@ -128,6 +147,14 @@ content {
 		display: flex;
 		flex-direction: column;
 		width: 50%;
+
+		@media (max-width: 768px) {
+			width: 100%;
+	}
+	
+		@media (max-width: 500px) {
+				width: 100%;
+		}
 	h2 {
 		font-size: 2.4em;
 		text-align: center;
@@ -136,15 +163,33 @@ content {
 		height: 100px;
 		.flex-col();
 
+		@media (max-width: 768px) {
+			display: none;
 	}
+	
+		@media (max-width: 500px) {
+				width: 500px;
+			display: none;
+		}
+	} 
 
 	p {
 		font-size: 1.6em;
 		line-height: 25px;
 		text-align: left;
 		height: 200px;
+		margin-left: 5px;
 		padding-top: 15px;
 		.flex-col();
+
+		@media (max-width: 768px) {
+			width: 100%;
+	}
+	
+		@media (max-width: 500px) {
+				width: 100%;
+		}
+
 	}
 
 	li {
@@ -153,8 +198,49 @@ content {
 		font-size: 2.0em;
 		padding-top: 20px;
 		.flex-col();
+
+		@media (max-width: 768px) {
+			display: none;
+	}
+	
+		@media (max-width: 500px) {
+			display: none;
 		}
+
+		}
+
 }
+
+
+.primary2 { 
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+
+	@media (max-width: 768px) {
+		width: 0%;
+}
+
+	@media (max-width: 500px) {
+			width: 0%;
+	}
+h2 {
+	font-size: 2.4em;
+	text-align: center;
+	margin-top: 10px;
+	padding-top: 15px;
+	height: 100px;
+	.flex-col();
+
+} 
+
+li {
+	height: 60px;
+	text-align: center;
+	font-size: 2.0em;
+	padding-top: 20px;
+	.flex-col();
+
 }
 
 // Manages the photograph
@@ -184,7 +270,18 @@ content {
 		padding-top: 20px;
 		padding-left: 50px;
 
+		
+	@media (max-width: 768px) {
+		width: 100%;
+		text-align: center;
+}
+
+	@media (max-width: 500px) {
+			width: 100%;
+			text-align: center;
 	}
+	}
+	
 
 	p {
 		font-size: 2.4em;
@@ -226,7 +323,7 @@ content {
 // End of Work History
 
 
-// Contact and Copyrights
+// Copyrights
   footer {
 	  text-align: center;
 	  font-size: 1.6em;
