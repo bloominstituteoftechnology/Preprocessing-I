@@ -77,11 +77,20 @@ body {
 			.flexbox(row, nowrap);
 			.flexalign(flex-end, center, center);
 			padding-right: 10px;
+
+				@media (max-width: 500px) {
+					.flexalign(space-around, center, center);
+					padding-right: 0;
+				}
 				
 				a {
 					.plainlink();
 					font-size: 2rem;
 					padding-left: 20px;
+
+					@media (max-width: 500px) {
+						padding-left: 0;
+					}
 				}
 
 				a:hover {
@@ -96,16 +105,29 @@ body {
 				img {
 					.dropshadow();
 					margin-top: 20px;
+
+					@media (max-width: 500px) {
+						width: 60%;
+						margin: 10px 20%;
+					}
 				}
 
 				h1 {
 					font-size: 4.5rem;
 					margin-top: 20px;
+					
+					@media (max-width: 500px) {
+						text-align: center;
+					}
 				}
 
 				h2 {
 					font-size: 2.7rem;
 					margin-top: 10px;
+
+					@media (max-width: 500px) {
+						text-align: center;
+					}
 				}
 
 				hr {
@@ -140,9 +162,17 @@ body {
 			width: 100%;
 			padding: 20px 0 20px 4%;
 
+				@media (max-width:500px){
+					.flexbox(column, nowrap);
+				}
+
 				.about-me {
 					width: 50%;
 					padding-right: 5%;
+
+						@media(max-width:500px){
+							width: 100%;
+						}
 
 						h3 {
 							font-size: 2.3rem;
@@ -151,11 +181,16 @@ body {
 
 						p {
 							font-size: 1.6rem;
+							padding-bottom: 10px;
 						}
 				}
 
 				.skills {
 					width: 40%;
+
+					@media(max-width:500px){
+						width: 100%;
+					}
 
 						h3 {
 							font-size: 2.3rem;
