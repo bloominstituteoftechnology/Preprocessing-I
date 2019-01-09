@@ -32,11 +32,17 @@ footer, header, hgroup, menu, nav, section {
 
 @main-color: grey;
 
+.flex-col {
+	flex-direction: column;
+	width: 40%;
+}
+
 .container {
 	background: rgb(255, 255, 255); /* Fallback */
-	background: rgba(255, 255, 255, 0.4);
-	box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.75);
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.25);
 	font-family: 'Ubuntu', sans-serif;
+	color: black;
 }
 
 body {
@@ -44,10 +50,8 @@ body {
 	font-size: 62.5%;
 	width: 1250px;
 	margin: auto;
-	border: 1px solid orange;
-	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
-
 nav {
 	font-size: 1.6em;
 	background: green;
@@ -61,28 +65,70 @@ nav {
 	}
 
 	li {
-	width: 100px;
+	width: 200px;
 	height: 60px;
-	border: 1px solid red;
 	text-align: center;
 	padding-top: 20px;
 	margin-right: 20px;
+	}
 
+	a {
+		text-decoration: none;
+		width: 200px;
+  		color: black;
+		  transition: 0.3s;
+	}
+
+	a:hover {
+		color: rgb(82, 193, 212);
 	}
 }
 
-header {
+content {
 	display: flex;
+	flex-direction: column;
 	width: 100%;
+	height: 800px;
 	font-family: 'Ubuntu', sans-serif;
 	.container();
 	margin-top: 10px;
 
 	h1 {
 		font-size: 4.8em;
-		width: 100%;
 		text-align: center;
+		width: 100%;
+		height: 75px;
+		padding-top: 20px;
+		padding-left: 50px;
+
 	}
+
+	h2 {
+		font-size: 2.4em;
+		text-align: center;
+		margin-left: 20px;
+		padding-top: 15px;
+		.flex-col();
+
+	}
+
+	p {
+		font-size: 1.6em;
+		line-height: 25px;
+		text-align: left;
+		margin-left: 20px;
+		padding-top: 15px;
+		.flex-col();
+
+	}
+}
+
+.picture {
+	height: 300px;
+	width: 500px;
+	margin-top: 30px;
+	margin-left: 30px;
+	border-radius: 20px;
 }
 
 ol, ul {
