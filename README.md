@@ -1,5 +1,5 @@
 ## View the Index Page of Project
-1. <a href="https://davidaceves.github.io/Preprocessing-Igit /index.html">Click here</a>
+1. <a href="https://davidaceves.github.io/Preprocessing-I/index.html">Click here</a>
 
 # Preprocessing I: Digital Resume
 
