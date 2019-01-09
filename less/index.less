@@ -52,8 +52,155 @@ table {
 * {
     box-sizing: border-box;
 }
+body {
+    width:70%;
+    margin: 0 auto;}
+
+html {font-size: 63%;}
 
 html, body {
     height: 100%;
 }
 
+@small-font: 1.6rem;
+@medium-font: 2rem;
+@medium-large-font: 3.5rem;
+@large-font: 6rem;
+
+a, p, h4 {
+    font-size: @small-font;
+    line-height: 1.4;}
+
+h1 {font-size: @large-font;}
+
+h2 {font-size: @medium-large-font;}
+
+h3 {font-size: @medium-font;}
+
+header {
+	color: black;
+	.navigation {
+		text-decoration: none;
+		display: flex;
+		margin: 2rem 0 0 0;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.header-img {
+		width: 300px;
+	}
+}
+
+.bordered1 {
+	background-color: antiquewhite;
+}
+.bordered2 {
+	background-color: grey;
+}
+
+.bordered3 {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	width: 30%;
+}
+.navi-header-top {
+	.bordered1();
+}
+
+ul{
+	list-style-type: none;
+	margin-top: 2rem;
+}
+
+li {
+	padding: 1rem 0;
+	.bordered3;
+}
+
+td,  th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+   tr:nth-child(even){background-color: #f2f2f2;}
+  
+   tr:hover {background-color: #ddd;}
+  
+   th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+  }
+  .break{
+    border: .05rem solid black;
+    margin: 4% 0;
+}
+
+.summary, {
+	width: 40%;
+}
+
+.work {
+	width: 70%;
+}
+
+button,footer {
+	.bordered2;
+}
+
+button, .copyright {
+	color:white;
+}
+
+.copyright{
+	text-align: center;
+}
+
+/*mobile size*/
+@media (max-width: 500px){
+    body{
+        width: 100%;
+    }
+    .navigation{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navi{
+        color: gray;
+        border: .02rem solid grey;
+        width: 100%;
+        border-radius: 0;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+    .break{
+        margin: 2rem 0;
+    }
+    .navi-header h1{
+        font-size: 5rem;
+    }
+    .header-img{
+        display: none;
+    }
+    .top{
+		display: flex;
+    }
+    .bottom{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    footer{
+        text-align: center;
+    }
+    .copyright{
+        text-align: center;
+    }
+}
