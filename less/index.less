@@ -62,10 +62,77 @@ html, body {
 // variables
 @rb: rebeccapurple;
 @db: dodgerblue;
+@msg: mediumseagreen;
+@hp: hotpink;
 
+@full: 100%;
+@half: 50%;
+
+
+
+
+
+// mixins
+.b_rb{
+	border: 2px solid @rb;
+}
+
+.b_db{
+	border: 2px solid @db;
+}
+
+.b_msg{
+	border: 2px solid @msg;
+}
+
+.b_hp {
+	border: 1px solid @hp;
+}
+
+.pad_02{
+	padding: 2%;
+}
+
+
+.flex-row{
+	width: @full;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.flex-col{
+	width: @full;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.centered{
+	margin: 0 auto;
+}
 
 nav {
 	border: 3px solid @db;
+	width: @half;
+	display: flex;
+	justify-content: space-evenly;
+	.centered();
+	a{
+		.b_hp();
+		width: 80%;
+		text-align: center;
+		font-size: 2rem;
+		text-decoration: none;
+		.pad_02();
+		&:hover {
+			color: hotpink;
+		}
+	}
+
 }
 
 
