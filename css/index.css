@@ -106,6 +106,7 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #073012;
 }
 ol,
 ul {
@@ -133,43 +134,55 @@ table {
 html,
 body {
   height: 100%;
-}
-html {
   font-size: 62,5%;
 }
 a {
   text-decoration: none;
-  color: #474545;
+  color: #313131;
 }
 a:hover {
   text-decoration: underline;
-  color: black;
+  color: #073012;
+  font-weight: bold;
+}
+h2 {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #073012;
+  text-transform: uppercase;
+  word-spacing: 0.1em;
+  border-bottom: 1px solid #073012;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 .container {
   max-width: 850px;
   margin: 0 auto;
   font-size: 1.6rem;
-  border: 1px blue solid;
+  background-color: white;
 }
-.container nav {
+.container header {
+  width: 100%;
+}
+.container header nav {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  border: 1px blue solid;
 }
-.container nav a {
+.container header nav a {
   padding: 15px;
   font-size: 1rem;
 }
-.container .header-bottom {
+.container header .header-bottom {
   width: 100%;
   background-color: #ebebeb;
   display: flex;
   padding-top: 25px;
   padding-bottom: 25px;
 }
-.container .header-bottom img.profile-photo {
+.container header .header-bottom img.profile-photo {
   width: 30%;
   width: auto;
   max-width: 200px;
@@ -179,34 +192,131 @@ a:hover {
   border-radius: 50%;
   filter: grayscale(100%) opacity(0.9);
 }
-.container .header-bottom img.profile-photo:hover {
+.container header .header-bottom img.profile-photo:hover {
   filter: none;
 }
-.container .header-bottom div.info {
+.container header .header-bottom div.info {
   width: 70%;
-  color: #474545;
+  color: #313131;
 }
-.container .header-bottom div.info h1 {
+.container header .header-bottom div.info h1 {
   font-size: 2.4rem;
+  color: #073012;
   margin-bottom: 10px;
   margin-right: 2%;
 }
-.container .header-bottom div.info h1 span {
+.container header .header-bottom div.info h1 span {
   font-weight: bold;
 }
-.container .header-bottom div.info h4 {
-  font-size: 1.2rem;
-  border-bottom: 1px solid #474545;
+.container header .header-bottom div.info h4 {
+  font-size: 1rem;
+  border-bottom: 1px solid #073012;
   padding-bottom: 20px;
   margin-right: 2%;
 }
-.container .header-bottom div.info ul {
-  font-size: 1.4rem;
+.container header .header-bottom div.info ul {
+  font-size: 1.2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 20px 2% 0 0;
 }
-.container .header-bottom div.info ul li {
+.container header .header-bottom div.info ul li {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.container header .header-bottom div.info ul li:nth-child(odd) {
+  width: 50%;
+}
+.container header .header-bottom div.info ul li:nth-child(even) {
+  width: 50%;
+}
+.container header .header-bottom div.info ul li img {
+  margin-right: 5px;
+}
+.container .content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: #313131;
+}
+.container .content .intro {
+  width: 50%;
+  padding: 20px 2%;
+}
+.container .content .intro p {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.container .content .skills {
+  width: 50%;
+  padding: 20px 2%;
+}
+.container .content .skills table {
+  width: 100%;
+}
+.container .content .skills table tr {
+  border: 0.5px lightgrey dotted;
+}
+.container .content .skills table tr:nth-child(odd) {
+  background-color: #ebebeb;
+}
+.container .content .skills table tr:hover {
+  background-color: #073012;
+  color: white;
+}
+.container .content .skills table tr td {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+.container .content .work-history {
+  width: 100%;
+  padding: 20px 2%;
+}
+.container .content .work-history p {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+}
+@media (max-width: 500px) {
+  .container h2 {
+    text-align: center;
+  }
+  .container header nav {
+    justify-content: center;
+  }
+  .container header .header-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container header .header-bottom img.profile-photo {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .container header .header-bottom div.info {
+    width: 100%;
+  }
+  .container header .header-bottom div.info h1 {
+    text-align: center;
+  }
+  .container header .header-bottom div.info h4 {
+    text-align: center;
+    margin-right: 0;
+  }
+  .container header .header-bottom div.info div.contact ul {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .container header .header-bottom div.info div.contact ul li:nth-child(odd),
+  .container header .header-bottom div.info div.contact ul li:nth-child(even) {
+    width: 50%;
+    align-self: center;
+  }
+  .container .content .intro,
+  .container .content .skills,
+  .container .content .work-history {
+    width: 100%;
+  }
 }

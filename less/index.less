@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: @text-hover-color;
 }
 ol, ul {
 	list-style: none;
@@ -55,84 +56,202 @@ table {
 
 html, body {
 	height: 100%;
-}
-
-html {
 	font-size: 62,5%;
 }
 
-@text-color: rgb(71, 69, 69);
+@text-color: rgb(49, 49, 49);
+@text-hover-color: rgb(7, 48, 18);
+@background-color-gray: rgb(235, 235, 235);
 
 a {
 	text-decoration: none;
 	color: @text-color;
 	&:hover {
 		text-decoration: underline;
-		color: black;
+		color: @text-hover-color;
+		font-weight: bold;
 	}
+}
+
+h2 {
+	display:inline-block;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: @text-hover-color;
+	text-transform: uppercase;
+	word-spacing: 0.1em;
+	border-bottom: 1px solid @text-hover-color;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 .container {
 	max-width: 850px;
 	margin: 0 auto;
 	font-size: 1.6rem;
-	border: 1px blue solid;
-	nav {
+	background-color: white;
+	header {
 		width: 100%;
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: flex-end;
-		border: 1px blue solid;
-		a {
-			padding: 15px;
-			font-size: 1rem;
+		nav {
+			width: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
+			a {
+				padding: 15px;
+				font-size: 1rem;
+			}
+		}
+		.header-bottom {
+			width: 100%;
+			background-color: @background-color-gray;
+			display: flex;
+			padding-top: 25px;
+			padding-bottom: 25px;
+			img.profile-photo {
+				width: 30%;
+				width: auto;
+				max-width: 200px;
+				height: auto;
+				max-height: 200px;
+				margin: 0 auto 0 2%;
+				border-radius: 50%;
+				filter: grayscale(100%) opacity(.9);
+				&:hover {
+					filter: none;
+				}
+			}
+			div.info {
+				width: 70%;
+				color: @text-color;
+				h1 {
+					font-size: 2.4rem;
+					color: @text-hover-color;
+					margin-bottom: 10px;
+					margin-right: 2%;
+					span {
+						font-weight: bold;
+					}
+				}
+				h4 {
+					font-size: 1rem;
+					border-bottom: 1px solid @text-hover-color;
+					padding-bottom: 20px;
+					margin-right: 2%;
+				}
+				ul {
+					font-size: 1.2rem;
+					display: flex;
+					flex-wrap: wrap;
+					margin: 20px 2% 0 0;
+					li {
+						margin-bottom: 10px;
+						display: flex;
+						align-items: center;
+						&:nth-child(odd) {
+							width: 50%;
+						}
+						&:nth-child(even) {
+							width: 50%;
+						}
+						img {
+							margin-right: 5px;
+						}
+					}
+				}
+			}
 		}
 	}
-	.header-bottom {
+	.content {
 		width: 100%;
-		background-color: rgb(235, 235, 235);
 		display: flex;
-		padding-top: 25px;
-		padding-bottom: 25px;
-		img.profile-photo {
-			width: 30%;
-			width: auto;
-			max-width: 200px;
-			height: auto;
-			max-height: 200px;
-			margin: 0 auto 0 2%;
-			border-radius: 50%;
-			filter: grayscale(100%) opacity(.9);
-			&:hover {
-				filter: none;
+		flex-wrap: wrap;
+		color: @text-color;
+		.intro {
+			width: 50%;
+			padding: 20px 2%;
+			p {
+				font-size: 1.2rem;
+				line-height: 1.5em;
+				text-align: justify;
 			}
 		}
-		div.info {
-			width: 70%;
-			color: @text-color;
-			h1 {
-				font-size: 2.4rem;
-				margin-bottom: 10px;
-				margin-right: 2%;
-				span {
-					font-weight: bold;
+		.skills {
+			width: 50%;
+			padding: 20px 2%;
+			table {
+				width: 100%;
+				tr {
+					border: 0.5px lightgrey dotted;
+					&:nth-child(odd) {
+						background-color: @background-color-gray;
+					}
+					&:hover {
+						background-color: @text-hover-color;
+						color: white;
+					}
+					td {
+						padding: 5px;
+						font-size: 1.2rem;
+					}
 				}
 			}
-			h4 {
+		}
+		.work-history {
+			width: 100%;
+			padding: 20px 2%;
+			p {
 				font-size: 1.2rem;
-				border-bottom: 1px solid @text-color;
-				padding-bottom: 20px;
-				margin-right: 2%;
+				line-height: 1.5em;
 			}
-			ul {
-				font-size: 1.4rem;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				margin: 20px 2% 0 0;
-				li {
-					margin-bottom: 10px;
+
+		}
+	}
+	@media (max-width: 500px) {
+		h2 {
+			text-align: center;
+		}
+		header {
+			nav {
+				justify-content: center;
+			}
+			.header-bottom {
+				flex-direction: column;
+				align-items: center;
+				img.profile-photo {
+					margin: 0 auto;
+					width: 100%;
 				}
+				div.info {
+					width: 100%;
+					h1 {
+						text-align: center;
+					}
+					h4 {
+						text-align: center;
+						margin-right: 0;
+					}
+					div.contact {
+						ul {
+							width: 100%;
+							flex-direction: column;
+							flex-wrap: nowrap;
+							align-items: center;
+							li {
+								&:nth-child(odd), &:nth-child(even) {
+									width: 50%;
+									align-self: center;
+								}
+							}
+						}
+					}
+				}
+
+			}
+		}
+		.content {
+			.intro, .skills, .work-history {
+				width: 100%;
 			}
 		}
 	}
