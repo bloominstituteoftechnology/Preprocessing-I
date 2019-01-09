@@ -78,6 +78,11 @@ html {
 	align-content: space-between;
 }
 
+.list-item(){
+	// margin-top: 8%;
+	color: @font-color;
+}
+
 .container{
 	.display-flex();
 	max-width: 1200px;
@@ -106,7 +111,7 @@ html {
 		font-size: 1.9rem;
 		color: @font-color;
 		width: 100%;
-		margin-bottom: 30%;
+		margin-bottom: 35%;
 		margin-left: 30%;
 	}
 
@@ -170,41 +175,82 @@ html {
 
 		p {
 			font-size: @size-font;
-			margin-top: 3%;
+			margin-top: 4%;
+			margin-left: 2%;
+			margin-right: 2%;
 			color: @font-color;
 		}
 	}
 
 	.skills{
-		margin-top: 7%;
+		margin-top: 10%;
 		.display-flex();
 		font-size: @size-font;
+		margin-left: 3%;
 
-		.col-4 {
-			margin: 0 10%;
-
-			li {
-			margin-top: 5%;
-			color: @font-color;
-			}
-		}
-
-		.col-5{
-			margin: 0 10%;
-
-			li {
-			margin-top: 5%;
-			color: @font-color;
-
+		.row {
+			
+			
+			li{
+				.list-item();
+				margin-bottom: 3%;
 			}
 		}
 		
 	}
+
+	.education {
+		.display-flex();
+		margin-top: 7%;
+		margin-left: 3%;
+
+		.li-1{
+			font-size: @size-font;
+		}
+		.li-2{
+			font-size: 1.5rem;
+			margin-bottom: 2%;
+		}
+	}
+
+	.work{
+		.display-flex();
+		margin-top: 4%;
+		margin-left: 3%;
+		
+
+		li{
+			font-size: 1.5rem;
+			margin-bottom: 4%;
+		}
+
+
+	}
 }
 
-footer {
+.footer {
+	.display-flex();
 	background-color: @footer-color;
 	width: 100%;
 	height: 10%;
-	margin: 0 auto;
+
+	 footer{
+		 margin-left: 40%;
+		padding-left: 5%;
+		margin-top: 2%;
+
+		a{
+			padding: 20px;
+		}
+	 }
+
+	
+}
+@media (max-width: 500px){
+	.container{
+			width: 500px;
+			margin: 0 auto;
+		
+			.display-flex();
+		}
 }
