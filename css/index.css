@@ -1,1 +1,400 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background-color: #283044;
+  font-family: 'Lato', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Staatliches', cursive;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #EBF5EE;
+  padding: 0 20px;
+}
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    padding: 0 10px;
+  }
+}
+.container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.container header nav {
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    padding: 18px;
+  }
+}
+.container header nav a {
+  text-decoration: none;
+  padding: 20px;
+  background-color: #283044;
+  color: #E88D67;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    padding: 8px;
+  }
+}
+.container header nav a:hover {
+  color: #BFA89E;
+}
+@media (max-width: 500px) {
+  .container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.container .intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.container .intro .aboutme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+@media (max-width: 500px) {
+  .container .intro .aboutme {
+    width: 100%;
+  }
+}
+.container .intro .aboutme img {
+  width: 300px;
+  height: 300px;
+}
+.container .intro .aboutme h1 {
+  font-weight: 900;
+  font-size: 3.5rem;
+  padding: 10px 0;
+}
+.container .intro .aboutme p {
+  text-align: center;
+}
+.container .intro .aboutme address {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.container .intro .aboutme address h4 {
+  width: 100%;
+  text-align: center;
+  margin: 5px;
+}
+.container .intro .aboutme address a {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  color: #A54657;
+}
+.container .intro .skill-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+}
+.container .intro .skill-list .skill {
+  border-left: 10px solid #78A1BB;
+  border-right: 10px solid #78A1BB;
+  padding: 22px;
+  background-color: #283044;
+  color: #EBF5EE;
+  text-align: center;
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  .container .intro .skill-list .skill {
+    width: 100%;
+    margin-bottom: 5px;
+    border-left: 0px solid #78A1BB;
+    border-right: 0px solid #78A1BB;
+    border-top: 10px solid #78A1BB;
+  }
+}
+@media (max-width: 500px) {
+  .container .intro .skill-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0px;
+  }
+}
+.container .education {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  .container .education {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.container .education .school {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 33%;
+  height: 200px;
+  background-color: #A54657;
+  color: #EBF5EE;
+  border-left: 10px solid #E88D67;
+  border-right: 10px solid #E88D67;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px 0;
+}
+@media (max-width: 500px) {
+  .container .education .school {
+    font-size: 0.8rem;
+    border-top: 10px solid #E88D67;
+    border-left: 0px solid #E88D67;
+    border-right: 0px solid #E88D67;
+  }
+}
+.container .education .school i {
+  font-size: 4rem;
+}
+@media (max-width: 500px) {
+  .container .education .school i {
+    font-size: 3rem;
+  }
+}
+.container .employment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.container .employment .work {
+  padding: 1rem 0;
+}
+.container .employment .work .work-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container .employment .work .work-info h5 {
+  width: 33%;
+}
+.container .employment .work .work-description p {
+  margin: 10px 0;
+  line-height: 1.4;
+}
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .portfolio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.portfolio .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 33%;
+  height: 200px;
+  background-color: #A54657;
+  color: #EBF5EE;
+  border-left: 10px solid #E88D67;
+  border-right: 10px solid #E88D67;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px 0;
+}
+@media (max-width: 500px) {
+  .portfolio .project {
+    width: 49.5%;
+    font-size: 0.8rem;
+    border-top: 10px solid #E88D67;
+    border-left: 0px solid #E88D67;
+    border-right: 0px solid #E88D67;
+  }
+}
+.portfolio .project i {
+  font-size: 4rem;
+}
+@media (max-width: 500px) {
+  .portfolio .project i {
+    font-size: 3rem;
+  }
+}
+.portfolio .project a {
+  text-align: center;
+  text-decoration: none;
+  color: #EBF5EE;
+}
