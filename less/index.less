@@ -64,22 +64,25 @@ html {
 
 
 //Variables
+@background: #babbbc;
+@top-content-color: #aa2a4a;
+@letter-colors: white;
 
 //Mixins
 .main-content-padding{
-	padding-top: 2.5%;
-	padding-bottom: 2.5%;
+	padding: 2.5%;
 }
 
 .h2-settings{
 	font-size: 2.5rem;
-	padding-bottom: 1.5%;
+	text-decoration: underline;
 }
 
 .h3-settings{
 	font-size: 2rem;
 	font-weight: bold;
 	padding-bottom: .5%;
+	padding-top: 1.5%;
 }
 
 .h4-settings{
@@ -88,15 +91,21 @@ html {
 	padding-bottom: .5%;
 }
 
+.ul-settings{
+	padding-top: 1%;
+}
+
 .li-settings{
-	list-style: circle;
+	list-style: disc;
 	padding-bottom: .5%;
 	font-size: 1.7rem;
+	
 }
 
 .history-settings{
 	display: flex;
-	flex-direction: column;		
+	flex-direction: column;
+	justify-content: space-evenly;		
 }
 
 //Main Page Styling
@@ -106,11 +115,14 @@ html {
 	width: 100%;
 	padding: 25px 0;
 	margin: 0 auto;
+	background-color: @background;
+	color: @letter-colors;
 	.top-content{
 		display: flex;
 		justify-content: space-between;
-		border: 4px groove gold;
+		border: 8px groove gold;
 		padding: 5px;
+		background-color: @top-content-color;
 		h1{
 			font-size: 3rem;		
 		}
@@ -130,7 +142,8 @@ html {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				padding: 5px;			
+				padding: 5px;	
+				color: @letter-colors;		
 			}			
 		}
 	}
@@ -140,7 +153,7 @@ html {
 			.main-content-padding;
 		}		
 		.skills{
-			border: 1px solid blue;
+			
 			height: 50%;
 			width: 100%;
 			display: flex;
@@ -148,6 +161,9 @@ html {
 			.main-content-padding;
 			h2{
 				.h2-settings;
+			}
+			ul{
+				.ul-settings;
 			}				
 			li{
 				.li-settings;		
@@ -167,12 +183,34 @@ html {
 			h4{
 				.h4-settings;
 			}
+			ul{
+				.ul-settings;
+			}
 			li{
 				.li-settings;
 			}
 
 		}
 	}
+
+	.contact{
+		.h3-settings;
+		p{
+			font-size: 1.7rem;
+			font-weight: normal;	
+		}
+		address{
+			font-size: 1.7rem;
+			font-weight: normal;
+		}
+	}
+	@media(max-width: 500px){
+		.page{
+			max-width: 500px;
+			width: 100%
+		}
+	}
+
 }
 
 
