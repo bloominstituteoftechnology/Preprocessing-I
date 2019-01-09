@@ -53,6 +53,9 @@ table {
     box-sizing: border-box;
 }
 
+//less variables
+@primary-color: lightgrey;
+
 html, body {
 	height: 100%;
 	width: 95%;
@@ -80,7 +83,7 @@ html, body {
 	
 	}
 	.header {
-		background-color: lightgray;
+		background-color: @primary-color;
 
 		div {
 			margin: 2rem;
@@ -136,14 +139,14 @@ html, body {
 			}
 			ul {
 				padding: 2% 0;
-				border: 1px solid lightgrey;
+				border: 1px solid @primary-color;
 				li {
 					padding: 1rem;
-					border-bottom: 1px solid lightgrey;
+					border-bottom: 1px solid @primary-color;
 					font-size: 1.3rem;
 
-					:last-child {
-						border-bottom: 1px solid red;
+					li:nth-last-child() {
+						border-bottom: none;
 					}
 				}
 			}
@@ -174,7 +177,7 @@ html, body {
 					padding: 1rem;
 				}
 				tr:nth-child(odd) {
-					background-color: lightgrey;
+					background-color: @primary-color;
 				}
 				
 			}
