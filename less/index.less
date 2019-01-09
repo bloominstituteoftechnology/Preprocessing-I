@@ -54,6 +54,60 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: @base-color;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	background-color: @main-color;
+	max-width: 800px;
+	margin: 0 auto;
+	
+		nav {
+			background-color: @base-color;
+			width: 100%;
+			height: 50px;
+			.flexbox(row, no-wrap);
+			.flexalign(flex-end, center, center);
+				
+				a {
+					.plainlink();
+					font-size: 2rem;
+					padding-left: 20px;
+				}
+		}
+}
+
+
+//Mix-ins
+
+.flexbox(@direction, @wrap){
+	display: flex;
+	flex-direction: @direction;
+	flex-wrap: @wrap;
+}
+
+.flexalign (@justify, @aligncontent, @alignitems) {
+	justify-content: @justify;
+	align-content: @aligncontent;
+	align-items: @alignitems;
+}
+
+.plainlink (){
+	text-decoration: none;
+	color: @text-color;
+}
+
+//variables
+
+@main-color: #F6F7FB;
+@base-color: #717FB4;
+@first-accent: #B47F71;
+@second-accent: #99B471;
+@text-color: black;
+
 
