@@ -85,6 +85,11 @@ h1, h2, h3, h4, h5 {
 	align-items: @alignment;
 }
 
+.text(@alignment, @decoration) {
+	text-align: @alignment;
+	text-decoration: @decoration;
+}
+
 .container {
 	max-width: 900px;
 	margin: 0 auto;
@@ -93,7 +98,8 @@ h1, h2, h3, h4, h5 {
 
 	@media (max-width: 500px) {
 		.flex(column, center);
-		margin: 15px;
+		margin: 10px;
+		padding: 0 10px;
 	}
 
 	header {
@@ -103,12 +109,12 @@ h1, h2, h3, h4, h5 {
 			padding: 20px;
 
 			@media (max-width: 500px) {
-				padding: 20px;
+				padding: 18px;
 			}
 
 			a {
 				text-decoration: none;
-				padding: 25px;
+				padding: 20px;
 				background-color: @darkblue;
 				color: @orange;
 
@@ -174,8 +180,7 @@ h1, h2, h3, h4, h5 {
 
 				a {
 					width: 100%;
-					text-decoration: none;
-					text-align: center;
+					.text(center, none);
 					margin: 5px;
 					color: @red;
 				}
@@ -196,12 +201,17 @@ h1, h2, h3, h4, h5 {
 				padding: 22px;
 				background-color: @darkblue;
 				color: @egg;
-				text-decoration: none;
+				.text(center, none);
 
 
 				@media (max-width: 500px) {
 					width: 100%;
 					margin-bottom: 5px;
+
+					border-left: 0px solid @lightblue;
+					border-right: 0px solid @lightblue;
+					border-top: 10px solid @lightblue;
+
 				}
 			}
 
@@ -209,6 +219,7 @@ h1, h2, h3, h4, h5 {
 				.flex(row, flex-start);
 				width: 100%;
 				flex-wrap: wrap;
+				padding: 0px;
 			}
 		}
 	}
@@ -227,12 +238,16 @@ h1, h2, h3, h4, h5 {
 			height: 200px;
 			background-color: @red;
 			color: @egg;
-			border-top: 10px solid @orange;
-			text-align: center;
+			border-left: 10px solid @orange;
+			border-right: 10px solid @orange;
+			.text(center, none);
 			margin: 20px 0;
 
 			@media (max-width: 500px) {
 				font-size: .8rem;
+				border-top: 10px solid @orange;
+				border-left: 0px solid @orange;
+				border-right: 0px solid @orange;
 			}
 
 			i {
@@ -263,6 +278,7 @@ h1, h2, h3, h4, h5 {
 			.work-description {
 				p {
 					margin: 10px 0;
+					line-height: 1.4;
 				}
 			}
 		}
@@ -271,6 +287,50 @@ h1, h2, h3, h4, h5 {
 }
 
 
+//PORTFOLIO SITE
 
+.portfolio {
+	.flex(row, space-evenly);
+	flex-wrap: wrap;
+
+	@media (max-width: 500px) {
+		.flex(row, space-between);
+	}
+
+	.project {
+		.flex(column, space-evenly);
+		.items(center);
+		width: 33%;
+		height: 200px;
+		background-color: @red;
+		color: @egg;
+		border-left: 10px solid @orange;
+		border-right: 10px solid @orange;
+		border-radius: 5px;
+		.text(center, none);
+		margin: 20px 0;
+
+		@media (max-width: 500px) {
+			width: 49.5%;
+			font-size: .8rem;
+			border-top: 10px solid @orange;
+			border-left: 0px solid @orange;
+			border-right: 0px solid @orange;
+		}
+
+		i {
+			font-size: 4rem;
+
+			@media (max-width: 500px) {
+				font-size: 3rem;
+			}
+		}
+
+		a {
+			.text(center, none);
+			color: @egg;
+		}
+	}
+}
 
 
