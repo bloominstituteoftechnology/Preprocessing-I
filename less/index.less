@@ -71,10 +71,10 @@ body {
 	margin: 0 auto;
 	
 		nav {
-			background-color: @second-accent;
+			background-color: @first-accent;
 			width: 100%;
 			height: 50px;
-			.flexbox(row, no-wrap);
+			.flexbox(row, nowrap);
 			.flexalign(flex-end, center, center);
 			padding-right: 10px;
 				
@@ -87,7 +87,7 @@ body {
 
 		.top {
 			background-color: @base-color;
-			padding-left: 20px;
+			padding: 0 0 30px 20px;
 
 				img {
 					.dropshadow();
@@ -111,16 +111,66 @@ body {
 
 				p {
 					font-size: 1.6rem;
-					padding-bottom: 10px;
+					padding-bottom: 20px;
+				}
+
+				.contact-button {
+					width: 150px;
+					height: 36px;
+					background-color: @second-accent;
+					border: 1px solid black;
+					cursor: pointer;
+					border-radius: 10px;
+					
+						p {
+							padding-top: 10px;
+							font-size: 1.6rem;
+							padding-left: 35px;
+						}
 				}
 		}
 
-		.bottom {
+		.about {
 			background-color: @main-color;
+			.flexbox(row, nowrap);
+			width: 100%;
+			padding: 20px 0 20px 4%;
+
+				.about-me {
+					width: 55%;
+
+						h3 {
+							font-size: 2.3rem;
+							margin-bottom: 10px;
+						}
+
+						p {
+							font-size: 1.6rem;
+						}
+				}
+
+				.skills {
+					width: 40%;
+
+						h3 {
+							font-size: 2.3rem;
+							margin-bottom: 10px;
+						}
+
+						ul {
+							list-style-type: disc;
+							list-style-position: inside;
+
+								li {
+									font-size: 1.6rem;
+									margin-bottom: 5px;
+								}
+						}
+				}
 		}
 
 		footer {
-			background-color: @second-accent;
+			background-color: @first-accent;
 			height: 50px;
 			text-align: center;
 
@@ -158,9 +208,9 @@ body {
 //variables
 
 @main-color: darkgray;
-@base-color: cadetblue;
-@first-accent: #E1A684;
-@second-accent: #ACE184;
+@base-color: #63887B;
+@first-accent: #4F2F2F;
+@second-accent: darkslategray;
 @text-color: black;
 
 
