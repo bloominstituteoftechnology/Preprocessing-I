@@ -143,7 +143,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Thasadith', sans-serif;
+  font-family: 'Anton', sans-serif;
   color: black;
 }
 /*VARIABLES*/
@@ -154,40 +154,55 @@ h5 {
 }
 body {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+}
+.background {
+  background: no-repeat, center;
 }
 .container {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid blue;
 }
 .header1 {
   width: 96.8%;
   max-width: 96.8%;
   display: flex;
   justify-content: center;
-  border: 1px solid blue;
-  background: lightyellow;
   margin-left: 1.7%;
 }
 .header1 nav {
   display: flex;
   justify-content: space-between;
-  border: 1px solid green;
-  background: pink;
-  width: 30%;
+  width: 45%;
   margin-top: 30px;
   margin-bottom: 30px;
-  color: #132B5D;
+  color: #F8E356;
   padding: 1%;
 }
+@media (max-width: 500px) {
+  .header1 nav {
+    width: 45%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+  }
+}
 nav a {
-  color: black;
+  color: white;
   font-size: 1.8rem;
+  padding-right: 5%;
+  padding-left: 5%;
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  nav a {
+    padding: 1%;
+  }
 }
 .topSection-container {
-  background: #D3D3D3;
+  background-image: url("hb.png");
   display: flex;
   flex-direction: column;
   height: 710px;
@@ -196,31 +211,71 @@ nav a {
 }
 .topImage {
   margin-top: 65px;
+  display: flex;
+  justify-content: center;
 }
-.topImage .resPhoto {
+@media (max-width: 500px) {
+  .topImage {
+    display: flex;
+    justify-content: center;
+  }
+}
+.resPhoto {
   width: 34.48%;
   height: 300px;
   margin-left: 3.4%;
+  border: 2px solid #F8E356;
+}
+@media (max-width: 500px) {
+  .resPhoto {
+    min-width: 50%;
+    border: 1px solid red;
+  }
 }
 h1 {
   font-size: 5rem;
   margin-left: 3.4%;
-  font-weight: 900;
-  color: #132B5D;
+  color: #F8E356;
+  text-align: center;
+  margin-top: 100px;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
 }
 .topContent {
   margin-top: 10px;
+  text-align: center;
 }
-.topContent .tech {
+@media (max-width: 500px) {
+  .topContent {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.topContent h2.tech {
   margin-top: 15px;
   font-size: 2rem;
-  color: black;
+  color: white;
   margin-left: 3.4%;
+}
+@media (max-width: 500px) {
+  .topContent h2.tech {
+    text-align: center;
+  }
 }
 h2.techp {
   margin-top: 60px;
   margin-left: 30px;
   font-size: 2rem;
+  color: #F8E356;
+}
+@media (max-width: 500px) {
+  h2.techp {
+    text-align: center;
+  }
 }
 button {
   width: 17.81%;
@@ -229,57 +284,110 @@ button {
   font-size: 1.8rem;
   margin-top: 45px;
   margin-left: 3.4%;
+  background: black;
+  margin-top: 300px;
+  border-radius: 20px;
+  border: 2px solid #F8E356;
 }
-h2.listenUp {
-  font-size: 3rem;
-  margin-top: 38px;
-}
-.listen p {
-  margin-top: 12px;
-  font-size: 2rem;
-}
-h2.stufflist {
-  font-size: 2.5rem;
-  border: 1px solid red;
-  margin-top: 32px;
-  margin-left: 1.7%;
+@media (max-width: 500px) {
+  button {
+    width: 40%;
+    align-self: center;
+  }
 }
 .midSection-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: lightpink;
   height: 328px;
   width: 96.8%;
   margin-left: 1.7%;
 }
+@media (max-width: 500px) {
+  .midSection-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+h2.listenUp {
+  font-size: 3rem;
+  margin-top: 38px;
+  color: #F8E356;
+  text-align: center;
+}
+.listen p {
+  margin-top: 12px;
+  font-size: 2rem;
+  color: white;
+  border: 3px solid #F8E356;
+  padding: 2.5%;
+}
+h2.stufflist {
+  font-size: 2.5rem;
+  margin-top: 32px;
+  margin-left: 1.7%;
+  color: #F8E356;
+  text-align: center;
+}
 div.listen {
   width: 49%;
-  border: 1px solid blue;
+}
+@media (max-width: 500px) {
+  div.listen {
+    width: 100%;
+    border: none;
+  }
 }
 div.stuff {
   width: 49%;
-  border: 1px solid blue;
+}
+@media (max-width: 500px) {
+  div.stuff {
+    width: 100%;
+    border: none;
+  }
 }
 ul {
   margin-top: 12px;
-  border: 1px solid purple;
+  color: white;
+}
+@media (max-width: 500px) {
+  ul {
+    width: 100%;
+  }
 }
 li {
   margin-left: 1.7%;
   padding: 13px 15% 18px 3.8%;
   font-size: 1.8rem;
+  background: black;
+  border: 2px solid #F8E356;
+}
+@media (max-width: 500px) {
+  li {
+    border: 2px solid #F8E356;
+  }
 }
 h2.work {
   font-size: 2.5rem;
   margin-top: 30px;
   margin-left: 1.7%;
+  color: #F8E356;
+}
+@media (max-width: 500px) {
+  h2.work {
+    margin-top: 350px;
+  }
 }
 table,
 th,
 td {
-  border: 1px solid green;
+  border: 1px solid black;
   margin-left: 1.7%;
+  background: black;
+  color: white;
+  border: 2px solid #F8E356;
 }
 tr td {
   vertical-align: middle;
@@ -293,7 +401,6 @@ table {
 }
 th {
   padding: 1.6%;
-  background: lightpink;
   height: 30px;
   text-align: left;
   padding-left: 1.14%;
@@ -301,93 +408,37 @@ th {
 }
 th:nth-child(1) {
   width: 11.49%;
-  background: lightyellow;
 }
 th:nth-child(3) {
   width: 39.08%;
-  background: lightyellow;
 }
 .bottomMain {
-  border: 1px solid blue;
   margin-top: 20px;
   margin-left: 1.7%;
 }
-.bottomMain h2.contacth2 {
+@media (max-width: 500px) {
+  .bottomMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+h2.contacth2 {
   font-size: 2rem;
+  color: #F8E356;
 }
 .contactp {
   font-size: 1.5rem;
+  color: white;
 }
 .copyright {
-  border: 1px solid red;
   width: 100%;
   margin-top: 50px;
-  background: grey;
   color: white;
   text-align: center;
   padding-top: 21px;
   height: 80px;
 }
-.copyright .copyright p {
-  font-size: 1.9rem;
-}
-@media (max-width: 500px) {
-  .header1 nav {
-    width: 60%;
-    padding: 1%;
-  }
-  .topImage {
-    display: flex;
-    justify-content: center;
-  }
-  .resPhoto {
-    min-width: 50%;
-    border: 1px solid red;
-  }
-  .topContent {
-    display: flex;
-    flex-direction: column;
-  }
-  h1 {
-    font-size: 4rem;
-    text-align: center;
-  }
-  h2.tech,
-  h2.techp {
-    text-align: center;
-  }
-  button {
-    width: 20%;
-    align-self: center;
-  }
-  .midSection-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    background: lightblue;
-  }
-  div.listen {
-    width: 100%;
-    border: none;
-  }
-  div.stuff {
-    width: 100%;
-    background: lightpink;
-    border: none;
-  }
-  ul {
-    width: 100%;
-    border: none;
-  }
-  li {
-    border: 1px solid green;
-  }
-  div.tableT {
-    margin-top: 250px;
-  }
-  div.bottomMain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.copyright p {
+  font-size: 1.6rem;
 }
