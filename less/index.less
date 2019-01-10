@@ -53,7 +53,180 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@box-color: #9099A2;
+
+.flex-settings {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	margin-top: 3%;
 }
+
+.flex-settings-mobile {
+	flex-direction: column;
+}
+
+.box-settings-mobile {
+	width: 90%;
+}
+
+.box-content {
+	background-color: @box-color;
+	padding: 2%;
+	line-height: 1.5;
+}
+
+.text-format-title {
+	font-weight: bold;
+	color: white;
+	font-size: 2.4rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0 auto;
+	max-width: 880px;
+	height: 100%;
+	font-size: 1.6rem;
+	background-color: #D5D5D5;
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	background-color: #6D7993;
+	align-items: center;
+	
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
+	h1 {
+		.text-format-title;
+		padding: 1%;
+		width: 50%;
+
+		@media (max-width: 500px) {
+			text-align: center;
+			margin-top: 3%;
+		}
+	}
+	
+	nav {
+		width: 50%;
+		display: flex;
+		justify-content: space-evenly;
+
+		@media (max-width: 500px) {
+			margin-top: 3%;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		a {
+			text-decoration: none;
+			color: white;
+
+			@media (max-width: 500px) {
+				padding: 5%;
+				border-bottom: solid 1px black;
+				text-align: center;
+				width: 100%;
+				font-size: 2rem;
+			}
+		}
+
+		a.home {
+			@media (max-width: 500px) {
+				border-top: solid 1px black;
+			}
+		}
+	}
+}
+
+h2 {
+	.text-format-title;
+}
+
+section.bio {
+	.flex-settings;
+
+	div.about {
+		display: flex;
+		flex-direction: row;
+		width: 95%;
+
+		@media (max-width: 500px) {
+			.flex-settings-mobile;
+		}
+
+		img {
+			height: 300px;
+			width: auto;
+			.box-content;
+		}
+
+		div.right-about {
+			.box-content;
+
+		}
+	}
+}
+
+section.work-experience {
+	.flex-settings;
+	
+	div.title {
+		.box-content;
+		width: 46.2%;
+	}
+
+	div.company {
+		.box-content;
+		width: 46.2%;
+	}
+}
+
+section.bottom-content {
+	.flex-settings;
+
+	div.skills {
+		.box-content;
+		width: 46.2%;
+
+		ul {
+			list-style-type: circle;
+			list-style-position: inside;
+		}
+	}
+
+	div.contact {
+		.box-content;
+		width: 46.2%;
+	}
+}
+
+footer {
+	background-color: #6D7993;
+	margin-top: 3%;
+	width: 100%;
+	padding: 2%;
+	
+	p {
+		text-align: center;
+	}
+}
+
+
+
+
+
 
