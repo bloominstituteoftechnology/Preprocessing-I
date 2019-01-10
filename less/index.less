@@ -234,7 +234,7 @@ body {
   section {
     .flex(row, space-between, center);
     @media (max-width: 500px) {
-      .flex(column, space-evenly, center);
+      .flex(column, space-around, center);
     }
     h2 {
       margin-bottom: 20px;
@@ -242,28 +242,53 @@ body {
       color: @font-color;
       font-style: italic;
       text-decoration: underline;
+
+      @media (max-width: 500px) {
+        .font(1.8rem, @font-weight);
+        color: @mobile-font;
+        font-style: oblique;
+        padding: 20px;
+        margin-bottom: 5px;
+      }
     }
 
     p {
       .font(1.6rem, none);
       margin-bottom: 20px;
+      @media (max-width: 500px) {
+        margin-bottom: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
     }
 
     h3 {
       .font(2rem, 600);
+      @media (mx-width: 500px) {
+        .font(1.8rem, @font-weight);
+      }
     }
     h4 {
       .font(1.6rem, 100);
+      @media (max-width: 500px) {
+        .font(2rem, 200);
+      }
     }
     ul {
       .font(1.6rem, 200);
-      display: flex;
       .flex(column, flex-end, center);
       margin-bottom: 20px;
+      @media (max-width: 500px) {
+        margin: 10px;
+      }
 
       li {
         list-style-type: disc;
         padding: 10px;
+        @media (max-width: 500px) {
+          list-style-type: decimal;
+          padding: 5px;
+        }
       }
     }
     .about-me {
@@ -273,11 +298,20 @@ body {
       flex-wrap: wrap;
       border-right: 10px solid @font-color;
       margin-right: 20px;
+      @media (max-width: 500px) {
+        height: 50%;
+        border-right: none;
+        margin-right: 0;
+        width: 100%;
+      }
 
       .about-me-para {
         background-color: #c0c0c0;
         margin-right: 10px;
         padding: 10px;
+        @media (max-width: 500px) {
+          margin-right: 0;
+        }
       }
     }
 
@@ -288,11 +322,17 @@ body {
       a {
         color: @font-color;
         .font(1.8rem, none);
+        @media (max-width: 500px) {
+          color: @mobile-font;
+        }
       }
     }
     .skill-set {
       align-items: baseline;
       padding: 10px;
+      @media (mx-width: 5000px) {
+        padding: 5px;
+      }
     }
   }
 }
