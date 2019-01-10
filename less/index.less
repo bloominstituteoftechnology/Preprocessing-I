@@ -212,11 +212,17 @@ body {
       width: 50%;
       .flex(row, space-between, flex-end);
       padding: 5px;
+
       @media (max-width: 500px) {
+        width: 100%;
+        .flex(row, space-evenly, center);
       }
       a {
         font-size: 1.6rem;
         text-decoration: none;
+        @media (max-width: 500px) {
+          color: @mobile-font;
+        }
         &:hover {
           color: #ffffff;
         }
@@ -227,7 +233,6 @@ body {
   //***************Main Content
   section {
     .flex(row, space-between, center);
-
     h2 {
       margin-bottom: 20px;
       .font(2.4rem, @font-weight);
