@@ -67,6 +67,8 @@ html, body {
 @standard-font: 'Exo', sans-serif;
 @header-font: 'Bungee', cursive;
 
+@phone: (max-width: 500px);
+
 .flex (@j-content: center; @a-items: center) {
 	display: flex;
 	justify-content: @j-content;
@@ -111,6 +113,9 @@ h2 {
 				padding: 15px;
 				font-size: 1rem;
 			}
+			@media @phone {   
+				justify-content: center;
+			}
 		}
 		.header-bottom {
 			width: 100%;
@@ -118,6 +123,10 @@ h2 {
 			.flex();
 			padding-top: 25px;
 			padding-bottom: 25px;
+			@media @phone {
+				flex-direction: column;
+				align-items: center;
+			}
 			img.profile-photo {
 				width: 30%;
 				width: auto;
@@ -130,10 +139,18 @@ h2 {
 				&:hover {
 					filter: none;
 				}
+				@media @phone {
+					margin: 0 auto;
+					margin-bottom: 20px;
+					width: 100%;
+				}
 			}
 			div.info {
 				width: 70%;
 				color: @text-color;
+				@media @phone {
+					width: 100%;
+				}
 				h1 {
 					font-size: 2.4rem;
 					font-family: @header-font;
@@ -143,27 +160,44 @@ h2 {
 					span {
 						font-weight: bold;
 					}
+					@media @phone {
+						text-align: center;
+						margin-bottom: 20px;
+					}
 				}
 				h4 {
 					font-size: 1rem;
 					border-bottom: 1px solid @text-hover-color;
 					padding-bottom: 20px;
 					margin-right: 2%;
+					@media @phone {
+						text-align: center;
+						margin-right: 0;
+						padding-bottom: 30px;
+					}
 				}
 				ul {
 					font-size: 1.2rem;
 					.flex;
 					flex-wrap: wrap;
 					margin: 20px 2% 0 0;
+					@media @phone {
+						width: 100%;
+						flex-direction: column;
+						flex-wrap: nowrap;
+						justify-content: center;
+						margin-left: 2%;
+					}
 					li {
 						margin-bottom: 10px;
 						.flex(flex-start);
-						&:nth-child(odd) {
+						&:nth-child(odd), &:nth-child(even) {
 							width: 50%;
+							@media @phone {
+								width: 100%;
+							}
 						}
-						&:nth-child(even) {
-							width: 50%;
-						}
+						
 						img {
 							margin-right: 5px;
 						}
@@ -184,6 +218,9 @@ h2 {
 				font-size: 1.2rem;
 				line-height: 1.5em;
 				text-align: justify;
+			}
+			@media @phone {
+				width: 100%;
 			}
 		}
 		.skills {
@@ -206,6 +243,9 @@ h2 {
 					}
 				}
 			}
+			@media @phone {
+				width: 100%;
+			}
 		}
 		.work-history {
 			width: 100%;
@@ -214,53 +254,7 @@ h2 {
 				font-size: 1.2rem;
 				line-height: 1.5em;
 			}
-
-		}
-	}
-	@media (max-width: 500px) {   
-		header {
-			nav {
-				justify-content: center;
-			}
-			.header-bottom {
-				flex-direction: column;
-				align-items: center;
-				img.profile-photo {
-					margin: 0 auto;
-					margin-bottom: 20px;
-					width: 100%;
-				}
-				div.info {
-					width: 100%;
-					h1 {
-						text-align: center;
-						margin-bottom: 20px;
-					}
-					h4 {
-						text-align: center;
-						margin-right: 0;
-						padding-bottom: 30px;
-					}
-					div.contact {
-						ul {
-							width: 100%;
-							flex-direction: column;
-							flex-wrap: nowrap;
-							justify-content: center;
-							margin-left: 2%;
-							li {
-								&:nth-child(odd), &:nth-child(even) {
-									width: 100%;
-								}
-							}
-						}
-					}
-				}
-
-			}
-		}
-		.content {
-			.intro, .skills, .work-history {
+			@media @phone {
 				width: 100%;
 			}
 		}
