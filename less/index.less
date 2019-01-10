@@ -67,6 +67,12 @@ html, body {
 @standard-font: 'Exo', sans-serif;
 @header-font: 'Bungee', cursive;
 
+.flex (@j-content: center; @a-items: center) {
+	display: flex;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
 a {
 	text-decoration: none;
 	color: @text-color;
@@ -99,9 +105,8 @@ h2 {
 		width: 100%;
 		nav {
 			width: 100%;
-			display: flex;
+			.flex (flex-end, center);
 			flex-wrap: nowrap;
-			justify-content: flex-end;
 			a {
 				padding: 15px;
 				font-size: 1rem;
@@ -110,7 +115,7 @@ h2 {
 		.header-bottom {
 			width: 100%;
 			background-color: @background-color-gray;
-			display: flex;
+			.flex();
 			padding-top: 25px;
 			padding-bottom: 25px;
 			img.profile-photo {
@@ -147,13 +152,12 @@ h2 {
 				}
 				ul {
 					font-size: 1.2rem;
-					display: flex;
+					.flex;
 					flex-wrap: wrap;
 					margin: 20px 2% 0 0;
 					li {
 						margin-bottom: 10px;
-						display: flex;
-						align-items: center;
+						.flex(flex-start);
 						&:nth-child(odd) {
 							width: 50%;
 						}
@@ -214,9 +218,6 @@ h2 {
 		}
 	}
 	@media (max-width: 500px) {   
-		// h2 {
-		// 	text-align: center;
-		// }
 		header {
 			nav {
 				justify-content: center;
