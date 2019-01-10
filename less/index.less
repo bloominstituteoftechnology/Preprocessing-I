@@ -61,6 +61,7 @@ html, body {
 
 @borderColor: blue;
 
+/*  Mixins */
 .flexbox-mixin {
   display: -webkit-box;
   display: -moz-box;
@@ -73,9 +74,17 @@ html, body {
 	margin-top: 5%;
 			height: 300px;
 			width: 300px;
-			border: 2px solid @borderColor;
+			
 }
 
+.pictureBlock-mixin {
+	height: 300px;
+	width: 33%;
+	margin-top: 4%;
+
+}
+
+/* End Mixins */
 
 .container {
 	margin: 0 15% 0 15%;
@@ -112,10 +121,8 @@ html, body {
 		width: 100%;
 
 		.blackBox {
-			margin-top: 3%;
 			margin-left: 5%;
-			height: 300px;
-			width: 300px;
+			.pictureBlock-mixin();
 			color: yellow;
 			.flexbox-mixin();
 			justify-content: center;
@@ -124,9 +131,7 @@ html, body {
 		}
 
 		.intro {
-			height: 300px;
-			width: 300px;
-			margin-top: 5%;
+			.pictureBlock-mixin();
 			margin-right: 5%;
 			
 			
@@ -144,10 +149,60 @@ html, body {
 
 		.skills {
 			.secTwo-Mixin();
+
+				ol {
+					.flexbox-mixin();
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: flex-start;
+					margin-top: 15%;
+				}
+
+				li {
+					margin: 5%;
+				}
+
+				p {
+					margin-top: 5%;
+					margin-left: 5%;
+					
+				}
 		}
 
 		.workHistory {
-		.secTwo-Mixin();
+			.secTwo-Mixin();
+
+				ol {
+					.flexbox-mixin();
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: flex-start;
+					margin-top: 15%;
+				}
+
+				li {
+					margin: 5%;
+				}
+
+				
+		}
+
+		
+	}
+
+	footer {
+		background-color: grey;
+		height: 20%;
+
+		p {
+		margin: 5%;
+			font-size: 1.4rem;
+		}
+
+		li {
+			margin-top:1.5%;
+			margin-left: 5%;
+			
 		}
 	}
 
