@@ -143,6 +143,8 @@ body {
 //variable
 @font-color: #6864f9;
 @font-weight: bold;
+@mobile: darkslategray;
+@mobile-font: chocolate;
 //Mixins
 .flex(@direction,@justify, @align) {
   display: flex;
@@ -162,6 +164,11 @@ body {
   margin: 0 auto;
   padding: 10px;
 
+  @media (max-width: 500px) {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
   //***********Header
   header {
     color: @font-color;
@@ -172,6 +179,13 @@ body {
     background-size: contain;
     background-color: rgba(0, 0, 0, 0.63);
 
+    @media (max-width: 500px) {
+      & {
+        .flex(column, space-between, center);
+        background-image: none;
+        background-color: @mobile;
+      }
+    }
     h1 {
       .font(6.4rem, @font-weight);
       color: #ffffff;
@@ -181,6 +195,16 @@ body {
       background-color: #6864f9;
       text-align: center;
       margin: 10px 0px;
+
+      @media (max-width: 500px) {
+        & {
+          color: @mobile-font;
+          .font(2.8rem, @font-weight);
+          border: none;
+          border-radius: 0px;
+          background-color: @mobile;
+        }
+      }
     }
     nav {
       text-decoration: none;
@@ -188,6 +212,8 @@ body {
       width: 50%;
       .flex(row, space-between, flex-end);
       padding: 5px;
+      @media (max-width: 500px) {
+      }
       a {
         font-size: 1.6rem;
         text-decoration: none;
