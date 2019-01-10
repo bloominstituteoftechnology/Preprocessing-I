@@ -169,7 +169,7 @@ div section.intro p span.btn-primary:hover {
 }
 
 .landing {
-  background-image: url(../img/background.jpg);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background.jpg);
   height: 100vh;
   background-size: cover;
   display: flex;
@@ -180,7 +180,7 @@ div section.intro p span.btn-primary:hover {
 }
 
 .about-section {
-  height: 100vh;
+  height: 100%;
 }
 .about-section .about p {
   margin: 1rem 0;
@@ -188,22 +188,23 @@ div section.intro p span.btn-primary:hover {
   text-align: center;
   line-height: 1.5;
 }
-.about-section .skills h2 {
-  font-size: 3rem;
+.about-section .skills {
+  margin: 5rem 0;
 }
 .about-section .skills .skills-img {
   display: flex;
   justify-content: center;
 }
 .about-section .skills .skills-img img {
-  padding: 4rem 1rem;
+  padding: 0 1rem;
+  margin: 4rem 0;
   width: 15%;
   max-width: 100%;
   height: 100%;
 }
 
 .work {
-  height: 100vh;
+  height: 100%;
 }
 .work h2 {
   text-align: center;
@@ -214,6 +215,7 @@ div section.intro p span.btn-primary:hover {
   text-align: center;
 }
 .work .projects {
+  margin: 4rem 0;
   display: flex;
   flex-flow: column;
   text-align: center;
@@ -282,13 +284,12 @@ div section.intro p span.btn-primary:hover {
 }
 
 #contact {
-  height: 91vh;
+  height: 100%;
 }
 #contact h2 {
+  margin-top: 9rem;
   text-align: center;
-}
-#contact .form-container {
-  padding: 15rem 0 0 0;
+  margin-bottom: 10rem;
 }
 #contact form {
   margin: 0 auto;
@@ -319,6 +320,15 @@ div section.intro p span.btn-primary:hover {
   border: none;
   background: #ffea9a;
 }
+#contact form input[type=submit] {
+  align-content: center;
+  background-color: #f9b8be;
+  cursor: pointer;
+}
+#contact form input[type=submit]:hover {
+  box-shadow: #333 1px 2px 3px;
+  border: 2px solid #ffdb4d;
+}
 #contact form input:focus {
   outline: none;
   border-bottom: 5px solid #f9b8be;
@@ -330,6 +340,116 @@ footer {
   color: #fff;
   padding: 2rem 0;
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  nav#desktop-nav {
+    display: none;
+  }
+
+  nav#mobile-nav {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  nav#mobile-nav ul {
+    flex-direction: row;
+    padding: 1rem 0;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  nav#mobile-nav ul a {
+    text-shadow: none;
+  }
+  nav#mobile-nav ul a i {
+    font-size: 2rem;
+    color: #f9b8be;
+  }
+  nav#mobile-nav ul a i:hover {
+    color: #fff;
+  }
+
+  .landing {
+    margin-bottom: 1rem;
+  }
+
+  #work {
+    display: none;
+  }
+  #work h2 {
+    margin-top: 20rem;
+  }
+  #work i {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .content .skills {
+    margin: 0;
+  }
+  .content .skills-img {
+    margin: 0;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    align-items: center;
+  }
+
+  .p-section-1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  .p-section-1 .p-img {
+    margin: 1rem 0;
+  }
+
+  #contact h2 {
+    margin: 4rem;
+  }
+  #contact h2.lg-heading {
+    margin: 4rem;
+  }
+  #contact form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  #contact h2 {
+    margin-top: 15vh;
+    font-size: 6rem;
+  }
+  #contact form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  nav#mobile-nav {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -73,8 +73,9 @@ div
 
 .landing
     // background: green
-    background-image: url(../img/background.jpg)
-    height: 100vh
+    
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background.jpg)
+    height: 100vh 
     background-size: cover
     display: flex
     flex-direction: column
@@ -83,7 +84,7 @@ div
     color: set-text-color($primary)
 
 .about-section
-  height: 100vh
+  height: 100%
   .about
     p
       margin: 1rem 0
@@ -92,18 +93,18 @@ div
       line-height: 1.5
 
   .skills
-    h2
-      font-size: 3rem
+    margin: 5rem 0
     .skills-img
       display: flex
       justify-content: center
       img
-        padding: 4rem 1rem
+        padding: 0 1rem
+        margin: 4rem 0
         width: 15%
         max-width: 100%
         height: 100%
 .work
-  height: 100vh
+  height: 100%
   
   h2
     text-align: center
@@ -113,6 +114,7 @@ div
     text-align: center
 
   .projects
+    margin: 4rem 0
     display: flex
     flex-flow: column
     text-align: center
@@ -171,11 +173,13 @@ div
       background: $primary       
 
 #contact
-  height: 91vh
+  height: 100%
   h2
+    margin-top: 9rem
     text-align: center
+    margin-bottom: 10rem
   .form-container
-    padding: 15rem 0 0 0 
+    // padding: 15rem 0 0 0 
   form 
     margin: 0 auto
     display: flex
@@ -202,6 +206,14 @@ div
       font-size: 1.8rem
       border: none
       background: lighten($highlight, 15)
+      &[type='submit']
+        align-content:  center
+        background-color: $secondary
+        cursor: pointer
+        // color: #fff
+        &:hover
+          box-shadow: #333 1px 2px 3px
+          border: 2px solid $highlight
       &:focus
         outline: none
         border-bottom: 5px solid $secondary
@@ -214,3 +226,4 @@ footer
   width: 100%
 
 
+@import 'mobile'
