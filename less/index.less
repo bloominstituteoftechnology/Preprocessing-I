@@ -69,6 +69,7 @@ html, body {
 @db: dodgerblue;
 @msg: mediumseagreen;
 @hp: hotpink;
+@lg: hsl(180, 22%, 80%); // lightgrey-blue-ish
 
 @full: 100%;
 @80: 80%;
@@ -220,6 +221,8 @@ nav {
 .highlights {
 	.flex-col();
 	.pad_02();
+	.centered();
+	padding: 0 7.5%;
 	h3{
 		font-size: 2rem;
 		.pad_02();
@@ -237,11 +240,42 @@ nav {
 }   // end highlights
 
 .work_history{
-	width: @full;
-//	.centered();
-	display: flex;
-	justify-content: space-evenly;
+	.b_db();
+	.flex-col();
+	font-size: 1.5rem;
+	width: @80;
+	margin: 5% auto;
+	.header{
+		font-weight: bolder;
+		font-size: 1.75rem;
+	}
+	.odd {
+		background: @lg;
+	}
+	.row{
+		padding: 1% 0;
+		.flex-row();
 
+		.years{
+			width: 10%;
+		}
+		.company{
+			width: 20%;
+		}
+		.title{
+			width: 40%;
+		}
+		.lang{
+			width: 30%;
+		}
+
+	}
+
+
+
+
+
+	/*
 	table{
 		width: @full;
 	}
@@ -258,12 +292,14 @@ nav {
 	}
 	td {
 		width: 100%;
-	}
+	} */
 }
 
 footer{
 	background: lightblue;
 	.centered();
+	width: @full;
+	margin: 2.5% 0;
 	font-size: 1.5rem;
 	text-align: center;
 	.pad_05();
