@@ -10,14 +10,15 @@
 html
   font-size: 62.5%
 
-html, body
+body
   height: 100%
+  background: $primary
 
 h1,h2,h3,h4,h5,h6,p,li
   font-size: 1.6rem
+  color: set-text-color($primary)
   &.lg-heading
     font-size: 7rem
-    color: $primary
     // @include textShadow
     margin: .5rem 0
   &.sm-heading
@@ -26,6 +27,13 @@ h1,h2,h3,h4,h5,h6,p,li
     color: $secondary
     // @include textShadow
 
+.img-cover
+  color: set-text-color($primary)
+  background: rgba($primary, .1)
+  padding: 1rem 0
+  @include textShadow
+  width: 100%
+  text-align: center
 
 .container
     width: 75%
@@ -98,22 +106,111 @@ div
   height: 100vh
   
   h2
-    font-size: 3rem
     text-align: center
+    margin-top: 2rem
   h3.sm-heading
-    margin: 1rem 0
+    margin: 1.6rem 0
     text-align: center
-    font-size: 1.6rem 
 
   .projects
     display: flex
+    flex-flow: column
     text-align: center
-    .sub-pro
-      // flex: 1 1 auto
-      margin: 1rem 
-      .project-info
-        text-align: center
+    .p-section-1
+      display: flex
+      margin: 3rem 0
     img
       max-width: 100%
-      width: 85%
-      opacity: .5
+      // background: #222
+      border-radius: 12px
+      &:hover
+        border: 3px solid $highlight
+    .p-img
+      position: relative
+      width: 50%
+      margin: 0 2rem
+      .image
+        display: block
+        width: 100%
+        height: auto
+    .middle
+      @include easeOut
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      height: 100%
+      width: 100%
+      opacity: 0
+      transition: .5s ease
+      // background-color: #008CBA
+      background-color: rgba($secondary, .9)
+      border-radius: 12px
+      &:hover
+          opacity: 1
+          border: 3px solid $highlight
+    .text
+      color: white
+      font-size: 2.6rem
+      position: absolute
+      top: 50%
+      left: 50%
+      -webkit-transform: translate(-50%, -50%)
+      -ms-transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%)
+      text-align: center
+      width: 100%
+      h2
+        font-size: 3rem
+      p
+        margin-top: 5px
+        font-size: 2.6rem
+    .img-cover
+      color: $highlight
+      background: $primary       
+
+#contact
+  height: 91vh
+  h2
+    text-align: center
+  .form-container
+    padding: 15rem 0 0 0 
+  form 
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    width: 60rem 
+    font-size: 1.6rem
+    // background-color: lighten($primary, 50)
+    padding: 2rem 2.6rem
+    border-bottom: 3px solid $secondary
+    border-radius: 1rem 1rem 0 0
+    box-shadow: #000 1px 1px 10px 1px
+    label
+      font-size: 2rem
+      margin-bottom: 2px
+      color: $secondary
+    textarea
+      margin: 0 0 1rem 0
+      font-size: 2rem
+      border: none
+      background: lighten($highlight, 15)
+    input
+      height: 3rem
+      margin: 0 0 2rem 0
+      font-size: 1.8rem
+      border: none
+      background: lighten($highlight, 15)
+      &:focus
+        outline: none
+        border-bottom: 5px solid $secondary
+
+footer
+  text-align: center
+  background: #222
+  color: #fff
+  padding: 2rem 0
+  width: 100%
+
+
