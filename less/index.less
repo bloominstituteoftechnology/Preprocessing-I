@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: @text-hover-color;
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +55,208 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62,5%;
+	font-family: @standard-font;
 }
 
+@text-color: rgb(49, 49, 49);
+@text-hover-color: rgb(7, 48, 18);
+@background-color-gray: rgb(235, 235, 235);
+
+@standard-font: 'Exo', sans-serif;
+@header-font: 'Bungee', cursive;
+
+@phone: (max-width: 500px);
+
+.flex (@j-content: center; @a-items: center) {
+	display: flex;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
+a {
+	text-decoration: none;
+	color: @text-color;
+	&:hover {
+		text-decoration: underline;
+		color: @text-hover-color;
+		font-weight: bold;
+	}
+}
+
+h2 {
+	display:inline-block;
+	font-size: 1.8rem;
+	font-weight: bold;
+	font-family: @header-font;
+	color: @text-hover-color;
+	text-transform: uppercase;
+	word-spacing: 0.1em;
+	border-bottom: 1px solid @text-hover-color;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+}
+
+.container {
+	max-width: 850px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	background-color: white;
+	header {
+		width: 100%;
+		nav {
+			width: 100%;
+			.flex (flex-end, center);
+			flex-wrap: nowrap;
+			a {
+				padding: 15px;
+				font-size: 1rem;
+			}
+			@media @phone {   
+				justify-content: center;
+			}
+		}
+		.header-bottom {
+			width: 100%;
+			background-color: @background-color-gray;
+			.flex();
+			padding-top: 25px;
+			padding-bottom: 25px;
+			@media @phone {
+				flex-direction: column;
+				align-items: center;
+			}
+			img.profile-photo {
+				width: 30%;
+				width: auto;
+				max-width: 200px;
+				height: auto;
+				max-height: 200px;
+				margin: 0 auto 0 2%;
+				border-radius: 50%;
+				filter: grayscale(100%) opacity(.9);
+				&:hover {
+					filter: none;
+				}
+				@media @phone {
+					margin: 0 auto;
+					margin-bottom: 20px;
+					width: 100%;
+				}
+			}
+			div.info {
+				width: 70%;
+				color: @text-color;
+				@media @phone {
+					width: 100%;
+				}
+				h1 {
+					font-size: 2.4rem;
+					font-family: @header-font;
+					color: @text-hover-color;
+					margin-bottom: 10px;
+					margin-right: 2%;
+					span {
+						font-weight: bold;
+					}
+					@media @phone {
+						text-align: center;
+						margin-bottom: 20px;
+					}
+				}
+				h4 {
+					font-size: 1rem;
+					border-bottom: 1px solid @text-hover-color;
+					padding-bottom: 20px;
+					margin-right: 2%;
+					@media @phone {
+						text-align: center;
+						margin-right: 0;
+						padding-bottom: 30px;
+					}
+				}
+				ul {
+					font-size: 1.2rem;
+					.flex;
+					flex-wrap: wrap;
+					margin: 20px 2% 0 0;
+					@media @phone {
+						width: 100%;
+						flex-direction: column;
+						flex-wrap: nowrap;
+						justify-content: center;
+						margin-left: 2%;
+					}
+					li {
+						margin-bottom: 10px;
+						.flex(flex-start);
+						&:nth-child(odd), &:nth-child(even) {
+							width: 50%;
+							@media @phone {
+								width: 100%;
+							}
+						}
+						
+						img {
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.content {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		color: @text-color;
+		.intro {
+			width: 50%;
+			padding: 20px 2%;
+			p {
+				font-size: 1.2rem;
+				line-height: 1.5em;
+				text-align: justify;
+			}
+			@media @phone {
+				width: 100%;
+			}
+		}
+		.skills {
+			width: 50%;
+			padding: 20px 2%;
+			table {
+				width: 100%;
+				tr {
+					border: 0.5px lightgrey dotted;
+					&:nth-child(odd) {
+						background-color: @background-color-gray;
+					}
+					&:hover {
+						background-color: @text-hover-color;
+						color: white;
+					}
+					td {
+						padding: 5px;
+						font-size: 1.2rem;
+					}
+				}
+			}
+			@media @phone {
+				width: 100%;
+			}
+		}
+		.work-history {
+			width: 100%;
+			padding: 20px 2%;
+			p {
+				font-size: 1.2rem;
+				line-height: 1.5em;
+			}
+			@media @phone {
+				width: 100%;
+			}
+		}
+	}
+}
