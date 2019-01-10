@@ -86,12 +86,18 @@ header{
 	justify-content:flex-end;
 	font-size: @font;
 	padding: 20px;;
+	@media @phone {
+		justify-content: center;
+	}
 }
 
 .container{
 	max-width: 860px;
 	display: flex;
 	justify-content: center;
+	@media @phone {
+		    flex-direction: row;
+		 }
 }
 
 navigation a{
@@ -137,12 +143,16 @@ button{
 .box{
 	width: 50%;
     padding: 25px;
-    margin: 25px 10px 0px 50px;
+	margin: 25px 10px 0px 50px;
+	
 }
 
 li{ 
 	padding: 20px;
 	border: 1px solid #dfdfdf;
+	@media @phone {
+		display: none;
+	 }
 }
 
 .bottomContent{ 
@@ -182,5 +192,3 @@ footer{
 @fontType: 2rem;
 @branding: #808080;
 @phone: (max-width: 500px);
-
-
