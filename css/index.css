@@ -137,23 +137,51 @@ body {
 html {
   font-size: 62.5%;
 }
+.middle-left-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
 .container {
   font-size: 1.6rem;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .container header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
 }
 nav {
   display: flex;
   justify-content: space-between;
   width: 50%;
   margin-left: 50%;
-  border: 1px solid red;
   margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  nav {
+    margin-left: 0%;
+  }
 }
 nav a {
   text-decoration: none;
   color: black;
   justify-content: flex-end;
+}
+@media (max-width: 500px) {
+  img {
+    max-width: 100;
+    height: auto;
+  }
 }
 .top-content {
   background: lightgray;
@@ -170,11 +198,18 @@ p {
   display: flex;
   margin-top: 20px;
 }
+@media (max-width: 500px) {
+  .middle-section {
+    flex-direction: column;
+    width: 200%;
+    padding: 2%;
+  }
+}
 .middle-left {
   display: flex;
   flex-direction: column;
-  flex-flow: wrap;
   width: 50%;
+  flex-flow: wrap;
 }
 .middle-left h2 {
   font-size: 2.5rem;
@@ -197,10 +232,8 @@ h3 {
 }
 .bottom-content {
   width: 100%;
-  border: 2px solid blue;
 }
 .bottom-content table {
-  border: 5px solid red;
   width: 100%;
 }
 .category {

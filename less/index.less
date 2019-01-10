@@ -72,24 +72,78 @@ html {
 @justify-content: center;
 @table-background-color: rgb(199, 196, 196);
 
+//Mixins
+.middle-left-right {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+// Nested at-rule
+// @media (max-width: 500px) {
+// 		//background: @background-color;
+// 		//.middle-right;
+// 		//.middle-left-right;
+// 		flex-flow: wrap;
+// 		width: 100%;
+
+// 		flex-direction: column;
+// }
+
 .container {
 	font-size: 1.6rem;
-	width: 50%;
+	width: 75%;
 	margin: 0 auto;
-}
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+	
+		header {
+
+			@media (max-width: 500px) {
+				//background: @background-color;
+				//.middle-right;
+				//.middle-left-right;
+				//flex-flow: wrap;
+				width: 100%;
+				//flex-direction: column;
+				display: flex;
+				justify-content: center;
+				max-width: 100%;
+			}		
+
+			nav {
+
+			}
+		}
+	}
+	
+	
+
 
 nav {
 	display: flex;
 	justify-content: space-between;
 	width: 50%;
 	margin-left: 50%;
-	border: 1px solid red;
 	margin-bottom: 20px;
+	
+
+	@media (max-width: 500px) {
+		margin-left: 0%;
+	}		
 	
 	a {
 		text-decoration: none;
 		color: black;
 		justify-content: flex-end;
+	}
+}
+
+img {
+	@media (max-width: 500px) {
+		max-width: 100;
+		height: auto;
 	}
 }
 
@@ -110,13 +164,19 @@ p {
 .middle-section {
 	display: flex;
 	margin-top: 20px;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		width: 200%;
+		padding: 2%;
+
+	}
+	
 }
 
 .middle-left {
-	display: flex;
-	flex-direction: column;
+	.middle-left-right;
 	flex-flow: wrap;
-	width: 50%;
 	
 	h2 {
 		font-size: 2.5rem
@@ -124,9 +184,7 @@ p {
 }
 
 .middle-right {
-	display: flex;
-	flex-direction: column;
-	width: 50%;
+	.middle-left-right;
 
 	tr {
 	border: 1px solid gray;
@@ -144,10 +202,10 @@ h3 {
 
 .bottom-content {
 	width: 100%;
-	border: 2px solid blue;
+	//border: 2px solid blue;
 	
 	table {
-		border: 5px solid red;
+		//border: 5px solid red;
 		width: 100%;
 
 		
