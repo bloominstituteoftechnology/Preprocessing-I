@@ -78,6 +78,8 @@ html, body {
 @m500: ~"(max-width: 500px)";
 
 
+
+
 ////////////////////
 // mixins
 ///////////////////
@@ -131,6 +133,21 @@ html, body {
 
 .centered{
 	margin: 0 auto;
+}
+
+// fonts
+#fonts() {
+	.Charm{
+		font-family: Charm, cursive;
+	}
+
+	.Mukta{
+		font-family: 'Mukta', sans-serif;
+	}
+
+	.Raleway {
+		font-family: 'Raleway', sans-serif;
+	}
 }
 
 
@@ -200,15 +217,18 @@ nav {
 		}
 		.tagline {
 			font-size: 3rem;
+			#fonts.Charm();
 		}
 		h3{
 			font-size: 2rem;
+			#fonts.Mukta();
 			@media @m500 {
 				font-size: 4rem;
 			}
 		}
 		p{
 			font-size: 1.5rem;
+			#fonts.Raleway();
 			@media @m500 {
 				font-size: 2rem;
 			}
@@ -225,6 +245,7 @@ nav {
 	padding: 0 7.5%;
 	h3{
 		font-size: 2rem;
+		#fonts.Mukta();
 		.pad_02();
 		@media @m500 {
 			font-size: 4rem;
@@ -232,6 +253,7 @@ nav {
 	}
 	p{
 		font-size: 1.5rem;
+		#fonts.Raleway();
 		.pad_02();
 		@media @m500 {
 			font-size: 2rem;
