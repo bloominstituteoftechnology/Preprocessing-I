@@ -55,7 +55,7 @@ table {
 
 html, body {
     height: 100%;
-	font-family: arial, sans-serif;
+	font-family: @font-arial, @font-sans-serif;
 }
 
 html {
@@ -89,6 +89,8 @@ h4 {
 // variables
 @nav-height: 50px;
 @margin-height: 10px;
+@font-arial: arial;
+@font-sans-serif: sans-serif;
 
 // Color variables
 @light-gray: #dddddd;
@@ -169,10 +171,17 @@ h4 {
 	.main-content {
 		display: flex;
 
+		@media (max-width: 500px) {
+			display: block;
+		}
 	}
-
 	.main-content-col {
 		width: 50%;
+
+		@media (max-width: 500px) {
+			//display: block;
+			width: 100%;
+		}
 	}
 
 	.skills {
