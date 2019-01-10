@@ -70,21 +70,34 @@ html {
 @medgrey: #a9a9a9;
 @ltgrey: #999;
 
-.flex() {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+body {
+	// background:url('/images/code-bg.jpg');
 }
 
-p {
+
+
+p, ul {
 	font-size: 1.2rem;
 	font-family: 'Open Sans', sans-serif;
 	#paddingMixins.text-padding;
 }
 
+a {
+	text-decoration: none;
+	color:#e51b7d;
+}
+
+ul {
+	font-size: 1.75rem;
+}
+
+.far, .fab {
+	font-size: 2.5rem;
+	#paddingMixins.bottom-padding;
+}
+
 .intro {
-	.flex;
+	.flex-column;
 
 	img {
 		padding-top: 10px;
@@ -96,21 +109,87 @@ p {
 		font-weight: bold;
 		font-family: 'Allerta', sans-serif;
 		color: @medgrey;
-		#paddingMixins.text-padding;
+		#paddingMixins.left-right-padding;
+		#paddingMixins.top-bottom-padding;
 	}
 
 	h2 {
 		font-size: 2rem;
 		font-family: 'Open Sans', sans-serif;
-		#paddingMixins.text-padding;
+		#paddingMixins.left-right-padding;
+		#paddingMixins.top-bottom-padding;
+	}
+
+	// .smaller {
+	// 	#textMixins.sm-text;
+	// }
+
+	.icon-row {
+		.flex-row;
+		justify-content: space-around;
+		#paddingMixins.top-bottom-padding;
 	}
 }
 
-//Name Spacing
+.flex-row {
+	.flex-row;
+	justify-content: space-around;
+	#paddingMixins.top-bottom-padding;
+}
+
+.bottom-bordered {
+	#borderMixins.bottom;
+}
+
+//Mixins
+
+.flex-column() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.flex-row() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+#textMixins {
+	.sm-text() {
+		font-size: .5rem;
+	}
+}
 
 #paddingMixins {
 	
 	.text-padding() {
-		padding: 1.5rem .25rem 1.5rem .25rem;
+		padding: 1.25rem .5rem 1.25rem .5rem;
+	}
+
+	.headings-padding() {
+		padding: .5rem 1.25rem .5rem 1.25rem;
+	}
+
+	.bottom-padding {
+		padding-bottom: 1.75rem;
+	}
+
+	.left-right-padding() {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+	}
+
+	.top-bottom-padding() {
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+	}
+}
+
+#borderMixins {
+	.bottom() {
+		border-bottom: 2px solid @ltgrey;
 	}
 }
