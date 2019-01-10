@@ -127,10 +127,41 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
-* {
+* * {
   box-sizing: border-box;
 }
 html,
 body {
   height: 100%;
+}
+nav {
+  border: 1px solid transparent;
+  display: flex;
+  background-color: white;
+  padding: 25px;
+  align-content: space-between;
+}
+nav a {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 30px;
+  margin: 0 auto;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 500px;
+    background: gray;
+  }
+  .container header nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .container header nav a {
+    margin-bottom: 20px;
+  }
 }

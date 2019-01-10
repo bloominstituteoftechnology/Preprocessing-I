@@ -51,21 +51,23 @@ table {
 /* Set every element's box-sizing to border-box */
 *
 
-// Variables //
-/*@color2: #dddddd;
+// Variables // 
+@color1; #e2fffe; 
+@color2; #dddddd;
 @color3: #00fff6;
 @FontA: font-family: 'Open Sans Condensed', sans-serif;
-@FontB:	 font-family: 'Thasadith', sans-serif;*/
+@FontB:	font-family: 'Thasadith', sans-serif;
 
 
 
-* {
+
+*{
 	box-sizing: border-box;
 }
 
 html, body {
 	height: 100%;
-	background-color: blue;
+	
 	
 
 }
@@ -73,15 +75,26 @@ html, body {
 nav{
 	border: 1px solid transparent;
 	display: flex;
-	background-color: white;
 	padding:25px;
 	align-content: space-between;
 
 a{
-	color: @greyShade;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 30px;
 	margin: 0 auto;
   }
 }
 
+.container {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid @color2;
+	padding: 20px;
+  }
+  
+  @media(max-width: 500px) {
+	.container {
+	  width: 500px;
+	  background: gray;
+	}
+}
