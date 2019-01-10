@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,172 @@ table {
 
 html, body {
     height: 100%;
+	font-family: @font-arial, @font-sans-serif;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+h1 {
+	font-size: 3.8rem;
+	margin-top: @margin-height;
+	margin-bottom: @margin-height;
+}
+
+h2 {
+	font-size: 2.5rem;
+	margin-top: @margin-height;
+	margin-bottom: @margin-height;
+}
+
+h3 {
+	font-size: 2rem;
+	margin-top: @margin-height;
+	margin-bottom: @margin-height;
+}
+
+h4 {
+	font-size: 1.8rem;
+	margin-top: @margin-height;
+	margin-bottom: @margin-height;
+}
+
+// variables
+@nav-height: 50px;
+@margin-height: 10px;
+@font-arial: arial;
+@font-sans-serif: sans-serif;
+
+// Color variables
+@light-gray: #dddddd;
+
+// mixin
+.page-centering() {
+	max-width: 880px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+
+	.nav-wrapper {
+		background-color: white;
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+
+	.main-container {
+		.page-centering;
+		font-size: 1.8rem;
+		margin-top: @nav-height;
+	}
+
+	nav {
+		.page-centering;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		height: @nav-height;
+		z-index: 1;
+	}
+
+	.nav-item {
+		font-size: 1.9rem;
+		margin-right: 20px;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.header {
+		background-color: #E9ECEF;
+		padding: 20px;
+
+		.header-sub-title {
+			margin-bottom: 25px;
+		}
+
+		button {
+
+			margin-top: 18px;
+			margin-bottom: 18px;
+		}
+
+		.contact {
+			margin-bottom: 20px;
+		}
+
+		a[href^="mailto"]::before {
+			content: "📧 ";
+		}
+
+		a[href^="tel"]::before {
+			content: "📞 ";
+		}
+
+		.link {
+			text-decoration: none;
+		}
+
+	}
+
+	.main-content {
+		display: flex;
+
+		@media (max-width: 500px) {
+			display: block;
+		}
+	}
+	.main-content-col {
+		width: 50%;
+
+		@media (max-width: 500px) {
+			margin-bottom: 40px;
+			width: 100%;
+		}
+	}
+
+	.skills {
+		border-left: 1px solid @light-gray;
+		border-right: 1px solid @light-gray;
+		border-bottom: 1px solid @light-gray;
+
+		li {
+			padding: 10px;
+			border-top: 1px solid @light-gray;
+		}
+	}
+
+	.work-history {
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid @light-gray;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: @light-gray;
+		}
+	}
+
+	footer {
+		.page-centering;
+		background-color: #808080;
+		color: white;
+		margin-top: 30px;
+		padding: 20px;
+		font-size: 1.6rem;
+		text-align: center;
+	}
+
+}
