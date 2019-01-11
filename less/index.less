@@ -69,8 +69,11 @@ html, body {
 	border: 1px solid black;
 }
 
-.flex() {
+.flex(@justify: ""; @alignitem: ""; @flexdir: "") {
 	display: flex;
+	justify-content: @justify;
+	align-items: @alignitem;
+	flex-direction: @flexdir;
 }
 
 .h2() {
@@ -107,8 +110,7 @@ html, body {
 		width: 100%;
 		
 		.navigation {
-			.flex();
-			justify-content: space-around;
+			.flex(space-around);
 
 			a {
 				font-family: @font_header;
@@ -129,9 +131,6 @@ html, body {
 			.h2();
 		}
 
-		p {
-			
-		}
 	} // intro
 
 	.skills {
@@ -184,9 +183,9 @@ html, body {
 }
 
 footer {
-	.flex();
-	align-items: center;
-	flex-direction: column;
+	.flex(@alignitem: center, @flexdir: column);
+	
+	//flex-direction: column;
 	font-size: 1.6rem;
 	margin-top: 20%;
 
