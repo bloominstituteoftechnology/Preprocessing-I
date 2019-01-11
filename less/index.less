@@ -60,6 +60,11 @@ html, body {
 
 //styling 
 
+html {
+	font-size: 62.5%;
+	font-family: @font-stack;
+}
+
 //variables
 @border: 1px solid red;
 @darkblue: #011936;
@@ -68,6 +73,7 @@ html, body {
 @background2: #f9dc5c;
 @headerFont: 'Fira Sans', sans-serif;
 @paragraphFont: 'Merriweather', serif;
+@font-stack: 'Merriweather', serif;
 
 //mixins
 .center() {
@@ -83,7 +89,7 @@ html, body {
 
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 800px;
 	margin: 0 auto;
 	// border: @border;
 
@@ -111,6 +117,7 @@ html, body {
 				color: @fontColor;
 				padding-left: 20px;
 				padding-top: 20px;
+				font-size: 2rem;
 
 
 				@media(max-width: 800px){
@@ -126,6 +133,8 @@ html, body {
 				display: flex;
 				justify-content: space-between;
 				padding: 20px 0;
+				width: 50%;
+
 			}
 			
 			li {
@@ -137,6 +146,7 @@ html, body {
 				color: @fontColor;
 				font-family: @paragraphFont;
 				margin-right: 10px;
+				font-size: 1.6rem;
 			}
 
 			a:hover{
@@ -148,6 +158,7 @@ html, body {
 	.bio {
 		// border: @border;
 		background: @background1;
+		// margin: 0 auto;
 	
 		.mainBio {
 			display: flex;
@@ -170,6 +181,11 @@ html, body {
 
 		.bioInfo {
 			padding-top: 20px;
+			padding-left: 20px;
+			width: 50%;
+			p {
+				font-size: 1.6rem;
+			}
 		}
 		
 		hr {
@@ -177,12 +193,13 @@ html, body {
 		}
 	
 		button{
-			font-family: @paragraphFont;
+			// font-family: @paragraphFont;
 			background-color: @darkblue;
 			color: @fontColor;
 			padding: 5px 20px;
 			margin: 20px 0 20px 0;
 			border: none;
+			font-size: 2rem;
 		}
 	
 		button:hover {
@@ -194,13 +211,27 @@ html, body {
 		background: @background2;
 	}
 	
-	.resume {
-		background: @background1;
+	.workHistory {
+		display: flex;
+
+		.resume {
+			background: @background1;
+			width: 33%;
+		}	
+		h3 {
+			font-size: 1.9rem;
+		}
+		p {
+			font-size: 1.6rem;
+		}
 	}
 	
 	footer{	
+		background: @darkblue;
 		p{
 			text-align: center;
+			color: @fontColor;
+			font-size: 1rem;
 		}
 	}
 }
