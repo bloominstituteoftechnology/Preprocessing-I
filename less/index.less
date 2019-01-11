@@ -62,6 +62,10 @@ html, body {
 		margin: 0 auto;
 		font-size: 62.5%;
 		width: 800px;
+		@media @phone {
+			width: 500px;
+			margin: 0 auto;
+		}
 
 	.flex-right() {
 		display: flex;
@@ -81,27 +85,41 @@ html, body {
 		font-size: 3rem;
 		font-family: @font;
 		.flex-center;
+		@media @phone {
+			font-size: 2rem;
+		}
 	}
 
 	nav {
 		.flex-right;
+
+		@media @phone {
+			justify-content: space-around;
+		}
 	}
 
 	@font: 'Caveat', cursive;
 	@background: lightgray;
+	@blood: darkred;
+	@phone: (max-width: 500px);
 
 	nav a {
 		margin: 3.5% 0 2.5% 2.5%;
 		font-family: @font;
 		font-size: 1.6rem;
 		text-decoration: none;
-		color: rgb(24, 119, 115);
+		color: @blood
 	}
 
 	img {
 		padding: 3%;
 		margin-left: 17%;
 		margin-bottom: 4%;
+
+		@media @phone {
+			padding: 3%;
+			margin-left: -1%;
+		}
 	}
 
 	.intro {
@@ -125,8 +143,6 @@ html, body {
 		font-family: @font;
 	}
 
-	@blood: darkred;
-
 	.telephone {
 		text-decoration: none;
 		color: @blood;
@@ -137,6 +153,10 @@ html, body {
 		font-weight: bold;
 		margin-bottom: 5%;
 		font-family: @font;
+
+		@media @phone {
+			font-size: 2rem;
+		}
 	}
 
 	.middle {
@@ -144,6 +164,11 @@ html, body {
 		flex-direction: column;
 		justify-content: flex-start;
 		width: 55%;
+
+		@media @phone {
+			width: 50%;
+			padding: 0 2.5%;
+		}
 	}
 	
 	.middle-container {
@@ -157,11 +182,25 @@ html, body {
 		font-size: 1.4rem;
 		line-height: 1.1;
 		font-family: @font;
+
+		@media @phone {
+			font-size: 1.4rem;
+		}
 	}
 
 	li {
 		font-size: 1.4rem;
 		line-height: 1.5;
+		font-family: @font;
+	}
+
+	.history-container {
+		@media @phone {
+			margin: 0 2%;
+		}
+	}
+
+	.history-container p {
 		font-family: @font;
 	}
 
@@ -171,5 +210,37 @@ html, body {
 		margin-top: 5%;
 		padding-bottom: 1.5%;
 		border-bottom: 1px solid lightgray;
+
+		@media @phone {
+			margin-left: 2%;
+		}
+	}
+
+	.table-head {
+		font-size: 1.6rem;
+		display: flex;
+		justify-content: space-between;
+		margin-top: -3%;
+	}
+
+	.table-row {
+		display: flex;
+		justify-content: space-between;
+		padding: 1.5% 0;
+		font-size: 1.1rem;
+	}
+
+	.table-row p {
+		padding-top: 1.5%;
+	}
+
+	.copy {
+		.flex-center;
+		font-size: 1.2rem;
+		padding-top: 2%;
+
+		@media @phone {
+			margin-top: 2%;
+		}
 	}
 }
