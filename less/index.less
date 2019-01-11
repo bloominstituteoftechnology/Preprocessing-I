@@ -104,6 +104,11 @@ html {
 	color: var(--dark-text-color);
 }
 
+.mobileViewText() {
+	.defaultText();
+	font-size: 1.3rem;
+}
+
 .lightText() {
 	.textFont();
 	color: var(--light-text-color);
@@ -353,10 +358,18 @@ html {
 		margin: 0 auto;
 		background: var(--primary-bg-shading);
 
+		@media (max-width: 500px) {
+			.flex(column, normal, normal);
+		}
+
 		section {
-			margin: 1.5rem 0;
+			margin: 15px 0;
 			.flex(column,normal,normal);
 			.defaultText();
+
+			@media (max-width: 500px) {
+				.mobileViewText();
+			}
 		}
 	}
 
@@ -365,6 +378,11 @@ html {
 		.flex(column,normal,normal);
 		padding: 0 1%;
 		margin: 0;
+
+		@media (max-width: 500px) {
+			flex: 0 0 100%;
+			padding: 0 3%;
+		}
 	}
 
 	.sidebar-content {
@@ -373,14 +391,24 @@ html {
 		.flex(column,normal,normal);
 		padding: 0 1%;
 		margin: 0;
+
+		@media (max-width: 500px) {
+			flex: 0 0 100%;
+			padding: 0 3%;
+		}
 	}
 
 	.section-title {
 		.headingFont();
 		font-size: 1.8rem;
 		font-weight: 600;
+		margin-bottom: 5px;
 		color: var(--primary-color);
 		text-transform: uppercase;
+
+		@media (max-width: 500px) {
+			font-size: 1.5rem;
+		}
 	}
 
 	.role, .skill-category-info, .education-info {
@@ -391,6 +419,10 @@ html {
 		font-size: 1.8rem;
 		font-weight: bold;
 		color: black;
+
+		@media (max-width: 500px) {
+			font-size: 1.5rem;
+		}
 	}
 
 	.company-info {
@@ -403,16 +435,24 @@ html {
 		color: var(--primary-dark-color);
 		font-size: 1.4rem;
 		font-weight: 900;
+
+		@media (max-width: 500px) {
+			font-size: 1.2rem;
+		}
 	}
 
 	.work-dates {
 		color: var(--primary-dark-color);
 		font-size: 1.4rem;
 		font-style: italic;
+
+		@media (max-width: 500px) {
+			font-size: 1.2rem;
+		}
 	}
 
 	.accomplishments {
-		margin-left: 2rem;
+		margin-left: 20px;
 		list-style-type: square;
 	}
 

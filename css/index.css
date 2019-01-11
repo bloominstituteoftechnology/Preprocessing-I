@@ -412,8 +412,16 @@ html {
   margin: 0 auto;
   background: var(--primary-bg-shading);
 }
+@media (max-width: 500px) {
+  .container .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: normal;
+  }
+}
 .container .content-container section {
-  margin: 1.5rem 0;
+  margin: 15px 0;
   display: flex;
   flex-direction: column;
   justify-content: normal;
@@ -424,6 +432,16 @@ html {
   letter-spacing: 0.1rem;
   color: var(--dark-text-color);
 }
+@media (max-width: 500px) {
+  .container .content-container section {
+    font-family: 'Open Sans', Helvetica, Sans-Serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    color: var(--dark-text-color);
+    font-size: 1.3rem;
+  }
+}
 .container .main-content {
   flex: 0 0 70%;
   display: flex;
@@ -432,6 +450,12 @@ html {
   align-items: normal;
   padding: 0 1%;
   margin: 0;
+}
+@media (max-width: 500px) {
+  .container .main-content {
+    flex: 0 0 100%;
+    padding: 0 3%;
+  }
 }
 .container .sidebar-content {
   flex: 0 0 30%;
@@ -443,12 +467,24 @@ html {
   padding: 0 1%;
   margin: 0;
 }
+@media (max-width: 500px) {
+  .container .sidebar-content {
+    flex: 0 0 100%;
+    padding: 0 3%;
+  }
+}
 .container .section-title {
   font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
+  margin-bottom: 5px;
   color: var(--primary-color);
   text-transform: uppercase;
+}
+@media (max-width: 500px) {
+  .container .section-title {
+    font-size: 1.5rem;
+  }
 }
 .container .role,
 .container .skill-category-info,
@@ -460,6 +496,11 @@ html {
   font-weight: bold;
   color: black;
 }
+@media (max-width: 500px) {
+  .container .job-title {
+    font-size: 1.5rem;
+  }
+}
 .container .company-info {
   display: flex;
   justify-content: space-between;
@@ -470,13 +511,23 @@ html {
   font-size: 1.4rem;
   font-weight: 900;
 }
+@media (max-width: 500px) {
+  .container .company-name {
+    font-size: 1.2rem;
+  }
+}
 .container .work-dates {
   color: var(--primary-dark-color);
   font-size: 1.4rem;
   font-style: italic;
 }
+@media (max-width: 500px) {
+  .container .work-dates {
+    font-size: 1.2rem;
+  }
+}
 .container .accomplishments {
-  margin-left: 2rem;
+  margin-left: 20px;
   list-style-type: square;
 }
 .container .accomplishments li {
