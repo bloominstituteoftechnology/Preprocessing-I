@@ -180,18 +180,44 @@ html {
 			.flex(row,flex-end,normal);
 			flex-wrap: nowrap;
 			padding: 0 1%;
+
+			a {
+				font-size: 1.2rem;
+				letter-spacing: .24rem;
+				text-transform: uppercase;
+				margin-left: 5%;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			@media (max-width: 500px) {
+				.flex(column,center,center);
+
+				a {
+						width: 100%;
+						text-align: center;
+						padding: 20px 0;
+						margin: 0;
+						font-size: 1.6rem;
+						font-weight: 500;
+						border-bottom: 0.5px solid var(--primary-color);
+				}
+
+				a:first-child {
+					border-top: 0.5px solid var(--primary-color);
+				}
+
+				a:hover {
+					.primary-neg-color-scheme();
+				}
+				
+			}
+		
 		}
 
-		.navigation a {
-			font-size: 1.2rem;
-			letter-spacing: .24rem;
-			text-transform: uppercase;
-			margin-left: 5%;
-		}
 
-		.navigation a:hover {
-			text-decoration: underline;
-		}
 	}
 
 	/*----- Footer -----*/
@@ -240,9 +266,7 @@ html {
 			.cta-links a {
 				.lightText();
 				font-size: 2rem;
-				
 			}
-
 		}
 
 		.copyright-info * {
