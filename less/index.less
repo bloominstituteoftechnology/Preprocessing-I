@@ -349,6 +349,22 @@ html {
 			}
 		}
 
+		.contact-info-mobile {
+			display: none;
+
+			@media (max-width: 500px) {
+				.flex(column,center,center);
+
+				a {
+					.lightText();
+					.default-link-style();
+					margin: 0.5rem 0;
+					font-size: 1.4rem;
+				}
+				
+			}
+		}
+
 	}
 
 	/*---- Main Content ----*/
@@ -446,15 +462,16 @@ html {
 		.contact-info {
 			word-spacing: 0.5rem;
 
+			@media (max-width: 500px) {
+				display: none;
+			}
+
 			a {
 				margin: 0.5rem 0;
 				color: var(--primary-color);
 				text-decoration: none;
 			}
 
-			@media (max-width: 500px) {
-				text-align: center;
-			}
 		}
 
 		.skill-category-name, .certification {
