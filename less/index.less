@@ -53,7 +53,169 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	height: 100%;
+	font-size: 62.5%;
+	font-family: 'PT Sans', sans-serif;
 }
 
+body {
+	height: 100%;
+	font-size: 1.45rem;
+	line-height: 20px;
+}
+
+// Mixins
+
+.normalize(@color) {
+	text-decoration: none;
+	color: @color;
+}
+
+.flex(@justify,@aitems,@acontent) {
+	display: flex;
+	justify-content: @justify;
+	align-items: @aitems;
+	align-content: @acontent;
+}
+
+// Variables
+
+@content: #EEE5DE;
+@attention: #A78D84;
+
+// Styles
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	
+	.navigation-container {
+		.flex(flex-end,center,center);
+		padding: 20px 0;
+
+		nav {
+			.flex(space-between,center,center);
+			width: 260px;
+
+			@media (max-width: 500px) {
+				width: 100%;
+				justify-content: space-evenly;
+			}
+
+			.nav__button {.normalize(black);}
+		}
+	}
+	
+	.intro {
+		padding: 20px;
+		background: @content;
+		height: 100%;
+		.flex(space-between, flex-start, center);
+		flex-direction: column;
+		border-radius: 5px;
+
+		.intro__img-container {.flex(space-between,center,center);}
+
+		.intro__self {
+			width: 100%;
+			border-bottom: 1px solid black;
+
+			h1 {
+				margin-top: 30px;
+				font-size: 3rem;
+			}
+
+			h2 {margin: 10px 0;}
+		}
+
+		p, a {margin: 15px 0;}
+
+		.intro__button {
+			.normalize(white);
+			background: @attention;
+			padding: 8px 20px;
+			border-radius: 3px;
+			font-size: 2rem;
+		}
+	}
+
+	.mid-content {
+		.flex(space-between,flex-start,center);
+		margin: 30px 0;
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+
+		h1 {
+			margin-bottom: 10px;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		.mid-content__story {
+			width: 48%;
+
+			@media (max-width: 500px) {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+
+		.mid-content__strengths {
+			width: 48%;
+
+			@media (max-width: 500px) {
+				width: 100%
+			}
+
+			li {
+				border: 1px solid lightgray;
+				padding: 5px 10px;
+			}
+		}
+	}
+
+	.work-history {
+		h1 {
+			margin-bottom: 15px;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+		
+		.work-history__table {
+				border-collapse: collapse;
+				width: 100%;
+				margin-bottom: 30px;
+		
+				td, th {
+					border-top: 1px solid lightgrey;
+					border-bottom: 1px solid lightgrey;
+					padding: 8px;
+				}
+			
+				tr:nth-child(even){background-color: #f2f2f2;}
+			
+				tr:hover {background-color: #ddd;}
+			
+				th {
+					padding-top: 12px;
+					padding-bottom: 12px;
+					text-align: left;
+					background-color: @content;
+					font-weight: bold;
+				}
+		}
+	}
+
+	footer {
+		background: @attention;
+		color: white;
+		text-align: center;
+		height: 60px;
+		
+		.copyright {padding-top: 20px;}
+	}
+
+}
