@@ -48,37 +48,48 @@ table {
 	border-spacing: 0;
 }
 
+/* variables */
+@fontFamily: 'Roboto', sans-serif;
+@tableStyle: solid 1px black;
+
+/* mixins */
+.button {
+	border-radius: 4px;
+	font-size: 15px;
+	padding: 10px 10px;
+	background-color: #555555;
+	color: white;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: @fontFamily;
 }
-
-/* variables */
-@font-family: 'Roboto', sans-serif;
 
 /* code */
 .container {
-	margin: 0px 50px;
+	margin: 0px 40px;
 	border: solid 1px lightblue;
+
 }
 
 nav {
-	font-family: @font-family;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	height: 65px;
-	border: solid 1px orange;
+	// border: solid 1px orange;
 
 	a {	
 		text-decoration: none;
 		color: black;
 		margin-left: 30px;
-		border: solid 1px orange;
+		// border: solid 1px orange;
 	}
 }
 
@@ -88,11 +99,30 @@ nav {
 	border-radius: 5px;
 
 	.top-content{
-		margin: 100px 50px;
+		margin: 50px 20px;
+
+		h1 {
+			font-size: 40px;
+			margin: 5px 0px 10px 0px;
+		}
+
+		hr {
+			margin: 25px 0px 25px 0px;
+		}
+
+		button {
+			margin-top: 20px;
+			.button();
+		}
 	}
 
 }
 
-h1 {
-	font-family: @font-family;
+table{
+	tb, th {
+		width: 100%;
+		border-top: @tableStyle;
+		border-bottom: @tableStyle;
+	}
+
 }
