@@ -69,29 +69,46 @@ html, body {
 
 	.header{
 		.flex-set(@justify:space-between);
-		.defaultMargin;
+		.defaultMargin();
 		font-size: @h2FontSize;
+
+		nav {
+			font-size: @pFontSize;
+		}
 	}
 
 	.jumbotron {
 		.flex-set(@flexdir: column);
-		.defaultPadding();
+		.defaultPadding(0);
 		background-color: @jumboBgColor;
 		
-		.img {
+		.jrow{
 			.defaultMargin();
-
+			.defaultPadding(0);
 			img {
 				width: 30%;
 				max-width: 80px;
 				// height: 50px;
 			}
-		}
+	
+			.name {
+				font-size: @h1FontSize;
+			}
 
-		.name {
-			.defaultMargin();
-			font-size: @h1FontSize;
+			div {
+				margin-top: 0.5%;
+			}
+
+			.button {
+				.flex-set();
+				border: 2px solid black;
+				.defaultPadding(0.005);
+				width: 30%;
+				max-width: 120px;
+			}
+			
 		}
+		
 	}
 }
 
