@@ -59,15 +59,22 @@ html, body {
 
 @primary: #203731;
 @secondary: #FFB612;
-.flex {
+
+
+.nostyle() {
+	text-decoration: none;
+	text-color: @primary;
+}
+
+.flex() {
 	display: flex;
 	}
 
-.h2resize {
+.h2resize() {
 	font-size: 25px;
 }
 
-.center {
+.center() {
 	margin: 0 auto;
 }
 
@@ -89,7 +96,7 @@ html, body {
 			font-size: 20px;
 			text-align: center;
 			width: 15%;
-			text-decoration: none;
+			.nostyle;
 			color: @primary;
 			border: 2px solid @secondary;
 			padding: 0px 15px;
@@ -110,6 +117,8 @@ html, body {
 		font-size: 50px;
 		text-align: center;
 		margin-bottom: 100px;
+		animation-name: h1Animate;
+		animation-duration: 2s;
 	}
 
 	.content {
@@ -143,6 +152,18 @@ html, body {
 					display: none;
 				}
 			}
+
+			a {
+				.nostyle;
+				width: 100%;
+				color: @secondary;
+				font-size: 24px; 
+				margin-left: 20%;
+				padding: 5px 15px 5px 15px;
+				border: 2px solid @secondary;
+				
+			}
+
 		}
 
 		.skills {
@@ -203,6 +224,7 @@ html, body {
 
 				p {
 					border-bottom: 2px solid @primary;
+					font-size: 25px; 
 				}
 			}
 		}
