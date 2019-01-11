@@ -79,17 +79,29 @@ body {
 	font-size: 1.6rem;
 }
 
-h2 {
-	font-size: 2rem;
+
+h1 {
+	font-size: 8rem;
+	font-weight: bold;
 	font-family: 'Allerta', sans-serif;
-	text-transform: uppercase;
+	color: @medgrey;
 	text-align: center;
-	padding-top: 40px;
+	#paddingMixins.top-bottom-padding;
+	margin-top: 20px;
+}
+
+h2 {
+	font-size: 3rem;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	#paddingMixins.left-right-padding;
+	#paddingMixins.top-bottom-padding;
 }
 p {
 	font-size: 1.8rem;
 	font-family: 'Open Sans', sans-serif;
 	#paddingMixins.text-padding;
+	#paddingMixins.left-right-padding;
 }
 
 ul, li {
@@ -112,28 +124,15 @@ a {
 	.flex-column;
 	width: 100%;
 
+	h1 {
+		text-align: center;
+	}
+
 	img {
 		padding-top: 10px;
 		border-radius: 20px;
 	}
 
-	h1 {
-		font-size: 8rem;
-		font-weight: bold;
-		font-family: 'Allerta', sans-serif;
-		color: @medgrey;
-		text-align: center;
-		#paddingMixins.left-right-padding;
-		#paddingMixins.top-bottom-padding;
-		margin-top: 20px;
-	}
-
-	h2 {
-		font-size: 3rem;
-		font-family: 'Open Sans', sans-serif;
-		#paddingMixins.left-right-padding;
-		#paddingMixins.top-bottom-padding;
-	}
 
 	.icon-row {
 		.flex-row;
@@ -148,7 +147,7 @@ a {
 
 .skills {
 	background-color: #f9f7f8;
-	#paddingMixins.top-bottom-padding;
+
 }
 
 .flex-row {
@@ -159,6 +158,7 @@ a {
 
 .bottom-bordered {
 	#borderMixins.bottom;
+	
 }
 
 //Mixins
@@ -203,8 +203,8 @@ a {
 	}
 
 	.top-bottom-padding() {
-		padding-top: 1.75rem;
-		padding-bottom: 1.75rem;
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
 	}
 }
 
