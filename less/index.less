@@ -7,6 +7,7 @@
 @dkgrey: #333;
 @medgrey: #a9a9a9;
 @ltgrey: #999;
+@pink: #e51b7d;
 
 
 
@@ -49,7 +50,7 @@ ul, li {
 
 a {
 	text-decoration: none;
-	color:#e51b7d;
+	color: @pink;
 }
 
 .far, .fab {
@@ -57,7 +58,7 @@ a {
 	#paddingMixins.bottom-padding;
 }
 
-nav {
+nav, .bottom-nav {
 	.flex-row;
 	background-color: #fff;
 	a {
@@ -70,6 +71,15 @@ nav {
 		&:active {
 			color: @ltgrey;
 		}
+	}
+}
+
+.bottom-nav {
+	background-color: @pink;
+	margin-top: 80px;
+
+	a {
+		color: #fff;
 	}
 }
 
@@ -170,6 +180,10 @@ nav {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+
+	h1 {
+		color: #fff;
+	}
 }
 
 	.container {
@@ -189,27 +203,32 @@ nav {
 			padding-top: 20px;
 			border-radius: 20px;
 			justify-content: space-between;
+			align-content: center;
 
 			img {
-				max-width: 60%;
+				max-width: 80%;
 				border-radius: 20px;
 			}
 	
 
 
 		.icon-row {
+			margin: 0 auto;
 			.flex-row;
-			justify-content: space-between;
+			justify-content: space-around;
 			#paddingMixins.top-bottom-padding;
 		}
 
-		
+		div {
+			max-width: 48%;
+		}
 
 	}
 
 	.skills {
-		background-color: #f9f7f8;
-		padding: 0 4rem;
+		background-color: @pink;
+		color: #fff;
+		padding: 0 2rem;
 		border-radius: 20px;
 		-webkit-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
 -moz-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
@@ -237,4 +256,53 @@ box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
 		justify-content: space-between;
 		#paddingMixins.top-bottom-padding;
 	}
+}
+
+@media (min-width: 1024px) {
+
+	
+	.container {
+		background-color: #fff;
+		border-radius: 20px;
+		-webkit-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+-moz-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+	}
+	.intro {
+		margin-top: 80px;
+		margin-bottom: 60px;
+
+		h1, h2 {
+			color: @dkgrey;
+		}
+	}
+
+	.skills {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.experience {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		text-align: center;
+	}
+
+}
+
+@media (min-width: 1288px) {
+
+	body{
+	background-size: cover;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container {max-width: 1200px;
+	}
+
+	.intro {
+		justify-content: space-around;
+	}
+
 }

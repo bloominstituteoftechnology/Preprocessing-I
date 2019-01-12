@@ -55,7 +55,8 @@ a {
   font-size: 3rem;
   padding-bottom: 1.75rem;
 }
-nav {
+nav,
+.bottom-nav {
   justify-content: space-around;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -65,15 +66,24 @@ nav {
   flex-direction: row;
   background-color: #fff;
 }
-nav a {
+nav a,
+.bottom-nav a {
   font-family: 'Open Sans', sans-serif;
   font-size: 2 rem;
   font-weight: bold;
   padding: 1.25rem 0.5rem 1.25rem 0.5rem;
   text-transform: uppercase;
 }
-nav a:active {
+nav a:active,
+.bottom-nav a:active {
   color: #999;
+}
+.bottom-nav {
+  background-color: #e51b7d;
+  margin-top: 80px;
+}
+.bottom-nav a {
+  color: #fff;
 }
 .intro {
   display: flex;
@@ -122,6 +132,9 @@ nav a:active {
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
+  body h1 {
+    color: #fff;
+  }
   .container {
     max-width: 80%;
     margin: 0 auto;
@@ -138,27 +151,33 @@ nav a:active {
     padding-top: 20px;
     border-radius: 20px;
     justify-content: space-between;
+    align-content: center;
   }
   .intro h2 {
     color: #fff;
   }
   .intro img {
-    max-width: 60%;
+    max-width: 80%;
     border-radius: 20px;
   }
   .intro .icon-row {
-    justify-content: space-around;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    justify-content: space-around;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
+  .intro div {
+    max-width: 48%;
+  }
   .skills {
-    background-color: #f9f7f8;
-    padding: 0 4rem;
+    background-color: #e51b7d;
+    color: #fff;
+    padding: 0 2rem;
     border-radius: 20px;
     -webkit-box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.46);
     -moz-box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.46);
@@ -184,5 +203,44 @@ nav a:active {
     justify-content: space-between;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    background-color: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 0px 21px -3px rgba(0, 0, 0, 0.46);
+  }
+  .intro {
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+  .intro h1,
+  .intro h2 {
+    color: #333;
+  }
+  .skills {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .experience {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+}
+@media (min-width: 1288px) {
+  body {
+    background-size: cover;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+  .intro {
+    justify-content: space-around;
   }
 }
