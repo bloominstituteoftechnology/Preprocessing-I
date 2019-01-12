@@ -8,9 +8,7 @@
 @medgrey: #a9a9a9;
 @ltgrey: #999;
 
-// body {
-// 	background:url('/images/code-bg.jpg');
-// }
+
 
 html {
 	font-size: 62.5%;
@@ -59,6 +57,22 @@ a {
 	#paddingMixins.bottom-padding;
 }
 
+nav {
+	.flex-row;
+	background-color: #fff;
+	a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 2 rem;
+		font-weight: bold;
+		#paddingMixins.text-padding;
+		text-transform: uppercase;
+
+		&:active {
+			color: @ltgrey;
+		}
+	}
+}
+
 .intro {
 	.flex-column;
 	text-align: center;
@@ -75,10 +89,6 @@ a {
 		.flex-row;
 		justify-content: space-around;
 		#paddingMixins.top-bottom-padding;
-	}
-
-	.large-col {
-		width: 100%;
 	}
 }
 
@@ -151,57 +161,80 @@ a {
 	}
 }
 
-@media (min-width: 1024px){
+//Media Queries
+@media (min-width: 768px){
+
+	body {
+	background:url('/images/code-bg.jpg');
+	background-position: top left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
 
 	.container {
 		max-width: 80%;
 		margin: 0 auto;
 	}
-	h1 {
-		font-size: 4rem;
-	}
 
-	h2 {
-		font-size: 2.5rem;
-
-	}
 
 	.intro {
-		max-width: 90%;
 		margin: 0 auto;
+
+		h2 {
+			color: #fff;
+		}
+
 		.flex-row;
 			padding-top: 20px;
 			border-radius: 20px;
+			justify-content: space-between;
 
 			img {
-				max-width: 80%;
-				// padding-top: 20px;
+				max-width: 60%;
 				border-radius: 20px;
 			}
-		}
+	
 
 
 		.icon-row {
 			.flex-row;
-			justify-content: space-around;
+			justify-content: space-between;
 			#paddingMixins.top-bottom-padding;
 		}
 
-// .small-col {
-// 	max-width: 35%;
-// }
-// 		.large-col {
-// 			max-width: 55%;
-// 		}
+		
+
 	}
 
 	.skills {
 		background-color: #f9f7f8;
+		padding: 0 4rem;
+		border-radius: 20px;
+		-webkit-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+-moz-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+
+		.flex-row {
+			max-width: 60%;
+			margin: 0 auto;
+		}
+
+		h2 {
+			padding-bottom: 0;
+			
+		}
+
+		ul {
+			padding-top: 0;
+			font-weight: bolder;
+		}
 
 	}
 
 	.flex-row {
 		.flex-row;
-		justify-content: space-around;
+		justify-content: space-between;
 		#paddingMixins.top-bottom-padding;
 	}
+}
