@@ -134,7 +134,9 @@ table {
 // Variables:
 @font-family: 'Thasadith', sans-serif;
 @main-color: rgb(240, 246, 248);
+@btn-color: rgb(161, 201, 171);
 @h2-size: 2.3rem;
+@bold-font: bolder;
 @main-padding: 2%;
 
 // Mixins:
@@ -142,6 +144,7 @@ table {
   display: flex;
   align-items: center;
 }
+
 
 * {
   box-sizing: border-box;
@@ -155,6 +158,7 @@ html {
 html, body {
   font-family: @font-family;
   height: 100%;
+  font-weight: @bold-font;
 }
 
 .container {
@@ -164,6 +168,20 @@ html, body {
 }
 
 .home {
+  @media (max-width: 830px) {
+    padding: @main-padding;
+    flex-direction: column;
+    img {
+      display: none;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: @main-padding;
+    flex-direction: column;
+    img {
+      display: none;
+    }
+  }
   margin-top: 20px;
 
   .top-content {
@@ -171,7 +189,7 @@ html, body {
     flex-direction: column;
     text-align: center;
     padding: 5%;
-    border: 1px solid rgb(53, 28, 22);
+    border: transparent;
     border-radius: 5px;
     background: @main-color;
 
@@ -198,7 +216,7 @@ html, body {
       padding: 5px 10px;
 
       &:hover {
-      background-color: rgb(161, 201, 171);
+      background-color: @btn-color;
       color: white;
       cursor: pointer;
       }
@@ -206,13 +224,24 @@ html, body {
   }
 }
   .main-header {
+    @media (max-width: 830px) {
+      flex-direction: column;
+      padding: @main-padding;
+    }
+
+    @media (max-width: 500px) {
+    flex-direction: column;
+    padding: @main-padding;
+  }
     .main-flex;
     justify-content: space-between;
     padding: @main-padding;
 
+
     h1 {
       font-size: 3.6rem;
       color: rgb(30, 55, 92);
+      padding: 4%;
      }
     nav a {
         color: black;
@@ -236,13 +265,21 @@ html, body {
         height: .25rem;
         width: 23.5%;
         margin: 0;
-        background: rgb(161, 201, 171);
+        background: @btn-color;
         border: none;
         transition: .3s ease-in-out;
       }
   }
 
  .middle-content {
+   @media (max-width: 830px) {
+      flex-direction: column;
+      padding: @main-padding;
+    }
+   @media (max-width: 500px) {
+    flex-direction: column;
+    padding: @main-padding;
+  }
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -270,12 +307,20 @@ html, body {
     }
 
     td {
-      border: 1px solid rgb(224, 222, 222);
+      border: 2px solid white;
       padding: 3%;
     }
   }
 
 .bottom-content {
+  @media (max-width: 830px) {
+      flex-direction: column;
+      padding: @main-padding;
+    }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    padding: @main-padding;
+  }
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -292,7 +337,7 @@ html, body {
     }
 
     table, th, td {
-      border: 1px solid rgb(224, 222, 222);
+      border: 2px solid white;
       padding: @main-padding;
     }
 
@@ -308,3 +353,65 @@ html, body {
   margin: 5%;
   padding: @main-padding;
   }
+
+// Contact Page
+
+#contact, body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: linear-gradient(to bottom, @main-color, rgba(108, 217, 236, 0.5)),url(../img/adam-solomon-472458-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.title, h2 {
+  padding: @main-padding;
+  font-size: @h2-size;
+}
+
+form {
+  margin-top: 40px;
+
+  input {
+    height: 45px;
+  }
+
+  .submit {
+    background-color: #f2e2cf;
+    border-color: transparent;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    height: 35px;
+    margin-top: 20px;
+    transition: 0.4s ease;
+
+    &:hover {
+      background-color: @btn-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.form-control {
+  width: 45%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  color: black;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+address {
+  color: black;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  padding: 10%;
+  text-align: center;
+}

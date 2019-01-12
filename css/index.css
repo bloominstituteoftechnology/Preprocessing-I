@@ -137,6 +137,7 @@ html,
 body {
   font-family: 'Thasadith', sans-serif;
   height: 100%;
+  font-weight: bolder;
 }
 .container {
   width: 100%;
@@ -146,13 +147,31 @@ body {
 .home {
   margin-top: 20px;
 }
+@media (max-width: 830px) {
+  .home {
+    padding: 2%;
+    flex-direction: column;
+  }
+  .home img {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .home {
+    padding: 2%;
+    flex-direction: column;
+  }
+  .home img {
+    display: none;
+  }
+}
 .home .top-content {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
   padding: 5%;
-  border: 1px solid #351c16;
+  border: transparent;
   border-radius: 5px;
   background: #f0f6f8;
 }
@@ -187,9 +206,22 @@ body {
   justify-content: space-between;
   padding: 2%;
 }
+@media (max-width: 830px) {
+  .main-header {
+    flex-direction: column;
+    padding: 2%;
+  }
+}
+@media (max-width: 500px) {
+  .main-header {
+    flex-direction: column;
+    padding: 2%;
+  }
+}
 .main-header h1 {
   font-size: 3.6rem;
   color: #1e375c;
+  padding: 4%;
 }
 .main-header nav a {
   color: black;
@@ -221,6 +253,18 @@ body {
   font-size: 1.7rem;
   line-height: 1.5;
 }
+@media (max-width: 830px) {
+  .middle-content {
+    flex-direction: column;
+    padding: 2%;
+  }
+}
+@media (max-width: 500px) {
+  .middle-content {
+    flex-direction: column;
+    padding: 2%;
+  }
+}
 .middle-content h2 {
   font-size: 2.3rem;
   padding: 2%;
@@ -238,7 +282,7 @@ body {
   width: 350px;
 }
 .middle-content td {
-  border: 1px solid #e0dede;
+  border: 2px solid white;
   padding: 3%;
 }
 .bottom-content {
@@ -246,6 +290,18 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1.7rem;
+}
+@media (max-width: 830px) {
+  .bottom-content {
+    flex-direction: column;
+    padding: 2%;
+  }
+}
+@media (max-width: 500px) {
+  .bottom-content {
+    flex-direction: column;
+    padding: 2%;
+  }
 }
 .bottom-content h2 {
   font-size: 2.3rem;
@@ -258,7 +314,7 @@ body {
 .bottom-content table,
 .bottom-content th,
 .bottom-content td {
-  border: 1px solid #e0dede;
+  border: 2px solid white;
   padding: 2%;
 }
 .bottom-content tr:nth-child(even) {
@@ -270,4 +326,59 @@ footer {
   text-align: center;
   margin: 5%;
   padding: 2%;
+}
+#contact,
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #f0f6f8, rgba(108, 217, 236, 0.5)), url(../img/adam-solomon-472458-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.title,
+h2 {
+  padding: 2%;
+  font-size: 2.3rem;
+}
+form {
+  margin-top: 40px;
+}
+form input {
+  height: 45px;
+}
+form .submit {
+  background-color: #f2e2cf;
+  border-color: transparent;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  height: 35px;
+  margin-top: 20px;
+  transition: 0.4s ease;
+}
+form .submit:hover {
+  background-color: #a1c9ab;
+  cursor: pointer;
+}
+.form-control {
+  width: 45%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  color: black;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+address {
+  color: black;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  padding: 10%;
+  text-align: center;
 }
