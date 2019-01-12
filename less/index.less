@@ -59,8 +59,9 @@ html, body {
 
 @white: white;
 @blue: #7a9d96;
-@light-blue: #e2eae8;
+@light-blue: #e0fff7;
 @button: #c7e7df;
+@bg: #f2fffb;
 
 .background(@color, @border-radius, @padding, @margin){ 
 	background-color: @color;
@@ -98,7 +99,7 @@ p {
 
 .container {
 	font-family: @font;
-	background-color: @light-blue;
+	background-color: @bg;
 }
 
 //Navigation
@@ -113,9 +114,17 @@ nav {
       a {
         .flex(center, center);
         width: 100%;
-        border-left: .1px solid black;
+        border: .1px solid black;
         border-bottom: .1px solid black;
       }
+      
+      a:hover {
+        transition: all .5s ease-in-out;
+        transform: scale(1);
+        background-color: @light-blue;
+        font-size: 1.6rem;
+      }
+      
 		}
 			a {
 				padding: 1rem;
@@ -166,28 +175,23 @@ body {
         button {
           background-color: @button;
           color: black;
-          
           height: 50px;
           border-radius: 15px;
           font-size: 1.4rem;
           cursor: pointer;
-          box-shadow: 0px 6px grey;
+        }
           
           button:hover {
-           box-shadow: 0 4px gray;
-           top: 2px;
+            transition: all .5s ease-in-out;
+            transform: scale(1.1);
           }
 
-          button:active {
-             box-shadow: none;
-             top: 6px;
-          }
 }
         }
 
 
     }
-  }
+
 
 //Bottom Section
 	.bottom-section {
