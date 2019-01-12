@@ -21,7 +21,7 @@ body {
 }
 
 h1 {
-	font-size: 8rem;
+	font-size: 3rem;
 	font-weight: bold;
 	font-family: 'Allerta', sans-serif;
 	color: @medgrey;
@@ -29,21 +29,21 @@ h1 {
 }
 
 h2 {
-	font-size: 5rem;
+	font-size: 2rem;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	margin: 0;
 	#paddingMixins.left-right-padding;
 	#paddingMixins.top-bottom-padding;
 }
+
 p {
-	font-size: 4rem;
+	font-size: 1.5rem;
 	font-family: 'Open Sans', sans-serif;
 	#paddingMixins.left-right-padding;
 }
 
 ul, li {
-	font-size: 4rem;
 	font-family: 'Open Sans', sans-serif;
 	list-style-type: none;
 	#paddingMixins.text-padding;
@@ -55,16 +55,18 @@ a {
 }
 
 .far, .fab {
-	font-size: 6rem;
+	font-size: 3rem;
 	#paddingMixins.bottom-padding;
 }
 
 .intro {
 	.flex-column;
-	width: 100%;
+	text-align: center;
+	
 
 	img {
-		padding-top: 20px;
+		max-width: 88%;
+		margin-top: 20px;
 		border-radius: 20px;
 	}
 
@@ -138,8 +140,8 @@ a {
 	}
 
 	.top-bottom-padding() {
-		padding-top: 2.5rem;
-		padding-bottom: 2.5rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 }
 
@@ -148,3 +150,58 @@ a {
 		border-bottom: 2px solid @ltgrey;
 	}
 }
+
+@media (min-width: 1024px){
+
+	.container {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+
+	}
+
+	.intro {
+		max-width: 90%;
+		margin: 0 auto;
+		.flex-row;
+			padding-top: 20px;
+			border-radius: 20px;
+
+			img {
+				max-width: 80%;
+				// padding-top: 20px;
+				border-radius: 20px;
+			}
+		}
+
+
+		.icon-row {
+			.flex-row;
+			justify-content: space-around;
+			#paddingMixins.top-bottom-padding;
+		}
+
+// .small-col {
+// 	max-width: 35%;
+// }
+// 		.large-col {
+// 			max-width: 55%;
+// 		}
+	}
+
+	.skills {
+		background-color: #f9f7f8;
+
+	}
+
+	.flex-row {
+		.flex-row;
+		justify-content: space-around;
+		#paddingMixins.top-bottom-padding;
+	}
