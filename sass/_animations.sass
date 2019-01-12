@@ -1,0 +1,64 @@
+@mixin easeOut
+    transition: all 0.3s ease-out
+
+@mixin scaleIn
+    animation: scale .3s ease-in-out forwards
+
+@mixin colorChange
+    animation: changeColor 2.5s ease-in infinite
+
+
+@mixin zoomIn
+    -webkit-animation: slide-in-blurred-top 0.5s ease-out forwards
+    animation: slide-in-blurred-top 0.5s ease-out forwards
+
+
+
+    
+@keyframes scale
+    0%
+        transform: scale(1)
+    100%
+        transform: scale(1.15)
+
+@keyframes changeColor
+    0%
+        color: #fff
+    100%
+        color: $secondary
+
+
+@-webkit-keyframes slide-in-blurred-top 
+    0% 
+        -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2)
+        transform: translateY(-1000px) scaleY(2.5) scaleX(0.2)
+        -webkit-transform-origin: 50% 0%
+        transform-origin: 50% 0%
+        -webkit-filter: blur(40px)
+        filter: blur(40px)
+        opacity: 0
+    100% 
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1)
+        transform: translateY(0) scaleY(1) scaleX(1)
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-filter: blur(0)
+        filter: blur(0)
+        opacity: 1
+@keyframes slide-in-blurred-top 
+    0% 
+        -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2)
+        transform: translateY(-1000px) scaleY(2.5) scaleX(0.2)
+        -webkit-transform-origin: 50% 0%
+        transform-origin: 50% 0%
+        -webkit-filter: blur(40px)
+        filter: blur(40px)
+        opacity: 0
+    100% 
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1)
+        transform: translateY(0) scaleY(1) scaleX(1)
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-filter: blur(0)
+        filter: blur(0)
+        opacity: 1

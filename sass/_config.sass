@@ -1,0 +1,36 @@
+$primary: #222
+$secondary: #f9b8be
+$highlight: #ffdb4d
+$info: aqua
+
+
+
+@mixin flexbox()
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+
+@mixin textShadow
+    text-shadow: #000 2px 3px 1px
+
+
+@function set-text-color($color)
+    @if (lightness($color) > 40)
+        @return #000000
+    @else
+        @return #ffffff
+
+@mixin mediaMd
+    @media screen and (max-width: 800px)
+        @content
+
+@mixin mediaSm
+    @media screen and (max-width: 500px)
+        @content
+
+@mixin mediaLg
+    @media screen and (min-width: 800px)
+        @content
