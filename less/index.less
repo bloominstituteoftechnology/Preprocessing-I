@@ -1,59 +1,308 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+
+/* Custom Styles */
+
+@import url('https://fonts.googleapis.com/css?family=Allerta');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@dkgrey: #333;
+@medgrey: #a9a9a9;
+@ltgrey: #999;
+@pink: #e51b7d;
+
+
+
+html {
+	font-size: 62.5%;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	font-size: 1.6rem;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+h1 {
+	font-size: 3rem;
+	font-weight: bold;
+	font-family: 'Allerta', sans-serif;
+	color: @medgrey;
+	text-align: center;
 }
 
-html, body {
-    height: 100%;
+h2 {
+	font-size: 2rem;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	margin: 0;
+	#paddingMixins.left-right-padding;
+	#paddingMixins.top-bottom-padding;
 }
 
+p {
+	font-size: 1.5rem;
+	font-family: 'Open Sans', sans-serif;
+	#paddingMixins.left-right-padding;
+}
+
+ul, li {
+	font-family: 'Open Sans', sans-serif;
+	list-style-type: none;
+	#paddingMixins.text-padding;
+}
+
+a {
+	text-decoration: none;
+	color: @pink;
+}
+
+.far, .fab {
+	font-size: 3rem;
+	#paddingMixins.bottom-padding;
+}
+
+nav, .bottom-nav {
+	.flex-row;
+	background-color: #fff;
+	a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 2 rem;
+		font-weight: bold;
+		#paddingMixins.text-padding;
+		text-transform: uppercase;
+
+		&:active {
+			color: @ltgrey;
+		}
+	}
+}
+
+.bottom-nav {
+	background-color: @pink;
+	margin-top: 80px;
+
+	a {
+		color: #fff;
+	}
+}
+
+.intro {
+	.flex-column;
+	text-align: center;
+	
+
+	img {
+		max-width: 88%;
+		margin-top: 20px;
+		border-radius: 20px;
+	}
+
+
+	.icon-row {
+		.flex-row;
+		justify-content: space-around;
+		#paddingMixins.top-bottom-padding;
+	}
+}
+
+.skills {
+	background-color: #f9f7f8;
+
+}
+
+.flex-row {
+	.flex-row;
+	justify-content: space-around;
+	#paddingMixins.top-bottom-padding;
+}
+
+.bottom-bordered {
+	#borderMixins.bottom;
+
+}
+
+//Mixins
+
+.flex-column() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.flex-row() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+#textMixins {
+	.sm-text() {
+		font-size: .5rem;
+	}
+}
+
+#paddingMixins {
+
+	.text-padding() {
+		padding: 1.25rem .5rem 1.25rem .5rem;
+	}
+
+	.headings-padding() {
+		padding: .5rem 1.25rem .5rem 1.25rem;
+	}
+
+	.bottom-padding {
+		padding-bottom: 1.75rem;
+	}
+
+	.left-right-padding() {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+	}
+
+	.top-bottom-padding() {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+}
+
+#borderMixins {
+	.bottom() {
+		border-bottom: 2px solid @ltgrey;
+	}
+}
+
+//Media Queries
+@media (min-width: 768px){
+
+	body {
+	background:url('/images/code-bg.jpg');
+	background-position: top left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	h1 {
+		color: #fff;
+	}
+}
+
+	.container {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+
+
+	.intro {
+		margin: 0 auto;
+
+		h2 {
+			color: #fff;
+		}
+
+		.flex-row;
+			padding-top: 20px;
+			border-radius: 20px;
+			justify-content: space-between;
+			align-content: center;
+
+			img {
+				max-width: 80%;
+				border-radius: 20px;
+			}
+	
+
+
+		.icon-row {
+			margin: 0 auto;
+			.flex-row;
+			justify-content: space-around;
+			#paddingMixins.top-bottom-padding;
+		}
+
+		div {
+			max-width: 48%;
+		}
+
+	}
+
+	.skills {
+		background-color: @pink;
+		color: #fff;
+		padding: 0 2rem;
+		border-radius: 20px;
+		-webkit-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+-moz-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+
+		.flex-row {
+			max-width: 60%;
+			margin: 0 auto;
+		}
+
+		h2 {
+			padding-bottom: 0;
+			
+		}
+
+		ul {
+			padding-top: 0;
+			font-weight: bolder;
+		}
+
+	}
+
+	.flex-row {
+		.flex-row;
+		justify-content: space-between;
+		#paddingMixins.top-bottom-padding;
+	}
+}
+
+@media (min-width: 1024px) {
+
+	
+	.container {
+		background-color: #fff;
+		border-radius: 20px;
+		-webkit-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+-moz-box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+box-shadow: 0px 0px 21px -3px rgba(0,0,0,0.46);
+	}
+	.intro {
+		margin-top: 80px;
+		margin-bottom: 60px;
+
+		h1, h2 {
+			color: @dkgrey;
+		}
+	}
+
+	.skills {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.experience {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		text-align: center;
+	}
+
+}
+
+@media (min-width: 1288px) {
+
+	body{
+	background-size: cover;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container {max-width: 1200px;
+	}
+
+	.intro {
+		justify-content: space-around;
+	}
+
+}
