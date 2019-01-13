@@ -1,0 +1,147 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.flex-direction(@direction) {
+    -ms-flex-direction: @direction;         //IE10
+    -webkit-flex-direction: @direction;     //android 4.3, IE mobile, Safari
+    flex-direction: @direction;
+}
+.flex-wrap(@wrap) {
+	-ms-flex-wrap: @wrap;
+	-webkit-flex-wrap: @wrap;
+	flex-wrap: @wrap;
+}
+.flex-flow(@direction, @wrap){
+	-ms-flex-flow: @direction , @wrap;
+	-webkit-flex-flow: @direction, @wrap;
+	flex-flow: @direction, @wrap;
+}
+.border(@width: 1px; @style: solid;  @color:purple){
+	border: @arguments;
+}
+@words-margin: 1.6rem;
+.flex(){
+	display: flex;
+}
+@brandColor: midnightblue;
+html {
+	font-size: 62.5%;
+}
+body {
+	.flex();
+	justify-content: center;
+	background-color: @brandColor;
+}
+.container {
+	width: 50%;
+	margin: 0 auto;
+	.border(3px; solid; black);
+	background-color: white;
+	.flex();
+	.flex-direction(column);
+	// align-items: center;
+	justify-content: center;
+	.nav {
+		.border(1px; dashed; purple);
+		.flex();
+		.flex-direction(row);
+		justify-content: space-evenly;
+		width: 50%;
+
+		a {
+			text-decoration: none;
+			font-size: 3rem;
+		}
+	}
+	.header {
+		.flex();
+		.flex-direction(row);
+		justify-content: center;
+		.border(1px; solid; red);
+
+		}
+		img {
+			width: 30rem;
+			height: 30rem;
+		}
+		.words {
+			.border();
+			.flex();
+			.flex-direction(column);
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
+		}
+		h1 {
+			font-size: 3rem;
+			margin: @words-margin;
+		}
+		h2 {
+			align-self: center;
+			.border();
+			margin: @words-margin;
+		}
+		p{
+			margin: @words-margin;
+		}
+		button {
+			width: 20%;
+			margin: @words-margin;
+		}
+	}
