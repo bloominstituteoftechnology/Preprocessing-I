@@ -51,14 +51,38 @@ table {
 /* variables */
 @fontFamily: 'Roboto', sans-serif;
 @tableStyle: solid 1px black;
+@whiteColor: white;
+@blackColor: black;
+@greyColor: #555555;
+@lightgrey: #E9ECEF;
 
 /* mixins */
 .button {
 	border-radius: 4px;
 	font-size: 15px;
 	padding: 10px 10px;
-	background-color: #555555;
-	color: white;
+	background-color: @greyColor;
+	color: @whiteColor;
+}
+
+.h1 {
+	font-size: 40px;
+	margin: 5px 0px 10px 0px;
+}
+
+.h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.mid-sections-styling {
+	width: 500px;
+}
+
+.table {
+	width: 100%;
+	border-top: @tableStyle;
+	border-bottom: @tableStyle;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -74,7 +98,7 @@ html, body {
 /* code */
 .container {
 	margin: 0px 40px;
-	border: solid 1px lightblue;
+	// border: solid 1px lightblue;
 
 }
 
@@ -87,23 +111,23 @@ nav {
 
 	a {	
 		text-decoration: none;
-		color: black;
+		color: @blackColor;
 		margin-left: 30px;
 		// border: solid 1px orange;
 	}
 }
 
 .top-section {
-	border: solid 1px #E9ECEF;
-	background-color: #E9ECEF;
+	border: solid 1px @lightgrey;
+	background-color: @lightgrey;
 	border-radius: 5px;
+	margin-bottom: 40px;
 
 	.top-content{
 		margin: 50px 20px;
 
 		h1 {
-			font-size: 40px;
-			margin: 5px 0px 10px 0px;
+			.h1();
 		}
 
 		hr {
@@ -118,11 +142,36 @@ nav {
 
 }
 
-table{
-	tb, th {
-		width: 100%;
-		border-top: @tableStyle;
-		border-bottom: @tableStyle;
+.mid-section {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 40px;
+
+	h2 {
+		.h2();
 	}
 
+	.mid-sections {
+		.mid-sections-styling()
+	}
+
+	.mid-section-left {
+		line-height: 1.6;
+	}
+
+	.mid-section-right {
+
+		p {
+			border: solid 1px @lightgrey;	
+		}
+		
+	}
+}
+
+table { 
+	margin-bottom: 30px;
+
+	tb, th {
+		.table();
+	}
 }
