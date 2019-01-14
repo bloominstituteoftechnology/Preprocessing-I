@@ -7,6 +7,7 @@
 @background-color: #E9ECEF;
 @font-size: 1.6rem;
 @nav-color: black;
+@mobile: (max-width: 500px);
 
 
 /* Set every element's box-sizing to border-box */
@@ -25,17 +26,29 @@ html {
 
 header {
 	padding: 15px 0;
+	@media @mobile {
+		padding: 0;
+	}
 }
 
 nav {
 	display: flex;
 	justify-content: flex-end;
+	@media @mobile {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
 	a {
 		color: @nav-color;
 		font-family: 'Roboto', sans-serif;
 		font-size: @font-size;
 		text-decoration: none;
 		padding-left: 4%;
+		@media @mobile {
+			font-size: 2.4rem;
+			border-bottom: 1px solid #e5e5e5;
+		}
 	}
 }
 .container {
