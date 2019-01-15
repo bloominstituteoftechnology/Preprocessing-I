@@ -144,7 +144,7 @@ table {
   margin-bottom: 10px;
 }
 .mid-sections-styling {
-  width: 500px;
+  max-width: 500px;
 }
 .table {
   width: 100%;
@@ -173,7 +173,6 @@ nav {
 nav a {
   text-decoration: none;
   color: black;
-  margin-left: 30px;
 }
 .top-section {
   border: solid 1px #E9ECEF;
@@ -199,23 +198,36 @@ nav a {
   background-color: #555555;
   color: white;
 }
+@media (max-width: 500px) {
+  .top-section .top-content img {
+    display: none;
+  }
+}
 .mid-section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+  .mid-section {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .mid-section h2 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 .mid-section .mid-sections {
-  width: 500px;
+  max-width: 500px;
 }
 .mid-section .mid-section-left {
   line-height: 1.6;
 }
-.mid-section .mid-section-right p {
-  border: solid 1px #E9ECEF;
+@media (max-width: 500px) {
+  .mid-section .mid-section-right {
+    margin-top: 20px;
+  }
 }
 .mid-section .mid-section-right ul {
   border: solid 1px lightgray;
