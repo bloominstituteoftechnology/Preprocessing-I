@@ -4,56 +4,418 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
+// Variables:
+@font-family: 'Thasadith', sans-serif;
+@main-color: rgb(240, 246, 248);
+@btn-color: rgb(161, 201, 171);
+@h2-size: 2.3rem;
+@bold-font: bolder;
+@main-padding: 2%;
+
+// Mixins:
+.main-flex() {
+  display: flex;
+  align-items: center;
+}
+
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  // 1rem = 10px
 }
 
 html, body {
-    height: 100%;
+  font-family: @font-family;
+  height: 100%;
+  font-weight: @bold-font;
 }
 
+.container {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.home {
+  @media (max-width: 830px) {
+    padding: @main-padding;
+    flex-direction: column;
+    img {
+      display: none;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: @main-padding;
+    flex-direction: column;
+    img {
+      display: none;
+    }
+  }
+  margin-top: 20px;
+
+  .top-content {
+    .main-flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5%;
+    border: transparent;
+    border-radius: 5px;
+    background: @main-color;
+
+    h2 {
+      font-size: @h2-size;
+      color: black;
+      margin-top: 20px;
+    }
+    p {
+      border-top: 1px solid grey;
+      font-size: 1.7rem;
+      color: black;
+      margin-top: 20px;
+      padding: @main-padding;
+
+    }
+
+    button {
+      transition-duration: 0.3s;
+      color: black;
+      border: 1px solid rgb(53, 28, 22);
+      border-radius: 5px;
+      font-size: 1.5rem;
+      padding: 5px 10px;
+
+      &:hover {
+      background-color: @btn-color;
+      color: white;
+      cursor: pointer;
+      }
+    }
+  }
+}
+  .main-header {
+    @media (max-width: 830px) {
+      flex-direction: column;
+      padding: @main-padding;
+    }
+
+    @media (max-width: 500px) {
+    flex-direction: column;
+    padding: @main-padding;
+  }
+    .main-flex;
+    justify-content: space-between;
+    padding: @main-padding;
+
+
+    h1 {
+      font-size: 3.6rem;
+      color: rgb(30, 55, 92);
+      padding: 4%;
+     }
+    nav a {
+        color: black;
+        padding: 15px;
+        font-size: 1.8rem;
+        text-decoration: none;
+      }
+      .two:hover ~ hr {
+        margin-left: 23%;
+      }
+
+      .three:hover ~ hr {
+        margin-left: 48%;
+      }
+
+      .four:hover ~ hr {
+        margin-left: 75%;
+      }
+
+      hr {
+        height: .25rem;
+        width: 23.5%;
+        margin: 0;
+        background: @btn-color;
+        border: none;
+        transition: .3s ease-in-out;
+      }
+  }
+
+ .middle-content {
+   @media (max-width: 830px) {
+      flex-direction: column;
+      padding: @main-padding;
+    }
+   @media (max-width: 500px) {
+    flex-direction: column;
+    padding: @main-padding;
+  }
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.7rem;
+    line-height: 1.5;
+
+    h2 {
+      font-size: @h2-size;
+      padding: @main-padding;
+      padding-left: 0;
+    }
+
+    .text-content {
+      padding: @main-padding;
+      padding-left: 0;
+    }
+
+    .interest {
+      padding: @main-padding;
+      padding-right: 0;
+    }
+
+    table {
+      width: 350px;
+      @media (max-width: 800px) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    td {
+      border: 2px solid white;
+      padding: 3%;
+    }
+  }
+
+.bottom-content {
+  @media (max-width: 830px) {
+      flex-direction: column;
+      padding: @main-padding;
+    }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    padding: @main-padding;
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.7rem;
+
+    h2 {
+    font-size: @h2-size;
+    padding: @main-padding;
+    padding-left: 0;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    table, th, td {
+      border: 2px solid white;
+      padding: @main-padding;
+    }
+
+    tr:nth-child(even) {
+      background: @main-color;
+    }
+  }
+
+ footer {
+  background: @main-color;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 5%;
+  padding: @main-padding;
+  }
+
+// Contact Page
+
+#contact, body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: linear-gradient(to bottom, @main-color, rgba(108, 217, 236, 0.5)),url(../img/adam-solomon-472458-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.title, h2 {
+  padding: @main-padding;
+  font-size: @h2-size;
+}
+
+form {
+  margin-top: 40px;
+
+  input {
+    height: 45px;
+  }
+
+  .submit {
+    background-color: #f2e2cf;
+    border-color: transparent;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    height: 35px;
+    margin-top: 20px;
+    transition: 0.4s ease;
+
+    &:hover {
+      background-color: @btn-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.form-control {
+  width: 45%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  color: black;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+address {
+  color: black;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  padding: 10%;
+  text-align: center;
+}
