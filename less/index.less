@@ -50,10 +50,74 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+/*Variables*/
+
+@font-stack: 'Cabin', Arial, sans-serif;
+@bkgrnd-color: 	#696969;
+
+/*General Styles*/
+html {
+	/*10px if the browser was 16px*/
+	/*1rem ====10px @ medium*/
+	font-size: 62.5%;  /* 62.5% OF 16PX IS 10PX, BASE OF 10*/
+	
+}
+.container {
+	font-family: @font-stack;
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+
+	@media (max-width: 500px) {
+		.container {
+			width: 85%;
+		}
+	}
+}
+
+header {
+	background-color: @bkgrnd-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 20rem;
+	padding: 0 5rem;
+}
+
+p, a{
+	font-size: 1.7rem;
+}
+
+header p {
+	color: white;
+}
+
+nav {
+	border: 1px solid red;
+	width: 90%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav a {
+	padding-top: 2rem;
+	padding-left: 2rem;
+	color: white;
+}
+
+
+/* Page-specific styles*/
+
+header h1 {
+	font-size: 5rem;
+	color: white;
+	margin: 1rem 0;
+}
