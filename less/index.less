@@ -85,12 +85,15 @@ body {
 	padding: 5%;
 }
 
-.blerb {
+section {
+	display: flex;
 	width: 80%;
-	@{test}: @tboxcol;
 	padding: @cozy;
-	overflow: auto;
+	flex-direction: row;
+}
 
+.blerb {
+	@{test}: @tboxcol;
 	img {
 		border-radius: 50%;
 		width: 33%;
@@ -106,11 +109,19 @@ body {
 	}
 }
 
-	table {
-		@{test}: blue;
+.skills {
+	@{test}: @tboxcol;
+	padding: @cozy;
+}
+
+.work{
+	// padding: @cozy;
+}
+
+.work table {
 		font-size: @psize;
 		color: @texttheme;
-		border-spacing: 5px;
+		border-spacing: 1%;
 	}
 	h1 {
 		font-size: @psize * 1.2;
@@ -123,15 +134,13 @@ body {
 		border: 1px solid black;
 	}
 
-footer {
-	@{test}: @tboxcol;
-	position: fixed;
-  	left: 0;
-  	bottom: 0;
-	width: 100%;
-	
-	// Is this how you force a text size? lol
-	h1,h2,h3,h4,h5,h6,p {
-		font-size: @psize;
-	}
-}
+// footer {
+// 	border-top: 3px solid @bgcolor1;
+// 	flex-shrink: 0;
+// 	width: 100%;
+// 	// Is this how you force a text size? lol
+
+// 	h1,h2,h3,h4,h5,h6,p {
+// 		font-size: @psize * .8;
+// 	}
+// }
