@@ -60,17 +60,48 @@ html, body {
 // =========================== Variables =========================== //
 
 @main-color: #ee4900;
+@main-color-light: #ee662b;
+@main-color-dark: #c73c00;
 
 
 // =========================== Mixins =========================== //
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.custom-flex (@direction; @justify; @align) {
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+	align-items: @align;
+}
 
 
 // =========================== Site Wide =========================== //
 
 body {
-	background-color: @main-color;
+	background-color: #323232;
+	max-width: 1024px;
+	width: 100%;
+	min-height: 100%;
+	margin: 0 auto;
 }
+
+// =========================== Navigation =========================== //
+nav {
+	.custom-flex(row; flex-end; center);
+	a {
+		padding: 20px 20px;
+		color: white;
+		text-decoration: none;
+	}
+	a:hover {
+		background-color: #666;
+	}
+}
+
 
 // =========================== Header =========================== //
 
