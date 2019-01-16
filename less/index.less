@@ -57,9 +57,16 @@ html, body {
     height: 100%;
 }
 
+//mixins
+.center {
+	display: flex;
+	justify-content: center;
+}
+
 .container {
 	max-width: 100%;
 	border: 2px solid green;
+	.center;
 }
 
 //nav
@@ -79,3 +86,27 @@ nav {
 	}
 }
 //end nav
+
+//top content
+.top-content {
+	width: 90%;
+	height: 50%;
+	background-color: gray;
+	.center();
+	flex-direction: column;
+
+	.profile-pic {
+		border: 2px solid black;
+		width: 14.45%;
+		height: 52%;
+	}
+	.main-text{
+		width: 100%;
+	}
+	h1 {
+		font-size: 46px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+}
+//end top content
