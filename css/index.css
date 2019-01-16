@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 html,
 body,
@@ -89,6 +89,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  line-height: 1.25;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -134,12 +135,47 @@ html,
 body {
   height: 100%;
 }
+@font-face {
+  font-family: "Beyno";
+  src: url("../fonts/BEYNO/BEYNO.otf"), url("../fonts/BEYNO/BEYNO.ttf"), url("../fonts/BEYNO/._BEYNO.tff");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v12/4iCs6KVjbNBYlgoKfw7z.ttf) format('truetype');
+}
+* {
+  color: white;
+}
+a {
+  text-decoration: none;
+}
 body {
+  font-family: 'Ubuntu', sans-serif;
   background-color: #323232;
   max-width: 1024px;
   width: 100%;
   min-height: 100%;
   margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Beyno", "Ubuntu", sans-serif;
+  color: #ee4900;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
 }
 nav {
   display: flex;
@@ -149,9 +185,79 @@ nav {
 }
 nav a {
   padding: 20px 20px;
-  color: white;
+  color: #ee4900;
   text-decoration: none;
 }
 nav a:hover {
-  background-color: #666;
+  color: #ee662b;
+  background-color: #232323;
+}
+nav .active {
+  color: #ee662b;
+  background-color: #232323;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #232323;
+}
+header .left {
+  height: 100%;
+  width: 30%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .left img {
+  border-radius: 50%;
+  border: 3px solid #ee4900;
+}
+header .right {
+  height: 100%;
+  width: 70%;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header .right h1,
+header .right h2,
+header .right p,
+header .right a {
+  margin-top: 20px;
+}
+header .right a {
+  border: 3px solid #ee662b;
+  border-radius: 5px 5px;
+  padding: 10px 20px;
+}
+.middle {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.middle .two-col {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.middle-col-1 p {
+  margin-top: 10px;
+}
+.middle-col-2 div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
