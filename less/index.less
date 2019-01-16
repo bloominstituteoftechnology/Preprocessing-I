@@ -68,6 +68,10 @@ html, body {
 //cozy padding
 @cozy: 5% 5%;
 
+// 
+@test: 	border;
+@tboxcol:  1px solid @fgcolor1;
+
 // table, th, td {
 // 	text-align: left;
 // 	border: 1px solid black;
@@ -81,14 +85,11 @@ body {
 	padding: 5%;
 }
 
-
-
-
-
 .blerb {
 	width: 80%;
-	border: 1px solid red;
+	@{test}: @tboxcol;
 	padding: @cozy;
+	overflow: auto;
 
 	img {
 		border-radius: 50%;
@@ -99,12 +100,14 @@ body {
 		color: @texttheme;
 	}
 	p {
-		font-size: @psize;
+		font-size: @psize * .75;
 		color: @texttheme;
+		width: 50%;
 	}
 }
 
 	table {
+		@{test}: blue;
 		font-size: @psize;
 		color: @texttheme;
 		border-spacing: 5px;
@@ -119,3 +122,16 @@ body {
 		text-align: left;
 		border: 1px solid black;
 	}
+
+footer {
+	@{test}: @tboxcol;
+	position: fixed;
+  	left: 0;
+  	bottom: 0;
+	width: 100%;
+	
+	// Is this how you force a text size? lol
+	h1,h2,h3,h4,h5,h6,p {
+		font-size: @psize;
+	}
+}
