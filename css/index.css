@@ -56,20 +56,6 @@ h3 header nav a:hover {
   text-decoration: none;
   color: #6c96c7;
 }
-h1 table,
-h2 table,
-h3 table,
-h1 td,
-h2 td,
-h3 td,
-h1 th,
-h2 th,
-h3 th {
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 15px;
-  width: 100%;
-}
 h1 .table2 table,
 h2 .table2 table,
 h3 .table2 table {
@@ -97,26 +83,48 @@ img {
   margin: auto;
   font-size: 1.6rem;
 }
-header {
-  width: 100%;
-  display: flex;
+ul,
+li {
+  list-style: none;
 }
-header nav {
-  margin: 2rem;
-  margin-top: 4rem;
-  width: 61%;
-  justify-content: space-evenly;
-  display: flex;
-}
-header nav a {
+a {
   text-decoration: none;
-  color: #141313;
 }
-/*  */
-/*  */
-header nav a:hover {
-  text-decoration: none;
+.navigation {
+  background-color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.navigation a {
+  display: block;
+  padding: 1em;
+  color: black;
+  font-weight: light;
+}
+.navigation a:hover,
+.navigation a:active {
   color: #6c96c7;
+}
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+  .navigation a:hover {
+    color: #6c96c7;
+  }
+}
+@media all and (max-width: 500px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+    border-radius: 3px;
+  }
+  .navigation a {
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
 }
 table,
 td,
@@ -149,34 +157,9 @@ td {
 footer {
   text-align: center;
   margin: 40px 0 20px;
-}
-.landing {
-  display: flex;
-  margin-top: 72px;
-  justify-content: flex-end;
-}
-.landing .landing-text {
-  font-size: 72px;
-  text-align: center;
-  letter-spacing: 5px;
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
-  align-items: center;
-  margin: 0 82px 0 0;
-}
-.landing .landing-text button {
-  border: 1px double black;
-  font-size: 16px;
-  background: white;
-  width: 170px;
-  height: 32px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-.landing .landing-text button:hover {
-  background: black;
-  color: white;
+  margin-bottom: 0;
+  border: 2px solid grey;
+  background-color: #afadad;
 }
 /* Main Content Styles */
 .main-content {
@@ -189,10 +172,7 @@ footer {
 }
 .main-content .top-content {
   display: flex;
-  margin: 30px auto;
-}
-.main-content .bottom-content {
-  display: flex;
+  margin: 20px auto;
 }
 .main-content .bottom-content p {
   padding-right: 20px;

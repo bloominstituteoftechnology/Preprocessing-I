@@ -48,13 +48,8 @@ header nav a:hover {
     text-decoration: none;
     color: #6c96c7;
 
-}
-table, td, th {  
-	border: 1px solid #ddd;
-	text-align: left;
-	padding: 15px;
-	width: 100%;
-  }
+} 
+// middle table
 .table2 table {
 		border-collapse: collapse;
 		border: white;
@@ -80,30 +75,56 @@ img {
 	margin: auto;
 	font-size: 1.6rem;
   }
-  header {
-	width: 100%;
-	display: flex;
+  ul,
+  li {
+	list-style: none;
   }
-  header nav {
-	margin: 2rem;
-	margin-top: 4rem;
-	width: 61%;
-	justify-content: space-evenly;
-	display: flex;
-  }
-  header nav a {
+  
+  a {
 	text-decoration: none;
-	color: #141313;
   }
-  /*  */
-  /*  */
-  header nav a:hover {
-	text-decoration: none;
+  
+  .navigation {
+	background-color:white;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+  }
+  
+  .navigation a {
+	display: block;
+	padding: 1em;
+	color: black;
+	font-weight: light;
+  }
+  
+  .navigation a:hover,
+  .navigation a:active {
 	color: #6c96c7;
   }
-  table,
-  td,
-  th {
+  
+  @media all and (max-width:800px){
+	.navigation{
+	  justify-content:space-around;
+	}
+	.navigation a:hover{
+		color: #6c96c7;
+	}
+  }
+  @media all and (max-width:500px){
+	.navigation{
+	  flex-flow:column wrap;
+	  padding:0;
+	  border-radius:3px;
+	}
+	.navigation a{
+	  text-align:center;
+	  border-top:2px solid rgba(255,255,255,.2);
+		border-bottom:2px solid rgba(0,0,0,.1);
+	}
+  }
+//   bottom table
+  table, td, th {
 	border: 1px solid #ddd;
 	text-align: left;
   }
@@ -111,8 +132,7 @@ img {
 	border-collapse: collapse;
 	width: 100%;
   }
-  th,
-  td {
+  th,td {
 	padding: 15px;
   }
   .table2 table {
@@ -131,40 +151,11 @@ img {
   }
   footer {
     text-align: center;
-    margin: 40px 0 20px;
+	margin: 40px 0 20px;
+	margin-bottom:0; 
+	border: 2px solid grey;
+	background-color: #afadad;
 }
-.landing {
-    display: flex;
-    margin-top: 72px;
-    justify-content: flex-end;
-}
-
-.landing .landing-text {
-    font-size: 72px;
-    text-align: center;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    margin: 0 82px 0 0;
-}
-
-.landing .landing-text button {
-    border: 1px double black;
-    font-size: 16px;
-    background: white;
-    width: 170px;
-    height: 32px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.landing .landing-text button:hover {
-    background: black;
-    color: white;
-}
-
 /* Main Content Styles */
 
 .main-content {
@@ -175,16 +166,12 @@ img {
    font-size: 16px;
    line-height: 18px;
 }
-
-.main-content .top-content {
-	display: flex;
-	margin: 30px auto;
+.main-content {
+	.top-content {
+		display: flex;
+		margin: 20px auto;
+	}
 }
-
-.main-content .bottom-content {
-    display: flex;
-}
-
 .main-content .bottom-content p {
     padding-right: 20px;
 }
