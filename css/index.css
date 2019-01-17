@@ -1,13 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v16/TK3iWkUHHAIjg752GT8D.ttf) format('truetype');
-}
 html,
 body,
 div,
@@ -133,10 +123,6 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
-.spaceme {
-  margin: 1.5rem;
-  line-height: 1.25;
-}
 * {
   box-sizing: border-box;
 }
@@ -144,59 +130,141 @@ html,
 body {
   height: 100%;
 }
-h1 {
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  margin: 1.5rem;
-  line-height: 1.25;
+html {
+  font-size: 62.5%;
 }
-a {
-  text-align: center;
-  font-size: 16px;
-  align-self: center;
-  margin: 30px;
-  text-decoration: none;
+body {
+  line-height: 1.5;
   font-family: 'Oswald', sans-serif;
+}
+h1 {
+  font-size: 4rem;
+  font-family: 'Roboto Slab', serif;
+}
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.7rem;
+  font-weight: 650;
+  margin-top: 0.2em;
 }
 p {
-  font-family: 'Oswald', sans-serif;
-  margin: 1.5rem;
-  line-height: 1.25;
+  font-size: 1.7rem;
 }
-.nav {
-  width: 100%;
-  justify-content: space-between;
-  margin-top: 30px;
-  border-bottom: solid black 2px;
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  border: 2rem solid lightblue;
+  padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.container .row {
+  width: 100%;
+  margin: 2rem 0;
+}
+.container .row .left-half {
+  min-width: 50%;
+  padding-right: 5%;
+  border-right: 2px dotted black;
+  text-align: right;
+}
+@media (max-width: 500px) {
+  .container .row .left-half {
+    min-width: none;
+    border-right: none;
+    text-align: center;
+  }
+}
+.container .row .right-half {
+  min-width: 50%;
+  margin-left: 5%;
+}
+@media (max-width: 500px) {
+  .container .row .right-half {
+    min-width: none;
+  }
+}
+.container span {
+  font-size: 3rem;
+  margin: 0.2rem 0;
+  text-align: center;
+}
+.container .title-header {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
-.fluidcontainer {
-  max-width: 800px;
-  margin: 0 auto;
-  border: solid black 4px;
-  padding: 10px 0;
+.container .title-header h1 {
+  width: 40%;
 }
-.logo {
-  width: 25%;
+.container .title-header .h1-left {
+  text-align: right;
+}
+.container .title-header .fa-award {
+  text-align: center;
+  font-size: 8rem;
+  width: 20%;
+}
+@media (max-width: 500px) {
+  .container .title-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.container .intro-contact,
+.container .education-experience,
+.container .skills-interests {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@media (max-width: 500px) {
+  .container .intro-contact,
+  .container .education-experience,
+  .container .skills-interests {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+}
+.container .intro-contact .contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .intro-contact .contact img {
+  margin-right: 1.8rem;
+  border-radius: 100%;
+  max-width: 10rem;
   height: auto;
-  margin: 0px 0px;
 }
-.main {
-  height: 400px;
-  width: 100%;
-  background-color: gainsboro;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border: solid black 4px;
-  padding: 10px 0;
+.container .intro-contact .contact div nav a {
+  margin: 0 0.2rem;
 }
-.pfp {
-  height: 200px;
-  width: 150px;
-  background-color: black;
-  justify-content: left;
+.container .intro-contact .contact div nav .fab {
+  color: lightblue;
+}
+@media (max-width: 500px) {
+  .container .intro-contact .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
