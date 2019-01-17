@@ -1,3 +1,7 @@
+@cool-color:white;
+@font-content: 'Play', serif;
+@font-header: 'ZCOOL XiaoWei', serif;
+@display-flex:flex;
 
 html, body {
     font-size: 62.5%;  
@@ -16,8 +20,33 @@ h1, h2, h3, {
 .container {
     max-width:1200px;
     margin: auto;
-    font-size:1.4rem;
+	font-size:1.4rem;
+	justify-content: space-evenly;
 }
+button.btn {
+	margin: 20px 0 20px;
+	padding: 1.2em 2.8em;
+	height: 300px;
+	width: 30px;
+	border: 2px solid red;
+
+	&:hover,
+	&:focus {
+	  color: @cool-color;
+	  outline: 0;
+	}
+  .third {
+	border-color: blue;
+	color: @cool-color;
+	box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
+	transition: all 150ms ease-in-out;
+	
+	&:hover {
+	  box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+	}
+  }
+}
+
 header nav {
     margin: 2rem;
     margin-top: 4rem; 
@@ -29,11 +58,12 @@ header nav {
 	
 }
 div {
-    background-color: white;
+    background-color: @cool-color;
      color:grey;
      padding: 25px;
      margin: 10px auto;
-     display: inline-block;
+	 display: inline-block;
+	 justify-content: space-evenly;
 
   }
 header nav a {
@@ -52,7 +82,7 @@ header nav a:hover {
 // middle table
 .table2 table {
 		border-collapse: collapse;
-		border: white;
+		border: @cool-color;
 		width: 100%;
 		text-align: center;
 		padding: 8px;
@@ -66,13 +96,17 @@ header nav a:hover {
 .size{
 	font-size: 5rem;
 }
+.test{
+background-color: #f0eded;
+}
 img {
 	width: 335px;;
 	height: 460x;
+	margin: 0 auto;
   }
 .container {
 	max-width: 880px;
-	margin: auto;
+	margin: 2px auto;
 	font-size: 1.6rem;
   }
   ul,
@@ -85,7 +119,7 @@ img {
   }
   
   .navigation {
-	background-color:white;
+	background-color:@cool-color;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-end;
@@ -131,13 +165,14 @@ img {
   table {
 	border-collapse: collapse;
 	width: 100%;
+	float: left;
   }
   th,td {
 	padding: 15px;
   }
   .table2 table {
 	border-collapse: collapse;
-	border: white;
+	border: @cool-color;
 	width: 100%;
   }
   .table2 th,
@@ -153,8 +188,8 @@ img {
     text-align: center;
 	margin: 40px 0 20px;
 	margin-bottom:0; 
-	border: 2px solid grey;
-	background-color: #afadad;
+	border: 2px solid #f0eded;
+	background-color: #f0eded;
 }
 /* Main Content Styles */
 
@@ -170,10 +205,12 @@ img {
 	.top-content {
 		display: flex;
 		margin: 20px auto;
+		justify-content: space-evenly;
 	}
 }
 .main-content .bottom-content p {
-    padding-right: 20px;
+	padding-right: 20px;
+	justify-content: space-evenly;
 }
 
 
