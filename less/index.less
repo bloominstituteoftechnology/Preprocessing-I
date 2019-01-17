@@ -141,8 +141,8 @@ body {
 
 @custom-color1: lightpink;
 @custom-color2: navy;
-@custom-font: "Helvetica", "Arial", sans-serif;
-
+@custom-font1:"Lobster", "Arial", sans-serif;
+@custom-font2:"Cherry Swash","Helvetica";
 .centered() {
   display: flex;
   justify-content: center;
@@ -168,7 +168,7 @@ body {
  
   header {
    .centered();
-    // width: 880px;
+    width: 55rem;
     height: 4rem;
     background: lightblue;
     overflow: hidden;
@@ -191,28 +191,37 @@ body {
  }
 
 .intro {
+    display: flex;
+    flex-wrap: wrap;
     .spacing(space-around,5rem);
-    margin-top: 5rem;
+    margin-top: 3rem;
   
-  h1 {
-    font-size: 4.5rem;
-    letter-spacing: 0.5rem;
+  h1, h2 {
+    font-family: @custom-font1;
+    font-size: 3.0rem;
     margin-top: 5.5rem;
     color: @custom-color2;
   }
   .picture {
-    width: 75%;
-    height: 65%;
-    .styling();
+    width: 50%;
+    margin-left: 13rem;;
   }
   p {
-    font-family: @custom-font;
+    font-family: @custom-font2;
     font-size: 1.2rem;
+    margin-left: 2.75rem;
+    margin-bottom: 2rem;
     color: @custom-color2;
+
   }
 }
+button {
+  .centered();
+  }
   
-.main-content {
+.main-content, .work-history {
+  font-family: @custom-font2;
   color: @custom-color2;
   .centered();
-}
+  }
+
