@@ -3,9 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>My Resume</title>
 
+  <link rel="stylesheet" href="less/index.less">
   <link rel="stylesheet" href="css/index.css">
 
   <!--[if lt IE 9]>
@@ -14,6 +16,87 @@
 </head>
 
 <body>
-  <h1>My Resume</h1>
+    <div class="resume-container">
+          <header class="banner">
+            <img class="image" src="assets/avatar.jpeg" alt="image of a person" class="resume-image" />
+            <h1 class="name">{{ Morning Star }}</h1>
+            <h2 class="description">{{ Software Engineer }}</h2>
+            <address class="contact-info">
+              <a href="#" class="phone-number">{{ +1 000-000-0000 }}</a>
+              <a href="#"class="email-address">{{ morningstar@email.com }}</a>
+            </address>
+          </header>
+
+          <section class="education-section">
+            <h1>Education</h1>
+            <ul>
+              <li>
+                <h2>{{ school.program }}</h2>
+                <div class="school-name-location-date-container">
+                  <span>{{ school.name }}</span>
+                  <div class="address-container">
+                    <span class="school-location">{{ school.city }}</span>
+                  </div>
+                  <span class="school-dates">({{ school.dates }})</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="languages-section">
+            <h1>Languages</h1>
+            <ul class="languages-list">
+              <li>
+                <h2>{{ language.name }}</h2>
+                <ul class="secondary-languages-list">
+                  <li>{{ type }}</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Tools</h1>
+            <ul class="tools-list">
+              <li>
+                <h2>{{ tool.name }}</h2>
+                <ul class="secondary-tools-list">
+                  <li>{{ type }}</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Professional Work Experience</h1>
+            <ul class="work-experience-list">
+              <li>
+                <div>
+                  <a href="#"></a>
+                    <h2 class="organization-name">{{ organization.name }}</h2></a>
+                </div>
+                <span class="organization-dates">{{ organization.dates }}</span>
+                <div>
+                  <h3 class="position-title">{{ position.title }}</h3>
+                  <ul class="tertiary-work-experience-list">
+                    <li>{{ responsibility }}</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Fun Stuff</h1>
+            <div class="camps-conferences-container">
+              <a href="#"></a>
+                <h2>{{ camp.name }}</h2>
+              </a>
+              <span class="camp-dates">{{ camp.dates }}</span>
+              <p>{{ camp.description }}</p>
+            </div>
+          </section>
+        </article>
+      </div>
 </body>
 </html>
