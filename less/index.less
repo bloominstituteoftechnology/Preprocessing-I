@@ -142,6 +142,7 @@ body {
 @custom-color1: lightpink;
 @custom-color2: navy;
 @custom-font: "Helvetica", "Arial", sans-serif;
+
 .centered() {
   display: flex;
   justify-content: center;
@@ -149,14 +150,22 @@ body {
 }
 .styling() {
   display: inline-block;
-  width: 350px;
+  width: 50%;
   margin: 10px 0 10px 0;
 }
- .container {
+
+.spacing(@borders, @margins) {
+  display: flex;
+  border: @borders;
+  margin: @margins;
+};
+
+//-----------------------------------------------------
+.container {
    width: 880px;
    margin: 0 auto;
    background: @custom-color1;
-
+ 
   header {
    .centered();
     width: 880px;
@@ -178,29 +187,31 @@ body {
     color: red;
     font-weight: bold;
   }
+ }
 
-  .intro {
+.intro {
     display:flex;
     padding: 1rem;
-     margin-top: 5rem;
-  }
-  .intro h1 {
+    margin-top: 5rem;
+  
+  h1 {
     font-size: 2.5rem;
     letter-spacing: 0.5rem;
     // margin-top: 5.5rem;
     color: @custom-color2;
   }
-  .intro .picture {
+  .picture {
     width: 40%;
     height: 65%;
     .styling();
   }
-  // p {
-  //   font-family: @custom-font;
-  //   font-size: 1.2rem;
-  //   color: @custom-color2;
-  // }
-  // .work-history {
-  //   font-family: @custom-font;
-  // }
+  p {
+    font-family: @custom-font;
+    font-size: 1.2rem;
+    color: @custom-color2;
+  }
 }
+  .work-history {
+    font-family: @custom-font;
+  }
+
