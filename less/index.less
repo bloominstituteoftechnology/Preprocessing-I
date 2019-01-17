@@ -59,8 +59,9 @@ html, body {
 
 /*Variables*/
 
-@font-stack: 'Cabin', Arial, sans-serif;
-@color-background: 	#696969;
+@font-stack: 'Raleway', Arial, sans-serif;
+@color-background: #3c3737;
+
 
 /*General Styles*/
 html {
@@ -69,11 +70,107 @@ html {
 	font-size: 62.5%;  /* 62.5% OF 16PX IS 10PX, BASE OF 10*/
 	
 }
+
+p, a, li{
+	font-size: 1.7rem;
+}
+
 .container {
 	font-family: @font-stack;
 	max-width: 1000px;
 	width: 100%;
 	margin: 0 auto;
+	line-height: 1.3;
+
+
+	header {
+		background-color: @color-background;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 30rem;
+		padding: 0 5rem;
+		margin-bottom: 50px;
+
+		h1 {
+			font-size: 5rem;
+			color: white;
+			margin: 1rem 0;
+		}
+
+	 	p {
+			 color: white;
+		}
+
+		nav {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			
+			a {
+				margin-top: 5rem;
+				padding-left: 5rem;
+				color: white;
+			}
+			
+		}
+
+	}
+
+	.intro-container {
+		border: 1px solid white;
+		width: 70%;
+		padding: 10px 0;
+		text-align: center;
+
+	}
+
+	.profile {
+		margin-bottom: 30px;
+	}
+	h2 {
+		font-size: 2.5rem;
+		font-weight: bold;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	li {
+		list-style-type: disc;
+		list-style-position: inside;
+	}
+
+	nav {
+		a {
+			text-decoration: none;
+		}
+	}
+
+	section {
+		display: flex;
+		justify-content: space-between;
+	
+	}
+
+
+	.left {
+		border-right: 1px solid black;
+		width: 30%;
+		padding-right: 2%;
+	}
+	.right {
+		width: 65%;
+
+	}
+	.text-container {
+		margin-bottom: 20px;
+
+	}
 
 	@media (max-width: 500px) {
 		.container {
@@ -84,67 +181,17 @@ html {
 
 }
 
-header {
-	background-color: @color-background;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 20rem;
-	padding: 0 5rem;
-	margin-bottom: 50px;
-}
 
-p, a{
-	font-size: 1.7rem;
-}
 
-header p {
-	color: white;
-}
 
-nav {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-}
 
-nav a {
-	margin-top: 5rem;
-	padding-left: 5rem;
-	color: white;
-}
+
 
 
 /* Page-specific styles*/
 
-header h1 {
-	font-size: 5rem;
-	color: white;
-	margin: 1rem 0;
-}
 
-.profile {
-	margin-bottom: 50px;
-}
-section {
-	display: flex;
-	justify-content: space-between;
 
-	h2 {
-		font-size: 5rem;
-	}
-}
-
-.left {
-	border-right: 1px solid black;
-	width: 30%;
-}
-.right {
-	width: 65%;
-
-}
 
 /*
 REM for fonts, PX for heights, % for left and right margins, paddings, width
