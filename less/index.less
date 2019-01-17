@@ -141,8 +141,9 @@ body {
 
 @custom-color1: lightpink;
 @custom-color2: navy;
-@custom-font1:"Lobster", "Arial", sans-serif;
-@custom-font2:"Cherry Swash","Helvetica";
+@custom-font1:"Cherry Swash","Helvetica";
+@custom-font2: "Arial", sans-serif;
+
 .centered() {
   display: flex;
   justify-content: center;
@@ -161,7 +162,8 @@ body {
 
 //-----------------------------------------------------
 .container {
-   width: 880px;
+   width: 100%;
+   max-width: 55rem;;
    margin: 0 auto;
    background: @custom-color1;
  
@@ -182,6 +184,7 @@ body {
     font-size: 1.5rem;
     padding: 1rem;
     color: @custom-color2;
+    font-family: @custom-font2;
   }
   header nav a:hover {
     color: red;
@@ -202,49 +205,70 @@ body {
     color: @custom-color2;
   }
   .picture {
-    width: 50%;
-    margin-left: 13rem;;
+    width: 30%;
+    margin-left: 15rem;;
   }
   p {
+    .centered();
     font-family: @custom-font2;
+    color: @custom-color2;
     font-size: 1.2rem;
     margin-left: 2.75rem;
     margin-bottom: 2rem;
-    color: @custom-color2;
   }
 }
-
 h2 {
   font-family: @custom-font1;
     font-size: 2.0rem;
     margin-top: 1.5rem;
     color: @custom-color2;
 }
+h3 {
+  font-family: @custom-font1;
+    font-size: 1.0rem;
+    margin-top: .5rem;
+    color: @custom-color2;
+}
+.contact {
+  .centered();
+  p {
+    .centered();
+    font-family: @custom-font2;
+    color: @custom-color2;
+    font-size: 1.2rem;
+    margin-left: 2.75rem;
+    margin-bottom: 2rem;
+  }
 button {
   width: 5rem;
-  height:5rem;
-  border-radius: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  .centered();
   }
   button:hover {
     color: white;
     background:@custom-color2;
   }
-  
+} 
 .main-content {
+  display: flex;
+  width: 100%;
   font-family: @custom-font2;
   color: @custom-color2;
   .bio {
-    .centered();
+    width: 65%;
+  	margin: 0 4rem 0 4rem;
   }
   .assets {
     .spacing(space-around, 2rem);
     width: 35rem;
     flex-wrap: wrap;
+    margin: 0 4rem 0 4rem;
   }
-
-
-  // .work-history {
-
-  // }
+  .work-history p {
+    display: flex;
+    width: 85%;
+    color: @custom-color2;
+    margin: 0 5rem;
   }
-
+}
