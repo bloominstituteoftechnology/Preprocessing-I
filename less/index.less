@@ -154,9 +154,9 @@ body {
   margin: 10px 0 10px 0;
 }
 
-.spacing(@borders, @margins) {
+.spacing(@justify, @margins) {
   display: flex;
-  border: @borders;
+  justify-content: @justify;
   margin: @margins;
 };
 
@@ -168,7 +168,7 @@ body {
  
   header {
    .centered();
-    width: 880px;
+    // width: 880px;
     height: 4rem;
     background: lightblue;
     overflow: hidden;
@@ -180,7 +180,8 @@ body {
     margin: 0
   }
   header nav a {
-    padding: 20px;
+    font-size: 1.5rem;
+    padding: 1rem;
     color: @custom-color2;
   }
   header nav a:hover {
@@ -190,18 +191,17 @@ body {
  }
 
 .intro {
-    display:flex;
-    padding: 1rem;
+    .spacing(space-around,5rem);
     margin-top: 5rem;
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     letter-spacing: 0.5rem;
-    // margin-top: 5.5rem;
+    margin-top: 5.5rem;
     color: @custom-color2;
   }
   .picture {
-    width: 40%;
+    width: 75%;
     height: 65%;
     .styling();
   }
@@ -211,7 +211,8 @@ body {
     color: @custom-color2;
   }
 }
-  .work-history {
-    font-family: @custom-font;
-  }
-
+  
+.main-content {
+  color: @custom-color2;
+  .centered();
+}
