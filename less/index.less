@@ -54,6 +54,106 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+}
+/* Start code here */
+
+@texttheme: blue;
+@psize: 1.5rem; 
+
+// swatch
+@fgcolor1: red;
+@bgcolor1: black;
+
+//cozy padding
+@cozy: 5% 5%;
+
+// 
+@test: 	border;
+@tboxcol:  1px solid @fgcolor1;
+
+// table, th, td {
+// 	text-align: left;
+// 	border: 1px solid black;
+//}
+
+.container {
+	display: flex;
+  }
+
+@media all and (max-width: 600px) {
+  
+.container {
+  flex-wrap: wrap;
+}
+	
+.container > li {
+  flex-basis: 50%;
+}
+  
 }
 
+nav {
+	margin-bottom: 2%
+}
+
+body {
+	font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	padding: 5%;
+}
+//
+.blerb {
+	// @{test}: @tboxcol;
+	width: 66%;
+	img {
+		border-radius: 50%;
+	}
+	h1 {
+		font-size: 2rem;
+		color: @texttheme;
+		width: 66%;
+	}
+	p {
+		font-size: @psize * .75;
+		color: @texttheme;
+		width: 66%;
+	}
+}
+
+.skills {
+	// @{test}: @tboxcol;
+	padding: 1%;
+}
+
+.work {
+}
+
+.work table {
+		// @{test}: @tboxcol;
+		padding: 1%;
+	}
+	h1 {
+		font-size: @psize * 1.2;
+		color: @texttheme;
+	}
+	tr, th, td {
+		font-size: @psize;
+		color: @texttheme;
+		text-align: left;
+		border: 1px solid black;
+	}
+//
+// footer {
+// 	border-top: 3px solid @bgcolor1;
+// 	flex-shrink: 0;
+// 	width: 100%;
+// 	// Is this how you force a text size? lol
+
+// 	h1,h2,h3,h4,h5,h6,p {
+// 		font-size: @psize * .8;
+// 	}
+// }
