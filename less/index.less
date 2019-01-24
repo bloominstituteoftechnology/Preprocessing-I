@@ -62,110 +62,159 @@ p {color: black;}
 
 //My code starts here//
 
-//@media(max-width: 800px) {.container {background:lightblue;}}//
+//@media(@tablet {background:lightblue;}
+
+//@tablet: ~"(max-width: 800px)";
+
+//@mobile: ~"(max-width: 500px)";
+
+//@media(@tablet) {background:lightblue;}
+
+//Variables
+
+//color
+@b: black;
+@g: gray;
+@c: chocolate;
+
+//font-size
+@fs: 1.4rem;
+@fc: 1.3rem;
+@fn: 1.6rem;
+@fl: 1.8rem;
+
+//Mixins
+
+.flash() {
+	background: transparent;
+	color: @c;
+}
+
+.middle() {
+	border: 1px solid red;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 10px .5%;
+	line-height: 1.3;
+}
+
+.spacing() {
+	width: 99%;
+	padding: 10px 1%;
+	margin: 5px;
+}
+
+.topper() {
+	border: 1px solid blue;
+	width: 80%;   
+	font-size: @fn;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px 0;
+}
+
+//Web page code starts here
 
 .container {
 	border: 1px solid green;
 	width: 880px;
 	margin: 30px 1%;
-	background-color: white;
 }
 
 .top {
 	border: 1px solid blue;
 	margin: 5px;
-	display: flex;
-	flex-direction: column;
 }
 
-.top .logo {
+.top-main {
 	border: 1px solid red;
-	width: 7%;
-	background: transparent;
+	display: flex;
+	flex-direction: column;
+	margin: 10px; 
+}
+
+.top-main .logo {
+	border: 1px solid blue;
+	width: 70px;
 }
 
 nav {
-	border: 1px solid blue;
-	width: 80%;   
-	font-size: 1.5rem;
-	display: flex;
-	justify-content: space-between;
-	margin: 5px 10px;
+	.topper()
 }
 
 nav a {
-	color: gray;
+	color: @g;
 	text-decoration: none;
-	
 }
 
 nav a:hover {
-	color: chocolate;
-	background: transparent;
+	.flash()
 }
 
 .top .top-img {
 	border: 1px solid blue;
-	width: 99%;
-	padding: 10px 1%;
+	.spacing()
+}
+
+.middle-content {
+	.middle()
 }
 
 .text-container {
-	font-size: 1.4rem;
-	color: chocolate;
-	margin: 10px;
+	border: 1px solid blue;
+	font-size: @fs;
+	color: @c;
+	margin: 8px;
 	width: 250px;
 }
 
-.text-container h2 {
-	font-size: 1.8rem;
-	color: gray;
-	margin: 10px 0;
+.text-container {
+	h2 {
+		font-size: @fl;
+		color: @c;
+		margin: 10px 0;
+	}
 }
 
 .text-container p:hover {
-	background: transparent;
-	color: gray;
+	.flash()
 }
-
-//.top-img:hover {background: white;color: transparent;}//
-//.bottom {background-image: url ("C:\Users\user\lambda\Preprocessing-I\img\crossroads.jpg") no-repeat center center; background-size: cover;}//
 
 .bottom .contact {
 	border: 1px solid red;
-	line-height: 1.5;
+	line-height: 1.6;
 	padding: 10px 1%;
-	font-size: 1.3rem;
+	font-size: @fc;
 	width: 160px;
 	background: transparent;
-	color: gray;
-	margin: 10px;
+	color: @g;
+	margin: 5px;
 }
 
 .bottom .contact h6 {
-	color: gray;
-	font-size: 1.4rem;
+	color: @c;
+	font-size: @fs;
 	margin: 0 0 5px;
 }
 
-.bottom .contact:hover {
-	background: transparent;
-	color: chocolate;
+.bottom .contact p:hover {
+	.flash()
 }
 
 .bottom .bottom-img {
 	border: 1px solid blue;
-	width: 99%;
-	height: 350px;
-	padding: 10px 1%;
+	height: 300px;
+	.spacing()
 }
 
 footer {
 	border: 1px solid blue;
 	padding: 10px;
-	font-size: 1.1rem;
+	font-size: @fs;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: gray;
+	color: @b;
 }
