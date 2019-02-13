@@ -1,10 +1,3 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,100 +43,147 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-
-// Variables
-
-
-
-
-
-// Mixins
-
-.bordered() {
-	border: solid black 4px;
-	padding: 10px 0;
-  }
-
-.center() {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
-
-.ptblr(@padding){
-	  padding: @padding;
-  }
-
-.spaceme{
-	margin: 1.5rem;
-	line-height: 1.25;
-}
-
-
-//Gen Styles
-
 * {
     box-sizing: border-box;
 }
 
 html, body {
-	height: 100%;
+    height: 100%;
 }
 
-h1{
-	font-size: 20px;
-	font-family: 'Oswald', sans-serif;
-	.spaceme();
-}
+// *** My code **************************************************************
 
-a{
-	text-align: center;
-    font-size: 16px;
-    align-self: center;
-	margin: 30px;
-	text-decoration: none;
+// *** Global tag styles, relative sizes
+html {
+	font-size: 62.5%;
+}
+body {
+	line-height: 1.5;
 	font-family: 'Oswald', sans-serif;
 }
-
-p{
-	font-family: 'Oswald', sans-serif;
-	.spaceme();
+h1 {
+	font-size: 4rem;
+	font-family: 'Roboto Slab', serif;
+}
+h2 {
+	font-size: 2.4rem;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+h3 {
+	font-size: 1.7rem;
+	font-weight: 650;
+	margin-top: 0.2em;
+}
+p {
+	font-size: 1.7rem;
 }
 
-.nav{
+// *** Variables and mixins
+@main-color: gold;
+
+.flexible(@direction, @justify, @align) {
 	display: flex;
-	width: 100%;
-    justify-content: space-between;
-	margin-top: 30px;
-	border-bottom: solid black 2px;
-	.center();
+	flex-direction: @direction;
+	justify-content: @justify;
+	align-items: @align;
 }
 
-.fluidcontainer{
-	max-width: 800px;
-	margin: 0 auto;
-	.bordered();
+// *** Utility classes
+.text-center() {
+	text-align: center;
 }
 
-.logo{
+// *** Main HTML-matching structure
+.container {
+	background-color: lightblue;
+	max-width: 900px;
+	margin: 2rem auto;
+	border: 2rem solid @main-color;
+	padding: 2rem;
+	.flexible(column, flex-start, stretch);
 
-	width: 25%;
-	height: auto;
-	margin: 0px 0px;
-}
+	.row {
+		width: 100%;
+		margin: 2rem 0;
 
-.main{
-	height: 400px;
-	width: 100%;
-	background-color: gainsboro;
-	.center();
-	.ptblr( 20px );
-	.bordered();
-}
+		// *** These two classes set up the middle dotted line present in some sections
+		.left-half {
+			min-width: 50%;
+			padding-right: 5%;
+			border-right: 2px dotted black;
+			text-align: right;
+			@media (max-width: 500px) {
+				min-width: none;
+				border-right: none;
+				text-align: center;
+			}
+		}
+		.right-half {
+			min-width: 50%;
+			margin-left: 5%;
+			@media (max-width: 500px) {
+				min-width: none;
+			}
+		}
+	}
 
-.pfp {
-	height: 200px;
-	width: 150px; 
-	background-color: black;
-	justify-content: left;
+	span {
+		font-size: 3rem;
+		margin: 0.2rem 0;
+		.text-center;
+	}
+
+	.title-header {
+		margin-bottom: 5rem;
+		.flexible(row, space-between, center);
+		width: 100%;
+	
+		h1 {
+			width:40%;
+		}
+		.h1-left {
+			text-align: right;
+		}
+		.fa-award {
+			.text-center;
+			font-size: 8rem;
+			width: 20%;
+		}
+
+		@media (max-width: 500px) {
+			.flexible(column, center, center);
+		}
+	}
+
+	.intro-contact, .education-experience, .skills-interests {
+		.flexible(row, flex-start, flex-start);
+		@media (max-width: 500px) {
+			.flexible(column, flex-start, center);
+			text-align: center;
+		}
+	}
+
+	.intro-contact {
+		.contact {
+			.flexible(row, flex-start, flex-start);
+			img {
+				margin-right: 1.8rem;
+				border-radius: 100%;
+				max-width: 10rem;
+				height: auto;
+			}
+			div nav a {
+				margin: 0 0.2rem;
+			}
+			div nav .fab {
+				color: @main-color;
+			}
+			@media (max-width: 500px) {
+				.flexible(column, flex-start, center)
+			}
+		}
+	}
+
 }
