@@ -192,16 +192,15 @@ header {
   padding: 20px 30px 20px 20px;
   background: #f4f4f4;
 }
-header .profile-pic {
-  height: 100px;
-  width: 100px;
-}
 header nav {
   margin: 15px 0;
   padding: 10px;
   justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
+}
+header nav :hover {
+  color: #4169E1;
 }
 header nav a {
   text-decoration: none;
@@ -210,21 +209,42 @@ header nav a {
   color: black;
   text-align: center;
 }
+@media ( max-width: 515px ) {
+  header nav a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+    font-size: 2rem;
+    font-weight: 300;
+    color: black;
+  }
+}
+@media ( max-width: 515px ) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
 header section.heading {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-header section.heading h2 {
-  margin: 0;
-  border: none;
-}
-.box {
+header section.heading .box {
   text-align: center;
   border: 2px solid black;
   padding: 30px 100px;
   background: #F1F6FE;
+}
+header section.heading h2 {
+  margin: 0;
+  border: none;
 }
 .all-content-container {
   display: flex;
@@ -232,13 +252,18 @@ header section.heading h2 {
   align-items: flex-start;
   width: 100%;
   border-top: 1px solid black;
-  height: 1200px;
+  height: 1600px;
 }
-.professional-content {
+.all-content-container .professional-content {
   margin-left: 5%;
 }
-.additional-info-content {
+.all-content-container .additional-info-content {
   background: #f4f4f4;
   padding: 0 20px;
   height: inherit;
+}
+@media ( max-width: 515px ) {
+  .all-content-container {
+    flex-direction: column;
+  }
 }

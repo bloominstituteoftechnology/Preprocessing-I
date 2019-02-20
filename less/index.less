@@ -50,15 +50,28 @@ table {
 
 /* Set every element's box-sizing to border-box */
 
+// variables 
+
 @font-stack: 'Roboto', sans-serif;
 @base-font-size: 62.5%;
 @font-color: black;
+@mobile: ( max-width: 515px );
+
+// mixins
+
 .custom-font-style(@size, @weight) {
 	font-size: @size;
 	font-weight: @weight;
 	color: black;
 }
 
+.column-center() {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+// -------------
 html {
 	box-sizing: border-box;
 	font-family: @font-stack;
@@ -118,46 +131,57 @@ header {
 	padding: 20px 30px 20px 20px;
 	background: #f4f4f4;
 
-	.profile-pic {
-		height: 100px;
-		width: 100px;
-	}
-
 	nav {
 		margin: 15px 0; 
 		padding: 10px;
 		justify-content: space-evenly;
 		display: flex;
 		flex-wrap: wrap;
+
+		:hover {
+			color: #4169E1;
+			}
 		
 		a {
 			text-decoration: none;
 			.custom-font-style(1.4rem, 500);
 			text-align: center;
+
+			@media @mobile {
+				width: 100%;
+        		display: block;
+        		text-align: center;
+        		padding: 20px 0;
+				border-bottom: 1px solid gray;
+				.custom-font-style(2rem, 300);
+			}
+
+			  } // a tag in nav
+			  @media @mobile {
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			  }
+
+		} // nav
+	section.heading {
+		.column-center();
+
+		.box {
+			text-align: center;
+			border: 2px solid black;
+			padding: 30px 100px;
+			background: #F1F6FE;
 		}
-	} // nav
+		
+		h2 {
+			margin: 0;
+			border: none;
+		}
+	} // heading content
 } // header
-
-header section.heading {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-}
-
-
-
-header section.heading h2 {
-	margin: 0;
-	border: none;
-}
-
-.box {
-	text-align: center;
-	border: 2px solid black;
-	padding: 30px 100px;
-	background: #F1F6FE;
-}
 
 .all-content-container {
 	display:flex;
@@ -165,15 +189,19 @@ header section.heading h2 {
 	align-items: flex-start;
 	width: 100%;
 	border-top: 1px solid black;
-	height: 1200px;
-}
+	height: 1600px;
 
-.professional-content {
-	margin-left: 5%;
-}
+	.professional-content {
+		margin-left: 5%;
+	} // work experience and education content container
 
-.additional-info-content {
-	background: #f4f4f4;
-	padding: 0 20px;
-	height: inherit;
-}
+	.additional-info-content {
+		background: #f4f4f4;
+		padding: 0 20px;
+		height: inherit;
+	} // contact info & skills content container
+
+	@media @mobile {
+        flex-direction: column;
+	}
+} // all content container
