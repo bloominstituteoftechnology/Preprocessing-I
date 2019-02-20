@@ -57,3 +57,174 @@ html, body {
     height: 100%;
 }
 
+/* My Code */
+
+/*variables*/
+@mandy: #ED616F;
+@clairvoyant: #4C0561;
+@moody-blue: #766DD5;
+@bombay:#ACACAF;
+@royal-blue: #5757E0;
+
+@size: 3rem;
+
+/*escaping*/
+
+
+/*mixin*/
+
+.bordered(){
+	padding:20px 0;
+	border-top:1px dashed black;
+	border-bottom: 1px dashed black;
+}
+
+.center(){
+	display: flex;
+	margin: 20px;
+}
+
+
+html {
+	box-sizing: border-box;
+	font-size:62.5%;
+
+}
+
+*{
+	background: @mandy;
+
+	@media (max-width: 505px){
+		background: @royal-blue;
+	}
+}
+
+/*container  constraints*/
+.container.home{
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: 2.5rem;
+}
+
+/*navigations */
+nav{
+	display:flex;
+	justify-content: flex-end;
+
+	@media (max-width: 505px){
+		justify-content:center;
+		flex-direction: column;
+		align-items:center;
+	}
+
+	a{
+		margin-left:20px;
+		font-size: 2.4rem;
+		text-decoration: none;
+
+		@media (max-width: 505px){
+			font-size: @size;
+			color: @clairvoyant;
+			
+		}
+	}
+}
+/*header nested */
+header{
+	border:1px solid gray;
+	display:flex;
+	flex-direction: column;
+	padding: 20px;
+	margin: 20px;
+	line-height: 1.3;
+	background:@clairvoyant;
+
+	img {
+		width: 35%;
+		height: auto;
+
+		@media(max-width: 505px){
+			margin-left: 30%;
+		}
+	}
+	h1{
+		font-size: 3.2rem;
+		//color: blue;
+	}
+	.about-me-bottom{
+		margin: 20px 0;
+		padding: 20px 0;
+		border-top: 1px dotted @bombay;
+	}
+	button{
+		width: 25%;
+		margin: 20px 0;
+		cursor: pointer;
+		color: blue;
+		background: @moody-blue;
+		border-radius: 20px;
+
+		@media(max-width:505px){
+			color:@mandy;
+		}
+	}
+}
+
+
+/*middle section*/
+
+.main-content{
+	.center();
+
+	.top-main-content{
+		padding: 10px;
+		width: 50%;
+		line-height: 1.2;
+	}
+
+	h2{
+		margin: 10px 0;
+	}
+	.bottom-main-content{
+		margin: 0 60px;
+
+	}
+	ul{
+		width: 100%;
+		line-height: 1.2;
+
+	}
+	li{
+		.bordered();
+		width: 250%;
+		text-align: center;
+	}
+}
+
+.work-table{
+		display:flex;
+		justify-content: space-between;
+		padding: 30px;
+		flex-direction:column;
+		border-top:1px dotted black;
+
+		table{
+			margin:10px 0;
+		}
+		td{
+			border-top: 1px solid black;
+			border-bottom:1px solid black;
+			text-align:center;
+		}
+		.color-tab{
+			background: @bombay;
+
+		}
+
+}
+
+footer{
+	.center();
+	margin-left: 250px;
+
+}
