@@ -57,3 +57,141 @@ html, body {
     height: 100%;
 }
 
+@color: lightgrey;
+@text-color: dimgrey;
+
+.flex() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.font-size() {
+	font-size: 1.6rem;
+}
+.margin() {
+	margin: 20px 0;
+}
+.header(@size) {
+	font-size: @size;
+	margin-bottom: 1rem;
+}
+.parcel() {
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: @color;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: "Montserrat", Helvetica, sans-serif;
+	width: 90%;
+	margin: 0 auto;
+	
+	
+	nav {
+		.flex();
+		width: 30%;
+		margin-left: 70%;
+		margin-top: 20px;
+		
+		a {
+			font-size: 1.2rem;
+			color: @text-color;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	h1 {
+		.margin();
+		.header(4rem);
+	}
+	
+	h2 {
+		.header(2.5rem);
+		font-weight: bold;
+	}
+	
+	p {
+		.font-size();
+		color: @text-color;
+		line-height: 1.9rem;
+	}
+
+	.content {
+		.parcel();
+	}
+
+	#intro-skills {
+		.flex();
+		align-items: flex-start;
+		.margin();
+
+		#intro {
+			width: 49%;
+		}
+
+		#skills {
+			width: 49%;
+			ul {
+				border: 1px solid black;
+				li {
+					.font-size();
+					color: @text-color;
+					border: 1px solid black;
+					padding: 10px 0px 10px 20px;
+					background-color: whitesmoke;
+				}
+			}
+		}
+	}
+
+
+	#work-history {
+		.margin();
+		
+		div {
+			table {
+				margin: 10px;
+				width: 100%;
+				border-collapse: separate;
+				border-spacing: 5px 0;
+
+				th, td {
+					font-size: 1.5rem;
+				}
+		
+				th {
+					height: 30px;
+					text-align: left;
+					font-weight: bold;
+					text-decoration: underline;
+				}
+	
+				td {
+					color: @text-color;
+					font-size: 1.3rem;
+					padding: 10px 0;
+				}
+			}
+		}
+	}
+
+
+	address {
+		.margin();
+		.font-size();
+		color: @text-color;
+		width: 70%;
+		line-height: 1.8rem;
+	}
+
+	footer {
+		text-align: center;
+		font-size: 1rem;
+		.margin();
+	}
+}
