@@ -33,7 +33,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style: initial;
 }
 blockquote, q {
 	quotes: none;
@@ -51,12 +51,18 @@ table {
 /* Set every element's box-sizing to border-box */
 
 @font-stack: 'Roboto', sans-serif;
-@base-font: 62.5%;
+@base-font-size: 62.5%;
+@font-color: black;
+.custom-font-style(@size, @weight) {
+	font-size: @size;
+	font-weight: @weight;
+	color: black;
+}
 
 html {
 	box-sizing: border-box;
 	font-family: @font-stack;
-	font-size: @base-font;
+	font-size: @base-font-size;
   }
   *, *:before, *:after {
 	box-sizing: inherit;
@@ -66,8 +72,44 @@ html, body {
 	height: 100%;
 }
 
-h1, h2, h3, h4, h5 {
-	font-size: 3rem;
-	color: black;
+h1 {
+	.custom-font-style(4rem, 300);
   }
 
+h2 {
+	.custom-font-style(2.5rem, 400);
+	border-bottom: 1px solid black;
+	padding: 8px 0;
+	margin: 2% auto;
+  }
+
+h3 {
+	.custom-font-style(2rem, 500);
+	padding: 5px 0;
+	margin: .5% auto;
+  }
+
+h4 {
+	.custom-font-style(1.8rem, 400);
+  }
+img {
+	width: 100%;
+	height: auto;
+}
+
+p {
+	line-height: 1.25;
+	.custom-font-style(1.6rem, 300);
+
+}
+
+ul li {
+	.custom-font-style(1.6rem, 300);
+	line-height: 1.25;
+	margin: 0px 20px;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
