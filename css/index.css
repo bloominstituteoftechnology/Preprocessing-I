@@ -1,1 +1,363 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+html {
+  padding-top: 3rem;
+}
+html,
+body {
+  height: 120vh;
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 28px;
+}
+.container {
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.flex {
+  display: flex;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.center {
+  margin: 0 auto;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #222222;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar a {
+  color: #e5f1ff;
+  text-decoration: none;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 16px;
+}
+.navbar a:hover {
+  color: #84dcc6;
+  text-decoration: underline;
+}
+.navbar a:not(last-child) {
+  margin-right: 1rem;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  background: #4b4e6d;
+  color: #e5f1ff;
+  text-align: left;
+  padding: 2rem;
+}
+.hero .hero-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: row;
+  border-bottom: 2px solid #95a3b3;
+  padding: 1rem 0;
+  flex-basis: 100%;
+}
+.hero .hero-body .titles {
+  display: flex;
+  flex-direction: column;
+}
+.hero .hero-body .titles h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #95a3b3;
+}
+@media screen and (max-width: 500px) {
+  .hero .hero-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero .hero-body img {
+    margin-bottom: 1rem;
+  }
+}
+.hero-footer {
+  padding: 1rem 0.5rem;
+}
+.hero-footer p {
+  margin-bottom: 1rem;
+}
+.container {
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+  max-width: 90%;
+}
+.hero-img {
+  border-radius: 5px;
+  max-width: 150px;
+  margin-right: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+  max-width: 90%;
+  border-radius: 0.25rem;
+  background: #e5f1ff;
+  text-align: left;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  align-items: center;
+  border-bottom: 2px solid #95a3b3;
+}
+.card-header .titles {
+  display: flex;
+  flex-direction: column;
+}
+.card-header .titles h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #95a3b3;
+}
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+}
+.card-footer p {
+  margin-bottom: 1rem;
+}
+button {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.grid .half {
+  flex-basis: 50%;
+}
+@media screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+ul li:not(last-child) {
+  margin-bottom: 0.5rem;
+}
+.about-me {
+  background: #e5f1ff;
+}
+.about-me .links a {
+  color: #4b4e6d;
+  text-decoration: none;
+  font-style: italic;
+}
+.about-me .links a:hover {
+  text-decoration: underline;
+}
+.about-me .links a:not(last-child) {
+  margin-right: 2.5rem;
+}
+@media screen and (max-width: 500px) {
+  .about-me .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-me .links a:not(last-child) {
+    margin-bottom: 1rem;
+  }
+}
