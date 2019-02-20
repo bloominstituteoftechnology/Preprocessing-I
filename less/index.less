@@ -63,9 +63,13 @@ html, body {
 @mandy: #ED616F;
 @clairvoyant: #4C0561;
 @moody-blue: #766DD5;
+@bombay:#ACACAF;
+@royal-blue: #5757E0;
+
+@size: 3rem;
 
 /*escaping*/
-@mobile:`( max-width: 515px);
+
 
 /*mixin*/
 
@@ -75,6 +79,12 @@ html, body {
 	border-bottom: 1px dashed black;
 }
 
+.center(){
+	display: flex;
+	margin: 20px;
+}
+
+
 html {
 	box-sizing: border-box;
 	font-size:62.5%;
@@ -83,7 +93,12 @@ html {
 
 *{
 	background: @mandy;
+
+	@media (max-width: 505px){
+		background: @royal-blue;
+	}
 }
+
 /*container  constraints*/
 .container.home{
 	max-width: 600px;
@@ -96,10 +111,22 @@ nav{
 	display:flex;
 	justify-content: flex-end;
 
+	@media (max-width: 505px){
+		justify-content:center;
+		flex-direction: column;
+		align-items:center;
+	}
+
 	a{
 		margin-left:20px;
 		font-size: 2.4rem;
 		text-decoration: none;
+
+		@media (max-width: 505px){
+			font-size: @size;
+			color: @clairvoyant;
+			
+		}
 	}
 }
 /*header nested */
@@ -116,6 +143,9 @@ header{
 		width: 35%;
 		height: auto;
 
+		@media(max-width: 505px){
+			margin-left: 30%;
+		}
 	}
 	h1{
 		font-size: 3.2rem;
@@ -124,7 +154,7 @@ header{
 	.about-me-bottom{
 		margin: 20px 0;
 		padding: 20px 0;
-		border-top: 1px dotted gray;
+		border-top: 1px dotted @bombay;
 	}
 	button{
 		width: 25%;
@@ -133,6 +163,10 @@ header{
 		color: blue;
 		background: @moody-blue;
 		border-radius: 20px;
+
+		@media(max-width:505px){
+			color:@mandy;
+		}
 	}
 }
 
@@ -140,8 +174,7 @@ header{
 /*middle section*/
 
 .main-content{
-	display:flex;
-	margin: 20px;
+	.center();
 
 	.top-main-content{
 		padding: 10px;
@@ -163,7 +196,6 @@ header{
 	}
 	li{
 		.bordered();
-		//border: 1px solid gray;
 		width: 250%;
 		text-align: center;
 	}
@@ -185,7 +217,7 @@ header{
 			text-align:center;
 		}
 		.color-tab{
-			background: gray;
+			background: @bombay;
 
 		}
 
