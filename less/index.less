@@ -1,59 +1,358 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
+
+@font-family: "Roboto", sans-serif;
+
+@dark: rgba(34, 34, 34, 1);
+@light: rgba(255, 255, 255, 1);
+@primary: rgba(75, 78, 109, 1);
+@info: rgba(132, 220, 198, 1);
+@secondary: rgba(149, 163, 179, 1);
+
+html,
+body {
+  height: 100%;
+  font-family: @font-family;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 28px;
+}
+
+.container {
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  .flex();
+  align-items: center;
+  flex-direction: row;
+}
+.flex-column() {
+  .flex();
+  flex-direction: column;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.img() {
+  border-radius: 5px;
+}
+
+.border-radius(@value) {
+  border-radius: @value;
+}
+
+.navbar {
+  .flex-row();
+  justify-content: flex-end;
+  background: @dark;
+  height: 3rem;
+  a {
+    color: @light;
+    text-decoration: none;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 16px;
+    &:hover {
+      color: @info;
+      text-decoration: underline;
+    }
+  }
+  a:not(last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.padding-x(@value: 1rem) {
+  padding: 0 @value;
+}
+.padding-y(@value: 1rem) {
+  padding: @value 0;
+}
+.padding(@value) {
+  padding: @value;
+}
+
+.hero {
+  .flex-column();
+  background: @primary;
+  color: @light;
+  text-align: left;
+  .padding(2rem);
+  .hero-body {
+    .flex-row();
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: row;
+    border-bottom: 2px solid @secondary;
+    .padding-y(1rem);
+    .titles {
+      .flex-column();
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid @secondary;
+        border-bottom: 2px solid @secondary;
+      }
+    }
+    flex-basis: 100%;
+  }
+}
+.hero-footer {
+  padding: 1rem 0.5rem;
+  p {
+    margin-bottom: 1rem;
+  }
+}
+.container {
+  .container();
+  .center();
+  max-width: 90%;
+}
+.hero-img {
+  .img();
+  max-width: 150px;
+  margin-right: 2rem;
+}
+
+.card {
+  .flex-column();
+  .center();
+  .container();
+  .border-radius(0.25rem);
+  background: @light;
+
+  text-align: left;
+}
+
+.card-header {
+  .flex-row();
+  padding-bottom: 1rem;
+  align-items: center;
+  border-bottom: 2px solid @secondary;
+  .titles {
+    .flex-column();
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid @secondary;
+    }
+  }
+}
+
+.card-footer {
+  .flex-column();
+  padding: 1rem 0.5rem;
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+button {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  .border-radius(0.25rem);
+}
+
+.text-wrapper {
+  // padding: 0.5rem 0.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 90%;
+  .center();
+  .half {
+    flex-basis: 50%;
+  }
+}
+
+ul {
+  list-style: disc;
+  list-style-position: inside;
+  li:not(last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.about-me {
+  background: @secondary;
+  .links {
+    a:not(last-child) {
+      margin-right: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    background: pink;
+  }
+}
