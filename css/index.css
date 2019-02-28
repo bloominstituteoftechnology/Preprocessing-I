@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -137,7 +137,7 @@ html {
 html,
 body {
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 h1,
 h2,
@@ -146,7 +146,7 @@ h4,
 h5 {
   font-size: 18px;
   margin-bottom: 15px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 .container {
   width: 800px;
@@ -158,6 +158,12 @@ header {
   width: 24%;
   background-color: lightgrey;
 }
+@media (max-width: 515px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 header nav a {
   display: flex;
   font-size: 27px;
@@ -165,8 +171,11 @@ header nav a {
   font-family: Copperplate;
   color: black;
 }
-header nav .pics {
-  display: block;
+@media (max-width: 515px) {
+  header nav {
+    margin-left: 0;
+    padding: 140px;
+  }
 }
 nav {
   margin: 10px 10px;
@@ -174,17 +183,34 @@ nav {
 }
 .pic {
   width: 311%;
+  height: 40%;
+  padding-right: 27px;
+  padding-left: 16px;
+}
+@media (max-width) {
+  .pic {
+    width: 100%;
+    height: auto;
+  }
 }
 h1 {
   font-size: 30px;
+  padding: 10px;
+  font-style: italic;
 }
 .middle-content {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-style: italic;
   display: flex;
   background-color: lightgrey;
   padding-top: 10px;
+}
+@media (max-width: 515px) {
+  .middle-content {
+    flex-direction: column;
+    padding: 10px;
+  }
 }
 .middle-content p {
   display: flex;
@@ -201,7 +227,7 @@ h1 {
 }
 ul li {
   font-size: 16px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   list-style-type: square;
   padding: 5px;
 }
