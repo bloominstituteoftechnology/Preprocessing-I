@@ -63,13 +63,14 @@ html, body {
 @top-color: @prim;
 @middle-color: @pale-lilac;
 @bottom-color: @casper;
+@border: @cello;
 @prim: #FEFBFE;
 @casper: #B6C1D8;
 @pale-lilac: #F4E8F8;
 @cello: #1E385B;
 
 .border() {
-	border: .125rem @border solid;
+	border: 2px @border solid;
 }
 
 .main {
@@ -78,28 +79,28 @@ html, body {
 }
 	
 header {
-		background: @top-color;
-		font-family: 'Raleway', cursive;
-		border-bottom: .25 grey solid;
-		padding: 20px 0;
-		height: 255px;
+	background: @top-color;
+	font-family: 'Raleway', cursive;
+	.border;
+	padding: 20px 0;
+	height: 255px;
+	display: flex;
+	justify-content: space-around;	
+	h1 {
+		font-size: 80px;	
+	}
+
+	p {
+		font-size: 30px;
+		padding: 64px;
+	}
+
+	nav {
 		display: flex;
-		justify-content: space-around;	
-		h1 {
-			font-size: 80px;	
-		}
-
-		p {
-			font-size: 30px;
-			padding: 64px;
-		}
-
-		nav {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-			order: 1;
-		}
+		flex-direction: column;
+		justify-content: space-evenly;
+		order: 1;
+	}
 }
 
 
@@ -131,6 +132,9 @@ footer {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	a {
+		margin: 0 10px;
+	}
 }
 
 
