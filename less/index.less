@@ -56,4 +56,93 @@ table {
 html, body {
     height: 100%;
 }
+.border(){
+	border: 1px solid black;
+}
+.nav_color(){
+	&:hover{
+		color: red;
+	}
+}
+@coolcolor: lightcoral;
+
+.container{
+	width: 100%;
+	margin: 0 auto;
+	background: @coolcolor;
+	h1{
+		font-size: 3em;
+	}
+	nav{
+		display: flex;
+		justify-content: space-evenly;
+		a{
+			.nav_color();
+		}
+		background: lightgreen;
+	}
+	h2{
+		font-size: 5em;
+	}
+	.home_about{
+		background: lightseagreen;
+		margin: 20px;
+		h3{
+			font-size: 36px;
+		}
+		div{
+			display: flex;
+		}
+		p{
+			line-height: 2;
+			border: 2px solid black;
+		}
+	}
+	.experience{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 14em;
+	}
+	table{
+		font-size: 3em;
+	th{
+		.border();
+	}
+	td{
+		.border();
+	}
+	tr{
+		.border();
+	}
+	background: grey;
+	}
+	.skills{
+		border: 3px dashed black;
+		background: yellowgreen;
+		font-family: 'ZCOOL KuaiLe', cursive;
+	}
+	.error{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		img{
+			justify-content: center;
+		}
+	}
+	footer{
+		background: skyblue;
+		color: white;
+		margin: 0 40em;
+		h4{
+			font-size: 2em;
+		}
+	}
+	@media(max-width: 500px){
+		.container{
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
 
