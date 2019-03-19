@@ -54,6 +54,65 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+.container {
+	width: 70%;
+	margin: auto;
+	border: 1px black dotted
+}
+
+header{
+	h1 {
+		font-size: 48px;
+		margin: 5px 0px;
+	}
+}
+
+nav {
+	.flex-layout(row; wrap; flex-end; center;);
+
+	a {
+		margin: 20px 0px;
+		margin-left: 20px;
+		text-decoration: none;
+		color: black;
+	}
+}
+
+header {
+	background-color: lightgray;
+	padding: 40px;
+	img {
+		width: 400px;
+	}
+}
+
+.mid-section {
+	.flex-layout();
+
+	#intro {
+		width: 50%;
+	}
+
+	#skills {
+		width: 50%;
+	}
+}
+
+footer {
+	text-align: center;
+	color: white;
+	background-color: gray;
+	padding: 20px 0px 40px 0px;
+}
+
+.flex-layout(@r: row; @w: wrap; @jc: space-between; @ai: center;) {
+	display: flex;
+	flex-flow: @r @w;
+	justify-content: @jc;
+	align-items: @ai;
+}
+
+@phone: 500px;
