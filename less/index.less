@@ -53,7 +53,105 @@ table {
     box-sizing: border-box;
 }
 
+@primaryColor: LightSlateGray;
+@secondaryColor: DarkGrey;
+@mainFont: Sans-serif;
+
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: @secondaryColor;
 }
 
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0 auto;
+	background-color: @primaryColor;
+	justify-content: center;
+
+	/* Flex mixin */
+	.flexContainer (@dir: row, @width: 90%) {
+		display: flex;
+		width: @width;
+		flex-direction: @dir;
+		justify-content: space-between;
+		align-content: center;
+		margin: 0 auto 25px auto;
+	}
+
+	/* Formatting mixin */
+	.easyFormat () {
+		font: @mainFont;
+		font-size: 1.160rem;
+		line-height: 25px;
+		color: WhiteSmoke;
+	}
+
+	span {
+		margin: 0 auto;
+		width: 90%;
+		font-size: 2rem;
+		color: PeachPuff;
+		border-top: 1px dashed WhiteSmoke;
+		padding-top: 25px;
+	}
+
+	/* Header/Navigation */
+	header {
+		width: 100;
+		background: rgba(57, 84, 107, 0.3);
+		nav{
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			margin: 35px 0;
+
+			a {
+				text-decoration: none;
+				.easyFormat;
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	/* About me */
+	.about-container {
+		.flexContainer();
+
+		.about-item {
+			height: 100px;
+			width: 50%;
+			.easyFormat;
+		}
+	}
+
+	/* Skills */
+	.skills-container {
+		.flexContainer();
+		
+		.skills-item {
+			width: 33%;
+			.easyFormat;
+		}
+	}
+
+	/* Work history */
+	.history-container {
+		.flexContainer();
+
+		.history-item {
+			width: 50%;
+			.easyFormat();
+		}
+
+	}
+
+	/* Contact */
+	.contact-container {
+		.flexContainer(column);
+		justify-content: flex-start;
+		.easyFormat;
+	}
+
+}
