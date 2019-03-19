@@ -133,6 +133,10 @@ table {
 @import url("https://fonts.googleapis.com/css?family=Black+And+White+Picture|Federant|Pacifico");
 
 /* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+
 //============================= variables
 @test-border: 1px solid red;
 @primary-color: #c0c0c0;
@@ -146,10 +150,6 @@ table {
 .border-and-radius (@border-size, @borderstyle, @border-color, @radius) {
   border: @border-size @borderstyle @border-color;
   border-radius: @radius;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html,
@@ -232,16 +232,24 @@ header {
   padding: 2%;
 
   .motto {
-    font-family: "Federant", cursive;
+    font-family: "Pacifico", cursive;
+  }
+
+  .quote {
+    font-family: "Black And White Picture", sans-serif;
   }
 
   .img-and-contacts {
     display: flex;
     justify-content: space-between;
+    .contacts {
+      margin-right: 5%;
+    }
 
     @media (max-width: 500px) {
       .contacts {
         padding: 5%;
+        margin-left: 15%;
         p {
           font-size: 1.4em;
         }
@@ -250,10 +258,11 @@ header {
   }
 
   img {
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 325px;
     margin-bottom: 3%;
-    border-radius: 50%;
+    margin-left: 5%;
+    border-radius: 200px;
   }
 
   section {
@@ -284,6 +293,9 @@ main {
     display: flex;
     justify-content: space-between;
 
+    .summary {
+      margin-left: 5%;
+    }
     .top-cards {
       width: 40%;
     }
@@ -296,7 +308,7 @@ main {
         border-right: 1px solid black;
         border-top: 1px solid black;
         border-radius: 1%;
-        width: 300px;
+        width: 127%;
         p {
           border-bottom: 1px solid black;
           padding: 3%;
@@ -350,6 +362,10 @@ main {
   .data3 {
     .display(space-around, flex-start);
     background: #f4f4f4;
+  }
+
+  .data4 {
+    .display(space-around, flex-start);
   }
 
   @media (max-width: 500px) {
