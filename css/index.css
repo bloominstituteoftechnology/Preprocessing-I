@@ -137,6 +137,13 @@ table {
   max-width: 100%;
   height: 100%;
 }
+@media only screen and (max-width:529px) {
+  .wrapper {
+    width: 500px;
+    max-width: 100%;
+    height: 100%;
+  }
+}
 .wrapper body,
 .wrapper html {
   margin: 0;
@@ -150,8 +157,23 @@ table {
   width: 100%;
   height: auto;
 }
+@media only screen and (max-width:529px) {
+  .nav {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 0;
+  }
+  .nav nav {
+    wdith: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+}
 .nav a {
-  width: 24.6%;
+  width: auto;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
@@ -162,6 +184,13 @@ table {
 .nav a:hover {
   color: white;
   background-color: darkgrey;
+}
+@media only screen and (max-width:529px) {
+  .nav a {
+    border-bottom: 1px solid darkgrey;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .introContent {
   margin: 0 auto 75px;
@@ -175,11 +204,22 @@ table {
   background-color: lightgrey;
   border-radius: 20px;
 }
+@media only screen and (max-width:529px) {
+  .introContent {
+    border: 0;
+    width: 75%;
+    height: auto;
+  }
+  .introContent img {
+    height: 75%;
+    width: 75%;
+  }
+}
 .introContent h1 {
   border-bottom: 4px solid darkgrey;
   margin-top: 20px;
   padding: 20px;
-  font-size: 40px;
+  font-size: 30px;
   align-items: flex-start;
 }
 .introContent img {
@@ -248,32 +288,62 @@ table {
   border-radius: 10px;
 }
 .midContent .something2 li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
   width: 400px;
-  padding: 10px;
+  padding: 20px;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   border-radius: 10px;
 }
 .midContent .something2 h2 {
-  margin: 30px 30px 10px;
+  margin: 30px 30px 50px;
+}
+.bottomContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
 }
 .bottomContent .moreStuff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 10px;
-  margin: 40px;
   width: 100%;
 }
-.bottomContent .moreStuff h2 {
-  margin: 20px;
-  font-size: 30px;
-  align-self: flex-start;
+.bottomContent .moreStuff .workExperince {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: auto;
 }
-.bottomContent .moreStuff h2 table,
-.bottomContent .moreStuff h2 td,
-.bottomContent .moreStuff h2 th {
-  border: 1px solid black;
+.bottomContent .moreStuff .workExperince table {
+  border: 1px solid balck;
+}
+.bottomContent .moreStuff .workExperince .one {
+  background-color: lightgrey;
+}
+.bottomContent .moreStuff .workExperince .two {
+  background-color: #F3F1B6;
+}
+.bottomContent .moreStuff .workExperince table,
+.bottomContent .moreStuff .workExperince td,
+.bottomContent .moreStuff .workExperince th,
+.bottomContent .moreStuff .workExperince tr {
+  border-collapse: collapse;
+  padding: 20px 70px;
+}
+.bottomContent .moreStuff h2 {
+  border-radius: 10px;
+  border: 1px solid darkgrey;
+  text-align: center;
+  background-color: lightgrey;
+  width: 600px;
+  height: auto;
+  margin: 20px 20px 0;
+  font-size: 30px;
 }
 .footer {
   display: flex;
