@@ -10,7 +10,7 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol, 
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
@@ -49,6 +49,10 @@ table {
 //variables
 @import "variables.less";
 
+//mix-ins
+.bordered() {
+	border-bottom: 1px dashed #00b09b;
+}
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -65,6 +69,7 @@ h1 {
 	
 	h2{ 
 	font-size: 2rem;
+	font-weight: bold;
 }
 	
 	h3 { 
@@ -116,4 +121,55 @@ nav a{
 	border-radius: 50%;
 	margin:0 0 10px 30px;
 
+	 }
+
+	 .main-content{ 
+		 padding: 10px
+	 }
+
+	 .content-header{ 
+		padding:10px;
+		font-size: 2.6rem;
+		.bordered;
+	
+	 }
+	 .content-title{ 
+		padding:10px 10px 0 10px;
+		font-size: 2rem; 
+		font-weight: bold;
+
+	 }
+	 .content-description{ 
+		padding:5px 10px 0px 10px;
+		font-size: 1.6rem; 
+		font-weight: 100;
+
+	 }
+
+
+	 .dates{ 
+		 font-size: 1.4rem;
+		 padding:5px 10px 10px 10px;
+	 }
+
+	 .content-area{ 
+		 font-size: 1.6rem;
+		 line-height: 15px;
+		 padding:10px;
+	 }
+
+
+	 .skills{ 
+		 font-size: 1.6rem;
+		 display: flex;
+		 justify-content: space-around;
+	 }
+	
+	 .reference{ 
+		 background: linear-gradient(to right, #00b09b, #96c93d);
+		 height: 100px;
+		 font-size: 2rem;
+		 text-align: center;
+		 color: white;
+		 padding: 50px;
 	 }
