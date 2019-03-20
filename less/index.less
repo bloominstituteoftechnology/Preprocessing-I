@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,12 +25,16 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
 	line-height: 1;
+	font-family: serif;
+	width: 80%;
+	margin: auto;
+
 }
 ol, ul {
 	list-style: none;
@@ -48,7 +52,34 @@ table {
 	border-spacing: 0;
 }
 
+h2{
+	font-size: 36px;
+	font-family:fantasy;
+}
+
+h3{
+	font-size: 28px;
+}
+
 /* Set every element's box-sizing to border-box */
+.center(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+}
+
+
+.flexbox(){
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 300px;
+	align-items: center;
+	margin: 30px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -57,3 +88,82 @@ html, body {
     height: 100%;
 }
 
+.mainNav{
+	.center
+}
+
+.mainNav a {
+	margin-left: 20px;
+	color: black;
+	text-decoration: none;
+}
+
+button{
+	height: 40px;
+	width: 100px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 20px;
+}
+
+.mainHeader{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	background-color: #E8E8E8;
+	border: 1px solid gray;
+	border-radius: 13px;
+}
+
+#SteveMain{
+	height: 400px;
+	width: 100%;
+	object-fit: contain;
+	margin-bottom: 20px;
+}
+
+.steveInfo{
+	text-align: left;
+	margin: 3px;
+	font-family: fantasy;
+}
+
+.theBody{
+.flexbox
+
+}
+
+.listenUp{
+	height: 300px;
+	width: 400px;
+}
+
+.goodats{
+	height: 300px;
+	width: 400px;
+}
+
+
+
+.footer{
+	height: 40px;
+	width: 100%;
+	margin-bottom: 0;
+	margin-top: 10px;
+
+}
+
+@media (max-width: 500px) {
+	.theBody{
+		flex-wrap: nowrap;
+	}
+
+	.listenUp{
+		margin: 25px;
+	}
+
+	.goodats{
+		margin: 25px;
+	}
+
+}
