@@ -60,12 +60,20 @@ html, body {
 }
 
 /* Begin My Styling */
-
+/* My Vars */
 @primary-color: #2f3640;
-@secondary-color: #34495e;
+@secondary-color:#487eb0;
+@link-hover:#40739e;
 @nominal-font-size: 1.6rem;
 @main-title-size: 2.4rem;
 @second-title-size: 1.9rem;
+@hero-img: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80' ;
+@max-width: 1024px;
+@global-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@phone: 500px;
+@tablet: 795px;
+@font: 'Josefin Sans', sans-serif;
+/*End My Vars */
 
 .main-wrapper{
 	width: 100%;
@@ -73,19 +81,244 @@ html, body {
 	* {
 		color: @primary-color;
 		font-size: @nominal-font-size;
-		
+		font-family: @font;
+
+		@media(max-width: @phone){
+			font-size:1.8rem;
+			
+		}
+	
 	}
 
 	h1{
 		font-size: @main-title-size;
 		font-weight: bold;
+		margin:1%;
+		@media(max-width: @phone){
+			font-weight: bolder;
+		}
+	
+	
 	}
 
 	h2{
 		font-size: @second-title-size;
 		font-weight: bold;
+
+		@media(max-width: @phone){
+			font-weight: bolder;
+			font-size: 2.0rem;
+		}
+	
 	}
 	
+	button{
+		.global-button(@secondary-color, #ffff);
+	}
+
+	.header-nav{
+		width: 100%;
+		margin: 0 auto;
+		max-width: @max-width;
+		.flex-apply();
+		justify-content: space-evenly;
+	
+		@media(max-width:@phone){
+			.flex-apply(column);
+			align-items: center;
+			text-align: center;
+			
+		}
+
+			a{
+				@media(max-width: @phone){
+					width: 100%;
+					padding: 5%;
+					border-bottom: 1px solid black;
+
+					&:hover{
+						text-shadow:none;
+						background-color: @link-hover;
+						color:white;
+					}
+				}
+				.nav-links;
+				
+			}
+	}
+
+	.header-content-wrapper{
+		background-image: url(@hero-img);
+		position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 600px;
+		max-width: @max-width;
+		margin: 0 auto;
+			
+
+		.header-section-content{
+			height: 40%;
+			.flex-apply(column);
+			justify-content: center;
+			align-items: center;
+			
+			h1{
+				@media(max-width: @phone){
+					font-size:3.0rem;
+				}
+			}
+
+			
+
+			hr{
+				border: 2px solid black;
+				width: 100%;
+			}
 
 
+			button{
+				max-width: 200px;
+				box-shadow: @global-shadow;
+				width:100%;
+				@media(max-width: @phone){
+					height:50px;
+					max-width: 300px;
+					width:300px;
+					font-size: 1.8rem;
+					margin-top:3%;
+					}
+					a{
+						text-decoration: none;
+						color:white;
+					}
+				}
+			}
+
+	}
+
+	.main-body-section{
+		width: 85%;
+		margin: 4% auto;
+
+		.upper-body-content{
+			.flex-apply();
+			align-items: baseline;
+
+			.inner-upper-body-content{
+				width:45%;
+				padding:2%;
+				line-height:1.5;
+				margin: 1%;
+
+				@media(max-width: @phone){
+					width: 100%;
+					text-align: center;
+					border-top: 1px solid grey;
+				}
+
+				.listed-experiance{
+					 li{
+						border-width: 1px 1px 0px 1px;
+						border-style: solid;
+						border-color: grey;
+						padding: 2%;
+
+						&:last-child{
+							border-bottom: 1px solid grey;
+						}
+					 }
+				}
+			}
+
+		}
+
+		.lower-body-content{
+			
+				table{
+					width: 100%;
+					border:1px solid black;
+					text-align: left;
+					  th,td{
+						  padding:1%;
+					  }
+
+					tr:nth-child(even){
+						background-color:lightblue;
+
+					}
+					tr:nth-child(odd){
+						background-color:lightgoldenrodyellow;
+					}
+
+				}
+		}
+
+	}
+
+	#contact-info{
+		width: 85%;
+		margin: 3% auto;
+
+		@media(max-width: @phone){
+			margin-top: 8%;
+		}
+
+	
+
+		 li{
+			 margin:2%;
+			@media(max-width: @phone){
+				margin: 5%;
+				
+			}
+		 }
+	}
+
+	footer{
+		text-align: center;
+		background-color:lightgray;
+		padding:2%;
+	}
+
+
+}
+
+/* My mix-ins prototypes */
+
+.global-button(@bg-color, @txt-color){
+	background-color: @bg-color;
+	color: @txt-color;
+	padding: 1%;
+	border-radius: 10px;	
+	border: 1px solid black;
+
+	&:hover{
+		background-color: @link-hover ;
+	}
+}
+
+.flex-apply(@orientation:row){
+	display: flex;
+	flex-flow: @orientation wrap;
+}
+
+
+.nav-links(@decoration: none, @color: @primary-color, @text-size:1.8rem){
+	text-decoration: @decoration;
+	color: @color;
+	font-size: @text-size;
+	margin: 2%;
+	@media(max-width:@phone){
+		margin: 0px;
+	}
+
+	&:hover{
+	text-shadow: 2px 2px 8px black;
+	}
+}
+
+.testingB{
+	border: 1px solid red;
 }
