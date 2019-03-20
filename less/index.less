@@ -56,6 +56,7 @@ table {
 @primaryColor: LightSlateGray;
 @secondaryColor: DarkGrey;
 @mainFont: Sans-serif;
+@phone: ~"max-width: 500px";
 
 html, body {
 	height: 100%;
@@ -121,6 +122,24 @@ html, body {
 				.easyFormat;
 				font-size: 1.5rem;
 			}
+
+			@media ( @phone ) {
+
+				width: 100%;
+				flex-direction: column;
+				align-items: center;
+				
+				a {
+					width: 100%;
+					text-align: center;
+					border-bottom: 1px dashed WhiteSmoke;
+					padding: 10px 0;
+
+					&:nth-child(1){
+						border-top: 1px dashed WhiteSmoke;
+					}
+				}
+			}
 		}
 	}
 
@@ -135,22 +154,38 @@ html, body {
 	.intro-container {
 		.flexContainer();
 		margin: 25px auto;
+
 		.intro-item {
-			display: inline-block;
+			.flexContainer(column, 50%);
 			text-align: center;
-			width: 45%;
-			margin: auto;
+			justify-content: center;
+
 
 			h1 {
 				font-size: 5rem;
 				margin: 10px auto;
 				color: LemonChiffon;
 			}
+
 			p {
 				line-height: 25px;
 				color: White;
 				font-size: 1.5rem;
 			}
+
+			@media ( @phone ) {
+
+				&.picture {
+					display: none;
+				}
+				width: 100%;
+				flex-direction: column;
+
+				h1 {
+					margin: 20px 0;
+				}
+			}
+
 		}
 		
 	}
@@ -160,8 +195,16 @@ html, body {
 		.flexContainer();
 
 		.about-item {
-			width: 50%;
+			width: 100%;
 			.easyFormat;
+		}
+
+		@media ( @phone ) {
+			flex-direction: column;
+
+			h1 {
+				margin: 20px 0;
+			}
 		}
 	}
 
@@ -173,6 +216,14 @@ html, body {
 			width: 33%;
 			.easyFormat;
 		}
+
+		@media ( @phone ) {
+			flex-direction: column;
+
+			h1 {
+				margin: 20px 0;
+			}
+		}
 	}
 
 	/* Work history */
@@ -182,6 +233,14 @@ html, body {
 		.history-item {
 			width: 50%;
 			.easyFormat();
+		}
+
+		@media ( @phone ) {
+			flex-direction: column;
+			
+			h1 {
+				margin: 20px 0;
+			}
 		}
 
 	}
