@@ -57,6 +57,18 @@ html, body {
     height: 100%;
 }
 
+.bold {
+	font-weight: bold;
+}
+
+@font-primary: black;
+
+
+@bg-primary: white;
+
+
+@bg-secondary: #e9ecef;
+
 
 .container {
 
@@ -84,22 +96,22 @@ html, body {
 			a {
 				text-decoration: none;
 				padding-right: 2.3rem;
-				color: black;
+				color: @font-primary;
 				flex-direction: row;
 				font-size: 1.6rem;
 			}
 	}
 
 	#upper-content {
-		background-color: #e9ecef;
+		background-color: @bg-secondary;
 			.main-content {
 				padding: 6%;
 			}
 			.team-up {
 			background-color: grey;
-			border-color: white;
+			border-color: @bg-primary;
 			font-size: 1.8rem;
-			color: white;
+			color: @bg-primary;
 			width: 15rem;
 			height: 4rem;	
 			border-radius: 7px;
@@ -117,17 +129,20 @@ html, body {
 			width: 47%;
 			height: 400px; 
 			max-height: 400px;
-			
+		}
 			h2 {
 			font-size: 3rem;
 			padding-bottom: 3%;
-			font-weight: bold;
+			.bold;
+			
+
 			}
 
 			h3 {
 			font-size: 2rem;
-			font-weight: bold;
 			padding-bottom: 4%;
+			.bold;
+
 			}
 
 			ul {
@@ -137,7 +152,7 @@ html, body {
 				padding: 20px;
 				
 			}
-		}
+		
 	
 	}
 
@@ -149,26 +164,24 @@ html, body {
 			grid-template-columns: auto auto auto auto;
 			padding: 5px;
 		  }
-		  .bold {
-			font-weight: bold;
-		}
+
 
 		h2 {
 			font-weight: bold;
 		}
 		  .grid-container > div {
-			border-top: 2px solid #dee2e6;
+			border-top: 2px solid @bg-secondary
 			padding: 20px;
 			font-size: 1.2rem;
 			text-align: center;
 		  }
 
 		  .grid-item-1 {
-			background-color: white;
+			background-color: @bg-primary;
 
 		}
 		  .grid-item-2 {
-			  background-color: #e9ecef;
+			  background-color: @bg-secondary;
 
 		  }
 
@@ -177,7 +190,7 @@ html, body {
 
 	footer {
 		background-color: grey;
-		color: white;
+		color: @bg-primary;
 		height: 100px;
 		text-align: center;
 		vertical-align: middle;
