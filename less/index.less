@@ -56,11 +56,18 @@ table {
 html, body {
     height: 100%;
 }
+
+/*--------------------   Variables    -----------------*/
+@colorA: #2376ae;
+@colorB: #c16ecf;
+@colorC: #49a09d;
+@colorD: #5f2c82;
+
 /*--------------------    Nav Bar     -----------------*/
 
 .navbar {
     font-size: 18px;
-    background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
+    background-image: linear-gradient(260deg, @colorA 0%, @colorB 100%);
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 10px;
 }
@@ -108,33 +115,90 @@ html, body {
                 padding-bottom: 0;
                 height: 70px;
                 align-items: center;
-            }
+    
 
             .main-nav {
                 display: flex;
                 margin-right: 30px;
                 flex-direction: row;
                 justify-content: flex-end;
-            }
+            
 
             .main-nav li {
                 margin: 0;
-            }
+            
 
             .nav-links {
                 margin-left: 40px;
-            }
+            
 
             .logo {
                 margin-top: 0;
-            }
+            
 
             .navbar-toggle {
                 display: none;
-            }
+            
 
             .logo:hover,
             .nav-links:hover {
                 color: rgba(255, 255, 255, 1);
-            }
-        }
+			}
+		}
+/* ----- table ----- */		
+.container {
+	background: linear-gradient(45deg, @colorC, @colorD);
+	font-weight: 100;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: rgb(255, 255, 255);
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+			
