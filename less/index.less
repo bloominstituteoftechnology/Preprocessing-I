@@ -57,12 +57,18 @@ html, body {
     height: 100%;
 }
 
-/*--------------------   Variables    -----------------*/
+/*--------------------   Variables & Mixins   -----------------*/
 @colorA: #2376ae;
 @colorB: #c16ecf;
 @colorC: #49a09d;
 @colorD: #5f2c82;
 
+.style(){
+	font-size: 1.5rem;
+	text-decoration: underline;
+	text-decoration-color: @colorA;
+	padding:10px;
+}
 /*--------------------    Nav Bar     -----------------*/
 
 .navbar {
@@ -114,7 +120,8 @@ html, body {
                 justify-content: space-between;
                 padding-bottom: 0;
                 height: 70px;
-                align-items: center;
+				align-items: center;
+			}
     
 
             .main-nav {
@@ -122,23 +129,23 @@ html, body {
                 margin-right: 30px;
                 flex-direction: row;
                 justify-content: flex-end;
-            
+			}
 
             .main-nav li {
                 margin: 0;
-            
+			}
 
             .nav-links {
                 margin-left: 40px;
-            
+			}
 
             .logo {
                 margin-top: 0;
-            
+			}
 
             .navbar-toggle {
                 display: none;
-            
+			}
 
             .logo:hover,
             .nav-links:hover {
@@ -201,4 +208,19 @@ tbody {
 		}
 	}
 }
-			
+/* --- heading --- */
+.heading{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	width:800px;
+	margin:0 auto;
+	padding:10px;
+	
+	h2{
+		.style();
+	}
+	p{
+		line-height: 30px;
+	}
+}
