@@ -7,7 +7,7 @@
 @roboto: 'Roboto', Arial, sans-serif;
 @opensans: 'Open Sans', Arial, sans-serif;
 @primary-color: #0074D9;
-@secondary-color: #FED766;
+@secondary-color: orange;
 @neutral-light: #f5f5f5;
 @neutral-dark: #333333;
 
@@ -15,6 +15,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.text-shadow() {
+	text-shadow: 3px 3px 2px rgba(51,51,51,0.25);
 }
 
 html {
@@ -78,7 +82,7 @@ html, body {
 	line-height: 1.25;
 	font-size: 1.6rem;
 	max-width: 1200px;
-	margin: 90px auto 0;
+	margin: 690px auto 0;
 }
 
 /* Header */
@@ -112,6 +116,79 @@ header {
 
 		&:hover {
 			filter: opacity(0.8);
+		}
+	}
+}
+
+/* Hero */
+.hero-container {
+	height: 600px;
+	width: 100vw;
+	background: url('../assets/productive-coffee.jpg');
+	background-size: cover;
+	background-position: 100% 40%;
+	position: absolute;
+	overflow-y: hidden;
+	top: 60px;
+	left: 0;
+	z-index: -1;
+}
+
+.hero {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+
+	h1, p, span {
+		color: @neutral-light;
+	}
+
+	&__name {
+		margin-bottom: 60px;
+
+		h1 {
+			font-family: @roboto;
+			font-weight: 300;
+			font-size: 6rem;
+			margin-bottom: 15px;
+			.text-shadow;
+		}
+		
+		span {
+			font-size: 3rem;
+			.text-shadow;
+		}
+	}
+	
+	&__intro {
+		max-width: 70%;
+		p {
+			font-size: 2.2rem;
+			.text-shadow;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__button {
+		height: 60px;
+		padding: 0 40px;
+		font-size: 2rem;
+		background: transparent;
+		border: 1px solid @neutral-light;
+		border-radius: 3px;
+		color: @neutral-light;
+		font-weight: 600;
+		letter-spacing: 1px;
+		cursor: pointer;
+		.text-shadow;
+
+		&:hover {
+			background: @secondary-color;
+			border: 1px solid @secondary-color;
+			// color: @secondary-color;
 		}
 	}
 }
