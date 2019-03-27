@@ -142,11 +142,12 @@ body {
   font-size: 1.6rem;
   max-width: 1200px;
   margin: 690px auto 0;
+  padding: 0 1%;
 }
 /* Header */
 header {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   right: 0;
   top: 0;
   height: 60px;
@@ -159,8 +160,9 @@ header {
   box-shadow: 0px 1px 5px -2px #333333;
 }
 header nav {
-  width: 100vw;
+  width: 100%;
   max-width: 1200px;
+  padding: 1% 0;
   display: flex;
   justify-content: space-between;
   box-sizing: content-box;
@@ -179,7 +181,7 @@ header a:hover {
 /* Hero */
 .hero-container {
   height: 600px;
-  width: 100vw;
+  width: 100%;
   background: url('../assets/productive-coffee.jpg');
   background-size: cover;
   background-position: 100% 40%;
@@ -196,6 +198,11 @@ header a:hover {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+}
+@media (max-width: 768px) {
+  .hero {
+    align-items: center;
+  }
 }
 .hero h1,
 .hero p,
@@ -218,6 +225,11 @@ header a:hover {
 }
 .hero__intro {
   max-width: 70%;
+}
+@media (max-width: 768px) {
+  .hero__intro {
+    max-width: 90%;
+  }
 }
 .hero__intro p {
   font-size: 2.2rem;
@@ -242,6 +254,12 @@ header a:hover {
   border: 1px solid orange;
 }
 /* Overview */
+.overview h2 {
+  color: #333333;
+  font-size: 3.8rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.3rem;
+}
 .overview__skill {
   display: flex;
   margin-bottom: 30px;
@@ -257,10 +275,46 @@ header a:hover {
   justify-content: space-evenly;
   padding: 60px;
 }
-.overview__description h2 {
+.overview__description h3 {
   font-size: 3rem;
 }
 .overview__description p {
   font-size: 1.8rem;
+}
+/* Experience */
+.experience h2 {
+  font-size: 3.8rem;
+  color: #333333;
+  margin-bottom: 30px;
+  letter-spacing: 0.3rem;
+}
+.company {
+  margin-bottom: 60px;
+}
+.company__img {
+  border-radius: 3px;
+}
+.company__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.company__name {
+  display: inline-block;
+  font-size: 3rem;
+  flex-grow: 2;
+  padding-left: 30px;
+}
+.company__years {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.company__bullets ul {
+  list-style: square inside;
+  font-size: 2rem;
+  line-height: 1.5;
 }
 /*# sourceMappingURL=index.css.map */
