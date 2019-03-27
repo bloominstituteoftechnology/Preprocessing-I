@@ -168,6 +168,13 @@ table {
 	}
 }
 
+.img-fix() {
+	margin       : 1rem 0;
+	width        : 50%;
+	height       : auto;
+	border-radius: 10px;
+}
+
 //beginning
 
 .container {
@@ -185,6 +192,10 @@ table {
 		font-size  : 1.8rem;
 		font-weight: bold;
 		text-align : center;
+	}
+
+	@media (max-width: 800px) {
+		margin: 10px 5px;
 	}
 }
 
@@ -270,10 +281,7 @@ header {
 		text-align    : center;
 
 		img {
-			margin       : 1rem 0;
-			width        : 50%;
-			height       : auto;
-			border-radius: 10px;
+			.img-fix();
 			//end of img
 		}
 
@@ -291,7 +299,6 @@ header {
 	display: flex;
 
 	div {
-		height         : auto;
 		justify-content: space-around;
 		.background();
 
@@ -304,6 +311,17 @@ header {
 		}
 
 		//end of div
+	}
+
+	@media (max-width: 800px) {
+		div {
+			height: 450px;
+
+			img {
+
+				height: auto;
+			}
+		}
 	}
 
 	//end of .bottom-content
