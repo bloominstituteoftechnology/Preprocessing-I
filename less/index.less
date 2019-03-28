@@ -204,7 +204,6 @@ header {
 	width          : 100%;
 	align-items    : center;
 	justify-content: center;
-	height         : 80px;
 	background     : #F4E285;
 	border         : 7px solid #869D7A;
 	border-radius  : 10px;
@@ -234,6 +233,22 @@ header {
 		//end of nav
 	}
 
+	@media (max-width: 500px) {
+		nav {
+			display       : flex;
+			flex-direction: column;
+			width         : 100%;
+			text-align    : center;
+
+			a {
+				padding      : 10px 0;
+				margin-right : 0;
+				border-bottom: 3px solid #869D7A;
+				width        : 100%;
+			}
+		}
+	}
+
 	//end of header
 }
 
@@ -258,6 +273,16 @@ header {
 		font-size : 1.1rem;
 		text-align: center;
 		margin    : 10px 0;
+	}
+
+	@media (max-width: 800px) {
+		display       : flex;
+		flex-direction: column;
+		align-items   : center;
+
+		img {
+			width: 50%
+		}
 	}
 
 	//end of .bio
@@ -296,9 +321,11 @@ header {
 }
 
 .bottom-content {
-	display: flex;
+	display   : flex;
+	font-size : 1.1rem;
+	text-align: center;
 
-	div {
+	.bottom-text {
 		justify-content: space-around;
 		.background();
 
@@ -314,13 +341,14 @@ header {
 	}
 
 	@media (max-width: 800px) {
-		div {
-			height: 450px;
+		flex-direction: column;
 
-			img {
+		.bottom-text {
 
-				height: auto;
-			}
+			display       : flex;
+			flex-direction: column-reverse;
+
+			img {}
 		}
 	}
 
