@@ -54,6 +54,153 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	width: 100%;
+	font-size: 62.5%;
+	.bg-gradient(@mainColor,@accentColor,@accentColor2);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
 }
+
+// Code starts here
+
+// Color
+
+
+@mainColor: #ffc3a0;
+@accentColor: #FFAFBD;
+@accentColor2: #C5C5FD;
+@accentColor3: #7492AC;
+@blockColor: #FBF9FA;
+@textColor: black;
+
+.bg-gradient(@color1,@color2,@color3) {
+	background: linear-gradient(@color1,@color2,@color3)
+}
+
+// Mix ins
+
+.move-right {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.font-fam {
+	font-family: "Bungee","Righteous" , sans-serif; 
+}
+
+.font-med {
+	font-size: 1.7rem;
+}
+
+.font-large {
+	font-size: 3rem;
+}
+
+.move-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.move-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.move-left {
+	display: flex;
+	justify-content: flex-start;
+}
+
+
+// Desktop
+.container {
+	margin: 0 auto;
+}
+
+.top-nav {
+	.move-center();
+	background: @textColor;
+	width: 100%;
+	a {
+		text-decoration: none;
+		padding: 2%;
+		color:  @mainColor;
+		.font-med();
+		.font-fam();
+	}
+}
+
+.middle-box {
+	margin: 2% 20% 1%;
+	max-width: 60%;
+	background-color: @blockColor;
+	border-radius: 50px;
+	.move-column();
+	.move-center();
+	img {
+		width:25%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+	h1 {
+		height: 35px;
+		.font-fam();
+		color: @textColor;
+		.font-large();
+		.move-center();
+		border-bottom: 2px solid @mainColor;
+		padding-bottom: 50px;
+		margin: 5% 14%;
+		text-align: center;
+	}
+
+	h3 {
+		.font-large();
+		margin: 5% 18%;
+	}
+
+	.about {
+		.font-fam();
+		color: @textColor;
+		.font-med();
+		.move-column();
+		word-break: break-all;
+	}
+
+	p {
+		margin: 0% 18% 5%;
+	}
+}
+
+// Contact page
+
+.contact{
+	address{
+		.font-fam();
+		color: @textColor;
+		.font-med();
+		.move-column();
+		margin: 15% 0%;
+	}
+}
+
+// Mobile
+
+@media screen and (max-width:500px) {
+	.top-nav {
+		.move-column();
+		.move-center();
+		.logo2 {
+			display: none;
+		}
+		.logo {
+			margin-bottom: -2%;
+		}
+	}
+}
+
 
