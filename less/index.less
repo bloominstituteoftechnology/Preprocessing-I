@@ -155,13 +155,17 @@ body {
 @font: 'Lato', sans-serif;
 @p-font-size: 1.8rem;
 
+//ESCAPING VARIABLE DECLARED
+@tablet: ~"(max-width: 900px)";
+
 .container {
 	width: 70%;
 	margin: 0 auto;
 	padding: 0 2.5%;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 
-	@media (max-width: 900px) {
+   //ESCAPING VARIABLE USED
+		@media @tablet {
 		width: 100%;
 
 		h1 {
@@ -218,7 +222,7 @@ nav a {
 	///////////////////////////////////
 	//MIXIN
 	.p-2 {
-		.p-1;
+		.p-1();
 	}
 
 	hr {
@@ -233,6 +237,12 @@ nav a {
 		color: #fff;
 		font-size: 1.9rem;
 		font-weight: bold;
+
+		/////////////////////////////////////
+		//FUNCTION
+		&:hover {
+			background-color: darken(teal, 5%);
+		}
 	}
 
 	@media(max-width: 500px) {
@@ -281,7 +291,7 @@ nav a {
 	/////////////////////////////////////
 	// MIXIN
 	.heading-3 {
-		.heading-2;
+		.heading-2();
 	}
 
 	p {
