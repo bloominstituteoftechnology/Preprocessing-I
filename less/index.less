@@ -10,7 +10,7 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
@@ -30,11 +30,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.8rem;
 }
-ol, ul {
-	list-style: none;
-}
+
 blockquote, q {
 	quotes: none;
 }
@@ -53,7 +51,152 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+h1 {
+	font-size: @siteFontSizeLarge;
 }
+
+h2 {
+	font-size: @siteFontSizeMedium;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+@siteFontColor: black;
+@menuBGColor: #5491e8;
+@menuHoverColor: white;
+@rootFontSize: 62.5%;
+@siteFontSize: 1.5rem;
+@siteFontSizeMedium: 2rem;
+@siteFontSizeLarge: 3rem;
+@siteFont: 'Lato', sans-serif;
+@headerFont: 'Fjalla One', sans-serif;
+
+.shadow() {
+	-webkit-box-shadow: 0px 10px 7px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 10px 7px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 10px 7px 0px rgba(0,0,0,0.2);
+}
+
+.flex() {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-column() {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+
+html {
+	font-size: @rootFontSize;
+}
+
+body {
+	height: 100%;
+	font-family: @siteFont;
+	font-size: @siteFontSize;
+}
+
+.site-container {
+
+	.menu-container {
+		width: 100%;
+		height: 65px;
+		background-color: @menuBGColor;
+		.shadow;
+
+		@media (max-width: 500px) {
+			height: unset;
+		}
+
+		h1 {
+			font-family: @headerFont;
+		}
+
+		nav {
+			width: 100%;
+			height: inherit;			
+			.flex;
+			@media (max-width: 500px) {
+				flex-flow: column nowrap;
+				height: unset;
+			}
+		}
+
+		.menu-item {
+			@media (max-width: 500px) {
+				width: 100%;
+				text-align: center;
+				margin: 10px 0;
+			}
+		}
+
+		a:link {
+			text-decoration: none;
+			color: @siteFontColor;
+			font-size: @siteFontSize;
+			font-weight: bold;
+
+			@media (max-width: 500px) {
+				font-size: @siteFontSizeLarge;
+			}
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		.menu-container a:visited {
+			color: @siteFontColor;
+		}
+		.menu-container a:active {
+			color: @siteFontColor;
+		}
+
+	}
+
+	.header-container {
+		display: block;
+		width: 65%;
+		margin: 15px auto;
+		padding: 20px;
+		
+
+		@media(max-width: 500px) {
+			line-height: 3rem;
+		}
+
+		#header-image {
+			height: 200px;;
+			width: 100%;
+			background-image: url("header.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-color: @menuBGColor;	
+		}
+
+		h1 {
+				text-align: center;
+				margin-top: 20px;
+				font-family: @headerFont;
+			}	
+	}
+
+	.content-container {
+		.flex-column;
+		width: 75%;
+		margin: 15px auto;
+		padding: 20px;
+
+		.content-item {
+			margin: 10px 0;
+		}
+
+		h2 {
+			margin: 7.5px 0;
+		}
+	}
+}
+
+
 
