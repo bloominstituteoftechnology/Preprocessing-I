@@ -81,7 +81,9 @@ html, body {
 
 //Variables
 
+@default-shadow-color: 3px 3px cyan;
 
+@alt-shadow-color: 3px 3px black;
 
 //CSS
 
@@ -92,41 +94,46 @@ header{
 	justify-content: center;
 	margin: auto;
 	flex-direction: column;
+
+	@media(max-width: 500px){
+		width: 100%;
+	}
 }
 
 h1{
 	padding: 3rem;
 	display: flex;
+	text-align: center;
 	justify-content: center;
 	font-size: 5rem;
 	margin: auto;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	text-shadow: 3px 3px cyan;
+	text-shadow: @default-shadow-color;
 }
 
 h3.starbucks{
 	.h3-load();
 	color: green;
-	text-shadow: 2px 2px black;
+	text-shadow: @alt-shadow-color;
 }
 
 h3.clays{
 	.h3-load();
 	color: crimson;
-	text-shadow: 2px 2px black;
+	text-shadow: @alt-shadow-color;
 }
 
 h3.PAC{
 	.h3-load();
 	color: lightseagreen;
-	text-shadow: 2px 2px black;
+	text-shadow: @alt-shadow-color;
 }
 
 h3.lambda{
 	.h3-load();
 	color: red;
-	text-shadow: 2px 2px black;
+	text-shadow: @alt-shadow-color;
 }
 
 h3.lone-star{
@@ -154,13 +161,19 @@ header p{
 
 body{
 	background-color: #f2f2f2;
+	
 }
 
 div.resume-body{
 	margin-top: 3rem;
 	padding-top: 3rem;
 	display: flex;
-
+	
+	@media(max-width: 500px){
+	width: 100%;
+	flex-direction: column;
+	flex-wrap: wrap;
+	}
 }
 
 div.resume-body section{
@@ -178,6 +191,22 @@ section.about{
 	border: 2px;
 	background-color: deepskyblue;
 	color: white;
+
+	h2{
+		text-shadow: @alt-shadow-color;
+	}
+
+	p{
+		text-align: center;
+	}
+
+	@media(max-width: 500px){
+		width: 100%;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: 0;
+		}
+
 }
 
 section.experience{
@@ -189,6 +218,13 @@ section.experience{
   	margin-right: 30px;
 	width: 100%;
 	background-color: white;
+
+	@media(max-width: 500px){
+		width: 100%;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: 0;
+		}
 }
 
 .resume-body h2{
@@ -205,17 +241,13 @@ section.experience{
 	padding: 20px;
 }
 
-.about h2{
-	text-shadow: 3px 3px black;
-}
+
 
 .experience h2{
-	text-shadow: 3px 3px cyan;
+	text-shadow: @default-shadow-color;
 }
 
-.about p{
-	text-align: center;
-}
+
 
 
 
