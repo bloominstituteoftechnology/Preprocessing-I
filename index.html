@@ -9,6 +9,370 @@
   <title>My Resume</title>
 
   <link rel="stylesheet" href="css/index.css">
+  <script src="animation.js"></script>
+  
+  <style>
+  .c-glitch,
+.c-glitch__img {
+  background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.c-glitch {
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+	position: relative;
+  width: 22vw;
+  border-radius: 50%;
+  border: 0.1875rem solid #1D365D;
+}
+
+.c-glitch__img {
+  background-blend-mode: none;
+  background-color: transparent;
+  height: 400px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  width: calc(100% + 10px * 2);
+}
+
+  
+  .c-glitch:hover .c-glitch__img:nth-child(n+2) {
+  animation-duration: 2s;
+  animation-delay: 0;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  }
+  
+  .c-glitch:hover .c-glitch__img:nth-child(2) {
+    animation-name: glitch-anim-1;
+  }
+  
+  .c-glitch:hover .c-glitch__img:nth-child(3) {
+    animation-name: glitch-anim-2;
+  }
+  
+  .c-glitch:hover .c-glitch__img:nth-child(4) {
+    animation-name: glitch-anim-3;
+  }
+  
+  .c-glitch:hover .c-glitch__img:nth-child(5) {
+    animation-name: glitch-anim-4;
+    background-blend-mode: overlay;
+    background-color: #af4949;
+  }
+
+
+
+.c-glitch__img:nth-child(n+2) {
+	opacity: 0;
+}
+
+@keyframes glitch-anim-1 {
+	0%, 100% { 
+		opacity: 1;
+		transform: translate3d(40px, 0, 0) scale3d(-1, -1, 1);
+		clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+	}
+  
+	20% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+	}
+  
+	30% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+	}
+  
+	40% {
+		clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+	}
+  
+	50% {
+		clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+	}
+  
+	55% {
+		clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+	}
+  
+	60% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+	}
+
+  65% {
+
+		clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+	}
+
+	70% {
+
+		clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+	}
+
+	80% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+	}
+
+	85% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%);
+	}
+
+	95% {
+		clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+	}
+}
+
+@keyframes glitch-anim-2 {
+	0%, 100% { 
+		opacity: 1;
+		transform: translate3d(-10px, 0, 0);
+		clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+	}
+  
+	10% {
+		clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+	}
+  
+	15% {
+		clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+	}
+  
+	17% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+  
+	19% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+	}
+  
+	33% {
+		clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+	}
+  
+	35% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+  
+	40% {
+		clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+	}
+  
+	45% {
+		clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+	}
+  
+	49% {
+		clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+	}
+  
+	50% {
+		clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+	}
+  
+	55% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+	}
+  
+	60% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+	}
+  
+	70% {
+		clip-path: polygon(0 65%, 100% 65%, 100% 60%, 0 60%);
+	}
+  
+	80% {
+		clip-path: polygon(0 80%, 100% 80%, 100% 85%, 0 85%);
+	}
+  
+	90% {
+		clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%);
+	}
+}
+
+@keyframes glitch-anim-3 {
+	0%, 100% {
+		opacity: 1;
+		transform: translate3d(0, -5px, 0) scale3d(-1, -1, 1);
+		clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+	}
+  
+	5% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+	}
+  
+	11% {
+		clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+	}
+  
+	20% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+  
+	25% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+	}
+  
+	35% {
+		clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+	}
+  
+	42% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+	}
+  
+	48% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+	}
+  
+	50% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+	}
+  
+	56% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+	}
+  
+	61% {
+		clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+	}
+  
+	68% {
+		clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+	}
+  
+	72% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+	}
+  
+	77% {
+		clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+	}
+  
+	81% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+	}
+  
+	86% {
+		clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+	}
+  
+	90% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+  
+	92% {
+		clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+	}
+  
+	94% {
+		clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+	}
+}
+
+@keyframes glitch-anim-4 {
+	0%, 5% { 
+		opacity: 0.2; 
+		transform: translate3d(10px, 5px, 0);
+	}
+
+	5.5%, 100% {
+		opacity: 0;
+		transform: translate3d(0, 0, 0);
+	}
+}
+  #animated_div {
+      width:100%;
+      height:47px;
+      background: transparent;
+      color: #1b3b4b;
+      position: relative;
+      font-weight:bold;
+      font-size:20px;
+      padding:10px;
+      animation:animated_div 5s 1;
+      -moz-animation:animated_div 5s 1;
+      -webkit-animation:animated_div 5s 1;
+      -o-animation:animated_div 5s 1;
+      border-radius:5px;
+      -webkit-border-radius:5px;
+      }
+      
+      @keyframes animated_div
+      {
+      0% {transform: rotate(0deg);left:0px;}
+      25% {transform: rotate(20deg);left:0px;}
+      50% {transform: rotate(0deg);left:500px;}
+      55% {transform: rotate(0deg);left:500px;}
+      /* 70% {transform: rotate(0deg);left:500px;background:#43cde6;} */
+      70% {transform: rotate(0deg);left:500px;background:transparent;}
+      100% {transform: rotate(-360deg);left:0px;}
+      }
+      
+      @-webkit-keyframes animated_div
+      {
+      0% {-webkit-transform: rotate(0deg);left:0px;}
+      25% {-webkit-transform: rotate(20deg);left:0px;}
+      50% {-webkit-transform: rotate(0deg);left:500px;}
+      55% {-webkit-transform: rotate(0deg);left:500px;}
+      /* 70% {-webkit-transform: rotate(0deg);left:500px;background:#43cde6;} */
+      70% {-webkit-transform: rotate(0deg);left:500px;background:transparent;}
+      100% {-webkit-transform: rotate(-360deg);left:0px;}
+      }
+      
+      @-moz-keyframes animated_div
+      {
+      0%  {-moz-transform: rotate(0deg);left:0px;}
+      25% {-moz-transform: rotate(20deg);left:0px;}
+      50%  {-moz-transform: rotate(0deg);left:500px;}
+      55%  {-moz-transform: rotate(0deg);left:500px;}
+      /* 70%  {-moz-transform: rotate(0deg);left:500px;background:#43cde6;} */
+      70%  {-moz-transform: rotate(0deg);left:500px;background:transparent;}
+      100% {-moz-transform: rotate(-360deg);left:0px;}
+      }
+      
+      @-o-keyframes animated_div
+      {
+      0% {transform: rotate(0deg);left:0px;}
+      25% {transform: rotate(20deg);left:0px;}
+      50%  {transform: rotate(0deg);left:500px;}
+      55%  {transform: rotate(0deg);left:500px;}
+      /* 70%  {transform: rotate(0deg);left:500px;background:#43cde6;} */
+      70%  {transform: rotate(0deg);left:500px;background:transparent;}
+      100% {transform: rotate(-360deg);left:0px;}
+      }
+      .char{
+      font-size: 12px;
+      height: 12px;
+      animation: an 1s ease-out 1 both;
+      display: inline-block;
+        }
+      #text{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      }
+      @keyframes text{
+            from{
+                opacity: 0;
+                transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+            }
+            to{
+                opacity: 1;
+                transform: perspective(500px) translate3d(0, 0, 0);
+            }
+        }
+      
+      
+      </style>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -16,52 +380,73 @@
 </head>
 
 <body>
+    <script >
+        var text = document.getElementById('text');
+            var newDom = '';
+            var animationDelay = 6;
+    
+            for(let i = 0; i < text.innerText.length; i++)
+            {
+                newDom += '<span class="char">' + (text.innerText[i] == ' ' ? '&nbsp;' : text.innerText[i])+ '</span>';
+            }
+    
+            text.innerHTML = newDom;
+            var length = text.children.length;
+    
+            for(let i = 0; i < length; i++)
+            {
+                text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+            }
+      </script>
+            
+   
   <div class="container">
     <header>
       <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+        <a href="https://lambdabox.netlify.com">Home</a>
+        <a href="https://cookpad.com/hu/receptek/6391426-ricotta-gozgomboc?via=profile">About</a>
+        <a href="https://userinterface.netlify.com/">Portfolio</a>
+        <a href="https://cookpad.com/hu/felhasznalok/6659384">Contact</a>
         </nav>
-      <img src="C:\Users\Anyuszi\Documents\LAMBDA-ASSIGNMENTS\week2\less\ujProcessing-I\Preprocessing-I\gesztenyephoto.jpg" alt="Life is a Piece of Cake!">
-      </header>
+        <hr>
 
+      </header>
       <section class="cta">
+          <div class="c-glitch" style="background-image: url('portre.jpg') width='200px' height=400px;">
+              <div class="c-glitch__img" width=200px height=400px style="background-image: url('portre.jpg');"></div>
+              <div class="c-glitch__img" width=200px height=400px style="background-image: url('portre.jpg');"></div>
+              <div class="c-glitch__img" width=200px height=400px style="background-image: url('portre.jpg');"></div>
+              <div class="c-glitch__img" width=200px height=400px style="background-image: url('portre.jpg');"></div>          
+              <div class="c-glitch__img" width=200px height=400px  style="background-image: url('portre.jpg');"></div>
+          </div>
+      
+      <!-- <div class="photo"> 
+          <img src="portre.jpg" width="200px" height="200px" alt="portre"> -->
+      <div class="name"><div id="animated_div"><h2>CSILLA ADEL GATES</h2></div></div>
         <div class="cta-text">
-        <h1>FULL STACK WEB DEVELOPER</h1>
+        <h1>FULL STACK <span
+          class="txt-rotate"
+          data-period="8000"
+          data-rotate='[ "IS FUN!" ]'></span></h1>
           
-          <button>Let's Go!</button>
+       <a href="https://cookpad.com/hu/felhasznalok/6659384"><button >() => {Let's Code!}()=></a></button>
         </div>
         </section>
     
     <section class="main-content">
-    
       <div class="top-content">
         <div class="text-content">
           <h2>This is Me</h2>
-          <p>Danish muffin toffee cake cake liquorice. Bonbon liquorice muffin carrot cake cake. Lemon drops pie apple pie chupa chups
+          <p id="text"><span class="char">Danish muffin toffee cake cake liquorice. Bonbon liquorice muffin carrot cake cake. Lemon drops pie apple pie chupa chups
           ice cream pie muffin jelly beans jujubes. Wafer gingerbread cookie tiramisu croissant jujubes bear claw sesame snaps bear
           claw. Biscuit jelly beans cotton candy gingerbread cheesecake. Caramels marshmallow danish. Jujubes pudding toffee fruitcake
-          brownie cake lollipop chupa chups dragée. Wafer apple pie gummi bears ice cream cheesecake dessert pastry. Sweet donut donut
-          topping bonbon carrot cake. Cake chocolate bar powder croissant donut topping cotton candy cotton candy macaroon. Toffee
-          jelly-o candy canes gummi bears cotton candy jelly beans. Dragée jelly beans danish marzipan chocolate dessert dessert chocolate
-          bar.</p>
+          brownie cake lollipop chupa chups dragée. Wafer apple pie gummi bears ice cream cheesecake dessert pastry.</p></span>
+          
+  </div>
+</div>
+<br/><br/>
          
-          <section class="list-of-best">
-          <div>
-          <h2>My Best</h2>
-          <p>
-            <ul>
-              <li>Code</li>
-              <li>Bake</li>
-              <li>Cook</li>
-              <li>Lego</li>
-              <li>Design</li>
-            </ul>
-          </p>
-        </div>
-         </section>
+          
          
          <section class="work">
          ​<div>
@@ -77,27 +462,27 @@
           </tr>
           <tr>
             <td>1</td>
-            <td>Apple</td>
-            <td>Software Engineer</td>
+            <td>DeepHire</td>
+            <td>Senior Software Engineer</td>
             <td>REACT</td>
           </tr>
           <tr>
-            <td>2</td>
-            <td>Microsoft</td>
-            <td>CS</td>
-            <td>SWIFT</td>
+            <td>1/2</td>
+            <td>LAMBDA</td>
+            <td>STUDENT</td>
+            <td>Back&Front</td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>Amazon</td>
+            <td>1</td>
+            <td>Squirrel</td>
             <td>DEV OPS</td>
-            <td>PHP</td>
+            <td>CSS, HTML</td>
           </tr>
         </table>
         </div>
         </section>
     <footer>
-      <p>Copyright AllForOne 2018</p>
+      <p>Copyright @AllForOne 2018</p>
     </footer>
     </div>
 </body>

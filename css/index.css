@@ -146,20 +146,42 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
   font-size: 1.6rem;
+  text-align: center;
+
+}
+
+.cta .photo{
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  display: block;
+  justify-content: center; 
+  margin-bottom: 20px;
+  display: block;
+}
+ 
+   
+
+.name h2{
+  font-size: 2.5rem;
+  margin-bottom: none;
+  padding: none;
 }
 h1 {
   color: #1D365D;
-  font-size: 3rem;
-  margin: 15px;
+  font-size: 1rem;
+  text-align: center;
 }
 p {
   font-size: 1.6rem;
 }
 .container {
   max-width: 880px;
-  width: 100%;
-  margin: auto;
+  width: 80%;
+  padding: 2%;
+  background-color: antiquewhite; 
 }
+
+
 /*Header Style*/
 header {
   width: 100%;
@@ -169,7 +191,7 @@ header {
 }
 header nav {
   width: 100%;
-  margin: 38px 1% 0;
+  margin: 10px 1% 0;
   justify-content: space-around;
   display: flex;
 }
@@ -179,14 +201,9 @@ header nav a {
 }
 header nav a:hover {
   text-decoration: underline;
-  color: black;
+  color:#1D365D;
 }
-header img {
-  border-radius: 10px;
-  display: flex;
-  margin-top: 8%;
-  justify-content: space-around;
-}
+
 .cta .cta-text {
   text-align: center;
   letter-spacing: 5px;
@@ -199,17 +216,33 @@ header img {
 .cta .cta-text h1 {
   letter-spacing: 5px;
   margin-bottom: 5px;
-  font-size: 7.2rem;
+  font-size:2.2rem;
+  padding: none;
+  margin: 0;
 }
-.cta .cta-text button {
-  border: 1px double black;
+ button {
+  border: 0.1em solid #000000;
   font-size: 1.6rem;
-  background: white;
+  /* background: rgb(133, 209, 245); */
+  color: whitesmoke;
   width: 170px;
   height: 32px;
   margin-top: 10px;
   cursor: pointer;
+  margin-bottom: 25px;
+  border-radius: 0.12em;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  background-color:#b1ebf5;
+  transition: all 0.15s;
+  display: block;
+  text-align: center;
+  
 }
+ button:hover {
+  text-shadow: 0 0 2em rgba(255,255,255,1);
+  border-color:#FFFFFF;
+}
+  
 .work table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -217,17 +250,43 @@ header img {
 }
 .work table td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid #7bdbec;
   text-align: center;
   padding: 8px;
 }
 .work table tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #b1ebf5;
 }
-footer {
+footer p{
   text-align: center;
   margin: 40px 0 20px;
+  font-size: 9px;
 }
+section .best{
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+
+}
+ .best h2{
+  margin-top: 25px;
+}
+ul li{
+  
+  align-items: center;
+  justify-content: center; 
+}
+@keyframes an{
+  from{
+      opacity: 0;
+      transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+  }
+  to{
+      opacity: 1;
+      transform: perspective(500px) translate3d(0, 0, 0);
+  }
+} 
 /* Tablet */
 @media (max-width: 800px) {
   .container {
@@ -246,7 +305,7 @@ footer {
   }
 }
 .cta {
-  margin-top: 35px;
+  margin-top: 5px;
   justify-content: center;
 }
 .cta .cta-text {
@@ -283,15 +342,16 @@ footer {
     margin-top: 50px;
   }
   .main-content {
-    padding-top: 55px;
+    padding-top: 35px;
   }
-  .main-content .top-content {
-    flex-wrap: wrap;
-    height: 300px;
-  }
+  
   .main-content .bottom-content {
     flex-wrap: wrap;
     align-content: space-between;
     height: 440px;
   }
+  
+}
+#text{
+  padding: 30px;
 }
