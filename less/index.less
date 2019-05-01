@@ -4,48 +4,135 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -53,7 +140,198 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
+// Variables 
+@primary-color: #6d6a6a;
+@secondary-color: #000;
+@link-color: cyan;
+@background-color-dark: dodgerblue;
+@background-color-medium: mediumblue;
+@background-color-light: #f4f4f4;
+@google-font: 'Dosis';
+@line-height: 1.4;
+
+// Mixins
+.left-align-flex() {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-align-flex() {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.space-between-flex() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-flex() {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap-flex() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.content-size-and-margin-bottom() {
+    font-size: @content-font-size;
+    line-height: 1.5em;
+    margin-bottom: 2em;
+}
+
+.dark-background-light-color() {
+    background-color: @background-color-dark;
+    color: white;
+}
+
+.container {
+    margin: .52% auto;
+    max-width: 90em;
+
+    @media (max-width: 500px) {
+        margin: 0 auto;
+    }
+}
+
+header {
+    .right-align-flex;
+
+    nav {
+        margin-top: 0;
+        width: 100%;
+        .space-between-flex;
+
+        a {
+            text-decoration: none;
+            color: @primary-color;
+            font-size: 1.4em;
+            margin-right: 145px;
+
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        .column-flex;
+
+        nav {
+            margin: 0 auto;
+            width: 100%;
+            .column-flex;
+
+            a {
+                width: 100%;
+                margin: 2em;
+                margin-left: 25%;
+                text-align: center;
+                align-items: space-between;
+                border-bottom: 1px solid grey;
+            }
+        }
+    }
+}
+
+.top-section {
+    padding: 3em;
+    background-color: @background-color-light;
+    img {
+        width: 15%;
+        max-width: 60em;
+        border-radius: 50%;
+        padding: 2em 0;
+    
+    } h4 {
+      margin-bottom: 22px;
+      font-size: 1.5em;
+    }
+    
+    p {
+        margin-top: 2em;
+    }
+    button {
+        .dark-background-light-color;
+        margin-top: 2%;
+        padding: .5em;
+        font-size: 1.56em;
+        font-weight: bold;
+    }
+    @media (max-width: 500px) {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+h1  {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+
+.middle-section {
+    margin-left: 80Px;
+    .space-between-flex;
+    .middle-section-column {
+        width: 100%;
+        
+    }
+    li {
+        padding: 1em;
+        border: solid 1px lightgrey;
+    } 
+    @media (max-width: 500px) {
+        .column-flex;
+        .middle-section-column {
+            width: 90%;
+        }
+    }
+}
+
+.bottom-section {
+    table {
+        width: 100%;
+        tr:first-child {
+            font-weight: bold;
+        }
+        tr:nth-child(odd) {
+            background-color: @background-color-light;
+        }
+        tr:nth-child(even) {
+            background-color: @background-color-medium;
+        }
+        td {
+            padding: 1em;
+        }
+    }
+    @media (max-width: 500px) {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+p {
+    line-height: 1.9;
+}
+
+// footer
+footer {
+    font-size: @content-font-size;
+    .dark-background-light-color;
+    text-align: center;
+    padding: 1.5em;
+}
