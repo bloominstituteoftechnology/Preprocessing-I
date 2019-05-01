@@ -144,9 +144,11 @@ table {
 @bodyPadding: 20px;
 @bfont: 1rem;
 @bodyMargin: 30px;
-@lineColor: rgb(244, 245, 247);
+@lineColor: rgb(205, 207, 209);
 @line-height: 1.4;
 @marginTop: 30px;
+@bodybackground: #f0f0d0;
+;
 
 .brd {
 	border: 1px solid @lineColor;
@@ -170,40 +172,47 @@ html {
 html,
 body {
 	height: 100%;
+
 }
 
 .container {
 	width: 900px;
 	margin: auto;
+	padding: 10px;
+	background: whitesmoke;
 
 }
 
-header ul {
-	list-style: none;
-	display: flex;
-	color: white;
-	justify-content: flex-end;
+header {
 
-	li {
-		padding: 20px;
+	ul {
+		list-style: none;
+		display: flex;
+		color: white;
+		justify-content: flex-end;
 
-		a {
-			text-decoration: none;
-			color: black;
-			padding: 10px;
+		li {
+			padding: 20px;
 
-			&:hover {
-				background: rgba(0, 0, 0, 0.205);
+			a {
+				text-decoration: none;
+				color: black;
+				padding: 15px;
+
+				&:hover {
+					background: rgba(0, 0, 0, 0.246);
+				}
 			}
 		}
 	}
 }
 
 #about {
-	background: @bodycolor;
+	background: @bodybackground;
 	width: 100%;
 
 	padding: 30px 20px;
+
 
 	img {
 		height: 300px;
@@ -246,13 +255,18 @@ header ul {
 }
 
 #portfolio {
+	background: @bodybackground;
 	margin-top: 30px;
 	display: flex;
 	justify-content: space-between;
+	padding: 5px;
+
 
 	.left-side {
 		margin-top: @marginTop;
 		flex: 1;
+		padding: 5px;
+
 
 
 
@@ -297,6 +311,8 @@ header ul {
 
 #work {
 	margin-top: @marginTop;
+	background: @bodybackground;
+	padding: 10px;
 
 	.history {
 		h2 {
@@ -331,12 +347,11 @@ header ul {
 
 #contact {
 	margin-top: 30px;
-	font-size: @bfont;
 	line-height: @line-height;
 
 	h2,
 	span {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		font-weight: 500;
 	}
 
@@ -347,7 +362,7 @@ header ul {
 	}
 
 	p {
-		font-size: @bfont;
+		font-size: 1.1rem;
 	}
 
 }
@@ -370,6 +385,7 @@ footer {
 	}
 
 	header ul {
+		padding: 10px;
 		align-items: center;
 
 
@@ -387,7 +403,7 @@ footer {
 
 	#portfolio {
 		flex-direction: column;
-		padding: 0 20px;
+		padding: 10px 20px;
 
 		.right-side {
 			margin-left: 0;
