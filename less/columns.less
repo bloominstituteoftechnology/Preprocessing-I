@@ -2,15 +2,21 @@
     .flex(space-between, flex-top); 
     margin-bottom: 2rem;
 
+    @media @mobileBreakpoint {
+        flex-direction: column;
+    }
+
     >#about-me, >#good-at {
         width: 48%;
+
+        @media @mobileBreakpoint {
+            width: 100%;
+        }
     }
 
     >#good-at > ul {
         border: 0.2rem solid @primaryColor;
         border-radius: @borderRadius;
-
-        
 
         >li {
             padding: 1rem 2rem;
