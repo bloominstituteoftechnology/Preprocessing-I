@@ -2,6 +2,36 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v17/TK3iWkUHHAIjg752GT8D.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Oswald SemiBold'), local('Oswald-SemiBold'), url(https://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-xhsTus9H.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(https://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-ohoTus9H.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(https://fonts.gstatic.com/s/robotocondensed/v17/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7CA.ttf) format('truetype');
+}
 html,
 body,
 div,
@@ -130,7 +160,163 @@ table {
 * {
   box-sizing: border-box;
 }
+p {
+  margin-bottom: 1.3em;
+}
+small {
+  font-size: 85%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald";
+  color: #000;
+}
 html,
 body {
   height: 100%;
+}
+:root {
+  font-size: 100%;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+#wrapper {
+  display: flex;
+  width: 960px;
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+aside {
+  width: 300px;
+  border: 1px solid red;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #f2f3f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+aside .author-image-container {
+  background-image: url("/images/about.jpg");
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 30px;
+}
+aside .author-logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+aside .author-logo {
+  display: block;
+  text-align: center;
+  color: #000;
+}
+aside .career {
+  display: block;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+aside nav {
+  width: 100%;
+  border: 1px solid red;
+  padding: 20px;
+  position: relative;
+}
+aside nav ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+aside nav ul li {
+  margin: 0 0 10px 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+aside nav ul li a {
+  display: block;
+  border: 1px solid orange;
+  padding: 10px 0;
+  font-family: "Roboto Condensed";
+}
+aside footer {
+  border: 1px solid magenta;
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+}
+aside footer ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+aside footer ul li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+aside footer ul li a {
+  padding: 5px;
+}
+main {
+  width: calc(100% - 300px);
+  border: 1px solid blue;
+}
+.section-container {
+  border: 1px solid red;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.hero {
+  min-height: 500px;
+  border: 1px solid red;
+}
+.hero .hero-content-container {
+  display: flex;
+}
+.hero .hero-content-container .intro {
+  border: 1px solid yellow;
+  height: 450px;
+}
+.hero .hero-content-container .intro h1 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.hero .hero-content-container .intro h2 {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+.hero-image-container {
+  background: green;
+}
+.about-container .about-description {
+  border: 1px solid red;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1.8;
+  position: relative;
 }
