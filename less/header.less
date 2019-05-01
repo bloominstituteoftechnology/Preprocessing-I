@@ -3,8 +3,19 @@
         .flex(flex-end, baseline);
         margin: 3rem 0;
 
+        @media @mobileBreakpoint {
+            .flex(flex-start, center);
+            flex-direction: column;
+            margin: 1.5rem 0;
+        }
+
         > nav {
             .flex(flex-start, baseline);
+
+            @media @mobileBreakpoint {
+                .flex(flex-start, center);
+                flex-direction: column;
+            }
 
             > a {
                 margin: 0 2rem;
@@ -21,6 +32,10 @@
 
                 &:last-of-type {
                     margin-right: 0;
+                }
+
+                @media @mobileBreakpoint {
+                    margin: 0.3rem 0;
                 }
             }
         }
