@@ -59,6 +59,7 @@ html, body {
 // Variables
 
 @newfont:'Raleway', sans-serif;
+@margins: 5%; 
 
 //Mixins
 .center() {
@@ -66,21 +67,35 @@ html, body {
 	justify-content: center;
 	align-items: center;
 }
+.row() {
+	display: flex;
+	flex-direction: column;
+}
 
 body {
 	width: 75%;
 	min-width:800px;
-	display: flex;
-	flex-direction: column;
+	.row();
 	margin: 0 auto;
-}
+	background-color: rgba(10, 107, 163, 0.856);
+
 .container {
+	nav {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 80%;
+		a {
+			padding: 15px;
+			color: black;
+		}
+	}
 	.top  { 
 		background-color: grey;
 		height: 50%;
 		padding: 20%;
 		width: 100%;
 		margin-bottom: 5%;
+	
 
 		h1 {
 			font-size: 2em;
@@ -96,7 +111,8 @@ body {
 	
 		}
 		p {
-			margin: 5% auto;
+			margin-top: 5%;
+			margin-bottom: 5%;
 			text-align: center;
 
 		}
@@ -108,40 +124,78 @@ body {
 	.mid {
 		display: flex;
 		flex-direction: row;
-	.mid-left { 
-		display: flex;
-		flex-direction: column;
-		width: 48%;
-	.mid-right {
-		display: flex;
-		width: 48%;
 
+	.mid-left { 
+		.row();
+		width: 48%;
+	h3 {
+		margin-bottom: @margins;
 	}
 	p {
-		margin-top: 5%;
+		margin-top: @margins;
+		margin-bottom: @margins;
 	}
-	ul {
-		margin-top: 5%;
 	}
+	
+
+	.mid-right {
+		.row();
+		width: 48%;
+		margin-left: 40%;
+		h3 {
+			margin-bottom: @margins;
+		}
+
+	ul li {
+		margin-bottom: @margins;
+		list-style-type: circle;
+		font-size: 1em;
+		font-family: @newfont;
+		list-style-type: circle;
+		margin-top: @margins;
+
+	}
+	}
+}
 .bottom {
 		display: flex;
 		flex-direction: row;
+
 	.years {
 		
-		width: 48%;
+		width: 25%;
+		justify-content: space-between;
+		align-content: space-between;
+		h6 {
+			margin-top: @margins
 
-	}
+		}
+	} 
 	.company {
+		width: 25%;
+		h6 {
+			margin-top: @margins
+
+		}
 
 	}
 	.title {
+		width: 25%;
+		h6 {
+			margin-top: @margins
+
+		}
 
 	}
 	.techUsed {
-		   
+		width: 25%;
+		h6 {
+			margin-top: @margins
+
+		}
+
 	}
-}
-	
+	}			
 	h2 {
 		font-size: 1.8em;
 		font-family: @newfont;
@@ -169,20 +223,22 @@ body {
 		font-family: @newfont;
 
 	}
-	li {
-		font-size: 1em;
-		font-family: @newfont;
-		list-style-type: bullets;
-	}
-	
-	nav {
-		display: flex;
-		// background-color: @lightning-yellow;
-		justify-content: space-between;
-		margin-left: 80%;
-		a {
-			padding: 15px;
-		}
+	footer {
+		p {
+			.center();
+			margin-top: @margins;
+			margin-bottom: 2%;
+			
 
+		}
+		ul {
+			list-style-type: none;
+			margin-top: @margins;
+
+		}
+		li {
+			padding: 1%;
+		}
 	}
+}
 }
