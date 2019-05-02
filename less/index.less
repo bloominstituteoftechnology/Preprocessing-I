@@ -73,9 +73,10 @@ h1, h2, h3 {
 
 .section-layout {
 	padding-bottom: 20px;
-		width: 40%;
-		display: flex;
-		flex-direction: column;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 40%;
 		
 		h2 {
 			font-size: 2rem;
@@ -103,29 +104,34 @@ h1, h2, h3 {
 }
 
 .container {
-	width: 876px;
-	height: 100%;
+	width: 900px;
 	margin: auto;
 	// background: lightgrey;
 }
 
 header {
+	display: flex;
+	justify-content: flex-end;
 	border-bottom: 1px solid black;
-	padding-bottom: 2.5%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 2.5%;
 }
 nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	padding-top: 2%;
-	margin-right: 5%;
-	margin-left:60%;
+	// display: flex;
+	// flex-direction: row;
+	// justify-content: flex-end;
+	// padding-top: 2%;
+	// margin-right: 5%;
+	// margin-left:60%;
 	font-size: 2rem;
-	justify-content: space-between;
+
+	// width:100%
 	
 	a{ 
 	text-decoration: none;
 	color: darkslategrey;
+	padding-left: 10px;
 	}
 
 }
@@ -170,11 +176,13 @@ nav {
 			color: @blue-dianne;
 			margin-bottom: 20px;
 		}
+
+		.schooling-information {
+			.section-layout()
+		}
 	}
 
-	.schooling-information {
-		.section-layout()
-	}
+	
 
 	.work {
 		display: flex;
@@ -187,13 +195,18 @@ nav {
 			color: @blue-dianne;
 			margin-bottom: 20px;
 		}
-	}
 
-	.work-information {
-		.section-layout()
+		.work-information {
+			.section-layout()
+			
+		}
 	}
-	}
-
-	.
 }
 
+
+@media (max-width: 500px){
+	.container {
+		width: 95%
+	}
+
+}
