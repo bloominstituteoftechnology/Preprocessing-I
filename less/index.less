@@ -57,13 +57,32 @@ html, body {
 	height: 100%;
 }
 
+@p-size: 1.4rem;
+@banner-color: rgb(222, 243, 236);
+
+.article {
+	display: flex;
+	justify-content: flex-start;
+	flex-flow: column wrap;
+	padding: 20px;
+}
+.border {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
 .container {
 	margin: 0 auto;
 	font-size: 62.7%;
+	
 	nav {
 		display: flex;
 		justify-content: flex-end;
 		margin: 20px 50px;
+		@media only screen and (max-width: 500px) {
+			justify-content: space-between;
+			margin: 0px;
+		}
 		ul {
 			display: flex;
 			flex-direction: row;
@@ -78,13 +97,13 @@ html, body {
 	}
 	.banner {
 		margin: 0px 50px;
-		
+		@media only screen and (max-width: 500px) {
+			margin: 0px;
+		}
 		article {
-			display: flex;
-			justify-content: flex-start;
-			flex-flow: column wrap;
-			background-color: rgb(222, 243, 236);
-			padding: 20px;
+			.article();
+			background-color: @banner-color;
+			
 			img {
 				display: block;
 				width: 300px;
@@ -98,7 +117,7 @@ html, body {
 			}
 			p {
 				display: block;
-				font-size: 1.4rem;
+				font-size: @p-size;
 				margin: 10px;
 			}
 			button {
@@ -118,11 +137,11 @@ html, body {
 		display: flex;
 		flex-flow: row wrap;
 		article {
-			display: flex;
-			justify-content: flex-start;
-			flex-flow: column wrap;
+			.article();
 			width: 50%;
-			padding: 10px;
+			@media only screen and (max-width: 500px) {
+				width: 100%;
+			}
 			h3 {
 				font-size: 2rem;
 				padding: 10px;
@@ -132,7 +151,7 @@ html, body {
 				padding: 10px;
 			}
 			p {
-				font-size: 1rem;
+				font-size: @p-size;
 				padding: 10px;
 			}
 			ul {
@@ -140,7 +159,7 @@ html, body {
 			}
 			li {
 				font-size: 1rem;
-				border: 1px solid gray;
+				.border();
 				padding: 10px;
 			}
 		}
@@ -150,14 +169,11 @@ html, body {
 		display: flex;
 		flex-flow: row wrap;
 		article {
-			display: flex;
-			justify-content: flex-start;
-			flex-flow: column wrap;
+			.article();
 			width: 100%;
-			padding: 10px;
+			
 			tr {
-				border-top: 1px solid gray;
-				border-bottom: 1px solid gray;
+				.border();
 			}
 			h3 {
 				font-size: 2rem;
@@ -182,7 +198,7 @@ html, body {
 		width: 100%;
 		padding: 30px;
 		p {
-			font-size: 1rem;
+			font-size: @p-size;
 		}
 	}
 }
