@@ -15,6 +15,7 @@
             @media @mobileBreakpoint {
                 .flex(flex-start, center);
                 flex-direction: column;
+                width: 100%;
             }
 
             > a {
@@ -22,20 +23,33 @@
                 color: @primaryColor;
                 text-decoration: none;
 
+                @media @mobileBreakpoint {
+                    margin: 0;
+                    padding: 0.7rem 0;
+                    width: 100%;
+                    text-align: center;
+                    border-bottom: 0.1rem solid @primaryColor;
+                }
+
                 &:hover {
                     text-decoration: underline;
+
+                    @media @mobileBreakpoint {
+                        text-decoration: none;
+                        background-color: @secondaryColor;
+                    }
                 }
 
                 &:first-of-type {
                     margin-left: 0;
+
+                    @media @mobileBreakpoint {
+                        border-top: 0.1rem solid @primaryColor;
+                    }
                 }
 
                 &:last-of-type {
                     margin-right: 0;
-                }
-
-                @media @mobileBreakpoint {
-                    margin: 0.3rem 0;
                 }
             }
         }
