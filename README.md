@@ -22,13 +22,13 @@ Follow these steps for completing your project.
 * [x] Open your terminal and navigate to your preprocessing project by using the `cd` command
 * [x] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
 * [x] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red`
-* [ ] Once you see the red screen, you can delete that style and you're ready to start on the next task
+* [x] Once you see the red screen, you can delete that style and you're ready to start on the next task
 
 ## Task 3: Project Objectives
 
-* [ ] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
+* [x] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
 **Note: you are only required to build one page, anything more than that would be stretch.**
-* [ ] The resume content will be provided by you. The content can be about you or a fictional character.  
+* [x] The resume content will be provided by you. The content can be about you or a fictional character.  
 * [ ] Content: Navigation - Build a simple navigation with 4 items of your choosing
 * [ ] Content: Intro - Have a short introduction as to why you would be a good hire
 * [ ] Content: Skills - Showcase a list of skills you have somewhere on your resume

@@ -57,43 +57,92 @@ html, body {
 	height: 100%;
 	box-sizing: border-box;
 	font-size: 62.5%; 
+	font-family: 'Lato', sans-serif;
 }
 
 //Variables
 @Athen-Gray: #E9ECEF;
 @Gray:#808080;
 @Concrete:#F2F2F2;
+@Silver-Chalice: #AAAAAA;
+//
 @main-color: @Athen-Gray;
+@shadow-boxes: @Silver-Chalice;
+@Buttons: @Gray;
 
 
 .container{
 	max-width: 900px;
 	margin: 0 auto;
 	font-size: 1.6rem;
-	border: 1px solid salmon;
+	box-shadow: 10px 10px 15px @shadow-boxes;
+	//border: 1px solid salmon;
 }   
 
 header{
-	display:flex;
-	flex-direction: row;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 	margin: 20px 0px;
-	border: 1px solid green;
+	padding-top: 20px;
+    //border: 1px solid green;
 	 
     nav{
 		margin-left: 62px;
-		border: 1px solid black;
+		//border: 1px solid black;
 		a{
 			font-size: 1.9rem;
 			color: black;
 	 		text-decoration: none;
-	 		border: 1px solid salmon;
+	 		//border: 1px solid salmon;
 			padding: 20px;
 			}
 		}		 
 	}
 
 .main-section{
-	display:flex;
+	display: flex;
+    flex-direction: column;
+    border-radius: 5px;
 	background-color: @Athen-Gray;
+	
+	.picture{
+		width: 41%;
+    	height: auto;
+		margin: 50px 0 30px 40px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 15px @shadow-boxes;
+	}
+	.name{
+		font-size: 6.0rem;
+		margin-left:40px;
+	}
+	.info{
+		font-size: 3.0rem;
+		margin: 0 40px 30px 40px;
+		padding-top: 40px;
+		
+	}
+	.bio{
+		margin: 0 40px 0 40px;
+    	padding-top: 35px;
+    	border-top: 1px solid @Gray;
+	}
+	.button{
+		font-size: 2.5rem;
+    	background-color: @Gray;
+   		width: 180px;
+    	margin: 35px 40px 70px;
+    	text-align: center;
+    	padding: 10px;
+		border-radius: 5px;
+		
+		a{
+		text-decoration: none;
+		color: white;
+	}
+
+	}
+
 }
 
