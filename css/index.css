@@ -164,6 +164,11 @@ section {
   border-bottom: 3px dashed black;
   flex-wrap: wrap;
 }
+@media (max-width: 515px) {
+  section {
+    flex-direction: column;
+  }
+}
 section h1 {
   font-size: 25px;
 }
@@ -185,6 +190,12 @@ section .about-item {
   width: 50%;
   margin: 0 auto;
 }
+@media (max-width: 515px) {
+  section .about-item {
+    width: 95%;
+    margin: 45px;
+  }
+}
 section .about-item .list {
   display: flex;
 }
@@ -195,30 +206,44 @@ section .about-item .li-head {
 section .about-item li {
   list-style-type: square;
   padding: 5px;
+  height: 30px;
 }
-section .chart {
+.chart {
   display: flex;
-  border: 1px solid black;
-  width: 1000px;
+  width: 100%;
   font-size: 25px;
 }
-section .chart ul {
-  width: 33%;
+.chart ul {
+  width: 33.3333%;
   border: 1px solid black;
 }
-section .chart li {
+.chart li {
   border-bottom: 1px solid black;
 }
-section .chart li:first-of-type {
+@media (max-width: 515px) {
+  .chart li {
+    font-size: 20px;
+  }
+}
+.chart li:first-of-type {
   font-size: 30px;
   padding: 5px;
 }
-.intro div {
+@media (max-width: 515px) {
+  .chart li:first-of-type {
+    font-size: 20px;
+  }
+}
+.intro .intro-item {
   width: 50%;
+  justify-content: space-around;
+}
+@media (max-width: 515px) {
+  .intro .intro-item {
+    width: 95%;
+    margin: 45px;
+  }
 }
 .intro p {
   padding-bottom: 30px;
-}
-.intro a {
-  margin: 25%;
 }
