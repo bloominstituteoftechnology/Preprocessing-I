@@ -137,6 +137,9 @@ body {
   font-size: 62.5%;
   font-family: 'Lato', sans-serif;
 }
+.mixin-shadow-box {
+  box-shadow: 10px 10px 15px #AAAAAA;
+}
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -172,14 +175,31 @@ header nav a {
   border-radius: 5px;
   box-shadow: 10px 10px 15px #AAAAAA;
 }
+@media (max-width: 500px) {
+  .main-section .picture {
+    width: 50%;
+    margin: 40px auto;
+  }
+}
 .main-section .name {
   font-size: 6rem;
   margin-left: 40px;
+}
+@media (max-width: 500px) {
+  .main-section .name {
+    font-size: 6.7rem;
+    text-align: center;
+  }
 }
 .main-section .info {
   font-size: 3rem;
   margin: 0 40px 30px 40px;
   padding-top: 40px;
+}
+@media (max-width: 500px) {
+  .main-section .info {
+    text-align: center;
+  }
 }
 .main-section .bio {
   margin: 0 40px 0 40px;
@@ -199,6 +219,13 @@ header nav a {
   text-decoration: none;
   color: white;
 }
+@media (max-width: 500px) {
+  .main-section .button {
+    width: 50%;
+    margin: 40px auto;
+    padding: 24px;
+  }
+}
 .second-section {
   display: flex;
   flex-direction: row;
@@ -207,6 +234,13 @@ header nav a {
 .second-section h1 {
   font-size: 3.4rem;
   padding-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .second-section h1 {
+    font-size: 3.4rem;
+    padding-bottom: 22px;
+    width: 50%;
+  }
 }
 .second-section .listen {
   width: 50%;
@@ -223,6 +257,20 @@ header nav a {
   width: 348%;
   padding: 13px;
   border-radius: 5px;
+}
+@media (max-width: 500px) {
+  .second-section .table h6 {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .second-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin: 0 150px;
+  }
 }
 .thrid-section {
   display: flex;
@@ -258,6 +306,8 @@ header nav a {
 .table-exp th {
   padding: 8px;
   text-align: left;
+  font-size: 1.7rem;
+  font-weight: bold;
   border-bottom: 1px solid #ddd;
 }
 .table-exp tr:nth-child(even) {

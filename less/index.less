@@ -71,34 +71,40 @@ html, body {
 @shadow-boxes: @Silver-Chalice;
 @Buttons: @Gray;
 
+//Mixins
+.mixin-flex-row(){
+	display:flex;
+	flex-direction: row;
+}
+ .mixin-shadow-box{
+	box-shadow: 10px 10px 15px @shadow-boxes;	 
+ }
 
 .container{
 	max-width: 900px;
 	margin: 0 auto;
 	font-size: 1.6rem;
-	box-shadow: 10px 10px 15px @shadow-boxes;
+	.mixin-shadow-box
 	//border: 1px solid salmon;
 }   
 
 header{
-	display: flex;
-    flex-direction: row;
+	.mixin-flex-row;
     justify-content: flex-end;
 	margin: 20px 0px;
 	padding-top: 20px;
-    //border: 1px solid green;
-	 
-    nav{
+
+	nav{
 		margin-left: 62px;
-		//border: 1px solid black;
+		
 		a{
 			font-size: 1.9rem;
 			color: black;
 	 		text-decoration: none;
-	 		//border: 1px solid salmon;
-			padding: 20px;
+	 		padding: 20px;
 			}
-		}		 
+		}	
+		
 	}
 
 .main-section{
@@ -112,17 +118,34 @@ header{
     	height: auto;
 		margin: 50px 0 30px 40px;
 		border-radius: 5px;
-		box-shadow: 10px 10px 15px @shadow-boxes;
+		.mixin-shadow-box;
+
+		@media(max-width:500px){
+		width: 50%;
+		margin: 40px auto;
+		}
+   
 	}
 	.name{
 		font-size: 6.0rem;
 		margin-left:40px;
-	}
+
+		@media(max-width:500px){
+			font-size: 6.7rem;
+    		text-align: center;
+		}
+
+		}
+	
 	.info{
 		font-size: 3.0rem;
 		margin: 0 40px 30px 40px;
 		padding-top: 40px;
-		
+
+		@media(max-width:500px){
+		text-align: center;
+
+		}
 	}
 	.bio{
 		margin: 0 40px 0 40px;
@@ -141,20 +164,29 @@ header{
 		a{
 		text-decoration: none;
 		color: white;
-	}
 
+
+	}
+	@media(max-width:500px){
+		width: 50%;
+    	margin: 40px auto;
+    	padding: 24px;
+	}
 	}
 
 }
 
 .second-section{
-	display: flex;
-	flex-direction: row;
-	//justify-content: space-between;
+	.mixin-flex-row;
 	margin-top: 41px;
 	h1{
 		font-size: 3.4rem;
 		padding-bottom: 20px;
+		@media(max-width:500px){
+		font-size: 3.4rem;
+    	padding-bottom: 22px;
+		width: 50%;
+		}
 	}
 
 	.listen{
@@ -172,8 +204,20 @@ header{
     		border: 1px solid #E9ECEF;
     		width: 348%;
     		padding: 13px;
-    		border-radius: 5px;
+			border-radius: 5px;
+			
+			@media(max-width:500px){
+			width: 100%;
+			}
 		}
+	}
+	@media(max-width:500px){
+		display: flex;
+    	flex-direction: column;
+		width: 100%;
+    	text-align: center;
+    	margin: 0 150px;
+    	
 	}
 }
 
@@ -211,7 +255,9 @@ header{
 	  }
 	  th {
 		padding: 8px;
-		text-align: left;
+    	text-align: left;
+    	font-size: 1.7rem;
+    	font-weight: bold;
 		border-bottom: 1px solid #ddd;
 	  }
 	  tr:nth-child(even) {
