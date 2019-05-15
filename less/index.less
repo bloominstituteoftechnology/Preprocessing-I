@@ -61,9 +61,31 @@ html, body {
 
 // mixins
 
+.font(){
+	color:#333333;
+	font-family: 'Playfair Display', serif;
+
+}
+
+.header-font(){
+	color:#C2DFFF;
+	font-family: 'Playfair Display', serif;
+
+}
+
 // variables
 
+// container
 
+.container{
+	@media(max-width:500px){
+		width: 100%;
+		display:flex;
+		flex-flow: column;
+	}
+		
+	
+}
 
 // header
 
@@ -73,7 +95,11 @@ html, body {
 	background-color:#333333;
 	flex-flow: column;
 	margin: 25px;
-	border:1px solid red;
+	@media(max-width:500px){
+		width: 100%;
+		display:flex;
+		flex-flow: column;
+	}
 
 	
 
@@ -81,7 +107,7 @@ html, body {
 		display:flex;
 		align-items:flex-end;
 		background-color:#333333;
-		color:#C2DFFF;
+		.header-font;
 		font-size: 5rem;
 		padding-left:200px;
 		margin-top: 50px;
@@ -96,7 +122,7 @@ html, body {
 	}
 
 	h2{
-		color:#C2DFFF;
+		.header-font;
 		font-size:2.5rem;
 		justify-content: center;
 		height: 150px;
@@ -105,7 +131,7 @@ html, body {
 	}
 
 	p{	justify-content: center;
-		color:#C2DFFF;
+		.header-font;
 		font-size:2rem;
 		text-align:center;
 		height:150px;
@@ -121,10 +147,15 @@ html, body {
 	flex-flow: column;
 	flex-wrap:wrap;
 	background-color:#FFFFFF;
-	color:#333333;
+	.font;
 	margin:30px;
 	padding-left:25px;
-	border:5px solid #333333;
+	border:5px double #333333;
+	@media(max-width:500px){
+		width: 100%;
+		display:flex;
+		flex-flow: column;
+	}
 }
 
 // contact info
@@ -136,17 +167,19 @@ html, body {
 	height:300px;
 	margin-bottom:25px; 
 	margin-top:50px;
-	color:#FFFFFF;
+	.font;
 
 	h3{
 		border-bottom:1px solid #333333;
-		color:#333333;
+		.font;
 		font-size:2rem;
+	
 	}
 
 
 	ul li{
-		color:#333333;
+		padding-top: 15px;
+		.font;
 		font-size: 1rem;
 	}
 }
@@ -157,19 +190,20 @@ html, body {
 	background-color:#FFFFFF;
 	border-bottom:1px solid #333333;
 	max-width: 250px;
-	height:250px;
+	height:200px;
 	margin-bottom:25px; 
-	color:#333333;
+	.font;
 	
 
 	h3{
-		color:#333333;
+		.font;
 		border-bottom:1px solid #333333;
 		font-size:2rem;
 	}
 
 	p{
-		color:#333333;
+		.font;
+		padding-top: 15px;
 		
 	}
 }
@@ -180,13 +214,17 @@ html, body {
 	background-color:#FFFFFF;
 	max-width: 250px;
 	padding-bottom:25px; 
-	color:#333333;
+	.font;
 
 	h3{
 		color:#333333;
 		font-size:2rem;
 		border-bottom:1px solid #333333;
 
+	}
+	ul li {
+		padding-top: 15px;
+		.font;
 	}
 }
 
@@ -197,15 +235,23 @@ html, body {
 	margin-bottom:25px; 
 	margin-top:50px;
 	padding-left: 50px;
-	color:#333333;
+	.font;
 	border-left: 4px solid #333333;
 
 
 	h3{
-		color:#333333;
+		.font;
 		font-size:2rem;
 		border-bottom:1px solid #333333;
 
+	}
+	h5{
+		.font;
+	}
+
+	p{
+		padding-top: 15px;
+		.font;
 	}
 }
 
