@@ -4,56 +4,297 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
 }
 
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+  color: @color;
+}
+p {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+// Vairables
+@color: grey;
+@font-size: 1.5rem;
+@table-font: 1rem;
+@h1-color: white;
+
+// Mixins
+
+.button() {
+  background-color: @color;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.skill-table() {
+  tr:nth-child(even) {
+    background-color: @color;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    border: 1px solid @color;
+    font-size: @font-size;
+  }
+
+  td {
+    border: 1px solid @color;
+    border-collapse: collapse;
+    width: 400px;
+    font-size: @table-font;
+    padding: 8px;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 400px;
+
+  a {
+    text-decoration: none;
+    color: @color;
+    font-size: @font-size;
+  }
+
+  a:hover {
+    color: black;
+  }
+}
+
+.name {
+  display: flex;
+  background-color: @color;
+  padding-bottom: 200px;
+
+  h1 {
+    display: flex;
+    margin-left: 160px;
+    margin-top: 150px;
+    color: @h1-color;
+  }
+}
+
+.image {
+  height: 400px;
+  position: relative;
+  left: 190px;
+  bottom: 170px;
+  border-radius: 50%;
+}
+
+.intro {
+  h2 {
+    padding-left: 250px;
+    position: relative;
+    bottom: 150px;
+    color: @color;
+    margin-bottom: 0;
+    border-bottom: solid 2px grey;
+  }
+}
+
+.small-projects {
+  border-bottom: 2px solid grey;
+  padding-bottom: 100px;
+
+  p {
+    margin-bottom: 50px;
+  }
+
+  button {
+    .button();
+  }
+}
+
+.about-section {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .about {
+    width: 400px;
+    padding-right: 50px;
+  }
+
+  .skill-table();
+}
+
+.work-history {
+  .skill-table();
+
+  h2 {
+    margin-bottom: 50px;
+  }
+}
+
+footer {
+  background-color: @color;
+  margin-top: 40px;
+  height: 50px;
+
+  p {
+    color: white;
+    margin-left: 340px;
+    position: relative;
+    top: 20px;
+  }
+}
