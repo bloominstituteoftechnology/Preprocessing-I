@@ -71,6 +71,8 @@ h2 {
 	margin-bottom: 20px;
 }
 
+@bg-color: white;
+
 header {
 	width: 90%;
 	margin: 20px 5%;
@@ -100,14 +102,19 @@ header {
 	margin: 30px 5%;
 	margin-bottom: 20px;
 	padding: 30px 0;
-	background-color: white;
+	background-color: @bg-color;
 }
 
 	.top-content {
 		display: flex;
 		margin: 20px 5%;
 		margin-bottom: 30px;
-	/*	border: 1px solid red; */
+
+		@media (max-width: 500px) {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 		img {
@@ -194,7 +201,17 @@ header {
 					background: #007bb5;
 					color: white;
 				}
+			
 		}
+
+	@media (max-width: 500px) {
+		h1 {
+			width: 100%;
+			margin: 0 0;
+			font-size: 30px;
+			text-align: center;
+	}	
+
 
 	.middle-content {
 		display: flex;
@@ -231,7 +248,7 @@ header {
 	padding: 30px 5%;
 	font-size: 1.20em;
 	line-height: 2.25;
-	background-color: white;
+	background-color: @bg-color;
 }
 
 	h3 {
@@ -245,4 +262,8 @@ header {
 footer {
 	text-align: center;
 	color: #082e3f;
+
+	@media(max-width: 500px) {
+			color: white;
+	}
 }
