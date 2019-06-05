@@ -94,17 +94,11 @@ video {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article,aside,details,
+figcaption,figure,
+footer,header,
+hgroup,menu,
+nav,section {
   display: block;
 }
 body {
@@ -139,6 +133,12 @@ table {
   box-sizing: border-box;
 }
 
+page {
+	@media (max-width:500px) {
+		display:flex;
+		direction:column;
+	}
+}
 html,
 body {
   height: 100%;
@@ -149,15 +149,9 @@ body {
     font-size: 25px;
 	padding: 15px;
 	color:#E27D60;
- }
+  }
 }
 
-.skills {
-  font-size: 15px;
-  padding: 15px;
-  color:blue;
-  }
-  
   /* Add a black background color to the top navigation */
   .topnav {
     background-color:#E8A873;
@@ -182,7 +176,7 @@ body {
 
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: pink;
+    background-color:#C38D9E;
     color: white;
   }
 
@@ -196,6 +190,21 @@ body {
     padding: 15px;
   }
 
+  table.historyTable {
+	  width: 50%;
+	  padding:15px;
+	  margin:10px;
+	  td {
+		border: 1px solid #ddd;
+		padding: 8px;
+	  }
+	  th {
+		border: 1px solid #ddd;
+		padding: 8px;
+	  }
+	  }
+	  
+  
   .p {
     font-size: 18px;
     padding: 10px;
@@ -216,6 +225,10 @@ body {
   }
 
   //   Contact form
+
+  div.container{
+	  width:50%;
+  }
   /* Style inputs with type="text", select elements and textareas */
   input[type="text"],
   select,
@@ -251,4 +264,5 @@ body {
     background-color: #f2f2f2;
     padding: 20px;
   }
-}
+
+
