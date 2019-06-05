@@ -57,6 +57,31 @@ html, body {
     height: 100%;
 }
 
-html {
-	background-color: red;
+// Start of personal code
+
+// Constants
+@border-bottom: 2px solid black;
+
+
+// Mixins
+
+.flex-box(@x, @y, @z) {
+	display:flex;
+	flex-wrap: @x;
+	justify-content: @y;
+	align-content: @z;
 }
+
+.borders() {
+	padding: 10px;
+	border-bottom: @border-bottom;
+}
+
+// Visible code
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	.flex-box(wrap, center, center);
+}
+
