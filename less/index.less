@@ -4,114 +4,305 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
-
 
 // contactform css
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
   }
-  
-  /* Style inputs */
-  input[type=text], select, textarea {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	margin-top: 6px;
-	margin-bottom: 16px;
-	resize: vertical;
+}
+
+//index css
+
+//variables
+@text-big: 2rem;
+@text-medium: 1.8rem;
+@text-small: 1.5rem;
+
+//mixins
+.h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: @text-medium;
+  text-decoration: underline;
+}
+
+///////
+
+html {
+  box-sizing: border-box;
+  width: 62.5%;
+  margin: 0 auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+p {
+  line-height: 2;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-decoration: underline;
+}
+
+h2 {
+  .h2();
+}
+
+.container {
+  max-width: 876px;
+  margin: 0 auto;
+}
+.N-letter {
+  width: 75px;
+  height: auto;
+  float: center;
+}
+
+header {
+  border-bottom: 2px solid forestgreen;
+  margin: 20px 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  input[type=submit] {
-	background-color: #4CAF50;
-	color: white;
-	padding: 12px 20px;
-	border: none;
-	cursor: pointer;
+  h1 {
+    font-size: 2rem;
+    @media (max-width: 500px) {
+      margin-bottom: 20px;
+    }
   }
-  
-  input[type=submit]:hover {
-	background-color: #45a049;
+  nav {
+	font-size: 1rem;
+    margin-left: 100px;
+    @media (max-width: 500px) {
+      margin-left: 0;
+    }
   }
-  
-  /* Style the container/contact section */
-  .container {
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 10px;
+		a {
+			margin-left: 20px;
+			font-size: @text-small;
+			text-decoration: none;
+
+		}
+		.first-anchor {
+			margin-left: 0;
+		  }
+}
+
+footer {
+  border-bottom: 2px solid forestgreen;
+  margin: 20px 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  nav {
+    font-size: 1rem;
+    margin-left: 62px;
   }
-  
-  /* Create two columns that float next to eachother */
-  .column {
-	float: left;
-	width: 50%;
-	margin-top: 6px;
-	padding: 20px;
+  a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: @text-medium;
   }
-  
-  /* Clear floats after the columns */
-  .row:after {
-	content: "";
-	display: table;
-	clear: both;
-  }
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-	.column, input[type=submit] {
-	  width: 100%;
-	  margin-top: 0;
-	}
-  }
+}
