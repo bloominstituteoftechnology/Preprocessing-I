@@ -66,15 +66,19 @@ html, body {
 	padding: 25px 0;
 }
 
+.profile-mobile {
+	height: 80%;
+	width: 80%;
+}
+
 .nav-style {
 	margin-right: 20px;
-	padding: 10px 5px;
+	padding: 20px 10px 0px 10px;
 }
 
 .content-margins {
 	margin: 5px 20px 10px 20px;
 }
-
 
 .link-style-nav {
 	text-decoration: none;
@@ -88,11 +92,6 @@ html, body {
 	border-bottom: 1px solid black;
 }
 
-.container {
-	font-size: 1.6rem;
-	width: 880px;
-}
-
 .h1-style {
 	font-size: 2.8rem;
 }
@@ -104,7 +103,7 @@ html, body {
 }
 
 .button-style {
-	margin: 10px 0 20px 0;
+	margin: 25px 0 25px 0;
 	padding: 12px 26px;
 	background-color: white;
 	border: 2px solid black;
@@ -118,14 +117,21 @@ html, body {
 	padding: 10px;
 }
 
+@border: 3px solid black;
+
 // Styling
+
+.container {
+	font-size: 1.6rem;
+	width: 880px;
+}
 
 header {
 	nav {
 	}
 		ul {
 			display: flex;
-			justify-content: flex-end;
+			justify-content: space-around;
 			margin: 0 20px 0 20px;
 		}
 			li {
@@ -144,13 +150,16 @@ header {
 	text-align: center;
 		.photo img {
 			.profile();
+			@media (max-width: 500px) {
+				.profile-mobile();
+			}
 		}
 		.info {
 			display: inline-block;
 		}
 			h1 {
-				border-bottom: 3px solid black;
-				padding-bottom: 5px;
+				border-bottom: @border;
+				padding-bottom: 10px;
 				.h1-style();
 			}
 			p {
@@ -173,16 +182,33 @@ header {
 	display: flex;
 	justify-content: space-between;
 	.content-margins();
+	@media (max-width: 500px) {
+		flex-wrap: wrap;
+	}
 	h2 {
 		font-size: 2.4rem;
 		margin-bottom: 8px;
+		@media (max-width: 500px) {
+			text-align: center;
+			padding-bottom: 10px;
+			border-bottom: @border;
+		}
 	}
 	.main-text {
 		width: 48%;
 		font-size: 1.8rem;
+		@media (max-width: 500px) {
+			width: 100%;
+			margin-bottom: 25px;
+			text-align: center;
+		}
 	}
 	.enjoy {
 		width: 48%;
+		@media (max-width: 500px) {
+			width: 100%;
+			text-align: center;
+		}
 	}
 		ul {
 		}
@@ -190,18 +216,25 @@ header {
 				border: 1px solid lightgrey;
 				font-size: 1.8rem;
 				padding: 5px;
+				@media (max-width: 500px) {
+					border: none;
+				}
 			}
 
 }
 
 .history {
 	margin: 20px;
-	border-top: 3px solid black;
+	border-top: @border;
 	padding-top: 10px;
+	@media (max-width: 500px) {
+		border: none;
+	}
 
 	h2 {
 		font-size: 2.4rem;
 		text-align: center;
+		border-bottom: @border;
 	}
 		table {
 			width: 100%;
@@ -217,15 +250,19 @@ header {
 }
 
 footer {
-	border-top: 3px solid black;
+	border-top: @border;
 	margin-top: 23px;
 	padding-top: 20px;
 
 		ul {
 			display: flex;
 			justify-content: space-between;
+
 		}
 			li {
 				font-size: 1.8rem;
+				@media (max-width: 500px) {
+					font-size: 1.4rem;
+				}
 			}
 }
