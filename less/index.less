@@ -139,7 +139,7 @@ body {
   height: 100%;
 }
 
-// contactform css
+// contactform css//
 
 * {
   box-sizing: border-box;
@@ -206,6 +206,7 @@ input[type="submit"]:hover {
 @text-big: 2rem;
 @text-medium: 1.8rem;
 @text-small: 1.5rem;
+@padding-bottom: 15px;
 
 //mixins
 .h2 {
@@ -215,16 +216,14 @@ input[type="submit"]:hover {
   text-decoration: none;
   text-align: center
 }
-
+.width{
+  width: 62.5%;
+}
 ///////
 
 html {
-  width: 62.5%;
-  margin: 0 auto;
-}
-
-body{
-	width: 100%;
+  .width();
+   margin: 0 auto;
 }
 
 *, *:before, *:after {
@@ -238,7 +237,7 @@ p {
 }
 
 p1{
-	font-size: @text-small;
+  font-size: @text-medium;
 }
 
 h1 {
@@ -249,37 +248,12 @@ h1 {
   text-align: center;
 }
 
+
 h2 {
   .h2();
 }
 
-
-.container1 {
-  max-width: 100%;;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-color:rgb(220, 250, 220);
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  color: rgb(224, 151, 221);
-     @media(max-width: 500px){
-		 margin-left: 15px;
-		 display: flex;
-		 flex-direction: column;
-		 align-items:center;
-	 }
-	 .text-content{
-		 display: block;
-		 border: 3px solid forestgreen;
-		 width: 100%;
-	 }
-}
-
-
 header {
-  border-bottom: 2px solid forestgreen;
   margin: 20px 0;
   padding: 20px 0;
   display: flex;
@@ -307,13 +281,35 @@ header {
             margin-left: 25px;
             font-size: @text-small;
 			text-decoration: none;
-			color: rgb(240, 162, 236);
+      color: rgb(180, 223, 24);
         }
         .first-anchor {
             margin-left: 0;
           }
 }
 
+.container1 {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color:rgb(220, 250, 220);
+  color: rgb(137, 172, 13);;
+     @media(max-width: 500px){
+		 margin-left: 15px;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+		 align-items:center;
+	 }
+	 .text-content{
+     display: block;
+     border: 2px solid forestgreen;
+     width: 100%;
+     padding: 20px;
+	 }
+}
 
 footer {
 
@@ -330,7 +326,7 @@ footer {
 		margin-left: 20px;
 		text-decoration: none;
 		font-size: @text-small;
-		color: rgb(240, 162, 236);
+		color: rgb(180, 223, 24);
 	}
 	.first-anchor {
 		margin-left: 0;
@@ -343,3 +339,4 @@ footer {
     width:10%;
   }
 
+}
