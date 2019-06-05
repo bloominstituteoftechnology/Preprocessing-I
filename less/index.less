@@ -209,30 +209,36 @@ input[type="submit"]:hover {
 
 //mixins
 .h2 {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 10px;
   font-size: @text-medium;
   text-decoration: underline;
+  border-top: 2px dashed forestgreen;
 }
 
 ///////
 
 html {
-  box-sizing: border-box;
   width: 62.5%;
   margin: 0 auto;
 }
 
-*,
-*:before,
-*:after {
+body{
+	width: 100%;
+}
+
+*, *:before, *:after {
   box-sizing: inherit;
 }
 
 p {
-  line-height: 2;
-  margin: 10px 0;
-  font-size: 1rem;
+  line-height: 1;
+  margin: 20px 0;
+  font-size: @text-medium;
+}
+
+p1{
+	font-size: @text-small;
 }
 
 h1 {
@@ -240,31 +246,48 @@ h1 {
   padding-top: 15px;
   padding-bottom: 15px;
   text-decoration: underline;
+  text-align: center;
 }
 
 h2 {
   .h2();
 }
 
-.container {
-  max-width: 876px;
+
+.container1 {
+  max-width: 100%;;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color:rgb(220, 250, 220);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+     @media(max-width: 500px){
+		 margin-left: 15px;
+		 display: flex;
+		 flex-direction: column;
+		 align-items:center;
+	 }
+	 .text-content{
+		 display: block;
+	 }
+	 	.box{
+		   border: 2px solid forestgreen;
+		 }
 }
-.N-letter {
-  width: 75px;
-  height: auto;
-  float: center;
-}
+
+
 
 header {
   border-bottom: 2px solid forestgreen;
   margin: 20px 0;
   padding: 20px 0;
   display: flex;
-  justify-content: space-between;
-  @media (max-width: 500px) {
-    flex-direction: column;
-    align-items: center;
+  justify-content: center;
+    @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
   }
   h1 {
     font-size: 2rem;
@@ -273,36 +296,51 @@ header {
     }
   }
   nav {
-	font-size: 1rem;
-    margin-left: 100px;
+    font-size: 1rem;
+    margin-left: 15px;
     @media (max-width: 500px) {
       margin-left: 0;
     }
   }
-		a {
-			margin-left: 20px;
-			font-size: @text-small;
-			text-decoration: none;
-
-		}
-		.first-anchor {
-			margin-left: 0;
-		  }
+        a {
+            margin-left: 25px;
+            font-size: @text-small;
+            text-decoration: none;
+        }
+        .first-anchor {
+            margin-left: 0;
+          }
 }
 
+
 footer {
-  border-bottom: 2px solid forestgreen;
+
   margin: 20px 0;
   padding: 20px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   nav {
     font-size: 1rem;
-    margin-left: 62px;
+    margin-left: 15px;
   }
   a {
     margin-left: 20px;
     text-decoration: none;
-    font-size: @text-medium;
+	font-size: @text-small;
   }
-}
+  .first-anchor {
+    margin-left: 0;
+  }
+  /*
+  .N-letter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+
+      /*
+    width: 15%;
+    height: auto;
+    */
+  }
+
