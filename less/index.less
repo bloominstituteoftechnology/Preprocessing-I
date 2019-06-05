@@ -61,7 +61,6 @@ html, body {
 
 // Constants
 @border-bottom: 2px solid black;
-@text: 1.6rem;
 
 // Mixins
 
@@ -77,6 +76,15 @@ html, body {
 	border-bottom: @border-bottom;
 }
 
+.box() {
+	padding: 5px;
+	border-top: 1px double black;
+	border-bottom: 1px double black;
+	border-radius: 5px;
+	background-color: whitesmoke;
+	margin: 5px 0;
+}
+
 // Visible code
 
 html {
@@ -90,23 +98,22 @@ html {
 }
 
 header {
-	width: 100%
-}
-
-header nav {
-	.flex-box(wrap, flex-end, center);
 	width: 100%;
-	.borders();
-	font-size: 2rem;
-}
-
-header nav a {
-	text-decoration: none;
-	margin-left: 50px;
+	nav {
+		.flex-box(wrap, flex-end, center);
+		width: 100%;
+		.borders();
+		font-size: 2rem;
+		a {
+			text-decoration: none;
+			margin-left: 50px;
+		}
+	}
 }
 
 .text {
-	font-size: @text;
+	font-size: 1.6rem;
+	padding: 5px 0;
 }
 
 .identity {
@@ -114,12 +121,62 @@ header nav a {
 	align-items: center;
 	.borders();
 	background-color: whitesmoke;
+	h1 {
+		font-size: 8rem;
+	}
+	h2 {
+		font-size: 4rem;
+	}
 }
 
-.identity h1 {
-	font-size: 8rem;
-}
+ .main-content {
+	 .flex-box(wrap, space-around, center);
+	 margin: 20px 0;
+	img {
+		padding: 20px;
+		object-fit:cover;
+	}
+	.main-content-text {
+		.flex-box(wrap, center, center);
+		width: 50%;
+		h3 {
+			font-size:2rem;
+			.box();
+			width: 50%;
+			text-align: center;
+		}
+	}
+ }
 
-.identity h2 {
-	font-size: 4rem;
-}
+ .bottom-content {
+	 .flex-box(wrap, space-evenly, stretch);
+	 flex-direction: column;
+	 width: 100%;
+	 
+	 table {
+		 width: 100%;
+		 font-size: 1.6rem;
+		 margin-bottom: 20px;
+		 th, td {
+			 padding: 15px;
+			 text-align:left;
+		 }
+		 th {
+			 font-weight: bold;
+		 }
+		 tr:nth-child(even) {background-color: #f2f2f2;}
+	 }
+	 h3 {
+		font-size:2rem;
+		font-weight:bold;
+		width: 25%;
+		text-align: left;
+	 }
+	 .work-history {
+		 .borders()
+	 }
+ }
+
+ footer {
+	margin: 20px 0;	
+ }
