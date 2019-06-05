@@ -132,11 +132,11 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
- // border: 1px solid red !important;
+  // border: 1px solid red !important;
 }
 //sizes
 @body-text-size: 1.6rem;
-@h1-size: 4rem;
+@h1-size: 5rem;
 @h2-size: 2rem;
 @border-radius: 0.5rem;
 
@@ -161,6 +161,13 @@ table {
 .border-radius {
   border-radius: @border-radius;
 }
+.background-color-primary {
+  background-color: @primary;
+}
+.background-color-secondary {
+  background-color: @secondary;
+}
+// end mixins
 
 html {
   height: 100%;
@@ -170,13 +177,20 @@ body {
   background-color: @bgcolor;
 }
 .wrapper {
-  .border-radius();
   margin: 2rem auto;
   max-width: 80vw;
   background-color: @secondary;
   font-size: @body-text-size;
   font-family: @raleway;
   color: @text-color;
+  .border-radius();
+  padding-bottom: 2.5rem;
+
+  section {
+    .border-radius();
+    padding: 2em;
+    margin: 1rem 0;
+  }
 
   nav {
     .flex();
@@ -187,6 +201,9 @@ body {
       background-color: @primary;
       color: white;
       padding: 1em;
+    }
+    a:hover {
+      .background-color-secondary();
     }
   }
 
@@ -201,6 +218,7 @@ body {
 
     img {
       margin: 2rem 3rem 0;
+      height: 40rem;
     }
 
     div {
@@ -214,13 +232,17 @@ body {
       text-align: right;
     }
 
-
     button {
       width: 20rem;
       font-size: 2rem;
       margin: 2rem 0;
       padding: 2rem;
+      color: white;
       .border-radius();
+      .background-color-primary();
+    }
+    button:hover {
+      .background-color-secondary();
     }
     .subtitle {
       font-size: 2.4rem;
@@ -231,17 +253,23 @@ body {
     .top-content {
       .flex();
       .center();
+      justify-content: space-between;
     }
     .bottom-content {
       .flex();
       .center();
       flex-direction: column;
+
+      section {
+        width: 100%;
+      }
     }
 
     section {
-      width: 45%;
+      width: 49%;
       height: 30rem;
       padding-top: 2.5rem;
+      background-color: white;
     }
   }
 
@@ -259,5 +287,11 @@ body {
 
   h2 {
     font-size: @h2-size;
+  }
+
+  footer {
+    .center();
+    text-align: center;
+    margin-top: 2rem;
   }
 }
