@@ -145,8 +145,15 @@ html {
   justify-content: center;
   align-content: center;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
 header {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 header nav {
   display: flex;
@@ -162,6 +169,12 @@ header nav a {
   text-decoration: none;
   margin-left: 50px;
 }
+@media (max-width: 500px) {
+  header nav {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+}
 .text {
   font-size: 1.6rem;
   padding: 5px 0;
@@ -176,11 +189,21 @@ header nav a {
   border-bottom: 2px solid black;
   background-color: whitesmoke;
 }
+@media (max-width: 500px) {
+  .identity {
+    flex-direction: column;
+  }
+}
 .identity h1 {
   font-size: 8rem;
 }
 .identity h2 {
   font-size: 4rem;
+}
+@media (max-width: 500px) {
+  .identity h2 {
+    font-size: 2rem;
+  }
 }
 .main-content {
   display: flex;
@@ -199,6 +222,11 @@ header nav a {
   justify-content: center;
   align-content: center;
   width: 50%;
+}
+@media (max-width: 500px) {
+  .main-content .main-content-text {
+    width: 90%;
+  }
 }
 .main-content .main-content-text h3 {
   font-size: 2rem;
@@ -244,6 +272,16 @@ header nav a {
 .bottom-content .work-history {
   padding: 10px;
   border-bottom: 2px solid black;
+}
+.contact {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.contact h3 {
+  font-size: 2rem;
 }
 footer {
   margin: 20px 0;

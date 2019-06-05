@@ -95,10 +95,15 @@ html {
 	width: 1000px;
 	margin: 0 auto;
 	.flex-box(wrap, center, center);
+	@media (max-width:500px) {
+		width: 100%;
+	}
 }
 
 header {
 	width: 100%;
+	display: flex;
+	flex-direction:column;
 	nav {
 		.flex-box(wrap, flex-end, center);
 		width: 100%;
@@ -107,7 +112,11 @@ header {
 		a {
 			text-decoration: none;
 			margin-left: 50px;
-		}
+			}
+			@media (max-width:500px) {
+				margin: 0;
+				font-size:1.8rem;
+			}
 	}
 }
 
@@ -121,11 +130,17 @@ header {
 	align-items: center;
 	.borders();
 	background-color: whitesmoke;
+	@media (max-width:500px) {
+		flex-direction: column;
+	}
 	h1 {
 		font-size: 8rem;
 	}
 	h2 {
 		font-size: 4rem;
+		@media (max-width:500px) {
+			font-size:2rem;
+		}
 	}
 }
 
@@ -139,6 +154,9 @@ header {
 	.main-content-text {
 		.flex-box(wrap, center, center);
 		width: 50%;
+		@media (max-width:500px) {
+			width:90%;
+		}
 		h3 {
 			font-size:2rem;
 			.box();
@@ -174,6 +192,14 @@ header {
 	 }
 	 .work-history {
 		 .borders()
+	 }
+ }
+
+ .contact {
+	 margin: 20px 0;
+	 .flex-box(wrap, center, center);
+	 h3 {
+		 font-size:2rem;
 	 }
  }
 
