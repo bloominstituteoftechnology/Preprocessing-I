@@ -28,15 +28,15 @@ Follow these steps for completing your project.
 
 * [ ] Review the [example resume](resume-example.png).  Notice how simplistic the example resume is.  Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. 
 **Note: you are only required to build one page, anything more than that would be stretch.**
-* [ ] The resume content will be provided by you. The content can be about you or a fictional character.  
-* [ ] Content: Navigation - Build a simple navigation with 4 items of your choosing
+* [x] The resume content will be provided by you. The content can be about you or a fictional character.  
+* [x] Content: Navigation - Build a simple navigation with 4 items of your choosing
 * [ ] Content: Intro - Have a short introduction as to why you would be a good hire
 * [ ] Content: Skills - Showcase a list of skills you have somewhere on your resume
 * [ ] Content: Work History - Showcase your work history somewhere on your resume
 * [ ] Content: Contact - Provide some way a potential employer could contact you.  Phone number, email, or a full on contact form (doesn't have to work)
-* [ ] Variables: Incorporate variables in your project for color and font stacks.  
-* [ ] Nesting: Every selector should be nested inside the main container.  Avoid having global styles unless they are element level.
-* [ ] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
+* [x] Variables: Incorporate variables in your project for color and font stacks.  
+* [x] Nesting: Every selector should be nested inside the main container.  Avoid having global styles unless they are element level.
+* [x] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
 * [ ] Mobile: Use nested-at rules to provide a mobile version of your resume.  Use `500px` as a `max-width` for mobile. 
 
 ## Stretch Goals: 
