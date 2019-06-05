@@ -49,11 +49,171 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// Vairables
+@color: grey;
+@font-size: 1.5rem;
+@table-font: 1rem;
+@h1-color: white;
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	box-sizing: border-box;
 }
 
+h1{
+	font-size:4rem;
+}
+h2{
+	font-size:3rem;
+	color:@color;
+}
+p{
+	font-size: 1.5rem;
+}
+h3{
+	font-size: 2rem;
+}
+
+//mixins
+.button(){
+	background-color: @color;
+	border:none;
+	color:white;
+	padding:15px 32px;
+	text-align:center;
+	text-decoration: none;
+	display:inline-block;
+	font-size:16px;
+}
+
+.skill-table(){
+	tr:nth-child(even) {
+		background-color: @color;
+}
+
+th{
+	padding-top:12px;
+	padding-bottom:12px;
+	text-align:left;
+	border: 1px solid @color;
+	font-size: @font-size;
+}
+
+td {
+	border:1px solid @color;
+	border-collapse: collapse;
+	width:400px;
+	font-size: @table-font;
+	padding:8px;
+}
+}
+
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	margin-left: 400px;
+}
+
+a {
+	text-decoration: none;
+	color: @color;
+	font-size: @font-size;
+}
+
+a:hover {
+	color:black;
+}
+
+
+.name {
+	display:flex;
+	background-color: @color;
+	padding-bottom: 200px;
+h1 {
+	display: flex;
+	margin-left: 160px;
+	margin-top: 150px;
+	color:@h1-color;
+}
+}
+
+.image {
+height: 400px;
+position: relative;
+left:190px;
+bottom: 170px;
+border-radius: 50%;
+}
+
+.intro {
+	h2 {
+		padding-left:250px;
+		position: relative;
+		bottom: 150px;
+		color: @color;
+		margin-bottom: 0;
+		border-bottom: solid 2px grey;
+	}
+}
+
+.small-projects {
+	border-bottom: 2px solid grey;
+	padding-bottom: 100px;
+
+	p {
+		margin-bottom: 50px;
+	}
+
+	button {
+		.button();
+	}
+}
+
+.about-section {
+	display:flex;
+	margin-top: 100px;
+	margin-bottom: 100px;
+
+	h2 {
+		margin-bottom:50px;
+
+	}
+
+	.about {
+		width:400px;
+		padding-right:50px;
+	}
+
+	.skill-table();
+}
+
+.work-history {
+	.skill-table();
+
+	h2 {
+		margin-bottom: 50px;
+	}
+
+}
+
+footer {
+	background-color: @color;
+	margin-top: 40px;
+	height: 50px;
+
+	p{
+		color: white;
+		margin-left: 340px;
+		position: relative;
+		top: 20px;
+	}
+}
