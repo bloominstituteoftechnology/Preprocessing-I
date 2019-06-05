@@ -31,7 +31,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: red;
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +53,184 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+
+@primary: #ffeaa5;
+@secondary: #40a798;
+
+// mixins
+.change-font {
+	font-size: .75em;
 }
+
+body {
+	max-width: 1000px;
+	width: 95%;
+	margin: auto;
+	@media (max-width: 600px){
+		width: 100%;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	background: @primary;
+
+	nav {
+		display: flex;
+		justify-content: center;
+
+		a {
+			padding: 15px;
+			text-decoration: none;
+			color: gray;
+			font-weight: 500;
+			font-size: 1.25rem;
+		}
+	}
+}
+
+.home {
+		background: @secondary;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+		@media (max-width: 500px){
+			justify-content: center;
+		}
+
+		img {
+			border-radius: 50%;
+			width: 25%;
+		}
+
+		div {
+			text-align: center;
+			padding: 20px;
+
+			h3 {
+				font-size: 1.8rem;
+				padding: 10px;
+				strong {
+					font-weight: 900;
+				}
+
+				@media (max-width: 500px){
+					font-size: .9em;
+				}
+			}
+
+			p {
+				font-size: 1.5rem;
+				padding: 10px;
+
+				@media (max-width: 500px){
+					font-size: .9em;
+				}
+			}
+
+			button {
+				font-size: 2rem;
+
+				@media (max-width: 500px){
+					font-size: .9em;
+				}
+			}
+		}
+	}
+
+	.about {
+		background: @primary;
+		display: flex;
+		justify-content: space-around;
+
+		@media (max-width: 600px){
+			.change-font();
+		}
+
+		div {
+			width: 45%;
+			padding: 40px;
+
+			button {
+				font-size: 1.5rem;
+				margin-top: 20px;
+			}
+
+			h3 {
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+		}
+	}
+
+	h6 {
+		background: @secondary;
+		font-size: 1.5rem;
+		font-weight: 600;
+		padding: 20px 0 20px 60px;
+	}
+
+	.portfolio {
+		background: @secondary;
+		padding: 20px;
+
+		.separate {
+			display: flex;
+			justify-content: space-around;
+
+			div {
+				width: 30%;
+
+				@media (max-width: 600px){
+					.change-font();
+				}
+
+				h1 {
+					font-size: 1.25rem;
+					font-weight: 600;
+				}
+			}
+		}
+
+		button {
+			display: block;
+			margin: 20px auto 0;
+			font-size: 2rem;
+		}
+	}
+
+	.contact {
+		background: @primary;
+		font-size: 1.5rem;
+		font-weight: 600;
+		padding: 40px;
+
+		.text-box {
+			font-size: 1rem;
+			font-weight: 500;
+			margin: 20px auto;
+			width: 85%;
+			height: 300px;
+			background: #226b80;
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: space-evenly;
+
+			button {
+				font-size: 2rem;
+				width: 150px;
+			}
+		}
+	}
+
+	footer {
+		background: @secondary;
+		padding: 20px;
+		text-align: center;
+	}
