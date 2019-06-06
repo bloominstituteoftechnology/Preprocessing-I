@@ -190,7 +190,15 @@ body {
   .border-radius();
   padding-bottom: 2.5rem;
 
+  @media (max-width: 500px) {
+    max-width: 90vw;
+  }
+
   nav {
+    @media (max-width: 500px) {
+      justify-content: space-between;
+    }
+
     .flex();
     justify-content: flex-end;
 
@@ -203,6 +211,8 @@ body {
     a:hover {
       .background-color-secondary();
     }
+
+    
   }
 
   header {
@@ -215,6 +225,27 @@ body {
     .border-radius();
 
     @media (max-width: 500px) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      
+      justify-content: center;
+     
+      align-items: center;
+      text-align: center;
+      h1 {
+        font-size: 3rem;
+      }
+      div {
+        width: 100% !important;
+      }
+      div p, div p:last-child {
+      
+        text-align: center;
+        
+      }
+      img {
+        max-height: 300px;
+      }
 
     }
 
@@ -252,7 +283,17 @@ body {
   }
 
   main {
+   
     .top-content {
+
+      @media (max-width: 500px) {
+        .flex();
+        flex-direction: column;
+
+        section {
+          width: 100%;
+        }
+      }
       .flex();
       .center();
       justify-content: space-between;
