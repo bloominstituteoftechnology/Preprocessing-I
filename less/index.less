@@ -139,6 +139,7 @@ table {
 @h1-size: 5rem;
 @h2-size: 2rem;
 @border-radius: 0.5rem;
+@padding2: 2rem;
 
 //colors
 @bgcolor: #efd9ce;
@@ -167,6 +168,9 @@ table {
 .background-color-secondary {
   background-color: @secondary;
 }
+.secondary-border {
+  border: 1px solid @secondary;
+}
 // end mixins
 
 html {
@@ -186,12 +190,6 @@ body {
   .border-radius();
   padding-bottom: 2.5rem;
 
-  section {
-    .border-radius();
-    padding: 2em;
-    margin: 1rem 0;
-  }
-
   nav {
     .flex();
     justify-content: flex-end;
@@ -200,7 +198,7 @@ body {
       text-decoration: none;
       background-color: @primary;
       color: white;
-      padding: 1em;
+      padding: @padding2;
     }
     a:hover {
       .background-color-secondary();
@@ -236,7 +234,7 @@ body {
       width: 20rem;
       font-size: 2rem;
       margin: 2rem 0;
-      padding: 2rem;
+      padding: @padding2;
       color: white;
       .border-radius();
       .background-color-primary();
@@ -254,6 +252,31 @@ body {
       .flex();
       .center();
       justify-content: space-between;
+
+      section {
+        p {
+          padding: @padding2;
+          margin: 2rem;
+        }
+        p.intro {
+          font-size: 3rem;
+          line-height: 3.5rem;
+        }
+
+        ul {
+          .secondary-border();
+          .border-radius();
+          margin-top: 3rem;
+        }
+        ul li {
+          padding: @padding2;
+          border-bottom: 1px solid @secondary;
+         
+        }
+        li:last-child {
+          border: 0;
+        }
+      }
     }
     .bottom-content {
       .flex();
@@ -263,35 +286,64 @@ body {
       section {
         width: 100%;
       }
+      table {
+        width: 100%;
+        margin: 3rem 0;
+        .secondary-border();
+
+        tr th {
+          font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+          background-color: @secondary;
+          color: white;
+        }
+
+        tr th, tr td{
+          text-align: left;
+          padding: @padding2;
+        }
+      }
     }
 
     section {
       width: 49%;
-      height: 30rem;
-      padding-top: 2.5rem;
+
       background-color: white;
+
+      .border-radius();
+      padding: 2.5rem 2em;
+      margin: 1rem 0;
+
+      h2 {
+        font-size: 4rem;
+        color: @primary;
+        padding: 1rem 0;
+        border-bottom: 1px dotted @secondary;
+      }
     }
   }
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: @quicksand;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: @quicksand;
+}
 
-  h1 {
-    font-size: @h1-size;
-  }
+h1 {
+  font-size: @h1-size;
+}
 
-  h2 {
-    font-size: @h2-size;
-  }
+h2 {
+  font-size: @h2-size;
+}
 
-  footer {
-    .center();
-    text-align: center;
-    margin-top: 2rem;
-  }
+footer {
+  .center();
+  text-align: center;
+  margin-top: 2rem;
 }
