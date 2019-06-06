@@ -211,8 +211,6 @@ body {
     a:hover {
       .background-color-secondary();
     }
-
-    
   }
 
   header {
@@ -227,26 +225,24 @@ body {
     @media (max-width: 500px) {
       flex-direction: column;
       flex-wrap: wrap;
-      
+
       justify-content: center;
-     
+
       align-items: center;
       text-align: center;
       h1 {
-        font-size: 3rem;
+        font-size: 4rem;
       }
       div {
         width: 100% !important;
       }
-      div p, div p:last-child {
-      
+      div p,
+      div p:last-child {
         text-align: center;
-        
       }
       img {
         max-height: 300px;
       }
-
     }
 
     img {
@@ -283,14 +279,13 @@ body {
   }
 
   main {
-   
     .top-content {
-
       @media (max-width: 500px) {
         .flex();
         flex-direction: column;
 
         section {
+          font-size: 1.8rem;
           width: 100%;
         }
       }
@@ -319,8 +314,24 @@ body {
       }
     }
     .bottom-content {
+      @media (max-width: 500px) {
+        table {
+          display: none;
+        }
+        section {
+          ul {
+            display: block;
+          }
+        }
+      }
+      @media (min-width: 501px) {
+        .mobile-experience {
+          display: none;
+        }
+      }
       .flex();
       .center();
+
       flex-direction: column;
 
       section {
