@@ -20,8 +20,9 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
+	font-size: 62.5%;
+	font-family: Helvetica;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -30,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 2;
 }
 ol, ul {
 	list-style: none;
@@ -52,15 +53,11 @@ table {
 * {
     box-sizing: border-box;
 }
-html {
-	font-size: 62.5%;
-}
 
 html, body {
   height: 100%;
 	width: 880px;
 	margin: 12px auto;
-	font-family: Helvetica;
 }
 
 @bigfont: 5rem;
@@ -69,8 +66,16 @@ html, body {
 
 @regularfont: 1.6rem;
 
-.box {
+.pexbox () {
+	padding: 20px 0;
 
+	.list h4 {
+		padding-bottom: 12px;
+	}
+
+	.list p {
+		padding: 0 0 10px 20px;
+	}
 }
 
 .container {
@@ -84,11 +89,14 @@ html, body {
 
 	h3 {
 		font-size: @regularfont;
-		font-weight: 800;
 		padding-bottom: 20px;
 	}
 
 	p {
+		font-size: @regularfont;
+	}
+
+	h4 {
 		font-size: @regularfont;
 	}
 
@@ -109,14 +117,15 @@ html, body {
 		height: 500px;
 		background-color: #45b3e0;
 		margin-bottom: 20px;
+		border-radius: 10px;
 
 		.name {
-			padding: 85px 0 60px 0;
+			padding: 50px 0 30px 0;
 			text-align: center;
 		}
 
 		.title {
-			padding-bottom: 60px;
+			padding-bottom: 30px;
 			text-align: center;
 		}
 
@@ -127,39 +136,27 @@ html, body {
 
 		.summary {
 			padding: 20px;
-			line-height: 200%;
 		}
 	}
 
 	.sidebyside {
 		display: flex;
+		padding-bottom: 60px;
 
 		.left {
 			width: 75%;
 			padding-left: 20px;
 
 			.projects {
-				padding: 20px 0;
-
-				.list p {
-					padding-bottom: 12px;
-				}
+				.pexbox;
 			}
 
 			.experience {
-				padding: 20px 0;
-
-				.list p {
-					padding-bottom: 12px;
-				}
+				.pexbox;
 			}
 
 			.education {
-				padding: 20px 0;
-
-				.list p {
-					padding-bottom: 12px;
-				}
+				.pexbox;
 			}
 		}
 
@@ -167,17 +164,8 @@ html, body {
 			padding: 20px;
 
 			.skills {
-				padding: 20 px;
-
-				.list p {
-					padding-bottom: 20px;
-				}
+				.pexbox;
 			}
 		}
-	}
-
-
-	.bottom {
-		padding: 20px;
 	}
 }
