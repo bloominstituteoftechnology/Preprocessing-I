@@ -1,3 +1,7 @@
+.Standardwm {
+  width: 800px;
+  margin: 20px auto;
+}
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -132,18 +136,18 @@ table {
 }
 html {
   font-size: 62.5%;
-  color: #686868;
+  color: gray;
 }
 html,
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3;
 }
 h1 {
-  font-size: 4.2rem;
-  font-weight: 800;
+  font-size: 5rem;
 }
 h2 {
-  font-size: 4.2rem;
+  font-size: 4rem;
   line-height: 1.4;
 }
 h3 {
@@ -159,13 +163,19 @@ p {
   line-height: 1.4;
 }
 .container {
-  max-width: 800px;
+  max-width: 100vw;
   margin: 0 auto;
 }
+.container header {
+  width: 800px;
+  margin: 15px auto;
+}
 .container header nav {
+  justify-content: center;
+  max-width: 630px;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
-  padding: 12px;
+  justify-content: space-between;
 }
 @media (max-width: 500px) {
   .container header nav {
@@ -178,166 +188,109 @@ p {
   text-decoration: none;
   color: gray;
   font-size: 1.6rem;
-  padding-left: 12px;
 }
 .container .top {
-  max-width: inherit;
-  background: #689788;
-  padding: 60px;
-  border-radius: 6px;
-  color: #6b3647;
+  max-width: 100vw;
+  height: 300px;
+  background: #8f6371;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media (max-width: 500px) {
-  .container .top {
-    padding: 40px 20px;
-  }
+.container .top .photo {
+  height: 200px;
+  width: 300px;
 }
-.container .top .intro {
-  padding-bottom: 40px;
-  text-align: center;
-}
-.container .top .summary {
-  max-width: 600px;
+.container .top .photo img {
+  height: 100%;
   width: 100%;
-  margin: 0 auto;
-  text-align: justify;
 }
-.container .top .summary h3 {
+.container .top .name {
+  height: 200px;
+  width: 380px;
+  padding-top: 18px;
+  margin-left: 26px;
+}
+.container .top .name h3 {
+  font-weight: 400;
+}
+.container .sidebyside {
+  width: 800px;
+  margin: 45px auto;
+  display: flex;
+}
+.container .sidebyside .left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .sidebyside .left .projects {
+  margin-bottom: 35px;
+}
+.container .sidebyside .left .projects h3 {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .projects ul li {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .experience {
+  margin-bottom: 35px;
+}
+.container .sidebyside .left .experience h3 {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .experience ul li {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .education h3 {
+  padding-bottom: 10px;
+}
+.container .sidebyside .left .education ul li {
+  padding-bottom: 10px;
+}
+.container .sidebyside .right {
+  width: 30%;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 45px;
+}
+.container .sidebyside .right .skills {
+  margin-bottom: 23px;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 20px;
+}
+.container .sidebyside .right .skills h3 {
   text-align: center;
   padding-bottom: 10px;
 }
-.container .sidebyside1 {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 40px 20px 40px 0;
+.container .sidebyside .right .skills ul li {
+  padding-bottom: 15px;
 }
-@media (max-width: 500px) {
-  .container .sidebyside1 {
-    flex-direction: column-reverse;
-  }
+.container .sidebyside .right .skills ul li h4 {
+  font-weight: 400;
+  text-align: center;
 }
-.container .sidebyside1 .left {
-  width: 70%;
+.container .sidebyside .right .interests {
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 20px;
 }
-@media (max-width: 500px) {
-  .container .sidebyside1 .left {
-    width: 100%;
-  }
+.container .sidebyside .right .interests h3 {
+  text-align: center;
+  padding-bottom: 10px;
 }
-.container .sidebyside1 .left .list .item {
-  padding: 10px 0;
+.container .sidebyside .right .interests ul li {
+  padding-bottom: 15px;
 }
-.container .sidebyside1 .right {
-  width: 30%;
-  padding-left: 40px;
+.container .sidebyside .right .interests ul h4 {
+  font-weight: 400;
+  text-align: center;
 }
-@media (max-width: 500px) {
-  .container .sidebyside1 .right {
-    width: 100%;
-    padding-left: inherit;
-  }
-}
-@media (max-width: 500px) {
-  .container .sidebyside1 .right .list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-.container .sidebyside1 .right .list .item {
-  padding: 10px 0;
-}
-@media (max-width: 500px) {
-  .container .sidebyside1 .right .list .item {
-    padding-right: 12px;
-  }
-}
-.container .sidebyside2 {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0 20px 20px 0;
-}
-@media (max-width: 500px) {
-  .container .sidebyside2 {
-    flex-direction: column-reverse;
-  }
-}
-.container .sidebyside2 .left {
-  width: 70%;
-}
-@media (max-width: 500px) {
-  .container .sidebyside2 .left {
-    width: 100%;
-  }
-}
-.container .sidebyside2 .left .list .item {
-  padding: 10px 0;
-}
-.container .sidebyside2 .right {
-  width: 30%;
-  padding-left: 40px;
-}
-@media (max-width: 500px) {
-  .container .sidebyside2 .right {
-    width: 100%;
-    padding-left: inherit;
-  }
-}
-@media (max-width: 500px) {
-  .container .sidebyside2 .right .list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-.container .sidebyside2 .right .list .item {
-  padding: 10px 0;
-}
-@media (max-width: 500px) {
-  .container .sidebyside2 .right .list .item {
-    padding-right: 12px;
-  }
-}
-.container .sidebyside3 {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 40px 20px 40px 0;
-}
-@media (max-width: 500px) {
-  .container .sidebyside3 {
-    flex-direction: column-reverse;
-  }
-}
-.container .sidebyside3 .left {
-  width: 70%;
-}
-@media (max-width: 500px) {
-  .container .sidebyside3 .left {
-    width: 100%;
-  }
-}
-.container .sidebyside3 .left .list .item {
-  padding: 10px 0;
-}
-.container .sidebyside3 .right {
-  width: 30%;
-  padding-left: 40px;
-}
-@media (max-width: 500px) {
-  .container .sidebyside3 .right {
-    width: 100%;
-    padding-left: inherit;
-  }
-}
-@media (max-width: 500px) {
-  .container .sidebyside3 .right .list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-.container .sidebyside3 .right .list .item {
-  padding: 10px 0;
-}
-@media (max-width: 500px) {
-  .container .sidebyside3 .right .list .item {
-    padding-right: 12px;
-  }
+.container .sidebyside .right .awards ul li {
+  padding-bottom: 10px;
 }
