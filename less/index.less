@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	
 }
 // ol, ul {
 // 	list-style: none;
@@ -58,10 +59,25 @@ html, body {
 	
 }
 
-@primarycolor: #FF5DC4;
+
+@import url('https://fonts.googleapis.com/css?family=Lora|Roboto&display=swap');
+body {
+	
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Lora', serif;
+}
+	
+
+
+@primarycolor: 	#DB7093;
 .text-box-big {
-	// display: flex;
-	// justify-content: center;
+	display: block;
+  	margin-left: auto;
+	margin-right: auto;	
+	margin-top: 15px;
 	width:40%;
 	border: 1px solid black;
 	padding: 10px;
@@ -70,6 +86,9 @@ html, body {
 	align-items: center;
 }
 .text-box-small {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;	
 	width:65%;
 	border: 1px solid black;
 	padding: 10px;
@@ -84,8 +103,8 @@ html, body {
 	width: 880px;
 	justify-content: center;
 	margin: 0 auto;
-	// height: 100vh;
-
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
 		@media (max-width: 500px) {
 			width: 100%;
 			height: 100vh;
@@ -94,18 +113,17 @@ html, body {
 }
 
 h1 {
-	font-size: 40px;
-	padding-bottom: 0px;
-	// text-align: center;
+	font-size: 4rem;
+	text-align: center;
 }
 h2 {
-	font-size: 25px;
+	font-size: 2rem;
 	margin-bottom: 20px;
 	border-bottom: 2px solid black
 
 }
 h3 {
-	font-size: 18px;
+	font-size: 1.5rem;
 	margin-top:5px
 }
 h4 {
@@ -116,13 +134,14 @@ h5 {
 	.text-box-small();
 }
 p {
-	font-size: 18px;
+	font-size: 1.2rem;
 	padding-bottom:10px;
+	
 }
 ul {
 	margin-left: 10px;
 	margin-bottom: 15px;
-	font-size: 18px;
+	font-size: 1.2rem;
 }
 
 .left {
@@ -133,18 +152,29 @@ ul {
   	align-items: center;
   	justify-content: center;
 	
-	img {
+	.me-pic {
 		width: 100;
 		height: 180px;
 		border-radius: 50%;
 		margin-bottom: 15px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		
 	}
-	.left-contant {
-		
+	.icon {
+		width: 40px;
+		height: 40px;
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;	
+	}
+	p {
+		text-align: center;
 		
 	}
-	
+	h3 {
+		text-align: center;
+	}
+
 }
 
 
@@ -154,28 +184,32 @@ ul {
 	flex-direction: column;
 	width: 800px;
 	padding: 20px;
-	// height: 100vh;
+	
+h4 {
+	text-align: center;
+}
+nav  {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
 
-	nav  {
-		width: 100%;
-		display: flex;
-		justify-content: flex-end;
-		margin-bottom: 15px;
+     a {
+        display: flex;
+        align-content: space-between;
+        padding: 10px;
+		color: black;
+		text-decoration: none;
+		
+		
 
-		 a {
-			display: flex;
-			align-content: space-between;
-			padding: 10px;
-			color: black;
-
-			
-
-				.work-content {
-					margin: 5px;
-				}
-				
-
-		}	
+            .work-content {
+                margin: 5px;
+            }
+            
+        }	
+    }
+	a:hover {
+		background-color: @primarycolor;
 	}
-
 }	
