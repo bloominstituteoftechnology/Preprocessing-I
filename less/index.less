@@ -54,6 +54,88 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
 }
 
+@silverish: #d6d4d3;
+
+.navStyle {
+	display: flex;
+	justify-content: space-around;
+	min-width: 60%;
+}
+
+.cardStyle {
+	width: 47%;
+	border: 2px solid grey;
+	height: 30%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: @silverish;
+	width: 90%;
+	border: 2px inset black;
+
+	@media(max-width: 500px) {
+		width: 100%;
+	}
+
+	.top-section{
+		width: 60%;
+		
+		.header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			nav {
+				.navStyle();
+
+				@media(max-width: 500px) {
+					flex-direction: column;
+					align-items: center;
+					height: 25vh;
+				}
+
+				a {
+					text-decoration: none;
+					color: blue;
+				}
+			}
+		}
+	}
+
+	.main-section {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+		height: 35vh;
+		
+		@media (max-width: 500px) {
+			flex-direction: column;
+			height: 100vh;
+			flex-wrap: nowrap;
+
+		}
+		
+		.content-card {
+			.cardStyle();
+
+			@media(max-width: 500px) {
+				height: 20%;
+				width: 70vw;
+			}
+		}
+	}
+}
