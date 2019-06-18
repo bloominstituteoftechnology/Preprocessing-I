@@ -143,6 +143,26 @@ body {
   max-width: 800px;
   font-size: 2rem;
   text-align: center;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../background.jpg");
+  min-height: 100%;
+}
+.container .article {
+  position: absolute;
+  background: black;
+  line-height: 1.4;
+  padding: 25px;
+}
+.container .main-content,
+.container .education {
+  position: relative;
+  background: black;
+  border: 2px solid silver;
+  padding: 16px;
 }
 .container .portrait {
   width: 25%;
@@ -150,10 +170,10 @@ body {
   border-radius: 16px;
   border: 1px solid white;
 }
-.container h1,
-.container h2,
-.container h3,
-.container h4 {
+h1,
+h2,
+h3,
+h4 {
   font-size: 2.8rem;
   font-family: 'EB Garamond';
 }
@@ -161,6 +181,7 @@ header {
   display: flex;
   text-align: center;
   font-size: 2.5rem;
+  border-bottom: 2px solid silver;
 }
 nav {
   display: flex;
@@ -211,9 +232,34 @@ nav a:hover {
 .button2 a {
   color: black;
 }
+footer {
+  border-top: 2px solid white;
+  font-size: 1.1em;
+}
 @media (max-width: 500px) {
   .container {
-    width: 80%;
-    font-size: 1.1em;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .container nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: black;
+    font-family: 'EB Garamond';
+    width: 100%;
+    height: 120px;
+    font-size: 2rem;
+    text-align: center;
+    color: navColor;
+    padding: 8px;
+    max-width: 800px;
+  }
+  .container nav a {
+    text-decoration: none;
+    color: silver;
+  }
+  .container nav a:hover {
+    color: blue;
   }
 }
