@@ -59,19 +59,23 @@ html, body {
 
 /* Code that I've added */
 
+@gray: #d3ded3;
+
 .container {
 	margin: 0 auto;
 	width: 800px;
-}
-
-html, body {
-    height: 100%;
 }
 
 header nav {
 	display: flex;
 	justify-content: space-between;
 	padding-left: 600px;
+
+	@media (max-width: 500px) {
+		display: flex;
+		padding-left: 300px;
+		
+	}
 
 	a {
 		font: black;
@@ -88,9 +92,9 @@ header nav {
 }
 
 .footer-style {
-	background-color: grey;
+	background-color: @gray;
 	text-align: center;
-	border: gray;
+	border: @gray;
 	width: 100%;
 }
 
