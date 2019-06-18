@@ -62,13 +62,29 @@ html, body {
     height: 100%;
 }
 
+/* Code that I've added */
+
+@gray: #d3ded3;
+
+.container {
+	margin: 0 auto;
+	width: 800px;
+}
+
 header nav {
 	display: flex;
 	justify-content: space-between;
-	padding-left: 100px;
+	padding-left: 600px;
+
+	@media (max-width: 500px) {
+		display: flex;
+		padding-left: 300px;
+		
+	}
 
 	a {
 		font: black;
+		font-family: "Times New Roman", 'Times New Roman', Times, serif;	
 	}
 }
 
@@ -81,8 +97,13 @@ header nav {
 }
 
 .footer-style {
-	background-color: grey;
+	background-color: @gray;
 	text-align: center;
-	border: gray;
+	border: @gray;
+	width: 100%;
+}
+
+.text-centerer{
+	text-align: center;
 }
 
