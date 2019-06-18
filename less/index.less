@@ -1,105 +1,230 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-html, body {
-	height: 100%;
-	font-size: 62.5%;
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }
-
-
-.header {
-	background-color: black;
-	font-size: 2em;
-	text-align: center;
-	color: silver;
-	width: 100%;
-	height: 120px;
-
-	nav {
-		background-color: white;
-		font-size: 2em;
-		text-align: center;
-		color: silver;
-		text-decoration: none;
-		display: flex;
-		justify-content: space-around;
-	}
-  }
-
-header-mixin() {
-
-}
-
 .container {
-	// Large screen styling
-	width: 800px;
-	height: 100%;
-	background: gray;
-	color: black;
-	font-size: 2em;
-	// Medium screen styling
-	@media (max-width: 800px) {
-	  width: 100%;
-	  background: black;
-	  font-size: 2em;
-	}
-  
-	// Small screen styling
-	@media (max-width: 500px) {
-	  width: 80%;
-	  background: black;
-	  font-size: 2em;
-	}
+  background-color: black;
+  color: white;
+  max-width: 800px;
+  font-size: 2rem;
+  text-align: center;
+}
+.portrait {
+  width: 25%;
+  height: 25%;
+  border-radius: 16px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-size: 2.8rem;
+  font-family: 'EB Garamond';
+}
+header {
+  display: flex;
+  text-align: center;
+  font-size: 2.5rem;
+}
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: black;
+  font-family: 'EB Garamond';
+  width: 100%;
+  height: 120px;
+  font-size: 2.5rem;
+  text-align: center;
+  color: silver;
+  padding: 15px;
+  max-width: 800px;
+}
+
+a {
+  text-decoration: none;
+  color: silver;
+}
+a:hover {
+	color: blue;
+} 
+
+.button1 {
+	width: 120px;
+	height: 58px;
+	color: white;
+	background-color: aqua;
+	border-radius: 12px;
+  	font-size: 1.1em;
+  	font-family: 'EB Garamond';
+  	text-align: center;
+	border: 2px solid white;
+	a {
+		color: black;
+	}  
+}
+
+.button2 {
+	width: 120px;
+	height: 58px;
+	color: white;
+	background-color: silver;
+	border-radius: 12px;
+  	font-size: 1.1em;
+  	font-family: 'EB Garamond';
+  	text-align: center;
+	border: 2px solid white;
+	  a {
+		  color: black;
+	  }
+}
+/*
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+    background: black;
+    font-size: 2em;
   }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 80%;
+    background: black;
+    font-size: 2em;
+  }
+}
+*/
