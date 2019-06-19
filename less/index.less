@@ -140,11 +140,17 @@ body {
 @navColor: silver;
 @backGround: black;
 
+.my-mixin-one() {
+	color: white;
+	font-size: 1.7rem;
+}
+
+.my-mixin-two() {
+	color: silver;
+}
+
 .container {
   background-color: @backGround;
-  color: white;
-  max-width: 800px;
-  font-size: 2rem;
   text-align: center;
   position: relative;
   background-attachment: fixed;
@@ -152,7 +158,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../background.jpg");
+  line-height: 1.2;
   min-height: 100%;
+  color: white;
+  font-size: 1.7rem;
+  }
 
   .article {
 	position: absolute;
@@ -173,7 +183,7 @@ body {
 	border-radius: 16px;
 	border: 1px solid white;
   }
-}
+
   h1,
   h2,
   h3,
@@ -200,9 +210,8 @@ nav {
 	height: 120px;
 	font-size: 2.5rem;
 	text-align: center;
-	color: navColor;
+	color: @navColor;
 	padding: 15px;
-	max-width: 800px;
   
 	a {
 	  text-decoration: none;
@@ -248,7 +257,7 @@ nav {
 .button1 {
 	width: 120px;
 	height: 58px;
-	color: white;
+	.my-mixin-one();
 	background-color: aqua;
 	border-radius: 12px;
   	font-size: 1.1em;
@@ -263,7 +272,7 @@ nav {
 .button2 {
 	width: 120px;
 	height: 58px;
-	color: white;
+	.my-mixin-one();
 	background-color: silver;
 	border-radius: 12px;
   	font-size: 1.1em;
@@ -297,7 +306,6 @@ footer {
 		text-align: center;
 		color: @navColor;
 		padding: 8px;
-		max-width: 800px;
 		a {
 		  text-decoration: none;
 		  color: silver;
