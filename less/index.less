@@ -4,56 +4,310 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin        : 0;
+	padding       : 0;
+	border        : 0;
+	font-size     : 100%;
+	font          : inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing : 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+// My Code//
+
+@backgroundgrey: rgb(214, 214, 214);
+@footerdarkgrey: rgb(146, 146, 146);
+
+// mix in example
+// .panel {
+//  	border: 1px solid black;
+// }
+
+// .lower-panel {
+// 		.panel;
+//  	font-size: 2rem;
+//      color: blue;
+// }
+
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	width : 90%;
+	margin: 0 auto;
+}
+
+header {
+	display        : flex;
+	justify-content: flex-end;
+	margin         : 2%;
+	font-size      : 2em;
+}
+
+header a {
+	margin         : 20px;
+	text-decoration: none;
+	color          : black;
+}
+
+
+
+// top-section //
+
+.top-section {
+	display         : flex;
+	flex-direction  : column;
+	justify-content : flex-start;
+	align-content   : center;
+	background: @backgroundgrey;
+}
+
+
+
+img {
+	width        : 25%;
+	padding      : 2%;
+	border-radius: 50%;
+
+}
+
+.top-section h1 {
+	font-family: Iceland;
+	font-size: 6rem;
+	padding  : 2%;
+}
+
+.top-section p {
+	padding  : 2%;
+	font-size: 3rem;
+}
+
+.dotted-line {
+	border-bottom: 1px solid grey;
+}
+
+
+
+button {
+	cursor       : pointer;
+	width        : 15%;
+	padding      : 1%;
+	margin       : 2% 0 5% 2%;
+	border-radius: 15%;
+	background   : grey;
+	color        : white;
+	font-weight  : bold;
+}
+
+// middle-section//
+.middle-section {
+	display        : flex;
+	flex-direction : row;
+	justify-content: center;
+	font-size: 2rem;
+
+
+}
+
+.middle-section div {
+	width    : 50%;
+	margin   : 2%;
+}
+
+.middle-section h3{
+	font-weight: bold;
+	margin: 2% 0;
+}
+
+.middle-section li {
+	border: 1px solid black;
+	padding: 3%;
+
+}
+
+// bottom section //
+
+.bottom-section {
+	display        : flex;
+	justify-content: center;
+	flex-direction: column;
+	font-size      : 2rem;
+}
+.bottom-section h2{
+	font-weight: bold;
+	padding: 2%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+
+}
+
+
+table th {
+	text-align: left;
+	color     : black;
+	padding   : 4px 30px 4px 8px;
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+
+table td {
+	border-top: 1px solid black;
+	padding: 8px 8px;
+}
+
+table tr:nth-child(2n) {
+	background: rgb(214, 214, 214);
+}
+
+// footer //
+
+footer {
+	background-color: @footerdarkgrey;
+	width: 100%;
+	padding         : 3%;
+	text-align      : center;
+	font-size: 2em;
+	margin: 2% 0;
+	color:white;
+}
+
+// moble
+@media (max-width: 500px){
+
+}
