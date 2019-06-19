@@ -137,11 +137,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-@navColor="silver";
-
+@navColor: silver;
+@backGround: black;
 
 .container {
-  background-color: black;
+  background-color: @backGround;
   color: white;
   max-width: 800px;
   font-size: 2rem;
@@ -156,14 +156,14 @@ body {
 
   .article {
 	position: absolute;
-	background: black;
+	background: @backGround;
 	line-height: 1.4;
 	padding: 25px;
   }
 
 .main-content, .education {
 	position: relative;
-	background: black;
+	background: @backGround;
 	border: 2px solid silver;
 	padding: 16px;
 }
@@ -194,7 +194,7 @@ nav {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
-	background-color: black;
+	background-color: @backGround;
 	font-family: 'EB Garamond';
 	width: 100%;
 	height: 120px;
@@ -208,10 +208,42 @@ nav {
 	  text-decoration: none;
 	  color: silver;
 	}
+
 	a:hover {
 		color: blue;
 	} 
   }
+
+.mainlogo {
+	border-radius: 16px;
+	text-align: center;
+	background: @backGround;
+}
+
+
+/* Styling the logos for the stacks */
+.stack-logos {
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+
+		/* Styling the logos for the stacks */
+		.logos {
+			height: 70%;
+			width: 100px;
+			opacity: 0.88;
+			border-radius: 8px;
+			margin: 0 auto;
+			padding: 15px;
+			border: 2px solid #444;
+			background-color: black;
+		
+			.logos:hover { 
+				background-color: #444;
+			}
+		}
+	}
 
 .button1 {
 	width: 120px;
@@ -257,13 +289,13 @@ footer {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-around;
-		background-color: black;
+		background-color: @backGround;
 		font-family: 'EB Garamond';
 		width: 100%;
 		height: 120px;
 		font-size: 2rem;
 		text-align: center;
-		color: navColor;
+		color: @navColor;
 		padding: 8px;
 		max-width: 800px;
 		a {
