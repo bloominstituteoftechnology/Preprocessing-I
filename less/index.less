@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.5;
 }
 ol, ul {
 	list-style: none;
@@ -54,18 +54,33 @@ table {
 }
 
 html, body {
-    height: 100%;
+    // height: 100%;
 }
 
 /* -----Begin Coding Here!----- */
 
-@h2heading: wheat;
+@h2heading: #fad689;
 @pfont: slategray;
 
+.ptext {
+	color: @pfont;
+	font-size: 1.2rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+}
+
+.h4 {
+	color: @pfont; 
+	font-size: 1.7rem;
+	border-bottom: 1px dotted black;
+}
 
 .container {
   width: 880px;
   margin: 0 auto;
+  background-color: whitesmoke;
 
   @media screen and (max-width: 800px) {
     width: 100%;
@@ -84,7 +99,7 @@ header {
   display: flex;
   width: 100%;
   margin: 0 auto;
-  background-color: wheat;
+  background-color: @h2heading;
   justify-content: space-around;
   align-items: center;
 
@@ -95,7 +110,7 @@ header {
 	  color: white;
 	  width: 100%;
 	  margin: 0 auto;
-	  padding: 1rem 0 0 5rem;
+	  padding: 0.5rem 0 0 7rem;
    }
 
     nav {
@@ -103,31 +118,51 @@ header {
 		width: 100%;
 		justify-content: space-around;
 		align-items: center;	
-		padding: 20px 0 0;
+		padding: 15px 0 0;
 		margin: auto
 	}
 
+	@media screen and  (max-width: 600px) {
+		nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 85%;
+		}
+	}
+	
+	@media screen and  (max-width: 500px) {
+		nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 85%;
+		}
+	}
+
     nav a {
-      font-size: 2.0rem;
+      font-size: 1.8rem;
       text-decoration: none;
-	  color: slategray;    
+	  color: 4d4dff;    
 	  justify-content: center;
 	  align-items: center;
-	  word-spacing: 2.0rem;
+	  word-spacing: 1.5rem;
 	  padding: 0.5rem;
 
-      a:hover {
-	  color: whitesmoke;
+// To get the 'hover' to work, the & sign will call on the parent (nav a) to work on it
+     &:hover {
+	  background-color: whitesmoke;
 	  opacity: 0.5;
 	  }
-}
+	}
 
      .self-portrait {
-      width: 30%;
+      width: 25%;
       border: 2px solid white;
-	  border-radius: 85%;
-	  
-}
+	  border-radius: 65%;
+	}	
 }
 
 .contact-info {
@@ -137,25 +172,113 @@ header {
 	justify-content: flex-end;
 	align-items: center;
 	font-size: 1.2rem;
-	color: rgb(28, 118, 148);
-	padding-bottom: 2rem;
-}
+	color: rgb(14, 74, 94);
+	padding-bottom: 1rem;
+	margin: 0 auto;
+	
+	.contact-me {
+		margin: 0 auto;
+	}
+} 
 
 .work-experienceI {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	width: 48%;
+	width: 100%;
+	margin: 0 auto;
 	color: @h2heading;
-	font: 2rem;
+	font-size: 2.2rem;
+	padding-bottom: 0.5rem;
 
 	h4 {
-		font: 1.6rem;
-		color: slategray
-
-	work {
-		font: 1.2rem;
-		color: slategray;
+		.h4();
 	}
+
+	p {
+		color: @pfont;
+		.ptext();
+  }
 }
+
+.work-experienceII {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	margin: 0 auto;
+	color: @h2heading;
+	font-size: 2.2rem;
+	padding-bottom: 0.5rem;
+
+	h4 {
+		.h4();
+	}
+	p {
+		color: @pfont;
+		.ptext();
+  }
 }
+
+.education {
+	width: 100%;
+	margin: 0 auto;
+	color: @h2heading;
+	font-size: 2.2rem;
+	padding-bottom: 0.5rem;
+
+	h4 {
+		.h4();
+	}
+	p {
+		color: @pfont;
+		.ptext();
+	  }
+}
+
+	.profile {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	margin: 0 auto;
+	color: @h2heading;
+	font-size: 2.2rem;
+	padding-bottom: 0.5rem;
+
+	h4 {
+		.h4();
+	}
+
+	p {
+		color: @pfont;
+		.ptext();
+  }
+}
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		width: 100%;
+		margin: 0 auto;
+		color: @h2heading;
+		font-size: 2.2rem;
+		padding-bottom: 0.5rem;
+	
+		h4 {
+			.h4();
+
+		p {
+			color: @pfont;
+			.ptext();
+	  }	
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: space-evenly;
+		padding: 1.0rem;
+	}
