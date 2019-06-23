@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Helvetica');
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -124,94 +126,150 @@ q:after {
   content: none;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
-  width: 1024px;
+  max-width: 1024px;
   margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  /* background-color: red; */
 }
 
 /* header / navigation */
 header {
   width: 100%;
-  margin: 10px;
 }
 nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-content: center;
   list-style-type: none;
-  margin: 20px;
-  padding: 40px;
-  /* background-color: yellow; */
-}
-nav a {
-  float: right;
-   /* padding: 30px; */
+  padding: auto;
 }
 a  {
-  display: block;
-  /* flex-direction: reverse; */
-  padding: 30px;
+  text-decoration: none;
+  margin: 20px;
+  padding: 10px;
 }
+
 
 /* upper-half  img - button  */
 .upper-half {
   width: 100%;
+  height: 50%%; 
   background-color: #dddddd;
+  padding: 30px;
 } 
 
 .container-upper {
   width: 100%; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 30px;
+  padding: 10px; 
 }
 .container-upper .img-container {
-  width: 100%;
+  width: 100%; 
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 20px; 
   border-bottom: 1px dashed black;
 }
-.img-container p {
-  margin: 10px;
-}
 .img-lahavas {
-  width: 50%;
-  height: 50%;
-  /* margin: 10px; */
-  /* padding: 5, 5, 10, 10; */
+  width: 35%;
+  height: 10%;
+  margin-bottom: 15px;
 }
-/* banner lower - button p */
-.button-container {
+
+
+
+
+/* upper-half banner lower - button p */
+.button-container, p {
   width: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
-  margin: 20px;
+  padding-right: 20px;
+  margin: 10px 5px;
 }
-.contact-button {
-  background-color: gray; 
-  width: 25%;
-  height: 25%;
+.button-container .contact-btn {
+  width: 30%;
+  border-radius: 5px;
+  text-decoration: none;
   margin-top: 10px;
+  background-color: #636363;
+  color: #ffffff;
+  padding: 5px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
-/* wine blog - insta link - stuff i'm good at table */
+.button-container .contact-btn:hover {
+  border-color: #dddddd;
+  background-color: #ffffff;
+  color: #dddddd;
+}
 
+
+/* wine blog - insta link - stuff i'm good at table */
+/* lower-half container-lower */
 .lower-half {
   width: 100%;
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  padding: 30px;
+  /* background-color: yellow; */
+}
+.container-lower {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.banner-upper {
+  width: 50% ;
+}
+/* table of things i'm good at. */
+.banner-lower {
+  width: 50%;
+}
+.STUFF {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.STUFF .stuff-tr .stuff-th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #ffffff;
 }
 
 
 /* workhistory-table */
+.workhistory-table {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 table {
-  width: 90%;
+  width: 100%;
   margin-top: 20px;
-  /* margin: 10px; */
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
 }
 td, th {
   border-top: 1px solid #dddddd;
@@ -223,18 +281,17 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-
-/* .container {
-  width: 800px;
-  height: 100%;
-  background: white;
+/* footer copyright element */
+.footer-copyright {
+  width: 100%;
+  height: 75px;
+  background-color: #636363;
+  color: white;
+}
+.footer-copyright, .copyright { 
   display: flex;
-  justify-content: space-between;
-
-  .box {
-    width: 200px;
-    height: 200px;
-    background: green; 
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */    /*play around with */
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px auto;
+}
