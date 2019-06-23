@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Helvetica');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -139,10 +138,18 @@ body {
   max-width: 1024px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
+
   /* background-color: red; */
 }
 
+/* @media(max-width: 500px) {
+  body {
+    background-color: red;
+  }  
+} */
+
 /* header / navigation */
+
 header {
   width: 100%;
 }
@@ -153,7 +160,7 @@ nav {
   justify-content: flex-end;
   flex-direction: row;
   align-content: center;
-  list-style-type: none;
+  list-style-type: none;q
   padding: auto;
 }
 a  {
@@ -161,7 +168,16 @@ a  {
   margin: 20px;
   padding: 10px;
 }
-
+  @media(max-width: 500px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    a { 
+      margin: 10px 5px;
+      padding: 10px 5px;
+    }  
+  }
 
 /* upper-half  img - button  */
 .upper-half {
@@ -171,15 +187,12 @@ a  {
   padding: 30px;
 } 
 
+/* img button p content */
 .container-upper {
-  width: 100%; 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  width: 100%;
   padding: 10px; 
 }
-.container-upper .img-container {
+.img-container {
   width: 100%; 
   display: flex;
   flex-direction: column;
@@ -193,12 +206,22 @@ a  {
   height: 10%;
   margin-bottom: 15px;
 }
+  @media(max-width: 500px) {
+    .container-upper .img-container, .img-cont-p { 
+      justify-content: center;
+      align-items: center;
+      padding: 10px 1px;
+    }
+    .img-lahavas { 
+      width: 100%;
+    }
+  }
 
 
 
 
 /* upper-half banner lower - button p */
-.button-container, p {
+.button-container {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -206,7 +229,7 @@ a  {
   padding-right: 20px;
   margin: 10px 5px;
 }
-.button-container .contact-btn {
+.contact-btn {
   width: 30%;
   border-radius: 5px;
   text-decoration: none;
@@ -224,6 +247,13 @@ a  {
   color: #dddddd;
 }
 
+  @media(max-width: 500px) {
+    .button-container, .contact-btn, .btn-p {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
 /* wine blog - insta link - stuff i'm good at table */
 /* lower-half container-lower */
@@ -257,7 +287,20 @@ a  {
   padding: 8px;
   background-color: #ffffff;
 }
+  @media(max-width: 500px) {
+    .container-lower {
+      flex-direction: column;
+      padding: 0 auto;
+      margin: 0 auto;
+    }
+    .banner-upper {
+      margin: 5px auto;
+    }
+    .banner-lower {
+      margin: 5px auto;
+    }
 
+  }
 
 /* workhistory-table */
 .workhistory-table {
