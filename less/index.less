@@ -62,7 +62,7 @@ html, body {
 // variables and mixins //
 
 @font-color-main: black;
-@font-family: 'Cedarville Cursive', cursive;
+@stylish-font: 'Cedarville Cursive', cursive;
 
 @keyframes button {
 	from {background-color: white;}
@@ -73,6 +73,14 @@ html, body {
 	display: flex;
 	justify-content: space-around; 
 	margin: 10px auto;
+	padding: 10px auto;
+	border-bottom: 1px solid @font-color-main;
+}
+
+.hover {
+	animation-name: button;
+	animation-duration: 2s;
+	font-weight: bold;
 }
 
 // full page stuff //
@@ -82,27 +90,77 @@ html, body {
 	margin: 0 auto;
 }
 
+h1 {
+	font-size: 30px;
+}
+
 // page layout //
 
 header {
 	.flexbox-property();
-	border-bottom: 1px solid @font-color-main;
 	padding: 20px 0;
 	a {
 		text-decoration: none;
 		color: @font-color-main;
 		padding: 20px 15px;
-		margin: 0 15px;
+		margin: 10 15px;
 	}
 	a:hover {
-		animation-name: button;
-		animation-duration: 2s;
-		font-weight: bold;
+		.hover();
 	}
 }
 
-.jeff-pic {
-	height: auto;
-	width: 600px;
+.intro-wrapper {
+	.flexbox-property();
+	.jeff-pic {
+		height: auto;
+		max-width: 400px;
+		width: 48%;
+		margin-bottom: 10px;
+	}
+	.intro {
+		text-align: center;
+		margin-top: 80px;
+		width: 30%;
+		h1 {
+			font-family: @stylish-font;
+		}
+		h2 {
+			font-size: 18px;
+			font-family: @stylish-font;
+		}
+		a {
+			border: 1px solid @font-color-main;
+			border-radius: 15px;
+			text-decoration: none;
+			color: @font-color-main;
+			padding: 15px 30px;
+			margin: 0 15px;
+			display: block;
+		}
+		a:hover {
+			.hover();
+		}
+		
+	}
 }
 
+.middle-wrapper {
+	.flexbox-property();
+	.about {
+		width: 48%;
+		margin: 10px 20px;
+	}
+	.skills {
+		width: 48%;
+		margin: 10px 20px;
+	}
+}
+
+.work-history {
+	.flexbox-property();
+}
+
+footer {
+	text-align: center;
+}
