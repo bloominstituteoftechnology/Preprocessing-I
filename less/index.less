@@ -58,21 +58,47 @@ html, body {
 }
 
 // my code here //
+
+// variables and mixins //
+
 @font-color-main: black;
 @font-family: 'Cedarville Cursive', cursive;
 
-.flexbox-property(){
-	display: flex;
-	justify-content: space-between;
+@keyframes button {
+	from {background-color: white;}
+	to {background-color: hotpink;}
 }
+
+.flexbox-property {
+	display: flex;
+	justify-content: space-around; 
+	margin: 10px auto;
+}
+
+// full page stuff //
 
 .container {
 	max-width: 800px;
 	margin: 0 auto;
 }
 
-header {
+// page layout //
 
+header {
+	.flexbox-property();
+	border-bottom: 1px solid @font-color-main;
+	padding: 20px 0;
+	a {
+		text-decoration: none;
+		color: @font-color-main;
+		padding: 20px 15px;
+		margin: 0 15px;
+	}
+	a:hover {
+		animation-name: button;
+		animation-duration: 2s;
+		font-weight: bold;
+	}
 }
 
 .jeff-pic {
