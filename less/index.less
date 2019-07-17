@@ -1,8 +1,12 @@
+
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -54,6 +58,484 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+/*******************************START HERE**************************************/
+
+/****VARIABLES***/
+@container-width: 60%;
+@container-height: 100%;
+@black-background: black;
+@pink-background: hotpink;
+@purple-background: purple;
+@white-text: white;
+@body-text-color: #3e3e3e;
+@container-font: 'Open Sans', sans-serif;
+@title-font: 'Julius Sans One', sans-serif;
+
+
+/***MIXINS***/
+
+//display a centered horizontal row of flex items
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+//space around flex row items
+.flex-space-between-row {
+	display: flex;
+	justify-content: space-around;
+}
+
+//space around flex columnn items
+.flex-space-between-column {
+	display: flex;
+	flex-direction: column;
+	align-items: space-around;
+}
+
+.flex-no-wrap {
+	display: flex;
+	flex-wrap: no-wrap;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
+h1 {
+	color: @white-text;	
+	font-size: 3.25rem;
+	letter-spacing: -0.025em;
+	font-weight: 300;
+	margin: 0 0 0.75rem 0;
+}
+
+
+h2 {
+	font-size: 2rem;
+	color: #3e3e3e;		
+	//margin: 0 0 0.75em 0;
+	font-weight: 700;
+	font-family: @title-font;
+}
+
+.h3-white {
+
+	font-size: 1rem;
+	color: @white-text;		
+	margin: 0 0 0.75em 0;
+	font-weight: 700;
+	letter-spacing: 0.025rem;
+}
+
+h3 {
+	font-size: 1rem;
+	color: #3e3e3e;		
+	margin: 0 0 0.75em 0;
+	font-weight: 700;
+}
+
+
+
+
+.container {
+	width: @container-width;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	font-family: @container-font;
+	margin: 0 auto;
+	border: 1px solid red;
+
+	@media (max-width: 500px) {		
+			width: 100%;			
+		
+	}
+	
+	header {
+		.flex-center();
+		height: 50px;
+		background-color: @black-background;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			height: 100%;
+			flex-direction: column;					
+			justify-content: center;
+			align-content: center;	
+			padding: 0px;	
+		}
+
+			
+		
+			nav {
+				.flex-center();
+
+				@media (max-width: 500px) {
+					width: 100%;	
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+				}//end @media
+
+					a {
+						text-decoration: none;
+						color: @white-text;
+						padding: 25px;
+						font-size: 1.2rem;
+
+						@media (max-width: 500px) {
+
+							width: 100%;
+							color: white;
+							//line-height: 2;
+							font-size: 2rem;
+							border-top: 1px solid rgb(41, 39, 39);
+							border-bottom: 1px solid gray;
+							text-align: center;
+
+						}//end @media
+						
+					}//end a					
+
+			}//end nav
+
+	}//end header
+
+	.intro-section {
+		display: flex;
+		width: 100%;
+		height: auto;	
+		background-color: purple;		
+		
+		
+		.intro-section-div {
+			.flex-no-wrap();
+			width: 100%;
+			height: auto;	
+
+			@media (max-width: 500px) {
+				width: 100%;
+				height: 100%;
+				flex-direction: column;							
+				justify-content: center;
+				align-content: center;	
+				padding: 0px;	
+			}
+			
+			
+				.intro-section-img-div {
+					.flex-center();	
+					width: 40%;
+					height: auto;	
+					//border: 1px solid red;								
+
+						.profilepic {
+							border-radius: 100%;
+							width: 200px;
+							height: 164px;
+						}	
+						
+						@media (max-width: 500px) {
+							width: 100%;
+							height: 100%;								
+							padding: 0px;	
+						}
+
+				}//end intro-section-img-div
+
+				.intro-section-details-div {
+					.flex-column();
+					.h3-white();
+					justify-content: center;
+					align-content: space-around;
+					width: 60%;
+					height: auto;
+
+					
+						@media (max-width: 500px) {
+							.flex-center();
+							width: 100%;
+							height: 100%;								
+							padding: 0px;	
+						}
+					
+															
+
+				}//end intro-section-details-div	
+
+		}//end intro-section-div		
+
+	}//end intro section
+
+	.main-content-section {
+		.flex-no-wrap();
+		width: 100%;
+		height: auto;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			height: 100%;
+			flex-direction: column-reverse;					
+			justify-content: center;
+			align-content: center;	
+			padding: 0px;	
+
+		}
+
+			.left-screen-div {
+				.flex-column();
+				width: 30%;
+				height: auto;
+
+				@media (max-width: 500px) {
+					width: 100%;
+					height: 100%;									
+					
+				}				
+
+				
+					.skills-section {
+						.flex-row-wrap();
+						height: 600px;
+
+												
+
+						.skills-title-div {
+							.flex-center();							
+							width: 100%;
+							text-align: center;
+							//border: 1px solid black;
+						}
+
+						.skills-details-title-icon-div {
+							display: flex;
+							justify-content: space-around;
+							align-items: center;
+							width: 20%;
+
+							.skills-icon {
+								color: #EA8A95;
+								font-size: 2rem;								
+											
+							}//end skills-icon						
+						
+
+						}//end skills-details-title-icon-div
+
+						.skills-details-title-div {
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+							width: 80%;
+							height: auto;
+							//border-right: 1px solid #EA8A95;				
+										
+							
+						}//end skills-details-title-div
+
+						.skills-details-div {
+
+							.flex-column();
+							justify-content: space-between;							
+							width: 100%;
+							height: auto;
+							//border-right: 1px solid #EA8A95;
+
+							.skills-list {
+								list-style-type: disc;
+								list-style-position: inside;
+
+								li {
+									color: #3e3e3e;									
+								}
+							}
+							
+						}//end skills-details-div	
+
+						
+					}//end skills-section
+
+					.contact-section {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						height: auto;
+						//border-right: 1px solid #EA8A95;
+
+						@media (max-width: 500px) {
+							.flex-center();
+							width: 100%;
+							height: 100%;								
+								
+						}
+
+						.contact-title-div {
+							width: 100%;
+							text-align: center;
+							//border: 1px solid black;
+
+						}
+
+						.address-div {
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							width: 100%;
+							height: auto;
+							//border-right: 1px solid #EA8A95;
+						}
+
+						.social-contact-div {
+							.flex-column();
+							align-content: space-between;
+							width: 100%;
+							height: 20%;
+							//border-right: 1px solid #EA8A95;
+
+							.social-icon {
+								color: #3e3e3e;	
+								font-size: 1rem;								
+											
+							}//end skills-icon	
+
+							
+						}//end-social-contact-div
+
+
+					}//end left-screen-div
+				
+
+			}//end left-screen-div
+
+			.right-screen-div {
+				.flex-column();
+				//background-color: @pink-background;
+				width: 70%;
+				height: auto;
+				background-color: #EA8A95;
+
+				@media (max-width: 500px) {
+					width: 100%;					
+					background-color: white;
+					justify-content: space-between;
+		
+				}				
+					.education-section {
+						.flex-row-wrap();
+						width: 100%;
+						height: 70%;
+
+						.education-title-div { //skills section has a height defined
+							.flex-center();
+							width: 100%;
+							text-align: center;
+							//border: 1px solid black;
+
+							@media (max-width: 500px) {
+								width: 100%;					
+								background-color: white;
+								margin: 2% 0 2% 0;
+					
+							}	
+
+						}
+
+						.education-date {
+							width: 20%;
+							height: auto;
+							//border: 1px solid purple;
+						}
+
+						.education-details-div {
+							.flex-column();							
+							width: 80%;
+							height: auto;
+							color: #3e3e3e;
+
+							@media (max-width: 500px) {															
+								margin: 0 0 3% 0;
+					
+							}	
+						}
+
+					}//end education-section
+
+					
+					.experience-section {
+						.flex-row-wrap();
+						width: 100%;
+						height: 70%;
+
+						.experience-title-div {
+							.flex-center();
+							width: 100%;
+							text-align: center;
+							//border: 1px solid black;
+
+							@media (max-width: 500px) {
+								width: 100%;					
+								background-color: white;
+								margin: 2% 0 2% 0;
+					
+							}	
+
+						}
+
+						.experience-date {
+							width: 20%;
+							height: auto;
+							//border: 1px solid purple;
+						}
+
+						.experience-details-div {
+							width: 80%;
+							height: 40%;
+							//border: 1px solid purple;
+
+							.experience-list {
+								list-style-type: none;
+								list-style-position: inside;
+
+								li {
+									color: #3e3e3e;									
+								}
+								
+
+							}//end experience-list
+
+							@media (max-width: 500px) {															
+								margin: 0 0 3% 0;
+					
+							}	
+
+
+						}//end experience-details-div
+
+
+					}//end experience-section
+					
+			}//end right-screen-div
+
+	}//end main content section
+
+
+
+}//end container
 
