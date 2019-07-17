@@ -57,3 +57,87 @@ html, body {
     height: 100%;
 }
 
+//Variables
+@backgroundColor: white;
+@fontSize: 200%;
+@sectionColor: skyblue;
+
+.container {
+	* {
+		border: 1px solid black;
+	}
+	//Mixins
+	.flexbotClass {
+		display: flex;
+		justify-content: space-evenly;
+		margin: 5%;
+	}
+	//Header Styles
+	header {
+		background: @backgroundColor;
+		nav {
+			.flexbotClass();
+			a {
+				text-decoration: none;
+				font-size: @fontSize;
+			}
+		}
+	}
+	//Top Content Styles
+	section {
+		.flexbotClass();
+		background: @sectionColor;
+		.top-about {
+			flex-direction: column;
+			h1 {
+				margin: 5%;
+				width: 50%;
+				font-size: 2.5rem;
+			}
+			h4 {
+				margin: 5%;
+				font-size: 1.5rem;
+			}
+			button{
+				margin-left: 5%;
+				margin-bottom: 2%;
+				font-size: 1.1rem;
+			}
+		}
+		.middle-left {
+			width: 50%;
+			h2 {
+				font-size: 1.5rem;
+				margin: 2%;
+			}
+			p {
+				font-size: 1rem;
+				margin: 2%;
+			}
+		}
+		.middle-right {
+			h2 {
+				font-size: 1.5rem;
+				margin: 2%;
+			}
+			ul {
+				margin: 2%;
+				li {
+					margin: 4%;
+				}
+			}
+		}
+		h2 {
+			font-size: 1.5rem;
+			margin: 5%;
+		}
+		.history-div {
+			width: 100%;
+			.history {
+				flex-direction: column;
+				margin: 5%;
+			}
+		}
+	}
+}
+
