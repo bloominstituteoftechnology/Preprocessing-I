@@ -61,152 +61,29 @@ Less- syntax that we write code in
 Node is going to be the compiler of our LESS
 CSS, the out from the compiler should never be edited again! 
 */
-@main-color:rgb(219, 101, 5);
-@header-font: 'Roboto Mono', monospace;
-@secondary-color:rgb(63, 62, 62);
 
-.centre(){
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.border(){
-  border:1px solid black;
-}
-html {
+
+* {
   box-sizing: border-box;
-  font-size: 62.5%; 
+}
+html,
+body {
+  height: 100%;
+}
+.containter {
+  width: 800px;
+}
+nav {
+  margin-left: 0%;
+  a {
+    text-decoration: none;
+    color: black;
+}
+}
+h1 {
+  font-size: 30px;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family:@header-font;
-  font-size: 2rem;
-  color:@secondary-color;
-}
-
-img {
- width: 100%;
- height: auto;
-}
-
-p {
-  line-height: 1.25;
-  margin: 20px 0;
-  font-size: 1.8rem;
- // .border();
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.6rem;
-}
-
-strong {
-  font-weight: bold;
-}
-
-header {
-  border-bottom: 1px solid black;
-  margin: 20px 0;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  
-  @media( max-width: 515px ) {
-    flex-direction: column;
-    align-items: center;
-  }
-  h1 {
-    font-size: 2rem;
-    
-    @media( max-width: 515px ) {
-      margin-bottom: 20px;
-    }
-  } //this closes the h1
-  
-  nav {
-    margin-left: 62px;
-
-    @media( max-width: 515px ) {
-      margin-left: 0;
-    }
-    a {
-      margin-left: 20px;
-      font-size: 1.8rem;
-    }// this closes the a link 
-  }// this closes the nav
-}// this closes the header
-
-
-header nav .first-anchor {
-  margin-left: 0;
-}
-
-.main-content {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@media( max-width: 515px ) {
-  .main-content {
-    flex-direction: column;
-  }
-}
-
-.main-content section {
-  margin: 20px 2.5%;
-  width: 45%;
-}
-
-@media( max-width: 515px ) {
-  .main-content section {
-    width: 90%;
-  }
-}
-
-.main-footer {
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
-  border-top: 1px dashed black;
-  padding-top: 20px;
-}
-
-.main-footer nav {
-  width: 90%;
-  display: flex;
-  justify-content: space-around;
-}
-.btn-centre{
-  .centre();
-}
-.book-flight-btn {
- display: block;
- background-color: @main-color;
- margin: 20px 10px 20px;
- cursor: pointer;
- width: 200px;
- height: 45px;
- font-size: 2rem;
- border-radius: 10px;
-}
-
-@media( max-width: 515px ) {
-  .book-flight-btn {
-    width: 90%;
-    height: 50px;
-    font-size: 2.5rem;
-  }
-}
-
-@media( max-width: 400px ) {
-  .book-flight-btn {
-    background-color: @main-color;
-    color: white;
-  }
+.top-content {
+  background-color: grey;
 }
