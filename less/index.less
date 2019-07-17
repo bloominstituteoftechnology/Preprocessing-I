@@ -31,7 +31,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: red;
 }
 ol, ul {
 	list-style: none;
@@ -53,8 +52,130 @@ table {
 * {
     box-sizing: border-box;
 }
-
 html, body {
     height: 100%;
 }
 
+.flexBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	font-size: 2rem;
+	text-decoration: underline;
+	margin: 20px 0;
+	border-top: 1px solid black;
+	font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+	font-size: 1.25rem;
+	text-decoration: underline;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	border-top: 1px solid black;
+	font-family: 'Poppins', sans-serif;
+}
+
+@navColor: gray;
+@emailColor: skyblue;
+@tableColor: #dddddd;
+
+body {
+	background-color: @emailColor;
+}
+
+container {
+	font-family: 'Raleway', sans-serif;
+	max-width: 600px;
+	background-color: white;
+	.flexBox();
+	margin: 20px auto;
+	padding: 20px;
+	nav {
+		margin: 20px;
+		@media(max-width: 500px) {
+			.flexBox();
+			width: 100%;
+			border-top: 2px solid @navColor;
+		}
+		a {
+			text-decoration: underline;
+			color: @navColor;
+			margin: 0 20px;
+			@media(max-width: 500px) {
+				.flexBox();
+				width: 100%;
+				margin: auto;
+				padding: 20px 0;
+				border-bottom: 2px solid @navColor;
+			}
+		}
+	}
+	article {
+		.flexBox();
+		.contact {
+			p {
+				font-size: 1.3rem;
+				margin: 20px;
+				a {
+					text-decoration: none;
+					color: @emailColor;
+				}
+			}
+		}
+		.about {
+			.flexBox();
+			figure {
+				margin: 20px 0;
+				img {
+					width: 300px;
+				}
+			}
+			p {
+				@media(max-width: 500px) {
+					width: 80%;
+				}
+			}
+		}
+		.skills {
+			.flexBox();
+			ul {
+				list-style-type: circle;
+				@media(max-width: 500px) {
+					width: 80%;
+				}
+				li {
+					margin: 10px 0;
+				}
+			}
+		}
+		.history {
+			.flexBox();
+			table {
+				@media(max-width: 500px) {
+					max-width: 90%;
+				}
+				tr {
+					th {
+						border: 1px solid @tableColor;
+						text-align: left;
+						padding: 8px;
+						font-weight: bold;
+					}
+					td {
+						border: 1px solid @tableColor;
+						text-align: left;
+						padding: 8px;
+					}
+				}
+				tr:nth-child(even) {
+					background-color: @tableColor;
+				}
+			}
+		}
+	}
+}
