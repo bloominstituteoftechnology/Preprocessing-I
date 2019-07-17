@@ -57,3 +57,113 @@ html, body {
     height: 100%;
 }
 
+/* variables */
+@main-color:skyblue;
+@main-content-font: 'Roboto Slab', serif;
+
+/* mixins */
+.paragraph(){
+	font-family: @main-content-font;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	line-height: 3rem;
+	text-align: center;
+}
+
+.background(){
+	background-color: aqua;
+	border: 1px solid black;
+}
+
+/* elements would be repeated */
+html{
+	box-sizing: border-box;
+	font-size: 62.5%
+}
+
+body{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgb(91, 107, 115);
+}
+
+h1, h2, h3{
+	.paragraph();
+}
+
+img{
+	width: 100%;
+	height: auto;
+	border: 0.5rem solid black;
+}
+
+p{
+	.paragraph();
+}
+
+hr{
+	width: 100%;
+	border: 0.1rem solid black;
+}
+
+/* header */
+#header{
+	// .background();
+	width: 100%;
+	.navigation{
+		// .background();
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		a{
+		// .background();
+		text-align: center;
+		width: 20%;
+		margin-top: 2rem;
+		color: black;
+		font-size: 1.5rem;
+    	text-decoration: none;
+		}
+	}
+}
+
+/* top section */
+#top-section{
+	.intro{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		img{
+			width: 30%;
+			margin: 3rem;
+		}
+		h1{
+			font-size: 3.5rem;
+		}
+	}
+}
+
+/* bottom section */
+#bottom-section{
+	.skills{
+		.background();
+
+	}
+	.work-history{
+		.background();
+	}
+}
+
+/* contact information*/
+#contact{
+	.background();
+}
+
+/* footer */
+#footer{
+	.background();
+}
