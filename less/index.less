@@ -84,6 +84,9 @@ html, body {
 }
 
 // full page stuff //
+body {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 .container {
 	max-width: 800px;
@@ -112,6 +115,7 @@ header {
 
 .intro-wrapper {
 	.flexbox-property();
+	align-items: center;
 	.jeff-pic {
 		height: auto;
 		max-width: 400px;
@@ -120,14 +124,12 @@ header {
 	}
 	.intro {
 		text-align: center;
-		margin-top: 80px;
 		width: 30%;
 		h1 {
 			font-family: @stylish-font;
 		}
 		h2 {
 			font-size: 18px;
-			font-family: @stylish-font;
 		}
 		a {
 			border: 1px solid @font-color-main;
@@ -141,7 +143,11 @@ header {
 		a:hover {
 			.hover();
 		}
-		
+	}
+	@media only screen and (max-width: 500px){
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 20px;
 	}
 }
 
@@ -149,18 +155,25 @@ header {
 	.flexbox-property();
 	.about {
 		width: 48%;
-		margin: 10px 20px;
+		margin: 0 20px 10px;
 	}
 	.skills {
 		width: 48%;
-		margin: 10px 20px;
+		margin: 0 20px 10px;
 	}
 }
 
 .work-history {
 	.flexbox-property();
+	div ul {
+		list-style-type: circle;
+	}
+	@media only screen and (max-width: 500px){
+		padding: 0 20px;
+	}
 }
 
 footer {
 	text-align: center;
+	margin-bottom: 10px;
 }
