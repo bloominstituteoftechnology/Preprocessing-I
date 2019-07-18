@@ -89,6 +89,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'Cabin Condensed', sans-serif;
 }
 /* HTML5 display-role reset for older browsers*/
 article,
@@ -134,11 +135,9 @@ html,
 body {
   height: 100%;
 }
-.container * {
-  border: 1px solid black;
-}
 .container .flexbotClass {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   margin: 5%;
 }
@@ -147,65 +146,75 @@ body {
 }
 .container header nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   margin: 5%;
+  flex-direction: row;
 }
 .container header nav a {
   text-decoration: none;
   font-size: 200%;
 }
-.container section {
+@media screen and (max-width: 500px) {
+  .container header nav a {
+    text-align: center;
+    font-size: 50px;
+    border: 1px solid black;
+    width: 100%;
+    padding: 2%;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+  }
+}
+.container .top-content {
+  flex-direction: row;
+}
+.container .top-content img {
+  min-width: 40%;
+}
+@media screen and (max-width: 500px) {
+  .container .top-content {
+    flex-direction: column;
+  }
+}
+.container div {
   display: flex;
   justify-content: space-evenly;
   margin: 5%;
+  flex-direction: column;
   background: skyblue;
 }
-.container section .top-about {
-  flex-direction: column;
-}
-.container section .top-about h1 {
-  margin: 5%;
+.container div .top-about h1 {
   width: 50%;
   font-size: 2.5rem;
 }
-.container section .top-about h4 {
-  margin: 5%;
+.container div .top-about h4 {
   font-size: 1.5rem;
 }
-.container section .top-about button {
-  margin-left: 5%;
-  margin-bottom: 2%;
+.container div .top-about button {
   font-size: 1.1rem;
 }
-.container section .middle-left {
-  width: 50%;
-}
-.container section .middle-left h2 {
+.container div h2 {
   font-size: 1.5rem;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+.container div p {
+  font-size: 1.2rem;
   margin: 2%;
 }
-.container section .middle-left p {
-  font-size: 1rem;
-  margin: 2%;
+.container div li {
+  margin: 3.5%;
 }
-.container section .middle-right h2 {
-  font-size: 1.5rem;
-  margin: 2%;
-}
-.container section .middle-right ul {
-  margin: 2%;
-}
-.container section .middle-right ul li {
-  margin: 4%;
-}
-.container section h2 {
-  font-size: 1.5rem;
+.container footer {
   margin: 5%;
 }
-.container section .history-div {
-  width: 100%;
-}
-.container section .history-div .history {
-  flex-direction: column;
-  margin: 5%;
+.container small {
+  display: flex;
+  justify-content: center;
 }

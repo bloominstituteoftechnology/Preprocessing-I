@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Cabin Condensed', sans-serif;
 }
 /* HTML5 display-role reset for older browsers*/
 article, aside, details, figcaption, figure, 
@@ -63,12 +64,10 @@ html, body {
 @sectionColor: skyblue;
 
 .container {
-	* {
-		border: 1px solid black;
-	}
 	//Mixins
 	.flexbotClass {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-evenly;
 		margin: 5%;
 	}
@@ -77,67 +76,70 @@ html, body {
 		background: @backgroundColor;
 		nav {
 			.flexbotClass();
+			flex-direction: row;
 			a {
 				text-decoration: none;
 				font-size: @fontSize;
+				@media screen and (max-width: 500px) {
+					text-align: center;
+					font-size: 50px;
+					border: 1px solid black;
+					width: 100%;
+					padding: 2%;
+					text-decoration: none;
+					margin: 0 auto;
+				}
+			}
+			@media screen and (max-width: 500px) {
+				flex-direction: column;
 			}
 		}
 	}
 	//Top Content Styles
-	section {
+	.top-content {
+		flex-direction: row;
+		img {
+			min-width: 40%;
+		}
+		@media screen and (max-width: 500px) {
+			flex-direction: column;
+		}
+	}
+	div {
 		.flexbotClass();
+		flex-direction: column;
 		background: @sectionColor;
 		.top-about {
-			flex-direction: column;
 			h1 {
-				margin: 5%;
 				width: 50%;
 				font-size: 2.5rem;
 			}
 			h4 {
-				margin: 5%;
 				font-size: 1.5rem;
 			}
 			button{
-				margin-left: 5%;
-				margin-bottom: 2%;
 				font-size: 1.1rem;
-			}
-		}
-		.middle-left {
-			width: 50%;
-			h2 {
-				font-size: 1.5rem;
-				margin: 2%;
-			}
-			p {
-				font-size: 1rem;
-				margin: 2%;
-			}
-		}
-		.middle-right {
-			h2 {
-				font-size: 1.5rem;
-				margin: 2%;
-			}
-			ul {
-				margin: 2%;
-				li {
-					margin: 4%;
-				}
 			}
 		}
 		h2 {
 			font-size: 1.5rem;
-			margin: 5%;
+			margin-top: 2%;
+			margin-left: 2%;
 		}
-		.history-div {
-			width: 100%;
-			.history {
-				flex-direction: column;
-				margin: 5%;
-			}
+		p {
+			font-size: 1.2rem;
+			margin: 2%;
 		}
+		li {
+			margin: 3.5%;
+		}
+	}
+	footer {
+		margin: 5%;
+	}
+	small {
+		display: flex;
+		justify-content: center;
 	}
 }
 
