@@ -49,11 +49,152 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@header:#00334e;
+@background:#e8e8e8;
+@button: #5588a3;
+@header-font: 'Raleway', sans-serif;
+@nav-font: 'Comfortaa', cursive;
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
+}
+h1{
+	font-family: @header-font;
+	font-size: 4rem;
+	border-bottom: 2px solid @header;
+}
+h2,h3{
+	font-family: @header-font;
+	font-size: 2rem;
+	border-bottom: 2px solid @header;
 }
 
+.border(){
+	border:1px solid red;
+}
+img{
+	margin-left: 3rem;
+	border-radius: 200px;
+}
+
+p{
+	padding:.5rem;
+	.border();
+}
+ul li{
+	padding:.5rem;
+	
+}
+
+
+
+.container .nav{
+	background-color:@header;
+	margin:0 10%;
+	display: flex;
+	flex-direction: row;
+    justify-content: flex-end;
+	// border-bottom: 1px solid gray;
+
+		a{
+			font-family: @nav-font;
+			border-bottom: 1px solid white;
+			margin:0 1.5rem .25rem 4rem;
+			padding-top: 1rem;
+			padding-bottom: .2rem;
+			text-decoration: none;
+			color:white;
+			.border();
+	}
+@media screen and (max-width: 500px){
+	.container .nav{
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+.header{
+//  border: 1px solid gray;
+ background-color: @background;
+ margin: 2% 10%;
+//  padding: 1rem;
+ display: flex;
+ flex-direction: column;
+
+ @media( max-width: 500px ) {
+    flex-direction: column;
+    align-items: center;
+
+
+		.header .intro{
+			width: 10%;
+			border: 1px solid gray;
+			display: flex;
+			flex-direction: row;
+		
+		}	
+		.intro{
+			margin: 1rem;
+			padding: 1rem;
+		}
+	
+		button{
+			margin: 1rem 5rem;
+			font-size: 2rem;
+			background-color:@button;
+			color: white;
+			height: 4rem;
+			width: 18rem;
+			border-radius: 8px;
+		}
+		
+}
+
+.middle {
+		background-color: @background;
+		margin: 10%;
+		padding: 1rem;
+		display: flex;
+
+		@media( max-width: 500px ) {
+			flex-direction: column;
+			align-items: center;
+
+
+
+		.info-1{
+			width: 50%;
+			padding: 1rem;
+
+		}
+	}
+
+	.bottom{
+		margin: 10%;
+	}
+
+footer{
+	margin:0 10% 0 ;
+	// border-top: 1px solid gray;
+	background-color:@header;
+	@media( max-width: 500px ) {
+		flex-direction: column;
+		align-items: center;
+		.footer {
+			padding-top:1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		a{  
+			padding:1rem;
+			text-decoration: none;
+			color:white;
+		}
+	}
