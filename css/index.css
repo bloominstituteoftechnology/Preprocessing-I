@@ -136,11 +136,11 @@ table {
 }
 html,
 body {
-  max-width: 880px;
+  max-width: 1000px;
   width: 100%;
   margin: auto;
   font-family: "Montserrat", sans-serif;
-  background: greenyellow;
+  font-size: 20px;
 }
 header {
   display: flex;
@@ -149,7 +149,7 @@ header {
 }
 header nav {
   display: flex;
-  width: 35%;
+  width: 50%;
   justify-content: space-between;
   margin-left: auto;
 }
@@ -157,65 +157,88 @@ header nav a {
   text-decoration: none;
   color: black;
 }
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 #main-content {
   display: flex;
-  flex-wrap: column;
-  flex-direction: column;
   width: 100%;
   margin: auto;
-  background: pink;
   align-items: row;
   margin: 20px;
   padding: 60px 40px;
+  border-radius: 40px;
 }
 #main-content img {
   width: 50%;
 }
+#main-content .intro {
+  width: 50%;
+  text-align: center;
+}
+#main-content h1 {
+  font-size: 3rem;
+}
 #main-content h1,
-#main-content p,
-#main-content button {
+#main-content p {
   padding: 20px;
 }
-#main-content {
-  padding: 60px 40px;
+@media (max-width: 500px) {
+  #main-content {
+    flex-wrap: wrap;
+  }
+  #main-content h1 {
+    font-size: 1.5rem;
+  }
+  #main-content img {
+    width: 100%;
+  }
 }
 #mid-content {
   display: flex;
-  flex-wrap: column;
-  width: 100%;
   margin: 20px;
+  border-radius: 40px;
+  width: 100%;
 }
 #mid-content .copy,
 #mid-content .mini-table {
   width: 100%;
-  background: lightcoral;
 }
 #mid-content .items-list {
   width: 100%;
+}
+#mid-content .items-list:first-child {
+  border-radius: 5px;
 }
 #mid-content .items-list div {
   flex-direction: column;
   padding: 10px;
   border: 1px solid grey;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 #bottom-content table {
-  border: 1px solid black;
   margin: 20px;
   background: white;
+  border-radius: 40px;
 }
 .table {
-  border: 1px dotted black;
   height: 200px;
   background: skyblue;
   width: 100%;
   text-align: center;
   font-size: 20px;
   padding: 10px;
+  border-radius: 40px;
 }
 .table th,
 .table td {
   border: 1px dotted grey;
+  border-radius: 40px;
 }
 .work-hist-header {
   margin: 20px;
@@ -224,3 +247,4 @@ footer {
   text-align: center;
   font-size: 10px;
 }
+/*responsive Styles*/

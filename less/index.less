@@ -142,18 +142,26 @@ table {
   padding: 60px 40px;
 }
 
+.roundcorner () {
+  border-radius: 40px;
+}
+
 .ctrsize {
   text-align: center;
   font-size: 20px;
 }
 
+.h2() {
+  font-size: 20px;
+}
+
 html,
 body {
-  max-width: 880px;
+  max-width: 1000px;
   width: 100%;
   margin: auto;
   font-family: "Montserrat", sans-serif;
-  background: greenyellow;
+  .h2;
 }
 
 header {
@@ -163,7 +171,7 @@ header {
 
   nav {
     display: flex;
-    width: 35%;
+    width: 50%;
     justify-content: space-between;
     margin-left: auto;
 
@@ -172,48 +180,69 @@ header {
       color: black;
     }
   }
+  @media (max-width: 500px) {
+    nav {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 
 #main-content {
   display: flex;
-  flex-wrap: column;
-  flex-direction: column;
   width: 100%;
   margin: auto;
-  background: pink;
   align-items: row;
-  .margins;
-  .all_padding;
+  .margins();
+  .all_padding();
+  .roundcorner();
 
   img {
     width: 50%;
   }
 
+  .intro {
+    width: 50%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
   h1,
-  p,
-  button {
+  p {
     padding: 20px;
   }
-}
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
 
-#main-content {
-  .all_padding;
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 #mid-content {
   display: flex;
-  flex-wrap: column;
-  width: 100%;
   .margins;
+  .roundcorner();
+  width: 100%;
 
   .copy,
   .mini-table {
     width: 100%;
-    background: lightcoral;
   }
 
   .items-list {
     width: 100%;
+    &:first-child {
+      border-radius: 5px;
+    }
   }
 
   .items-list div {
@@ -221,26 +250,29 @@ header {
     padding: 10px;
     border: 1px solid grey;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 #bottom-content table {
-  border: 1px solid black;
   .margins;
   background: white;
+  .roundcorner();
 }
 
 .table {
-  border: 1px dotted black;
   height: 200px;
   background: skyblue;
   width: 100%;
   .ctrsize;
   padding: 10px;
+  .roundcorner();
 
   th,
   td {
     border: 1px dotted grey;
+    .roundcorner();
   }
 }
 
@@ -252,3 +284,5 @@ footer {
   text-align: center;
   font-size: 10px;
 }
+
+/*responsive Styles*/
