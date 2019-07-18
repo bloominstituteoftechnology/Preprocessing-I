@@ -53,37 +53,49 @@ table {
     box-sizing: border-box;
 }
 
-@main-color:red;
+@main-color: grey;
 @header-font: 'Roboto Mono', monospace;
+@head: 'Barriecito', cursive; 
+@para-color: darkblue;
+
+.border {
+  font-style: 'Roboto Mono', monospace;
+  text-decoration: none;
+  margin-right: 65px;
+  font-size: 1.0rem;
+  color: darkblue;
+}
+
+.footer {
+display: flex;
+justify-content: center;
+width: auto;
+background: rgb(10, 92, 92);
+}
+
+
+
 
 .color(){
   background: black;
 }
 
-
-
 html, body {
     height: 100%;
 }
 
-
 header nav  {
 	display: flex;
   justify-content: space-between;
-  .border();
   }
 
- 
-table {
+ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
-
-
-
 
 }
 html, body {
@@ -93,32 +105,27 @@ html, body {
 h1, h2, h3, h4, h5 {
   font-size: 18px;
   margin-bottom: 15px;
-  font-family: 'Rubik', sans-serif;
+  font-family: @header-font;
 }
 
-
-
-
 header {
-  display:flex;
+ display:flex;
  justify-content: center;
  background-color: beige;
-
 }
 
 header nav  {
 	display: flex;
 	justify-content: center;
-  }
- 
-  header nav a {
-    font-family: @header-font;
-    text-decoration: none;
-    margin-right: 65px;
-    font-size: 14px;
-    color: darkblue;
 }
 
+  header nav a {
+  font-family: @head;
+  .border();
+}
+
+
+   
 .top {
   width: 800px;
   margin: 0 auto;
@@ -128,28 +135,22 @@ img {
   width:50%;
   height: auto;
   display: flex;
-  
-
 }
-
 button {
   display:flex;
-  margin: 5px 10px 5px 5px;
 }
-
-
 
 .inside {
   display: flex;
   align-content: flex-start;
-  background-color: gray;
+  background-color: azure;
 }
 
 .plus {
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: gray;
+  background-color: aliceblue;
   padding: 50px;
 }
 
@@ -164,7 +165,6 @@ p {
   font-size: 1.0rem;
 
 }
-
 
 .par{
   line-height: .25;
@@ -194,13 +194,8 @@ display: flex;
   border-bottom: 1px dashed black;
 }
 
-
-
 footer {
-  display: flex;
-  justify-content: center;
-  width: auto;
-  background: lightslategray;
+ .footer();
 }
 
 footer nav {
@@ -209,32 +204,25 @@ footer nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 2%;
-  font-size: 14px;
+  font-size: 1.0rem;
 }
 
 footer nav a {
   color: white;
   text-decoration: none;
 }
-
-
-
 @media ( max-width: 500px) {
 
-
-  .container {
+.container {
     width: 500px;
   } 
-
-
-  header {
+header {
   display:flex;
    justify-content: center;
    background-color: beige;
+}
   
-  }
-  
-  header nav  {
+ header nav  {
     display: flex;
     justify-content: center;
     }
@@ -256,23 +244,19 @@ footer nav a {
     height: auto;
     display: flex;
     
-  
-  }
+ }
   
   button {
     display:flex;
-    margin: 5px 10px 5px 5px;
   }
   
-  
-  
-  .inside {
+.inside {
     display: flex;
     align-content: flex-start;
     background-color: gray;
   }
   
-  .plus {
+.plus {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -280,8 +264,8 @@ footer nav a {
     padding: 50px;
   }
   
-  
-  p {
+p {
+    color: @para-color;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -293,20 +277,19 @@ footer nav a {
   
   }
   
-  
-  .par{
+.par{
     line-height: .25;
     background: gray;
     width: 20%;
     height: 50%;
   }
   
-  .middle {
+.middle {
   display: flex;
   flex-direction: column;
   }
   
-  .bottom-content {
+.bottom-content {
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
@@ -314,25 +297,22 @@ footer nav a {
     justify-content: space-around;
   }
   
-  
-  .last-content {
+.last-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 20px;
     border-bottom: 1px dashed black;
   }
   
   
-  
-  footer {
+footer {
     display: flex;
     justify-content: center;
     width: auto;
     background: lightslategray;
   }
   
-  footer nav {
+footer nav {
     width: 60%;
     display: flex;
     justify-content: space-between;
@@ -345,11 +325,5 @@ footer nav a {
     color: white;
     text-decoration: none;
   }
-  
+}  
 
-
-
-
-
-
-}
