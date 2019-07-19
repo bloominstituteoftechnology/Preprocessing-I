@@ -1,59 +1,265 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@color_1: #2c2f33;
+@color_2: #535c68;
+@color_3: #36C5F0;
+@color_4: #666;
+@font_family_1: "Lato", sans-serif;
+@background_color_1: #f5f6fa;
+@background_color_2: white;
+@background_color_3: #ecf0f1;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
+* {
+	
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+a {
+	color: @color_1;
+	&:hover {
+		text-decoration: none;
+		color: @color_1;
+	}
+}
+.container {
+	max-width: 880px;
+	margin: 0 auto;
 }
 body {
-	line-height: 1;
+	font-family: @font_family_1;
+	color: @color_2;
+	.section-header {
+		text-align: center;
+		padding: 20px 20px;
+		margin: 10px 0;
+		background-color: @background_color_1;
+		box-shadow: 1px 1px 3px #ccc;
+	}
+	.heading {
+		background-color: @background_color_2;
+		border-bottom: 1px solid #dcdde1;
+			nav {
+				background: @color_3;
+				padding: 20px;
+				display: flex;
+				justify-content: space-around;
+				a {
+					text-decoration: none;
+					color: white;
+					font-weight: 600; 
+					font-size: 1.3rem;
+				}
+			}
+		.name {
+			border-right: 1px solid #dcdde1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			h1 {
+				font-weight: 700;
+				font-size: 4.5rem;
+				padding-left: 10px;
+				margin-bottom: 0;
+				color: @color_3;
+			}
+			p {
+				margin-bottom: 0;
+				font-weight: 300;
+				padding-left: 1em;
+				width: 70%;
+			}
+		}
+		.contact {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			margin-right: 20px;
+			.icon {
+				font-size: 18px;
+				margin-right: 10px;
+				color: @color_3;
+			}
+			p {
+				margin-bottom: 0;
+				color: @color_2;
+			}
+		}
+	}
+	.main-body {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		padding-top: 24px;
+		.experience {
+			border-right: 1px solid #dcdde1;
+			h3 {
+				font-weight: 700;
+				color: @color_3;
+				margin-bottom: 0;
+				padding: 15px 0;
+			}
+			.project-container {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: flex-start;
+				align-content: flex-start;
+				.one {
+					flex-basis: 100%;
+				}
+				.two {
+					flex-basis: 100%;
+				}
+				.project {
+					position: relative;
+					margin: 25px 1em 0;
+					p {
+						line-height: 1.5;
+						font-weight: 300;
+					}
+					.project-title {
+						font-size: 1.5rem;
+						font-weight: 700;
+						color: @color_3;
+					}
+					.project-link {
+						color: @color_3;
+						font-weight: 700;
+						text-decoration: underline;
+					}
+					ul {
+						list-style-type: none;
+						li {
+							display: inline-block;
+							font-size: 12px;
+							padding: 5px 10px;
+							margin: 3px;
+							border: 1px solid #088da5;
+							background-color: @background_color_1;
+							border-radius: 5px;
+						}
+					}
+				}
+			}
+			.work-experience {
+				.disclaimer {
+					color: @color_4;
+					.disclaimer-link {
+						color: @color_3;
+						font-weight: 700;
+						text-decoration: underline;
+					}
+				}
+				.job {
+					margin: 25px;
+					ul {
+						list-style-type: disc;
+						color: @color_3;
+						li {
+							font-weight: 300;
+							color: @color_2;
+							margin-bottom: 10px;
+						}
+					}
+					.job-row {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						.job-title {
+							font-size: 1.5rem;
+							font-weight: 700;
+							color: @color_3;
+							margin-bottom: 0;
+						}
+						.date {
+							font-size: 14px;
+							color: @color_2;
+							margin-left: auto;
+						}
+					}
+					.position {
+						font-size: 1rem;
+						font-weight: 700;
+						font-style: italic;
+						.location {
+							font-style: normal;
+						}
+					}
+				}
+			}
+		}
+		.side-bar {
+			h3 {
+				font-weight: 700;
+				color: @color_3;
+				margin-bottom: 0;
+				padding: 15px 0;
+			}
+			.school {
+				margin-top: 25px;
+				padding: 0 1em;
+				h5 {
+					font-size: 1.25rem;
+					font-weight: 700;
+				}
+				.date {
+					font-size: 14px;
+					margin-bottom: 0;
+				}
+				.description {
+					font-size: 14px;
+					font-weight: 300;
+					line-height: 1.5;
+				}
+			}
+			.skills {
+				max-width: 100%;
+				padding: 0 1em;
+				.skills-heading {
+					font-weight: 700;
+					padding: 15px 0;
+					margin-bottom: 0;
+				}
+				.dev-list {
+					margin-bottom: 0;
+					li {
+						display: block;
+						color: @color_1;
+						font-weight: 300;
+					}
+				}
+				.design-list {
+					list-style-type: none;
+					margin-bottom: 0;
+					li {
+						display: block;
+						color: @color_1;
+						font-weight: 300;
+					}
+				}
+				.skills-list {
+					list-style-type: none;
+					li {
+						display: inline-block;
+						padding: 5px 10px;
+						box-shadow: 1px 1px 2px #ccc;
+						margin: 3px 1.5px;
+						border-radius: 5px;
+						background-color: @background_color_3;
+						color: @color_3;
+						font-weight: 400;
+					}
+				}
+			}
+			.interests {
+				padding: 1em;
+				p {
+					margin-top: 10px;
+					font-weight: 300;
+				}
+			}
+		}
+	}
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-}
-
