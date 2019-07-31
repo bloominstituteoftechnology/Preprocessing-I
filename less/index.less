@@ -57,7 +57,109 @@ html, body {
     height: 100%;
 }
 
-body {
-	background-color: red;
+/*Kira's LESS*/
+
+/*Variables and Mix-ins*/
+@lightest-gray: #DCDCDC;
+
+.horizontal-flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.arrange-two-items {
+	padding: 1%;
+	width: 48%
+}
+
+/*Nested Styling*/
+
+.container {
+	max-width: 800px;
+	margin: auto;
+	padding: 1%;
+	font-family: 'Crimson Pro', serif;
+	
+
+	header {
+		margin-top: 3%;
+		margin-bottom: 3%;
+	}
+
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1.6rem;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+	}
+
+	ul {
+		margin-left: 20px;
+		li {
+			list-style-type: square;
+			padding: 5px;
+		}
+	}
+	
+	.navigation {
+		.horizontal-flex();
+		margin: 20px 10px 30px 10px;
+	}
+	.nav-item {
+		text-decoration: none;
+		color: black;
+	}
+
+	.nav-item:hover {
+		color: @lightest-gray;	
+	}
+
+	.tagline {
+		font-size: 1.2rem;
+		font-style: italic;
+	}
+
+	.main-content {
+		background-color: @lightest-gray;
+		border-radius: 8px;
+		padding: 1%;
+	}
+
+	.middle-content {
+		.horizontal-flex();	
+	}
+
+	.middle-content-box {
+		.arrange-two-items();
+		@media (max-width: 500px) {
+			width: 98%;
+		  }
+	}
+
+	.bottom-content {
+		.horizontal-flex();
+		}
+
+	.bottom-content-box {
+		.arrange-two-items();
+		@media (max-width: 500px) {
+			width: 98%;
+		  }
+	}
+
+	.my-button {
+		background-color: black;
+		color: white; 
+		text-decoration: none;
+		padding: 10px;
+		border-radius: 5px;
+	}
+
 }
 
