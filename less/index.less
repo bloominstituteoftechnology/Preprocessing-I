@@ -100,9 +100,10 @@ img {
 .container {
 	width: 80%;
 	margin: 0 auto;
+	justify-content: center;
+	align-content: center;
 	display: flex;
 	flex-direction: column;
-	margin-left: 3rem;
 
 	header{
 		.SectionSize();	
@@ -187,7 +188,7 @@ img {
 				font-size: @ImportantFont;	
 			}
 				.SkillsList{
-				 font-size: @ImportantFont - .3rem;
+				 font-size: @ImportantFont - .8rem;
 				 text-decoration: underline;
 				 text-align: center;
 				}
@@ -218,12 +219,10 @@ img {
 
 		.End-Section{
 			.SectionSize();
-			border: 1px solid black;
-			padding: .75rem;
-			width: 100%;
+			width: 90%;
 		}
 			.WorkTable{
-				table-layout: fixed;
+				table-layout: auto;
 				width: 90%;
 				text-align: center;
 			}	
@@ -232,13 +231,15 @@ img {
 					font-size: @ImportantFont;
 				}
 					tr{
-					margin: 1rem;
-					font-size: @ImportantFont - .55rem;	
+					font-size: @ImportantFont - .5rem;	
 					}
-						td{
-						padding: .50rem;
-						text-align: center;
+						th{
+							text-decoration: underline;
 						}
+							td{
+							text-align: center;
+							font-size: @ImportantFont -.65rem;
+							}
 
 		.Foot-Section{
 			.SectionSize();
@@ -255,29 +256,33 @@ img {
 
 @media (max-width: 500px){
 	.container{
-		a{
-			display: flex;
-			flex-direction: column;
-			text-align: center;
-			margin: 0 auto;
-		}
-
-		.AboutSection{
-			width: 90%;
-			display: flex;
-			flex-direction: row;
-			margin: 0 auto;
-		}
-
-			img{
-				width: 80%;
-			 display: flex;
-			 flex-direction: column;
+		header{
+			nav{
+				a{
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					margin: 0 auto;
+				}	
 			}
-
-		.Text-Info{
-			display: inline-flex;
+		}	
+		.AboutSection{
+				width: 90%;
+				display: flex;
+				flex-direction: row;
+				margin: 0 auto;
+			}
+				img{
+					width: 40%;
+					display: flex;
+				}
+				.Text-Info{
+					width: 40%;
+					flex-direction: row;
+				}
 		}
-	}
-}
+}	
+
+	
+
 
