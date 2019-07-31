@@ -74,6 +74,13 @@ html, body {
 	margin: .5rem;
 }
 
+.ButtonSizing{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
 h1{
 	Font-size: @ImportantFont;
 	padding: @TextPadding;
@@ -118,7 +125,6 @@ img {
 	.AboutSection{
 			.SectionSize();
 			background-color: @boxbackground;
-			
 			display: flex;	
 		}
 		.PortaitSection{
@@ -127,21 +133,25 @@ img {
 		}
 
 		.Text-Info{
-			width: 60%;
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			margin: 0 auto;
-			padding: 2.5rem;
+			padding: 1rem;
 		}
+			h3{
+				width: 110%;
+				text-align: Center;
+				font-size: @ImportantFont - .5rem;
+			}
 			.InfoPgraph{
 				padding: .5rem;
+				width: 75%;
+				text-align: center;
 			}
 			.SignUpHere {
-				width: 20%;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				margin: 0 auto;
+				width: 25%;
+				.ButtonSizing();
 			}
 
 		.Middle-Section{
@@ -179,12 +189,18 @@ img {
 				margin: 1rem;
 				text-align: center;
 				background-color: @boxbackground;
+				padding: .25rem;
+				padding: @TextPadding;
 			}
+				.LearmMoreHere {
+					.ButtonSizing();
+				}
 
 		.End-Section{
 			.SectionSize();
-			border: 2px solid black;
-			
+			border: 1px solid black;
+			padding: .75rem;
+			width: 100%;
 		}
 			.WorkTable{
 				table-layout: auto;
@@ -197,9 +213,11 @@ img {
 				}
 					tr{
 					margin: 1rem;
+					font-size: @ImportantFont - .55rem;	
 					}
 						td{
 						padding: .50rem;
+						text-align: center;
 						}
 
 		.Foot-Section{
