@@ -58,48 +58,47 @@ html, body {
 }
 
 // code starts here -------------------//
-@mobile: ~"(max-width: 500px)";
+@mobile: "(max-width: 500px)";
 @padding: 2rem;
+@flexcolumn: column;
 
 * {
 	font-family: Arial, Helvetica, sans-serif;
   }
   
   body {
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
+	
 	@media @mobile {
 	margin-left: 1rem;
 	display: flex;
-	flex-direction:column;
+	flex-direction:@flexcolumn;
 	
-	}
-  }
-  
-  a {
-	text-decoration: none;
 	
-	@media @mobile{display: flex;
-		padding-bottom: 2rem;
-		
-		
-	}
-  }
-  
-  .nav {
-	width: 80%;
-	display: flex;
-	justify-content: space-around;
-	border-top: 0rem;
-	padding-bottom: 3rem;
-
 	  
-	@media @mobile{
-		flex-direction: column;
-		flex-wrap: wrap;
-		padding-left: 6rem;
+	.nav {
+		width: 80%;
+		display: flex;
+		justify-content: space-around;
+		border-top: 0rem;
+		padding-bottom: 3rem;
+	
+		  
+		@media @mobile{
+			flex-direction:@flexcolumn;
+			flex-wrap: wrap;
+			padding-left: 6rem;
+  
+
+  			a {
+			text-decoration: none;
+	
+			@media @mobile{display: flex;
+			padding-bottom: 2rem;
 		
-	}	
+	 }
+
 }
 
 .photo{
@@ -115,7 +114,7 @@ html, body {
 
 	@media @mobile{
 			width: 90%;
-			flex-direction: column;
+			flex-direction:@flexcolumn;
 			justify-items: center;
 			margin-left: 1rem;
 		  
@@ -127,12 +126,21 @@ h1 {
 	
   }
 
+  .button {
+	
+	  display: flex;
+	  justify-content: center;
+	  margin-top: 3rem;
+	  
+  }
+
   .experience {
 	  
 	  display: flex;
-	  flex-direction: column;
+	  flex-direction: @flexcolumn;
 	  justify-content: space-between;
-	  height: 5rem;
+	  flex-wrap: wrap;
+	 
 	  margin-bottom: @padding;
 
 	  @media @mobile{
@@ -142,36 +150,23 @@ h1 {
   
   .stuff {
 	  
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 5rem;
-	margin-bottom: @padding;
-
-	@media @mobile{
-		margin-top: 3rem;
+	.experience()
 	}
 }
   
 .work-history {
-	  
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 5rem;
-	margin-bottom: @padding;
-
-	@media @mobile{
-		margin-top: 3rem;
+	.experience()
 	}
 }
 	
 	#footer {
 	
 	  display: flex;
-	  flex-direction: column;
+	  flex-direction: row;
 	  @media @mobile{
 		  margin-top: 3rem;
+		  
+
 	  }
 	
 	}
