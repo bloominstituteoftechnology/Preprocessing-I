@@ -1,1 +1,340 @@
-/* Compile your LESS file! */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  /* background-color: red; */
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+
+  /* background-color: red; */
+}
+
+/* @media(max-width: 500px) {
+  body {
+    background-color: red;
+  }  
+} */
+
+/* header / navigation */
+
+header {
+  width: 100%;
+}
+nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-content: center;
+  list-style-type: none;q
+  padding: auto;
+}
+a  {
+  text-decoration: none;
+  margin: 20px;
+  padding: 10px;
+}
+  @media(max-width: 500px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    a { 
+      margin: 10px 5px;
+      padding: 10px 5px;
+    }  
+  }
+
+/* upper-half  img - button  */
+.upper-half {
+  width: 100%;
+  height: 50%%; 
+  background-color: #dddddd;
+  padding: 30px;
+} 
+
+/* img button p content */
+.container-upper {
+  width: 100%;
+  padding: 10px; 
+}
+.img-container {
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 20px; 
+  border-bottom: 1px dashed black;
+}
+.img-lahavas {
+  width: 35%;
+  height: 10%;
+  margin-bottom: 15px;
+}
+  @media(max-width: 500px) {
+    .container-upper .img-container, .img-cont-p { 
+      justify-content: center;
+      align-items: center;
+      padding: 10px 1px;
+    }
+    .img-lahavas { 
+      width: 100%;
+    }
+  }
+
+
+
+
+/* upper-half banner lower - button p */
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-right: 20px;
+  margin: 10px 5px;
+}
+.contact-btn {
+  width: 30%;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  background-color: #636363;
+  color: #ffffff;
+  padding: 5px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button-container .contact-btn:hover {
+  border-color: #dddddd;
+  background-color: #ffffff;
+  color: #dddddd;
+}
+
+  @media(max-width: 500px) {
+    .button-container, .contact-btn, .btn-p {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+/* wine blog - insta link - stuff i'm good at table */
+/* lower-half container-lower */
+.lower-half {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  /* background-color: yellow; */
+}
+.container-lower {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.banner-upper {
+  width: 50% ;
+}
+/* table of things i'm good at. */
+.banner-lower {
+  width: 50%;
+}
+.STUFF {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.STUFF .stuff-tr .stuff-th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #ffffff;
+}
+  @media(max-width: 500px) {
+    .container-lower {
+      flex-direction: column;
+      padding: 0 auto;
+      margin: 0 auto;
+    }
+    .banner-upper {
+      margin: 5px auto;
+    }
+    .banner-lower {
+      margin: 5px auto;
+    }
+
+  }
+
+/* workhistory-table */
+.workhistory-table {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+td, th {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* footer copyright element */
+.footer-copyright {
+  width: 100%;
+  height: 75px;
+  background-color: #636363;
+  color: white;
+}
+.footer-copyright, .copyright { 
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px auto;
+}
