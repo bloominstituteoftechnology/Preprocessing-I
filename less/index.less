@@ -4,56 +4,316 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+/*new less code and variables */
+@textheader: black;
+@backgroundcolor: #33cc33;
+@lines: gray;
+
+/*Mixins*/
+.border {
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  border: 1px solid black;
+}
+
+.margin {
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  header {
+    width: 100%;
+    background: gray;
+    margin-bottom: 30px;
+
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+
+      a {
+        color: @backgroundcolor;
+        font-size: 1.3rem;
+        text-decoration: none;
+        padding: 2rem;
+      }
+    }
+  }
+}
+.rickpic {
+  height: 200px;
+  width: 40%;
+  background-color: @backgroundcolor;
+  border-radius: 50%;
+}
+
+body {
+  background-image: url(../rick-and-morty-wallpaper-portal-wallpaper-001.jpg);
+
+  .backgroundheader {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    background: lightgray;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  .name {
+    font-size: 3rem;
+  }
+  .under {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+  .under2 {
+    border-top: 1px solid black;
+    padding: 2rem;
+    font-size: 20px;
+  }
+}
+
+button {
+  width: 200px;
+  padding: 10px;
+  margin-left: 10px;
+  background: gray;
+  border-radius: 8px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+
+  .middle-content {
+    display: flex;
+    background-color: lightgray;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2rem;
+    .lestinup {
+      flex-direction: column;
+      text-align: left;
+      flex-wrap: wrap;
+      width: 50%;
+
+      h4 {
+        font-size: 2rem;
+        padding: 2rem;
+      }
+    }
+  }
+}
+.list1 {
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    font-size: 25px;
+    margin-bottom: 1rem;
+  }
+
+  padding: 2rem;
+  ul {
+    padding: 2rem;
+    .border();
+    li {
+      border-bottom: 1px solid black;
+      padding: 1rem;
+    }
+  }
+}
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightgray;
+  padding: 5rem;
+  margin-top: 30px;
+  flex-direction: column;
+  text-align: left;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+  @media (max-width: 500px) {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  h4 {
+    font-size: 2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .head-titles {
+    display: flex;
+    flex-direction: row;
+    .border();
+    font-size: 2rem;
+    justify-content: space-between;
+  }
+}
+.titles1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .margin();
+}
+.titles2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .margin();
+}
+.titles3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .margin();
+}
