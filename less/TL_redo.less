@@ -1,40 +1,38 @@
-// -- ** -- **
-// -- ** -- **
-// VARIABLES
-	//FONTS
-		// Main Font
-            @fontVariable: 'Cinzel', serif;
-		// Sub Font
-			@fontVariableSub: 'Raleway', serif;
 
+// IMPORTS
 
-	//COLORS
-		// Main
-			@colorMAIN: #708090;
-		// Sub
-            @color2: #bebebe;
-            
-// -- ** -- **
-// -- ** -- **
-// MIXINS
+    @import "TL_redo_reset.less";
+    @import "TL_redo_variables.less";
+    @import "TL_redo_mixins.less";
 
-
-// -- ** -- **
-// General
-// -- ** -- **
-
-.hero {
-    border: 1px solid black
-}
-body {
-    background-color: orange;
-    
-    p {
-        color: orange;
+// MAIN LESS CSS
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .pageContainer {
+        width: 800px;
         border: 1px solid black;
     }
-    
-}
-h1 {
-    color: yellow;
-}
+
+// NAV Styles
+    .navContainer {
+        .flexParent(flex-end, center);
+        padding: 10px 0;
+
+        nav {
+            .flexParent(space-between, center);
+            width: 50%;
+
+            a {
+                // color: @some-color;
+                color: @someOther-color;
+                text-decoration: none;
+
+                &:last-child {
+                    color: @some-color;
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
