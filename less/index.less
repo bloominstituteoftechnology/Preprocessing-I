@@ -71,8 +71,10 @@ padding: 1rem;
 html, body {
 	
 	height: 100%;
-	width: 100%;
+	max-width: 100%;
 	font-size: 62.5%;
+	background-color: #363636
+
 
 }
 
@@ -82,13 +84,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: @headerfont;
 	font-size: 3rem;
 	font-weight: 600;
-	margin: 2rem 1rem;
+	margin: 1rem 1rem;
+	padding: 1rem 0rem;
 }
 
 p, li {
 	font-family: @mainfont;
 	font-size: 2rem;
-	margin: 2rem;
+	padding: 1rem;
 }
 
 input[type=text], select, textarea {
@@ -143,7 +146,6 @@ input[type=text], select, textarea {
 
   }
 
-  
 
   .navbar {
 	display: flex;
@@ -156,23 +158,24 @@ input[type=text], select, textarea {
 			margin: 1rem;
 			font-family: @mainfont;
 			font-size: 2rem;
-			color: black;
+			color: #dddddd5d;
 			text-decoration: none;
 			font-weight: 600;
   }//closes a
   			a:hover {
-				color: red; 
+				color: white; 
 		} //closes a:hover
 	  
 } //closes navbar
 
 .top-content {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-content: center;
-	background-color: #d8d8d8;
+	background-color: #b8b8b8;
 	max-width: 100%;
-	width: 40vh 50vw;
+	padding: 2rem;
+	
 	
 }
 .bottom-content {
@@ -181,19 +184,10 @@ input[type=text], select, textarea {
 	align-content: space-evenly;
 	background-color: #7a7a7abe;
 	max-width: 100%;
-	width: 50%;
+	
 	
 }
 
-.content{
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		background-color: #dddddd5d;
-		max-width: 100%;
-		
-	}
 
 .skills {
 	display: flex;
@@ -206,13 +200,43 @@ input[type=text], select, textarea {
 	max-height: 100%;
 	padding: 1rem 3rem;
 	background-image: url(../images/matrix.jpg); 
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-position: fill;
+	background-position: fixed;
 	background-size: 100%;
 	width: 100%;
 	height: 100%;
-	li {
+		li {
 		margin: 10px 0;
 		list-style-type: square;
 	}
 }
+
+footer {
+	padding: 2rem 2rem;
+	text-align: center;
+	font-family: @mainfont;
+	font-size: 2rem;
+	color: white;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border: 1px solid rgb(0, 0, 0);
+	font-family: @mainfont;
+	font-size: 2rem;
+  }
+  
+  td {
+	border: 1px solid rgb(0, 0, 0);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-family: @mainfont;
+	font-size: 2rem;
+	padding: 1rem;
+  }
+
+  tr:nth-child(even) {background-color: #f2f2f2;}
+  tr:nth-child(odd) {background-color: #8b8b8b;}
