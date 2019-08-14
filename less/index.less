@@ -51,10 +51,13 @@ table {
 /* Set every element's box-sizing to border-box */
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
-
+/***variables***/
 @primary-color: lightcoral; 
+@tertiary-color: rgb(37, 195, 248); 
 @seconday-color: lightsalmon; 
 @text-color: white; 
+
+/***mixins***/
 .round-img{
 	border-radius: 50%; 
 }
@@ -65,9 +68,16 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 .flex-column{
 	display:flex; 
-	justify-content: center; 
+	justify-content: space-between; 
 	align-items:center; 
 	flex-direction:column; 
+}
+
+.flex{
+	display:flex; 
+	justify-content: center;  
+	flex-wrap: wrap; 
+	align-items:center; 
 }
 .intro{
 	background: @primary-color; 
@@ -79,8 +89,101 @@ body {font-family: Verdana, sans-serif; margin:0}
 			.round-img(); 
 		}
 	}
+	h1{
+		font-size: 30px; 
+		font-weight: bold; 
+	}
 
 }
+
+.about-me{
+	.padding(); 
+	text-align:center; 
+	h2{
+		font-size: 20px; 
+	}
+	span{
+		font-weight:bold;
+	}
+}
+
+/****skills****/
+
+.skills-container{
+	.flex-column(); 
+	 
+	 
+	background: @seconday-color; 
+	.skills{
+		
+	
+		.flex(); 
+		.skill{
+			width: 50%; 
+			
+			padding: 3%; 
+		}
+	
+	}
+	
+}
+
+.skill-guage{
+	background:@text-color; 
+	max-width: 100%; 
+	height: 10px; 
+	display: flex;  
+	
+}
+/***time management***/
+.time{
+		.percent{
+			width:76%; 
+			max-height: 100%; 
+			background: @tertiary-color; 
+		}
+	}
+
+/***attn to detail***/
+.creativity{
+	.percent{
+		width:76%; 
+		max-height: 100%; 
+		background: @tertiary-color; 
+	}
+}
+.attn-to-detail{
+	.percent{
+		width:80%; 
+		max-height: 100%; 
+		background: @tertiary-color; 
+	}
+}
+
+.communication{
+	.percent{
+		width:90%; 
+		max-height: 100%; 
+		background: @tertiary-color; 
+	}
+}
+
+.photography{
+	.percent{
+		width:100%; 
+		max-height: 100%; 
+		background: @tertiary-color; 
+	}
+}
+
+.blending{
+	.percent{
+		width:93%; 
+		max-height: 100%; 
+		background: @tertiary-color; 
+	}
+}
+/***projects***/
 .projects {
 	display:flex; 
 	justify-content: space-around; 
@@ -94,4 +197,9 @@ body {font-family: Verdana, sans-serif; margin:0}
 		}
 	
 
+}
+
+.experience{
+	background: @primary-color; 
+	.flex-column(); 
 }
