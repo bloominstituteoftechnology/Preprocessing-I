@@ -154,7 +154,7 @@ body {
   align-items: center;
   background: url("../img/arizona.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -163,10 +163,9 @@ body {
 header {
   text-shadow: 0 0 10px #fff;
   width: 80%;
-  height: 30vh;
   background: url("../img/cowboy.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 20px;
@@ -175,11 +174,25 @@ header {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (max-width: 500px) {
+  header {
+    width: 100%;
+  }
+}
 header nav {
   margin: 10px;
   width: 50%;
   display: flex;
   justify-content: space-around;
+}
+@media screen and (max-width: 500px) {
+  header nav {
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -192,8 +205,50 @@ header nav a:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 800px) {
+  header nav a:hover {
+    padding: 0px;
+    margin: 0px;
+    background: none;
+  }
+}
 header p {
   font-size: 1.5rem;
 }
 /* Main content */
+.main {
+  width: 50%;
+  border: 5px solid grey;
+  background: url("../img/bigiron.jpeg");
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media screen and (max-width: 1500px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+}
+.main div {
+  border: 5px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.main div ul li {
+  text-align: center;
+}
 /* Footer content */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

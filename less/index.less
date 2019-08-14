@@ -73,21 +73,28 @@ h3{
 	margin:10px;
 }
 body{
-	.flex();
+	.flexcolumn();
 	background: url("../img/arizona.jpg");
 	.parallax();
 }
 
 /* Variables and mixins */
 
-.flex(){
+@bordercolor:grey;
+
+.flexcolumn(){
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 }
+.flexrow(){
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
 .parallax(){
 	background-attachment:fixed;
-	background-position:center;
+	background-position:bottom;
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -97,17 +104,24 @@ body{
 header{
 	text-shadow:0 0 10px #fff;
 	width:80%;
-	height:30vh;
 	background: url("../img/cowboy.jpg");
 	.parallax();
 	margin:20px;
-	border:5px solid grey;
-	.flex();
+	border:5px solid @bordercolor;
+	.flexcolumn();
+	@media screen and (max-width: 500px){
+		width:100%;
+	}
 	nav{
 		margin:10px;
 		width:50%;
 		display:flex;
 		justify-content:space-around;
+		@media screen and (max-width: 500px){
+			margin:0px;
+			width:100%;
+			.flexrow();
+		}
 		a{
 			text-decoration:none;
 			font-size:1.25rem;
@@ -117,6 +131,11 @@ header{
 				background:url("../img/bang.png");
 				background-position:center;
 				background-repeat:no-repeat;
+				@media screen and (max-width: 800px){
+					padding:0px;
+					margin:0px;
+					background:none;
+				}
 			}
 		}
 	}
@@ -127,4 +146,29 @@ header{
 
 /* Main content */
 
+.main{
+	width:50%;
+	border:5px solid @bordercolor;
+	background:url("../img/bigiron.jpeg");
+	.parallax();
+	.flexrow();
+	@media screen and (max-width: 1500px){
+		.flexcolumn();
+		width:80%
+	}
+	div{
+		border:5px solid @bordercolor;
+		.flexcolumn();
+		margin:20px;
+		ul{
+			li{
+				text-align:center;
+			}
+		}
+	}
+}
+
 /* Footer content */
+footer{
+	.flexcolumn();
+}
