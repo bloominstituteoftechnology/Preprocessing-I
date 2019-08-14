@@ -1,4 +1,236 @@
 @import "./_reset.less";
 @import "./_variables.less";
 @import "./_media_bp.less";
+@import "./_utilities.less";
 @import "./_flex.less";
+
+
+/* *************************
+  FullPage Styles
+**************************/
+body{
+  background-color: lighten(desaturate(@darkBlue, 80%), 60%);
+  .ptNarrow();
+  line-height: 1.5;
+}
+
+.wrapper {
+ width: 100%;
+ min-height: 100vh;
+ .flexContainer(@dir: column; @j-c: space-between;);
+}
+
+h1, h3 {
+  .exa();
+}
+
+.imgContainer{
+  .flexContainer();
+  width: max-content;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.lineBreak {
+  height: 2px;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: @darkBlue;
+}
+
+section{
+  margin: 2rem 0;
+  padding: 1rem;
+}
+/* *************************
+  Header Styles
+**************************/
+header{
+  background-color: @darkBlue; 
+  color: @white;
+  .flexContainer(@j-c: center ;@a-i: center;);
+
+  .imgContainer{
+    width:48%;
+
+
+    img {
+          max-height: 250px;
+          object-fit: cover;
+        }
+  }
+
+  nav {
+    width: 48%;
+  }
+ 
+  .navButton {
+    padding: 1rem 2rem;
+  }
+
+  ul {
+    .flexContainer(@dir: column; @a-i: center;);
+    a {
+      .d-block();
+      margin: 1rem;
+    }
+  }
+
+  /* *******************
+  Tablet sizes for header 
+  **********************/
+
+  @media @mb_tablet_up{
+    background-color: @white; 
+    justify-content: flex-end;
+    padding: 0 1rem;
+
+    ul{
+      flex-direction: row;
+    }
+
+    nav{
+      width: auto;
+    }
+
+    .imgContainer{
+    .d-none();
+    }
+
+    .navButton{
+      background-color: @mPurple;
+      &:hover{
+      background-color: @redPurp;
+      }
+    }
+
+    
+
+  }
+}
+/* *************************
+  Hero Styles
+**************************/
+.hero {
+  h1, h4 {
+    .t-a(center);
+  }
+
+    .imgContainer {
+      .d-none();
+  }
+
+  button{
+    background-color: @mPurple;
+    color: @white;
+    border: none;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+
+    &:hover{
+      background-color: @redPurp;
+    }
+  }
+
+  @media @mb_tablet_up{
+    background-color:@darkBlue;
+    color: @white;
+    margin-top: 0;
+
+    h1, h4{
+      .t-a(left);
+    }
+
+    .lineBreak {
+      background-color: @mPurple;
+    }
+    .imgContainer{
+      .d-block();
+      margin: 1rem 0 0 1rem;
+      max-width: 40%;
+      img {
+        max-height: 350px;
+      }
+    }
+
+    button {
+      margin-bottom: 1rem;
+    }
+  }
+
+}
+
+/* *************************
+  Info Styles
+**************************/
+.info, .experience{
+  .flexContainer(column;);
+
+
+  @media @mb_tablet_up{
+
+    flex-direction: row;
+    justify-content: space-between;
+
+      div:nth-of-type(1){
+        width: 68%;
+      } 
+
+      div:nth-of-type(2){
+        width: 28%;
+      }
+  }
+}
+
+// .info{
+//   .flexContainer(column;  );
+
+//   @media @mb_tablet_up{
+
+//     flex-direction: row;
+//     justify-content: space-between;
+
+//       .about{
+//         width: 68%;
+//       } 
+
+//       .skills{
+//         width: 28%;
+//       }
+//   }
+// }
+/* *************************
+  Skills Experience
+**************************/
+// .experience{
+//   .flexContainer(column);
+
+
+//   @media @mb_tablet_up{
+
+//     flex-direction: row;
+//     justify-content: space-between;
+
+//       .wh{
+//         width: 68%;
+//       } 
+
+//       .contact{
+//         width: 28%;
+//       }
+//   }
+// }
+
+/* *************************
+  Footer Styles
+**************************/
+footer{
+  color: @white;
+  background-color: @darkBlue;
+  flex-grow:0;
+  .t-a(center);
+}

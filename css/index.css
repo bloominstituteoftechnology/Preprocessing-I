@@ -267,7 +267,8 @@ header,
 hgroup,
 menu,
 nav,
-section {
+section,
+button {
   display: block;
 }
 html {
@@ -337,3 +338,186 @@ a:visited {
 /* *********************
       Media Breakpoints
 ************************* */
+/* *************************
+  FullPage Styles
+**************************/
+body {
+  background-color: #b6b6cb;
+  font-family: 'PT Sans Narrow', sans-serif;
+  line-height: 1.5;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: unset;
+}
+h1,
+h3 {
+  font-family: 'Lexend Exa', sans-serif;
+}
+.imgContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: unset;
+  width: max-content;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.lineBreak {
+  height: 2px;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: #01024e;
+}
+section {
+  margin: 2rem 0;
+  padding: 1rem;
+}
+/* *************************
+  Header Styles
+**************************/
+header {
+  background-color: #01024e;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* *******************
+  Tablet sizes for header 
+  **********************/
+}
+header .imgContainer {
+  width: 48%;
+}
+header .imgContainer img {
+  max-height: 250px;
+  object-fit: cover;
+}
+header nav {
+  width: 48%;
+}
+header .navButton {
+  padding: 1rem 2rem;
+}
+header ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: center;
+}
+header ul a {
+  display: block;
+  margin: 1rem;
+}
+@media screen and (min-width: 500px) {
+  header {
+    background-color: #fff;
+    justify-content: flex-end;
+    padding: 0 1rem;
+  }
+  header ul {
+    flex-direction: row;
+  }
+  header nav {
+    width: auto;
+  }
+  header .imgContainer {
+    display: none;
+  }
+  header .navButton {
+    background-color: #543864;
+  }
+  header .navButton:hover {
+    background-color: #8b4367;
+  }
+}
+/* *************************
+  Hero Styles
+**************************/
+.hero h1,
+.hero h4 {
+  text-align: center;
+}
+.hero .imgContainer {
+  display: none;
+}
+.hero button {
+  background-color: #543864;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+}
+.hero button:hover {
+  background-color: #8b4367;
+}
+@media screen and (min-width: 500px) {
+  .hero {
+    background-color: #01024e;
+    color: #fff;
+    margin-top: 0;
+  }
+  .hero h1,
+  .hero h4 {
+    text-align: left;
+  }
+  .hero .lineBreak {
+    background-color: #543864;
+  }
+  .hero .imgContainer {
+    display: block;
+    margin: 1rem 0 0 1rem;
+    max-width: 40%;
+  }
+  .hero .imgContainer img {
+    max-height: 350px;
+  }
+  .hero button {
+    margin-bottom: 1rem;
+  }
+}
+/* *************************
+  Info Styles
+**************************/
+.info,
+.experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+}
+@media screen and (min-width: 500px) {
+  .info,
+  .experience {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .info div:nth-of-type(1),
+  .experience div:nth-of-type(1) {
+    width: 68%;
+  }
+  .info div:nth-of-type(2),
+  .experience div:nth-of-type(2) {
+    width: 28%;
+  }
+}
+/* *************************
+  Skills Experience
+**************************/
+/* *************************
+  Footer Styles
+**************************/
+footer {
+  color: #fff;
+  background-color: #01024e;
+  flex-grow: 0;
+  text-align: center;
+}
