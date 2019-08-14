@@ -54,6 +54,14 @@ table {
 @content-font-color: rgb(65, 63, 63);
 @nav-font-color: grey;
 
+/*MIXINS*/
+.nav-styling() {
+	padding: 1.2rem;
+	text-decoration: none;
+	color: @nav-font-color;
+
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -70,9 +78,7 @@ header {
 	justify-content: center;
 
 		nav a {
-			padding: 1.2rem;
-			text-decoration: none;
-			color: @nav-font-color;
+			.nav-styling();
 		}
 	
 }
@@ -128,8 +134,7 @@ footer {
 	display: flex;
 	justify-content: center;
 }
-	footer nav {
-		padding: 1.2rem;
-		text-decoration: none;
-		color: darkgray;
+
+		footer nav a {
+			.nav-styling();
 	}
