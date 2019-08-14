@@ -136,8 +136,241 @@ table {
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 html,
 body {
   height: 100%;
 }
+/* ==== PRESETS ======== */
+/* ==== PRESETS ======== */
+/* ==== PRESETS ======== */
+/* ==== PRESETS ======== */
+/* VARIABLES */
+/* colors */
+@main-color: #e9ecef;
+@button-color: #808080;
+
+/* fonts */
+@roboto: "Roboto Mono", monospace;
+
+@monoton: "Monoton", cursive;
+
+/* mix-ins */
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-ct() {
+  display: flex;
+  justify-content: center;
+}
+.flex-br() {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-cr() {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+}
+
+.first-level-format() {
+  width: 52vw;
+  margin: 0 auto;
+}
+
+.half-first-level() {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.margin-auto() {
+  margin: 0px auto;
+}
+
+.section-format() {
+  height: 30vh;
+}
+
+.button() {
+  height: 40px;
+  width: 200px;
+  background-color: #808080;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 5%;
+  padding: 10px;
+  margin: 30px;
+}
+
+.article-format() {
+}
+/* ====== START OF STYLES ======== */
+/* ====== START OF STYLES ======== */
+/* ====== START OF STYLES ======== */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: lightpink;
+}
+
+/* ++++ HEADERS +++++++ */
+/* ++++ HEADERS +++++++ */
+.top-header {
+  .first-level-format();
+  background: yellow;
+  height: 8vh;
+  .flex-cr();
+  nav {
+    .space-around();
+    border: 2px solid blue;
+    height: 50%;
+    width: 40%;
+    a {
+      align-self: center;
+      justify-content: space-evenly;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+      font-family: @roboto;
+      text-decoration: none;
+    }
+  }
+}
+
+.bottom-header {
+  .first-level-format();
+  .flex-ct();
+  align-items: flex-start;
+  background: lightgreen;
+  height: 77vh;
+  .container {
+    width: 90%;
+    height: 100%;
+    border: 2px solid magenta;
+    background-color: @main-color;
+    display: flex;
+    flex-direction: column;
+    .photo-and-name {
+      background: lightseagreen;
+      height: 70%;
+      margin-left: 2%;
+      padding: 2%;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 2px solid red;
+        border-bottom: 1px solid black;
+        height: 49%;
+        margin-top: 2%;
+        img {
+          height: 50%;
+          width: 30%;
+          margin-top: 8%;
+        }
+        h1 {
+          font-size: 5rem;
+          font-family: @monoton;
+          font-weight: bold;
+          // margin-top: 50px;
+        }
+
+        h2 {
+          font-size: 2rem;
+          margin-top: 4%;
+          padding: 10px;
+
+          background: green;
+        }
+      }
+    } /* end of photo-and-name */
+
+    .short-intro {
+      height: 30%;
+      background: lightskyblue;
+      margin-left: 2%;
+      font-size: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      p {
+        width: 70%;
+        margin-left: 2%;
+        margin-top: 20px;
+        font-size: 1.5rem;
+      }
+
+      a {
+        .button();
+      }
+    }
+  } /* end of b.header container */
+} /* end of bottom header */
+
+/* ++++ MIDDLE SECTION +++++ */
+.middle-section {
+  .first-level-format();
+  height: 40vh;
+  background-color: aqua;
+  .container {
+    background-color: plum;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    div {
+      width: 50%;
+      padding: 20px;
+      font-size: 1.5rem;
+      margin-left: 2%;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .right {
+      ul li {
+        // font-size: 1.3rem;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+/* ++++ BOTTOM SECTION ++++  */
+.bottom-section {
+  .first-level-format();
+  height: 70vh;
+
+  .work-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    h2 {
+      font-size: 2rem;
+    }
+    table {
+      margin: 0 auto;
+      th {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+/* ++++ FOOTER +++++  */
