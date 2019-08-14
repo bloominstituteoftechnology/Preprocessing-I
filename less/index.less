@@ -68,9 +68,11 @@ h1, h2, h3 {
 	
 // }
 
+// Variables
 @blue-dianne: #1E4F5C;
 @secondary-grey:#959595;
 
+//Mixin
 .section-layout () {
 	padding-bottom: 40px;
 	display: flex;
@@ -105,12 +107,16 @@ h1, h2, h3 {
 		li {
 			font-size: 1.8rem;
 		}
-}
+}//end of section-layout mixin
 
 .container {
 	width: 900px;
 	margin: auto;
 	// background: lightgrey;
+
+	@media (max-width: 500px){
+		width: 95%
+	}
 }
 
 header {
@@ -120,25 +126,27 @@ header {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-right: 2.5%;
-}
-nav {
-	// display: flex;
-	// flex-direction: row;
-	// justify-content: flex-end;
-	// padding-top: 2%;
-	// margin-right: 5%;
-	// margin-left:60%;
-	font-size: 2rem;
 
-	// width:100%
+	nav {
+		// display: flex;
+		// flex-direction: row;
+		// justify-content: flex-end;
+		// padding-top: 2%;
+		// margin-right: 5%;
+		// margin-left:60%;
+		font-size: 2rem;
 	
-	a{ 
-	text-decoration: none;
-	color: darkslategrey;
-	padding-left: 10px;
+		// width:100%
+		
+		a{ 
+		text-decoration: none;
+		color: darkslategrey;
+		padding-left: 10px;
+		}
+	
 	}
-
 }
+
 
 .top-content {
 	display: flex;
@@ -172,65 +180,66 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	
-.skills {
-	width: 40%;
-	margin: 5%;
-	justify-content: space-evenly;
-	height: fit-content;
-	
-	ul {
-		list-style: disc inside;
-	}
-
-	h1 {
-		font-size: 3rem;
-		color: @blue-dianne;
-		margin-bottom: 20px;
-	}
-
-	li {
-		font-size: 1.8rem;
-	}
-}
-
-.education{
-	width: 40%;
-	margin: 5%;
-	justify-content: space-evenly;
-
-	h1 {
-		font-size: 3.5rem;
-		color: @blue-dianne;
-		margin-bottom: 30px;
-	}
-
-	.schooling-information {
-		.section-layout()
-	}
-}
-
-
-
-.work {
-	width: 40%;
-	margin: 5%;
-	justify-content: space-evenly;
-
-	h1 {
-		font-size: 3.5rem;
-		color: @blue-dianne;
-		margin-bottom: 30px;
-	}
-
-	.work-information {
-		.section-layout()
+	.skills {
+		width: 40%;
+		margin: 5%;
+		justify-content: space-evenly;
+		height: fit-content;
 		
+		ul {
+			list-style: disc inside;
+		}
+
+		h1 {
+			font-size: 3rem;
+			color: @blue-dianne;
+			margin-bottom: 20px;
+		}
+
+		li {
+			font-size: 1.8rem;
+		}	
 	}
-} 
+
+	.education{
+		width: 40%;
+		margin: 5%;
+		justify-content: space-evenly;
+
+		h1 {
+			font-size: 3.5rem;
+			color: @blue-dianne;
+			margin-bottom: 30px;
+		}
+
+		.schooling-information {
+			.section-layout()
+		}
+	}
+
+	.work {
+		width: 40%;
+		margin: 5%;
+		justify-content: space-evenly;
+
+		h1 {
+			font-size: 3.5rem;
+			color: @blue-dianne;
+			margin-bottom: 30px;
+		}
+
+		.work-information {
+			.section-layout()
+		}
+	} 
+
+	@media (max-width: 500px){
+		display: flex;
+		flex-direction: column;
+	}
 
 }
 
-	
 
 
 
