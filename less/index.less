@@ -54,11 +54,17 @@ border: 1px solid green; }
 body {font-family: Verdana, sans-serif; margin:0}
 
 /***variables***/
-@primary-color: lightcoral; 
+@primary-color: rgb(180, 109, 109); 
 @tertiary-color: rgb(37, 195, 248); 
 @seconday-color: lightsalmon; 
 @text-color: white; 
-@border-top: 1px solid black; 
+@border-top: 1px solid black;
+@side-content-padding: 3% 1%;  
+@info-padding: 0 0 8%; 
+@section-padding: 4% 0; 
+@sub-title: 1.5em; 
+@projects-title: 1.2em; 
+ 
 
 /***mixins***/
 .round-img{
@@ -83,24 +89,36 @@ body {font-family: Verdana, sans-serif; margin:0}
 	align-items:center; 
 }
 
+.title{
+	font-weight:bold; 
+	font-size: 3em; 
+
+}
 
 
 
 /***container***/
 .container {
 	width:90%; 
+	max-width: 90%; 
 	display: flex; 
 	margin: 0 auto; 
 	padding: 5% 0; 
+	font-size: 1em; 
+	line-height: 1; 
 
 	.side-content {
 		width: 33%; 
-		
+		background: @primary-color; 
+		color: @text-color; 
+		padding: @side-content-padding; 
 		.border-top{
-			border-top: 1px solid black; 
+			border-top: 1px solid white; 
 		}
 		.intro{
 			.flex-column(); 
+			padding: @side-content-padding;
+			
 			.profile-photo{
 				img{
 					.round-img(); 
@@ -110,17 +128,43 @@ body {font-family: Verdana, sans-serif; margin:0}
 				font-size: 30px; 
 				font-weight: bold; 
 			}
+
+			.social-media{
+				.flex-column();
+				i a:hover{
+					background: @tertiary-color; 
+				}
+			}
 		
 		}
 
 		.social-media{
 			.flex(); 
+			padding:@side-content-padding; 
 
+		}
+
+		.education{
+			padding: @side-content-padding; 
+			h2{
+			font-size: @sub-title; 
+			text-align:center;
+			}
 		}
 
 		.experience{
 			background: @primary-color; 
 			.flex-column(); 
+			padding: @side-content-padding;
+			
+			.job{
+				padding: @side-content-padding; 
+				
+			}
+
+			h3{
+				font-size: @sub-title; 
+				}
 
 
 		}
@@ -130,11 +174,12 @@ body {font-family: Verdana, sans-serif; margin:0}
 	.skills-container{
 		.flex-column(); 
 		
-		
+		h2{
+			font-size: @sub-title; 
+			}
 		
 		.skills{
 			
-		
 			.flex(); 
 			.skill{
 				width: 50%; 
@@ -210,12 +255,31 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 	.content{
 		width: 66%; 
+		.padding();
+		line-height:1.2; 
 
+		
+		.name{
+			h1{
+				.title();
+				padding:@info-padding; 
+			}
+			
+
+			
+		}
+
+		.profession{
+			font-size:@sub-title; 
+			padding:@info-padding; 
+		}
+		.border-top{
+			border-bottom: 1px solid black;
+		}
 		.about-me{
-			.padding(); 
-			text-align:center; 
+			padding:@section-padding;
 			h2{
-				font-size: 20px; 
+				font-size:@sub-title; 
 			}
 			span{
 				font-weight:bold;
@@ -224,14 +288,14 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 		/***projects***/
 		.projects {
+			padding:@section-padding;
 			display:flex; 
 			flex-wrap: wrap; 
-			max-width: 90%; 
+			
 			margin: 0 auto; 
 			h2{
 					
-					font-size: 30px; 
-					font-weight: bold; 
+					font-size:@sub-title;  
 				}
 			.project{
 				padding: 2%;
@@ -240,7 +304,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 				border-bottom: 1px solid black; 
 				
 				h3{
-					font-size: 20px; 
+					font-size: @projects-title;
 				}
 				.caption{
 					width: 60%; 
