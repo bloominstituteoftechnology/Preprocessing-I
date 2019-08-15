@@ -245,17 +245,26 @@ body {
 /* ++++ HEADERS +++++++ */
 .top-header {
   .first-level-format();
-  background: green;
+
   height: 8vh;
 
   .header-div {
     .flex-cr();
-    border: 2px solid blue;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      justify-content: center;
+    }
     width: 90%;
     height: 100%;
     margin: 0 auto;
     nav {
       .space-around();
+      @media screen and (max-width: 500px) {
+        width: 100%;
+        a {
+          padding: 5px;
+        }
+      }
       height: 50%;
       width: 40%;
       a {
@@ -276,7 +285,7 @@ body {
 
   display: flex;
   justify-content: center;
-  background: pink;
+
   // height: 77vh;
   @media screen and (width: 500px) {
     width: 100%;
@@ -290,7 +299,6 @@ body {
     flex-direction: column;
     @media screen and (width: 500px) {
       width: 100%;
-      background: blue;
     }
     .photo-and-name {
       height: 70%;
@@ -348,12 +356,15 @@ body {
 } /* end of bottom header */
 
 /* ++++ MIDDLE SECTION +++++ */
+/* ++++ MIDDLE SECTION +++++ */
+/* ++++ MIDDLE SECTION +++++ */
+/* ++++ MIDDLE SECTION +++++ */
 .middle-section {
   .first-level-format();
-  height: 45vh;
 
   .container {
     width: 90%;
+
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -362,6 +373,7 @@ body {
       padding: 20px;
       font-size: 1.5rem;
       margin-left: 2%;
+
       h2 {
         font-family: @roboto;
         font-size: 3rem;
