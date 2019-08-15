@@ -54,9 +54,12 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height:100%;
+}
+
+body{
     width:800px;
-    margin:2% auto;
+	margin:20px auto;
     background-image: url("https://images.unsplash.com/photo-1557682257-2f9c37a3a5f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=486&q=80");
 	background-position:center;
 	background-repeat:no-repeat;
@@ -67,6 +70,9 @@ html, body {
 
 
 // Variables
+@bullet:square;
+
+// Mix Ins
 .border(){
 	border:1px solid black;
 }
@@ -93,8 +99,8 @@ html, body {
 .header{
 	display:flex;
 	flex-direction:wrap;
-	justify-content:space-evenly;
-	margin:5% auto;	
+	justify-content:space-around;
+	margin:30px auto;	
 	.profilePic{
 	box-shadow: 10px 25px 45px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border-radius:50%;
@@ -108,7 +114,7 @@ html, body {
 header{
 	.decoration();
 	.flex();
-	align-text:center;
+	text-align:center;
 	justify-content:center;
 	align-content:center;
 	align-items:center;
@@ -117,22 +123,27 @@ header{
 	flex-wrap:wrap;
 	flex-direction:column;
 	opacity:0.9;
+	padding-bottom:20px;
 	h1{
-		font-size:4rem;
+		font-size:4.3rem;
 		margin-bottom:15px;
 	}
 	h3{
 		font-size:2.5rem;
 		padding:15px;
-		margin-bottom:10px;
-		// border-bottom: 1px solid #FFF8DC;
-	}	
+		margin-bottom:15px;
+	}
 	.contact{
 		.flex();
 		justify-content:space-evenly;
 		span{
 		margin:0 17% 0 4%;
+		letter-spacing:0.5px;
 		}
+	}
+	a{
+		color:white;
+		text-decoration:none;
 	}
 }
 
@@ -141,7 +152,10 @@ header{
 
 
 
-
+.skillsHeader{
+	.decoration();
+	font-size:2.3rem;
+}
 
 
 
@@ -149,12 +163,8 @@ header{
 	border-bottom:1px solid #FFF8DC;
 	text-align:center;
 	display:flex;
-	margin-bottom:5%;
-	padding-bottom:15px;
-	h2{
-		.decoration();
-		font-size:2.2rem;
-	}
+	margin-bottom:20px;
+	padding:25px 0;
 	.workButtons{
 		background: #FFF8DC;
 		border-radius: 100%;
@@ -214,7 +224,7 @@ header{
 	font-family: 'Open Sans', sans-serif;
 	line-height:1.6;
 	font-size:14px;
-
+	text-align:center;
 	h3{
 		font-size:16px;
 		font-style:italic;
@@ -229,8 +239,82 @@ header{
 	font-family: 'Open Sans', sans-serif;
 	line-height:1.6;
 	font-size:15px;
+	text-align:center;
 	h3{
+		.contentDecoration();
+	}
+}
+
+.work{
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:column;
+	color:#FFF8DC;
+	font-family: 'Open Sans', sans-serif;
+	line-height:1.6;
+	font-size:15px;
+	padding-bottom:20px;
+	margin-bottom:25px;
+	.date{
+		text-align:right;
+	}
+	h2{
+		.decoration();
+		font-size:2.2rem;
+		text-align:right;
+	}
+	h3{
+		.contentDecoration();
+		font-size:18px;
+	}
+	p{
 		font-size:16px;
 		font-style:italic;
+	}
+}
+
+ul{
+	list-style-type:@bullet;
+	margin-left:20px;
+}
+
+@media screen and (max-width:500px){
+	body{
+		width:100%;
+	}
+	.header{
+		flex-direction:column;
+		display:flex;
+		align-content:center;
+		justify-content:center;
+		align-items:center;
+		width:100%;
+	}
+	header h1{
+		font-size:4rem;
+	}
+	header h3{
+		font-size:1.75rem;
+	}
+	.bulkContent{
+		padding:15px;
+	}
+	.contactMe p:first-of-type{
+		font-size:10px;
+	}
+	.skillsHeader{
+		display:flex;
+		justify-content:center;
+	}
+	.skills{
+		padding: 10px 5px;
+	}
+	.work{
+		padding:20px;
+		h2{
+			display:flex;
+			justify-content:center;
+			margin-bottom:15px;
+		}
 	}
 }
