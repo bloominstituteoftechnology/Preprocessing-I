@@ -77,11 +77,15 @@ html, body {
 }
 
 nav {
-	.navcenter()
+	display:flex;
+	flex-direction:row;
+	justify-content: space-evenly;
+	.navcenter() {
 		@media( max-width: 500px) {
 			flex-direction: column;
 			align-items: center;
 		}
+	}
 }
 
 	nav a {
@@ -157,8 +161,10 @@ nav {
 		}
 }
 	.history {
-		width: 30%;
+		width:30%;
 		color:@maincolor;
+		margin-top: 25px;
+		margin-left: 25px;
 	}
 
 	.history h2 {
@@ -172,6 +178,11 @@ nav {
 		.history h2 {
 			font-size: 1.5rem;
 			color:@maincolor;
+		
+			@media( max-width: 500px) {
+				display:flex;
+				justify-content:space between;
+			}
 		}
 	}
 
