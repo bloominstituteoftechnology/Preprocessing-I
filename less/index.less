@@ -1,170 +1,20 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+@p-color: #001f3f;
+@f-font: 1.7rem;
+@import "htm.less";
+@import "nav.less";
+@import "topsection.less";
+
+.custom-flex {
+  display:flex;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* Set every element's box-sizing to border-box */
- * {
-  box-sizing: border-box;
-}
-@p-color: #001f3f;;
-html,
-body {
-  height: 100%;
-	line-height: 2;
-	font-size: 62.5%;
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
-  font-size:62.5%;
-}
-nav {
-	display: flex;
-  flex-flow: row-reverse;
-  background: rgba(128, 128, 128, 0.722);
-  margin-top: 4%;
-	a {
-    text-decoration: none;
-    color: #000000;
-    margin-right: 3%;
-    font-size: 1.7rem;
-    padding-top: 1%;
-    border: 8px solid #ff000066;
-    border-left: #00BCD4;
-    border-right-color: #0008ff2b;
-    border-right-width: 20px;
-    
-	}
-}
+
 img {
     width: 44%;
     // height: 350px;
     padding-top: 6%;
     padding-left: 12%;
-  
-}.topsection, .middlesection, .bottomsection {
+  }
+  .topsection, .middlesection, .bottomsection {
   // border: 1px solid red;
 }h1, h2, p {
   // padding-left: 6%;
@@ -205,15 +55,15 @@ h2 {
 }footer {
   text-align: center;
 }.listenup h3 {
-  font-size: 1.7rem;
+  font-size: @f-font;;
 }.listenup, h3, p {
   font-size: 1rem;
 }.work h3 {
-  font-size: 1.7rem;
+  font-size: @f-font;;
 }.bottommid {
   display:flex;
 }.skills h3 {
-  font-size: 1.7rem;
+  font-size: @f-font;
 }.skillsss {
   padding-left: 6%;
 }p, li {
@@ -248,7 +98,7 @@ h2 {
 }
 @media screen and (max-width:500px){
   nav {
-    display: flex;
+    .custom-flex;
     justify-content: center;
     background: rgba(128, 128, 128, 0.27);
     margin-top: 4%;
