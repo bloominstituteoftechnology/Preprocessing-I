@@ -137,6 +137,11 @@ body {
 }
 /***variables***/
 /***mixins***/
+.scale {
+  max-width: 100%;
+  width: 95%;
+  height: 95%;
+}
 .round-img {
   border-radius: 50%;
 }
@@ -161,7 +166,6 @@ body {
 }
 /***container***/
 .container {
-  width: 90%;
   max-width: 90%;
   display: flex;
   margin: 0 auto;
@@ -169,8 +173,11 @@ body {
   font-size: 1em;
   line-height: 1;
 }
-.container div {
+.container div,
+.container .skills {
   max-width: 100%;
+  width: 95%;
+  height: 95%;
 }
 .container .side-content {
   width: 33%;
@@ -198,6 +205,9 @@ body {
 }
 .container .side-content .intro .profile-photo img {
   border-radius: 50%;
+  max-width: 100%;
+  width: 95%;
+  height: 95%;
 }
 .container .side-content .intro h1 {
   font-size: 30px;
@@ -225,7 +235,6 @@ body {
   text-align: center;
 }
 .container .side-content .experience {
-  background: #b46d6d;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -257,35 +266,42 @@ body {
   width: 50%;
   padding: 3%;
 }
+@media (max-width: 500px) {
+  .container .side-content .skills-container .skills {
+    font-size: 0.7em;
+  }
+}
 .container .side-content .skill-guage {
   background: white;
   max-width: 100%;
   height: 10px;
   display: flex;
 }
+.container .side-content .skill-guage .percent {
+  background: #25c3f8;
+}
+@media (max-width: 500px) {
+  .container .side-content .skill-guage .percent {
+    background: #b46d6d;
+  }
+}
 .container .side-content .time .percent {
   width: 76%;
-  background: #25c3f8;
 }
 .container .side-content .creativity .percent {
   width: 76%;
-  background: #25c3f8;
 }
 .container .side-content .attn-to-detail .percent {
   width: 80%;
-  background: #25c3f8;
 }
 .container .side-content .communication .percent {
   width: 90%;
-  background: #25c3f8;
 }
 .container .side-content .photography .percent {
   width: 100%;
-  background: #25c3f8;
 }
 .container .side-content .blending .percent {
   width: 93%;
-  background: #25c3f8;
 }
 @media (max-width: 500px) {
   .container .side-content {
@@ -297,6 +313,11 @@ body {
   padding: 5%;
   line-height: 1.2;
   /***projects***/
+}
+@media (max-width: 500px) {
+  .container .content {
+    text-align: center;
+  }
 }
 .container .content .name h1 {
   font-weight: bold;
@@ -336,6 +357,15 @@ body {
   flex-wrap: wrap;
   align-items: center;
   border-bottom: 1px solid black;
+}
+@media (max-width: 500px) {
+  .container .content .projects .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 1%;
+  }
 }
 .container .content .projects .project h3 {
   font-size: 1.2em;

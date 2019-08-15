@@ -64,9 +64,15 @@ body {font-family: Verdana, sans-serif; margin:0}
 @section-padding: 4% 0; 
 @sub-title: 1.5em; 
 @projects-title: 1.2em; 
+
  
 
 /***mixins***/
+.scale{
+	max-width:100%; 
+	width: 95%;
+	height: 95%;  
+}
 .round-img{
 	border-radius: 50%; 
 }
@@ -100,7 +106,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 /***container***/
 .container {
-	width:90%; 
+	
 	max-width: 90%; 
 	display: flex; 
 	margin: 0 auto; 
@@ -108,8 +114,10 @@ body {font-family: Verdana, sans-serif; margin:0}
 	font-size: 1em; 
 	line-height: 1; 
 
-	div{
-		max-width: 100%;
+	
+
+	div, .skills{
+		.scale();
 	}
 
 	
@@ -132,6 +140,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 			.profile-photo{
 				img{
 					.round-img(); 
+					.scale(); 
 				}
 			}
 			h1{
@@ -161,7 +170,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 		}
 
 		.experience{
-			background: @primary-color; 
+		
 			.flex-column(); 
 			padding: @side-content-padding;
 			
@@ -185,6 +194,8 @@ body {font-family: Verdana, sans-serif; margin:0}
 		h2{
 			font-size: @sub-title; 
 			}
+
+			
 		
 		.skills{
 			
@@ -193,6 +204,10 @@ body {font-family: Verdana, sans-serif; margin:0}
 				width: 50%; 
 				
 				padding: 3%; 
+			}
+
+			@media (max-width:500px){
+				font-size: .7em; 
 			}
 		
 		}
@@ -205,22 +220,25 @@ body {font-family: Verdana, sans-serif; margin:0}
 		height: 10px; 
 		display: flex;  
 		
+		.percent{
+			background:@tertiary-color; 
+			@media (max-width: 500px){
+				background:@primary-color; 
+			}
+		}
 	}
 	/***time management***/
 	.time{
 			.percent{
 				width:76%; 
 				
-				background: @tertiary-color; 
 			}
 		}
 
 	/***attn to detail***/
 	.creativity{
 		.percent{
-			width:76%; 
-			
-			background: @tertiary-color; 
+			width:76%;
 		}
 	}
 	/***attention to detail***/
@@ -228,7 +246,6 @@ body {font-family: Verdana, sans-serif; margin:0}
 		.percent{
 			width:80%; 
 			
-			background: @tertiary-color; 
 		}
 	}
 
@@ -237,7 +254,6 @@ body {font-family: Verdana, sans-serif; margin:0}
 		.percent{
 			width:90%; 
 			
-			background: @tertiary-color; 
 		}
 	}
 
@@ -246,7 +262,6 @@ body {font-family: Verdana, sans-serif; margin:0}
 		.percent{
 			width:100%; 
 			
-			background: @tertiary-color; 
 		}
 	}
 
@@ -255,11 +270,11 @@ body {font-family: Verdana, sans-serif; margin:0}
 		.percent{
 			width:93%; 
 			
-			background: @tertiary-color; 
 		}
 	}
 		@media( max-width: 500px ){
-			background:@tertiary-color; 
+			background:@tertiary-color;
+			
 		}
 	}	
 
@@ -268,7 +283,9 @@ body {font-family: Verdana, sans-serif; margin:0}
 		width: 66%; 
 		.padding();
 		line-height:1.2; 
-
+		@media (max-width: 500px){
+			text-align:center; 
+		}
 		
 		.name{
 			h1{
@@ -304,6 +321,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 			flex-wrap: wrap; 
 			
 			margin: 0 auto;
+			
 			 
 			h2{
 					
@@ -314,7 +332,10 @@ body {font-family: Verdana, sans-serif; margin:0}
 				width: 100%;
 				.flex(); 
 				border-bottom: 1px solid black; 
-				
+				@media (max-width:500px){
+					.flex-column();
+					padding: 1%; 
+				}
 				h3{
 					font-size: @projects-title;
 				}
