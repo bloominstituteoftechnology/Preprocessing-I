@@ -57,8 +57,31 @@ body {font-family: Verdana, sans-serif; margin:0}
 @tertiary-color: rgb(37, 195, 248); 
 @seconday-color: lightsalmon; 
 @text-color: white; 
-
 @border-top: 1px solid black; 
+
+/***mixins***/
+.round-img{
+	border-radius: 50%; 
+}
+
+.padding{
+	padding: 5%; 
+}
+
+.flex-column{
+	display:flex; 
+	justify-content: space-between; 
+	align-items:center; 
+	flex-direction:column; 
+}
+
+.flex{
+	display:flex; 
+	justify-content: center;  
+	flex-wrap: wrap; 
+	align-items:center; 
+}
+
 
 
 
@@ -71,7 +94,10 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 	.side-content {
 		width: 33%; 
-
+		
+		.border-top{
+			border-top: 1px solid black; 
+		}
 		.intro{
 			.flex-column(); 
 			.profile-photo{
@@ -84,6 +110,11 @@ body {font-family: Verdana, sans-serif; margin:0}
 				font-weight: bold; 
 			}
 		
+		}
+
+		.social-media{
+			.flex(); 
+
 		}
 
 		.experience{
@@ -225,28 +256,6 @@ body {font-family: Verdana, sans-serif; margin:0}
 	}
 }
 
-/***mixins***/
-.round-img{
-	border-radius: 50%; 
-}
-
-.padding{
-	padding: 5%; 
-}
-
-.flex-column{
-	display:flex; 
-	justify-content: space-between; 
-	align-items:center; 
-	flex-direction:column; 
-}
-
-.flex{
-	display:flex; 
-	justify-content: center;  
-	flex-wrap: wrap; 
-	align-items:center; 
-}
 
 
 
