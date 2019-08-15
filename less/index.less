@@ -188,12 +188,10 @@ body {
 .first-level-format() {
   width: 52vw;
   margin: 0 auto;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 500px) {
     width: 100%;
 
     margin: 0 auto;
-    background: green;
-    .displayFlex(center, center);
   }
 }
 
@@ -241,19 +239,18 @@ body {
 .wrapper {
   width: 100%;
   height: 100%;
-  background-color: lightpink;
 }
 
 /* ++++ HEADERS +++++++ */
 /* ++++ HEADERS +++++++ */
 .top-header {
   .first-level-format();
-
+  background: green;
   height: 8vh;
 
   .header-div {
     .flex-cr();
-
+    border: 2px solid blue;
     width: 90%;
     height: 100%;
     margin: 0 auto;
@@ -276,17 +273,25 @@ body {
 
 .bottom-header {
   .first-level-format();
-  // .flex-ct();
-  align-items: flex-start;
 
-  height: 77vh;
+  display: flex;
+  justify-content: center;
+  background: pink;
+  // height: 77vh;
+  @media screen and (width: 500px) {
+    width: 100%;
+  }
   .container {
     width: 90%;
     height: 100%;
 
-    background-color: @main-color;
+    // background-color: @main-color;
     display: flex;
     flex-direction: column;
+    @media screen and (width: 500px) {
+      width: 100%;
+      background: blue;
+    }
     .photo-and-name {
       height: 70%;
       margin-left: 2%;
