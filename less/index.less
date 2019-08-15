@@ -202,6 +202,12 @@ body {
   height: 30vh;
 }
 
+.paragraph() {
+  font-size: 1.5rem;
+  line-height: 25px;
+  font-family: @roboto;
+}
+
 .button() {
   height: 40px;
   width: 200px;
@@ -301,7 +307,7 @@ body {
     } /* end of photo-and-name */
 
     .short-intro {
-      height: 30%;
+      height: 40%;
       background: lightskyblue;
       margin-left: 2%;
       font-size: 1.3rem;
@@ -311,7 +317,8 @@ body {
         width: 70%;
         margin-left: 2%;
         margin-top: 20px;
-        font-size: 1.5rem;
+
+        .paragraph();
       }
 
       a {
@@ -324,7 +331,7 @@ body {
 /* ++++ MIDDLE SECTION +++++ */
 .middle-section {
   .first-level-format();
-  height: 40vh;
+  height: 45vh;
   background-color: aqua;
   .container {
     background-color: plum;
@@ -338,39 +345,87 @@ body {
       font-size: 1.5rem;
       margin-left: 2%;
       h2 {
+        font-family: @roboto;
         font-size: 3rem;
+        margin: 20px 0;
+      }
+
+      p {
+        .paragraph();
       }
     }
 
     .right {
+      ul {
+        border: 0.8px solid grey;
+        border-bottom: none;
+      }
       ul li {
         // font-size: 1.3rem;
-        line-height: 25px;
+        border-bottom: 0.8px solid grey;
+        .paragraph();
+        padding: 10px;
+        font-size: 1.5rem;
       }
     }
-  }
-}
+  } // container
+} // middle section
 
 /* ++++ BOTTOM SECTION ++++  */
 .bottom-section {
   .first-level-format();
-  height: 70vh;
-
+  height: 35vh;
+  background-color: firebrick;
   .work-history {
+    height: 70%;
     display: flex;
+    font-family: @roboto;
     flex-direction: column;
-    align-items: center;
     width: 90%;
+    background-color: lightyellow;
+    margin: 0 auto;
     h2 {
       font-size: 2rem;
+      font-weight: bolder;
+      display: block;
+      background-color: aquamarine;
+      margin: 2%;
     }
     table {
-      margin: 0 auto;
+      font-size: 1.3rem;
+      text-align: center;
+      font-family: @roboto;
+      height: 50%;
+      margin: 2%;
       th {
         font-size: 1.5rem;
+        font-weight: bolder;
+        vertical-align: middle;
+      }
+
+      tr:nth-child(even) {
+        background: lightgray;
+      }
+
+      td {
+        vertical-align: middle;
       }
     }
   }
 }
 
 /* ++++ FOOTER +++++  */
+
+footer {
+  .footer-div {
+    .first-level-format();
+    text-align: center;
+    height: 100px;
+    background-color: #808080;
+    padding: 1%;
+
+    p {
+      .paragraph();
+    }
+  } // footer-div
+}
