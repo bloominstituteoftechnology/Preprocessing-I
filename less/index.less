@@ -16,77 +16,80 @@
 
 .border-radius (@radius: 8px) {
 	-webkit-border-radius: @radius;
-	-moz-border-radius:    @radius;
-	border-radius:         @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
 
-	-moz-background-clip:    padding;
+	-moz-background-clip: padding;
 	-webkit-background-clip: padding-box;
-	background-clip:         padding-box;
+	background-clip: padding-box;
 }
 
-.box-shadow (@string: 0 1px 8px grey) {
-	-webkit-box-shadow: @string;
-	-moz-box-shadow:    @string;
-	box-shadow:         @string;
-}
-
-body{
+body {
 	font-family: @font;
 }
 
-h1{font-size: 2.4rem;}
-h2{font-size: 1.6rem;}
-p{font-size: 1rem;}
+.nav{
+	text-align:center;
+}
+h1 {
+	font-size: 2.4rem;
+}
 
-.container{
+h2 {
+	font-size: 1.6rem;
+}
+
+p {
+	font-size: 1rem;
+}
+
+.container {
 	width: 100%;
 
-	header{
+	header {
 		width: 100%;
 		text-align: center;
 		padding: 20px 0;
 
-		a{
+		a {
 			text-decoration: none;
 			color: black;
 			padding: 0 15px;
 			font-weight: 500;
 			transition: 0.2s;
-				&:hover{
-					color: @blue;
-				}
+
+			&:hover {
+				color: @blue;
+			}
 		}
 	}
 
-	.bio{
+	.bio {
 		width: 100%;
 		padding: 0 25px 25px 25px;
 
-		.img{
-			height: 300px;
-			background-image: url('../img/picMobile.jpg');
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
 
-		.bioText{
+
+		.bioText {
 			width: 100%;
 			padding: 0 25px 15px 25px;
 			text-align: center;
 
-			h1{
+			h1 {
 				font-weight: 600;
 				padding: 30px 0 5px 0;
 			}
 
-			h2{
+			h2 {
 				font-weight: 500;
 				padding: 0 0 25px 0;
 			}
 
-			p{line-height: 19px;}
+			p {
+				line-height: 19px;
+			}
 
-			button{
+			button {
 				width: 45%;
 				height: 40px;
 				margin-top: 20px;
@@ -98,96 +101,116 @@ p{font-size: 1rem;}
 				cursor: pointer;
 				transition: 0.3s;
 				.border-radius;
-					&:hover{
-						background-color: @darkblue;
-					}
+
+				&:hover {
+					background-color: @darkblue;
+				}
 			}
 		}
 	}
 
-	.top{
+	.top {
 		width: 100%;
 
-		.topLeft{
+		.topLeft {
 			width: 100%;
 			padding: 30px;
 			background-color: @secondary-bgcolor;
 
-			h2{padding: 0 0 15px 0;}
-			p{line-height: 19px;}
+			h2 {
+				padding: 0 0 15px 0;
+			}
+
+			p {
+				line-height: 19px;
+			}
 		}
 
-		.topRight{
+		.topRight {
 			width: 100%;
 			padding: 30px;
 
-			table{
+			table {
 				width: 100%;
 				border: 2px solid @gray;
 				margin-top: 15px;
-				
-				tr{border: 2px solid @gray;}
-				td{padding: 7px;}
+
+				tr {
+					border: 2px solid @gray;
+				}
+
+				td {
+					padding: 7px;
+				}
 			}
 		}
 	}
 
-	.bot{
+	.bot {
 		width: 100%;
 
-		.botCont{
+		.botCont {
 			width: 100%;
 			padding: 30px;
 
-			h2{padding: 0 0 15px 0;}
-			li{padding: 7px 0 0 0;
-				span{font-weight: 500;}
+			h2 {
+				padding: 0 0 15px 0;
+			}
+
+			li {
+				padding: 7px 0 0 0;
+
+				span {
+					font-weight: 500;
+				}
 			}
 		}
 	}
 
-	footer{
+	footer {
 		width: 100%;
 		background-color: @secondary-bgcolor;
 
-		p{
+		p {
 			padding: 15px 0 0 0;
 			text-align: center;
 		}
 
-		p:nth-child(2){
+		p:nth-child(2) {
 			padding: 5px 0 15px 0;
 		}
 	}
 }
 
-@media (min-width: 500px){
-	.container{
-		.top{
+@media (min-width: 500px) {
+	.container {
+		.top {
 			display: flex;
 			justify-content: space-between;
 			background-color: @secondary-bgcolor;
 
-			.topLeft{
+			.topLeft {
 				width: 48%;
 				background-color: none;
 			}
 
-			.topRight{width: 48%;}
+			.topRight {
+				width: 48%;
+			}
 		}
 	}
 }
 
-@media (min-width: 850px){
-	.container{
-		header{
+@media (min-width: 850px) {
+	.container {
+		header {
 			width: 850px;
 			margin: 0 auto;
 			padding: 25px 0 0 10px;
 			text-align: right;
 		}
 
-		.bio{
+		.bio {
 			width: 850px;
 			margin: 0 auto;
 			padding: 0 0 35px 0;
@@ -196,39 +219,45 @@ p{font-size: 1rem;}
 			justify-content: space-between;
 			align-items: center;
 
-			.img{
+			.img {
 				width: 46%;
 				margin-top: 30px;
 				height: 350px;
-				background-image: url('../img/pic.jpg');
-				.box-shadow;
+				align-content: flex-end;
 			}
 
-			.bioText{
+			.bioText {
 				width: 46%;
 
-				h2{padding: 0 0 35px 0;}
-				p{line-height: 21px;}
+				h2 {
+					padding: 0 0 35px 0;
+				}
+
+				p {
+					line-height: 21px;
+				}
 			}
 		}
 
-		.top{
+		.top {
 			width: 850px;
 			margin: 0 auto;
 			padding: 30px 0;
 
-			.topLeft{
-				p{line-height: 21px;}
+			.topLeft {
+				p {
+					line-height: 21px;
+				}
 			}
 		}
 
-		.bot{
+		.bot {
 			width: 850px;
 			margin: 0 auto;
 			padding: 30px 0;
 		}
 
-		footer{
+		footer {
 			width: 850px;
 			margin: 0 auto;
 		}
