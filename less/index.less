@@ -97,6 +97,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 
 
+}
 /***container***/
 .container {
 	width:90%; 
@@ -107,11 +108,18 @@ body {font-family: Verdana, sans-serif; margin:0}
 	font-size: 1em; 
 	line-height: 1; 
 
+	
+
 	.side-content {
 		width: 33%; 
 		background: @primary-color; 
 		color: @text-color; 
-		padding: @side-content-padding; 
+		padding: @side-content-padding;
+
+		@media( max-width: 500px ){
+			background:@tertiary-color; 
+		}
+		 
 		.border-top{
 			border-top: 1px solid white; 
 		}
@@ -131,9 +139,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 			.social-media{
 				.flex-column();
-				i a:hover{
-					background: @tertiary-color; 
-				}
+				max-width: 100500%;
 			}
 		
 		}
@@ -292,7 +298,8 @@ body {font-family: Verdana, sans-serif; margin:0}
 			display:flex; 
 			flex-wrap: wrap; 
 			
-			margin: 0 auto; 
+			margin: 0 auto;
+			 
 			h2{
 					
 					font-size:@sub-title;  
@@ -315,10 +322,15 @@ body {font-family: Verdana, sans-serif; margin:0}
 					
 					background: @tertiary-color; 
 				}
+
+				
 			}
 	
 		}
+
+		
 	}
+	
 }
 
 
