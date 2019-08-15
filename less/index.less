@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	width: 800px;
 	
 }
 ol, ul {
@@ -67,8 +68,8 @@ padding: 1rem;
 .mainfont() {
 	font-family: 'Source Code Pro', monospace;
 	font-size: 2rem;
-	color:black;
-	@fontcolor;
+	
+	color: @fontcolor;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -76,14 +77,18 @@ padding: 1rem;
     box-sizing: border-box;
 }
 
-html, body {
+html {
 	
-	height: 100%;
-	max-width: 100%;
+	width: 800px;
 	font-size: 62.5%;
-	background-color: #363636
+	background-color: #363636;
+}
 
-
+body {
+	
+	width: 800px;
+	font-size: 62.5%;
+	background-color: #363636;
 }
 
 
@@ -94,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	margin: 1rem 1rem;
 	padding: 1rem 0rem;
-	@fontcolor;
+	color:@fontcolor;
 }
 
 p, li {
@@ -262,6 +267,17 @@ footer {
 	align-content: space-evenly;
 	background-color: #7a7a7abe;
 	max-width: 100%;
+		@media only screen and (max-width: 500px) {
+
+			background-color: lightslategray;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content: center;
+			background-color: #614040be;
+			max-width: 100%;
+	
 	
 		table {
 			table-layout: fixed;
@@ -277,27 +293,15 @@ footer {
 					font-family: @mainfont;
 					font-size: 2rem;
 					padding: 1rem;
-				}
+				} // ends td
 						tr:nth-child(even) {
 							background-color: #f2f2f2;
-					}
+					} // ends table even
 					
 						tr:nth-child(odd) {
 							background-color: #8b8b8b;
-					}
-	  }
+					} //ends table odd
+		} // ends media	
+	  } // ends table
 	  
-	  @media only screen and (max-width: 500px) {
-		.top-content {
-		  background-color: lightslategray;
-		  display: flex;
-		  flex-direction: column;
-		  flex-wrap: wrap;
-		  justify-content: center;
-		  align-content: center;
-		  background-color: #614040be;
-		  max-width: 100%;
-		}
-	  }  
-	}
- 
+	} //ends bottom	
