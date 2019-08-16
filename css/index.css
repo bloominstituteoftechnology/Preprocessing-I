@@ -188,15 +188,21 @@ header h3 {
 header .contact {
   display: flex;
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 header .contact span {
-  margin: 0 17% 0 4%;
   letter-spacing: 0.5px;
+  margin-left: 5px;
+  margin-right: 35px;
 }
 header a {
   color: white;
   text-decoration: none;
+}
+@media screen and (max-width: 500px) {
+  span {
+    margin: 0;
+  }
 }
 .skillsHeader {
   color: #FFF8DC;
@@ -348,18 +354,15 @@ ul {
   header h3 {
     font-size: 1.75rem;
   }
-  .bulkContent {
-    padding: 15px;
-  }
-  .contactMe p:first-of-type {
-    font-size: 10px;
-  }
   .skillsHeader {
     display: flex;
     justify-content: center;
   }
   .skills {
-    padding: 10px 5px;
+    padding: 10px;
+  }
+  .skills span {
+    font-size: 12px;
   }
   .work {
     padding: 20px;
@@ -368,5 +371,21 @@ ul {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .bulkContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px;
+  }
+  .bulkContent .bulk {
+    display: flex;
+    width: 100%;
+  }
+  .work {
+    width: 100%;
+    padding: 30px;
   }
 }
