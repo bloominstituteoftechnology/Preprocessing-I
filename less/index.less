@@ -54,6 +54,328 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	background-image: linear-gradient( #b76e79, #D3D3D3);
+	background-repeat: no-repeat;
 }
+
+/*Variables*/
+@navcolor: #D3D3D3;
+@h2color: #b76e79;
+@h2font: 'Playfair Display', serif;
+@regfont: 'Oswald', sans-serif;
+
+/*Mixins*/
+.headings {
+	color: @h2color;
+	font-family: @h2font;
+	font-size: 5em;
+	
+}
+
+.headings-two {
+	padding-top: 3%;
+}
+
+
+.simple-text {
+	color: darkslategray;
+	font-family: @regfont;
+	font-size: 3em;
+}
+
+.row-items {
+	display: flex;
+	flex-direction: row;
+}
+
+.headings-four {
+	       color: #555555;
+			font-size: 4em;
+			font-weight: bold;
+			font-family: @regfont;
+			margin-bottom: 1%;
+}
+
+ //end of mixins 
+
+ h2 {
+	 border-bottom: 1px solid @h2color;
+ }
+
+	.nav-links {
+		.row-items;
+		justify-content: space-around;
+		padding: 3%;
+		font-size: 2em;
+
+		@media(max-width: 768px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 0;
+			font-size: 2em;
+		 }//end of media query nav-links class
+		
+		@media(max-width: 500px) {
+		   flex-direction: column;
+		   justify-content: center;
+		   align-items: center;
+		   padding: 0;
+		   font-size: 2em;
+		}//end of media query nav-links class
+
+
+		a {
+			.simple-text;
+			text-decoration: none;
+			list-style: none;
+			&:hover {
+				color: white;
+			}
+
+			@media(max-width: 768px) {
+				border-bottom: 1px solid #555555;
+			 }//end of media query anchor selector
+			
+			@media(max-width: 500px) {
+				border-bottom: 1px solid #555555;
+			 }//end of media query anchor selector
+			
+		} //end of anchor selector
+	} // end of nav-links class
+
+	.portrait {
+		width: 30%;
+		border-radius: 50%;
+		padding: 5%;
+		margin-left: 10%;
+
+		@media(max-width: 768px) {
+			width: 40%;
+			height: 50%;
+			margin-left: 0%;
+		}//end of media query portrait class
+
+		@media(max-width: 500px) {
+			width: 40%;
+			height: 50%;
+			margin-left: 0%;
+		}//end of media query portrait class
+	} //end of portrait class
+
+	header {
+		.row-items;
+
+		@media(max-width: 768px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		 }//end of media query header
+
+		@media(max-width: 500px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		 }//end of media query header
+		#intro {
+			padding: 5%;
+			text-align: center;
+		   margin: 5% 7% 0 0%;
+
+		   @media(max-width: 768px) {
+			padding: 0;
+			margin: 0;
+		 }//end of media query intro class
+		   
+		   @media(max-width: 500px) {
+			padding: 0;
+			margin: 0;
+		 }//end of media query intro class
+		   
+
+		   h1 {
+			color: white;
+			font-family: @h2font;
+			font-size: 5em;
+			padding: 1%;
+		
+		} // end of H1 selector
+
+		p {
+			.simple-text;
+			line-height: 1.5em;
+			font-size: 4em;
+		} // end of p selector inside intro class
+		} //end of intro class
+	} //end of header selector
+
+	.container {
+		display: flex;
+		flex-direction:row;
+		background: #E5E1D6;
+		width: 90%;
+		height: 300px;
+		margin-left: 5%;
+
+		@media(max-width: 768px) {
+			width: 100%;
+			flex-direction: column;
+			padding:0;
+			padding-top: 5%;
+			margin: 0;
+			height: 700px;
+		 }//end of media query container class
+
+		@media(max-width: 500px) {
+			width: 100%;
+			flex-direction: column;
+			padding:0;
+			padding-top: 5%;
+			margin: 0;
+			height: 700px;
+		 }//end of media query container class
+
+		h2 {
+			.headings;
+			padding-top: 4%;
+			text-align: center;
+		} //end of h2 skills
+
+		.key {
+			list-style-type: disc;
+			.simple-text;
+			font-size: 3em;
+			padding: 5%;
+			line-height: 1.5em;
+			
+		} //end of key class
+
+		#skills {
+			padding-left: 20%;
+			padding-top: 2%;
+
+			
+			@media(max-width: 768px) {
+				padding:0;
+			 }//end of media query skills id
+
+			@media(max-width: 500px) {
+				padding:0;
+			 }//end of media query skills id
+		} //end of skills id
+
+		.skills-list {
+			text-align: center;
+			.simple-text;
+			line-height: 2em;
+			margin-top: 10%;
+
+			@media(max-width: 768px) {
+				margin-top: 5%;
+			 } //end of media querie skill list
+
+			@media(max-width: 500px) {
+				margin-top: 5%;
+			 } //end of media querie skill list
+		} //end of skills id
+
+		.skills-item {
+			font-size: 1.5em;
+
+		} // end of skills-item
+
+	} //end of container class
+
+	.container-two {
+		display: flex;
+		flex-direction: column;
+		background: #E5E1D6;
+		width: 90%;
+		height: 600px;
+		margin-left: 5%;
+
+		@media(max-width: 768px) {
+			width: 100%;
+			padding:0;
+			padding-top: 5%;
+			margin: 0;
+		 }//end of media query container-two class
+
+		@media(max-width: 500px) {
+			width: 100%;
+			padding:0;
+			padding-top: 5%;
+			margin: 0;
+		 }//end of media query container-two class
+
+		 h2 {
+			.headings;
+			padding-top: 4%;
+			text-align: center;
+		} //end of h2 experience
+
+
+		 h4 {
+			.headings-four;
+		} //end of h4 inside container-two
+
+		p{
+			.simple-text;
+		} //end of p selector inside container-two
+
+		ul {
+			list-style-type: disc;
+			color: darkslategray;
+			font-family: @regfont;
+			font-size: 3em;
+			line-height: 1.5em;
+		} //end of unordered list inside work experience
+
+		.work-one, .work-two {
+			padding: 2%;
+
+		} //end of work-one class
+
+	} //end of container-two class
+
+	footer {
+		background-image: linear-gradient(#b76e79, #D3D3D3);
+		width: 100%;
+		height: 300px;
+		color: #333333;
+
+		h2 {
+			font-family: @h2font;
+			font-size: 5em;
+			text-align: center;
+			padding-top: 5%; 
+			} //h2 closing
+
+			#contact {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+
+				p {
+					font-size: 4em;
+				} //end of p element inside contact id
+	
+				a {
+					text-decoration: none;
+					font-size: 3em;
+					
+				
+				} // end of a element inside contact id
+			} // end of contact id
+
+		
+	
+	} //end of footer 
+
+
+
+
 
