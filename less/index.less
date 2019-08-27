@@ -52,8 +52,100 @@ table {
 * {
     box-sizing: border-box;
 }
+/*---STARTS HERE--------------------------------*/
 
-html, body {
-	height: 100%;
+
+@bordered: 2px solid crimson;
+
+.position(@direction, @align){
+	display: flex;
+	flex-direction: @direction;
+	align-items: @align;
 }
 
+html, body {
+	.position(column, center);
+	height: 100%;
+	width: 95%;
+
+	h1 {
+		font-size: 25px;
+		text-decoration: underline;
+	}
+
+	p{
+		padding: 1%;
+	}
+
+	header {
+		margin-bottom: 2%;
+		.position(column, center);
+		
+		.intro {
+			padding: 5%;
+			background: lightgrey;
+		}
+
+		h1 {
+			font-size: 30px;
+			padding-bottom: 10px;
+		}
+
+		nav {
+			width: 90%;
+			display: flex;
+			justify-content: space-evenly;
+			border: @bordered;
+			margin: 2%;
+			padding: 10px;
+
+			a {
+				text-decoration: none;
+				color: black;
+				background: lightgrey;
+				border: 1px double black;
+				border-radius: 5px;
+				padding: 10px;
+			}
+		}
+	}
+
+	main {
+		border: @bordered;
+		.position(row, center);
+		width: 100%;
+		
+		.middle {
+			.position(column, flex-start);
+			}
+
+		div {
+			width: 100%;
+				
+			section {
+			width: 80%;
+			height: 150px;
+			margin: 10px;
+			border-bottom: 2px dashed black;
+			}
+		}
+
+		img {
+			margin-right: 30px;
+			width: 350px;
+			height: 400px;	
+		}
+	}
+
+	.contact {
+		width: 95%;
+		.position(column, center);
+		margin: 2%;
+		padding: 2% 5% 2% 5%;
+		background: lightgrey;
+
+		p {
+			border-bottom: 3px double black;
+		}
+	}
+}
