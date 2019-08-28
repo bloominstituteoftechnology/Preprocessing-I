@@ -57,15 +57,18 @@ html, body {
 	font-size: 15px;
 	height: 100%;
 	max-width: 100%;
+	background-color: lightgray;
 }
 
-@backgroundGray: gray;
+@backgroundGray: lightgray;
 @basicwidth: 80%;
 @basicmargin: 0 auto;
 @contentwidth: 40%;
+@mixinuse1: .skill-div;
+@mixinuse2: .mixinuse2;
 
 .navigation-container .main-navigation {
-	max-width: @basicwidth;
+	max-width: 30%;
 	display: flex;
 	justify-content: space-around;
 	margin: @basicmargin;
@@ -74,6 +77,8 @@ html, body {
 		a{
 			
 			color: green;
+			font-size: 1.2rem;s
+			text-decoration: none;
 			
 		}
 		a:hover{
@@ -84,8 +89,8 @@ html, body {
 
 header{
 	background-color: @backgroundGray;
-	width: @basicwidth;
-	margin: 0 auto;
+	width: 100%;
+	margin: @basicmargin;
 	padding: 50px;
 
   	h1{
@@ -101,7 +106,7 @@ header{
 		
 		@media(max-width: 800px){
 			width:40%;
-			margin: 0 auto;
+			margin: @basicmargin;
 			display: flex;
 		}
 		@media(max-width: 500px){
@@ -114,7 +119,7 @@ header{
 		margin: @basicmargin;
 		padding-top: 1.1rem;
 		border-top: 1px solid green;
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 		text-align: center;
 
 		@media(max-width: 500px){
@@ -125,8 +130,106 @@ header{
 }
 
 
+.middle-content-container{
+	width: @basicwidth;
+	margin: @basicmargin;
+	padding-top: 1.2rem;
+	font-size: 1.2rem;
+	text-align: center;
+
+  .bio-div{
+	  background-color: rgb(205, 234, 243);
+	  width: @contentwidth;
+	  margin: @basicmargin;
+	  padding: 20px;
+	  margin-bottom: 10px;
+	  @media(max-width: 800px){
+		width: 40%;
+		margin: @basicmargin;
+	  }
+  }	
+
+	h1 {
+		margin: @basicmargin;
+		width: 5.5rem;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		
+	}
+}
+
+.flex-skills{
+	display: flex;
+	width: 30%;
+	margin: @basicmargin;
+	padding-top: 1.2rem;
+	font-size: 1.2rem;
+	text-align: center;
+	justify-content: center;
+	justify-content: space-around;
+
+  .skill-div{
+	  border: 1px solid black;
+	  padding: 1.1rem;
+	  background-color: rgba(166, 217, 115, 1);
+  }
+
+  .workhist-div {
+	@mixinuse1;
+  }
 
 
+	h2 {
+		font-size: 1.4rem;
+		border-bottom: 1px solid black;
+	
+	}
+
+	.mixinuse2{
+		list-style-type: square;
+		padding-left: .5em;
+
+	}
+
+	li {
+		padding: .5em;
+	}
+
+	ol{
+		@mixinuse2;
+	}
+	
+}
+
+.contact-section{
+	width: @basicwidth;
+	margin: @basicmargin;
+	padding-top: 1.2rem;
+	font-size: 1.2rem;
+	
+
+	.contact-div{
+	  background-color: rgb(205, 234, 243);
+	  width: @contentwidth;
+	  margin: @basicmargin;
+	  padding: 20px;
+	  margin-bottom: 10px;
+	}
+	 h2{
+		margin: @basicmargin;
+		text-align: center;
+		font-size: 1.5rem;
+		margin-bottom: 1rem; 
+	 }
+}
+
+footer{
+	width: @basicwidth;
+	margin: @basicmargin;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
 
 
 
