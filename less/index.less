@@ -73,6 +73,10 @@ html, body {
 	background:@background;
 	color: @color;
 }
+.link-format(@decoration, @color){
+	text-decoration: @decoration;
+	color: @color;
+}
 
 .container{
 	width: 80%;
@@ -82,7 +86,7 @@ html, body {
 	padding: 20px;
 	header{
 		nav{
-			.flex(row, space-evenly, center);
+			.flex(row, space-between, center);
 			margin: 10px 0;
 			height: 70px;
 
@@ -98,10 +102,18 @@ html, body {
 					font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 					text-transform: uppercase;
 					font-size: 2rem;
+					@media(max-width: 500px){
+						font-size: 3.5rem;
+					
+					}
 				}
 				.logo-desc{
 					font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 					font-size: 1rem;
+					@media(max-width: 500px){
+						font-size: 1.75rem;
+					
+					}
 				}
 				
 			}
@@ -133,6 +145,7 @@ html, body {
 				margin-left: 20px;
 				font-size: @default-font-size;
 				line-height: 24px;
+				padding: 10px;
 				li{
 					font-size: 1.6rem;
 				}
@@ -186,8 +199,8 @@ html, body {
 		h1{
 			.title(2.4rem, 10px, black, white);
 		}
-
-
+		
+		
 		ul{
 			list-style: square;
 			margin-left: 20px;
@@ -198,6 +211,23 @@ html, body {
 			}	
 		}
 	}
+	.contact{
+		h1{
+			.title(2.4rem, 10px, black, white);
+			
+		}
+		address{
+			font-size:1.6rem;
+			padding: 10px;
+		}
+		a{
+			font-size: 1.6rem;
+			.link-format(none, black);
+			padding:10px;
+		}
+		
 
+
+}
 }
 }
