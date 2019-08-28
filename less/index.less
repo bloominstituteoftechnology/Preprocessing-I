@@ -145,22 +145,33 @@ body {
 	height: 100%;
 }
 
+/*Google Font Imports*/
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 /*LESS Variable*/
 @section-color: rgb(212, 212, 212);
 @footer-color: #515c63;
+@navy : navy;
 
+/*LESS Mixin Properties*/
+.fontLato () {
+	font-family: 'Lato';
+}
 
-body {}
+.flexDisplay () {
+	display: flex;
+}
+
 
 .container {
 	width: 1300px;
 	margin: 0 auto;
+	margin-top: 20px;
 
 
 	section p {
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Roboto', .fontLato(), sans-serif;
 	}
 
 	img {
@@ -176,13 +187,13 @@ body {}
 	}
 
 	section h1:hover {
-		color: cadetblue;
+		color: @navy;
 	}
 
 	.line-1 {
 		margin-top: 20px;
 		margin-bottom: 20px;
-		border: 1px black solid;
+		border: 1px @navy solid;
 	}
 
 	.lets-team-up-button {
@@ -192,17 +203,17 @@ body {}
 		color: white;
 		width: 130px;
 		margin-top: 30px;
+		box-shadow:  5px 10px #888888;
 	}
 
 	.nav-flex {
-		display: flex;
+		display: flexDisplay();
 		justify-content: space-between;
 	}
 
 	.anchors {
-		color: black;
+		color: @navy;
 		text-decoration: none;
-		margin-left: 50px;
 		margin-right: 50px;
 		font-size: 25px;
 		margin-top: 30px;
@@ -210,7 +221,7 @@ body {}
 	}
 
 	.anchors:hover {
-		color: cadetblue;
+		color: @navy;
 	}
 
 	.background-section-grey {
