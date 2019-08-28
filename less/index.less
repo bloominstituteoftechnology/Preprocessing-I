@@ -58,17 +58,46 @@ html, body {
 }
 
 // my code starts here!
+
+@background-color1: olive;
+
+@accent-color: palegoldenrod;
+
+.flexbox-mixin(){
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+
 body{
+
+	
+
+	font-family: 'Hepta Slab', serif;
 	.container{
 		width: 100%;
-	}	
-	nav{
-
-	}
-	.bio{
-		img{
-			width: 20%;
+	
+		nav{
+			.flexbox-mixin;
+			justify-content: space-evenly;
+			margin: 50px auto;
+			
 		}
+		.bio{			
+			.flexbox-mixin;
+			justify-content: space-around;
+			margin: auto;
+			background-color: @background-color1;
+			img{
+				width: 30%;
+			}
+			.biotext{
+				width: 45%;
+			}
+		}	
 	}
 }
 
