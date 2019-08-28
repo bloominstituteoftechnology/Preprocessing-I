@@ -147,7 +147,7 @@ body {
 .navigation-container .main-navigation a {
   color: green;
   font-size: 1.2rem;
-  stext-decoration: none;
+  text-decoration: none;
 }
 .navigation-container .main-navigation a:hover {
   color: red;
@@ -201,18 +201,30 @@ header p {
   font-size: 1.2rem;
   text-align: center;
 }
+@media (max-width: 800px) {
+  .middle-content-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .middle-content-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
 .middle-content-container .bio-div {
   background-color: #cdeaf3;
   width: 40%;
   margin: 0 auto;
   padding: 20px;
   margin-bottom: 10px;
-}
-@media (max-width: 800px) {
-  .middle-content-container .bio-div {
-    width: 40%;
-    margin: 0 auto;
-  }
 }
 .middle-content-container h1 {
   margin: 0 auto;
@@ -236,15 +248,13 @@ header p {
   background-color: #a6d973;
 }
 .flex-skills .workhist-div {
-  border: 1px solid black;
-  padding: 1.1rem;
-  background-color: #a6d973;
+  @mixinuse 1;
 }
 .flex-skills h2 {
   font-size: 1.4rem;
   border-bottom: 1px solid black;
 }
-.flex-skills ul {
+.flex-skills .mixinuse2 {
   list-style-type: square;
   padding-left: 0.5em;
 }
@@ -252,8 +262,7 @@ header p {
   padding: 0.5em;
 }
 .flex-skills ol {
-  list-style-type: square;
-  padding-left: 0.5em;
+  @mixinuse 2;
 }
 .contact-section {
   width: 80%;
