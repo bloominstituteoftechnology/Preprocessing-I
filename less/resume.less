@@ -21,35 +21,41 @@ table {
   }
 
 .main-info-block{
-	display: flex;
+    display: flex;
+    flex-direction: column;
 	margin-top: 40px;
 	background-color: @gray;
 	width: @one-hundred-percent;
 	height: @seventy-five-percent;
     border: 5px solid purple;
+    margin-bottom: @five-percent;
 }
 
 .left-side {
-	width: 40%;
+	width: 50%;
 	border: 2px solid yellow;
 }
 
-.section1 {
-	width: @fifty-percent;
-	margin-bottom: 40px;
-	margin-right: 30px;
+.listen-up{
+    .section-designer();
+    border: 1px solid green;
+}
+
+
+
+
+.good-at-table {
+   .section-designer();
 }
 
 .center-content {
 	margin-top: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
+    .custom-flex(space-evenly, center);
 }
 
 .image-formater{
 	border: 5px, solid green;
-	width: @seventy-five-percent;
+    width: @seventy-five-percent;
 }
 
 .text-centerer{
@@ -60,15 +66,19 @@ table {
 	width: 50%;
 }
 
+.selected-works {
+    margin-bottom: 5%;
+    .custom-flex(center, center);
+    flex-direction: column;
+}
+
 .button-team-up {
 	border-radius: 1px;
 	background-color: @button-footer-background;
 	border: @black;
 	width: @ten-percent;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 40px;
+	.custom-flex(center, center);
+	height: @one-hundred-percent;
 	.text-centerer();
 	color: @white;
 
