@@ -135,14 +135,26 @@ body {
   height: 100%;
 }
 .container {
-  width: 880px;
+  width: 800px;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
 .container header {
-  width: 100%;
   height: 50px;
   display: flex;
+  width: 100%;
   justify-content: flex-end;
+  margin: 20px auto;
+  font-family: "Arial", "sans-serifs";
+}
+@media (max-width: 500px) {
+  .container header {
+    justify-content: center;
+  }
 }
 .container header nav {
   width: 440px;
@@ -150,38 +162,117 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.container .profile-section {
-  width: 800px;
-  display: flex;
-  background: whitesmoke;
-  margin: 30px;
-  border-radius: 10px;
+.container header nav a {
+  text-decoration: none;
+  color: black;
 }
-.container .profile-section .profile {
+.container header nav a:hover {
+  color: red;
+}
+.profile-section {
+  display: flex;
+  width: 100%;
+  background: whitesmoke;
+  border-radius: 10px;
+  padding: 10px 10px;
+  justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  .profile-section {
+    flex-direction: column;
+  }
+}
+.profile-section .profile {
   width: 450px;
   padding-left: 20px;
+  font-family: "Arial", "sans-serifs";
 }
-.container .profile-section .profile h1 {
+.profile-section .profile h1 {
   font-size: 2.5rem;
   padding: 10px 0 5px 0;
-  font-weight: 100;
+  font-weight: bolder;
 }
-.container .profile h3 {
+.profile-section .profile h3 {
   font-size: 20px;
   padding-bottom: 10px;
   font-weight: bolder;
 }
-.container .profile p {
+.profile-section .profile p {
   padding-bottom: 30px;
 }
-.container table,
-.container th,
-.container td {
-  border: 1px solid black;
-  border-collapse: collapse;
+.contact ul li {
+  line-height: 1.6;
 }
-.container th,
-.container td {
-  padding: 15px;
+.contact ul li .li-info {
+  font-weight: bold;
+  width: 65px;
+}
+.profile-middle {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  padding: 30px 0;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .profile-middle {
+    flex-direction: column;
+  }
+}
+.profile-middle .profile-box {
+  width: 350px;
+}
+@media (max-width: 500px) {
+  .profile-middle .profile-box {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+}
+.profile-middle .profile-box h1 {
+  padding-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #696969;
+  font-family: "Arial", "sans-serifs";
+}
+.profile-middle .profile-box table,
+.profile-middle .profile-box td,
+.profile-middle .profile-box th {
+  border: 1px solid #ddd;
   text-align: left;
+}
+.profile-middle .profile-box table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.profile-middle .profile-box th,
+.profile-middle .profile-box td {
+  padding: 15px;
+}
+.experience {
+  width: 100%;
+}
+.experience h1 {
+  padding-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #696969;
+  font-family: "Arial", "sans-serifs";
+}
+.experience table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.experience table th {
+  font-weight: bold;
+}
+.experience table th,
+.experience table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
 }
