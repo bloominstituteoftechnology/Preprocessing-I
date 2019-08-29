@@ -152,7 +152,6 @@ body {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  border: 3px solid green;
 }
 a {
   text-decoration: none;
@@ -232,34 +231,35 @@ button:hover {
   color: white;
 }
 .section2 {
-  border: 1px solid brown;
-  width: 95%;
-  height: 500px;
+  width: 95vw;
+  height: auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 15px;
 }
 tr {
   font-size: 14px;
 }
 .left-photo-container {
-  margin-top: 20px;
-  border: 3px solid blue;
-  width: 90%;
+  margin-top: auto;
+  width: 100%;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #things-I-excell {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 75%;
-  margin-bottom: 30px;
-  margin-left: 30px;
+  margin-bottom: 10px;
 }
 #things-I-excell tr:hover {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 75%;
   margin-bottom: 30px;
-  margin-left: 30px;
   color: gray;
   font-weight: bold;
 }
@@ -281,13 +281,17 @@ tr {
 }
 .right-photo-container {
   margin-top: 20px;
-  width: 60vw;
+  margin-left: 120px;
+  width: 75%;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #previous-work {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 46vw;
+  width: 55vw;
 }
 #previous-work tr:hover {
   background-color: #ddd;
@@ -316,14 +320,6 @@ tr {
   width: 40vw;
   height: 150px;
 }
-.copyright {
-  width: 80%;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 100px;
-  padding-top: 12px;
-  height: 35px;
-}
 .site-change-main-container {
   width: 99%;
   height: 99%;
@@ -342,9 +338,10 @@ tr {
   border-radius: 25px;
   padding: 20px;
 }
+.mobile-form {
+  display: none;
+}
 .slide-show-container {
-  margin-right: 100px;
-  margin-left: 30px;
   height: 210px;
 }
 .minislide {
@@ -391,11 +388,10 @@ tr {
 .products-main-container {
   width: 95%;
   height: 700px;
-  border: 2px solid tan;
+  border: 2px solid brown;
   background: beige;
 }
 .products-items-container {
-  border: 1px solid blue;
   width: 90%;
   height: 600px;
   margin: 40px auto;
@@ -405,15 +401,66 @@ tr {
   body {
     background-color: lightseagreen;
   }
-}
-@media only screen and (max-width: 500px) {
-  body {
-    background-color: lightblue;
+  .site-change-main-container .change-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
   }
   .container .nav {
     display: flex;
     flex-direction: column;
-    color: red;
+    font-size: 22px;
+    height: 170px;
+    width: 160px;
+  }
+  .section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 450px;
+  }
+  .right-photo-container {
+    margin-top: 150px;
+    margin-right: 40px;
+  }
+  .left-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+  }
+  .slide-show-container {
+    margin-right: 50px;
+  }
+  #things-I-excell {
+    margin-right: 45px;
+  }
+  .table-form {
+    display: none;
+  }
+  .underEmploymentText {
+    margin-bottom: 30px;
+  }
+  .mobile-form {
+    margin-bottom: 30px;
+  }
+  .tablet-form {
+    margin-bottom: 30px;
+    display: block;
+  }
+  .change-container-enclosure {
+    width: 95%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container .nav {
+    display: flex;
+    flex-direction: column;
     font-size: 22px;
     height: 170px;
     width: 160px;
@@ -439,29 +486,37 @@ tr {
     height: 450px;
   }
   .right-photo-container {
+    margin-right: 180px;
     margin-top: 150px;
   }
   .left-photo-container {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid blue;
-    margin-left: 50px;
   }
   .slide-show-container {
-    border: 3px solid red;
     margin-right: 50px;
   }
   #things-I-excell {
     margin-right: 45px;
+    width: 60%;
   }
   .tablet-form {
     display: none;
   }
+  .underEmploymentTable {
+    width: 70vw;
+    text-align: center;
+    margin-right: 40px;
+  }
   .underEmploymentText {
     margin-bottom: 30px;
+    width: 60vw;
+    margin-right: 40px;
   }
   .mobile-form {
+    display: block;
     margin-bottom: 30px;
   }
 }

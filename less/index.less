@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: tan;
+	background: @themeColorTan;
 }
 ol, ul {
 	list-style: none;
@@ -77,22 +77,22 @@ html, body {
 	display: flex;
 	justify-content: space-between;
 	font-weight: bold;
-	border: 3px solid green;
+	// border: 3px solid @themeColorBrown;
 }
 a {
 	text-decoration: none;
 	margin-right: 20px;
-	color: brown;
+	color: @themeColorBrown;
 	font-weight: bold;
 }
 // #######################################################################
 // #######################################################################
 							//  NOTE   SECTION 1      SECTION 1     SECTION 1  
 .section1 {
-	border: 1px solid brown;
+	border: 1px solid @themeColorBrown;
 	width: 95%;
 	height: 500px;
-	background: beige;
+	background: @themeColorBeige;
 	margin-bottom: 10px;
 	border-radius: 15px;
 	display: flex;
@@ -138,7 +138,7 @@ width: 99%;
 height: auto;
 font-size: 18px;
 margin: 10px;
-background: tan;
+background: @themeColorTan;
 padding: 10px;
 border-radius: 15px;
 // color: white;
@@ -162,7 +162,7 @@ button:hover {
 	border-radius: 6px;
 }	
 .button-text {
-	color: brown;
+	color: @themeColorBrown;
 	padding-left: 8px;
 }		
 .button-text:hover {
@@ -175,10 +175,12 @@ button:hover {
 // ##########################################################################################
 // ---------------------------------------------------------------------------------------
 .section2 {
-	border: 1px solid brown;
-	width: 95%;
-	height: 500px;
+	// border: 14px solid @themeColorBrown;
+	width: 95vw;
+	height: auto;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	border-radius: 15px;
 	// background: sandybrown;
 	// justify-content: center;
@@ -194,10 +196,15 @@ tr {
 }
 .left-photo-container{ 
 	// border: 2px dotted cyan;
-	margin-top: 20px;
-	border: 3px solid blue;
-	width: 90%;
+	margin-top: auto;
+	// margin-left: 70px;
+	// border: 8px dotted blue;
+	width: 100%;
 	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 	
 }
 
@@ -206,8 +213,8 @@ tr {
 	border-collapse: collapse;
 	width: 75%;
 	// border: 10px solid green;
-	margin-bottom: 30px;
-	margin-left: 30px;
+	margin-bottom: 10px;
+	// margin-left: 30px;
   }
  
   #things-I-excell tr:hover {
@@ -216,7 +223,6 @@ tr {
 	width: 75%;
 	// border: 10px solid green;
 	margin-bottom: 30px;
-	margin-left: 30px;
 	color: gray;
 	font-weight: bold;
   }
@@ -256,16 +262,24 @@ tr {
 // ----------------------------------------------------------------------
 							// NOTE   RIGHT PHOTO CONTAINER 		RIGHT PHOTO CONTAINER
 .right-photo-container {
+				// NOTE this moves employment table and text latin text below
 	// border: 2px dotted cyan;
 	margin-top: 20px;
-	width: 60vw;
+	margin-left: 120px;
+	width: 75%;
 	height: 400px;
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	// border: 3px solid fuchsia;
 }
 							// NOTE THIS IS THE TABLE STYLING		NOTE THIS IS THE TABLE STYLING
 #previous-work {
+// /			/ NOTE  THIS ONLY MOVES THE EMPLOYMENT TABLE
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
-	width: 46vw;
+	width: 55vw;
+	
 	// border: 10px solid green;
   }
   #previous-work tr:hover {
@@ -300,23 +314,24 @@ tr {
 
 
 
-.copyright {
-	width: 80%;
-	// border: 2px solid fuchsia;
-	text-align: center;
-	margin-top: 10px;
-	margin-bottom: 100px;
-	padding-top: 12px;
-	// background: lightgray;
-	height: 35px;
-}
+// .copyright {
+// 	width: 80%;
+// 	// border: 2px solid fuchsia;
+// 	text-align: center;
+// 	margin-top: 10px;
+// 	margin-bottom: 100px;
+// 	padding-top: 12px;
+// 	// background: lightgray;
+// 	height: 35px;
+// 	color: @themeColorTan;
+// }
 							// NOTE   SITE CHANGES			SITE CHANGES			SITE CHANGES
 
 .site-change-main-container {
 	// border: 3px solid cyan;
 	width: 99%;
 	height: 99%;
-	background: tan;
+	background: @themeColorTan;
 }
 							
 .change-container {
@@ -333,17 +348,18 @@ tr {
 	padding: 20px;
 
 }							
+				// NOTE   EMAIL   CONTACT    EMAIL    CONTACT
 
+.mobile-form {
+	display: none;
+}
+
+
+// -----------------------------------------------
 // NOTE EXPERIMENT SLIDE SHOW		NOTE EXPERIMENT SLIDE SHOWNOTE        EXPERIMENT SLIDE SHOW
 
 .slide-show-container {
-	// width: 60%;
-	// height: 60%;
-	// margin: 0 auto;
-	// margin-bottom: 150px;
 	// border: 4px solid blue;
-	margin-right: 100px;
-	margin-left: 30px;
 	height: 210px;
 }
 .minislide{width:350px; height:300px; overflow:hidden; position:relative; }
@@ -360,7 +376,7 @@ tr {
 .aboutMeContainer{
 	margin: 20px;
 	font-size: 20px;
-	border: 1px solid brown;
+	border: 1px solid @themeColorBrown;
 	padding: 15px;
 	border-radius: 15px;
 
@@ -375,37 +391,107 @@ tr {
 .products-main-container {
 	width: 95%;
 	height: 700px;
-	border: 2px solid tan;
-	background: beige;
+	border: 2px solid @themeColorBrown;
+	background: @themeColorBeige;
 }
 .products-items-container {
-	border: 1px solid blue;
+	// border: 1px solid blue;
 	width: 90%;
 	height: 600px;
 	margin: 40px auto;
 	padding: 40px;
 }
-// ==============================================
-
-
-//   ==========================================
+// ===================================================
+// ===================================================
 								// NOTE  750PX
-
+// ===================================================
+// ===================================================
 @media only screen and (max-width: 750px) {
 	body {
 	  background-color: lightseagreen;
 		}	
+		.site-change-main-container .change-container  {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 50px;
+			// border: 5px dashed blue;
+		}
+		.container .nav {
+			display: flex;
+			flex-direction: column;
+			// color: red;
+			font-size: 22px;
+			height: 170px;
+			width: 160px;
+		}
+		.section2 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 450px;
+		}
+		.right-photo-container {
+			margin-top: 150px;
+			margin-right: 40px;
+			
+
+		}
+		.left-photo-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			// border: 3px solid blue;
+			margin-left: 50px;
+		}
+		.slide-show-container {
+			// border: 3px solid yellowgreen;
+			margin-right: 50px;
+		}
+		#things-I-excell {
+			margin-right: 45px;
+		}
+		.table-form {
+			display: none;
+		}
+		.underEmploymentText {
+			margin-bottom: 30px;
+		}
+		.mobile-form {
+			margin-bottom: 30px;
+		}
+		.tablet-form {
+			margin-bottom: 30px;
+			display: block;
+		}
+		.change-container-enclosure {
+			width: 95%;
+			height: 500px;
+			display: flex;
+			// border: 6px solid blue;
+			flex-direction: column;
+			align-items: center;
+		}
 	}				
 
-						// NOTE 500PX   500PX   500PX    500PX     500PX
+
+
+
+
+
+// ===================================================
+// ===================================================
+								// NOTE  500PX
+// ===================================================
+// ===================================================
 @media only screen and (max-width: 500px) {
 	body {
-	  background-color: lightblue;
+	//   background-color: lightblue;
 	}
 	.container .nav {
 		display: flex;
 		flex-direction: column;
-		color: red;
+		// color: hotpink;
 		font-size: 22px;
 		height: 170px;
 		width: 160px;
@@ -429,32 +515,59 @@ tr {
 		flex-direction: column;
 		align-items: center;
 		height: 450px;
-
 	}
 	.right-photo-container {
+		margin-right: 180px;
 		margin-top: 150px;
+		// border: 3px solid black;
+
 	}
 	.left-photo-container {
+		width: 90%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		border: 3px solid blue;
-		margin-left: 50px;
+		// border: 3px solid green;
+		// margin-left: 50px;
 	}
 	.slide-show-container {
-		border: 3px solid red;
+		// border: 3px solid purple;
 		margin-right: 50px;
+
 	}
+
 	#things-I-excell {
 		margin-right: 45px;
+		width: 60%;
 	}
 	.tablet-form {
 		display: none;
 	}
+	.underEmploymentTable {
+		width: 70vw;
+		text-align: center;
+		margin-right: 40px;
+
+	}
 	.underEmploymentText {
 		margin-bottom: 30px;
+		width: 60vw;
+		margin-right: 40px;
 	}
 	.mobile-form {
+		display: block;
 		margin-bottom: 30px;
 	}
   }
+
+
+
+// ===================================================
+// ===================================================
+						// NOTE  MIXINS   MIXINS
+// ===================================================
+// ===================================================
+
+  @themeColorTan: tan;
+  @themeColorBrown: brown;
+  @themeColorBeige: beige;
