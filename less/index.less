@@ -4,56 +4,300 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+@smokey-font: #696969;
+@font-stack: "Arial", "sans-serifs";
+
+.header-class() {
+  padding-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.flex-class() {
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+  header {
+    height: 50px;
+    .flex-class();
+    justify-content: flex-end;
+    margin: 20px auto;
+    font-family: @font-stack;
+
+    @media (max-width: 500px) {
+      justify-content: center;
+    }
+
+    nav {
+      width: 440px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.profile-section {
+  .flex-class();
+  background: whitesmoke;
+  border-radius: 10px;
+  padding: 10px 10px;
+  justify-content: space-evenly;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  .profile {
+    width: 450px;
+    padding-left: 20px;
+    font-family: @font-stack;
+
+    h1 {
+      font-size: 2.5rem;
+      padding: 10px 0 5px 0;
+      font-weight: bolder;
+    }
+
+    h3 {
+      font-size: 20px;
+      padding-bottom: 10px;
+      font-weight: bolder;
+    }
+
+    p {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.contact {
+  ul li {
+    line-height: 1.6;
+
+    .li-info {
+      font-weight: bold;
+      width: 65px;
+    }
+  }
+}
+.profile-middle {
+  .flex-class();
+  margin: 20px 0;
+  padding: 30px 0;
+  justify-content: space-between;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  .profile-box {
+    width: 350px;
+
+    @media (max-width: 500px) {
+      width: 100%;
+      padding-bottom: 30px;
+    }
+    h1 {
+      .header-class();
+      color: @smokey-font;
+      font-family: @font-stack;
+    }
+    table,
+    td,
+    th {
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 15px;
+    }
+  }
+}
+
+.experience {
+  width: 100%;
+  h1 {
+    .header-class();
+    color: @smokey-font;
+    font-family: @font-stack;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+      font-weight: bold;
+    }
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+}
