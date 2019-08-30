@@ -57,6 +57,7 @@ table {
 
 @bordered: 2px solid darkmagenta;
 @boxColor: black;
+@phone: ~"( max-width: 550px )";
 
 .position(@direction, @align){
 	display: flex;
@@ -118,6 +119,19 @@ html, body {
 				padding: 10px;
 			}
 		}
+
+		@media @phone {
+
+			nav {
+			background: black;
+			.position(column, center);
+
+				a {
+				margin-bottom: 10px;
+				}
+			}
+		}
+		
 	}
 
 	main {
@@ -160,6 +174,13 @@ html, body {
 				color: lightgrey;
 				background: @boxColor;
 			}	
+		}
+
+		@media @phone {
+
+			aside {
+				display: none;
+			}
 		}
 	}
 
