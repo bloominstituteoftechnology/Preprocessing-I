@@ -3,6 +3,10 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Chilanka&display=swap");
+@quote-text: 'Chilanka', cursive;
+@header-color: rgb(201, 202, 131);
+@skill-color: rgb(245, 96, 50);
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,7 +57,124 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	height: 100%;
+	background: rgb(33, 105, 129);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+body {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
+header {
+	width: 80%;
+	margin: 15px;
+	height: 60px;
+	border-bottom: 2px solid black;
+	
+	nav {
+		display: flex;
+		justify-content: space-evenly;
+		
+		a {
+			text-decoration: none;
+			color: @header-color;
+			font-size: 1.8rem;
+		}// end of anchor tags
+		a:hover {
+			color: red;
+		  }// end anchor tag hover
+	}//end of nav
+} //end of header
+
+.top-section {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: rgb(68, 24, 62);
+	
+	img {
+		 margin: 3%;
+	} // end img
+	
+	h1 {
+		font-size: 3.5rem; 
+		color: @header-color;
+		padding: 10px;
+	}//end h1
+	p {
+		font-size: 1.2rem; 
+		padding: 10px; 
+		font-family: @quote-text;
+		text-align: center;
+		color: @header-color;
+	} // end p
+} //end top section 
+
+.middle-section {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 1%;
+	margin: 30px 0; 
+	
+	h2 {
+		font-size: 2.7rem; 
+		text-align: center;
+		padding: 5px 0;
+		color: @skill-color
+	}
+	div {
+		border: solid black 2px;
+		padding: 1%; 
+		background-color: rgb(81, 111, 121);
+
+		h3 {
+			font-size: 2rem;
+			padding: 5px 0;
+			color: @skill-color;
+		} //end h3
+		
+		p { 
+			font-size: 1.3rem;
+			color: @skill-color;
+		}
+	} // end div
+ } //end middle section
+ .work { 
+	 display: flex;
+	 justify-content: center;
+	 flex-wrap: wrap;
+
+	h2 {
+		font-size: 2rem; 
+	}
+	.grid-container {
+		width: 85%;
+		height: 150px;
+		display: grid;
+		justify-content: center;
+		grid-template-columns: 20% 10% 25% 45%;
+		margin: 60px;
+		border: solid black;
+		.grid-item {
+			text-align: center;
+			padding: 2px;
+			font-size: 1.2rem;
+			border-bottom: 1px solid black;
+		}
+		.grid-header {
+			text-align: center;
+			border-bottom: 1px solid black;
+			padding: 4px;
+			font-size: 1.4rem;
+		}
+	}
+}
