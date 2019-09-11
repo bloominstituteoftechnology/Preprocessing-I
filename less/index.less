@@ -54,6 +54,140 @@ table {
 }
 
 html, body {
-    height: 100%;
+	font-size: 1.3rem;
+	color:white;
+	height: 100%;
+	background-color: #14191D;
+
 }
 
+@redFontColor:#AA2814;
+@orangeBackground:#FA9F15;
+@buttonBorderColor:#E68114;
+.displayFlexBetween(){
+	display: flex;
+	justify-content: space-between;
+}
+.container{
+	// height: 1700px;
+	min-height: 1vh;
+	padding:2rem;
+	background-color: #212930;
+	width: 880px;
+	/* TB LR */
+	margin: 0 auto;
+	h1{
+		font-family: 'Press Start 2P', cursive;
+		font-size: 2.5rem;
+	}
+	h2{
+		font-family: 'Press Start 2P', cursive;
+		font-size: 2rem;
+	}
+
+	header{
+		background-color: @orangeBackground;
+		width:100%;
+		margin: 1rem 0;
+		padding: 1rem 1rem;
+		.displayFlexBetween();
+		align-items: center;
+		img{
+			width:100px;
+			height: 100px;
+		}
+		nav{
+			.displayFlexBetween();
+			width:75%;
+	
+			a{
+				text-decoration: none;
+				color: @redFontColor;
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.about{
+		padding: 1rem 0;
+		p{
+			font-size:1rem;
+		}
+}
+button{
+	margin:.5rem;
+	border: 5px solid @buttonBorderColor;
+	font-size: 1.5rem;
+	background-color: @orangeBackground;
+	color: @redFontColor;
+	padding: .5rem;
+}
+.listItem{
+	.displayFlexBetween();
+	align-items: center;
+	width: 100%;
+	
+
+	img{
+		width:50px;
+		height: 50px;
+	}
+}
+.playerPic{
+	width:100%;
+}
+.List{
+	padding: 1rem;
+}
+.skillsList{
+	.displayFlexBetween();
+	align-items: center;
+	flex-wrap: wrap;
+	list-style-type: circle;
+	li{
+		width:30%;
+	}
+}
+input[type=text]{
+    padding: 5px;
+    margin: 15px 0px;
+    width:100%;
+    border:2px solid black;
+    border-radius: 9px;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    background-color:white;
+}
+input[type=submit]{
+    margin:.5rem;
+	border: 5px solid @buttonBorderColor;
+	font-size: 1.5rem;
+	background-color: @orangeBackground;
+	color: @redFontColor;
+	padding: .5rem;
+}
+
+}
+
+@media (max-width:500px){
+	.container{
+		font-size: 1rem;
+		width: 450px;
+
+		h1{
+			font-size: 1em;
+		}
+		h2{
+			font-size: 1em;
+		}
+
+		header{
+			nav{
+				a{
+					font-size:1rem;
+				}
+			}
+		}
+
+	}
+}
