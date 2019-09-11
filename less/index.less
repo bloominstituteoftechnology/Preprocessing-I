@@ -55,24 +55,25 @@ table {
 
 html, body {
 	height: 100%;
-	background-color: red;
+	background-color: lightgoldenrodyellow;
 }
 p{
-  color:orange;
+  color:black;
 }
 
 @import
-url("https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet");
+url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
 @main-color: grey;
+@body-font:'Raleway', sans-serif;
 
 .center(){
   display: flex;
   justify-content: center;
 }
 .border(){
-  border:2px dotted yellow;
-  padding:10%;
+  border:2px solid grey;
+  padding:2%;
 }
 
 body{
@@ -80,18 +81,62 @@ body{
 }
 
 h1, h2 {
-  font-size: 2rem;
-  font-family: @heading-font;
+  font-size: 1rem;
+  font-family: @body-font;
 }
 
 img {
   width:100%;
-  height:auto;
+  height:10%;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  background-color: floralwhite;
+  margin : 5% 0;
+  padding: 5% 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 p {
   line-height: 2;
-  margin: 20px 20px;
-  font-size: 2rem;
-  .border()
+  margin: 2%;
+  font-size: 1rem;
+  .border();
 }
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+header {
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  background-color: floralwhite;
+  margin : 5% 0;
+  padding: 5% 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media( max-width: 500px){
+    margin-bottom: 5%;
+  }//close h1 media
+}//close h1
+
+nav {
+  margin: 5%;
+
+  @media (max-width:500px){
+    margin: 20%;
+  } //close nav media
+    a{
+      margin-left: 5%;
+      font-size: 1rem;
+    }//close a tag
+}//close nav
+
