@@ -3,6 +3,16 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+// Global reset
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	font-size: 62.5%;
+	text-decoration: none;
+  }
+  
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -25,12 +35,14 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
+// article, aside, details, figcaption, figure, 
+// footer, header, hgroup, menu, nav, section {
+// 	display: block;
+// }
+
 body {
-	line-height: 1;
+	line-height: 1.5;
 }
 ol, ul {
 	list-style: none;
@@ -48,12 +60,186 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
-
 html, body {
     height: 100%;
 }
 
+/******** Desktop View *******/
+
+/* Variables */
+@background-color: skyblue;
+
+@midBGcolor: #F4EFDB;
+
+@headerFont: 'Ubuntu', sans-serif;
+
+@pFont: 'Raleway', sans-serif;
+
+
+/** Nesting Starts Here **/
+
+header {
+	display: flex;
+		flex-direction: row-reverse;
+		align-items: space-between;
+		font-family: @headerFont;
+		font-size: 1.5rem;
+		color: black;
+	nav {
+		display: flex;
+		// flex-direction: row-reverse;
+		// font-family: @headerFont;
+		// font-size: 1.5rem;
+		align-items: space-between;
+		color: black;
+		
+	}
+	.navlinks a {
+		display: flex;
+		// flex-direction: row-reverse;
+		// font-family: @headerFont;
+		// font-size: 1.5rem;
+		align-items: space-between;
+		color: black;
+	}
+}
+
+.topContent {
+	padding: 4%;
+	background-color: @background-color;
+	margin: 8%;
+
+	img {
+		padding-bottom: 3%;
+	}
+	h1 {
+		font-size: 2rem;
+		//Increase h1 font size
+		font-family: @headerFont
+	}
+	h3 {
+		font-size: 1.5rem;
+		font-family: @headerFont;
+		padding-bottom: 2%;
+	}
+	p {
+		font-family: @pFont;
+		font-size: 1.5rem;
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+	button {
+		background-color: white;
+		font-size: 1.2rem;
+		padding: 2%;
+	}
+
+}
+
+.middleContent {
+	display: flex;
+	background-color: @midBGcolor;
+	font-size:1.2rem;
+	font-family: @pFont;
+	margin: 8%;
+	margin-top: -8%;
+	padding-bottom: 5%;
+
+	#box1 {
+		display: flex;
+		flex-direction: column;
+		width: 40%;
+		margin-left: 5%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-family: @headerFont;
+	}
+	h3 {
+		font-size: 1.5rem;
+		font-family: @headerFont;
+	}
+
+	#box2 {
+		display: flex;
+		flex-direction: column; 
+		width: 30%;
+		margin-left: 11%;
+		padding-top: 3%;
+	}
+
+	
+}
+
+#list {
+	border: solid 1.5px black;
+	padding-left: 5%;
+	padding-top: 5%;
+}
+
+.bottomContent {
+	border: solid 1.5px black;
+	background-color: @midBGcolor;
+	font-family: @pFont;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-top:-10%;
+	padding-bottom: 5%;
+
+	h3 {
+		font-size: 2rem;
+		font-family: @headerFont;
+		padding: 3%;
+		margin-left: 3%;
+	}
+	
+	th {
+		font-size: 1.5rem;
+		font-family: @headerFont;
+		padding: 2%;
+	}
+
+	td {
+		font-size: 1.2rem;
+		padding: 1%;
+		text-align: center;
+	}
+
+	#top {
+		background-color: seashell;
+	}
+	#middle {
+		background-color: @background-color;
+	}
+
+	#bottom {
+		background-color: seashell;
+	}
+}
+
+footer {
+	background-color: @background-color;
+	font-family: @headerFont;
+	height: 7vh;
+	display: flex;
+	justify-content: center;
+	padding: 2%;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+// ****** Mobile View ******
+@media (max-width: 500px) {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	
+	header {
+		display: flex;
+		flex-direction: column;
+		background-color: red;
+	}
+}
