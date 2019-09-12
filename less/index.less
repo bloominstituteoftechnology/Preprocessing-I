@@ -69,12 +69,16 @@ table {
 	box-sizing: border-box;
 	}
 
+*, *:before, *:after {
+	box-sizing: inherit;
+	}
+
 
 body {
 	width: 100%;
-	margin: 10% 0% 0% 0%;
-	background-image: url(/img/bg5.jpg);
-	background-color: #efeff1;
+	margin: 10% 5% 10% 5%;
+	background-image: url(/img/background4.jpg);
+	background-color: #ffffff;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -84,10 +88,10 @@ body {
 
 header {
 
+
 	.flexcenter();
 	border-bottom:1px solid #379683;
 	width: 100%;
-
 
 	
 	nav{
@@ -121,12 +125,6 @@ p {
 	text-align: center;
 }
 
-@media ( max-width: 500px ) {
-	.flexcenter();
-	justify-content: center;
-	font-size: 1.5rem;
-	
-}
 
 }
 
@@ -138,9 +136,8 @@ ul {
 		//width: 100%;
 
 		@media ( max-width: 500px ) {
-			.flexcenter();
 			justify-content: center;
-			font-size: 1.5rem;
+			align-items:center;
 			
 		}
 }
@@ -149,6 +146,14 @@ section {
 
 	border-bottom:1px solid #379683;
 	width: 100%;
+
+	@media ( max-width: 500px ) {
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		font-size: 1.5rem;
+		
+	}
 
 	h3 {
 		font-family: @headerfont;
@@ -168,23 +173,11 @@ section {
 		text-align: justify;
 		width: 100%;
 	}
-	@media ( max-width: 500px ) {
-		.flexcenter();
-		justify-content: center;
-		font-size: 1.5rem;
-		
-	}
 
 
 
 }
 footer {
 	.flexcenter();
-
-	@media ( max-width: 500px ) {
-		.flexcenter();
-		justify-content: center;
-		font-size: 1.5rem;
-		
 	}
-}
+
