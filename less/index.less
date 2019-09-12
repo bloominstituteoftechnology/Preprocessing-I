@@ -148,7 +148,12 @@ body {
 // amc code below
 
 .border {
-    border: 2px dotted orange;
+    border: 2px dotted #FF7F50;
+    padding: 2%;
+}
+
+.borderSolid {
+    border: 2px solid #FF7F50;
     padding: 2%;
 }
 
@@ -188,6 +193,7 @@ html {
         align-items: center;
         padding: 2%;
         margin: 5%;
+        .borderSolid();
     }
 
     //end of span
@@ -199,6 +205,7 @@ html {
         font-size: 1.6rem;
         text-align: center;
         .border();
+        font-family: @heading-font;
 
         .alignCenter {
             display: flex;
@@ -228,14 +235,24 @@ html {
         margin: 1%;
         align-items: center;
 
+        .intro,
+        .history {
+            .borderSolid();
+            font-size: 1.4rem;
+        }
+
         h2 {
             padding: 2%;
             margin: 1%;
+            font-family: @heading-font;
+            .borderSolid();
         }
 
         p {
             padding: 2%;
             margin: 1%;
+            font-family: @body-font;
+            .borderSolid();
         }
     }
 
@@ -245,6 +262,8 @@ html {
         width: 90%;
         padding: 5%;
         margin: 2%;
+        background-color: #FFA07A;
+
 
         .topRightBox {
             display: flex;
@@ -262,12 +281,14 @@ html {
                 width: 100%;
                 padding: 5%;
                 margin: 1%;
-                font-size: 1.4rem;
+                font-size: 1.8rem;
+                font-family: @heading-font;
 
                 li {
                     width: 100%;
                     padding: 5%;
                     margin: 1%;
+
                 }
             }
 
@@ -298,9 +319,26 @@ html {
     html {
         font-size: 50%;
         overflow-wrap: break-word;
+    }
+
+    .topRightBox {
+        text-align: center;
+
+        #nav {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
 
         .container {
-            display: column;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+    }
+
+    .displayRow {
+        flex-direction: column-reverse;
     }
 }

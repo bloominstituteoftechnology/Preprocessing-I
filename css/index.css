@@ -134,7 +134,11 @@ body {
   height: 100%;
 }
 .border {
-  border: 2px dotted orange;
+  border: 2px dotted #FF7F50;
+  padding: 2%;
+}
+.borderSolid {
+  border: 2px solid #FF7F50;
   padding: 2%;
 }
 @font-face {
@@ -175,8 +179,9 @@ html {
 }
 .leftCol-1 span {
   align-items: center;
-  padding: 2%;
   margin: 5%;
+  border: 2px solid #FF7F50;
+  padding: 2%;
 }
 .leftCol-1 .leftColBox {
   align-items: center;
@@ -184,8 +189,9 @@ html {
   margin: 15%;
   font-size: 1.6rem;
   text-align: center;
-  border: 2px dotted orange;
+  border: 2px dotted #FF7F50;
   padding: 2%;
+  font-family: 'Manjari', sans-serif;
 }
 .leftCol-1 .leftColBox .alignCenter {
   display: flex;
@@ -204,13 +210,23 @@ html {
   margin: 1%;
   align-items: center;
 }
-.main-content .main-text h2 {
+.main-content .main-text .intro,
+.main-content .main-text .history {
+  border: 2px solid #FF7F50;
   padding: 2%;
+  font-size: 1.4rem;
+}
+.main-content .main-text h2 {
   margin: 1%;
+  font-family: 'Manjari', sans-serif;
+  border: 2px solid #FF7F50;
+  padding: 2%;
 }
 .main-content .main-text p {
-  padding: 2%;
   margin: 1%;
+  font-family: 'Roboto Mono', monospace;
+  border: 2px solid #FF7F50;
+  padding: 2%;
 }
 .main-content .mainTopBox {
   display: flex;
@@ -218,6 +234,7 @@ html {
   width: 90%;
   padding: 5%;
   margin: 2%;
+  background-color: #FFA07A;
 }
 .main-content .mainTopBox .topRightBox {
   display: flex;
@@ -235,7 +252,8 @@ html {
   width: 100%;
   padding: 5%;
   margin: 1%;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  font-family: 'Manjari', sans-serif;
 }
 .main-content .mainTopBox .topRightBox #nav li {
   width: 100%;
@@ -252,7 +270,20 @@ html {
     font-size: 50%;
     overflow-wrap: break-word;
   }
-  html .container {
-    display: column;
+  .topRightBox {
+    text-align: center;
+  }
+  .topRightBox #nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .topRightBox .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .displayRow {
+    flex-direction: column-reverse;
   }
 }
