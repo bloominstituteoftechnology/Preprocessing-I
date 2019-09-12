@@ -168,15 +168,18 @@ html {
     font-size: 10px;
 }
 
-body {
+
+.displayRow {
     display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 .leftCol-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 35%;
+    width: 30%;
     align-items: center;
     padding: 1%;
     margin: 2%;
@@ -211,28 +214,63 @@ body {
 
 }
 
-// end of rightCol-1
-section {
-    width: 65%;
+// end of leftCol-1
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
 
-    .topRightBox {
-        display: flex;
-        flex-direction: column;
-        width: 85%;
-        align-items: center;
-        padding: 5%;
+    .mainTopBox {
+        width: 75%;
+        padding: 1%;
         margin: 15%;
 
-        .container {
+        .topRightBox {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            width: 75%;
+            align-items: center;
+            padding: 10%;
+            margin: 15%;
+            font-size: 1rem;
+
+            #nav {
+                display: flex;
+                flex-direction: row;
+                padding: 10%;
+                margin: 15%;
+                font-size: 1rem;
+            }
+
+            //end of nav
+
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+
+            }
+
+            // end of container
+
         }
 
-        // end of container
-
+        //end of topRightBox
     }
 
-    //end of topRightBox
+    //end mainTopBox
+
 }
 
-//end of section
+//end of main content
+
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 50%;
+        overflow-wrap: break-word;
+
+        .container {
+            display: column;
+        }
+    }
+}

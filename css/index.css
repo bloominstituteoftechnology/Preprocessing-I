@@ -161,13 +161,15 @@ body {
 html {
   font-size: 10px;
 }
-body {
+.displayRow {
   display: flex;
+  width: 100%;
+  align-items: center;
 }
 .leftCol-1 {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 30%;
   align-items: center;
   padding: 1%;
   margin: 2%;
@@ -190,18 +192,42 @@ body {
   display: flex;
   flex-direction: column;
 }
-section {
-  width: 65%;
-}
-section .topRightBox {
+.main-content {
   display: flex;
   flex-direction: column;
-  width: 85%;
-  align-items: center;
-  padding: 5%;
+  width: 75%;
+}
+.main-content .mainTopBox {
+  width: 75%;
+  padding: 1%;
   margin: 15%;
 }
-section .topRightBox .container {
+.main-content .mainTopBox .topRightBox {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  align-items: center;
+  padding: 10%;
+  margin: 15%;
+  font-size: 1rem;
+}
+.main-content .mainTopBox .topRightBox #nav {
   display: flex;
   flex-direction: row;
+  padding: 10%;
+  margin: 15%;
+  font-size: 1rem;
+}
+.main-content .mainTopBox .topRightBox .container {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+    overflow-wrap: break-word;
+  }
+  html .container {
+    display: column;
+  }
 }
