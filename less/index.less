@@ -3,57 +3,287 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans+Condensed:300&display=swap");
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@heading-font: "Open Sans Condensed", sans-serif;
+@body-font: "Noto Sans", sans-serif;
+
+.margins () {
+  margin: 10px 0;
+}
+
+.border () {
+  border: 1px solid red;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  //   background: orange;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
+body {
+  //Opens body //
 
+  @media (max-width: 400px) {
+  .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width:100%;
+      background-color: lightblue;
+
+    header {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-evenly;
+      nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+  }
+    
+
+  height: 100%;
+  font-family: @body-font;
+  .border();
+
+  .container {
+    //Opens container//
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    font-size: 62.5%;
+
+    header {
+      // Header //
+      display: flex;
+      width: 100%;
+      font-family: @heading-font;
+      justify-content: space-between;
+      text-align: left;
+      .border();
+
+      nav {
+        // Nav bar //
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        // margin-top: 35px;
+        .border();
+
+        a {
+          display: flex;
+          justify-content: flex-end;
+          margin-right: 50px;
+          font-size: 1.4rem;
+          color: gray;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      } //Nav bar//
+    } // Header //
+
+    section {
+      // Sections //
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      font-size: 1.5rem;
+      margin: 10px 0;
+      
+      h1 {
+        font-size: 3rem;
+        .border();
+      }
+
+      h2 {
+        // h2 //
+        display: flex;
+        align-items: center;
+
+        color: gray;
+        font-family: @heading-font;
+        font-size: 1.8rem;
+        margin: 10px 0;
+      } //h2 //
+
+      .text {
+        // Text //
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+        .right {
+          display: flex;
+          justify-content: center;
+        }
+      } // Text //
+    } // Sections //
+    footer {
+      //Footer //
+      width: 80%;
+      font-family: @heading-font;
+      justify-content: space-between;
+      text-align: center;
+      background: lightgray;
+      .border();
+
+      nav {
+        // Nav bar //
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        // width: 691px;
+        margin-top: 35px;
+        .border();
+
+        a {
+          display: flex;
+          justify-content: flex-end;
+          margin-right: 65px;
+          font-size: 14px;
+          color: black;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      } //Nav bar//
+    } // Footer //
+    table {
+      width: 80%;
+      border: 1px solid black;
+    }
+  } //Closes container//
+} //Closes body //
