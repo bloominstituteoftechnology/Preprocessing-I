@@ -18,16 +18,16 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
-	padding: 0;
+	padding: 2%;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: flex;
 }
 body {
 	line-height: 1;
@@ -49,11 +49,142 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|PT+Serif&display=swap');
+@bodyfont: PT Serif , serif;
+@headerfont: Bree Serif, serif;
+@body-font-size: 1.2rem;
+@header-font-size: 1.5rem;
+@headersBorder-Color: #379683;
+
+.flexcenter(){
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+
+body {
+	width: 100%;
+	margin: 10% 0% 0% 0%;
+	background-image: url(/img/bg5.jpg);
+	background-color: #efeff1;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	.flexcenter();
+
 }
 
-html, body {
-    height: 100%;
+header {
+
+	.flexcenter();
+	border-bottom:1px solid #379683;
+	width: 100%;
+
+
+	
+	nav{
+		font-display: @bodyfont;
+		width: 100%;
+		justify-content: space-evenly;
+
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 1.2rem;
+		margin:0%;
+		color: #379683;
+		&:hover {
+			color:#5dd489;
+			transition-duration: 1s; 
+		}
+	}
+
+	h1 {
+	font-size: 1.5rem;
+	font-family: @headerfont;
+	width: 100%;
+	padding: 0;
+	color: @headersBorder-Color;
 }
 
+p {
+	color: @headersBorder-Color;
+	text-align: center;
+}
+
+@media ( max-width: 500px ) {
+	.flexcenter();
+	justify-content: center;
+	font-size: 1.5rem;
+	
+}
+
+}
+
+
+
+ul {
+		list-style-type: square;
+		//border-bottom:1px solid #379683;
+		//width: 100%;
+
+		@media ( max-width: 500px ) {
+			.flexcenter();
+			justify-content: center;
+			font-size: 1.5rem;
+			
+		}
+}
+
+section {
+
+	border-bottom:1px solid #379683;
+	width: 100%;
+
+	h3 {
+		font-family: @headerfont;
+		color: @headersBorder-Color;
+	}
+
+	content{
+		font-family: @bodyfont;
+		justify-content: center;
+		align-items: center;
+		text-align: justify;
+	}
+
+	div {
+		justify-content: center;
+		align-items: center;
+		text-align: justify;
+		width: 100%;
+	}
+	@media ( max-width: 500px ) {
+		.flexcenter();
+		justify-content: center;
+		font-size: 1.5rem;
+		
+	}
+
+
+
+}
+footer {
+	.flexcenter();
+
+	@media ( max-width: 500px ) {
+		.flexcenter();
+		justify-content: center;
+		font-size: 1.5rem;
+		
+	}
+}
