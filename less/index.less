@@ -131,6 +131,14 @@ h2 {
 	font-family: @title-font;
 }
 
+.h2-white {
+	font-size: 2rem;
+	color: white;
+	margin: 0 0 0.75em 0;
+	font-weight: 700;
+	letter-spacing: 0.025rem;
+  }
+
 .h3-white {
 
 	font-size: 1rem;
@@ -147,9 +155,6 @@ h3 {
 	font-weight: 700;
 }
 
-
-
-
 .container {
 	width: @container-width;
 	height: auto;
@@ -158,7 +163,14 @@ h3 {
 	align-content: space-between;
 	font-family: @container-font;
 	margin: 0 auto;
-	border: 1px solid #EA8A95;;
+	//border: 1px solid #EA8A95;
+	box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24); 
+	
+	@media (max-width: 800px) {		
+		width: 100%;			
+	
+	}
 
 	@media (max-width: 500px) {		
 			width: 100%;			
@@ -167,8 +179,15 @@ h3 {
 	
 	header {
 		.flex-center-row();
+		width: 100%;
 		height: 50px;
 		background-color: @black-background;
+
+		@media (max-width: 800px) {
+			width: 100%;
+			height: 100%;
+			
+		}		
 
 		@media (max-width: 500px) {
 			width: 100%;
@@ -181,6 +200,13 @@ h3 {
 		
 			nav {
 				.flex-center-row();
+				width: 100%;
+				
+				@media (max-width: 800px) {
+					width: 100%;	
+					height: 100%;
+					
+				}//end @media
 
 				@media (max-width: 500px) {
 					width: 100%;	
@@ -195,8 +221,18 @@ h3 {
 					a {
 						text-decoration: none;
 						color: @white-text;
-						padding: 25px;
-						font-size: 1.2rem;
+						padding: 3%;
+						//font-size: 1.2rem;
+						font-size: 1.5vw;
+						
+
+						@media (max-width: 800px) {
+
+							width: 100%;
+							padding: 2%;
+							font-size: 2.5vw;
+
+						}//end @media
 
 						@media (max-width: 500px) {
 
@@ -218,15 +254,26 @@ h3 {
 
 	.intro-section {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: auto;	
 		background-color: @purple-background;
 		
 		
 		.intro-section-div {
-			.flex-no-wrap();
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			width: 100%;
 			height: auto;	
+
+			@media (max-width: 800px) {
+				width: 100%;
+				height: 100%;				
+				padding: 0px;	
+			}			
+			
 
 			@media (max-width: 500px) {
 				width: 100%;
@@ -237,7 +284,7 @@ h3 {
 				padding: 0px;	
 			}			
 			
-				.intro-section-img-div {
+				/*.intro-section-img-div {
 					.flex-center-row();	
 					width: 40%;
 					height: auto;													
@@ -254,25 +301,35 @@ h3 {
 							padding: 0px;	
 						}
 
-				}//end intro-section-img-div
+				}//end intro-section-img-div*/
 
 				.intro-section-details-div {
 					.flex-column();
 					.h3-white();
 					justify-content: center;
-					align-content: space-around;
-					width: 60%;
-					height: auto;					
+					align-items: center;
+					width: 100%;
+					height: auto;
 					
-					
-						@media (max-width: 500px) {
-							.flex-center-row();
-							width: 100%;
-							height: 100%;								
-							padding: 0px;	
-							text-align: justify;
+					@media (max-width: 800px) {
+						
+						width: 100%;
+						height: 100%;								
+						
+						
+						
+					}	
 							
-						}				
+					
+					
+					@media (max-width: 500px) {
+						.flex-center-row();
+						width: 100%;
+						height: 100%;								
+						padding: 0px;	
+						text-align: justify;
+						
+					}				
 															
 
 				}//end intro-section-details-div	
@@ -286,6 +343,12 @@ h3 {
 		width: 100%;
 		height: auto;
 
+		@media (max-width: 800px) {
+			width: 100%;
+			height: 100%;
+			
+		}
+
 		@media (max-width: 500px) {
 			width: 100%;
 			height: 100%;
@@ -298,9 +361,16 @@ h3 {
 
 			.left-screen-div {
 				.flex-column();
-				width: 30%;
+				width: 33%;
 				height: auto;
-				margin-right: 5%;
+				margin-right: 2%;
+				
+
+				@media (max-width: 800px) {
+					width: 33%;
+					height: 100%;													
+					
+				}	
 
 				@media (max-width: 500px) {
 					width: 100%;
@@ -318,7 +388,8 @@ h3 {
 							height: 100%;												
 								
 						}	*/
-						
+
+												
 						@media (max-width: 500px) {
 							display: flex;
 							flex-direction: column;
@@ -336,13 +407,12 @@ h3 {
 							.flex-center-row();							
 							width: 100%;
 							//border: 1px solid red;
-							
+
+														
 							@media (max-width: 500px) {
-								margin-bottom: 5%;						
-															
+								margin-bottom: 5%;											
 									
-							}				
-						
+							}			
 							
 						}
 
@@ -358,9 +428,10 @@ h3 {
 								
 											
 							}//end skills-icon	
-							
+
+														
 							@media (max-width: 500px) {
-								margin-top: 2%;	
+								
 								display: flex;
 								flex-direction: column;
 								justify-content: center;
@@ -384,16 +455,16 @@ h3 {
 							height: auto;	
 
 							@media (max-width: 500px) {
-							margin-top: 2%;	
-							display: flex;
-							flex-direction: column;
-							justify-content: center;
-							align-content: center;
-							margin-top: 2%;
-							width: 100%;
-							height: 100%;	
-							text-align: center;
-							margin: 0 auto;	
+								margin-top: 2%;	
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-content: center;
+								margin-top: 2%;
+								width: 100%;
+								height: 100%;	
+								text-align: center;
+								margin: 0 auto;	
 																				
 									
 							}												
@@ -440,16 +511,14 @@ h3 {
 						@media (max-width: 500px) {
 							.flex-center-row();
 							width: 100%;
-							height: 100%;							
-											
+							height: 100%;						
 								
 						}
 
 						.contact-title-div {
 							width: 100%;
 							text-align: center;	
-							margin-bottom: 2%;						
-							
+							margin-bottom: 2%;				
 
 						}
 
@@ -465,8 +534,7 @@ h3 {
 								.flex-center-row();
 								//margin-top: 2%;
 								width: 100%;
-								height: 100%;							
-												
+								height: 100%;										
 									
 							}
 						}
@@ -477,12 +545,22 @@ h3 {
 							width: 100%;
 							height: 20%;
 							//border-right: 1px solid #EA8A95;
+							
 
 							.social-icon {
 								color: #3e3e3e;	
-								font-size: 1rem;								
-											
+								font-size: 1rem;
+								
+																			
 							}//end skills-icon	
+
+							@media (max-width: 800px) {
+								
+								width: 100%;
+								height: 100%;							
+												
+									
+							}
 
 							@media (max-width: 500px) {
 								.flex-center-row();
@@ -507,17 +585,30 @@ h3 {
 				width: 70%;
 				height: auto;
 				//background-color: #EA8A95;
+				
+
+				@media (max-width: 800px) {
+					width: 70%;	
+					
+		
+				}	
 
 				@media (max-width: 500px) {
 					width: 100%;					
-					background-color: white;
-					justify-content: space-between;
+					
 		
 				}				
 					.education-section {
 						.flex-row-wrap();
 						width: 100%;
-						height: 70%;
+						height: 45%;
+						
+
+						@media (max-width: 800px) {
+							width: 100%;
+							height: 100%;					
+											
+						}	
 
 						.education-title-div { 
 							.flex-center-row();							
@@ -531,6 +622,12 @@ h3 {
 								box-shadow: 0 10px 10px -10px #8c8b8b inset;
 							}*/
 							
+							@media (max-width: 800px) {
+								width: 100%;		
+								margin: 2% 0 2% 0;			
+												
+							}	
+
 
 							@media (max-width: 500px) {
 								width: 100%;					
@@ -543,6 +640,11 @@ h3 {
 							width: 20%;
 							height: auto;
 							//border: 1px solid purple;
+
+							@media (max-width: 800px) {																						
+								width: 100%;
+					
+							}	
 						}
 
 						.education-details-div {
@@ -550,6 +652,12 @@ h3 {
 							width: 80%;
 							height: auto;
 							color: #3e3e3e;
+
+							@media (max-width: 800px) {																						
+								width: 100%;
+								margin: 0 0 3% 0;
+					
+							}	
 
 							@media (max-width: 500px) {																						
 								margin: 0 0 3% 0;
@@ -563,13 +671,26 @@ h3 {
 					.experience-section {
 						.flex-row-wrap();
 						width: 100%;
-						height: 70%;
+						height: 53%;
+						margin-top: 2%;
+
+						@media (max-width: 800px) {
+							width: 100%;
+							height: 100%;					
+											
+						}	
 
 						.experience-title-div {
 							.flex-center-row();
 							width: 100%;
 							text-align: center;
 							//border: 1px solid black;
+
+							@media (max-width: 800px) {
+								width: 100%;		
+								//margin: 2% 0 2% 0;			
+												
+							}	
 
 							@media (max-width: 500px) {
 								width: 100%;					
@@ -584,12 +705,23 @@ h3 {
 							width: 20%;
 							height: auto;
 							//border: 1px solid purple;
+
+							@media (max-width: 800px) {																						
+								width: 100%;
+					
+							}
 						}
 
 						.experience-details-div {
 							width: 80%;
 							height: 40%;
 							//border: 1px solid purple;
+
+							@media (max-width: 800px) {																						
+								width: 100%;
+								//margin: 0 0 3% 0;
+					
+							}	
 
 							.experience-list {
 								list-style-type: disc;

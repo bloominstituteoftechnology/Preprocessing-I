@@ -204,7 +204,12 @@ h3 {
   align-content: space-between;
   font-family: 'Open Sans', sans-serif;
   margin: 0 auto;
-  border: 1px solid #EA8A95;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .container {
@@ -215,8 +220,15 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 50px;
   background-color: black;
+}
+@media (max-width: 800px) {
+  .container header {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (max-width: 500px) {
   .container header {
@@ -232,6 +244,13 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .container header nav {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (max-width: 500px) {
   .container header nav {
@@ -246,8 +265,15 @@ h3 {
 .container header nav a {
   text-decoration: none;
   color: white;
-  padding: 25px;
-  font-size: 1.2rem;
+  padding: 3%;
+  font-size: 1.5vw;
+}
+@media (max-width: 800px) {
+  .container header nav a {
+    width: 100%;
+    padding: 2%;
+    font-size: 2.5vw;
+  }
 }
 @media (max-width: 500px) {
   .container header nav a {
@@ -261,15 +287,43 @@ h3 {
 }
 .container .intro-section {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: auto;
   background-color: purple;
 }
 .container .intro-section .intro-section-div {
   display: flex;
-  flex-wrap: no-wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: auto;
+  /*.intro-section-img-div {
+					.flex-center-row();	
+					width: 40%;
+					height: auto;													
+
+						.profilepic {
+							border-radius: 100%;
+							width: 200px;
+							height: 164px;
+						}	
+						
+						@media (max-width: 500px) {
+							width: 100%;
+							height: 100%;								
+							padding: 0px;	
+						}
+
+				}//end intro-section-img-div*/
+}
+@media (max-width: 800px) {
+  .container .intro-section .intro-section-div {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+  }
 }
 @media (max-width: 500px) {
   .container .intro-section .intro-section-div {
@@ -278,25 +332,6 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding: 0px;
-  }
-}
-.container .intro-section .intro-section-div .intro-section-img-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  height: auto;
-}
-.container .intro-section .intro-section-div .intro-section-img-div .profilepic {
-  border-radius: 100%;
-  width: 200px;
-  height: 164px;
-}
-@media (max-width: 500px) {
-  .container .intro-section .intro-section-div .intro-section-img-div {
-    width: 100%;
-    height: 100%;
     padding: 0px;
   }
 }
@@ -312,6 +347,12 @@ h3 {
   align-items: center;
   width: 100%;
   height: auto;
+}
+@media (max-width: 800px) {
+  .container .intro-section .intro-section-div .intro-section-details-div {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (max-width: 500px) {
   .container .intro-section .intro-section-div .intro-section-details-div {
@@ -330,6 +371,12 @@ h3 {
   width: 100%;
   height: auto;
 }
+@media (max-width: 800px) {
+  .container .main-content-section {
+    width: 100%;
+    height: 100%;
+  }
+}
 @media (max-width: 500px) {
   .container .main-content-section {
     width: 100%;
@@ -343,9 +390,15 @@ h3 {
 .container .main-content-section .left-screen-div {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 33%;
   height: auto;
-  margin-right: 5%;
+  margin-right: 2%;
+}
+@media (max-width: 800px) {
+  .container .main-content-section .left-screen-div {
+    width: 33%;
+    height: 100%;
+  }
 }
 @media (max-width: 500px) {
   .container .main-content-section .left-screen-div {
@@ -499,6 +552,12 @@ h3 {
   color: #3e3e3e;
   font-size: 1rem;
 }
+@media (max-width: 800px) {
+  .container .main-content-section .left-screen-div .contact-section .social-contact-div {
+    width: 100%;
+    height: 100%;
+  }
+}
 @media (max-width: 500px) {
   .container .main-content-section .left-screen-div .contact-section .social-contact-div {
     display: flex;
@@ -514,18 +573,27 @@ h3 {
   width: 70%;
   height: auto;
 }
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div {
+    width: 70%;
+  }
+}
 @media (max-width: 500px) {
   .container .main-content-section .right-screen-div {
     width: 100%;
-    background-color: white;
-    justify-content: space-between;
   }
 }
 .container .main-content-section .right-screen-div .education-section {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 70%;
+  height: 45%;
+}
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .education-section {
+    width: 100%;
+    height: 100%;
+  }
 }
 .container .main-content-section .right-screen-div .education-section .education-title-div {
   display: flex;
@@ -539,6 +607,12 @@ h3 {
 								box-shadow: 0 10px 10px -10px #8c8b8b inset;
 							}*/
 }
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .education-section .education-title-div {
+    width: 100%;
+    margin: 2% 0 2% 0;
+  }
+}
 @media (max-width: 500px) {
   .container .main-content-section .right-screen-div .education-section .education-title-div {
     width: 100%;
@@ -550,12 +624,23 @@ h3 {
   width: 20%;
   height: auto;
 }
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .education-section .education-date {
+    width: 100%;
+  }
+}
 .container .main-content-section .right-screen-div .education-section .education-details-div {
   display: flex;
   flex-direction: column;
   width: 80%;
   height: auto;
   color: #3e3e3e;
+}
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .education-section .education-details-div {
+    width: 100%;
+    margin: 0 0 3% 0;
+  }
 }
 @media (max-width: 500px) {
   .container .main-content-section .right-screen-div .education-section .education-details-div {
@@ -566,7 +651,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 70%;
+  height: 53%;
+  margin-top: 2%;
+}
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .experience-section {
+    width: 100%;
+    height: 100%;
+  }
 }
 .container .main-content-section .right-screen-div .experience-section .experience-title-div {
   display: flex;
@@ -574,6 +666,11 @@ h3 {
   align-items: center;
   width: 100%;
   text-align: center;
+}
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .experience-section .experience-title-div {
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .container .main-content-section .right-screen-div .experience-section .experience-title-div {
@@ -586,9 +683,19 @@ h3 {
   width: 20%;
   height: auto;
 }
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .experience-section .experience-date {
+    width: 100%;
+  }
+}
 .container .main-content-section .right-screen-div .experience-section .experience-details-div {
   width: 80%;
   height: 40%;
+}
+@media (max-width: 800px) {
+  .container .main-content-section .right-screen-div .experience-section .experience-details-div {
+    width: 100%;
+  }
 }
 .container .main-content-section .right-screen-div .experience-section .experience-details-div .experience-list {
   list-style-type: disc;
