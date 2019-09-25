@@ -140,11 +140,23 @@ body {
   background: grey;
 }
 
-@backgroundPurple: orange;
+// variable //
+@main: orange;
+@background: lightslategrey;
 
-.purpleText {
-	color: @backgroundPurple;
-	font-size: 2rem;
+//mixins//
+.purpleText (@main, @background) {
+  color: @main;
+  font-size: 2rem;
+  background: @background;
+}
+
+.hover (@main, @background) {
+  &:hover {
+    background: @main; 
+    color: @background;
+  }
+
 }
 
 .container {
@@ -152,97 +164,56 @@ body {
   margin: 50px auto;
   background-color: grey;
 
-  @medai(max-width: 800px){
-	  width: 100px;
-	  padding: 20px;
-
-  }
-
   header {
     width: 100%;
 
     nav {
       width: 100%;
       display: flex;
-	  justify-content: space-between;
-	  background-color: grey;
+      justify-content: space-between;
 
       a {
-       .purpleText();
-		text-decoration: none;
-		padding: 50 auto;
+        .purpleText(@main, @background);
+        text-decoration: none;
+        padding: 50 auto;
+        .hover (@main, @bakcground);
 
+        @media (max-width: 500px) {
+          color: dodgerblue;
 
-		@media (max-width: 500px){
-			color: dodgerblue;
-			
+          .contatiner {
+            width: 100%;
+          }
 
-			.contatiner {
-				width:100%;
-			}
-			
-			header{
-				width:100%;
-			}
-		}
+          header {
+            width: 100%;
+          }
+        }
       }
     }
   }
 }
 
-
-
-
 section {
-	width:100% - 10%;
-	display: flex;
-	align-content: center;
-	border: 1px solid green;
-	padding: 40px 40px;
-	margin: 10% 10%;
+  width: 100% - 10%;
+  display: flex;
+  align-content: center;
+  border: 1px solid green;
+  padding: 40px 40px;
+  margin: 10% 10%;
 
-		p{
-			.purpleText();
-		}
+  p {
+    .purpleText(@main, @background);
+  }
 }
 
-.bottom{
-	.bottom-content{
-		padding: 14px;
-
-	}
-
-		.text-container{
-
-button {
-
-        background: blue;
-        
-		
-
-	
+.bottom {
+  .bottom-content {
+    padding: 14px;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-// .container header {
-// 	width: 100%;
-// }
-// .container header nav{
-// 	width: 100%;
-// 	display: flex;
-// 	justify-content: space-between;
-// }
-
-// .container header nav a {
-// 	color: @backgroundBlue;
-// 	font-size: 1.3rem;
-// 	text-decoration: none;
-// }
+.text-container {
+  button {
+    background: blue;
+  }
+}
