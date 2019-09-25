@@ -53,7 +53,174 @@ table {
     box-sizing: border-box;
 }
 
+
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: 'Noto Sans', sans-serif
+	
 }
+/*    Varibales for color */
+@color-gray:rgb(202, 202, 202); 
+@dark-gray : gray;
+@fontsize : 3rem;/* Variable for font-size */
+@top : 10px; /* Varibale to adjust top-margin */
+
+
+/*     MIXINS FOR FLEXBOX CONTAINERS   */
+.navbaroptions{
+	justify-content: space-between;
+	text-decoration : none;
+	padding: 20px;
+	color: black;
+}
+
+
+
+.midsectionflex {
+	display : flex;
+	flex-wrap:wrap;
+	padding:10px;
+	
+
+
+}
+
+
+
+
+
+.navbar {
+	margin-top :@top;
+	display: flex;
+	justify-content: flex-end;
+
+ a{
+	.navbaroptions();
+}
+}
+
+.top-section{
+ background : @color-gray;
+
+
+.myImage{
+  width : 20%;
+  margin-top : 16px;
+}
+}
+
+.title {
+	font-size: 3.5rem;
+}
+.subtitle {
+	font-size : 1.5rem;
+	margin-top:10px;
+}
+.bottom-section{
+	margin-top : @top;
+	h3 {
+		padding : 10px;
+	}
+}
+ 
+button {
+	padding : 10px;
+	margin-top: 20px;
+	margin-bottom : 20px;
+}
+.mid{
+	.midsectionflex();
+	p{
+		
+		padding : 10px;
+		margin-top : @top;
+		font-size : 1.2rem;
+	}
+}
+	.About-Me {
+	width:45%;
+	margin-top :@top;
+	padding: 10px;
+    .Me{
+	margin-left: 10px;
+	font-size : @fontsize;
+	}
+  }
+
+
+
+
+.Skills{
+	padding :10px;
+	display : table;
+	width :47%;
+	margin-top : @top;
+	border : 1px solid black;
+	font-size : 1.3rem;
+	margin-left: 60px;
+	 h3 {
+		font-size : @fontsize;
+    
+          }
+	}
+
+
+	.Work-history h2 {
+		font-size: 2rem;
+		margin-bottom: 15px;
+	}
+.work-table{
+	width: 100%;
+	margin-bottom: 20px;
+}
+	
+
+
+
+.work-table tr:nth-child(2){
+	background-color : @color-gray;
+	}
+
+
+
+
+
+tr{
+	border :1px solid black;
+	width:100%;
+
+
+	
+	
+  td  {
+	 padding : 20px;
+	 
+ }
+}
+footer span {
+background: @dark-gray;
+width :100%;
+display :flex;
+justify-content: center ;
+padding : 40px;
+color : white;
+font-size : 1.3rem;
+}
+
+
+
+@media (max-width:500px){
+	.navbar{
+		display :flex;
+		flex-wrap : wrap
+	a {
+		border : 1px solid red;
+	
+	}
+
+    .bottom-section {
+		border : 1px solid red;
+	}
+	}
+
 
