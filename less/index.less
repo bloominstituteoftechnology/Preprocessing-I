@@ -1,59 +1,123 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	// height: 100%;
+	font-family: sans-serif;
+	background: #14121f;
 }
 
+@primaryColor: crimson;
+@secondaryColor: darken(crimson, 5%);
+
+.container {
+	width: 800px;
+	// height: 150vh;
+	margin: 0 auto;
+	background: white;
+	// .flex(space-between, center, column, nowrap);
+}
+
+.flex(@justify, @align, @direction, @wrap) {
+	display: flex;
+	justify-content: @justify;
+	align-items: @align;
+	flex-direction: @direction;
+	flex-wrap: @wrap;
+}
+
+.header-border {
+	border-bottom: black solid 4px;
+	border-top: rgb(10, 8, 8) solid 4px;
+}
+
+header {
+	width: 100%;
+	background: @primaryColor;
+	// .header-border();
+	.flex(center, center, row, nowrap);
+	nav {
+		width: 50%;
+		.flex(space-evenly, center, row, nowrap);
+		a {
+			color: white;
+			text-decoration: none;
+			font-size: 16px;
+			padding: 15px 35px;
+
+			&:hover {
+				transition: all 0.5s;
+				background: @secondaryColor;
+			}
+		}
+	}
+}
+
+.jumbotron {
+	// background: silver;
+	border-left: black solid 8px;
+	border-right: black solid 8px;
+	padding: 20px;
+	height: 50vh;
+	margin: 25px;
+	border-radius: 20px;
+	.jumbo-top {
+		.flex(space-evenly, center, row, nowrap);
+		text-align: center;
+		height: 100%;
+		img {
+			height: 100%;
+			border: black solid 5px;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+			font-weight: bold;
+		}
+
+		p {
+			padding: 10px;
+			font-size: 18px;
+		}
+	}
+}
+
+.main-section {
+	.flex(space-between, flex-top, row, nowrap);
+	height: 100%;
+	padding: 0 25px;
+
+	.about-me {
+		width: 25vh;
+		padding: 0 15px;
+		border-right: @secondaryColor solid 1px;
+	}
+
+	.skill-history {
+		padding: 0 15px;
+	}
+
+	h2 {
+		font-size: 2rem;
+		padding: 5px 0;
+	}
+
+	p {
+	}
+
+	li {
+		font-size: 18px;
+		font-weight: 500;
+	}
+}
+
+footer {
+	background: @secondaryColor;
+	height: 30px;
+	color: white;
+	text-align: center;
+	// padding: 8px;
+}
