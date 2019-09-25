@@ -137,6 +137,8 @@ body {
 .container {
   position: relative;
   width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
   border: 1px solid red;
   text-align: center;
   background: #000000;
@@ -229,7 +231,6 @@ body {
   justify-content: column;
 }
 .center {
-  border: 3px solid white;
   display: flex;
   flex-direction: row;
   padding: 20px 0;
@@ -238,7 +239,6 @@ body {
   width: 46%;
   margin-right: 20px;
   margin-left: 40px;
-  border: 2px dotted #FF4500;
 }
 .center .side-bar {
   display: flex;
@@ -247,17 +247,15 @@ body {
 .center .side-bar .contact {
   width: 170%;
   height: 50%;
-  border: 2px dotted #FF4500;
   align-items: right;
 }
 .center .side-bar .education {
   width: 170%;
   height: 60%;
-  border: 2px dotted #FF4500;
+  padding-top: 50px;
   align-items: center;
 }
 .second {
-  border: 2px dotted #FF4500;
   margin-left: 50%;
   margin-right: 80px;
 }
@@ -292,4 +290,26 @@ body {
   text-align: right;
   padding-right: 100px;
   padding-bottom: 20px;
+}
+@media screen and (max-width: 500px) {
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .nav-bar {
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    height: 30px;
+  }
+  nav a {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    width: 100%;
+  }
+  .flower {
+    display: none;
+  }
 }

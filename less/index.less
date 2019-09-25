@@ -61,6 +61,8 @@ html, body {
   & {
     position: relative;
   width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
   border: 1px solid red;
  text-align: center;
     background: @background-color;
@@ -166,7 +168,7 @@ p {
   justify-content: column;
 }
 
-.center { border: 3px solid white;
+.center { 
   & {
     display: flex;
     flex-direction: row;
@@ -177,7 +179,7 @@ p {
     width: 46%;
     margin-right: 20px;
     margin-left: 40px;
-    border: 2px dotted #FF4500;
+    
   }
   
   .side-bar { display: flex;
@@ -186,14 +188,14 @@ p {
   .contact {
     width: 170%;
     height: 50%;
-    border: 2px dotted #FF4500;
+    
     align-items: right;
   }
     
 .education {
    width: 170%;
     height: 60%;
-    border: 2px dotted #FF4500;
+    padding-top: 50px;
     align-items: center;
   }
     
@@ -202,13 +204,9 @@ p {
 
 .second { 
   &{
-    border: 2px dotted #FF4500;
     margin-left: 50%;
-    margin-right: 80px;
-    
+    margin-right: 80px; 
   }
- 
-
 }
 
 .experience {
@@ -248,3 +246,27 @@ p {
   }
 }
 
+@media screen and (max-width: 500px){
+       .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+  
+  .nav-bar{
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        height: 30px;
+    }
+  
+  nav a{
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    width: 100%;
+    
+  }
+  
+  .flower {display: none;}
+}
