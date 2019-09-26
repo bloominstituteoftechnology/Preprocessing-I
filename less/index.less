@@ -53,7 +53,159 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+/* VARIABLES, MIXINS, GOOGLE FONTS */
+
+@font:'Lexend Deca', sans-serif;
+@auto: 0 auto;
+
+html {
+	height: 100%;
+	width: 1000px;
+	margin: 0 auto;
+	font-family: @font;
 }
 
+	body {
+		width: 870px;
+		margin: @auto;
+	}
+
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	padding: 30px 0;
+	
+	a {
+		color: black;
+		text-decoration: none;
+		padding-left: 60px;
+	}
+}
+
+.top-container {
+	background-color: #E9ECEF;
+	padding: 0 30px;
+	border-radius: 10px;
+
+	img {
+		height: 400px;
+		width: 300px;
+		padding: 60px 0 30px 0;
+	}
+	
+	h1 {
+		font-size: 48px;
+		padding: 0 0 30px 0;
+	}
+
+	h2 {
+		padding: 0 0 30px 0;
+		font-size: 24px;
+		border-bottom: 1px darkgray solid;
+	}
+
+	p {
+		padding: 30px 0px;
+	}
+
+	button {
+		margin: 0 0 100px 0;
+		background-color: #808080;
+		padding: 10px;
+		color: white;
+		border-radius: 5px;
+	}
+}
+
+.middle-container {
+	display: inline-block;
+	width: 100%;
+	padding: 40px 0;
+	
+	h1 {
+		font-size: 48px;
+	}
+
+	h2 {
+		font-size: 28px;
+		padding-bottom: 10px;
+	}
+
+	p {
+		padding: 20px 0;
+	}
+
+	.left-box {
+		display: inline-block;
+		width: 49%;
+		margin: 0 5px 0 0;
+	}
+
+	.right-box {
+		display: inline-block;
+		width: 49%;
+		margin: @auto;
+		vertical-align: top;
+		padding-left: 20px;
+	}
+
+	li {
+		padding: 20px 0 20px 20px;
+		border: 1px solid #E9ECEF;
+		list-style-type: none;
+	}
+
+	// li:first-child {
+	// 	border-top-left-radius: 10px;
+	// 	border-top-right-radius: 10px;
+	// }
+
+	li:last-child {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+}
+
+.bottom-container {
+	width: 100%;
+	margin: @auto;
+	padding-bottom: 30px;
+
+	h2 {
+		font-size: 28px;
+		padding-bottom: 10px;
+	}
+
+	table {
+		border-top: solid 1px #E9ECEF;
+		margin: @auto;
+		width: 100%;
+	}
+
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	th, td {
+		border-top: solid 1px #E9ECEF;
+		border-bottom: solid 1px #E9ECEF;
+		padding: 15px;
+		text-align: left;
+	}
+
+	th {
+		font-weight: bold;
+	}
+	
+}
+
+footer {
+	background-color: gray;
+	text-align: center;
+	padding: 30px 0 40px 0;
+	color: white;
+	width: 900px;
+	margin: 0 -15px;
+	
+}
