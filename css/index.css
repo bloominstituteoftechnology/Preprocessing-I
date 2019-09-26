@@ -136,6 +136,8 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 /*    Varibales for color */
+/* Variable for font-size */
+/* Varibale to adjust top-margin */
 /*     MIXINS FOR FLEXBOX CONTAINERS   */
 .navbaroptions {
   justify-content: space-between;
@@ -148,6 +150,7 @@ body {
   flex-wrap: wrap;
   padding: 10px;
 }
+/*                Header Section                      */
 .navbar {
   margin-top: 10px;
   display: flex;
@@ -159,12 +162,13 @@ body {
   padding: 20px;
   color: black;
 }
+/*            Introduction Section          */
 .top-section {
   background: #cacaca;
 }
 .top-section .myImage {
   width: 20%;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 .title {
   font-size: 3.5rem;
@@ -173,6 +177,7 @@ body {
   font-size: 1.5rem;
   margin-top: 10px;
 }
+/*   Intorduction Section --bottom part       */
 .bottom-section {
   margin-top: 10px;
 }
@@ -184,6 +189,7 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+/*              Content Section mid-page                 */
 .mid {
   display: flex;
   flex-wrap: wrap;
@@ -205,16 +211,12 @@ button {
 }
 .Skills {
   padding: 10px;
-  display: table;
   width: 47%;
   margin-top: 10px;
-  border: 1px solid black;
   font-size: 1.3rem;
   margin-left: 60px;
 }
-.Skills h3 {
-  font-size: 3rem;
-}
+/*                Bottom Section                      */
 .Work-history h2 {
   font-size: 2rem;
   margin-bottom: 15px;
@@ -233,6 +235,7 @@ tr {
 tr td {
   padding: 20px;
 }
+/*            Footer Section                 */
 footer span {
   background: gray;
   width: 100%;
@@ -242,12 +245,43 @@ footer span {
   color: white;
   font-size: 1.3rem;
 }
+/*            CSS For Responsive Mobile Desing         */
 @media (max-width: 500px) {
   .navbar {
+    width: 100%;
+    border: 1px solid green;
+    display: flex;
+  }
+  .navbar a {
+    justify-content: center;
+    margin-right: 20px;
+  }
+  .top-section {
     display: flex;
     flex-wrap: wrap;
   }
-  .bottom-section {
+  .top-section .top {
+    justify-content: center;
+  }
+  .top-section .top .myImage {
+    width: 100%;
+  }
+  .top-section .top .myImage .title {
+    width: 100%;
+  }
+  .top-section .top .myImage .title .Skills {
+    width: 100%;
+  }
+  .mid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mid .About-Me {
+    width: 100%;
+  }
+  .mid .About-Me .Skills {
+    width: 100%;
     border: 1px solid red;
+    flex-wrap: wrap;
   }
 }

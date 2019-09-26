@@ -60,11 +60,10 @@ html, body {
 	
 }
 /*    Varibales for color */
-@color-gray:rgb(202, 202, 202); 
+@bg-color:rgb(202, 202, 202); 
 @dark-gray : gray;
 @fontsize : 3rem;/* Variable for font-size */
-@top : 10px; /* Varibale to adjust top-margin */
-
+@topmargin : 10px; /* Varibale to adjust top-margin */
 
 /*     MIXINS FOR FLEXBOX CONTAINERS   */
 .navbaroptions{
@@ -74,50 +73,46 @@ html, body {
 	color: black;
 }
 
-
-
 .midsectionflex {
 	display : flex;
 	flex-wrap:wrap;
 	padding:10px;
-	
+	}
 
 
-}
-
-
-
-
+/*                Header Section                      */
 
 .navbar {
-	margin-top :@top;
+	margin-top :@topmargin;  
 	display: flex;
 	justify-content: flex-end;
 
  a{
-	.navbaroptions();
+	.navbaroptions();  //Using a mixin function to give                          space between the menu options 
+ }
 }
-}
+
+/*            Introduction Section          */
 
 .top-section{
- background : @color-gray;
-
-
-.myImage{
+ background : @bg-color;
+  .myImage{
   width : 20%;
-  margin-top : 16px;
-}
+  margin-top :10px;;
+ }
 }
 
 .title {
-	font-size: 3.5rem;
+	font-size: 3.5rem;  // H1 title
 }
 .subtitle {
 	font-size : 1.5rem;
-	margin-top:10px;
+	margin-top:10px;    
 }
+
+/*   Intorduction Section --bottom part       */
 .bottom-section{
-	margin-top : @top;
+	margin-top : @topmargin;
 	h3 {
 		padding : 10px;
 	}
@@ -125,21 +120,23 @@ html, body {
  
 button {
 	padding : 10px;
-	margin-top: 20px;
-	margin-bottom : 20px;
+	margin-top: @topmargin*2; //Using an addition function
+	margin-bottom :20px;
 }
+
+/*              Content Section mid-page                 */
 .mid{
 	.midsectionflex();
 	p{
-		
-		padding : 10px;
-		margin-top : @top;
-		font-size : 1.2rem;
+	 padding : 10px;
+	 margin-top : @topmargin;
+	 font-size : 1.2rem;
 	}
 }
-	.About-Me {
+	
+.About-Me {
 	width:45%;
-	margin-top :@top;
+	margin-top :@topmargin;
 	padding: 10px;
     .Me{
 	margin-left: 10px;
@@ -147,56 +144,38 @@ button {
 	}
   }
 
-
-
-
 .Skills{
 	padding :10px;
-	display : table;
 	width :47%;
-	margin-top : @top;
-	border : 1px solid black;
+	margin-top : @topmargin;
 	font-size : 1.3rem;
 	margin-left: 60px;
-	 h3 {
-		font-size : @fontsize;
-    
-          }
 	}
 
+/*                Bottom Section                      */
 
-	.Work-history h2 {
-		font-size: 2rem;
-		margin-bottom: 15px;
+ .Work-history h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
 	}
 .work-table{
 	width: 100%;
 	margin-bottom: 20px;
 }
 	
-
-
-
 .work-table tr:nth-child(2){
-	background-color : @color-gray;
+	background-color : @bg-color;
 	}
-
-
-
-
 
 tr{
 	border :1px solid black;
 	width:100%;
-
-
-	
-	
-  td  {
+	td  {
 	 padding : 20px;
-	 
- }
+	}
 }
+
+/*            Footer Section                 */
 footer span {
 background: @dark-gray;
 width :100%;
@@ -208,19 +187,51 @@ font-size : 1.3rem;
 }
 
 
-
+/*            CSS For Responsive Mobile Desing         */
 @media (max-width:500px){
-	.navbar{
-		display :flex;
-		flex-wrap : wrap
-	a {
-		border : 1px solid red;
-	
-	}
+.navbar{
+	width :100%;
+	border : 1px solid green;
+	display : flex;
+     a{
+		 justify-content: center;
+		 margin-right :20px;
+	 }
+}
 
-    .bottom-section {
-		border : 1px solid red;
+.top-section {
+	display : flex;
+	flex-wrap: wrap;
+	 .top{
+		 justify-content: center;
+		 .myImage{
+			 width: 100%;
+			 .title {
+				 width:100%;
+				 .Skills {
+					 width : 100%;
+				 }
+
+			 }
+		 }
+	 }
+	 }
+	
+.mid {
+	display : flex;
+	flex-wrap: wrap;
+
+	.About-Me{
+		width:100%;
+
+		.Skills {
+			width :100%;
+			border : 1px solid red;
+			flex-wrap: wrap;
+		}
 	}
-	}
+}
+} 
+
 
 
