@@ -4,56 +4,282 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+html,
+body {
+  height: 100%;
+  font-family: 'Muli', sans-serif;
+}
+//************** VARIABLES ****************//
+@background: #0f1213;
+@main: #c30403;
 
+// *************MIX-IN****************//
+.hover(@main) {
+  &:hover {
+    color: @main;
+  }
+}
+.flex(@justify) {
+  display: flex;
+  justify-content: @justify;
+}
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box;
+  font-size: 62.5%;
+  max-width: 100%;
+  margin: 0;
+  border: 1rem;
+  padding: 1rem;
+  background: @background;
 
-html, body {
-    height: 100%;
-}
+  /**********THIS IS THE HEADER**********/
 
+  nav {
+    background: @background;
+    width: 50%;
+    margin: 0 20rem;
+    padding: 2rem;
+    .flex (space-around);
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    .hover(@main);
+  }
+  .pic1 {
+    width: 100%;
+    margin: 0;
+  }
+
+  //***********THIS IS THE CONTAINER***********/
+
+  .container {
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    color: white;
+    padding: 1rem;
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.8rem;
+    }
+    h2 {
+      font-family: 'Mali', sans-serif;
+      font-size: 1.7rem;
+    }
+
+    .info {
+      width: 33.3%;
+      margin: 1rem;
+      border: 2rem;
+      padding: 2rem;
+      .card1 {
+        line-height: 1.6rem;
+        margin: 0;
+        border: 0;
+        padding: 20px 0;
+      }
+      .btn {
+        width: 35%;
+        background-color: #0f1213;
+        color: white;
+        padding: 0.4rem;
+        font-size: 1.6rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        .hover(@main);
+      }
+    }
+  }
+  h2 {
+    font-family: 'Mali', sans-serif;
+    font-size: 1.7rem;
+  }
+  .mid {
+    border-top: 1px solid red;
+
+    color: white;
+    width: 80%;
+    margin: 1rem;
+    border: 2rem;
+    padding: 2rem;
+
+    .card4 {
+      width: 100%;
+      line-height: 1.6rem;
+      margin: 1rem;
+      border: 2rem;
+      padding: 2rem;
+    }
+  }
+  .bottom {
+    width: 100%;
+    margin: 0;
+    color: white;
+    padding: 3rem;
+    border-bottom: 1px solid red;
+    .list {
+      margin: 0;
+      border: 0;
+      padding: 1rem;
+      line-height: 1.9rem;
+      font-size: 1.1rem;
+    }
+    .work {
+      width: 100%;
+      padding-top: 1rem;
+    }
+    footer {
+      nav {
+        background: @background;
+        display: flex;
+        width: 50%;
+        margin: 0 20rem;
+        padding: 2rem;
+        justify-content: space-around;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.2rem;
+          .hover(@main);
+        }
+      }
+    }
+  }
+}
+/*//**********500px SCREEN SIZE*************/
+
+@media (max-width: 500px) {
+  .body {
+    width: 100%;
+  }
+}
