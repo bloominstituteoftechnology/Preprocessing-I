@@ -49,15 +49,129 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@accent-color: #FAF0E6;
+@secondary-color: rgb(38, 38, 38);
+@accent-font: 'Bangers', cursive;
+
+.display-flex(){
+	display: flex;
+	align-items: center;
+}
+
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
+		max-width: 100%;
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
+		font-size: 62.5%;
+		margin: auto;
+		font-family: 'Nanum Gothic', sans-serif;
 }
 
-body {
-	background-color: pink;
+h1 {
+	font-size: 3.5rem;
+	width: 25%;
+	color: @accent-color;
+	font-family: @accent-font;
 }
 
+h2 {
+	font-size: 2.5rem;
+}
+
+// Header Styling //
+
+header {
+	.display-flex();
+	justify-content: space-between;
+	margin-bottom: 2.5%;
+	padding: 2.5%;
+	background-image: linear-gradient(to right, salmon, rgba(255, 255, 255, 0));
+
+		nav {
+			.display-flex();
+			width: 75%;
+			justify-content: space-evenly;
+			font-size: 2rem;
+		
+			a {
+				text-decoration: none;
+				color: @secondary-color;
+			
+		} // closes a tag
+	} // closes nav
+} // closes header
+
+// Main Content //
+
+.main-content-container {
+	.display-flex();
+
+	div {
+		width: 45%;
+		margin: 2%;
+	}
+
+	.text-container {
+		padding: 6%;
+	}
+
+		p {
+			font-size: 1.25rem;
+			
+		}
+}
+
+
+// Work History Section //
+
+.work-history-container {
+	.display-flex();
+	flex-direction: column;
+	justify-content: center;
+	color: @secondary-color;
+	background-image: linear-gradient(to bottom, salmon, white);
+
+		.work-text{
+			.display-flex();
+			justify-content: center;
+			width: 40%;
+		}
+
+		.work-history-boxes-container{
+			.display-flex();
+			flex-wrap: wrap;
+			justify-content: space-around;
+			padding: 5%;
+			.fab {
+				font-size: 4rem;
+			}
+			
+			div {
+				.display-flex();
+				flex-direction: column;
+				justify-content: center;
+				width: 45%;
+				margin: 2%;
+				height: 150px;
+				
+		
+		} // closes divs
+	} // closes work-history-boxes-container
+} // closes work-history-container
+
+// Footer Section //
+
+footer {
+	.display-flex();
+	justify-content: space-between;
+	margin: 2%;
+
+	div {
+		
+
+
+		} // Closes Divs //
+	} // Closes Footer //
