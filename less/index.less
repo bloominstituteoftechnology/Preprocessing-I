@@ -54,6 +54,155 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	margin: 0 10%;
+	@media ( max-width: 500px ) {
+		margin: 0 0%;
+	}
 }
 
+@main-font: 'Roboto Condensed', sans-serif;
+@main-color: rgb(130, 175, 226);
+@title-color: rgb(26, 26, 26);
+@main-text-color: darkgrey;
+.mainFont(){
+	font-family: @main-font;
+	margin: 2% 2%;
+}
+.paraFont(){
+	font-family: 'Open Sans', sans-serif;
+	margin: 2% 3%;
+}
+h1{
+	font-size:4.5rem;
+	color: @title-color;
+	.mainFont();
+	@media ( max-width: 500px ) {
+		font-size: 2.4rem;
+	}
+}
+h2{
+	font-size:2.5rem;
+	color: @title-color;
+	.mainFont();
+	@media ( max-width: 500px ) {
+		font-size: 2rem;
+	}
+}
+h3{
+	font-size:2rem;
+	color: @title-color;
+	.mainFont();
+	@media ( max-width: 500px ) {
+		font-size: 1.8rem;
+	}
+}
+a{
+	font-size: 1.6rem;
+	.paraFont();
+	text-decoration: none;
+	@media ( max-width: 500px ) {
+		font-size: 1.4rem;
+	}
+}
+p, li{
+	font-size: 1.6rem;
+	color: @main-text-color;
+	.paraFont();
+	@media ( max-width: 500px ) {
+		font-size: 1.4rem;
+	}
+}
+.bold{
+	font-weight: 500;
+	margin-right: 4%;
+}
+.semiBold{
+	font-weight: 300;
+	margin-right: 4%;
+}
+.sectionSep{
+	border-bottom: 1px solid rgba(70, 70, 70, 0.096);
+}
+
+header{
+	width: 100%;
+	background-color: @main-color;
+	nav{
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		
+		a{
+			font-size: 1.6rem;
+			color: white;
+			@media ( max-width: 500px ) {
+				text-align: center;
+				padding-bottom: 3%;
+				width: 80%;
+				border-bottom: 1px solid white;
+			}
+		}
+		@media ( max-width: 500px ) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}
+section{
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+.topSection{
+	display: flex;
+	justify-content: space-between;
+	@media ( max-width: 500px ) {
+		flex-direction: column;
+	}
+	div{
+		margin: 0 4%;
+	}
+	p{
+		color: @main-text-color;
+		span{
+			color: @title-color;
+		}
+		a{
+			color: @main-text-color;
+		}
+	}
+}
+
+.skills{
+	.skillCont{
+		display: flex;
+		@media ( max-width: 500px ) {
+			margin-left: 3%;
+		}
+	}
+	.skillCard{
+		background-color: @main-color;
+		color: @title-color;
+		display: inline-block;
+		text-align: center;
+		padding: 1% 4%;
+		margin: 3% 1%;
+		border-radius: 10px;
+	}
+
+}
+.experience{
+	.jobs{
+		margin-left: 3%;
+	}
+	.seperator{
+		width: 80%;
+	}
+}
+
+.education{
+	.school{
+		margin-left: 3%;
+	}
+}
