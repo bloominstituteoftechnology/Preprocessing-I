@@ -57,3 +57,248 @@ html, body {
     height: 100%;
 }
 
+// my code here
+
+
+// global changes
+
+html{
+	font-size: 62.5%;
+	@media (max-width: 500px){
+		font-size: 41.7%
+	}
+}
+
+*{
+	// making sure nobody sneaks outside and remain visible
+	max-width: 100%;
+	color: white;
+}
+
+// Variables
+
+@english: #2ed73a;
+@darkEnglish: #135A18;
+@darkFelt: #003a0a;
+@deepEnglish: #001a04;
+
+// Mixins
+
+.flexRow{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+
+.mobile{
+	@media (max-width: 500px){
+		flex-flow: column nowrap;
+		align-content: space-around;
+	}
+}
+
+.pixelText{
+	font-family: 'Press Start 2P', cursive;
+}
+
+body{
+	background: @darkEnglish;
+}
+
+.main{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	header {
+		width: 90%;
+		margin: 20px 0;
+		padding: 20px 0;
+		border-bottom: 3px solid @english;
+		.flexRow();
+		
+		nav { 
+
+			width: 100%;
+
+			a{
+				font-size: 3rem;
+				text-decoration: none;
+			}
+
+			.flexRow();
+		}
+	} //end of header CSS
+	.promo{
+		display: flex;
+		flex-flow: column nowrap;
+		width: 85%;
+		background: @darkFelt;
+		padding: 5rem 3rem;
+		border-radius: 1rem;
+		
+		img{
+			width: 50%;
+			padding: 1rem 1rem 0 0;
+			@media (max-width: 500px){
+				width: 100%;
+				padding: 1rem;
+			}
+		}
+		h1{
+			font-size: 5.0rem;
+			margin: 1rem 0 0 0;
+			padding: 1rem 0;
+			@media(max-width: 500px){
+				font-size: 4.0rem;
+			}
+		}
+		h2{
+			font-size: 3.0rem;
+			margin: 0.5rem 0;
+			padding: 0.5rem 0;
+			@media(max-width: 500px){
+				font-size: 2.3rem;
+			}
+		}
+
+		p{
+			font-size: 1.6rem;
+			margin: 2rem 0;
+			padding: 2rem 0;
+			border-top: 3px dashed @english;
+			@media(max-width: 500px){
+				font-size: 2.0rem;
+			}
+		}
+
+		button{
+			background: @deepEnglish;
+			border: none;
+			border-radius: 1rem;
+			width: 33%;
+			padding: 1rem 3rem;
+			font-size: 2rem;
+			@media (max-width: 500px){
+				width: 50%;
+			}
+
+			.pixelText();
+		}
+
+		@media (max-width: 500px){
+			align-items: center;
+		}
+
+	} //end of promo CSS
+	.content{
+		width: 85%;
+		padding: 3rem;
+		margin: 3rem 0;
+		
+		.half{
+			width: 50%;
+			padding: 1rem;
+			h1{
+				font-size: 3.0rem;
+				margin: 2rem 0;
+				@media(max-width: 500px){
+					font-size: 2.3rem;
+				}
+			}
+			
+			p, ul, li{
+				font-size: 1.6rem;
+				@media(max-width: 500px){
+					font-size: 2.0rem;
+				}
+			}
+
+			ul{
+				background: @darkFelt;
+				border-radius: 1rem;
+				li{
+					padding: 1rem;
+					border-bottom: 2px solid @darkEnglish;
+				}
+				.last{
+					border: none;
+				}
+			}
+
+			@media(max-width: 500px){
+				width: 100%;
+			}
+
+
+		}
+
+		.whole{
+			width: 100%;
+			h1{
+				font-size: 3.0rem;
+				margin: 2rem 0;
+				@media(max-width: 500px){
+					font-size: 2.3rem;
+				}
+			}
+			
+			p{
+				font-size: 1.6rem;
+				@media(max-width: 500px){
+					font-size: 2.0rem;
+				}
+			}
+
+			ul {
+				background: @darkFelt;
+				border-radius: 2rem;
+				li{
+					border-bottom: 2px solid @deepEnglish;
+					p{
+						font-size: 1.6rem;
+						padding: 1.5rem;
+						@media(max-width: 500px){
+							font-size: 2.0rem;
+						}
+					}
+					
+					h2{
+						font-size: 2.5rem;
+						padding: 1rem;
+						width: 33%;
+						text-align: center;
+						background: @darkEnglish;
+						border-radius: 0 0 1rem 0;
+						@media(max-width: 500px){
+							font-size: 2.3rem;
+							width: 50%;
+							border-radius: 0 0 2rem 0;
+						}
+					}
+				}
+				.last{
+					border: none;
+				}
+			}
+		}
+		
+		.flexRow();
+		.mobile();
+	}
+
+	footer{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 4rem 0 0 0;
+		padding: 3rem 0;
+		background: @deepEnglish;
+		width: 100%;
+		h3{
+			font-size: 1.4rem;
+		}
+	}	
+
+}
