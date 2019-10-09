@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	
 }
 ol, ul {
 	list-style: none;
@@ -48,6 +49,59 @@ table {
 	border-spacing: 0;
 }
 
+// ==================== Variables
+
+
+
+@static-color: #33A8FF;
+
+// ==================== Mixins
+
+.static-content() {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: baseline;
+	
+}
+
+.nav-centered() {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+
+.centered() {
+	display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.column() {
+	display: flex;
+	flex-direction: column;
+}
+
+.border-line() {
+	border-bottom: 2px solid @static-color;
+	margin-bottom: 3%;
+}
+
+.special-font() {
+	font-family: 'KoHo', sans-serif;
+}
+
+.main-font() {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+// ==================== General Styles
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -57,3 +111,157 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	max-width: 880px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	}
+
+img {
+	max-width: 25%;
+	height: auto;
+}
+
+h1 {
+	font-size: 4rem;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+h2 {
+	padding-bottom: 2%;
+}
+
+h3 {
+	font-size: 3rem;
+	padding-top: 1.5%;
+	padding-bottom: 2%;
+	.special-font();
+}
+
+p {
+	.main-font();
+	line-height: 1.25;
+	margin-bottom: 2%;
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+
+
+// ==================== Header Styles
+
+header {
+	.border-line();
+	
+	nav{
+		.nav-centered();
+		margin: 2%;
+		margin-top: 2%;
+	}
+
+		a {
+			color: @static-color;
+			.special-font();
+			font-weight: bold;
+		}		
+		
+}
+
+// ==================== Landing Info Styles
+
+.landing-info {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: baseline;
+	background-color: @static-color;
+
+	@media (max-width: 500px) {
+		display: flex;
+    	justify-content: space-around;
+    	align-content: center;
+    	align-items: center;
+    	flex-direction: column;
+    	text-align: center;
+	}
+
+	.close-up {
+		padding-top: 6%;
+		width: 30%;
+		height: 30%;
+	}
+
+	.name-title {
+		.special-font();
+		color: white;
+		font-weight: bold;
+	}
+
+	
+}
+
+// ==================== Main Content Styles
+
+.homepage-content {
+	
+	.border-line();
+
+	h3 {
+		padding-left: 2%;
+		color: @static-color;
+	}
+
+		p {
+		padding-right: 10%;
+		padding-left: 3%;
+		padding-bottom: 2%;
+		.border-line();
+		}
+
+		ul {
+			list-style-position: inside;
+			.main-font();
+			margin-bottom: 1%;
+			.border-line();
+
+		}
+
+			li {
+				line-height: 2;
+				padding-left: 3%;
+				padding-bottom: 3%;
+				}
+
+	
+			
+}
+
+// ==================== Contact
+
+.contact {
+	.static-content();
+	flex-direction: column;
+	.special-font();
+	color: @static-color;
+	font-weight: bold;
+	.border-line();
+	padding-left: 2%;
+
+	@media (max-width: 500px) {
+		background-color: @static-color;
+		color: white;
+	}
+}
+
+// ==================== Footer
+footer {
+	.nav-centered();
+}
