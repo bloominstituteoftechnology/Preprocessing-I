@@ -54,90 +54,141 @@ table {
 @hi-font: 'Days One', sans-serif;
 @content-font-color: white;
 @nav-font-color: white; 
+@body-color: #12475F;
 
 /*MIXINS*/
 .nav-styling() {
 	padding: 1.2rem;
 	text-decoration: none;
-	color: @nav-font-color;
+	color: @nav-font-color;	
 }
 
 .header-footer-styling() {
 	display: flex;
-	background-color:#d3bce6;
 	padding:1.5rem;
-	justify-content: center;
+	justify-content: flex-end;
+	padding: 1rem;
 }
+
+.skills-styling() {
+    padding: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
-	height: 100%;
-	background-color: #12475F;
-	font-family: Arial, Helvetica, sans-serif;
+a {
+    .nav-styling();
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #12475F;
+    color: @content-font-color;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.container {
+    max-width: 100%;
+    margin: auto;
+    padding: 0 30px;
 }
 
 header {
-.header-footer-styling();
+	.header-footer-styling();
 
-		nav a {
-			.nav-styling();
-		}
-	
 }
 
-.title {
-	display: flex;
-
-		.profile-pic {
-			padding: 3rem;
-		}
-
-		.profile-picture {
-			border-radius: 30rem;
-			width: 30rem;
-			height: 20rem;
-		}
-
-			.profile-name {
-				padding: 3rem;
-				text-align: center;
-			}
-
-				.profile-name h1 {
-			font-size: @h1-font-size;
-			Font-family: @hi-font;
-		}
-			.profile-name h2 {
-				font-size: 2rem;
-			}
-		}
-		
-
-
-.Content {
-	display: flex;
-	
-	.content p {
-		color: @content-font-color;
-	}
+.intro {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
 }
 
-aside {
-	width: 100%;
+#showcase {
+    height: 300px;
 }
 
-main {
-	
+#showcase h1 {
+    font-size: 50px;
+    line-height: 1.3;
+    position: relative;
+    animation: heading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;    
+}
+
+@keyframes heading {
+    0% {top: -50px;}
+    100% {top: 200px;}
+}
+
+#content {
+    position: relative;
+    animation-name: content;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes content {
+    0% {left: -1000px;}
+    100% {left: 0;}
+}
+
+.btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    margin-top: 40px;
+    opacity: 0 ;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.btn:hover {
+    transform: rotateY(180deg);
+}
+
+@keyframes btn {
+    0% {opacity:0}
+    100% {opacity:1}
+}
+
+.skills {
+    background-color: white;
+    display: flex;
+    color: #12475F;
+    text-align: center;
+
+        h1 {
+            @h1-font-size;
+        }
+}
+
+.skills-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.responsive-design {
+    .skills-styling();
+    background-color: white;
 }
 
 footer {
-	.header-footer-styling();
+    padding: 2rem;
 }
-
-		footer nav a {
-			.nav-styling();
-	}
