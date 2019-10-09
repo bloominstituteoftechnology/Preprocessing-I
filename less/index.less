@@ -54,6 +54,164 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Acme&display=swap');
+
+@font-abril: 'Abril Fatface', cursive;
+@font-acme: 'Acme', sans-serif;
+
+.flexRow(){
+	display:flex;
+	align-items: center;
+}
+
+.fontDefault{
+	font-family: @font-acme;
+	font-size: 1.8rem;
+}
+
+.flexColumn(){
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+}
+
+section p{
+	.fontDefault();
+}
+
+h2{
+	font-family: @font-abril;
+	font-size: 4rem;
+}
+h3{
+	font-family: @font-abril;
+	font-size: 2.5rem;
+}
+/*Header Section*/
+header{
+	width: 100%;
+	height: 55vh;
+	background-image: url(../img/mountain-pan.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	.flexColumn();
+	justify-content: space-between;
+	nav{
+		width: 100%;
+		height: 5vh;
+		padding: 4% 0;
+		.flexRow();
+		justify-content: space-around;
+		a{
+			text-decoration: none;
+			font-family: @font-abril;
+			color: black;
+			padding: 1%;
+			border: 3px solid yellowgreen;
+			border-radius: 15px;
+			font-size: 2rem;
+		}//closes header nav a
+	}//closes header nav
+	.headerName{
+		margin-bottom: 5%;
+		padding: 5% 5% 5% 5%;
+		border: 1px solid white;
+		background-color: rgba(0,0,0,.5);
+		color: white;
+		font-size: 8rem;
+		text-align: center;
+	}
+}//closes header
+
+/*About Section*/
+#about{
+	.flexRow();
+	justify-content: space-between;
+
+	div{
+		margin: 4% 4% 0 4%;
+	}
+}
+.aboutMe{
+	width: 20%
+}
+.box1{
+	background-color: orange;
+	position: absolute;
+	width: 50%;
+	height: 20%;
+	top: 550px;
+	left: 30px;
+}
+.aboutBox{
+	background-color: yellow;
+	position: absolute;
+	width: 50%;
+	height: 20%;
+	text-align: center;
+	.flexColumn();
+	justify-content: space-around;
+	top: 600px;
+
+	p{
+		height: 50%;
+	}
+}
+.interests{
+	width: 30%;
+	text-align: center;
+
+	h3{
+		padding:2%;
+		background-color: grey;
+	}
+}
+ul{
+	width: 100%;
+}
+li{
+	.fontDefault();
+	border: 1px solid grey;
+	padding: 4%;
+	text-align: center;
+}
+/*Skills Section*/
+#skills{
+	text-align: center;
+	margin: 4%;
+}
+.skills{
+	.flexRow();
+
+	@media(max-width: 500px){
+		display: flex;
+		flex-direction: column;
+	}
+}
+/*Work History Section*/
+#work{
+	.flexColumn();
+	margin:4%;
+}
+.work{
+	.flexRow();
+
+	@media(max-width: 500px){
+		display: flex;
+		flex-direction: column;
+	}
+}
+.gridCont{
+	display: inline-grid;
+	grid-template-columns: auto auto auto;
+}
+.gridCont div{
+	font-size: 2rem;
+}
+
+
 
