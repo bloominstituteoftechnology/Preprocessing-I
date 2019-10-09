@@ -53,7 +53,105 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+.container{
+	width: 800px;
+	margin: 0 auto;
 }
 
+html, body {
+	height: 100%;
+	background-color:white;
+}
+
+h1, h2, h3, h4, h5{
+	font-family: @fullPageFontStyle;
+}
+
+nav{
+	display: flex;
+	padding: 50px 0px;
+	background-color: white;
+	width: 80%;
+	a{
+		justify-content: space-evenly;
+		.navFont();
+	}
+	@media (max-width: 500px) {
+		a{
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+section{
+	width: 100%;
+	height: fit-content;
+	margin: 0 auto;
+}
+
+p{
+	font-family: @fullPageFontStyle;
+	font-size: 1rem;
+}
+
+ul{
+	font-family: @fullPageFontStyle;
+}
+
+.intro{
+	width: 800px;
+	.textSections();
+	@media (500px) {
+		width: 100%;
+	}
+}
+
+.skills{
+	width: 800px;
+	ul{
+		width: fit-content;
+		margin: 0 auto;
+	}
+}
+
+.workHistory{
+	.textSections();
+	//Mix-in isn't working. Figure this out.. 
+}
+
+form{
+	align-content: center;
+	font-family: @fullPageFontStyle;
+	font-size: @fontsize;
+	text-decoration: @removeTextDecoration;
+}
+
+
+// Declaring Variables;
+
+@fullPageFontStyle: 'Courier New', Courier, monospace;
+@fontSize: 1rem;
+@removeTextDecoration: none;
+
+//Mix-in Examples:
+
+.navFont{
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1.6rem;
+	text-decoration: underline, bold;
+	color: rgb(10, 98, 128);
+}
+
+.textSections{
+	width: fit-content;
+	margin: 0 auto;
+	height: 200px;
+	width: 100%;
+}
+
+.phoneDimensions{
+	width: 100%;
+	display: flex;
+
+}
