@@ -48,8 +48,19 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+//import font from google
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+
+//mixin
+
+.small-screen{
+	width: 100%;
+	overflow: inherit;
+}
+.flex-even{
+	display: flex;
+	justify-content: space-evenly;
+}
 
 
 /* Set every element's box-sizing to border-box */
@@ -84,6 +95,9 @@ body {
 	height: 100%;
 	width: 60%;
 	color: black;
+	@media only screen and (max-width:500px){
+		.small-screen();
+	}
 
 	h1{
 		font-size: 3.5rem;
@@ -129,15 +143,18 @@ body {
 }//end profile info
 
 .and-more{
-	border: 1px solid black;
+	
 	font-family: tahoma;
 	text-align: center;
+	margin-bottom: 3%;
 	
 	h3{
 		font-size: 1rem;
+		padding-bottom: 2%;
 	} 
 	p{
 		font-size: 0.8rem;
+		
 	}
 }//end and-more
 	
@@ -146,12 +163,12 @@ footer{
 	text-align: center;
 	
 	nav{
-		display: flex;
-		justify-content: space-evenly;
+		.flex-even();
+		padding-top: 5%;
+		margin-bottom: 5%;
 
 		a{
-			width: 100px;
-			height: 50px;
+			font-size: 1.3rem;
 
 		}//end a
 
@@ -159,7 +176,7 @@ footer{
 
 }//end footer
 
-	
+
 	 
 
 

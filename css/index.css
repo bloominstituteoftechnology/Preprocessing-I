@@ -133,6 +133,14 @@ table {
   font-display: swap;
   src: local('Mansalva Regular'), local('Mansalva-Regular'), url(https://fonts.gstatic.com/s/mansalva/v1/aWB4m0aacbtDfvq5NKliKYo.ttf) format('truetype');
 }
+.small-screen {
+  width: 100%;
+  overflow: inherit;
+}
+.flex-even {
+  display: flex;
+  justify-content: space-evenly;
+}
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
@@ -160,6 +168,12 @@ body {
   height: 100%;
   width: 60%;
   color: black;
+}
+@media only screen and (max-width: 500px) {
+  .profile-info {
+    width: 100%;
+    overflow: inherit;
+  }
 }
 .profile-info h1 {
   font-size: 3.5rem;
@@ -196,12 +210,13 @@ body {
   display: block;
 }
 .and-more {
-  border: 1px solid black;
   font-family: tahoma;
   text-align: center;
+  margin-bottom: 3%;
 }
 .and-more h3 {
   font-size: 1rem;
+  padding-bottom: 2%;
 }
 .and-more p {
   font-size: 0.8rem;
@@ -213,8 +228,9 @@ footer {
 footer nav {
   display: flex;
   justify-content: space-evenly;
+  padding-top: 5%;
+  margin-bottom: 5%;
 }
 footer nav a {
-  width: 100px;
-  height: 50px;
+  font-size: 1.3rem;
 }
