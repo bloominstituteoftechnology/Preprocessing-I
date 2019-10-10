@@ -90,15 +90,27 @@ header {
 	padding: 2.5%;
 	background-image: linear-gradient(to right, salmon, rgba(255, 255, 255, 0));
 
+	@media (max-width: 500px){
+		flex-direction: column;
+	}
 		nav {
 			.display-flex();
 			width: 75%;
 			justify-content: space-evenly;
 			font-size: 2rem;
+
+			@media (max-width: 500px){
+				flex-direction: column;
+				margin: 3% 0;
+			}
 		
 			a {
 				text-decoration: none;
 				color: @secondary-color;
+
+				@media (max-width: 500px){
+					margin-top: 3%;
+				}
 			
 		} // closes a tag
 	} // closes nav
@@ -165,7 +177,10 @@ header {
 				width: 45%;
 				margin: 2%;
 				height: 150px;
-				
+			
+				@media (max-width: 500px){
+					width: 80%;
+				}
 		
 		} // closes divs
 	} // closes work-history-boxes-container
