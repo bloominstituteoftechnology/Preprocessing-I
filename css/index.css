@@ -144,11 +144,14 @@ body .backgroundimg {
   z-index: -1;
   position: absolute;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 }
 html .maincontainer,
 body .maincontainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   width: 80vw;
   height: 80vh;
   margin: auto;
@@ -159,7 +162,6 @@ body .maincontainer {
   padding: 2%;
   position: sticky;
   top: 10%;
-  flex-flow: row wrap;
 }
 header {
   position: sticky;
@@ -192,26 +194,37 @@ header .resumetitle .resumenav a {
 header .resumetitle .resumenav a:hover {
   color: darkslategray;
 }
-#about .aboutcontainer {
-  width: 40%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.profilepic img {
+  max-width: 20vh;
+  max-height: 20vh;
   background-color: white;
-  border-radius: 1rem 0 1rem 0;
+  border-radius: 3rem;
+  padding: 3%;
+}
+.profilepic img:hover {
+  box-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+#about .aboutcontainer {
+  width: 60vw;
+  height: 20vh;
+  display: flex;
+  background-color: white;
+  border-radius: 1rem;
 }
 #about .aboutcontainer .aboutp {
-  width: 100%;
+  display: flex;
+  align-items: center;
   padding: 1%;
   margin: 5%;
-  flex-basis: 80%;
 }
 #about .aboutcontainer .aboutp h3 {
   font-family: "raleway", sans-serif;
   font-size: 3.2rem;
-  border-bottom: 1px solid black;
   padding: 1%;
   margin: 1%;
+  border-right: 1px solid black;
 }
 #about .aboutcontainer .aboutp p {
   font-family: "Be Vietnam", sans-serif;
@@ -222,4 +235,11 @@ header .resumetitle .resumenav a:hover {
   box-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
   -webkit-transform: translateX(-3px);
   transform: translateX(-3px);
+}
+.bottomcontent {
+  display: flex;
+  background-color: white;
+  height: 50vh;
+  width: 73vw;
+  margin: 1% 0 0 1%;
 }
