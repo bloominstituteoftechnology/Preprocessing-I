@@ -61,12 +61,31 @@ html, body {
 
 
 // v----- UNIVERSAL STYLES -----v
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Mansalva|Noto+Serif+KR&display=swap');
+@mainFont: 'Bree Serif', serif;
+@bgColor: aliceblue;
+
+.boxFormat(){
+	padding: 1% 2%;
+	background-color: lavender;
+	border: 2px solid indigo;
+	border-radius: 20px;
+}
+.center(){	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 html {
 	font-size: 62.5%;
+	color: indigo;
 }
 
 body{
-	background-color: aliceblue;
+	background-color: @bgColor;
+	font-family: @mainFont;
+	width: 100%;
 
 	h1 {
 		font-size: 4rem;
@@ -75,51 +94,168 @@ body{
 	h2{
 		font-size: 2rem;
 	}
-}
 
-nav {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 10vh;
-
-	a {
-		text-decoration: none;
-		font-size: 2rem;
-		padding: 1%;
-		color: indigo;
-		background-color: lavender;
-		border: 1px solid indigo;
-		border-radius: 20px;
+	h3{
+		font-size: 3rem;
 	}
-}
 
+	nav {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin: 2%;
+		height: 10vh;
+	
+		a {
+			text-decoration: none;
+			text-align: center;
+			font-size: 2rem;
+			padding: 1% 2%;
+			background-color: lavender;
+			border: 1px solid indigo;
+			border-radius: 20px;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// v----- FOOTER -----v
+
+	footer{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.4rem;
+		margin: 1%;
+	}
+	
+}
 
 // v----- TOP SECTION -----v
 .top {
 	display: flex;
 	justify-content: center;
-	margin: 2%;
+
+	.intro {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 50%;
+		background-color: lavender;
+		border: 2px solid indigo;
+		border-radius: 10px;
+		text-align: center;
+		line-height: 1.8;
+		padding: 2%;
+		font-size: 1.4rem;
+	
+		img {
+			height: auto;
+			width: 70%;
+			margin-bottom: 2%;
+			border-radius: 10px;
+		}
+	}
 }
 
-.intro {
+// v----- MIDDLE SECTION -----v
+.middle{
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	width: 50%;
-	color: indigo;
-	background-color: lavender;
-	border: 2px solid indigo;
-	border-radius: 10px;
-	text-align: center;
-	line-height: 1.5;
-	padding: 2%;
+	justify-content: center;
+	align-content: center;
+	margin: 2%;
 
-	img {
-		height: auto;
-		width: 70%;
-		margin-bottom: 2%;
-		border-radius: 10px;
+	.content{
+		display:flex;
+		flex-direction: column;
+		align-items: flex-start;
+		font-size: 1.4rem;
+		line-height: 2.0;
+		width: 30%;
+		margin: 0 2%;
+		.boxFormat();
+	}
+
+	.workHis {
+		display:flex;
+		flex-direction: column;
+		align-items: flex-start;
+		font-size: 1.4rem;
+		line-height: 2.0;
+		width: 30%;
+		margin: 0 2%;
+		.boxFormat();
+
+		.workList {
+			margin: 1.5%;
+			line-height: 1.5;
+		}
+	}
+}
+
+// v----- BOTTOM SECTION -----v
+.bottom{
+	.center();
+	margin: 2%;
+	text-align: center;
+	// width: 100%;
+
+	.contact{
+		.boxFormat();
+		
+		.form{
+			font-size: 1.6rem;
+				
+			.field{
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				align-content: center;
+				padding: 3% 7%;
+	
+				label{
+					margin: 2%;
+				}
+	
+				#message {
+					width:100%;
+				}
+			}
+		}
+	}
+	
+}
+
+@media (max-width: 500px) {
+	.top{
+		margin-bottom: 3%;
+		.intro{
+			line-height: 1.2;
+			padding: 3%;
+		}
+	}
+
+	.middle{
+		flex-direction: column;
+
+		.content{
+			width: 95%;
+			margin-bottom: 3%;
+			padding: 1% 3% 3% 3%;
+		}
+
+		.workHis{
+			width: 95%;
+			margin-bottom: 1%;
+			padding: 1% 3% 3% 3%;
+		}
+	}
+
+	.bottom{
+		.contact{
+			padding: 3%;
+		}
 	}
 }

@@ -134,11 +134,35 @@ html,
 body {
   height: 100%;
 }
+@font-face {
+  font-family: 'Bree Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Bree Serif Regular'), local('BreeSerif-Regular'), url(https://fonts.gstatic.com/s/breeserif/v9/4UaHrEJCrhhnVA3DgluA96rp4g.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mansalva';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Mansalva Regular'), local('Mansalva-Regular'), url(https://fonts.gstatic.com/s/mansalva/v1/aWB4m0aacbtDfvq5NKliKYo.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Serif KR'), local('NotoSerifKR-Regular'), url(https://fonts.gstatic.com/s/notoserifkr/v6/3Jn7SDn90Gmq2mr3blnHaTZXRudj1g.otf) format('opentype');
+}
 html {
   font-size: 62.5%;
+  color: indigo;
 }
 body {
   background-color: aliceblue;
+  font-family: 'Bree Serif', serif;
+  width: 100%;
 }
 body h1 {
   font-size: 4rem;
@@ -146,43 +170,146 @@ body h1 {
 body h2 {
   font-size: 2rem;
 }
-nav {
+body h3 {
+  font-size: 3rem;
+}
+body nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 2%;
   height: 10vh;
 }
-nav a {
+body nav a {
   text-decoration: none;
+  text-align: center;
   font-size: 2rem;
-  padding: 1%;
-  color: indigo;
+  padding: 1% 2%;
   background-color: lavender;
   border: 1px solid indigo;
   border-radius: 20px;
 }
+body nav a:hover {
+  text-decoration: underline;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 1%;
+}
 .top {
   display: flex;
   justify-content: center;
-  margin: 2%;
 }
-.intro {
+.top .intro {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 50%;
-  color: indigo;
   background-color: lavender;
   border: 2px solid indigo;
   border-radius: 10px;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.8;
   padding: 2%;
+  font-size: 1.4rem;
 }
-.intro img {
+.top .intro img {
   height: auto;
   width: 70%;
   margin-bottom: 2%;
   border-radius: 10px;
+}
+.middle {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 2%;
+}
+.middle .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.4rem;
+  line-height: 2;
+  width: 30%;
+  margin: 0 2%;
+  padding: 1% 2%;
+  background-color: lavender;
+  border: 2px solid indigo;
+  border-radius: 20px;
+}
+.middle .workHis {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.4rem;
+  line-height: 2;
+  width: 30%;
+  margin: 0 2%;
+  padding: 1% 2%;
+  background-color: lavender;
+  border: 2px solid indigo;
+  border-radius: 20px;
+}
+.middle .workHis .workList {
+  margin: 1.5%;
+  line-height: 1.5;
+}
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  text-align: center;
+}
+.bottom .contact {
+  padding: 1% 2%;
+  background-color: lavender;
+  border: 2px solid indigo;
+  border-radius: 20px;
+}
+.bottom .contact .form {
+  font-size: 1.6rem;
+}
+.bottom .contact .form .field {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  padding: 3% 7%;
+}
+.bottom .contact .form .field label {
+  margin: 2%;
+}
+.bottom .contact .form .field #message {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .top {
+    margin-bottom: 3%;
+  }
+  .top .intro {
+    line-height: 1.2;
+    padding: 3%;
+  }
+  .middle {
+    flex-direction: column;
+  }
+  .middle .content {
+    width: 95%;
+    margin-bottom: 3%;
+    padding: 1% 3% 3% 3%;
+  }
+  .middle .workHis {
+    width: 95%;
+    margin-bottom: 1%;
+    padding: 1% 3% 3% 3%;
+  }
+  .bottom .contact {
+    padding: 3%;
+  }
 }
