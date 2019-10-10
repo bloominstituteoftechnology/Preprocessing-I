@@ -49,11 +49,157 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@background-color: #ecf0f1;
+@font-family: 'Muli', sans-serif;
+@margins: 3%;
+.flexbox-center() {
+	display:flex;
+	justify-content: center;
+}
+.flexbox-right(){
+	display: flex;
+	justify-content: flex-end;
+}
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: @font-family;
+	font-size: 62.5%;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background: #2c3e50;
 }
 
+.container {
+	max-width: 90%;
+	border:1px solid black;
+	margin:@margins;
+	background-color: @background-color;
+	
+}
+
+header {
+	margin-top: 3%; 
+	
+
+nav {
+	display: flex; 
+	justify-content: flex-end;
+	justify-items: right;
+	
+}//This is the end of the nav
+
+nav a {
+	color: black;
+	text-decoration: none;
+	margin: 2% 4%;
+}// This is the end of nav a
+
+@media(max-width: 500px) {
+	header{
+		display: flex;
+		justify-content: center;
+	}
+	nav {
+		display: flex;
+		justify-content: center;
+	}
+}//This is the end of the media header 
+} //This is the end of the header
+
+.first-section {
+	font-size: 1.6rem;
+
+.home-img {
+	width: 400px;
+	height: 400px;
+	margin: @margins;
+}//This is the end of home-img
+h1 {
+	font-size: 6.0rem;
+	margin: @margins;
+}
+
+button{
+	margin: 0 3%;
+	border-radius: 15%;
+	font-size:1.5rem;
+}//This is the end of the button 
+hr{
+	width:94%;
+
+}//This is the end of my hr
+
+p {
+	font-size: 2.0rem;
+	margin: 0 3%;
+}//This is the end of my paragragh
+
+}//This is the end of first section
+
+.bottom-section{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-wrap: wrap;
+.about-me {
+	margin: 2% 3%;
+	width: 50%;
+}//End of about-me
+h2 {
+	font-size: 2.0rem;
+	margin-bottom: 2%;
+}//End of the h2
+.skills {
+	margin: 2% 3%;
+	width: 50%;
+}//end of the skills section
+@media(max-width: 500px) {
+	.bottom-section{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+	}//bottom section media
+	.about-me{
+		width: 80%;
+	}
+	.skills {
+		width: 80%;
+	}
+}//end of bottom section media
+}//End of the about me section
+
+.work-experience {
+	width:70%;
+	margin:3%;
+	text-align: left;
+	
+tr, th {
+	padding: 15px 0;
+	background-color: #bdc3c7;
+	padding-left: 5px;
+}		
+}//This is the end of the work div
+
+.work-h {
+	font-size: 2.0rem;
+	margin: 1% 3%;
+}// This is the end of my work h2
+
+.contact {
+	margin: 3%;
+h3{
+	font-size: 2.0rem;
+	margin-bottom:1%;
+}//This is the end of the h3
+}//This is the end of contact
+
+.copywrite{
+	text-align: center;
+	font-size: 1.1rem;
+	margin-bottom:1%;
+	color:white;
+}//This is the end of the copywrite
