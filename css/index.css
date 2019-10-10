@@ -147,6 +147,14 @@ body .backgroundimg {
   background-repeat: repeat;
   background-size: cover;
 }
+@media (max-width: 500px) {
+  html .backgroundimg .backgroundimg,
+  body .backgroundimg .backgroundimg {
+    background-size: auto;
+    height: auto;
+    width: auto;
+  }
+}
 html .maincontainer,
 body .maincontainer {
   display: flex;
@@ -178,6 +186,7 @@ header .resumetitle {
 header .resumetitle h1 {
   font-size: 2.4rem;
   justify-content: flex-start;
+  color: white;
 }
 header .resumetitle .resumenav {
   display: flex;
@@ -188,11 +197,11 @@ header .resumetitle .resumenav {
 header .resumetitle .resumenav a {
   text-decoration: none;
   justify-content: space-between;
-  color: black;
+  color: white;
   margin: 2rem;
 }
 header .resumetitle .resumenav a:hover {
-  color: darkslategray;
+  color: lightgrey;
 }
 .profilepic img {
   max-width: 20vh;
@@ -200,6 +209,23 @@ header .resumetitle .resumenav a:hover {
   background-color: white;
   border-radius: 3rem;
   padding: 3%;
+  -webkit-animation: fadein 3s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 3s;
+  /* Internet Explorer */
+  -o-animation: fadein 3s;
+  /* Opera < 12.1 */
+  animation: fadein 3s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .profilepic img:hover {
   box-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
@@ -212,6 +238,11 @@ header .resumetitle .resumenav a:hover {
   display: flex;
   background-color: white;
   border-radius: 1rem;
+  -webkit-animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  -ms-animation: fadein 3s;
+  -o-animation: fadein 3s;
+  animation: fadein 3s;
 }
 #about .aboutcontainer .aboutp {
   display: flex;
@@ -248,6 +279,11 @@ header .resumetitle .resumenav a:hover {
   margin: 1%;
   width: 35%;
   border-radius: 1rem;
+  -webkit-animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  -ms-animation: fadein 3s;
+  -o-animation: fadein 3s;
+  animation: fadein 3s;
 }
 .bottomcontent #work .workcontainer {
   justify-content: center;
@@ -264,9 +300,10 @@ header .resumetitle .resumenav a:hover {
 .bottomcontent #work .workcontainer h4 {
   font-size: 2rem;
   margin: 0.5rem;
+  padding: 0.6rem;
 }
 .bottomcontent #work .workcontainer p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 0.5rem;
   font-family: "Be Vietnam", sans-serif;
 }
@@ -281,6 +318,11 @@ header .resumetitle .resumenav a:hover {
   margin: 1%;
   width: 35%;
   border-radius: 1rem;
+  -webkit-animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  -ms-animation: fadein 3s;
+  -o-animation: fadein 3s;
+  animation: fadein 3s;
   width: 100%;
   align-items: flex-start;
   flex-direction: column;
@@ -302,9 +344,10 @@ header .resumetitle .resumenav a:hover {
 .bottomcontent #skills .workcontainer h4 {
   font-size: 2rem;
   margin: 0.5rem;
+  padding: 0.6rem;
 }
 .bottomcontent #skills .workcontainer p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 0.5rem;
   font-family: "Be Vietnam", sans-serif;
 }

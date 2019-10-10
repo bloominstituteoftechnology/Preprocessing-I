@@ -153,6 +153,13 @@ body {
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+    @media (max-width: 500px) {
+      .backgroundimg {
+        background-size: auto;
+        height: auto;
+        width: auto;
+      }
+    }
   }
 
   .maincontainer {
@@ -187,6 +194,7 @@ header {
     h1 {
       font-size: 2.4rem;
       justify-content: flex-start;
+      color: white;
     }
     .resumenav {
       display: flex;
@@ -197,12 +205,12 @@ header {
       a {
         text-decoration: none;
         justify-content: space-between;
-        color: black;
+        color: white;
         margin: 2rem;
       }
 
       a:hover {
-        color: darkslategray;
+        color: lightgrey;
       }
     }
   }
@@ -215,6 +223,20 @@ header {
     background-color: white;
     border-radius: 3rem;
     padding: 3%;
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 3s; /* Firefox < 16 */
+    -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+    animation: fadein 3s;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   img:hover {
     box-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
@@ -231,6 +253,12 @@ header {
     display: flex;
     background-color: white;
     border-radius: 1rem;
+    -webkit-animation: fadein 3s;
+    -moz-animation: fadein 3s;
+    -ms-animation: fadein 3s;
+    -o-animation: fadein 3s;
+    animation: fadein 3s;
+
     .aboutp {
       display: flex;
       align-items: center;
@@ -271,6 +299,11 @@ header {
     margin: 1%;
     width: 35%;
     border-radius: 1rem;
+    -webkit-animation: fadein 3s;
+    -moz-animation: fadein 3s;
+    -ms-animation: fadein 3s;
+    -o-animation: fadein 3s;
+    animation: fadein 3s;
 
     .workcontainer {
       justify-content: center;
@@ -288,9 +321,10 @@ header {
       h4 {
         font-size: 2rem;
         margin: 0.5rem;
+        padding: 0.6rem;
       }
       p {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin: 0.5rem;
         font-family: @vietnam;
       }
