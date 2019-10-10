@@ -136,75 +136,204 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+
 * {
 	box-sizing: border-box;
 }
 
 html,
 body {
+	font-family: 'Abel',
+		sans-serif;
+	@maincolor: rgb(113, 124, 197);
 	height: 100%;
-	width: 100%;
+	width: 95%;
 	margin: 0 auto;
 	margin-top: 10px;
+	font-size: 62.5%;
 
-}
-
-// Header Styling
-
-.header {
-	width: 95%;
-	display: flex;
-	justify-content: flex-end;
-	margin-bottom: 20px;
-
-	a {
-		text-decoration: none;
-		color: black;
-		border: 1px solid darkgray;
-		border-radius: 10%;
-		padding: 5px 10px;
+	.text-design {
+		font-size: 2.5em;
+		text-decoration: underline;
+		padding-bottom: 10%;
 	}
-}
 
+	.box-setting {
+		font-size: 2.5em;
+		padding: 1.5em;
+	}
 
+	// Header Styling
 
-.main-section {
-	background-color: lightgrey;
-
-	.banner {
-		background: rgb(113, 124, 197);
+	.header {
+		width: 95%;
 		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 20px;
 
-		.main-img {
-			padding-top: 2.5%;
-			padding-left: 2.5%;
+		@media (max-width: 500px) {
+			justify-content: center;
+		}
 
-			img {
-				width: 49%;
-				border-radius: 20%;
-
+		nav {
+			@media (max-width: 500px) {
+				display: flex;
+				flex-direction: column;
 			}
 		}
 
-		.titles {
-			display: flex;
-			flex-direction: column;
-			align-content: center;
-			width: 49%;
-			margin: 0 auto;
-			margin-top: 2.8%;
+		a {
+			text-decoration: none;
+			color: black;
+			border: 1px solid darkgray;
+			border-radius: 10%;
+			padding: 1px 10px;
 			text-align: center;
 
-			h1 {
-				font-size: 200%;
+			@media (max-width: 500px) {
+				margin-top: 30%;
+				font-size: 6em;
 			}
 		}
+
 	}
 
 
 
-	.work {
-		margin: 30px;
-		width: 50%
+
+	.main-section {
+		background-color: lightgrey;
+
+
+		.banner {
+			background-color: @maincolor;
+			display: flex;
+
+			.main-img {
+				padding: 2.5%;
+				display: flex;
+				width: 49%;
+
+
+				img {
+					border-radius: 20%;
+					width: 49%;
+
+					@media (max-width: 500px) {
+						display: none;
+					}
+				}
+			}
+
+			.titles {
+				color: white;
+				display: flex;
+				flex-direction: column;
+				width: 49%;
+				margin: 0 auto;
+				margin-top: 2.8%;
+				text-align: right;
+
+
+				h1 {
+					font-size: 4em;
+				}
+
+				@media (max-width: 500px) {
+					margin-right: 25%;
+					width: 100%;
+					text-align: center;
+					font-size: 2.5em;
+					margin-bottom: 3%;
+				}
+			}
+		}
+
+		.life {
+			display: flex;
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+			}
+
+			.experience {
+				width: 50%;
+
+
+				.work {
+					margin: 5%;
+					border: 2px solid darkgray;
+					border-radius: 20%;
+					padding: 5%;
+
+					@media (max-width: 500px) {
+						width: 190%;
+						.box-setting();
+					}
+
+					h1 {
+						font-size: 2em;
+					}
+
+					h2 {
+						font-size: 1.5em;
+						padding-bottom: 1em;
+					}
+				}
+
+			}
+
+			.skills {
+				width: 50%;
+				margin: 2%;
+				height: 50%;
+				background-color: rgb(56, 75, 88);
+				border-radius: 20%;
+				padding: 2%;
+
+				@media (max-width: 500px) {
+					width: 95%;
+					.box-setting();
+				}
+
+				.skills-header {
+					.text-design();
+				}
+
+				div {
+					padding: 2%;
+
+					h1 {
+						font-size: 2em;
+						text-align: center;
+					}
+				}
+
+				.contact {
+					margin-top: 1em;
+					text-align: center;
+					background-color: white;
+					border-radius: 20%;
+					text-decoration: none;
+
+					h1 {
+						padding: 2%;
+					}
+
+					h3 {
+						.text-design();
+					}
+				}
+			}
+
+		}
+
+	}
+
+	footer {
+		height: 5%;
+		background-color: @maincolor;
 	}
 }
