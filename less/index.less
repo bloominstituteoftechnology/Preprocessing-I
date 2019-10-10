@@ -137,6 +137,7 @@ table {
 @background: rgba(112, 128, 144, 0.9);
 @vietnam: "Be Vietnam", sans-serif;
 @raleway: "raleway", sans-serif;
+
 html,
 body {
   height: 100%;
@@ -260,8 +261,79 @@ header {
 
 .bottomcontent {
   display: flex;
-  background-color: white;
   height: 50vh;
   width: 73vw;
   margin: 1% 0 0 1%;
+
+  #work {
+    display: flex;
+    background-color: white;
+    margin: 1%;
+    width: 35%;
+    border-radius: 1rem;
+
+    .workcontainer {
+      justify-content: center;
+      margin: 1%;
+
+      h2 {
+        font-size: 3.5rem;
+        margin: 3%;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid black;
+        font-family: @raleway;
+      }
+
+      h4 {
+        font-size: 2rem;
+        margin: 0.5rem;
+      }
+      p {
+        font-size: 1.6rem;
+        margin: 0.5rem;
+        font-family: @vietnam;
+      }
+    }
+  }
+  #work:hover {
+    box-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  #skills {
+    #work();
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    .skillcontainer {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-size: 3.5rem;
+        border-right: 1px solid black;
+        padding: 10rem;
+        max-height: 100%;
+      }
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 3rem;
+        margin: 2rem;
+        font-style: @vietnam;
+      }
+    }
+  }
+}
+#skills:hover {
+  box-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
 }
