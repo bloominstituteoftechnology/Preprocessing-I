@@ -144,6 +144,16 @@ body {
 @font-variable: "Josefin Sans", sans-serif;
 @border-variable: 2px solid #3d3a3a27;
 
+.flex {
+  display: flex;
+  padding: 3% 0;
+}
+
+.flex-50 {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .wrapper {
   max-width: 880px;
   margin: 30px auto;
@@ -151,10 +161,9 @@ body {
 }
 
 nav {
-  display: flex;
+  .flex();
   justify-content: flex-end;
   align-items: center;
-  padding: 3% 0;
   background: @bg-variable;
   border-bottom: @border-variable;
 
@@ -172,15 +181,13 @@ nav {
 }
 
 header {
-  display: flex;
+  .flex();
   justify-content: flex-end;
   align-items: center;
-  padding: 3% 0;
   border-bottom: @border-variable;
 
   .header-img {
-    width: 50%;
-    margin: 0 auto;
+    .flex-50();
     text-align: center;
 
     img {
@@ -194,8 +201,7 @@ header {
   }
 
   .header-text {
-    width: 50%;
-    margin: 0 auto;
+    .flex-50();
 
     @media (max-width: 500px) {
       width: 100%;
@@ -253,7 +259,7 @@ header {
 
     h2,
     p {
-      padding: 3% 3%;
+      padding: 3%;
     }
 
     h2 {
@@ -280,13 +286,11 @@ header {
 
   h3 {
     font-family: @font-variable;
-    font-size: 1.6rem;
-    padding: 3% 3%;
   }
 
   ul {
     width: 90%;
-    padding: 3% 3%;
+    padding: 3%;
   }
 
   li {
@@ -305,7 +309,7 @@ header {
 }
 
 .work-history {
-  padding: 3% 3%;
+  padding: 3%;
 
   h3 {
     font-family: @font-variable;
@@ -315,11 +319,10 @@ header {
   }
 
   table {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: @font-variable;
     width: 100%;
     margin-bottom: 3%;
-    margin: ;
   }
 
   thead {
@@ -332,13 +335,13 @@ header {
     border-bottom: @border-variable;
   }
   td {
-    padding: 1% 1%;
+    padding: 1%;
   }
 
   th {
     text-align: left;
     font-weight: bold;
-    .td();
+    padding: 1%;
   }
 }
 
