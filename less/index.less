@@ -55,5 +55,188 @@ table {
 
 html, body {
     height: 100%;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 62.5%;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+//variables for color and font
+@nav-color: rgb(63, 7, 116);
+@nav-hover-color: mediumslateblue;
+@title-color: rgb(49, 171, 192);
+@text-color: indigo;
+
+/*container */
+
+.container {
+	width: 880px;
+	/* TB LR */
+	margin: 0 auto;
+  }
+
+//mixins
+.flex-width {
+	display: flex;
+	max-width: 100%;
+}
+
+.flex-space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+// header
+
+header {
+	display: flex;
+	justify-content: center;
+}
+
+header nav {
+  .flex-space-between ();
+  width: 80%;
+  vertical-align: top;
+  margin-top: 4%;
+  color: @nav-color;
+}
+
+header nav a {
+  margin-right: 8%;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+header nav a:first-child {
+	margin-left: 0;
+  }
+
+header nav a:last-child {
+	margin-right: 0;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: @nav-hover-color;
+}
+
+//body
+.main-content {
+	border-top: 1px solid black;
+	margin-top: 4%;
+	padding-top: 4%;
+	width: 100%
+  }
+
+.main-content .text-content h2 {
+	.flex-space-between();
+	font-size: 2rem;
+	padding: 0 10px;
+	width: 100%;
+	color: @title-color;  
+}
+
+
+.main-content .text-content p {
+	padding: 0 10px;
+	padding-bottom: 4%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 1.6rem;
+	color: @text-color;
+  }
+
+.contact {
+	max-width: 100%;
+	margin-top: 1%;
+	border-top: 1px solid black;
+	padding: 4% 2% 4%;
+}
+
+.contact h3 {
+	font-size: 1.6rem;
+	color: @title-color;
+}
+
+.contact p {
+	font-size: 1.2rem;
+	color: @text-color;
+}
+
+/* MEDIA QUERIES HERE */
+
+/* tablet view */
+@media(max-width: 800px) {
+	.container {
+		max-width: 85%;
+	}
+	
+	header {
+		.flex-width ();
+		flex-direction: column;
+		
+	}
+	.main-content {
+		max-width: 100%;
+	}
+
+	.main-content .text-content h4 {
+		.flex-width();
+	}
+	.main-content .text-content p {
+	  .flex-width();
+	}
+
+	.contact {
+		max-width: 100%;
+	}
+
+}
+
+@media(max-width:500px) {
+
+	.container {
+		width: 100%;
+	}
+
+
+	header {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	header nav {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		margin-right: 0%;
+		text-align: center;
+	}
+
+	header nav a {
+		margin-right: 0%;
+		width: 100%;
+		border-top: 1px solid rgb(131, 79, 79);
+		border-top: 1px solid gray;
+		padding: 5% 2%;
+		box-sizing: border-box;
+	}
+
+	.main-content .text-content {
+		padding-top: 2%;
+		display: flex;
+		flex-direction: column; 
+		width: 100%;
+	}
+
+	.contact {
+		max-width: 100%;
+	}
+}
