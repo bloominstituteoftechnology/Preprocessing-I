@@ -4,6 +4,23 @@
    License: none (public domain)
 */
 
+// Variables
+
+@Maingray: #A9A9A9;
+@Green: olivedrab;
+
+// Mixins
+
+.flex-columnstart {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.auto-margin {
+	margin: 0 auto;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,7 +70,159 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+
+html {
+	height: 100%;
+	font-size: 62.5%
 }
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	font-size: 1.6rem;
+    width: 100%;
+    .auto-margin;
+
+	    h1 {
+			font-size: 2rem;
+			font-family: Copperplate;
+			letter-spacing: 2px;
+			color: white;
+			margin-top: 3%;
+			margin-bottom: 3%;
+		}
+
+	    header {
+		display: flex;
+		justify-content: center;
+		}
+
+		nav {
+			padding-left: 2%;
+			padding-right: 2%;
+			margin-top: 2%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 800px;
+			width: 100%;
+			background-color: @Maingray; 
+
+			@media(max-width: 500px) {
+				flex-direction: column;
+				align-items: center;
+				width: 75%;
+			}
+		}
+
+		nav a {
+			transition: 0.4s;
+			padding-top: 2%;
+			padding-bottom: 2%;
+			font-size: 1.8rem;
+			font-family: Copperplate;
+			text-decoration: none;
+			color: @Green; 
+		}
+
+		nav a:hover {
+			background-color: #ffffff;
+			padding: 2% 2%;
+		}
+
+
+		.mainbanner {
+			margin-top: 3%;
+			width: 100%;
+			height: 100%;
+			background-color: @Maingray;
+			color: white;
+			text-align: center;
+
+			p {
+				font-size: 1.6rem;
+				margin-bottom: 3%;
+			}
+		}
+
+
+
+		.skills {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 3%;
+			background-color: white;
+			width: 20%;
+			.auto-margin;
+
+			@media(max-width: 500px) {
+				width: 75%;
+			}
+
+			h2 {
+				font-size: 2rem;
+				font-family: Copperplate;
+				color: @Green;
+				margin-bottom: 2%;
+			}
+
+			ul {
+				.flex-columnstart;
+
+				li {
+					width: 20%;
+					color: black;
+				}
+			}
+		}
+
+		.work-history {
+			.auto-margin;
+			margin-top: 3%;
+			width: 98%;
+			color: black;
+			background-color: white;
+
+			h2 {
+				margin-bottom: 2%;
+			}
+		}
+
+		.history {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.history-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			.title {
+				margin-bottom: 5%;
+				color: @Green;
+			}
+		}
+
+		.contact {
+			ul {
+				font-size: 1.2rem;
+				margin-left: 1%;
+				margin-top: 3%;
+				.flex-columnstart;
+			}
+		}
+
+		footer {
+			margin-top: 5%;
+		}
+
+}
+
+
+
+
 
