@@ -1,3 +1,6 @@
+@import "variables.less";
+@import "mixins.less";
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -54,6 +57,158 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: @fontFamily;
+	// background:@jumboBgColor;
+}
+
+h1 {
+	font-size: @h1FontSize;
+}
+
+h2 {
+	font-size: @h2FontSize;
+}
+
+p {
+	font-size: @pFontSize;
+	text-align: justify;
+	line-height: 130%;
+}
+
+.container {
+	font-size: @pFontSize;
+	margin: 1%;
+
+	.header{
+		.flex-set(@justify:space-between; @alignitems: center);
+		.defaultMargin();
+		font-size: @h2FontSize;
+
+		.nav {
+			// .flex-set(@justify: space-around);
+			// .flex-set();
+			font-size: @pFontSize;
+			// align-items: center;
+		}
+	}
+
+	.jumbotron {
+		.flex-set(@flexdir: column);
+		.defaultPadding(0);
+		background-color: @jumboBgColor;
+		
+		.jrow{
+			.defaultMargin();
+			.defaultPadding(0);
+			img {
+				width: 30%;
+				max-width: 80px;
+				// height: 50px;
+			}
+	
+			.name {
+				font-size: @h1FontSize;
+			}
+
+			div {
+				margin-top: 0.5%;
+			}
+
+			.button {
+				.flex-set();
+				border: 2px solid black;
+				.defaultPadding(0.005);
+				width: 30%;
+				max-width: 120px;
+			}
+			
+		}
+		
+	}
+
+	.content {
+		.flex-set();
+		// .defaultMargin();
+		// .defaultPadding(0);
+
+		.info {
+			.flex-set(@flexdir: column);
+			width: 65%;
+			// .defaultMargin();
+			margin: 1% 3% 1% 1%;
+
+			p {
+				margin: 1.5% 0 1.5% 0;
+			}
+
+		}
+
+		.experience {
+			.flex-set(@flexdir: column);
+			// .defaultMargin();
+			margin: 1% 3% 1% 1%;
+			width: 35%;
+			.properties {
+				.flex-set(@flexdir: column);
+				.defaultMargin();
+				h2 {
+					
+				}
+				.property {
+					border: 1px solid black;
+                    width: 100%;
+					.defaultPadding(-.0005);
+					.defaultMargin();
+					&:hover{
+						background-color: @jumboBgColor;
+					}
+				}
+			}
+			
+		}
+	}
+
+	.workexp {
+		.flex-set(@flexdir: column);
+		.defaultPadding(0);
+		width: 100%;
+
+		h2 {
+			margin-bottom: 1%;
+		}
+
+
+		.workexp-history-table{
+			width: 100%;
+			// .defaultMargin();
+			// .defaultPadding(0);
+			text-align: left;
+			// .flex-set();
+
+			th {
+				.defaultPadding(0);
+			}
+			td {
+				.defaultPadding(0);
+				
+			}
+
+			.coloredH {
+				background-color: @jumboBgColor;
+			}
+
+			.coloredR {
+				background: lightcyan;
+			}
+
+		}
+	}
+
+	footer {
+		.defaultPadding(0);
+		text-align: center;
+	}
 }
 
