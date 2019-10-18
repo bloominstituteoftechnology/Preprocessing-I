@@ -53,7 +53,161 @@ table {
     box-sizing: border-box;
 }
 
+// @media (max-width: 500px) {
+// 	display: flex;
+// 	flex-direction: column;
+// }
+@import "var";
+
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
 html, body {
     height: 100%;
 }
+
+h1, h2, h3, h4, h5, h6, p {
+	padding: 5px;
+}
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 0;
+	
+	header {
+		background-color:  @theme;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 880px;
+	}
+	
+	ul {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: row;
+		li {
+			padding: 5px;
+			}
+			a {
+				text-decoration: none;
+				color: black;
+			}
+	}
+	
+	h1 {
+		font-size: 3rem;
+		font-style: bold;
+	}
+	
+	h2 {
+		font-size: 2.4rem;
+		font-style: bold;
+	}
+	
+	h3 {
+		font-size: 2rem;
+		font-style: bold;
+	}
+	
+	th, td {
+		padding: 15px;
+	}
+	
+	section {
+		padding: 5px 0;
+	}
+	
+	footer {
+		background-color: @theme;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 880px;
+	}
+
+	.downArrow {
+		height: 2.4rem;
+		vertical-align: baseline;
+	}
+	
+	#top {
+		border: 1px solid black;
+	}
+	
+	#bottom {
+		padding-bottom: 25px;
+		div {
+			padding-bottom: 5px;
+			border-bottom: 1px @theme;
+			ul {
+				flex-direction: column;
+				flex-wrap: wrap;
+				list-style: disc;
+				list-style-position: inside;
+				li {
+					padding-left: 25px;
+				}
+			}
+			p {
+				font-size: 1.8rem;
+			}
+		}
+		.compressor {
+			height: 3rem;
+			overflow: hidden;
+			&:last-child {
+				padding-bottom: 40px;
+			}
+			&:hover {
+				height: unset;
+				&:last-child {
+					padding-bottom: 25px;
+				}
+				// border-bottom: 1px solid black;
+			}
+		}
+		#skills ul {
+			columns: 2;
+		}
+	}
+
+	#tallImg {
+		@media @phone {
+			display:none
+		}
+		position: fixed;
+		height: 95vh;
+		max-width: 40%;
+	}
+	
+	#wrapper {
+		padding: 15px 15px 2px 2px;
+		height: 95vh;
+		width: 60%;
+		margin-left: 40%;
+		@media @phone {
+			margin-left: 0;
+		}
+		@media @phone {
+			margin-left: 30%;
+		}
+	}
+}
+
+
+
 
