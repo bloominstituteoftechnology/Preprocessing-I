@@ -29,20 +29,394 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
+// Variables that might pop up now and then
+
+@main-color: grey;
+
+.flex-col {
+	width: 100%;
+}
+
+.container {
+	background: rgb(255, 255, 255); /* Fallback */
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.25);
+	font-family: 'Ubuntu', sans-serif;
+	color: black;
+	display: flex;
+	flex-direction: column;
+}
+
+// This is where the real work begins
 body {
 	line-height: 1;
+	font-size: 62.5%;
+	width: 1250px;
+	margin: auto;
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+
+	@media (max-width: 768px) {
+		width: 750px;
 }
+
+	@media (max-width: 500px) {
+			width: 500px;
+	}
+} 
+
+// NavBar at the top of the screen
+nav {
+	font-size: 1.6em;
+	background: green;
+	.container();
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	li {
+	width: 200px;
+	height: 60px;
+	text-align: center;
+	padding-top: 20px;
+	margin-right: 20px;
+	}
+
+	a {
+		text-decoration: none;
+		width: 200px;
+  		color: black;
+		  transition: 0.3s;
+	}
+
+	a:hover {
+		color: rgb(82, 193, 212);
+	}
+} // End NavBar
+
+//Beginning of primary 
+
+
+.row {
+	display: flex;
+	@media (max-width: 768px) {
+		width: 100%;
+}
+
+	@media (max-width: 500px) {
+			width: 100%;
+	}
+} 
+
+
+// Setting up the big old shadow box for the content
+content {
+	width: 100%;
+	height: 900px;
+	.container();
+	margin-top: 10px;
+	@media (max-width: 768px) {
+		width: 750px;
+		height: 800px;
+}
+
+	@media (max-width: 500px) {
+			width: 500px;
+			height: 900px;
+	}
+} 
+
+// This Includes my name
+	h1 {
+		font-size: 4.8em;
+		text-align: center;
+		width: 100%;
+		height: 75px;
+		padding-top: 20px;
+		padding-left: 50px;
+		margin-bottom: 10px;
+
+		@media (max-width: 768px) {
+			display:none;
+	}
+	
+		@media (max-width: 500px) {
+			display:none;
+		}
+
+	}
+
+	.mobiledisplay {
+		display:none;
+
+		@media (max-width: 768px) {
+			display: flex;
+			font-size: 4.8em;
+			text-align: center;
+			width: 100%;
+			height: 75px;
+			padding-top: 20px;
+			padding-left: 50px;
+			margin-bottom: 10px;
+	}
+	
+		@media (max-width: 500px) {
+			display: flex;
+			font-size: 4.8em;
+			text-align: center;
+			width: 100%;
+			height: 75px;
+			padding-top: 20px;
+			padding-left: 50px;
+			margin-bottom: 10px;
+		}
+
+	}
+
+	// These are the two columns below the h1
+	.primary { 
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+
+		@media (max-width: 768px) {
+			width: 80%;
+	}
+	
+		@media (max-width: 500px) {
+				width: 80%;
+		}
+	
+	h2 {
+		font-size: 2.4em;
+		text-align: center;
+		margin-top: 10px;
+		padding-top: 15px;
+		height: 100px;
+		.flex-col();
+
+		@media (max-width: 768px) {
+			display: none;
+	}
+	
+		@media (max-width: 500px) {
+			display: none;
+		}
+	} 
+
+	p {
+		font-size: 1.6em;
+		line-height: 25px;
+		text-align: left;
+		height: 200px;
+		margin-left: 5px;
+		padding-top: 15px;
+		.flex-col();
+
+		@media (max-width: 768px) {
+			width: 70%;
+			height: 250px;
+			text-align: center;
+			margin-left: 10px;
+	}
+	
+		@media (max-width: 500px) {
+			width: 80%;
+			height: 250;
+			text-align: center;
+			margin-left: 10px;
+		}
+
+	}
+
+	li {
+		height: 60px;
+		text-align: center;
+		font-size: 2.0em;
+		padding-top: 20px;
+		.flex-col();
+
+		@media (max-width: 768px) {
+			display: none;
+	}
+	
+		@media (max-width: 500px) {
+			display: none;
+		}
+
+		}
+
+	}
+
+
+.primary2 { 
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+
+	@media (max-width: 768px) {
+		display: none;
+}
+
+	@media (max-width: 500px) {
+			display: none;
+	}
+h2 {
+	font-size: 2.4em;
+	text-align: center;
+	margin-top: 10px;
+	padding-top: 15px;
+	height: 100px;
+	.flex-col();
+
+} 
+
+li {
+	height: 60px;
+	text-align: center;
+	font-size: 2.0em;
+	padding-top: 20px;
+	.flex-col();
+
+}
+}
+
+// Manages the photograph
+.picture {
+	height: 300px;
+	width: 500px;
+	margin-top: 30px;
+	margin-left: 30px;
+	border-radius: 20px;
+
+	@media (max-width: 768px) {
+		width: 50%;
+		height: 260px;
+}
+
+	@media (max-width: 500px) {
+		width: 70%;
+		height: 250px;
+	}
+}
+// End of content
+
+// Beginning of Work history
+.history {
+
+	width: 100%;
+	height: 400px;
+	.container();
+	margin-top: 10px;
+
+	@media (max-width: 768px) {
+			display: none;
+}
+
+	@media (max-width: 500px) {
+			display:none;
+	}
+	
+	h1 {
+		font-size: 4.8em;
+		text-align: left;
+		width: 100%;
+		height: 75px;
+		padding-top: 20px;
+		padding-left: 50px;
+
+		
+	@media (max-width: 768px) {
+		width: 100%;
+		text-align: center;
+}
+
+	@media (max-width: 500px) {
+			width: 100%;
+			text-align: center;
+	}
+	}
+	
+
+	p {
+		font-size: 2.4em;
+		line-height: 25px;
+		margin-left: 10px;
+		text-align: left;
+		height: 50px;
+		padding-top: 15px;
+	}
+
+
+}
+
+.workHistory {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.6em;
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+  }
+  
+  .workHistory td, .workHistory th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  .workHistory tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .workHistory tr:hover {background-color: rgb(150, 144, 144);}
+  
+  .workHistory th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: rgb(36, 36, 36);
+	color: white;
+  }
+
+// End of Work History
+
+
+// Copyrights
+  footer {
+	text-align: center;
+	font-size: 1.6em;
+	padding-top: 20px;
+	width: 100%;
+	height: 50px;
+	.container();
+	margin-top: 10px;
+
+	@media (max-width: 768px) {
+		text-align: center;
+		margin-left: 10px;
+}
+
+	@media (max-width: 500px) {
+		text-align: center;
+		margin-left: 10px;
+	}	
+  }
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -54,6 +428,5 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
-
