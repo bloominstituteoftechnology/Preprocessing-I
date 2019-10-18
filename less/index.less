@@ -20,9 +20,10 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
+	color: white;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -31,6 +32,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +58,162 @@ table {
     box-sizing: border-box;
 }
 
+
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: black;
 }
 
+@width: 80%;
+@padding: 3%;
+
+
+
+.ribbon {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: baseline;
+	width: @width;
+	font-size: 2vw;
+}
+
+.content {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: @width;
+	text-align: center;
+	padding: @padding;
+	border-bottom: 1px dashed white;
+	border-top: 1px dashed white;
+}
+
+.box {
+	text-align: center;
+	padding: @padding;
+	align-items: center;
+}
+
+h1 {
+	// border: 1px solid white;
+	font-size: 4vw;
+	.box();
+}
+
+h2 {
+	font-size: 3.5vw;
+	text-decoration: underline solid white;
+	color: rgb(138, 21, 21);
+	
+}	
+
+.list {
+	text-align: center;
+	font-size: 1.5vw;
+
+}
+
+nav {
+	.ribbon();
+	padding: @padding;
+
+}
+
+.hook {
+	.content();
+}
+
+.hook-inner {
+	width: 33%;
+	padding: @padding;
+	.box();
+}
+
+.skills {
+	.box();
+	text-align: center;
+	border: 1px solid white;
+}
+
+table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2vw;
+	border-color: gray;
+	text-align: justify;
+  }
+
+.tabletop {
+	font-weight: 500;
+	background-color: rgb(138, 21, 21);
+}
+
+footer {
+	.ribbon();
+	border-top: 1px dashed white;
+	padding: @padding;
+}
+
+
+@media(max-width: 600px) {
+	h1 {
+		font-size: 3vw;
+	h2 {
+		font-size: 2vw;
+	}
+	}
+	.ribbon {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+
+		width: @width;
+		font-size: 1.5vw;
+	}
+	
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		width: @width;
+		text-align: center;
+		padding: @padding;
+		border-bottom: 1px dashed white;
+		border-top: 1px dashed white;
+	}
+
+	nav {
+		.ribbon();
+		padding: @padding;
+	
+	}
+	
+	.hook {
+		.content();
+	}
+
+	.hook-inner {
+		width: 90%;
+		padding: @padding;
+		.box();
+	}
+
+	table {
+		display: table;
+		border-collapse: collapse;
+		border-spacing: 2vw;
+		border-color: gray;
+		text-align: justify;
+		font-size: 1.5vw;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	  }
+	  footer {
+		.ribbon();
+		border-top: 1px dashed white;
+		padding: @padding;
+	}
+}
