@@ -4,6 +4,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,8 +30,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
+	font-family: 'Raleway', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +56,118 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
 
+
+
+
+@fontSize: 150%;
+@grayScale: rgb(128, 127, 127);
+
+html, body {
+	height: auto;
+	// width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1000px;
+	margin: auto;
+
+	.navigation{
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 2rem;
+		margin-top: 2rem;
+
+		nav a{
+			margin-left: 1rem;
+			text-decoration: none;
+			font-style: oblique;
+			color: black;
+		}
+	}
+
+	.topContainer{
+		background-color: rgb(239, 247, 255);
+		img{
+			height: 17rem;
+			width: 13rem;
+			margin-left: 2rem;
+			margin-top: 5rem;
+			margin-bottom: 1rem;
+		  }
+	}
+
+	.heading{
+		margin-left: 2rem;
+		margin-right: 3rem;
+		.pBorderTop{
+			border-bottom: 1px solid @grayScale;
+			padding-bottom: 1rem;
+		}
+		.pBorderBottom{
+			padding-top: 1rem;
+		}
+		.teamUp{
+			font-size: 20px;
+			padding: 5px 30px 5px 30px;
+			text-decoration: none;
+			border: 0px solid black;
+			background: rgb(138, 138, 138);
+			margin-top: 20px;
+			color: white;
+			margin-bottom: 5rem;
+		}
+	}
+
+	.bottomContainer{
+		display: flex;
+		.topLeft{
+			width: 45%;
+			// border: 1px solid black;
+			padding-top: 1rem;
+			.listen{
+				font-size: 200%;
+			}
+			.random{
+				font-size: @fontSize;
+				margin-top: 2rem;
+			}
+		}
+		.topRight{
+			width: 45%;
+			margin-left: 10%;
+			padding-top: 1rem;
+			.listing{
+				font-size: 200%;
+				
+			}
+			li{
+				border:	1px solid black;
+				padding: 1rem 0 1rem 1rem;
+				list-style-type: none;
+			}	
+		}
+	}
+	.workHistory{
+		font-size: 150%;
+	}
+	.table{
+		margin-bottom: 10rem;
+		td{
+			border-top: 1px solid black;
+			padding: 1rem 0 1rem 1.5rem;
+		}
+		.gray{
+			background-color: @grayScale;
+		}
+	}
+	.footer{
+		text-align: center;
+		border: 1px solid black;
+		padding: 5% 35% 5% 35%;
+		background-color: @grayScale;
+	}
+
+	
+	
+}
