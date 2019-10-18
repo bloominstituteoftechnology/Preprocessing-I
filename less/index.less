@@ -1,51 +1,14 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@light-gray: #e9ecef;
+@dark-gray: #808080;
+@font-stack: Arial, Helvetica, sans-serif;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+.space-between() {
+	display: flex;
+	justify-content: space-between;		
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+.dark-gray-back() {
+	background-color: @dark-gray;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -54,6 +17,171 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: @font-stack;
+	line-height: 1.2;
 }
 
+.container {
+	font-size: 1.8rem;
+	max-width: 1000px;
+	margin: 0 auto;
+	// use % and see if it works better on mobile.
+	// not sure of the purpose of this padding. guessing perfect pixel
+	// padding: 0 50px;
+	// border: 1px solid black;
+	
+	nav {
+		margin-top: 26px;
+		margin-left: auto;
+		width: 100%;
+		padding: 20px;
+		
+		@media (min-width: 800px) {
+			width: 37%;
+			padding: 0;
+		}
+
+	}
+
+	nav ul {
+		.space-between;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: #000;
+	}
+
+	.intro-main {
+		background-color: @light-gray;
+		padding: 30px;
+		margin-top: 30px;
+		border-radius: 5px;
+	}
+
+	.intro-main img {
+		max-width: 100%;
+		margin-top: 30px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		
+		@media (min-width: 500px) {
+			display: inline;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	.intro-main h1 {
+		font-size: 4rem;
+		margin-top: 10px;
+
+		@media (min-width: 500px) {
+			font-size: 5rem;
+		}
+	}
+
+	.intro-main h2 {
+		margin-top: 20px;
+		margin-bottom: 30px;
+		font-size: 2rem;
+	}
+
+	.intro-main p {
+		margin-top: 25px;
+	}
+
+	.intro-main .btn {
+		.dark-gray-back;
+		margin-top: 20px;
+		font-size: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+		border-radius: 5px;
+		margin-bottom: 40px;
+	}
+
+	.intro-detailed {
+		margin: 0;
+		.space-between;
+		flex-wrap: wrap;	
+		padding: 20px;
+		
+		@media (min-width: 500px) {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+		@media (min-width: 800px) {
+			padding: 0;
+		}
+
+	}
+
+	.intro-detail-item {
+		width: 100%;
+		margin-bottom: 10px;
+		
+		@media (min-width: 500px) {
+			width: 48.5%;
+			margin-bottom: 0;		
+		}
+	}
+
+	.intro-detail-item h2 {
+		font-size: 3.5rem;
+		margin-bottom: 10px;
+	}
+	
+	.intro-detail-item h3,
+	.work h2  {
+		font-size: 2.8rem;
+		margin-bottom: 5px;
+	}
+
+	.intro-detail-item li {
+		padding: 15px;
+		border: 1px solid rgba(0,0,0,.125);
+		margin-bottom: -1px;
+	}
+
+	.work {
+		display: none;
+		
+		@media (min-width: 500px) {
+			display: block;
+			margin-bottom: 30px;
+		}	
+	}
+
+	table, th, td {
+		border-top: 1px solid rgba(0,0,0,.125);
+		border-collapse: collapse;
+	}
+
+	tbody tr:nth-of-type(odd) {
+		background-color: rgba(0,0,0,.05);
+	}
+
+	th, td {
+		padding: 12px;
+		text-align: left;    
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+	footer {
+		color: #fff;
+		font-weight: bold;
+		.dark-gray-back;
+		text-align: center;
+		padding: 20px 0 40px;
+	}
+}
