@@ -64,6 +64,9 @@ table {
 	display: flex;
 	justify-content: center;
 }
+
+@color-header : linear-gradient(#000428,  #004e92);
+@base-font:62.5%;
 /*................end less..................*/
 * {
     box-sizing: border-box;
@@ -71,7 +74,7 @@ table {
 
 html, body {
 	height: 100%;
-	font-size: 62.5%;
+	font-size: @base-font;
 	
 }
 
@@ -92,7 +95,7 @@ body{
 header {
 	display: flex;
 	align-items: center;
-	background-image: linear-gradient(#000428,  #004e92);
+	background-image: @color-header ;
 	height: 5%;
 	
 	
@@ -137,6 +140,8 @@ header {
 	padding:2.5% 5%;
 	@media (max-width:1000px) {
 		left:25%;
+		font-size: auto;
+		height: auto;
 	}
 	@media (max-width:800px){
 		left: 15%;
@@ -162,6 +167,7 @@ h1{
 	.center-content();
 	@media (max-width:500px){
 		text-align: center;
+		
 	}
 }
 
@@ -170,6 +176,11 @@ h2 {
 	display: flex;
 	justify-content: flex-end;
 	border-bottom: 0.5rem solid gray;
+	@media (max-width:500px){
+		text-align: center;
+		font-size: 3rem;;
+		
+	}
 	
 }
 
@@ -190,6 +201,11 @@ h3 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	@media (max-width:500px){
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	
 	
 	
@@ -198,4 +214,39 @@ h3 {
 
 ul {
 	list-style-type: square;
+}
+
+
+/*.....................contact...........................*/
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
