@@ -56,6 +56,10 @@ table {
 @text-color: #563f46;
 @text-color2: #484f4f; 
 @text-color3: #e0e2e4;
+.text-mixin {
+	color: @text-color3;
+	font-size: 3rem;
+}
 
 html, body {
 	height: 100%;
@@ -161,8 +165,7 @@ header {
 		padding: 2%;
 
 		h2 {
-			font-size: 3rem;
-			color: @text-color3;
+			.text-mixin();
 			margin-bottom: 5%;
 			text-decoration: underline;
 		}
@@ -182,10 +185,8 @@ header {
 		text-align: center;
 
 		h2 {
-			font-size: 3rem;
-			color: @text-color3;
-			margin: 5% 0;
-			//margin-bottom: 15%;
+			.text-mixin;
+			margin: 5% 0;			
 			text-decoration: underline;
 		}
 
@@ -207,8 +208,7 @@ header {
 		padding: 1.5%;
 	
 		h2 {
-			color: @text-color3;
-			font-size: 3rem;
+			.text-mixin;
 			text-decoration: underline;
 		}
 
