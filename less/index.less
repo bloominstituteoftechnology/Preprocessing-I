@@ -150,6 +150,12 @@ body {
 	padding: 1%;
 }
 
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	width: auto;
+}
+
 .flex-space {
 	display: flex;
 	justify-content: space-around;
@@ -166,15 +172,15 @@ body {
 
 nav {
 	.flex-space();
-	background-color: #00ccff;
+	background-color: lightcyan;
 	width: 100%;
 
 	a {
 		text-decoration: none;
-		color: white;
+		color: darkblue;
 	}
 	a:hover {
-		background-color: white;
+		background-color: royalblue;
 	}
 }
 
@@ -184,8 +190,7 @@ nav {
 
 	@media (max-width: 500px) {
 		width: 90%;
-		display: flex;
-		flex-direction: column;
+		.flex-column();
 	}
 
 	.Self-Photo {
@@ -194,8 +199,7 @@ nav {
 	}
 
 	.intro {
-		display: flex;
-		flex-direction: column;
+		.flex-column();
 		width: 30%;
 		align-items: center;
 		justify-content: center;
@@ -218,9 +222,15 @@ nav {
 
 		.button {
 			.spacing();
-			background-color: silver;
+			background-color: lightcyan;
 			border: 1px solid black;
-			color: white;
+			color: royalblue;
 		}
 	}
+}
+
+.skills {
+	.flex-column();
+	width: auto;
+	.spacing();
 }
