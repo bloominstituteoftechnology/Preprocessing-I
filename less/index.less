@@ -75,8 +75,24 @@ header {
 		a {
 			text-decoration: none;
 			color: @text-color;
-			margin: 4%;
+			margin: 0 3%;
 			font-size: 2rem;
+		}
+	}
+
+	@media(max-width: 500px) {
+
+		nav {
+			flex-direction: column;
+			justify-content: center;
+			margin: 0;
+		
+			a {
+				border-bottom: 1px solid @text-color2;
+				margin: 0;
+				text-align: center;
+				padding: 3%;
+			}
 		}
 	}
 }
@@ -91,7 +107,13 @@ header {
 		margin-bottom: 3%;
 		border-radius: 10px;
 	}
+	
+	@media(max-width: 500px) {
+		img {
+		display: none;
+		}
 
+	}
 	.top-intro {
 		width: 100%;
 		text-align: justify;
@@ -119,7 +141,11 @@ header {
 			padding: 1%;
 			font-size: 1.8rem;
 			border-radius: 10px;
-		} 
+		}
+		
+		@media(max-width: 500px) {
+			text-align: center;
+		}
 	}
 }
 
@@ -127,7 +153,7 @@ header {
 	display: flex;
 	justify-content: space-around;
 	margin-top: 5%;
-
+	
 	.story {
 		width: 35%;
 		background-color: @text-color;
@@ -191,6 +217,43 @@ header {
 			color: @text-color3;
 		}
 	}
+
+	@media(max-width: 500px) {
+		display: block;
+		background-color: @text-color;
+		border-radius: 10px;
+		
+		.story {
+			width: 100%;
+			padding: 5%;
+
+			h2 {
+				text-align: center;
+			}
+		}
+
+		.skills {
+			width: 100%;
+
+			h2 {
+				margin: 3%;
+			}
+
+			ul {
+				li {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}	
+		
+		.contact {
+			width: 100%;
+			text-align: center;
+			margin-top: 10%;
+		}
+		
+	}
 }
 
 .history {
@@ -219,8 +282,14 @@ header {
 			td {
 				font-size: 1.5rem;
 				text-align: center;
-				padding-top: 2%
+				padding: 2% 0;
 			}
 		}
 	}
+}
+
+.copyright {
+	font-size: 1.6rem;
+	text-align: center;
+	margin-bottom: 3%;
 }
