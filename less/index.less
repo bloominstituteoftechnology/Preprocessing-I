@@ -49,6 +49,18 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@color-u2: #E3D6D6;
+@color-u1: #5986B8;
+@color-base: #0D1A66;
+@color-d1: #43578C;
+@color-d2: #130E17;
+
+
+.spacing {
+	margin: 1%;
+	padding: 2%;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -57,3 +69,62 @@ html, body {
     height: 100%;
 }
 
+nav{
+	.spacing();
+	display: flex;
+	justify-content: space-evenly;
+	background-color: @color-u2;
+	a{
+		justify-content: center;
+		text-decoration: none;
+		color: blue;
+	}// end a
+		a:hover{
+			color: black;
+			text-decoration: underline;
+		
+	} // end hover
+	
+} // end nav
+header{
+	background-color: @color-u1;
+	.spacing();
+	h1{
+		color: @color-d2;
+		text-align: center;
+		font-size: 30px;
+	} // end h1
+	h2{
+		color: @color-d2;
+		text-align: center;
+	}
+} //end header
+.skills{
+	.spacing();
+	background-color: @color-d1;
+	color: @color-u2;
+	display: flex;
+	justify-content: center;
+	// flex-wrap: wrap;
+	// width: 50%;
+
+	height: 200px;
+	h2{
+		flex-wrap: wrap;
+		font-size: 20px;
+		// text-align: center;
+		display: inline-block;
+	}
+	div{
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		height: 50%;
+	}
+	.test-list{
+		width: 30%;
+	}
+	img{
+		max-width: 20%;
+	}
+}
