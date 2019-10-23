@@ -56,6 +56,15 @@ table {
 html, body {
     height: 100%;
 }
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-even {
+	display: flex;
+	justify-content: space-evenly;
+}
 
 @font-style: Sans-serif;
 @color-1: #7F00AF;
@@ -67,8 +76,7 @@ html, body {
 	margin: auto;
 
 	nav ul {
-		display: flex;
-		justify-content: center;
+		.flex-center();
 		padding-top: 10px;
 		background-color: #aaa9ad;
 		height: 40px;
@@ -160,6 +168,21 @@ html, body {
 				border: 1px solid black;
 				padding: 10px;
 			}
+		}
+	}
+
+	.hits {
+		height: 200px;
+		padding-top: 20px;
+		h1 {
+			text-align: center;
+			font-size: 1.5rem;
+			padding-bottom: 15px;
+			color: @color-1;
+		}
+
+		.ul-grid {
+			.flex-even()
 		}
 	}
 }
