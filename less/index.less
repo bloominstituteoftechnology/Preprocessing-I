@@ -141,6 +141,8 @@ body {
 }
 // variables
 
+@primary-color: #00ffff;
+
 // mixins
 
 .flex-center {
@@ -177,10 +179,16 @@ nav {
 
 	a {
 		text-decoration: none;
-		color: darkblue;
+		color: #0000ff;
 	}
 	a:hover {
 		background-color: royalblue;
+	}
+
+	@media (max-width: 500px) {
+		.flex-column();
+		align-items: center;
+		.spacing();
 	}
 }
 
@@ -196,13 +204,16 @@ nav {
 	.Self-Photo {
 		width: auto;
 		align-items: center;
+		.spacing();
 	}
 
 	.intro {
 		.flex-column();
-		width: 30%;
+		width: 28%;
 		align-items: center;
 		justify-content: center;
+		background-color: #f0fff0;
+		.spacing();
 
 		@media (max-width: 500px) {
 			width: 90%;
