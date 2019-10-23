@@ -142,6 +142,8 @@ body {
 // variables
 
 @primary-color: #00ffff;
+@secondary-color: #fdf5e6;
+@text-color: #000080;
 
 // mixins
 
@@ -179,7 +181,7 @@ nav {
 
 	a {
 		text-decoration: none;
-		color: #0000ff;
+		color: @text-color;
 	}
 	a:hover {
 		background-color: royalblue;
@@ -212,7 +214,7 @@ nav {
 		width: 28%;
 		align-items: center;
 		justify-content: center;
-		background-color: #f0fff0;
+		background-color: @secondary-color;
 		.spacing();
 
 		@media (max-width: 500px) {
@@ -222,13 +224,13 @@ nav {
 		h2 {
 			.spacing();
 			font-size: 2rem;
-			color: navy;
+			color: @text-color;
 		}
 
 		p {
 			.spacing();
 			font-size: 1.4rem;
-			color: navy;
+			color: @text-color;
 		}
 
 		.button {
@@ -245,7 +247,8 @@ nav {
 	width: auto;
 	.spacing();
 	align-items: center;
-	background-color: #fdf5e6;
+	background-color: @secondary-color;
+	color: @text-color;
 
 	h2 {
 		font-size: 2.4rem;
@@ -262,5 +265,8 @@ nav {
 
 .work {
 	.spacing();
-	background-color: ;
+	.flex-column();
+	align-items: center;
+	background-color: @secondary-color;
+	color: @text-color;
 }
