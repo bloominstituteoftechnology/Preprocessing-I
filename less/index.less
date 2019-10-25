@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-}
+	}
 ol, ul {
 	list-style: none;
 }
@@ -50,67 +50,111 @@ table {
 
 /* Set every element's box-sizing to border-box */
 
+body {
+	margin: 0 20%;
+	justify-content: center;
+
+
+	h1 {
+		font-size: 30px;
+		margin-bottom: 10px;
+
+
+		@media(max-width: 500px) {
+
+			font-size: 50px;
+		}
+	}
+
+
+	h2 {
+		font-size: 25px;
+
+	}
+
+	h3 {
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+
+}
+
+
+
 *{
 	color: black;
 }
 
 /* mixins */
-p {
-	font-style: italic;
+.font {
+	font-style: bold;
 }
 
 /*variables */
-@hover-color: rgb(79, 169, 243)
+@hover-color: rgb(79, 169, 243);
 
 /*nesting*/
-.page-container {
-	width: 100% + 10; /*operations*/
-	max-width: 960px;
-	margin: 0 auto;
+header nav {
+	display: flex;
+	justify-content: center;
+	margin: 20px 20px;
+	padding: 20px;
+	margin-bottom: 20px;
 
-	header nav {
-		display: flex;
-		justify-content: flex-end;
-		margin: 20px 20px;
-		padding: 10px;
-		margin-bottom: 20px;
+	a {
+		text-decoration: none;
+		color:  rgb(180, 179, 179);
+		width: 100%; 
+		padding: 20px;
+		font-weight: bolder;
+		font-size: 35px;
 		}
 
-		nav a {
-			text-decoration: none;
-			color:  rgb(180, 179, 179);
-			width: 100%; 
-			text-align: center;
+	a:hover {
+			 color: @hover-color; /*variables */
+			}
+}
 
-			 a:hover {
-				 	color: @hover-color; /*variables */
-			 		}
-				}
-	}
 
-		.nav-links {
-			display: flex;
-			width: 100%; 
-			text-align: center;
-	}
+
 
 .three-paragraphs{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	
 
-	.img {
-		size: auto;
-
+	img {
+		height: 100px;
+		width: 100px;
 	}
-.page-container {
-	.p(); /* mixins */
+
+	.paragraph-container{
+		padding: 5% 0;
+		.font(); /* mixins */
+	}
+
+	a {
+		text-decoration: none;
+		background-color: rgb(181, 241, 241);
+		font-size: 20px;
+		border:  1px solid rgb(153, 201, 241);
+		text-align: center;
+		padding: 10px 10px;
+		width: 25%;
+		margin-top: 10px;
+	}	
+
+	a:hover {
+			 background-color: @hover-color; /*variables */
+			}
 
 }
 
-/*variables */
-
-
+footer {
+	text-align: center;
+	margin-top: 10px;
+}
 
 	
 
