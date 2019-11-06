@@ -47,13 +47,162 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap');
+/* Variables and Mixers */
+@proza:'Proza Libre', sans-serif;
+@open:'Open Sans', sans-serif;
+@specialgrayhover: rgba(128, 128, 128, 0.212);
+@specialgray: rgba(128, 128, 128, 0.925);
+.flex1(){
+	display: flex;
+}
+.titular(){
+	font-family: @proza;
+	font-weight: bold;
+}
+.bodytype(){
+	font-family: @open;
+}
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
 }
+body {
+	margin-left: 10%;
+	margin-right: 6%;
+	width: 67%;
+}
+.container{
+	width: 100%
+	
+}
+header{
+	height: 17%;
+	width: 100%;
+	nav{
+		.flex1();
+		justify-content: flex-end;
+		align-items: center;
+		align-content: flex-end
+	}
+	nav a{
+		text-decoration: none;
+		color: grey;
+		
 
+	}
+	nav a:hover{
+		background-color: wheat;
+		color: white;
+	}
+
+}
+.section1{
+	background-color: #e9ecefcc;
+	color: black;
+	.flex1();
+	flex-direction: column;
+	max-width: 100%;
+	padding: 2%;
+	margin: 1.5% 0;
+	
+	.section1img{
+		width: 40%;
+	}
+	H1{
+		font-size: 3rem;
+		.titular();
+	}
+	H3{
+		font-size: 3rem;
+		font-style: oblique;
+		.titular();
+	}
+	.title{
+		border-bottom: .25px solid rgb(202, 198, 198);
+	}
+	p{
+		margin: .5% 0;
+		font-size: 1rem;
+		.bodytype();
+	}
+	button{
+		background:@specialgray;
+		color: white;
+		border-radius: 5px;
+		font-size: .95rem;
+		font-weight: bold;
+		padding: .5%;
+		.bodytype();
+	}
+	button:hover{
+		background: @specialgrayhover;
+	}
+}
+.section2{
+	.flex1();
+	h3{
+		font-size: 1.7rem;
+		.titular();
+	}
+	.listen-up{
+		width: 50%;
+		line-height: 1.8;
+	}
+	.listen-up p{
+		.bodytype();
+	}
+	.skills{
+		width: 50%;
+		margin: 1.5%;
+	}
+	.skills ul{
+		margin: 1.5%;
+	}
+	.skills li{
+		border: .1px solid lightgray;
+		padding: 3% 1.5%;
+		.bodytype();
+		font-weight: lighter;
+	}
+}
+.section3{
+	margin-top: 3%;
+	h3{
+		font-size: 1.7rem;
+		.titular();
+	}
+	table{
+		.bodytype();
+		border-collapse: collapse;
+		width: 100%;
+	}
+	th{
+		font-weight: bold;
+	}
+	td, th{
+		border-top: .5px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+	tr:nth-child(even) {
+		background-color: #f3f0f0d3;
+	}
+}
+footer{
+	width: 100%;
+	padding: 3%;
+	margin-top: 3%;
+	background: @specialgray;
+	color: white;
+	.flex1();
+	justify-content: center;
+	.titular();
+}
