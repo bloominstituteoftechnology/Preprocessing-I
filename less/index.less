@@ -19,7 +19,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border:0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -57,3 +57,232 @@ html, body {
     height: 100%;
 }
 
+/* Variables */
+@colorOne:#396362;
+@colorTwo:#4b8e8d;
+@colorThree:#f6c89f;
+@colorFour:#ffe7d1;
+
+@fontSet:Roboto Mono, monospace;
+
+// End Variables
+
+/* Mix Ins */
+.flexColumn {
+	display:flex;
+	flex-direction: column;
+}
+
+.sectionSpacing {
+	margin:1% 0 1%;
+	padding:1% 2% 1%;
+}
+
+
+// End Mix Ins
+
+//This contains the whole page and sets global properties.
+.pageContainer {
+	display:flex;
+	flex-direction: row;
+	background:@colorFour;
+	//Sets the font family and sizing for all text on the page
+	p, a, h1, h2 {
+		font-family: @fontSet;
+		color:@colorThree;
+		font-size:1rem;
+	}
+	h1 {
+		font-size:3rem;
+		color: @colorTwo;
+	}
+	h2 {
+		font-size:1.5rem;
+		color: @colorTwo;
+	}
+	p {
+		font-size: 1rem;
+		color:@colorThree;
+		background-color: @colorTwo;
+		border-radius: 5px;
+		.sectionSpacing();
+	}
+
+	@media(max-width:500px){
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		width:100%;
+		img {
+			display:none;
+		}
+		h1 {
+			font-size:2rem;
+			color: @colorTwo;
+		}
+		h2 {
+			font-size:1.2rem;
+			color: @colorTwo;
+		}
+		p {
+			font-size:.8rem;
+			color:@colorThree;
+			background-color: @colorTwo;
+			padding:2%;
+			border-radius: 5px;
+		}
+		a {
+			font-size:.8rem;
+		}
+
+	}
+
+}
+
+header {
+	width:15%;
+	height:18%;
+	padding:.5% .2% .5%;
+	display:flex;
+	background-color: @colorTwo;
+	border-bottom-right-radius:5%;
+	position:fixed;
+	top:0px;
+	nav {
+		.flexColumn();
+		width:70%;
+	}
+	nav a {
+		padding:3% 5% 3% 0;
+		text-align:right;
+	}
+	nav a:hover {
+		background-color: @colorOne;
+		color:@colorFour;
+	}
+	img {
+		height:50%;
+		width:100%;
+		border-radius: 10%;
+	}
+
+	@media(max-width:500px) {
+		position:inherit;
+		width:100%;
+		margin:0 auto;
+		border-radius: 0;
+		nav {
+			margin:0 auto;
+			width:100%;
+			padding:0%;
+		}
+		nav a {
+			padding:3%;
+			text-align: center;
+		}
+	}
+}
+
+.contentContainer {
+	width:70%;
+	margin:0 auto;
+	margin-top:2%;
+	align-items: center;
+	.flexColumn();
+	
+	section, footer {
+		width:85%;
+		margin:0 auto;
+	}
+
+	.whoMe, .workHistory,.skillsContact,footer {
+		.sectionSpacing();
+	}
+
+	@media(max-width:500px) {
+		width: 100%;
+		justify-content: center;
+		section, footer {
+			width:100%;
+		}
+		.billyLicense {
+			display:none;
+		}
+	}
+	
+}
+
+.titleSection {
+	display:flex;
+	flex-wrap:wrap;
+	align-items: center;
+	justify-content: space-around;
+	img {
+		width:30%;
+		border-radius:30%;
+	}
+
+	h1 {
+		width:50%;
+		height:50%;
+		text-align: center;
+	}
+	p {
+		width: 70%;
+		margin:0 auto;
+		.sectionSpacing();
+		text-align: center;
+	}
+
+	@media(max-width:500px) {
+		h1 {
+		width:75%;
+		height:50%;
+		text-align: center;
+		}
+		p {
+			width: 90%;
+			margin:0 auto;
+			margin-top:2%;
+			margin-bottom:3%;
+			text-align: center;
+		}
+		
+	}
+}
+
+.skillsContact {
+	display:flex;
+	justify-content: space-between;
+	div {
+		width:45%;
+		height:100%;
+	}
+	form {
+		text-align:center;
+		p {
+			.sectionSpacing();
+			text-align: left;
+		}
+	}
+
+	input[type=text] {
+		width:100%;
+		padding:2%;
+	}
+	textarea {
+		width:100%;
+		height:100px;
+		resize: none;
+	}
+	@media(max-width:500px) {
+		flex-direction: column;
+		div {
+			width:100%;
+		}
+	}
+}
+
+footer {
+	text-align: center;
+}

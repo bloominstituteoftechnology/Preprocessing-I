@@ -1,1 +1,354 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/* Variables */
+/* Mix Ins */
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.sectionSpacing {
+  margin: 1% 0 1%;
+  padding: 1% 2% 1%;
+}
+.pageContainer {
+  display: flex;
+  flex-direction: row;
+  background: #ffe7d1;
+}
+.pageContainer p,
+.pageContainer a,
+.pageContainer h1,
+.pageContainer h2 {
+  font-family: Roboto Mono, monospace;
+  color: #f6c89f;
+  font-size: 1rem;
+}
+.pageContainer h1 {
+  font-size: 3rem;
+  color: #4b8e8d;
+}
+.pageContainer h2 {
+  font-size: 1.5rem;
+  color: #4b8e8d;
+}
+.pageContainer p {
+  font-size: 1rem;
+  color: #f6c89f;
+  background-color: #4b8e8d;
+  border-radius: 5px;
+  margin: 1% 0 1%;
+  padding: 1% 2% 1%;
+}
+@media (max-width: 500px) {
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .pageContainer img {
+    display: none;
+  }
+  .pageContainer h1 {
+    font-size: 2rem;
+    color: #4b8e8d;
+  }
+  .pageContainer h2 {
+    font-size: 1.2rem;
+    color: #4b8e8d;
+  }
+  .pageContainer p {
+    font-size: 0.8rem;
+    color: #f6c89f;
+    background-color: #4b8e8d;
+    padding: 2%;
+    border-radius: 5px;
+  }
+  .pageContainer a {
+    font-size: 0.8rem;
+  }
+}
+header {
+  width: 15%;
+  height: 18%;
+  padding: 0.5% 0.2% 0.5%;
+  display: flex;
+  background-color: #4b8e8d;
+  border-bottom-right-radius: 5%;
+  position: fixed;
+  top: 0px;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+header nav a {
+  padding: 3% 5% 3% 0;
+  text-align: right;
+}
+header nav a:hover {
+  background-color: #396362;
+  color: #ffe7d1;
+}
+header img {
+  height: 50%;
+  width: 100%;
+  border-radius: 10%;
+}
+@media (max-width: 500px) {
+  header {
+    position: inherit;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+  header nav {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0%;
+  }
+  header nav a {
+    padding: 3%;
+    text-align: center;
+  }
+}
+.contentContainer {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.contentContainer section,
+.contentContainer footer {
+  width: 85%;
+  margin: 0 auto;
+}
+.contentContainer .whoMe,
+.contentContainer .workHistory,
+.contentContainer .skillsContact,
+.contentContainer footer {
+  margin: 1% 0 1%;
+  padding: 1% 2% 1%;
+}
+@media (max-width: 500px) {
+  .contentContainer {
+    width: 100%;
+    justify-content: center;
+  }
+  .contentContainer section,
+  .contentContainer footer {
+    width: 100%;
+  }
+  .contentContainer .billyLicense {
+    display: none;
+  }
+}
+.titleSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.titleSection img {
+  width: 30%;
+  border-radius: 30%;
+}
+.titleSection h1 {
+  width: 50%;
+  height: 50%;
+  text-align: center;
+}
+.titleSection p {
+  width: 70%;
+  margin: 0 auto;
+  margin: 1% 0 1%;
+  padding: 1% 2% 1%;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .titleSection h1 {
+    width: 75%;
+    height: 50%;
+    text-align: center;
+  }
+  .titleSection p {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    text-align: center;
+  }
+}
+.skillsContact {
+  display: flex;
+  justify-content: space-between;
+}
+.skillsContact div {
+  width: 45%;
+  height: 100%;
+}
+.skillsContact form {
+  text-align: center;
+}
+.skillsContact form p {
+  margin: 1% 0 1%;
+  padding: 1% 2% 1%;
+  text-align: left;
+}
+.skillsContact input[type=text] {
+  width: 100%;
+  padding: 2%;
+}
+.skillsContact textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+@media (max-width: 500px) {
+  .skillsContact {
+    flex-direction: column;
+  }
+  .skillsContact div {
+    width: 100%;
+  }
+}
+footer {
+  text-align: center;
+}
