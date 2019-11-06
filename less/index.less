@@ -54,6 +54,128 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+header{
+	width: 100%;
+	// display: flex;
+	
+	nav{
+		width: 100%;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		a{
+			margin: 2% 0;
+			font-size: 5rem;
+			width: 95%;
+			border: solid gray 1px;
+			text-decoration: none;
+			color: #857;
+			text-align: center;
+			@media(min-width: 800px){
+				width: auto;
+			}
+		}//a dies here
+		@media(min-width: 800px){
+			flex-flow: row nowrap;
+			justify-content: space-between;
+		}
+	}//nav dies here
+
+	h1{
+		font-size: 10rem;
+		text-align: center;
+	}
+
+
+}//header dies here
+
+p, h2, h3, h4{
+	font-size: 4rem;
+}
+
+.main{
+	display: flex;
+	width: 100%;
+	// flex-direction: column;
+}
+.title(){
+	color: #654;
+	text-align: center;
+	width: 100%;
+}
+.job(){
+	width: 80%;
+	border: solid black 2px;
+	margin: 2% 0;
+	h3{
+		.title();
+	}
+	h4{
+		.title();
+		color: #547;
+	}
+	
+	background: #298;
+	text-align: justify;
+	padding: 1.25%;
+}
+
+.full-time{
+	display: flex;
+	flex-flow: wrap row;
+	width: 100%;
+
+	h2{
+		width: 100%;
+		text-align: center;
+		border-bottom: black 2px solid;
+	}
+	.full{
+		width: 100%;
+		border: solid black 2px;
+		margin: 2% 0;
+		h3{
+			.title();
+		}
+		p{
+			margin-bottom: .5%;
+		}
+		h4{
+			.title();
+			color: #547;
+		}
+		background: #298;
+		text-align: justify;
+		padding: 1.25%;
+		@media(min-width: 800px){
+			width: 32%;
+			margin: 0.5%
+		}
+	}
+}
+.projects{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	.project{
+		.job();
+		width: 100%;
+		background: #435;
+	}
+}
+.part-time{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	.part{
+		.job();
+	}
+}
+.contact{
+	font-size: 1rem;
+	color: red;
 }
 
