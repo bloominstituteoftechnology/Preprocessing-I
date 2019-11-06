@@ -19,8 +19,8 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
+	// border: 0;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -47,13 +47,55 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+// end reset
+
+
+//mixins
+.centerHor() {
+	display:flex;
+	justify-content: center;
+}
+
+
+
+
+
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	border: 1px solid red;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+.container {
+	width: 46%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+header {
+	.navDiv {
+	display: flex;
+	justify-content: flex-end;
+	
+		nav {
+			margin-top: 3%;
+			width: 35%;
+			display: flex;
+			justify-content: space-between;
+
+			a {
+				text-decoration: none;
+
+			}//end a
+		}//end nav
+	}//end navDiv
+}//end header
 
