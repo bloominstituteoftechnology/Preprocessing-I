@@ -80,24 +80,27 @@ h2, h3, h4, h5, h6{
 
 /*Variables*/
 
-@background: #04402F;
-@accentcolor: #05593A;
+@background: rgba(4, 64, 47, 0.959);
+@accentcolor: rgb(5, 89, 58);
 @linkcolor: #D96B0B;
-@accentcolor2: #07598C;
-@accentcolor3: #BF4141;
+@accentcolor2: rgb(7, 68, 105);
+@accentcolor3: rgba(0, 52, 85, 0.808);
 
 /*Mix-Ins*/
 
 .headerStyle(){
-	padding: 5%;
+	padding: 3%;
 	color: white;
 	line-height: 2;
+	text-shadow: -3px 3px #000000;
 }
 
 .generalStyle(){
-	line-height: 1;
+	line-height: 1.75;
 	margin: auto;
 	padding: 3%;
+	text-align: justify;
+	color: rgba(255, 255, 255, 0.404);
 }
 
 .linkStyle(){
@@ -110,6 +113,8 @@ h2, h3, h4, h5, h6{
 .mediaStyle(){
 	font-size: 1.25rem;
 }	
+
+
 
 /*Nav Section*/
 header{
@@ -148,15 +153,17 @@ header{
 
 			h1, h2, p, a{
 				font-size: 1rem;
-			}
+			
+			}//this closes h1,h2,p,a
 
-		}
+		}//this closes @media
 
 	img{
 		max-width: 30%;
 		padding: 2%;
 		
 	}//this closes img
+		
 		div{
 			display: flex;
 			flex-direction: column;
@@ -172,5 +179,95 @@ header{
 
 /*Intro Section*/
 #intro{
+	background-color: @accentcolor3;
+	.generalStyle();
+	padding-bottom: 5%;
 
-}
+	@media (max-width: 500px){
+		.mediaStyle()
+	}//this closes @media
+
+	h2{
+		.headerStyle();
+
+		@media (max-width: 500px){
+			.mediaStyle();
+		
+		}//this closes @media
+	
+	}//this closes h2
+
+	p{
+		@media (max-width: 500px){
+			font-size: 1rem;
+		
+		}//this closes @media
+	}//this closes p
+}//this closes intro
+
+/*Main Content Section*/
+#main-content{
+	line-height: 1.75;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	background-color: @accentcolor;
+	
+	.left-side{
+		display: flex;
+		flex-direction: column;
+		
+		.education{
+		background-color: @accentcolor2;
+		color: white;
+		width: 50%;
+
+		}//this closes education
+
+		.awards{
+		background-color: @accentcolor2;
+		color: white;
+		width: 50%;
+
+		}//this closes awards
+	}//this closes left-side
+
+	.right-side{
+		display: flex;
+		flex-direction: column;
+
+		.skills{
+			background-color: rgba(47, 101, 134, 0.521);
+			color: white;
+			width: 50%;
+
+		}//this closes skills
+
+		.activities{
+		background-color: rgba(47, 101, 134, 0.521);
+		color: white;
+		width: 50%;
+		
+		}//this closes activities
+
+
+	}//this closes right-side
+
+	.right-side{
+		background-color: rgba(27, 155, 235, 0.521);
+		color: white;
+		width: 50%;
+	
+	}//this closes right-side
+
+	@media (max-width: 500px){
+		.mediaStyle();
+		h2, p{
+			font-size: 1rem;
+		
+		}//this closes h2p for @media
+	}//this closes @media for whole section
+
+}//this closes main content
