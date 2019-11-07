@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -149,8 +149,9 @@ html {
 .navigation {
   max-width: 100%;
   width: 94%;
-  margin: 3%;
+  margin: 0 3% 3% 3%;
   display: flex;
+  padding-top: 3%;
   justify-content: space-between;
 }
 .navigation a {
@@ -163,8 +164,9 @@ html {
   border-radius: 10%;
 }
 .navigation a:hover {
-  background-color: black;
-  color: white;
+  background-color: lightgrey;
+  transition: ease-in;
+  opacity: 0.8;
 }
 .links {
   display: flex;
@@ -228,9 +230,10 @@ html {
 }
 /******* Name *******/
 #info {
-  height: 100vh;
-  background-color: beige;
-  opacity: 0.8;
+  background-color: whitesmoke;
+}
+#info #none {
+  display: none;
 }
 #info .about {
   max-width: 100%;
@@ -238,5 +241,68 @@ html {
   margin: 0 10%;
   text-align: center;
   color: black;
-  padding-top: 25%;
+  padding-top: 5%;
+}
+#info .about h2 {
+  font-size: 3rem;
+}
+#info .about p {
+  font-size: 2rem;
+  margin-top: 4%;
+  text-align: start;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5%;
+}
+.flex .things {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.flex .things h3 {
+  font-size: 2rem;
+}
+.flex .things img {
+  max-width: 100% !important;
+  height: 300px !important;
+  border: 1px solid black !important;
+  margin: 3% 0 !important;
+}
+#a-img {
+  max-width: 100%;
+  height: 300px;
+  border: 1px solid black;
+  margin: 3% 0;
+  width: 100%;
+}
+#a-img:hover {
+  border-radius: 60%;
+  transition: ease-in;
+  transition-delay: 0.1s;
+}
+img:hover {
+  box-shadow: 0 0 15px grey;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 30%;
+  margin-right: 20%;
+  font-size: 2rem;
+}
+.form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: flex-start;
+  margin: 2% 0;
+}
+#contact {
+  background-image: url(../Images/back.jpg);
+  height: 100vh;
 }
