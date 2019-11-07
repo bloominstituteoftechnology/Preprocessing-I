@@ -60,24 +60,26 @@ table {
 html, body {
 	height: 100%;
 	font-size: 62.5%;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Ruluko', sans-serif;
 }
 
 p{
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 }
 
 h1{
-	font-size: 3rem;
+	font-size: 4rem;
+	font-family: 'Montserrat', sans-serif;
 } 
 
 h2, h3, h4, h5, h6{
-	font-size: 2rem;
+	font-size: 3rem;
+	font-family: 'Philosopher', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Graduate|Montserrat|Philosopher|Roboto+Slab|Ruluko|Tenor+Sans&display=swap');
 
+</style>
 /*Variables*/
 
 @background: rgba(4, 64, 47, 0.959);
@@ -265,15 +267,41 @@ header{
 
 }//this closes main content
 
-/*Work History Section*/
-#work-history{
+/*Bottom Section*/
+#bottom-section{
 	background-color: @accentcolor3;
+	display: flex;
+	
 	.generalStyle();
+		h2{
+			.headerStyle();
+		}//this closes h2
+
+	.work-history{
+		width: 50%;
+	
+	}//this closes work-history
 
 	.reference{
-		background-color: pink;
-		padding: 5%;
-	}
+		background-color: @background;
+		width: 50%;
+		
+	}//this closes reference
+
+	@media (max-width:500px){
+		h2, p{
+			.mediaStyle();
+			font-size: 1rem;
+		}//this closes @ media h2p
+	}//this closes @media for whole section
 	
 
+}//this closes bottom section
+
+/*Footer*/
+footer{
+	background-color: @accentcolor;
+	.generalStyle();
+	text-align: center;
+	padding: 2.5%;
 }
