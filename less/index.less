@@ -131,99 +131,112 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-box-sizing: border-box;
-
+  box-sizing: border-box;
 }
 
 html,
 body {
-height: 100%;
-font-size: 62.5%;
+  height: 100%;
+  font-size: 62.5%;
 }
 
+@borderColor: #f4f4f4;
 .font-Size(@Size) {
-font-size: @Size;
+  font-size: @Size;
 }
 @mobile: ~"(max-width:500px)";
+
 .View(@width,@margin) {
-width: @width;
-margin: @margin;
+  width: @width;
+  margin: @margin;
 }
 
 .Flex(@display,@justify,@align,@direction) {
-display: @display;
-justify-content: @justify;
-align-items: @align;
-flex-direction: @direction;
+  display: @display;
+  justify-content: @justify;
+  align-items: @align;
+  flex-direction: @direction;
 }
 /* header start*/
 .container {
-.View(50%, 0 auto);
+  @media @mobile {
+    .View(70%, 0 auto);
+  }
+  .View(50%, 0 auto);
 
-nav {
-padding: 3% 0;
-.font-Size(2rem);
-.Flex(flex, flex-end, null, null);
-}
-a {
-text-decoration: none;
-color: black;
-padding: 0 2%;
-}
-/* header end*/
+  nav {
+    padding: 3% 0;
+    .font-Size(2rem);
+    .Flex(flex, flex-end, null, null);
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 0 2%;
+  }
+  /* header end*/
 
-/* section about me with picture*/
+  /* section about me with picture*/
 }
 .myself {
-padding-top: 2%;
-width: 20%;
+  padding-top: 2%;
+  width: 35%;
 }
 
 .aboutme {
-background: #f4f4f4;
-.font-Size(1.8rem);
-.Flex(flex, null, null, column);
+  background: @borderColor;
+  .font-Size(1.8rem);
+  .Flex(flex, null, null, column);
 
-.metop {
-padding: 3% 3% 0 3%;
+  .metop {
+    padding: 3% 3% 0 3%;
 
-p {
-	padding-bottom: 3%;
-	border-bottom: 1px solid gray;
-}
-}
+    p {
+      padding-bottom: 3%;
+      border-bottom: 1px solid gray;
+    }
+  }
 
-h1 {
-.font-Size(3.5rem);
-}
-.mebottom {
-padding: 3%;
-p {
-	padding-bottom: 1.5%;
-}
-}
+  h1 {
+    .font-Size(3.5rem);
+  }
+  .mebottom {
+    padding: 3%;
+    p {
+      padding-bottom: 1.5%;
+    }
+  }
 
-button {
-.font-Size(2rem);
-padding: 1%;
-color: white;
-background: #878989;
-border-radius: 10%;
-}
+  button {
+    .font-Size(2rem);
+    padding: 1%;
+    color: white;
+    background: #878989;
+    border-radius: 10%;
+  }
 }
 /*section about me with picture end*/
 
 /* middle section start*/
 
 .middle-section {
+  @media @mobile {
+    flex-direction: column;
+    padding-bottom: 15%;
+  }
+
   .font-Size(2rem);
   display: flex;
-  padding-bottom:5%;
+  padding-bottom: 5%;
   h2 {
     .font-Size(3rem);
   }
   .Listen {
     width: 70%;
+
+    @media @mobile {
+      padding: 4% 0;
+    }
 
     p {
       padding-right: 2%;
@@ -238,14 +251,14 @@ border-radius: 10%;
     flex-direction: column;
     height: 100%;
     justify-content: space-around;
-    border: 2px solid #f4f4f4;
+    border: 2px solid @borderColor;
     li:last-child {
       border-bottom: 0;
     }
   }
   li {
     padding-bottom: 2%;
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid @borderColor;
   }
 }
 
@@ -253,18 +266,79 @@ border-radius: 10%;
 
 /* Work History start*/
 
-.workhistory{
-	display: flex;
+.workhistory {
+  h3 {
+    font-size: 2rem;
+    padding-bottom: 1.5%;
+  }
 
-	h3{
-		font-size: 2rem;
-	}
+  table {
+    text-align: center;
 
-	ul{
-		font-size:2rem;
-		width:100%;
-	}
+    font-size: 2rem;
+    th,
+    td {
+      padding-bottom: 3%;
+      border-bottom: 1px solid @borderColor;
+    }
+    th {
+      border-top: 1px solid @borderColor;
+    }
+    .tr1,
+    .tr3 {
+      background-color: #f4f4f4;
+    }
+  }
+}
+/* work history end*/
 
-	
+/* footer*/
 
+footer {
+  background-color: #878989;
+  height: 8vh;
+  text-align: center;
+
+  p {
+    font-size: 2rem;
+    padding: 3% 0;
+    color: white;
+  }
+}
+
+.contact {
+  @media @mobile {
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    a {
+      padding: 4% 0;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2% 0;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    padding-bottom: 3%;
+
+    a:nth-child(1) {
+      color: #24292e;
+    }
+    a:nth-child(2) {
+      background: blue;
+      color: white;
+    }
+    a:nth-child(3) {
+      color: red;
+    }
+  }
 }
