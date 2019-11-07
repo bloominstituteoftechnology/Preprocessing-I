@@ -20,7 +20,8 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	// font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -50,19 +51,173 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	// box-sizing: border-box;
+	font-size: 62.5%;
 }
 
+/* vars */
+
+
+@bp-1: 55rem;
+@bp-2: 42rem;
+@width-1: 34rem;
+@width-2: 24rem;
+@height-1: 19.1rem;
+@height-2: 13.5rem;
+
+/*
+
+/* Extra small devices (phones, 600px and down) */
+// @media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {...}
+
+/* mix-ins */
+
+.original-size(){
+	// width: 42rem;
+	width: 100%;
+	height: 23.6rem; 
+}
+
+.flex-able-centered(){
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* applied */
 
 html, body {
-    height: 100%;
+	height: 100%;
+	margin: 0% auto;
 }
 
-html {
-	background-color: red;
+h1 {
+	font-size: 1.8rem;
+	text-align: center;
+	color: white;
 }
 
+h2 {
+	font-size: 1.6rem;
+	text-align: center;
+	color: white;
+}
+p {
+	color: lightgrey;
+}
 body {
-	background-color: white;
+	background-image: url("../img/castle.jpg");
+	background-size: 100%;
+}//body
+
+.container {
+	background-color: black;
+	opacity: 80%;
 	width: 80%;
+	margin: 0% auto;
+	border-radius: 2rem;
 }
+
+header {
+	.flex-able-centered();	
+
+	nav {
+		margin: 2% 0;
+		a {
+			text-decoration: none;
+			letter-spacing: .05rem;
+			color: white;
+			background-color: grey;
+			border-radius: 10px;
+			padding: 1rem;
+		}
+		a:hover {
+			color: black;
+		}
+	}
+
+} // header
+
+.headlines {
+	margin: 2%;
+}
+
+.hero {
+	.flex-able-centered();		
+	margin: 1rem;
+} // hero
+
+.crimpSrc{
+	// width: 42rem;
+	margin: 2% 0;
+	display: flex;
+	flex-shrink: inherit;
+	// border: 5px dotted red;
+	border-radius: 2rem;
+	background-color: darkslategrey;
+	color: lightgrey;
+	img {
+		padding: 2%;
+		border-radius: 2rem;
+		width: 40%;
+		height: 40%;
+	}
+	padding: 2%;
+	p {
+		margin: 0 auto;
+		// text-align: center;
+		line-height: 1.1;
+		flex-shrink: inherit;
+		width: inherit;
+	} //p
+
+} //crimp
+
+.video-space {
+	.flex-able-centered();
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+	height: auto;
+	width: auto;
+	opacity: 90%;
+	.ytCrimp {
+		height: auto;
+		margin: 0% auto;
+	}
+	iframe {
+		border-radius: 2rem;
+		@media only screen and (min-width: 992px){
+			.original-size();
+		} // desktop
+
+		@media only screen and (min-width: 768px) {
+			.original-size();
+		} // tablet
+
+		@media only screen and (min-width: 600px) {
+			.original-size();
+		} // phone
+
+	} // iframe
+
+	@media(max-width: @bp-1) {
+		width: @width-1 + 1rem;
+	} // media (first breakpoint)
+	@media(max-width: @bp-2) {
+		width: @width-2 + 1rem;
+	} // media (second breakpoint)
+
+}// video-space
