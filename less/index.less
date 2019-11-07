@@ -21,7 +21,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'Open Sans', sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -50,10 +50,157 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	max-width:100%;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: #e3d8e2;
+}
+@main-color:#9b8ce6;
+@second-color: #454;
+
+.flexing{
+	display:flex;
+	justify-content: center;
+}
+.space{
+	margin: 2%;
+	padding: 1%;
+}
+.wh{
+	width:90%;
+	height:25%;
 }
 
+h1{
+	color:@main-color;
+	font-size: 3em;
+	padding-bottom: 1%;
+	
+	
+	
+}
+h2{
+	color:@second-color;
+	font-size:1.3em;
+}
+
+p {
+	color: @second-color;
+	padding:2%;
+}
+
+
+
+
+header{
+	background-color: @main-color;
+	padding:3%;
+	@media (max-width: 500px){
+		.flexing();
+	}
+
+	 nav{
+	.flexing();
+	@media (max-width: 500px){
+		display:flex;
+		flex-direction: column;
+	}
+
+	  a{
+		color:@second-color;
+		.space();
+
+	
+
+	  }//end a	
+	}//end nav
+}//end header//
+
+a:hover{
+	color:white;
+}
+
+.about {
+	
+	.wh();
+	border: 1px solid @main-color;
+	margin: 5%;
+	line-height: 1.2;
+
+    .about div {
+		.space();
+
+		
+	
+		.myInfo{
+			.space();
+			padding: 3%;
+			
+		}//myInfo//
+	}//about//
+} // end section
+
+h1, h2 ,h3 {
+	text-align: center;
+	color: @second-color;
+  } // end h
+
+.middleCont{
+	.wh();
+	.space();
+	text-align: center;
+	background-color: @main-color;
+	margin: 5%;
+
+	
+	.Skills{
+		line-height: 2;
+	
+	  div{
+		border-bottom: 1px solid @second-color;
+	    
+	  }//div ends//
+	}//end skills
+}//middlecont//
+	
+
+
+.myImg img{
+		width:100px;
+		height: 100px;
+		border-radius: 50%;
+		position:relative;
+		overflow: hidden;
+		margin: 0 auto;
+	
+	}//myImg img closes//
+
+.workHist{
+	.space();
+	//.wh();
+	margin: 5%;
+	border: 1px solid @main-color;
+	
+
+
+ .History{
+	text-align: center;
+
+	div{
+		border-bottom: 1px solid @main-color;
+	}//div ends//
+	
+ }	//History ends//
+}//workHist ends//
+ 
+.copy div {
+	text-align: center;
+	.space();
+	.wh();
+
+}
