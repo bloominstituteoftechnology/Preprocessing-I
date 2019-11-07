@@ -21,7 +21,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 62.5%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -29,9 +28,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
+
 ol, ul {
 	list-style: none;
 }
@@ -50,89 +47,194 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
+	line-height: 1.5em;
+	font-family: 'McLaren', cursive;
 	box-sizing: border-box;
 	h1 {
-		font-size: 5rem;
+		font-size: 4.5rem;
 	}
 	h2 {
-		font-size: 3rem;
-	}
-	a {
-		font-size: 1.3rem;
+		font-size: 2.5rem;
 	}
 
+	
 }
 
-html, body {
-	height: 100%;
-
-}
 
 
 
 // Our code starts here
-
-.mainContainer {
-
-	flex-flow: wrap column;
-	width: 100%;
-	margin: 0;
-	background-image: url("images/bg.jpg");
+//Mixins
+.textBox(@flex, @justify, @direction, @align, @font-size) {
+	display: @flex;
+	justify-content: @justify;
+	flex-direction: @direction;
+	align-items: @align;
+	font-size:@font-size;
+	border: 2px solid black;
 }
 
-header {
+@htmlColor: rgb(53, 117, 190);
+@cssColor: rgb(230, 230, 68);
+@jsColor: rgb(63, 218, 63);
+//CODE
+.mainContainer {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: column;
-	border: 2px solid black;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 1200px;
+	max-width: 100%;
+	margin: 0 auto;
 
-	@media (9)
-	
-	nav {
-		display: flex;
-		justify-content: space-evenly;
-		padding: 1rem;
-		margin-bottom: 4rem;
-		background-color: black;
+	header {
 
-		a {
-			text-decoration: none;
-			color:rgb(217, 255, 0);
-			border: 3px solid rgb(217, 255, 0);
-			padding: .5rem;
-			border-radius: 5px;
-		}//END of ANCHORS
-	}//END OF NAV
+		padding: 0 auto;
+		color: white;
+		background-color: rgb(42, 40, 40);
+		.textBox(flex, center, column, center, 2rem);
+		width: 100%;
+		border: none;
 
-	
+		img {
+			height: 100%;
+			width: 25%;
+		}
+		.navBar {
+			.textBox(flex, flex-end, row, center, 2rem);
+			width: 100%;
+			height: 3em;
+			border: none;
+			nav{
+				display: flex;
+				justify-content: space-between;
+				text-decoration: none;
 
-	.topHeader {
-		display: flex;
-		flex-direction: row-reverse;
-		justify-content: space-around;
+				a{
+					padding: 5em;
+					color: rgb(238, 90, 90);
+
+					i{
+						font-size: 4.5rem;
+					}
+				}
+			}
+		}
+
+		.headerInfo {
+			.textBox(flex, space-between, row, center, 2rem);
+			width: 100%;
+			border: none;
+
+		.webDev {
+			padding-right: 12em;
+			align-self: flex-start;
+
+			h1{
+				padding-top: 0.5em;
+			}
+
+			h2 {
+
+				text-decoration: underline;
+			}
+
+			ul {
+				.textBox(flex, space-between, row, flex-start, 3rem);
+				border: none;
+			
+
+				li {
+					width: 33.3%;
+
+					font-size: 3rem;
+					padding: 2em 2em 0 0;
+
+					p {
+						font-weight: 750;
+					}
+
+						#html {
+							visibility: hidden;
+						}
+						#less {
+							visibility: hidden;
+						}
+						#javascript {
+							visibility: hidden;
+						}
+						.fa-html5 {
+							color: @htmlColor;
+						}
+						.fa-less {
+							color: @cssColor;
+						}
+						.fa-js-square {
+							color: @jsColor;
+						}
+						#htmlOnHover:hover ~ #html{
+							visibility: visible;
+							color: @htmlColor;
+						}
+
+						#lessOnHover:hover ~ #less{
+							visibility: visible;
+							color: @cssColor;
+						}
+						#javascriptOnHover:hover ~ #javascript{
+							visibility: visible;
+							color:@jsColor;
+						}
+					}
+				}
+
+			}
+
+		}
+	}
+
+
+
+
+
+
+	.backgroundInfo {
+		.textBox(flex, center, column, center, 2rem);
+		width: 100%;
+		border-top: none;
+
+
+		.textBox {
+			.textBox(flex,center, column, center, 2rem);
+			padding: 2.5em 5em;
+			text-align: center;
+			font-size: 2.5rem;
+
+			font-weight: 600;
+
+			p{
+				border: 2px solid black;
+				padding: 1em;
+			}
+
+			h2{
+				padding-bottom: 1em;
+			}
+		}
 		
 	}
 
-	.headerImg img {
+	.workHistory {
+		.textBox(flex, center, column, center, 2rem);
+		
 
-		width: 20%;
-	}
+		.jobList{
+			.textBox(flex, center, column, center, 2rem);
 
-	.webDev {
-		display: flex;
-		flex-direction: column;
+			ol {
+				display: flex;
+				font-size: 4rem;
+			}
+		}
 	}
-	
-	img {
-		margin-top: -4rem;
-		height: 20rem;
-		width: 20rem;
-	}
-
-	ul {
-		display: flex;
-		flex-direction: column;
-		font-size: 1.8rem;
-		text-decoration: 
-	}
-}//END OF HEADER
+}

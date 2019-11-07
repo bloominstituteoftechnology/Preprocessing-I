@@ -87,7 +87,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 62.5%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -103,9 +102,6 @@ menu,
 nav,
 section {
   display: block;
-}
-body {
-  line-height: 1;
 }
 ol,
 ul {
@@ -128,63 +124,178 @@ table {
 }
 /* Set every element's box-sizing to border-box */
 * {
+  line-height: 1.5em;
+  font-family: 'McLaren', cursive;
   box-sizing: border-box;
 }
 * h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 * h2 {
-  font-size: 3rem;
-}
-* a {
-  font-size: 1.3rem;
-}
-html,
-body {
-  height: 100%;
+  font-size: 2.5rem;
 }
 .mainContainer {
   display: flex;
   flex-direction: column;
-  margin: 2% 2%;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
 }
-header {
-  display: block;
-  justify-content: column;
+.mainContainer header {
+  padding: 0 auto;
+  color: white;
+  background-color: #2a2828;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  border: 2px solid black;
+  width: 100%;
+  border: none;
+}
+.mainContainer header img {
+  height: 100%;
+  width: 25%;
+}
+.mainContainer header .navBar {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  border: 2px solid black;
+  width: 100%;
+  height: 3em;
+  border: none;
+}
+.mainContainer header .navBar nav {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.mainContainer header .navBar nav a {
+  padding: 5em;
+  color: #ee5a5a;
+}
+.mainContainer header .navBar nav a i {
+  font-size: 4.5rem;
+}
+.mainContainer header .headerInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  border: 2px solid black;
+  width: 100%;
+  border: none;
+}
+.mainContainer header .headerInfo .webDev {
+  padding-right: 12em;
+  align-self: flex-start;
+}
+.mainContainer header .headerInfo .webDev h1 {
+  padding-top: 0.5em;
+}
+.mainContainer header .headerInfo .webDev h2 {
+  text-decoration: underline;
+}
+.mainContainer header .headerInfo .webDev ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 3rem;
+  border: 2px solid black;
+  border: none;
+}
+.mainContainer header .headerInfo .webDev ul li {
+  width: 33.3%;
+  font-size: 3rem;
+  padding: 2em 2em 0 0;
+}
+.mainContainer header .headerInfo .webDev ul li p {
+  font-weight: 750;
+}
+.mainContainer header .headerInfo .webDev ul li #html {
+  visibility: hidden;
+}
+.mainContainer header .headerInfo .webDev ul li #less {
+  visibility: hidden;
+}
+.mainContainer header .headerInfo .webDev ul li #javascript {
+  visibility: hidden;
+}
+.mainContainer header .headerInfo .webDev ul li .fa-html5 {
+  color: #3575be;
+}
+.mainContainer header .headerInfo .webDev ul li .fa-less {
+  color: #e6e644;
+}
+.mainContainer header .headerInfo .webDev ul li .fa-js-square {
+  color: #3fda3f;
+}
+.mainContainer header .headerInfo .webDev ul li #htmlOnHover:hover ~ #html {
+  visibility: visible;
+  color: #3575be;
+}
+.mainContainer header .headerInfo .webDev ul li #lessOnHover:hover ~ #less {
+  visibility: visible;
+  color: #e6e644;
+}
+.mainContainer header .headerInfo .webDev ul li #javascriptOnHover:hover ~ #javascript {
+  visibility: visible;
+  color: #3fda3f;
+}
+.mainContainer .backgroundInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  border: 2px solid black;
+  width: 100%;
+  border-top: none;
+}
+.mainContainer .backgroundInfo .textBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  border: 2px solid black;
+  padding: 2.5em 5em;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.mainContainer .backgroundInfo .textBox p {
+  border: 2px solid black;
+  padding: 1em;
+}
+.mainContainer .backgroundInfo .textBox h2 {
+  padding-bottom: 1em;
+}
+.mainContainer .workHistory {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
   border: 2px solid black;
 }
-header nav {
+.mainContainer .workHistory .jobList {
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  padding: 1rem;
-  margin-bottom: 4rem;
-  background-color: black;
-  width: 100%;
-}
-header nav a {
-  text-decoration: none;
-  color: #d9ff00;
-  border: 3px solid #d9ff00;
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-header .topHeader {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-}
-header .webDev {
-  display: flex;
+  justify-content: center;
   flex-direction: column;
-}
-header img {
-  margin-top: -4rem;
-  height: 20rem;
-  width: 20rem;
-}
-header ul {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   font-size: 2rem;
+  border: 2px solid black;
+}
+.mainContainer .workHistory .jobList ol {
+  display: flex;
+  font-size: 4rem;
 }
