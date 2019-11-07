@@ -53,7 +53,242 @@ table {
     box-sizing: border-box;
 }
 
+@main-font: 'Roboto', sans-serif;
+
 html, body {
     height: 100%;
 }
 
+h1, h2, h3, h4, h5 {
+	font-family: @main-font
+}
+
+body {
+	background-color: rgb(255, 255, 255);
+}
+
+.parent {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+
+	nav {
+		height: 7em;
+		padding: .5em;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+			@media (max-width: 500px) {
+			display: flex;
+        	flex-direction: column-reverse;
+        	height: 50%;
+        	justify-content: center;
+			}
+		display {
+			width: 100%;
+			height:7em;
+		} //This closes the display
+	}//This closes the nav tag
+}//This closes the parent tag
+
+.buttons {
+    padding: 5px 32px 5px 32px;
+    border-radius: 5%;
+    font-size: 16px;
+	color: black;
+}
+
+.buttons:hover {
+	color: white;
+	border-radius: 8%;
+	border: 1px solid black;
+	background-color: black;
+}
+
+.main-content {
+	border: 1px solid black;
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	background-color: rgb(231, 230, 230);
+
+	h1 {
+		height: 80%;
+		width: 100%;
+		text-align: center;
+		font-size: 50px;
+	}//This closes the h1 tag
+	
+	h2 {
+		font-size: 20px;
+		text-align: center;
+		padding: 2px;
+		border-bottom: 1px solid black;
+	}//This closes the h2 tag
+}//This closes the main content tag
+
+p {
+	font-size: 16px;
+	text-align: center;
+	padding: 1%;
+}
+
+.main-image {
+    width: 50%;
+    height: 70%;
+	justify-content: right;
+	margin: 0 auto;
+	padding: 1%;
+
+	.top-img {
+		display: flex;
+		align-content: right;
+		width: 100%;
+		height: 100%;
+
+		@media (max-width: 500px) {
+			display: none;
+		}//This closes the media query
+	}//This closes the top img tag
+}//This closes the main image tag
+
+button {
+	text-align: center;
+	top: -100px;
+	border: 1px solid black;
+	height: 35px;
+	width: 180px;
+    font-size: 16px;
+    border-radius: 8%;
+    background-color: rgb(177, 169, 169);
+	color: white;
+}//This closes the button tag
+
+button:hover {
+	color: black;
+    border-radius: 8%;
+    border: 1px solid black;
+    background-color: rgb(71, 69, 71);
+    transition: 1s ease-in-out;
+}
+
+.button-class {
+	text-align: center;
+	width: 100%;
+}
+
+.middle-content {
+	display:flex;
+	flex-direction: row;
+	width:80%;
+	height:40%;
+	margin: 0 auto;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}//This closes the media query
+
+	.about-me {
+		line-height: 32px;
+		width: 33.33%;
+		height: 100%;
+		background-color: lightgray;
+		margin: 5px;
+	}//This closes the about me tag
+
+	h3 {
+		text-align: center;
+		width: 100%;
+		font-size: 24px;
+		padding: 5%;
+	}//This closes the h3 tag
+
+	.skills {
+		width:33.33%;
+		height:100%;
+		line-height: 32px;
+		padding: 5px;
+		background-color: gray;
+		margin: 5px;
+	}//This closes the skills tag
+
+	.contact-me {
+		width:33.33%;
+		height:100%;
+		background-color: gray;
+		margin: 5px;
+		padding: 5px;
+		line-height: 32px;
+	}//This closes the contact me tag
+}//This closes the middle content tag
+
+h4 {
+	font-size: 32px;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.history {
+	display:flex;
+	flex-direction: row;
+	width: 80%;
+	height: 40%;
+	margin: 0 auto;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}//This closes the media query
+
+	.work1 {
+		width: 33.3%;
+		height: 100%;
+		margin: 10px 5px 5px 5px;
+		padding: 5px;
+		text-align: center;
+		line-height: 64px;
+		background-color: lightgray;
+	}//This closes the work1 tag
+
+	.work2 {
+		width: 33.3%;
+		height:100%;
+		margin: 10px 5px 5px 5px;
+		padding: 5px;
+		text-align: center;
+		line-height: 64px;
+		background-color: gray;
+	}//This closes the work 2 tag
+
+	.work3 {
+		.work1;
+	}//This closes the work 3 tag
+}//This closes the history tag
+
+h5 {
+	font-size: 24px;
+}
+
+.footer {
+	.nav;
+}
+
+.footer-nav {
+	display: flex;
+	justify-content: center;
+}
+
+@media (max-width: 500px) {
+
+	.nav-display {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 50%;
+        justify-content: center;
+    }
+}
