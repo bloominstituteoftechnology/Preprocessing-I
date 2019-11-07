@@ -162,7 +162,7 @@ header{
 			h1, h2, p, a{
 				font-size: 1rem;
 			
-			}//this closes h1,h2,p,a
+			}//this closes h1,h2,p,a @media
 
 		}//this closes @media
 
@@ -178,10 +178,17 @@ header{
 			max-width: 50%;
 			text-align: center;
 
-			p a{
+			p{
+				color: white;
+				text-shadow: -5px 5px #000000;
+				
+
+			}//this closes p
+
+			a{
 				.linkStyle();
 			
-			}//this closes p a	
+			}//this closes a	
 		}//this closes div
 }//this closes .header
 
@@ -241,8 +248,13 @@ header{
 
 			img{
 				max-width: 10%;
-			}
-		
+			}//this closes img
+
+			@media (max-width: 500px){
+				padding-top: 20%;
+			
+			}//this closes media
+
 		}//this closes education
 
 		.activities{
@@ -251,13 +263,15 @@ header{
 			display: flex;
 			flex-direction: column;
 			padding-bottom: 5%;
+			line-height: .75;
 			height: 32vh;
 
-			h2{
-				@media(max-width: 500px){
-					padding-bottom: 15%;
-				}
-			}//this closes h2
+			@media (max-width: 500px){
+				line-height: 1;
+				padding-top: 20%;
+				.mediaStyle();
+			}
+
 		
 			img{
 				max-width: 10%;
@@ -298,7 +312,13 @@ header{
 				img{
 					max-width: 13%;
 					padding: 2%;
-				}
+				
+				}//this closes img
+
+				@media (max-width: 500px){
+					padding-top: 20%;
+				
+				}//this closes media
 	
 		}//this closes awards
 
@@ -309,12 +329,13 @@ header{
 			height: 32vh;
 			width: 100%;
 
+			@media(max-width: 500px){
+				padding: 20%;
+			}//this closes @media	
+
 			h2{
 				padding-bottom: 7%;
 
-				@media(max-width: 500px){
-					margin-bottom: 15%;
-				}//this closes @media
 			}//this closes h2
 
 			table{
@@ -333,8 +354,6 @@ header{
 					padding: 5%;
 
 				
-					
-	
 					
 				}//this closes td,th
 			}//this closes table
@@ -358,6 +377,7 @@ header{
 #bottom-section{
 	display: flex;
 	width: 100%;
+	background-color: @linkcolor;
 	.generalStyle();
 
 	.work-history{
@@ -367,8 +387,8 @@ header{
 		width: 50%;
 
 		h2{
-			padding-bottom: 3%;
-		}
+			padding-bottom: 1%;
+		}//this closes h2
 
 		ul{
 			font-size: 1.75rem;
@@ -380,21 +400,50 @@ header{
 			
 			}//this ends @media	
 
-		}//this closes span
-
-		
 		}//this closes ul
+
+		p{
+			@media (max-width:500px){
+				font-size: .5rem;
+				padding-bottom: 10%;
+			}//this closes @media
+		}//this closes p
+
+		a{
+			color: @linkcolor;
+
+		}//this closes a
 	
 	}//this closes work-history
 
-	.extra-section{
+	.last-section{
 		width: 50%;
 		background-color: @background;
-		
+		display: flex;
 
+		.special{
+			 display: flex;
+			 flex-direction: column;
+			 text-align: center;
+			 padding-top: 10%;
+			 width: 50%;
+
+			 span{
+				 color: white;
+				 text-shadow: -5px 5px #000000;
+
+			 }//this closes span
+		 
+		}//this closes .special
 		
 		
-	}//this closes reference
+			img{
+				max-width: 50%;
+				
+			
+			}//this closes img
+	
+	}//this closes extra-section
 
 	@media (max-width:500px){
 		h2, p{
@@ -412,5 +461,23 @@ footer{
 	.generalStyle();
 	text-align: center;
 	padding: 2.5%;
+	font-size: 1.5rem;
+	
+	@media (max-width: 500px){
+		.mediaStyle();
+	
+	}//this closes @media
+
+	p{
+		@media (max-width: 500px){
+			.mediaStyle();
+		
+		}//this closes p @media
+	}//this closes p
+	
+	a{
+		color: @linkcolor;
+	
+	}//this closes a
 }
 
