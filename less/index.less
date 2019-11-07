@@ -1,7 +1,7 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -17,40 +17,40 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+display: block;
 }
 body {
-	line-height: 1;
+line-height: 1;
 }
 ol, ul {
-	list-style: none;
+list-style: none;
 }
 blockquote, q {
-	quotes: none;
+quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+content: '';
+content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+border-collapse: collapse;
+border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+box-sizing: border-box;
 }
 
 html, body {
@@ -58,42 +58,45 @@ html, body {
 	background-color: @bg-color;
 	background-image: url(../images/bg-image.png);
 	color:@font-color;
-	font-family:@h1-font;
+	font-family:@web-font;
 	font-size: 62.5%;
 }
 
 // Fonts
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 
 
 // Variables
 
 @bg-color: white;
 @font-color:#1A242E;
-@bg-font: 'Roboto Condensed', sans-serif;
-@h1-font: 'Lato', sans-serif;
+@web-font: 'Roboto Condensed', sans-serif;
+
+// Mixins
+
+.center(){
+	display:flex;
+	justify-content: center;
+}
 
 header{
-	font-size:20px;
-	display:flex;
+	.center();
 	flex-direction: column;
-	justify-content: center;
-	color:white;
 	background-image: url(../images/header.jpg);
 	background-size: cover;
-	
+
 	nav{
 		text-align: right;
-		border:2px solid peru;
 		padding:1%;
-		a{
+		
+			a{
 			text-decoration: none;
 			color:@font-color;
 			padding:5% 2% 0 3%;
 			font-size: 2.5rem;
 			font-weight:bold;
-		}
+			}//closes a
 	}//closes nav
 
 	.intro{
@@ -105,163 +108,169 @@ header{
 		align-items:center;
 		margin-left:15%;
 
+			.intro-inner{
+				height:40vh;
+			}//closes intro-inner
+
+				h1{
+					font-family: @web-font;
+					font-size:7rem;
+					color: @font-color;
+					font-weight:bolder;
+					text-shadow: 0px 4px 0px white; 
+
+					@media(max-width:800px){
+						font-size:4rem;
+					}
+					@media(max-width:500px){
+						font-size:3.5rem;
+					}
+				}//closes h1
+
+				hr{
+					border: 0;
+					border-bottom: 1px dashed #ccc;
+					background: #999;
+				}//closes hr
+
+				button{
+					margin-left:35%;
+					width:30%;
+					background-color:@bg-color;
+					border:none;
+					cursor: pointer;
+					outline:none;
+					margin-top:4%;
+					padding:2%;
+					color:@web-font;
+					font-weight:bold;
+					font-size:2rem;
+
+						@media(max-width: 500px){
+							width:50%;
+						}
 
 
-		.intro-inner{
-			height:40vh;
-			
-		}//closes intro-inner
-
-		h1{
-			font-family: @h1-font;
-			font-size:7rem;
-			color: #1A242E;
-			font-weight:bolder;
-	text-shadow: 0px 4px 0px white; /* 50% white from bottom */
-		}//closes h1
-
-	
-
-		hr{
-			border: 0;
-			height: 0; /* Firefox... */
-			margin-top:5%;
-			color:white;
-			background-color: white;
-		}//closes hr
-
-		
-		
-		button{
-			margin-left:35%;
-			width:30%;
-			background-color:white;
-			border:none;
-			cursor: pointer;
-			outline:none;
-			margin-top:4%;
-			padding:2%;
-			color:#1F1D52;
-			font-weight:bold;
-			font-size:2rem;
-			
-
-			
-		}//closes button
+				}//closes button
 	}//closes intro
-
-
 }//closes header
 
 main{
-	background-color: white;
-	display:flex;
+	background-color:@bg-color;
 	background-image:url('../images/bg-image.png');
-	justify-content:center;
 	align-items:center;
+	.center();
 	margin:0;
-	border:3px solid red;
 
-	.top-content{
+		.top-content{
 		display: flex;
-		border:2px solid orange;
-		
-		div{
+			
+			@media(max-width:500px){
+				flex-flow: column;
+			}
+
+			div{
 			width: 60%;
-			border:2px solid green;
 			padding:3%;
 			display: flex;
 			flex-direction: column;
 			text-align: left;
 
-			h2{
-				color:#1A242E;
-				font-size:4rem;
-				margin-bottom:3%;
-				width:80%;
+				@media(max-width:500px){
+					width:100%;
+				}
 
-			}
+				h2{
+					color:#1A242E;
+					font-size:4rem;
+					margin-bottom:3%;
+					width:80%;
+				}// ends h2
 
-			h3{
-				font-size:3.5rem;
-			}
+				h3{
+					font-size:3.5rem;
+				}//ends h3
 
-			p{
-				font-size:2rem;
-				width:80%;
-			}
+				h4{
+					font-size:4rem;
+					text-align: right;
+					border-top:1px solid #1A242E;
+					padding:2% 0 2% 0;
+					
+				}//ends h4
+				
+				h4:last-child{
+					border-bottom:1px solid #1A242E;
+					
+				}
 
-			h4{
-				font-size:4rem;
-				text-align: right;
-				border-top:1px solid #1A242E;
-				padding:2% 0 2% 0;
-
-			}
-
-			h4:last-child{
-				border-bottom:1px solid #1A242E;
-
-			}
-		}
-	}
+				p{
+					font-size:2rem;
+					width:80%;
+				}// ends p
+			}//ends div
+		}//ends top content
 
 
-}
+}//ends main
 
 .bottom-content{
 	display: flex;
 	flex-direction:column;
-	font-size:35px;
+	font-size:3rem;
 	text-align:center;
-	.first-row  {
+
+		@media(max-width:500px){
+			font-size:2rem;
+		}
+
+		.first-row  {
 		display: flex;
 		background:#D1D9E2;
-	}
-	.second-row  {
+		}
+		.second-row  {
 		display: flex;
-		
-	}
-	.third-row  {
-		display: flex;
-		
-	}
-	.fourth-row  {
-		display: flex;
-		
-	}
-	
-	p{
-			width:25%;
-			margin:2%;
-			padding:2%;
-	}
 
-	h3{
+		}
+		.third-row  {
+		display: flex;
+
+		}
+		.fourth-row  {
+		display: flex;
+		}
+
+		p{
+		width:25%;
+		margin:2%;
+		padding:2%;
+		}
+
+		h3{
 		font-size:5rem;
 		margin-top:5% 0 5% 0;
 		padding:5%;
 		text-align: center;
-	}
+		}
 }
 
 
 footer{
-	background-color: #1A242E;
-	height:10vh;
-	p{
-		font-size:2rem;
-		color:white;
-		text-align: center;
-		padding-top:1%;
-	}
+background-color: #1A242E;
+height:10vh;
+p{
+font-size:2rem;
+color:white;
+text-align: center;
+padding-top:1%;
+}
 }
 
 
 .intro button:hover {background-color: #f0e6e6}
 
 button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
 }
