@@ -66,18 +66,20 @@ html, body {
 html {
 	display: flex;
 	justify-content: center;
+	//width: 100%;
 	//overflow: hidden;
 }
 
 body { 
 	font-family: 'Poppins', sans-serif;
-	padding: 0 5%;
+	padding: 0 30px;
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 	max-width: 900px;
 	//max-height: 1000px;
 	min-height: 1400px;
+	//border: 1px solid black;
 }
 
 header {
@@ -109,9 +111,12 @@ header {
 
 .aboutbox {
 	padding: 5% 5%;
+	margin: 0%;
 	background: @lightblue;
 	border-radius: 3px;
 	height: 50%;
+	width: 100%;
+	max-width: 900px;
 	display: flex;
 	//justify-content: space-around;
 	flex-flow: column;
@@ -163,30 +168,42 @@ header {
 		display: flex;
 		flex-flow: column;
 		justify-content: space-around;
-		padding: 0% 0;
 		width: 100%;
 		height: 25%;
 		//border: 1px solid black;
+
+		@media (max-width: 550px) {
+			padding-top: 10%;
+		}
 
 		p {
 			margin-bottom: 3%;
 			line-height: 1.5;
 		}
 
-		.button {
-			display: flex;
-			align-items: center;
-			background: grey;
-			color: white;
-			width: 9.5rem;
-			height: 2.4rem;
-			justify-content: center;
-			border-radius: 3px;
+		.buttonbox {
+			
+			@media (max-width: 550px) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-top: 5%;
+			}
+		
+			.button {
+				display: flex;
+				align-items: center;
+				background: grey;
+				color: white;
+				width: 9.5rem;
+				height: 2.4rem;
+				justify-content: center;
+				border-radius: 3px;
 
+				h4 {
+					font-size: 1.2rem;
 
-			h4 {
-				font-size: 1.2rem;
-
+				}
 			}
 		}
 	}
