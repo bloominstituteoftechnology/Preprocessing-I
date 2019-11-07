@@ -318,9 +318,17 @@ header nav a {
   flex-direction: column;
   width: 50%;
 }
+@media (max-width: 500px) {
+  #main-content .left-side {
+    flex-direction: column-reverse;
+  }
+}
 #main-content .left-side .education {
   background-color: #074469;
   color: white;
+  padding-bottom: 4%;
+  padding-top: 1%;
+  height: 22vh;
 }
 #main-content .left-side .education img {
   max-width: 10%;
@@ -328,43 +336,79 @@ header nav a {
 #main-content .left-side .activities {
   background-color: rgba(0, 52, 85, 0.808);
   color: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5%;
+  height: 32vh;
+}
+@media (max-width: 500px) {
+  #main-content .left-side .activities h2 {
+    padding-bottom: 15%;
+  }
 }
 #main-content .left-side .activities img {
-  max-width: 13%;
+  max-width: 10%;
   padding: 2%;
+}
+#main-content .left-side .activities span {
+  font-size: 1.5rem;
+}
+@media (max-width: 500px) {
+  #main-content .left-side .activities span {
+    font-size: 1.25rem;
+  }
 }
 #main-content .right-side {
   display: flex;
   flex-direction: column;
   width: 50%;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  #main-content .right-side {
+    flex-direction: column-reverse;
+  }
+}
+#main-content .right-side .awards {
+  background-color: rgba(0, 52, 85, 0.808);
+  color: white;
+  height: 22vh;
+}
+#main-content .right-side .awards img {
+  max-width: 13%;
+  padding: 2%;
 }
 #main-content .right-side .skills {
   background-color: #074469;
   color: white;
   padding-bottom: 10%;
+  height: 32vh;
+  width: 100%;
 }
 #main-content .right-side .skills h2 {
-  padding-bottom: 3%;
+  padding-bottom: 7%;
+}
+@media (max-width: 500px) {
+  #main-content .right-side .skills h2 {
+    margin-bottom: 15%;
+  }
 }
 #main-content .right-side .skills table {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: white;
   margin: auto;
   font-family: 'Lemon', cursive;
+}
+@media (max-width: 500px) {
+  #main-content .right-side .skills table {
+    font-size: 1rem;
+  }
 }
 #main-content .right-side .skills table td,
 #main-content .right-side .skills table th {
   border-collapse: collapse;
   border: 2.5px solid rgba(0, 52, 85, 0.808);
   padding: 5%;
-}
-#main-content .right-side .awards {
-  background-color: rgba(0, 52, 85, 0.808);
-  color: white;
-}
-#main-content .right-side .awards img {
-  max-width: 13%;
-  padding: 2%;
 }
 @media (max-width: 500px) {
   #main-content {
@@ -377,8 +421,8 @@ header nav a {
 }
 /*Bottom Section*/
 #bottom-section {
-  background-color: rgba(0, 52, 85, 0.808);
   display: flex;
+  width: 100%;
   line-height: 1.75;
   margin: auto;
   padding: 3%;
@@ -386,9 +430,31 @@ header nav a {
   color: rgba(255, 255, 255, 0.404);
 }
 #bottom-section .work-history {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 52, 85, 0.808);
   width: 50%;
 }
-#bottom-section .reference {
+#bottom-section .work-history h2 {
+  padding-bottom: 3%;
+}
+#bottom-section .work-history ul {
+  font-size: 1.75rem;
+  list-style-type: circle;
+  margin-left: 15%;
+}
+@media (max-width: 500px) {
+  #bottom-section .work-history ul {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  #bottom-section .work-history ul p {
+    font-size: 0.5rem;
+  }
+}
+#bottom-section .extra-section {
+  width: 50%;
   background-color: rgba(4, 64, 47, 0.959);
 }
 @media (max-width: 500px) {

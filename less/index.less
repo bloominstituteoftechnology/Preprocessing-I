@@ -226,11 +226,18 @@ header{
 		display: flex;
 		flex-direction: column;
 		width: 50%;
+
+		@media (max-width: 500px){
+			flex-direction: column-reverse;
+		}//this ends @media
 				
 		
 		.education{
 		background-color: @accentcolor2;
 		color: white;
+		padding-bottom: 4%;
+		padding-top: 1%;
+		height: 22vh;
 
 			img{
 				max-width: 10%;
@@ -241,11 +248,32 @@ header{
 		.activities{
 			background-color: @accentcolor3;
 			color: white;
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 5%;
+			height: 32vh;
 
+			h2{
+				@media(max-width: 500px){
+					padding-bottom: 15%;
+				}
+			}//this closes h2
+		
 			img{
-				max-width: 13%;
+				max-width: 10%;
 				padding: 2%;
-			}
+			
+			}//this closes img
+
+			span{
+				font-size: 1.5rem;
+
+				@media (max-width: 500px){
+					.mediaStyle();
+				
+				}//this closes @media
+			
+			}//this closes span
 		
 		}//this closes activities
 		
@@ -255,26 +283,56 @@ header{
 		display: flex;
 		flex-direction: column;
 		width: 50%;
+		align-items: center;
+
+		@media(max-width: 500px){
+			flex-direction: column-reverse;
+		}//this ends @media
+
+		.awards{
+			background-color: @accentcolor3;
+			color: white;
+			height: 22vh;
+			
+	
+				img{
+					max-width: 13%;
+					padding: 2%;
+				}
+	
+		}//this closes awards
 
 		.skills{
 			background-color: @accentcolor2;
 			color: white;
 			padding-bottom: 10%;
+			height: 32vh;
+			width: 100%;
 
 			h2{
-				padding-bottom: 3%;
-			}
+				padding-bottom: 7%;
+
+				@media(max-width: 500px){
+					margin-bottom: 15%;
+				}//this closes @media
+			}//this closes h2
 
 			table{
-				font-size: 1.5rem;
+				font-size: 1.25rem;
 				color: white;
 				margin: auto;
 				font-family: 'Lemon', cursive;
+
+				@media (max-width: 500px){
+					font-size: 1rem;
+				}//this closes @media
 				
 				td, th{
 					border-collapse: collapse;
 					border: 2.5px solid @accentcolor3;
 					padding: 5%;
+
+				
 					
 	
 					
@@ -283,17 +341,6 @@ header{
 			
 
 		}//this closes skills
-
-		.awards{
-			background-color: @accentcolor3;
-			color: white;
-	
-				img{
-					max-width: 13%;
-					padding: 2%;
-				}
-	
-		}//this closes awards
 
 	}//this closes right-side
 
@@ -309,16 +356,39 @@ header{
 
 /*Bottom Section*/
 #bottom-section{
-	background-color: @accentcolor3;
 	display: flex;
+	width: 100%;
 	.generalStyle();
 
 	.work-history{
+		display: flex;
+		flex-direction: column;
+		background-color: @accentcolor3;
 		width: 50%;
+
+		h2{
+			padding-bottom: 3%;
+		}
+
+		ul{
+			font-size: 1.75rem;
+			list-style-type: circle;
+			margin-left: 15%;
+
+			@media (max-width:500px){
+				font-size: 1rem;
+			
+			}//this ends @media	
+
+		}//this closes span
+
+		
+		}//this closes ul
 	
 	}//this closes work-history
 
-	.reference{
+	.extra-section{
+		width: 50%;
 		background-color: @background;
 		
 
