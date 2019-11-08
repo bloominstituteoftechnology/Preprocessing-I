@@ -146,14 +146,22 @@ table {
   display: none;
 }
 
+@mobile: (max-width: 500px);
 html,
 body {
   height: 100%;
   max-width: 1000px;
-  border: 50px dotted seagreen;
   margin-left: auto;
+  overflow-y: scroll;
   margin-right: auto;
+  font-family: "Shadows Into Light";
   .font();
+}
+@media (max-width: 500px) {
+  body {
+    border: none;
+    font-size: 20px;
+  }
 }
 
 nav {
@@ -185,21 +193,6 @@ header {
     padding: 15px;
   } //closes Contact
 } //closes header
-
-.Main {
-  display: flex;
-  font-size: 20px;
-  padding: 10px 0px;
-  h2 {
-    font-size: @title;
-  } //closes h2
-  .Main-Left {
-    width: 50%;
-  } //closes left
-  .Main-Right {
-    width: 50%;
-  } //closes right
-} //closes main
 
 .Bottom {
   padding: 100px 0px 10px 0px;

@@ -131,41 +131,79 @@ table {
   box-sizing: border-box;
 }
 @font-face {
-  font-family: 'Shadows Into Light';
+  font-family: "Shadows Into Light";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Shadows Into Light'), local('ShadowsIntoLight'), url(https://fonts.gstatic.com/s/shadowsintolight/v9/UqyNK9UOIntux_czAvDQx_ZcHqZXBNQzdcD8.ttf) format('truetype');
+  src: local("Shadows Into Light"), local("ShadowsIntoLight"),
+    url(https://fonts.gstatic.com/s/shadowsintolight/v9/UqyNK9UOIntux_czAvDQx_ZcHqZXBNQzdcD8.ttf)
+      format("truetype");
 }
 html,
 body {
   height: 100%;
-  max-width: 1000px;
+  max-width: 1500px;
   border: 50px dotted seagreen;
   margin-left: auto;
+  overflow-y: scroll;
   margin-right: auto;
   font-family: "Shadows Into Light";
+}
+@media (max-width: 500px) {
+  body {
+    border: none;
+    font-size: 20px;
+  }
 }
 nav {
   display: flex;
   justify-content: space-evenly;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 40px;
+}
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+a {
+  text-decoration: none;
+  color: black;
+  margin: 60px 0px 20px 0px;
+  border: 1px solid #461818;
+  border-radius: 5px;
+  padding: 10px 30px;
+  background-color: seagreen;
+}
+@media (max-width: 500px) {
+  a {
+    margin: 10px 40px;
+  }
 }
 header {
   display: flex;
-}
-header .Hobbit {
   border: 30px solid #461818;
 }
+
 @media (max-width: 900px) {
   header .Hobbit {
     display: none;
   }
 }
 header .info {
-  border: 50px solid #461818;
+  border-left: 25px solid #461818;
   font-size: 17px;
+  padding: 50px;
+  font-size: 40px;
+}
+@media (max-width: 500px) {
+  header .info {
+    font-size: 30px;
+    width: 100%;
+    padding: 30px;
+    border-left: none;
+  }
 }
 header h1 {
   font-size: 40px;
@@ -177,29 +215,71 @@ header .contact {
   padding: 15px;
 }
 .Main {
-  display: flex;
+  margin: auto;
   font-size: 20px;
   padding: 10px 0px;
 }
 .Main h2 {
+  text-align: center;
+  font-size: 100px;
+}
+.Main .Main-top {
+  width: 80%;
+  margin: auto;
+  padding: 60px;
   font-size: 40px;
 }
-.Main .Main-Left {
-  width: 50%;
+@media (max-width: 500px) {
+  .Main .Main-top {
+    font-size: 25px;
+    width: 100%;
+    padding: 30px;
+  }
 }
-.Main .Main-Right {
-  width: 50%;
+.Main .Main-middle {
+  width: 80%;
+  margin: auto;
+  padding: 60px;
+  font-size: 40px;
+}
+@media (max-width: 500px) {
+  .Main .Main-middle {
+    font-size: 25px;
+    width: 100%;
+    padding: 30px;
+  }
 }
 .Bottom {
-  padding: 100px 0px 10px 0px;
-  font-size: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 60px;
+  font-size: 40px;
+}
+@media (max-width: 500px) {
+  .Bottom {
+    font-size: 25px;
+    width: 100%;
+    padding: 30px;
+  }
 }
 .Bottom h2 {
-  font-size: 40px;
+  text-align: center;
+  font-size: 100px;
 }
 .End {
-  font-size: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 60px;
+  font-size: 30px;
+}
+@media (max-width: 500px) {
+  .End {
+    font-size: 25px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+  }
 }
 .End h3 {
-  font-size: 40px;
+  font-size: 70px;
 }
