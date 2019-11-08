@@ -48,6 +48,11 @@ table {
 	border-spacing: 0;
 }
 
+
+// variable //
+
+
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -58,7 +63,7 @@ html, body {
 }
 
 .nav {
-	position: absolute;
+	text-align: center;
 	top: 50px;
 	right: 20px;
 	
@@ -97,7 +102,6 @@ html, body {
 }
 
 .button {
-	margin-top: ;
 	background-color: darkgrey;
 	border: none;
 	color: white;
@@ -138,7 +142,6 @@ html, body {
 		}
 	}
 
-
 }
 	.StuffImGoodAt{
 		width: 100%;
@@ -158,9 +161,30 @@ html, body {
 			tr{border: 2px solid gray;}
 			td{padding: 7px;}
 		}
+
 	}
+
+// mixing 
+
+.displayFeatures(@font) {
+	text-align: center;
+	color: @font;
+	text-weight: bold;
+	font-size: 1.5rem;
+}
+
+footer p{
+	.displayFeatures(darkgrey);
 }
 
 
+@media (min-width: 500px) {
+
+	.nav a{
+		text-align: center;
+		font-size: 1.5rem;
+		padding: 1%;
+	}
 
 
+}
