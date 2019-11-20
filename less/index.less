@@ -76,22 +76,42 @@ html, body {
 	grid-row-gap: 0px;
 	height: 830px;
 
+	@media(max-width: 500px) {
+
+		display: flex;
+		flex-direction: column;
+		height: 0px;
+		grid-template-columns: 0px;
+		grid-template-rows: 0px;
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		
+		
+	}
+
 
 
 	.web { 
 		
 		grid-area: 1 / 1 / 2 / 2; 
 		background-color: #ff7675;
-		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-		color: black;
+		font-family: Cambria;
 		font-size: @fontSize;
 		text-align: center;
 		padding: 20%;
+		transition: 2s;
 
 		&:hover {
-
+		
+			font-style: italic;
 			background-color:  aliceblue;
-			text-decoration-style: wavy;
+			
+		}
+
+		@media(max-width: 500px) {
+
+			width: 100%;
+			
 		}
 	}
 
@@ -110,6 +130,13 @@ html, body {
 		p {
 
 			display: none;
+
+			@media(max-width: 500px) {
+
+				display: block;
+				font-size: 1.5rem;
+				text-align: justify;
+			}
 		}
 
 		&:hover  {
@@ -130,7 +157,12 @@ html, body {
 		
 		}
 
+		@media(max-width: 500px) {
 
+			width: 100%;
+			padding-top: 0%;
+			
+		}
 	}
 
 	.skills { 
@@ -145,6 +177,13 @@ html, body {
 		li {
 
 			display: none;
+
+			@media(max-width: 500px) {
+
+				display: block;
+				font-size: 1.5rem;
+				text-align: justify;
+			}
 		}
 
 		&:hover {
@@ -169,6 +208,12 @@ html, body {
 
 		}
 
+		@media(max-width: 500px) {
+
+			width: 100%;
+			padding-top: 0%;
+			
+		}
 	
 	}
 
@@ -187,6 +232,13 @@ html, body {
 		li {
 
 			display: none;
+
+			@media(max-width: 500px) {
+
+				display: block;
+				font-size: 1.5rem;
+				text-align: justify;
+			}
 		}
 
 		&:hover {
@@ -207,7 +259,13 @@ html, body {
 				
 			}
 		}
-	
+		
+		@media(max-width: 500px) {
+
+			width: 100%;
+			padding-top: 0%;
+			
+		}
 	}
 
 
@@ -215,27 +273,31 @@ html, body {
 		
 		grid-area: 2 / 2 / 3 / 3; 
 		background-color: #00cec9;
+		font-family: sans-serif;
 		font-size: @fontSize;
-		padding-top: @TextPadding;
+		padding: 20%;
+		text-align: center;
 		transition: 2s;
-
+		
 		a {
-
-			display: none;
+			text-decoration: none;
+			color: black;
 		}
+
 
 		&:hover {
 
 			font-family: sans-serif;
-			color: black;
 			font-size: @fontSize;
 			background-color: aliceblue;
-			text-align: start;
-			padding: 0%;
-		
+			
 		}	
 	
-		
+		@media(max-width: 500px) {
+
+			width: 100%;
+			
+		}
 	}
 
 	.let { 
@@ -245,44 +307,48 @@ html, body {
 		font-size: 2rem;
 		text-align: @TextAlign;
 		font-family: sans-serif;
-		padding-top: @TextPadding;
+		padding-top: 25%;
+		transition: 2s;
 
-		p {
+		.hov {
 
 			display: none;
+
+			@media(max-width: 500px) {
+
+				display: block;
+				
+				text-align: center;
+			}
 		}
+
 
 		&:hover  {
 
 			font-family: sans-serif;
 			color: black;
-			font-size: @fontSize;
+			font-size: 2rem;
 			background-color: aliceblue;
-			text-align: start;
-			padding: 0%;
-			
+			padding-top: 3%;
+
 			.hov {
 				transition-delay: 2s;
 				display: block;
-				font-size: @fontSize;
+				font-size: 1.5rem;
+				line-height: 1.5;
 				
 			}
+
 		
 		}
 	
+		@media(max-width: 500px) {
+
+			width: 100%;
+			
+		}
 	}
 
-	@media(max-width: 500px) {
-		
-		display: flex;
-		flex-direction: column;
-
-		.icons {
-			display: none;
-		  }
-
-
-	}
 
 }
 
@@ -304,10 +370,5 @@ html, body {
 		}
 	
 	}
-
-
-
-
-
 
 

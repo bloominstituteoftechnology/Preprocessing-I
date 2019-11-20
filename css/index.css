@@ -143,18 +143,34 @@ body {
   grid-row-gap: 0px;
   height: 830px;
 }
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 0px;
+    grid-template-columns: 0px;
+    grid-template-rows: 0px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
 .container .web {
   grid-area: 0.25;
   background-color: #ff7675;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: black;
+  font-family: Cambria;
   font-size: 3rem;
   text-align: center;
   padding: 20%;
+  transition: 2s;
 }
 .container .web:hover {
+  font-style: italic;
   background-color: aliceblue;
-  text-decoration-style: wavy;
+}
+@media (max-width: 500px) {
+  .container .web {
+    width: 100%;
+  }
 }
 .container .intro {
   grid-area: 0.08333333;
@@ -167,6 +183,13 @@ body {
 }
 .container .intro p {
   display: none;
+}
+@media (max-width: 500px) {
+  .container .intro p {
+    display: block;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
 }
 .container .intro:hover {
   font-family: sans-serif;
@@ -181,6 +204,12 @@ body {
   display: block;
   font-size: 2rem;
 }
+@media (max-width: 500px) {
+  .container .intro {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
 .container .skills {
   grid-area: 0.04166667;
   background-color: #0984e3;
@@ -191,6 +220,13 @@ body {
 }
 .container .skills li {
   display: none;
+}
+@media (max-width: 500px) {
+  .container .skills li {
+    display: block;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
 }
 .container .skills:hover {
   font-family: sans-serif;
@@ -206,6 +242,12 @@ body {
   font-size: 1.5rem;
   line-height: 1.5;
 }
+@media (max-width: 500px) {
+  .container .skills {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
 .container .work {
   grid-area: 0.33333333;
   background-color: #636e72;
@@ -217,6 +259,13 @@ body {
 }
 .container .work li {
   display: none;
+}
+@media (max-width: 500px) {
+  .container .work li {
+    display: block;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
 }
 .container .work:hover {
   font-family: sans-serif;
@@ -232,23 +281,34 @@ body {
   font-size: 1.5rem;
   line-height: 1.5;
 }
+@media (max-width: 500px) {
+  .container .work {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
 .container .port {
   grid-area: 0.11111111;
   background-color: #00cec9;
+  font-family: sans-serif;
   font-size: 3rem;
-  padding-top: 40%;
+  padding: 20%;
+  text-align: center;
   transition: 2s;
 }
 .container .port a {
-  display: none;
+  text-decoration: none;
+  color: black;
 }
 .container .port:hover {
   font-family: sans-serif;
-  color: black;
   font-size: 3rem;
   background-color: aliceblue;
-  text-align: start;
-  padding: 0%;
+}
+@media (max-width: 500px) {
+  .container .port {
+    width: 100%;
+  }
 }
 .container .let {
   grid-area: 0.05555556;
@@ -256,31 +316,34 @@ body {
   font-size: 2rem;
   text-align: center;
   font-family: sans-serif;
-  padding-top: 40%;
+  padding-top: 25%;
+  transition: 2s;
 }
-.container .let p {
+.container .let .hov {
   display: none;
+}
+@media (max-width: 500px) {
+  .container .let .hov {
+    display: block;
+    text-align: center;
+  }
 }
 .container .let:hover {
   font-family: sans-serif;
   color: black;
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: aliceblue;
-  text-align: start;
-  padding: 0%;
+  padding-top: 3%;
 }
 .container .let:hover .hov {
   transition-delay: 2s;
   display: block;
-  font-size: 3rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 @media (max-width: 500px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-  .container .icons {
-    display: none;
+  .container .let {
+    width: 100%;
   }
 }
 .icons {
