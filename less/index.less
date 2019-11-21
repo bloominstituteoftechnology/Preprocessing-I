@@ -53,7 +53,111 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+
+
+@backgroundTeal: teal;
+.flexbox {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 2%;
+  padding: 2%;
+  background-color: @backgroundTeal;
+}
+
+.nav {
+ .flexbox();
+  .nav1 {
+	margin: 1%;
+	padding: 2%;
+	text-decoration: none;
+  }
+}
+
+.mainheader {
+  box-sizing: border-box;
+  width: 95%;
+  height: 55%;
+  margin: 2%;
+  padding: 2%;
+  background-color: grey;
+  display: inline-block;
+  line-height: 1rem;
+}
+.mainheader .topsection h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 2em;
+}
+.mainheader .topsection h2 {
+  line-height: 2rem;
+}
+.mainheader .topsection p {
+  line-height: 2rem;
+}
+.mainheader .topsection .button{
+  line-height: 3rem;
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+.middlesection {
+  display: flex;
+  justify-content: space-between;
+}
+h2 {
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 1.25rem;
+  margin-bottom: 2%;
+}
+.about-me {
+  width: 48%; 
+}
+.work-history h2 {
+  text-align: center;
+}
+.work-history ol li {
+  text-align: center;
+}
+.skills ol li {
+  list-style-type: upper-roman;
+}
+.contact {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+@media(max-width: 500px){
+  html,
+  body {
+    height: 100%;
+    margin: 2%;
+    padding: 2%;
+  }
+  .nav {
+    justify-content: space-evenly;
+  }
+  .mainheader {
+    height: 50%;
+   
+  }
+ .mainheader .topsection .button {
+   margin-left: 30%;
+   justify-content: center;
+   margin-bottom: 3%;
+ }
+ .middlesection {
+   flex-direction: column;
+   justify-content: space-evenly;
+ }
+ .middlesection .about-me {
+   width: 95%;
+   margin-bottom: 4%;
+ }
+ 
+}
