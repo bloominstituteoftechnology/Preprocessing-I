@@ -5,7 +5,7 @@
 */
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -24,17 +24,73 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
+
+
 body {
 	line-height: 1;
 }
 ol, ul {
 	list-style: none;
 }
+
+
+ul{ 
+ display: inline-flex; 
+ flex-direction: row; 
+
+}
+
+//variables
+
+@border: 2px; 
+@radius: 2em; 
+@color: black ; 
+@radius: 10em;
+@border-style: solid;
+
+
+
+//nesting
+.navi {
+ li{
+	padding: 2em; 
+	}
+
+  a{
+	text-decoration : none; 
+	border: @border-style;
+	margin: @border ; 
+	color: @color;
+	border-radius: @radius ;
+	}
+}
+
+
+//mixin 
+#title{
+  border-bottom: solid 2px black ;
+}
+
+// dynamic 
+
+@media (max-width: 500px){
+	 .navi nav ul {
+	 	flex-direction: column;
+		
+	}
+}
+
+
+
 blockquote, q {
 	quotes: none;
 }
@@ -48,6 +104,10 @@ table {
 	border-spacing: 0;
 }
 
+background{
+	color:  n
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -55,5 +115,8 @@ table {
 
 html, body {
     height: 100%;
+
+
 }
+
 
