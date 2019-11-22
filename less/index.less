@@ -50,10 +50,109 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@display: flex;
+@color-text: rgb(243, 247, 1);
+
+.section {
+	border: 1px solid lawngreen;
+	font-size: 20px;
+	display: @display;
+	justify-content: center;
+	margin: 3% 0%;
 }
 
 html, body {
-    height: 100%;
+	background-image: url(C:/Users/kskid/Preprocessing-I/images/spidermanBackground.png);
+	background-attachment: fixed;
+	background-size: cover;
+	color: @color-text;
+	margin: 2% 3% 1.5%;
 }
 
+.header {
+	width: 100%;
+	display: @display;
+
+	nav {
+		width: 100%;
+		display: @display;
+		justify-content: center;
+		margin: 2% 2.5%;
+
+
+		a {
+			width: 100%;
+			text-decoration: none;
+			color: @color-text;
+			display: @display;
+			justify-content: space-evenly;
+			background-color: rgb(135, 5, 5);
+			opacity: 0.85;
+			padding: 2% 3%;
+			
+		}
+	}
+}
+
+.top-section {
+	.section();
+
+	div {
+		display: @display;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(135, 5, 5);
+		opacity: 0.8;
+		padding: 0% 3%;
+		margin: 2% 2.5%;
+
+		h2 {
+			font-size: 35px;
+			margin: 2% 0%;
+		}
+
+		p {
+			margin: 2% 0%;
+			padding: 0% 5%;
+		}
+	}
+
+	.selfie {
+		width: 400px;
+		margin: 2% 2.5%;
+	}
+}
+
+.middle-section {
+	.section();
+
+	.info {
+		border: 1px solid green;
+		width: 75%;
+		display: @display;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 3% 5%;
+	}
+
+	.skills {
+		border: 1px solid green;
+		width: 25%;
+		display: @display;
+		justify-content: center;
+		padding: 3% 5%;
+	}
+}
+
+.bottom-section {
+	.section();
+}
+
+.footer {
+	.section();
+}
