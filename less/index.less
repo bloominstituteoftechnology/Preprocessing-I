@@ -49,11 +49,178 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+@border-radius: 10px;
+@font-size: 24px;
+@font-size-mobile: 48px;
+@color: black;
+
 html, body {
-    height: 100%;
+	height: 100%;
+}
+
+#wrap {
+	width: 900px;
+	margin: 0 auto;
+}
+
+h1{
+	font-size: 96px;
+	font-family: 'Calistoga', cursive;
+	color: navy;
+	margin-top: 20px;
+
+	@media (max-width: 500px){
+		font-size: @font-size-mobile;
+	}
+}
+
+p{
+	font-size: 24px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	margin-top: 10px;
+}
+
+// Navigation Bar
+
+.navigation{
+	display: flex;
+	flex-direction: column;
+	background-color: #deecfb;
+	margin-bottom: 25px;
+
+	@media (max-width:500px){
+		width: 500px;
+		font-size: @font-size;
+
+	}
+
+.bar{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-top: 20px;
+	padding: 20px 10px;;
+	border: 2px solid grey;
+	background-color: #1666ba;
+	border-radius: @border-radius;
+	
+
+}
+	a{
+	font-size: 24px;
+	text-decoration: none;
+	color:white;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		
+		@media (max-width:500px){
+			font-size: 18px;
+		}
+
+}
+	a:hover{
+	color: black;
+	}
+}
+
+// Main Content
+
+.maincontent{
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 30px 10px;
+
+		@media (max-width:500px){
+			width: 500px;
+			margin: 20px 0px;
+		}
+	h2{
+		width: 100%;
+		text-align: center;
+		font-size: 3em;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		
+		@media (max-width:500px){
+			font-size: 1.8em;
+		}
+	}
+
+		.skills{
+			Height: 350px;
+			width: 45%;
+			margin-bottom: 50px;
+			border-bottom: 3px solid black;
+
+		}
+
+	.about{
+		.skills()
+	}	
+
+	li{
+		font-size: 24px;
+		text-align: center;
+		border: 2px solid #1666ba;
+		border-radius: @border-radius;
+		margin: 30px;
+		padding: 10px;
+	}
+	ul a{
+			text-decoration: none;
+			color: black;
+	}
+}
+
+// Footer
+
+.footer{
+	background-color: #1666ba;
+	width: 100%;
+	height: 570px;
+
+		@media (max-width:500px){
+			height: 540px;
+		}
+
+	h3{
+		font-size: @font-size;
+		text-align: center;
+		margin-top: 20px;
+
+	}
+	.history p{
+		border: 2px solid black;
+		border-radius: @border-radius;
+		padding: 5px;
+		margin: 10px;
+
+		@media (max-width:500px){
+			font-size: 16px;
+			margin: 5px;
+		
+		}
+	}
+	.contact{
+		margin-top: 20px;
+	}
+
+	.footer_bar{
+		font-size: @font-size;
+		padding: 10px;
+	}
+	a{
+		text-decoration: none;
+		color: @color;
+		width: 20%;
+
+	}
 }
 
