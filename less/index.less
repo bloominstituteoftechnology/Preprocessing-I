@@ -128,6 +128,10 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
+
+@headerfont: "Fredoka One", cursive;
+@navbg: pink;
+
 * {
   box-sizing: border-box;
 }
@@ -137,7 +141,7 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 h1, h2, h3 {
-  font-family: 'Fredoka One', cursive;
+  font-family: @headerfont;
   letter-spacing: 1px;
   margin-bottom: 15px;
 
@@ -154,15 +158,22 @@ header {
   // padding-top: 60px;
 }
 
-.nav-bar {
-  width: 100%;
+
+.flexrow(@navbordercolor) {
   display: flex;
   flex-direction: row;
+  border: solid @navbordercolor;
+}
+.nav-bar {
+  width: 100%;
+  .flexrow(green);
+  // display: flex;
+  // flex-direction: row;
   justify-content: flex-end;
   padding-top: 30px;
   font-size: 18px;
-  border: solid blue;
-  background: pink;
+  // border: solid blue;
+  background: @navbg;
 
 	a {
 		padding: 30px;
@@ -271,6 +282,10 @@ header {
         // width: 100%;
         // padding: 20px;
         // text-align: center;
+      }
+
+      .shaded {
+        background-color: lightgrey;
       }
     
     }
