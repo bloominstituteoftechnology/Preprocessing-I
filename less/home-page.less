@@ -4,141 +4,128 @@ MAIN-PAGES.LESS
 
 */
 
-/* in process 
-input[type=text], select, textarea {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-top: 6px;
-	margin-bottom: 16px;
-	resize: vertical;
-  }
-  
-  input[type=submit] {
-	background-color: #4CAF50;
-	color: white;
-	padding: 12px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-	background-color: #45a049;
-  }
-  
-  .container {
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 20px;
-  }
-  */
-
 .container {
     width: 1150px;
 
-    nav {
+    @media () //media query will go here // /* Header - Hello Image and Buttons */ .header {
         display: flex;
-        background: @rojo;
         justify-content: space-evenly;
-        li {
-            display: inline-block;
-            margin: 20px;
-        }
-        nav a {
-            padding: 20px;
-            color: gray;
-            text-decoration: none;
-        }
-    } // closing nav
-
-    /* Header - Hello Image and Buttons */
-
-    .header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        align-items: center;
         padding: 20px 0px 20px 0px;
-        .hello {
-            display: inline-flex;
 
-            h1 {
-                font-size: 150px;
-                padding: 20px;
-            }
-            h2 {
-                padding: 20px;
-                font-size: 20px;
-            }
+        h1 {
+            font-size: @paolatext;
+            padding: 10px 0px 10px 60px;
+            margin: 10px 10px 30px 20px;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+        h2 {
+            padding: 20px;
+            font-size: 30px;
+            margin: @margintextforall;
+            font-style: italic;
         }
 
         .containerforimage {
-            padding: 20px;
+            margin: 5px;
 
             .femalecoderimg {
                 display: inline-flex;
                 padding: 20px;
-                width: 600px;
-                align-content: center;
+                width: 500px;
             }
         }
-
-        .buttonarea {
-            padding: 20px;
-
-            p {
-                font-size: 40px;
-            }
-            .button {
-                display: inline-block;
-                padding: 0.3em 1.2em;
-                margin: 0 0.1em 01.1em 0;
-                border-radius: 2em;
-                box-sizing: border-box;
-                text-decoration: none;
-                font-family: "Roboto", sans-serif;
-                font-weight: 200;
-                color: #800000;
-                transition: all 0.2s;
-                .button:hover {
-                    border-color: #00ff7f;
-                }
-                @media all and (max-width: 30em) {
-                    button {
-                        display: block;
-                        margin: 0.2em;
-                    }
-                }
-            }
-        } // closing header
     }
 
-    div .Introandskills {
+    .buttonarea {
+        margin: @margintextforall;
+        padding: 20px;
+        align-items: center;
+        p {
+            font-size: 34px;
+        }
+        button {
+            padding: 5px;
+        }
+    }
+
+    .introandskills {
         margin: 20px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-
-        .Intro {
-            margin: 10px;
-            display: inline-flex;
+        justify-content: space-between;
+        .intro {
+            width: 48%;
         }
         h2 {
             padding: 20px;
-            font-size: 80px;
+            font-size: 30px;
+            text-transform: uppercase;
         }
         p {
             padding: 10px;
-            font: 20px;
+            font-size: @sizesmalltext;
             color: @rojo;
         }
-        .Skills {
-            margin: 10px;
-            display: inline-flex;
+        .skills {
+            width: 48%;
         }
-    } // closing introandskills
-} //closing container
+        h2 {
+            padding: 20px;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        ul {
+            margin: 10px;
+        }
+        li {
+            color: @rojo;
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
+
+    .workhistorytable {
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2 {
+            font-size: 2em;
+            padding: 20px;
+            margin: 0 auto;
+            color: @violeta;
+        }
+        table {
+            border-collapse: collapse;
+            tr {
+                margin: 20px;
+                border: 4px solid rgb(214, 214, 214);
+            }
+            th {
+                padding: 15px;
+                text-align: center;
+                background: rgb(255, 255, 229);
+                font-weight: bold;
+                color: rgb(146, 86, 146);
+            }
+            td {
+                padding: 15px;
+                text-align: center;
+            }
+            th:first-child {
+                font-weight: bold;
+            }
+            tr:nth-child(even) {
+                background-color: #fdff71;
+            }
+        }
+    }
+
+    .contact {
+        h3 {
+            font-size: 2rem;
+            color: @violeta;
+        }
+    }
+}
