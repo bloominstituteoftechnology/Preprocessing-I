@@ -11,9 +11,34 @@
   width: 100%;
   z-index: 1;
 
-
-  h1 {
+  h1,
+    {
     color: white;
+    animation: typing 3s steps(16);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0ch;
+      border-right: 2px solid white;
+    }
+
+    100% {
+      width: 16ch;
+      border-right: 2px solid white;
+    }
+  }
+
+  @keyframes blinking {
+    from {
+      visibility: hidden;
+    }
+
+    to {
+      visibility: none;
+    }
   }
 
   a {

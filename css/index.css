@@ -149,6 +149,27 @@ body {
 }
 .navbar h1 {
   color: white;
+  animation: typing 3s steps(16);
+  overflow: hidden;
+  white-space: nowrap;
+}
+@keyframes typing {
+  0% {
+    width: 0ch;
+    border-right: 2px solid white;
+  }
+  100% {
+    width: 16ch;
+    border-right: 2px solid white;
+  }
+}
+@keyframes blinking {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: none;
+  }
 }
 .navbar a {
   padding: 5px;
@@ -258,6 +279,8 @@ html body .aboutme {
   align-items: center;
   flex-direction: column;
   padding-bottom: 10%;
+  margin-bottom: 30%;
+  padding-top: 10%;
 }
 html body .aboutme h1 {
   font-size: 45px;
@@ -303,4 +326,75 @@ h6 {
   body .project-boxes {
     flex-direction: column;
   }
+}
+.Contact {
+  text-align: center;
+  padding-top: 10%;
+}
+.Contact h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+.Contact form {
+  height: 400px;
+  max-width: 80%;
+  background: black;
+  opacity: 80%;
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-right: auto;
+  margin-bottom: 10%;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Contact form #msgArea {
+  height: 150px;
+  width: 500px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  outline: none;
+  font-size: 18px;
+}
+.Contact form #msgArea:hover {
+  background: grey;
+}
+.Contact form .msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Contact form .msg button {
+  height: 30px;
+  width: 100px;
+  background: magenta;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.Contact form .msg button:active {
+  border-bottom: 1px solid black;
+}
+.Contact form .formInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.Contact form .formInfo label {
+  padding: 20px;
+}
+.Contact form .formInfo input {
+  border-radius: 5px;
+  outline: none;
+  height: 30px;
+  font-size: 18px;
+}
+.Contact form .formInfo input:hover {
+  background: grey;
 }
