@@ -1,0 +1,129 @@
+html {
+  scroll-behavior: smooth;
+
+  body {
+    background: url(/css/photo_backgrounds_textures_app04.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 40%;
+      bottom: auto;
+      padding-bottom: 30%;
+
+      h1 {
+        font-size: 45px;
+        line-height: 50px;
+        margin-bottom: 5%;
+      }
+
+      button {
+        .buttonstyle(black, lightgrey, 40px, 150px, 5px, 90%);
+        border: none;
+        cursor: pointer;
+        outline: none;
+        font-size: 13.5px;
+        font-weight: bold;
+
+        @media screen and(max-width: 500px) {
+          color: white;
+          background: blue;
+        }
+      }
+    }
+
+    .projects {
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10%;
+
+      h1 {
+        font-size: @title;
+        color: white;
+        line-height: 70px;
+      }
+
+      p {
+        color: lightgrey;
+        font-size: 20px;
+      }
+
+      .project-boxes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+
+      .boxes {
+        height: 400px;
+        width: 400px;
+        background: magenta;
+        border-radius: 10px;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+
+        &:hover {
+          transition: 0.5s ease;
+          height: 410px;
+          width: 410px;
+          cursor: pointer;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .aboutme {
+      text-align: center;
+      margin-top: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 10%;
+      margin-bottom: 30%;
+      padding-top: 10%;
+
+      h1 {
+        font-size: @title;
+        margin-bottom: 20px;
+      }
+
+      .reference {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background: white;
+        height: 40px;
+        align-items: center;
+        width: 90%;
+      }
+
+      .column {
+        width: 45%;
+      }
+
+      #ref1,
+      #ref3 {
+        background: lightgrey;
+      }
+
+      #ref0 {
+        border-bottom: 2px solid black;
+      }
+    }
+
+  }
+}
