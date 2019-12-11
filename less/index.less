@@ -48,12 +48,56 @@ table {
 	border-spacing: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
+@main-red: #F9581C;
+@main-orange: #FFA300;
+@main-red-org: #DF5E19;
+@nav-select: #F6F70E;
+@main-brown: #C5491B;
+
+.space-center {
+	display: flex;
+	justify-content: space-between;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
+body {
+	padding: 2.0rem;
+}
+
+.nav {
+height: 100%;
+width: 16rem;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: @main-brown;
+overflow-x: hidden;
+padding-top: 20%;
+display: flex;
+flex-direction: column;
+
+@media screen and (max-width: 768px) {
+.nav {
+padding-top: 20%;
+	}
+}
+}
+a {
+padding: 0.6rem 0.8rem 0.6rem 1.6rem;
+font-size: 2.5rem;
+color: white;
+margin: 5%;
+}
