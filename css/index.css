@@ -2,8 +2,16 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+.flexspace-between {
+  display: flex;
+  justify-content: space-between;
+}
+.button-text-color {
+  color: white;
+}
 :root {
   font-size: 10px;
+  animation: bg-anim 5s infinite;
 }
 html,
 body,
@@ -139,6 +147,7 @@ body {
 .container {
   font-family: sans-serif;
   margin: 0 20%;
+  background-color: white;
 }
 .container .top-nav {
   display: flex;
@@ -151,11 +160,15 @@ body {
   font-weight: bold;
   padding: 15px;
 }
+@media () {
+  .container .top-nav {
+    width: 100vw;
+  }
+}
 .container header {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  background-color: #b1b1ff;
   padding: 30px 30px 50px;
 }
 .container header img {
@@ -170,6 +183,7 @@ body {
   padding: 10px 10px 30px;
 }
 .container header p {
+  width: 100%;
   font-size: 1.2rem;
   padding: 10px;
   border-top: 1px solid gray;
@@ -178,10 +192,10 @@ body {
   align-self: stretch;
   text-align: center;
   text-decoration: none;
-  color: white;
   border-radius: 5px;
   background-color: dodgerblue;
   padding: 10px;
+  color: white;
 }
 .container header a:hover {
   background-color: #1d7bd8;
@@ -190,6 +204,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+  padding: 20px;
 }
 .container .top-sec h2 {
   font-weight: bold;
@@ -220,6 +235,9 @@ body {
   border: 0.5px solid rgba(204, 204, 204, 0.842);
   border-radius: 2px;
 }
+.container .bot-sec {
+  padding: 20px;
+}
 .container .bot-sec h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -227,14 +245,30 @@ body {
 .container .bot-sec .grid-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   font-size: 1.6rem;
 }
 .container .bot-sec .grid-container .grid-item {
-  padding: 10px 0;
+  padding: 10px;
+}
+.container .bot-sec .grid-container .a {
+  font-weight: bold;
 }
 .container footer {
   text-align: center;
   color: white;
   background-color: #202020;
-  padding: 30px;
+  padding: 20px 30px;
+  margin: 10px 0 0;
+}
+@keyframes bg-anim {
+  0% {
+    background-color: pink;
+  }
+  50% {
+    background-color: turquoise;
+  }
+  100% {
+    background-color: pink;
+  }
 }
