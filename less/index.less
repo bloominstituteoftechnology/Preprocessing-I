@@ -1,59 +1,165 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// VARIABLES
+// COLORS
+@primary-color: crimson;
+@light-text-color: rgb(231, 231, 231);
+@light-border-color: rgb(154, 154, 154);
+@bg-golor: #202020;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+//FONTS
+@regular: 1.6rem;
+@medium: 1.8rem;
+@large: 2.5rem;
+@largest: 3rem;
+
+// DEVICE WIDTHS
+@mobile: 500px;
+
+//MIXINS
+.centered() {
+	display: flex;
+	align-items: center;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.justify() {
+	display: flex;
+	justify-content: space-around;
 }
 
-html, body {
-    height: 100%;
-}
+// STYLES
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	font-family: 'Open Sans';
+	-webkit-font-smoothing: antialiased;
+	background: @bg-golor;
+  }
+  
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+  
+  body {
+	color: @light-text-color;
+  }
+  
+  h1, h2, h3, h4, h5 {
+	font-size: @large;
+	font-weight: 900;
+  }
+  
+  img {
+	width: 100%;
+	height: auto;
+  }
+  
+  p {
+	margin: 20px 0;
+	font-size: @regular;
+	line-height: 2.4rem;
+  }
+  
+  a {
+	text-decoration: none;
+	color: inherit;
+	font-weight: 600;
+  }
+
+  .container {
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: @regular;
+
+  
+  strong {
+	font-weight: bold;
+	color: @primary-color;
+  }
+  
+	header {
+		border-bottom: 1px solid @light-border-color;
+		margin: 20px 0;
+		padding: 20px 0;
+		display: flex;
+		justify-content: space-between;
+
+		@media( max-width: @mobile ) {
+		  flex-direction: column;
+		  align-items: center;
+	  	}
+
+  		h1 {
+			font-size: @largest;
+			text-align: center;
+			}
+
+		@media( max-width: @mobile ) {
+			  margin-bottom: 20px;
+		  }
+	
+		nav {
+			.centered();
+			margin-left: 62px;
+
+			.first-anchor {
+				margin-left: 0;
+		  	}  
+
+			a {
+				margin-left: 20px;
+				font-size: @medium;
+			}
+
+			@media( max-width: @mobile ) {
+				  margin-left: 0;
+				}
+	}
+}
+  
+  .header-img-container img {
+	width: 100%;
+  }
+  
+  
+  .main-content {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media( max-width: @mobile ) {
+		  flex-direction: column;
+		}
+  }
+  
+  .main-content section {
+	margin: 20px 2.5%;
+	width: 45%;
+
+	@media( max-width: @mobile ) {
+		  width: 90%;
+		}
+  }
+
+  .history-contact-section {
+	margin: 20px 2.5%;
+	width: 45%;
+
+	@media( max-width: @mobile ) {
+		  width: 90%;
+		}
+  }
+  
+  .main-footer {
+	margin-bottom: 70px;
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid rgb(154, 154, 154);
+	padding-top: 40px;
+
+	nav {
+		width: 90%;
+		.justify();
+	}
+  }
+
+  }
