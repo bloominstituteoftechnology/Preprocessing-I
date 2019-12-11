@@ -6,124 +6,273 @@
 
 //MIXINS
 
-
-
 //CSS
 
 :root {
-	font-size: 10px;
+  font-size: 10px;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 .container {
-	margin: 0 20%;
+  font-family: sans-serif;
+  margin: 0 20%;
 
+  .top-nav {
+    display: flex;
+    justify-content: flex-end;
 
-	.top-nav {
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 15px;
+    }
+  }
+
+  header {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+    background-color: rgb(177, 177, 255);
+    padding: 30px 30px 50px;
+
+    img {
+      width: 200px;
+    }
+
+    h1 {
+		font-size: 3rem;
+		padding-top: 10px;
+	}
+	
+	h3 {
+		font-size: 1.8rem;
+		padding: 10px 10px 30px;
+	}
+
+	p {
+		font-size: 1.2rem;
+		padding: 10px;
+		border-top: 1px solid gray;
+	}
+
+	a {
+		align-self: stretch;
+		text-align: center;
+		text-decoration: none;
+		color: white;
+		border-radius: 5px;
+		background-color: dodgerblue;
+		padding: 10px;
+	}
+
+	a:hover {
+		background-color: rgb(29, 123, 216);
+	}
+
+  }
+
+  .top-sec {
+	  display: flex;
+	  justify-content: space-between;
+	  margin: 20px 0;
+
+	  h2 {
+		  font-weight: bold;
+		  padding-bottom: 10px;
+	  }
+
+	  .part1 {
+		width: 48%;
+
+		h2 {
+			font-size: 2.5rem;
+		}
+
+		p {
+			font-size: 1.8rem;
+			line-height: 1.5;
+		}
+	  }
+
+	  .part2 {
 		display: flex;
-		justify-content: flex-end;
+		flex-flow: column;
+	    width: 48%;
+
+		h2 {
+			font-size: 2rem;
+		}
 
 		a {
-			text-decoration: none;
-			color: black;
-			font-size: 2rem;
-			font-family: 'Lato²', sans-serif;
-			font-weight: bold;
-			padding: 15px;
-			
-		}
-	}
-
-	header {
-		background-color: lightblue;
-
-
-		img{
-			width: 200px;
+			flex-flow: column;
+			font-size: 1.4rem;
+			padding: 20px;
+			border: 0.5px solid rgba(204, 204, 204, 0.842);
+			border-radius: 2px;
 		}
 
+	  }
+
+  }
+  
+  .bot-sec {
+	  h2{
+		  font-size: 2rem;
+		  font-weight: bold;
+	  }
+	.grid-container {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.6rem;
+		
+		.grid-item {
+			padding: 10px 0;
+		}
 	}
+  }
+
+  footer {
+	  text-align: center;
+	  color: white;
+	  background-color: rgb(32, 32, 32);
+	  padding: 30px;
+	 
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 }
