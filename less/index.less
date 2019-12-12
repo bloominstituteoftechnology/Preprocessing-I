@@ -64,24 +64,29 @@ html, body {
 @background-color1:  #34495e;
 @background-color2: gainsboro;
 @background-color3:;
+.displayFlex(@justify){
+
+	display:flex;
+	justify-content: @justify;
+}
 
 
 header {
 	nav {
-		display: flex;
-		
-		justify-content: flex-end;
+		.displayFlex(center);
 		align-items: baseline;
 		
 		.links{
 	
-		display: flex;
+		.displayFlex(space-evenly);
 		
 		font-family: @main-font;
 		font-size: @text-size;
+		width: 80%;
 		
 		a {
-			margin-left: 4%;
+			margin-left: 5%;
+
 		}
 		
 		
@@ -115,8 +120,7 @@ header {
 	background-color: @background-color2;
 	
 	.intro-img{
-		display: flex;
-		justify-content: flex-start;
+		.displayFlex(flex-start);
 		img{
 			width: 40%;
 			height: 400px;
@@ -184,19 +188,19 @@ header {
 }
 
 #sec2 {
-	display: flex;
+	.displayFlex(space-around);
 	flex-direction: row;
 	font-family: @main-font;
-	justify-content: flex-start;
-	align-items: center;
+	
+	// align-items: center;
 	width: 80%;
 	margin: 10%;
 	background-color:@background-color2;
 
 	.skills{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
+		.displayFlex(center);
+		width:100%;
+
 
 		
 	}
@@ -222,12 +226,12 @@ header {
 	}
 
 	.skill-list {
-		justify-content: center ;
+		.displayFlex(center)
 		font-size: @text-size;
-		width: 50%;
+		width: 100%;
 		border: 1px solid black;
-		margin: 4%;
-		background-color: #34495e;
+		
+		background-color: @background-color1;
 		color: whitesmoke;
 		
 
@@ -235,6 +239,8 @@ header {
 		ul li {
 			border: 1px solid black;
 			padding: 4%;
+			width: 80%;
+			margin: 10% 20% 10% 10%;
 			
 
 			
@@ -285,10 +291,10 @@ header {
 
 
 #sec3{
-	display: flex;
+	.displayFlex(center);
 	
 	font-family: @main-font;
-	justify-content: center;
+	
 	align-items: center;
 	width: 80%;
 	margin:10%;
