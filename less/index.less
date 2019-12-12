@@ -63,8 +63,13 @@ html, body {
 @background-color:#5095C7;
 @link-color:grey;
 @font:'Ubuntu Mono, monospace';
-
-
+//mix-in
+.bordered{
+	border: 1px solid gray;
+}
+.padded{
+	padding:2%;
+}
 
 .pageContainer{
 	
@@ -82,7 +87,7 @@ html, body {
 
 .navContainer{
 	
-	padding: 2%;
+	.padded();
 	
 	
 	
@@ -96,6 +101,10 @@ html, body {
 		height: 20vh;
 		
 			
+	}
+	a:hover{
+		color:green;
+		
 	}
 }
 .introduction{
@@ -116,7 +125,7 @@ html, body {
 		
 		font-family:@font;
 		
-		padding:2%;
+		.padded();
 		
 		
 	}
@@ -129,7 +138,7 @@ html, body {
 	button{
 		width: 25%;
 		margin-left:2%;
-		padding:2%;
+		.padded();
 		font-family: @font
 	
 	}
@@ -169,7 +178,7 @@ html, body {
 	width:75%;
 	padding-top:5%;
 	padding-bottom:5%;
-	font-family: 'Ubuntu Mono', monospace;
+	font-family: @font;
 	table th{
 		border: 1px solid black;
 		font-weight:bold;
@@ -181,16 +190,48 @@ html, body {
 	}
 	td{
 		text-align:center;
-		color:red;
+		
+	}
+}
+footer{
+	text-align:center;
+	form, h2{
+		// font-family:@font;
+		text-align:justify;
+	
+	}
+	h2{
+		padding-top:2%;
+		padding-bottom:2%;
 	}
 }
 
 
-@media(max-width: 500px){
+@media (max-width: 568px){
+	.navContainer{
+		flex-direction:column;
+		width:40%;
+		// a{
+		// font-family:@font;
+		// .bordered();
+		// padding:2%;
+		// }
+	}//
+	.image{
+		display:none;
+	}
+		
+	
 	.introduction {
-		display:flex;
-		flex-direction:flex-column;
-		flex-wrap:none;
-		color:red;
+		
+		height:70vh;
+		
+		button{
+			width:50%;
+		}//this ends button
+
+	}//this ends the introduction
+	.work{
+	border:none;
 	}
-}
+}//this closes media inquiry

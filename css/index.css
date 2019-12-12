@@ -134,6 +134,12 @@ html,
 body {
   height: 100%;
 }
+.bordered {
+  border: 1px solid gray;
+}
+.padded {
+  padding: 2%;
+}
 .pageContainer {
   width: 80%;
   margin: 0 auto;
@@ -150,6 +156,9 @@ body {
   word-spacing: 3em;
   color: grey;
   height: 20vh;
+}
+.navContainer a:hover {
+  color: green;
 }
 .introduction {
   background-color: lightblue;
@@ -208,7 +217,7 @@ body {
   width: 75%;
   padding-top: 5%;
   padding-bottom: 5%;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono, monospace';
 }
 .work table th {
   border: 1px solid black;
@@ -219,13 +228,33 @@ body {
 }
 .work td {
   text-align: center;
-  color: red;
 }
-@media (max-width: 500px) {
+footer {
+  text-align: center;
+}
+footer form,
+footer h2 {
+  text-align: justify;
+}
+footer h2 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+@media (max-width: 568px) {
+  .navContainer {
+    flex-direction: column;
+    width: 40%;
+  }
+  .image {
+    display: none;
+  }
   .introduction {
-    display: flex;
-    flex-direction: flex-column;
-    flex-wrap: none;
-    color: red;
+    height: 70vh;
+  }
+  .introduction button {
+    width: 50%;
+  }
+  .work {
+    border: none;
   }
 }
