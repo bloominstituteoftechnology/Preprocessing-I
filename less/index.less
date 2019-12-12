@@ -63,7 +63,7 @@ html, body {
 @heading-size: 30px;
 @background-color1:  #34495e;
 @background-color2: gainsboro;
-@background-color3:;
+
 .displayFlex(@justify){
 
 	display:flex;
@@ -72,12 +72,16 @@ html, body {
 
 
 header {
+	
+	
 	nav {
 		.displayFlex(center);
 		align-items: baseline;
 		
+		
+
 		.links{
-	
+			
 		.displayFlex(space-evenly);
 		
 		font-family: @main-font;
@@ -88,6 +92,7 @@ header {
 			margin-left: 5%;
 
 		}
+	
 		
 		
 	}
@@ -95,7 +100,64 @@ header {
 	}
 
 	
+	@media(max-width:500px) {
+		header{
+			.displayFlex(center);
+			 
+		}
 		
+
+	 .links{
+			
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width:100%;
+			
+			
+		
+		}
+		 a {
+       
+			/* flex-wrap:nowrap; */
+			text-align: center;
+			// border-bottom: 1px solid grey;
+			// border-top: 1px solid grey;
+			// border-collapse: collapse;
+			padding-top: 4%;
+			padding-bottom: 4%;
+			font-size:@heading-size;
+			width:100%;
+			
+		}
+			#sec1{
+
+				
+			}
+		
+
+		
+
+
+		#sec2{
+			.displayFlex(center);
+
+			.skills {
+				
+				flex-direction: column;
+				justify-content: center;
+
+				h2 {
+					justify-content: center;
+					align-items: center;
+					
+				}
+			}
+		}
+	}
+
+
+	
 		
 		
 
@@ -226,7 +288,7 @@ header {
 	}
 
 	.skill-list {
-		.displayFlex(center)
+		.displayFlex(center);
 		font-size: @text-size;
 		width: 100%;
 		border: 1px solid black;
@@ -291,7 +353,7 @@ header {
 
 
 #sec3{
-	.displayFlex(center);
+	.displayFlex(center); 
 	
 	font-family: @main-font;
 	
@@ -333,8 +395,7 @@ header {
 
 
 #contact{
-	display: flex;
-	justify-content: flex-start;
+	.displayFlex(flex-start);
 	margin: 0 10% 10% 10%;
 
 	h3{
@@ -345,6 +406,13 @@ header {
 		// color: whitesmoke;
 		font-size: @text-size;
 	}
+}
+
+
+.foot {
+	.displayFlex(center);
+	font-family: @main-font;
+	font-size: @text-size;
 }
 
 
