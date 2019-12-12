@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +55,186 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
+
+}
+//variables
+@background-color:#5095C7;
+@link-color:grey;
+@font:'Ubuntu Mono', monospace;
+//mix-in
+.bordered{
+	border: 1px solid gray;
+}
+.padded{
+	padding:2%;
 }
 
+.pageContainer{
+	
+	width: 80%;
+	margin: 0 auto;
+
+	
+	height: 95vh;
+}
+.top{
+	justify-content: center;
+	
+	
+}
+
+.navContainer{
+	
+	.padded();
+	
+	
+	
+	
+	a{
+
+		
+		text-decoration:none;
+		word-spacing: 3em;
+		color:@link-color;
+		height: 20vh;
+		
+			
+	}
+	a:hover{
+		color:green;
+		
+	}
+}
+.introduction{
+	background-color:lightblue;
+	height: 50vh;
+	display:flex;
+	flex-direction:flex-reverse;
+	
+	justify-content:space-between;
+	width:75%;
+	border: 2px dotted gray;
+	.me{
+		
+		line-height:1.5;
+		width: 60%;
+	}
+	h1, p{
+		
+		font-family:@font;
+		
+		.padded();
+		
+		
+	}
+	.image img{
+		
+		height: 50vh;
+		max-width: 100%;
+		padding:2%;
+	}
+	button{
+		width: 25%;
+		margin-left:2%;
+		.padded();
+		font-family: @font
+	
+	}
+}
+.bottom{
+	background-color:lightcyan;
+	display:flex;
+	justify-content:center;
+	width:75%;
+
+	
+	.aboutSkills{
+		display:flex;
+		justify-content:space-around;
+		font-family: @font
+		
+	}
+	.aboutMe, .skills{
+	
+		margin-top:2%;
+		width:30%;
+		padding-right:2%;
+		
+	
+		h1{
+			font-weight:bold;
+		}
+		
+	}
+	
+}
+
+.work{
+	display:flex;
+	justify-content:center;
+	background-color:lightblue;
+	width:75%;
+	padding-top:5%;
+	padding-bottom:5%;
+	font-family: @font;
+	table th{
+		border: 1px solid black;
+		font-weight:bold;
+		
+	}
+	 td{
+		
+		border: 1px solid black;
+	}
+	td{
+		text-align:center;
+		
+	}
+}
+footer{
+	text-align:center;
+	form, h2{
+		// font-family:@font;
+		text-align:justify;
+	
+	}
+	h2{
+		padding-top:2%;
+		padding-bottom:2%;
+		font-family:@font;
+		font-weight:bold;
+	}
+}
+
+
+@media (max-width: 568px){
+	.navContainer{
+		flex-direction:column;
+		width:40%;
+		// a{
+		// font-family:@font;
+		// .bordered();
+		// padding:2%;
+		// }
+	}//
+	.image{
+		display:none;
+	}
+		
+	
+	.introduction {
+		
+		height:70vh;
+		font-size: 18px;
+		button{
+			width:50%;
+		}//this ends button
+
+	}//this ends the introduction
+	.work{
+	font-size: 18px;
+	border:none;
+	}
+}//this closes media inquiry
