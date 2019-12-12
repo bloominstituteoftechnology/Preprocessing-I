@@ -53,7 +53,165 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+@main-font: 'Quicksand', sans-serif;
+@main-color: lightgray;
+
+.border(){
+	border: 2px solid pink;
+}
+html {
+	height: 100%;
+	font-size: 62.5%;
+	margin: 2%;
+}
+body {
+	font-family:@main-font;
+}
+
+nav {
+	font-size: 2rem;
+	word-spacing: 2px;
+	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: flex-end;
+	justify-content: space-evenly;
+	margin-bottom: 2%;
+
+	a:link {
+		text-decoration: none;
+	}
+
+	@media (max-width: 500px) {
+		nav {
+			flex-direction: column;
+
+		}
+	}
+}
+
+.start {
+	font-size: 1.8rem;
+	.border();
+	background-color: @main-color;
+	padding: 2%;
+
+	h1 {
+		font-size: 2.5rem;
+		font-weight: bold;
+		padding-bottom: 2%;
+	}
+	img {
+		width: 50%;
+		height: 40vh;
+		padding-bottom: 2%;
+	}
+	p {
+		margin-top: 2%;
+		
+	}
+	.startp {
+		border-top: 1px dashed black;
+		padding-top: 2%;
+	}
+	button {
+		margin:2% 2% 2% 0;
+		background-color: darkgray;
+		color: white;
+	}
+	@media (max-width: 500px) {
+		img {
+			width: 100%;
+		}
+	}
+}
+.middle {
+	display: flex;
+	margin-top: 2%;
+
+	#about {
+		margin-right: 2%;
+		padding: 2%;
+		.border();
+		h2 {
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin: 2% 0;
+			text-decoration: underline;
+		}
+		p {
+			font-size: 1.3rem;
+		}
+	}
+	.list {
+		margin-right: 2%;
+		padding: 2%;
+		.border();
+		h2 {
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin: 2% 0;
+			text-decoration: underline;
+			text-align: center;
+		}
+		ul {
+			font-size: 1.5rem;
+			line-height: 3vh;
+			text-align: center;
+		}
+	}	
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+}
+#work {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2%;
+		.title {
+			font-size: 1.7rem;
+			font-weight: bold;
+			margin: 2% 0;
+			text-decoration: underline;
+			text-align: center;
+			justify-content: center;
+			.border();
+			width: 20%;
+		}
+		.job {
+			margin-right: 2%;
+			margin-bottom: 2%;
+			padding: 2%;
+			.border();
+			h2 {
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin: 2% 0;
+				text-decoration: underline;
+			}
+			p {
+				font-size: 1.3rem;
+			}
+		}
+	}
+footer {
+	background-color: @main-color;
+	.border();
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	h2{
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin: 2% 0;
+		text-decoration: underline;
+	} 
+	p {
+		font-size: 1.3rem;
+		padding: 2%;
+	}
+
 }
 
