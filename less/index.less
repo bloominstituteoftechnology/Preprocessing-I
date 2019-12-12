@@ -105,38 +105,69 @@ body {
 
 .main {
 	padding: 2rem;
-	margin: 5%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
 }
 
  .skills {
 	//  float: left;
-	 margin: 0rem 5rem;
-	 width: 40%;
+	 margin: 0;
 	 background-color: @second-color;
 	 padding: 5rem;
 	 font-size: 2.0rem;
+	border: 2px solid @main-color;
+	border-radius: 1rem;
+	text-align: center;
 	 h2 {
-		 font-size: 4rem;
+		 font-size: 5rem;
 		 text-transform: uppercase;
 	 }
 	 table {
-		border-collapse: collapse;
+		border-collapse: separate;
+		border-spacing: 1rem;
 	 }
 	table, td {
-		border: 1px solid black;
+		font-size: 4rem;
 	}
  }
 
  .partner {
-	 float: right;
-	 top: 0;
-	 margin: 0 5rem;
-	 width: 40%;
+	 margin: 0 1rem;
+	 padding: 1rem;
 	background-color: @second-color;
+	font-size: 2.0rem;
+	text-align: right;
+	width: 100%;
+	border-radius: 1rem;
+	border: 2px solid @main-color;
+	h2 {
+		font-size: 4rem;
+	}
+	.john {
+		width: 100%;
+		object-fit: cover;
+		height: 60%;
+	}
+	.quotes {
+		font-style: italic;
+	.quotes:before {
+		content: open-quote;
+		font-style: italic;
+	.quotes:after {
+		content: close-quote;
+	}
+	@media screen and (max-width: 768px) {
+		.john {
+			justify-content: center;
+			object-fit: cover;
+		}
+	}
  }
 
- .row {
-	 display: flex;
-	 flex-wrap: wrap;
-	 bottom: 0;
- }
+.footer {
+background-color: @main-color;
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+}

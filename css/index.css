@@ -167,34 +167,72 @@ body {
 }
 .main {
   padding: 2rem;
-  margin: 5%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 .skills {
-  margin: 0rem 5rem;
-  width: 40%;
+  margin: 0;
   background-color: #D5C188;
   padding: 5rem;
   font-size: 2rem;
+  border: 2px solid #DCB6A7;
+  border-radius: 1rem;
+  text-align: center;
 }
 .skills h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   text-transform: uppercase;
 }
 .skills table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 1rem;
 }
 .skills table,
 .skills td {
-  border: 1px solid black;
+  font-size: 4rem;
 }
 .partner {
-  float: right;
-  top: 0;
-  margin: 0 5rem;
-  width: 40%;
+  margin: 0 1rem;
+  padding: 1rem;
   background-color: #D5C188;
+  font-size: 2rem;
+  text-align: right;
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px solid #DCB6A7;
 }
-.row {
+.partner h2 {
+  font-size: 4rem;
+}
+.partner .john {
+  width: 100%;
+  object-fit: cover;
+  height: 60%;
+}
+.partner .quotes {
+  font-style: italic;
+}
+.partner .quotes .quotes:before {
+  content: open-quote;
+  font-style: italic;
+}
+.partner .quotes .quotes:before .quotes:after {
+  content: close-quote;
+}
+@media screen and (max-width: 768px) {
+  .partner .quotes .quotes:before .john {
+    justify-content: center;
+    object-fit: cover;
+  }
+}
+.partner .quotes .footer {
+  background-color: #DCB6A7;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.partner .quotes .row {
   display: flex;
   flex-wrap: wrap;
   bottom: 0;
