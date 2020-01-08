@@ -54,6 +54,181 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background:@main-color;
 }
 
+
+
+
+//color selectors//
+
+@main-color: #353333;
+@header-color: rgb(13, 71, 228);
+@text-color: white;
+
+
+
+
+
+.headerNav{
+	display: flex;
+	justify-content: center;
+	@media (max-width: 500px){
+		flex-direction: column;
+		text-align: center;
+		
+	}
+
+	a{
+		font-size: 1.5rem;
+		text-decoration: none;
+		border:2px white outset;
+		padding:2rem 5rem 2rem 5rem;
+		margin: 1rem 2rem 0 2rem;
+		color:@text-color;
+	}
+
+}
+
+.profile{
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom:2rem;
+	margin-top:3rem;
+
+	@media (max-width: 500px){
+		flex-direction: column;
+		margin-left:3rem;
+	}
+
+	.name{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color:@text-color;
+
+		h1{
+			font-size: 6rem;
+			color:@header-color;
+			@media (max-width: 500px){
+				font-size: 3rem;
+				text-align: center;
+				margin-right:2rem;
+			}
+		}
+		p{
+			font-size: 2rem;
+			margin-top:2rem;
+		}
+	}
+
+	.profileImage{
+		width: 25rem;
+		border-radius: 4rem;
+		border: 2px black solid;
+	}
+}
+
+.profileDescription{
+	color:@text-color;
+	display: flex;
+	justify-content: center;
+
+
+	p{
+		font-size:1.3rem;
+	}
+
+	h2{
+		font-size: 2rem;
+		margin-bottom: .8rem;
+		display: flex;
+		justify-content: center;
+		color:@header-color;
+	}
+
+	.about{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left:10rem;
+		margin-right:10rem;
+		margin-top: 0rem;
+		padding:5rem 10rem 5rem 10rem;
+		border-radius: 2rem;
+
+		@media (max-width: 500px){
+			margin:0rem;
+			padding:3rem;
+		}
+
+	}
+}
+
+
+.work{
+
+	display: flex;
+	justify-content: space-evenly;
+	margin-top:4rem;
+	color:@text-color;
+
+	@media (max-width: 500px){
+		flex-direction: column;
+	}
+
+	p , li{
+		font-size: 1.8rem;
+		display: flex;
+		justify-content: center;
+		margin-bottom:.3rem;
+	}
+
+	h2{
+		font-size: 2.7rem;
+		margin-bottom:2rem;
+		color:@header-color;
+	}
+
+	.skills{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media (max-width: 500px){
+			margin-bottom:6rem;
+		}
+
+	}
+
+	.history{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media (max-width: 500px){
+			margin-bottom:4rem;
+		}
+
+	}
+}
+
+.contact{
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 2rem;
+	color:@text-color;
+	margin-top:7rem;
+	margin-bottom:2rem;
+	
+	background:black;
+	padding:3rem;
+
+	@media (max-width: 500px){
+		margin-top:2rem;
+		margin-bottom:4rem;
+	}
+
+}
