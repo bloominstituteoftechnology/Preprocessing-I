@@ -67,8 +67,10 @@ html, body {
 @header-color: #555558;
 @margin-box: 2.5%;
 @left-margin: 3%;
+
+//mix-in
 .hover-style{
-	background:#0aad49;
+	background:#6ed194;
 	color: black;
 }
 .skills-style{
@@ -87,33 +89,33 @@ header {
 	nav{
 		display: flex;
 		justify-content: center;
-		padding:2%;
+		padding:1% 2%;
 		background: @header-color;
 		// margin: @margin-box;
 		@media (max-width:480px){
 			flex-direction: column;
 			background:#c1d8ec;
 			align-items:center;
-			
+		
 		}
 		
 		a {
-		width:25%;
-		padding:1% 10%;
-		font-size: 1.5rem;
-		color: white;
-		text-decoration:none;
-		
-		&:hover {
-			.hover-style();
-		}
-		@media (max-width:480px){
+			width:25%;
+			padding:1% 10%;
+			font-size: 1.5rem;
+			color: white;
+			text-decoration:none;
+			
+			&:hover {
+				.hover-style();
+			}
+
+			@media (max-width:480px){
 			width:100%;
 			padding: 2%;
 			text-align: center;
 			color:#eaeb;
-		
-						
+							
 		}
 		
 		} // end of a
@@ -160,7 +162,7 @@ header {
 				margin: 2% 5%;
 				height: 55vh;
 				width:70vh;
-				//background-image: url('../Computer-Tech.jpg');
+				background-image: url('../Computer-Tech.jpg');
 				background-position: center;
 				background-size: 100%;
 				background-repeat: no-repeat;
@@ -171,9 +173,25 @@ header {
 			} // end img heading
 	} // end of about section
 
+// begin of why hire me section
+.why-hire-me {
+	margin:@margin-box;
 	
+	h3{
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom:1%;
 
-#portfolio{
+	}
+	p {
+		background: @back-color;
+		font-size: 1.2rem;
+		padding: 2%;
+	}
+} // end why hire section
+	
+// begin of working experiance
+#work{
 	display: flex;
 	
 	font-size:1.2rem;
@@ -255,9 +273,15 @@ header {
 			text-decoration: none;
 			color:@main-color;
 			margin-left:@left-margin;
+			&:hover{
+				background: #88a8ad;
+			}
 		}
 		email{
 			margin-left:@left-margin;
+			&:hover{
+				background: #88a8ad;
+			}
 		}
 		
 		address{
