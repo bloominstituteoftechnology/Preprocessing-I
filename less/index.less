@@ -64,42 +64,19 @@ html, body {
 
 .flex-box {
 	display: flex;
-	flex-direction: row;
-
-}
-.flex-box-column-center {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.flex-box-column-end {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-}
-.flex-box-column-start {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-}
-.flex-box-row-start {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-}
-.flex-box-row-end {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-}
 
 
+}
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
 
 header {
 	.flex-box();
 	justify-content: space-around;
 	border-bottom: 1px solid @secondary-color ;
+	background: @secondary-color;
    nav {
 	.flex-box();
 	ul {
@@ -108,10 +85,114 @@ header {
 		
 	li {
 		padding: 20px;
+		a{
+			text-decoration:none;
+			color: @primary-color
+		}
+		a:hover{
+			color: @heading-color;
+			text-decoration: underline;
+		}
 	}
 	}
    }
    .logo {
 	   padding: 20px;
+	   font-family: 'Bevan', cursive;
    }
+}
+
+.first-section {
+  .flex-box();
+  justify-content: space-around;
+  padding-top: 100px;
+  .description {
+	  align-self: center;
+	  h1 {
+		  font-size: 4rem;
+		  color: @heading-color;
+		  font-family: 'Bevan', cursive;
+	  }
+	  p{
+		  font-size: 2rem;
+		  font-family: 'Bevan', cursive;
+	  }
+  }
+  .intro-img{
+	  border-radius: 100%;
+	  width: 30%;
+  }
+}
+
+.section-two {
+	width: 100%;
+	.flex-box();
+	justify-content: center;
+	div {
+		width: 50%;
+		padding: 100px;
+		.flex-col();
+		align-items: center;
+		h2 {
+			padding: 10%;
+			font-weight: bold;
+			font-size: 2rem;
+			color: @heading-color;
+			font-family: 'Bevan', cursive;
+		}
+		.skills-list {
+			text-align: left;
+			align-self: center;
+			li{
+				padding: .6em;
+				list-style-type: disc;
+			}
+		}
+	}
+}
+.section-three {
+	.flex-box();
+	width: 100%;
+	padding: 100px;
+	justify-content: center;
+	.work-history {
+		.flex-col();
+		div {
+			.flex-box();
+			flex-direction: row;
+			justify-content: space-around;
+			p {
+				padding: 20px 100px 20px 100px;
+				width: 25%;
+			}
+		}
+	}
+
+}
+.row-header {
+	border-bottom: 1px solid @secondary-color;
+	p{
+		font-weight: bold;
+		color: @heading-color;
+		font-family: 'Bevan', cursive;
+	}
+}
+.row-2 {
+	border-top: 1px solid @secondary-color;
+	border-bottom: 1px solid @secondary-color;
+}
+.row-3{
+	border-bottom: 1px solid @secondary-color;
+}
+#contact {
+	.flex-box();
+	padding: 50px 100px 50px 100px;
+	background: @secondary-color;
+	p{
+		padding: .6em;
+	}
+}
+footer {
+	text-align: center;
+	background: @secondary-color;
 }
