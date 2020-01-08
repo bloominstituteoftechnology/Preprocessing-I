@@ -31,6 +31,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	
+
 }
 ol, ul {
 	list-style: none;
@@ -57,10 +59,34 @@ html, body {
     height: 100%;
 }
 
+//variables
+@backgroundcolor: #FFE4C4;
+
+// mix-ins
+.box-spacing {
+	margin: 1%;
+	padding: 2%;
+  }
+
+.margin{
+	margin: 2% 15%;
+}
+
+.flex-center{
+	justify-content: center;
+  }
+
+.fontfam{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: bold;
+}
+
+//header
 header{
 	
 	nav{
 		display: flex;
+		margin-right: 15%;
 		justify-content: flex-end;
 		align-items: center;
 		a {
@@ -73,10 +99,12 @@ header{
 	}
 }
 
+
 //about me section
 #aboutme{
-	background-color: #E99183;
-	margin: 2% 3%;
+	background-color: @backgroundcolor;
+	.margin();
+	Width: 75%;
 
 	img{
 		width: 20%;
@@ -86,25 +114,175 @@ header{
 
 
 	h1{
-		font-size: 55px;
-		margin-left: 5%;
-		padding: 2%;
+		font-size: 5rem;
+		margin-left: 9%;
+		padding: 1%;
+		.fontfam();
 	
 	}
 	h2{
-		border: solid;
-		font-weight: lighter;
-		font-size: 30px;
-		margin-left: 7%;
+		font-size: 2rem;
+		margin-left: 9%;
 		padding: 1%;
 
 	}
 
-	div{
+	
+	div {
 		display: flex;
-		flex-direction: column;
+		align-items: left;
+		.box-spacing();
+		
+	}
+
+	p{
+		font-size: 20px;
+		width: 65%;
+		margin-left: 10%;
+			
+	}
+		
+	a {
+		background-color: #b9e887;
+		border: 1px solid white;
+		.box-spacing();
+		border-radius: 10px;
+		margin-left: 8%;
+			
+			
+	}
+
+}
+
+//skills section
+.skills-section {
+	width: 76%;
+	margin: 0 15%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	font-weight: bold;
+	margin-bottom: 20px;
+	border-bottom: 1px dashed black;
+	
+		
+		.text-container {
+			width: 48%;
+			padding: 0 1%;
+			padding-bottom: 20px;  
+
+			table{
+				border:#DCDCDC;
+				width: 90%;
+				
+			}
+
+			h2{
+				font-size: 2rem;
+				.fontfam();
+			}
+			p{
+				font-weight: lighter;
+			}
+			tr{
+				font-weight: lighter;
+				
+			}
+			td{
+				border: solid #DCDCDC;
+				height: 50px;
+				padding: 15px;
+ 			 	text-align: left;
+			}
+			
+		}
+	
+	}
+
+//workhistory section
+.workhistory{
+	width: 76%;
+	margin-left: 15%;
+		div{
+			padding: 2%;
+		}
+		h2{
+			font-size: 2rem;
+			.fontfam();
+
+			
+		}
+		table{
+			width: 100%;
+			
+			th {
+				border-top: black;
+				background-color: white;
+				height: 50px;
+				text-align: left;
+				font-weight: bold;
+				
+			  }
+			 
+		
+		}
+		td:first-child{
+			font-weight: bold;
+		}
+
+}
+
+//contact section
+.contact{
+	.margin();
+	
+	width: 75%;
+	background-color: @backgroundcolor;
+	padding: 2%;
+
+	h2{
+		.fontfam();
+	}
+}
+
+//footer
+footer{
+	text-align: center;
+	background-color: #b9e887;
+	.margin();
+	padding: 5%;
+	Width: 75%;
+	height: 15%;
+			
+}
+
+@media(max-width: 500px){
+	a{
+		align-items: center;
+	}
+
+	#aboutme {
+		h1 {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		h2{
+			font-size: 20px;
+			font-weight: bold;
+		}
 	}
 
 
+	.skills-section{
+		background-color: #b9e887;
+		flex-direction: column;
+		align-items: center;
+
+		.text-container{
+			width: 100%;
+			
+		}
+	}
 }
 
