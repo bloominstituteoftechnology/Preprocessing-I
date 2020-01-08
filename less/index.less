@@ -54,6 +54,216 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
+	
 }
+
+// start coding here
+
+// variable
+@back-color:#d5e4e4;
+@main-color: #5d6161;
+@header-color: #555558;
+@margin-box: 2.5%;
+@left-margin: 3%;
+.hover-style{
+	background:#0aad49;
+	color: black;
+}
+.skills-style{
+	width: 40%;
+	height: 30vh;
+	padding: 2%;
+	margin: 2%;
+	background:@back-color;
+}
+header {
+	margin:2%;
+	height:80vh;
+	
+	
+	
+	nav{
+		display: flex;
+		justify-content: center;
+		padding:2%;
+		background: @header-color;
+		// margin: @margin-box;
+		@media (max-width:480px){
+			flex-direction: column;
+			background:#c1d8ec;
+			align-items:center;
+			
+		}
+		
+		a {
+		width:25%;
+		padding:1% 10%;
+		font-size: 1.5rem;
+		color: white;
+		text-decoration:none;
+		
+		&:hover {
+			.hover-style();
+		}
+		@media (max-width:480px){
+			width:100%;
+			padding: 2%;
+			text-align: center;
+			color:#eaeb;
+		
+						
+		}
+		
+		} // end of a
+		} // end of nav
+	} // end of header
+
+	// begin about-section
+	.about-section {
+		display: flex;
+		justify-content: space-around;
+		background: @back-color;
+		margin: 2% 0;
+		
+		
+		
+		//  begin about text
+		#about-text{
+			margin:2% 5%;;
+			width:40vw;
+			height: 50vh;
+			
+			background: @back-color;
+			@media (max-width:480px){
+				width:80vw;
+				
+			}
+			
+			h1{
+				text-align:center;
+				font-size: 4rem;
+				color:@main-color;
+				padding: 5%;
+			}
+			p{
+				font-size:1.2rem;
+				margin:@margin-box;
+				text-align:center;
+			}
+		
+		} // end of about text
+
+	// begin img heading
+			.img-heading {
+				margin: 2% 5%;
+				height: 55vh;
+				width:70vh;
+				//background-image: url('../Computer-Tech.jpg');
+				background-position: center;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				@media (max-width:480px){
+					display: none;
+				}
+			
+			} // end img heading
+	} // end of about section
+
+	
+
+#portfolio{
+	display: flex;
+	
+	font-size:1.2rem;
+	flex-direction: column;
+	
+	margin:@margin-box;
+	
+		h2{
+			padding:2%;
+			text-align:center;
+			font-size: 2.5rem;
+			font-weight: 600;
+			background: #cfebeb;
+			
+		}
+		.skills-container {
+			display: flex;
+			
+			justify-content: space-around;
+			flex-wrap: wrap;
+			flex-direction: row;
+			background:#1544;
+			// margin:@margin-box;
+			background: #dce2e2;
+			@media (max-width:480px){
+				flex-direction: column;
+				align-items:center;
+			}
+			.html-skills, .css-skills, .responsive-skills, .pre-processor-skills{
+				
+				.skills-style();
+				text-align: center;
+				// border : 1px solid #fafcac;
+				border-radius: 15px;
+				@media (max-width:480px){
+					
+					width:70vw;
+					margin:2%;
+					padding:0 2%;
+					
+					;
+				}
+					h3 {
+					padding: 3%;
+					font-weight: 800;
+
+				} //end h3
+
+
+	} // end skills box
+} // end skills-container
+
+} // end portfolio
+
+//contact section
+
+#contact{
+	
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
+		width: 95%;
+		margin:1% 2.5%;
+		padding: 2% 3%;
+		background: rgba(189, 194, 193, 0.2);
+		font-size: 1.1rem;
+		color:@main-color;
+		line-height: 1.2;
+		
+		
+		h3{
+			font-size: 2rem;
+			font-weight: 500;
+			text-decoration: underline;
+			margin-bottom: 2%;;
+		}
+
+		a {
+			text-decoration: none;
+			color:@main-color;
+			margin-left:@left-margin;
+		}
+		email{
+			margin-left:@left-margin;
+		}
+		
+		address{
+			margin-left:@left-margin;
+		}
+		
+
+} //end of contact
 
