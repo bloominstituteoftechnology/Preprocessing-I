@@ -50,10 +50,273 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+@text-color: #563f46;
+@text-color2: #484f4f; 
+@text-color3: #e0e2e4;
+.text-mixin {
+	color: @text-color3;
+	font-size: 3rem;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 62.5%;
 }
 
+//Start of my CSS//
+
+header {
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		margin: 3%;
+	
+		a {
+			text-decoration: none;
+			color: @text-color;
+			margin: 0 3%;
+			font-size: 2rem;
+		}
+	}
+
+	@media(max-width: 500px) {
+
+		nav {
+			flex-direction: column;
+			justify-content: center;
+			margin: 0;
+		
+			a {
+				border-bottom: 1px solid @text-color2;
+				margin: 0;
+				text-align: center;
+				padding: 3%;
+			}
+		}
+	}
+}
+
+.top-section {
+	background-color: #8ca3a3;
+	display: flex;
+
+	img {
+		margin-left: 3%;
+		margin-top: 3%;
+		margin-bottom: 3%;
+		border-radius: 10px;
+	}
+	
+	@media(max-width: 500px) {
+		img {
+		display: none;
+		}
+
+	}
+	.top-intro {
+		width: 100%;
+		text-align: justify;
+		margin: 7%;
+		color: @text-color;
+
+		h1 {
+			font-size: 4rem;
+			margin: 3% 0;
+		}
+		
+		h2 {
+			font-size: 3rem;
+			margin: 3% 0;
+		}
+		
+		p {
+			font-size: 2rem;
+			margin-bottom: 3%;
+		}
+		
+		button {
+			padding: 1%;
+			border-radius: 10px;
+			cursor: pointer;
+			font-size: 1.4rem;
+			margin-bottom: 2%;
+		}
+		
+		@media(max-width: 500px) {
+			text-align: center;
+		}
+	}
+}
+
+.bottom-section {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5%;
+	
+	.story {
+		width: 35%;
+		background-color: @text-color;
+		border-radius: 10px;
+		padding: 2%;
+
+		h2 {
+			.text-mixin();
+			margin-bottom: 5%;
+			text-decoration: underline;
+		}
+		
+		p {
+			font-size: 2rem;
+			color: @text-color3;
+		}
+		
+	}
+
+	.skills {
+		width: 15%;
+		background-color: @text-color;
+		border-radius: 10px;
+		padding: 1%;
+		text-align: center;
+
+		h2 {
+			.text-mixin;
+			margin: 5% 0;			
+			text-decoration: underline;
+		}
+
+		ul {
+			li {
+				font-size: 2rem;
+				margin-top: 10%;
+				padding: 2%;
+				color: @text-color3;
+			}
+		}
+	}
+
+	.contact {
+		width: 30%;
+		font-size: 2rem;
+		background-color: @text-color;
+		border-radius: 10px;
+		padding: 1.5%;
+	
+		h2 {
+			.text-mixin;
+			text-decoration: underline;
+		}
+
+		form {
+			padding: 5% 0;
+			color: @text-color3;
+		}
+	}
+
+	@media(max-width: 500px) {
+		display: block;
+		background-color: @text-color;
+		border-radius: 10px;
+		
+		.story {
+			width: 100%;
+			padding: 5%;
+
+			h2 {
+				text-align: center;
+			}
+		}
+
+		.skills {
+			width: 100%;
+
+			h2 {
+				margin: 3%;
+			}
+
+			ul {
+				li {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}	
+		
+		.contact {
+			width: 100%;
+			text-align: center;
+			margin-top: 10%;
+		}
+		
+	}
+}
+
+.history {
+	
+	h2 {
+		font-size: 3rem;
+		margin: 3% 0 2% 3%;
+		color: @text-color;
+		text-align: center;
+	}
+
+	table {
+		border: 2px solid @text-color2;
+		width: 94%;
+		margin-left: 3%;
+		margin-bottom: 3%;
+		
+		th {
+			font-size: 2rem;
+			text-align: center;
+			background-color: gray;
+		}
+
+		tr {
+
+			td {
+				font-size: 1.5rem;
+				text-align: center;
+				padding: 2% 0;
+			}
+		}
+	}
+}
+
+.copyright {
+	font-size: 1.6rem;
+	text-align: center;
+	margin-bottom: 3%;
+}
+
+//Portfolio Page//
+
+.portfolio-opening {
+	h1 {
+		.text-mixin;
+		background-color: @text-color;
+		padding: 1%;
+	}
+
+	p {
+		font-size: 1.6rem;
+		margin: 3% 0 0 1%;
+	}
+}
+	
+.links {
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		font-size: 1.6rem;
+		margin: 4% 0 0 1%;
+		color: @text-color;
+	}
+}
