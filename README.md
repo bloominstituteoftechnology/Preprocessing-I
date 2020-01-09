@@ -36,7 +36,7 @@ Follow these steps for completing your project.
 * [ ] Content: Contact - Provide some way a potential employer could contact you.  Phone number, email, or a full on contact form (doesn't have to work)
 * [ ] Variables: Incorporate variables in your project for color and font stacks.  
 * [ ] Nesting: Every selector should be nested inside the main container.  Avoid having global styles unless they are element level.
-* [ ] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
+* [x] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
 * [ ] Mobile: Use nested-at rules to provide a mobile version of your resume.  Use `500px` as a `max-width` for mobile. 
 
 ## Stretch Goals: 

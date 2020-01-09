@@ -3,6 +3,18 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-color:black;
+.flex-box
+
+.column{
+	display:flex;
+	flex-direction: column;
+}
+
+.center{
+	display:flex;
+	justify-content: center;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -66,8 +78,15 @@ html, body {
 	header{
 		nav{
 			.flex-box();
+
+			@media(max-width:500px){
+				.column();
+			}
+			@media(max-width:500px){
+				.center();
+			}
 			a{
-				color:black;
+				color:@font-color;
 				margin: 1%;
 				padding: 2%;
 				text-decoration: none;
@@ -88,13 +107,13 @@ html, body {
 	}
 	h3{
 		padding-bottom:1%;
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid @font-color;
 	}
 	p{
 		padding: 3% 0;
 	}
 	a{
-		border: 1px solid black;
+		border: 1px solid @font-color;
 		padding:1%;
 		margin: 3% 0;
 		text-decoration: none;
@@ -104,10 +123,7 @@ html, body {
 	}
 }
 .content-two{
-	padding: 2% 0;
-	display:flex;
-	justify-content:space-around;
-	align-items: center;
+
 	.listen{
 		h1{
 			font-size: 2rem;
@@ -115,7 +131,7 @@ html, body {
 		}
 		p{
 		width: 30%;
-		color:black;
+		color:@font-color;
 		}
 	}
 	h1{
@@ -125,7 +141,7 @@ html, body {
 		width: 30% 0;
 		padding: 2%;
 		tr,td{
-			border: 1px solid red;
+			border: 1px solid @font-color;
 			padding-right: 200px;
 			margin-right: 40px;
 		}
@@ -139,7 +155,7 @@ table{
 	padding: 2%;
 	
 	tr{
-		border-top: 1px solid red;
+		border-top: 1px solid @font-color;
 	}
 }
 }
