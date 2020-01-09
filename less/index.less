@@ -54,6 +54,294 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	
+	
+}
+
+// start coding here
+
+// variable
+@back-color:#d5e4e4;
+@main-color: #5d6161;
+@header-color: #555558;
+@margin-box: 2.5%;
+@left-margin: 3%;
+
+//mix-in
+.hover-style{
+	background:#6ed194;
+	color: black;
+}
+.skills-style{
+	width: 40%;
+	height: 30vh;
+	padding: 2%;
+	margin: 2%;
+	background:@back-color;
+}
+header {
+	margin:2%;
+	height:80vh;
+	
+	
+	
+	nav{
+		display: flex;
+		justify-content: center;
+		padding:1% 2%;
+		background: @header-color;
+		// margin: @margin-box;
+		@media (max-width:480px){
+			flex-direction: column;
+			background:#c1d8ec;
+			align-items:center;
+		
+		}
+		
+		a {
+			width:25%;
+			padding:1% 10%;
+			font-size: 1.5rem;
+			color: white;
+			text-decoration:none;
+			
+			&:hover {
+				.hover-style();
+				
+			}
+
+			@media (max-width:480px){
+			width:100%;
+			padding: 2%;
+			text-align: center;
+			color:#eaeb;
+							
+		}
+		
+		} // end of a
+		} // end of nav
+	} // end of header
+
+	// begin about-section
+	.about-section {
+		display: flex;
+		justify-content: space-around;
+		background: @back-color;
+		margin: 2% 0;
+		
+		
+		
+		//  begin about text
+		#about-text{
+			margin:2% 5%;;
+			width:40vw;
+			height: 50vh;
+			
+			background: @back-color;
+			@media (max-width:480px){
+				width:80vw;
+				
+			}
+			
+			h1{
+				text-align:center;
+				font-size: 4rem;
+				color:@main-color;
+				padding: 5%;
+			}
+			p{
+				font-size:1.2rem;
+				margin:@margin-box;
+				text-align:center;
+				strong{
+					font-weight: 700;
+					font-size: 1.4rem;;
+				}
+			}
+		
+		} // end of about text
+
+	// begin img heading
+			.img-heading {
+				margin: 2% 5%;
+				height: 55vh;
+				width:70vh;
+				background-image: url('../Computer-Tech.jpg');
+				background-position: center;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				@media (max-width:480px){
+					display: none;
+				}
+			
+			} // end img heading
+	} // end of about section
+
+// begin of why hire me section
+.why-hire-me {
+	margin:@margin-box;
+	
+	h3{
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom:1%;
+
+	}
+	p {
+		background: @back-color;
+		font-size: 1.2rem;
+		padding: 2%;
+		@media (max-width:500px){
+			padding:5%;
+		}
+	}
+} // end why hire section
+	
+// begin of working experiance
+#work{
+	display: flex;
+	
+	font-size:1.2rem;
+	flex-direction: column;
+	
+	margin:@margin-box;
+	
+		h2{
+			padding:2%;
+			text-align:center;
+			font-size: 2.5rem;
+			font-weight: 600;
+			 background: #cfebeb;
+			 @media (max-width:500px){
+				font-size: 2.2rem;
+			}
+			
+		}
+		.skills-container {
+			display: flex;
+			flex-direction: column;
+			background:#1544;
+			.header-skills{
+				
+				display: flex;
+								
+				h2{
+					
+					width:25%;
+					text-align:left;
+					
+					&:nth-of-type(1){
+						width:10%;
+					}
+
+					&:nth-of-type(4){
+						width:40%;
+					}
+				
+				//media query 
+				@media (max-width:500px){
+					font-size: 1.2rem;
+				}
+			}
+			}
+			
+			// @media (max-width:480px){
+			// 	flex-direction: column;
+			// 	align-items:center;
+			// }
+			.skill{
+				
+				display: flex;
+				
+
+				h3{
+					padding:1%;
+					width:10%;
+					text-align:center;
+					font-weight: 800;
+					
+					
+				}
+				p {
+					padding:1%;
+					width:25%;
+					
+					&:nth-of-type(3){
+					width: 40%;
+					}
+					@media (max-width:500px){
+						font-size: 1rem;
+					}
+				}
+				
+				
+				// border-radius: 15px;
+				// @media (max-width:480px){
+					
+																
+				
+			
+					
+					
+				
+
+
+	} // end skills box
+} // end skills-container
+
+} // end portfolio
+
+//contact section
+
+#contact{
+	
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
+		width: 95%;
+		margin:1% 2.5%;
+		padding: 2% 3%;
+		background: rgba(189, 194, 193, 0.2);
+		font-size: 1.1rem;
+		color:@main-color;
+		line-height: 1.2;
+		
+		
+		h3{
+			font-size: 2rem;
+			font-weight: 500;
+			text-decoration: underline;
+			margin-bottom: 2%;;
+		}
+
+		a {
+			text-decoration: none;
+			color:@main-color;
+			margin-left:@left-margin;
+			&:hover{
+				background: #88a8ad;
+			}
+		}
+		email{
+			margin-left:@left-margin;
+			
+			&:hover{
+				background: #88a8ad;
+			}
+		}
+		
+		address{
+			margin-left:@left-margin;
+		}
+		
+
+} //end of contact
+.copyRight{
+	padding:2%;
+	background: @back-color;
+	text-align: center;
+	margin:2% 2.5%;
+	font-size: 1.2rem;
 }
 
