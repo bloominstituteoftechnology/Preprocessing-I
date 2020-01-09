@@ -3,6 +3,18 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-color:black;
+.flex-box
+
+.column{
+	display:flex;
+	flex-direction: column;
+}
+
+.center{
+	display:flex;
+	justify-content: center;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -56,4 +68,94 @@ table {
 html, body {
     height: 100%;
 }
+.flex-box{
+	display:flex;
+	justify-content:flex-end;
+	align-items:center ;
+}
+.container{
+	padding: 2%;
+	header{
+		nav{
+			.flex-box();
 
+			@media(max-width:500px){
+				.column();
+			}
+			@media(max-width:500px){
+				.center();
+			}
+			a{
+				color:@font-color;
+				margin: 1%;
+				padding: 2%;
+				text-decoration: none;
+			} // a tag end
+
+		} //nav end
+	}  //header end
+}
+.box{
+	background:#a18a67;
+	padding:1% 0;
+	.content-one{
+	padding:1%;
+	margin:2%;
+	h1{
+		font-size: 4rem;
+		padding: 1% 0;
+	}
+	h3{
+		padding-bottom:1%;
+		border-bottom: 1px solid @font-color;
+	}
+	p{
+		padding: 3% 0;
+	}
+	a{
+		border: 1px solid @font-color;
+		padding:1%;
+		margin: 3% 0;
+		text-decoration: none;
+		color:black;
+		border-radius:0.5rem;
+	}
+	}
+}
+.content-two{
+
+	.listen{
+		h1{
+			font-size: 2rem;
+			// padding: 1% 0;
+		}
+		p{
+		width: 30%;
+		color:@font-color;
+		}
+	}
+	h1{
+		font-size: 2rem;
+	}
+	table{
+		width: 30% 0;
+		padding: 2%;
+		tr,td{
+			border: 1px solid @font-color;
+			padding-right: 200px;
+			margin-right: 40px;
+		}
+	}
+}
+.work-hist{
+	display:flex;
+	justify-content:center;
+	
+table{
+	padding: 2%;
+	
+	tr{
+		border-top: 1px solid @font-color;
+	}
+}
+}
