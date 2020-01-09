@@ -108,6 +108,7 @@ header {
 			
 			&:hover {
 				.hover-style();
+				
 			}
 
 			@media (max-width:480px){
@@ -153,6 +154,10 @@ header {
 				font-size:1.2rem;
 				margin:@margin-box;
 				text-align:center;
+				strong{
+					font-weight: 700;
+					font-size: 1.4rem;;
+				}
 			}
 		
 		} // end of about text
@@ -187,6 +192,9 @@ header {
 		background: @back-color;
 		font-size: 1.2rem;
 		padding: 2%;
+		@media (max-width:500px){
+			padding:5%;
+		}
 	}
 } // end why hire section
 	
@@ -204,41 +212,79 @@ header {
 			text-align:center;
 			font-size: 2.5rem;
 			font-weight: 600;
-			background: #cfebeb;
+			 background: #cfebeb;
+			 @media (max-width:500px){
+				font-size: 2.2rem;
+			}
 			
 		}
 		.skills-container {
 			display: flex;
-			
-			justify-content: space-around;
-			flex-wrap: wrap;
-			flex-direction: row;
+			flex-direction: column;
 			background:#1544;
-			// margin:@margin-box;
-			background: #dce2e2;
-			@media (max-width:480px){
-				flex-direction: column;
-				align-items:center;
-			}
-			.html-skills, .css-skills, .responsive-skills, .pre-processor-skills{
+			.header-skills{
 				
-				.skills-style();
-				text-align: center;
-				// border : 1px solid #fafcac;
-				border-radius: 15px;
-				@media (max-width:480px){
+				display: flex;
+								
+				h2{
 					
-					width:70vw;
-					margin:2%;
-					padding:0 2%;
+					width:25%;
+					text-align:left;
 					
-					;
-				}
-					h3 {
-					padding: 3%;
-					font-weight: 800;
+					&:nth-of-type(1){
+						width:10%;
+					}
 
-				} //end h3
+					&:nth-of-type(4){
+						width:40%;
+					}
+				
+				//media query 
+				@media (max-width:500px){
+					font-size: 1.2rem;
+				}
+			}
+			}
+			
+			// @media (max-width:480px){
+			// 	flex-direction: column;
+			// 	align-items:center;
+			// }
+			.skill{
+				
+				display: flex;
+				
+
+				h3{
+					padding:1%;
+					width:10%;
+					text-align:center;
+					font-weight: 800;
+					
+					
+				}
+				p {
+					padding:1%;
+					width:25%;
+					
+					&:nth-of-type(3){
+					width: 40%;
+					}
+					@media (max-width:500px){
+						font-size: 1rem;
+					}
+				}
+				
+				
+				// border-radius: 15px;
+				// @media (max-width:480px){
+					
+																
+				
+			
+					
+					
+				
 
 
 	} // end skills box
@@ -279,6 +325,7 @@ header {
 		}
 		email{
 			margin-left:@left-margin;
+			
 			&:hover{
 				background: #88a8ad;
 			}
