@@ -56,9 +56,9 @@ html, body {
 	height: 100%;
 	
 }
-
+//variable
 @border-color:black;
-
+//mixin
 .contentspecs{
 	padding:10%;
 	margin: auto;
@@ -66,14 +66,16 @@ html, body {
 	border-radius: 30px;
 	border: .1rem solid @border-color;
   }
-
+//mixin
 .FlexRow{
 	display:flex;
 	flex-direction: row;
 }
+
 Body{
 	background-color: #777;
 }
+
 .maincontainer{
 	display: flex;
 	flex-direction: column;
@@ -88,13 +90,17 @@ header{
 	align-content: center;
 	border: 2px solid @border-color;
 	width: 50%;
-
+	@media(max-width:500px){
+		width: 100%;
+		height: 25%;
+	}
   #Navtitle{
 	color: lightgray;
 	font-size: 2rem;	
 	Margin:.5%;	
 	border: 2px solid white;
 	background-color: @border-color;
+  
   }
  }
 }
@@ -127,6 +133,7 @@ a:hover{
 	width: 25%;
 	height: 100%;
 	border:.2rem solid @border-color;
+
  }
 
 	h2{
@@ -140,6 +147,9 @@ a:hover{
 	height: 2.5rem;
 	text-align: center;
 	border-radius: 25px;
+	@media(max-width:500px){
+		width: auto;
+	}
   } 
   h5{
 	  font-size: 1.5rem;
@@ -150,6 +160,9 @@ a:hover{
 	  .FlexRow();
 	  border-radius: 30px;
 	  margin-top: 5%;
+	  @media(max-width:500px){
+		  flex-direction: column;
+	  }
   }
   .IB{
 	.FlexRow();  
@@ -164,6 +177,7 @@ a:hover{
 	display: flex;
 	flex-direction: row;
 }
+
 .BIBcontent{
 	.contentspecs();
 	height: 100%;
@@ -171,16 +185,31 @@ a:hover{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between
-}
+ }
+
 footer{
 	width: 75%;
 	margin: auto;
 	margin-bottom: 5%;
+
+	@media(max-width:500px){
+		display: none;
+	}
+	
   #contact{
 	width: 25%;
+
+	@media(max-width:500px){
+		display: none;
+	}
  }
 }
 hr{
 	border: .1rem solid white;
 	width: 100%;
+}
+#middlephoto{
+	@media(max-width:500px){
+		display: none;
+	}
 }
