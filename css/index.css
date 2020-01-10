@@ -136,6 +136,16 @@ body {
 }
 /* VARIABLES */
 /* -----------*/
+/* MIX INS */
+.containerSetup {
+  display: flex;
+  width: 100%;
+  margin-bottom: 3%;
+}
+/* ----------*/
+/* ESCAPED VARIABLE EXAMPLE 
+@mobile: ~"(max-width: 500px)"
+*/
 * {
   margin: 0;
   padding: 0;
@@ -145,28 +155,51 @@ body {
 body {
   width: 75%;
   margin: 0 auto;
+  /* end breakpoint */
+}
+@media (max-width: 500px) {
+  body {
+    width: 500px;
+  }
 }
 .header {
-  width: 75%;
+  /* Width 75% Was Here */
   background-color: #0e659c;
   display: flex;
+  width: 100%;
+  margin-bottom: 3%;
   height: 70px;
   justify-content: space-between;
   flex-direction: row;
   /* end navigation*/
 }
+@media (max-width: 500px) {
+  .header {
+    width: 500px;
+    height: 350px;
+    justify-content: center;
+    flex-direciton: column;
+  }
+}
 .header .navigation {
   display: flex;
-  width: 70%;
+  width: 75%;
   align-items: center;
   justify-content: center;
   background-color: #0e659c;
   height: 70px;
   position: absolute;
-  margin-left: 5%;
   font-family: 'Merriweather', serif;
   /* END NAV DIV */
   /* END DIV HOVER */
+}
+@media (max-width: 500px) {
+  .header .navigation {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    top: 125px;
+  }
 }
 .header .navigation div {
   font-size: 19px;
@@ -175,7 +208,8 @@ body {
   font-weight: bold;
   margin: 3% 1%;
   height: 68px;
-  width: 150px;
+  width: 19%  ;
+  /* width 150px was here */
   text-align: center;
   cursor: pointer;
   transition: height 0.5s ease-in-out;
@@ -188,16 +222,41 @@ body {
   background-color: #3ea5e6;
   border-bottom: 3px solid #9ac0fc;
 }
+@media (max-width: 500px) {
+  .header .navigation div:hover {
+    width: 100%;
+  }
+}
 /* end HEADER */
 .top-section {
-  width: 100%;
   height: 500px;
   display: flex;
-  margin-top: 5%;
+  width: 100%;
+  margin-bottom: 3%;
+}
+@media (max-width: 500px) {
+  .top-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35%;
+  }
 }
 .top-section .photo-container {
   width: 50%;
   height: 100%;
+}
+@media (max-width: 500px) {
+  .top-section .photo-container {
+    width: 500px;
+    margin-top: 5%;
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  .top-section .dude {
+    width: 500px;
+  }
 }
 .top-section .name-container {
   width: 50%;
@@ -206,6 +265,11 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 500px) {
+  .top-section .name-container {
+    width: 500px;
+  }
 }
 .top-section .name-container .name {
   font-size: 65px;
@@ -221,17 +285,31 @@ body {
   left: 20px;
 }
 .middle-section {
-  width: 100%;
-  height: 400px;
-  border: orange 2px dotted;
   display: flex;
-  border-top: 1px solid black;
+  width: 100%;
+  margin-bottom: 3%;
+  height: 400px;
   /* end ABOUT section */
+}
+@media (max-width: 500px) {
+  .middle-section {
+    width: 500px;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 85%;
+  }
 }
 .middle-section .about {
   width: 50%;
   padding: 3% 4%;
   /* end about me heading */
+}
+@media (max-width: 500px) {
+  .middle-section .about {
+    width: 500px;
+    padding: 2% 5%;
+    margin-top: 45%;
+  }
 }
 .middle-section .about .about-me {
   font-size: 30px;
@@ -246,12 +324,22 @@ body {
   justify-content: center;
   width: 50%;
   height: 100%;
-  border: 1px red dotted;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .middle-section .talents {
+    margin-top: 10%;
+    justify-content: center;
+  }
 }
 .middle-section .talents .goodat {
   font-size: 30px;
   justify-content: center;
+  margin-bottom: 5%;
+  display: block;
 }
 .middle-section .talents .list-item {
-  font-size: 20px;
+  font-size: 21px;
+  padding: 5%;
 }
