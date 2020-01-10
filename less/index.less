@@ -56,7 +56,9 @@ html, body {
 	height: 100%;
 	
 }
+
 @border-color:black;
+
 .contentspecs{
 	padding:10%;
 	margin: auto;
@@ -64,6 +66,11 @@ html, body {
 	border-radius: 30px;
 	border: .1rem solid @border-color;
   }
+
+.FlexRow{
+	display:flex;
+	flex-direction: row;
+}
 Body{
 	background-color: #777;
 }
@@ -74,21 +81,22 @@ Body{
 	height: 100%;
 	width: 75%;
 	margin: auto;
-}
+
 header{
 	background-color:#333;
 	height: 12%;
 	align-content: center;
 	border: 2px solid @border-color;
 	width: 50%;
-}
-#Navtitle{
+
+  #Navtitle{
 	color: lightgray;
 	font-size: 2rem;	
 	Margin:.5%;	
 	border: 2px solid white;
 	background-color: @border-color;
-	
+  }
+ }
 }
 nav{
 	display: flex;
@@ -100,18 +108,16 @@ a{
 	text-decoration: none;
 	color: white;
 	border: 1px solid @border-color;
-  }
+ }
 }
-
 a:hover{
 	background-color:#777
-}
+  }
 .topsection{
 	height: 25%;
 }
 .topcontent{
-	display: flex;
-	flex-direction: row;
+	.FlexRow();
 	justify-content: center;
 	align-items: center;
 	height: 100%;
@@ -141,24 +147,23 @@ a:hover{
   .mid{
 	  height: 100%;
 	  width: 100%;
-	  display: flex;
+	  .FlexRow();
 	  border-radius: 30px;
 	  margin-top: 5%;
   }
   .IB{
-	  display: flex;
-	  flex-direction: row;
-	  
+	.FlexRow();  
   }
   .IBcontent{
 	.contentspecs();
 	  height: 50%;
 	  width: 75%;
-  }
+}
+
 .BIB{
 	display: flex;
 	flex-direction: row;
- }
+}
 .BIBcontent{
 	.contentspecs();
 	height: 100%;
@@ -166,9 +171,7 @@ a:hover{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between
-
 }
-
 footer{
 	width: 75%;
 	margin: auto;
