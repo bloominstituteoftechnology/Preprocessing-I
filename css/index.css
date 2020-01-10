@@ -215,6 +215,11 @@ body {
   transition: height 0.5s ease-in-out;
   background-color: #0e659c;
 }
+@media (max-width: 500px) {
+  .header .navigation div {
+    width: 500px;
+  }
+}
 .header .navigation div:hover {
   height: 100px;
   border-radius: 0px 10px;
@@ -233,6 +238,7 @@ body {
   display: flex;
   width: 100%;
   margin-bottom: 3%;
+  justify-content: space-between;
 }
 @media (max-width: 500px) {
   .top-section {
@@ -245,6 +251,7 @@ body {
 .top-section .photo-container {
   width: 50%;
   height: 100%;
+  margin-left: 10%;
 }
 @media (max-width: 500px) {
   .top-section .photo-container {
@@ -342,4 +349,37 @@ body {
 .middle-section .talents .list-item {
   font-size: 21px;
   padding: 5%;
+}
+/* KEY FRAMES */
+@keyframes nav-animation {
+  50% {
+    background-color: #3ea5e6;
+    color: black;
+  }
+  100% {
+    background-color: #0e659c;
+    color: white;
+  }
+}
+@keyframes text-animation {
+  50% {
+    color: #0e659c;
+  }
+  100% {
+    color: black;
+  }
+}
+.navigation,
+.nav-field,
+.header {
+  animation-name: nav-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.name,
+.about-me,
+.goodat {
+  animation-name: text-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }

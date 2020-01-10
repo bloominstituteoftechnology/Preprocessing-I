@@ -92,6 +92,7 @@ html, body {
 body {
   width: 75%;
   margin: 0 auto;
+  
 
   @media @mobile {
     width: 500px;
@@ -150,6 +151,9 @@ body {
     transition: height 0.5s ease-in-out;
     background-color: @primary-color;
    
+      @media @mobile {
+        width: 500px;
+      }
       
    } /* END NAV DIV */
   
@@ -174,6 +178,7 @@ body {
   
   height: 500px;
   .containerSetup();
+  justify-content: space-between;
  
       @media @mobile {
         flex-direction: column;
@@ -186,6 +191,7 @@ body {
   .photo-container {
     width: 50%;
     height: 100%;
+    margin-left: 10%;
 
       @media @mobile {
         width: 500px;
@@ -195,6 +201,7 @@ body {
    }
 
   .dude {
+
     @media @mobile {
       width: 500px;
     }
@@ -293,4 +300,38 @@ body {
      padding: 5%; 
     }
   }
+}
+
+/* KEY FRAMES */ 
+
+@keyframes nav-animation {
+  50% {
+    background-color: @border-color;
+    color: black;
+  }
+  100% {
+    background-color: @primary-color;
+    color: white;
+  }
+}
+
+@keyframes text-animation {
+  50% {
+      color: @primary-color;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.navigation, .nav-field, .header {
+  animation-name: nav-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.name, .about-me, .goodat {
+  animation-name: text-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
