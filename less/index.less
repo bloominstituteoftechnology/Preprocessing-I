@@ -49,32 +49,58 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.borderd-box {
+	box-sizing: border-box;
+}
+.box-spacing() {
+	margin: 1%;
+	padding: 3%;
 }
 
+@background-color: #7FFFD4;
+@default-header-size: 1.5rem; 
+
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: @background-color;
+	.borderd-box
 }
-nav {
-	display: flex;
-	justify-content: space-around;
-	font-size: 1.5rem;
-}
-h1 {
-	font-size: 2.5rem;
-	display: inline;
-}
-h3 {
-	font-size: 1.5rem;
-}
-img {
-	display: flex;
-	align-items: right;
-	
-}
+
 @media (max-width: 500px) {
 	.container { width: 100%;}
 }
 
+nav {
+	display: flex;
+	justify-content: space-around;
+	font-size: @default-header-size;
+	.borderd-box;
+	.box-spacing;
+	img {
+		display: flex;
+		align-items: right;
+		.borderd-box;
+		h1 {
+			font-size: 2.5rem;
+			display: inline;
+			.borderd-box
+		}
+	}
+}
 
+h3 {
+	font-size: @default-header-size;
+	.borderd-box;
+	.box-spacing;
+	p {
+		table{
+			border: 1px solid black;
+			tr {
+				border: 1px solid black;
+				th {
+
+				}
+			}
+		}
+	}
+}
