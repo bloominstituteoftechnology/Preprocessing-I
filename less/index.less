@@ -8,9 +8,9 @@
 @color1: #e9ecef;
 @color2: #f2f2f2;
 @color3: #808080;
+@fontSz: 2rem;
 
 // escaped value
-
 @tablet: ~'(max-width: 500px)';
 
 //mixins
@@ -123,6 +123,7 @@ menu,
 nav,
 section {
   display: block;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   line-height: 1;
@@ -150,6 +151,7 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 html,
@@ -158,169 +160,171 @@ body {
   margin: 3%;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 3%;
-  @media @tablet {
-    .flex-center();
+.container {
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3%;
+    @media @tablet {
+      .flex-center();
+    }
   }
-}
-nav {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-}
-nav a {
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  font-size: 18px;
-  @media @tablet {
-    padding: 5px;
-  }
-}
-nav a:hover {
-  text-decoration: line-through black;
-}
-
-.first-sec {
-  background-color: @color1;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 50px;
-
-  img {
-    margin: 3% 3% 1% 3%;
-    width: 200px;
-    height: 230px;
-  }
-  h1 {
-    font-size: 40px;
-    margin-left: 3%;
-    margin-bottom: 1%;
-  }
-  p {
-    font-size: 16px;
-    margin-left: 3%;
-  }
-  button {
-    background-color: #808080;
-    color: white;
-    width: 130px;
-    height: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 2% 3%;
-    border-radius: 8px;
-  }
-}
-hr {
-  width: 94%;
-  color: @color1;
-  margin: 1% 3%;
-}
-
-.second-sec {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 3%;
-
-  .half-one {
+  nav {
     width: 50%;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-size: 18px;
+    @media @tablet {
+      padding: 5px;
+    }
+  }
+  nav a:hover {
+    text-decoration: line-through black;
+  }
 
-    h2 {
-      font-size: 26px;
-      font-weight: 600;
-      padding-bottom: 2%;
+  .first-sec {
+    background-color: @color1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+
+    img {
+      margin: 3% 3% 1% 3%;
+      width: 200px;
+      height: 230px;
+    }
+    h1 {
+      font-size: 40px;
+      margin-left: 3%;
+      margin-bottom: 1%;
     }
     p {
       font-size: 16px;
-      line-height: 1.2;
-      margin-right: 3%;
-      padding-right: 3%;
+      margin-left: 3%;
+    }
+    button {
+      background-color: #808080;
+      color: white;
+      width: 130px;
+      height: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 2% 3%;
+      border-radius: 8px;
     }
   }
-  .half-two {
-    width: 50%;
-    justify-content: flex-end;
+  hr {
+    width: 94%;
+    color: @color1;
+    margin: 1% 3%;
+  }
 
-    h2 {
-      font-size: 24px;
-      padding-bottom: 1%;
-      font-weight: 600;
+  .second-sec {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+
+    .half-one {
+      width: 50%;
+      justify-content: flex-start;
+
+      h2 {
+        font-size: 26px;
+        font-weight: 600;
+        padding-bottom: 2%;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.2;
+        margin-right: 3%;
+        padding-right: 3%;
+      }
     }
+    .half-two {
+      width: 50%;
+      justify-content: flex-end;
 
-    table {
-      width: 100%;
-      border: 1px solid @color3;
+      h2 {
+        font-size: 24px;
+        padding-bottom: 1%;
+        font-weight: 600;
+      }
 
-      tr {
-        .padding-one();
+      table {
+        width: 100%;
         border: 1px solid @color3;
-        td {
-          padding: 3%;
-          font-size: 20px;
+
+        tr {
+          .padding-one();
+          border: 1px solid @color3;
+          td {
+            padding: 3%;
+            font-size: 20px;
+          }
         }
       }
     }
+    @media @tablet {
+      .flex-center();
+      flex-direction: column;
+    }
   }
-  @media @tablet {
-    .flex-center();
-    flex-direction: column;
-  }
-}
 
-.third-sec {
-  width: 100%;
-  margin-top: 3%;
-
-  h2 {
-    font-size: 26px;
-    margin-bottom: 0.5%;
-    font-weight: 600;
-  }
-  table {
+  .third-sec {
     width: 100%;
-    border-top: 1px solid @color1;
-    border-bottom: 1px solid @color1;
-    .padding-one();
+    margin-top: 3%;
 
-    tr {
+    h2 {
+      font-size: 26px;
+      margin-bottom: 0.5%;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-top: 1px solid @color1;
       border-bottom: 1px solid @color1;
       .padding-one();
 
-      th {
-        font-size: 20px;
+      tr {
+        border-bottom: 1px solid @color1;
         .padding-one();
-        font-weight: 600;
+
+        th {
+          font-size: 20px;
+          .padding-one();
+          font-weight: 600;
+        }
+        td {
+          font-size: 16px;
+          .padding-one();
+        }
       }
-      td {
-        font-size: 16px;
-        .padding-one();
+      tr:nth-child(3) {
+        background-color: @color2;
       }
-    }
-    tr:nth-child(3) {
-      background-color: @color2;
     }
   }
-}
 
-footer {
-  width: 100%;
-  background-color: @color3;
-  margin-top: 3%;
-  height: 10%;
-  .flex-center();
-  justify-content: space-evenly;
-  p {
-    color: @color1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 20px;
+  footer {
+    width: 100%;
+    background-color: @color3;
+    margin-top: 3%;
+    height: 10%;
+    .flex-center();
+    justify-content: space-evenly;
+    p {
+      color: @color1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 20px;
+    }
   }
 }
