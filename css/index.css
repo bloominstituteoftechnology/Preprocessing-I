@@ -2,6 +2,15 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+.mixingflex {
+  display: flex;
+  flex-direction: column;
+}
+.margin {
+  margin-top: 4rem;
+  margin-left: 7rem;
+  width: 40%;
+}
 html,
 body,
 div,
@@ -145,29 +154,23 @@ nav {
   justify-content: space-evenly;
   text-align: center;
 }
-.logo {
+#main {
+  background-color: lightgray;
+  width: 60%;
+  margin-left: 26rem;
+  margin-top: 5rem;
+  padding-bottom: 2rem;
+}
+#main .logo {
+  margin-left: 24rem;
+  padding-top: 4rem;
   width: 400px;
-  margin-top: 2rem;
-  margin-left: 3rem;
 }
 h2 {
   margin-top: 2rem;
   font-size: 3rem;
   font-weight: bold;
-  margin-left: 3rem;
-}
-#main {
-  background-color: lightgray;
-  width: 60%;
-  margin-left: 15rem;
-  margin-top: 5rem;
-  padding-bottom: 2rem;
-}
-h4 {
-  margin-top: 4rem;
-  font-size: 2rem;
-  border-bottom: 1px solid lightslategray;
-  margin-left: 3rem;
+  margin-left: 17rem;
 }
 h5 {
   margin-top: 3rem;
@@ -175,12 +178,8 @@ h5 {
   padding-bottom: 2rem;
   margin-left: 3rem;
 }
-a {
-  color: black;
-  margin: 1rem;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 17px;
+@media (max-width: 500px) {
+  width: 450px;
 }
 .main-section div a {
   background-color: gray;
@@ -189,24 +188,42 @@ a {
   padding: 1rem;
   border-radius: 10px;
 }
-#data div {
+.main-section div a a {
+  color: black;
+  margin: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 17px;
+}
+#data {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
-.intro {
+#data .intro {
   margin-top: 4rem;
+  margin-left: 7rem;
+  width: 40%;
 }
-.data div {
-  grid-auto-flow: column;
+#data .intro .data div {
+  display: flex;
+  flex-direction: column;
 }
 h3 {
   font-size: 2rem;
 }
-#workhistory div {
+#workhistory {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-left: 25rem;
-  width: 20rem;
+}
+@media (max-width: 500px) {
+  #workhistory {
+    width: 100%;
+  }
+}
+#workhistory .work {
+  margin-top: 4rem;
+  margin-left: 7rem;
+  width: 40%;
+}
+#workhistory .work .workhistory div {
+  display: flex;
+  flex-direction: column;
 }
