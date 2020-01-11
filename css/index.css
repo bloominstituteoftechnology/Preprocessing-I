@@ -146,25 +146,26 @@ body {
   color: #225e9f;
   text-align: center;
 }
-section.topBar {
+.topBar {
   width: 100%;
   height: 10vh;
   background-color: #a2a1a6;
 }
-section.topBar nav {
-  width: 100%;
+.topBar nav {
+  width: 80%;
   display: flex;
   justify-content: space-between;
   padding: 3% 2% 3% 2%;
+  margin: 0 auto;
 }
-.navBarLink {
+.topBar nav a {
   font-size: 1.5rem;
   font-family: "Lato", sans-serif;
   text-decoration: none;
   color: #efe9dc;
 }
 header {
-  height: 20vh;
+  height: 30vh;
   width: 100%;
   background-color: #2a3841;
   display: flex;
@@ -180,18 +181,18 @@ header div h1 {
   font-size: 3rem;
   color: #a2a1a6;
 }
-@media (max-height: 450px) {
-  header div .title {
+@media (max-height: 650px) {
+  header div h1 {
     display: none;
   }
 }
-.profile img {
+img.headshotImg {
   height: 150px;
   width: 150px;
 }
 .profile {
   width: 100%;
-  height: 40vh;
+  height: 60vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -205,6 +206,11 @@ header div h1 {
   flex-direction: column;
   justify-content: center;
 }
+@media (max-width: 700px) {
+  .profile div {
+    width: 90%;
+  }
+}
 .profile div img {
   margin: 0 auto 3% auto;
 }
@@ -215,7 +221,7 @@ header div h1 {
 }
 .education {
   display: flex;
-  height: 15vh;
+  height: 25vh;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
@@ -224,6 +230,11 @@ header div h1 {
   display: flex;
   justify-content: space-between;
   padding: 0% 5% 0% 5%;
+}
+@media (max-height: 650px) {
+  .education div {
+    flex-direction: column;
+  }
 }
 .education div div {
   display: flex;
@@ -242,15 +253,25 @@ header div h1 {
   text-align: center;
 }
 .skills {
-  height: 60vh;
+  height: 65vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
+@media (max-height: 1200px) {
+  .skills {
+    margin-bottom: 50%;
+  }
+}
 .skills img {
-  width: 700px;
+  width: 600px;
   height: auto;
+}
+@media (max-width: 700px) {
+  .skills img {
+    width: 450px;
+  }
 }
 .skills div {
   width: 100%;
@@ -278,9 +299,14 @@ div.jobs div {
 footer {
   display: flex;
   justify-content: center;
-  height: 20vh;
+  height: 10vh;
   width: 100%;
-  margin: 0 auto;
+  margin: 0% auto 5% auto;
+}
+@media (max-height: 550px) {
+  footer {
+    margin-top: 40%;
+  }
 }
 .contactHeader {
   font-size: 2rem;
@@ -289,9 +315,4 @@ footer {
 }
 .copyright {
   text-align: center;
-}
-@media (max-height: 450px) {
-  .title {
-    font-size: 0.5rem;
-  }
 }
