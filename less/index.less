@@ -76,7 +76,32 @@ html{
 	font-size:3rem;
 	margin:3%;
 	font-family:@main-font;
-}
+
+	
+	@media(max-width:500px){
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:space-around;
+		font-size:5rem;
+		width:100%;
+	}//closed media
+
+	a{
+		@media(max-width:500px){
+		display:flex;
+		align-content:center;
+		justify-content:center;
+		width:100%;
+		border-bottom:1px solid gray;
+		border-width:50%;
+		margin:20px;
+		padding-bottom:25px;
+		}//closed media
+	}//closed a
+}//closed nav
+
+
 h1, h2{
 	font-family:@title-font;
 }
@@ -90,6 +115,11 @@ header{
 		display:flex;
 		justify-content:center;
 		margin:20px;
+
+		@media(max-width:500px){
+			display:flex;
+			justify-content:center;
+		}
 	}	
 	p{
 		font-size:3rem;
@@ -127,6 +157,10 @@ body{
 		text-align:justify;
 		margin:60px;
 
+		@media(max-width:500px){
+			margin:0px;
+		}
+
 		h2{
 			margin-left:20px;
 			border-bottom: 2px dotted slategray;
@@ -135,19 +169,39 @@ body{
 
 	.stuffandwork{
 		display:flex;
-		justify-content:space-around;
+		justify-content:space-between;
+
+		@media(max-width:500px){
+			display:flex;
+			flex-direction:column;
+			justify-content:center
+		}//closes media	
 
 		.Stuff{
 			display:flex;
 			flex-direction:column;
-			justify-content:space-between;
+			justify-content:space-evenly;
 			margin-left:180px;
-		}
+			width:40%;
+
+			@media(max-width:500px){
+				margin-left:0px;
+				width:100%;
+				margin-top:50px;
+			}//closes media
+
+		}//closes stuff
 		.Workhistory{
 			margin-right:100px;
-		}
-	}
-}
+			width:40%;
+
+			@media(max-width:500px){
+				width:100%;
+				margin-top:50px;
+			}//closes media
+		}//closes workhistory
+	}//closes stuffandwork
+}//closes body
 
 p{
 	line-height:1.5;
@@ -164,14 +218,22 @@ li{
 }
 footer{
 	margin:60px;
+
+	@media(max-width:500px){
+		margin:0px;
+		margin-top:50px;
+	}//closes media
+
+
 	h2{
 		margin-left:20px;
 		border-bottom: 2px dotted slategray;
-	}
+		border-width:50%;
+	}//closes h2
 
 	address{
 	line-height:1.5;
 	font-size:3rem;
 	font-family:@main-font;
-	}
-}
+	}//closes address
+}//closes footer
