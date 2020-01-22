@@ -52,7 +52,7 @@ table {
 * {
 	box-sizing: border-box;
 	font-size: 62.5%;
-	border: 1px solid black;
+	// border: 1px solid black;
 }
 
 html, body {
@@ -112,7 +112,6 @@ p {
 h1 {
 	font-size: 3rem;
 	color: @h1-color;
-	
 }
 
 h2 {
@@ -128,6 +127,10 @@ header {
 	display: flex;
 	margin: 40px auto;
 	.center();
+	@media (max-width: 500px) {
+		display: flex;
+		margin: 10px auto;
+	}//closes media query for header
 }
 
 nav {
@@ -137,6 +140,22 @@ nav {
 	width: 80%;
 	justify-content: space-evenly;
 	margin: 20px auto;
+	@media (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-bottom: 1px solid gray;
+	}//closes media query for nav
+}
+
+nav a {
+	@media (max-width: 500px) {
+		display: flex;
+    	border-top: 1px solid gray;
+    	width: 100%;
+		justify-content: center;
+		margin: 5px auto;
+	}
 }
 
 .Intro-section p {
