@@ -51,10 +51,110 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
 	box-sizing: border-box;
-	border: 1px solid red;
+	font-size: 62.5%;
+	border: 1px solid black;
 }
 
 html, body {
     height: 100%;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
+//variables
+
+@main-font: 'Noto Sans TC', sans-serif;
+@h1-color: #4A235A;
+@h2-color: #4A235A;
+@nav-color: #D4AC0D;
+
+//end variables
+
+//mix-ins
+
+.center(){
+	display: flex;
+	justify-content: center;
+}
+
+.margin(){
+	display: flex;
+	margin: 20px auto;
+}
+
+.content-margin(){
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin: 20px auto;
+}
+
+//end mix-ins
+
+a {
+	color: @nav-color;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	font-family: @main-font;
+}
+
+p {
+	font-size: 1.5rem;
+	.margin();
+}
+
+h1 {
+	font-size: 3rem;
+	color: @h1-color;
+	
+}
+
+h2 {
+	font-size: 2rem;
+	color: @h2-color;
+}
+
+h3 {
+	font-size: 1rem;
+}
+
+header {
+	display: flex;
+	margin: 40px auto;
+	.center();
+}
+
+nav {
+	font-size: 2rem;
+	color: @nav-color;
+	display: flex;
+	width: 80%;
+	justify-content: space-evenly;
+	margin: 20px auto;
+}
+
+.Intro-section p {
+	font-weight: bold;
+}
+
+.PlaySay-section, .Salesforce-section {
+	.content-margin();
+}
+
+.Lambda-section {
+	margin: 20px auto;
+}
+
+.contact-me p {
+	font-size: 2rem;
+}
+
+footer {
+	.center();
+}
