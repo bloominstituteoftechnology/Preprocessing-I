@@ -130,58 +130,89 @@ table {
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  background-image: url("../images/skills.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 html .wrapper,
 body .wrapper {
-  height: 190vh;
-}
-html .wrapper #topContent,
-body .wrapper #topContent {
-  background-image: url("../images/Intro.png");
-  height: 95vh;
-}
-html .wrapper #topContent .intro,
-body .wrapper #topContent .intro {
-  float: right;
-  width: 33%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-html .wrapper #topContent .intro h1,
-body .wrapper #topContent .intro h1 {
-  font-size: 64px;
-}
-html .wrapper #topContent .intro h3,
-body .wrapper #topContent .intro h3 {
-  font-size: 26px;
+  color: white;
 }
 html .wrapper nav,
 body .wrapper nav {
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
-  justify-content: space-evenly;
-  width: 80vw;
-  height: 5vh;
+  justify-content: space-around;
 }
 html .wrapper nav .box,
 body .wrapper nav .box {
-  font-size: 24px;
+  height: 50px;
+  align-self: center;
 }
 html .wrapper nav .box a,
 body .wrapper nav .box a {
+  padding: 20px;
   text-decoration: none;
-  color: grey;
+  color: black;
+  font-size: 24px;
 }
-html .wrapper #bottomContent,
-body .wrapper #bottomContent {
-  background-image: url("../images/skills.jpg");
-  background-size: cover;
-  height: 95vh;
+html .wrapper nav .box a:hover,
+body .wrapper nav .box a:hover {
+  border: 1px pink dotted;
+  color: white;
 }
-html .wrapper #bottomContent .box,
-body .wrapper #bottomContent .box {
-  margin: 0px auto;
-  background-color: white;
+html .wrapper #firstContent,
+body .wrapper #firstContent {
+  margin: 15px auto 0px auto;
   width: 80%;
-  height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+html .wrapper #firstContent .intro,
+body .wrapper #firstContent .intro {
+  width: 40%;
+  text-align: center;
+}
+html .wrapper #firstContent .intro h1,
+body .wrapper #firstContent .intro h1 {
+  font-size: 64px;
+}
+html .wrapper #secondContent,
+body .wrapper #secondContent {
+  margin: 50px auto 0px auto;
+  padding: 10px 0px 10px 0px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+html .wrapper #secondContent .box,
+body .wrapper #secondContent .box {
+  font-size: 1.8em;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px pink solid;
+  display: flex;
+  justify-content: center;
+}
+html .wrapper #secondContent .box img,
+body .wrapper #secondContent .box img {
+  display: block;
+}
+html .wrapper #secondContent .box .halfBox,
+body .wrapper #secondContent .box .halfBox {
+  padding: 10px 20px;
+  text-align: center;
+  width: 25%;
+}
+html .wrapper #thirdContent,
+body .wrapper #thirdContent {
+  background-color: white;
+  margin: 50px auto 0px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 button,
 .button {
@@ -195,10 +226,8 @@ button,
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
   border: 0;
   border-radius: 0;
-  cursor: pointer;
   display: inline-block;
   font-family: Helvetica, sans-serif;
-  font-size: 0.4rem;
   font-weight: 900;
   letter-spacing: 0.075em;
   height: 3rem;
@@ -206,7 +235,6 @@ button,
   padding: 0 2rem;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 input[type="submit"].icon:before,
@@ -315,7 +343,8 @@ button,
 .button {
   background-color: transparent;
   box-shadow: inset 0 0 0 2px #212931;
-  color: #212931 !important;
+  color: white;
+  font-size: 28px;
 }
 input[type="submit"]:hover,
 input[type="reset"]:hover,
