@@ -140,6 +140,7 @@ body {
   width: 50%;
   padding: 2% 0;
 }
+/*Variables*/
 header .nagivation {
   widows: 100%;
   padding-bottom: 2%;
@@ -153,6 +154,12 @@ header .nagivation nav a {
   text-decoration: none;
   font-size: 1.6rem;
 }
+@media (max-width: 500px) {
+  header .nagivation nav a {
+    font-size: 1.3rem;
+    padding: 0 5%;
+  }
+}
 header .introduction {
   padding-bottom: 5%;
   background-color: gainsboro;
@@ -164,6 +171,11 @@ header .introduction .Picture {
 header .introduction h1 {
   font-size: 5rem;
   margin: 0 4%;
+}
+@media (max-width: 500px) {
+  header .introduction h1 {
+    font-size: 2.5rem;
+  }
 }
 header .introduction h3 {
   font-size: 2rem;
@@ -182,6 +194,7 @@ header .introduction button {
   color: white;
   margin: 0 4%;
   padding: 1% 3%;
+  border-radius: 8px;
 }
 .middleSection {
   margin: 3% 0;
@@ -214,23 +227,100 @@ header .introduction button {
   border: 1px solid gainsboro;
   padding: 2% 3%;
 }
+@media (max-width: 500px) {
+  .middleSection {
+    align-items: baseline;
+  }
+  .middleSection div h2 {
+    font-size: 1.7rem;
+  }
+  .middleSection div p {
+    font-size: 1.2rem;
+  }
+  .middleSection .rightSide ul li {
+    font-size: 1.3rem;
+  }
+}
 .lastSection h2 {
   font-size: 3rem;
 }
 .lastSection .PreviousExperience table {
   width: 100%;
+  margin-bottom: 4%;
+  margin-top: 1%;
 }
 .lastSection .PreviousExperience table tr {
   padding: 1% 0;
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
 }
 .lastSection .PreviousExperience table tr th {
+  font-family: verdana;
+  padding: 1% 0;
   font-size: 2rem;
-  font-family: "Times New Roman", Times, serif;
 }
 .lastSection .PreviousExperience table tr td {
+  padding: 1% 0;
   font-size: 2rem;
+  text-align: center;
+}
+.lastSection .PreviousExperience table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+@media (max-width: 500px) {
+  .lastSection h2 {
+    font-size: 1.8rem;
+  }
+  .lastSection .PreviousExperience table tr th {
+    font-size: 1rem;
+  }
+  .lastSection .PreviousExperience table tr td {
+    font-size: 1rem;
+  }
+}
+.ContactSection {
+  background-color: #f2f2f2;
+  margin-bottom: 4%;
+}
+.ContactSection h2 {
+  font-size: 3rem;
+  margin: 3% 0;
+}
+.ContactSection label {
+  font-size: 2rem;
+}
+.ContactSection input[type=text],
+.ContactSection select,
+.ContactSection textarea {
+  width: 100%;
+  padding: 1.5%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.ContactSection textarea {
+  height: 20vh;
+}
+.ContactSection input[type=submit] {
+  background-color: lightslategray;
+  color: white;
+  padding: 1.5% 3%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.ContactSection input[type=submit]:hover {
+  background-color: gray;
+}
+@media (max-width: 500px) {
+  .ContactSection h2 {
+    font-size: 1.8rem;
+  }
+  .ContactSection label {
+    font-size: 1.5rem;
+  }
 }
 footer {
   background-color: gainsboro;
