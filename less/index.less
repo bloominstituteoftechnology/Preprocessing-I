@@ -200,22 +200,70 @@ html, body {
 
 	.references {
 		.mainboxstyles();
+
+		ul {
+			list-style: none; /* Remove default bullets */
+		  }
+		  
+		ul li::before {
+		content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+		color: @titlecolor; /* Change the color */
+		font-weight: bold; /* If you want it to be bold */
+		display: inline-block; /* Needed to add space between the bullet and the text */
+		width: 1em; /* Also needed for space (tweak if needed) */
+		margin-left: -1em; /* Also needed for space (tweak if needed) */
+		padding: 1% 2%;
+		}
 	}
 
-	ul {
-		list-style: none; /* Remove default bullets */
-	  }
-	  
-	ul li::before {
-	content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-	color: @titlecolor; /* Change the color */
-	font-weight: bold; /* If you want it to be bold */
-	display: inline-block; /* Needed to add space between the bullet and the text */
-	width: 1em; /* Also needed for space (tweak if needed) */
-	margin-left: -1em; /* Also needed for space (tweak if needed) */
-	padding: 1% 2%;
+
+
+	.icons {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		height: 10vh;
+		width: 100%;
+
+		li {
+			width: 25%;
+			background-color: @titlecoloralt;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+		}
+
 	}
+
+	
+
+
+	
 } //main
+
+//media queiry for 500px//
+
+@media (max-width: 500px) {
+
+	.container {
+		flex-direction: column;
+		padding:2% 5%;
+
+		.main {
+			padding: 2% 0;
+		}
+
+		.sidebar {
+			padding: 2% 0;
+
+			.topimg {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+}
 
 
 

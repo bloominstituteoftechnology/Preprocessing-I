@@ -255,11 +255,11 @@ body {
   border-top-right-radius: 5%;
   padding: 2% 2%;
 }
-.main ul {
+.main .references ul {
   list-style: none;
   /* Remove default bullets */
 }
-.main ul li::before {
+.main .references ul li::before {
   content: "\2022";
   /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #DAA520;
@@ -273,4 +273,34 @@ body {
   margin-left: -1em;
   /* Also needed for space (tweak if needed) */
   padding: 1% 2%;
+}
+.main .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 10vh;
+  width: 100%;
+}
+.main .icons li {
+  width: 25%;
+  background-color: dimgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    padding: 2% 5%;
+  }
+  .container .main {
+    padding: 2% 0;
+  }
+  .container .sidebar {
+    padding: 2% 0;
+  }
+  .container .sidebar .topimg {
+    display: flex;
+    justify-content: center;
+  }
 }
