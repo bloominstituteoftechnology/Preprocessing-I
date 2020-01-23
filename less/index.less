@@ -60,9 +60,20 @@ table {
 @titlecolor: #DAA520;
 @titlecoloralt: dimgray;
 
+.mainboxstyles() {
+	border: 1px @titlecoloralt solid;
+	border-top: 8px gray solid;
+	border-top-right-radius: 5%;
+	padding: 2% 2%;
+}
+
+.sidebarstyles() {
+	padding: 4% 0;
+}
+
 html, body {
 	height: 100%;
-
+	font-family: 'Libre Baskerville', serif;
 }
 
 .container {
@@ -70,6 +81,7 @@ html, body {
 	display: flex;
 	border: 1px white solid;
 	padding: 0 10%;
+
 
 	h1 {
 		font-size: 2rem;
@@ -84,7 +96,7 @@ html, body {
 	}
 
 	h3 {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 
 	h4 {
@@ -94,29 +106,52 @@ html, body {
 
 .sidebar {
 	background-color: @titlecoloralt;
+	.sidebarstyles();
 
 	.contact {
-		padding: 1%;
-	}
+		.sidebarstyles();
+		
 
-	.phone {
-		padding: 1%;
-	}
+		.address {
+			display: flex;
+			justify-content: space-evenly;
+			flex-direction: column;
+			align-items: center;
+			padding: 5% 0 0 0;
+		}
+	
 
-	.email {
-		padding: 1%;
-	}
-
-	.skills {
-
-		.personal {
-			padding: 1%;
+		.phone {
+			.sidebarstyles();
+			display: flex;
+			justify-content: space-evenly;
+			flex-direction: column;
+			align-items: center;
 		}
 
-		.professional {
-			padding: 1%;
+		.email {
+			.sidebarstyles();
+			display: flex;
+			justify-content: space-evenly;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.skills {
+
+			.personal {
+				padding: 1%;
+			}
+
+			.professional {
+				padding: 1%;
+			}
 		}
 	} //skills
+
+	h2 {
+		background-color:	#4B4B4B;
+	}
 
 	ul {
 		list-style: none; /* Remove default bullets */
@@ -143,29 +178,28 @@ html, body {
 	padding:0 2%;
 
 	.statement {
-		border: 1px @titlecoloralt solid;
-		padding: 2%;
-		border-top: 8px gray solid;
+		.mainboxstyles();
 
 	} //statement
 
 	.education {
-		border: 1px @titlecoloralt solid;
-		padding: 2%;
-		border-top: 8px gray solid;
+		.mainboxstyles();
+
+		.school {
+			padding: 2% 0
+		}
 	}
 
 	.experience {
-		border: 1px @titlecoloralt solid;
-		padding: 2%;
-		border-top: 8px gray solid;
+		.mainboxstyles();
+
+		.work {
+			padding: 2% 0;
+		}
 	}
 
 	.references {
-		border: 1px @titlecoloralt solid;
-		padding: 2%;
-		border-top: 8px gray solid;
-		border-bottom: 2px gray solid;
+		.mainboxstyles();
 	}
 
 	ul {
@@ -179,7 +213,7 @@ html, body {
 	display: inline-block; /* Needed to add space between the bullet and the text */
 	width: 1em; /* Also needed for space (tweak if needed) */
 	margin-left: -1em; /* Also needed for space (tweak if needed) */
-	padding: 1% 8%;
+	padding: 1% 2%;
 	}
 } //main
 
