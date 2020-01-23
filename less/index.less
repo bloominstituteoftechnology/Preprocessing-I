@@ -53,6 +53,13 @@ table {
     box-sizing: border-box;
 }
 
+//content module background
+@contentBackground: rgba(0, 0, 0, 0.5);
+
+//navigation bar background
+@navBackground: rgba(255,255,255,0.5);
+
+@transparent: rgba(0, 0, 0, 0);
 
 
 html, body {
@@ -64,19 +71,20 @@ html, body {
 
     .wrapper{
     	width: 80%;
-    	margin: 10px auto 0px auto;
+    	margin: 0px auto;
     	color: white;
 
     	nav {
-    		padding-top: 10px;
+    		margin-top: 10px;
     		display: flex;
     		justify-content: space-around;
-    		background-color: rgba(255,255,255,0.5);
+    		background-color: @navBackground;
     		border-radius: 12px;
 
     		.box {
+    			margin: auto;
+				padding: 10px;
     			height: 50px;
-    			align-self: center;
 
     			a{
     				padding: 20px;
@@ -103,12 +111,12 @@ html, body {
     	}//nav
 
     	.tab1 {
-    		background-color: rgba(0, 0, 0, 0.5);
-    		border-radius: 24px;
     
 	    	#firstContent {
-	    		margin: 25px auto 0px auto;
-	    		width: 80%;
+	    		background-color: @contentBackground;
+    			border-radius: 24px;
+	    		margin: 25px auto 15px auto;
+	    		width: 75%;
 	    		display: flex;
 	    		justify-content: center;
 
@@ -119,7 +127,7 @@ html, body {
 
 		    		h1 {
 		    			font-size: 64px;
-		    			padding-bottom: 1rem;
+		    			padding: 1rem .25rem;
 		    			&:hover {
 		    				background-color: rgba(255, 255, 255, 0.8);
 		    				color: rgba(0, 0, 0, 0.8);
@@ -135,6 +143,7 @@ html, body {
 		    			&:hover {
 		    				background-color: rgba(255, 255, 255, 0.8);
 		    				color: rgba(0, 0, 0, 0.8);
+		    				border-radius: 12px;
 		    			}  	
 		    		}
 	    		}//intro
@@ -148,7 +157,9 @@ html, body {
 	    	}//firstContent
 
 	    	#secondContent {
-	    		margin: 50px auto 0px auto;
+	    		background-color: @contentBackground;
+    			border-radius: 24px;
+	    		margin: 10px auto 0px auto;
 	    		padding: 10px 0px;
 	    		width: 400px;
 	       		display: flex;
@@ -182,7 +193,7 @@ html, body {
 	    		}//box
 
 	    		@media (max-width: 860px){
-	    			width: 100%;
+	    			width: 80%;
 
 	    			.box{
 	    				width: 100%;
@@ -193,20 +204,27 @@ html, body {
 	    	}//secondContent
 
 	    	#thirdContent {
-	    		margin: 25px auto 0px auto;
+	    		background-color: @contentBackground;
+    			border-radius: 24px;
+	    		margin: 20px auto 0px auto;
 	    		padding: 10px 0px;
 	    		width: 80%;
 	       		display: flex;
 	       		text-align: center;
-	       		justify-content: space-between;
+	       		justify-content: space-evenly;
 
 	       		.box{
 	       			width: 20%;
 	       			line-height: 1.25;
-	       			
 	       			padding: 0px 25px;
 
+	       			a {
+	       				text-decoration: none;
+	       				color: white;
+	       			}
+
 	       			img {
+	       				margin-top: 15px;
 	       				width: 100%;
 	       				&:hover{
 	    					opacity: 0.6;
@@ -216,26 +234,80 @@ html, body {
 	    					background-color: rgba(128, 128, 128, 0.5);
 	    				}
 	       			}
+
 	       			h3 {
-	       				padding: 10px 0px;
+	       				padding: 10px 5px;
 	       				font-size: 18px;
+	       				background-color: rgba(255, 255, 255, 0.1);
+	       				border-radius: 12px;	
 	       			}
-	       		}
+	       		}//box
 
 	       		@media (max-width: 860px){
 	    			flex-direction: column;
 
 	    			.box{
-	    				width: 60%;
+	    				width: 100%;
 	    				text-align: center;
 	    				margin: 0px auto;
+	    				padding-bottom: 25px;
 	    				border-bottom: 1px grey solid;
+	    			}
+
+	    			h3 {
+
+	       				margin: 10px 0px;
 	    			}
 	    		}
 	    	}//thirdContent
 
+	    	#contact {
+	    		background-color: @contentBackground;
+    			border-radius: 24px;
+	    		margin: 20vh auto 0px auto;
+	    		padding: 10px 25px;
+	    		height: 80vh;
+	    		width: 50%;
+	    		text-align: center;
+
+	    		h2{
+	    			font-size: 32px;
+	    			padding: 10px 15px;
+	    			margin: 0px auto;
+	    			
+	    		}
+
+	    		form{
+	    			display: flex;
+    				width: 100%;
+    				flex-wrap: wrap;
+
+    				.box{
+    					margin: 15px 0px;
+    					height: 15vh;
+    					width: 100%;
+    				}
+    
+	    		}//form
+	    	}//contact
+
 	    }//tab1
 
+	    footer{
+	    	font-size: 18px;
+	    	background-color: @navBackground;
+	    	color: black;
+	    	float: right;
+	    	margin: 34px 0px 16px 0px;
+	    	padding: 10px 0px;
+	    	text-align: center;
+	    	width: 250px;
+
+	    	&:hover{
+	    		background-color: @transparent;
+	    		color: @transparent;
+	    	}
+	    }//footer
 
 	} //wrapper
 }//html, body
