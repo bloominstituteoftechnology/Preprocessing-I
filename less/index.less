@@ -57,6 +57,9 @@ table {
 	
 }
 
+@titlecolor: #DAA520;
+@titlecoloralt: dimgray;
+
 html, body {
 	height: 100%;
 
@@ -65,15 +68,19 @@ html, body {
 .container {
 	width: 100%;
 	display: flex;
-	border: 1px red solid;
+	border: 1px white solid;
 	padding: 0 10%;
 
 	h1 {
 		font-size: 2rem;
+		color: #FAF0E6;
+		display: flex;
+		justify-content: center;
 	}
 
 	h2 {
 		font-size: 1.8rem;
+		color: @titlecolor;
 	}
 
 	h3 {
@@ -86,7 +93,7 @@ html, body {
 }
 
 .sidebar {
-	background-color: dimgray;
+	background-color: @titlecoloralt;
 
 	.contact {
 		padding: 1%;
@@ -110,39 +117,69 @@ html, body {
 			padding: 1%;
 		}
 	} //skills
+
+	ul {
+		list-style: none; /* Remove default bullets */
+	  }
+	  
+	ul li::before {
+	content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: @titlecolor; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 1em; /* Also needed for space (tweak if needed) */
+	margin-left: -1em; /* Also needed for space (tweak if needed) */
+	padding: 1% 8%;
+	}
 } //sidebar
 
 .main {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	flex-direction: column;
 	width: 100%;
-	border: 1px red solid;
-	background-color: #FFFAFA;
+	border: 1px white solid;
+	background-color: #FAF0E6;
+	padding:0 2%;
 
 	.statement {
-		border: 1px white solid;
+		border: 1px @titlecoloralt solid;
 		padding: 2%;
-		border-top: 2px gray solid;
+		border-top: 8px gray solid;
 
 	} //statement
 
 	.education {
-		border: 1px white solid;
+		border: 1px @titlecoloralt solid;
 		padding: 2%;
-		border-top: 2px gray solid;
+		border-top: 8px gray solid;
 	}
 
 	.experience {
-		border: 1px white solid;
+		border: 1px @titlecoloralt solid;
 		padding: 2%;
-		border-top: 2px gray solid;
+		border-top: 8px gray solid;
 	}
 
 	.references {
-		border: 1px white solid;
+		border: 1px @titlecoloralt solid;
 		padding: 2%;
-		border-top: 2px gray solid;
+		border-top: 8px gray solid;
+		border-bottom: 2px gray solid;
+	}
+
+	ul {
+		list-style: none; /* Remove default bullets */
+	  }
+	  
+	ul li::before {
+	content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: @titlecolor; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 1em; /* Also needed for space (tweak if needed) */
+	margin-left: -1em; /* Also needed for space (tweak if needed) */
+	padding: 1% 8%;
 	}
 } //main
 
