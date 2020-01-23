@@ -57,6 +57,21 @@ table {
 }
 /* */
 @navColor:black;
+@mobile: ~"(max-width:500px)";
+
+.button(@justify,@align){
+	display: flex;
+	justify-content:@justify;
+	align-items: @align;
+
+}
+.button-parent{
+	.button(center,center){
+		background-color: aqua;
+		color:black
+	}
+}
+
 
 /*full page styling*/
 html, body {
@@ -67,6 +82,9 @@ html, body {
 
 p, li{
 	font-size: 1.5rem;
+	@media @mobile{
+		font-size:1rem;
+	}
 }
 h2{
 	font-size: 2.2rem;
@@ -75,15 +93,27 @@ h2{
 
 /*full page styling End*/
 
+
+
  section.nav{
 	display: flex;
 	justify-content: flex-end;
 	height: 10%;
 	width:100%;
+
+	@media @mobile {
+		justify-content: space-evenly;
+		height:5%;
+		}
 	
 	nav{
-		font-size: 1.75rem;
-		word-spacing: 3rem;
+		font-size: 1.5rem;
+		word-spacing: 2.5rem;
+
+		@media @mobile{
+			font-size: 1.25rem;
+			word-spacing:2rem;
+		}
 
 		
 		
@@ -98,10 +128,14 @@ h2{
 
 section.section-one{
 	padding:5% 2%;
-	height: 108%;
+	height: 90%;
 	width: 100%;
 	background-color:lightgray;
-
+	
+	@media @mobile{
+		height:45%;
+		}
+		
 	img{
 		width:40%
 	}//end img
@@ -109,9 +143,16 @@ section.section-one{
 		font-size:6rem;
 		letter-spacing: .6rem;
 		margin: 2% 0;
+		@media @mobile{
+			font-size: 2.2rem;
+			letter-spacing:.2rem;
+		}
 	}//h1 end
 	h4{
 		font-size:2rem;
+		@media @mobile{
+			font-size:1.6rem;
+		}
 	}//h4 end
 	hr{
 		margin:2% 0;
@@ -131,6 +172,9 @@ section.section-two{
 	height: 50%;
 	display: flex;
 	justify-content:space-between;
+	@media @mobile{
+		height: 40%;
+	}
 	
 	div{
 		width:49%;
@@ -149,6 +193,10 @@ section.section-two{
 		height:20%;
 		vertical-align:center;
 		padding:2.5% 0 2% 2%;
+		@media @mobile{
+			height:18%;
+			padding-top:7%;
+		}
 	}//li end
 	}//ul end
 	}//div end
@@ -163,6 +211,9 @@ section.section-three{
 		Font-size:2rem;
 		margin:2% 0;
 		font-weight: Bold;
+		@media @mobile{
+			font-size: 1.5rem;
+		}
 	}//h4 End
 	div{
 		height: 20%;
@@ -174,6 +225,9 @@ section.section-three{
 			font-weight: bold;
 			margin-left: 2%;
 			width:10%;
+			@media @mobile{
+				font-size: 1.3rem;
+			}
 		
 		}//H5 End
 		h6{
@@ -181,6 +235,9 @@ section.section-three{
 			font-weight: bold;
 			margin-left: 4%;
 			width:25%;
+			@media @mobile{
+				font-size: 1.3rem;
+			}
 		
 
 		}// H6 End
@@ -204,16 +261,51 @@ footer{
 	height: 12%;
 	padding:2% 0;
 	margin-top: 2%;
+	@media @mobile{
+		height:8%;
+		margin-top: 0%;
+	}
 
 	h3{
 		font-size: 1.5rem;
 	}// footer h3 end
 }//footer end
 
-@media screen(max-width:500px){
-	.section-one{
-		background-color: darkgreen;
-		
+section.contact{
+	height:20%;
+
+	h2{
+		font-size: 1.75rem;
+		margin: 3%0;
+		@media @mobile{
+			font-size: 1.25rem;
+		}
+	}
 	
+	address{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@media @mobile{
+			flex-direction: column;
+			width: 100%;
+			
+
+		}
+		
+		div{
+			width:20%;
+			@media @mobile{
+				width:100%;
+				margin:2%0;
+				text-align: center;}
+			p{
+				font-size: 1.25rem;
+			
+			}
+			
+		}
+	}
 }
-}
+
