@@ -166,7 +166,18 @@ body .wrapper nav .box a {
 }
 html .wrapper nav .box a:hover,
 body .wrapper nav .box a:hover {
-  color: grey;
+  color: rgba(255, 255, 255, 0.75);
+}
+@media (max-width: 860px) {
+  html .wrapper nav,
+  body .wrapper nav {
+    flex-direction: column;
+  }
+  html .wrapper nav nav,
+  body .wrapper nav nav {
+    width: 90%;
+    height: 120px;
+  }
 }
 html .wrapper .tab1,
 body .wrapper .tab1 {
@@ -186,15 +197,16 @@ body .wrapper .tab1 #firstContent .intro {
   width: 40%;
   text-align: center;
 }
-html .wrapper .tab1 #firstContent .intro:hover,
-body .wrapper .tab1 #firstContent .intro:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  color: rgba(0, 0, 0, 0.9);
-}
 html .wrapper .tab1 #firstContent .intro h1,
 body .wrapper .tab1 #firstContent .intro h1 {
   font-size: 64px;
+  padding-bottom: 1rem;
+}
+html .wrapper .tab1 #firstContent .intro h1:hover,
+body .wrapper .tab1 #firstContent .intro h1:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
 }
 html .wrapper .tab1 #firstContent .intro p,
 body .wrapper .tab1 #firstContent .intro p {
@@ -204,13 +216,17 @@ body .wrapper .tab1 #firstContent .intro p {
 }
 html .wrapper .tab1 #firstContent .intro p:hover,
 body .wrapper .tab1 #firstContent .intro p:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
-@media (max-width: 500px) {
+@media (max-width: 860px) {
   html .wrapper .tab1 #firstContent,
   body .wrapper .tab1 #firstContent {
-    background-color: black;
+    width: 90%;
+  }
+  html .wrapper .tab1 #firstContent .intro,
+  body .wrapper .tab1 #firstContent .intro {
+    width: 100%;
   }
 }
 html .wrapper .tab1 #secondContent,
@@ -249,17 +265,60 @@ body .wrapper .tab1 #secondContent .box .halfBox {
   text-align: center;
   width: 50%;
 }
+@media (max-width: 860px) {
+  html .wrapper .tab1 #secondContent,
+  body .wrapper .tab1 #secondContent {
+    width: 100%;
+  }
+  html .wrapper .tab1 #secondContent .box,
+  body .wrapper .tab1 #secondContent .box {
+    width: 100%;
+    text-align: center;
+  }
+}
 html .wrapper .tab1 #thirdContent,
 body .wrapper .tab1 #thirdContent {
-  margin: 50px auto 0px auto;
+  margin: 25px auto 0px auto;
   padding: 10px 0px;
-  width: 800px;
+  width: 80%;
   display: flex;
   text-align: center;
   justify-content: space-between;
 }
 html .wrapper .tab1 #thirdContent .box,
 body .wrapper .tab1 #thirdContent .box {
-  border: 1px pink dashed;
-  width: 30%;
+  width: 20%;
+  line-height: 1.25;
+  padding: 0px 25px;
+}
+html .wrapper .tab1 #thirdContent .box img,
+body .wrapper .tab1 #thirdContent .box img {
+  width: 100%;
+}
+html .wrapper .tab1 #thirdContent .box img:hover,
+body .wrapper .tab1 #thirdContent .box img:hover {
+  opacity: 0.6;
+  border: 0.5px black solid;
+}
+html .wrapper .tab1 #thirdContent .box img:active,
+body .wrapper .tab1 #thirdContent .box img:active {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+html .wrapper .tab1 #thirdContent .box h3,
+body .wrapper .tab1 #thirdContent .box h3 {
+  padding: 10px 0px;
+  font-size: 18px;
+}
+@media (max-width: 860px) {
+  html .wrapper .tab1 #thirdContent,
+  body .wrapper .tab1 #thirdContent {
+    flex-direction: column;
+  }
+  html .wrapper .tab1 #thirdContent .box,
+  body .wrapper .tab1 #thirdContent .box {
+    width: 60%;
+    text-align: center;
+    margin: 0px auto;
+    border-bottom: 1px grey solid;
+  }
 }

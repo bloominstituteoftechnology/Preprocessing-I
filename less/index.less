@@ -85,11 +85,21 @@ html, body {
     				font-size: 24px;
 
     				&:hover{
-    					color: grey;
+    					color: rgba(255, 255, 255, 0.75);
     				}
     			}
 
     		}
+
+    		@media (max-width: 860px){
+    			flex-direction: column;
+
+    			nav{
+    				width: 90%;
+    				height: 120px;
+    			}
+    		}
+
     	}//nav
 
     	.tab1 {
@@ -107,15 +117,14 @@ html, body {
 		    		width: 40%;
 		    		text-align: center;
 
-		    		&:hover{
-	    				background-color: rgba(255, 255, 255, 0.6);
-	    				border-radius: 8px;
-	    				color: rgba(0,0,0,0.9);
-	    			}
-
 		    		h1 {
 		    			font-size: 64px;
-		    			
+		    			padding-bottom: 1rem;
+		    			&:hover {
+		    				background-color: rgba(255, 255, 255, 0.8);
+		    				color: rgba(0, 0, 0, 0.8);
+		    				border-radius: 12px;
+		    			}  
 		    		}
 
 		    		p {
@@ -124,17 +133,18 @@ html, body {
 		    			width: 50%;  
 
 		    			&:hover {
-		    				background-color: rgba(0, 0, 0, 0.5);
-		    				color: rgba(255, 255, 255, 0.8);
+		    				background-color: rgba(255, 255, 255, 0.8);
+		    				color: rgba(0, 0, 0, 0.8);
 		    			}  	
 		    		}
+	    		}//intro
 
+	    		@media (max-width: 860px){
+	    			width: 90%;
+	    			.intro{
+	    				width: 100%;
+	    			}
 	    		}
-
-	    		@media (max-width: 500px) {
-					background-color: black;
-				
-				}
 	    	}//firstContent
 
 	    	#secondContent {
@@ -161,32 +171,70 @@ html, body {
 	    				&:active {
 	    					background-color: rgba(128, 128, 128, 0.5);
 	    				}
-	    			}
+	    			}//img
 
 	    			.halfBox {
 	    				padding: 10px 20px;
 	    				text-align: center;
 	    				width: 50%;
-	    			}
+	    			}//halfBox
+
 	    		}//box
+
+	    		@media (max-width: 860px){
+	    			width: 100%;
+
+	    			.box{
+	    				width: 100%;
+	    				text-align: center;
+	    			}
+
+	    		}//mobile-secondContent
 	    	}//secondContent
 
 	    	#thirdContent {
-	    		margin: 50px auto 0px auto;
+	    		margin: 25px auto 0px auto;
 	    		padding: 10px 0px;
-	    		width: 800px;
+	    		width: 80%;
 	       		display: flex;
 	       		text-align: center;
 	       		justify-content: space-between;
 
 	       		.box{
-	       			border: 1px pink dashed;
+	       			width: 20%;
+	       			line-height: 1.25;
+	       			
+	       			padding: 0px 25px;
 
-	       			width: 30%;
+	       			img {
+	       				width: 100%;
+	       				&:hover{
+	    					opacity: 0.6;
+	    					border: .5px black solid;
+	    				}
+	    				&:active {
+	    					background-color: rgba(128, 128, 128, 0.5);
+	    				}
+	       			}
+	       			h3 {
+	       				padding: 10px 0px;
+	       				font-size: 18px;
+	       			}
 	       		}
-	    	}
 
-	    }//intro
+	       		@media (max-width: 860px){
+	    			flex-direction: column;
+
+	    			.box{
+	    				width: 60%;
+	    				text-align: center;
+	    				margin: 0px auto;
+	    				border-bottom: 1px grey solid;
+	    			}
+	    		}
+	    	}//thirdContent
+
+	    }//tab1
 
 
 	} //wrapper
