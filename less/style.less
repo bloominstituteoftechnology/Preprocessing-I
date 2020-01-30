@@ -27,16 +27,16 @@ body {
 h1,
 h3,
 h4 {
-	letter-spacing: 0.1rem;
+	letter-spacing: 0.1em;
 }
 
 h1 {
-	font-size: 4.2rem;
+	font-size: 4.2em;
 	font-family: @main-header;
 }
 
 h3 {
-	font-size: 1.2rem;
+	font-size: 1.2em;
 	font-family: @title;
 	text-transform: uppercase;
 	padding-bottom: 10px;
@@ -89,42 +89,51 @@ header {
 .container {
 	display: flex;
 	flex-direction: row-reverse;
-}
-
-aside,
-section {
-	div {
-		margin: 20px 0;
+	@media screen {
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
 	}
-}
 
-section {
-	margin-left: 19px;
-	line-height: 1.3em;
-}
-
-.experiences {
-	.experience-content h4:first-child {
-		margin-top: -10px;
+	aside,
+	section {
+		div {
+			margin: 20px 0;
+		}
 	}
-}
 
-aside {
-	width: 577px;
-	margin-top: 19px;
-	padding: 20px;
-	background-color: @light-gray;
-	font-size: 0.77rem;
-	p,
-	h4 {
-		letter-spacing: 0.02rem;
+	section {
+		margin-left: 19px;
+		line-height: 1.3em;
+		.experiences {
+			.experience-content h4:first-child {
+				margin-top: -10px;
+			}
+		}
 	}
-}
-.skills {
-	ul {
-		li {
-			&:before {
-				content: '';
+
+	aside {
+		width: 577px;
+		margin-top: 19px;
+		padding: 20px;
+		background-color: @light-gray;
+		font-size: 0.77em;
+		@media screen and (max-width: 500px) {
+			display: flex;
+			flex-grow: 1;
+		}
+		p,
+		h4 {
+			letter-spacing: 0.02em;
+		}
+
+		.skills {
+			ul {
+				li {
+					&:before {
+						content: '';
+					}
+				}
 			}
 		}
 	}

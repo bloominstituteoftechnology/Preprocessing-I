@@ -16,14 +16,14 @@ body {
 h1,
 h3,
 h4 {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1em;
 }
 h1 {
-  font-size: 4.2rem;
+  font-size: 4.2em;
   font-family: 'Charmonman', cursive;
 }
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-family: 'Lora', serif;
   text-transform: uppercase;
   padding-bottom: 10px;
@@ -68,28 +68,39 @@ header .header-name h4 {
   display: flex;
   flex-direction: row-reverse;
 }
-aside div,
-section div {
+@media screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.container aside div,
+.container section div {
   margin: 20px 0;
 }
-section {
+.container section {
   margin-left: 19px;
   line-height: 1.3em;
 }
-.experiences .experience-content h4:first-child {
+.container section .experiences .experience-content h4:first-child {
   margin-top: -10px;
 }
-aside {
+.container aside {
   width: 577px;
   margin-top: 19px;
   padding: 20px;
   background-color: #21180508;
-  font-size: 0.77rem;
+  font-size: 0.77em;
 }
-aside p,
-aside h4 {
-  letter-spacing: 0.02rem;
+@media screen and (max-width: 500px) {
+  .container aside {
+    display: flex;
+    flex-grow: 1;
+  }
 }
-.skills ul li:before {
+.container aside p,
+.container aside h4 {
+  letter-spacing: 0.02em;
+}
+.container aside .skills ul li:before {
   content: '';
 }
