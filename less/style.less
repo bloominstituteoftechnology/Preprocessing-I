@@ -4,37 +4,54 @@
 
 @text: 'Open Sans', sans-serif;
 
+@light-gray: #21180508;
+
 .center-element {
 	margin: 0 auto;
 }
 
+.center-text {
+	text-align: center;
+}
+
 body {
-	font-size: 16px;
+	box-sizing: border-box;
+	font-size: 14px;
 	font-family: @text;
 	width: 1024px;
 	padding: 70px 90px;
+	line-height: 1.2em;
 	.center-element;
 }
 
+h1,
+h3,
+h4 {
+	letter-spacing: 0.1rem;
+}
+
 h1 {
-	font-size: 3rem;
+	font-size: 4.2rem;
 	font-family: @main-header;
 }
 
 h3 {
-	font-size: 1.8rem;
+	font-size: 1.2rem;
 	font-family: @title;
+	text-transform: uppercase;
+	padding-bottom: 10px;
 }
 
 h4 {
-	font-size: 1.2em;
-	font-family: @title;
+	font-size: 1.02em;
+	font-family: @text;
+	font-weight: 700;
 }
 
 ul {
 	li {
 		&:before {
-			content: "\000bb";
+			content: "\000bb \0020";
 		}
 		padding: 4px 0;
 	}
@@ -43,14 +60,29 @@ ul {
 header {
 	display: flex;
 	.header-img {
-		width: 25%;
+		width: 233px;
+		height: 233px;
+		overflow: hidden;
 
 		.profile {
-			width: 100%;
+			height: 100%;
+			position: relative;
+			left: -50px;
 		}
 	}
 
 	.header-name {
+		flex-grow: 1;
+		line-height: normal;
+		height: 233px;
+		align-self: center;
+		background-color: @light-gray;
+		margin-left: 21px;
+
+		.center-text;
+		h4 {
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -67,5 +99,33 @@ section {
 }
 
 section {
-	margin-left: 30px;
+	margin-left: 19px;
+	line-height: 1.3em;
+}
+
+.experiences {
+	.experience-content h4:first-child {
+		margin-top: -10px;
+	}
+}
+
+aside {
+	width: 577px;
+	margin-top: 19px;
+	padding: 20px;
+	background-color: @light-gray;
+	font-size: 0.77rem;
+	p,
+	h4 {
+		letter-spacing: 0.02rem;
+	}
+}
+.skills {
+	ul {
+		li {
+			&:before {
+				content: '';
+			}
+		}
+	}
 }
