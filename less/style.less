@@ -18,10 +18,13 @@ body {
 	box-sizing: border-box;
 	font-size: 14px;
 	font-family: @text;
-	width: 1024px;
+	max-width: 1024px;
 	padding: 70px 90px;
 	line-height: 1.2em;
 	.center-element;
+	@media screen and (max-width: 500px) {
+		padding: 0;
+	}
 }
 
 h1,
@@ -63,6 +66,9 @@ header {
 		width: 233px;
 		height: 233px;
 		overflow: hidden;
+		@media screen and (max-width: 500px) {
+			display: none;
+		}
 
 		.profile {
 			height: 100%;
@@ -72,13 +78,20 @@ header {
 	}
 
 	.header-name {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		flex-grow: 1;
 		line-height: normal;
 		height: 233px;
 		align-self: center;
 		background-color: @light-gray;
 		margin-left: 21px;
-
+		@media screen and (max-width: 500px) {
+			font-size: 0.6rem;
+			height: auto;
+			padding: 20px 0;
+		}
 		.center-text;
 		h4 {
 			text-transform: uppercase;
@@ -120,7 +133,12 @@ header {
 		font-size: 0.77em;
 		@media screen and (max-width: 500px) {
 			display: flex;
-			flex-grow: 1;
+			width: 100%;
+			justify-content: space-around;
+			text-align: center;
+			div {
+				padding: 3px;
+			}
 		}
 
 		p,
@@ -133,10 +151,13 @@ header {
 				font-style: italic;
 				i {
 					padding-right: 5px;
-					&:nth-of-type(0) {
-						padding-right: 19px;
-					}
 				}
+			}
+		}
+
+		.contact {
+			@media screen and (max-width: 500px) {
+				order: 2;
 			}
 		}
 
@@ -147,6 +168,12 @@ header {
 						content: '';
 					}
 				}
+			}
+		}
+
+		.education {
+			h3 {
+				margin-bottom: -20px;
 			}
 		}
 	}
