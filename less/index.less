@@ -73,6 +73,7 @@ body {
 // Variables
 @leftSideBackground: #CADFF4;
 @sectionTitleColor: #2C75BC;
+@leftSideWidth: 30%;
 
 //Mixing
 .flex(){
@@ -108,10 +109,27 @@ p{
 
 a {
 	color: @sectionTitleColor;
+
+	&:hover {
+		color: rgb(129, 175, 221);
+	}
 }
 
-a:hover {
-	color: rgb(129, 175, 221);
+.button {
+	display: block;
+	width: 7rem;	
+	background: linear-gradient(@leftSideBackground, @sectionTitleColor);
+	color: @leftSideBackground;
+	border: 1px solid @sectionTitleColor;
+	text-align: center;
+	padding: .8rem 0;
+	border-radius: 10rem;
+	text-decoration: none;
+
+	&:hover {
+		background: @sectionTitleColor;
+		color: @leftSideBackground;
+	}
 }
 
 
@@ -119,27 +137,37 @@ a:hover {
 #container {
 	.flex();
 	height: 100%;
-	width: 55%;
+	width: 100%;
 	margin: 0 auto;
 
 	#leftSide {
 		background: @leftSideBackground;
 		height: 100%;
-		width: 40%;
+		width: @leftSideWidth;
 		padding: 3rem;
+		position: fixed;
 
 		img {
-			width: 90%;
+			width: 50%;
 			border: 1.2rem solid black;
 		}
 
+		nav {
+			margin-top: 2rem;
+			.flex();
+			justify-content: space-between;
+		}
+
 		article {
-			margin-top: 5rem;
+			margin-top: 3rem;
 		}
 	}
 
 	#content {
 		width: 60%;
+		position: relative;
+		margin-left: 30%;
+		padding: 3rem;
 	}
 
 	
@@ -148,8 +176,7 @@ a:hover {
 
 
 footer {
-	width: 55% - 33%;
-	left: 22.5%;
+	width: @leftSideWidth;
 	position: absolute;
 	bottom: 0;
 	padding-left: 1.5rem;
