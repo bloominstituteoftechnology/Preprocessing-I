@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 62.5%;
+	font-size: 100%;
 	font-family: 'Martel Sans', sans-serif;
 	vertical-align: baseline;
 }
@@ -52,27 +52,119 @@ table {
 * {
     box-sizing: border-box;
 }
-@bgColor: #e3ebeb;
-@fontColor: ;
+
 html, body {
 	height: 100%;
-	background-color: @bgColor;
+	background-color: @bg-color;
 }
 
+@bg-color: #d9e7eb;
+@fg-color: #339999;
+@text-color: black;
+@hover-color: #2c3a47;
+@link-color: #efefef;
+@width: 80vw;
+
+
 .container {
-	width: 800px;
-	margin: 50px auto;
-  }
-  nav ul{
-	display: flex;
-	list-style: none;
-  }
-  nav li{
-	padding-right: 2rem;
-  }
-  nav a {
-	font-size: 2.5rem;
-  }
-h1 {
-	font-size: 3.5rem;
+	  width: @width;
+	  color: @text-color;
+	  margin: 0 auto;
+	nav {
+		height: 3rem;
+		background-color: @fg-color;
+		ul{
+			display: flex;
+			justify-content: flex-end;
+			list-style: none;
+			margin-bottom: 1rem;		
+			@media only screen and (max-width:500px){
+				justify-content: center;
+			}
+		}
+		li {
+			margin-top: 1rem;
+			padding-right: 1rem;
+			color: @link-color;
+			&:hover{
+				color: @hover-color;
+			}
+		}
+
+    }
+	.splash {
+		display: flex;
+		width: @width;
+		@media only screen and (max-width:600px){
+			width: 100vw;
+		}	  
+		.splash-txt {
+			width: @width*.5;
+			@media only screen and (max-width:600px){
+				width: (@width+20vh)*.5;
+			}
+		}
+		.splash-img {
+			background-color: green;
+			height: 33vh;
+			min-height: 15rem;
+			width: @width*.5;
+			@media only screen and (max-width:600px){
+				width: (@width+20vh)*.5;
+			}
+		}
+
+	}
+	
+	h1 {
+		padding: .5rem;
+		font-size:2.5rem;
+	}
+	h2 {
+		padding: .5rem;
+		font-size:2rem;
+	}
+	p {
+		margin: .5rem;
+	}
+	button {
+		margin: .5rem;
+		padding: .5rem;
+		font-size: 1rem;
+		border-radius: .5rem;
+
+		&:hover {
+			background-color: darkslategrey;
+			color: @link-color;
+		}
+	}
+	.content{
+		display: flex;
+		.content50 {
+		width: @width*.48;
+		@media only screen and (max-width:600px){
+			width: (@width+20vh)*.52;
+		}
+		}
+	}
+	ul {
+		width: 100%;
+		margin: .5rem;
+	}
+	li {
+		margin: .5rem;
+	}
+	.footer{
+		background-color: @fg-color;
+		height: 3rem;
+		display: flex;
+		justify-content:center;
+		p {
+		font-size: .8rem;
+		padding-top: 1em;
+		}
+	} 
+	@media only screen and (max-width:600px){
+		width: 100vw;
+	}
 }
