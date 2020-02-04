@@ -4,6 +4,8 @@
    License: none (public domain)
 */
 
+@navColor: black;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,7 +22,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -54,6 +56,65 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+.wrapper {
+	width:90%;
+	margin: 2% auto;
+
+	nav {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		margin-bottom: 4%;
+
+		a {
+			padding: 0 4%;
+			text-decoration: none;
+			color: @navColor;
+		}
+	}
+
+	.top-content {
+		margin: 0 auto;
+		// border: 1px solid red;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		.box1 {
+			display: flex;
+			flex-flow: column wrap;
+			width: 46%;
+			height: auto;
+			border: 1px solid red;
+			align-items: center;
+			justify-content: space-evenly;
+
+			h2 {
+				padding: 4%;
+			}
+
+			img {
+				width: 40%;
+				height: auto;
+				object-fit: contain;
+				padding: 4%;
+			}
+			p {
+				padding: 4%;
+				line-height: 1.4rem;
+			}
+		}
+
+		.box2 {
+			border: 1px solid red;
+		}
+	}
+
+
+}
