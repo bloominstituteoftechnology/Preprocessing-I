@@ -52,15 +52,16 @@ table {
 * {
     box-sizing: border-box;
 }
+// Mix-Ins
+@border: 4px ridge #817088;
+@bgcolor: #E0D8E7;
+@color: #34233B;
+@sidecolor: #BEB1C3;
 
 html, body {
 	height: 100%;
-	background-color: #E0D8E7;
+	background-color: @bgcolor;
 }
-
-// Mix-Ins
-@border: 4px solid #817088;
-@color: #34233B;
 
 // Code Start
 .sidenav {
@@ -69,11 +70,12 @@ html, body {
 	position: fixed;
 	width: 30%;
 	height: 100%;
-	background-color: #BEB1C3;
-	padding: 3%;
+	background-color:@sidecolor;
+	padding-top: 3%;
+	padding-left: 3%;
 	.image {
 		align-self: center;
-		width: 80%;
+		width: 65%;
 		height: auto;
 		border: @border;
 	}
@@ -90,3 +92,21 @@ h1 {
 	color: @color;
 }
 
+.button {
+	background-color: @bgcolor;
+	border-radius: 50%;
+	border: 2px solid @color;
+	padding: 6px;
+	margin: 3.5%;
+	margin-top: 4%;
+}
+
+.button:hover {
+	background-color: @color;
+	color: @bgcolor;
+  }
+
+a {
+	text-decoration: none;
+	color: @color;
+}
