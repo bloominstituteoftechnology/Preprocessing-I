@@ -58,18 +58,31 @@ html, body {
 	background-color: @bg-color;
 }
 
-@bg-color: #d9e7eb;
-@fg-color: #339999;
-@text-color: black;
+@bg-color: #477890;
+@content-color: #F5F0F6;
+@content50-color: #D7B377;
+@footer-color: #2B4162;
+@fg-color: #477890;
+@text-color: #2B4162;
 @hover-color: #2c3a47;
 @link-color: #efefef;
+@button-color: #8F754F;
+@list-color: #e4bf7f;
+@list-color-alt: #c7a76f;
 @width: 80vw;
 
+.border-gen(@border) {
+
+	border: @border solid @button-color;
+	border-width: (@border*.2) (@border*.2) (@border*.5) (@border*.5);
+	border-radius: @border*.5;
+}
 
 .container {
 	  width: @width;
 	  color: @text-color;
 	  margin: 0 auto;
+	  background-color: @content-color;
 	nav {
 		height: 3rem;
 		background-color: @fg-color;
@@ -78,7 +91,7 @@ html, body {
 			justify-content: flex-end;
 			list-style: none;
 			margin-bottom: 1rem;		
-			@media only screen and (max-width:500px){
+			@media only screen and (max-width:600px){
 				justify-content: center;
 			}
 		}
@@ -99,16 +112,18 @@ html, body {
 			width: 100vw;
 		}	  
 		.splash-txt {
+			padding-top: 3rem;
 			width: @width*.5;
 			@media only screen and (max-width:600px){
 				width: (@width+20vh)*.5;
+				padding-top: .25rem;
 			}
 		}
-		.splash-img {
-			background-color: green;
-			height: 33vh;
-			min-height: 15rem;
-			width: @width*.5;
+		img {
+			object-fit: cover;
+			height: 20rem;
+			margin: .25rem;
+			width: (@width*.5)-.5rem;
 			@media only screen and (max-width:600px){
 				width: (@width+20vh)*.5;
 			}
@@ -132,6 +147,7 @@ html, body {
 		padding: .5rem;
 		font-size: 1rem;
 		border-radius: .5rem;
+		background-color: @button-color;
 
 		&:hover {
 			background-color: darkslategrey;
@@ -140,22 +156,38 @@ html, body {
 	}
 	.content{
 		display: flex;
-		.content50 {
-		width: @width*.48;
+		justify-content: center;
+		align-items: center;
 		@media only screen and (max-width:600px){
-			width: (@width+20vh)*.52;
+			flex-flow: column;
+			justify-content: center;
 		}
+		.content50 {
+			.border-gen(1rem);
+			margin: .5rem;
+			width: @width*.5;
+			background-color: @content50-color;
+			@media only screen and (max-width:600px){
+				width: (@width+20vh)*.98;
+		
+			}
 		}
 	}
 	ul {
 		width: 100%;
-		margin: .5rem;
+	
 	}
-	li {
-		margin: .5rem;
+	.list li{
+		padding: .5rem;
+		background-color: @list-color;
+		&:nth-child(odd){
+			background-color: @list-color-alt;
+		}
 	}
+	
 	.footer{
-		background-color: @fg-color;
+		background-color: @footer-color;
+		color: @link-color;
 		height: 3rem;
 		display: flex;
 		justify-content:center;
