@@ -4,12 +4,19 @@
    License: none (public domain)
 */
 
-// My var
+// Vars
 @blackVar: black;
 
-// My mixin
+// Mixins
 .setBackgroundColor(@colorToSet){
 	background-color: @colorToSet;
+}
+
+.flex(@flow, @justifyContent, @alignItems){
+	display: flex;
+	flex-flow: @flow;
+	justify-content: @justifyContent;
+	align-items: @alignItems;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -98,15 +105,18 @@ p,li {
 		}
 	}
 
+
+
 	.content {
 		margin: 5% auto;
 		border: 1px solid @blackVar;
 		width: 100%;
 		height: auto;
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-around;
-		align-items: center;
+		// display: flex;
+		// flex-flow: row nowrap;
+		// justify-content: space-around;
+		// align-items: center;
+		.flex(row nowrap, space-around, center);
 		.setBackgroundColor(#C38D9E);
 
 		p,li {
