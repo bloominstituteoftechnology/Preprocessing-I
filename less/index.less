@@ -57,3 +57,147 @@ html, body {
     height: 100%;
 }
 
+//mix-ins
+
+@theme: grey;
+.plainText() {
+	text-decoration: none;
+}
+
+
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+	@media(max-width: 500px) {
+		.container {
+		  width: 96%;
+		  margin: 0 2%;
+		}
+
+	p {
+		line-height: 1.5em;
+	}
+
+	header {
+		color: black;
+		font-size: 1.6rem;
+		display: flex;
+		justify-content: flex-end;
+		/* align-items: center; */
+		border: 1px solid black;
+
+		nav {
+			border: 1px solid green;
+			width: 33.33%;
+			margin: 20px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@media (max-width: 500px){
+				  width: 100%;
+				}
+			
+			a {
+				.plainText();
+				color: black;
+			  }
+		  }
+		
+	}//header
+
+	.sec {
+		border: 1px solid blue;
+		font-family: 'Monoton', cursive;
+		font-size: 1.6rem;
+		padding: 25px;
+		img{
+			width: 33.33%;
+			height: 100px;
+			margin-top: 30px;
+			@media(max-width: 500px) {
+				  width: 100%;
+			  }
+		}
+		h1 {
+			font-size: 4rem;
+			margin-bottom: 10px;
+		  }
+		p {
+		padding-bottom: 24px;
+		}
+		.occasion {
+		border-top: 1px solid @theme;
+  		padding-top: 20px;
+		}
+		button {
+			font-size: 1.6rem;
+			padding: 10px;
+			border-radius: 4px;
+			width: 160px;
+			color: white;
+			background: rgb(94, 90, 90);
+		}
+	}
+	main {
+		margin: 20px 0;
+		display: flex;
+		align-items: center;
+		/* flex-wrap: wrap; */
+		font-size: 1.2rem;
+		.listen {
+			width: 50%;
+			h2 {
+				margin-bottom: 8px;
+				font-size: 2.5rem;
+			  }
+			p {
+				padding-right: 20px;
+			}
+		  }
+		ul {
+			width: 50%;
+			li {
+				border: 1px solid black;
+				padding: 10px;
+			}
+		}
+		@media (max-width: 500px) {
+			.listen {
+			  width: 100%;
+			}
+			ul {
+			  width: 100%;
+			}
+		  }
+	.work-history {
+		font-size: 1.6rem;
+		.graph {
+			display: flex;
+			align-items: center;
+			.box {
+				padding: 10px 0;
+				p {
+					padding: 10px;
+					margin-right: 80px;
+				  }
+			  }
+		  }
+	}
+	.contact {
+		font-size: 1.6rem;
+		@media (max-width: 1600px) {
+			  display: none;
+		  }
+	  }
+	  footer {
+		padding: 30px 0;
+		font-size: 1.6rem;
+		text-align: center;
+		background: @theme;
+		color: white;
+	  }
+		
+	}
+}
+}
