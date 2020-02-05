@@ -1,5 +1,5 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126 
+   v2.0 | 20110126
    License: none (public domain)
 */
 html,
@@ -106,6 +106,7 @@ section {
 }
 body {
   line-height: 1;
+  
 }
 ol,
 ul {
@@ -133,105 +134,142 @@ table {
 html,
 body {
   height: 100%;
+  font-size: 62.5%;
 }
-/* Start coding from here */
-.body {
-  margin: 24px 24px;
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+
 }
-.header {
-  text-align: right;
-  margin-right: 32px;
-  margin-bottom: 8px;
-  width: 100%;
+@media(max-width: 500px) {
+  .container {
+    width: 96%;
+    margin: 0 2%;
+  }
 }
-.a {
+.container p {
+  line-height: 1.5em;
+}
+.container header {
   color: black;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  border: 1px solid red;
+}
+.container header nav {
+  border: 1px solid green;
+  width: 33.33%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px){
+  .container header nav {
+    width: 100%;
+  }
+}
+.container header nav a {
   text-decoration: none;
-  margin-inline-end: 8px;
+  color: black;
 }
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  border-radius: 20px;
-  background: lightgray;
+.sec .img {
+  width: 33.33%;
+  height: 100px;
+  margin-top: 30px;
 }
-.box2 {
-  margin: 25px 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  align-content: center;
-  border-radius: 5px;
-  background: grey;
+.container .sec {
+  border: 1px solid blue;
+  font-family: 'Monoton', cursive;
+  font-size: 1.6rem;
+  padding: 25px;
 }
-.image {
-  height: 125px;
-  width: 125px;
-  margin: 15px;
-  margin-left: 20x;
-  margin-top: 40px;
+@media(max-width: 500px) {
+  .container .sec img {
+    width: 100%;
+  }
 }
-.button {
-  background: grey;
+.container .sec h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+.container .sec p {
+  padding-bottom: 24px;
+}
+.container .sec .occasion {
+  border-top: 1px solid grey;
+  padding-top: 20px;
+}
+.container .sec button {
+  font-size: 1.6rem;
+  padding: 10px;
+  border-radius: 4px;
+  width: 160px;
   color: white;
-  margin-top: 8px;
-  margin-left: 16px;
-  margin-bottom: 22px;
+  background: rgb(94, 90, 90);
 }
-.heading-title {
-  margin-left: 16px;
-  margin-top: 8px;
-  font-size: 28px;
+.container main {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  font-size: 1.2rem;
 }
-.heading-normal {
-  margin-left: 16px;
-  font-size: 16px;
-  margin-top: 4px;
+.container .listen {
+  width: 50%;
 }
-.paragraph2 {
-  margin-left: 16px;
-  margin-top: 20px;
-  font-size: 16px;
+.container .listen h2 {
+  margin-bottom: 8px;
+  font-size: 2.5rem;
 }
-.features {
-  width: 49%;
-  display: inline-block;
-  text-align: left;
+.container .listen p {
+  padding-right: 20px;
 }
-.about {
-  width: 49%;
-  display: inline-block;
-  text-align: left;
+.container ul {
+  width: 50%;
 }
-th,
-td {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
+.container ul li {
+  border: 1px solid black;
+  padding: 10px;
+}
+@media (max-width: 500px) {
+  .container .listen {
+    width: 100%;
+  }
+  .container ul {
+    width: 100%;
+  }
+}
+.container .work-history {
+  font-size: 1.6rem;
+}
+.container .work-history .graph {
+  display: flex;
+  align-items: center;
+}
+.container .work-history .graph .box {
+  padding: 10px 0;
+}
+.container .work-history .box p {
+  padding: 10px;
+  margin-right: 80px;
+}
+.container .contact {
+  font-size: 1.6rem;
   text-align: center;
 }
-.h1 {
-  font-size: 28px;
+@media (max-width: 1600px) {
+  .container .contact {
+    display: none;
+  }
 }
-.table {
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-block-end: 24px;
-}
-.footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
+.container footer {
+  padding: 30px 0;
+  font-size: 1.6rem;
   text-align: center;
-  border-radius: 20px;
   background: grey;
   color: white;
-  height: 50px;
-  width: 100%;
-  position: static;
-  line-height: 25px;
-  align-self: center;
 }
