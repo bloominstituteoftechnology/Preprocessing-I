@@ -55,6 +55,7 @@ table {
 }
 @fontWeight: 50%;
 @fontSize: 30px;
+@mediascreen: (max-width: 500px);
 .margin{
 	margin: 0 auto;
 }
@@ -68,6 +69,10 @@ html, body {
 	display: flex;
 	justify-content: flex-end;
 	padding: 2rem;
+	text-decoration: none;
+	@media @mediascreen {
+		justify-content: space-between;
+	}
 
 	.anchor{
 		padding-left: 1rem;
@@ -77,14 +82,15 @@ html, body {
 .intro {
 	display: flex;
 	flex-direction: column;
-	padding: 2rem;
+	padding: 1rem;
 	background-color: #dbcb9d;
-	.margin;
-	width: 40rem;
+	width: 100%;
 
 	.picture-of-me{
-		.margin;
 		padding: 2rem;
+		@media @mediascreen {
+			display: none;
+		}
 	}
 	.text1 {
 		display: inline-block;
@@ -95,6 +101,11 @@ html, body {
 			padding: 0px;
 			font-size: @fontSize;
 			font-weight: @fontWeight;
+			@media @mediascreen {
+				font-size: @fontSize * 2;
+				margin: 0 auto;
+				padding: 2%;
+			}
 		}
 
 		}
@@ -109,12 +120,15 @@ html, body {
 		margin: 0 0 0 2rem;
 		border: 1px solid lightgray;
 		padding: .7rem;
-		display: inline-block;
+		display: flex;
 		border-radius: 100px;
 		color: white;
 		text-decoration: none;
 		background: #4f4735;
 		width: 7rem;
+		@media @mediascreen {
+			margin: 0 auto;
+		}
 
 		&:hover{
 			color:#4f4735;
@@ -123,13 +137,23 @@ html, body {
 	}
 	}
 	.second{
+		margin: 0 auto;
 		display: flex;
 		padding: 1rem;
+		@media @mediascreen {
+			flex-direction: column;
+			
+		}
 
 		.about-me{
 			.margin;
 			padding: 0 2rem;
 			width: 50%;
+			@media @mediascreen {
+				width: 100%;
+				flex-wrap: wrap;
+				padding: 2rem;
+			}
 
 			h3{
 				display:flex;
@@ -150,12 +174,22 @@ html, body {
 				border-radius: 2rem;
 				font-size: @fontSize/1.5;
 				font-weight: @fontWeight/2;
+				@media @mediascreen {
+					display: flex;
+					font-size: @fontSize/1.5;
+					font-weight: @fontWeight/2;
+				}
+
+				}
 			}
 		}
 		.jobs{
 			.margin;
 			padding: 0 2rem;
 			width: 50%;
+			@media @mediascreen {
+				width: 100%;
+			}
 
 			h3{
 				display:flex;
@@ -178,6 +212,8 @@ html, body {
 				border-radius: 2rem;
 				font-size: @fontSize/1.5;
 				font-weight: @fontWeight/2;
+				@media @mediascreen {
+				}
 				
 				.job-title{
 					display: block;
@@ -190,12 +226,13 @@ html, body {
 
 		}
 
-	}
+	
 	.my-contact{
 		display: flex;
 		flex-direction: column;
+
 		padding: 2rem;
-		width: 50%;
+		width: 750%;
 
 
 		h3{
