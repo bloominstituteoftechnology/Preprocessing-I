@@ -57,7 +57,7 @@ html, body {
 	height: 100%;
 	background-color: @bg-color;
 }
-
+// Color Variables
 @bg-color: #477890;
 @content-color: #F5F0F6;
 @content50-color: #D7B377;
@@ -66,26 +66,34 @@ html, body {
 @text-color: #2B4162;
 @hover-color: #2c3a47;
 @link-color: #efefef;
-@button-color: #8F754F;
+@border-color: #8F754F;
+@button-color: #D7B377;
 @list-color: #e4bf7f;
 @list-color-alt: #c7a76f;
 @width: 80vw;
-
+//Mixins
+//generate border with offset thickness and border radius 
 .border-gen(@border) {
-
-	border: @border solid @button-color;
+	border-style: solid;
+	border-color: @border-color;
 	border-width: (@border*.2) (@border*.2) (@border*.5) (@border*.5);
 	border-radius: @border*.5;
 }
-
+//main body CSS
 .container {
 	  width: @width;
 	  color: @text-color;
 	  margin: 0 auto;
 	  background-color: @content-color;
+	  @media only screen and (max-width:600px){
+		width: 100vw;
+	}
+	  //navBar CSS
 	nav {
 		height: 3rem;
 		background-color: @fg-color;
+		border-bottom-left-radius: 80%;
+		border-bottom-right-radius: 10%;
 		ul{
 			display: flex;
 			justify-content: flex-end;
@@ -104,7 +112,8 @@ html, body {
 			}
 		}
 
-    }
+	}
+	//Splash Image and header
 	.splash {
 		display: flex;
 		width: @width;
@@ -130,7 +139,7 @@ html, body {
 		}
 
 	}
-	
+	// font management
 	h1 {
 		padding: .5rem;
 		font-size:2.5rem;
@@ -154,6 +163,7 @@ html, body {
 			color: @link-color;
 		}
 	}
+	//main content and panels
 	.content{
 		display: flex;
 		justify-content: center;
@@ -177,6 +187,7 @@ html, body {
 		width: 100%;
 	
 	}
+	//patterned list
 	.list li{
 		padding: .5rem;
 		background-color: @list-color;
@@ -184,19 +195,18 @@ html, body {
 			background-color: @list-color-alt;
 		}
 	}
-	
+	//footer
 	.footer{
 		background-color: @footer-color;
 		color: @link-color;
 		height: 3rem;
 		display: flex;
 		justify-content:center;
+		border-top-left-radius: 5%;
+		border-top-right-radius: 95%;
 		p {
 		font-size: .8rem;
 		padding-top: 1em;
 		}
 	} 
-	@media only screen and (max-width:600px){
-		width: 100vw;
-	}
 }
