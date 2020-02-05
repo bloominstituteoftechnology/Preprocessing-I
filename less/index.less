@@ -57,6 +57,7 @@ table {
 @bgcolor: #E0D8E7;
 @color: #34233B;
 @sidecolor: #BEB1C3;
+@align: center;
 
 html, body {
 	height: 100%;
@@ -67,6 +68,8 @@ html, body {
 
 // Code Start
 .sidenav {
+	display: flex;
+	flex-direction: column;
     height: 100%;
     width: 160px;
 	position: fixed;
@@ -76,7 +79,7 @@ html, body {
 	padding-top: 3%;
 	padding-left: 3%;
 	.image {
-		align-self: center;
+		align-self: @align;
 		width: 65%;
 		height: auto;
 		border: @border;
@@ -84,22 +87,26 @@ html, body {
 }
 
 h1 {
+	align-self: @align;
 	font-weight: bold;
 	font-size: 2rem;
 	color: @color;
 }
 
 .title {
+	align-self: @align;
 	font-style: italic;
 	color: @color;
 }
 
 .button {
+	align-self: @align;
 	background-color: @bgcolor;
 	border-radius: 50%;
+	width: 20%;
 	border: 2px solid @color;
 	padding: 6px;
-	margin: 3.5%;
+	margin-left: 0;
 	margin-top: 4%;
 
 }
@@ -124,7 +131,7 @@ h2 {
 	padding-bottom: 1%;
 }
 
-.intro {
+.right {
 	padding-top: 1%;
 	margin-left: 32%;
 	padding-right: 2.5%;
@@ -150,4 +157,14 @@ h3 {
 	padding-top: 1%;
 	margin-left: 32%;
 	padding-right: 2.5%;
+}
+
+.copy {
+	text-align: @align;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
 }
