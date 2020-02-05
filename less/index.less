@@ -82,16 +82,21 @@ header {
 	width: 100%;
 	height: 15%;
 	padding-left: 30%;
-	//border: 2px solid blue;
+	@media (max-width: 500px) {
+		padding-left:25%;
+	}
 	nav {
 		.flex();
 		padding-top: 3%;
+		@media (max-width: 500px) {
+			flex-direction: column;
+			height: 5rem;
+		}
 
 		a {
 			text-decoration: none;
 			color: black;
 			font-size: 1.6rem;
-			//border: 2px solid black;
 		}//a
 		a:hover {
 			.button();
@@ -110,10 +115,27 @@ div.top-box {
 	background-image: url("@{image-base-url}/vinyl-bg.jpg");
 	background-position: center;
 
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: 90%;
+		border: .5rem double @yeyoPink;
+		background: white;
+		.flex();
+		justify-content: space-evenly;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-left: .1rem;
+		padding-left: .2rem;
+		margin-top: 5rem;
+	}
+
 	img {
 		max-width:20rem;
 		max-height: 20rem;
-		//margin-left: 2rem;
+		@media (max-width: 500px) {
+			max-width: 30%;
+			max-height: 30%;
+		}
 	}//img
 
 	h1 {
@@ -157,11 +179,24 @@ div.middle-box {
 	margin: 1% 5%; 
 	.flex();
 
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: auto;
+		flex-direction: column;
+		margin-left: .1rem;
+	}
 	.skills {
 		width: 50%;
 		border: .1rem solid black;
 		padding: 1rem;
 		border-right: .5rem dotted @yeyoBlue;
+
+		@media(max-width: 500px) {
+			max-width: 30rem;
+			border: none;
+			border-right: none;
+			
+		}
 
 		h3 {
 			font-size: 1.8rem;
@@ -183,6 +218,11 @@ div.middle-box {
 		padding: 1rem;
 		background: black;
 
+		@media(max-width:500px) {
+			min-width: 28rem;
+			border-top: .2rem dotted @yeyoBlue;
+		}
+
 		h2 {
 			font-size: 2rem;
 			color: @yeyoPurple;
@@ -201,6 +241,9 @@ div.history {
 	border: 1rem double @yeyoPurple;
 	margin: 0% 5%;
 
+	@media (max-width: 500px){
+		visibility: hidden;
+	}
 	h3 {
 		font-size: 1.8rem;
 		margin-bottom: 1rem;
@@ -219,6 +262,13 @@ div.history {
 footer {
 	.flex();
 
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: auto;
+		flex-direction: column;
+		margin-left: .1rem;
+	}
+
 	span{
 		color: silver;
 		padding: 2rem;
@@ -235,6 +285,14 @@ div.contact {
 	margin: 1% 5%; 
 	.flex();
 	flex-direction: column;
+
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: auto;
+		flex-direction: column;
+		margin-left: .1rem;
+		margin-top: 4rem;
+	}
 
 	h2 {
 		color: @yeyoPink;
