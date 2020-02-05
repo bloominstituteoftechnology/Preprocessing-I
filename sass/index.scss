@@ -1,0 +1,58 @@
+//Typography 
+$primary-color: #272727;
+$secondary-color: #ada5ac;
+$text-color: #fff;
+$font-weights: ( "regular": 400, "medium": 600, "thick": 900);
+// Media Queries
+$breakpoint-desktop: 1200px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+// HTML elements
+$table-links: ("border-top":1px solid #444444, "border-bottom": 1px solid #444444);
+body {
+    background: $primary-color;
+    font-weight: map-get($font-weights, bold);
+    color: $text-color;
+}
+
+//Responsive at desktop viewport
+.container {
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: $breakpoint-desktop) {
+        #{&}__bio {
+            font-weight: map-get($font-weights, medium);
+            &:hover {
+                color: lightcoral;
+            }
+        }
+    }
+}
+
+//Responsive at tablet viewport  ////
+.container {
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: $breakpoint-tablet) {
+        #{&}__bio {
+            font-weight: map-get($font-weights, medium);
+            &:hover {
+                color: blueviolet;
+            }
+        }
+    }
+}
+
+//Responsive at mobile viewport
+.container {
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: $breakpoint-mobile) {
+        #{&}__bio {
+            font-weight: map-get($font-weights, medium);
+            &:hover {
+                color: peru;
+            }
+        }
+    }
+}
