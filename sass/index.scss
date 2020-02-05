@@ -1,19 +1,60 @@
 //Using sass because, in the end, I want to use Suzy
 //Typography 
-$primary-color:green;
-$secondary-color: #ada5ac;
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed&display=swap');
+$primary-color:#272727;
+$secondary-color: #79b869;
 $text-color: #fff;
-$font-weights: ( "regular": 400, "medium": 600, "thick": 900);
+$fill-color: #999999;
+$header-font: Roboto Condensed,
+san-serif;
+$par-font: Raleway,
+san-serif;
+$font-weights: ( "regular": 400,
+"medium": 600,
+"thick": 900);
+$sm: 1rem;
+$md: 1.7rem;
+$lg: 2.8rem;
 // Media Queries
 $breakpoint-desktop: 1200px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 480px;
-// HTML elements
-$table-links: ("border-top":1px solid #444444, "border-bottom": 1px solid #444444);
+// Spacing 
+$buttons: (padding: 15px,
+margin: 10px);
 body {
     background: $primary-color;
-    font-weight: map-get($font-weights, bold);
+    font-weight: map-get($font-weights, regular);
+    font-family: $par-font;
     color: $text-color;
+}
+
+header {
+    nav {
+        display: flex;
+        flex-direction: wrap;
+        justify-content: space-around;
+        a {
+            li {
+                border: $secondary-color;
+                @mixin padding {
+                    padding: $md $sm;
+                }
+            }
+        }
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: wrap;
+    background: $fill-color;
+    .bio {
+        flex-direction: column;
+        h2 {
+            color: $primary-color;
+        }
+    }
 }
 
 //Responsive at desktop viewport
@@ -21,7 +62,7 @@ body {
     width: 90%;
     margin: 0 auto;
     @media (min-width: $breakpoint-desktop) {
-        #{&}__bio {
+        #{&}__bio a {
             font-weight: map-get($font-weights, medium);
             & p {
                 color: lightcoral;
@@ -30,30 +71,29 @@ body {
     }
 }
 
-//Responsive at tablet viewport  ////
-.container {
-    width: 90%;
-    margin: 0 auto;
-    @media (min-width: $breakpoint-tablet) {
-        #{&}__bio {
-            font-weight: map-get($font-weights, medium);
-            &:hover {
-                color: blueviolet;
-            }
-        }
-    }
-}
-
-//Responsive at mobile viewport
-.container {
-    width: 90%;
-    margin: 0 auto;
-    @media (min-width: $breakpoint-mobile) {
-        #{&}__bio {
-            font-weight: map-get($font-weights, medium);
-            &:hover {
-                color: peru;
-            }
-        }
-    }
-}
+// //Responsive at tablet viewport  ////
+// .container {
+//     width: 90%;
+//     margin: 0 auto;
+//     @media (min-width: $breakpoint-tablet) {
+//         #{&}__bio {
+//             font-weight: map-get($font-weights, medium);
+//             &:hover {
+//                 color: blueviolet;
+//             }
+//         }
+//     }
+// }
+// //Responsive at mobile viewport
+// .container {
+//     width: 90%;
+//     margin: 0 auto;
+//     @media (min-width: $breakpoint-mobile) {
+//         #{&}__bio {
+//             font-weight: map-get($font-weights, medium);
+//             &:hover {
+//                 color: peru;
+//             }
+//         }
+//     }
+// }
