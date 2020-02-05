@@ -60,12 +60,16 @@ html, body {
 
 @image-base-url: "/Users/jordan.oliver/Documents/School/Lambda/Lambda Projects/Preprocessing-I/img";
 
+@yeyoPurple: #6E49F6;
+@yeyoBlue: #52CBF7;
+@yeyoPink: #EC3D68;
+
 .button() {
-	border: .2rem solid #EC3D68;
+	border: .2rem solid @yeyoPink;
 	border-radius: 125%;
 	padding: .5rem;
-	color: #52CBF8;
-	background: #6E49F6;
+	color: @yeyoBlue;
+	background: @yeyoPurple;
 }
 
 .flex() {
@@ -98,7 +102,7 @@ header {
 div.top-box {
 	width: 90%;
 	height: 40rem;
-	border: 1rem double #EC3D68;
+	border: 1rem double @yeyoPink;
 	margin: 0% 5%;
 	.flex();
 	flex-direction: column;
@@ -114,31 +118,31 @@ div.top-box {
 
 	h1 {
 		font-size: 3rem;
-		color: #EC3D68;
+		color: @yeyoPink;
 		//margin-left: 2rem;
-		border-bottom: 1rem solid #52CBF8;
+		border-bottom: 1rem solid @yeyoBlue;
 	}//h1
 
 	span {
 		font-size: 1.4rem;
-		color: #52CBF8;
+		color: @yeyoBlue;
 		background: black;
 	}//span
 
 	p {
-		color: #EC3D68;
+		color: @yeyoPink;
 		background: black;
-		border: 1rem double #52CBF8;
+		border: 1rem double @yeyoBlue;
 		padding: 2rem;
-	}
+	}//p
 
 	button {
 		font-size: 1rem;
-		border: .3rem double #6E49F6;
+		border: .3rem double @yeyoPurple;
 		background: #FDF852;
 		border-radius: 125%;
 		padding:1rem;
-	}
+	}//button
 	button:hover {
 		.button();
 		padding: 1rem;
@@ -149,7 +153,7 @@ div.middle-box {
 	width: 90%;
 	height: 15rem;
 	background: black;
-	border: 1rem double #52CBF8;
+	border: 1rem double @yeyoBlue;
 	margin: 1% 5%; 
 	.flex();
 
@@ -157,11 +161,11 @@ div.middle-box {
 		width: 50%;
 		border: .1rem solid black;
 		padding: 1rem;
-		border-right: .5rem dotted #52CBF8;
+		border-right: .5rem dotted @yeyoBlue;
 
 		h3 {
 			font-size: 1.8rem;
-			color:#EC3D68;
+			color:@yeyoPink;
 		}//h3
 
 		ul {
@@ -169,7 +173,7 @@ div.middle-box {
 			li{
 				list-style: square outside none;
 				line-height: 2;
-				color: #6E49F6;
+				color: @yeyoPurple;
 			}//li
 		}//ul
 	}//.skills
@@ -181,12 +185,12 @@ div.middle-box {
 
 		h2 {
 			font-size: 2rem;
-			color: #6E49F6;
+			color: @yeyoPurple;
 		}//h2
 
 		p {
 			font-size:1.4rem;
-			color: #EC3D68;
+			color: @yeyoPink;
 		}//p
 	}//.about
 }//.middle-box
@@ -194,10 +198,56 @@ div.middle-box {
 div.history {
 	width: 90%;
 	height: 10rem;
-	border: 1rem double #6E49F6;
+	border: 1rem double @yeyoPurple;
 	margin: 0% 5%;
 
 	h3 {
 		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}//h3
+
+	ol {
+		.flex();
+		justify-content: space-between;
+		li{
+			font-size: 1.5rem;
+
+		}//li
+	}//ol
+}//.history
+
+footer {
+	.flex();
+
+	span{
+		color: silver;
+		padding: 2rem;
+		background: black;
 	}
 }
+
+//Contact page
+div.contact {
+	width: 90%;
+	height: 15rem;
+	background: black;
+	border: 1rem double @yeyoBlue;
+	margin: 1% 5%; 
+	.flex();
+	flex-direction: column;
+
+	h2 {
+		color: @yeyoPink;
+		font-size: 2rem;
+		margin-left: 1rem;
+	}//h2
+	p {
+		color: @yeyoPink;
+		margin-left: .5rem;
+		span {
+			font-weight: bold;
+			font-size: 1.6rem;
+			color: @yeyoPurple;
+		}//span
+	}//p
+}//.contact
