@@ -58,12 +58,13 @@ table {
 @color: #34233B;
 @sidecolor: #BEB1C3;
 @align: center;
+@link: #B765FF;
 
 html, body {
 	height: 100%;
 	background-color: @bgcolor;
 	color: @color;
-	font-size: 18px;
+	font-size: 1.15rem;
 }
 
 // Code Start
@@ -103,49 +104,57 @@ h1 {
 	align-self: @align;
 	background-color: @bgcolor;
 	border-radius: 50%;
-	width: 20%;
+	width: 25%;
 	border: 2px solid @color;
 	padding: 6px;
-	margin-left: 0;
 	margin-top: 4%;
 
-}
-
-.button:hover {
-	background-color: @color;
-	color: white;
-  }
-
-a {
-	text-decoration: none;
-	color: @color;
-}
-
-a:hover {
-	color: @bgcolor;
+	@media (max-width: 500px) {
+		.button {
+			width: 90%;
+			border-radius: 20%;
+			padding: 12px;
+		}
 	}
-
-h2 {
-	font-weight: bold;
-	font-size: 1.7rem;
-	padding-bottom: 1%;
 }
 
 .right {
 	padding-top: 1%;
 	margin-left: 32%;
 	padding-right: 2.5%;
+	h2 {
+		font-weight: bold;
+		font-size: 1.7rem;
+		padding-bottom: 1%;
+	}
+	h3 {
+		font-weight: bold;
+		font-size: 1.3rem;
+		padding-top: 1%;
+		padding-bottom: 1.5%;
+	}
 }
 
-h3 {
-	font-weight: bold;
-	font-size: 1.3rem;
-	padding-top: 1%;
-	padding-bottom: 1.5%;
-}
+.button:hover {
+	background-color: @color;
+	color: @link;
+  }
+
+a {
+	text-decoration: none;
+	color: @color;
+	}
+
+a:hover {
+	color: @link;
+	}
+
+
+
+
 
 .screenshot {
-	width: 30%;
+	width: 50%;
 	height: auto;
 	margin-bottom: 1%;
 	margin-top: 2%;
@@ -163,6 +172,8 @@ h3 {
 	text-align: @align;
 	font-size: 12px;
 	font-style: italic;
+	padding-top: 2%;
+	padding-bottom: 1%;
 }
 
 .bold {
