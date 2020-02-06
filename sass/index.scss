@@ -75,22 +75,27 @@ body {
 }
 
 header {
-    display: inline;
+    display: flex;
+    img {
+        display: contents;
+    }
     nav {
         display: flex;
         flex-direction: wrap;
         justify-content: space-around;
         a {
             li {
-                @mixin padding {
-                    padding: $md $sm;
-                }
+                @include global-spacing(100%,
+                90%,
+                $highlight-color,
+                20px,
+                2px);
             }
-            background-color: $dark-color;
-            padding: $md $lg;
-            width: 100%;
-            text-align: center;
         }
+        background-color: $dark-color;
+        padding: $md $lg;
+        width: 100%;
+        text-align: center;
     }
     .me {
         max-width: 100%;
@@ -134,14 +139,19 @@ section {
             .cell {
                 display: table-cell;
                 @include global-borders(1px solid #444,
-                1px solid #444,
-                1px solid #444,
-                1px solid #444,
-                10px);
-                @include global-spacing($sm+2,
+                0px solid #444,
+                0px solid #444,
+                0px solid #444,
+                0px);
+                @include global-spacing($sm,
                 $md,
                 transparent,
-                0px)
+                20rem,
+                2rem);
+            }
+            div.cell:hover {
+                background-color: $dark-color;
+                color: $highlight-color;
             }
         }
     }
