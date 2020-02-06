@@ -1,13 +1,13 @@
 //Using sass because, in the end, I want to use Suzy
 //Typography  Variables
-@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton|Raleway&display=swap');
 $dark-color:#272727;
 $highlight-color: #79b869;
 $text-color: #fff;
 $fill-color: #999999;
-$font-stack-1: Roboto Condensed,
+$font-stack-1: 'Anton',
 san-serif;
-$font-stack-2: Raleway,
+$font-stack-2: 'Raleway',
 san-serif;
 $font-weights: ( "regular": 400,
 "medium": 600,
@@ -15,7 +15,34 @@ $font-weights: ( "regular": 400,
 $sm: 1rem;
 $md: 1.7rem;
 $lg: 2.8rem;
+// Map-Key//Map-get
+$line-designs: ("display":block,
+"position": absolute,
+"top": 50%,
+"left": 20px,
+"width": calc(100% - 40px),
+"border-bottom": solid 1px #fff);
 // Mixins
+@mixin trbl-p($top,
+$right,
+$bottom,
+$left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+@mixin trbl-m($top,
+$right,
+$bottom,
+$left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
 @mixin global-borders ($border-top,
 $border-bottom,
 $border-l,
@@ -34,12 +61,10 @@ $rad,
 
 @mixin global-spacing($height,
 $width,
-$bg,
 $box-margins,
 $box-padding) {
     height: $height;
     width: $width;
-    background: $bg;
     margin: $box-margins;
     padding: $box-padding;
 }
@@ -48,12 +73,12 @@ $box-padding) {
 
 /* Media Queries */
 
-$breakpoint-desktop: 1200px;
-$breakpoint-tablet: 768px;
-$breakpoint-mobile: 480px;
+$rwd-desktop: 1200px;
+$rwd-tablet: 768px;
+$rwd-mobile: 480px;
 // Spacing 
 body {
-    background: $dark-color;
+    background: url(/img/black-paper.png) no-repeat fixed green;
     font-weight: map-get($font-weights, regular);
     font-family: $font-stack-2;
     color: $text-color;
@@ -62,22 +87,53 @@ body {
 //Responsive at desktop viewport
 .container {
     width: 90%;
-    margin: 0 auto;
-    @media (min-width: $breakpoint-desktop) {
-        #{&}__bio a {
-            color: $highlight-color;
-            font-weight: map-get($font-weights, thick);
-            & p {
-                background-color: lightcoral;
+    margin: 100px auto;
+    display: flex;
+    flex: wrap;
+    flex-direction: column;
+    align-items: center;
+    background: $dark-color url(/img/axiom.png) no-repeat fixed;
+    @media (max-width: $rwd-mobile) {
+        .container, article, .image-title, .skills {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: stretch;
+            h1,
+            h2,
+            h3,
+            p,
+            ul {
+                @include global-spacing(100%,
+                100,
+                $sm,
+                $sm)
+            }
+            img {
+                max-width: 100%;
+                ;
             }
         }
     }
 }
 
+h1,
+h2,
+h3 {
+    @include trbl-m( 20px,
+    0,
+    20px,
+    0)
+}
+
+p,
+li {
+    line-height: 1.8em;
+}
+
 header {
-    display: flex;
     img {
-        display: contents;
+        display: block;
     }
     nav {
         display: flex;
@@ -85,46 +141,126 @@ header {
         justify-content: space-around;
         a {
             li {
-                @include global-spacing(100%,
+                @include global-spacing(1.6rem,
                 90%,
-                $highlight-color,
                 20px,
                 2px);
+                font-family: $font-stack-1;
+                list-style: none;
+                color: $highlight-color;
             }
         }
         background-color: $dark-color;
-        padding: $md $lg;
         width: 100%;
         text-align: center;
     }
     .me {
-        max-width: 100%;
-    }
-    h1,
-    h2 {
-        display: inline-block;
-        height: 100%;
+        padding: 20px;
     }
 }
 
 section {
-    display: flex;
-    flex-direction: wrap;
-    flex-wrap: wrap;
+    width: 33%;
     @include global-spacing(100%,
     90%,
-    $highlight-color,
     20px,
     20px);
+    h1 {
+        font-family: $font-stack-1;
+        font-size: $lg;
+    }
+    h2 {
+        font-family: $font-stack-2;
+        font-size: $md;
+    }
     .bio {
-        flex-grow: 1;
-        width: 33%;
         .bio-par:last-child {
             flex-grow: 2;
         }
-        h2 {
-            color: $dark-color;
+    }
+}
+
+.image-title {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    align-content: center;
+    .me {
+        transform: scale(1.5);
+    }
+    h1 {
+        align-self: center;
+    }
+    .sub-header {
+        align-self: flex-end;
+    }
+}
+
+article {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    p {
+        @include trbl-p(20px,
+        10px,
+        20px,
+        10px);
+        border: map-get($line-designs, all);
+    }
+    p:hover {
+        background: $fill-color;
+        color: $highlight-color;
+        background: linear-gradient(223deg, #25302d, #000000);
+        background-size: 400% 400%;
+        -webkit-animation: AnimationName 3s ease infinite;
+        -moz-animation: AnimationName 3s ease infinite;
+        animation: AnimationName 3s ease infinite;
+        @-webkit-keyframes AnimationName {
+            0% {
+                background-position: 0% 99%
+            }
+            50% {
+                background-position: 100% 2%
+            }
+            100% {
+                background-position: 0% 99%
+            }
         }
+        @-moz-keyframes AnimationName {
+            0% {
+                background-position: 0% 99%
+            }
+            50% {
+                background-position: 100% 2%
+            }
+            100% {
+                background-position: 0% 99%
+            }
+        }
+        @keyframes AnimationName {
+            0% {
+                background-position: 0% 99%
+            }
+            50% {
+                background-position: 100% 2%
+            }
+            100% {
+                background-position: 0% 99%
+            }
+        }
+    }
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .graphic {
+        @include global-borders(1px solid $highlight-color,
+        1px solid $highlight-color,
+        1px solid $highlight-color,
+        1px solid $highlight-color,
+        0px)
     }
 }
 
@@ -138,20 +274,57 @@ section {
             display: table-row;
             .cell {
                 display: table-cell;
-                @include global-borders(1px solid #444,
+                @include global-borders(1px solid $highlight-color,
                 0px solid #444,
                 0px solid #444,
                 0px solid #444,
                 0px);
                 @include global-spacing($sm,
                 $md,
-                transparent,
                 20rem,
                 2rem);
             }
-            div.cell:hover {
+            &:hover {
                 background-color: $dark-color;
                 color: $highlight-color;
+                background: linear-gradient(223deg, #165847, #272727);
+                background-size: 400% 400%;
+                -webkit-animation: AnimationName 2s ease infinite;
+                -moz-animation: AnimationName 2s ease infinite;
+                animation: AnimationName 2s ease infinite;
+                @-webkit-keyframes AnimationName {
+                    0% {
+                        background-position: 0% 99%
+                    }
+                    50% {
+                        background-position: 100% 2%
+                    }
+                    100% {
+                        background-position: 0% 99%
+                    }
+                }
+                @-moz-keyframes AnimationName {
+                    0% {
+                        background-position: 0% 99%
+                    }
+                    50% {
+                        background-position: 100% 2%
+                    }
+                    100% {
+                        background-position: 0% 99%
+                    }
+                }
+                @keyframes AnimationName {
+                    0% {
+                        background-position: 0% 99%
+                    }
+                    50% {
+                        background-position: 100% 2%
+                    }
+                    100% {
+                        background-position: 0% 99%
+                    }
+                }
             }
         }
     }
