@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Raleway&display=swap");
+/* Media Queries */
+body {
+  background: url(/img/black-paper.png) no-repeat fixed green;
+  font-weight: 400;
+  font-family: "Raleway", san-serif;
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+  margin: 100px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #272727 url(/img/axiom.png) no-repeat fixed;
+}
+
+@media (max-width: 480px) {
+  .container .container, .container article, .container .image-title, .container .skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .container .container h1,
+  .container .container h2,
+  .container .container h3,
+  .container .container p,
+  .container .container ul, .container article h1,
+  .container article h2,
+  .container article h3,
+  .container article p,
+  .container article ul, .container .image-title h1,
+  .container .image-title h2,
+  .container .image-title h3,
+  .container .image-title p,
+  .container .image-title ul, .container .skills h1,
+  .container .skills h2,
+  .container .skills h3,
+  .container .skills p,
+  .container .skills ul {
+    height: 100%;
+    width: 100;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .container .container img, .container article img, .container .image-title img, .container .skills img {
+    max-width: 100%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-right: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+p,
+li {
+  line-height: 1.8em;
+}
+
+header img {
+  display: block;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: wrap;
+          flex-direction: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #272727;
+  width: 100%;
+  text-align: center;
+}
+
+header nav a li {
+  height: 1.6rem;
+  width: 90%;
+  margin: 20px;
+  padding: 2px;
+  font-family: "Anton", san-serif;
+  list-style: none;
+  color: #79b869;
+}
+
+header .me {
+  padding: 20px;
+}
+
+section {
+  width: 33%;
+  height: 100%;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+}
+
+section h1 {
+  font-family: "Anton", san-serif;
+  font-size: 2.8rem;
+}
+
+section h2 {
+  font-family: "Raleway", san-serif;
+  font-size: 1.7rem;
+}
+
+section .bio .bio-par:last-child {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.image-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.image-title .me {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.image-title h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.image-title .sub-header {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+article p {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+article p:hover {
+  background: #999999;
+  color: #79b869;
+  background: linear-gradient(223deg, #25302d, #000000);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.skills .graphic {
+  border-top: 1px solid #79b869;
+  border-bottom: 1px solid #79b869;
+  border-left: 1px solid #79b869;
+  border-right: 1px solid #79b869;
+  border-radius: 0px;
+}
+
+.work-history .table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.work-history .table .row {
+  display: table-row;
+}
+
+.work-history .table .row .cell {
+  display: table-cell;
+  border-top: 1px solid #79b869;
+  border-bottom: 0px solid #444;
+  border-left: 0px solid #444;
+  border-right: 0px solid #444;
+  border-radius: 0px;
+  height: 1rem;
+  width: 1.7rem;
+  margin: 20rem;
+  padding: 2rem;
+}
+
+.work-history .table .row:hover {
+  background-color: #272727;
+  color: #79b869;
+  background: linear-gradient(223deg, #165847, #272727);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 2s ease infinite;
+  animation: AnimationName 2s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+
+footer {
+  font-size: 0.8rem;
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */
