@@ -131,7 +131,10 @@ table {
   box-sizing: border-box;
 }
 html {
-  background-color: rgba(166, 168, 168, 0.973);
+  background-color: white;
+}
+P {
+  font-size: 20px;
 }
 body {
   font-family: 'Kelly Slab', cursive;
@@ -140,20 +143,50 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  body {
+    flex-direction: column;
+  }
+}
+form {
+  width: 1000px;
+}
+@media (max-width: 500px) {
+  form {
+    width: 500px;
+  }
+}
+form h3 {
+  width: auto;
+}
+@media (max-width: 500px) {
+  .contactform {
+    width: 500px;
+  }
+}
 .container {
   border: rgba(166, 168, 168, 0.973);
-  max-width: 1000px;
+  max-width: 1200px;
 }
 @media (max-width: 500px) {
   .container {
-    width: 100%;
+    width: 500px;
   }
 }
 header {
+  position: fixed;
+  width: 1200px;
+  top: 0;
   display: flex;
   justify-content: space-between;
   background-color: black;
   padding: 3% 10% 3% 10%;
+}
+@media (max-width: 500px) {
+  header {
+    width: 500px;
+    padding: 1%;
+  }
 }
 header a {
   color: white;
@@ -162,20 +195,44 @@ header a {
 header h1 a {
   text-decoration: none;
   font-size: 5.5rem;
+  text-decoration: underline rgba(228, 31, 31, 0.938);
 }
-header nav ul {
+@media (max-width: 500px) {
+  header h1 a {
+    font-size: 3rem;
+  }
+}
+nav ul {
+  margin-top: 5%;
   display: flex;
 }
-header nav ul li {
+nav ul li {
   margin-left: 3%;
 }
-header img {
+nav ul li a {
+  font-size: 1.9rem;
+  font-family: 'Kelly Slab', cursive;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
+nav img {
   height: auto;
   width: 20%;
 }
 .imgdivz {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 500px) {
+  .imgdivz {
+    flex-direction: column;
+  }
 }
 .imgdivz aside {
   display: flex;
@@ -184,17 +241,75 @@ header img {
 .lastcontainer {
   background-color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 600px;
+  flex-direction: row;
+  height: auto;
 }
 .mainasidedivs {
   display: flex;
   flex-direction: column;
-  padding-top: 2%;
-  border-bottom: solid #299eec 3px;
+  padding: 2%;
   height: 50%;
-  margin: 0 auto;
+}
+.mainasidedivs P {
+  padding-top: 1%;
+}
+address {
+  font-size: 20px;
+}
+.xp {
+  font-size: 3rem;
+  padding-bottom: 5%;
+  background-color: white;
+}
+#rightalign {
+  text-align: right;
+}
+.xpdivz {
+  background-color: black;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .xpdivz {
+    flex-direction: column;
+  }
+}
+.xpdivz img {
+  width: 50%;
+  max-width: 1200px;
+}
+@media (max-width: 500px) {
+  .xpdivz img {
+    width: 100%;
+    margin-top: 2%;
+  }
+}
+.xpdivz h2,
+.xpdivz p {
+  color: white;
+  padding: 1%;
+}
+.xpdivz .childdiv {
+  width: 47%;
+}
+@media (max-width: 500px) {
+  .xpdivz .childdiv {
+    width: 100%;
+  }
+}
+.xpdivz .childdiv h2 {
+  font-size: 2.5rem;
+}
+.mainsection {
+  margin-top: 25%;
+}
+@media (max-width: 500px) {
+  .mainsection {
+    margin-top: 19%;
+  }
 }
 .mainsection div {
   background-color: white;
@@ -203,24 +318,20 @@ header img {
   font-family: 'Kelly Slab', cursive;
 }
 .mainsection div img {
-  width: 60%;
+  width: 100%;
   height: 100%;
 }
 .mainaside {
   width: 100%;
+  line-height: 1.5;
 }
 .mainaside h3 {
-  font-family: 'Russo One', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 900;
-  letter-spacing: 5px;
-  margin-bottom: 5% ;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 3% ;
 }
 .mainaside h3:hover {
   color: red;
-}
-.mainaside h3 p {
-  border-bottom: solid #299eec 3px;
 }
 .mainaside .asidespan {
   font-weight: bold;
