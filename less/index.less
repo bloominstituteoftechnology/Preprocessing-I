@@ -66,7 +66,7 @@ body {
 	.h3-style {
 		h3 {
 		font-size: 30px;
-		color: cornsilk;
+		color: #A80020;
 		text-decoration: underline;
 		margin-top: 2%;
 		}	
@@ -74,17 +74,22 @@ body {
 	.h4-style {
 		h4 {
 		font-size: 26px;
-		color: chartreuse;
-		margin-top: 2%;
+		color: black;
+		margin-top: 3%;
 		}
 	}
 	.ul-style {
-		ul{
+		ul {
+		margin-top: 2%;
+		margin-left: 2%;
 		font-size: 22px;
-		color: darkblue;
+		color: #AC7C00;
+		list-style: square;
 		}
 	} 
 	@blue-font: #2bd1fc;
+	@background: #F8B800;
+	@80s-font: #881400;
 
 	.grandparent {
 		height: 100%;
@@ -92,7 +97,8 @@ body {
 		margin-left: 5%;
 		margin-right: 5%;
 		padding: 3%;
-		background-color: #ff48c4;
+		background-color: @background;
+		color: @80s-font;
 		font-family: 'Press Start 2P', open;
 		@media (max-width: 500px) {
 			background-color: darkgray;
@@ -109,9 +115,10 @@ body {
 			margin-bottom: 2%;
 			@media (max-width: 500px) {
 				display: flex;
-				justify-content: space-evenly;
-				margin: auto;
-				border: solid chartreuse 4px;
+				flex-direction: column;
+				
+				
+				
 				max-width: 100%;
 			}
 
@@ -119,11 +126,12 @@ body {
 				text-decoration: none;
 				display: flex;
 				justify-content: flex-start;
-				color: @blue-font;
+				color: @80s-font;
 				margin-right: 5%;
 				@media (max-width: 500px) {
 					justify-content: center;
 					margin-left: 2%;
+					
 				}	
 			}	
 		} 
@@ -141,7 +149,7 @@ body {
 			flex-direction: column;
 			align-content: space-between;
 			margin-left: 10%;
-			background-color: #f3ea5f;
+			background-color: #E45C10;
 			width: 40%;
 			height: 700px;
 			@media (max-width: 500px) {
@@ -160,7 +168,7 @@ body {
 				}
 				}
 				h1 {
-				color: @blue-font;
+				
 				font-size: 44px;
 				}
 			}
@@ -182,15 +190,17 @@ body {
 				
 				.intro {
 					font-size: 36px;
-					color: @blue-font;
+					
 					font-style: oblique;
 					// margin-bottom: 5%;
 					
 				}
 				h1 {
 					font-size: 36px;
-					margin-top: 2%;
+					margin-top: 5%;
 					margin-bottom: 2%;
+					color: black;
+					text-decoration: underline;
 				}
 				ul {
 					margin-left: 2%;;
@@ -219,8 +229,13 @@ body {
 			.ul-style();
 			@media (max-width: 500px) {
 				display: flex;
-				border: solid chartreuse 2px;
+				
 				font-size: 10px;
+				}
+				ul {
+					@media (max-width: 500px) {
+						display: none;
+					}
 				}
 			}
 			.bottom-right {
@@ -233,6 +248,7 @@ body {
 				@media (max-width: 500px) {
 					font-size: 0.25rem;
 					width: 100%;
+					display: flex;
 				}	
 				p {
 					font-size: 30px;
@@ -241,6 +257,7 @@ body {
 					@media (max-width: 500px) {
 						// font-size: 0.25rem;
 						width: 100%;
+						
 					}		
 				}	
 			}
@@ -252,33 +269,36 @@ body {
 		width: 100%;
 		height: 900px;
 		font-family: 'Press Start 2P', open;
-		background-color: lavender;
+		background-color: @background;
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+		}
 		
 		.info {
-			padding: 2%;
+			padding: 3%;
 
 			#first-name {
-				border: solid teal 2px;
-				margin-top: 10px;
-				margin-bottom: 10px;
+				border: solid @80s-font 4px;
+				
 				height: 50px;
 				
 			}
 			#last-name {
-				border: solid chartreuse 2px;
+				border: solid @80s-font 4px;
 				margin-top: 10px;
 				margin-bottom: 10px;
 				height: 50px;
 			}
 		}
 		#message {
-			border: solid pink 2px;
+			border: solid @80s-font 4px;
 			margin-top: 10px;
 			margin-bottom: 10px;
 			height: 200px;
 		}
 		#email {
-			border: solid goldenrod 2px;
+			border: solid @80s-font 4px;
 			margin-top: 10px;
 			margin-bottom: 10px;
 			height: 50px;
