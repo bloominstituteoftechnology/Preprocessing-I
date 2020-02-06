@@ -1,19 +1,30 @@
+@color-flash: #454678;
+
+.font-mixit {
+  font-size: 100%;
+}
+
+.padding-mixit{
+  padding: 0;
+}
+
 html {
   margin:0;
-  padding:0;
+  .padding-mixit();
   border:0;
-  font-size:100%;
+  .font-mixit();
   font:inherit;
   vertical-align:baseline;
   height:100%;
   font-family:'Titillium Web', sans-serif;
 }
+
 body {
   margin:0;
   padding:0;
   padding:0 75px;
   border:0;
-  font-size:100%;
+  .font-mixit();
   font:inherit;
   vertical-align:baseline;
   line-height:1;
@@ -21,6 +32,7 @@ body {
   font-family:'Titillium Web', sans-serif;
   width:1024px;
 }
+
 div, span, applet, object, iframe, h6, p, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td, canvas, embed, output, ruby, summary, time, mark, audio, video {
   margin:0;
   padding:0;
@@ -29,6 +41,7 @@ div, span, applet, object, iframe, h6, p, pre, a, abbr, acronym, address, big, c
   font:inherit;
   vertical-align:baseline;
 }
+
 h1, h2, h3, h4, h5 {
   margin:0;
   padding:0;
@@ -41,6 +54,7 @@ h1, h2, h3, h4, h5 {
   letter-spacing:1px;
   margin-bottom:15px;
 }
+
 blockquote, q {
   margin:0;
   padding:0;
@@ -50,6 +64,7 @@ blockquote, q {
   vertical-align:baseline;
   quotes:none;
 }
+
 ol, ul {
   margin:0;
   padding:0;
@@ -59,6 +74,7 @@ ol, ul {
   vertical-align:baseline;
   list-style:none;
 }
+
 table {
   margin:0;
   padding:0;
@@ -69,6 +85,7 @@ table {
   border-collapse:collapse;
   border-spacing:0;
 }
+
 article, aside, details, figure, figcaption, header, hgroup, menu, nav {
   margin:0;
   padding:0;
@@ -78,6 +95,7 @@ article, aside, details, figure, figcaption, header, hgroup, menu, nav {
   vertical-align:baseline;
   display:block;
 }
+
 footer {
   margin:0;
   padding:0;
@@ -89,6 +107,7 @@ footer {
   display:block;
   text-align:center;
 }
+
 section {
   margin:0;
   padding:0;
@@ -99,41 +118,49 @@ section {
   vertical-align: baseline;
   display:block;
 }
+
 blockquote:before, blockquote:after, q:before, q:after {
   content:'';
   content:none;
 }
+
 * {
   box-sizing:border-box;
 }
+
 nav ul {
   display:flex;
   align-items:center;
   justify-content:space-around;
 }
+
 nav a {
   text-decoration:none;
   color:black;
   height:50px;
 }
+
 .head-content {
   display:flex;
   flex-direction:row;
   margin-left:20px;
   background:#13a3bd;
 }
+
 .first-content {
   display:flex;
   p {
     text-align:left;
   }
 }
+
 .bottom-content {
   text-align:left;
   display:flex;
   flex-direction:column;
   padding:30px;
 }
+
 .header-right {
   width:49%;
   img {
@@ -141,11 +168,13 @@ nav a {
     margin:50px 0;
   }
 }
+
 .header-right:after {
   content:"";
   clear:both;
   display:table;
 }
+
 .header-left {
   display:flex;
   flex-direction:column;
@@ -158,16 +187,20 @@ nav a {
     padding:7px 45px;
   }
 }
+
 button a {
   text-decoration:none;
   color:black;
 }
+
 header h1 {
   font-size:4.5em;
 }
+
 .middle-content {
   padding:40px 0;
 }
+
 .top-content {
   margin-bottom:10px;
   margin-right:10px;
@@ -175,6 +208,7 @@ header h1 {
   display:flex;
   flex-direction:column;
 }
+
 .content-two {
   display:flex;
 }
@@ -199,4 +233,14 @@ table tr td{
   flex-direction: column;
   padding: 20px 0 20px 0;
   text-align: center;
+}
+
+.some-class {
+  width: 500px;
+  background: gray;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    background: black;
+  }
 }
