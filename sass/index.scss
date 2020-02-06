@@ -1,13 +1,13 @@
 //Using sass because, in the end, I want to use Suzy
-//Typography 
+//Typography  Variables
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed&display=swap');
-$primary-color:#272727;
-$secondary-color: #79b869;
+$dark-color:#272727;
+$highlight-color: #79b869;
 $text-color: #fff;
 $fill-color: #999999;
-$header-font: Roboto Condensed,
+$font-stack-1: Roboto Condensed,
 san-serif;
-$par-font: Raleway,
+$font-stack-2: Raleway,
 san-serif;
 $font-weights: ( "regular": 400,
 "medium": 600,
@@ -15,46 +15,48 @@ $font-weights: ( "regular": 400,
 $sm: 1rem;
 $md: 1.7rem;
 $lg: 2.8rem;
+// Mixins
+@mixin global-borders ($border-top,
+$border-bottom,
+$border-l,
+$border-r,
+$rad,
+) {
+    border-top: $border-top;
+    border-bottom: $border-bottom;
+    border-left: $border-l;
+    border-right: $border-r;
+    -webkit-border-radius: $rad;
+    -moz-border-radius: $rad;
+    -ms-border-radius: $rad;
+    border-radius: $rad;
+}
+
+@mixin global-spacing($height,
+$width,
+$bg,
+$box-margins,
+$box-padding) {
+    height: $height;
+    width: $width;
+    background: $bg;
+    margin: $box-margins;
+    padding: $box-padding;
+}
+
 // Media Queries
+
+/* Media Queries */
+
 $breakpoint-desktop: 1200px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 480px;
 // Spacing 
-$buttons: (padding: 15px,
-margin: 10px);
 body {
-    background: $primary-color;
+    background: $dark-color;
     font-weight: map-get($font-weights, regular);
-    font-family: $par-font;
+    font-family: $font-stack-2;
     color: $text-color;
-}
-
-header {
-    nav {
-        display: flex;
-        flex-direction: wrap;
-        justify-content: space-around;
-        a {
-            li {
-                border: $secondary-color;
-                @mixin padding {
-                    padding: $md $sm;
-                }
-            }
-        }
-    }
-}
-
-section {
-    display: flex;
-    flex-direction: wrap;
-    background: $fill-color;
-    .bio {
-        flex-direction: column;
-        h2 {
-            color: $primary-color;
-        }
-    }
 }
 
 //Responsive at desktop viewport
@@ -63,37 +65,84 @@ section {
     margin: 0 auto;
     @media (min-width: $breakpoint-desktop) {
         #{&}__bio a {
-            font-weight: map-get($font-weights, medium);
+            color: $highlight-color;
+            font-weight: map-get($font-weights, thick);
             & p {
-                color: lightcoral;
+                background-color: lightcoral;
             }
         }
     }
 }
 
-// //Responsive at tablet viewport  ////
-// .container {
-//     width: 90%;
-//     margin: 0 auto;
-//     @media (min-width: $breakpoint-tablet) {
-//         #{&}__bio {
-//             font-weight: map-get($font-weights, medium);
-//             &:hover {
-//                 color: blueviolet;
-//             }
-//         }
-//     }
-// }
-// //Responsive at mobile viewport
-// .container {
-//     width: 90%;
-//     margin: 0 auto;
-//     @media (min-width: $breakpoint-mobile) {
-//         #{&}__bio {
-//             font-weight: map-get($font-weights, medium);
-//             &:hover {
-//                 color: peru;
-//             }
-//         }
-//     }
-// }
+header {
+    display: inline;
+    nav {
+        display: flex;
+        flex-direction: wrap;
+        justify-content: space-around;
+        a {
+            li {
+                @mixin padding {
+                    padding: $md $sm;
+                }
+            }
+            background-color: $dark-color;
+            padding: $md $lg;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .me {
+        max-width: 100%;
+    }
+    h1,
+    h2 {
+        display: inline-block;
+        height: 100%;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    @include global-spacing(100%,
+    90%,
+    $highlight-color,
+    20px,
+    20px);
+    .bio {
+        flex-grow: 1;
+        width: 33%;
+        .bio-par:last-child {
+            flex-grow: 2;
+        }
+        h2 {
+            color: $dark-color;
+        }
+    }
+}
+
+// Fake table - Using divs courtesy of https://codepen.io/wsiqueira/pen/JheLK
+.work-history {
+    .table {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        .row {
+            display: table-row;
+            .cell {
+                display: table-cell;
+                @include global-borders(1px solid #444,
+                1px solid #444,
+                1px solid #444,
+                1px solid #444,
+                10px);
+                @include global-spacing($sm+2,
+                $md,
+                transparent,
+                0px)
+            }
+        }
+    }
+}
