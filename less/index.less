@@ -76,6 +76,10 @@ body {
 
 //Mixins
 //generate border with offset thickness and border radius 
+.flex(@just) {
+    display:flex;
+    justify-content: @just;
+}
 .border-gen(@border) {
     border-style: solid;
     border-color: @border-color;
@@ -102,8 +106,7 @@ body {
         border-bottom-right-radius: 10%;
 
         ul {
-            display: flex;
-            justify-content: flex-end;
+            .flex(flex-end);
             list-style: none;
             margin-bottom: 1rem;
 
@@ -126,7 +129,7 @@ body {
 
     //Splash Image and header
     .splash {
-        display: flex;
+        .flex(center);
         width: @width;
 
         @media only screen and (max-width:600px) {
@@ -192,8 +195,7 @@ body {
 
     //main content and panels
     .content {
-        display: flex;
-        justify-content: center;
+        .flex(center);
         align-items: center;
 
         @media only screen and (max-width:600px) {
@@ -234,8 +236,7 @@ body {
         background-color: @footer-color;
         color: @link-color;
         height: 3rem;
-        display: flex;
-        justify-content: center;
+        .flex(center);
         border-top-left-radius: 5%;
         border-top-right-radius: 95%;
 
