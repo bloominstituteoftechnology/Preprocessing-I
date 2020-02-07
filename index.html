@@ -14,9 +14,24 @@
 </head>
 
 <body>
-
+  <script>
+  (function() {
+    var header = $(".ClearHeader");
+    (window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+    
+        if (scroll >= 1) {
+            header.removeClass('ClearHeader').addClass("WhiteHeader ");
+            header.addClass("transition");
+        } else {
+            header.removeClass("WhiteHeader ").addClass('ClearHeader');
+            header.addClass("transition");
+        }
+    });
+});
+  </script>
   <div class="navigation">
-    <header>
+    <header class="ClearHeader">
       <nav>
         <a href="index.html">Home</a>
         <a href="#about">About Me</a>

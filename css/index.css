@@ -130,6 +130,13 @@ table {
 * {
   box-sizing: border-box;
 }
+.navflex {
+  display: flex;
+  margin-bottom: 85px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
 html,
 body {
   height: 100%;
@@ -141,17 +148,34 @@ body {
   line-height: 1.2em;
   margin: 0 auto;
 }
-.navigation {
-  position: fixed;
-  width: 100%;
+@media screen and (max-width: 500px) {
+  html,
+  body {
+    padding: 0;
+  }
 }
-.navigation header {
+.ClearHeader {
   display: flex;
   margin-bottom: 85px;
   padding: 30px;
-  background-color: white;
   justify-content: center;
   align-items: center;
+  background-color: #f000;
+}
+.WhiteHeader {
+  display: flex;
+  margin-bottom: 85px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.transition {
+  transition: height 2s;
+}
+.navigation {
+  position: fixed;
+  width: 100%;
 }
 .navigation nav {
   margin-right: 50px;
@@ -208,6 +232,11 @@ h4 {
 .container aside div {
   margin: 20px;
 }
+@media screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+}
 header {
   display: flex;
 }
@@ -220,6 +249,11 @@ header .header-img .profile {
   height: 100%;
   position: relative;
   left: -50px;
+}
+@media screen and (max-width: 500px) {
+  header .header-img {
+    display: none;
+  }
 }
 header .header-name {
   display: flex;
@@ -235,6 +269,14 @@ header .header-name {
 }
 header .header-name h4 {
   text-transform: uppercase;
+}
+@media screen and (max-width: 500px) {
+  header .header-name {
+    font-size: 0.6rem;
+    height: auto;
+    margin-left: 0px;
+    padding: 20px 0;
+  }
 }
 header .container aside {
   width: 449;
