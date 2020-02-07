@@ -52,6 +52,9 @@ table {
 * {
     box-sizing: border-box;
 }
+@flex: flex;
+@auto: auto;
+@center: center;
 
 html, body {
 	height: 100%;
@@ -61,19 +64,19 @@ html, body {
   	max-width: 1024px;
   	padding: 20px;
   	line-height: 1.2em;
-  	margin: 0 auto;
+  	margin: 0 @auto;
 }
 
 .navigation {
 	position: fixed;
 	width: 100%;
 	header {
-		display: flex;
+		display: @flex;
 		margin-bottom: 85px;
 		padding: 30px;
 		background-color: white;
-		justify-content: center;
-		align-items: center;
+		justify-content: @center;
+		align-items: @center;
 	}
 	nav {
 		margin-right: 50px;
@@ -111,10 +114,10 @@ h4 {
   }
 .container {
 	width: 100%;
-	margin: auto;
-	display: flex;
+	margin: @auto;
+	display: @flex;
   	flex-direction: row-reverse;
-  	height: auto;
+  	height: @auto;
   	margin-bottom: 200px;
 	padding-top: 10px;
 	section {
@@ -133,7 +136,7 @@ h4 {
 	}
 }
 header {
-	display: flex;
+	display: @flex;
 
 	.header-img {
 		width: 233px;
@@ -147,16 +150,16 @@ header {
 		}
 	}
 	.header-name {
-		display: flex;
+		display: @flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: @center;
 		flex-grow: 1;
 		line-height: normal;
 		height: 233px;
-		align-self: center;
+		align-self: @center;
 		background-color: #21180508;
 		margin-left: 21px;
-		text-align: center;
+		text-align: @center;
 	
 		 h4 {
 			text-transform: uppercase;
