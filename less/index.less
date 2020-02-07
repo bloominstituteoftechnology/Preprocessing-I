@@ -54,6 +54,255 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	width: 1400px;
+	font-family: 'Lobster', cursive;
+	margin: 0 auto;
+
+	@media (max-width: 500px) {
+		margin: 0 auto;
+	}
 }
 
+@image-base-url: "/Users/jordan.oliver/Documents/School/Lambda/Lambda Projects/Preprocessing-I/img";
+
+@yeyoPurple: #6E49F6;
+@yeyoBlue: #52CBF7;
+@yeyoPink: #EC3D68;
+
+.button() {
+	border: .2rem solid @yeyoPink;
+	border-radius: 125%;
+	padding: .5rem;
+	color: @yeyoBlue;
+	background: @yeyoPurple;
+}
+
+.flex() {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+}
+
+header {
+	width: 100%;
+	height: 15%;
+	padding-left: 30%;
+	@media (max-width: 500px) {
+		padding-left:25%;
+	}
+	nav {
+		.flex();
+		padding-top: 3%;
+		@media (max-width: 500px) {
+			flex-direction: column;
+			height: 5rem;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			font-size: 1.6rem;
+		}//a
+		a:hover {
+			.button();
+		}//a.hover
+	}//nav
+}//header
+
+div.top-box {
+	width: 90%;
+	height: 40rem;
+	border: 1rem double @yeyoPink;
+	.flex();
+	flex-direction: column;
+	align-items: center;
+	background-image: url("@{image-base-url}/vinyl-bg.jpg");
+	background-position: center;
+
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: 90%;
+		border: .5rem double @yeyoPink;
+		background: white;
+		.flex();
+		justify-content: space-evenly;
+		flex-direction: column;
+		align-items: flex-start;
+		padding-left: .2rem;
+	}
+
+	img {
+		max-width:20rem;
+		max-height: 20rem;
+		@media (max-width: 500px) {
+			max-width: 30%;
+			max-height: 30%;
+		}
+	}//img
+
+	h1 {
+		font-size: 3rem;
+		color: @yeyoPink;
+		border-bottom: 1rem solid @yeyoBlue;
+	}//h1
+
+	span {
+		font-size: 1.4rem;
+		color: @yeyoBlue;
+		background: black;
+	}//span
+
+	p {
+		color: @yeyoPink;
+		background: black;
+		border: 1rem double @yeyoBlue;
+		padding: 2rem;
+	}//p
+
+	button {
+		font-size: 1rem;
+		border: .3rem double @yeyoPurple;
+		background: #FDF852;
+		border-radius: 125%;
+		padding:1rem;
+	}//button
+	button:hover {
+		.button();
+		padding: 1rem;
+	}//button:hover
+}//top-box
+
+div.middle-box {
+	width: 90%;
+	height: 15rem;
+	background: black;
+	border: 1rem double @yeyoBlue;
+	.flex();
+
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: auto;
+		flex-direction: column;
+	}
+	.skills {
+		width: 50%;
+		border: .1rem solid black;
+		padding: 1rem;
+		border-right: .5rem dotted @yeyoBlue;
+
+		@media(max-width: 500px) {
+			max-width: 30rem;
+			border: none;
+			border-right: none;
+			
+		}
+
+		h3 {
+			font-size: 1.8rem;
+			color:@yeyoPink;
+		}//h3
+
+		ul {
+			margin-left:2rem;
+			li{
+				list-style: square outside none;
+				line-height: 2;
+				color: @yeyoPurple;
+			}//li
+		}//ul
+	}//.skills
+
+	.about {
+		width:50%;
+		padding: 1rem;
+		background: black;
+
+		@media(max-width:500px) {
+			min-width: 28rem;
+			border-top: .2rem dotted @yeyoBlue;
+		}
+
+		h2 {
+			font-size: 2rem;
+			color: @yeyoPurple;
+		}//h2
+
+		p {
+			font-size:1.4rem;
+			color: @yeyoPink;
+		}//p
+	}//.about
+}//.middle-box
+
+div.history {
+	width: 90%;
+	height: 10rem;
+	border: 1rem double @yeyoPurple;
+	
+
+	@media (max-width: 500px){
+		visibility: hidden;
+	}
+	h3 {
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}//h3
+
+	ol {
+		.flex();
+		justify-content: space-between;
+		li{
+			font-size: 1.5rem;
+
+		}//li
+	}//ol
+}//.history
+
+footer {
+	.flex();
+
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: auto;
+		flex-direction: column;
+	}
+
+	span{
+		color: silver;
+		padding: 2rem;
+		background: black;
+	}
+}
+
+//Contact page
+div.contact {
+	width: 90%;
+	height: 15rem;
+	background: black;
+	border: 1rem double @yeyoBlue; 
+	.flex();
+	flex-direction: column;
+
+	@media (max-width: 500px){
+		max-width: 30rem;
+		height: auto;
+		flex-direction: column;
+		margin-top: 4rem;
+	}
+
+	h2 {
+		color: @yeyoPink;
+		font-size: 2rem;
+		margin-left: 1rem;
+	}//h2
+	p {
+		color: @yeyoPink;
+		margin-left: .5rem;
+		span {
+			font-weight: bold;
+			font-size: 1.6rem;
+			color: @yeyoPurple;
+		}//span
+	}//p
+}//.contact
