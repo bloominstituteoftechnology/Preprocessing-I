@@ -21,7 +21,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'Martel Sans', sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -53,7 +53,196 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
+    background-color: @bg-color;
 }
 
+// Color Variables
+@bg-color: #477890;
+@content-color: #F5F0F6;
+@content50-color: #D7B377;
+@footer-color: #2B4162;
+@fg-color: #477890;
+@text-color: #2B4162;
+@hover-color: #2c3a47;
+@link-color: #efefef;
+@border-color: #8F754F;
+@button-color: #D7B377;
+@list-color: #e4bf7f;
+@list-color-alt: #c7a76f;
+@width: 80vw;
+
+//Mixins
+//generate border with offset thickness and border radius 
+.flex(@just) {
+    display:flex;
+    justify-content: @just;
+}
+.border-gen(@border) {
+    border-style: solid;
+    border-color: @border-color;
+    border-width: (@border*.2) (@border*.2) (@border*.5) (@border*.5);
+    border-radius: @border*.5;
+}
+
+//main body CSS
+.container {
+    width: @width;
+    color: @text-color;
+    margin: 0 auto;
+    background-color: @content-color;
+
+    @media only screen and (max-width:600px) {
+        width: 100vw;
+    }
+
+    //navBar CSS
+    nav {
+        height: 3rem;
+        background-color: @fg-color;
+        border-bottom-left-radius: 80%;
+        border-bottom-right-radius: 10%;
+
+        ul {
+            .flex(flex-end);
+            list-style: none;
+            margin-bottom: 1rem;
+
+            @media only screen and (max-width:600px) {
+                justify-content: center;
+            }
+        }
+
+        li {
+            margin-top: 1rem;
+            padding-right: 1rem;
+            color: @link-color;
+
+            &:hover {
+                color: @hover-color;
+            }
+        }
+
+    }
+
+    //Splash Image and header
+    .splash {
+        .flex(center);
+        width: @width;
+
+        @media only screen and (max-width:600px) {
+            width: 100vw;
+        }
+
+        .splash-txt {
+            padding-top: 4.2rem;
+            width: @width*.5;
+
+            @media only screen and (max-width:600px) {
+                width: (@width+20vh)*.5;
+                margin-top: 4.2rem;
+                padding-top: .25rem;
+            }
+
+            h1 {
+                transform: rotate(-90deg);
+                margin-left: 30vw;
+            }
+        }
+
+        img {
+            object-fit: cover;
+            height: 20rem;
+            margin: .25rem;
+            width: (@width*.5)-.5rem;
+
+            @media only screen and (max-width:600px) {
+                width: (@width+20vh)*.5;
+            }
+        }
+
+    }
+
+    // font and text management
+    h1 {
+        padding: .5rem;
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    p {
+        margin: .5rem;
+    }
+
+    button {
+        margin: .5rem;
+        padding: .5rem;
+        font-size: 1rem;
+        border-radius: .5rem;
+        background-color: @button-color;
+
+        &:hover {
+            background-color: darkslategrey;
+            color: @link-color;
+        }
+    }
+
+    //main content and panels
+    .content {
+        .flex(center);
+        align-items: center;
+
+        @media only screen and (max-width:600px) {
+            flex-flow: column;
+            justify-content: center;
+        }
+
+        .content50 {
+            .border-gen(1rem);
+            margin: .5rem;
+            width: @width*.5;
+            background-color: @content50-color;
+
+            @media only screen and (max-width:600px) {
+                width: (@width+20vh)*.98;
+
+            }
+        }
+    }
+
+    ul {
+        width: 100%;
+
+    }
+
+    //patterned list
+    .list li {
+        padding: .5rem;
+        background-color: @list-color;
+
+        &:nth-child(odd) {
+            background-color: @list-color-alt;
+        }
+    }
+
+    //footer
+    .footer {
+        background-color: @footer-color;
+        color: @link-color;
+        height: 3rem;
+        .flex(center);
+        border-top-left-radius: 5%;
+        border-top-right-radius: 95%;
+
+        p {
+            font-size: .8rem;
+            padding-top: 1em;
+        }
+    }
+}
