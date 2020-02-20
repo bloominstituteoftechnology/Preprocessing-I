@@ -141,11 +141,12 @@ body {
 
 /*-----variables-----*/
 
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-@main-font:'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=El+Messiri|Pontano+Sans&display=swap');
+@main-font:'Pontano Sans', sans-serif;
+@title-font:'El Messiri', sans-serif;
 
 @main-color: #ff99ff;
-@header-color:#4d004d;
+@header-color:black;
 
 /*---MIXINS start here----*/
 
@@ -154,35 +155,159 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 body{
   font-family:@main-font;
   margin:0 10%;
+  background-image: url(../images/Background\ body.jpg);
+
+  header{
    
-  // background-image:url(' 
-  // background-image: url ("C:\Users\natal\Documents\Assignments\Preprocessing-I\images\Background body.jpg");
-  // background-repeat: no-repeat;') 
-  // background-repeat: no-repeat;
+    width:100%;
+    background-color:@header-color;
+    height: 20%;
+    .centered();
+   
+     h1{
+     font-size: 3rem;
+     color:@main-color;
+     padding-bottom: 2.5%;
+     }
+   
+       h2{
+         font-size: 1.5rem;
+         color:@main-color;
+       }
+}
 }
 
-header{
- width:100%;
- background-color:@header-color;
- height: 30%;
- .centered();
 
-  h1{
-  font-size: 3rem;
-  color:@main-color;
-  padding-bottom: 2.5%;
-  }
 
-    h2{
-      font-size: 1.5rem;
-      color:@main-color;
+.personal{
+  background-color: @main-color;
+  display:flex;
+  flex-direction: column;
+  border-right: 2px solid black;
+    img{
+      border-radius: 50%;
+      width: 50%;
+      margin:5% 25%;
     }
-  }
 
+    width: 40%;
+}
+
+
+
+.professional{
+  background-color: #ffccff;
+  display:flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top:0.5;
+ 
+}
+
+.boxes{
+  .row();
+}
+
+.profile{
+  padding: 5%;
+  // border: 2px solid black;
+  border-radius: 10%;
+  margin-left: 3%;
+  margin-right: 3%;
+    h2{
+      
+      font-weight: bold;
+    }
+}
+
+
+.skilltitle{
+  .centered();
+}
+
+.skills{
+  padding: 5%;
+  // border: 2px solid black;
+  border-radius: 10%;
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+    h3{
+      
+      font-weight: bold;
+    }
+}
+
+
+.skill-box{
+ 
+  padding: 3%;
+  // border: 2px solid black;
+  border-radius: 10%;
+  
+ 
+    h3{
+    
+      font-weight: bold;
+      padding-bottom: 2%;
+    }
+}
+
+.work-history{
+ 
+  padding: 3%;
+  border-top: 2px solid black;
+ 
+  
+ 
+    h3{
+   
+      font-weight: bold;
+      padding-bottom: 2%;
+    }
+}
+
+.education{
+  border-radius:10%;
+  padding: 3%;
+  // border: 2px solid black;
+ 
+  
+ 
+    h3{
+      
+      font-weight: bold;
+      padding-bottom: 2%;
+    }
+
+}
+
+
+footer{
+  background-color: @header-color;
+  padding:3%;
+ 
+
+    nav{
+      width: 100%;
+      display:flex;
+      justify-content: space-evenly;
+    
+        a{
+          color:@main-color;
+          text-decoration: none;
+        }
+    }
+
+}
