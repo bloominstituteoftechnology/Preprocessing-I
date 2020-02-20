@@ -149,7 +149,7 @@ body {
   background-color: rgba(167, 138, 92, 0.897);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 .leftSection img {
@@ -157,21 +157,28 @@ body {
   border: 10px ridge crimson;
 }
 .leftSection .leftInfo {
-  border: 1px solid grey;
   height: 44%;
   padding: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: flex-start;
+}
+@media (max-width: 800px) {
+  .leftSection .leftInfo {
+    height: 55%;
+  }
 }
 .rightSection {
   width: 66%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 .rightSection header {
   height: 25%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -183,9 +190,19 @@ body {
   font-size: 3rem;
   font-family: 'Aclonica', sans-serif;
 }
+@media (max-width: 800px) {
+  .rightSection header h1 {
+    font-size: 1.5rem;
+  }
+}
 .rightSection header h2 {
   font-size: 1rem;
   font-family: 'Aclonica', sans-serif;
+}
+@media (max-width: 800px) {
+  .rightSection header h2 {
+    font-size: 0.75rem;
+  }
 }
 .rightSection .mainContent {
   width: 100%;
@@ -194,6 +211,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: flex-start;
   background-color: rgba(141, 99, 31, 0.897);
 }
 h3 {
@@ -204,9 +222,15 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .infoBlock h3 {
   font-size: 2.5rem;
+}
+@media (max-width: 800px) {
+  .infoBlock h3 {
+    font-size: 1.25rem;
+  }
 }
 .infoBlock h4 {
   font-family: 'Kelly Slab', cursive;
