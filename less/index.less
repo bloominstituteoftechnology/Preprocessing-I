@@ -163,6 +163,12 @@ body {
   justify-content: space-between;
 }
 
+.around{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 
 
 
@@ -172,6 +178,8 @@ body {
     font-family:@main-font;
     margin:0 10%;
     background-image: url(../images/Background\ body.jpg);
+    background-repeat: no-repeat;
+    background-color: #cccccc;
 
     .boxes{
       .row();
@@ -186,23 +194,21 @@ body {
       h1{
       font-size: 3rem;
       color:@main-color;
-      padding-bottom: 2.5%;
-      margin-top:5% ;
+      padding-bottom: 1%;
+      margin-top:2% ;
       }
     
         h2{
           font-size: 1.5rem;
           color:@main-color;
+          margin-top:0.5%;
         }
-
-     
         }
           }
 
 .personal{
+  .centered();
   background-color: @main-color;
-  display:flex;
-  flex-direction: column;
   border-right: 2px solid black;
   width: 40%;
 
@@ -214,23 +220,22 @@ body {
 
       .profile{
         padding: 5%;
-        border-radius: 10%;
         margin-left: 3%;
         margin-right: 3%;
           h2{
-            
+            .centered();
             font-weight: bold;
           }
       }
 
       .skills{
         padding: 5%;
-        border-radius: 10%;
         margin-left: 2%;
         margin-top: 5%;
         margin-bottom: 5%;
 
           h3{
+           .centered();
            
             font-weight: bold;
           }
@@ -263,12 +268,18 @@ body {
 
 
 
-
-
+.topleft-box{
+  .around();
+ 
+.languages .computer{
+  .centered();
+}
+}
    
 .work-history{
-  padding: 3%;
+  padding:10%;
   border-top: 2px solid black;
+ 
 
     h3{
       font-weight: bold;
@@ -277,8 +288,8 @@ body {
 }
 
 .education{
-  border-radius:10%;
-  padding: 3%;
+  
+  padding:4% 10%;
 
     h3{
       font-weight: bold;
@@ -302,4 +313,19 @@ footer{
         }
     }
 
+}
+
+
+/*--MEDIAS BEFORE NESTING starts---*/
+
+@media( max-width:500px){
+  body{
+    
+  }
+
+}
+
+@media(max-width:500px){
+
+  
 }
