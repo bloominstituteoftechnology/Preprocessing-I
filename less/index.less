@@ -57,6 +57,7 @@ table {
 
 html {
 	font-size: 62.5%;
+
 }
 
 html, body {
@@ -69,27 +70,42 @@ html, body {
 }
 
 /*We start the project here
-First we start on the header.*/
+First we start with some CSS, then body, then Header
+ on the header.*/
 
 @middleborder: 2px solid black;
+@bgcolor: lightgrey;
+
+@media (max-width: 500px){
+	body {
+		width:500px;
+		background-color: @bgcolor;
+	}
+}
+
+
 
 header {
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 60px;
+	background-color: @bgcolor;
 
 	h1 {
 		font-size: 8rem;
 		width: 100%;
 		text-align: center;
+		margin-top: 20px;
+		margin-bottom: 30px;
 	}
 
 	nav{
 		width: 100%;
 		font-size: 2rem;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		margin: 0 auto;
+		margin-bottom: 20px;
 	}
 
 	.myprofile {
@@ -109,6 +125,37 @@ header {
 		}
 
 	}
+
+	/*We work on our mobile site*/
+	@media (max-width: 500px){
+		h1{
+			width: 90%;
+			font-size: 5rem;
+			margin-bottom: 20px;
+		}
+
+		.myprofile{
+			flex-wrap: wrap;
+			justify-content: center;
+
+			
+
+			h2{
+				width: 95%;
+				font-size: 3rem; 
+			}
+		}
+
+		nav {
+			width: 90%;
+			flex-direction: column;
+			align-items: center;
+
+			a {
+				margin: 10px 0px;
+			}
+		}
+	}
 }
 
 /*Display:flex the necesary boxes*/
@@ -116,39 +163,117 @@ header {
 .middleinfo {
 	display: flex;
 	flex-wrap: wrap;
-	border-top: solid 2px black;
-}
-
-
-/*Here we will start to work on */
-
-.leftbox {
-	width: 45%;
-	display:flex;
-	flex-direction: column;
-	border-right: solid 2px black;
+	border-top: @middleborder;
+	border-bottom: @middleborder;
+	background-color: @bgcolor; 
 	
 
-	.profilesquare {
-		.middleborder();
+	h3{
+		font-size: 4rem;
+		Margin: 25px 2%;
+	}
+
+	h4{
+		font-size: 2.5rem;
+	}
+
+	p{
+		font-size: 2rem;
 		padding: 2%;
+	}
 
-		h3{
-			font-size: 4rem;
-			Margin: 25px 2%;
-		}
+	li{
+		font-size: 2rem;
+		padding: 2%;
+	}
+ 
+/*Working on the middle section mobile*/
 
-		h4{
-			font-size: 2.5rem;
-		}
+	@media (max-width: 500px){
+		width: 100%;
+		padding-bottom: 15px;
 
-		p{
-			font-size: 2rem;
-		}
-
-		li{
-			font-size: 2rem;
+		.profilesquare {
+			width: 100%;
+			border-bottom: @middleborder;
 		}
 	}
 
+
+
+}
+
+
+/*Here we will start to work on the left box */
+
+.leftbox {
+	width: 50%;
+	display:flex;
+	flex-direction: column;
+	border-right:@middleborder;
+	
+
+	.profilesquare {
+		padding: 2%;
+	}
+			
+	button{
+	width: 40%;
+	margin: 2vh 30% 1vh 30%;
+	font-size: 1.5rem;
+	border-radius: 10px;
+
+		&:hover {
+			background-color: blue;
+			color: white;
+
+		}
+	}
+
+	@media (max-width: 500px){
+		width: 100%;
+		border-right: none;
+	}
+
+}
+
+
+/*Here we start to work on the right box*/
+.rightbox {
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (max-width: 500px) {
+		width: 100%;
+		padding-left: 3%;
+
+	}
+}
+
+/*Here we work on a footer*/
+
+footer{
+	font-size: 2rem;
+	margin: 3% 0px;
+	background-color: @bgcolor;
+
+	h4{
+		font-size: 2.5rem;
+		padding-bottom: 20px; 
+	}
+
+	p {
+		font-size: 1.5rem;
+		text-align: center;
+		margin: 3% 0px;
+	}
+
+	a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 2rem;
+		margin-top: 20px;
+	}
 }
