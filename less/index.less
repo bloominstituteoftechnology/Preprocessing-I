@@ -163,48 +163,80 @@ body {
   justify-content: space-between;
 }
 
-body{
-  font-family:@main-font;
-  margin:0 10%;
-  background-image: url(../images/Background\ body.jpg);
-
-  header{
-   
-    width:100%;
-    background-color:@header-color;
-    height: 20%;
-    .centered();
-   
-     h1{
-     font-size: 3rem;
-     color:@main-color;
-     padding-bottom: 2.5%;
-     }
-   
-       h2{
-         font-size: 1.5rem;
-         color:@main-color;
-       }
-}
-}
 
 
+
+/*-----mixins finish here---*/
+
+  body{
+    font-family:@main-font;
+    margin:0 10%;
+    background-image: url(../images/Background\ body.jpg);
+
+    .boxes{
+      .row();
+  }
+
+    header{
+      width:100%;
+      background-color:@header-color;
+      height: 20%;
+      .centered();
+    
+      h1{
+      font-size: 3rem;
+      color:@main-color;
+      padding-bottom: 2.5%;
+      margin-top:5% ;
+      }
+    
+        h2{
+          font-size: 1.5rem;
+          color:@main-color;
+        }
+
+     
+        }
+          }
 
 .personal{
   background-color: @main-color;
   display:flex;
   flex-direction: column;
   border-right: 2px solid black;
+  width: 40%;
+
     img{
       border-radius: 50%;
       width: 50%;
       margin:5% 25%;
-    }
+      }
 
-    width: 40%;
+      .profile{
+        padding: 5%;
+        border-radius: 10%;
+        margin-left: 3%;
+        margin-right: 3%;
+          h2{
+            
+            font-weight: bold;
+          }
+      }
+
+      .skills{
+        padding: 5%;
+        border-radius: 10%;
+        margin-left: 2%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+
+          h3{
+           
+            font-weight: bold;
+          }
+      }
+
 }
-
-
 
 .professional{
   background-color: #ffccff;
@@ -212,67 +244,33 @@ body{
   flex-direction: column;
   width: 60%;
   padding-top:0.5;
- 
-}
 
-.boxes{
-  .row();
-}
-
-.profile{
-  padding: 5%;
-  // border: 2px solid black;
-  border-radius: 10%;
-  margin-left: 3%;
-  margin-right: 3%;
-    h2{
-      
-      font-weight: bold;
-    }
-}
-
-
-.skilltitle{
-  .centered();
-}
-
-.skills{
-  padding: 5%;
-  // border: 2px solid black;
-  border-radius: 10%;
-  margin-left: 2%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-    h3{
-      
-      font-weight: bold;
-    }
-}
-
-
-.skill-box{
- 
-  padding: 3%;
-  // border: 2px solid black;
-  border-radius: 10%;
+  .skill-box{
+    padding: 3%;
+    border-radius: 10%;
   
- 
-    h3{
-    
-      font-weight: bold;
-      padding-bottom: 2%;
-    }
-}
+      h3{
+       
+        font-weight: bold;
+        padding-bottom: 2%;
+       }
+      }
 
+        .skilltitle {
+          .centered();
+        }
+   }
+
+
+
+
+
+   
 .work-history{
- 
   padding: 3%;
   border-top: 2px solid black;
- 
-  
- 
+
     h3{
-   
       font-weight: bold;
       padding-bottom: 2%;
     }
@@ -281,23 +279,17 @@ body{
 .education{
   border-radius:10%;
   padding: 3%;
-  // border: 2px solid black;
- 
-  
- 
+
     h3{
-      
       font-weight: bold;
       padding-bottom: 2%;
     }
 
 }
 
-
 footer{
   background-color: @header-color;
   padding:3%;
- 
 
     nav{
       width: 100%;
