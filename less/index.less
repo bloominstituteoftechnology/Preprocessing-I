@@ -4,6 +4,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,6 +58,21 @@ html, body {
 
 /*My code starts here*/
 
+/*Mixins*/
+.flexbox() {
+	display:flex;
+	flex-wrap:wrap;
+}
+.headerFont() {
+	font-family: 'Lacquer', sans-serif;
+}
+
+/*Variables*/
+@h3Color:blue;
+@maxWidth:100%;
+
+/*Styling*/
+
 /*html {
 	border:2px solid aqua;
 }*/
@@ -69,16 +85,16 @@ h1 {
 	letter-spacing:5px;
 }
 h3 {
-	color:blue;
+	color:@h3Color;
 }
 ul {
 	list-style-type: symbols(-);
 }
 #top-content {
-	display:flex;
-	flex-wrap:wrap;
+	.flexbox();
+	.headerFont();
 	flex-direction:column;
-	max-width:100%;
+	max-width:@maxWidth;
 .top-content {
 	height:100%;
 	width:25%;
@@ -92,9 +108,8 @@ p {
 	}//closes p element for top-content
 }
 .personal {
-	max-width:100%;
-	display:flex;
-	flex-wrap:wrap;
+	max-width:@maxWidth;
+	.flexbox();
 	margin-top: 5%;
 	div {
 		width:47%;
