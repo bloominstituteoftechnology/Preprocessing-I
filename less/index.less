@@ -60,13 +60,21 @@ table {
 }
 
 html, body {
-    height: 100%;
+    //height: 100%;
     font-size: 62.5%;
+    //background-color: transparent;
+    //background-image: url(../img/bg.jpg);
+    //background-size: 100%;
+}
+html{
+    padding: 1%;
 }
 
 /*variables*/
 @marginTop: 2%;
 @skillsBGCol: #b8b8b8;
+@mainFontColor: black;
+@lineMargin: 1%;
 
 
 /*mixins*/
@@ -86,7 +94,7 @@ html, body {
     font-size: 2.5rem;
 }
 .aFont{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .blackDashBorder{
     border: 1px dashed black;
@@ -109,7 +117,7 @@ html, body {
         a {
             .aFont();
             text-decoration: none;
-            color: black;
+            color: @mainFontColor;
 
             &:hover {
                 .linkHover();
@@ -117,15 +125,14 @@ html, body {
         }
         nav {
             width: 50%;
-            margin: auto;
             .centeredFlex();
+            margin: 0 auto auto;//in this case I don't want margin at the top of the item because it makes uneven spacing on top and bottom of page
         }
     }
 }
 
 .intro {
     .container{
-        margin: 0 2%;//the zero gets overwritten in .centeredFlex, this is the behavior I want
         padding: 1%;
         .centeredFlex();
         img{
@@ -135,10 +142,11 @@ html, body {
     }
 }
 
-.skills{
+article{
     .container{
+        .centeredFlex();
         ul{
-            margin-top: @marginTop;
+            margin: @marginTop 0;
             background-color: @skillsBGCol;
             .listHeading();
             p{
@@ -148,9 +156,37 @@ html, body {
         li{
             background-color: @skillsBGCol + 50;
             &:nth-child(even){//note to self: can use an+b for: start at b and increment every an from there
+                justify-content: flex-end;
                 background-color: @skillsBGCol + 25;
             }
             .listItem();
         }
+    }
+}
+
+article#contact{
+    display: flex;
+    .pFont();
+    .aFont();
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        margin: @lineMargin / 2;
+    }
+    .field.half{
+        margin: @lineMargin * 2;
+    }
+    li{
+        margin: @lineMargin;
+    }
+    form{
+        .actions{
+            display: flex;
+        }
+    }
+    .icons{
+        display: flex;
+        flex-direction: row;
     }
 }
