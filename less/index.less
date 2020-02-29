@@ -65,6 +65,8 @@ html, body {
 }
 
 /*variables*/
+@marginTop: 2%;
+@skillsBGCol: #b8b8b8;
 
 
 /*mixins*/
@@ -75,7 +77,7 @@ html, body {
 
 .centeredFlex {
     border: 1px solid black;//this will be gone when finished
-    margin-top: 2%;
+    margin-top: @marginTop;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -85,6 +87,20 @@ html, body {
 }
 .aFont{
     font-size: 1.2rem;
+}
+.blackDashBorder{
+    border: 1px dashed black;
+}
+.listHeading{
+    .blackDashBorder();
+    padding: 1rem;
+    font-size: 1.8rem;
+    width: 50%;
+}
+.listItem{
+    .blackDashBorder();
+    font-size: 1.5rem;
+    padding: .5rem;
 }
 
 /*styles*/
@@ -116,5 +132,25 @@ html, body {
             max-width: 200px;
         }
         .pFont();
+    }
+}
+
+.skills{
+    .container{
+        ul{
+            margin-top: @marginTop;
+            background-color: @skillsBGCol;
+            .listHeading();
+            p{
+                margin-bottom: @marginTop / 2;
+            }
+        }
+        li{
+            background-color: @skillsBGCol + 50;
+            &:nth-child(even){//note to self: can use an+b for: start at b and increment every an from there
+                background-color: @skillsBGCol + 25;
+            }
+            .listItem();
+        }
     }
 }
