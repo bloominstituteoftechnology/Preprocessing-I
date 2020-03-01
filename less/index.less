@@ -2,6 +2,8 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
+
+   format and some style based on http://www.pascalvangemert.nl/#/profile
 */
 
 html, body, div, span, applet, object, iframe,
@@ -88,13 +90,20 @@ p{font-size: 1.5rem;}
     font-size: 1.8rem;
 }
 .centeredFlex{
-    border: 1px solid black;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 /*styles*/
+.container{
+    background-color: darkseagreen;
+    hr{
+        border: 1px solid black;
+        width: 66%;
+        margin: 4% auto;
+    }
+}
 header{
     nav{
         width: 50%;
@@ -110,16 +119,33 @@ header{
     }
     margin-bottom: 1%;
 }
+section{
+    padding: 1%;
+}
+.intro{
+    background-color: antiquewhite;
+    .centeredFlex();
+    flex-direction: column;
+    hr{
+        margin: 1% 0;
+    }
+}
 .about{
+    background-color: lightcoral;
+    .contentHeader{
+        h2, h3{
+            margin: 1% 0;
+        }
+        .centeredFlex();
+        flex-direction: column;
+    }
     .content{
+        .centeredFlex();
         img{
             max-width: 200px;
         }
     }
 }
-
-.container{
-    hr{
-        margin: 0;
-    }
+.experience{
+    background-color: lightgoldenrodyellow;
 }
