@@ -1,0 +1,405 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto&display=swap");
+
+@fonts: "Nanum Gothic", san s-serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-family: @fonts;
+  
+}
+
+*::selection {
+  color: floralwhite;
+  background-color: #5a6074;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 85%;
+  margin: auto;
+  line-height: 1;
+
+  @media (max-width: 800px) {
+    width: 99%;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -30px;
+  flex-flow: row wrap;
+  // font-family: @fonts;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    text-align: center;
+    background-color: #1f1f1f;
+  }
+
+  a {
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px 30px 20px 30px;
+
+    @media (max-width: 800px) {
+      padding: 2% 2.5% 2% 2.5%;
+    }
+    @media (max-width: 500px) {
+      font-size: 1.6rem;
+      color: white;
+    }
+  }
+
+  a:hover {
+    color: #5a6074;
+  }
+}
+
+.top-section {
+  background-color: #e9ecef;
+  border-radius: 4px;
+
+  @media (max-width: 500px) {
+    background-image: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+  }
+
+  img {
+    width: 30%;
+    height: 26%;
+    padding-top: 55px;
+    padding-left: 27px;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  } // closes img
+
+  h1 {
+    font-size: 4rem;
+    padding-top: 20px;
+    padding-left: 25px;
+
+    @media (max-width: 500px) {
+      color: red;
+      -webkit-text-stroke: 0.3px white;
+    }
+  }
+  // closes h1
+  h2 {
+    font-size: 2.4rem;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-bottom: 40px;
+
+    @media (max-width: 500px) {
+      color: red;
+      -webkit-text-stroke: 0.3px white;
+    }
+  } // closes h2
+
+  p {
+    font-size: 1.8rem;
+    padding: 25px 30px 30px 25px;
+    font-weight: bold;
+
+    @media (max-width: 500px) {
+      color: red;
+      -webkit-text-stroke: 0.3px white;
+    }
+  } // closes p
+
+  hr {
+    width: 95%;
+    margin-top: 30px;
+    margin: auto;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  } // closes hr
+} // closes top-section
+
+button {
+  border-radius: 4px;
+  background-color: #808080;
+  font-weight: bold;
+  color: white;
+  margin: 0px 0px 80px 50px;
+  font-size: 1.7rem;
+  width: 170px;
+  height: 50px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #1b2b34;
+  background-color: #5a6074;
+  transition: 0.5s;
+}
+
+.middle-section {
+  display: flex;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  div {
+    width: 49%;
+    margin: 0 auto;
+
+    @media (max-width: 500px) {
+      width: 97%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      padding-top: 40px;
+      padding-bottom: 20px;
+      // font-family: @fonts;
+    } // closes h1
+    p {
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding-right: 30px;
+      line-height: 1.4;
+
+      @media (max-width: 500px) {
+        padding: 0;
+      } // closes media query
+    } // closes p
+  } // closes div
+} // closes middle-section
+
+.bottom-section {
+  width: 100%;
+
+  h2 {
+    font-size: 3rem;
+    padding-top: 35px;
+    padding-bottom: 15px;
+    // font-family: @fonts;
+  } // closes h2
+} // closes bottom-section
+
+footer {
+  width: 100%;
+  height: 100px;
+  background: #808080;
+  margin-top: 20px;
+
+  p {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+    // font-family: @fonts;
+  } // closes p tag
+} // closes footer
+
+//table stuff below
+#experience {
+  width: 100%;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5a6074;
+    color: white;
+    font-size: 2rem;
+  } // closes th
+
+  td {
+    font-size: 1.9rem;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  } // closes td
+} // closes #work-experience
+
+#experience td,
+#experience th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#experience tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#experience tr:hover {
+  background-color: #ddd;
+}
+
+ul {
+  margin-left: 30px;
+
+  li {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 1% 0 1% 0;
+  }
+}
