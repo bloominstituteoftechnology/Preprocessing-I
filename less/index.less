@@ -1,3 +1,6 @@
+@mainButtonColor: #4CAF50;
+@mainFontFamily: 'Spartan', sans-serif;
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -53,15 +56,14 @@ table {
     box-sizing: border-box;
 }
 
+
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
 html{
-    font-family: 'Spartan', sans-serif;
+    font-family: @mainFontFamily; 
 }
-
-* {box-sizing: border-box;}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -75,17 +77,17 @@ input[type=text], select, textarea {
 }
 
 input[type=submit], button {
-  background-color: #4CAF50;
+  background-color: @mainButtonColor;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  :hover {
+	background-color: mainButtonColor;
+  }
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
 
 .container {
   border-radius: 5px;
@@ -95,13 +97,13 @@ input[type=submit]:hover {
 
 nav{
     display: flex;
-    justify-content: space-evenly;
+	justify-content: space-evenly;
+	a{
+		text-decoration: none;
+		color: mainButtonColor;
+	}
 }
 
-nav a{
-    text-decoration: none;
-    color: #4CAF50;
-}
 
 header{
     display: flex;
@@ -118,7 +120,8 @@ header{
 section{
     display: flex;
 
-    justify-content: center;
+	justify-content: center;
+	padding: 1%;
 }
 
 #firstsection{
@@ -129,4 +132,28 @@ section{
 }
 #about{
     width: 69%;
+}
+
+li{
+	font-weight: bold;
+}
+
+h1{
+	font-size: 50px;
+	margin: 1%;
+}
+
+h2{
+	font-size: 25px;
+	margin: 1%;
+}
+
+h3{
+	font-size: 20px;
+	margin: 1%;
+}
+
+li{
+	font-size: 18px;
+	margin: 1%;
 }
