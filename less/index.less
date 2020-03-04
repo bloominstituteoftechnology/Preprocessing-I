@@ -80,19 +80,25 @@ h5{font-size: 1rem;}
 p{font-size: 1.5rem;}
 
 /*variables*/
-
+@defaultMargin: 1%;
 
 
 /*mixins*/
-.linkDefault{
+.linkDefault(){
     text-decoration: none;
     color: black;
     font-size: 1.8rem;
 }
-.centeredFlex{
+.centeredFlex(){
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.columnFlex(){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*styles*/
@@ -124,28 +130,58 @@ section{
 }
 .intro{
     background-color: antiquewhite;
-    .centeredFlex();
-    flex-direction: column;
+    .columnFlex();
     hr{
-        margin: 1% 0;
+        margin: @defaultMargin 0;
     }
 }
 .about{
     background-color: lightcoral;
+    h2, h3{
+        margin: @defaultMargin 0;
+    }
     .contentHeader{
-        h2, h3{
-            margin: 1% 0;
-        }
-        .centeredFlex();
-        flex-direction: column;
+        .columnFlex();
     }
     .content{
         .centeredFlex();
+        .info{
+            width: 33%;
+            margin: 0 @defaultMargin;
+        }
         img{
             max-width: 200px;
+            margin: 0 @defaultMargin;
+        }
+        .details{
+            width: 33%;
+            margin: 0 @defaultMargin;
         }
     }
 }
+
 .experience{
     background-color: lightgoldenrodyellow;
+    h2, h3{
+        margin: @defaultMargin 0;
+    }
+    .contentHeader{
+        .columnFlex();
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
