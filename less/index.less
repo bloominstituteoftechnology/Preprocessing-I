@@ -1,6 +1,16 @@
 @mainButtonColor: #4CAF50;
 @mainFontFamily: 'Spartan', sans-serif;
 
+.centeredFlex() {
+	display: flex;
+	justify-content: center;
+}
+
+.spacedFlex() {
+	display: flex;
+	justify-content: space-evenly;
+}
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -96,8 +106,7 @@ input[type=submit], button {
 }
 
 nav{
-    display: flex;
-	justify-content: space-evenly;
+	.spacedFlex();
 	a{
 		text-decoration: none;
 		color: mainButtonColor;
@@ -106,9 +115,9 @@ nav{
 
 
 header{
-    display: flex;
+    .centeredFlex();
     flex-direction: column;
-    justify-content: center;
+
     align-content: center;
     text-align: center;
     background-color: black;
@@ -118,9 +127,7 @@ header{
 
 
 section{
-    display: flex;
-
-	justify-content: center;
+	.centeredFlex();
 	padding: 1%;
 }
 
