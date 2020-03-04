@@ -113,7 +113,7 @@ p{font-size: 1.5rem;}
         margin: 4% auto;
     }
 }
-header{
+header, footer{
     nav{
         width: 50%;
         margin: auto;
@@ -126,7 +126,9 @@ header{
             }
         }//end a
         @media @phone{
+            width: 66%;
             .columnFlex();
+            align-items: flex-end;
         }
     }//end nav
     margin-bottom: 1%;
@@ -163,8 +165,20 @@ section{
             width: 33%;
             margin: 0 @defaultMargin;
         }
-    }
-}
+        @media @tablet{
+            .columnFlex();
+            .info{
+                margin: @defaultMargin 0;
+            }
+            img{
+                margin: @defaultMargin 0;
+            }
+            .details{
+                margin: @defaultMargin 0 @defaultMargin*4;
+            }
+        }
+    }//end content
+}//end about
 
 .experience{
     h2, h3{
