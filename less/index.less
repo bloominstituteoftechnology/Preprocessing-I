@@ -62,11 +62,7 @@ table {
 }
 
 html, body {
-    //height: 100%;
-
-    //background-color: transparent;
-    //background-image: url(../img/bg.jpg);
-    //background-size: 100%;
+    background-color: #D7F9F1;
 }
 html{
     font-size: 62.5%;
@@ -79,14 +75,21 @@ h4{font-size: 1.5rem;}
 h5{font-size: 1rem;}
 p{font-size: 1.5rem;}
 
-/*variables*/
+//escapes
+@tablet: ~"(max-width: 700px)";
+@phone: ~"(max-width: 700px)";
+
+//variables
 @defaultMargin: 1%;
+@mainFontColor: #40531B;
+@oddEntryColor: #AFBC88;
+@evenEntryColor: #618B4A;
+@hoverColor: darken(#7AA095, 5%);
 
-
-/*mixins*/
+//mixins
 .linkDefault(){
     text-decoration: none;
-    color: black;
+    color: @mainFontColor;
     font-size: 1.8rem;
 }
 .centeredFlex(){
@@ -103,9 +106,9 @@ p{font-size: 1.5rem;}
 
 /*styles*/
 .container{
-    background-color: darkseagreen;
+    color: @mainFontColor;
     hr{
-        border: 1px solid black;
+        border: 1px solid @mainFontColor;
         width: 66%;
         margin: 4% auto;
     }
@@ -121,22 +124,23 @@ header{
                 font-size: 2rem;//not sure if I like this atm
                 color: green;
             }
+        }//end a
+        @media @phone{
+            .columnFlex();
         }
-    }
+    }//end nav
     margin-bottom: 1%;
 }
 section{
     padding: 1%;
 }
 .intro{
-    background-color: antiquewhite;
     .columnFlex();
     hr{
         margin: @defaultMargin 0;
     }
 }
 .about{
-    background-color: lightcoral;
     h2, h3{
         margin: @defaultMargin 0;
     }
@@ -163,7 +167,6 @@ section{
 }
 
 .experience{
-    background-color: lightgoldenrodyellow;
     h2, h3{
         margin: @defaultMargin 0;
     }
@@ -177,7 +180,8 @@ section{
         margin: auto;
 
         .entry{
-            margin: @defaultMargin;
+            background-color: @oddEntryColor;
+            padding: @defaultMargin;
             .centeredFlex();
             h4{
                 margin: @defaultMargin 0;
@@ -185,14 +189,18 @@ section{
             }
             .title{
                 width: 30%;
+                margin: 0 @defaultMargin;
             }
             .description{
                 width: 70%;
+                margin: 0 @defaultMargin;
             }
-        }
-    }
-
-}
+            &:nth-child(even){
+                background-color: lighten(@evenEntryColor, 5%);
+            }
+        }//end entry
+    }//end content
+}//end experience
 
 
 

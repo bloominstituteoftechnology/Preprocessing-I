@@ -132,6 +132,10 @@ table {
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  background-color: #D7F9F1;
+}
 html {
   font-size: 62.5%;
   padding: 1%;
@@ -154,14 +158,12 @@ h5 {
 p {
   font-size: 1.5rem;
 }
-/*variables*/
-/*mixins*/
 /*styles*/
 .container {
-  background-color: darkseagreen;
+  color: #40531B;
 }
 .container hr {
-  border: 1px solid black;
+  border: 1px solid #40531B;
   width: 66%;
   margin: 4% auto;
 }
@@ -177,18 +179,25 @@ header nav {
 }
 header nav a {
   text-decoration: none;
-  color: black;
+  color: #40531B;
   font-size: 1.8rem;
 }
 header nav a:hover {
   font-size: 2rem;
   color: green;
 }
+@media (max-width: 700px) {
+  header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 section {
   padding: 1%;
 }
 .intro {
-  background-color: antiquewhite;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -196,9 +205,6 @@ section {
 }
 .intro hr {
   margin: 1% 0;
-}
-.about {
-  background-color: lightcoral;
 }
 .about h2,
 .about h3 {
@@ -229,9 +235,6 @@ section {
   width: 33%;
   margin: 0 1%;
 }
-.experience {
-  background-color: lightgoldenrodyellow;
-}
 .experience h2,
 .experience h3 {
   margin: 1% 0;
@@ -248,7 +251,8 @@ section {
   margin: auto;
 }
 .experience .content .entry {
-  margin: 1%;
+  background-color: #AFBC88;
+  padding: 1%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -259,7 +263,12 @@ section {
 }
 .experience .content .entry .title {
   width: 30%;
+  margin: 0 1%;
 }
 .experience .content .entry .description {
   width: 70%;
+  margin: 0 1%;
+}
+.experience .content .entry:nth-child(even) {
+  background-color: #6d9c53;
 }
