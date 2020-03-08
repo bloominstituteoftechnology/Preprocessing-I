@@ -64,17 +64,36 @@ table {
 html, body {
     background-color: #D7F9F1;
 }
-html{
+
+html {
     font-size: 62.5%;
     padding: 1%;
     font-family: "Permanent Marker", serif;
 }
-h1{font-size: 6.3rem;}
-h2{font-size: 5.4rem;}
-h3{font-size: 2.8rem;}
-h4{font-size: 1.5rem;}
-h5{font-size: 1rem;}
-p{font-size: 1.5rem;}
+
+h1 {
+    font-size: 6.3rem;
+}
+
+h2 {
+    font-size: 5.4rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
 
 //escapes
 @tablet: ~"(max-width: 700px)";
@@ -88,17 +107,19 @@ p{font-size: 1.5rem;}
 @hoverColor: darken(#7AA095, 5%);
 
 //mixins
-.linkDefault(){
+.linkDefault() {
     text-decoration: none;
     color: @mainFontColor;
     font-size: 1.8rem;
 }
-.centeredFlex(){
+
+.centeredFlex() {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.columnFlex(){
+
+.columnFlex() {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -106,9 +127,10 @@ p{font-size: 1.5rem;}
 }
 
 /*styles*/
-.container{
+.container {
     color: @mainFontColor;
-    hr{
+
+    hr {
         height: 0;
         border: 0;
         border-top: 1px solid @mainFontColor;
@@ -116,156 +138,205 @@ p{font-size: 1.5rem;}
         margin: 4% auto;
     }
 }
-header, footer{
-    nav{
+
+header, footer {
+    nav {
         width: 50%;
         margin: auto;
         .centeredFlex();
-        a{
+
+        a {
             .linkDefault();
             margin: @defaultMargin 0;
-            &:hover{
-                font-size: 2rem;//not sure if I like this atm
+
+            &:hover {
+                font-size: 2rem; //not sure if I like this atm
                 color: green;
             }
-        }//end a
-        @media @phone{
+        }
+
+        //end a
+        @media @phone {
             width: 66%;
             .columnFlex();
             align-items: flex-end;
         }
-    }//end nav
+    }
+
+    //end nav
     margin-bottom: 1%;
 }
-section{
+
+section {
     padding: 1%;
 }
-.intro{
+
+.intro {
     .columnFlex();
-    hr{
+
+    hr {
         margin: @defaultMargin 0;
     }
-    @media @phone{
-        h1{
+
+    @media @phone {
+        h1 {
             font-size: 5.9rem;
         }
-        h3{
+
+        h3 {
             font-size: 2rem;
         }
     }
 }
-.about{
-    h2, h3{
+
+.about {
+    h2, h3 {
         margin: @defaultMargin 0;
     }
-    .contentHeader{
+
+    .contentHeader {
         .columnFlex();
     }
-    .content{
+
+    .content {
         width: 66%;
         margin: auto;
         .centeredFlex();
-        .info{
+
+        .info {
             width: 33%;
             margin: 0 @defaultMargin;
         }
-        img{
+
+        img {
             max-width: 200px;
             margin: 0 @defaultMargin*2;
             border-radius: 10px;
         }
-        .details{
+
+        .details {
             width: 33%;
             margin: 0 @defaultMargin;
         }
-        @media @tablet{
+
+        @media @tablet {
             .columnFlex();
-            .info{
+            .info {
                 margin: @defaultMargin 0;
             }
-            img{
+
+            img {
                 margin: @defaultMargin 0;
             }
-            .details{
+
+            .details {
                 margin: @defaultMargin 0 @defaultMargin*4;
             }
-        }//end tablet call
-        @media @phone{
-            .info{
+        }
+        //end tablet call
+        @media @phone {
+            .info {
                 width: 75%;
             }
-            .contentHeader{
+
+            .contentHeader {
                 .centeredFlex();
-                h3{
+
+                h3 {
                     font-size: 2rem;
                 }
             }
         }
-    }//end content
-}//end about
+    }
 
-.experience{
-    h2, h3{
+    //end content
+}
+
+//end about
+
+.experience {
+    h2, h3 {
         margin: @defaultMargin 0;
     }
-    .contentHeader{
+    p a{
+        color: @mainFontColor;
+    }
+
+    .contentHeader {
         .columnFlex();
     }
 
-    .content{
+    .content {
         padding: 1%;
         width: 66%;
         margin: auto;
-        .phoneSize{
+
+        .phoneSize {
             display: none;
         }
 
-        .entry{
+        .entry {
             background-color: @oddEntryColor;
             padding: .75rem;
             .centeredFlex();
-            h4{
+
+            h4 {
                 margin: 1rem 0;
                 font-weight: bold;
             }
-            .title{
+
+            .title {
                 width: 30%;
                 margin: 0 @defaultMargin;
             }
-            .description{
+
+            .description {
                 width: 70%;
                 margin: 0 @defaultMargin;
             }
-            &:nth-child(even){
+
+            &:nth-child(even) {
                 background-color: lighten(@evenEntryColor, 5%);
             }
-            &:first-of-type{
+
+            &:first-of-type {
                 border-top-right-radius: 10px;
                 border-top-left-radius: 10px;
             }
-            &:last-of-type{
+
+            &:last-of-type {
                 border-bottom-right-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
-        }//end entry
-    }//end content
-}//end experience
-@media @phone{//in a refactored version/different project I would do my media queries better, but this was my first from scratch project
-    .contentHeader{
-        .centeredFlex();
-        h3{
-            font-size: 2rem;
         }
+
+        //end entry
     }
-    .content{
-        .fullSize{
-            display: none;
+
+    //end content
+    @media @phone {
+        //in a refactored version/different project I would do my media queries better, but this was my first from scratch project
+        .contentHeader {
+            .centeredFlex();
+
+            h3 {
+                font-size: 2rem;
+            }
         }
-        .phoneSize{
-            display: block;
+
+        .content {
+            .fullSize {
+                display: none;
+            }
+
+            .phoneSize {
+                display: block;
+            }
         }
     }
 }
+
+//end experience
 
 
 
