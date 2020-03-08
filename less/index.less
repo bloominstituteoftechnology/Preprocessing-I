@@ -78,7 +78,7 @@ p{font-size: 1.5rem;}
 
 //escapes
 @tablet: ~"(max-width: 700px)";
-@phone: ~"(max-width: 700px)";
+@phone: ~"(max-width: 500px)";
 
 //variables
 @defaultMargin: 1%;
@@ -109,7 +109,9 @@ p{font-size: 1.5rem;}
 .container{
     color: @mainFontColor;
     hr{
-        border: 1px solid @mainFontColor;
+        height: 0;
+        border: 0;
+        border-top: 1px solid @mainFontColor;
         width: 66%;
         margin: 4% auto;
     }
@@ -161,6 +163,7 @@ section{
         img{
             max-width: 200px;
             margin: 0 @defaultMargin*2;
+            border-radius: 10px;
         }
         .details{
             width: 33%;
@@ -176,6 +179,17 @@ section{
             }
             .details{
                 margin: @defaultMargin 0 @defaultMargin*4;
+            }
+        }//end tablet call
+        @media @phone{
+            .info{
+                width: 75%;
+            }
+            .contentHeader{
+                .centeredFlex();
+                h3{
+                    font-size: 2rem;
+                }
             }
         }
     }//end content
@@ -193,13 +207,16 @@ section{
         padding: 1%;
         width: 66%;
         margin: auto;
+        .phoneSize{
+            display: none;
+        }
 
         .entry{
             background-color: @oddEntryColor;
-            padding: @defaultMargin;
+            padding: .75rem;
             .centeredFlex();
             h4{
-                margin: @defaultMargin 0;
+                margin: 1rem 0;
                 font-weight: bold;
             }
             .title{
@@ -213,8 +230,32 @@ section{
             &:nth-child(even){
                 background-color: lighten(@evenEntryColor, 5%);
             }
+            &:first-of-type{
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+            &:last-of-type{
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
         }//end entry
     }//end content
+    @media @phone{
+        .contentHeader{
+            .centeredFlex();
+            h3{
+                font-size: 2rem;
+            }
+        }
+        .content{
+            .fullSize{
+                display: none;
+            }
+            .phoneSize{
+                display: block;
+            }
+        }
+    }
 }//end experience
 
 
