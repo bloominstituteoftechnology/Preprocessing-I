@@ -123,6 +123,7 @@ header, footer{
         .centeredFlex();
         a{
             .linkDefault();
+            margin: @defaultMargin 0;
             &:hover{
                 font-size: 2rem;//not sure if I like this atm
                 color: green;
@@ -143,6 +144,14 @@ section{
     .columnFlex();
     hr{
         margin: @defaultMargin 0;
+    }
+    @media @phone{
+        h1{
+            font-size: 5.9rem;
+        }
+        h3{
+            font-size: 2rem;
+        }
     }
 }
 .about{
@@ -240,23 +249,23 @@ section{
             }
         }//end entry
     }//end content
-    @media @phone{
-        .contentHeader{
-            .centeredFlex();
-            h3{
-                font-size: 2rem;
-            }
-        }
-        .content{
-            .fullSize{
-                display: none;
-            }
-            .phoneSize{
-                display: block;
-            }
+}//end experience
+@media @phone{//in a refactored version/different project I would do my media queries better, but this was my first from scratch project
+    .contentHeader{
+        .centeredFlex();
+        h3{
+            font-size: 2rem;
         }
     }
-}//end experience
+    .content{
+        .fullSize{
+            display: none;
+        }
+        .phoneSize{
+            display: block;
+        }
+    }
+}
 
 
 
