@@ -55,47 +55,107 @@ table {
 }
 
 html, body {
-	height: 100%;
-	background-color: skyblue;
-}
-  h1 {
-	  font-size: 3rem;
-  }
-    #top-box {
-		display: flex;
-	}
-	  .about {
-		  margin-left: 200px;
-		  justify-content: center;
-		  width: 80%;
-		  
-		  
-	  }
-	  .story {
-		  margin: 50px;
-		  justify-content: center;
-		  font-size: 1.5rem;
-	  }
-	  .main-content {
-		  display: flex;
-		  width: 100%;
-		  font-size: 1.5rem
-	  }
-	  .training {
-		  width: 35%;
-		  margin: 30px;
-	  }
-	    .career-experience {
-			width: 50%;
-			margin: 20px;
-			padding: 20px;
-		}
-		   h2 {
-			   font-size: 2rem;
-			   margin: 30px;
-			   text-decoration: underline;
-		   }
-		    .contact {
-				margin: 30px;
-			}
+	height: 100vh;
+	max-width: 960px;
+	margin: 0 auto;
+	
+ }
+	 // styling - starts here
+	 
+   //variables
+	@primary-color: skyblue;
+	@font: 18px;
 
+ //mix-ins
+	   .center {
+		 display: flex;
+		 flex-direction: row;
+		 justify-content: center;
+		 
+
+		 
+	   }
+
+    // mix-ins
+
+	    .box-spacing {
+			margin: 2%;
+			padding: 2%;
+			
+		}
+		 
+ 
+	  #wrapper {
+		   
+		 background-color: @primary-color;
+		 font-size: @font;
+		 display: flex;
+		 max-width: 960px;
+		 		   
+		   }
+		   #wrapper {
+			   margin: 0 auto;
+			   padding-left: 10px;
+		   }
+		   .main {
+			   .center
+		   }
+
+
+		  .top {
+			  display: flex;
+		  } 
+		   
+      .introduction {
+		  display: flex;
+		  flex-direction: row;
+		  flex-basis: auto;
+		  margin-right: 2%;
+	  }
+
+	    .introduction h1 {
+			font-size: 25px;
+		}
+			  
+	
+	   nav {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-end;
+		margin: 10px;
+	 }
+	   a {
+		   justify-content: space-between;
+		   margin-left: 10%;
+		   padding: 2%;
+          
+		  }
+		  @media(max-width: 500px) {
+			  nav {
+				  display: flex;
+				  flex-direction: column;
+			  }
+		  }
+	     .main {
+			
+			display: flex;
+			flex-direction: row;
+			.box-spacing();
+			
+		 }
+		   h1 {
+			   font-size: 2rem;
+			   
+		   }
+		   h2 {
+			font-size: @font;
+		}
+		     
+		   .bottom-content {
+			   display: flex;
+			 .box-spacing();
+			 flex-basis: auto;
+		   }   
+			   
+
+		
