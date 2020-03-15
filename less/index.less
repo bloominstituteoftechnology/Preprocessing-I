@@ -81,10 +81,12 @@ html, body {
 }
 .intro {
 	display: flex;
-	flex-direction: column;
+	margin: 0 auto;
+	max-width: 80%;
+	flex-direction: row;
 	padding: 1rem;
 	background-color: #dbcb9d;
-	width: 100%;
+	
 
 	.picture-of-me{
 		padding: 2rem;
@@ -93,7 +95,10 @@ html, body {
 		}
 	}
 	.text1 {
-		display: inline-block;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
 		border-bottom: 2px dotted black;
 		padding: 0 2rem 2rem 2rem;
 
@@ -107,145 +112,144 @@ html, body {
 				padding: 2%;
 			}
 		}
-
-		}
-	.text2 {
-		padding: 2rem;
 		p{
-			font-size: @fontSize - 12px;
+			text-align: center;
+			font-size: 1.5rem;
 			font-weight: @fontWeight/2;
 		}
-	}	
-	.button{
-		margin: 0 0 0 2rem;
-		border: 1px solid lightgray;
-		padding: .7rem;
-		display: flex;
-		border-radius: 100px;
-		color: white;
-		text-decoration: none;
-		background: #4f4735;
-		width: 7rem;
-		@media @mediascreen {
-			margin: 0 auto;
-		}
 
-		&:hover{
-			color:#4f4735;
-			background-color: white;
+		
+		.button{
+			margin: 0 0 0 2rem;
+			border: 1px solid lightgray;
+			padding: .7rem;
+			display: flex;
+			border-radius: 100px;
+			color: white;
+			text-decoration: none;
+			background: #4f4735;
+			width: 7rem;
+			@media @mediascreen {
+				margin: 0 auto;
+			}
+
+			&:hover{
+				color:#4f4735;
+				background-color: white;
+			}
 		}
 	}
-	}
-	.second{
-		margin: 0 auto;
-		display: flex;
-		padding: 1rem;
-		@media @mediascreen {
-			flex-direction: column;
-			
-		}
-
-		.about-me{
-			.margin;
-			padding: 0 2rem;
-			width: 50%;
-			@media @mediascreen {
-				width: 100%;
-				flex-wrap: wrap;
-				padding: 2rem;
-			}
-
-			h3{
-				display:flex;
-				font-size: @fontSize;
-				font-weight: @fontWeight;
-				justify-content: space-around;
-				padding: 1rem 0 1rem 0;
-				font-style: italic;
-				text-decoration: underline;
-
-			}
-			p{
-
-				display: inline-block;
-				padding: 2rem;
-				border: 2px solid black;
-				background: #dbcb9d;
-				border-radius: 2rem;
-				font-size: @fontSize/1.5;
-				font-weight: @fontWeight/2;
-				@media @mediascreen {
-					display: flex;
-					font-size: @fontSize/1.5;
-					font-weight: @fontWeight/2;
-				}
-
-				}
-			}
-		}
-		.jobs{
-			.margin;
-			padding: 0 2rem;
-			width: 50%;
-			@media @mediascreen {
-				width: 100%;
-			}
-
-			h3{
-				display:flex;
-				font-size: @fontSize;
-				font-weight: @fontWeight;
-				justify-content: space-around;
-				padding: 1rem 0 1rem 0;
-				font-style: italic;
-				text-decoration: underline;
-			}
-			.titles{
-
-				display: flex;
-				flex-direction: column;
-				align-items: space-between;
-				justify-content: center;
-				padding: 2rem;
-				border: 2px solid black;
-				background: #dbcb9d;
-				border-radius: 2rem;
-				font-size: @fontSize/1.5;
-				font-weight: @fontWeight/2;
-				@media @mediascreen {
-				}
-				
-				.job-title{
-					display: block;
-					text-align: center;
-					padding: 2rem;
-					border-bottom: 2px dotted black;
-				}
-			}
-
-
-		}
-
-	
-	.my-contact{
-		display: flex;
+}
+.second{
+	margin: 0 auto;
+	display: flex;
+	padding: 1rem;
+	@media @mediascreen {
 		flex-direction: column;
+		
+	}
 
-		padding: 2rem;
-		width: 750%;
-
+	.about-me{
+		.margin;
+		padding: 0 2rem;
+		width: 50%;
+		@media @mediascreen {
+			width: 100%;
+			flex-wrap: wrap;
+			padding: 2rem;
+		}
 
 		h3{
+			display:flex;
 			font-size: @fontSize;
 			font-weight: @fontWeight;
+			justify-content: space-around;
+			padding: 1rem 0 1rem 0;
+			font-style: italic;
+			text-decoration: underline;
+
 		}
 		p{
-			font-weight: @fontWeight /2;
-			font-size: @fontSize - 10px;
+
+			display: inline-block;
+			padding: 2rem;
+			border: 2px solid black;
+			background: #dbcb9d;
+			border-radius: 2rem;
+			font-size: @fontSize/1.5;
+			font-weight: @fontWeight/2;
+			@media @mediascreen {
+				display: flex;
+				font-size: @fontSize/1.5;
+				font-weight: @fontWeight/2;
+			}
+
 		}
-		span{
-			font-weight: @fontWeight /2;
-			font-size: @fontSize - 10px;
+	}
+
+	.jobs{
+		.margin;
+		padding: 0 2rem;
+		width: 50%;
+		@media @mediascreen {
+			width: 100%;
 		}
 
+		h3{
+			display:flex;
+			font-size: @fontSize;
+			font-weight: @fontWeight;
+			justify-content: space-around;
+			padding: 1rem 0 1rem 0;
+			font-style: italic;
+			text-decoration: underline;
+		}
+		.titles{
+
+			display: flex;
+			flex-direction: column;
+			align-items: space-between;
+			justify-content: center;
+			padding: 2rem;
+			border: 2px solid black;
+			background: #dbcb9d;
+			border-radius: 2rem;
+			font-size: @fontSize/1.5;
+			font-weight: @fontWeight/2;
+			@media @mediascreen {
+			}
+			
+			.job-title{
+				display: block;
+				text-align: center;
+				padding: 2rem;
+				border-bottom: 2px dotted black;
+			}
+		}
+
+
 	}
+}
+
+.my-contact{
+	display: flex;
+	flex-direction: column;
+
+	padding: 2rem;
+	width: 750%;
+
+
+	h3{
+		font-size: @fontSize;
+		font-weight: @fontWeight;
+	}
+	p{
+		font-weight: @fontWeight /2;
+		font-size: @fontSize - 10px;
+	}
+	span{
+		font-weight: @fontWeight /2;
+		font-size: @fontSize - 10px;
+	}
+
+}

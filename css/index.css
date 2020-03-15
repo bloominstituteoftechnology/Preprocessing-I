@@ -156,10 +156,11 @@ body {
 }
 .intro {
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  max-width: 80%;
+  flex-direction: row;
   padding: 1rem;
   background-color: #dbcb9d;
-  width: 100%;
 }
 .intro .picture-of-me {
   padding: 2rem;
@@ -170,7 +171,10 @@ body {
   }
 }
 .intro .text1 {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   border-bottom: 2px dotted black;
   padding: 0 2rem 2rem 2rem;
 }
@@ -186,14 +190,12 @@ body {
     padding: 2%;
   }
 }
-.intro .text2 {
-  padding: 2rem;
-}
-.intro .text2 p {
-  font-size: 18px;
+.intro .text1 p {
+  text-align: center;
+  font-size: 1.5rem;
   font-weight: 25%;
 }
-.intro .button {
+.intro .text1 .button {
   margin: 0 0 0 2rem;
   border: 1px solid lightgray;
   padding: 0.7rem;
@@ -205,11 +207,11 @@ body {
   width: 7rem;
 }
 @media (max-width: 500px) {
-  .intro .button {
+  .intro .text1 .button {
     margin: 0 auto;
   }
 }
-.intro .button:hover {
+.intro .text1 .button:hover {
   color: #4f4735;
   background-color: white;
 }
@@ -260,17 +262,17 @@ body {
     font-weight: 25%;
   }
 }
-.jobs {
+.second .jobs {
   margin: 0 auto;
   padding: 0 2rem;
   width: 50%;
 }
 @media (max-width: 500px) {
-  .jobs {
+  .second .jobs {
     width: 100%;
   }
 }
-.jobs h3 {
+.second .jobs h3 {
   display: flex;
   font-size: 30px;
   font-weight: 50%;
@@ -279,7 +281,7 @@ body {
   font-style: italic;
   text-decoration: underline;
 }
-.jobs .titles {
+.second .jobs .titles {
   display: flex;
   flex-direction: column;
   align-items: space-between;
@@ -291,7 +293,7 @@ body {
   font-size: 20px;
   font-weight: 25%;
 }
-.jobs .titles .job-title {
+.second .jobs .titles .job-title {
   display: block;
   text-align: center;
   padding: 2rem;
