@@ -62,8 +62,10 @@ html, body {
     height: 100%;
 }
 
-// VARIABLES //////////
+// VARIABLES ///////////////////////////////
 @mainColor: rgb(185, 180, 180);
+@secondaryColor: rgb(124, 158, 141);
+@mainFont: "Montserrat";
 
 // SIDEBAR ///////////
 .main-container {
@@ -76,6 +78,7 @@ html, body {
 		flex-direction: column;
 		width: 20%;
 		height: 100%;
+		position: sticky;
 	}
 		.sidebar {
 			display: flex;
@@ -89,13 +92,14 @@ html, body {
 				border-radius: 100%;
 				width: 70%;
 				align-self: center;
+				filter: drop-shadow(0 8px 5px rgb(155, 151, 151));
 			}
 
 			ul {
 				width: 100%;
 			}
 				li {
-					font-family: "Montserrat";
+					font-family: @mainFont;
 					font-size: 1.3rem;
 					padding: 10%;
 					text-align: center;
@@ -112,3 +116,53 @@ html, body {
 					}
 
 // HEADER ///////////
+.content{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 100%;
+}
+	.header {
+		display: flex;
+		position: sticky;
+		width: 100%;
+		height: 40%;
+		background-color: @secondaryColor;
+	}
+		.header-content {
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1;
+			justify-content: center;
+			padding: 5%;
+		}
+			h1 {
+				text-align: center;
+				color: white;
+				font-family: @mainFont;
+				font-weight: 900;
+				font-size: 5rem;
+				width: 100%;
+				align-self: center;
+			}
+			h2 {
+				text-align: center;
+				color: rgb(236, 231, 231);
+				font-family: @mainFont;
+				width: 100%;
+				padding: 1%;
+				font-size: 1.2rem;
+				align-self: top;
+			}
+
+	// BOTTOM ///////////////
+
+	.bottom {
+		width: 100%;
+		height: 60%;
+		background-color: @mainColor;
+		
+	}
+		.bottom-content {	
+			
+		}
