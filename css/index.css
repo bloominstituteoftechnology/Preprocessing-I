@@ -1,1 +1,327 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  width: 1200px;
+  margin: 0 auto;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+}
+/*We start the project here
+First we start with some CSS, then body, then Header
+ on the header.*/
+@media (max-width: 500px) {
+  body {
+    width: 450px;
+    background-color: lightgrey;
+    max-width: 450px;
+  }
+}
+/* This is the .hidden so people who are using a listening computer
+ may skip */
+.hidden {
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+header {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  background-color: lightgrey;
+  /*We work on our mobile site*/
+}
+header h1 {
+  font-size: 8rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+header nav {
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  background-color: cadetblue;
+  justify-content: space-around;
+  padding: 30px 0;
+  border: black 2px solid;
+  margin: 0 auto;
+}
+header nav a {
+  text-decoration: none;
+  color: darkblue;
+}
+header .myprofile {
+  display: flex;
+  flex-direction: column;
+}
+header .myprofile img {
+  display: block;
+  width: 15%;
+  margin: 30px auto;
+}
+header .myprofile h2 {
+  width: 65%;
+  font-size: 5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  header h1 {
+    width: 90%;
+    font-size: 5rem;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  header .myprofile {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header .myprofile h2 {
+    width: 95%;
+    font-size: 3rem;
+  }
+  header .myprofile img {
+    width: 40%;
+  }
+  header nav {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav a {
+    margin: 10px 0px;
+  }
+}
+/*Display:flex the necesary boxes*/
+.middleinfo {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: lightgrey;
+  /*Working on the middle section mobile*/
+}
+.middleinfo h3 {
+  font-size: 4rem;
+  Margin: 25px 2%;
+}
+.middleinfo h4 {
+  font-size: 2.5rem;
+}
+.middleinfo p {
+  font-size: 2rem;
+  padding: 2%;
+}
+.middleinfo li {
+  font-size: 2rem;
+  padding: 2%;
+}
+@media (max-width: 500px) {
+  .middleinfo {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  .middleinfo .profilesquare {
+    width: 100%;
+    border-bottom: 2px solid black;
+  }
+}
+/*Here we will start to work on the left box */
+.leftbox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid black;
+}
+.leftbox .profilesquare {
+  padding: 2%;
+}
+.leftbox button {
+  width: 40%;
+  margin: 2vh 30% 1vh 30%;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+.leftbox button:hover {
+  background-color: blue;
+  color: white;
+}
+@media (max-width: 500px) {
+  .leftbox {
+    width: 100%;
+    border-right: none;
+  }
+}
+/*Here we start to work on the right box*/
+.rightbox {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .rightbox {
+    width: 100%;
+    padding-left: 3%;
+  }
+}
+/*Here we work on a footer*/
+footer {
+  font-size: 2rem;
+  margin: 3% 0px;
+  background-color: lightgrey;
+}
+footer h4 {
+  font-size: 2.5rem;
+  padding-bottom: 20px;
+}
+footer p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 3% 0px;
+}
+footer a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 20px;
+}
