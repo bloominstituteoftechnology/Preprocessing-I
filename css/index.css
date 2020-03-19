@@ -150,14 +150,14 @@ body {
   width: 20%;
   height: 100%;
   position: sticky;
-  filter: drop-shadow(-4px 0 3.8px #000000);
-  z-index: 3;
+  filter: drop-shadow(0 1px 7px #000000);
+  z-index: 1000000000;
 }
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #b9b4b4;
+  background-color: #d6cdcd;
   flex-grow: 1;
 }
 .portrait {
@@ -166,17 +166,17 @@ body {
   width: 70%;
   align-self: center;
 }
-ul {
+.nav {
   width: 100%;
 }
-li {
+.nav-links {
   font-family: "Montserrat";
   font-size: 1.3rem;
   padding: 10%;
   text-align: center;
   color: #757474;
 }
-li:hover {
+.nav-links:hover {
   color: #575555;
   background-color: rgba(255, 245, 245, 0.856);
 }
@@ -188,15 +188,19 @@ a {
   flex-direction: column;
   width: 80%;
   height: 100%;
+  position: relative;
+  z-index: 0;
+  padding-left: 0.1%;
+  background-color: #d6cdcd;
 }
 .header {
   display: flex;
   position: sticky;
   width: 100%;
   height: 40%;
-  background-color: #7c9e8d;
+  background-color: #eb3a45;
   filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.719));
-  z-index: 7;
+  z-index: 500;
 }
 .header-content {
   display: flex;
@@ -226,11 +230,10 @@ h2 {
 .bottom {
   width: 100%;
   height: 60%;
-  background-color: #b9b4b4;
-  padding: 5%;
-  overflow: scroll;
-  overflow-x: hidden;
+  background-color: #d6cdcd;
+  padding: 5% 5% 0;
   z-index: 0;
+  overflow: scroll;
 }
 .bottom-content {
   display: flex;
@@ -246,6 +249,13 @@ h2 {
   font-family: "Playfair Display";
   font-size: 2.2rem;
   font-weight: 700;
+  width: 100%;
+}
+.bot-small-heading {
+  color: #eb3a45;
+  font-family: "Montserrat";
+  font-size: 2.5rem;
+  font-weight: 900;
   width: 100%;
 }
 .main-text {
@@ -282,4 +292,57 @@ h2 {
 }
 .js {
   width: 15%;
+}
+.main-skills-container {
+  display: flex;
+  justify-content: center;
+}
+.skills-list {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+.skills {
+  list-style: inside;
+  text-align: start;
+  line-height: 1.5;
+  color: #7e7979;
+}
+.r {
+  margin-left: 25%;
+}
+.portfolio {
+  z-index: 0;
+}
+.port-img-container {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 62.8%;
+}
+.port-img-container:hover {
+  opacity: 90%;
+}
+.port-nav {
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(2px) grayscale(20%);
+}
+.portfolio-img {
+  width: 50%;
+  opacity: 40%;
+  border-radius: 80%;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0 0;
+}
+.footer-container {
+  text-align: center;
+  width: 100%;
+}
+.f-text {
+  padding: 1%;
+  color: #727171;
 }

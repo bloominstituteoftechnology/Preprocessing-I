@@ -63,8 +63,8 @@ html, body {
 }
 
 // VARIABLES ///////////////////////////////
-@mainColor: rgb(185, 180, 180);
-@secondaryColor: rgb(124, 158, 141);
+@mainColor: rgb(214, 205, 205);
+@secondaryColor: rgb(235,58,69);
 @mainFont: "Montserrat";
 
 // SIDEBAR ///////////
@@ -79,8 +79,8 @@ html, body {
 		width: 20%;
 		height: 100%;
 		position: sticky;
-		filter: drop-shadow(-4px 0 3.8px rgb(0, 0, 0));
-		z-index: 3;
+		filter: drop-shadow(0 1px 7px rgb(0, 0, 0));
+		z-index: 1000000000;
 	}
 		.sidebar {
 			display: flex;
@@ -97,10 +97,10 @@ html, body {
 				align-self: center;
 			}
 
-			ul {
+			.nav {
 				width: 100%;
 			}
-				li {
+				.nav-links {
 					font-family: @mainFont;
 					font-size: 1.3rem;
 					padding: 10%;
@@ -123,7 +123,10 @@ html, body {
 	flex-direction: column;
 	width: 80%;
 	height: 100%;
-	
+	position: relative;
+	z-index: 0;
+	padding-left: .1%;
+	background-color: @mainColor;
 }
 	.header {
 		display: flex;
@@ -132,7 +135,8 @@ html, body {
 		height: 40%;
 		background-color: @secondaryColor;
 		filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.719));
-		z-index: 7;
+		z-index: 500;
+
 	}
 		.header-content {
 			display: flex;
@@ -167,16 +171,18 @@ html, body {
 		width: 100%;
 		height: 60%;
 		background-color: @mainColor;
-		padding: 5%;
-		overflow: scroll;
-		overflow-x: hidden;
+		padding: 5% 5% 0;
+		// overflow-x: hidden;
 		z-index: 0;
+		overflow: scroll;
+
 	}
 		.bottom-content {	
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
 			flex-direction: column;
+
 		}
 
 			.pd {
@@ -187,6 +193,13 @@ html, body {
 				font-family: "Playfair Display";
 				font-size: 2.2rem;
 				font-weight: 700;
+				width: 100%;
+			}
+			.bot-small-heading{
+				color: @secondaryColor;
+				font-family: "Montserrat";
+				font-size: 2.5rem;
+				font-weight: 900;
 				width: 100%;
 			}
 			.main-text {
@@ -224,3 +237,69 @@ html, body {
 				.js {
 					width: 15%;
 				}
+			.main-skills-container{
+				display: flex;
+				justify-content: center;
+			}
+				.skills-list {
+					display: flex;
+					// flex-wrap: wrap;
+					width: 70%;
+					justify-content: center;
+					
+				}
+					.skill-container{
+						// width: 70%;
+					}
+						.skills {
+							list-style: inside;
+							text-align: start;
+							line-height: 1.5;
+							color: rgb(126, 121, 121);
+						}
+					.r {
+						margin-left: 25%;
+					}
+		
+			.portfolio {
+				z-index: 0;
+			}
+				.port-img-container{
+					background-image: url(../images/bg.jpg);
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position-y: 62.8%;
+
+						&:hover {
+							opacity: 90%;
+						}
+					
+				}
+					.port-nav {
+						display: flex;
+						justify-content: center;
+						backdrop-filter: blur(2px) grayscale(20%);
+
+						
+		
+					}
+						.portfolio-img{
+							width: 50%;
+							opacity: 40%;
+							border-radius: 80%;
+						}
+
+			.footer {
+				display: flex;
+				justify-content: center;
+				padding: 5% 0 0;
+
+			}
+				.footer-container {
+					text-align: center;
+					width: 100%;
+				}
+					.f-text {
+						padding: 1%;
+						color: rgb(114, 113, 113);
+					}
