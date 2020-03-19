@@ -49,11 +49,169 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+//Mixins//
+.center(){
+	display: flex;
+	justify-content: center;
+}
+.img-resize(){
+	height:100px;
+	width:100px;
+}
+
+
+
+
+/* Variables */
+@background-color:#CFCFCF;
+@info-font:'Crimson Text', serif;
+@h2-font:'Exo 2', sans-serif;
+
+
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	}
+header{
+	nav{
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-around;
+		border-bottom: 2px solid black;
+	
+	} //End Nav Bracket//
+	a{
+		text-decoration: none;
+		color:#323232;
+	} // End Anchor Bracket //
+	
+} // End Header Bracket //\
+body{
+	background-color: @background-color;
+	.title{
+		.center();
+		height:100%;
+		width:35%;
+		flex-direction: column;
+		background-color:#323232;
+		color: #FFFFFF;
+		
+		
 }
+		h1{
+			font-size: x-large;
+			text-align: center;
+	}
+			h2{
+				text-align: center;
+				font-family: @h2-font;
 
+	}
+				p{
+					text-align: center;
+					margin-top: 1%;
+					color:#944040;
+	}
+	h3{
+		text-align: center;
+		margin-top: 6%;
+		color:#84B6B1;
+	}
+	.content{
+		.center();
+		height: 100%;
+		font-family: @info-font;
+	}
+
+	.history{
+		margin-top: 5%;
+		border-bottom: 2px dotted black;
+		margin-bottom: 5px;
+		padding-bottom: 10px;
+		h2{
+			color:#FFFFFF;
+		}
+		h3{
+			color: whitesmoke;
+		}
+		p{
+			margin-bottom: 5%;
+			font-size: 20px;
+		}
+
+	} //End of History Bracket//
+
+	body .skills-list{
+		h2{
+			font-family: @info-font;
+			font-size: 25px;
+		}
+		li{
+			font-size: 17px;
+			line-height: 30px;
+			color: #59584C;
+		}
+		
+	} //End of Skills List //
+	.works{
+		display: flex;
+	.portfolio{
+		margin-top: 20px;
+		.sweet-eats{
+			display: flex;
+			width: 33%;
+		img{
+			
+			.img-resize();
+		}//end of sweet eats img link//
+	}//end of sweet eats class//
+	.project-2{
+		display: flex;
+		img{
+			.img-resize()
+		}
+	}
+	}//end of portfolio class//
+	}// End of works div//
+} // End of Body //
+
+footer{
+	nav{
+	display: flex;
+	justify-content: space-around;
+	border-top: 2px solid black;
+	a{
+		color:#323232;
+		text-decoration: none;
+	}
+	}//end of footer//
+}//End//
+//Mobile Settings//
+@media(max-width: 500px){
+body{
+	header{
+		height: 20%;
+		nav{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			height: 100%;
+			a{
+				border-bottom: 1px solid black;
+			}
+
+		}//nav end//
+	}//header end//
+	.project-2{
+		margin-top: 15%;
+	}
+}//Body End//
+footer{
+	display: none;
+}//footer end//
+}//Media End//
