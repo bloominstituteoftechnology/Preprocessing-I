@@ -17,6 +17,11 @@
 	border: none;
 }
 
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -83,6 +88,7 @@ html, body {
 	.header {
 		text-align: center;
 		font-size: 3rem;
+		margin-top: 40px;
 
 		@media (max-width: 500px) {
 			font-size: 1.3rem;
@@ -129,7 +135,7 @@ html, body {
 		}
 
 		@media (max-width: 500px) {
-			flex-direction: column;
+			.flexColumn();
 		}
 
 
@@ -142,12 +148,18 @@ html, body {
 			.noBorderClass();
 
 			@media (max-width: 800px) {
-				width: 50%;
+				width: 80%;
+				padding-left: 70px;
+			}
+
+			@media (max-width: 500px) {
+				padding-left: 10px;
 			}
 	
 			h2 {
 				font-size: 1.3rem;
 				padding: 5%;
+				font-weight: bold;
 			}
 	
 			p {
@@ -158,20 +170,32 @@ html, body {
 		.skills {
 			border: 1px solid red;
 			.noBorderClass();
+			.flexColumn();
+			width: 30%;
 
 			@media (max-width: 800px){
 				padding: 10%;
+				width: 100%;
+			}
+
+			@media (max-width: 500px) {
+				width: 100%;
 			}
 
 			p.title {
 				font-size: 1.5rem;
 				border: none;
 				font-weight: bold;
+				text-align: center;
 			}
 
 			p {
-				padding: 0%;
-				width: 100%;
+				padding: 5%;
+				border: 1px solid black;
+			}
+
+			p:nth-child(even){
+				background-color: lightblue;
 			}
 		}
 	}
@@ -182,8 +206,7 @@ html, body {
 		justify-content: space-around;
 
 		@media (max-width: 800px) {
-			display: flex;
-			flex-direction: column;
+			.flexColumn();
 			align-items: center;
 		}
 		
@@ -191,8 +214,7 @@ html, body {
 			border: 1px solid red;
 			margin: 5% 0px 0px;
 			.noBorderClass();
-			display: flex;
-			flex-direction: column;
+			.flexColumn();
 			width: 100%;
 			align-items: center;
 
@@ -253,10 +275,10 @@ html, body {
 
 		.contact{
 			border: 1px solid red;
-			display: flex;
-			flex-direction: column;
+			.flexColumn();
 			justify-content: flex-end;
 			.noBorderClass();
+			padding: 30px 0px;
 
 			h2 {
 				font-weight: bold;

@@ -2,6 +2,10 @@
 .noBorderClass {
   border: none;
 }
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -145,6 +149,7 @@ body {
 .container .header {
   text-align: center;
   font-size: 3rem;
+  margin-top: 40px;
 }
 @media (max-width: 500px) {
   .container .header {
@@ -193,6 +198,7 @@ body {
 }
 @media (max-width: 500px) {
   .container .midContent {
+    display: flex;
     flex-direction: column;
   }
 }
@@ -206,12 +212,19 @@ body {
 }
 @media (max-width: 800px) {
   .container .midContent .hireMe {
-    width: 50%;
+    width: 80%;
+    padding-left: 70px;
+  }
+}
+@media (max-width: 500px) {
+  .container .midContent .hireMe {
+    padding-left: 10px;
   }
 }
 .container .midContent .hireMe h2 {
   font-size: 1.3rem;
   padding: 5%;
+  font-weight: bold;
 }
 .container .midContent .hireMe p {
   text-indent: 20px;
@@ -219,20 +232,33 @@ body {
 .container .midContent .skills {
   border: 1px solid red;
   border: none;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
 @media (max-width: 800px) {
   .container .midContent .skills {
     padding: 10%;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .container .midContent .skills {
+    width: 100%;
   }
 }
 .container .midContent .skills p.title {
   font-size: 1.5rem;
   border: none;
   font-weight: bold;
+  text-align: center;
 }
 .container .midContent .skills p {
-  padding: 0%;
-  width: 100%;
+  padding: 5%;
+  border: 1px solid black;
+}
+.container .midContent .skills p:nth-child(even) {
+  background-color: lightblue;
 }
 .container .workAndContact {
   display: flex;
@@ -307,6 +333,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   border: none;
+  padding: 30px 0px;
 }
 .container .workAndContact .contact h2 {
   font-weight: bold;
