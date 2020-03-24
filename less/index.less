@@ -1,3 +1,22 @@
+/*Variables */
+@background-color: white;
+@font-family: tahoma;
+@primary-color: #3b5998;
+@seconday-color: #20B2AA;
+@line-height: 1em + 1em;
+
+.text-color(@a) when (lightness(@a) >= 50%){
+	color: black;
+}
+
+.text-color(@a) when (lightness(@a) < 50%){
+	color: white;
+}
+
+.noBorderClass {
+	border: none;
+}
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -57,3 +76,195 @@ html, body {
     height: 100%;
 }
 
+.container {
+	background-color: @background-color;
+	.text-color(@background-color);
+
+	.header {
+		text-align: center;
+		font-size: 3rem;
+
+		@media (max-width: 500px) {
+			font-size: 1.3rem;
+		}
+
+		.nav {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 10px;
+			padding: 0% 10%;
+			width: 100%;
+
+			@media (max-width: 800px) {
+				justify-content: center;
+			}
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+			}
+
+			a {
+				text-decoration: none;
+				border: 2px solid purple;
+				border-radius: 10px;
+				padding: 5px 10px;
+				margin: 0px 5px;
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	.midContent {
+		display: flex;
+		margin: 3% 0px 0px 0px;
+		justify-content: space-evenly;
+		border: 1px solid green;
+		.noBorderClass();
+
+		@media (max-width: 800px){
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+
+
+		.hireMe {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: 1px solid red;
+			width: 20%;
+			.noBorderClass();
+
+			@media (max-width: 800px) {
+				width: 50%;
+			}
+	
+			h2 {
+				font-size: 1.3rem;
+				padding: 5%;
+			}
+	
+			p {
+				text-indent: 20px;
+			}
+		}
+
+		.skills {
+			border: 1px solid red;
+			.noBorderClass();
+
+			@media (max-width: 800px){
+				padding: 10%;
+			}
+
+			p.title {
+				font-size: 1.5rem;
+				border: none;
+				font-weight: bold;
+			}
+
+			p {
+				padding: 0%;
+				width: 100%;
+			}
+		}
+	}
+
+	.workAndContact {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		@media (max-width: 800px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.workHistory {
+			border: 1px solid red;
+			margin: 5% 0px 0px;
+			.noBorderClass();
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			align-items: center;
+
+			@media (max-width: 500px) {
+				table {
+					width: 80%;
+					padding: 0px;
+
+					th:nth-child(1){
+						display: none;
+					}
+					th:nth-child(4){
+						display:none;
+					}
+					td:nth-child(1){
+						display:none;
+					}
+					td:nth-child(4){
+						display:none;
+					}
+				}
+			}
+			
+			p.title {
+				display: flex;
+				text-decoration: underline;
+				font-size: 1.5rem;
+				height: 50px;
+				justify-content: center;
+				align-items: center;
+			}
+
+			table {
+				background-color: lightblue;
+				border: 1px solid grey;
+				width: 80%;
+
+				th {
+					font-weight: bold;
+					padding: 10px;
+				}
+
+				td {
+					padding: 10px;
+				}
+
+				td:nth-child(1) {
+					text-align: center;
+				}
+
+				tr:nth-child(even){
+					background-color: lightgrey;
+					border-bottom: 1px solid grey;
+					border-top: 1px solid grey;
+				}
+			}
+		}
+
+		.contact{
+			border: 1px solid red;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			.noBorderClass();
+
+			h2 {
+				font-weight: bold;
+			}
+
+			@media (max-width: 800px) {
+				margin: 5%;
+			}
+		}
+	}
+}
