@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,25 +92,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -50,10 +137,191 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+/*Google Font Imports*/
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/*LESS Variable*/
+@section-color: rgb(212, 212, 212);
+@footer-color: #515c63;
+@navy : navy;
+
+/*LESS Mixin Properties*/
+.fontLato () {
+	font-family: 'Lato';
+}
+
+.flexDisplay () {
+	display: flex;
+}
+
+
+
+.container {
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 20px;
+
+	@media (max-width: 500px) {
+		width: 500;
+	}
+
+
+	section p {
+		font-family: 'Roboto', .fontLato(), sans-serif;
+	}
+
+	img {
+		border-radius: 500px;
+		border: 10px black solid;
+
+		@media (max-width: 500px) {
+			width: 400px;
+		}
+	}
+
+	h1 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 45px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	section h1:hover {
+		color: @navy;
+	}
+
+	.line-1 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border: 1px @navy solid;
+	}
+
+	.lets-team-up-button {
+		border-radius: 1px darkgrey;
+		height: 40px;
+		background-color: grey;
+		color: white;
+		width: 130px;
+		margin-top: 30px;
+		box-shadow:  5px 10px #888888;
+	}
+
+	.nav-flex {
+		display: flexDisplay();
+		justify-content: space-between;
+
+		@media (max-width: 500px) {
+			width: 500px;
+			display: block;
+		}
+	}
+
+	.anchors {
+		color: black;
+		text-decoration: none;
+		margin-right: 100px;
+		font-size: 25px;
+		margin-top: 25px;
+		margin-bottom: 30px;
+
+		@media (max-width: 500px) {
+			width: 500px;
+			margin: 0 auto;
+			margin-right: 40px;
+			margin-left: 5px;
+		}
+	}
+
+	.anchors:hover {
+		color: @navy;
+	}
+
+	.background-section-grey {
+		background-color: @section-color;
+		padding: 50px 50px 50px 50px;
+		margin-top: 20px;
+
+		@media (max-width: 500px) {
+			width: 500px;
+		}
+	}
+
+	.section-2 {
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		margin-top: 40px;
+		margin-bottom: 40px;
+
+		@media (max-width: 500px) {
+			width: 500px;
+			display: block;
+		}
+
+		.part-1 {
+			width: 500px;
+			display: inline;
+
+			@media (max-width: 500px) {
+				display: block;
+				padding: 30px 30px 30px 30px;
+			}
+		}
+
+		.part-2 {
+			width: 500px;
+			display: inline;
+
+			@media (max-width: 500px) {
+				display: block;
+				padding: 30px 30px 30px 30px;
+			}
+		}
+	}
+
+	.footer {
+		background-color: @footer-color;
+		text-align: center;
+		padding: 20px 20px 20px 20px;
+		color: white;
+	
+		@media (max-width: 500px) {
+			width: 500px;
+		}
+	}
+
+
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+		margin-top: 40px;
+		margin-bottom: 40px;
+
+		@media (max-width: 500px) {
+			width: 500px;
+			
+		}
+	  }
+	  
+	  td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	  }
+	  
+	  tr:nth-child(even) {
+		background-color: #dddddd;
+	  }
+
+
+}
