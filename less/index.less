@@ -1,59 +1,276 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url("https://fonts.googleapis.com/css?family=Lora|Montserrat&display=swap");
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html {
+  font-size: 62.5%;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  font-family: "Lora", serif;
+  opacity: 0;
+  animation: fade-in 1.1s linear 0s 1 forwards;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-html, body {
-    height: 100%;
+section {
+  margin-bottom: 1rem;
 }
 
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+h1 {
+  font-size: 3vw;
+}
+
+h2 {
+  font-size: 2.5vw;
+}
+
+p {
+  font-size: 2vw;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem 0 2rem 0;
+  font-size: 2vw;
+
+  a {
+    background: black;
+    border: 0.3rem solid black;
+    border-radius: 0.2rem;
+    width: 15%;
+    height: 5rem;
+    text-align: center;
+    transition: background 0.2s, border 0.2s;
+
+    &:hover {
+      background: gray;
+      border: 0.3rem solid gray;
+    }
+  }
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 35%;
+    margin: 2rem 0 0 0;
+  }
+}
+
+#showcase,
+#contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contact {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+#showcase {
+  img {
+    width: 95%;
+    height: auto;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+#projects {
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+p {
+  button {
+    width: 40%;
+  }
+}
+
+button,
+img {
+  margin: 1rem;
+}
+
+img {
+  border-radius: 0.2rem;
+}
+
+button {
+  border-radius: 0.2rem;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  font-size: 2vw;
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.2s;
+
+  &:hover {
+    background: gray;
+  }
+
+  a {
+    transition: color 0.2s;
+
+    &:hover {
+      background: white;
+    }
+  }
+}
+
+i {
+  cursor: pointer;
+  color: black;
+  font-size: 5rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: gray;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 6vw;
+  }
+
+  h2 {
+    font-size: 5.5vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+
+  nav {
+    margin: 2.5rem 0 1.5rem 0;
+    font-size: 4.5vw;
+
+    a {
+      width: 17%;
+      height: 2.5rem;
+    }
+  }
+
+  #about {
+    img {
+      width: 65%;
+      margin: 4rem 0 2rem 0;
+    }
+  }
+
+  #showcase {
+    flex-wrap: wrap;
+
+    img {
+      width: 22%;
+      margin: 0 0 1.2rem 0;
+    }
+  }
+  p {
+    button {
+      width: 55%;
+    }
+  }
+
+  button {
+    margin: 1.5rem;
+    width: 35%;
+    font-size: 4vw;
+  }
+
+  i {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 6vw;
+  }
+
+  h2 {
+    font-size: 5.5vw;
+  }
+
+  p {
+    font-size: 4vw;
+  }
+
+  nav {
+    margin: 3rem 0 2rem 0;
+    font-size: 3.5vw;
+
+    a {
+      width: 17%;
+      height: 3rem;
+    }
+  }
+
+  #about img {
+    img {
+      width: 65%;
+      margin: 4rem 0 2rem 0;
+    }
+  }
+
+  #showcase {
+    flex-wrap: wrap;
+
+    img {
+      width: 22%;
+      margin: 0 0 1.2rem 0;
+    }
+  }
+
+  p {
+    button {
+      width: 55%;
+    }
+  }
+
+  button {
+    margin: 1.5rem;
+    width: 35%;
+    font-size: 4vw;
+  }
+
+  i {
+    font-size: 4rem;
+  }
+}
