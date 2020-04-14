@@ -73,7 +73,7 @@ html{
 //Global Variables
 @mainH: 100vh;
 @mainW: 100vw;
-@home: rgba(0,0,0,.85);
+@home: rgba(37,37,37,0.4);
 @about: rgba(0,128,255,0.85);
 @portfolio: rgba(255,0,0,0.85);
 @contact: rgba(0,255,128,0.85);
@@ -116,7 +116,9 @@ html{
   max-width: 60rem;
   margin: 0 auto;
 	padding-top: 5px;
-	h1{
+
+	.logo{
+		position: fixed;
 		font-family: 'Baloo Paaji 2', cursive;
 		font-size: 1.6em;
 		padding-left: 10px;
@@ -125,13 +127,22 @@ html{
 			color: green;
 		}
 	}
+	nav{
+		position: fixed;
+		right: 14rem;
+	}
 	nav a{
 		padding: 20px;
 		&:hover{
 			color: green;
 		}
 	}
-}
+	.main{
+		height: @mainH - 8.2rem;
+		margin-top: 60px;
+		background: red;
+	}
+}//end home
 .about{
   background: @about;
 }
