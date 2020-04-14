@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -56,4 +56,74 @@ table {
 html, body {
     height: 100%;
 }
+a{
+	text-decoration: none;
+	color: #fff;
+}
 
+/*@color: rgba(255,0,0,.8);
+
+html{
+	background: @color;
+}*/
+//font-family: 'Baloo Paaji 2', cursive;
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500;600;700;800&display=swap');
+//Global Variables
+@mainH: 100vh;
+@mainW: 100vw;
+@home: rgba(0,0,0,.85);
+@about: rgba(0,128,255,0.85);
+@portfolio: rgba(255,0,0,0.85);
+@contact: rgba(0,255,128,0.85);
+//mixins
+.display(){
+  display: flex;
+}
+.center(){
+  justify-content: center;
+}
+.spaceBetween(){
+  justify-content: space-between;
+}
+.testing(){
+  border: 2px solid red;
+}
+//end mixins
+.bg{
+  height: @mainH;
+  width: @mainW;
+  background: red;
+}
+.cover{
+  height: @mainH;
+  width: @mainW;
+}
+.home{
+  background: @home;
+  //.testing();
+  .display();
+  .spaceBetween();
+  max-width: 60rem;
+  margin: 0 auto;
+	padding-top: 5px;
+	h1{
+		font-family: 'Baloo Paaji 2', cursive;
+		font-size: 1.6em;
+	}
+	nav a{
+		padding: 20px;
+		&:hover{
+			color: green;
+		}
+	}
+}
+.about{
+  background: @about;
+}
+.portfolio{
+  background: @portfolio;
+}
+.contact{
+  background: @contact;
+}
