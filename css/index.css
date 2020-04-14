@@ -140,6 +140,12 @@ table {
   font-display: swap;
   src: local('Russo One'), local('RussoOne-Regular'), url(https://fonts.gstatic.com/s/russoone/v8/Z9XUDmZRWg6M1LvRYsH-yA.ttf) format('truetype');
 }
+/*
+.dark-gold {color: #8E793E}
+.light-gold {color: #AD974F}
+.intellectual-grey {color: #231F20}
+.light-grey {color: #EAEAEA}
+*/
 * {
   box-sizing: border-box;
 }
@@ -147,6 +153,7 @@ html,
 body {
   font-size: 62.5%;
   font-family: 'Roboto Slab', serif;
+  background-color: #040001;
 }
 h1,
 h2,
@@ -157,6 +164,9 @@ h6 {
   font-family: 'Russo One', sans-serif;
   font-size: 2.4rem;
   letter-spacing: 2rem;
+  text-shadow: 2px 2px 0 black;
+  padding-bottom: 2%;
+  line-height: 1.6rem;
 }
 p,
 ul {
@@ -164,26 +174,58 @@ ul {
   margin: 3% 0%;
   line-height: 1.6rem;
 }
+a {
+  color: #eaeaea;
+  text-decoration: none;
+}
+a:hover {
+  color: #e0a42b;
+  text-transform: uppercase;
+}
+a:visited {
+  color: #e0a42b;
+}
+nav {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-evenly;
+  align-content: center;
+}
+@media (max-width: 500px) {
+  font-size: 3rem;
+}
 .diagonal-box {
   transform: skewY(-8deg);
-  padding: 5% 0 0 8%;
+  padding: 5% 0 0 20%;
   margin-bottom: 5%;
-  border: 1px solid red;
+  border: 5px groove #e0a42b;
+}
+.diagonal-box:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: skewY(-11deg);
 }
 .diagonal-box .heading h2 {
   letter-spacing: 1.3rem;
   padding: 2%;
-  text-align: center;
+  line-height: 2.4rem;
+  color: #eaeaea;
 }
 .diagonal-box #name h1 {
-  text-align: center;
   font-size: 3.5rem;
+  border-bottom: 2px solid #e0a42b;
+  color: #eaeaea;
+  text-shadow: 3px 3px 0 #e0a42b;
 }
 .content {
-  max-width: 70em;
-  padding-top: 5%;
+  max-width: 50em;
+  padding-top: 2%;
   margin: 0 auto;
   transform: skewY(7deg);
+  color: #eaeaea;
 }
 .content h2,
 .content h3,
@@ -191,10 +233,21 @@ ul {
   letter-spacing: 0.5rem;
   font-size: 1.4rem;
 }
-#edu {
+#edu,
+#work,
+#about {
   padding-bottom: 9%;
 }
 #contact {
   background-color: black;
   color: white;
+}
+#about h2,
+#work h2,
+#skills h2,
+#edu h2,
+#contact h2 {
+  border-bottom: 2px solid #e0a42b;
+  color: #eaeaea;
+  text-shadow: 3px 3px 0 #e0a42b;
 }

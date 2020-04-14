@@ -52,30 +52,50 @@ table {
 //Mixins and Variables
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Russo+One&display=swap');
 
+/*
+.dark-gold {color: #8E793E}
+.light-gold {color: #AD974F}
+.intellectual-grey {color: #231F20}
+.light-grey {color: #EAEAEA}
+*/
+
+
 @mainFont:'Roboto Slab', serif;
 @headingFont: 'Russo One', sans-serif;
 
-.contentColorsTop() {
-	background-image: linear-gradient(to bottom, #000000, #372525, #6a463d, #9b6f50, #c39e62, #c39e62, #c39e62, #c39e62, #9b6f50, #6a463d, #372525, #000000);
+.contentColors() {
+	background-image: #2a231d;
 }
 
+.headingStyle(){
+	border-bottom: 2px solid #e0a42b;
+	color: #eaeaea;
+	text-shadow: 3px 3px 0 #e0a42b;
 
+}
+
+.borders(){
+	border: 5px groove #e0a42b;
+}
 
 * {
 	box-sizing: border-box;
-	//border: 1px solid grey;
 }
 
 html, body {
 	//height: 100%;
 	font-size: 62.5%;
 	font-family: @mainFont;
+	background-color: #040001;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: @headingFont;
 	font-size: 2.4rem;
 	letter-spacing: 2rem;
+	text-shadow: 2px 2px 0 black;
+	padding-bottom: 2%;
+	line-height: 1.6rem;
 
 }
 
@@ -86,30 +106,71 @@ p, ul {
 
 }
 
+a {
+	color: #eaeaea;
+	text-decoration:none;
+
+	&:hover {
+		color: #e0a42b;
+			text-transform: uppercase;
+	}
+
+	&:visited {
+		color: #e0a42b;
+
+	}
+}
+
+nav {
+	display: flex;
+	font-size: 2rem;
+	justify-content: space-evenly;
+	align-content: center;
+}
+
+	@media (max-width: 500px){
+		font-size: 3rem;
+	}
+
 .diagonal-box {
 	transform: skewY(-8deg);
-	padding: 5% 0 0 8%;
+	padding: 5% 0 0 20%;
 	margin-bottom: 5%;
-	border: 1px solid red; 
+	.borders(); 
+
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;	
+		transform: skewY(-11deg);
+	}
 
 	.heading h2{
 		letter-spacing: 1.3rem;
 		padding: 2%;
-		text-align:center;
+		line-height: 2.4rem;;
+		color: #eaeaea;
 	}
 
 	#name h1{
-		text-align:center;
+		
 		font-size: 3.5rem;
+		.headingStyle();
 	}
-
+	
 
 } 
+
+
 .content { 	
-	max-width: 70em;
-	padding-top: 5%;
+	max-width: 50em;
+	padding-top: 2%;
 	margin: 0 auto;
 	transform:skewY(7deg);
+	color:#eaeaea;
+	
 
 
 	h2, h3, h4 {
@@ -117,7 +178,7 @@ p, ul {
 		font-size: 1.4rem;
 	}
 }
-#edu {
+#edu, #work, #about {
 	padding-bottom: 9%;
 }
 
@@ -126,3 +187,6 @@ p, ul {
 	color: white;
 }
 
+#about h2, #work h2, #skills h2, #edu h2, #contact h2 {
+	.headingStyle();
+}
