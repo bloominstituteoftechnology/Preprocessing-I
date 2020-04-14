@@ -1,59 +1,338 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  background: white;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
+
+@headerfont: "Fredoka One", cursive;
+@navbg: pink;
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+}
+h1, h2, h3 {
+  font-family: @headerfont;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+
+}
+#wrapper {
+  width: 90%;
+  margin: 0 auto;
 }
 
-html, body {
-    height: 100%;
+header {
+  background: green;
+  // text-align: center;
+  // border-bottom: 1px solid #000;
+  // padding-top: 60px;
 }
+
+
+.flexrow(@navbordercolor) {
+  display: flex;
+  flex-direction: row;
+  border: solid @navbordercolor;
+}
+.nav-bar {
+  width: 100%;
+  .flexrow(green);
+  // display: flex;
+  // flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 30px;
+  font-size: 18px;
+  // border: solid blue;
+  background: @navbg;
+
+	a {
+		padding: 30px;
+		margin: 20px;
+		text-decoration: none;
+		align-content: center;
+	}
+}
+
+.top-section {
+  width: 100%;
+  margin: 10px auto;
+  background: lightblue;
+  display: flex;
+  align-items: stretch;
+  padding: 20px;
+  
+	.resume-img {
+    background-color: purple;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+		padding: 20px;
+		/* box-shadow: 2px 2px 3px #ccc; */
+	}
+	
+	  .johnny {
+      display: flex;
+      flex-direction: column;
+
+      background-color: yellow;
+      width: 70%;
+      font-size: 18px;
+      padding: 30px;
+      
+      // text-align: center;
+
+      button {
+        width: 150px;
+        margin: 40px 10px;
+        padding: 20px;
+        font-size: 16px;
+        align-content: base-line;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: lightblue;
+      }
+   }
+}
+
+.middle-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  h2, h3 {
+    font-size: 20px;
+  }
+
+  .middle-left {
+    width: 60%;
+    border: solid green;
+  }
+  .middle-right {
+    width: 30%;
+    margin: 20px;
+
+      .list {
+        border: 1px solid #ddd;
+        text-align: center;
+       
+        li {
+          padding: 10px;
+          border-bottom: 1px solid #ddd;
+        }
+      }
+    }
+}
+
+.bottom-section {
+  padding: 20px;
+  background-color: palegreen;
+
+    .table {
+      border: solid black;
+      width: 100%;
+
+      th, td {
+      padding: 10px;
+      // text-align: center;
+      border-bottom: 1px solid #ddd;
+       }
+    
+      th {
+        height: 30px;
+        // width: 100%;
+        background-color: lightgrey;
+      }
+
+      td {
+        height: 30px;
+        // width: 100%;
+        // padding: 20px;
+        // text-align: center;
+      }
+
+      .shaded {
+        background-color: lightgrey;
+      }
+    
+    }
+
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 800px) {
+	#wrapper {
+    width: 100%;
+    margin: 0;
+    background-color: orange;
+  
+	}	
+}
+
+
+@media screen and (max-width: 500px) {
+	#wrapper {
+    width: 80%;
+    margin: 0;
+    background-color: pink;
+
+    .nav-bar {
+      flex-direction: column;
+      // align-items: center;
+      
+    }
+
+    a {
+      border-bottom: 1px solid black;
+    }
+
+    .resume-img {
+      display: none;
+    }
+
+    .middle-right {
+      display: none;
+    }
+	}
+}
+
+
 
