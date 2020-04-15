@@ -55,6 +55,29 @@ table {
 @bg: #223344ff;
 @lc: #ddccbbff;
 @tc: #ccccccff;
+@font: 10px;
+
+.flexrow{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.flexcol{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.heading-style-1{
+	font-variant: small-caps;
+	color: @bg
+}
+
+.heading-style-2{
+	font-variant: small-caps;
+	color: @lc;
+}
 
 html, body {
 	height: 100%;
@@ -63,13 +86,13 @@ html, body {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: flex-start;
-	
+	font-size: 10px;
+	margin: 1rem;
+	line-height: 1.15;
 }
 
-a{
-	color: @lc;
-	text-decoration: none;
-	padding: 0 .5rem 0 .5rem
+.home{
+	font-size: 2rem;
 }
 
 .headshot{
@@ -77,8 +100,9 @@ a{
 	max-height: 30vh;
 	padding: 1rem;
 	border-radius: 10px;
-	border: solid black 5px;
+	border: solid @bg 5px;
 	box-shadow: 1.25rem 1.25rem 4rem;
+
 }
 
 .navbar{
@@ -88,12 +112,18 @@ a{
 	align-content: center;
 	max-height: 30vh;
 	justify-content: flex-end;
-	padding: 0 10rem 0 10rem
-
+	padding: 0rem 10rem 1rem 10rem;
+	color: @tc;
 }
 
 .navlink{
 	text-decoration: none;
+	color: @tc;
+	padding: 0rem 1rem 0rem 1rem;
+}
+
+.navlink:hover{
+	color:blanchedalmond;
 }
 
 li{
@@ -105,7 +135,109 @@ li{
 	padding: 2rem 2rem 2rem 2rem;
 	background-color: @lc;
 	color: @bg;
+	display: flex;
+	flex-direction: column;
+
+}
+
+#awesome-work{
+	display: flex;
+	color: @bg;
+	padding: 1rem;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: dotted #888888ff 1px
+}
+
+#awesome-work:hover{
+	color:dodgerblue
+}
+.upper{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.name-title{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 
+.name-title h1{	
+	font-size: 5rem;
+	.heading-style-1;
+}
 
+.name-title h2{
+	font-size: 4rem;
+	.heading-style-1;
+}
+
+.name-title h3{
+	font-size: 3rem;
+	.heading-style-1;
+}
+
+.list-level-2{
+	padding: 0 0 0 4rem;
+	list-style: circle;
+}
+
+.mid-box h2{
+	.heading-style-2;
+	font-size: 3rem	
+}
+
+.mid-box{
+	.flexrow;
+	justify-content: space-between;
+	margin: 0 2rem 0 2rem;
+}
+
+.box1{	
+	width: 50%;
+}
+
+.box2{
+	width: 40%;
+}
+
+.box2 tr:nth-child(even) {
+	background-color: #666666aa;
+}
+tr{
+	border: solid @tc 1px
+}
+
+td{
+	padding: 1rem;
+}
+
+.bottom-box tr:nth-child(odd) {
+	background-color: #666666aa;
+}
+
+.bottom-box h2{
+	font-size: 4rem;
+	color: @lc;
+	padding-bottom: 1rem
+}
+
+.bottom-box{
+	margin: 2rem
+}
+
+.work-history{
+	width:100%
+}
+
+.footer{
+	.flexcol;
+	align-items: center;
+	margin: 2rem 0 2rem 0
+}
