@@ -1,0 +1,190 @@
+/*Variables */
+@background-color: black;
+@font-family: tahoma;
+@primary-color: #3b5998;
+@seconday-color: #20B2AA;
+@line-height: 1em + 1em;
+
+//mixins
+.text-color(@a) when (lightness(@a) >= 50%){
+	color: black;
+}
+
+.text-color(@a) when (lightness(@a) < 50%){
+	color: white;
+}
+
+.noBorderClass {
+	border: none;
+}
+
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: @background-color;
+}
+
+.container {
+	.text-color(@background-color);
+	font-family: 'Baloo 2';
+
+	.header {
+		text-align: center;
+		font-size: 3rem;
+		margin-top: 40px;
+
+		@media (max-width: 500px) {
+			font-size: 1.3rem;
+		}
+
+		.nav {
+			display: flex;
+			justify-content: center;
+			margin-top: 10px;
+			padding: 0% 10%;
+            width: 100%;
+
+			@media (max-width: 800px) {
+				justify-content: center;
+			}
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+			}
+
+			a {
+				text-decoration: none;
+				border: 2px solid purple;
+				border-radius: 10px;
+				padding: 5px 10px;
+				margin: 0px 5px;
+				font-size: 1.5rem;
+                .text-color(@background-color);
+                
+                &:hover {
+                    animation-name: a1;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                }
+
+                @keyframes a1{
+                    0% {background-color: black;}
+                    25% {background-color: green;}
+                    50% {background-color: yellow;}
+                    75% {background-color: purple;}
+                    100% {background-color: black;}
+                    0%{color: white;}
+                    40%{color: black;}
+                    90%{color: white;}
+                }
+			}
+		}
+    }
+
+    .github {
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        ul {
+            .flexColumn();
+            border: 1px solid black;
+            .noBorderClass();
+            align-items: center;
+
+            li {
+                padding-top: 3%;
+                @media (max-width: 800px){
+                    padding-top: 10%;
+                }
+
+                a {
+                    font-size: 1.2rem;
+                    animation-name: a2;
+                    animation-duration: 20s;
+                    animation-iteration-count: infinite;
+                }
+                
+                @keyframes a2 {
+                    0% {color: black;}
+                    10% {color: silver;}
+                    20% {color: purple;}
+                    30% {color: red;}
+                    40% {color: blue;}
+                    50% {color: aqua;}
+                    60% {color: green;}
+                    70% {color: brown;}
+                    80% {color: gold;}
+                    90% {color: turquoise;}
+                    100% {color: black;}
+                }
+            }
+        }
+    }
+}
