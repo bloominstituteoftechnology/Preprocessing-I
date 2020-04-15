@@ -1,79 +1,94 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@mobile: ~"only screen and (max-width: 600px)";
+@red: red;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+.border-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+div {
+  display: inline-block;
+  padding: 50px;
+  background: #820000;
+  background: -moz-linear-gradient(-45deg, #820000 0%, #1C6EA4 50%, #F0F0F0 100%);
+  background: -webkit-linear-gradient(-45deg, #820000 0%, #1C6EA4 50%, #F0F0F0 100%);
+  background: linear-gradient(135deg, #820000 0%, #1C6EA4 50%, #F0F0F0 100%);
+}
+* {
+  box-sizing: border-box;
 }
 body {
-	line-height: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  text-align: center;
+  font-family: 'Lato';
 }
-ol, ul {
-	list-style: none;
+.mainCont {
+  background-color: white;
 }
-blockquote, q {
-	quotes: none;
+.mainContBox {
+  display: block;
+  width: 50%;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  -webkit-column-rule: 1px solid rgba(28,110,164,0.5);
+  -moz-column-rule: 1px solid rgba(28,110,164,0.5);
+  column-rule: 1px solid rgba(28,110,164,0.5);
+  background-color: grey;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
+  border: 5px outset #1C6EA4;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+.navLink {
+  justify-content: space-between;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 25px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  color: #ececec;
+  font-weight: 400;
+  text-decoration: underline solid rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1rem;
+  text-decoration: none;
+  text-align: center;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+a:hover {
+  color: red;
 }
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.myButton {
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
 }
-.test {
-	background-color: yellow;
+.myButton:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
 }
-@red: #FF0000;
-html, body {
-	height: 100%;
+.myButton:active {
+	position:relative;
+	top:1px;
 }
-.body {
-	// Large screen styling
-	width: 800px;
-	height: 100%;
-	background: gray;
-  
-	// Medium screen styling
-	@media (max-width: 800px) {
-	  width: 100%;
-	  background: black;
-	}
-  
-	// Small screen styling
-	@media (max-width: 500px) {
-	  width: 80%;
-	  background: green;
-	}
-  }
