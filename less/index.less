@@ -93,7 +93,10 @@ html, body {
 		  .flexColumn();
 		  padding:4%;
 		  section{
-			  display:flex
+			  display:flex;
+			  @media(max-width:500px){
+				  flex-direction:column;
+			  }
 		  }
 		  h1{
 			  margin:auto;
@@ -101,6 +104,13 @@ html, body {
 			font-size:4rem;
 			text-align:center;
 			width:40%;
+			@media(max-width:500px){
+				text-align:left;
+				align-self:flex-end;
+				margin:1%;
+				width:100%;
+				font-size:2rem;
+			}
 		  }
 		  img{
 			  margin:auto;
@@ -111,6 +121,9 @@ html, body {
 			padding:3% 0% 3% 0%;
 			font-size:1.5rem;
 			align-self:center;
+			@media(max-width:500px){
+				padding:6% 0% 6% 0%;
+			}
 		  }
 		  p{
 			 align-self:center;
@@ -131,19 +144,33 @@ html, body {
 		color:black;
 		margin:auto;
 		padding:auto;
-		width:85%;
-		@media(max-width:700px){
+		width:100%;
+		@media(max-width:500px){
 			.flexColumn();
-		}
+			align-self:center;
+			justify-content:center;
+			align-items:center;
+			width:100%;
+			padding:0%;
+		}	margin:0%;
 	  }
 	  .sec2{
 		  width:75%;
+		  @media(max-width:500px){
+			  width:98%;
+		  }
 		  .flexColumn();
 		  section{
 			  .flexColumn();
 			  line-height: 2rem;
 			  padding-bottom:1.5rem;
-		  }
+			  @media(max-width:500px){
+				  background-color:lightblue;
+				  border:1px solid black;
+				  padding:3%;
+				  width:100%;
+			  }
+		   }
 		  h4{
 			  .mainFont();
 		  }
@@ -160,6 +187,9 @@ html, body {
 		  width:20%;
 		  .flexColumn();
 		  line-height: 2rem;
+		  @media(max-width:500px){
+			  width:100%;
+		  }
 		  h3{
 			.listFont();
 		  }
