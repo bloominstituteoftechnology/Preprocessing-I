@@ -54,24 +54,30 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: #ecb3ff;
+	font-size: 62.5%;
 }
 
 @importantText: black;
-@minorText: @importantText - 15%;
+@minorText: #333333;
+@smallText: 2rem;
 
 .navigation{
 	width: 100%;
 	height: 50px;
 	nav{
 		display: flex;
-		justify-content: flex-end;
-		padding: 10px;
+		justify-content: space-around;
+		border: 3px solid #b30047;
+		border-radius: 25px;
+		margin: 20px;
+		padding: 5px;
 		a{
 			color: @importantText;
+			font-size: @smallText;
 			text-decoration: none;
-			font-size: 24px;
-			margin: 15px;
+			margin: 1.5rem;
 		}	
 	}
 }
@@ -79,11 +85,54 @@ html, body {
 header{
 	display: flex;
 	justify-content: space-between;
+	margin: 5rem;
+	.avatar{
+		width: 35%;
+		margin: 2rem;
+	}
 	.main-info{
 		width: 50%;
+		h1{
+			font-size: 5rem;
+		}
+		p{
+			color: @minorText;
+			font-size: 4rem;
+			margin-top: 5%;
+			margin-bottom: 5%;
+		}
+		button{
+			width: 30%;
+			height: 10%;
+			margin-left: 30%;
+			border: 3px solid black;
+			background-color: #b30047;
+			border-radius: 25px;
+			font-size: @smallText;
+			font-weight: bold;
+		}
 	}
 }
 
+
 section{
 	display: flex;
+	justify-content: space-around;
+	margin: 5rem;
+	div{
+		padding: 20px;
+		font-size: 3rem;
+		color: @minorText;
+	}
+}	
+
+footer{
+	border: 3px solid #b30047;
+	border-radius: 25px;
+	margin: 20px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	font-size: @smallText;
+	color: @importantText;
 }
