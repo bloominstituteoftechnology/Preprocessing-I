@@ -127,8 +127,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Set every element's box-sizing to border-box */
 
+// VARIABLES
 @headerfont: "Fredoka One", cursive;
 @bodyfont: "Comfortaa", cursive;
 
@@ -138,6 +138,20 @@ table {
 @johnnybg: yellow;
 @bottom-sectionbg: palegreen;
 
+// MIXINS
+.headerText {
+  font-family: @headerfont;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.flexrow(@navbordercolor) {
+  display: flex;
+  flex-direction: row;
+  border: solid @navbordercolor;
+}
+
+/* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
@@ -151,27 +165,14 @@ body {
 h1,
 h2,
 h3 {
-  font-family: @headerfont;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
+  .headerText();
 }
+
 #wrapper {
   width: 90%;
   margin: 0 auto;
 }
 
-header {
-  background: green;
-  // text-align: center;
-  // border-bottom: 1px solid #000;
-  // padding-top: 60px;
-}
-
-.flexrow(@navbordercolor) {
-  display: flex;
-  flex-direction: row;
-  border: solid @navbordercolor;
-}
 .nav-bar {
   width: 100%;
   .flexrow(green);
