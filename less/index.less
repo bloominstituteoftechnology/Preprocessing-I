@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -130,21 +130,30 @@ table {
 /* Set every element's box-sizing to border-box */
 
 @headerfont: "Fredoka One", cursive;
+@bodyfont: "Comfortaa", cursive;
+
 @navbg: pink;
+@topbg: lightblue;
+@resumebg: purple;
+@johnnybg: yellow;
+@bottom-sectionbg: palegreen;
 
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
-  font-family: 'Comfortaa', cursive;
+  font-family: @bodyfont;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   font-family: @headerfont;
   letter-spacing: 1px;
   margin-bottom: 15px;
-
 }
 #wrapper {
   width: 90%;
@@ -158,7 +167,6 @@ header {
   // padding-top: 60px;
 }
 
-
 .flexrow(@navbordercolor) {
   display: flex;
   flex-direction: row;
@@ -167,65 +175,69 @@ header {
 .nav-bar {
   width: 100%;
   .flexrow(green);
-  // display: flex;
-  // flex-direction: row;
   justify-content: flex-end;
   padding-top: 30px;
-  font-size: 18px;
-  // border: solid blue;
+  font-size: 20px;
   background: @navbg;
 
-	a {
-		padding: 30px;
-		margin: 20px;
-		text-decoration: none;
-		align-content: center;
-	}
+  a {
+    padding: 30px;
+    margin: 20px;
+    text-decoration: none;
+    align-content: center;
+  }
+
+  a:hover {
+    background-color: palevioletred;
+    border-radius: 15px;
+    color: white;
+  }
 }
 
 .top-section {
   width: 100%;
   margin: 10px auto;
-  background: lightblue;
+  background: @topbg;
   display: flex;
   align-items: stretch;
   padding: 20px;
-  
-	.resume-img {
-    background-color: purple;
-    width: 300px;
-    height: 300px;
+
+  .resume-img {
+    background-color: @resumebg;
+    width: 450px;
+    height: 450px;
     margin: 20px;
-		padding: 20px;
-		/* box-shadow: 2px 2px 3px #ccc; */
-	}
-	
-	  .johnny {
-      display: flex;
-      flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+  }
 
-      background-color: yellow;
-      width: 70%;
-      font-size: 18px;
-      padding: 30px;
-      
+  .johnny {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: @johnnybg;
+    width: 70%;
+    margin: 20px;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 15px;
+
+    button {
+      width: 150px;
+      margin: 40px 10px;
+      padding: 20px;
+      font-size: 16px;
+      align-content: base-line;
       // text-align: center;
+      align-items: center;
+      border-radius: 10px;
+    }
 
-      button {
-        width: 150px;
-        margin: 40px 10px;
-        padding: 20px;
-        font-size: 16px;
-        align-content: base-line;
-        text-align: center;
-        border-radius: 10px;
-      }
-
-      button:hover {
-        cursor: pointer;
-        background-color: lightblue;
-      }
-   }
+    button:hover {
+      cursor: pointer;
+      background-color: lightblue;
+    }
+  }
 }
 
 .middle-section {
@@ -233,63 +245,64 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  h2, h3 {
+  h2,
+  h3 {
     font-size: 20px;
   }
 
   .middle-left {
     width: 60%;
     border: solid green;
+    padding: 20px;
   }
   .middle-right {
     width: 30%;
     margin: 20px;
 
-      .list {
-        border: 1px solid #ddd;
-        text-align: center;
-       
-        li {
-          padding: 10px;
-          border-bottom: 1px solid #ddd;
-        }
+    .list {
+      border: 1px solid #ddd;
+      text-align: center;
+
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
       }
     }
+  }
 }
 
 .bottom-section {
   padding: 20px;
-  background-color: palegreen;
+  background-color: @bottom-sectionbg;
 
-    .table {
-      border: solid black;
-      width: 100%;
+  .table {
+    border: solid black;
+    width: 100%;
 
-      th, td {
+    th,
+    td {
       padding: 10px;
       // text-align: center;
       border-bottom: 1px solid #ddd;
-       }
-    
-      th {
-        height: 30px;
-        // width: 100%;
-        background-color: lightgrey;
-      }
-
-      td {
-        height: 30px;
-        // width: 100%;
-        // padding: 20px;
-        // text-align: center;
-      }
-
-      .shaded {
-        background-color: lightgrey;
-      }
-    
     }
 
+    th {
+      height: 30px;
+      // width: 100%;
+      background-color: lightgrey;
+    }
+
+    td {
+      height: 30px;
+      // width: 100%;
+      // padding: 20px;
+      // text-align: center;
+    }
+
+    .shaded {
+      background-color: lightgrey;
+    }
+  }
 }
 
 footer {
@@ -299,25 +312,21 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-	#wrapper {
+  #wrapper {
     width: 100%;
     margin: 0;
     background-color: orange;
-  
-	}	
+  }
 }
 
-
 @media screen and (max-width: 500px) {
-	#wrapper {
+  #wrapper {
     width: 80%;
     margin: 0;
     background-color: pink;
 
     .nav-bar {
       flex-direction: column;
-      // align-items: center;
-      
     }
 
     a {
@@ -331,8 +340,5 @@ footer {
     .middle-right {
       display: none;
     }
-	}
+  }
 }
-
-
-
