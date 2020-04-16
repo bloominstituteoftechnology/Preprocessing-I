@@ -29,9 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
+
 ol, ul {
 	list-style: none;
 }
@@ -68,7 +66,11 @@ table {
 	flex-direction: column;
 }
 
-
+.home{
+	.flexcol;
+	align-items: center;
+	justify-content: space-between;
+}
 .heading-style-1{
 	font-variant: small-caps;
 	color: @bg
@@ -80,16 +82,114 @@ table {
 }
 
 html, body {
+	.flexcol;
+	justify-content: flex-start;
+	line-height: 1;
 	height: 100%;
 	background-color: @bg;
 	color: @tc;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-start;
 	font-size: 10px;
-	margin: 1rem;
+
 	line-height: 1.15;
 }
+
+@media (min-width:501px){
+	body{
+		max-width: 1080px;
+		min-width: 501px;
+		margin: 1rem;
+	}
+	.home{
+		max-width: 1080px;
+		min-width: 501px;
+	}
+	.topbox{
+		min-width: 700px;
+	}
+	.upper{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		max-width: 100%;
+	}
+
+	.navlink{
+		text-decoration: none;
+		color: @tc;
+		padding: 0rem 1rem 0rem 1rem;
+	}
+	
+	.mid-box{
+		.flexrow;
+		justify-content: space-between;
+		margin: 0 2rem 0 2rem;
+	}
+	
+	.box1{	
+		width: 50%;
+	}
+	
+	.box2{
+		width: 40%;
+	}
+	
+	
+}
+
+@media (max-width:500px){
+	body{
+		max-width:500px;
+		min-width: 400px;
+	}
+	.upper{
+		display:flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.topbox{
+		width: 80%;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+	}
+
+	#awesome-work{
+		.flexcol;
+		align-items: center;
+		text-align: center;
+	}
+
+	.navbar{
+		align-self: auto;
+		text-align: center;
+		padding: 0;
+		margin: 0
+	}
+
+	.navlink{
+		text-decoration: none;
+		color: @tc;
+		padding: 0rem 1rem 0rem 1rem;
+	}
+
+	.mid-box{
+		.flexcol;
+		align-items: center;
+	}
+	
+	.box1{	
+		widows: 100%;
+		margin: 10px
+	}
+	
+	.box2{
+		width: 40%;
+	}
+	
+
 
 .home{
 	font-size: 2rem;
@@ -98,9 +198,8 @@ html, body {
 .headshot{
 	max-width: 20rem;
 	max-height: 30vh;
-	padding: 1rem;
 	border-radius: 10px;
-	border: solid @bg 5px;
+	border: solid @bg 6px;
 	box-shadow: 1.25rem 1.25rem 4rem;
 
 }
@@ -110,17 +209,12 @@ html, body {
 	flex-direction: row;
 	align-items: center;
 	align-content: center;
-	max-height: 30vh;
 	justify-content: flex-end;
-	padding: 0rem 10rem 1rem 10rem;
+	padding: 0rem 0rem 1rem 0rem;
 	color: @tc;
 }
 
-.navlink{
-	text-decoration: none;
-	color: @tc;
-	padding: 0rem 1rem 0rem 1rem;
-}
+
 
 .navlink:hover{
 	color:blanchedalmond;
@@ -155,11 +249,6 @@ li{
 #awesome-work:hover{
 	color:dodgerblue
 }
-.upper{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-}
 
 .name-title{
 	display: flex;
@@ -183,29 +272,11 @@ li{
 	.heading-style-1;
 }
 
-.list-level-2{
-	padding: 0 0 0 4rem;
-	list-style: circle;
-}
-
 .mid-box h2{
 	.heading-style-2;
 	font-size: 3rem	
 }
 
-.mid-box{
-	.flexrow;
-	justify-content: space-between;
-	margin: 0 2rem 0 2rem;
-}
-
-.box1{	
-	width: 50%;
-}
-
-.box2{
-	width: 40%;
-}
 
 .box2 tr:nth-child(even) {
 	background-color: #666666aa;
