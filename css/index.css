@@ -135,11 +135,17 @@ table {
 .flexcol {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.boxes {
+  margin: 1rem;
+  max-width: 80%;
 }
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
 }
 .heading-style-1 {
@@ -154,6 +160,7 @@ html,
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   line-height: 1;
   height: 100%;
@@ -162,11 +169,34 @@ body {
   font-size: 10px;
   line-height: 1.15;
 }
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  align-items: flex-end;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 1rem 0rem 1rem 0rem;
+  background-color: #c4a688;
+  width: 110%;
+}
+.navlink {
+  text-decoration: none;
+  color: #223344ff;
+}
+.navlink:first-child {
+  padding-left: 5%;
+}
+.navlink:last-child {
+  padding-right: 5%;
+}
 @media (min-width: 501px) {
   body {
     max-width: 1080px;
     min-width: 501px;
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
   }
   .home {
     max-width: 1080px;
@@ -183,7 +213,7 @@ body {
   }
   .navlink {
     text-decoration: none;
-    color: #ccccccff;
+    color: #223344ff;
     padding: 0rem 1rem 0rem 1rem;
   }
   .mid-box {
@@ -195,6 +225,7 @@ body {
   }
   .box1 {
     width: 50%;
+    margin-bottom: 1rem;
   }
   .box2 {
     width: 40%;
@@ -203,7 +234,6 @@ body {
 @media (max-width: 500px) {
   body {
     max-width: 500px;
-    min-width: 400px;
   }
   .upper {
     display: flex;
@@ -224,27 +254,42 @@ body {
     align-items: center;
     text-align: center;
   }
-  .navbar {
-    align-self: auto;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  .navlink {
-    text-decoration: none;
-    color: #ccccccff;
-    padding: 0rem 1rem 0rem 1rem;
-  }
   .mid-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    margin: 1rem;
+    max-width: 80%;
+    align-content: center;
   }
-}
-.home {
-  font-size: 2rem;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+  }
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0rem;
+    margin-bottom: 2rem;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box1 h2 {
+    margin-bottom: 1rem;
+  }
+  .box1 p {
+    margin-bottom: 1rem;
+  }
+  .box2 h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
 .headshot {
   max-width: 20rem;
@@ -253,15 +298,6 @@ body {
   border: solid #223344ff 6px;
   box-shadow: 1.25rem 1.25rem 4rem;
 }
-.navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: flex-end;
-  padding: 0rem 0rem 1rem 0rem;
-  color: #ccccccff;
-}
 .navlink:hover {
   color: blanchedalmond;
 }
@@ -269,12 +305,12 @@ li {
   padding-left: 2rem;
 }
 .topbox {
-  margin: 2rem 2rem 2rem 2rem;
-  padding: 2rem 2rem 2rem 2rem;
+  margin: 4rem 2rem 2rem 2rem;
   background-color: #ddccbbff;
   color: #223344ff;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 #awesome-work {
   display: flex;
@@ -321,8 +357,15 @@ li {
 tr {
   border: solid #ccccccff 1px;
 }
-td {
-  padding: 1rem;
+@media (min-width: 501px) {
+  td {
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  td {
+    padding: 0;
+  }
 }
 .bottom-box tr:nth-child(odd) {
   background-color: #666666aa;
@@ -335,12 +378,38 @@ td {
 .bottom-box {
   margin: 2rem;
 }
+@media (max-width: 500px) {
+  .bottom-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    max-width: 80%;
+  }
+}
 .work-history {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 501px) {
+  .work-history {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .work-history {
+    margin: 1rem;
+    max-width: 80%;
+  }
 }
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem 0 2rem 0;
+}
+.home {
+  font-size: 2rem;
+  width: 100%;
 }

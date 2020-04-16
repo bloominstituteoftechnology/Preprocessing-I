@@ -50,11 +50,14 @@ table {
 * {
     box-sizing: border-box;
 }
+
+// color pallete
 @bg: #223344ff;
 @lc: #ddccbbff;
 @tc: #ccccccff;
 @font: 10px;
 
+// mixins
 .flexrow{
 	display:flex;
 	flex-direction: row;
@@ -64,13 +67,21 @@ table {
 .flexcol{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+}
+
+.boxes{
+	margin: 1rem;
+	max-width: 80%
 }
 
 .home{
 	.flexcol;
-	align-items: center;
+	align-content: center;
 	justify-content: space-between;
 }
+// end mixins
+
 .heading-style-1{
 	font-variant: small-caps;
 	color: @bg
@@ -89,16 +100,43 @@ html, body {
 	background-color: @bg;
 	color: @tc;
 	font-size: 10px;
-
 	line-height: 1.15;
+}
+
+.navbar{
+	.flexrow;
+	position: fixed;
+	align-items: flex-end;
+	text-align: center;
+	justify-content: space-evenly;
+	margin: 0;
+	padding: 1rem 0rem 1rem 0rem;
+	background-color: darken(@lc, 15%);
+	width: 110%;
+	// top: 0;
+}
+
+.navlink{
+	text-decoration: none;
+	color: @bg;
+	// padding: 0rem 1rem 0rem 1rem;
+}
+
+.navlink:first-child{
+	padding-left: 5%;
+}
+
+.navlink:last-child{
+	padding-right: 5%;
 }
 
 @media (min-width:501px){
 	body{
 		max-width: 1080px;
 		min-width: 501px;
-		margin: 1rem;
+		margin: 0 1rem 1rem 1rem;
 	}
+
 	.home{
 		max-width: 1080px;
 		min-width: 501px;
@@ -115,7 +153,7 @@ html, body {
 
 	.navlink{
 		text-decoration: none;
-		color: @tc;
+		color: @bg;
 		padding: 0rem 1rem 0rem 1rem;
 	}
 	
@@ -123,23 +161,24 @@ html, body {
 		.flexrow;
 		justify-content: space-between;
 		margin: 0 2rem 0 2rem;
+		
 	}
 	
 	.box1{	
 		width: 50%;
+		margin-bottom: 1rem
 	}
 	
 	.box2{
 		width: 40%;
-	}
-	
-	
+	}	
 }
+
 
 @media (max-width:500px){
 	body{
 		max-width:500px;
-		min-width: 400px;
+		// min-width: 400px;
 	}
 	.upper{
 		display:flex;
@@ -162,38 +201,40 @@ html, body {
 		text-align: center;
 	}
 
-	.navbar{
-		align-self: auto;
-		text-align: center;
-		padding: 0;
-		margin: 0
-	}
-
-	.navlink{
-		text-decoration: none;
-		color: @tc;
-		padding: 0rem 1rem 0rem 1rem;
-	}
-
 	.mid-box{
 		.flexcol;
-		align-items: center;
+		.boxes;
+		align-content: center;
 	}
-	
+	.intro{
+		.flexcol;
+		width: 100%;
+		text-align: left;
+	}
 	.box1{	
-		widows: 100%;
-		margin: 10px
+		.flexcol;
+		width: 100%;
+		padding: 0rem;
+		margin-bottom: 2rem
 	}
-	
+
 	.box2{
-		width: 40%;
+		width: 100%;
 	}
-	
+	.box1 h2{
+		margin-bottom: 1rem;
+	}
+	.box1 p{
+		margin-bottom: 1rem;
+	}
 
-
-.home{
-	font-size: 2rem;
+	.box2 h2{
+		text-align: center;
+		margin-bottom: 1rem;
+	}
 }
+
+
 
 .headshot{
 	max-width: 20rem;
@@ -204,15 +245,7 @@ html, body {
 
 }
 
-.navbar{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	align-content: center;
-	justify-content: flex-end;
-	padding: 0rem 0rem 1rem 0rem;
-	color: @tc;
-}
+
 
 
 
@@ -225,12 +258,13 @@ li{
 }
 
 .topbox{
-	margin: 2rem 2rem 2rem 2rem;
-	padding: 2rem 2rem 2rem 2rem;
+	margin: 4rem 2rem 2rem 2rem;
+	// padding: 2rem 2rem 2rem 2rem;
 	background-color: @lc;
 	color: @bg;
 	display: flex;
 	flex-direction: column;
+	width: 100%
 
 }
 
@@ -286,7 +320,13 @@ tr{
 }
 
 td{
-	padding: 1rem;
+	@media (min-width:501px){
+		padding: 1rem;
+	}
+	@media (max-width:500px){
+		padding: 0;
+	}
+
 }
 
 .bottom-box tr:nth-child(odd) {
@@ -300,15 +340,32 @@ td{
 }
 
 .bottom-box{
-	margin: 2rem
+	margin: 2rem;
+	@media (max-width:500px){
+		.flexcol;
+		// align-content: center;
+		.boxes;
+	}
 }
 
 .work-history{
-	width:100%
+	.flexcol;
+	@media (min-width:501px){
+		width:100%;
+	}
+	@media (max-width:500px){
+		.boxes
+	}
 }
 
 .footer{
 	.flexcol;
 	align-items: center;
 	margin: 2rem 0 2rem 0
+}
+
+
+.home{
+	font-size: 2rem;
+	width: 100%;
 }
