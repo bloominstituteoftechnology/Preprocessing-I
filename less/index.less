@@ -80,6 +80,14 @@ table {
 	align-content: center;
 	justify-content: space-between;
 }
+
+.flex(@direction:row, @justify:center, @align:center){
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+	@align-items: @align;
+
+}
 // end mixins
 
 .heading-style-1{
@@ -104,8 +112,10 @@ html, body {
 }
 
 .navbar{
-	.flexrow;
-	position: fixed;
+	.flexrow();
+	position: absolute;
+	top: 0;
+	left: 0;
 	align-items: flex-end;
 	text-align: center;
 	justify-content: space-evenly;
@@ -113,7 +123,6 @@ html, body {
 	padding: 1rem 0rem 1rem 0rem;
 	background-color: darken(@lc, 15%);
 	width: 110%;
-	// top: 0;
 }
 
 .navlink{
@@ -196,7 +205,7 @@ html, body {
 	}
 
 	#awesome-work{
-		.flexcol;
+		.flex(@direction:column);
 		align-items: center;
 		text-align: center;
 	}
@@ -234,8 +243,6 @@ html, body {
 	}
 }
 
-
-
 .headshot{
 	max-width: 20rem;
 	max-height: 30vh;
@@ -244,10 +251,6 @@ html, body {
 	box-shadow: 1.25rem 1.25rem 4rem;
 
 }
-
-
-
-
 
 .navlink:hover{
 	color:blanchedalmond;
