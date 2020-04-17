@@ -1,59 +1,448 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@mobile: ~"only screen and (max-width: 600px)";
+@red: red;
+@import "anim.css";
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+.border-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+div {
+  width: 1000px;
+  display: flex;
+  background: #820000;
+  background: -moz-linear-gradient(-45deg, #820000 0%, #1C6EA4 50%, #F0F0F0 100%);
+  background: -webkit-linear-gradient(-45deg, #820000 0%, #1C6EA4 50%, #F0F0F0 100%);
+  background: linear-gradient(135deg, #820000 0%, #1C6EA4 50%, #F0F0F0 100%);
+  align-self: center;
+}
+* {
+  box-sizing: border-box;
 }
 body {
-	line-height: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Lato';
+  align-self: center;
 }
-ol, ul {
-	list-style: none;
+span {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #ffffff;
+  font-weight: normal;
+  text-decoration: underline solid rgb(255, 255, 255);
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  align-self: center;
 }
-blockquote, q {
-	quotes: none;
+.mainCont {
+  width: 100%;
+  background-color: white;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+.mainContBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  -webkit-column-rule: 1px solid rgba(28,110,164,0.5);
+  -moz-column-rule: 1px solid rgba(28,110,164,0.5);
+  column-rule: 1px solid rgba(28,110,164,0.5);
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
+  border: 5px outset #1C6EA4;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.navLink {
+  justify-content: space-between;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 25px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  color: #ececec;
+  font-weight: 400;
+  text-decoration: underline solid rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+a:hover {
+  color: red;
+}
+.myButton {
+  width: 25%;
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #ffee66;
+  align-self: center;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.img {
+  display: inline-flex;
+  height: 100px;
+  position: initial;
+  left: 50%;
+  right: 50%;
+  justify-content: space-between;
+}
+#titleImg {
+  width: 100%;
+}
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.container2 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+/******                  ******/
+/***** BREAK POINTS 1000 *****/
+/******                 ******/
+@media (max-width: 1000px) {
+  .img{
+    display: inline-flex;
+  }
+  #titleImg{
+    display: inline-flex;
+  }
+  .navLink{
+    font-size: 16px;
+    color: black;
+  }
+  div{
+    width: 95%;
+    background-color: white;
+  }
+  body{
+    width: 95%;
+    background-color: white;
+    color: black;
+  }
+  .mainContBox{
+    width: 95%;
+    display: inline-flex;
+    flex-direction: column;
+    align-self: center;
+    box-shadow: 1px 1px 3px 1px #000000;
+    border: 1px outset #1C6EA4;
+    background-color: slategray;
+  }
+  .mainCont{
+    width: 95%;
+    background-color: white;
+  }  
+  span{
+    width: 95%;
+    background-color: white;
+    color: black;
+
+  }
+  #titleImg {
+    width: 75%;
+  }
+  div {
+    display: flex;
+    background: white;
+    align-self: center;
+  }
+}
+.mainContBox:hover {
+  color: powderblue;
+}
+.myButton:hover {
+  color: red;
+}
+/******                  ******/
+/***** BREAK POINTS 750 *****/
+/******                 ******/
+@media (max-width: 750px) {
+  .img{
+    display: none;
+  }
+  #titleImg{
+    display: inline-flex;
+  }
+  .navLink{
+    font-size: 16px;
+    color: black;
+  }
+  div{
+    width: 95%;
+    background-color: white;
+  }
+  body{
+    width: 95%;
+    background-color: white;
+    color: black;
+  }
+  .mainContBox{
+    width: 95%;
+    display: inline-flex;
+    flex-direction: column;
+    align-self: center;
+    box-shadow: 1px 1px 3px 1px #000000;
+    border: 1px outset #1C6EA4;
+    background-color: slategray;
+  }
+  .mainCont{
+    width: 95%;
+    background-color: white;
+  }  
+  span{
+    width: 95%;
+    background-color: white;
+    color: black;
+
+  }
+  #titleImg {
+    width: 75%;
+  }
+  div {
+    display: flex;
+    background: white;
+    align-self: center;
+  }
+}
+.mainContBox:hover {
+  color: powderblue;
+}
+.myButton:hover {
+  color: red;
 }
 
-html, body {
+/******BUTTON***TEST*******/
+nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1px 0;
+  box-shadow: 0px 5px 0px #dedede;
+  }
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: rgb(240, 236, 11);
+}
+
+
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: rgb(240, 236, 11);
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #fff;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+/* Circle */
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+}
+
+/* SHIFT */
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #91640F;
+}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #F1C40F;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+
+
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
     height: 100%;
+    background: rgb(21, 135, 228);
+  }
+  
 }
 
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
