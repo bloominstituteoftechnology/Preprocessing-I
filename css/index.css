@@ -1,1 +1,289 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+  }
+  
+  header {
+	margin-top: 35px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: flex-end;
+  }
+  
+  header nav a {
+
+	font-size: 13px;
+	margin-right: 25px;
+	color: grey;
+	text-decoration: none;
+	align-items: flex-end;
+	padding: 15px;
+  }
+  	
+  .logo {
+	  display: flex;
+	  justify-content: center;
+	  align-content: center;
+  }
+  .logo .logo-text {
+	display: flex;
+	flex-direction: column;
+	margin-top: 120px;
+	text-align: center;
+	padding: 0px 75px;
+	}
+	
+	.logo .logo-text h1 {
+		font-size: 77px;
+	}
+  
+  .logo .logo-text button {
+	background: white;
+	vertical-align: top;
+	margin-top: 6px;
+	padding: 8px 44px;
+	font-size: 17px;
+	border: 1px solid black;
+	cursor: pointer;
+  }
+  
+  .logo .logo-text button:hover {
+	background: black;
+	color: white;
+  }
+  
+  .logo img {
+	margin-top: 69px;
+  }
+  
+  .main-content {
+	border-top: 2px solid black;
+	margin-top: 76px;
+	padding-top: 39px;
+  }
+  
+  .main-content .top-content {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	flex-direction: row;
+  }
+
+  .main-content .top-content .text-content {
+	width: 410px;
+	margin-right: 34px;
+  }
+  
+  .main-content .top-content .text-content:last-child {
+	margin-right: 0;
+  }
+  
+  .main-content .middle-img {
+	margin-top: 45px;
+  }
+  
+  .main-content .bottom-content {
+	margin-top: 37px;
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	border: none;
+  }
+  
+  .main-content .bottom-content .text-content {
+	width: 275px;
+	margin-right: 12px;
+	flex-direction: column;
+  }
+  
+  .main-content .bottom-content .text-content:last-child {
+	margin-right: 0;
+  }
+  
+  .contact {
+	margin-top: 57px;
+	border-top: 2px solid black;
+	padding: 39px 10px 0;
+  }
+  
+  .contact p {
+	margin: 20px 0;
+  }
+  
+  footer {
+	margin: 32px 0;
+	text-align: center;
+	font-size: 14px;
+	}
+
+@media (max-width: 800px) {
+	.container {
+			width: 750px;
+			margin: 10px;
+	}
+	.container header {
+			flex-direction: column-reverse;
+			align-items: center;
+			margin-bottom: 50px;
+	}
+	.container header nav {
+			margin-top: 50px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 750px;
+	}
+	.container .logo .logo-text {
+			margin-top: 0px;
+			width: 750px;
+	}
+	.logo img {
+			display: none;
+			margin-bottom: 10px;
+	}
+	.container .main-content img.middle-img {
+			width: 750px;
+	}
+}
+
+@media (max-width: 500px) {
+	.container {
+			width: 500px;
+			margin-left: 0px;
+	} 
+	.container header {
+			flex-direction: column-reverse;
+			align-items: center;
+			margin-bottom: 10px;
+	} 
+	.container header nav {
+			margin-top: 10px;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			width: 500px;
+			height: 510px;
+			align-items: center;
+	}
+	.container header nav a {
+			width: 500px;
+			height: 100px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border-top: solid black 1px;
+			margin-right: 0px;
+			font-size: 16px;
+	}
+	.container header nav a:last-child {
+		border-bottom: solid black 1px;
+	}
+	.container .logo .logo-text {
+			margin-top: 20px;
+			width: 450px;
+	}
+	.logo img {
+			display: none;
+			margin-bottom: 10px;
+	}
+	.container .main-content img.middle-img {
+			width: 450px;
+			margin-left: 10px;
+	}
+	.main-content .top-content {
+		width: 450px;
+		height: 250px;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 10px;
+	}
+	.main-content img {
+		margin-top: 0px;
+	}
+	.main-content .bottom-content {
+		width: 450px;
+		height: 400px;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-content: space-between;
+	}
+	.main-content .bottom-content .text-content {
+		width: 450px;
+	}
+	.contact {
+		margin-top: 40px;
+	}
+	.footer {
+		margin-bottom: 10px;
+	}
+}
