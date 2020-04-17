@@ -1,5 +1,5 @@
 $(".about").hide();
-//$(".home").hide();//ll;l;
+//$(".home").hide();
 $(".contact").hide();
 $("#about").click(function(){
   $(".about").toggle("show");
