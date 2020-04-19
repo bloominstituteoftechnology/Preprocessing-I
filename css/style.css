@@ -1,0 +1,288 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*-----------------------------------------*/
+/*The reset above is from https://vujson.com/post/2020-css-reset (it is suppose to be 2020 css reset) */
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  background: #99b2c0;
+}
+/*--------------------------------*/
+/*Variable and Mixin*/
+/*used it only for the about section header*/
+/*used it olny for about secition content*/
+.flexStyles {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*Skill underliner defined*/
+.def-Highlight {
+  text-decoration: underline;
+  font-weight: bold;
+}
+/*Container*/
+.container {
+  margin: 2% auto;
+  width: 100%;
+  max-width: 1080px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.container * {
+  margin: 3%;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+/*Header*/
+.nav-mnu-link {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: flex-end;
+}
+nav a {
+  text-decoration: none;
+  padding: 1em;
+  color: #000000;
+  font-weight: bold;
+}
+.container header nav {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px;
+  padding: 30px;
+  background: #a2bece;
+  justify-content: space-evenly;
+}
+.img-top-right {
+  padding: 0px 10px 0px 10px;
+  margin-top: 45px;
+  max-width: 150px;
+  max-height: 200px;
+  width: 100%;
+  align-items: center;
+}
+nav a:hover {
+  background: #99b2c0;
+  color: #ffffff;
+  font-weight: bold;
+}
+/*About*/
+.about {
+  background: #99b2c0;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.about * {
+  padding: 2%;
+}
+.about .phrase {
+  font-family: 'Comic Neue', cursive;
+}
+.about .content {
+  font-family: 'Noto Sans', sans-serif;
+}
+/*middle image */
+.mod-img {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  box-shadow: 1px 1px 10px #000000;
+  border-radius: 5%;
+  margin: 2%;
+}
+/*Skills*/
+.skills ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+.skills ul li {
+  padding: 1%;
+}
+.skills ul li .highlight {
+  text-decoration: underline;
+  font-weight: bold;
+}
+/*Resume*/
+.resume {
+  margin: 3%;
+}
+.resume table,
+.resume tfoot {
+  text-align: center;
+  border: 5px double #000000;
+  margin: 0 auto;
+  width: 90%;
+  background: #a0acb3;
+}
+.resume th {
+  font-weight: 800;
+  text-decoration: underline;
+}
+.resume th,
+.resume td {
+  border: 1px solid #000000;
+  padding: 2%;
+}
+/*Contact*/
+.contact .info {
+  border: 5px dotted #000000;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2;
+}
+/*Footer*/
+.footer p {
+  text-align: center;
+}
+/*Tablet*/
+@media (max-width: 800px) {
+  header nav {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .nav-mnu-link {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 5%;
+  }
+}
+/*Phones*/
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-mnu-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav a {
+    padding: 15px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav a:hover {
+    color: black;
+    background-color: lightblue;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+  }
+}
