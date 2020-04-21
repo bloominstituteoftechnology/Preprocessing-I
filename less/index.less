@@ -1,5 +1,26 @@
+//Colors
+@gray: slategray;
+@blue: dodgerblue;
+
+//Fonts
+@mainFont: ~"'Roboto Slab', serif";
+
+//Mixins
+.fontstyle(@weight) {
+	font-family: @mainFont;
+	font-weight: @weight;
+}
+
+//Mobile
+@phone: ~'(max-width: 500px)';
+
+.displayflex(@display,@direction) {
+	display: @display;
+	flex-direction: @direction;
+}
+
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +34,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +46,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -57,3 +78,247 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+nav {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 40px 0;
+	justify-content: space-between;
+
+	.displayflex(flex,row);
+	.fontstyle(500);
+
+	@media @phone {
+		max-width: 500px;
+		padding: 20px 0;
+		justify-content: space-around;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 2rem;
+		color: @gray;
+		text-transform: uppercase;
+
+		@media @phone {
+		font-size: 1.5rem;
+		}
+
+		&:hover {
+			color: @blue;
+		}
+	}
+}
+
+.mainBanner {
+	width: 100%;
+	background-color: @gray;
+	padding: 40px 400px;
+
+	.displayflex(flex,row);
+
+	@media @phone {
+		max-width: 500px;
+		.displayflex(flex,column);
+		padding: 20px;
+	}
+
+	.image {
+		img {
+			margin-right: 40px;
+
+			@media @phone {
+				width: 100%;
+			}
+		}
+	}
+
+	.mainBannerInfo {
+		font-family: @mainFont;
+		h1 {
+			font-size: 4rem;
+			color: white;
+			text-transform: uppercase;
+			margin: 100px 0 20px 0;
+			line-height: 5rem;
+			@media @phone {
+				margin: 20px 0 10px 0;
+				text-align: center;
+			}
+		}
+		h2 {
+			font-size: 2.5rem;
+			text-align: center;
+		}
+	}
+}
+
+.intro {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 40px 0;
+	.displayflex(flex,row);
+	font-family: @mainFont;
+
+	@media @phone {
+		width: 100%;
+		padding: 20px 0;
+		.displayflex(flex, column);
+	}
+
+	div {
+		width: 50%;
+		padding: 20px;
+		@media @phone {
+			width: 100%;
+		}
+	}
+
+	h2 {
+		font-size: 3rem;
+		color: @blue;
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-family: @mainFont;
+		font-weight: 300;
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+
+	.skills {
+		ul {
+			border: 1px solid @gray;
+			font-weight: 300;
+			font-size: 1.8rem;
+
+			li {
+				padding: 20px 10px;
+				border-bottom: 1px solid @gray;
+			}
+
+			li:last-of-type {
+				border-bottom: none;
+			}
+
+			li:nth-child(2n) {
+				background-color: lighten(@gray, 30%);
+			}
+		}
+	}
+}
+
+.workHistory {
+	width: 1000px;
+	margin: 0 auto;
+	font-family: @mainFont;
+
+	@media @phone {
+		width: 100%;
+		padding: 20px;
+	}
+	h2 {
+		font-size: 3rem;
+		color: @blue;
+		margin-bottom: 20px;
+	}
+
+	.workTable {
+		.displayflex(flex,row);
+
+		ul {
+			width: 33%;
+
+			li {
+				font-size: 2rem;
+				font-weight: 300;
+				padding: 15px 20px;
+				text-transform: capitalize;
+			}
+
+			li:first-of-type {
+				font-weight: 500;
+				color: red;
+			}
+
+			li:nth-child(2n) {
+				background-color: lighten(@gray, 30%);
+			}
+		}
+	}
+}
+
+.contact {
+	width: 1000px;
+	margin: 40px auto;
+	font-family: @mainFont;
+	.displayflex(flex,row);
+
+	@media @phone {
+		width: 100%;
+		padding: 20px;
+		.displayflex(flex, column);
+	}
+
+	div {
+		width: 50%;
+		@media @phone {
+			width: 100%;
+			margin-bottom: 40px;
+		}
+	}
+
+	h2 {
+		font-size: 3rem;
+		color: @blue;
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 2rem;
+		font-weight: 300;
+		line-height: 3rem;
+
+		span {
+			font-weight: 500; margin-right: 10px;
+		}
+	}
+
+	.contactForm {
+		form {
+			.displayflex(flex,column);
+
+			input, textarea {
+				width: 100%;
+				padding: 10px 5px;
+				margin: 10px 0;
+			}
+			input[type="submit"] {
+				color: white;
+				font-size: 2rem;
+				text-transform: capitalize;
+				border: none;
+				padding: 20px;
+				background-color: @gray;
+
+				&:hover {
+					background-color: @blue;
+				}
+			}
+		}
+
+	}
+}
+
+footer {
+	padding: 40px;
+	background-color: @blue;
+	text-align: center;
+	font-size: 2rem;
+	color: white;
+	.fontstyle(500);
+}
