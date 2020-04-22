@@ -130,9 +130,12 @@ table {
 html {
   font-size: 62.5%;
 }
-.flexbox {
-  display: flexbox;
+.media500 {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
 }
 * {
   box-sizing: border-box;
@@ -142,14 +145,22 @@ body {
   max-height: 100%;
   max-width: 100%;
   margin: 5%;
-  display: flexbox;
-  justify-content: center;
   letter-spacing: 0.1rem;
 }
 header {
   max-width: 100%;
+  max-height: 100%;
   background-color: silver;
   padding: 5rem;
+}
+@media screen and (max-width: 500px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 header h1 {
   margin: 2rem;
@@ -167,10 +178,13 @@ section {
   display: flex;
   justify-content: center;
 }
-@media screen (max-width: 480px) {
+@media screen and (max-width: 500px) {
   section {
-    display: row;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 .container1 {
@@ -180,6 +194,15 @@ section {
   display: flexbox;
   justify-content: center;
 }
+@media screen and (max-width: 500px) {
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
 .container1 img {
   max-width: 50rem;
   max-height: 50rem;
@@ -188,27 +211,50 @@ section {
   color: orangered;
   padding: 4rem;
   max-height: 100%;
-  line-height: 2rem;
 }
 div {
   line-height: 1.8rem;
   margin: 2rem;
 }
+@media screen and (max-width: 500px) {
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
 h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 4rem;
-  margin: 2.0rem;
-  padding-bottom: 2.0rem;
-  
+  margin: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  h4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.5rem;
   font-style: italic;
 }
+@media screen and (max-width: 500px) {
+  h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
 p,
 ul {
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
-  margin-bottom: 2.0rem;
 }
