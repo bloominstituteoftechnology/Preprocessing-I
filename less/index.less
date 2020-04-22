@@ -4,6 +4,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,11 +50,95 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+html {
+	font-size: 62.5%;
+}
+// Variables
+@background: royalblue;
+@fonth2p: 'Raleway', sans-serif;
+@fonth4: 'Montserrat', sans-serif;
+
+// Mixins
+.flexbox {
+	display: flexbox;
+	justify-content: center;
+}
+// .purpletext()
+// CSS code  
 * {
     box-sizing: border-box;
 }
-
 html, body {
-    height: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	margin: 5%;
+	display: flexbox;
+	justify-content: center;
+	letter-spacing: 0.10rem;
 }
+
+header {
+	max-width: 100%;
+	background-color: silver;
+	padding: 5.0rem;
+	
+	h1 { 
+		margin: 2rem;
+		display: flex;
+		justify-content: flex-start;
+		font-family: 'Montserrat', sans-serif;
+		font-style: initial;
+		font-size: 5.0rem;
+		h3 {
+			font-family: 'Raleway', sans-serif;	
+			font-size: 2rem;
+		}
+	}
+}
+section {
+	display: flex;
+	justify-content: center;
+
+	@media screen (max-width: 480px) {
+		display: row;
+		justify-content: center;
+	}
+	
+}
+.container1{
+	background-color: @background;
+	margin: 4.0rem;
+	color: white;
+	display: flexbox;
+	justify-content: center;
+	img {
+		max-width: 50.0rem;
+		max-height: 50.0rem;
+	}
+}	
+.container2 {
+	color: orangered;
+	padding: 4.0rem;
+	max-height: 100%;
+}	
+div {
+	line-height: 1.8rem;
+	margin: 2.0rem;
+}
+h4 {
+	font-family: @fonth4;
+	font-size: 4.0rem;
+	margin: 1.5rem
+
+}
+h2 { 
+	font-family: @fonth2p;
+	font-size: 1.5rem;
+	font-style: italic;
+}
+ p, ul {
+	font-family: @fonth2p;
+	font-size: 2.0rem;
+}
+
 
