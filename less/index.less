@@ -54,6 +54,151 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: grey;	
 }
+// reset end
 
+//variables
+@a_border_color:red;
+@a_hover_background-color:black;
+
+//mixins
+.mixins_margins_0_paddings_2{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding:2%;
+}
+.mixins_h1_font_color_margin{
+			font-size: 24px;
+			color:@a_border_color;
+			margin-bottom: 2%;
+		}
+
+.main_container{
+	width:96%;
+	height:100%;
+	margin:2%;	
+	padding:0%;	
+	.top_container{
+		background-color: #cccccc;
+		width:100%;
+		padding-left: 3%;
+		padding-bottom: 3%;
+
+		.picture_and_navi{
+			width:100%;
+			display:flex;		
+			justify-content:space-evenly;		
+			align-items: center;
+			padding:1%;
+			margin:auto;
+	
+			.picture{
+				width: 40%;
+				height: 15%;
+				img{
+					width:100%;
+					height: 100%;
+					//border-radius: 15px;
+				}
+			}
+			.navi{
+				display:flex;
+				flex-wrap:wrap;
+				justify-content: flex-start;
+				width:60%;
+				box-sizing: border-box;
+				margin:5%;
+
+				a{
+					width:120px;
+					height:30px;
+					text-decoration: none;
+					border-style:solid;
+					border-color:@a_border_color;
+					background-color: grey;
+					border-width: 1px;
+					border-radius: 5px;
+					text-align:center;	
+					font-size: 18px;		
+					padding:5px;
+					margin:3%;
+					color:white;
+				}
+				a:hover{
+					background-color:@a_hover_background-color;
+				}	
+		
+			}	
+		}
+		h1{
+			font-size: 50px;
+			color:@a_border_color;
+			.mixins_margins_0_paddings_2();
+		} 	
+		h3{
+			font-size: 24px;
+			color:@a_border_color;
+			.mixins_margins_0_paddings_2();
+		}		
+		p{
+			.mixins_margins_0_paddings_2();
+		}
+		.Lets_Team_Up{
+			margin-left:2%;
+			padding:1%;
+			font-size: 18px;
+			background-color: grey;
+			text-decoration:none;
+			box-sizing:border-box;
+			color:white;
+			border-color:@a_border_color;
+			border-style: solid;
+			border-width:1px;
+			border-radius: 5px;
+		}
+		a:hover{
+			background-color:@a_hover_background-color;
+		}	
+	
+	} // top container	
+	.mid_container{
+		display:flex;
+		justify-content: start;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		padding:0%;
+	
+		.mid_left_container{
+			width:45%;
+			 h1{
+				.mixins_h1_font_color_margin();
+			 }
+		}
+		.mid_right_container{
+			width:45%;
+			margin-left: 10%;
+			h1{
+				.mixins_h1_font_color_margin();
+			}
+		}
+	}
+	.bottom_container {
+		 h1{
+			.mixins_h1_font_color_margin();
+		}
+		.table{
+			.head{
+				font-weight: bold;
+				th{
+					width: 200px;
+					text-align: left;
+				}
+			}
+			.row{
+				color:black;
+			}
+		}
+	}
+} // main container
