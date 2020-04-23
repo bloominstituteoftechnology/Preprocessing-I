@@ -161,43 +161,68 @@ table {
   height: auto;
   padding-left: 25%;
 }
-.main-container header h1 {
-  color: white;
-  font-size: 50px;
-  font-weight: bold;
+@media screen and (max-width: 500px) {
+  .main-container header {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .main-container header h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+  }
 }
 .main-container .header-container {
   display: flex;
   flex-direction: column;
 }
-.main-container .header-container .header-container-h1cm {
+.main-container .header-container-h1cm {
   display: flex;
   justify-content: space-between;
   padding: 2%;
 }
-.main-container nav {
+@media screen and (max-width: 500px) {
+  .main-container .header-container-h1cm {
+    flex-direction: column;
+  }
+}
+nav {
   display: flex;
   justify-content: center;
 }
-.main-container nav a {
-  margin: 0 20px;
-  border: 1px solid lightgray;
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  /*======= create a background property. Set the value to #F87B99 */
-  background: darkblue;
+@media screen and (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    align-content: center;
+  }
+  nav a {
+    margin: 0 20px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    background: darkblue;
+  }
 }
-.main-container .container-main-content {
+@media screen and (max-width: 500px) and screen and (max-width: 500px) {
+  nav a {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+.container-main-content {
   display: flex;
 }
-.main-container .container-main-content .left-side {
+.container-main-content .left-side {
   background-color: aqua;
   width: 25%;
   padding: 25px;
 }
-.main-container .container-main-content .right-side {
+.container-main-content .right-side {
   background-color: grey;
   width: 75%;
   padding: 25px;
