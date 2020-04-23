@@ -53,47 +53,166 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
+html, body {background-color: white;
 	height: 100%;
 }
 
-.flex{}
-.button{background-color: grey;
+@newblue:rgb(50, 50, 158);
+
+.flex{
+	display: flex;
+}
+
+.button{
+	background-color: grey;
 	margin:5%;
 	border: 5px darkgrey outset;
-}	
-.a{
+
+	a{
 		color:whitesmoke; 
 		text-decoration: none;
 		font-weight: bold;
+	}
+	
 }
 
+.head{
+	font-size: 24px;
+	color:white;
+}
+
+
 header{
-	background-color: navy;
+	background-color: @newblue;
 	color:white;
 	
 	nav{
-		display: flex;
+		.flex();
 		justify-content: flex-end;
 		margin:3%;
+		margin-top: 0%;
+		padding-top: 3%;
 		
 		button{
-			background-color: grey;
-			margin:5%;
-			border: 5px darkgrey outset;
-			
-			a{
-				color:whitesmoke; 
-				text-decoration: none;
-				font-weight: bold;
-			}
-		
+			.button();	
 		}
 			
 	}
 	
+	img{
+		border: 10px lightgray outset;
+		margin-left: 450px;
+		
+		
+		
+	}
+
+	h1{
+		font-size: 32px; .flex();
+		justify-content:center;}
+
+	p{
+		width:70%;
+		margin-top: 3%;
+		margin-left: 300px;
+	}
+
 	button{
 		.button();
-		.a();
+		margin-left: 690px;
 	}
+
+	@media(max-width:500px){
+		
+		nav{
+			.flex();
+			justify-content: center;
+			align-items: center;	
+		}
+
+		img{
+			margin-left: 50px;
+			width:400px;
+			height:400px;
+		}
+
+		p{margin-left: 50px;}
+
+		button{margin-left:200px;}
+	}
+
+}
+
+.sec1{
+	background-color: gray;
+	color:@newblue;
+	.flex();
+	flex-direction: row;
+	
+	 h4{
+	 	.head();
+	}
+
+	#div1{
+		
+		width:550px;
+		margin-right: 200px;
+		margin-left: 50px;
+	}
+
+	#div2{
+		
+		width:550px;
+	}
+
+	@media(max-width:500px){
+			.flex();
+			flex-direction: column;
+			
+			
+			#div1{
+				padding:2%;
+				width:400px;}
+
+			#div2{padding:2%;
+				width:400px;
+			margin-left: 50px;}
+		
+	}
+
+}
+.sec2{
+	background-color: @newblue;
+	color: white;
+	.flex();
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 3%;
+
+	h4{
+		.head();
+	}
+
+	table, th, td {
+		padding:15px;
+		border: 5px outset gray;
+		margin-bottom: 3%;
+	  }
+}
+
+footer{
+	background-color: gray;
+	.flex();
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 3%;
+	color:@newblue;
+	padding-bottom: 3%;
+
+	h4{
+		.head();
+	}
+
 }
