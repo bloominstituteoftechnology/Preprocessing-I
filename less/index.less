@@ -59,22 +59,54 @@ html, body {
 	height: 100%;
 }
 
+
+// ## EXAMPLE OF VARIABLES
+@variableColor: powderblue;
+@variableBoxColor: rgb(38, 6, 247);
+@variableFontFamily: Fira Sans, sans-serif;
+
+// ## EXAMPLE OF MIXINS
+
+.mixin1 {
+	width: 45%;
+	border-style: solid;
+	// border-color: red;
+	border-color: @variableColor;
+	border-width: 3px;
+	border-radius: 10px;
+	margin: 1.75rem 1.75rem 1.75rem 1.75rem;
+	// background-color: yellow;
+	background-color: @variableBoxColor;
+	padding: 1.5rem;	
+	font-family: @variableFontFamily;
+}
+
+.marginDimensionsShortcut {
+	margin: 1.5rem 1.5rem 1.5rem 0rem;
+
+}
+
+
+
 .boxFrame {
 	border-width: 2px;
 	border-style: solid;
 	margin: 10%;
-	color: darkslategray;
+	// color: darkslategray;
+	color: @variableColor;
 	padding: 5%;
 }
 
 h1 {
 	font-size: 7.0rem;
-	font-family: Fira Sans, sans-serif;
+	// font-family: Fira Sans, sans-serif;
+	font-family: @variableFontFamily;
 }
 
 h2 {
 	font-size: 5.0rem;
-	font-family: Fira Sans, sans-serif;
+	// font-family: Fira Sans, sans-serif;
+	font-family: @variableFontFamily;
 }
 
 h3 {
@@ -96,19 +128,50 @@ h1 nav {
 	margin-left: 5%;
 }
 
+// ## NESTING EXAMPLE 
+
 .navigationBar {
 
 	display: flex;
 	justify-content: flex-end;
+	@media (max-width: 500px){flex-direction: column; }
+	text-align: space-between;
 	font-size: 2.5rem;
-	color: black;
-	font-family: Fira Sans, sans-serif;
-}
+	// color: black;
+	color: @variableColor;
+	// font-family: Fira Sans, sans-serif;
+	font-family: @variableFontFamily;
 
-li {
-	margin: 2.0rem;
-	color: black;
-}
+				a {
+				margin: 2.0rem;
+				background-color: none;
+				color: rgb(201, 51, 51);	
+				text-decoration: none;
+					@media (max-width: 500px) {
+						color: orange;
+
+		}
+
+	}
+		
+	}
+
+	// ## ORIGINAL CODE THAT I LATER NESTED 
+// .navigationBar {
+
+// 	display: flex;
+// 	justify-content: flex-end;
+// 	font-size: 2.5rem;
+// 	color: black;
+// 	font-family: Fira Sans, sans-serif;
+// }
+
+// li {
+// 	margin: 2.0rem;
+// 	color: black;
+// }
+
+
 
 
 img {
@@ -117,39 +180,48 @@ img {
 	border-radius: .5rem;
 	margin: 5rem 5rem 5rem 0rem;
 	border-style: solid;
-	border-color: red;
+	// border-color: red;
+	border-color: @variableColor;
 	border-width: 3px;	
 }
 
 .slogan {
 	font-weight: bold;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	color: salmon;
+	// color: salmon;
+	color: @variableColor;
 	font-size: 3rem;
 	margin: 11.5rem 1.5rem 1.5rem 0rem;
 }
 
+
 .hireMeText {
 	font-weight: bold;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	color: salmon;
+	// color: salmon;
+	color: @variableColor;
 	font-size: 3rem;
 	margin: 1.5rem 1.5rem 1.5rem 0rem;
 }
 
 .hireMeButton {
-	margin: 1.5rem 1.5rem 1.5rem 0rem;
+	// margin: 1.5rem 1.5rem 1.5rem 0rem;
+	.marginDimensionsShortcut;
 	padding: 1.5rem;
-	background-color: salmon;
+	// background-color: salmon;
+	background-color: @variableColor;
 	border-radius: 1.5rem;
 	border-style: dashed;
+	font-family: @variableFontFamily;
 
 }
 
 .hireMeButton:hover {
-	margin: 1.5rem 1.5rem 1.5rem 0rem;
+	// margin: 1.5rem 1.5rem 1.5rem 0rem;
+	.marginDimensionsShortcut;
 	padding: 1.5rem;
-	background-color: rgb(206, 74, 60);
+	// background-color: rgb(206, 74, 60);
+	background-color: @variableColor;
 	border-radius: 1.5rem;
 	border-style: dashed;
 }
@@ -161,47 +233,63 @@ img {
 }
 
 .introBox {
-	width: 45%;
-	border-style: solid;
-	border-color: red;
-	border-width: 3px;
-	border-radius: 10px;
-	margin: 1.75rem 1.75rem 1.75rem 1.75rem;
-	background-color: yellow;
-	padding: 1.5rem;	
+	.mixin1()
+	// width: 45%;
+	// border-style: solid;
+	// // border-color: red;
+	// border-color: @variableColor;
+	// border-width: 3px;
+	// border-radius: 10px;
+	// margin: 1.75rem 1.75rem 1.75rem 1.75rem;
+	// // background-color: yellow;
+	// background-color: @variableBoxColor;
+	// padding: 1.5rem;	
+	// font-family: @variableFontFamily;
 }
 
 .skillsBox {
-	width: 45%;
-	border-style: solid;
-	border-color: red;
-	border-width: 3px;
-	border-radius: 10px;
-	margin: 1.75rem 1.75rem 1.75rem 1.75rem;
-	background-color: yellow;
-	padding: 1.5rem;
+	.mixin1()
+	// width: 45%;
+	// border-style: solid;
+	// // border-color: red;
+	// border-color: @variableColor;
+	// border-width: 3px;
+	// border-radius: 10px;
+	// margin: 1.75rem 1.75rem 1.75rem 1.75rem;
+	// // background-color: yellow;
+	// background-color: @variableBoxColor;
+	// padding: 1.5rem;
+	// font-family: @variableFontFamily;
 }
 
 .workHistoryBox {
-	width: 45%;
-	border-style: solid;
-	border-color: red;
-	border-width: 3px;
-	border-radius: 10px;
-	margin: 1.75rem 1.75rem 1.75rem 1.75rem;
-	background-color: yellow;
-	padding: 1.5rem;
+	.mixin1()
+	// width: 45%;
+	// border-style: solid;
+	// // border-color: red;
+	// border-color: @variableColor;
+	// border-width: 3px;
+	// border-radius: 10px;
+	// margin: 1.75rem 1.75rem 1.75rem 1.75rem;
+	// // background-color: yellow;
+	// background-color: @variableBoxColor;
+	// padding: 1.5rem;
+	// font-family: @variableFontFamily;
 }
 
 .contactBox {
-	width: 45%;
-	border-style: solid;
-	border-color: red;
-	border-width: 3px;
-	border-radius: 10px;
-	margin: 1.75rem 1.75rem 1.75rem 1.75rem;
-	background-color: yellow;
-	padding: 1.5rem;
+	.mixin1()
+	// width: 45%;
+	// border-style: solid;
+	// // border-color: red;
+	// border-color: @variableColor;
+	// border-width: 3px;
+	// border-radius: 10px;
+	// margin: 1.75rem 1.75rem 1.75rem 1.75rem;
+	// // background-color: yellow;
+	// background-color: @variableBoxColor;
+	// padding: 1.5rem;
+	// font-family: @variableFontFamily;
 }
 
 .space5Rem {
@@ -210,5 +298,7 @@ img {
 
 .footerBox {
 	padding: 5rem 5rem 5rem 5rem;
-	background-color: black;
+	// background-color: black;
+	background-color: @variableBoxColor;
+	font-family: @variableFontFamily;
 }
