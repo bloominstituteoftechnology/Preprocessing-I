@@ -62,28 +62,53 @@ body {
 nav {
 	display: flex;
 	justify-content: flex-end;
+
+	@media (max-width:500px) {
+		justify-content: center;
+		align-items: center; 
+	}
+		
+
 		a {
 			text-transform: uppercase;
 			font-size: 1.0rem;
 			text-decoration: none;
 			padding: 10px 30px;
 			margin: 0px;
-			color: #323232;
+			color: @theme-color;	
+
 		&:hover {
-			background-color: #323232;
-			color: #e8f9e9;
+			background-color: @theme-color;
+			color: @hover-color;
 			border-top-left-radius: 5rem;
 			border-top-right-radius: 5rem;
 			border-bottom-left-radius: 5rem;
 			border-bottom-right-radius: 5rem;
 			margin: .5rem;
+
+
+				
+			}
 		}
 	}
-}
+
 	
 .logo-image {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: auto;
+
+	img {
+
+	@media (max-width:500px) {
+		width: 450px;
+		height: 200px;
+		display: flex;
+		align-items: center;
+	}
+
+}
 }
 
 
@@ -93,8 +118,28 @@ p {
 }
 
 .skills-section {
-	width: 100%;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: auto;
+	
+
+	img {
+
+	@media (max-width:500px) {
+		width: 350px;
+		height: 150px;
+		
+		
+		}
+	}
+}
+
+.work-history-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 h2 {
@@ -118,7 +163,7 @@ footer {
 	.footer-container {
 		align-items: center;
 		background-color: @theme-color;
-		color: #e8f9e9;
+		color: @hover-color;
 		display: flex;
 		font-size: .8rem;
 		justify-content: center;
