@@ -1,4 +1,4 @@
-// Is this working?
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -48,12 +48,138 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+/*MY CODE BELOW*/
+
+@theme-color: #323232;
+@hover-color: #e8f9e9;
+
+.def-align {
+	align-items: center;
 }
 
-html, body {
-    height: 100%;
+.def-just {
+	justify-content: center;
 }
 
+body {
+	background-color: #FFFFFF;
+	margin: 0;
+	font-family: corbel;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+
+	@media (max-width:500px) {
+		display: flex;
+		.def-align();
+		background-color:#f19292;
+	}
+		
+
+		a {
+			text-transform: uppercase;
+			font-size: 1.0rem;
+			text-decoration: none;
+			padding: 10px 30px;
+			margin: 0px;
+			color: @theme-color;	
+
+		&:hover {
+			background-color: @theme-color;
+			color: @hover-color;
+			border-top-left-radius: 5rem;
+			border-top-right-radius: 5rem;
+			border-bottom-left-radius: 5rem;
+			border-bottom-right-radius: 5rem;
+			margin: .5rem;
+
+
+				
+			}
+		}
+	}
+
+	
+.logo-image {
+	display: flex;
+	flex-direction: column;
+	.def-align();
+	width: auto;
+
+	img {
+
+	@media (max-width:500px) {
+		width: 450px;
+		height: 200px;
+		display: flex;
+		.def-align();
+	}
+
+}
+}
+
+
+p { 
+	width: 100%;
+	text-align: center;
+}
+
+.skills-section {
+	display: flex;
+	flex-direction: column;
+	.def-align();
+	width: auto;
+	
+
+	img {
+
+	@media (max-width:500px) {
+		width: 350px;
+		height: 150px;
+		
+		
+		}
+	}
+}
+
+.work-history-section {
+	display: flex;
+	.def-just();
+	.def-align();
+	flex-direction: column;
+}
+
+h2 {
+	display: flex;
+	.def-just();
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	color: #f19292;
+}
+
+
+
+footer {
+	display: flex;
+	height: 5vh;
+	.def-just();
+	position: relative;
+	width: 100%;
+	.footer-container {
+		align-items: center;
+		background-color: @theme-color;
+		color: @hover-color;
+		display: flex;
+		font-size: .8rem;
+		justify-content: center;
+		width: 75%;
+		border-top-left-radius: 5rem;
+		border-top-right-radius: 5rem;
+		border-bottom-left-radius: 5rem;
+		border-bottom-right-radius: 5rem;
+	}
+}
