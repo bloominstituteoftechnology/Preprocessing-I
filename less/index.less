@@ -56,4 +56,157 @@ table {
 html, body {
     height: 100%;
 }
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-even {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+@font-style: Sans-serif;
+@color-1: #7F00AF;
+@color-2: #aaa9ad;
+
+
+.container {
+	width: 90%;
+	margin: auto;
+
+	nav ul {
+		.flex-center();
+		padding-top: 10px;
+		background-color: #aaa9ad;
+		height: 40px;
+		border: 1px solid black;
+
+		li a{
+			font-family: @font-style;
+			padding: 15px;
+			text-decoration: none;
+			font-size: 1.2rem;
+			color: white;
+		}
+	}
+
+	.pro-pic {
+		text-align: center;
+		padding-top: 30px;
+
+		img {
+			border-radius: 100%;
+			height: 150px;
+			margin: auto;
+		}
+	}
+
+	.character-disc {
+		text-align: center;
+		font-family: @font-style;
+
+		h1 {
+			font-size: 1.7rem;
+		}
+
+		p {
+			font-size: .8rem;
+			padding-top: 5px;
+			color: @color-1;
+		}
+	}
+
+	.call-to-action {
+		text-align: center;
+		padding-top: 100px;
+		padding-bottom: 75px;
+
+		p {
+			font-family: @font-style;
+		}
+		button {
+			margin-top: 10px;
+		}
+	}
+
+	.content {
+		display: flex;
+		padding-top: 10px;
+		background-color: @color-2;
+		height: 300px;
+		border: 1px solid black;
+
+		.about {
+			width: 40%;
+			padding-left: 15px;
+			font-family: @font-style;
+			text-align: center;
+
+			@media (max-width: 500px) {
+				width: 80%; 
+			}
+
+			h2 {
+				font-size: 1.5rem;
+				padding-bottom: 10px;
+				color: @color-1;
+			}
+			
+			p {
+				padding: 10px;
+
+				@media (max-width: 500px) {
+					font-size: .7rem; 
+				}
+			}
+		}
+
+		.awards {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+
+			h2 {
+				font-size: 1.5rem;
+				padding-bottom: 10px;
+				color: @color-1;
+			}
+			li {
+				border: 1px solid black;
+				padding: 10px;
+
+				@media (max-width: 500px) {
+					padding: 5px;
+				}
+			}
+		}
+	}
+
+	.hits {
+		height: 200px;
+		padding-top: 20px;
+		border-bottom: 1px solid black;
+		h1 {
+			text-align: center;
+			font-size: 1.5rem;
+			padding-bottom: 15px;
+			color: @color-1;
+		}
+
+		.ul-grid {
+			.flex-even()
+		}
+	}
+
+	.contact {
+		text-align: center;
+		padding-top: 20px;
+
+		h1 {
+			font-size: 1.7rem;
+			padding-bottom: 10px;
+		}
+	}
+}
 
