@@ -135,6 +135,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.top {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  height: 294px;
+  width: 100%;
+}
 .top-right-triangle {
   width: 0;
   height: 0;
@@ -143,6 +152,7 @@ table {
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 2;
 }
 @media (max-width: 800px) {
   .top-right-triangle {
@@ -197,6 +207,7 @@ table {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 3;
   }
 }
 .right-border {
@@ -207,7 +218,7 @@ table {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1;
 }
 @media (max-width: 800px) {
   .right-border {
@@ -218,6 +229,7 @@ table {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1;
   }
 }
 @media (max-width: 500px) {
@@ -229,14 +241,103 @@ table {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1;
   }
 }
-div > img {
+div.image > img {
   position: fixed;
   top: 72px;
   left: 40px;
   z-index: 4;
   border-radius: 50%;
+  width: 210px;
+  height: 210px;
+}
+div.header > h2 {
+  position: fixed;
+  font-size: 2.5rem;
+  top: 159px;
+  left: 262px;
+  z-index: 4;
+}
+hr {
+  border: 2px solid darkBlue;
+  width: 100%;
+  position: fixed;
+  top: 294px;
+  left: 0;
+  z-index: 0;
+}
+@media (max-width: 800px) {
+  div.image > img {
+    position: fixed;
+    top: 60px;
+    left: 32px;
+    z-index: 4;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+  }
+  div.header > h2 {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 138px;
+    left: 220px;
+    z-index: 4;
+  }
+  hr {
+    border: 1.5px solid red;
+    width: 100%;
+    position: fixed;
+    top: 248px;
+    left: 0;
+    z-index: 0;
+  }
+}
+@media (max-width: 500px) {
+  div.image > img {
+    position: fixed;
+    top: 30px;
+    left: 16px;
+    z-index: 4;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+  }
+  div.header > h2 {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 102px;
+    left: 154px;
+    z-index: 4;
+  }
+  hr {
+    border: 1px solid black;
+    width: 100%;
+    position: fixed;
+    top: 154px;
+    left: 0;
+    z-index: 0;
+  }
+}
+.columns {
+  display: flex;
+  flex-direction: row;
+  margin-top: 314px;
+  min-height: calc(100% - 314px);
+}
+.left-column {
+  width: 35%;
+  border-right: 2px solid darkBlue;
+  padding: 12px;
+  background-color: lightBlue;
+  min-height: calc(100% - 314px);
+}
+.right-column {
+  width: 65%;
+  padding: 12px;
+  background-color: pink;
+  min-height: calc(100% - 314px);
 }
 /* Set every element's box-sizing to border-box */
 * {
