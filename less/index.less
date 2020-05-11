@@ -4,56 +4,360 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+// variables
+
+@font-color-one: #2a6592;
+@background-color-one: #d3d3d3;
+@background-color-two: #f6d8ac;
+@background-color-body: #f0f0f0;
+@accent-color: #8ec3eb;
+@s-font: 1.3rem;
+
+// mixins
+
+.section_header() {
+  width: 100%;
+  font-size: 4rem;
+  text-align: center;
+  color: @font-color-one;
+  background-color: @background-color-one;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.flex_sbt {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main_container {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  background-color: @background-color-one;
+  border-radius: 10px;
+
+  .name {
+    font-size: 5rem;
+    text-align: center;
+    color: @font-color-one;
+  }
+  p {
+    text-align: center;
+    color: @font-color-one;
+    font-size: @s-font;
+  }
+  nav {
+    .flex_sbt;
+    padding: 20px 10%;
+    width: 100%;
+    @media (max-width: 500px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      .flex_center;
+      font-size: 1.5rem;
+      background-color: @accent-color;
+      width: 20%;
+      padding: 5px;
+      border-radius: 10px;
+      @media (max-width: 500px) {
+        width: 100%;
+        margin: 3px 0;
+        padding: 15px 0;
+      }
+    }
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 10%;
+  font-size: @s-font;
+  background-color: @background-color-body;
+  width: 100%;
+
+  .contact {
+    width: 25%;
+    @media (max-width: 500px) {
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      background-color: @background-color-one;
+      width: 75%;
+      color: @font-color-one;
+      border-radius: 10px;
+      padding: 5px 2%;
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+    p {
+      padding: 5px 0;
+    }
+  }
+
+  .profile {
+    display: flex;
+    width: 75%;
+    font-size: @s-font;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      padding-right: 2%;
+      border-right: 7px solid @accent-color;
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+    p {
+      padding: 3px 2%;
+      width: 100%;
+      border-top: 2px solid @accent-color;
+      border-bottom: 2px solid @accent-color;
+    }
+  }
+}
+
+.skills {
+  .flex_sbt;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 20px;
+
+  h2 {
+    .section_header;
+  }
+
+  .skill_container {
+    width: 30%;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
+    ul {
+      list-style: square;
+
+      li {
+        padding: 7px 0;
+      }
+    }
+    .skill_properties {
+      margin: 0 auto;
+      .flex_center;
+      flex-wrap: wrap;
+      font-size: 1.5rem;
+      border: 5px solid @accent-color;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      align-items: center;
+      background-color: @background-color-two;
+      padding: 20px 0;
+      @media (max-width: 500px) {
+        border-radius: 0;
+        width: 100%;
+        font-size: 2rem;
+      }
+
+      h3 {
+        .flex_center;
+        width: 51%;
+      }
+
+      p {
+        .flex_center;
+        width: 51%;
+      }
+    }
+  }
+}
+
+.experience {
+  h2 {
+    .section_header;
+  }
+
+  ul {
+    list-style: square;
+
+    li {
+      padding: 10px 0;
+
+      h3 {
+        font-size: 2rem;
+        padding-bottom: 5px;
+      }
+      .year {
+        background-color: @background-color-two;
+        width: 20%;
+        padding: 5px 0;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        text-align: center;
+        @media (max-width: 500px) {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
