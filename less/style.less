@@ -1,0 +1,344 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*-----------------------------------------*/
+
+/*The reset above is from https://vujson.com/post/2020-css-reset (it is suppose to be 2020 css reset) */
+
+html, body {
+  height: 100%;
+  font-size: 62.5%;
+  background: @full-bg;
+}
+/*--------------------------------*/
+/*Variable and Mixin*/
+@wht-white: rgb(255, 255, 255);
+@top-nav-bg:rgb(162, 190, 206);
+@gry-gray:  rgb(128, 128, 128);
+@blk-black: rgb(0, 0, 0);
+@tbl-bg:  rgb(160, 172, 179);
+@full-bg: rgb(153, 178, 192);
+/*used it only for the about section header*/
+@Comic-Neue: 'Comic Neue', cursive;
+/*used it olny for about secition content*/
+@Noto-Sans: 'Noto Sans',  sans-serif;
+@montserrat: 'Montserrat', sans-serif;
+
+.flexStyles {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*Skill underliner defined*/
+.def-Highlight {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+/*Container*/
+.container {
+  margin: 2% auto;
+  width: 100%;
+  max-width: 1080px;
+  //border: 2px solid @blk-black;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  * {
+    margin: 3%;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+
+/*Header*/
+
+.nav-mnu-link{
+display: flex;
+width: 100%; 
+text-align: center;
+justify-content:flex-end
+}
+
+nav a {
+text-decoration: none;
+padding: 1em;
+color: @blk-black;
+font-weight: bold;
+}
+
+.container header nav{
+display: flex;
+align-items: center;
+margin: 10px 10px;
+padding: 30px;
+background: @top-nav-bg;
+justify-content: space-evenly;
+}
+
+.img-top-right{
+padding: 0px 10px 0px 10px;
+margin-top: 45px;
+max-width: 150px;
+max-height: 200px;
+width: 100%;
+align-items: center
+}
+
+nav a:hover {
+background:@full-bg;
+color: @wht-white;
+font-weight: bold;
+}
+
+/*About*/
+
+.about{
+background: @full-bg;
+width: 90%;
+margin: 0 auto;
+text-align: center;
+
+
+* {
+  padding: 2%;
+}
+.phrase {
+  font-family: @Comic-Neue;
+}
+.content{
+  font-family: @Noto-Sans;
+}
+}
+
+/*middle image */
+.mod-img {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  box-shadow: 1px 1px 10px @blk-black;
+  border-radius: 5%;
+  margin: 2%;
+}
+
+/*Skills*/
+.skills {
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+
+  li{
+    padding: 1%;
+    .highlight{
+      .def-Highlight;
+    }
+  }
+}
+}
+
+/*Resume*/
+
+.resume{
+  margin: 3%;
+
+  table, tfoot{
+    text-align: center;
+    border: 5px double @blk-black;
+    margin: 0 auto;
+    width: 90%;
+    background: @tbl-bg;
+  }
+
+  th{
+    font-weight: 800;
+    text-decoration: underline;
+  }
+  th, td {
+    border: 1px solid @blk-black;
+    padding: 2%;
+  }
+ }
+
+/*Contact*/
+
+.contact {
+  .info {
+    border: 5px dotted @blk-black;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2;
+  }
+}
+
+/*Footer*/
+
+.footer {
+  p {
+    text-align: center;
+  }
+}
+
+
+/*Tablet*/
+@media(max-width: 800px) {
+  header nav {
+    display:  flex;
+    flex-direction:  column-reverse; 
+  }
+
+  .nav-mnu-link {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 5%;    
+  }
+ }
+
+/*Phones*/
+@media(max-width: 500px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-mnu-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+   }
+
+   header nav a {
+     padding: 15px;
+     border-bottom: 1px solid black;
+     width: 100%; 
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+   }
+
+  header nav a:hover{
+     color: black;
+     background-color: lightblue;
+     font-weight: bold;
+     font-weight: bold;
+     border-bottom: 1px solid gray;
+   }
+   .img-top-right{
+    padding: 0px 10px 0px 10px;
+    margin-top: 45px;
+    max-width: 140px;
+    max-height: 140px;
+    width: 100%;
+    align-items: center
+    }
+}
+
+
