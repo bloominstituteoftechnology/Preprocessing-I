@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+/*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+ HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -48,12 +48,137 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+Set every element's box-sizing to border-box */
+@full-width: 100%;
+.full-width(){
+	width: @full-width;
+}
+@text-style: 1px 2px black;
+.text-style() {
+	text-shadow: @text-style;
+}
+
 * {
     box-sizing: border-box;
 }
+html{
+	height: 100%;
+}
+body {
+	height: 100%;
+	background: #973E30 + #333;
+	color: 	#e9bf5c;
+} 
 
-html, body {
-    height: 100%;
+#navbar{
+	height: 75px;
+	.full-width();
+	border-bottom: 2px 	#b5e3ea solid;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background:	#662422;
+	padding-right: 45px;
+	padding-left: 45px;
+	box-shadow: 5px 7px 10px 1px #662422;
+	h1{
+		font-size: 70px;
+		color:	#b5e3ea;
+		text-shadow: 3px 3px black;
+	}
+	a{
+		text-decoration: none;
+		color: 	#e9bf5c;
+		.text-style();
+	}
+}
+#information{
+	padding-top: 80px;
+	padding-bottom: 100px;
+	section{
+		padding: 10px 10px 10px 30px;
+		box-shadow: 5px 7px 10px 1px #662422;
+		background: #973e30; 
+		margin: 30px 15px 0px 0px;
+		width: @full-width;
+		border: 1px dotted black;
+		h2{ 
+			font-size: 35px;
+			text-decoration: underline;
+			.text-style();
+		}
+		p{
+			font-size: 30px;
+			.text-style();
+		}
+	}
+}
+#contact-info{
+	display: flex;
+	flex-direction: column;
+	align-content: center; 
+	label{
+		font-size: 40px;
+		.text-style();
+	}
+	textarea{
+		margin: 30px 20px 30px 10px;
+		height: 100px; 
+	}
+	#submit{
+		background: #4CAF50;
+		border: none;
+		color: white;
+		margin: 0px 15px 15px 0px;
+		height: 45px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	#submit:hover{
+		background: #4CAF50 + #111;
+	}
+}
+#info{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+	padding: 0px 20px 0px 10px;
+	input{ 
+		width: 45%;
+		height: 5vh;
+	} 
 }
 
+#derp-image{
+	height: 200px;
+	width: 350px;
+}
+#main-saitama{
+	.full-width();
+	box-shadow: 5px 7px 10px 1px #662422;
+}
+
+@media (max-width: 800px){
+	#navbar{
+		flex-direction: column;
+		position: static;
+		height: 100px;
+		h1{
+			font-size: 50px;
+		}
+		a{
+			display: none;
+		}
+	}
+	#information{
+		padding-top: 20px;
+	}
+}
+@media (max-width: 500px){
+	#navbar{
+		align-items: flex-start;
+	}
+}
