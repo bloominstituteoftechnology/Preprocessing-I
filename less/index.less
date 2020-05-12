@@ -1,59 +1,282 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
+html {
+    font-family: "Quicksand", sans-serif;
+}
+
+//----------Varbiables Begin--------------
+@main-color: rgba(194, 255, 220, 0.5);
+@secondary-color: white;
+//----------Varbiables End--------------
+
+//----------Mixins Begin--------------
+.spacing {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+//----------Mixins End--------------
 
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
+header {
+    width: 100%;
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    }
+
+    a {
+        margin: 1rem 2rem 1rem 4rem;
+        text-decoration: none;
+        color: white;
+
+        @media (max-width: 500px) {
+            margin: 1rem 0.5rem 1rem 0.5rem;
+        }
+
+        &:hover {
+            color: @main-color;
+        }
+    }
+}
+
+.heading {
+    width: 100%;
+    background-color: #1d1d1d;
+    padding-bottom: 2rem;
+
+    h2 {
+        text-align: center;
+        padding-top: 5rem;
+        font-size: 3rem;
+        color: rgba(194, 255, 220, 0.8);
+
+        @media (max-width: 500px) {
+            padding-top: 2rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    h3 {
+        .spacing(); //Mixin
+        color: lightcyan;
+        font-size: 1.5rem;
+        font-weight: 300;
+
+        @media (max-width: 500px) {
+            padding-top: 2rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+.bg-canvas {
+    background-color: rgba(243, 240, 240, 0.9);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: 40rem;
+
+    @media (max-width: 500px) {
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .left-color {
+        background-color: @main-color;
+        width: 50%;
+        height: 40rem;
+
+        .resume {
+            width: 80%;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0 auto;
+        }
+    }
+
+    h2 {
+        padding: 1rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-weight: 200;
+        padding: 1rem;
+    }
+
+    .right-color {
+        background-color: @secondary-color;
+        width: 50%;
+        z-index: 1;
+        height: 40rem;
+
+        .resume2 {
+            width: 80%;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            margin: 0 auto;
+        }
+
+        h2 {
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        p {
+            font-weight: 200;
+            padding: 1rem;
+        }
+    }
+}
