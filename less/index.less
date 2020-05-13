@@ -49,11 +49,150 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
+//Variables
+@h2-color: purple;
+@h2-font: Century Gothic;
+@h2-font-size: 3rem;
+@waterloo: #848590;
 
-html, body {
-    height: 100%;
-}
 
+//Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  .h2-styles() {
+	font-size: @h2-font-size;
+	color: @h2-color;
+	font-family: @h2-font;
+  }
+  
+  * {
+	box-sizing: border-box;
+  }
+  
+  html,
+  body {
+	height: 100%;
+  }
+  html {
+	font-size: 62.5%;
+  }
+  .container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	font-size: 2rem;
+  
+	nav {
+	  display: flex;
+	  justify-content: flex-end;
+  
+	  @media (max-width: 500px) {
+		.center;
+		background: lightgrey;
+	  }
+  
+	  a {
+		margin: 1%;
+		text-decoration: none;
+		color: black;
+	  }
+	}
+  }
+  
+  .top-section {
+	text-align: center;
+	background: lightgrey;
+	margin: 6%;
+	padding: 4%;
+  
+	h1 {
+	  font-size: 4rem;
+	  color: purple;
+	  display: flex;
+	  font-family: @h2-font;
+	  align-items: center;
+	}
+	.second-heading {
+	  justify-content: flex-end;
+	}
+  }
+  .middle-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 3%;
+	margin: 3%;
+	line-height: 3rem;
+	@media (max-width: 500px) {
+	  background: lightgray;
+	}
+  
+	.text-content {
+	  width: 44%;
+	  flex-direction: column;
+	  .center;
+	  justify-content: flex-start;
+  
+	  @media (max-width: 500px) {
+		width: 100%;
+		.center;
+	  }
+  
+	  h2 {
+		.h2-styles;
+	  }
+	  p {
+		margin-top: 5%;
+		@media (max-width: 500px) {
+		  margin-bottom: 5%;
+		}
+	  }
+	}
+  }
+  
+  .bottom-content {
+	padding: 3%;
+	margin: 3%;
+  
+	@media (max-width: 500px) {
+	  background: lightgray;
+	}
+	.bottom-text h2 {
+	  .h2-styles;
+	  text-align: center;
+	  margin-bottom: 2%;
+	}
+  }
+  
+  .contact {
+	.center;
+	flex-direction: column;
+	margin: 3%;
+  
+	@media (max-width: 500px) {
+	  background: lightgray;
+	}
+	h2 {
+	  .h2-styles;
+	}
+  }
+  table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  td,
+  th {
+	text-align: left;
+	padding: 8px;
+	font-size: 1.7rem;
+  }
+  
+  tr:nth-child(even) {
+	background-color: #dddddd;
+  }
+  
