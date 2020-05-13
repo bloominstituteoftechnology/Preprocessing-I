@@ -1,1 +1,377 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+/******************************************************
+ ******************** Reset Layout ********************
+ ******************************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 62.5%;
+  font-family: 'Helvetica', Arial, sans-serif;
+  height: 100%;
+}
+/******************************************************
+ *********************** Mixins ***********************
+ ******************************************************/
+/******************************************************
+ ********************** Home Page *********************
+ ******************************************************/
+h1 {
+  font-size: 5.32rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.08rem;
+}
+h4 {
+  font-size: 1.88rem;
+}
+h5 {
+  font-size: 1.63rem;
+}
+.container {
+  max-width: 870px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+}
+.home header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .home header {
+    background-color: green;
+    justify-content: center;
+  }
+}
+.home header .main-nav {
+  padding: 3.6% 0;
+  text-decoration: none;
+  width: 34.9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .home header .main-nav {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+}
+.home header .main-nav a {
+  text-decoration: none;
+  color: black;
+}
+@media (max-width: 500px) {
+  .home header .main-nav a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid black;
+    padding: 2% 0;
+  }
+}
+.home .topContent {
+  flex-direction: column;
+  padding: 7.5% 3.9%;
+  background-color: #E9ECEF;
+  padding-bottom: 10.8%;
+  margin-bottom: 4%;
+}
+.home .topContent div {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .home .topContent div {
+    display: flex;
+    justify-content: center;
+  }
+}
+.home .topContent div .selfie {
+  width: 37.3%;
+  height: 37.3%;
+  margin-bottom: 1%;
+}
+.home .topContent h1 {
+  margin-bottom: 2.3%;
+}
+@media (max-width: 500px) {
+  .home .topContent h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+.home .topContent h4 {
+  padding-bottom: 3.7%;
+  border-bottom: 1px solid #D1D4D7;
+  margin-bottom: 3%;
+}
+.home .topContent h5 {
+  line-height: 1.5;
+  margin-bottom: 3.7%;
+}
+.home .topContent .btnLetsTeamUp {
+  border: 1px solid gray;
+  border-radius: 3.5px;
+  background-color: gray;
+  padding: 1.3% 1.45%;
+  color: white;
+  text-decoration: none;
+  font-size: 2.1rem;
+}
+.home .midContent {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .home .midContent {
+    flex-direction: column;
+  }
+}
+.home .midContent .mid-left {
+  flex-direction: column;
+  max-width: 47.2%;
+}
+@media (max-width: 500px) {
+  .home .midContent .mid-left {
+    max-width: 100%;
+  }
+}
+.home .midContent .mid-left h2 {
+  margin-bottom: 2.3%;
+}
+.home .midContent .mid-left p {
+  line-height: 153%;
+  margin-bottom: 5%;
+}
+.home .midContent .mid-right {
+  flex-direction: column;
+  width: 48.3%;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .home .midContent .mid-right {
+    width: 100%;
+  }
+}
+.home .midContent .mid-right h3 {
+  font-size: 2.37rem;
+  margin-bottom: 2.3%;
+}
+.home .midContent .mid-right .goodStuff {
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  height: 81.5%;
+  flex-direction: column;
+}
+.home .midContent .mid-right .goodStuff li h4 {
+  padding: 3.86% 4.8%;
+  font-size: 1.64rem;
+}
+.home .midContent .mid-right .goodStuff li .borderLineBetween {
+  border-bottom: 1px solid gray;
+}
+.home .botContent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4.3%;
+}
+.home .botContent h3 {
+  font-size: 2.4rem;
+  width: 100%;
+  margin-bottom: 1.3%;
+}
+.home .botContent .spreadsheet {
+  display: flex;
+  flex-direction: column;
+}
+.home .botContent .spreadsheet nav {
+  display: flex;
+  border-bottom: 1px solid #DEE2E6;
+  padding: 1.8% 0;
+  padding-left: 1.3%;
+}
+.home .botContent .spreadsheet nav h4 {
+  color: #212529;
+  font-size: 1.7rem;
+}
+.home .botContent .spreadsheet nav .column-yrs {
+  width: 12.1%;
+}
+@media (max-width: 500px) {
+  .home .botContent .spreadsheet nav .column-yrs {
+    width: 15%;
+  }
+}
+.home .botContent .spreadsheet nav .column-company {
+  width: 23.8%;
+}
+@media (max-width: 500px) {
+  .home .botContent .spreadsheet nav .column-company {
+    width: 38%;
+  }
+}
+.home .botContent .spreadsheet nav .column-title {
+  width: 39.6%;
+}
+.home .botContent .spreadsheet nav .column-techUsed {
+  width: 20%;
+}
+.home .botContent .spreadsheet .row-title {
+  border-top: 1px solid #DEE2E6;
+}
+.home .botContent .spreadsheet .evenRow {
+  background-color: #F2F2F2;
+}
+.home footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  padding: 2.8% 0;
+  padding-bottom: 4.5%;
+  color: white;
+}
