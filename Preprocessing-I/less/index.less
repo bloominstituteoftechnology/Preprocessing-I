@@ -1,0 +1,369 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	width: 90%;
+	max-width:800px;
+	margin: 0 auto;
+}
+
+//COMMON VALUES 
+@table-padding: 5px;
+@main-background-color: rgb(220, 220, 231);
+
+//COMMONLY USED SETTINGS
+.links () {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	justify-content: space-between;
+}
+
+.fonts () {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-section-standard () {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.header-margin () {
+	margin: 0px 5% 0px;
+}
+
+.rows () {
+	display: flex;
+	flex-direction: row;
+}
+
+.row-font () {
+	font-size: 1.15rem;
+}
+
+.row-spacing () {
+	width: 25%;
+	justify-content: flex-start;
+	margin: 10px 0px;
+}
+
+.mobile-center {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+}
+
+//TOPBAR
+.top-bar {
+	.content-section-standard;
+	@media (max-width: 500px) {
+		flex-direction: column-reverse;
+		.mobile-center;
+		margin-bottom: 20px;
+	}
+}
+
+.contact {
+	.content-section-standard;
+	.fonts;
+	font-size: 1.2rem;
+	flex-direction: column;
+	justify-content: center;
+	@media (max-width: 500px) {
+		.mobile-center;
+	}
+}
+
+.navBar {
+	.content-section-standard;
+	justify-content: flex-end;
+	align-items: baseline;
+
+	a {
+		.links;
+		font-size: 1.3rem;
+		margin: 20px 0px 20px 20px;
+		.fonts;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	@media (max-width: 500px){
+		.mobile-center;
+	}
+}
+
+//HEADER & INTRO
+.header{
+	.content-section-standard;
+	.fonts;
+	background-color: @main-background-color;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	height: 200px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+
+	h1 {
+		.header-margin;
+		font-size: 3rem;
+		margin-bottom: 10px;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		.header-margin;
+		width: 90%;
+		border-bottom: 1px solid gray;
+		padding-bottom: 10px;
+	}
+
+	p {
+		.header-margin;
+		margin-top: 10px;
+		font-size: 1.2rem;
+	}
+
+	a {
+		.links;
+		.header-margin;
+		margin-top: 10px;
+		font-size: 1.2rem;
+		background-color: rgb(118, 118, 128);
+		padding: 8px;
+		color: white;
+		border-radius: 5px;
+	}
+
+	a:hover {
+		background-color: white;
+		color: rgb(118, 118, 128);
+	}
+
+	@media(max-width: 500px){
+		a{
+			justify-content: center;
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+	}
+}
+
+.main-section {
+	.content-section-standard;
+	.fonts;
+	justify-content: space-between;
+	margin-bottom: 30px;
+
+	@media(max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		.mobile-center;
+		width: 90%
+	}
+}
+
+.listen-up {
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+
+	h2 {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin: 10px 0px;
+	}
+
+	p {
+		font-size: 1.2rem;
+		line-height: 1.3;
+	}
+
+	@media(max-width: 500px){
+		width: 100%;
+		margin-bottom: 20px;
+
+		h2 {
+			text-align: center;
+		}
+	}
+}
+
+.stuff {
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+
+	h3 {
+		font-size: 1.3rem;
+		font-weight: bold;
+		margin: 10px 0px;
+	}
+
+	p {
+		padding: 10px;
+		font-size: 1.2rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		border: 1px solid rgb(207, 207, 207);
+	}
+
+	@media (max-width: 500px) {
+		width: 100%;
+
+		h3 {
+			text-align: center;
+		}
+
+		p {
+			justify-content: center;
+		}
+	}
+}
+
+.work-history {
+	.fonts;
+	.content-section-standard;
+	flex-direction: column;
+
+	h2 {
+		font-size: 1.5rem;
+		font-weight: bold;
+		border-bottom: .75px solid gray;
+		padding-bottom: 5px;
+	}
+
+	@media(max-width: 500px){
+		text-align: center;
+		margin-top: 30px;
+	}
+}
+
+.table {
+	flex-direction: column;
+}
+
+.first-row {
+	.rows;
+
+	h3 {
+		font-size: 1.25rem;
+		font-weight: bold;
+		.row-spacing;
+	}
+}
+
+.second-row {
+	padding-left: @table-padding;
+	.rows;
+	background: @main-background-color;
+
+	p {
+		.row-font;
+		.row-spacing;
+	}
+}
+
+.third-row {
+	padding-left: @table-padding;
+	.rows;
+
+	p {
+		.row-font;
+		.row-spacing;
+	}
+}
+
+.fourth-row {
+	padding-left: @table-padding;
+	.rows;
+	background: @main-background-color;
+
+	p {
+		.row-font;
+		.row-spacing;
+	}
+}
+
+.footer-box {
+	.fonts;
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 40px;
+	display: flex;
+	padding: 20px;
+	background: rgba(160, 160, 173, 0.671);
+
+	footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.2rem;
+		width: 100%;
+	}
+}
