@@ -56,4 +56,188 @@ table {
 html, body {
     height: 100%;
 }
+/* initial commit */
+@myColor: black;
+@h1Size: 2.4rem;
+@pSize: 1.6rem;
+@titleSize: 3.6rem;
+@favColor: gray;
+@mobileValue: 500px;
+@defaultPercent: 100%;
+@defaultMargin: 2%;
+@defaultPadding: 2%;
+@fontStack: Helvetica, Arial, sans-serif;
+@borderBox: solid red 1px;
+.custom-layout(@direction,@justify, @align,@wrap) {
+	display: flex;
+	justify-content: @justify;
+	flex-direction: @direction;
+	align-items: @align;
+	flex-wrap: @wrap;
+  }
+html{
+	font-size: 62.5%;
+}
+.container{
+	max-width: 880px;
+	  margin: 0 auto;
+	  font-family: @fontStack;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+	padding-left: @defaultPadding;
+	padding-right: @defaultPadding;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: left;
+	font-size: @pSize;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color: #fff;
+}
+table th {
+    background-color: black;
+    color: white;
+}
+h1{
+	margin-top: 15px;
+	font-size: @h1Size;
+}
+p{
+	margin-top: 15px;
+	font-size: @pSize;
+	line-height: 2;
+}
+header {
+	.custom-layout(column,none, none,nowrap);
+	width: 100%;
+	h1 {
+	  font-size: @titleSize;	  
+	}
+  
+	nav {
+	  .custom-layout(row,space-between,none,nowrap);
+	  align-self: flex-end;	 
+	  @media( max-width: 500px ) {
+        align-self: center;
+      }
+	  a {
+		font-size: 1.6rem;
+		margin: 10px;
+		text-decoration: none;
+
+		
+		&:hover {
+		  color: @favColor;
+		}
+	  }
+	}
+  }
+.header-content{
+	background-color: #F5F4F3;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: @defaultPadding;
+	padding-left: @defaultPadding;
+	.header-top{
+		padding-top: 10px;
+		padding-bottom:10px;
+		border-bottom: solid 1px gray;
+		img{
+			width:30%;
+			height:auto;
+			border-radius: 8px;
+		}
+		h2{
+			font-size:1.8rem;
+		}
+	}
+	.header-bottom{
+		@media( max-width: 500px ) {
+			display: flex;
+			flex-wrap: wrap;
+		  }
+		p{
+			width: 80%;
+			@media( max-width: 500px ) {
+				width:100%;
+			  }
+		}
+		button{
+			background-color: darkgray;
+			border-radius: 8px;
+			padding: 10px;
+			margin-top: 15px;
+		}
+	}
+}
+.main-content{
+	.custom-layout(row, none, none,wrap);
+	.top-content{
+		.custom-layout(row, space-between, none, nowrap);
+		@media( max-width: 500px ) {
+			flex-wrap: wrap;
+		  }
+		div{
+			width: 45%;
+			@media( max-width: 500px ) {
+				width:100%;
+			  }
+		}
+	}
+	.bottom-content{
+		width: 100%;
+	}	
+}
+.container{
+	footer{
+		text-align: center;
+		width: 100%;
+		background-color: darkgray;
+	}
+}
+.container-contact{
+	/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container-contact {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+label{
+	font-size: 3.6rem;
+}
+}
 
