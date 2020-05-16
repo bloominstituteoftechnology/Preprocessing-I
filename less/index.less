@@ -48,12 +48,139 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+//===========  variables  ===========
+
+@border-color: black;
+@main-font: Arial, sans-serif;
+
+//===========  mixins  ===========
+
+.flex-between() {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-end() {
+	display: flex;
+	justify-content: flex-end;
+}
+
+//===========  general Styles  ===========
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: @main-font;
+	line-height: 1.25;
+	margin: 0 10px;
 }
 
+.container {
+	max-width: 840px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+}
+
+h2 {
+	font-size: 2rem;
+	padding: 20px 0;
+}
+
+//===========  header Styles  ===========
+
+header {
+	.flex-end;
+	padding-right: 20px;
+	
+	@media (max-width: 500px) {
+		padding: 0px 20px;
+	}
+	
+
+	nav{
+		width: 300px;
+		.flex-between;
+		margin: 30px 0;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+
+		a {
+			color: @border-color;
+			text-decoration: none;
+			font-size: 2rem;
+		}
+	}
+}
+
+.intro {
+	background-color: lightgray;
+	padding: 20px;
+	border-radius: 5px;
+
+	img {		
+		border-radius: 5px;
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 3rem;
+		padding-top: 20px;
+
+		@media (max-width: 500px) {
+			font-size: 2.5rem;		
+		}
+	}
+
+	p {
+		border-top: 1px solid @border-color;
+		padding: 20px 0;
+	}
+
+	.button {
+		background-color: grey;
+		padding: 20px;
+		border-radius: 5px;
+		width: 175px;
+		text-align: center;
+		color: white;
+	}
+}
+
+.about-me {
+	.flex-between;
+	flex-wrap: wrap;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
+	.stuff {
+		width: 48%;
+		margin-bottom: 20px;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+
+		.list {
+			display: flex;
+			flex-direction: column;
+
+			p {
+				padding: 10px 20px;
+				border: 1px solid @border-color;
+			}
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	margin: 20px 0;
+}
