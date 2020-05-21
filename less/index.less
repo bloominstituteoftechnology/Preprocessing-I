@@ -56,6 +56,19 @@ table {
 @standard-margin: 2rem;
 @standard-padding: .3rem;
 
+.h1-titles {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	margin-bottom: @standard-margin;
+}
+
+.content-margins {
+	margin-top: @standard-margin;
+	margin-left: @standard-margin;
+	margin-right: @standard-margin;
+	margin-bottom: @standard-margin;
+}
+
 html, body {
     height: 100%;
 		font-family: 'Open Sans', sans-serif;
@@ -122,10 +135,7 @@ img.heading-name {
 }
 
 div.intro {
-	margin-right: @standard-margin;
-	margin-left: @standard-margin;
-	margin-top: @standard-margin;
-	margin-bottom: @standard-margin;
+	.content-margins ()
   display: flex;
 	font-size: 1.1rem;
 	font-style: italic;
@@ -133,23 +143,15 @@ div.intro {
 }
 
 div.employment {
-	margin-top: @standard-margin;
-	margin-left: @standard-margin;
-	margin-right: @standard-margin;
-	margin-bottom: @standard-margin / 4;
+	.content-margins ()
 }
 
 div.employer-details-list {
-	margin-top: @standard-margin / 4;
-	margin-left: @standard-margin;
-	margin-right: @standard-margin;
-	margin-bottom: @standard-margin;
+	.content-margins ()
 }
 
 h1.employment {
-	font-size: 1.5rem;
-	font-weight: bolder;
-	margin-bottom: @standard-margin;
+	.h1-titles ()
 }
 
 section.employer-details {
@@ -180,9 +182,7 @@ div.skills {
 }
 
 h1.skills {
-	font-size: 1.5rem;
-	font-weight: bolder;
-	margin-bottom: @standard-margin;
+	.h1-titles ()
 }
 
 section.skills-details {
@@ -192,4 +192,25 @@ section.skills-details {
 
 ul.skills-details {
 	flex-direction: column;
+}
+
+@media (max-width: 500px) {
+
+	a.heading-contact {
+		color: blue;
+
+		a.heading-contact:link {
+
+			}
+
+		a.heading-contact:visited {
+
+			}
+
+	}
+
+	a.heading-contact:hover {
+
+	}
+
 }
