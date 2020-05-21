@@ -51,29 +51,29 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
 	box-sizing: border-box;
-	font-family: @font-type;
 }
 
-@font-color: white;
-@font-type: font-family: 'Roboto Condensed', sans-serif;
-@flex-center: align-items: center; justify-content: center;
+@font-color: #e0e0e0;
+// @font-type:'Roboto Condensed', sans-serif;
+// @flex-center: display: flex; justify-content: center; align-items: center;
+
 
 html, body {
 	height: 100%;
-
-	
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 h2{
 	color: @font-color;
 	font-size: 2rem;
 	padding-bottom: 4%;
+	padding-top: 2%;
 	text-align: center;
 }
 
 header {
 	background-image: url("../images/wallpaper.jpg");
-	height: 90%;
+	height: 92.5%;
 	display: flex;
 	justify-content: left;
 	flex-direction: column;
@@ -82,6 +82,7 @@ header {
 		font-size: 4rem;
 		color: @font-color;
 		padding: 12% 0 0 16%;
+		
 	}
 
 	p {
@@ -144,16 +145,20 @@ header {
 			padding: 2% 0 0 2%;
 			width: 40%;
 			font-size: 1.5rem;
+			
 		}
 
 		.navBar {
 			padding: 0% 3%;
+			
 		}
 
 		nav {
 			width: 80%;
 			align-self: flex-start;
+			padding-left: 30%;
 			flex-direction: row;
+			
 		}
 
 		nav a {
@@ -197,12 +202,71 @@ header {
 .myWork {
 	background-image: url("../images/backgroundTree.jpg");
 	background-size: cover;
-	height: 800px;
+	height: 50rem;
 	background-repeat: no-repeat;
+	
 
-	h2{
-		color: white;
+	ul{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 	}
+
+	.backLine {
+	
+		display: flex;
+		justify-content: center;
+		padding-left: 1%;;
+		
+	}
+
+	li {
+		
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		height: 200px;
+		
+	}
+
+	li img {
+		height: 201px;
+	
+	}
+
+	.textContainer {
+		padding: 5%;
+		width: 45%;
+	}
+
+	p{
+		color: @font-color;
+		font-size: 1.5rem;
+	}
+
+	@media screen and (max-width: 800px){
+		
+		li{
+			height: 10%;
+			flex-direction: column;
+		}
+
+		.textContainer{
+			width: 90%;
+		}
+
+		li img{
+			height: 10rem;
+		}
+
+
+	}
+
+}//MyWork
+
+.myWork{
+	height: 1100px;
 }
 
 .divider{
@@ -218,15 +282,14 @@ header {
 	height: 400px;
 	background-repeat: no-repeat;
 	display: flex;
-	@flex-center;
+	align-items: center; 
+	justify-content: center;
 
 	ul{
 		display: flex;
 		list-style-type: disc;
 		flex-direction: column;
 	}
-
-
 
 	li {
 		color: @font-color;
@@ -242,7 +305,8 @@ footer{
 	height: 150px;
 	background-repeat: no-repeat;
 	display: flex;
-	@flex-center;
+	align-items: center; 
+	justify-content: center;
 
 	nav {
 		padding: 1%;
@@ -250,7 +314,8 @@ footer{
 		text-align: center;
 		display: flex;
 		flex-direction: column;
-		@flex-center;
+		align-items: center; 
+		justify-content: center;
 	}
 
 	nav a {
