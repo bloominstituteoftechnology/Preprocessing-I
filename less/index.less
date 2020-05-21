@@ -53,11 +53,18 @@ table {
     box-sizing: border-box;
 }
 
-@standard-margin: 40px;
+@standard-margin: 2rem;
+@standard-padding: .3rem;
 
 html, body {
     height: 100%;
 		font-family: 'Open Sans', sans-serif;
+}
+
+li {
+	padding: @standard-padding;
+	list-style-type: square;
+	margin-left: @standard-margin;
 }
 
 a.heading-contact {
@@ -83,8 +90,9 @@ a.heading-contact:hover {
 }
 
 h1.heading-contact {
-	font-size: 4em;
+	font-size: 4rem;
 	font-weight: bolder;
+	margin-top: @standard-margin;
 	margin-bottom: @standard-margin;
 }
 
@@ -112,15 +120,47 @@ div.intro {
 	margin-top: @standard-margin / 4;
 	margin-bottom: @standard-margin;
   display: flex;
+	font-size: 1.1rem;
+	font-style: italic;
 }
 
 div.employment {
-	margin: @standard-margin;
+	margin-top: @standard-margin;
+	margin-left: @standard-margin;
+	margin-right: @standard-margin;
+	margin-bottom: @standard-margin / 4;
+}
+
+div.employer-details-list {
+	margin-top: @standard-margin / 4;
+	margin-left: @standard-margin;
+	margin-right: @standard-margin;
+	margin-bottom: @standard-margin;
+}
+
+h1.employment {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	margin-bottom: @standard-margin;
 }
 
 section.employer-details {
 	display: flex;
 	flex-direction: row;
+}
+
+div.employer-details-list {
+	display: flex;
+	flex-direction: column;
+}
+
+h2.employer-details {
+	font-weight: bolder;
+	margin-left: @standard-margin;
+}
+
+p.employer-details {
+	text-transform: uppercase;
 }
 
 ul.employer-details {
@@ -129,6 +169,12 @@ ul.employer-details {
 
 div.skills {
 	margin: @standard-margin;
+}
+
+h1.skills {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	margin-bottom: @standard-margin;
 }
 
 section.skills-details {
