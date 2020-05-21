@@ -67,16 +67,28 @@ html, body {
 @third-color: #bb5c37;
 @font-color: #4b0055;
 @button-color: #8e6345;
-@padding: 10px;
+@padding: 20px;
 
 //mixins
+.titlefonts (){
+	font-size: 25px;
+	color: @font-color;
+	font-weight: 700f;
+}
 
+.interior () {
+	margin-left: @padding * 3;
+	margin-right: @padding * 3;
+	padding: @padding * 2;
+	background-color: @main-color;
+}
 
 //styles
 	body {
 		max-width: 1050px;
 		margin: 0 auto;
-		background-color: @third-color;
+		background-color: white;
+		background-image: url("https://i.pinimg.com/originals/c7/57/51/c75751ace6af6d42ccfff2c36bd2488c.png");
 	}
 
 	//header
@@ -84,14 +96,22 @@ html, body {
 		display: flex;
 		background-color: @secondary-color;
 		justify-content: space-between;
+		padding-top: @padding * 2;
+		padding-bottom: @padding;
 		h1 {
 			padding: @padding;
+			.titlefonts();
 		}
 		.navbar {
 			padding: @padding;
 			a {
-				padding-left: @padding;	
-		}
+				padding-left: @padding;
+				.titlefonts();
+				text-decoration: none;
+			}
+			a:hover {
+				color: @third-color;
+			}
 	  }
 	}
 
@@ -105,12 +125,34 @@ html, body {
 		margin-left: @padding * 3;
 		margin-right: @padding * 3;
 		padding: @padding * 2;
-		background-color: @main-color;
-		img {
+		background-color: @third-color;
+		.profile-image {
+			width: 250px;
+			height: 250px;
 			border: 10px solid @secondary-color;
+			background-image: url("https://vignette.wikia.nocookie.net/ravencbbctvseries/images/c/c0/Scooby_Doo.jpg/revision/latest?cb=20180619023113");
+			background-size: cover;
+			transition: ease-in .5s;
 		}
+		.profile-image:hover {
+			border: 10px solid @secondary-color;
+			background-image: url("https://i.pinimg.com/564x/3a/d0/b7/3ad0b7132464268d0591fd645b0c9548.jpg");
+			}
 		h2 {
-
+			.titlefonts ();
+			font-size: 40px;
+		}
+		button {
+			padding: 10px;
+    		background-color: @button-color;
+    		color: white;
+    		font-size: 40px;
+			width: 300px;
+			height: 100px;	
+		}
+		button:hover {
+			background-color: @secondary-color;
+			background-image: url("https://66.media.tumblr.com/7cfec08406bc000fb798af5ee4bcbe22/tumblr_pq6vnwODEE1xwpz8uo2_500.png");
 		}
 	}
 
@@ -120,6 +162,10 @@ html, body {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		.interior ();
+		h2 {
+			.titlefonts ();
+			}
 	}
 
 	//work
@@ -127,10 +173,15 @@ html, body {
 	.work {
 		display: flex;
 		flex-direction: row;
+		.interior ();
+		h2 {
+			.titlefonts();
+		}
 	}
 
 	//footer
 
 	.footer {
-
+		background-color: @secondary-color;
+		padding: @padding;
 	}
