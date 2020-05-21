@@ -3,6 +3,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+// Variables
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,3 +60,77 @@ html, body {
     height: 100%;
 }
 
+//variables 
+
+@main-color: #128a84;
+@secondary-color: #79af30;
+@third-color: #bb5c37;
+@font-color: #4b0055;
+@button-color: #8e6345;
+@padding: 10px;
+
+//mixins
+
+
+//styles
+	body {
+		max-width: 1050px;
+		margin: 0 auto;
+		background-color: @third-color;
+	}
+
+	//header
+	.header {
+		display: flex;
+		background-color: @secondary-color;
+		justify-content: space-between;
+		h1 {
+			padding: @padding;
+		}
+		.navbar {
+			padding: @padding;
+			a {
+				padding-left: @padding;	
+		}
+	  }
+	}
+
+
+
+	//main content
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		margin-left: @padding * 3;
+		margin-right: @padding * 3;
+		padding: @padding * 2;
+		background-color: @main-color;
+		img {
+			border: 10px solid @secondary-color;
+		}
+		h2 {
+
+		}
+	}
+
+	//about
+
+	.about {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	//work
+
+	.work {
+		display: flex;
+		flex-direction: row;
+	}
+
+	//footer
+
+	.footer {
+
+	}
