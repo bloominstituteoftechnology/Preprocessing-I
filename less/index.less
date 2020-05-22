@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -50,10 +50,267 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
+// Variables
+@fontFamily: 'Lato', sans-serif;
+@fontHeading: 'Roboto Slab', serif;
+@defaultFontSize: 1.6rem;
+@defaultFontColor: #1d1d1d;
+@accentColor: #ffcf23;
+@borderColor: #dedede;
+@spaceBottom: 20px;
+@tabletWidth: 800px;
+@mobileWidth: 500px;
+
+// Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.customLayout(@jusitfy) {
+	display: flex;
+	justify-content: @jusitfy;
+}
+
+// Styling starts here
+html {
+	font-family: @fontFamily;
+	font-size: 62.5%;
+	color: @defaultFontColor;
+}
+
+p, li {
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @fontHeading;
+}
+
+strong {
+	font-weight: 900;
+}
+
+.container {
+	font-size: @defaultFontSize;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+// Header
+header {
+	.main-nav {
+		width: 100%;
+		.center;
+
+		@media only screen and (max-width: @mobileWidth) {
+			flex-direction: column;
+		}
+
+		a {
+			margin: 10px 0;
+			padding: 10px 5%;
+			text-decoration: none;
+			color: #000;
+			font-weight: 400;
+
+			@media only screen and (max-width: @mobileWidth) {
+				width: 100%;
+				margin: 0;
+				border-bottom: 1px solid @borderColor;
+				padding: 20px 0;
+				text-align: center;
+			}
+
+			&:hover {
+				background-color: @borderColor;
+				color: #555;
+			}
+		}
+	}
+}
+
+// Headline
+.headline {
+	.center;
+	flex-direction: column;
+	padding: 60px 0;
+	margin-bottom: @spaceBottom;
+	background: linear-gradient(@accentColor, #fbfbfb);
+
+	img {
+		width: 20%;
+		height: auto;
+		border:3px solid @borderColor;
+		border-radius: 50%;
+		margin-bottom: @spaceBottom;
+	}
+
+	h1 {
+		font-size: 4rem;
+		margin-bottom: @spaceBottom;
+
+		@media only screen and (max-width: @tabletWidth) {
+			font-size: 3.5rem;
+		}
+
+		@media only screen and (max-width: @mobileWidth) {
+			font-size: 1.8rem;
+		}
+	}
+
+	p {
+		font-size: 2rem;
+
+		@media only screen and (max-width: @mobileWidth) {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+// Main content
+.main-content {
+	margin: 40px 2%;
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	@media only screen and (max-width: @mobileWidth) {
+		margin-right: 5%;
+		margin-left: 5%;
+	}
+}
+
+.background-info {
+	margin-bottom: @spaceBottom;
+
+	.background-content {
+		padding: 20px;
+		.customLayout(space-between);
+		align-items: center;
+
+		img {
+			width: 35%;
+			height: auto;
+			margin-right: 5%;
+			border: 3px solid #d0d0d0;
+
+			@media only screen and (max-width: @tabletWidth) {
+				width: 48%;
+			}
+
+			@media only screen and (max-width: @mobileWidth) {
+				display: none;
+			}
+		}
+
+		p {
+			text-align: justify;
+
+			@media only screen and (max-width: @mobileWidth) {
+				line-height: 2;
+			}
+		}
+	}
+}
+
+.skills {
+	margin: 40px 0;
+	border-top: 1px solid @borderColor;
+	border-bottom: 1px solid @borderColor;
+	padding-top: 40px;
+}
+
+.skills-content {
+	padding: 20px;
+	.center;
+
+	ul {
+		// border: 1px solid #d0d0d0;
+		margin-right: 9%;
+		margin-left: 2%;
+		padding: 20px;
+		list-style-image: url(../img/icon-golden-snitch.png);
+
+		@media only screen and (max-width: @mobileWidth) {
+			margin-right: 0;
+			margin-left: 4%;
+			padding-right: 0;
+		}
+
+		li {
+			font-size: 2rem;
+			margin-bottom: @spaceBottom;
+			padding-left: 3%;
+			padding-bottom: 5px;
+		}
+	}
+
+	img {
+		width: 30%;
+		height: auto;
+		transform: rotate(-8deg);
+
+		@media only screen and (max-width: @mobileWidth) {
+			display: none;
+		}
+	}
+}
+
+.work-history {
+	table {
+		width: 100%;
+		margin: 40px 0 70px 0;
+
+		td, th {
+			border: 1px solid @borderColor;
+			padding: 20px;
+		}
+
+		th {
+			border-color: @accentColor;
+		}
+
+		th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: @accentColor;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f8f8f8;
+		}
+	}
+}
+
+.contact {
+	border-top: 1px solid @borderColor;
+	padding-top: 50px;
+	.center;
+	flex-direction: column;
+
+	* {
+		margin-bottom: @spaceBottom;
+	}
+
+	img {
+		width: 25%;
+		height: auto;
+	}
+}
+
+footer {
+	.center;
+	margin-bottom: @spaceBottom;
+}
