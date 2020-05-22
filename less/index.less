@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -53,7 +53,207 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@standard-margin: 2rem;
+@standard-padding: .3rem;
+
+.h1-titles {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	margin-bottom: @standard-margin;
 }
 
+.content-margins {
+	margin-top: @standard-margin;
+	margin-left: @standard-margin;
+	margin-right: @standard-margin;
+	margin-bottom: @standard-margin;
+}
+
+html, body {
+    height: 100%;
+		font-family: 'Open Sans', sans-serif;
+}
+
+li {
+	padding: @standard-padding;
+	list-style-type: square;
+	margin-left: @standard-margin;
+}
+
+a.heading-contact {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+	transition: 0.5s;
+	font-weight: bolder;
+
+	a.heading-contact:link {
+
+		}
+
+	a.heading-contact:visited {
+
+		}
+
+}
+
+a.heading-contact:hover {
+	color: gray;
+	transition: 0.5s;
+}
+
+h1.heading-contact {
+	font-size: 4rem;
+	font-weight: bolder;
+	margin-top: @standard-margin;
+	margin-bottom: @standard-margin;
+}
+
+div.heading {
+	margin-right: @standard-margin;
+	margin-left: @standard-margin;
+	margin-top: @standard-margin / 4;
+	margin-bottom: @standard-margin / 4;
+	display: flex;
+	justify-content: flex-end;
+}
+
+div.heading-name {
+	margin-right: @standard-margin;
+	margin-left: @standard-margin;
+	margin-top: @standard-margin / 4;
+	margin-bottom: @standard-margin / 4;
+	display: flex;
+	justify-content: space-between;
+}
+
+img.heading-name {
+	width: 125px;
+	border-radius: 1rem;
+	border: .1rem black solid;
+	box-shadow: .2rem .2rem .2rem black;
+}
+
+div.intro {
+	display: flex;
+	font-size: 1.1rem;
+	font-style: italic;
+	line-height: 1.25rem;
+	.content-margins ()
+}
+
+div.employment {
+	.content-margins ()
+}
+
+div.employer-details-list {
+	.content-margins ()
+}
+
+h1.employment {
+	.h1-titles ()
+}
+
+section.employer-details {
+	display: flex;
+	flex-direction: row;
+}
+
+div.employer-details-list {
+	display: flex;
+	flex-direction: column;
+}
+
+h2.employer-details {
+	font-weight: bolder;
+	margin-left: @standard-margin;
+}
+
+p.employer-details {
+	text-transform: uppercase;
+}
+
+ul.employer-details {
+	flex-direction: column;
+}
+
+div.skills {
+	margin: @standard-margin;
+}
+
+h1.skills {
+	.h1-titles ()
+}
+
+section.skills-details {
+	display: flex;
+	flex-direction: row;
+}
+
+ul.skills-details {
+	flex-direction: column;
+}
+
+@media (max-width: 500px) {
+
+	a.heading-contact {
+		font-size: 7px;
+
+		a.heading-contact:link {
+
+			}
+
+		a.heading-contact:visited {
+
+			}
+
+	}
+
+	a.heading-contact:hover {
+
+	}
+
+	h1.heading-contact {
+		font-size: 2.5rem;
+	}
+
+	img.heading-name {
+		margin-top: 25px;
+		width: 100px;
+		height: 100px;
+	}
+
+	p.intro-details {
+		font-size: .5rem;
+		line-height: 1rem;
+	}
+
+	h2.employer-details {
+		font-size: .8rem;
+	}
+
+	p.employer-details {
+		font-size: .8rem;
+	}
+
+	h5.employer-details {
+		font-size: .8rem;
+	}
+
+	h3.employer-details {
+		font-size: .8rem;
+	}
+
+	li.employer-details {
+		margin-top: @standard-margin / 10;
+		margin-bottom: @standard-margin / 10;
+		font-size: .7rem;
+	}
+
+	li.skills-details {
+		margin-top: @standard-margin / 10;
+		margin-bottom: @standard-margin / 10;
+		font-size: .7rem;
+	}
+
+}
