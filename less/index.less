@@ -4,56 +4,373 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+
+//google font import
+@import url("https://fonts.googleapis.com/css?family=Black+And+White+Picture|Federant|Pacifico");
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//============================= variables
+@test-border: 1px solid red;
+@primary-color: #c0c0c0;
+@secondary-color: #f9f9;
+//=============================  mixins
+.display (@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+.border-and-radius (@border-size, @borderstyle, @border-color, @radius) {
+  border: @border-size @borderstyle @border-color;
+  border-radius: @radius;
 }
 
+html,
+body {
+  height: 100%;
+}
+// General styles
+html {
+  font-size: 62.5%;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  padding: 1% 1% 0 1%;
+
+  a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: black;
+
+    &:hover {
+      color: @secondary-color;
+      border-bottom: @test-border;
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-family: "Pacifico", cursive;
+    span {
+      font-family: "Black And White Picture", sans-serif;
+    }
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  footer {
+    text-align: center;
+    color: @secondary-color;
+    background: #333;
+    padding: 1%;
+    margin-top: 5%;
+  }
+}
+// Specific styles
+header {
+  .display (flex-end, center);
+
+  nav {
+    width: 50%;
+    .display (space-between, center);
+  }
+  // Header mobile styles
+  @media (max-width: 500px) {
+    nav {
+      width: 100%;
+      .display (space-between, center);
+      flex-direction: column;
+
+      a {
+        border-bottom: 1px solid black;
+        .display (center, center);
+        width: 100%;
+      }
+    }
+  }
+}
+
+.intro-container {
+  margin: 3% auto;
+  background: @primary-color;
+  padding: 2%;
+
+  .motto {
+    font-family: "Pacifico", cursive;
+  }
+
+  .quote {
+    font-family: "Black And White Picture", sans-serif;
+  }
+
+  .img-and-contacts {
+    display: flex;
+    justify-content: space-between;
+    .contacts {
+      margin-right: 5%;
+    }
+
+    @media (max-width: 500px) {
+      .contacts {
+        padding: 5%;
+        margin-left: 15%;
+        p {
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 40%;
+    height: 325px;
+    margin-bottom: 3%;
+    margin-left: 5%;
+    border-radius: 200px;
+  }
+
+  section {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    background: #f4f4f4;
+    .border-and-radius (1px, solid, black, 6%);
+    width: 20%;
+    margin-top: 5%;
+    .display(center, center);
+
+    &:hover {
+      background: #333;
+      color: @secondary-color;
+    }
+  }
+
+  hr {
+    margin: 3% auto;
+  }
+}
+
+main {
+  .top-main {
+    display: flex;
+    justify-content: space-between;
+
+    .summary {
+      margin-left: 5%;
+    }
+    .top-cards {
+      width: 40%;
+    }
+
+    .talents {
+      .display(center, flex-start);
+
+      .list {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        border-radius: 1%;
+        width: 127%;
+        p {
+          border-bottom: 1px solid black;
+          padding: 3%;
+        }
+        :nth-child(odd) {
+          background: #f4f4f4;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .top-main {
+      flex-direction: column;
+
+      .top-cards {
+        margin: 5%;
+        .display (center, center);
+        flex-direction: column;
+        width: 90%;
+      }
+    }
+  }
+}
+
+.work-history {
+  margin: 3% 0;
+
+  h2 {
+    border-bottom: 1px solid black;
+  }
+
+  p {
+    border-bottom: 1px solid black;
+    width: 25%;
+    padding-bottom: 1.6%;
+    margin-top: 2%;
+    text-align: center;
+  }
+  .head {
+    .display(space-around, flex-start);
+  }
+  .data1 {
+    .display(space-around, lex-start);
+    background: #f4f4f4;
+  }
+
+  .data2 {
+    .display(space-around, flex-start);
+  }
+
+  .data3 {
+    .display(space-around, flex-start);
+    background: #f4f4f4;
+  }
+
+  .data4 {
+    .display(space-around, flex-start);
+  }
+
+  @media (max-width: 500px) {
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
