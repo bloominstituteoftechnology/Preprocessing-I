@@ -83,15 +83,26 @@ html, body {
 body {
 	
 	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-	
-}
+	}
+
+	h1,h2,h3, a {
+		color: #696969;
+	}
+
+	section {
+		padding: 3%;
+	}
 // HEADER BEGINS BELOW THIS LINE******
+
 header {
 	width:100%;
-	// height: 16vh;
-	border: 3px solid black;
+	border: 2px solid black;
 	padding-top: 6%;
 	
+	@media (max-width:500px){
+		width: 100%;
+		height: 17vh;
+		}//this ends the header media query
 	nav {
 		width: 100%;
 		display:flex;
@@ -101,10 +112,12 @@ header {
 		a{
 			text-decoration: none;
 			letter-spacing: 1px;
-			color: .fontColor();
 			font-size: 1.3rem;
 			display: flex;
 			justify-content: space-between;
+			&:hover {
+				color: pink;
+			}//this ends the hover
 			}	//this ends the "a"
 	h1 {
 		width:70%;
@@ -125,27 +138,27 @@ header {
 	display: flex;
 	flex-direction:row;
 	align-items: center;
-	}
+	}//this ends .profile
 
-section .profile{
-	display: flex;
-	flex-direction: column-reverse;
-	
-	
-}	
+	section {
+		@media(max-width:500px){
+			flex-direction: column;
+			align-items: center;
+		}//this ends media query for section
+	}//this ends section
+
 h2 {
 	width: 25%;
-	padding: 1%;
+	padding: 1% 0;
 	font-size: 1.5rem;
 	display: flex;
 	align-items: center;
-}
-
+}//this ends h2
 p {
 	width:40%;
 	font-size: 1.2rem;
 	color: .fontColor();
-}
+}//this ends p tag
 
 img {
 	width: 20%;
