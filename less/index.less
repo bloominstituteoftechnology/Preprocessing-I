@@ -85,12 +85,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -105,220 +105,223 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 html {
-	font-size: 62.5%;
-	font-family: 'Inconsolata', monospace;
+  font-size: 62.5%;
+  font-family: "Inconsolata", monospace;
 }
 
 // mixins
 
 .flexEnd() {
-	display: flex;
-	justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .justifyCenter() {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .wrap() {
-	width: 40%;
-	display: flex;
-	flex-wrap: wrap;
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @DSBlue: darkslateblue;
 
 .styling() {
-	font-family: 'Inconsolata', monospace;
-	text-decoration: none;
-	color: black;
+  font-family: "Inconsolata", monospace;
+  text-decoration: none;
+  color: black;
 }
 
 .styling2() {
-	font-family: 'Inconsolata', monospace;
-	text-decoration: none;
-	color: black;
+  font-family: "Inconsolata", monospace;
+  text-decoration: none;
+  color: black;
 }
 
-
-
-
-// begin 
+// begin
 body {
-	margin-top: 50px;
-	margin-left: 25px;
-	margin-right: 25px;
-	padding:
-	width: 100%;
-	height: 100%;
-	background-image: url("https://thumbs.dreamstime.com/b/abstract-architecture-design-white-modern-background-minimal-b-building-construction-column-interior-concept-d-illustration-97139368.jpg");
+  margin-top: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
+  // padding:
+  width: 100%;
+  height: 100%;
+  background-image: url("https://thumbs.dreamstime.com/b/abstract-architecture-design-white-modern-background-minimal-b-building-construction-column-interior-concept-d-illustration-97139368.jpg");
+
+  .topBar {
+    .styling();
+	.justifyCenter();
+	
+
+    // @media (max-width: 500px) {
+    //   width: 100%;
+    //   margin: 10px auto;
+    //   display: flex;
+    //   justify-content: center;
+    // }
+
+    nav {
+      border: 2px solid black;
+      margin: 30px;
+      display: flex;
+      font-size: 1.4rem;
+      justify-content: space-between;
+	  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR4iBhZWdDQthE_CkOQZlc3Vf_qtJTtyQt72EODHXLdKf_iULoL&usqp=CAU");
 
 
-
-	.topBar {
-		.styling();
-		.justifyCenter();
+	  @media (max-width: 500px) {
+		background-color: red;;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: space-between;
 		
+      }
+	  
 
-		@media (max-width: 500px) {
-			width: 100%;
-			margin: 10px auto;
-			display: flex;
-			justify-content: center;
-		}
 
-		nav {
-			border: 2px solid black;
-			margin: 30px;
-			display: flex;
-			font-size: 1.4rem;
-			justify-content: space-between;
-			background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR4iBhZWdDQthE_CkOQZlc3Vf_qtJTtyQt72EODHXLdKf_iULoL&usqp=CAU");
+      a {
+        border: 1px solid darkcyan;
+        .styling2();
+        padding: 10px;
+        margin: 20px;
+        box-shadow: 0px 0px 7px #000000;
+        background-color: ghostwhite;
+      }
+    }
+  }
 
-			a {
-				border: 1px solid darkcyan;
-				.styling2();
-				padding: 10px;
-				margin: 20px;
-				box-shadow: 0px 0px 7px #000000;
-				background-color: ghostwhite;
+  .topContent {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+    width: auto;
+    background-color: white;
+    font-size: 1.6rem;
+    .styling();
 
-			}
-		}
-	}
+    h1 {
+      font-size: 2rem;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+    }
 
-	.topContent {
-		border: 2px solid black;
+    table {
+      display: flex;
+	  justify-content: center;
+	  font-size: 2rem;
+	  height: 100%;
+      padding: 10px;
+      margin: 10px;
+	  border: 2px solid black;
+
+	  tr:hover{
+		  color: darkturquoise;
+	  }
+	 
+
+      td {
+		border: 1px solid black;
+		display: flex;
+		justify-content: center;
 		margin: 10px;
 		padding: 10px;
-		height: 100%;
-		width: auto;
-		background-color: white;
-		font-size: 1.6rem;
-		.styling();
-
-
-		h1 {
-			font-size: 2rem;
-			font-family: sans-serif;
-			display: flex;
-			justify-content: center;
-		}
-
-
-
-		table {
-			display: flex;
-			justify-content: space-between;
-			padding: 10px;
-			margin: 10px;
-			border: 2px solid black;
-			
-			td {
-			  border: 1px solid black;
-			}
-		  }
-
-		  .contact {
-			  .styling();
-			  
-		  }
-
-
-	p {
-		font-size: 1.4rem;
-		.wrap();
-		margin: 10px;
-		padding: 10px;
-	}
-
-
-	.container {
-		padding: 50px;
-		margin: 0 auto;
-		width: 100%;
-		min-width: 30rem;
-		height: 100%;
-		background-color: #F8F8FF;
-		box-shadow: 0px 0px 7px #000000;
 		
+	  }
+	  
+	  
 
-		@media (max-width: 500px) {
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			flex-direction: row;
+    .contact {
+      .styling();
+    }
 
-		}
+    p {
+      font-size: 1.4rem;
+      .wrap();
+      margin: 10px;
+      padding: 10px;
+    }
 
+    .container {
+      padding: 50px;
+      margin: 0 auto;
+      width: 100%;
+      min-width: 30rem;
+      height: 100%;
+      background-color: #f8f8ff;
+      box-shadow: 0px 0px 7px #000000;
 
+      @media (max-width: 500px) {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+		flex-direction: row;
+		
+      }
 
+      .heroImage {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+	  }
+	 
+    }
+  }
 
+  header {
+    display: flex;
+    .flexEnd();
+  }
 
-		.heroImage {
-
-
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			margin: 10px;
-			padding: 10px;
-
-			
-		}
-	}
 
 }
-}
-
-header {
-	display: flex;
-	.flexEnd();
-}
-
-.languages .workHistory {
-	display: flex;
-	justify-content: center;
 }
