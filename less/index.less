@@ -60,428 +60,107 @@ table {
 html, body {
 	height: 100%;
 	font-size: 62.5%;
-	font-family: 'Ruluko', sans-serif;
+	
 }
 
 p{
-	font-size: 1.75rem;
+	font-size: .95rem;
 	padding: 2%;
 }
 
 h1{
 	font-size: 4rem;
-	font-family: 'Graduate', cursive;
-	text-shadow: -5px 5px #000000;
-	color: white;
 	line-height: 2;
-	padding: 3%;
 } 
 
 h2, h3, h4, h5, h6{
-	font-size: 3rem;
-	font-family: 'Graduate', cursive;
-	text-shadow: -5px 5px #000000;
-	color: white;
+	font-size: 1.5rem;
 	line-height: 2;
 	padding-top: 1.5%;
 	text-align: center;
 	
 }
 
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Graduate|Lemon|Montserrat|Philosopher|Roboto+Slab|Ruluko|Tenor+Sans&display=swap');
-
-
-/*Variables*/
-
-@background: #01403A;
-@accentcolor: #077065da;
-@linkcolor: #04BFAD;
-@accentcolor2: rgb(0, 109, 98);
-@accentcolor3: #005858;
-
-/*Mix-Ins*/
-
-
-.generalStyle(){
-	line-height: 1.75;
+.header {
+	text-align: center;
+	width: 80%;
 	margin: auto;
 	padding: 3%;
-	text-align: justify;
-	color: rgba(255, 255, 255, 0.404);
+	h1 {
+		font-size: 2rem;
+	}
 }
 
-.linkStyle(){
-	color: @linkcolor;
-	text-decoration: none;
-	font-family: 'Montserrat', sans-serif;
-	text-shadow: 2px 2px #000000;
-
-}
-
-.mediaStyle(){
-	font-size: 1.25rem;
-}	
-
-
-
-/*Nav Section*/
-header{
-	background-color: @accentcolor;
-
-	nav{
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		padding: 1.5%;
-
-		a{
-			.linkStyle();
-			font-size: 1.75rem;
-			padding-left: 3%;
-
-			@media (max-width: 500px){
-				.mediaStyle();
-			
-			}//this closes @media
-				
-		}//this closes a
-	}//this closes nav
-}//this closes header
-
-
-/*Header Section*/
-#header{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: @background;
+.top-content {
 	
-		@media (max-width: 500px){
-			.mediaStyle();
-
-			h1, h2, p, a{
-				font-size: 1rem;
-			
-			}//this closes h1,h2,p,a @media
-
-		}//this closes @media
-
-	img{
-		max-width: 30%;
-		padding: 2%;
-		
-	}//this closes img
-		
-		div{
-			display: flex;
-			flex-direction: column;
-			max-width: 50%;
-			text-align: center;
-
-			p{
-				color: white;
-				text-shadow: -5px 5px #000000;
-				
-
-			}//this closes p
-
-			a{
-				.linkStyle();
-			
-			}//this closes a	
-		}//this closes div
-}//this closes .header
-
-/*Intro Section*/
-#intro{
-	background-color: @accentcolor3;
-	.generalStyle();
-	padding-bottom: 5%;
-	
-
-	@media (max-width: 500px){
-		.mediaStyle()
-	}//this closes @media
-
-	h2{
-		
-		@media (max-width: 500px){
-			.mediaStyle();
-		
-		}//this closes @media
-	
-	}//this closes h2
-
-	p{
-		@media (max-width: 500px){
-			font-size: 1rem;
-		
-		}//this closes @media
-	}//this closes p
-}//this closes intro
-
-/*Main Content Section*/
-#main-content{
-	line-height: 1.75;
-	align-items: center;
 	text-align: center;
-	background-color: @accentcolor;
+	width: 80%;
+	margin: auto;
+	padding: 3%;
+	h1 {
+		font-size: 2rem;
+	}
+}
+
+.gallery {
 	display: flex;
+	justify-content: space-evenly;
 	
-	
-	.left-side{
+	.card {
+		width: 30%;
+		border: 1px solid black;
 		display: flex;
 		flex-direction: column;
-		width: 50%;
+		padding: 3%;
 
-		@media (max-width: 500px){
-			flex-direction: column-reverse;
-		}//this ends @media
-				
-		
-		.education{
-		background-color: @accentcolor2;
-		color: white;
-		padding-bottom: 4%;
-		padding-top: 1%;
-		height: 22vh;
+		.image {
+			margin: auto;
+			background-color: blue;
+			width: 80%;
+			padding: 20%;
 
-			img{
-				max-width: 10%;
-			}//this closes img
-
-			@media (max-width: 500px){
-				padding-top: 12%;
-			
-			}//this closes media
-
-		}//this closes education
-
-		.activities{
-			background-color: @background;
-			color: white;
-			display: flex;
-			flex-direction: column;
-			padding-bottom: 5%;
-			line-height: .75;
-			height: 32vh;
-
-			@media (max-width: 500px){
-				line-height: 1;
-				padding-top: 10%;
-				.mediaStyle();
-			}
-
-		
-			img{
-				max-width: 10%;
-				padding: 2%;
-			
-			}//this closes img
-
-			span{
-				font-size: 1.5rem;
-
-				@media (max-width: 500px){
-					.mediaStyle();
-				
-				}//this closes @media
-			
-			}//this closes span
-		
-		}//this closes activities
-		
-	}//this closes left-side
-
-	.right-side{
-		display: flex;
-		flex-direction: column;
-		width: 50%;
-		align-items: center;
-
-		@media(max-width: 500px){
-			flex-direction: column-reverse;
-		}//this ends @media
-
-		.awards{
-			background-color: @background;
-			color: white;
-			height: 22vh;
-			
-	
-				img{
-					max-width: 13%;
-					padding: 2%;
-				
-				}//this closes img
-
-				@media (max-width: 500px){
-					padding-top: 15%;
-				
-				}//this closes media
-	
-		}//this closes awards
-
-		.skills{
-			background-color: @accentcolor2;
-			color: white;
-			padding-bottom: 10%;
-			height: 32vh;
-			width: 100%;
-
-			@media(max-width: 500px){
-				padding: 5%;
-			}//this closes @media	
-
-			h2{
-				padding-bottom: 7%;
-
-			}//this closes h2
-
-			table{
-				font-size: 1.25rem;
-				color: white;
-				margin: auto;
-				font-family: 'Lemon', cursive;
-
-				@media (max-width: 500px){
-					font-size: 1rem;
-				}//this closes @media
-				
-				td, th{
-					border-collapse: collapse;
-					border: 2.5px solid @linkcolor;
-					padding: 5%;
-
-				
-					
-				}//this closes td,th
-			}//this closes table
-			
-
-		}//this closes skills
-
-	}//this closes right-side
-
-	@media (max-width: 500px){
-		.mediaStyle();
-		h2, p{
-			font-size: 1rem;
-		
-		}//this closes h2p for @media
-	}//this closes @media for whole section
-
-}//this closes main content
-
-/*Bottom Section*/
-#bottom-section{
-	display: flex;
-	width: 100%;
-	background-color: @accentcolor;
-	.generalStyle();
-	
-
-	.work-history{
-		display: flex;
-		flex-direction: column;
-		background-color: @accentcolor3;
-		width: 50%;
-		border: 3px solid white;
-
-		h2{
-			padding-bottom: 1%;
-		}//this closes h2
-
-		ul{
-			font-size: 1.75rem;
-			list-style-type: circle;
-			margin-left: 15%;
-
-			@media (max-width:500px){
-				font-size: 1rem;
-			
-			}//this ends @media	
-
-		}//this closes ul
-
-		p{
-			@media (max-width:500px){
+			h3 {
 				font-size: .5rem;
-				padding-bottom: 10%;
-			}//this closes @media
-		}//this closes p
-
-		a{
-			color: @linkcolor;
-
-		}//this closes a
-	
-	}//this closes work-history
-
-	.last-section{
-		width: 50%;
-		background-color: @background;
-		display: flex;
-
-		.special{
-			 display: flex;
-			 flex-direction: column;
-			 text-align: center;
-			 padding-top: 10%;
-			 width: 50%;
-			 border: 3px solid white;
-
-			 span{
-				 color: white;
-				 text-shadow: -5px 5px #000000;
-
-			 }//this closes span
-		 
-		}//this closes .special
-		
-		
-			img{
-				max-width: 50%;
-				border: 3px solid white;
-				
-			
-			}//this closes img
-	
-	}//this closes extra-section
-
-	@media (max-width:500px){
-		h2, p{
-			.mediaStyle();
-			font-size: 1rem;
-		}//this closes @ media h2p
-	}//this closes @media for whole section
-	
-
-}//this closes bottom section
-
-/*Footer*/
-footer{
-	background-color: @accentcolor;
-	.generalStyle();
-	text-align: center;
-	padding: 2.5%;
-	font-size: 1.5rem;
-	
-	@media (max-width: 500px){
-		.mediaStyle();
-	
-	}//this closes @media
-
-	p{
-		@media (max-width: 500px){
-			.mediaStyle();
-		
-		}//this closes p @media
-	}//this closes p
-	
-	a{
-		color: @linkcolor;
-	
-	}//this closes a
+			}
+		}
+	}
 }
 
+.bottom-content {
+	border: 1px solid black;
+		.top-section {
+		background-color: grey;
+	}
+	.container {
+		width: 100%;
+		display: flex;
+	.showcase {
+		width: 50%;
+		padding: 3%;
+		align-self: center;		
+		.image {
+			margin: 5% auto;
+			background-color: blue;
+			width: 80%;
+			padding: 20%;
+		}
+		}
+	.howto {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		.card {
+			p {
+				font-size: 1rem;
+			}
+			.image {
+				margin: auto;
+				background-color: blue;
+				width: 80%;
+				padding: 10%;
+			}
+			
+		}
+	}
+	}
+}
