@@ -58,8 +58,12 @@ html, body {
 	font-size: 62.5%;
 }
 
-.container{
+.flex{
 	display: flex;
+}
+
+.container{
+	.flex();
 	flex-direction: column;
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -67,12 +71,17 @@ html, body {
 }
 
 .container header nav{
-	display: flex;
+	.flex();
 	justify-content: space-evenly;
 	font-size: 3rem;
 	text-decoration: none;
 	align-items: center;
 	padding: 5rem;
+	@media(max-width: 500px){
+		flex-direction: column;
+		padding: 2rem;
+		margin: 2rem;
+	}
 	a{
 		text-decoration: none;
 		color: black;
@@ -90,18 +99,28 @@ html, body {
 	padding: 5rem 2rem 5rem 5rem;
 	margin: 0 auto;
 	width: 70%;
+	@media (max-width:500px){
+		width: 90%
+	}
 	h1{
 		font-size: 5em;
 		display: flex;
 		padding: 2rem;
 		justify-content: center;
+		@media (max-width:500px){
+			font-size: 2rem;
+
+		}
 	}
 }
 
 .firstbox .picture img{
 	border: 1rem solid black;
 	border-radius: 1rem;
-	width: 40rem;
+	width: 30rem;
+	@media (max-width: 500px){
+		width: 15rem;
+	}
 }
 
 .intro p{
@@ -109,7 +128,11 @@ html, body {
 	justify-content: center;
 	font-size: 2rem;
 	width: 40rem;
-	padding: 2rem
+	padding: 2rem;
+	@media(max-width: 500px){
+		font-size: 1rem;
+		width: 90%;
+	}
 }
 
 .secondbox{
@@ -123,12 +146,12 @@ html, body {
 	border-radius: 2rem;
 	padding: 5rem 2rem 5rem 5rem;
 	margin: 5rem auto;
-	width: 80%;
+	width: 90%;
 	h2{
 		font-size: 4rem;
 	}
 	.portfolioimages img{
-		width: 30rem;
+		width: 20rem;
 		border: 1rem solid black;
 		border-radius: 1rem;
 		margin: 2rem;
@@ -144,14 +167,18 @@ html, body {
 	border: 2rem solid black;
 	border-radius: 2rem;
 	padding: 2rem 2rem 5rem 5rem;
-	margin: 5rem auto;
+	margin: 4rem auto;
 	width: 80%;
 	p{
 		border: 1rem solid black;
 		border-radius: 2rem;
-		padding: 2rem;
+		padding: 1rem;
 		font-size: 3em;
-		width: 50rem;
+		width: 40rem;
+		@media(max-width: 500px){
+			font-size: 1rem;
+			width: 90%;
+		}
 	}
 	ol{
 		display: flex;
@@ -162,7 +189,12 @@ html, body {
 		border-radius: 2rem;
 		padding: 2rem;
 		font-size: 3em;
-		width: 50rem;
+		width: 40rem;
+		@media(max-width: 500px){
+			font-size: 1rem;
+			width: 30rem;
+			margin: 2rem;
+		}
 	}
 }
 .contact{
@@ -175,7 +207,7 @@ html, body {
 	border: 2rem solid black;
 	border-radius: 2rem;
 	padding: 4em;
-	margin: 5rem auto;
+	margin: 2rem auto;
 	width: 30%;
 	a{
 		display: flex;
