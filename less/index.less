@@ -81,7 +81,7 @@ html, body {
 	width: 100%;
 	display: flex;
 	padding: 2% 5%;
-	background-color: gray;
+	background-color: white;
 
 
 	h1 {
@@ -93,7 +93,6 @@ html, body {
 
 	h2 {
 		font-size: 1.8rem;
-		color: @titlecolor;
 	}
 
 	h3 {
@@ -108,9 +107,16 @@ html, body {
 .sidebar {
 	margin: 0 1% 0 0;
 	border-radius: 10px;
-	background: linear-gradient(180deg,white 20%, #266d75 95%);
+	background: linear-gradient(180deg,white 10%, #266d75 55%);
 	.sidebarstyles();
 	width: 45%;
+	color: white;
+	box-shadow: 0px 0px 10px rgb(204, 204, 204);
+
+	h2 {
+		color: white;
+		border-bottom: 2px white solid;
+	}
 
 	.topimg{
 		padding: 1%;
@@ -123,6 +129,7 @@ html, body {
 	.contact {
 		padding: 8% 0;
 		width: 100%;
+		color: white;
 
 		.address {
 			display: flex;
@@ -131,6 +138,7 @@ html, body {
 			align-items: center;
 			padding: 4% 0;
 			height: 6vh;
+			color: white;
 			
 			.home {
 				display: none
@@ -140,7 +148,7 @@ html, body {
 
 		.address:hover .home {
 			display: block;
-			color: #214e53;
+			color: white;
 
 		}
 
@@ -156,6 +164,7 @@ html, body {
 			flex-direction: column;
 			align-items: center;
 			height: 6vh;
+			color: white;
 
 			.number {
 				display: none
@@ -164,7 +173,7 @@ html, body {
 
 		.phone:hover .number {
 			display: block;
-			color: #214e53;
+			color: white;
 
 		}
 
@@ -179,6 +188,7 @@ html, body {
 			flex-direction: column;
 			align-items: center;
 			height: 6vh;
+			color: white;
 
 
 			.gmail {
@@ -188,42 +198,38 @@ html, body {
 
 		.email:hover .gmail {
 			display: block;
-			color: #214e53;
-			// height: 20px;
+			color: white;
 		}
 
 		.email:hover .fa-envelope-open {
 			display: none
 		}
-
-		.skills {
-
-			.personal {
-				padding: 1%;
-			}
-
-			.professional {
-				padding: 1%;
-			}
-		}
-	} //skills
-
-	h2 {
-		border-bottom: 2px #214e53 solid;
 	}
 
-	ul {
-		list-style: none; /* Remove default bullets */
-	  }
-	  
-	ul li::before {
-	content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-	color: @titlecolor; /* Change the color */
-	font-weight: bold; /* If you want it to be bold */
-	display: inline-block; /* Needed to add space between the bullet and the text */
-	width: 1em; /* Also needed for space (tweak if needed) */
-	margin-left: -1em; /* Also needed for space (tweak if needed) */
-	padding: 1% 8%;
+	.skills {
+		ul {
+			list-style: none; /* Remove default bullets */
+		  }
+		  
+		ul li::before {
+		content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+		color: @titlecolor; /* Change the color */
+		font-weight: bold; /* If you want it to be bold */
+		display: inline-block; /* Needed to add space between the bullet and the text */
+		width: 1em; /* Also needed for space (tweak if needed) */
+		margin-left: -1em; /* Also needed for space (tweak if needed) */
+		padding: 1% 8%;
+		color: white;
+		}
+
+		.personal {
+			// padding: 1%;
+			margin-bottom: 5%;
+		}
+
+		.professional ul {
+			padding: 2%;
+		}
 	}
 } //sidebar
 
@@ -233,8 +239,9 @@ html, body {
 	flex-direction: column;
 	width: 100%;
 	border-radius: 10px;
-	background: linear-gradient(180deg,#266d75 20%, white 95%);
+	background: linear-gradient(180deg,#266d75 65%, white 89%);
 	padding:0 2%;
+	box-shadow: 0px 0px 10px rgb(204, 204, 204);
 
 	.statement {
 		.mainboxstyles();
@@ -341,16 +348,36 @@ html, body {
 		flex-direction: column;
 		padding:2% 5%;
 
-		.main {
-			padding: 2% 0;
-		}
-
 		.sidebar {
-			padding: 2% 0;
+			width: 100%;
+			margin-bottom: 2%;
 
 			.topimg {
 				display: flex;
 				justify-content: center;
+			}
+
+			.address .fa-home, .phone .fa-mobile-alt, .email .fa-envelope-open {
+				display: none;
+			}
+
+			.address .home, .phone .number, .email .gmail {
+				display: block;
+				color: white;
+			}
+
+			h2 {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		.main {
+			padding: 2% 0;
+			width: 100%;
+
+			.statement, .education, .experience, .references {
+				margin: 1% 0;
 			}
 		}
 	}

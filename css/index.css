@@ -142,7 +142,7 @@ body {
   width: 100%;
   display: flex;
   padding: 2% 5%;
-  background-color: gray;
+  background-color: white;
 }
 .container h1 {
   font-size: 2rem;
@@ -152,7 +152,6 @@ body {
 }
 .container h2 {
   font-size: 1.8rem;
-  color: black;
 }
 .container h3 {
   font-size: 1.5rem;
@@ -163,9 +162,15 @@ body {
 .sidebar {
   margin: 0 1% 0 0;
   border-radius: 10px;
-  background: linear-gradient(180deg, white 20%, #266d75 95%);
+  background: linear-gradient(180deg, white 10%, #266d75 55%);
   padding: 4% 3%;
   width: 45%;
+  color: white;
+  box-shadow: 0px 0px 10px #cccccc;
+}
+.sidebar h2 {
+  color: white;
+  border-bottom: 2px white solid;
 }
 .sidebar .topimg {
   padding: 1%;
@@ -176,6 +181,7 @@ body {
 .sidebar .contact {
   padding: 8% 0;
   width: 100%;
+  color: white;
 }
 .sidebar .contact .address {
   display: flex;
@@ -183,13 +189,14 @@ body {
   align-items: center;
   padding: 4% 0;
   height: 6vh;
+  color: white;
 }
 .sidebar .contact .address .home {
   display: none;
 }
 .sidebar .contact .address:hover .home {
   display: block;
-  color: #214e53;
+  color: white;
 }
 .sidebar .contact .address:hover .fa-home {
   display: none;
@@ -201,13 +208,14 @@ body {
   flex-direction: column;
   align-items: center;
   height: 6vh;
+  color: white;
 }
 .sidebar .contact .phone .number {
   display: none;
 }
 .sidebar .contact .phone:hover .number {
   display: block;
-  color: #214e53;
+  color: white;
 }
 .sidebar .contact .phone:hover .fa-mobile-alt {
   display: none;
@@ -219,31 +227,23 @@ body {
   flex-direction: column;
   align-items: center;
   height: 6vh;
+  color: white;
 }
 .sidebar .contact .email .gmail {
   display: none;
 }
 .sidebar .contact .email:hover .gmail {
   display: block;
-  color: #214e53;
+  color: white;
 }
 .sidebar .contact .email:hover .fa-envelope-open {
   display: none;
 }
-.sidebar .contact .skills .personal {
-  padding: 1%;
-}
-.sidebar .contact .skills .professional {
-  padding: 1%;
-}
-.sidebar h2 {
-  border-bottom: 2px #214e53 solid;
-}
-.sidebar ul {
+.sidebar .skills ul {
   list-style: none;
   /* Remove default bullets */
 }
-.sidebar ul li::before {
+.sidebar .skills ul li::before {
   content: "\2022";
   /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: black;
@@ -257,6 +257,13 @@ body {
   margin-left: -1em;
   /* Also needed for space (tweak if needed) */
   padding: 1% 8%;
+  color: white;
+}
+.sidebar .skills .personal {
+  margin-bottom: 5%;
+}
+.sidebar .skills .professional ul {
+  padding: 2%;
 }
 .main {
   display: flex;
@@ -264,8 +271,9 @@ body {
   flex-direction: column;
   width: 100%;
   border-radius: 10px;
-  background: linear-gradient(180deg, #266d75 20%, white 95%);
+  background: linear-gradient(180deg, #266d75 65%, white 89%);
   padding: 0 2%;
+  box-shadow: 0px 0px 10px #cccccc;
 }
 .main .statement {
   border: 1px #214e53 solid;
@@ -367,14 +375,37 @@ body {
     flex-direction: column;
     padding: 2% 5%;
   }
-  .container .main {
-    padding: 2% 0;
-  }
   .container .sidebar {
-    padding: 2% 0;
+    width: 100%;
+    margin-bottom: 2%;
   }
   .container .sidebar .topimg {
     display: flex;
     justify-content: center;
+  }
+  .container .sidebar .address .fa-home,
+  .container .sidebar .phone .fa-mobile-alt,
+  .container .sidebar .email .fa-envelope-open {
+    display: none;
+  }
+  .container .sidebar .address .home,
+  .container .sidebar .phone .number,
+  .container .sidebar .email .gmail {
+    display: block;
+    color: white;
+  }
+  .container .sidebar h2 {
+    display: flex;
+    justify-content: center;
+  }
+  .container .main {
+    padding: 2% 0;
+    width: 100%;
+  }
+  .container .main .statement,
+  .container .main .education,
+  .container .main .experience,
+  .container .main .references {
+    margin: 1% 0;
   }
 }
