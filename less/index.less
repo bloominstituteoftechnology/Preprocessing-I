@@ -68,12 +68,22 @@ html, body {
 @font-color: #4b0055;
 @button-color: #8e6345;
 @padding: 20px;
+@banger: 'Bangers', cursive; 
+@chelsea: 'Chelsea Market', cursive;
 
 //mixins
 .titlefonts (){
 	font-size: 25px;
 	color: @font-color;
 	font-weight: 700;
+	font-family: @banger;
+	letter-spacing: 2px;
+}
+
+.bodyfont () {
+	font-size: 18px;
+	color: white;
+	font-family: @chelsea;
 }
 
 .interior () {
@@ -89,6 +99,11 @@ html, body {
 		margin: 0 auto;
 		background-color: white;
 		background-image: url("https://i.pinimg.com/originals/c7/57/51/c75751ace6af6d42ccfff2c36bd2488c.png");
+		
+		@media (max-width: 500px) {
+			width: 100%;
+
+		}
 	}
 
 	//header
@@ -98,6 +113,7 @@ html, body {
 		justify-content: space-between;
 		padding-top: @padding * 2;
 		padding-bottom: @padding;
+	
 		h1 {
 			padding: @padding;
 			.titlefonts();
@@ -126,6 +142,10 @@ html, body {
 		margin-right: @padding * 3;
 		padding: @padding * 2;
 		background-color: @third-color;
+		@media (max-width: 500px) {
+			width: 100%;
+			
+		}
 		.profile-image {
 			width: 250px;
 			height: 250px;
@@ -133,6 +153,7 @@ html, body {
 			background-image: url("https://vignette.wikia.nocookie.net/ravencbbctvseries/images/c/c0/Scooby_Doo.jpg/revision/latest?cb=20180619023113");
 			background-size: cover;
 			transition: ease-in .5s;
+		
 		}
 		.profile-image:hover {
 			border: 10px solid @secondary-color;
@@ -141,14 +162,33 @@ html, body {
 		h2 {
 			.titlefonts ();
 			font-size: 40px;
+			padding-top: 20px;
+		}
+		.where {
+			.bodyfont();
+			font-size: 20px;
+			border-top: none;
+			padding-top: 25px;
+		}
+		p {
+			.bodyfont();
+			border-top: 2x dashed @font-color;
+			border-bottom: 5px dashed @font-color;
+			padding: 40px 50px 40px 0;
 		}
 		button {
+			margin-top: 30px;
+			.titlefonts ();
 			padding: 10px;
     		background-color: @button-color;
     		color: white;
     		font-size: 40px;
 			width: 300px;
-			height: 100px;	
+			height: 100px;
+			@media (max-width: 500px) {
+				width: 100%;
+				align-items: center;
+			}	
 		}
 		button:hover {
 			background-color: @secondary-color;
@@ -165,14 +205,18 @@ html, body {
 		justify-content: center;
 		.interior ();
 		.aboutme {
-			padding-right: 125px;
+			width: 50%;
+			padding-left: 0;
+			padding-right: @padding*2;
+			.bodyfont ();
 			h2 {
 				.titlefonts ();
 				}
 		}
 		.stuff {
-			padding-right: 125px;
-			padding-left: 125px;
+			width: 50%;
+			padding-left: @padding;
+			.bodyfont ();
 			h2 {
 				.titlefonts();
 			}
@@ -192,7 +236,14 @@ html, body {
 		}
 		div {
 			p {
-				font-weight: 650;
+				.bodyfont();
+				font-family: @banger;
+				letter-spacing: 2px;
+				border-bottom: 2px dashed @secondary-color;
+			}
+			ul {
+				.bodyfont();
+				padding-top: 10px;
 			}
 		}
 	}
