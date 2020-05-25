@@ -50,10 +50,204 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	// border: 1px solid grey!important; //Take important off when done
 }
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+//media queries begin
+// @media (max-width:500px){
+// 	width: 100%;
+// 	height: 17vh;
+// 	}//this ends the header media query
+
+
+
+//media queries END
+
+//variables start
+
+@color:#2F4F4F;
+
+@font: 'Oswald', sans-serif;
+
+.headingTitle2 (){
+	font-size: 1.2rem;
+}    //MIXIN
+
+//variables end
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+body {
+	
+	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	}
+
+	h1,h2,h3, a {
+		color: #696969;
+		font-family: @font
+	}
+
+	section {
+		padding: 3%;
+	}
+// HEADER BEGINS BELOW THIS LINE******
+
+header {
+	width:100%;
+	border: 2px solid black;
+	padding-top: 6%;
+	
+	@media (max-width:500px){
+		width: 100%;
+		height: 22vh;
+		display: flex;
+		flex-direction: column;
+
+		nav{
+			display:flex;
+			flex-direction: column;
+			padding: 2%;
+			
+		}//this ends the nav inside media query
+
+		a {
+			display: flex;
+			justify-content: space-between;
+		}
+		}//this ends the header media query
+	
+	nav {
+		width: 100%;
+		display:flex;
+		justify-content: space-around;
+		align-items:baseline;
+
+		a{
+			text-decoration: none;
+			letter-spacing: 1px;
+			font-size: 1.3rem;
+			display: flex;
+			justify-content: space-between;
+			&:hover {
+				color: pink;
+			}//this ends the hover
+			}	//this ends the "a"
+	h1 {
+		width:70%;
+		font-size: 2.5rem;
+		padding-bottom: 2%;
+		}//This ends nav
+	} //this ends h1
+} //this ends header
+
+// HEADER ENDS ABOVE THIS LINE******
+
+//PROFILE SECTION AND PHOTO BEGINS BELOW THIS LINE*****
+.profile  {
+	width:90%;
+	padding-top: 2%;
+	padding-left:2%;
+	padding-bottom: 2%;
+	display: flex;
+	flex-direction:row;
+	align-items: center;
+}
+
+	@media(max-width:500px){
+	flex-direction: column;
+	}
+
+	
+	
+	section {
+		@media(max-width:500px){
+			flex-direction: column;
+		
+			}//this ends media query for section
+	}//this ends section
+
+h2 {
+	width: 25%;
+	padding: 1% 0;
+	.headingTitle2()
+}//this ends h2
+p {
+	width:40%;
+	.headingTitle2();
+	font-family: @font;
+	color: @color
+}//this ends p tag
+
+img {
+	width: 20%;
+	border: 1px solid black;
+	border-radius: 85%;
+}
+//PROFILE AND IMAGE SECTION ENDS ABOVE THIS LINE****
+
+
+//SKILLS AND LANGUAGE SECTION BEGINS BELOW********
+.skills {
+	width: 100%;
+	height: 62.5vh;
+	color: @color;
+	font-family: @font;
+	padding-top: 3%;
+	display: flex;
+	justify-content:space-around;
+	border-top: 4px dotted black;
+	border-bottom: 4px dotted black;
+	
+    .list1 {
+	 width: 50%;
+	 padding:3%;
+	 list-style-type: none;
+	 .headingTitle2();
+	 font-family: @font;
+	 color: @color; 
+	} //This ends .list
+
+	.list2{
+	width: 50%;
+	padding: 3%;
+	.headingTitle2();
+	}
+	
+	h2 {
+	font-size: 1.75rem;
+	}//this ends list2
+	}//this ends .skills
+
+// SKILLS AND LANGUAGES SECTION ENDS ABOVE THIS LINE*****
+//Work experience table starts
+table {
+	// border: 1px solid black;
+	padding: 10%;
+	line-height: 2;
+	color: @color;
+	font-family: @font;
+}//ends table
+//work experience table ends
+// FOOTER BEGINS BELOW THIS LINE *********
+
+.footer {
+	h3{
+	.headingTitle2();
+	color:white;
+	text-align: center;
+	margin: 0 40%;
+	padding: 1%;
+	background-color: #4682B4;
+	// @media(max-width: 500px){
+	// width: 80%;
+	// display:  flex;
+	// justify-content: flex-start;
+	// }//this ends media query
+     }// this ends h3
+}//this ends footer
