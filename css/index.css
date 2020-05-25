@@ -130,6 +130,13 @@ table {
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Anton Regular'), local('Anton-Regular'), url(https://fonts.gstatic.com/s/anton/v11/1Ptgg87LROyAm0K0.ttf) format('truetype');
+}
 html,
 body {
   height: 100%;
@@ -159,15 +166,26 @@ header {
   justify-content: center;
   border: 1px solid black;
 }
-nav {
+@media (max-width: 300px) {
+  header {
+    align-items: center;
+  }
+}
+header nav {
   display: flex;
   justify-content: center;
 }
-a {
+@media (max-width: 300px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header a {
   padding-top: 20px;
   padding-bottom: 30px;
 }
-.links {
+header .links {
   margin-right: 20px;
   font-size: 1.5rem;
 }
@@ -177,10 +195,12 @@ a {
   margin: 0 auto;
 }
 .mainheader {
-  background-color: #cf7458;
+  background-color: #fff7f7;
   width: 400px;
   height: 500px ;
   margin: 0 auto;
+  margin-top: 10px;
+  border: 2px solid black;
 }
 .mainheader button {
   margin: 15px;
