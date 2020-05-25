@@ -75,7 +75,7 @@ table {
 
 .headingTitle2 (){
 	font-size: 1.2rem;
-}
+}    //MIXIN
 
 //variables end
 
@@ -105,9 +105,21 @@ header {
 	
 	@media (max-width:500px){
 		width: 100%;
-		height: 17vh;
+		height: 22vh;
 		display: flex;
 		flex-direction: column;
+
+		nav{
+			display:flex;
+			flex-direction: column;
+			padding: 2%;
+			
+		}//this ends the nav inside media query
+
+		a {
+			display: flex;
+			justify-content: space-between;
+		}
 		}//this ends the header media query
 	
 	nav {
@@ -129,6 +141,7 @@ header {
 	h1 {
 		width:70%;
 		font-size: 2.5rem;
+		padding-bottom: 2%;
 		}//This ends nav
 	} //this ends h1
 } //this ends header
@@ -144,13 +157,18 @@ header {
 	display: flex;
 	flex-direction:row;
 	align-items: center;
-	}//this ends .profile
+}
+
+	@media(max-width:500px){
+	flex-direction: column;
+	}
 
 	
 	
 	section {
 		@media(max-width:500px){
 			flex-direction: column;
+		
 			}//this ends media query for section
 	}//this ends section
 
