@@ -3,6 +3,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+// Variables
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,3 +60,189 @@ html, body {
     height: 100%;
 }
 
+//variables 
+
+@main-color: #128a84;
+@secondary-color: #79af30;
+@third-color: #bb5c37;
+@font-color: #4b0055;
+@button-color: #8e6345;
+@padding: 20px;
+@banger: 'Bangers', cursive; 
+@chelsea: 'Chelsea Market', cursive;
+
+//mixins
+.titlefonts (){
+	font-size: 25px;
+	color: @font-color;
+	font-weight: 700;
+	font-family: @banger;
+	letter-spacing: 2px;
+}
+
+.bodyfont () {
+	font-size: 18px;
+	color: white;
+	font-family: @chelsea;
+}
+
+.interior () {
+	margin-left: @padding * 3;
+	margin-right: @padding * 3;
+	padding: @padding * 2;
+	background-color: @main-color;
+}
+
+//styles
+	body {
+		max-width: 1050px;
+		margin: 0 auto;
+		background-color: white;
+		background-image: url("https://i.pinimg.com/originals/c7/57/51/c75751ace6af6d42ccfff2c36bd2488c.png");
+
+	}
+
+	//header
+	.header {
+		display: flex;
+		background-color: @secondary-color;
+		justify-content: space-between;
+		padding-top: @padding * 2;
+		padding-bottom: @padding;
+	
+		h1 {
+			padding: @padding;
+			.titlefonts();
+		}
+		.navbar {
+			padding: @padding;
+			a {
+				padding-left: @padding;
+				.titlefonts();
+				text-decoration: none;
+			}
+			a:hover {
+				color: @third-color;
+			}
+	  }
+	}
+
+
+
+	//main content
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		margin-left: @padding * 3;
+		margin-right: @padding * 3;
+		padding: @padding * 2;
+		background-color: @third-color;
+
+		.profile-image {
+			width: 250px;
+			height: 250px;
+			border: 10px solid @secondary-color;
+			background-image: url("https://vignette.wikia.nocookie.net/ravencbbctvseries/images/c/c0/Scooby_Doo.jpg/revision/latest?cb=20180619023113");
+			background-size: cover;
+			transition: ease-in .5s;
+		
+		}
+		.profile-image:hover {
+			border: 10px solid @secondary-color;
+			background-image: url("https://i.pinimg.com/564x/3a/d0/b7/3ad0b7132464268d0591fd645b0c9548.jpg");
+			}
+		h2 {
+			.titlefonts ();
+			font-size: 40px;
+			padding-top: 20px;
+		}
+		.where {
+			.bodyfont();
+			font-size: 20px;
+			border-top: none;
+			padding-top: 25px;
+		}
+		p {
+			.bodyfont();
+			border-top: 2x dashed @font-color;
+			border-bottom: 5px dashed @font-color;
+			padding: 40px 50px 40px 0;
+		}
+		button {
+			margin-top: 30px;
+			.titlefonts ();
+			padding: 10px;
+    		background-color: @button-color;
+    		color: white;
+    		font-size: 40px;
+			width: 300px;
+			height: 100px;
+		}
+		button:hover {
+			background-color: @secondary-color;
+			background-image: url("https://66.media.tumblr.com/7cfec08406bc000fb798af5ee4bcbe22/tumblr_pq6vnwODEE1xwpz8uo2_500.png");
+		}
+	}
+
+	//about
+
+	.about {
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		@media(max-width: 500px) {
+			flex-direction: column;
+		}
+		.interior ();
+		.aboutme {
+			width: 50%;
+			padding-left: 0;
+			padding-right: @padding*2;
+			.bodyfont ();
+			h2 {
+				.titlefonts ();
+				}
+		}
+		.stuff {
+			width: 50%;
+			padding-left: @padding;
+			.bodyfont ();
+			h2 {
+				.titlefonts();
+			}
+		}
+	
+	}
+
+	//work
+
+	.work {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		.interior ();
+		h2 {
+			.titlefonts();
+		}
+		div {
+			p {
+				.bodyfont();
+				font-family: @banger;
+				letter-spacing: 2px;
+				border-bottom: 2px dashed @secondary-color;
+			}
+			ul {
+				.bodyfont();
+				padding-top: 10px;
+			}
+		}
+	}
+
+	//footer
+
+	.footer {
+		background-color: @secondary-color;
+		padding: @padding;
+	}
