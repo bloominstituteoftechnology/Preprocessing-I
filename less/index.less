@@ -216,19 +216,33 @@ html, body {
 		color: @titlecolor; /* Change the color */
 		font-weight: bold; /* If you want it to be bold */
 		display: inline-block; /* Needed to add space between the bullet and the text */
-		width: 1em; /* Also needed for space (tweak if needed) */
-		margin-left: -1em; /* Also needed for space (tweak if needed) */
-		padding: 1% 8%;
+		width: 1rem; /* Also needed for space (tweak if needed) */
+		margin-left: -1rem; /* Also needed for space (tweak if needed) */
+		// padding: 1% 8%;
 		color: white;
 		}
 
 		.personal {
 			// padding: 1%;
 			margin-bottom: 5%;
+
+			ul {
+				padding: 1% 8%;
+			}
+
+			ul li {
+				padding: 1%;
+			}
 		}
 
-		.professional ul {
-			padding: 2%;
+		.professional {
+			ul {
+				padding: 2% 8%;
+			}
+
+			ul li {
+				padding: 1%;
+			}
 		}
 	}
 } //sidebar
@@ -346,7 +360,7 @@ html, body {
 
 	.container {
 		flex-direction: column;
-		// padding:2% 5%;
+		padding: 1%;
 
 		.sidebar {
 			width: 100%;
@@ -370,6 +384,12 @@ html, body {
 				display: flex;
 				justify-content: center;
 			}
+
+			.personal ul, .professional ul {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 		}
 
 		.main {
@@ -379,6 +399,10 @@ html, body {
 			.statement, .education, .experience, .references, .icons {
 				margin: 1%;
 
+			}
+
+			.references ul {
+				padding: 0 2%;
 			}
 		}
 	}

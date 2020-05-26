@@ -252,18 +252,26 @@ body {
   /* If you want it to be bold */
   display: inline-block;
   /* Needed to add space between the bullet and the text */
-  width: 1em;
+  width: 1rem;
   /* Also needed for space (tweak if needed) */
-  margin-left: -1em;
+  margin-left: -1rem;
   /* Also needed for space (tweak if needed) */
-  padding: 1% 8%;
   color: white;
 }
 .sidebar .skills .personal {
   margin-bottom: 5%;
 }
+.sidebar .skills .personal ul {
+  padding: 1% 8%;
+}
+.sidebar .skills .personal ul li {
+  padding: 1%;
+}
 .sidebar .skills .professional ul {
-  padding: 2%;
+  padding: 2% 8%;
+}
+.sidebar .skills .professional ul li {
+  padding: 1%;
 }
 .main {
   display: flex;
@@ -373,6 +381,7 @@ body {
 @media (max-width: 800px) {
   .container {
     flex-direction: column;
+    padding: 1%;
   }
   .container .sidebar {
     width: 100%;
@@ -397,6 +406,12 @@ body {
     display: flex;
     justify-content: center;
   }
+  .container .sidebar .personal ul,
+  .container .sidebar .professional ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .container .main {
     padding: 2% 0;
     width: 100%;
@@ -407,5 +422,8 @@ body {
   .container .main .references,
   .container .main .icons {
     margin: 1%;
+  }
+  .container .main .references ul {
+    padding: 0 2%;
   }
 }
