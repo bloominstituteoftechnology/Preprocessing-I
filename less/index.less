@@ -53,7 +53,139 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+//h1 font
+
+//Variables
+@main-color:#fabfaa;
+@h1-font:'Anton', sans-serif;
+@back-color:#fff7f7;
+@border: 2px solid black;
+@accent-color:#bdb779
+//mixins
+.flex(){
+	display:flex;
+	justify-content:center;
+
 }
 
+
+html, body {
+	height: 85%;
+	font-size: 62.5%;
+	width: 850px;
+	background-color:#fabfaa;
+}
+
+h1{
+	font-size: 3rem;
+	padding-top: 15px;
+
+}
+
+ h2 {
+	font-size: 2rem;
+	padding-bottom: 20px;
+
+
+}
+p{
+	font-size: 1.5rem;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+img{
+	width: 150px;
+}
+header{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 1px solid black;
+@media(max-width: 300px) {
+	align-items: center;
+}
+
+nav{
+	.flex();
+	@media(max-width: 300px) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+a{
+	padding-top: 20px;
+	padding-bottom: 30px;
+	&:hover{
+		color: @accent-color;
+	}
+}
+.links{
+	margin-right: 20px;
+	font-size: 1.5rem;
+}
+}
+
+.containerHome{
+	width: 95%;
+	max-width: 850px;
+	margin: 0 auto;
+}
+.mainheader{
+	background-color:@back-color;
+	width: 400px;
+	height:500px ;
+	margin: 0 auto;
+	margin-top: 10px;
+	border: @border;
+	
+
+	button{
+		margin: 15px;
+	}
+
+	
+}
+
+.secondsection{
+	display: flex;
+	width: 50%;
+	margin: 0 auto;
+	padding-top: 20px;
+
+	h2{
+		padding-bottom: 0em;
+	}
+	ul{
+		padding-top: 20px;
+
+	}
+
+	li{
+		font-size: 1.5rem;
+		border: 1px solid black
+	}
+
+}
+
+
+.thirdsection{
+	display: flex;
+	justify-content: center;
+	width:50%;
+	margin: 0 auto;
+
+	h2{
+		padding-bottom: 0;
+		margin-top: 20px;
+	}
+	p{
+		padding-top: 10px;
+		
+	}
+  }
+
+  footer{
+	  text-align: center;
+  }
