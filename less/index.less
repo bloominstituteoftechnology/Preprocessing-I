@@ -3,133 +3,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
+@import "variables.less";
+@import "mixins.less";
+@import "reset.less"; // * Set every element's box-sizing to border-box
 * {
   box-sizing: border-box;
   //   border: 2px solid black;
@@ -138,12 +14,13 @@ table {
 body {
   //   height: 100%;
   width: 100%;
+  background-color: @main;
   //   margin-right: 10%;
   //   flex-direction: column;
   //   justify-content: right;
   font-family: Arial, Helvetica, sans-serif;
   //   align-content: center;
-  border: 4px solid blue;
+  //   border: 4px solid blue;
   padding: 3%;
 }
 // body {
@@ -153,14 +30,14 @@ header {
   //   border: 4px solid black;
 }
 header nav {
-width: 100%;
+  width: 100%;
   //   border: 2px solid red;
   display: flex;
   justify-content: flex-end;
   padding-bottom: 2%;
-  //   background-color: #87cefa;
+  // background-color: #87cefa;
   font-size: 0.8rem;
-//   justify-content: flex-end; 
+  //   justify-content: flex-end;
 }
 
 a {
@@ -168,19 +45,21 @@ a {
   display: flex;
   justify-content: flex-end;
 }
+  
 
 .intro {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
   //   border: 2px solid cyan;
-  background-color: lightgray;
+  background-color: @main;
   width: 100%;
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
+  padding: 1%;
 }
 
 h1 {
@@ -196,14 +75,15 @@ h2 {
 
 p {
   padding: 1%;
-  font-size: .9rem;
+  font-size: 0.9rem;
+  color: @text;
 }
 
 button {
-  display: flex;
+  .flex();
   justify-content: flex-start;
-  font-size: .8rem;
-  background-color: grey;
+  font-size: 0.8rem;
+  background-color: gray;
   color: white;
   width: 10%;
   padding: 1%;
@@ -212,17 +92,16 @@ button {
 
 .bio {
   width: 100%;
-  display: flex;
-//   padding: .1%;
-//   border: 2px solid black;
+  .flex();
+  // display: flex;
+  //   padding: .1%;
+  //   border: 2px solid black;
   // div this is for divs in .bio
-.bio-content {
-	width: 50%;
-	p{
-		font-size: 120%;
-
-		
-	}
+  .bio-content {
+    width: 50%;
+    p {
+      font-size: 120%;
+    }
   }
 }
 
@@ -230,43 +109,46 @@ h2 {
   font-weight: bold;
   padding: 0.5%;
 }
- div h3 {
+div h3 {
   font-weight: bold;
-  display: flex;
-  justify-content: flex-start;
+  .flex();
   padding: 1%;
 }
-h3{
-	font-weight: bold;
-	display: flex;
-	padding: 1%;
+h3 {
+  font-weight: bold;
+  display: flex;
+  padding: 1%;
 }
 
 .bio-content table th {
-  display: flex;
+  .flex();
   flex-direction: column;
-//   justify-content: flex-end;
-align-items: flex-start;
+  //   justify-content: flex-end;
+  align-items: flex-start;
   border: none;
   border: 1px solid lightgray;
   padding: 2%;
 }
-table, td, th {
-	border: 1px solid black;
-	padding: 1%;
-  }
-  
-  table {
-	border-collapse: collapse;
-	width: 100%;
-  }
+table,
+td,
+th {
+  border: 1px solid black;
+  padding: 1%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
 //   th, td {
-	// text-align: left;
-	// padding: 8px;
-  
+// text-align: left;
+// padding: 8px;
+
 // }
-  tr:nth-child(odd) {background-color: #f2f2f2;}
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
 
 footer {
   width: 100%;
