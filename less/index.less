@@ -17,35 +17,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -54,6 +54,116 @@ table {
 }
 
 html, body {
-    height: 100%;
+    .flex-direction-column();
+    margin: 0 auto;
+    color: @color;
+    width: 880px;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
 }
 
+// Variables //
+@background: lightgray;
+@font-family: Modern Antiqua, Kirang Haerang;
+@font-size: 62.5%;
+@color: black;
+
+// Mixins //
+.flex-direction-column() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+// Container //
+.container {
+    background-color: @background;
+    max-width: 880px;
+    width: 90%;
+    border: 1px solid black;
+    .flex-direction-column();
+}
+
+
+// Navigation & header //
+header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+nav {
+    display: flex;
+    font-size: 1.5rem;
+    width: 50%;
+    color: gray;
+    align-items: center;
+    margin: 10px 2%;
+    padding: 5px 1%;
+    margin-bottom: 20px;
+    position: relative;
+    left: -230px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+
+&:hover {
+    color: gray;
+    text-decoration: underline;
+}
+}
+button {
+    background-color: black;
+    margin-top: 15px;
+	border: solid black 1px;
+    padding: 10px 50px;
+
+&:hover {
+    color: lightblue;
+}
+}
+
+// Intro text //
+h1 {
+    font-family: @font-family;
+    font-size: 2.2rem;
+    margin-bottom: 9px;
+}
+  
+.top p {
+    .flex-direction-column();
+    }
+
+    .self {
+        position: relative;
+        width: 25%;
+        display: inline-block;
+        top: 20px;
+      }
+// Skills //
+
+// Employment //
+h1 {
+    margin-bottom: 20px;
+}
+
+
+// Contact //
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: @font-family;
+}
+
+.contact p {
+    margin-bottom: 20px;
+    .flex-direction-column();
+}
+
+footer {
+    position: relative;
+    right: 0px;
+    left: 380px;
+}
