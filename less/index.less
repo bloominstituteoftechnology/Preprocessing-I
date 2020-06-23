@@ -1,59 +1,368 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+
+//variables
+@color: @yellow; 
+@yellow: #fafad2;
+@font: cursive;
+
+//mixin
+.padding {
+  padding: 15px;
+}
+ 
+.bordered {
+  border-bottom: 1px solid lightskyblue;
 }
 
-html, body {
-    height: 100%;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  font-family: Verdana, cursive;
+}
+
+body {
+  height: 100%;
+  font-family: Verdana, cursive;
+}
+
+.container {
+  max-width: 880px;
+  margin: auto;
+  font-size: 1.8rem;
+}
+
+header {
+  width: 95%;
+  display: flex;
+  margin: 25px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+header nav a {
+  text-decoration: none;
+  margin: 15px;
+  font-size: 1.8rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+.intro {
+  background-color: @yellow;
+  .padding;
+  margin: 15px;
+  width: 95%;
+
+
+h1 {
+  .padding;
+  font-size: 2.8rem;
+
+
+h2 {
+  font-family: "Courier New", @font;
+  font-size: 1.8rem;
+  .padding;
+
+
+p {
+  font-size: 1.4rem;
+  .padding;
+  line-height: 2;
+  font-family: @font;
+}//intro
+}//h1
+}//h2
+}//p
+
+.intro button {
+  font-size: 1.2rem;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.main {
+  display: flex;
+  width: 98%;
+}
+
+.main .text {
+  width: 500px;
+  justify-content: space-between;
+  margin: 20px;
+  font-family: @font;
+  font-size: 1.8rem;
+}
+
+.main .text p {
+  font-size: 1.4rem;
+  padding: 10px 10px 0;
+  line-height: 1.4;
+  font-family: @font;
+}
+
+.main .text ul li {
+  .bordered;
+  font-size: 1.3rem;
+  padding: 3px;
+  align-content: center;
+  margin-left: 10px;
+  list-style: square;
+}
+
+.work-history h2 {
+  margin: 10px;
+  width: 95%;
+  font-family: @font;
+  font-size: 1.8rem;
+}
+
+.work-history table {
+  border-collapse: collapse;
+  width: 95%;
+  margin: 20px;
+}
+
+.work-history table th {
+  text-align: left;
+  .padding;
+  font-size: 1.4rem;
+  color: red;
+}
+
+.work-history table td {
+  text-align: left;
+  .padding;
+  font-size: 1.3rem;
+}
+
+.work-history table tr:nth-child(odd) {
+  background-color: lightcyan;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 8px;
+  background-color: lightblue;
+  width: 98%;
+}
+
+.team h2 {
+  color: rebeccapurple;
+  font-size: 2.8rem;
+  padding-left: 30px;
+}
+
+.team input {
+  width: 30%;
+  .padding;
+  margin: 20px 10px 20px;
+}
+
+textarea {
+  width: 80%;
+  height: 200px;
+  margin-top: 10px;
+}
+
+.contact {
+  margin-top: 20px;
+  background-color: @yellow;
+  width: 98%;
+}
+
+.contact p {
+  font-size: 1.6rem;
+  padding: 10px 10px 0;
+  line-height: 1.4;
+  font-family: @font;
+  color: red;
+}
+
+//mobile
+@media (max-width: 500px){
+  .container {
+    max-width: 90%;
+  }
+
+  header {
+    justify-content: center;
+  nav {
+    flex-direction: column;
+a {
+    padding: 0;
+    margin: 5px;
+    text-align: center;
+    font-size: 20px;
+
+  }
+  }
+  }
+
+  .intro h1, h2 {
+    align-items: center;
+    padding: 8px;
+    margin: 0;
+    color: red;
+  }
+
+  .intro img {
+    display: none;
+  }
+
+  .main {
+   flex-direction: column; 
+  .text {
+    width: 90%;
+  }
+}
+
+  .work-history table {
+    margin: 0;
+    padding: 0;
+  }
 }
 
