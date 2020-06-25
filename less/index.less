@@ -57,3 +57,151 @@ html, body {
     height: 100%;
 }
 
+// mix-ins
+
+.text-center-white() {
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+}
+
+.section-heading-content() {
+	h1 {
+		font-size: 4.2rem;
+		color: firebrick;
+		font-weight: bold;
+	}
+
+	h2 {
+		font-size: 2.0rem;
+		font-weight: bold;
+		margin: 25px 0 8px 0;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+		margin: 8px 0;
+	}
+
+	p {
+		font-size: 1.4rem;
+		margin: 20px 0;
+	}
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+// Header with navigation in top bar
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		background-color: black;
+		padding: 25px 0;
+		box-shadow: 0 0 30px 0;
+
+		nav {
+			display: flex;
+
+			a {
+				color: white;
+				font-size: 1.8rem;
+				text-decoration: none;
+				margin: 0 5%;
+			}
+		
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.body {
+		display: flex;
+		flex-grow: 1;
+
+		.side-bar {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 400px;
+			background-color: firebrick;
+
+			.avatar {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+		
+				.avatar-img {
+					margin: 130px 0 40px 0;
+				}
+		
+				h1 {
+					font-size: 3.8rem;
+					.text-center-white();
+				}
+		
+				h2 {
+					font-size: 1.8rem;
+					.text-center-white();
+				}
+			}
+		
+			.get-in-touch {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+		
+				h3 {
+					font-size: 1.4rem;
+					color: white;
+					margin: 100px 0 10px 0;
+				}
+		
+				.git-icons {
+					display: flex;
+					flex-direction: row;
+					margin: 10px 0;
+		
+					.contact-icon {
+						height: 50px;
+						width: 50px;
+						padding: 5px;
+					}
+				}
+			}
+		}
+		
+		.content {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 600px;
+			margin: 40px 70px;
+
+			.section-content {
+				.section-heading-content();
+				.section-h1 {
+					margin-top: 70px;
+				}
+				ul {
+					li {
+						list-style-type: square;
+						list-style-position: inside;
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+}
