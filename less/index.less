@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -47,13 +47,142 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Set every element's box-sizing to border-box */
+
+//My code begins here
+
+//Variables
+@default-pad: 1%;
+@theme1: lightgrey;
+//Mix-Ins
+.flex-flex() {
+	display: flex;
+	justify-content: space-between;
+}
+.ja-center {
+	justify-content: center;
+	align-items: center;
 }
 
-html, body {
-    height: 100%;
+header {
+	background-color: @theme1;
+	display: flex;
+	align-items: baseline;
+	display: flex;
+	h1 {
+		font-size: 2rem;
+	}
+	nav {
+		width: 80%;
+		display: flex;
+		justify-content: flex-end;
+		a {
+			margin: 2%;
+			text-decoration: none;
+			color: black;
+		}
+		a:hover {
+		color:white;
+		}
+	}
+	@media (max-width: 500px) {
+		flex-direction: column;
+		header {
+			display: flex;
+			.ja-center;
+		}
+	}
+}
+img {
+
+	width: 20rem;
+	height: auto;
 }
 
+.about-section {
+	margin: 1%;
+	display: flex;
+	flex-direction: column;
+	.ja-center;
+	h2 {
+		font-size: 2rem;
+		text-align: center;
+		text-decoration: underline;
+		padding: @default-pad;
+	}
+	p {
+		width: 50%;
+		text-align: center;
+		.ja-center;
+	}
+}
+.why-me {
+	display: flex;
+	justify-content: space-around;
+	padding: @default-pad;
+	background-color: @theme1;
+
+	h2 {
+		font-size: 1.5rem;
+	}
+	.exp {
+		p{
+			font-size: 1.2rem;
+			justify-content: center;
+			width: 45vw;
+		}
+	}
+	.pros {
+		width: 40vw;
+		li {
+			border: 1px solid black;
+			font-size: 1.2rem;
+		}
+
+	}
+	@media (max-width: 500px) {
+		text-align: center;
+		flex-direction: column;
+		.ja-center;
+	}
+}
+.history {
+	display: flex;
+	flex-direction: column;
+	padding: @default-pad;
+	h2 {
+		font-size: 1.5rem;
+	}
+	.hist-container {
+		border: 1px solid black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: @default-pad;
+		.context {
+			.flex-flex();
+		}
+		.content1 {
+			.flex-flex;
+		}
+		.content2 {
+			.flex-flex;
+		}
+		.content3 {
+			.flex-flex;
+		}
+	}
+	@media (max-width: 500px) {
+		.ja-center;
+	}
+}
+footer {
+	display: flex;
+	justify-content: center;
+	h4 {
+		padding: @default-pad;
+	}
+}
