@@ -1,9 +1,7 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,38 +20,184 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
-}
+	vertical-align: baseline; }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
+	display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
-	content: none;
-}
+	content: none; }
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
-}
-
+	border-spacing: 0; }
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
+* {	box-sizing: border-box; }
+html, body { height: 100%; }
+/////////
+// Start
+/////////
+// Variables
+@mobile-max-width: 500px;
 
-html, body {
-    height: 100%;
-}
+// Colors
+@color-red: #ff0000;
+@color-lightgray: #dfdfdf;
+@color-darkgray: #3e3e3e;
+@color-gray: #999999;
+@color-mutedgray: #99999955;
+@color-black: #131313;
+@color-white: #ececec;
 
+// Fonts
+@font-title: 'Roboto', sans-serif;
+@font-body: 'Lato', sans-serif;
+
+// Mix-ins 
+.center() { justify-content: center; margin: 0 auto; }
+.font-title() { font-family: @font-title; font-weight: 700; }
+.font-subtitle() {
+	font-family: @font-title; 
+	font-weight: 300;
+	font-style: italic;
+}
+.font-body() { font-family: @font-body; font-weight: 400; }
+.transition() { transition-duration: 1s; }
+
+// Elements
+html { font-size: 62.5%; }
+.body { width: 100%; max-width: 800px; .center; 
+	@media screen and (max-width: @mobile-max-width) { 
+		background-color: @color-black;
+		color: @color-white;
+		width: 100%;
+		.center;
+		.transition;
+	} 
+}
+body, p { font-size: 1.6rem; line-height: 1.5; .font-body; 
+	@media screen and (max-width: @mobile-max-width) { font-size: 1.2rem; } 
+}
+p { margin: 10px 0; }
+h1 { font-size: 2.8rem; .font-title; 
+	@media screen and (max-width: @mobile-max-width) { font-size: 2.4rem; } 
+}
+h2 { font-size: 2.2rem; .font-title; 
+	@media screen and (max-width: @mobile-max-width) { font-size: 1.8rem; } 
+}
+h3 { font-size: 1.8rem; .font-subtitle; 
+	@media screen and (max-width: @mobile-max-width) { font-size: 1.4rem; } 
+}
+ul { margin: 0 40px; }
+li { list-style-type: square; }
+hr { border-top: 1px solid #00000033; margin: 20px 0; }
+.strike { text-decoration: line-through; color: @color-gray; }
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+th, td { padding: 20px; text-align: left; }
+th { font-weight: bold; }
+thead th:nth-child(1) {	width: 10%; }
+thead th:nth-child(2) {	width: 20%; }
+thead th:nth-child(3) {	width: 25%; }
+thead th:nth-child(4) {	width: 45%; }
+tbody tr:nth-child(odd) { background-color: @color-mutedgray; }
+
+// Bootstrappy
+.row { display: flex; }
+.col-6 { width: 50%; }
+
+// @parameters: 1.6rem;
+// .loop( @parameters ) when ( font-size=1.6rem ) {
+//     .loop( @parameters - 0.2rem ); // iterate.
+//     font-size: @parameters;
+// }
+// Nested page declaration
+.main { 
+	margin: 20px 20px 0 20px;
+	.top-nav {
+		width: 100%;
+		height: 40px;
+		ul { 
+			margin: 0;
+			display: flex;
+			justify-content: space-between;
+			width: 56.66%;
+			float: right;
+			.transition;
+			@media screen and (max-width: @mobile-max-width) { 
+				width: 100%;
+				float: none;
+			} 
+		}
+		li { 
+			list-style-type: none; 
+			font-size: 1.4rem;
+			padding: 0 0 0 10px; 
+			@media screen and (max-width: @mobile-max-width) { 
+				padding: 0 10px 0 10px;
+			}
+			a { 
+				color: @color-black; text-decoration: none; 
+				@media screen and (max-width: @mobile-max-width) { 
+					color: @color-white;
+				}
+			}
+		}
+	}
+	header {
+		width: 100%;
+		background-color: @color-mutedgray;
+		padding: 20px;
+		margin: 0 0 20px 0;
+		img { 
+			margin: 20px 0;
+			width: 33.33%; 
+			max-width: 400px; 
+		}
+	}
+	.middle {
+		margin: 0 0 20px 0;
+		.row {
+			.col-6 { 
+				p { 
+					padding: 0 10px 0 0; 
+				}
+				.fake-table { 
+					border: 1px solid @color-mutedgray;
+					margin: 0 0 -1px 0;
+					padding: 10px;
+				}
+			}
+
+		}
+
+	}
+	.bottom {
+		thead tr th { 
+			border-top: 1px solid @color-gray; 
+			border-bottom: 1px solid @color-gray; 
+		}
+		
+
+	}
+	footer {
+		text-align: center;
+		background-color: @color-gray;
+		color: @color-white;
+		width: 100%;
+		height: 120px;
+		margin: 20px 0 0 0;
+		padding: 20px;
+		@media screen and (max-width: @mobile-max-width) { 
+			background-color: @color-darkgray;
+		}
+		img { width: 32px; margin: 10px; }
+	}
+}
