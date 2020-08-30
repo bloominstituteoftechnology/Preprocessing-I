@@ -1,1 +1,441 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  Max-width: 100%;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Libre Baskerville', serif;
+}
+.container {
+  background-image: url('../img/diamond.jpg');
+  background-color: rgba(111, 157, 243, 0.5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  height: auto;
+  width: 100%;
+  display: flex;
+  padding: 2% 5%;
+}
+.container h1 {
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.container h2 {
+  font-size: 1.8rem;
+}
+.container h3 {
+  font-size: 1.5rem;
+}
+.container h4 {
+  font-size: 1.2rem;
+}
+.sidebar {
+  margin: 0 1% 0 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4% 3%;
+  width: 45%;
+  color: white;
+}
+.sidebar h2 {
+  color: white;
+  border-bottom: 2px white solid;
+}
+.sidebar .topimg {
+  padding: 1%;
+}
+.sidebar .topimg img {
+  border-radius: 10px;
+}
+.sidebar .contact {
+  padding: 8% 0;
+  width: 100%;
+  color: white;
+}
+.sidebar .contact .address {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4% 0;
+  height: 6vh;
+  color: white;
+}
+.sidebar .contact .address .home {
+  display: none;
+}
+.sidebar .contact .address:hover .home {
+  display: block;
+  color: white;
+}
+.sidebar .contact .address:hover .fa-home {
+  display: none;
+}
+.sidebar .contact .phone {
+  padding: 4% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 6vh;
+  color: white;
+}
+.sidebar .contact .phone .number {
+  display: none;
+}
+.sidebar .contact .phone:hover .number {
+  display: block;
+  color: white;
+}
+.sidebar .contact .phone:hover .fa-mobile-alt {
+  display: none;
+}
+.sidebar .contact .email {
+  padding: 4% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 6vh;
+  color: white;
+}
+.sidebar .contact .email .gmail {
+  display: none;
+}
+.sidebar .contact .email:hover .gmail {
+  display: block;
+  color: white;
+}
+.sidebar .contact .email:hover .fa-envelope-open {
+  display: none;
+}
+.sidebar .skills ul {
+  list-style: none;
+  /* Remove default bullets */
+}
+.sidebar .skills ul li::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: black;
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1rem;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1rem;
+  /* Also needed for space (tweak if needed) */
+  color: white;
+}
+.sidebar .skills .personal {
+  margin-bottom: 5%;
+}
+.sidebar .skills .personal ul {
+  padding: 4% 8%;
+}
+.sidebar .skills .personal ul li {
+  padding: 1%;
+}
+.sidebar .skills .professional ul {
+  padding: 4% 8%;
+}
+.sidebar .skills .professional ul li {
+  padding: 1%;
+}
+.main {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0 2%;
+}
+.main .statement {
+  border-radius: 5px;
+  padding: 2% 2%;
+  background-color: #ffffff;
+}
+.main .statement h2 {
+  color: #1d2e7d;
+}
+.main .education {
+  border-radius: 5px;
+  padding: 2% 2%;
+  background-color: #ffffff;
+}
+.main .education h2 {
+  color: #1d2e7d;
+}
+.main .education .school {
+  padding: 2% 0;
+}
+.main .experience {
+  border-radius: 5px;
+  padding: 2% 2%;
+  background-color: #ffffff;
+}
+.main .experience h2 {
+  color: #1d2e7d;
+}
+.main .experience .work {
+  padding: 2% 0;
+}
+.main .references {
+  border-radius: 5px;
+  padding: 2% 2%;
+  background-color: #ffffff;
+}
+.main .references h2 {
+  color: #1d2e7d;
+}
+.main .references ul {
+  list-style: none;
+  /* Remove default bullets */
+}
+.main .references ul li::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: black;
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+  padding: 1% 2%;
+}
+.main .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 10vh;
+  width: 100%;
+}
+.main .icons li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .icons .fa-facebook-square {
+  color: #e2e7e7;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.main .icons .fa-facebook-square:hover {
+  transform: scale(1.1);
+}
+.main .icons .fa-instagram {
+  text-decoration: none;
+  color: #e2e7e7;
+  transition: all 0.2s ease-in-out;
+}
+.main .icons .fa-instagram:hover {
+  transform: scale(1.1);
+}
+.main .icons .fa-linkedin {
+  text-decoration: none;
+  color: #e2e7e7;
+  transition: all 0.2s ease-in-out;
+}
+.main .icons .fa-linkedin:hover {
+  transform: scale(1.1);
+}
+.main .icons .fa-github {
+  text-decoration: none;
+  color: #e2e7e7;
+  transition: all 0.2s ease-in-out;
+}
+.main .icons .fa-github:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    padding: 1%;
+  }
+  .container .sidebar {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .container .sidebar .topimg {
+    display: flex;
+    justify-content: center;
+  }
+  .container .sidebar .address .fa-home,
+  .container .sidebar .phone .fa-mobile-alt,
+  .container .sidebar .email .fa-envelope-open {
+    display: none;
+  }
+  .container .sidebar .address .home,
+  .container .sidebar .phone .number,
+  .container .sidebar .email .gmail {
+    display: block;
+    color: white;
+  }
+  .container .sidebar h2 {
+    display: flex;
+    justify-content: center;
+  }
+  .container .sidebar .personal ul,
+  .container .sidebar .professional ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .main {
+    padding: 2% 0;
+    width: 100%;
+  }
+  .container .main .statement,
+  .container .main .education,
+  .container .main .experience,
+  .container .main .references,
+  .container .main .icons {
+    margin: 1%;
+  }
+  .container .main .references ul {
+    padding: 0 2%;
+  }
+}

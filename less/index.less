@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -50,10 +50,390 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	Max-width: 100%;
+	
+}
+
+@titlecolor: black;
+@titlecoloralt: dimgray;
+
+.mainboxstyles() {
+	// border: 1px #214e53 solid;
+	// border-top: 8px #214e53 solid;
+	// background: linear-gradient(180deg, rgb(111, 157, 243) 20%, rgb(150, 183, 243) 95%);
+	border-radius: 5px;
+	padding: 2% 2%;
+	background-color: rgb(255, 255, 255);
+
+	h2 {
+		color: #1d2e7d;
+	}
+}
+
+.sidebarstyles() {
+	padding: 4% 3%;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: 'Libre Baskerville', serif;
 }
+
+.container {
+	background-image: url('../img/diamond.jpg');
+    background-color: rgba(111, 157, 243, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    height: auto;
+
+	width: 100%;
+	display: flex;
+	padding: 2% 5%;
+	// background-color: black;
+
+
+	h1 {
+		font-size: 2rem;
+		color: white;
+		display: flex;
+		justify-content: center;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+	}
+}
+
+.sidebar {
+	margin: 0 1% 0 0;
+	border-radius: 10px;
+	// background: linear-gradient(180deg,white 10%, #266d75 55%);
+	background: rgba(0, 0, 0, 0.7);
+	.sidebarstyles();
+	width: 45%;
+	color: white;
+	// box-shadow: 0px 0px 10px rgb(204, 204, 204);
+
+	h2 {
+		color: white;
+		border-bottom: 2px white solid;
+	}
+
+	.topimg{
+		padding: 1%;
+
+		img {
+			border-radius: 10px;
+		}
+	}
+
+	.contact {
+		padding: 8% 0;
+		width: 100%;
+		color: white;
+
+		.address {
+			display: flex;
+			justify-content: space-evenly;
+			// flex-direction: column;
+			align-items: center;
+			padding: 4% 0;
+			height: 6vh;
+			color: white;
+			
+			.home {
+				display: none
+			}
+			
+		}
+
+		.address:hover .home {
+			display: block;
+			color: white;
+
+		}
+
+		.address:hover .fa-home {
+			display: none
+		}
+	
+
+		.phone {
+			padding: 4% 0;
+			display: flex;
+			justify-content: space-evenly;
+			flex-direction: column;
+			align-items: center;
+			height: 6vh;
+			color: white;
+
+			.number {
+				display: none
+			}
+		}
+
+		.phone:hover .number {
+			display: block;
+			color: white;
+
+		}
+
+		.phone:hover .fa-mobile-alt {
+			display: none
+		}
+
+		.email {
+			padding: 4% 0;
+			display: flex;
+			justify-content: space-evenly;
+			flex-direction: column;
+			align-items: center;
+			height: 6vh;
+			color: white;
+
+
+			.gmail {
+				display: none
+			}
+		}
+
+		.email:hover .gmail {
+			display: block;
+			color: white;
+		}
+
+		.email:hover .fa-envelope-open {
+			display: none
+		}
+	}
+
+	.skills {
+		ul {
+			list-style: none; /* Remove default bullets */
+		  }
+		  
+		ul li::before {
+		content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+		color: @titlecolor; /* Change the color */
+		font-weight: bold; /* If you want it to be bold */
+		display: inline-block; /* Needed to add space between the bullet and the text */
+		width: 1rem; /* Also needed for space (tweak if needed) */
+		margin-left: -1rem; /* Also needed for space (tweak if needed) */
+		// padding: 1% 8%;
+		color: white;
+		}
+
+		.personal {
+			// padding: 1%;
+			margin-bottom: 5%;
+
+
+			ul {
+				padding: 4% 8%;
+			}
+
+			ul li {
+				padding: 1%;
+			}
+		}
+
+		.professional {
+			ul {
+				padding: 4% 8%;
+			}
+
+			ul li {
+				padding: 1%;
+			}
+		}
+	}
+} //sidebar
+
+.main {
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	width: 100%;
+	border-radius: 10px;
+	// background: linear-gradient(128deg,#080808 50%, rgba(0, 0, 0, 0.7) 40%);
+	background-color: rgba(0, 0, 0, 0.7);
+	padding:0 2%;
+	// box-shadow: 0px 0px 10px rgb(204, 204, 204);
+
+	.statement {
+		.mainboxstyles();
+	} //statement
+
+	.education {
+		.mainboxstyles();
+		
+
+		.school {
+			padding: 2% 0
+		}
+	}
+
+	.experience {
+		.mainboxstyles();
+
+		.work {
+			padding: 2% 0;
+		}
+	}
+
+	.references {
+		.mainboxstyles();
+
+		ul {
+			list-style: none; /* Remove default bullets */
+		  }
+		  
+		ul li::before {
+		content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+		color: @titlecolor; /* Change the color */
+		font-weight: bold; /* If you want it to be bold */
+		display: inline-block; /* Needed to add space between the bullet and the text */
+		width: 1em; /* Also needed for space (tweak if needed) */
+		margin-left: -1em; /* Also needed for space (tweak if needed) */
+		padding: 1% 2%;
+		}
+	}
+
+
+
+	.icons {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		height: 10vh;
+		width: 100%;
+
+
+
+		li {
+			width: 25%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.fa-facebook-square {
+			color:#e2e7e7;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: all .2s ease-in-out;
+		}
+		.fa-facebook-square:hover {
+			// color: #e2e7e7;
+			transform: scale(1.1);
+		}
+
+		.fa-instagram {
+			text-decoration: none;
+			color:#e2e7e7;
+			transition: all .2s ease-in-out;
+		}
+		.fa-instagram:hover {
+			// color: #191970;
+			transform: scale(1.1);
+		}
+
+		.fa-linkedin {
+			text-decoration: none;
+			color:#e2e7e7;
+			transition: all .2s ease-in-out;
+		}
+		.fa-linkedin:hover {
+			// color: #214e53;
+			transform: scale(1.1);
+		}
+
+		.fa-github {
+			text-decoration: none;
+			color:#e2e7e7;
+			transition: all .2s ease-in-out;
+		}
+		.fa-github:hover {
+			// color: black;
+			transform: scale(1.1);
+		}
+	}
+
+	
+
+
+	
+} //main
+
+//media queiry for 500px//
+
+@media (max-width: 800px) {
+
+	.container {
+		flex-direction: column;
+		padding: 1%;
+
+		.sidebar {
+			width: 100%;
+			margin-bottom: 2%;
+
+			.topimg {
+				display: flex;
+				justify-content: center;
+			}
+
+			.address .fa-home, .phone .fa-mobile-alt, .email .fa-envelope-open {
+				display: none;
+			}
+
+			.address .home, .phone .number, .email .gmail {
+				display: block;
+				color: white;
+			}
+
+			h2 {
+				display: flex;
+				justify-content: center;
+			}
+
+			.personal ul, .professional ul {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		.main {
+			padding: 2% 0;
+			width: 100%;
+
+			.statement, .education, .experience, .references, .icons {
+				margin: 1%;
+
+			}
+
+			.references ul {
+				padding: 0 2%;
+			}
+		}
+	}
+}
+
+
+
+
+
 
