@@ -1,3 +1,6 @@
+## View the Index Page of Project
+1. <a href="https://davidaceves.github.io/Preprocessing-I/index.html">Click here</a>
+
 # Preprocessing I: Digital Resume
 
 For this project you will be building a digital resume from scratch. You will be required to use specific preprocessing skills to accomplish your tasks.  
