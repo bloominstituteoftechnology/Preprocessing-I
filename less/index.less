@@ -54,6 +54,479 @@ table {
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+/*-----Typography-----*/
+/* Montserrat & Lato */
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:400,500,600,700');
+
+/* Roboto Slab & Open Sans */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,500,600,700');
+
+.headingFont() {
+	font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.textFont() {
+	font-family: 'Open Sans', Helvetica, Sans-Serif;
+}
+
+/*-----Color Palette-----*/
+:root {
+	--primary-color: #265077;
+  --primary-dark-color: #022140;
+  --primary-light-color: #C5CAE9;
+	--accent-color: #51A7F8;
+  --emphasis-color: #212121;
+	--secondary-color: #1E4258;
+	--dark-text-color: #595959;
+	--light-text-color: #FFFFFF;
+	--secondary-text-color: #CCC;
+	--primary-bg-shading: #FCFCFC;
+	--secondary-bg-shading: #f0f0f8;
+}
+
+.emphasize-text() {
+  color: var(--emphasis-text-color);
+  font-weight: bold;
+}
+
+.defaultText() {
+	.textFont();
+	font-size: 1.5rem;
+	line-height: 1.2;
+	letter-spacing: 0.1rem;
+	color: var(--dark-text-color);
+}
+
+.mobileViewText() {
+	.defaultText();
+	font-size: 1.3rem;
+}
+
+.lightText() {
+	.textFont();
+	color: var(--light-text-color);
+}
+
+.banner-bg() {
+	background-image: url(../img/bg_code_corp_light.jpg);
+	background-position: top center;
+  background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;  
+}
+
+.primary-color-scheme() {
+	color: var(--light-text-color);
+	background: var(--primary-dark-color);
+}
+
+.primary-neg-color-scheme() {
+	color: var(--primary-dark-color);
+	background: var(--light-text-color);
+}
+
+.accent-color-scheme() {
+	color: var(--light-text-color);
+	background: var(--accent-color);
+}
+
+.overlay-color-scheme() {
+	color: var(--secondary-text-color);
+	background: var(--secondary-color);
+}
+
+.divider-color() {
+	border-color: var(--dark-primary-color);
+}
+
+// Page Template Settings
+.default-link-style() {
+	text-decoration: none;
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.flex(@direction,@justify,@align) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+/****** MAIN CONTAINER *******/
+.container {
+
+	/*---- Header & Footer ----*/
+	.header, .header *, .footer {
+		.primary-color-scheme();
+		.lightText();
+		.default-link-style();
+	}
+
+	/*----- Header -----*/
+	.header {
+		width: 100%;
+		.flex(row,center,normal);
+		padding: 1.15rem 0;
+
+		.navigation {
+			max-width: 991px;
+			flex-basis: 100%;
+			.flex(row,flex-end,normal);
+			flex-wrap: nowrap;
+			padding: 0 1%;
+
+			a {
+				font-size: 1.2rem;
+				letter-spacing: .24rem;
+				text-transform: uppercase;
+				margin-left: 5%;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			@media (max-width: 500px) {
+				.flex(column,center,center);
+
+				a {
+						width: 100%;
+						text-align: center;
+						padding: 20px 0;
+						margin: 0;
+						font-size: 1.6rem;
+						font-weight: 500;
+						border-bottom: 0.5px solid var(--primary-color);
+				}
+
+				a:first-child {
+					border-top: 0.5px solid var(--primary-color);
+				}
+
+				a:hover {
+					.primary-neg-color-scheme();
+				}
+				
+			}
+		
+		}
+
+
+	}
+
+	/*----- Footer -----*/
+	.footer {
+		// bottom: 0;
+		// position: fixed;
+		z-index: 2;
+		width: 100%;
+		.flex(column,normal,center);
+		padding: 20px 0;
+
+		.cta-info, .copyright-info {
+			.flex(column,normal,center);
+		}
+
+		.cta-info {
+			.cta-text {
+				.flex(column,normal,center);
+			}
+
+			.cta-text p {
+				font-size: 1.8rem;
+				font-weight: bold;
+				margin: 0.5rem 0;
+
+				@media (max-width: 500px) {
+					font-size: 1.6rem;
+					margin: 0.75rem 0;
+				}
+			}
+
+		.cta-btn {
+				.accent-color-scheme();
+				justify-self: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				padding: 0.5rem 1rem;
+				margin: 1rem 0;
+				border: 0;
+				border-radius: 25px;
+				letter-spacing: 0.12rem;
+				text-transform: uppercase;
+		}
+
+			.cta-links {
+				width: 40%;
+				font-size: 3rem;
+				.flex(row, space-evenly, normal);
+
+				@media (max-width: 500px) {
+					font-size: 2rem;
+					width: 60%;
+					margin-bottom: 10px;
+				}
+			}
+
+			.cta-links a {
+				.lightText();
+				font-size: 2rem;
+			}
+		}
+
+		.copyright-info * {
+			.lightText();
+			.default-link-style();
+			margin: 0.5rem 0;
+			font-size: 1.2rem;
+			word-spacing: 0.25rem;
+
+			@media (max-width: 500px) {
+				margin: 0.75rem 0;
+			}
+		}
+	}
+
+	/*----- Banner -----*/
+	.banner {
+		.lightText();
+		.textFont();
+		.banner-bg();
+		.flex(column,center,center);
+		width: 100%;
+		padding: 20px 0;
+		margin: 0;
+
+		p {
+			max-width: 991px;
+			margin: 1rem 0;
+		}
+
+		.headline {
+			.headingFont();
+			font-size: 4rem;
+			font-weight: bold;
+			text-transform: uppercase;
+
+			@media (max-width: 500px) {
+				font-size: 2.4rem;
+			}
+		}
+
+		.subtitle {
+			.headingFont();
+			font-size: 2rem;
+			font-weight: semi-bold;
+
+			@media (max-width: 500px) {
+				font-size: 1.4rem;
+			}
+		}
+
+		.tagline {
+			font-size: 1.8rem;
+			letter-spacing: 0.1rem;
+			line-height: 1.35;
+			padding: 0 1%;
+
+
+			@media (max-width: 500px) {
+				font-size: 1.35rem;
+				padding: 0 4%;
+				
+				
+			}
+		}
+
+		.contact-info-mobile {
+			display: none;
+
+			@media (max-width: 500px) {
+				.flex(column,center,center);
+
+				a {
+					.lightText();
+					.default-link-style();
+					margin: 0.5rem 0;
+					font-size: 1.4rem;
+				}
+				
+			}
+		}
+
+	}
+
+	/*---- Main Content ----*/
+	.content-container {
+		display: flex;
+		max-width: 991px;
+		margin: 0 auto;
+		background: var(--primary-bg-shading);
+
+		@media (max-width: 500px) {
+			.flex(column, normal, normal);
+		}
+
+		section {
+			margin: 15px 0;
+			.flex(column,normal,normal);
+			.defaultText();
+
+			@media (max-width: 500px) {
+				.mobileViewText();
+			}
+		}
+	}
+
+	.main-content {
+		flex: 0 0 70%;
+		.flex(column,normal,normal);
+		padding: 0 1%;
+		margin: 0;
+
+		@media (max-width: 500px) {
+			flex: 0 0 100%;
+			padding: 0 3%;
+		}
+
+		.job-title {
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: black;
+
+				@media (max-width: 500px) {
+					font-size: 1.5rem;
+				}
+			}
+
+			.company-info {
+				display: flex;
+				justify-content: space-between;
+				margin: 0.5rem 0;
+			}
+
+			.company-name {
+				color: var(--primary-dark-color);
+				font-size: 1.4rem;
+				font-weight: 900;
+
+				@media (max-width: 500px) {
+					font-size: 1.2rem;
+				}
+			}
+
+			.work-dates {
+				color: var(--primary-dark-color);
+				font-size: 1.4rem;
+				font-style: italic;
+
+				@media (max-width: 500px) {
+					font-size: 1.2rem;
+				}
+			}
+
+			.accomplishments {
+				margin-left: 20px;
+				list-style-type: square;
+			}
+
+			.accomplishments li {
+				margin-bottom: 1rem;
+			}
+	}
+
+	.sidebar-content {
+		flex: 0 0 30%;
+		background: var(--secondary-bg-shading);
+		.flex(column,normal,normal);
+		padding: 0 1%;
+		margin: 0;
+
+		@media (max-width: 500px) {
+			flex: 0 0 100%;
+			padding: 0 3%;
+			background: var(--primary-bg-shading);
+		}
+
+		.contact-info {
+			word-spacing: 0.5rem;
+
+			@media (max-width: 500px) {
+				display: none;
+			}
+
+			a {
+				margin: 0.5rem 0;
+				color: var(--primary-color);
+				text-decoration: none;
+			}
+
+		}
+
+		.skill-category-name, .certification {
+			margin: 0.5rem 0;
+			color: black;
+			font-size: 1.5rem;
+			font-weight: bold;
+
+			@media (max-width: 500px) {
+				font-size: 1.3rem;
+			}
+		}
+
+		.skills-list {
+			font-size: 1.3rem;
+			word-spacing: 0.5rem;
+
+			@media (max-width: 500px) {
+				font-size: 1.1rem;
+			}
+		}
+
+		.certification-date {
+			font-style: italic;
+			font-size: 1.2rem;
+		}
+
+	}
+
+	.section-title {
+		.headingFont();
+		font-size: 1.8rem;
+		font-weight: 600;
+		margin-bottom: 5px;
+		color: var(--primary-color);
+		text-transform: uppercase;
+
+		@media (max-width: 500px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	.role, .skill-category-info, .education-info {
+		margin-bottom: 1rem;
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
 

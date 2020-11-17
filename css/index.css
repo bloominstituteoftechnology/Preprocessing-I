@@ -1,1 +1,593 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+/*-----Typography-----*/
+/* Montserrat & Lato */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_ZpC3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_bZF3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
+}
+/* Roboto Slab & Open Sans */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+/*-----Color Palette-----*/
+:root {
+  --primary-color: #265077;
+  --primary-dark-color: #022140;
+  --primary-light-color: #C5CAE9;
+  --accent-color: #51A7F8;
+  --emphasis-color: #212121;
+  --secondary-color: #1E4258;
+  --dark-text-color: #595959;
+  --light-text-color: #FFFFFF;
+  --secondary-text-color: #CCC;
+  --primary-bg-shading: #FCFCFC;
+  --secondary-bg-shading: #f0f0f8;
+}
+/****** MAIN CONTAINER *******/
+.container {
+  /*---- Header & Footer ----*/
+  /*----- Header -----*/
+  /*----- Footer -----*/
+  /*----- Banner -----*/
+  /*---- Main Content ----*/
+}
+.container .header,
+.container .header *,
+.container .footer {
+  background: var(--primary-dark-color);
+  font-family: 'Open Sans', Helvetica, Sans-Serif;
+  color: var(--light-text-color);
+  text-decoration: none;
+}
+.container .header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: normal;
+  padding: 1.15rem 0;
+}
+.container .header .navigation {
+  max-width: 991px;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: normal;
+  flex-wrap: nowrap;
+  padding: 0 1%;
+}
+.container .header .navigation a {
+  font-size: 1.2rem;
+  letter-spacing: 0.24rem;
+  text-transform: uppercase;
+  margin-left: 5%;
+}
+.container .header .navigation a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .container .header .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .header .navigation a {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-bottom: 0.5px solid var(--primary-color);
+  }
+  .container .header .navigation a:first-child {
+    border-top: 0.5px solid var(--primary-color);
+  }
+  .container .header .navigation a:hover {
+    color: var(--primary-dark-color);
+    background: var(--light-text-color);
+  }
+}
+.container .footer {
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+  padding: 20px 0;
+}
+.container .footer .cta-info,
+.container .footer .copyright-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+}
+.container .footer .cta-info .cta-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+}
+.container .footer .cta-info .cta-text p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+@media (max-width: 500px) {
+  .container .footer .cta-info .cta-text p {
+    font-size: 1.6rem;
+    margin: 0.75rem 0;
+  }
+}
+.container .footer .cta-info .cta-btn {
+  color: var(--light-text-color);
+  background: var(--accent-color);
+  justify-self: center;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: 0;
+  border-radius: 25px;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+.container .footer .cta-info .cta-links {
+  width: 40%;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: normal;
+}
+@media (max-width: 500px) {
+  .container .footer .cta-info .cta-links {
+    font-size: 2rem;
+    width: 60%;
+    margin-bottom: 10px;
+  }
+}
+.container .footer .cta-info .cta-links a {
+  font-family: 'Open Sans', Helvetica, Sans-Serif;
+  color: var(--light-text-color);
+  font-size: 2rem;
+}
+.container .footer .copyright-info * {
+  font-family: 'Open Sans', Helvetica, Sans-Serif;
+  color: var(--light-text-color);
+  text-decoration: none;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  word-spacing: 0.25rem;
+}
+@media (max-width: 500px) {
+  .container .footer .copyright-info * {
+    margin: 0.75rem 0;
+  }
+}
+.container .banner {
+  color: var(--light-text-color);
+  font-family: 'Open Sans', Helvetica, Sans-Serif;
+  background-image: url(../img/bg_code_corp_light.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+}
+.container .banner p {
+  max-width: 991px;
+  margin: 1rem 0;
+}
+.container .banner .headline {
+  font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+@media (max-width: 500px) {
+  .container .banner .headline {
+    font-size: 2.4rem;
+  }
+}
+.container .banner .subtitle {
+  font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: semi-bold;
+}
+@media (max-width: 500px) {
+  .container .banner .subtitle {
+    font-size: 1.4rem;
+  }
+}
+.container .banner .tagline {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.35;
+  padding: 0 1%;
+}
+@media (max-width: 500px) {
+  .container .banner .tagline {
+    font-size: 1.35rem;
+    padding: 0 4%;
+  }
+}
+.container .banner .contact-info-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .banner .contact-info-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .banner .contact-info-mobile a {
+    font-family: 'Open Sans', Helvetica, Sans-Serif;
+    color: var(--light-text-color);
+    text-decoration: none;
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+  }
+}
+.container .content-container {
+  display: flex;
+  max-width: 991px;
+  margin: 0 auto;
+  background: var(--primary-bg-shading);
+}
+@media (max-width: 500px) {
+  .container .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: normal;
+  }
+}
+.container .content-container section {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  font-family: 'Open Sans', Helvetica, Sans-Serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.1rem;
+  color: var(--dark-text-color);
+}
+@media (max-width: 500px) {
+  .container .content-container section {
+    font-family: 'Open Sans', Helvetica, Sans-Serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    color: var(--dark-text-color);
+    font-size: 1.3rem;
+  }
+}
+.container .main-content {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  padding: 0 1%;
+  margin: 0;
+}
+@media (max-width: 500px) {
+  .container .main-content {
+    flex: 0 0 100%;
+    padding: 0 3%;
+  }
+}
+.container .main-content .job-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+}
+@media (max-width: 500px) {
+  .container .main-content .job-title {
+    font-size: 1.5rem;
+  }
+}
+.container .main-content .company-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+.container .main-content .company-name {
+  color: var(--primary-dark-color);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+@media (max-width: 500px) {
+  .container .main-content .company-name {
+    font-size: 1.2rem;
+  }
+}
+.container .main-content .work-dates {
+  color: var(--primary-dark-color);
+  font-size: 1.4rem;
+  font-style: italic;
+}
+@media (max-width: 500px) {
+  .container .main-content .work-dates {
+    font-size: 1.2rem;
+  }
+}
+.container .main-content .accomplishments {
+  margin-left: 20px;
+  list-style-type: square;
+}
+.container .main-content .accomplishments li {
+  margin-bottom: 1rem;
+}
+.container .sidebar-content {
+  flex: 0 0 30%;
+  background: var(--secondary-bg-shading);
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  padding: 0 1%;
+  margin: 0;
+}
+@media (max-width: 500px) {
+  .container .sidebar-content {
+    flex: 0 0 100%;
+    padding: 0 3%;
+    background: var(--primary-bg-shading);
+  }
+}
+.container .sidebar-content .contact-info {
+  word-spacing: 0.5rem;
+}
+@media (max-width: 500px) {
+  .container .sidebar-content .contact-info {
+    display: none;
+  }
+}
+.container .sidebar-content .contact-info a {
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.container .sidebar-content .skill-category-name,
+.container .sidebar-content .certification {
+  margin: 0.5rem 0;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .container .sidebar-content .skill-category-name,
+  .container .sidebar-content .certification {
+    font-size: 1.3rem;
+  }
+}
+.container .sidebar-content .skills-list {
+  font-size: 1.3rem;
+  word-spacing: 0.5rem;
+}
+@media (max-width: 500px) {
+  .container .sidebar-content .skills-list {
+    font-size: 1.1rem;
+  }
+}
+.container .sidebar-content .certification-date {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.container .section-title {
+  font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+@media (max-width: 500px) {
+  .container .section-title {
+    font-size: 1.5rem;
+  }
+}
+.container .role,
+.container .skill-category-info,
+.container .education-info {
+  margin-bottom: 1rem;
+}
