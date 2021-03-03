@@ -2,6 +2,10 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
+   font-family: 'Aclonica', sans-serif;
+   font-family: 'Kelly Slab', cursive;
+   font-family: 'Open Sans', sans-serif;
+   font-family: 'Fondamento', cursive;
 */
 
 html, body, div, span, applet, object, iframe,
@@ -57,3 +61,94 @@ html, body {
     height: 100%;
 }
 
+//start of my css
+//variables
+@nameFont:'Aclonica', sans-serif;
+@titleFont:'Fondamento', cursive;
+@jobFont:'Kelly Slab', cursive;
+//mixins
+.displayFlex(@direction, @justify, @align){
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+
+
+body{
+	display: flex;
+	max-width: 960px;
+	margin: auto;
+}
+
+.leftSection{
+	width: 33%;
+	height: auto;
+	background-color: rgba(167, 138, 92, 0.897);
+	.displayFlex(column,space-evenly,center);
+	img{
+		max-width: 50%;
+		border: 10px ridge crimson;
+		
+	}
+	.leftInfo{
+		height: 44%;
+		padding: 5%;
+		.displayFlex(column,space-evenly,flex-start);
+		@media(max-width: 800px){
+			height: 55%;
+		}
+	}
+	
+}
+
+.rightSection{
+	width: 66%;
+	.displayFlex(column,space-between,center);
+	header{
+		height: 25%;
+		width: 100%;
+		.displayFlex(column,space-evenly,center);
+
+		color: white;
+		background-color: rgb(44, 65, 30);
+		h1{
+			font-size: 3rem;
+			font-family: @nameFont;
+			@media(max-width: 800px){
+				font-size: 1.5rem;
+			}
+		}
+		h2{
+			font-size: 1rem;
+			font-family: @nameFont;
+			@media(max-width: 800px){
+				font-size: .75rem;
+			}
+		}
+	}
+	.mainContent{
+		width: 100%;
+		height: 75%;
+		padding: 5%;
+		.displayFlex(column,space-evenly,flex-start);
+		background-color: rgba(141, 99, 31, 0.897);
+	}
+}
+h3{
+	font-family: @titleFont;
+}
+.infoBlock{
+	height: 44%;
+	.displayFlex(column,space-between,flex-start);
+	h3{
+		font-size: 2.5rem;
+		@media(max-width: 800px){
+			font-size:1.25rem;
+		}
+	}
+	h4{
+		font-family: @jobFont;
+	}
+}
