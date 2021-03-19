@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,131 @@ table {
 
 html, body {
     height: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	font-size: 62.5%;
+}
+h1 {
+	font-size: 3.6rem;
+	padding-top: 25px;
+	padding-left: 1%;
 }
 
+.container	{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.6rem;
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		background: lightgray;
+		height: 50px;
+		align-items: center;
+		@media only screen and (max-width: 800px)	{
+
+			justify-content: space-around;
+		}
+		@media only screen and (max-width: 500px)	{
+			margin-top: -9px;
+			flex-direction: column;
+			width:100%;
+			height: 100%;
+
+		}
+		a {
+			text-decoration: none;
+			color: black;
+			padding: 1%;
+			@media only screen and (max-width: 500px)	{
+				background: lightgray;
+				text-align: center;
+				padding: 20px 0;
+				width: 100%;
+				border-top: 1px solid black;
+			}
+		}
+		a:last-of-type {
+			@media only screen and (max-width: 500px)	{
+				border-bottom: 1px solid black;
+			}
+		}
+	}
+
+}
+.face	{
+	margin-top: 25px;
+	background: aqua;
+	border-radius: 10px;
+	@media only screen and (max-width: 500px)	{
+		margin-top: 40px;
+	}
+	img {
+		margin: 2%;
+		border-radius: 10px;
+	}
+	div {
+		margin-top: 20px;
+		padding-left: 1%;
+		margin-bottom: 20px;
+	}
+	.button	{
+		width: 12%;
+		min-width: 100px;
+		height: 25px;
+		margin-left: 1%;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	hr {
+		width: 90%;
+	}
+}
+.info-bar	{
+	display: flex;
+	@media only screen and (max-width: 500px)	{
+		flex-direction: column;
+	}
+	div {
+		width: 50%;
+		padding: 2%;
+		@media only screen and (max-width: 500px)	{
+			width: 100%;
+		}
+		h2 {
+			font-size: 2.4rem;
+			padding-bottom: 10px;
+		}
+		p {
+			padding-top: 30px;
+		}
+		li {
+			padding: 5px 1%;
+		}
+	}
+}
+footer {
+	height: 50px;
+	background: dodgerblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.notMobile	{
+	@media only screen and (max-width: 500px)	{
+		display: none;
+	}
+}
+.onlyMobile	{
+	display: none;
+	@media only screen and (max-width: 500px)	{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 3%;
+	}
+	h3 {
+		font-size: 2.4rem;
+		padding: 2%;
+	}
+}
