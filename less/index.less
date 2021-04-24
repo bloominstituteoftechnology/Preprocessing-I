@@ -1,4 +1,7 @@
-// Is this working?
+
+
+//== CSS Reset =================================================================
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,4 +59,187 @@ table {
 html, body {
     height: 100%;
 }
+
+
+//== Boilerplate ===============================================================
+a:link, a:visited {
+	text-decoration: none;
+	color: @color-primary;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
+}
+
+
+//== Theme =====================================================================
+
+@color-primary: #670319;
+@color-secondary: #435937;
+@color-primary-dark: shade(@color-primary);
+@color-secondary-light: tint(@color-secondary, 90%);
+
+.layout-text () {
+	font-size: 125%;
+	font-weight: bold;
+	color: inherit;
+}
+.theme-box () {
+	border-radius: 2rem 0;
+}
+
+
+//== Layout ====================================================================
+
+@layout-width-desktop: 800px;
+@layout-width-mobile: 500px;
+
+html {
+	background: @color-secondary-light;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: @layout-width-desktop;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	//
+	.main-nav {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-end;
+		border: 2px solid @color-primary;
+		border-width: 0 0 2px 0;
+		margin-bottom: 4rem;
+		@media screen and (max-width: 500px) {
+			flex-direction: column;
+			align-items: center;
+		}
+		.main-nav__bar {
+			display: flex;
+			flex-direction: column;
+			width: 45.4rem;
+			padding-left: 2rem;
+			@media screen and (max-width: 500px) {
+				width: 100%;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+		h1 {
+			font-family: 'Uncial Antiqua', sans-serif;
+			font-size: 280%;
+			color: @color-primary;
+			@media screen and (max-width: 500px) {
+				font-size: 250%;
+				align-self: center;
+			}
+		}
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 6.4rem;
+			a {
+				.layout-text();
+				&:hover {
+					color: @color-secondary;
+				}
+			}
+		}
+		.main-nav__profile {
+			order: -1;
+			width: 28%;
+			max-width: 22.4rem;
+			min-width: 19.2rem;
+			height: 22.4rem;
+			position: relative;
+			top: 25%;
+			.theme-box();
+			@media screen and (max-width: 500px) {
+				top: 0;
+				margin-top: 4rem;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				outline: 0.5rem solid @color-secondary-light;
+			}
+		}
+	}
+
+	main {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 5%;
+		justify-content: space-between;
+		//
+		section {
+			.theme-box();
+			width: 47.5%;
+			background: white;
+			line-height: 1.2;
+			padding: 1rem;
+			text-align: justify;
+			h2 {
+				.layout-text() ;
+				margin: 1em 0;
+			}
+			@media screen and (max-width: 500px) {
+				width: 100%;
+			}
+		}
+		section:nth-child(2n-1) {
+			margin-top: 4rem;
+			@media screen and (max-width: 500px) {
+				margin: 2rem 0;
+			}
+		}
+		section:nth-child(2n) {
+			margin-bottom: 4rem;
+			@media screen and (max-width: 500px) {
+				margin: 2rem 0;
+			}
+		}
+		//-- Intro ---------------------------------------
+		//-- Skills --------------------------------------
+		//-- Work History --------------------------------
+		table {
+			width: 100%;
+			caption {
+				.layout-text();
+				margin: 1em 0;
+			}
+			tr {
+				border-top: 1px solid black;
+			}
+			td {
+				padding: 1rem;
+			}
+		} 
+		//-- Contact -------------------------------------
+		.contact__details {
+			display: flex;
+			flex-direction: column;
+			span {
+				margin-bottom: 1em;
+			}
+		}
+	}
+	
+	footer {
+		margin: 4rem 5% 0rem 5%;
+		height: 10rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 
