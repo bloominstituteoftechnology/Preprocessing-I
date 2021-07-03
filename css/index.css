@@ -1,1 +1,472 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Allerta Stencil';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Allerta Stencil Regular'), local('AllertaStencil-Regular'), url(https://fonts.gstatic.com/s/allertastencil/v8/HTx0L209KT-LmIE9N7OR6eiycOe1_Dbz.ttf) format('truetype');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+html,
+body {
+  height: 100%;
+}
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+h1 {
+  font-size: 5rem;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-weight: 800;
+  margin-top: 20px;
+}
+h2 {
+  font-size: 3.5rem;
+}
+p {
+  line-height: 1.25;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
+header {
+  width: 100%;
+  max-width: 200px;
+}
+@media (max-width: 800px) {
+  header {
+    max-width: 800px;
+  }
+}
+header nav {
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  position: fixed;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 800px) {
+  header nav {
+    position: inherit;
+    max-width: 800px;
+  }
+}
+header nav a {
+  padding: 12px 0;
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.8);
+}
+header nav a:hover {
+  color: #60abc4;
+}
+@media (max-width: 800px) {
+  header nav a {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+    width: 100%;
+  }
+  header nav a a {
+    padding: 30px 0;
+  }
+}
+.main {
+  background: rgba(128, 128, 128, 0.235);
+  width: 100%;
+  height: 100%;
+}
+.wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  height: 100%;
+}
+@media (max-width: 500px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+.wrapper p {
+  padding: 40px 0 20px 0;
+}
+.wrapper hr {
+  width: 40%;
+  height: 0;
+  margin: 1em auto;
+  border: none;
+  border-top: solid 2px #60abc4;
+  margin-bottom: 50px;
+}
+@media (max-width: 800px) {
+  .wrapper {
+    max-width: 500px;
+  }
+}
+.main-section-wrapper {
+  border-left: 2px solid #60abc4;
+  padding-left: 30px;
+}
+.main-section-wrapper h2:before {
+  content: "";
+  margin: 0 20px 0 -50px;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: solid 2px #222222;
+  background-color: #ffffff;
+  border-radius: 50%;
+  vertical-align: bottom;
+}
+.main-social nav {
+  padding: 20px 0;
+}
+.main-social nav a {
+  text-decoration: none;
+  color: #60abc4;
+  margin-right: 30px;
+  font-size: 2rem;
+}
+.main-social nav a i {
+  color: black;
+}
+.main-social nav a i:hover {
+  color: #60abc4;
+}
+.main-social nav a:hover {
+  color: rgba(128, 128, 128, 0.8);
+}
+/** Bar Graph **/
+.skill-set {
+  padding-left: 1em;
+  list-style: none;
+  margin-bottom: 40px;
+}
+.bar {
+  height: 2.5em;
+  max-width: 800px;
+  margin: 0.5em 0;
+  padding: 0 0 0 5px;
+  color: white;
+  position: relative;
+  line-height: 3em;
+  font-size: 1.5rem;
+}
+.bar:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2.5em;
+  z-index: -2;
+  background: #eee;
+}
+.bar:after {
+  content: '';
+  background: #60abc4;
+  height: 2.5em;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  -webkit-animation: bar-before 1 1.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@-webkit-keyframes bar-before {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.hundred:after {
+  max-width: 100%;
+}
+.ninty:after {
+  max-width: 90%;
+}
+.eighty:after {
+  max-width: 80%;
+}
+.seventy:after {
+  max-width: 70%;
+}
+.sixty:after {
+  max-width: 60%;
+}
+.fifty:after {
+  max-width: 50%;
+}
+.forty:after {
+  max-width: 40%;
+}
+.thirty:after {
+  max-width: 30%;
+}
+/** Employer **/
+.main-employment h2 {
+  margin-bottom: 30px;
+}
+.main-employment div h3 {
+  font-size: 2.2rem;
+}
+.main-employment div h3 .blue {
+  color: #60abc4;
+}
+.main-employment div h4 {
+  margin-bottom: 15px;
+}
+.main-employment div ul {
+  margin-bottom: 20px;
+}
+.main-employment div ul li {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.main-employment div ul li:before {
+  content: "🔹";
+  padding-right: 10px;
+}
+.going-up-arrow {
+  height: 100%;
+}
+.backtop {
+  font-size: 4rem;
+  position: relative;
+  left: -16px;
+}
+.contact-image {
+  margin-top: 50px;
+}
+form {
+  margin-top: 100px;
+  height: 100vh;
+}
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit] {
+  background-color: #60abc4;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+label {
+  font-size: 2rem;
+}
+/* 
+Preprocessing I : Digital Resume
+
+Task 1: Set Up The Project With Git
+   x     Fork the project into your GitHub user account
+   x     Clone the forked project into a directory on your machine
+   x     You are now ready to build this project with your preferred IDE
+
+
+Task 2: Set up your preprocessor
+    x    Verify that you have LESS installed correctly by running lessc -v in your         terminal, if you don't  
+    x     get a version message back, reach out to your project manager for help.
+    x    Open your terminal and navigate to your preprocessing project by using the        cd command
+    x    Once in your project's root folder, run the following command                     less-watch-compiler less css               index.less
+    x    Verify your compiler is working correctly by changing the background-color        on the html selector to         red
+    x    Once you see the red screen, you can delete that style and you're ready to         start on the next task
+
+Task 3: Project Objectives
+    x    Review the example resume. Notice how simplistic the example resume is.      ?     Develop a simple layout of your choosing. If you are struggling to be             creative, you may use the example resume as your design file. Note: you are      only required to build one page, anything more than that would be stretch.
+    x   The resume content will be provided by you. The content can be about you or              a fictional character.
+    x    Content: Navigation - Build a simple navigation with 4 items of your choosing
+    x    Content: Intro - Have a short introduction as to why you would be a good hire
+    x     Content: Skills - Showcase a list of skills you have somewhere on your            resume
+    x      Content: Work History - Showcase your work history somewhere on your resume
+    x    Content: Contact - Provide some way a potential employer could contact you.            Phone number, email, or a full on contact form (doesn't have to work)
+    x    Variables: Incorporate variables in your project for color and font stacks.
+    x    Nesting: Every selector should be nested inside the main container. Avoid               having global styles unless they are element level.
+   x     Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use              flexbox properties in mixins
+  x    Mobile: Use nested-at rules to provide a mobile version of your resume. Use              500px as a max-width for mobile.
+
+
+   Stretch Goals:
+   x   Incorporate a google font of your choosing
+    x  Convert the great idea CSS into LESS. Introduce variables, mixins, nesting, etc.
+      Create a link to the portfolio page and create a layout that would allow users to see your work. A good idea is to link projects back to their github repos so employers can see your code.
+
+*/
