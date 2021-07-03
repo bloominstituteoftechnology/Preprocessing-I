@@ -1,1 +1,291 @@
 /* Compile your LESS file! */
+/* Reset - Meyers */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* variables */
+/* mixins */
+.page {
+  font-family: "Ubuntu, sans-serif";
+  color: black;
+  font-size: 16px;
+  margin: 10px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 20px;
+}
+p {
+  padding: 10px;
+}
+button {
+  margin: 0 10px 0;
+}
+.main-content {
+  display: flex;
+  width: 50%;
+  flex-flow: row wrap;
+  text-decoration: none;
+}
+nav a {
+  margin: 0 auto;
+  text-decoration: none;
+}
+.top-nav {
+  display: flex;
+  margin: 40px;
+  width: 50%;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-around;
+}
+.top-nav button {
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 20px 0 rgba(0, 0, 0, 0.19);
+  float: left;
+}
+.button1,
+.button2,
+.button3,
+.button4 {
+  display: flex;
+  border-radius: 4px;
+  background-color: #d8afa2;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.statement {
+  font-weight: bold;
+}
+nav h3 {
+  display: flex;
+  padding: 10px 20px 0 0;
+  margin-bottom: 10px;
+}
+.skills {
+  display: inline-block;
+  WIDTH: 100%;
+}
+.skills h3 {
+  padding: 10px 0 0 0;
+  margin-bottom: 10px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: #1a17ca;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  border: 1px solid blue;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  word-wrap: nowrap;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.history {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  margin-top: 10px;
+  flex-flow: column;
+  margin-left: 30px;
+}
+.history h3 {
+  margin-left: 10px;
+  display: inline-block;
+}
+.contact {
+  line-height: 1.25;
+}
+@media (max-width: 500px) {
+  img {
+    visibility: hidden;
+  }
+}
+.main-content nav a {
+  display: flex;
+  text-decoration: column;
+  margin: 0 20px 0;
+}
+.main-content h3 {
+  margin: 20px;
+}
+.skills div {
+  display: flex;
+  align-content: space-between;
+  flex-direction: row;
+  flex-flow: row nowrap;
+}
