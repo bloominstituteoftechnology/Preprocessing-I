@@ -57,3 +57,191 @@ html, body {
     height: 100%;
 }
 
+// 1 rem = 10px
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: @backColor1;
+}
+
+@navColor: #9B360D;
+@backColor1: #EFE8C6;
+@titleColor: #B1360D;
+@fontLink: 1.7rem;
+@fontH1: 3rem;
+@fontH2: 2.5rem;
+@fontH3: 1.8rem;
+@fontP: 1.6rem;
+@fontLi: 1.4rem;
+
+
+.flexStyle() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flexColumn() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.pStyle() {
+	font-family: 'Mali', cursive;
+	font-size: @fontP;
+	line-height: 1.5;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	nav {
+		.flexStyle;
+		background-color: @navColor;
+		width: 100%;
+
+		.navLinks {
+			.flexStyle;
+			width: 40%;
+		}
+
+		a {
+			text-decoration: none;
+			color: white;
+			margin: 10px 2%;
+			font-size: @fontLink;
+		}
+
+		a:hover {
+			color: @backColor1;
+		}
+
+		.name {
+			font-size: @fontH1;
+
+			@media (max-width:500px) {
+				font-size: @fontH3;
+			}
+		}
+	}
+
+	section.intro {
+		margin: 20px 0;
+		.flexColumn;
+		
+		h1 {
+			font-size: @fontH1;
+			color: @titleColor;
+			margin: 10px 0;
+
+			@media (max-width:500px) {
+				font-size: @fontH2;
+			}
+		}
+
+		h2 {
+			font-size: @fontH2;
+			margin: 10px 0 15px 0;
+			font-weight: bold;
+
+			@media (max-width:500px) {
+				font-size: @fontH3;
+			}
+		}
+
+		p {
+			.pStyle;
+			font-weight: bold;
+			text-align: center;
+
+			@media (max-width:500px) {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.info {
+		.flexStyle;
+
+		@media (max-width:500px) {
+				.flexColumn;
+		}
+
+		.skills {
+			width: 40%;
+
+			@media (max-width:500px) {
+				width: 100%;
+			}
+		}
+
+		section {
+			margin-left: 1%;
+
+			h2 {
+				font-size: @fontH2;
+				color: @titleColor;
+				margin: 10px 0;
+
+				@media (max-width:500px) {
+					font-size: @fontH3;
+				}
+			}
+
+			p {
+				.pStyle;
+				margin: 10px 0;
+
+				@media (max-width:500px) {
+					font-size: 1.4rem;
+				}
+			}
+
+			h3 {
+				font-size: @fontH3;
+				font-weight: bold;
+
+				@media (max-width:500px) {
+					font-size: 1.6rem;
+				}
+			}
+
+			ul {
+				margin: 20px 0;
+			}
+
+			li {
+				font-size: @fontLi;
+				font-family: 'Mali', cursive;
+				margin: 10px 0;
+				list-style: disc;
+				list-style: inside;
+				line-height: 1.5;
+			}
+
+			.compImg {
+				width: 85%;
+
+				@media (max-width:500px) {
+					// width: 98%;
+					display: none;
+				}
+			}
+		}
+
+		.leilaImg {
+			margin: 0 10%;
+		}
+
+		padding: 10px 0;
+		border-bottom: 2px solid @navColor;
+		border-top: 2px solid @navColor;
+	}
+
+}
