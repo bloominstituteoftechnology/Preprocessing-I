@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +54,196 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@mobile: ~"(max-width: 500px)";
+@font-color: @shark;
+@shark: #212529;
+@main-bg:  @white;
+@white: #FFFFFF;
+@navigation-border: @silver;
+@silver: #C0C0C0;
+
+html {
+	/* works on a base of 10px if the font-size is 16px, scales to the user's font settings.  1rem === 10px */
+	font-size: 62.5%;
+  }
+  
+  html, body {
+	  height: 100%;
+	  font-family: 'Open Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5 {
+	  font-family: 'Gravitas One', sans-serif;
+	  letter-spacing: 1px;
+	  margin-bottom: 5px;
+	  height: 100%;
+	//   font-size: 1.6rem;
+  }
+
+  h1 {
+	font-size: 3rem;
+  }
+  
+  h2 {
+	font-size: 2.2rem;
+	padding-bottom: 10px;
+  }
+  
+  p {
+	line-height: 1.5;
+	font-size: 1.6rem;
+	padding-bottom: 10px;
+  }
+  
+  .container {
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+  
+	@media @mobile {
+	  width: 90%;
+	  margin: 0 5%;
+	}
+  
+
+	.navigation {
+		width: 100%;
+  		height: 30px;
+  		background: @main-bg;
+  		border-bottom: 2px solid @shark;
+  		// position: fixed;
+	
+
+	  .container-nav-container {
+		height: 80%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	
+
+	  @media @mobile {
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 10px;
+	  }
+	
+
+	 .nav {
+		width: 350px;
+		display: flex;
+		justify-content: space-evenly;
+  
+		@media @mobile {
+		  width: 100%;
+		  justify-content: space-around;
+		}
+
+		a {
+			font-size: 1.6rem;
+			color: @font-color;
+			text-decoration: none;
+
+			&:hover {
+				background: @font-color;
+				color: @white;
+			}
+		  }
+		}
+	}
+
 }
 
+  .top-section {
+	padding: 50px;
+    border: 2px @shark;
+    width: 100%;
+	background:@silver;
+	
+	@media @mobile {
+		width: 100%;
+		justify-content: space-around;
+	  }
+	
+	.top-section-div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  
+    img {
+		width: 50%;
+		height: 50%;
+		padding-bottom: 1rem;
+	}
+	.button-creator(@width, @height) {
+		width: @width;
+		height: @height;
+	}
+	
+	
+	button {
+		background: gray;
+		color: white;
+		font-size: 16px;
+		border: 1px solid black;
+		.button-creator(50px,25px);
+   }
+  }
+}
+
+
+ 	.middle-section {
+		border-top: 4px solid black;
+		border-bottom: 4px solid black;
+		 display: flex;
+		 flex: wrap;
+		 width: 100%;
+		 flex-direction: row;
+		 justify-content: space-between;
+		 padding: 40px;
+		 
+		 
+		 @media @mobile {
+			width: 100%;
+			justify-content: space-around;
+		  }
+
+		 .more-about-me {
+		 display: flex;
+		 flex: wrap;
+		 width: 47%;
+		//  align-items: flex-end;
+		 justify-content: start;
+		//  border: 2px dashed blue;
+		 padding: 20px;
+		 }
+
+		 .my-skills {
+		 display: flex;
+		 flex: wrap;
+		 flex-direction: column;
+		 width: 45%;
+		 align-items: center;
+		 justify-content: space-evenly;
+		//  border: 2px dashed blue;
+		 padding: 20px;
+		}
+	 }
+
+    .bottom-section {
+		padding-top: 1.6rem;
+	}
+    
+	 footer {
+		width: 100%;
+		border-top: 2px solid @shark;
+		background: @silver;
+		
+		p {
+		  text-align: center;
+		  color: @font-color;
+		  font-size: 1.6rem;
+		  padding: 20px;
+		}
+	}
+	
+  }
