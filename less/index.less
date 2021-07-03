@@ -49,6 +49,11 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+@mainColor: lightgray;
+@accentColor: black;
+@fontStack: Helvetica, Arial;
+
 * {
     box-sizing: border-box;
 }
@@ -56,4 +61,135 @@ table {
 html, body {
     height: 100%;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	max-width: 1000px;
+	/* TB LR */
+	margin: 0 auto;
+	font-size: 1.6rem;
+	font-family: @fontStack;
+
+	@media ( max-width: 500px ){
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+	header {
+	display: flex;
+	justify-content: center;
+	margin: 1% 2% 0;
+
+	@media (max-width: 500px ) {
+		flex-wrap: wrap;
+		margin: 0; 
+	}
+	
+	nav {
+	  display: flex;
+	  
+	  a { 
+		margin: 10px;
+		color: gray;
+		
+		&:hover {
+		  color: @accentColor;
+		}
+		
+		}
+	  }
+	}
+
+  .name {
+	  display: flex;
+	  justify-content: center;
+	  background-color: @mainColor;
+	  padding-bottom: 9%;
+	
+	.name .name-text {
+		margin-top: 5%;
+		text-align: center;
+		padding: 0 9%;
+		}
+
+		h1 {
+			font-size: 4rem;
+			margin-bottom: 5%;
+		}	
+  	}
+  
+  
+  .main-content {
+	display: flex;
+	flex-flow: row wrap;
+	border-top: 1px solid black;
+	background-color: @mainColor;
+	margin-top: 1%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+  }
+  
+  .main-content .top-content {
+	display: flex;
+	padding: 0 1%;
+
+	.main-content .top-content .text-content {
+		width: 100%;
+		margin-right: 8%;
+	  }
+	  h4 {
+		  font-size: 1.8rem;
+		 padding-bottom: 3%;
+	  }
+	  &:last-child {
+		margin-right: 0;
+	  }
+  }
+  
+  .main-content .bottom-content {
+	display: flex;
+	margin-top: 4%;
+	padding: 0 1%;
+
+	.main-content .bottom-content .text-content {
+		width: 100;
+	  }
+	  h4 {
+		  font-size: 1.8rem;
+		  margin-bottom: 3%;
+	  }
+	  &:last-child {
+		  margin-right: 0;
+	  }
+  }
+  
+  .contact {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+	margin-top: 3%;
+	border-top: 1px solid black;
+    padding: 4% 1% 0;
+	font-size: 1.6rem;
+	
+	 p {
+		margin: 2% 0;
+  	}
+  }
+  
+  footer {
+	display: flex;
+	justify-content: center;
+	margin: 4% 0;
+	font-size: 1.4rem;
+  }
+  
+  
+  
+
+
 
