@@ -54,6 +54,177 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+@font-size: 1.6rem;
+@header-font-size: 2.6rem;
+@border: 1px solid black;
+@margin: 35px;
+@h1-margin: 15px;
+@full-width: 100%;
+@half-width: 50%;
+
+.flex-center-mixin() {
+	display: flex;
+	justify-content: center;
+}
+
+.margin-center() {
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 800px;
+	width: @full-width;
+	.margin-center;	
+
+	h1 {
+		font-size: @header-font-size;
+	}
+
+	p {
+		font-size: @font-size;
+	}
+
+	li {
+		font-size: @font-size;
+	}
+}
+
+.nav-bar {
+	width: @full-width;
+	font-size: @font-size;
+	.flex-center-mixin;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 25px;
+	margin-bottom: 60px;
+
+	a {
+		text-decoration: none;
+		color: lightgray;
+		margin: 1rem;
+	}
+}
+
+.intro {
+	margin-bottom: 100px;
+	width: @full-width;
+	.flex-center-mixin;
+	align-items: center;
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
+
+	img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		margin-right: 5rem;
+		@media (max-width: 500px) {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+	.name {
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 4.2rem;
+		margin-bottom: @h1-margin;
+	}
+}
+
+.top-content {
+	width: 95%;
+	.flex-center-mixin;
+	margin: @margin 2.5%;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	h1 {
+		margin-bottom: @h1-margin; 
+		.flex-center-mixin;
+	}
+
+	.about {		
+		width: @half-width;
+		@media (max-width: 500px) {
+			margin-bottom: @margin;
+		}
+	}
+
+	.skills {
+		width: @half-width;
+		.flex-center-mixin;
+		flex-direction: column;
+
+		h1 {
+			margin-bottom: @h1-margin;
+		}
+
+		ul {
+			width: 50%;
+			list-style: none;
+			align-self: center;
+			text-align: center;
+
+			li {
+				margin: 10px 0;
+			}
+		}		
+	}
+}
+
+.work {
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	margin: @margin 2.5%;
+	
+	h1 {
+		text-align: center;
+		margin-bottom: @h1-margin;
+	}
+
+	li {
+		margin: 10px 0;
+	}
+}
+
+.contact {
+	width: 95%;
+	margin: @margin 2.5%;
+	@media (max-width: 500px) {
+		.flex-center-mixin;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	h1 {
+		margin-bottom: @h1-margin;
+	}
+
+	p {
+		margin-bottom: 10px;
+	}
+}
+
+.footer {
+	.flex-center-mixin;
+	margin: @margin 20px;
+	padding: 40px 0;
+	background-color: red;
+
+		p {
+			font-size: 2.4rem;
+			color: #FFFFFF;
+		}
+}
