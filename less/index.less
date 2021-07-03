@@ -57,3 +57,231 @@ html, body {
     height: 100%;
 }
 
+@white: white;
+@blue: #7a9d96;
+@light-blue: #e0fff7;
+@button: #c7e7df;
+@bg: #f2fffb;
+
+.background(@color, @border-radius, @padding, @margin){ 
+	background-color: @color;
+	border-radius: @border-radius;
+	padding: @padding;
+	margin: @margin;
+}
+
+.column(@direction, @align){
+  display: flex;
+  flex-direction: @direction;
+  align-items: @align;
+}
+
+@font: 'Old Standard TT', serif;
+.flex(@justify, @align){
+	display: flex;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+h1 {
+	font-size: 2.5rem;
+	color: white;
+}
+h2 {
+	font-size: 1.7rem;
+	color: white;
+}
+
+p {
+	font-size: 1.3rem;
+	color: white;
+}
+
+.container {
+	font-family: @font;
+	background-color: @bg;
+}
+
+//Navigation
+nav {
+	font-size: 1.5rem;
+	background-color: @button;
+		.nav-bar {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+        
+      a {
+        .flex(center, center);
+        width: 100%;
+        border: .1px solid black;
+        border-bottom: .1px solid black;
+      }
+      
+      a:hover {
+        transition: all .5s ease-in-out;
+        transform: scale(1);
+        background-color: @light-blue;
+        font-size: 1.6rem;
+      }
+      
+		}
+			a {
+				padding: 1rem;
+				.flex(flex-end, flex-end);
+				color: black;
+				text-decoration: none;
+			}
+	}
+
+body {
+  
+//Profile Photo 
+	.photo { 
+		.flex(center, center);
+    
+		.profile {
+      width: 80%;
+      height: auto;
+			border-radius: 10%;
+		}
+	}
+ 
+//Main Section
+  .bod { 
+     .column(column, center);
+    
+    .intro {
+      .column(column, center);
+      border: .5px solid black;
+      width: 95%;
+      background-color: @blue;
+      padding: 10px;
+      border-radius: 20px;
+      margin: 15px;
+
+        h1 {
+          .flex(center, center);
+          color: white;
+          padding: 20px;
+        }
+
+        p {
+          color: white;
+          padding: 20px;
+        }
+      
+//Button
+        button {
+          background-color: @button;
+          color: black;
+          height: 50px;
+          border-radius: 15px;
+          font-size: 1.4rem;
+          cursor: pointer;
+        }
+          
+          button:hover {
+            transition: all .5s ease-in-out;
+            transform: scale(1.1);
+          }
+
+}
+        }
+
+
+    }
+
+
+//Bottom Section
+	.bottom-section {
+    width: 90%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+    margin-bottom: 15px;
+			.skills {
+        border: .5px solid black;
+				.background(@blue, 10px, 8px, 10px);
+				
+					h2 {
+						.flex(center, center);
+						padding: 8px;
+						}
+						
+						p {
+							padding: 5px;
+						}
+			}
+
+			.work {
+         border: .5px solid black;
+				.background(@blue, 10px, 8px, 10px);
+				
+					h2 {
+					.flex(center, center);
+					padding: 8px;
+					}
+					
+					p {
+						padding: 5px;
+					}
+			}	
+	}
+
+//Footer
+	.contact {
+    border: .5px solid black;
+    width: 100%;
+		.background(@blue, 0px, 15px, 0px);
+			h2 { 
+				.flex(center, center);
+				padding: 8px;
+			}
+			p {
+				.flex(center, center);
+				padding: 8px;
+			}
+	
+	}
+			
+//Mobile Version
+@media(max-width: 500px) {
+  .column(@direction, @align){
+  display: flex;
+  flex-direction: @direction;
+  align-items: @align;
+}
+  
+  nav {
+    .nav-bar {
+      .column(column, center);
+      
+      a {
+        .column(column, center);
+        width: 100%;
+        border-bottom: .1px solid black;
+      }
+    }
+  }
+  
+  body {
+    .bottom-section {
+        .column(column, center);
+      
+      .skills {
+        width: 100%;
+      }
+      
+      .work {
+        width: 100%;
+      }
+      
+      .contact {
+        .bottom {
+          .column(column, center);
+        }
+      }
+    }
+  }
+}
