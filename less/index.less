@@ -4,56 +4,558 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	/* Set every element's box-sizing to border-box */
+	* {
+	    box-sizing: border-box;
+	}
+
+	html, body {
+	    height: 100%;
+	  
+	}
+.shake-hard {
+  display: inline-block;
+  transform-origin: center center; }
+
+	.shake-freeze,
+	.shake-constant.shake-constant--hover:hover,
+	.shake-trigger:hover .shake-constant.shake-constant--hover {
+  animation-play-state: paused; }
+
+	.shake-freeze:hover,
+	.shake-trigger:hover .shake-freeze, .shake-hard:hover,
+	.shake-trigger:hover .shake-hard {
+  animation-play-state: running; }
+
+	@keyframes shake-hard {
+	  2% {
+	    transform: translate(3px, -1px) rotate(-0.5deg); }
+	  4% {
+	    transform: translate(0px, -8px) rotate(-0.5deg); }
+	  6% {
+	    transform: translate(6px, 10px) rotate(-0.5deg); }
+	  8% {
+	    transform: translate(10px, -4px) rotate(1.5deg); }
+	  10% {
+	    transform: translate(-6px, 9px) rotate(-0.5deg); }
+	  12% {
+	    transform: translate(5px, 2px) rotate(-1.5deg); }
+	  14% {
+	    transform: translate(-2px, 6px) rotate(0.5deg); }
+	  16% {
+	    transform: translate(-1px, -2px) rotate(-2.5deg); }
+	  18% {
+	    transform: translate(4px, 9px) rotate(3.5deg); }
+	  20% {
+	    transform: translate(6px, 7px) rotate(-0.5deg); }
+	  22% {
+	    transform: translate(9px, -4px) rotate(-0.5deg); }
+	  24% {
+	    transform: translate(10px, 8px) rotate(-1.5deg); }
+	  26% {
+	    transform: translate(-2px, 0px) rotate(2.5deg); }
+	  28% {
+	    transform: translate(7px, -7px) rotate(2.5deg); }
+	  30% {
+	    transform: translate(1px, 0px) rotate(-1.5deg); }
+	  32% {
+	    transform: translate(-6px, -2px) rotate(2.5deg); }
+	  34% {
+	    transform: translate(1px, -4px) rotate(-0.5deg); }
+	  36% {
+	    transform: translate(1px, 7px) rotate(0.5deg); }
+	  38% {
+	    transform: translate(6px, -9px) rotate(0.5deg); }
+	  40% {
+	    transform: translate(-5px, -3px) rotate(-1.5deg); }
+	  42% {
+	    transform: translate(0px, -6px) rotate(-2.5deg); }
+	  44% {
+	    transform: translate(7px, 10px) rotate(1.5deg); }
+	  46% {
+	    transform: translate(6px, -4px) rotate(2.5deg); }
+	  48% {
+	    transform: translate(-4px, -6px) rotate(-0.5deg); }
+	  50% {
+	    transform: translate(3px, -4px) rotate(0.5deg); }
+	  52% {
+	    transform: translate(7px, 2px) rotate(2.5deg); }
+	  54% {
+	    transform: translate(7px, 4px) rotate(-2.5deg); }
+	  56% {
+	    transform: translate(9px, 1px) rotate(-2.5deg); }
+	  58% {
+	    transform: translate(-3px, -7px) rotate(2.5deg); }
+	  60% {
+	    transform: translate(6px, 3px) rotate(0.5deg); }
+	  62% {
+	    transform: translate(1px, 4px) rotate(-0.5deg); }
+	  64% {
+	    transform: translate(10px, 4px) rotate(-0.5deg); }
+	  66% {
+	    transform: translate(8px, -7px) rotate(2.5deg); }
+	  68% {
+	    transform: translate(-3px, -6px) rotate(0.5deg); }
+	  70% {
+	    transform: translate(-7px, -4px) rotate(1.5deg); }
+	  72% {
+	    transform: translate(10px, 6px) rotate(1.5deg); }
+	  74% {
+	    transform: translate(3px, 9px) rotate(1.5deg); }
+	  76% {
+	    transform: translate(-6px, 5px) rotate(-2.5deg); }
+	  78% {
+	    transform: translate(4px, 5px) rotate(0.5deg); }
+	  80% {
+	    transform: translate(-8px, 3px) rotate(3.5deg); }
+	  82% {
+	    transform: translate(3px, -2px) rotate(2.5deg); }
+	  84% {
+	    transform: translate(7px, 10px) rotate(-0.5deg); }
+	  86% {
+	    transform: translate(5px, -6px) rotate(-0.5deg); }
+	  88% {
+	    transform: translate(-8px, -5px) rotate(0.5deg); }
+	  90% {
+	    transform: translate(3px, -9px) rotate(-0.5deg); }
+	  92% {
+	    transform: translate(8px, 8px) rotate(-0.5deg); }
+	  94% {
+	    transform: translate(-6px, -7px) rotate(2.5deg); }
+	  96% {
+	    transform: translate(-6px, 5px) rotate(0.5deg); }
+	  98% {
+	    transform: translate(5px, -7px) rotate(0.5deg); }
+	  0%, 100% {
+	    transform: translate(0, 0) rotate(0); } }
+
+	.shake-hard:hover,
+	.shake-trigger:hover .shake-hard, .shake-hard.shake-freeze, .shake-hard.shake-constant {
+	  animation-name: shake-hard;
+	  animation-duration: 100ms;
+	  animation-timing-function: ease-in-out;
+	  animation-iteration-count: infinite; }
+.shake-little {
+  display: inline-block;
+  transform-origin: center center; }
+
+	.shake-freeze,
+	.shake-constant.shake-constant--hover:hover,
+	.shake-trigger:hover .shake-constant.shake-constant--hover {
+	  animation-play-state: paused; }
+
+	.shake-freeze:hover,
+	.shake-trigger:hover .shake-freeze, .shake-little:hover,
+	.shake-trigger:hover .shake-little {
+	  animation-play-state: running; }
+
+	@keyframes shake-little {
+	  2% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  4% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  6% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  8% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  10% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  12% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  14% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  16% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  18% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  20% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  22% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  24% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  26% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  28% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  30% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  32% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  34% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  36% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  38% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  40% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  42% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  44% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  46% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  48% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  50% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  52% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  54% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  56% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  58% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  60% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  62% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  64% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  66% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  68% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  70% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  72% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  74% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  76% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  78% {
+	    transform: translate(0px, 0px) rotate(0.5deg); }
+	  80% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  82% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  84% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  86% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  88% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  90% {
+	    transform: translate(0px, 1px) rotate(0.5deg); }
+	  92% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  94% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  96% {
+	    transform: translate(1px, 0px) rotate(0.5deg); }
+	  98% {
+	    transform: translate(1px, 1px) rotate(0.5deg); }
+	  0%, 100% {
+	    transform: translate(0, 0) rotate(0); } }
+
+	.shake-little:hover,
+	.shake-trigger:hover .shake-little, .shake-little.shake-freeze, .shake-little.shake-constant {
+	  animation-name: shake-little;
+	  animation-duration: 100ms;
+	  animation-timing-function: ease-in-out;
+	  animation-iteration-count: infinite; }
+
+@main-font: "Gill Sans", sans-serif;
+@title-font-size: 1.4em; 
+@paragraph-fonts: "Avantgarde", sans-serif;
+@site-color1: #c5d5cb;
+@site-color2: #9fa8a3;
+@site-color3: #e3e0cf;
+
+.main_div {
+	width: 100%;
+	margin: 0 auto;
+	
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.mobile_nav {
+	display: none;
+}
+.main_nav_contain {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px 30px 0px;
+  background-color: @site-color2;
+
+ 	nav {
+ 		a {
+ 			padding: 0px 20px 0px 20px;
+ 			font-size: @title-font-size;
+ 			text-decoration:none;
+ 			color: @site-color1;
+ 		}
+ 		a:hover {
+ 			color: @site-color3;
+ 		}
+ 	} 
+} 
+
+
+.intro_contain {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0px 20px 0px;
+	background-color: @site-color3;
+	width: 100%;
+  	.right_side_intro {
+  		padding: 40px 0px 0px 40px;
+  		width: 35%;
+
+  		.name {
+  			padding: 0px 0px 20px 0px;
+  			font-size: @title-font-size;
+  			font-weight: bold;
+  		}
+  		.tagline {
+  			font-family: @paragraph-fonts;
+  			padding: 0px 0px 20px 0px;
+  			font-size: 1.2rem;
+  			font-weight: bold;
+  		}
+  		.intro {
+  			margin: 0px 0px 10px 0px;
+  			width: 65.66%;
+  			font-family: @paragraph-fonts;
+  		}
+
+  		.team_up {
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+  			width: 170px;
+  			height: 40px;
+  			background-color: #c9c9c9;
+  			border: 1px solid #008989;
+  			text-decoration: none;
+  			font-family: @main-font;
+  
+  		}
+  		.team_up:hover {
+  			background-color: #590909;
+  			color: white;
+  		}
+
+  	}
+}
+.second_contain {
+	display:flex;
+	margin: 0 auto;
+	padding: 30px 0px 30px 0px;
+	justify-content: space-evenly;
+	background-color: @site-color1;
+
+	.about {
+		width:40.66%;
+
+		.about_title {
+			font-family: @main-font;
+			font-size: @title-font-size;
+			padding: 0px 0px 10px 0px;
+		}
+		p {
+			font-family: @paragraph-fonts;
+			line-height: 30px;
+		}
+	}
+	.stuff_im_good_at {
+		margin: 0px 0px 0px 30px;
+
+		.good_at_nav {
+			
+			h2 {
+				font-family: @main-font;
+				font-size: @title-font-size;
+				padding: 0px 0px 5px 0px;
+			}
+
+			.top, .middle {
+				padding: 8px 20px 8px 10px;
+				font-family: @paragraph-fonts;
+				border-top: 1px solid @site-color2;
+				border-left: 1px solid @site-color2;
+				border-right: 1px solid @site-color2;
+			}
+			.bottom {
+				padding: 8px 20px 8px 10px;
+				font-family: @paragraph-fonts;
+				border: 1px solid @site-color2;
+			}
+
+		}
+
+	}
 }
 
-html, body {
-    height: 100%;
+.another_work_div {
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: @site-color2;
+	padding: 40px 0px 40px 0px;
+	
+	.work_history_title {
+		padding: 0px 0px 30px 0px;
+		font-size: @title-font-size;
+		font-family: @main-font;
+	}
+
+	.grid {
+		display:flex;
+		flex-wrap: wrap;
+
+		nav {
+			padding: 0px 60px 0px 0px;
+
+			.first {
+				font-size: @title-font-size;
+				padding-bottom: 10px;
+			}
+			p {
+				font-family: @paragraph-fonts;
+				padding: 5px 0px 0px 0px;
+			}
+		}
+	}
+
 }
 
+
+.first_contact_div {
+	display: flex;
+	justify-content:center;
+	background-color: @site-color3;
+	flex-wrap: wrap;
+	padding: 0px 0px 30px 0px;
+		.contact {
+
+			h3 {
+				padding: 40px 0px 40px 0px;
+				font-family: @main-font;	
+				font-size: @title-font-size;
+			}
+		}
+}
+
+.copyright {
+	display:flex;
+	justify-content:center;
+	padding: 30px 0px 30px 0px;
+	background-color: @site-color1;
+
+		p {
+			font-family: @main-font;
+			font-size: @title-font-size;
+		}
+}
+
+@media (max-width: 500px) {
+	.intro_contain {
+
+		#intro_pic {
+			display: none;
+		}
+		.right_side_intro {
+			display:flex;
+			flex-wrap: wrap;
+			justify-content:center;
+			padding: 0px;
+			width: 60%;
+		}
+			.intro {
+			display:none;
+			}
+			.team_up {
+			margin: 0px;
+			}
+	}
+
+
+	.main_nav_contain {
+		display: none;
+	}
+	.mobile_nav{
+		display: flex;
+		flex-direction: column;
+		margin:auto;
+		align-items: center;
+	  	background-color: @site-color2
+	}
+
+		.nav_buttons_mobile, .nav_logo_mobile {
+			padding: 20px 0px 20px 0px;
+		  	color: #d5d2cc;
+		  	text-decoration: none;
+
+		}
+			.border {
+			  width: 100%;
+			  border-bottom: 1px solid black;
+			}
+	
+	.second_contain {
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:center;
+
+			.about {
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:center;
+				margin: 0px 0px 30px 0px;
+				width: 70%;		
+			}
+	}
+
+	.another_work_div {
+		padding: 40px 30px 40px 30px;
+	}
+
+
+}
