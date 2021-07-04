@@ -53,7 +53,212 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html, body{
+	margin: 0 auto;
+	font-size: 62.5%;
+	max-width: 880px;
 }
 
+// Variables------------------
+
+@light-accent: #D0B495;
+@mid-accent: #AABC94;
+@dark-accent: #2C371F;
+
+// Mixins------------------
+
+.flex-column{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.h1-font-styling{
+	font-family: sans-serif;
+	font-size: 3.5rem;
+	color: @dark-accent;
+	font-weight: bold;
+}
+
+.h2-font-styling{
+	font-family: sans-serif;
+	font-size: 2.5rem;
+	color: @dark-accent;
+	font-weight: bold;
+}
+
+.text-styling(@color: @dark-accent, @font-size: 1.8rem){
+	font-family: sans-serif;
+	font-size: @font-size;
+	color: @color;
+}
+
+.child-sizing{
+	p:nth-of-type(1){
+		flex-grow: 1;
+	}
+	p:nth-of-type(2){
+		flex-grow: 1;
+	}
+	p:nth-of-type(3){
+		flex-grow: 3;
+	}
+	p:nth-of-type(4){
+		flex-grow: 2;
+	}
+}
+
+// .button-creator(@height, @width, @bgcolor){
+// 	height: 
+// }
+
+article{
+	padding: 2%;
+}
+// Header------------------------
+
+.nav{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 2% 0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+	a{
+		.text-styling;
+		text-decoration: none;
+		width: 10%;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+}
+
+// Main Content/Intro------------------
+
+.intro{
+	width: 100%;
+	height: 550px;
+	background: @light-accent;
+	.flex-column;
+	padding: 3% 3%;
+	.photo{
+		width: 33%;
+		height: 200px;
+		background: white;
+	}
+	.name{
+		.flex-column;
+		color: @dark-accent;
+		border-bottom: 1px solid white;
+		h1{
+			.h1-font-styling;
+		}
+		p{
+			.text-styling;
+			padding: 3% 0;
+		}
+	}
+	.teamUp{
+		padding: 3% 0;
+		div{
+			.text-styling;
+			width: 100%;
+			padding: 2% 0;
+		}
+		.TUButton{
+			width: 20%;
+			background: @dark-accent;
+			color: @light-accent;
+		}
+	}
+} // .intro
+
+.mainContent{
+	display: flex;
+	justify-content: space-between;
+	.aboutMe{
+		width: 100%;
+		padding-right: 3%;
+		.flex-column;
+		h2{
+			.h2-font-styling;
+			padding: 3% 0;
+		}
+		div{
+			display: flex;
+			.text-styling;
+			height: 200px;
+		}
+	}
+	.talents{
+		width: 90%;
+		h2{
+			.h2-font-styling;
+			padding: 3% 0;
+		}
+		ul{
+			.text-styling;
+			li{
+				border: 1px solid gray;
+				height: 40px;
+				display: flex;
+				align-items: center;
+				padding-left: 2%;
+			}
+		}
+	}
+
+} // .mainContent
+
+// Resume and footer
+
+.resume{
+	.flex-column;
+	h2{
+		.h2-font-styling;
+	}
+	div{
+		.flex-column;
+		div:nth-of-type(2){
+			background-color: @mid-accent;
+		}
+		div:nth-of-type(4){
+			background-color: @mid-accent;
+		}
+
+		.header{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			.text-styling;
+			width: 100%;
+			.child-sizing;
+			padding: 1% 0;
+			border-top: 1px solid @dark-accent;
+			
+		}
+		.item{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			.text-styling;
+			width: 100%;
+			.child-sizing;
+			padding: 1% 0;
+			border-top: 1px solid @dark-accent;
+		}
+	}
+
+} // .resume
+
+footer{
+	width: 100%;
+	height: 3%;
+	background-color: @dark-accent;
+	color: @light-accent;
+	.text-styling(@light-accent, 1.5rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3%;
+	margin: 3% 0;
+}
