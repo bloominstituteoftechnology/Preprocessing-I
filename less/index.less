@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -57,3 +57,337 @@ html, body {
     height: 100%;
 }
 
+// My code starts here
+
+// Variables
+
+@heading-font: 'Helvetica', sans-serif;
+@site-font: 'Times New Roman', serif;
+@font-color: black;
+@btn-background: grey;
+@btn-color: white;
+
+// Mixins
+
+.flex-container(@justify, @align) {
+
+	display: flex;
+	justify-content: @justify;
+	align-items: @align;
+
+}
+
+.responsive-img(@size) {
+
+	width: @size;
+	height: auto;
+
+}
+
+// Site-wide Styles
+
+html {
+
+	font-size: 62.5%;
+
+}
+
+h1 {
+
+	font-size: 5rem;
+	font-weight: bold;
+	margin-bottom: 25px;
+	font-family: @heading-font;
+	text-align: center;
+
+}
+
+h2 {
+
+	font-size: 3rem;
+	margin-bottom: 20px;
+	font-weight: bold;
+	text-align: center;
+	font-family: @heading-font;
+
+}
+
+p {
+
+	font-size: 1.8rem;
+	line-height: 1.2;
+	color: @font-color;
+	font-family: @site-font;
+
+}
+
+b {
+
+	font-weight: bold;
+
+}
+
+footer {
+
+	.flex-container(center, center);
+	height: 100px;
+	font-size: 2rem;
+	background-color: grey;
+
+	p {
+
+		color: white;
+
+	}
+
+}
+
+.container {
+
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 50px;
+	padding-top: 20px;
+
+	@media (max-width: 500px) {
+
+		max-width: 500px;
+
+	}
+
+	nav {
+
+		.flex-container(flex-end, center);
+
+		@media (max-width: 500px) {
+
+			flex-direction: column;
+			margin-bottom: 10px;
+
+		}
+
+		a {
+
+			font-size: 1.6rem;
+			text-decoration: none;
+			padding: 20px;
+			color: @font-color;
+
+			@media (max-width: 500px) {
+
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid black;
+
+			}
+
+		}
+
+		a:hover {
+
+			color: grey;
+
+		}
+
+	}
+
+	.top {
+
+		width: 100%;
+		border-bottom: 1px solid grey;
+		padding: 0 50px;
+		padding-bottom: 30px;
+		text-align: center;
+
+		img {
+
+			.responsive-img(45%);
+			padding: 20px;
+			margin: auto;
+			display: block;
+
+		}
+
+	}
+
+	.team-up {
+
+		padding: 0 50px;
+		padding-top: 25px;
+		padding-bottom: 120px;
+
+		@media (max-width: 500px) {
+
+			padding-bottom: 50px;
+
+		}
+
+		button {
+
+			color: @btn-color;
+			background-color: @btn-background;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 4px;
+			margin: auto;
+			margin-top: 10px;
+			font-size: 1.8rem;
+			display: block;
+			border: 1px solid grey;
+
+		}
+
+		button:hover {
+
+			background-color: @btn-color;
+			color: @btn-background;
+
+		}
+
+	}
+
+	.skills {
+
+		.flex-container(space-between, flex-start);
+
+		@media (max-width: 500px) {
+
+			flex-direction: column;
+
+		}
+
+		.skills-subsection {
+
+			width: 50%;
+			padding: 10px;
+
+			@media (max-width: 500px) {
+
+				width: 100%;
+				flex-direction: column;
+				margin-bottom: 30px;
+
+			}
+
+			ul {
+
+				border: 1px solid grey;
+				border-radius: 4px;
+
+				li {
+
+					width: 100%;
+					padding: 20px;
+					border-bottom: 1px solid grey;
+					font-size: 1.6rem;
+					text-align: center;
+
+				}
+
+				li:last-child {
+
+					border-bottom: none;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.work-history {
+
+		padding: 20px;
+
+		.work-row:nth-child(even) {
+
+			background-color: silver;
+
+		}
+
+		.work-row {
+
+			border-top: 1px solid grey;
+			padding: 20px 0;
+
+			p {
+
+				@media (max-width: 500px) {
+
+				font-size: 1.2rem;
+
+				}
+
+			}
+
+			.flex-container(flex-start, center);
+
+			.years {
+
+				width: 10%;
+
+			}
+
+			.company {
+
+				width: 25%;
+
+			}
+
+			.title {
+
+				width: 35%;
+
+			}
+
+			.tech {
+
+				width: 25%;
+
+			}
+
+		}
+
+	}
+
+	.portfolio-items {
+
+		.flex-container(space-between, flex-start);
+
+		flex-wrap: wrap;
+
+		.portfolio-item {
+
+			width: 48%;
+			border: 1px solid black;
+			margin: 20px 0;
+			padding: 20px;
+			border-radius: 6px;
+
+			img {
+
+				display: block;
+				margin: auto;
+
+			}
+
+			p {
+
+				text-align: center;
+				margin-bottom: 10px;
+
+			}
+
+			a {
+
+				text-align: center;
+				display: block;
+
+			}
+
+		}
+
+	}
+
+}
