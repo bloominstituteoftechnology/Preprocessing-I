@@ -4,56 +4,347 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+/* Google Fonts */
+/* 
+font-family: "Roboto", sans-serif;
+font-family: "Allerta Stencil", sans-serif;
+*/
+
+/* Variables */
+/* http://chir.ag/projects/name-that-color/#6195ED */
+@mercury: #e6e6e6;
+@mystic: #e1e6ef;
+
+/* Mixins */
+.chart(@j-content, @f-direction) {
+  display: flex;
+  justify-content: @j-content;
+  flex-direction: @f-direction;
+  padding: 2%;
+  border-bottom: 0.1rem solid gray;
+}
+.wrap(@wrap) {
+  display: flex;
+  flex-wrap: @wrap;
+}
+
+/* Home Page */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  @media (max-width: 500px) {
+    max-width: 500px;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3% 0;
+  nav {
+    .wrap(wrap);
+    justify-content: space-between;
+    width: 40%;
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 2rem;
+      @media (max-width: 500px) {
+        font-size: 3rem;
+        text-align: center;
+        border-bottom: 0.1rem solid lightgray;
+        padding: 5% 0;
+      }
+    }
+    a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      @media (max-width: 500px) {
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+    a:active {
+      transform: translateY(0.4rem);
+      @media (max-width: 500px) {
+        transform: none;
+      }
+    }
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 6%;
+    }
+  }
+}
+
+.profile {
+  background: @mystic;
+  padding: 4% 5%;
+}
+
+.top-content {
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 4rem;
+    margin: 2% 0;
+    font-family: "Roboto", sans-serif;
+  }
+  p {
+    font-size: 2rem;
+    margin: 1% 0;
+    font-family: "Allerta Stencil", sans-serif;
+  }
+}
+
+.top-content-lower {
+  border-top: 0.1rem solid lightgray;
+  p {
+    margin: 2% 0;
+  }
+  button {
+    color: white;
+    background: gray;
+    font-size: 2rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 1% 2%;
+  }
+  button:hover {
+    color: black;
+    background: white;
+    cursor: pointer;
+  }
+  button:active {
+    transform: translateY(0.4rem);
+  }
+}
+
+.main-content {
+  margin: 3% 0;
+  @media (max-width: 500px) {
+    padding: 0 5%;
+  }
+}
+
+.middle-content {
+  .wrap(wrap);
+  justify-content: space-between;
+}
+
+.text-content-1 {
+  width: 45%;
+  padding-right: 5%;
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 3%;
+  }
+  p {
+    font-size: 1.6rem;
+    line-height: 125%;
+  }
+}
+
+.text-content-2 {
+  width: 45%;
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 2%;
+  }
+  p {
+    border: 0.1rem solid lightgray;
+    padding: 2% 5%;
+  }
+}
+
+.bottom-content {
+  margin: 5% 0;
+  h3 {
+    font-size: 2rem;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+    .line1 {
+      .chart(space-between, row);
+      p {
+        font-weight: bold;
+        width: 25%;
+      }
+    }
+    .line2 {
+      .chart(space-between, row);
+      background: @mercury;
+      p {
+        width: 25%;
+      }
+    }
+    .line3 {
+      .chart(space-between, row);
+      p {
+        width: 25%;
+      }
+    }
+    .line4 {
+      .chart(space-between, row);
+      background: @mercury;
+      p {
+        width: 25%;
+      }
+    }
+  }
+}
+
+footer {
+  .wrap(wrap);
+  justify-content: center;
+  color: white;
+  background: gray;
+  padding: 3% 0;
+}
