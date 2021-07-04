@@ -1,1 +1,350 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+body {
+  font-size: 1.6rem;
+  background-color: #ece9d8;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+.body-container {
+  width: 880px;
+  height: 100%;
+  margin: 0 auto;
+}
+.intro {
+  margin: 0 auto;
+  margin-top: 30%;
+  position: absolute;
+  width: 25%;
+  height: 18%;
+  margin-left: 20%;
+  background-color: lightgray;
+  display: none;
+}
+.contact {
+  display: none;
+  margin: 0 auto;
+  margin-top: 60%;
+  position: absolute;
+  width: 22%;
+  height: 15%;
+  margin-left: 21%;
+  background-color: lightgray;
+}
+.header-container {
+  height: 50%;
+  width: 100%;
+}
+.header-container header {
+  background-color: rgba(224, 224, 224, 0.637);
+  box-shadow: 5px 5px 5px black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header-column {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  justify-content: space-between;
+  /* Tried to use this media query both inside and outside the nest; 
+	trying to find the reason why it's not working. Too many nests?
+		.center {
+			@media (max-width: 500px){
+				
+					display: none;
+					width: 0%;
+					}
+				
+		} */
+}
+.header-column .profile-pic {
+  display: flex;
+}
+.header-column .circle {
+  animation-name: wobble;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  height: 15rem;
+  width: 15rem;
+  background-color: #000000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 30%;
+  border: inset 5px #0038d3;
+}
+.header-column .circle p {
+  color: #ffffff;
+  font-size: 1.6rem;
+  padding-top: 15%;
+}
+@media (max-width: 500px) {
+  .header-column .center {
+    display: none;
+    width: 0%;
+  }
+}
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.center img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+  margin: 0 auto;
+  border: inset 5px #0038d3;
+}
+.right {
+  align-items: flex-end;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  height: 45%;
+}
+section .lefter {
+  display: flex;
+  flex-direction: column;
+  animation-name: expand;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  width: 65%;
+  height: 50%;
+  background-color: #000000;
+  margin: 5px;
+  color: white;
+  border-right: solid 20px #0038d3;
+}
+section .righter {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 50%;
+  background-color: black;
+  align-self: flex-end;
+  color: white;
+  border-left: solid 20px #b91414;
+}
+section .righter h2,
+section .righter p {
+  align-self: flex-end;
+}
+@keyframes expand {
+  0% {
+    width: 0px;
+    display: none;
+  }
+}
+@keyframes wobble {
+  0%,
+  10% {
+    transform: scale(1, 1);
+  }
+  10%,
+  20% {
+    transform: scale(1.5, 1.3);
+  }
+  20%,
+  30% {
+    transform: scale(1.3, 1.5);
+  }
+  30%,
+  40% {
+    transform: scale(1.5, 1.3);
+  }
+  50%,
+  60% {
+    transform: scale(1.5, 1.7);
+  }
+  60%,
+  70% {
+    transform: scale(1.5, 1.3);
+  }
+  70%,
+  80% {
+    transform: scale(1.3, 1.5);
+  }
+  80%,
+  90% {
+    transform: scale(1.5, 1.5);
+  }
+  90%,
+  100% {
+    transform: scale(1, 1);
+  }
+}
+#clip-path {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 70%, 52% 80%, 28% 82%, 0% 85%);
+  background-color: #000000;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 45vh;
+}
+#clip-path2 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 70%, 52% 80%, 28% 82%, 0% 85%);
+  background-color: #0038d3;
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 65vh;
+}
+#clip-path3 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 70%, 52% 80%, 28% 82%, 0% 85%);
+  background-color: #b91414;
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  height: 85vh;
+}

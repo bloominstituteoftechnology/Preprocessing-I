@@ -54,6 +54,259 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+
+
+html {
+	font-size: 62.5%;
+	
+}
+h1 {
+	font-size: 6rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+body {
+	font-size: 1.6rem;
+	background-color: @pastyColor;
+	font-family: @balooFont;
+}
+
+@pastyColor: rgb(236, 233, 216);
+@balooFont: 'Ubuntu Condensed', sans-serif;
+
+.fDisplay(){
+	display: flex;
+}
+
+.body-container {
+	width: 880px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+//forfeited idea for freely positioned box
+.intro {
+	margin: 0 auto;
+	margin-top: 30%;
+	position: absolute;
+	width: 25%;
+	height: 18%;
+	margin-left: 20%;
+	background-color: lightgray;
+	display: none;
+}
+
+//forfeited idea for freely positioned box
+.contact {
+	display: none;
+	margin: 0 auto;
+	margin-top: 60%;
+	position: absolute;
+	width: 22%;
+	height: 15%;
+	margin-left: 21%;
+	background-color: lightgray;
+}
+
+.header-container {
+	
+	height: 50%;
+	width: 100%;
+	
+
+	header {
+		background-color: rgba(224, 224, 224, 0.637);
+		box-shadow: 5px 5px 5px black;
+		height: 100%;
+		width: 100%;
+		.fDisplay; 
+		justify-content: space-between;
+	}
+	
+
+}
+
+
+.header-column {
+		.fDisplay; 
+		flex-direction: column;
+		width: 33%;
+		justify-content: space-between;
+	/* Tried to use this media query both inside and outside the nest; 
+	trying to find the reason why it's not working. Too many nests?
+		.center {
+			@media (max-width: 500px){
+				
+					display: none;
+					width: 0%;
+					}
+				
+		} */
+		.profile-pic {
+			display: flex;
+		}
+		
+			.circle {
+			.wobblyAnimation;
+			height: 15rem;
+			width: 15rem;
+			background-color: rgb(0, 0, 0);
+			border-radius: 5px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			margin: 30%;
+			border: inset 5px rgb(0, 56, 211); 
+
+				p {
+					color: rgb(255, 255, 255);
+					font-size: 1.6rem;	
+					padding-top: 15%;
+				}
+		}
+
+	}
+@media (max-width: 500px){
+	.header-column .center {
+		display: none;
+		width: 0%;
+		}
+	}
+
+
+
+	.center {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		
+		
+		img {
+			width: 80%;
+			height: auto;
+			border-radius: 50%;
+			justify-self: center;
+			align-self: center;
+			margin: 0 auto;
+			border: inset 5px rgb(0, 56, 211);
+		}
+	}
+
+	.right {
+		align-items: flex-end;
+		
+	}
+
+	section {
+
+		.fDisplay;
+		flex-direction: column;
+		height: 45%;
+		
+		
+		.lefter {
+			.fDisplay;
+			flex-direction: column;
+			.expandAnimation;
+			width: 65%;
+			height: 50%;
+			background-color: rgb(0, 0, 0);
+			margin: 5px; 
+			color: white;
+			border-right: solid 20px rgb(0, 56, 211); 
+		}
+		.righter {
+			.fDisplay;
+			flex-direction: column;
+			width: 65%;
+			height: 50%;
+			background-color: black;	
+			align-self: flex-end;
+			color: white;
+			border-left: solid 20px rgb(185, 20, 20);
+			h2, p {
+				align-self: flex-end;
+
+			}
+		}
+		
+	}
+//ANIMATION SECTION
+
+//--expandAnimation
+	.expandAnimation(){
+		animation-name: expand;
+		animation-duration: 4s;
+		animation-iteration-count: 1;
+		animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	@keyframes expand {
+		0% {
+			width:0px;
+			display: none;
+		}
+		100% {
+
+		}
+	}
+//--fromSide Animation
+	.fromSide(@margin) {
+
+	}
+//--wobbyAnimation
+.wobblyAnimation(){
+		animation-name: wobble;
+  animation-duration: 20s; 
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	@keyframes wobble {
+		0%,10% {  transform: scale(1,1);
+		}
+		10%,20% {
+		  transform: scale(1.5,1.3);
+		}
+		20%,30% {transform: scale(1.3,1.5);}
+		30%,40% {transform: scale(1.5,1.3);}
+		50%,60% {transform: scale(1.5,1.7);}
+		60%,70% {transform: scale(1.5,1.3);}
+		70%,80% {transform: scale(1.3,1.5);}
+		80%,90% {transform: scale(1.5,1.5);}
+		90%,100% {transform: scale(1,1);}
+	  }
+
+//ANIMATION SECTION END
+	
+	#clip-path {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 70%, 52% 80%, 28% 82%, 0% 85%);
+		background-color: rgb(0, 0, 0);
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 45vh;
+	}
+	
+	#clip-path2 {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 70%, 52% 80%, 28% 82%, 0% 85%);
+		background-color: rgb(0, 56, 211);
+		position: absolute;
+		z-index: -2;
+		width: 100%;
+		height: 65vh;
+	}
+
+	#clip-path3 {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 70%, 52% 80%, 28% 82%, 0% 85%);
+		background-color: rgb(185, 20, 20);
+		position: absolute;
+		z-index: -3;
+		width: 100%;
+		height: 85vh;
+	}
