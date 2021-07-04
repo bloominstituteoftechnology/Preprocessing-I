@@ -53,7 +53,293 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//Variables
+@head-foot-height: 50px;
+@main-content-padding: 10px;
+@head-foot-color: linear-gradient(to right, #FFA100 1%, #32343e);
+@left-color: #32343e;
+@right-color: #32343e;
+@html-background: #202124;
+@text-color: #ffe7bf;
+//Mix ins!
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
+.flex-row {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.left-styling {
+	width: 100%;
+	height: 250px;
+	padding: 10px;
+	.flex-column;
+	align-items: flex-start;
+	justify-content: space-between;
+	background: @left-color;
+	border-radius: 20px;
+}
+
+.right-styling {
+	background: @right-color;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.left-right-mobile {
+	@media (max-width: 500px) {
+		margin: 10px 0;
+	}
+}
+//Main stuff
+
+html, body {
+	height: 100%;
+	font-size: 62.5%;
+	background: @html-background;
+	color: @text-color;
+}
+
+h1 {
+	font-size: 3.2rem;
+}
+
+h2 {
+	font-size: 3.0rem;
+}
+
+.container {
+	width: 100%;
+	max-width: 900px;
+	padding: 20px 0;
+	font-size: 1.6rem;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	
+}
+
+header {
+	width: 100%;
+	max-width: 900px;
+	height: @head-foot-height;
+	display: flex;
+	align-items: center;
+	padding-left: 1.11%;
+	background: @head-foot-color;
+
+	@media (max-width: 500px) {
+		width: 70%;
+		max-width: 350px;
+		.flex-column;
+		margin: 0 auto;
+		height: 125px;
+		padding: 5px 0;
+		background: linear-gradient(#FFA100 1%, #32343e);
+	}
+	
+	nav {
+		width: 55%;
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			max-width: 250px;
+			height: 115px;
+			.flex-column;
+		}
+		
+
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+	}	
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	width: 100%;
+	height: 800px;
+
+	@media (max-width: 500px){
+		height: 100%;
+		max-width: 500px;
+		flex-wrap: wrap;
+		align-items: center;
+	
+	}
+
+	.left-content {
+		.flex-column;
+		justify-content: space-around;
+		width: 30%;
+		padding: @main-content-padding;
+
+		@media (max-width: 500px){
+			width: 100%;
+			max-width: 500px;
+			flex-wrap: wrap;
+		
+		}
+		
+	}
+
+	.right-content {
+		.flex-column;
+		justify-content: space-between;
+		width: 70%;
+		padding: @main-content-padding;
+
+		@media (max-width: 500px){
+			width: 100%;
+			max-width: 500px;
+			flex-wrap: wrap;
+		
+		}
+
+	}
+
+}
+
+.skills {
+	.left-styling;
+
+	.left-right-mobile;
+
+	ul {
+		.flex-column;
+		width: 100%;
+		height: 200px;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	li {
+		font-size: 2.0rem;
+		border-top: 1px solid grey;
+		border-bottom: 1px solid grey;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.contact {
+	.left-styling;
+
+	.left-right-mobile;
+
+	h2{
+		margin-bottom: 10px;
+	}
+
+	ul {
+		.flex-column;
+		align-items: flex-start;
+		justify-content: space-around;
+		height: 200px;
+	}
+}
+
+.brandon {
+	.right-styling;
+	width: 100%;
+	height: 200px;
+
+	.left-right-mobile;
+	
+}
+
+.brandon-content {
+	.flex-row;
+	padding: 10px;
+
+	img {
+		width: 18%;
+		height: 75%;
+	}
+
+	p {
+		margin: auto 0;
+		margin-left: 10px;
+	}
+}
+
+.about {
+	.right-styling;
+	width: 100%;
+	height:300px;
+	.flex-column;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	.left-right-mobile;
+}
+
+.about-content1 {
+	.flex-row;
+	align-items: center;
+	height: 120px;
+
+	img {
+		height: 100px;
+		width: 18%;
+	}
+
+}
+
+.about-content2 {
+	.flex-row;
+	align-items: center;
+	justify-content: flex-start;
+	height: 120px;
+
+	img {
+		// height: 18%;
+		width: 18%;
+	}
+
+}
+
+.work {
+	.right-styling;
+	width: 100%;
+	height:200px;
+	.flex-column;
+	justify-content: space-between;
+
+	.left-right-mobile;
+
+	ul {
+		.flex-column;
+		justify-content: space-between;
+		height: 140px;
+		width: 100%;
+		
+
+	}
+}
+
+footer {
+	.flex-row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 900px;
+	height: @head-foot-height;
+	background: grey;
+	background: @head-foot-color;
+}
+
+	
+
 
