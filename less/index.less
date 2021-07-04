@@ -53,7 +53,221 @@ table {
     box-sizing: border-box;
 }
 
+
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: 'Noto Sans', sans-serif
+	
 }
+
+
+/*    Varibales for color */
+@bg-color:rgb(202, 202, 202); 
+@dark-gray : gray;
+@fontsize : 3rem;/* Variable for font-size */
+@topmargin : 10px; /* Varibale to adjust top-margin */
+
+/*     MIXINS FOR FLEXBOX CONTAINERS   */
+.navbaroptions{
+	justify-content: space-between;
+	text-decoration : none;
+	padding: 20px;
+	color: black;
+}
+
+.midsectionflex {
+	display : flex;
+	flex-wrap:wrap;
+	padding:10px;
+	}
+
+
+.container{
+	margin : 0 auto;
+	width : 1024px;
+}
+
+/*                Header Section                      */
+
+.navbar {
+	margin-top :@topmargin;  
+	display: flex;
+	justify-content: flex-end;
+
+ a{
+	.navbaroptions();  //Using a mixin function to give                          space between the menu options 
+ }
+}
+
+/*            Introduction Section          */
+
+.top-section{
+ background : @bg-color;
+  .myImage{
+  width : 20%;
+  margin-top :10px;;
+ }
+}
+
+.title {
+	font-size: 3.5rem;  // H1 title
+}
+.subtitle {
+	font-size : 1.5rem;
+	margin-top:10px;    
+}
+
+/*   Intorduction Section --bottom part       */
+.bottom-section{
+	margin-top : @topmargin;
+	h3 {
+		padding : 10px;
+	}
+}
+ 
+button {
+	padding : 10px;
+	margin-top: @topmargin*2; //Using an addition function
+	margin-bottom :20px;
+}
+
+/*              Content Section mid-page                 */
+.mid{
+	.midsectionflex();
+	p{
+	 padding : 10px;
+	 margin-top : @topmargin;
+	 font-size : 1.2rem;
+	}
+}
+	
+.About-Me {
+	width:45%;
+	margin-top :@topmargin;
+	padding: 10px;
+    .Me{
+	margin-left: 10px;
+	font-size : @fontsize;
+	}
+  }
+
+.Skills{
+	padding :10px;
+	width :47%;
+	margin-top : @topmargin;
+	font-size : 1.3rem;
+	margin-left: 60px;
+	}
+
+/*                Bottom Section                      */
+
+ .Work-history h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
+	}
+.work-table{
+	width: 100%;
+	margin-bottom: 20px;
+}
+	
+.work-table tr:nth-child(2){
+	background-color : @bg-color;
+	}
+
+tr{
+	border :1px solid black;
+	width:100%;
+	td  {
+	 padding : 20px;
+	}
+}
+
+/*            Footer Section                 */
+footer span {
+background: @dark-gray;
+width :100%;
+display :flex;
+justify-content: center ;
+padding : 40px;
+color : white;
+font-size : 1.3rem;
+}
+
+
+.contact {
+	display : flex;
+	padding : 10px;
+	flex-wrap:wrap;
+
+	h2{
+		font-size : 5vh;
+		justify-content: center;
+	}
+	 address {
+		 margin-top : 20px;
+		 width :20%;
+	 }
+}
+
+/*            CSS For Responsive Mobile Desing         */
+@media (max-width:500px){
+/* Header Navigation Section  */
+
+.container{
+	margin : 0 auto;
+	width : 500px;
+}
+
+	.navbar{
+	width :100%;
+	border : 1px solid green;
+	display : flex;
+     a{
+		 justify-content: center;
+		 margin-right :20px;
+	 }
+}
+
+
+/* Introduction Section */
+.top-section {
+	display : flex;
+	flex-wrap: wrap;
+	 .top{
+		 justify-content: center;
+		 .myImage{
+			 width: 100%;
+			 .title {
+				 width:100%;
+				 .Skills {
+					 width : 100%;
+				 }
+
+			 }
+		 }
+	 }
+	 }
+	/* Content Section- Mid Page  */
+.mid {
+	display : flex;
+	flex-wrap: wrap;
+
+	.About-Me{
+		width:100%;
+
+		.Skills {
+			width :100%;
+			border : 1px solid red;
+			flex-wrap: wrap;
+		}
+	}
+}
+
+address {
+	display: flex;
+	flex-wrap :wrap;
+}
+} 
+
+
 
