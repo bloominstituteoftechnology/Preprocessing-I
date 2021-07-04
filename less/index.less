@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -54,6 +55,202 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+@mainfont: 'Montserrat', sans-serif;
+@pfont: 1.6rem;
+@titlefont: 2rem;
+@h1font: 3rem;
+@introcolor: #9b59b6;
+@aboutcolor: #1abc9c;
+@transparentaboutcolor: rgba(47, 255, 185, .3);
+@careercolor: whitesmoke;
+@maincolor: #34495e;
+@alertcolor: #2fffb9;
+@subtlefont: dimgrey;
+@basespace: 33px;
+@tablet: ~"(max-width: 550px)";
+@phone: ~"(max-width: 500px)";
+
+.center-it() {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+
+  .column(){
+	  flex-direction: column;
+	  align-items: center;
+  }
+
+.wrapper  {
+	font-family:@mainfont;
+	.container {
+		.center-it;
+		max-width: @basespace*(30);
+		margin: auto;
+		font-size: @pfont;
+		h1{
+			font-size: @h1font;
+			text-align: center;
+			margin-bottom: @basespace;
+		}
+		h3{
+			font-size: @titlefont;
+		}
+	}
+
+	section {
+		padding: @basespace 0;
+	}
+
+	header {
+		position: fixed;
+		background: @maincolor;
+		width: 100%;
+		.container {
+		.center-it;
+		align-items: stretch;
+
+		@media @phone{
+			.column;
+		}
+			.logo {
+				width: 60%;
+			img {
+			height: @basespace*2;
+			clip-path: circle(47%);
+			margin: @basespace*.5 10% @basespace*.5 0;
+		}
+			a {
+				.center-it;
+				justify-content: flex-start;
+				font-size: @titlefont;
+				padding: 0;
+				color: @careercolor;
+		}
+		}//logo
+	
+		nav {
+			.center-it;
+			width: 60%;
+			align-items: stretch;
+
+			@media @phone{
+				width: 90%;
+				padding-bottom: @basespace;
+			}
+
+			a {
+				.center-it;
+				justify-content: center;
+				height: 100%;
+				width: 20%;
+				font-weight: bold;
+				color: @careercolor;
+			}
+		}
+ 	 }
+  } //Header
+
+	footer {
+		background-color: @maincolor;
+		.container{
+			justify-content: center;
+			padding: @basespace 0;
+			color: @careercolor;
+
+  	 }
+  }
+}//wrapper
+
+
+//------Home Page------
+.home {
+	.introduction {
+		background-color: @introcolor;
+		.container{
+			.column;
+			padding: @basespace*2 0;
+			a {
+				margin-top: @basespace*3;
+				padding: @basespace @basespace*3;
+				background-color: @alertcolor;
+				cursor: pointer;
+				&:hover {
+					background: @maincolor;
+					color: @careercolor;
+				}
+			}
+			img {
+				height: @basespace*8;
+				margin-bottom: @basespace;
+				margin-top: @basespace*3;
+				border: solid 10px @aboutcolor;
+				outline: solid 5px @transparentaboutcolor;
+			}
+			
+			p {
+				text-align: center;
+			}
+		}
+	} //Introduction
+
+	.about-me {
+		background-color: @aboutcolor;
+		.container{
+			.column;
+			padding: @basespace*2 0;
+
+			p{
+				text-align: center;
+			}
+		}
+	}//About Me
+
+	.career {
+		background-color: @careercolor;
+		.container{
+			.column;
+			.container{
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: space-around;
+				flex-wrap: wrap;
+
+				@media @phone{
+					.center-it;
+					flex-wrap:nowrap;
+					.column;
+				}
+			}
+		}
+	} //Career
+
+	.employer{
+		width: 47%;
+
+		@media @phone{
+			width: 90%;
+		}
+
+		  h3 {
+			 border-bottom: 1px dotted @subtlefont;
+		}
+		span {
+			display: inline-block;
+			color: @subtlefont;
+			margin-right: 1rem;
+		}
+		.position {
+			color: @introcolor;
+			font-weight: bold;
+			margin-bottom: @basespace*.5;
+		}
+	} //Employer
+}//home
