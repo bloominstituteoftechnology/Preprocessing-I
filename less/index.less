@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -49,11 +49,312 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+//@custom-font: 'Helvetica', Arial, sans-serif;
+
+@custom-fh1: darkred;
+
+@custom-fh2: #F77B36;
+
+// crusta = #F77B36 = Location:http://chir.ag/projects/name-that-color/#F77B36
+
+@custom-fh3: coral;
+
+@custom-fh4:white;
+
+.headerspacing () {
+	margin-top: 2.5rem;
+	margin-bottom: 1.6rem;
+	padding: 10px;
+}
+.footerspacing () {
+	margin-top: 3.1rem;
+	margin-bottom: 1.6rem;
+	font-size: 1.7rem;
+	font-size-adjust: 1.9rem;
+}
+
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lineUp(){
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.brobox() {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
+		font-family: 'Titillium Web', sans-serif;
 }
 
+html {
+	font-size: 62.5%
+	// 1 rem = 10px and 2 rem = 20px
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+		font-size: 2.5rem;
+		font-size: 3.0rem;
+		line-height: 2rem;
+		padding: 8px 5%;
+
+	}
+
+h1 {
+	font-size: 4.2rem;
+	line-height: 2rem;
+	color: @custom-fh1;
+	display: flex;
+	align-self: flex-end;
+	padding: 2.5%;
+	// border-top: 2%;
+	.center();
+
+
+
+
+
+}
+
+p {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	letter-spacing:normal;
+	border-radius: 10px;
+	padding: 4px 1%;
+	margin: 4px 1%;
+
+}
+
+div{
+	border-radius: 10px;
+	padding: 4px 1%;
+	margin: 4px 1%;
+}
+
+// font
+// *{
+// 	box-sizing: border-box;
+// }
+
+.container {
+	max-width: 880px;
+	width: 100%;
+	border:4px solid red;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	padding: 5px;
+
+	.headerAll {
+		 max-width: 99%;
+		 border: 1px solid pink;
+		 border-radius: 10px;
+		 display:flex;
+		 justify-content:space-around;
+		 color: lightgray;
+		 // background-color: gray;
+		 align-items:flex-end;
+		 // font-size: 2.9rem;
+		 @media (max-width:500px) {
+ 			.lineUp();
+			width: 98%;
+
+ 		 }
+
+		 .nav1 {
+			 width: 85%;
+			 display: flex;
+			 justify-content: space-between;
+			 font-size: 1.4rem;
+			 color: @custom-fh4;
+			 text-decoration: none;
+			 align-items: flex-end;
+			 .headerspacing();
+			 @media (max-width:600px) {
+	 			.lineUp();
+	 		 }
+
+			 a {
+				 font-size: 1.5rem;
+				 display: flex;
+				 justify-content: space-between;
+				 @media (max-width:600px) {
+		 			.lineUp();
+					justify-content: space-around;
+					font-size: 1.8rem;
+					padding: 15px;
+					width: 97%;
+
+		 		 }
+
+			 }
+
+		 }
+
+
+	 }
+
+	 // footer {
+		//  max-width: 65%;
+		//  .center();
+		//  padding: 10px;
+		//  .footerspacing();
+	 //
+		//  nav {
+		// 	 width: 80%;
+		// 	 display: flex;
+		// 	 justify-content: space-around;
+		// 	 font-size: 1.4rem;
+		// 	 color: @custom-fh4;
+		// 	 text-decoration: none;
+		// 	 align-items: flex-end;
+	 //
+		//  }
+	 //
+	 // }
+	 .btm-Sec{
+		 background-color: darkgray;
+		 .center();
+		 flex-direction: row;
+		 @media (max-width:500px) {
+			 display: none;
+		 }
+
+		 // .logo {
+			//  width: 100px;
+			//  height: auto;
+	 		//  border-radius: 10px;
+	 		//  border: 2px line @custom-fh4;
+			//  @media (max-width:700px) {
+			// 	 display: none;
+			//  }
+
+		 }
+
+	 }
+	h2 {
+		 font-size: 3.0rem;
+		 line-height: 2rem;
+		 padding: 8px;
+		 border-top: 2%;
+		 color: @custom-fh3;
+	}
+
+
+
+footer {
+	max-width: 95%;
+	.center();
+	padding: 10px;
+	.footerspacing();
+	@media (max-width:650px) {
+	 .lineUp();
+	 justify-content: space-around;
+	 font-size: 1.8rem;
+	 padding: 15px;
+	 width: 97%;
+
+	}
+
+	nav {
+		width: 80%;
+		display: flex;
+		justify-content: space-around;
+		font-size: 1.4rem;
+		color: @custom-fh4;
+		text-decoration: none;
+		align-items: flex-end;
+		@media (max-width:600px) {
+		 .lineUp();
+		 justify-content: space-around;
+		 font-size: 1.8rem;
+		 padding: 15px;
+		 width: 97%;
+
+	}
+	h2 {
+		line-height: 2.0;
+		order: -1;
+		display: none;
+	}
+
+}
+
+ .home{
+	background:lightgray;
+
+}
+.top-Section{
+	.brobox();
+
+	.aboutMe1{
+		width: 45%;
+		background-color: pink;
+	}
+
+  .techMe2{
+	  width: 50%;
+	  background-color: @custom-fh4;
+
+   }
+	}
+.workHistory4 {
+
+}
+.mid-Sec {
+	.brobox();
+	.Education3 {
+		width: 45%;
+		background-color: @custom-fh4;
+	}
+	.workHistory4 {
+		width: 50%;
+		background-color: pink;
+	}
+}
+
+
+
+.btm-Sec {
+	.brobox();
+	  .logo1 {
+			width: 78%;
+			height: auto;
+			border-radius: 10px;
+			border: 2px line @custom-fh4;
+		.logo {
+			width: 75%;
+			height: auto;
+			border-radius: 10px;
+			border: 2px line @custom-fh4;
+			@media (max-width:450px) {
+				display: none;
+			}
+	  }
+    }
+	 .contact {
+		 width: 50%
+		 border: 2px line white;
+	  }
+
+	 }
