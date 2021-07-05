@@ -48,12 +48,268 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+// =================== Variables ============================
+
+@grey: grey;
+@main-font: Verdana, Arial;
+
+// =================== Mixins ===============================
+
+.flex() {
+	display: flex;
+	flex-direction: column;
+}
+
+// =================== General Styles =======================
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
+html, body {
+	height: 100%;
+	font-family: @main-font;
+}
+
+.container {
+	max-width: 880;
+	margin: 0 auto;
+	width: 90%;
+	font-size: 1.8rem;
+	line-height: 1.5;
+}
+
+h2 {
+	font-size: 5rem;
+}
+
+h3, h4 {
+	font-size: 4rem;
+}
+
+// ===================== Header Styles =========================
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	margin: 25px 0;
+	width: 100%;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		width: 500px;
+
+		@media(max-width: 500px) {
+			.flex;
+		}
+
+		a {
+			color: black;
+			text-decoration: none;
+
+			@media(max-width: 500px) {
+				border: 1px solid black;
+				width: 100%;
+				.flex;
+				align-items: center;
+				padding: 10px 0;
+				background: lightgrey;
+				margin: 5px 0;
+			}
+		}		
+	}
+}
+
+// ======================= Top Content Styles =======================
+
+.top-content {
+	background: #0A3C47;
+
+	@media(max-width: 500px) {
+		.flex;
+		align-items: center;
+		width: 100%;
+	}
+
+	img {
+		margin: 75px 0 0 50px;
+		width: 200px;
+
+		@media(max-width: 500px) {
+			margin: 50px 0;
+		}
+	}
+
+	h1 {
+		font-size: 6rem;
+		margin: 25px 0 25px 50px;
+
+		@media(max-width: 500px) {
+			margin: 25px 25px;
+			font-size: 2.8rem;
+			font-weight: bold;
+		}
+	}
+
+	p {
+		margin: 0 100px 25px 50px;
+		padding-top: 25px;
+		border-top: 2px solid @grey;
+		height: 100%;
+
+		@media(max-width: 500px) {
+			margin: 0 15px 25px 15px;
+		}
+	}
+
+	button {
+		background: @grey;
+		color: white;
+		border-radius: 4px;
+		font-size: 3rem;
+		padding: 5px 40px;
+		margin: 0 0 75px 50px;
+
+		@media(max-width: 500px) {
+			margin: 25px 0 75px 0;
+		}
+	}
+}
+
+// ========================== Middle Content Styles ======================
+
+.middle-content {
+	display: flex;
+
+	@media(max-width: 500px) {
+		.flex;
+	}
+
+	.about-me {
+		width: 50%;
+		.flex;
+		align-items: flex-start;
+		padding-right: 50px;
+		margin-top: 50px;
+
+		@media(max-width: 500px) {
+			width: 100%;
+			padding-right: 0;
+			align-items: center;
+			
+		}
+	}
+}
+
+
+.intro p {
+	margin-top: 10px;
+}
+
+.skills p {
+	border: 1px solid @grey;
+	width: 100%;
+	font-size: 2rem;
+	padding: 10px 0 10px 20px;
+}
+
+// ============================== Bottom Conttent Styles =====================
+
+.bottom-content {
+	margin: 50px 0;
+
+	@media(max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 25px;
+	}
+	
+	.history {
+		display: flex;
+		width: 100%;
+	
+		.line {
+			.flex;
+			width: 100%;
+			border-top: 1px solid @grey;
+			border-bottom: 1px solid @grey;
+
+			@media(max-width: 500px) {
+				height: 100%;
+				border-top: none;
+				border-bottom: none;
+			}
+			
+			h5 {
+				font-weight: bold;
+				padding: 10px 0;
+				border-bottom: 1px solid gray;
+			}
+
+			p {
+				width: 100%;
+				border-top: 1px solid @grey;
+				padding: 10px 0;
+
+				@media(max-width: 500px) {
+					width: 33.33%;
+					height: 125px;
+					border-top: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+.background-color {
+	background: lightgrey;
+
+	@media(max-width: 500px) {
+		background: white;
+	}
+}
+
+// ================================= Contact Styles ===========================
+
+.contact {
+	display: flex;
+	margin-bottom: 50px;
+	align-items: baseline;
+
+	@media(max-width: 500px) {
+		align-items: center;
+	}
+
+	h5 {
+		font-size: 3rem;
+	}
+
+	a {
+		margin-left: 15px;
+	}
+}
+
+// ================================== Footer Styles ============================
+
+footer {
+	height: 100px;
+	width: 100%;
+	background: grey;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media(max-width: 500px) {
+		height: 50px;
+	}
+
+	p {
+		color: white;
+	}
+}
