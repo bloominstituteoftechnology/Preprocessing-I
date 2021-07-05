@@ -3,57 +3,346 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  height: 100%;
 }
 
+p {
+  font-family: "Nato Sans", sans-serif;
+}
+
+// My Code
+@clr-white: white;
+@clr-highlight: rgb(62, 136, 196);
+@clr-main: #dde3ee;
+@clr-dark: rgb(179, 184, 197);
+@full-size: 100%;
+@mobile: ~"(max-width:500px)";
+
+.flex() {
+  display: flex;
+}
+
+.fullPage {
+  font-size: 1.4rem;
+  width: @full-size * 0.9;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.button {
+  font-size: 1.4rem;
+  border-radius: 4px;
+  color: @clr-white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem;
+  background: @clr-highlight;
+}
+
+.nav {
+  .flex();
+  text-transform: uppercase;
+  width: @full-size;
+  justify-content: flex-end;
+  &__list {
+    .flex();
+    width: @full-size * 0.6;
+    padding: 2rem 0;
+    @media @mobile {
+      flex-wrap: wrap;
+      width: @full-size;
+    }
+  }
+  &__item {
+    text-align: right;
+    flex: 1 1 auto;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    @media @mobile {
+      text-align: center;
+      width: @full-size;
+      padding: 1rem;
+      border-top: 1px solid @clr-dark;
+      &:first-of-type {
+        border: none;
+      }
+    }
+  }
+}
+.bio {
+  background: @clr-main;
+  padding: 4rem 3rem 7rem;
+  &__name {
+    h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      padding: 1rem 0 2rem;
+    }
+  }
+  &__call-to {
+    border-top: 1px solid @clr-dark;
+  }
+  &__oneliner {
+    padding: 2rem 0;
+  }
+  &__pic {
+    width: 50vmin;
+  }
+}
+.about {
+  .flex();
+  padding: 2rem 0 2rem;
+  @media @mobile {
+    flex-wrap: wrap;
+  }
+  h2 {
+    font-size: 3rem;
+    padding: 0 0 1rem;
+  }
+  h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  &__description {
+    width: @full-size / 2;
+    @media @mobile {
+      width: @full-size;
+      padding: 2rem 0;
+    }
+  }
+
+  &__paragraph {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    padding-right: 1rem;
+  }
+}
+.skills {
+  width: @full-size / 2;
+  h3 {
+    padding: 1rem 0 2rem;
+  }
+  @media @mobile {
+    width: @full-size;
+    padding: 2rem 0;
+  }
+  &__list {
+    width: @full-size;
+    border-radius: 4px;
+    border-left: 1px solid @clr-dark;
+    border-right: 1px solid @clr-dark;
+    border-bottom: 1px solid @clr-dark;
+  }
+  &__item {
+    padding: 1rem;
+    border-top: 1px solid @clr-dark;
+    &:first-of-type {
+      border-radius: 4px;
+    }
+  }
+}
+
+.work {
+  margin: 1rem 0 2rem;
+  h3 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+  &__table {
+    text-align: left;
+    width: @full-size;
+  }
+  &__row {
+    border-top: 1px solid @clr-dark;
+    &:nth-of-type(even) {
+      background: @clr-main;
+    }
+    &:last-of-type {
+      border-bottom: 1px solid @clr-dark;
+    }
+  }
+  &__header {
+    border-top: 1px solid @clr-dark;
+    font-weight: bold;
+  }
+  &__description {
+    padding: 1rem;
+    width: auto;
+  }
+}
+
+.contact {
+  font-size: 1.5rem;
+  background: @clr-main;
+  margin: 4rem 0;
+  padding: 1rem;
+  h3 {
+    font-size: 2rem;
+    padding: 1rem 0 2rem;
+  }
+  &__title {
+    border-bottom: 1px solid @clr-dark;
+    margin-bottom: 2rem;
+  }
+  &__input,
+  &__text {
+    resize: none;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  &__input &__button {
+    margin: 1rem 0;
+  }
+}
+
+.footer {
+  text-align: center;
+  background: @clr-highlight;
+  padding: 3rem;
+  color: @clr-white;
+}
