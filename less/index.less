@@ -54,6 +54,154 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size:62.5%;
+	background-color: whitesmoke;
+}
+@font-size:1.6rem;
+@margin:10px 0px 10px 0px;
+@text-align-center:center;
+
+.flex(){
+	display: flex;
+	justify-content: space-between;
+}
+.media-500-styling(){
+	width:100%;
+	flex-direction: column;
+		p{
+			text-align: @text-align-center;
+		}
+		li{
+			text-align: @text-align-center;
+		}
+		h2{
+			text-align:@text-align-center;
+		}
+		div{
+			width:100%;
+		}
+}
+.box-style(){
+	background-color: lightgrey;
+	border: 2px solid red;
+	border-radius: 5px;
+}
+#all-content {
+	width:100%;
+	max-width: 880px;
+	margin:0px auto;
+}	
+.navigation{
+	width:100%;
+	padding:10px 5px;
+	.box-style();
+	.flex();
+		a{
+			text-decoration: none;
+			font-size:@font-size;
+			color:black;
+		}
+		a:hover{
+			color:gold;
+		}
+		@media(max-width:500px){
+			width:100%;
+			flex-direction:column;
+			text-align:@text-align-center;
+			a {font-size:3rem;
+				text-shadow: 2px 2px black;
+				border-bottom:1px solid black;
+				color:red;
+			}
+		}
+	}	
+.top-container{
+	width:100%;
+	padding:10px;
+	margin:@margin;
+	.box-style();
+	h1{
+		font-size:3.5rem;
+		font-weight: bold;
+		margin:@margin;
+	}
+	p{
+		font-size:@font-size;
+		margin:@margin;
+	}
+	button{
+		margin:@margin;
+	}
+	button:hover{
+		cursor: crosshair;
+	}
+	@media(max-width:500px){
+		width:100%;
+		.flex();
+		flex-direction: column-reverse;
+		align-items: center;
+		img{
+			width:25%;
+		}
+		p{
+			font-size:2rem;
+			text-align: @text-align-center;
+		}
+	}
 }
 
+.middle-container{
+	width:100%;
+	.box-style();
+	.flex();
+	div{
+		width:47%;
+		padding:2%;
+	}
+	h2{
+		font-size: 2.5rem;
+	}
+	p{
+		font-size:@font-size;
+		margin:@margin;
+	}
+	li{
+		font-size:@font-size;
+		margin:@margin;
+	}
+	@media(max-width:500px){
+		.media-500-styling();
+	}
+}
+
+.bottom-container{
+	width:100%;
+	.box-style();
+	.flex();
+	margin: @margin;
+	div{
+		width:47%;
+		padding:2%;
+	}
+	h2{
+		font-size:2.5rem;
+	}
+	p{
+		font-size:@font-size;
+	}
+	li{
+		font-size:@font-size;
+	}
+	@media(max-width:500px){
+		.media-500-styling();
+	}
+}
+footer{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	margin: @margin;
+	font-size:1.4rem;
+}
