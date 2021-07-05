@@ -1,1 +1,427 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  animation: fadein 2s;
+  line-height: 1.5;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+html {
+  font-size: 62.5%;
+}
+.landing-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.pexels.com/photos/548084/pexels-photo-548084.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+}
+.nav a {
+  color: white;
+  margin: 40px 10px;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: 300ms;
+}
+.nav a:hover {
+  color: #34b3a0;
+  transition: 300ms;
+}
+@media (max-width: 768px) {
+  .nav a {
+    margin: 10px;
+  }
+}
+.landing-content {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+  width: 100%;
+  text-align: center;
+}
+.landing-content h1 {
+  font-size: 4rem;
+  margin-bottom: 0px;
+  line-height: 1.2;
+}
+.landing-content p {
+  font-size: 2.5rem;
+}
+.landing-content .btn {
+  background-color: #34b3a0;
+  color: white;
+  padding: 15px 30px;
+  margin-top: 15px;
+  font-size: 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.about-me-container {
+  width: 100vw;
+  background-color: #34b3a0;
+  padding: 100px 0;
+}
+@media (max-width: 992px) {
+  .about-me-container {
+    padding: 60px 0;
+  }
+}
+.about-me {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .about-me {
+    flex-direction: column;
+  }
+}
+@media (max-width: 550px) {
+  .about-me {
+    width: 95%;
+  }
+}
+.about-me img {
+  max-width: 500px;
+  border-radius: 50%;
+  max-height: 300px;
+}
+@media (max-width: 992px) {
+  .about-me img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+}
+.about-me-content {
+  color: white;
+  margin-left: 40px;
+}
+@media (max-width: 992px) {
+  .about-me-content {
+    margin-left: 0;
+  }
+}
+.about-me-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-me-content p {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  max-width: 500px;
+}
+.hire-me-container {
+  background: #34b3a0;
+  padding: 50px 0;
+}
+.hire-me h1 {
+  color: white;
+  font-size: 3.5rem;
+  text-align: center;
+}
+.hire-me hr {
+  border: none;
+  border: 2px solid white;
+  width: 70px;
+  margin-top: 15px;
+}
+.my-skills-wrapper {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 992px) {
+  .my-skills-wrapper {
+    width: 95%;
+  }
+}
+@media (max-width: 768px) {
+  .my-skills-wrapper {
+    flex-direction: column;
+  }
+}
+.my-skills {
+  color: white;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.my-skills h1 {
+  font-size: 3rem;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.my-skills p {
+  font-size: 1.6rem;
+  max-width: 600px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+}
+@media (max-width: 768px) {
+  .my-skills p {
+    margin: 10px auto;
+  }
+}
+.my-skills-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+.my-skills-icons img {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+#my-work {
+  background: lightgray;
+  padding: 100px 0;
+}
+#my-work .my-work-wrapper {
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 992px) {
+  #my-work .my-work-wrapper {
+    width: 95%;
+  }
+}
+#my-work .my-work-wrapper h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+@media (max-width: 550px) {
+  #my-work .my-work-wrapper h3:last-of-type {
+    display: none;
+  }
+  #my-work .my-work-wrapper h3:nth-child(2) {
+    width: 50%;
+    margin-left: auto;
+  }
+}
+.my-work-history {
+  display: flex;
+  margin: 20px auto;
+}
+.my-work-history h3 {
+  font-size: 3rem;
+  width: 30%;
+}
+.my-work-history h3:first-of-type {
+  width: 10%;
+}
+.my-work-history-content {
+  display: flex;
+  margin: 20px 0;
+}
+.my-work-history-content h3 {
+  font-size: 2.2rem;
+  width: 30%;
+}
+.my-work-history-content h3:first-of-type {
+  width: 10%;
+}
+.contact-me {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 0;
+}
+@media (max-width: 992px) {
+  .contact-me {
+    width: 70%;
+  }
+}
+@media (max-width: 550px) {
+  .contact-me {
+    width: 90%;
+  }
+}
+.contact-me h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.contact-me input {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 2rem;
+}
+.contact-me #message {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 2rem;
+}
+.contact-me #submit {
+  background-color: #34b3a0;
+  border: 1px solid black;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
