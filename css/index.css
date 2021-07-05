@@ -1,1 +1,381 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+/* variables */
+/* mixins */
+/* my own styling */
+.header-container {
+  display: flex;
+  justify-content: center;
+  background-color: #DA3110;
+}
+.header-container .navigation {
+  width: 80%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Nunito', sans-serif;
+}
+.header-container .navigation h1 {
+  font-size: 4rem;
+  font-family: 'Permanent Marker', cursive;
+  color: #FDFDFE;
+}
+.header-container .navigation nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.header-container .navigation nav a {
+  color: #FDFDFE;
+  text-decoration: none;
+}
+@media (max-width: 800px) {
+  .header-container .navigation h1 {
+    font-size: 3rem;
+  }
+  .header-container .navigation nav {
+    width: 60%;
+  }
+  .header-container .navigation nav a {
+    margin: 0 0 0 20px;
+  }
+}
+@media (max-width: 500px) {
+  .header-container .navigation {
+    flex-direction: column;
+  }
+  .header-container .navigation h1 {
+    font-size: 4rem;
+  }
+  .header-container .navigation nav {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+  .header-container .navigation nav a {
+    padding: 10px 0;
+    border-top: 1px solid black;
+  }
+  .header-container .navigation nav a:first-child {
+    border-top: none;
+  }
+}
+h3 {
+  font-size: 2rem;
+  font-family: 'Permanent Marker', cursive;
+}
+p {
+  font-size: 1.8rem;
+  padding: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+.top-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #E1E0DB;
+}
+.top-content .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-content .container-restraint .ammy-main {
+  width: 40%;
+  max-width: 250px;
+  border: 1px solid black;
+  margin: 50px 0 20px 0;
+}
+.top-content .container-restraint .top-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
+}
+.top-content .container-restraint .top-text h2 {
+  font-size: 5rem;
+  font-family: 'Permanent Marker', cursive;
+}
+.top-content .container-restraint .top-text p {
+  font-size: 3rem;
+}
+@media (max-width: 500px) {
+  .top-content .container-restraint {
+    width: 100%;
+  }
+}
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ##FFFDFE;
+  height: 30%;
+}
+.intro .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.skills {
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #E1E0DB;
+}
+.skills .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.skills .container-restraint .skillset-details {
+  margin-top: 30px;
+}
+.skills .container-restraint .weapons-details {
+  margin-top: 30px;
+}
+.skills .container-restraint ul {
+  padding-top: 10px;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.skills .container-restraint ul li {
+  margin: 0 10px;
+  list-style-type: disc;
+}
+.skills .container-restraint .sun {
+  width: 10%;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .skills .container-restraint .sun {
+    display: none;
+  }
+}
+.work-history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ##FFFDFE;
+}
+.work-history .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.work-history .container-restraint table {
+  font-size: 1.6rem;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  margin: 20px 0;
+}
+.work-history .container-restraint table tr:nth-child(even) {
+  background-color: #E1E0DB;
+}
+.work-history .container-restraint table tr th {
+  padding: 10px 0;
+  color: #FDFDFE;
+  background-color: #DA3110;
+}
+.work-history .container-restraint table tr td {
+  padding: 5px 10px;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E1E0DB;
+}
+.contact .container-restraint {
+  width: 80%;
+  max-width: 750px;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.contact .container-restraint form {
+  width: 60%;
+  font-family: 'Nunito', sans-serif;
+  margin: 0 auto;
+}
+.contact .container-restraint form div {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+.contact .container-restraint form div label {
+  margin: 5px 0;
+  font-size: 1.6rem;
+}
+.contact .container-restraint form div input {
+  font-size: 1.6rem;
+}
+.contact .container-restraint form div textarea {
+  font-size: 1.8rem;
+  height: 100px;
+}
+@media (max-width: 500px) {
+  .contact .container-restraint form {
+    width: 100%;
+  }
+}
