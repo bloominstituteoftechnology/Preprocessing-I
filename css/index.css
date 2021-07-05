@@ -1,1 +1,365 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 16px;
+  background-color: black;
+}
+.container {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 830px;
+}
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 0px;
+    grid-template-columns: 0px;
+    grid-template-rows: 0px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+.container .web {
+  grid-area: 0.25;
+  background-color: #ff7675;
+  font-family: Cambria;
+  font-size: 3rem;
+  text-align: center;
+  padding: 20%;
+  transition: 2s;
+}
+.container .web:hover {
+  font-style: italic;
+  background-color: aliceblue;
+}
+@media (max-width: 500px) {
+  .container .web {
+    width: 100%;
+  }
+}
+.container .intro {
+  grid-area: 0.08333333;
+  background-color: #6c5ce7;
+  font-family: sans-serif;
+  color: black;
+  font-size: 3rem;
+  padding-top: 40%;
+  transition: 2s;
+}
+.container .intro p {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .intro p {
+    display: block;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+}
+.container .intro:hover {
+  font-family: sans-serif;
+  color: black;
+  font-size: 3rem;
+  background-color: aliceblue;
+  text-align: start;
+  padding: 0%;
+}
+.container .intro:hover .hov {
+  transition-delay: 2s;
+  display: block;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .container .intro {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
+.container .skills {
+  grid-area: 0.04166667;
+  background-color: #0984e3;
+  font-family: sans-serif;
+  font-size: 3rem;
+  padding-top: 40%;
+  transition: 2s;
+}
+.container .skills li {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .skills li {
+    display: block;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+}
+.container .skills:hover {
+  font-family: sans-serif;
+  color: black;
+  font-size: 3rem;
+  background-color: aliceblue;
+  text-align: start;
+  padding: 0%;
+}
+.container .skills:hover .hov {
+  transition-delay: 2s;
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .container .skills {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
+.container .work {
+  grid-area: 0.33333333;
+  background-color: #636e72;
+  font-size: 3rem;
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 10%;
+  transition: 2s;
+}
+.container .work li {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .work li {
+    display: block;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+}
+.container .work:hover {
+  font-family: sans-serif;
+  color: black;
+  font-size: 3rem;
+  background-color: aliceblue;
+  text-align: start;
+  padding: 0%;
+}
+.container .work:hover .hov {
+  transition-delay: 2s;
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .container .work {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
+.container .port {
+  grid-area: 0.11111111;
+  background-color: #00cec9;
+  font-family: sans-serif;
+  font-size: 3rem;
+  padding: 20%;
+  text-align: center;
+  transition: 2s;
+}
+.container .port a {
+  text-decoration: none;
+  color: black;
+}
+.container .port:hover {
+  font-family: sans-serif;
+  font-size: 3rem;
+  background-color: aliceblue;
+}
+@media (max-width: 500px) {
+  .container .port {
+    width: 100%;
+  }
+}
+.container .let {
+  grid-area: 0.05555556;
+  background-color: #ffeaa7;
+  font-size: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 25%;
+  transition: 2s;
+}
+.container .let .hov {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .let .hov {
+    display: block;
+    text-align: center;
+  }
+}
+.container .let:hover {
+  font-family: sans-serif;
+  color: black;
+  font-size: 2rem;
+  background-color: aliceblue;
+  padding-top: 3%;
+}
+.container .let:hover .hov {
+  transition-delay: 2s;
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .container .let {
+    width: 100%;
+  }
+}
+.icons {
+  justify-content: center;
+  display: flex;
+  background-color: black;
+  opacity: 0.4;
+}
+.icons li {
+  margin-top: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+@media (max-width: 500px) {
+  .icons {
+    position: fixed;
+    width: 100%;
+  }
+}
