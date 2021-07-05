@@ -4,56 +4,255 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-html, body {
-    height: 100%;
+@fontfamily: "Oswald", sans-serif;
+@Display: flex;
+@shadowblack:2px 2px black;
+html {
+  height: 100%;
+  font-size: 32.5%;
+  body {
+    display: @Display;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
-
+.Container {
+  display: @Display;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 20px ridge red;
+  background-image: url(../laxinsnoopyhouseback.png);
+  background-repeat: no-repeat;
+  background-position: unset;
+  background-size: cover;
+  nav {
+    margin: 2% auto;
+    display: @Display;
+    justify-content: space-evenly;
+    width: 100%;
+    a {
+      font-weight: bold;
+      font-family: @fontfamily;
+      text-decoration: none;
+      color: red;
+      font-size: 4rem;
+      text-shadow: @shadowblack;
+    }
+    a:hover {
+      color: white;
+    }
+  }
+  h1 {
+    font-weight: bolder;
+    font-size: 5rem;
+    color: red;
+    text-shadow: @shadowblack;
+  }
+  div {
+    width: 100%;
+    display: @Display;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2% 0;
+    padding: 2%;
+    img {
+      width: 45%;
+      border: 5px groove red;
+      border-radius: 5%;
+      box-shadow: @shadowblack;
+    }
+    div {
+      width: 40%;
+      display: @Display;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 0;
+      margin: 0;
+      h2 {
+        align-self: center;
+        font-family: @fontfamily;
+        font-weight: bold;
+        font-size: 4rem;
+        color: red;
+        text-shadow: @shadowblack;
+        margin: 0 0 2% 0;
+      }
+      .tBtn {
+        text-decoration: none;
+        color: red;
+        font-size: 3rem;
+        text-shadow: 1px 1px black;
+        margin-top: 2%;
+        padding: 1%;
+        box-shadow: @shadowblack;
+      }
+      .tBtn:hover {
+        color: white;
+        background: red;
+      }
+      button {
+        background: white;
+        border: 1px solid red;
+        color: red;
+        box-shadow: @shadowblack;
+        margin-top: 2%;
+      }
+      p,
+      li,
+      ul {
+        width: 45%;
+        font-family: @fontfamily;
+        font-weight: 600;
+        color: white;
+        text-shadow: @shadowblack;
+        font-size: 3rem;
+        line-height: 1.5;
+        ul {
+          line-height: 2;
+        }
+        a {
+          color: red;
+          text-shadow: 1px 1px black;
+          margin: 2%;
+        }
+        a:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
