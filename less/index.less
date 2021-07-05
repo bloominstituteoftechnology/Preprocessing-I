@@ -53,7 +53,164 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	height: 100%;
+	font-size: 62.5%;
+	body{
+		font-size: 1.6rem;
+	}
+    
 }
+
+
+//Variables
+@background: #babbbc;
+@top-content-color: #aa2a4a;
+@letter-colors: white;
+
+//Mixins
+.main-content-padding{
+	padding: 2.5%;
+}
+
+.h2-settings{
+	font-size: 2.5rem;
+	text-decoration: underline;
+}
+
+.h3-settings{
+	font-size: 2rem;
+	font-weight: bold;
+	padding-bottom: .5%;
+	padding-top: 1.5%;
+}
+
+.h4-settings{
+	font-size: 1.8rem;
+	font-style: italic;
+	padding-bottom: .5%;
+}
+
+.ul-settings{
+	padding-top: 1%;
+}
+
+.li-settings{
+	list-style: disc;
+	padding-bottom: .5%;
+	font-size: 1.7rem;
+	
+}
+
+.history-settings{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;		
+}
+
+//Main Page Styling
+
+.page{
+	max-width: 800px;
+	width: 100%;
+	padding: 25px 0;
+	margin: 0 auto;
+	background-color: @background;
+	color: @letter-colors;
+	.top-content{
+		display: flex;
+		justify-content: space-between;
+		border: 8px groove gold;
+		padding: 5px;
+		background-color: @top-content-color;
+		h1{
+			font-size: 3rem;		
+		}
+		img{
+			width: 60%;			
+		}
+		nav{
+			display: flex;
+			flex-direction: column;
+			padding-right: 10%;
+			justify-content: space-evenly;
+			a{
+				text-decoration: none;
+				border: 2px solid black;
+				border-radius: 15px 15px 15px 15px;
+				font-size: 2rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 5px;	
+				color: @letter-colors;		
+			}			
+		}
+	}
+	.main-content{		
+		.opening{
+			font-size: 1.8rem;
+			.main-content-padding;
+		}		
+		.skills{
+			
+			height: 50%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			.main-content-padding;
+			h2{
+				.h2-settings;
+			}
+			ul{
+				.ul-settings;
+			}				
+			li{
+				.li-settings;		
+			}			
+		}
+
+		.history{			
+			.main-content-padding;
+			.history-settings;
+			h2{
+				.h2-settings;
+			}
+			
+			h3{
+				.h3-settings;
+			}
+			h4{
+				.h4-settings;
+			}
+			ul{
+				.ul-settings;
+			}
+			li{
+				.li-settings;
+			}
+
+		}
+	}
+
+	.contact{
+		.h3-settings;
+		p{
+			font-size: 1.7rem;
+			font-weight: normal;	
+		}
+		address{
+			font-size: 1.7rem;
+			font-weight: normal;
+		}
+	}
+	@media(max-width: 500px){
+		.page{
+			max-width: 500px;
+			width: 100%
+		}
+	}
+
+}
+
 
