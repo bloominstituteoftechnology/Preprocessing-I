@@ -53,7 +53,187 @@ table {
     box-sizing: border-box;
 }
 
+// **-****-***-**-**-**-***-**-* Variables **-****-***-**-**-**-***-**-*
+
+@main-color: darkgrey;
+@secondary-color:white;
+@tertiary-color: black;
+
+// **-****-***-**-**-**-***-**-* General **-****-***-**-**-**-***-**-*
+
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	font-family: 'Roboto', sans-serif;
+}
+.container{
+	display: flex;
+	width: 880px;
+	margin: 0 auto;
+	@media (max-width:880px){
+		.center(column, wrap);
+		width: 100%;
+	}
 }
 
+h1{
+	font-size:2.5rem;
+}
+h2{
+	font-size: 2rem;
+}
+h3{
+	font-size: 1.7rem;
+}
+h4{
+	font-size: 1.4rem;
+}
+p{
+	font-size: 1.6rem;
+}
+
+// **-****-***-**-**-**-***-**-* Resume Page **-****-***-**-**-**-***-**-*
+
+header{
+	width: 830px;
+	margin: 5px auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	height: 5%;
+	@media (max-width:880px){
+		.center(row,wrap);
+		width: 90%;
+		margin: 5%;
+	}
+	a{
+		margin-left: 2em;
+		font-size: 2rem;
+		color: @tertiary-color;
+		text-decoration: none;
+		padding: 3px 10px;
+		transition: .2s;
+	}
+	a:hover{
+		background-color:@tertiary-color;
+		color: @secondary-color;
+	}
+	p{
+		font-size: 4rem;
+	}
+}
+.left-panel{
+	.center(row, wrap);
+	width: 45%;
+	margin: 1% 0;
+	background-color: @main-color;
+	border: 1px solid @tertiary-color;
+	@media (max-width:880px){
+		width: 80%;
+	}
+	h1{
+		width: 100%;
+		margin: 1% 5%;
+		color: white;
+		background: @tertiary-color;
+		padding: 15px;
+	}
+	.display-picture{
+		margin: 5%;
+		max-width: 90%;
+		height: auto;
+	}
+	div{
+		width: 90%;
+		background-color: @secondary-color;
+		padding: 5%;
+		margin: 5%;
+		text-align: start;
+		border: 1px solid @tertiary-color;
+		h2{
+			margin-bottom: 2%;
+		}
+		Ul{
+			margin: 3% 8%;
+			li{
+				font-size: 1.5rem;
+				list-style-type: square;
+				margin-bottom: 2%;
+			}
+		}
+	}
+}
+.right-panel{
+	width: 70%;
+	div{
+		margin: 3% 7% 7% 7%;
+		p{
+			margin: 2% 0;
+		}	
+	}	
+	@media (max-width:880px){
+		width: 100%;
+	}
+}
+
+.work-experience{
+	h1{
+		text-align: center;
+	}
+	div{
+		line-height: 23px;
+		margin: 5%;
+		padding-bottom: 2%;
+		border-bottom: 1px solid @tertiary-color;
+	.center(column, wrap);
+		h3{
+			margin: 1% 0;
+		}	
+	}
+}
+.contact-icons{
+	width: 15%;
+	a{
+		width:15%;
+		height: auto;
+	}
+	.icon{
+		width: 15%;
+		height: auto;
+		transition: .1s;
+	}
+	.icon:hover{
+		transform: scale(1.2);
+	}	
+}
+
+.contact-line-height{
+	line-height: 30px;
+}
+
+.box{
+	.padding-box(@main-color, @tertiary-color);
+}
+
+.inner-box{
+	.padding-box(@secondary-color, @tertiary-color);
+}
+
+
+// **-****-***-**-**-**-***-**-* Mix-ins **-****-***-**-**-**-***-**-*
+
+.center(@direction, @wrap){
+	display: flex;
+	justify-content: center;
+	flex-direction: @direction;
+	flex-wrap: @wrap;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.padding-box(@background, @border){
+	padding: 5%;
+	background-color:@background;
+	border: 1px solid @border;
+}
