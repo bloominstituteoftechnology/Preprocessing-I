@@ -55,5 +55,282 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
+	@media @m500{
+		 background: yellow;
+	}
+
 }
 
+//////////////////////
+// variables
+//////////////////////
+@rb: rebeccapurple;
+@db: dodgerblue;
+@msg: mediumseagreen;
+@hp: hotpink;
+@lg: hsl(180, 22%, 80%); // lightgrey-blue-ish
+
+@full: 100%;
+@80: 80%;
+@half: 50%;
+
+@m500: ~"(max-width: 500px)";
+
+
+
+
+////////////////////
+// mixins
+///////////////////
+
+// debug
+.b_rb{
+	border: 2px solid @rb;
+}
+
+.b_db{
+	border: 2px solid @db;
+}
+
+.b_msg{
+	border: 2px solid @msg;
+}
+
+.b_hp {
+	border: 1px solid @hp;
+}
+
+// padding
+.pad_02{
+	padding: 2%;
+}
+
+.pad_05{
+	padding: 5%;
+}
+.pad_10{
+	padding: 10%;
+}
+
+// flex & layout
+.flex-row{
+	width: @full;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.flex-col{
+	width: @full;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.centered{
+	margin: 0 auto;
+}
+
+// fonts
+#fonts() {
+	.Charm{
+		font-family: Charm, cursive;
+	}
+
+	.Mukta{
+		font-family: 'Mukta', sans-serif;
+	}
+
+	.Raleway {
+		font-family: 'Raleway', sans-serif;
+	}
+}
+
+
+
+////////////
+//   START
+
+
+nav {
+	width: @80;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: center;
+	.centered();
+	@media @m500{
+		flex-direction: column;
+
+	}
+
+	a{
+		color: black;
+		width: 80%;
+		text-align: center;
+		font-size: 2rem;
+		text-decoration: none;
+		.pad_02();
+		@media @m500 {
+			font-size: 4rem;
+		}
+		&:hover {
+			color: @hp;
+		@media @m500{
+			font-size: 6rem;
+		}
+
+		}
+	}
+
+} // end nav
+
+
+.banner{
+	.flex-row();
+	padding: 0 5%;
+	img{
+		max-width: 240px;
+		width: 50%;
+		@media @m500 {
+			display: none;
+		}
+
+	}
+	.side-container{
+		.flex-col();
+		width: 90%;
+		padding: 2.5% 5%;
+		justify-content: space-around;
+		.part{
+			width: @full;
+			margin: 5%;
+			text-align: center;
+		}
+		h1{
+			font-size: 4rem;
+			.pad_02();
+		}
+		.tagline {
+			font-size: 3rem;
+			#fonts.Charm();
+		}
+		h3{
+			font-size: 2rem;
+			#fonts.Mukta();
+			@media @m500 {
+				font-size: 4rem;
+			}
+		}
+		p{
+			font-size: 1.5rem;
+			#fonts.Raleway();
+			@media @m500 {
+				font-size: 2rem;
+			}
+		}
+	}
+}  // end banner
+
+
+
+.highlights {
+	.flex-col();
+	.pad_02();
+	.centered();
+	padding: 0 7.5%;
+	h3{
+		font-size: 2rem;
+		#fonts.Mukta();
+		.pad_02();
+		@media @m500 {
+			font-size: 4rem;
+		}
+	}
+	p{
+		font-size: 1.5rem;
+		#fonts.Raleway();
+		.pad_02();
+		@media @m500 {
+			font-size: 2rem;
+		}
+	}
+}   // end highlights
+
+.work_history{
+	.flex-col();
+	font-size: 1.5rem;
+	width: @80;
+	margin: 5% auto;
+	.header{
+		font-weight: bolder;
+		font-size: 1.75rem;
+	}
+	.odd {
+		background: @lg;
+	}
+	.row{
+		padding: 1% 0;
+		.flex-row();
+
+		.years{
+			width: 10%;
+		}
+		.company{
+			width: 20%;
+		}
+		.title{
+			width: 40%;
+		}
+		.lang{
+			width: 30%;
+		}
+
+	}
+
+
+
+
+
+	/*
+	table{
+		width: @full;
+	}
+	.headers {
+		font-weight: bolder;
+	}
+	th, td {
+		font-size: 1.5rem;
+		width: 20%;
+		.pad_02();
+		@media @m500{
+			.pad_05();
+		}
+	}
+	td {
+		width: 100%;
+	} */
+}
+
+footer{
+	background: lightblue;
+
+	.centered();
+	width: @full;
+	margin: 2.5% 0;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 5rem;
+	.pad_05();
+	div a{
+		text-decoration: none;
+		&:hover{
+			color: @db;
+			font-size: 5rem;
+		}
+	}
+}
