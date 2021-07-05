@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 2;
 }
 ol, ul {
 	list-style: none;
@@ -47,6 +47,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+//============================= Variables
+
+@nav-color: grey;
+@main-font: 'Roboto', sans-serif, Arial;
+@border-color: #ddd;
+
+
+//============================= Mixins
+
+.border() {
+	display: flex;
+	border: 1px solid @border-color;
+	padding: 5px 3%;
+}
+
+.round-border () {
+	border-radius: 5px;
+}
+
+
+//============================= General Styles
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -54,6 +75,215 @@ table {
 }
 
 html, body {
-    height: 100%;
+	// height: 100%;
+	font-size: 62.5%;
+	font-family: @main-font;
 }
 
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;	
+}
+
+h2 {
+	font-size: 2.8rem;
+}
+
+//============================= Header Styles
+
+header {
+	display: flex;
+    justify-content: flex-end;
+	margin: 25px 0;
+	
+	nav {
+		display: flex;
+		justify-content: space-evenly;
+		width: 50%;
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			font-size: 2rem;
+		}
+
+		a {
+			color: @nav-color;
+			text-decoration: none;
+
+			@media (max-width: 500px) {
+				.border;
+				justify-content: center;
+    			width: 100%;
+			}
+		}
+
+		a:hover {
+			text-decoration: underline;
+
+			@media (max-width: 500px) {
+				background-color: black;
+				color: white;
+			}
+		  }
+	}
+}
+
+//============================= Top Content styles
+
+.top-content {
+	background-color: rgba(214, 214, 214, 0.733);
+	.round-border;
+	padding: 5%;
+
+	.Profile-pic {
+		width: 56%;
+	}
+
+	.top-text {
+		line-height: 1.4;
+		margin: 10px 0 20px;
+		h1 {
+			font-size: 5rem;
+		}
+	
+		p {
+			font-size: 1.8rem;
+		}
+	}
+
+	.bottom-text {
+		border-top: 1px solid rgba(128, 128, 128, 0.226);
+		padding: 17px 0 34px;
+
+		button {
+			background: rgb(107, 107, 107);
+			border: 1px solid black;
+			.round-border;
+			font-size: 1.8rem;
+			color: white;
+			padding: 9px 3%;
+			margin-top: 18px;
+		}
+		
+		button:hover {
+			background: black;
+			color: white;
+		}
+	}
+	
+}
+
+//============================= Mid Content styles
+
+.mid-content {
+	display: flex;
+
+	@media (max-width: 500px) {
+		padding: 5%;
+	}
+
+	.left-text {
+		width: 50%;
+		margin-right: 5%;
+
+		p {
+			margin-bottom: 15px;
+		}
+	}
+
+	.right-text {
+		width: 47%;
+
+		p {
+			.border;
+		}
+	}
+}
+
+//============================= Bottom Content styles
+
+.bottom-content {
+
+	@media (max-width: 500px) {
+		padding: 5%;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		margin-bottom: 40px;
+
+		tr:nth-child(even){background-color: #f2f2f2}
+
+		th {
+			font-weight: bold;
+		}
+		
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+	}
+}
+
+//============================= Contact Page
+.contact-form {
+	margin: 5%;
+
+	input[type=text] {
+		width: 100%;
+		padding: 12px 2%;
+	}
+	
+	input[type=submit]{
+		background: rgb(107, 107, 107);
+		border: 1px solid black;
+		.round-border;
+		font-size: 1.8rem;
+		color: white;
+		padding: 9px 3%;
+		margin-top: 18px;
+	}
+	input[type=submit]:hover {
+		background: black;
+		color: white;
+	}
+	
+	textarea {
+		width: 100%;
+		height: 150px;
+		padding: 12px 2%;
+		margin-top: 20px;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		font-size: 16px;
+		resize: none;
+	}
+}
+
+
+//============================= Footer
+
+footer {
+	display: flex;
+    justify-content: center;
+    padding: 16px 0% 25px 0;
+    background-color: grey;
+	color: white;
+	margin: 1px -1%;
+
+	@media (max-width: 500px) {
+		margin: 1px 0;
+	}
+}
