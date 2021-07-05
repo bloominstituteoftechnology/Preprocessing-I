@@ -4,56 +4,334 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
+    font-size: 62.5%;
 }
 
-html, body {
+html,
+body {
     height: 100%;
+    font-family: 'Neucha', cursive; 
+    background-color: #61605b;
+}
+// VARIABLES
+@secondary-color: #4cb7a8;
+// MIXINS
+.headlines(){
+    font-size: 2rem;
+    border-bottom: 2px solid black;
+    letter-spacing: .5rem;
+    color: white;
+}   
+.ptags(){
+    font-size: 1.2rem;
+     color: white;
+     width:75%;
+     font-weight: lighter;
+     word-spacing: 3px;
+}
+    .boxes-config(){
+    background: linear-gradient(to bottom, black, #61605b)  ;
+   border:3px solid transparent;
+   border-image:linear-gradient(0deg,@secondary-color, transparent);
+   border-image-slice:1;
+   
+}
+.flex-column(){
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+     align-items: center;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+
+
+.header {
+    width: 100%;
+    margin: 15px auto;
+    height: 80px;
+    display: flex;
+    border-bottom: 3px solid black;
+    padding: 10px;
+}
+}
+.nav--bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   
+    .left-side {
+        width: 40%;
+        display:flex;
+    }
+    a {
+        width: 45% ;
+        text-decoration: none;
+        font-size: 2rem;
+        margin: 0 auto;
+        padding:0 8px;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        @media(max-width: 500px){
+            font-size:1.2rem;
+            width: 50%;
+        }
+    }
+    a:hover{
+        color: @secondary-color;
+        
+    }
+    .right-side {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        width: 40%;
+        @media(max-width: 500px){
+            width: 30%;
+        }
+    }
+    img {
+        height: 52px;
+    }
 }
 
+ .face__content{
+    width:90%;
+    margin: 0 auto;
+    display: flex;
+    @media(max-width: 500px){
+        justify-content: center;
+        align-self: center;
+    }
+
+	.main-img img{
+        height:350px;
+        width:80%;
+        border:4px solid @secondary-color;
+        border-radius: 8%;
+        margin-top: 20px;
+        box-shadow:10px 10px 7px @secondary-color;
+        justify-self: center;
+        margin-bottom: 12px;
+        @media(max-width: 500px){
+            display:none;
+        }
+
+    }
+    .about-me{
+        color:white;
+        width:70%;
+        font-size: 1.2rem;
+        .flex-column;
+
+        h1{
+            .headlines;
+            margin: 15px auto;
+            width:90%;
+        }
+    }
+}
+.middle-con{
+   width:95%;
+    height: 150px;
+    margin:30px auto;
+    padding:10px auto;
+    .boxes-config;
+    .flex-column;
+
+    h1{
+        .headlines;
+    }
+    p{
+     .ptags;
+
+     @media(max-width:500px){
+         width: 100%
+     }
+    }
+}
+
+.job-history{
+   display:flex;
+   justify-content: space-between;
+   margin: 30px 0;
+   
+     @media(max-width: 500px){
+       flex-direction: column;
+       width: 95%;
+       justify-content: center;
+     }
+
+    
+   .job{
+        color:white;
+        .boxes-config;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+
+        h3{
+            .headlines;
+            text-align: center;
+        }
+        p{
+            .ptags;
+        }
+    }
+
+   
+}
+.con{
+    background: black;
+    height:20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        color:@secondary-color;
+        font-size: 1rem;
+       
+    }
+}
