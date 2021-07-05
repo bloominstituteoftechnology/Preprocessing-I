@@ -57,3 +57,196 @@ html, body {
     height: 100%;
 }
 
+@darkBlue: #000050;
+@pink: rgb(253, 188, 239);
+@lightgrey: rgb(233, 231, 231);
+
+.border() {
+	border: solid @darkBlue 1px;
+}
+
+.font1() {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+}
+
+.font2() {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5rem;
+	padding-bottom: 20px;
+}
+
+.container {
+	max-width: 1090px;
+	width: 100%;
+	margin: 0 auto;
+	background: @lightgrey;
+	
+	
+	header { 
+		nav {
+			display: flex;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			margin: 0 7.5%;
+		   a {
+			padding: 2% 3.5%;
+			text-decoration: none;
+			background: @darkBlue;
+			color: white;
+		   }
+		   a:hover {
+			   color: @darkBlue;
+			   background: @lightgrey;
+			   border: solid @darkBlue 2px;
+		   }
+		}
+	}
+
+ 	.me {
+		width: 200px;
+		height: 200px;
+		border-radius: 150px;
+		position: relative;
+		bottom: 140px;
+		right: 400px;
+	}
+
+	.top-content {
+		width: 85%;
+		height: 500px;
+		color:white;
+		background-image: url("https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fst2.depositphotos.com%2F2605379%2F10670%2Fi%2F950%2Fdepositphotos_106708760-stock-photo-girly-office-desktop-with-blank.jpg&f=1");
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;
+
+		h1 {
+			.font1();
+			font-weight: bold;
+			font-size: 3.12rem;
+			text-shadow: 3px 3px black;
+			position: relative;
+			bottom: 100px;
+		}
+
+		p {
+			.font1();
+			font-size: 1.65rem;
+			font-weight: bold;
+			color: @darkBlue;
+			position: relative;
+			bottom: 85px;
+			right: 260px;
+		}
+
+		button {
+			padding: 10px;
+			width: 200px;
+			border: solid @darkBlue 1px;
+			background: @darkBlue;
+			position: relative;
+			bottom: 75px;
+
+		}
+
+		button a {
+			text-decoration: none;
+			color: white;
+			.font1();
+		}
+
+		button:hover {
+			background: @lightgrey;
+		}
+
+		button a:hover {
+			color: @darkBlue;
+		}
+
+	}
+
+	.main-content {
+		height: 250px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: @pink;
+		width: 85%;
+		margin: 0 auto;
+		.font1();
+
+		h2 {
+			.font2();
+			text-align: center;	
+		}
+
+		.intro {
+			width: 50%;
+			line-height: 1.30rem;
+			margin: 0 2.58% 0 7.5%;
+			padding: 1.83%;
+			
+
+		}
+
+		.skills {
+			display: inline-block;
+			width: 50%;
+			line-height: 1.30rem;
+			margin: 0 7.5% 0 2.58%;
+			padding: 1.5% 1.83%;
+			
+
+			.list {
+				display: flex;
+				justify-content: space-around;
+
+				li {
+					list-style: disc outside;
+					padding-top: 10px;
+				}
+
+				li:first-child{
+					padding-top: 0;
+				}
+			}
+		}
+	}
+
+	.bottom-content {
+		width: 85%;
+		height:350px;
+		margin: 0 auto;
+
+		h2 {
+			.font2();
+			padding: 20px;
+		}
+
+		table {
+			height: 250px;
+			width: 100%;
+
+			td, th {
+				border: solid black 1px;
+				padding-top: 25px;
+			}
+
+			tr{
+				.font1();
+				text-align: center;
+			}
+
+			tr:nth-child(odd){
+				background: white;
+		   }
+
+		   tr:first-child {
+			   font-weight: bold;
+		   }
+		}
+	}
+}
