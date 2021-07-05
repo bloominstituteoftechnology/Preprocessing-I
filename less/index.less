@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -56,4 +56,179 @@ table {
 html, body {
     height: 100%;
 }
+
+@header-size: 1.2rem;
+@title-size: 2rem;
+@main-color: grey;
+@pastel: #C8CADB;
+@purple: #767BA5;
+
+.centering() {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.columns() {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+}
+
+/* my less css */
+
+h1, h2, h3 {
+    font-family: 'Bangers';
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 880px;
+    margin: auto;
+    
+    header {
+	nav {
+	    display: flex;
+	    justify-content: flex-end;
+	    /* border: 1px solid red; */
+	    a {
+		padding: 8px 3%;
+		font-size: @header-size;
+		text-decoration: none;
+		color: grey;
+	    }
+	    @media (max-width:500px) {
+		/* border: 1px solid red; */
+		display: flex;
+		flex-flow: row wrap;
+		width: 100%;
+		justify-content: center;
+		a {
+		    width: 100%;
+		    border-bottom: 1px solid black;
+		    text-align: center;
+		}
+	    }
+	}
+    }
+
+    .grey {
+	width: 90%;
+	margin: auto;
+	background: @pastel;
+	margin-bottom: 35px;
+	.myinfo {
+	    width: 90%;
+	    margin: auto;
+	    background: @pastel;
+	    h1 {
+		font-size: @title-size;
+	    }
+	    h4 {
+		padding-top: 15px;
+	    }
+	}
+	
+	.subtitle {
+	    padding-top: 20px;
+	    font: size: 20px;
+	    border-top: solid 1px black;
+	    .centering;
+	    margin-top: 30px;
+	    button {
+		width: 150px;
+		margin-top: 50px;
+		margin-bottom: 25px;
+		height: 35px;
+		justify-content: flex-start;
+	    } //button
+	} // subtitle
+    } //grey
+    .main-content {
+	.columns();
+	width: 85%;
+	margin: auto;
+	section {
+	    width: 50%;
+	    margin: auto;
+	    /* border: 1px solid red; */
+	    display: flex;
+	    flex-flow: row wrap;
+	    padding: 0 12px;
+	    h1 {
+		font-size: @header-size;
+		margin-bottom: 15px;
+	    }
+	    a {
+		border: 1px solid @purple;
+		width: 80%;
+		font-size: 25px;
+		text-decoration: none;
+		color: @purple;
+		text-align: center;
+	    }
+	    @media (max-width:500px) {
+		display: flex;
+		flex-flow: row wrap;
+		width: 90%;
+		margin: 0 auto 25px auto;
+		/* border: 1px solid red; */
+		
+		a {
+		    width: 100%;
+		}
+	    }
+	}
+    }
+    
+    .work {
+	width: 70%;
+	margin: auto;
+	padding-top: 35px;
+	h1 {
+	    font-size: @header-size;  
+	}
+	table {
+	    justify-content: space-between;
+	    margin-top: 15px;
+	    border-top: 1px solid black;
+	    line-height: 2;
+	    /* border: 1px solid red; */
+	    width: 100%;
+	    h1 {
+		font-weight: bold;
+	    }
+	    th {
+		font-weight: bold;
+		font-size: @header-size;
+		border: 1px solid black;
+	    }
+	    td {
+		border: 1px solid black;
+		text-align: center;
+	    }
+	}
+    }
+    
+    footer {
+	background: @pastel;
+	margin-top: 50px;
+	/* text-align: center; */
+	font-size: 18px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	h4 {
+	    align-self: center;
+	    /* border: 1px solid red; */
+	}
+    }
+} //div
 
