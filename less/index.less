@@ -53,7 +53,228 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@font-face {
+	font-family: 'dubbed';
+	src: url('fonts/dubbed__.ttf') format('truetype');
 }
 
+.testb {
+	border: 1px solid red;
+}
+
+@bordw: 3px solid white;
+
+@bordw-half: 1.5px solid white;
+
+html, body {
+	height: 100%;
+	font-size: 62.5%;
+	
+}
+
+.container {
+	max-width: 1024px;
+	background-color: black;
+}
+
+
+
+.normal-text {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.wire-text {
+	font-family: 'dubbed', Arial, Helvetica, sans-serif;
+	font-size: 2.4rem;
+	letter-spacing: .2rem;
+	text-decoration: none;
+}
+
+h1 {
+	.wire-text;
+}
+
+// a {
+// 	.wire-text;
+// }
+
+img {
+	width: 50%;
+}
+
+header {
+	display: flex;
+	padding: 20px 0;
+	justify-content: space-around;
+	background-color: grey;
+	border-bottom: @bordw;
+	
+	a {
+		.wire-text;
+		color: white;
+	}
+	
+}
+
+.intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+	margin: 0 15%;
+	background-color: gray;
+	border-left: @bordw;
+	border-right: @bordw;
+
+	.img-box{
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		// .testb;
+
+		img {
+			width: 50%;
+		}
+
+	}
+
+	.text-box {
+		width: 50%;
+		padding: 20px 0;
+
+		h1 {
+			text-align: center;
+		}
+
+		p {
+			.normal-text;
+			padding: 10px;
+		}
+	}
+
+
+}
+
+.mid-container {
+	// border-top: @bordw;
+	// border-bottom: @bordw;
+	background-color: black;
+	display: flex;
+	padding: 0;
+	justify-content: center;
+
+	
+
+	.skills {
+		background-color:gray;
+		width: 40%;
+		border: @bordw;
+		border-right: 1.5px solid white;
+		padding: 20px 5%;
+
+		h1 {
+			padding-bottom: 10px;
+		}
+		ul {
+
+			li{
+				.normal-text;
+			}
+		}
+
+	
+	}
+
+	.work-history {
+		background-color: gray;
+		border: @bordw;
+		width: 50%;
+		border-left: 1.5px solid white;
+		padding: 20px 2%;
+
+		.wh-headings {
+			display: flex;
+			flex-wrap: nowrap;
+			padding: 20px 2% 10px;
+			justify-items: space-evenly;
+			.normal-text;
+		}
+		.wh-content {
+			display: flex;
+			flex-direction:column;
+			.normal-text;
+			font-size: 1.2rem;
+
+			.wh-row {
+				display: flex;
+				flex-wrap: nowrap;
+				padding: 20px 2%;
+				background-color: black;
+				color: white;
+				border: @bordw;
+				margin: 10px 0;
+			}
+
+			// .r1 {
+			// 	border-top: @bordw;
+			// 	border-bottom: @bordw-half;
+			// }
+
+			// .r2 {
+			// 	border-top: @bordw-half;
+			// 	border-bottom: @bordw-half;
+			// }
+
+			// .r3 {
+			// 	border-top: @bordw-half
+			// 	border-bottom: @bordw;
+			// }
+
+		}
+
+		.c1 {
+			width: 25%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.c2 {
+			width: 30%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.c3 {
+			width: 55%;
+			display: flex;
+			justify-content: center;
+		}
+	}
+	@media (max-width: 500px){
+		flex-direction: column;
+		align-items: center;
+
+		.skills, .work-history {
+			width: 95%;
+		}
+	}
+}
+
+.contact {
+	display: flex;
+	background: gray;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 10%;
+	margin: 0 15%;
+	border-left: @bordw;
+	border-right: @bordw;
+
+	p{
+		.normal-text;
+	}
+}
