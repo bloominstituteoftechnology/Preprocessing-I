@@ -57,3 +57,269 @@ html, body {
     height: 100%;
 }
 
+//Variables
+@main-color: #34495e;
+@accent-color: #e74c3c;
+@that-gray: #bdc3c7;
+@that-other-gray: #ecf0f1;
+
+//Mixins
+.flex(@just, @align){
+	display: flex;
+	justify-content: @just;
+	align-items: @align;
+}
+
+.info-card(@pad, @color){
+	background-color: @color;
+	padding: @pad;
+}
+
+html{
+	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+
+	nav{
+		.flex(flex-start, center);
+		width: 100vw;
+		max-width: 100%;
+		background-color: @main-color;
+		padding: 20px 0 20px 310px; 
+
+		@media(max-width: 518px){
+			padding: 20px 0 20px 0;
+			justify-content: space-evenly;
+		}
+
+		a{
+			text-decoration: none;
+			color: white;
+			font-size: 1.6rem;
+			margin-right: 20px;
+		}
+	}
+}
+
+.master-flex{
+	display: flex;
+	align-items: stretch;
+
+	@media(max-width: 518px){
+		flex-direction: column;
+	}
+}
+
+.sidebar{
+	position: fixed;
+	top: 0px;
+	.flex(flex-start, flex-start);
+	flex-direction: column;
+	width: 300px;
+	background-color: @main-color;
+	height: 100vh;
+	overflow: hidden;
+	padding: 0 10px;
+	color: white;
+	padding-top: 20px;
+
+	@media(max-width: 518px){
+		position: static;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.prof-pic{
+		width: 70%;
+		align-self: center;
+		border-radius: 100%;
+		height: auto;
+		margin: 0 0 10px 0;
+		border: 3px solid @accent-color;
+	}
+
+	h1{
+		align-self: center;
+		font-size: 2.5rem;
+		margin-bottom: 5px;
+	}
+
+	h2{
+		align-self: center;
+		font-size: 1.5rem;
+		color: @that-gray;
+	}
+
+	.contact{
+		margin-top: 20px;
+		width: 100%;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		border-top: 2px dashed @accent-color;
+		border-bottom: 2px dashed @accent-color;
+
+		@media(max-width: 518px){
+			text-align: center;
+		}
+
+		h2{
+			font-size: 2rem;
+			color: white;
+			margin-bottom: 2px;
+		}
+
+		i{
+			color: @accent-color;
+		}
+
+		p{
+			font-size: 1.6rem;
+			margin-bottom: 15px;
+			color: @that-gray;
+		}
+	}
+
+	.skills{
+		.flex(center, stretch);
+		flex-direction: column;
+		font-size: 1.6rem;
+		color: @accent-color;
+		width: 100%;
+		height: 100%;
+
+		@media(max-width: 518px){
+			padding-bottom: 15px;
+		}
+
+		h2{
+			color: white;
+			font-size: 2rem;
+			margin-bottom: 10px;
+
+			@media(max-width: 518px){
+				margin-top: 20px;
+			}
+		}
+
+		.single-skill{
+			.flex(space-between, center);
+			margin-bottom: 10px;
+			padding-bottom: 2px;
+			border-bottom: 1px dashed @that-gray;
+
+			.skill{
+				width: 80px;
+				text-align: left;
+			}
+
+			.rating{
+				.flex(space-between, center);
+
+				i{
+					color: white;
+					font-size: 1.2rem;
+					margin-left: 2px;
+				}
+			}
+		}
+	}
+}
+
+.main-section{
+	display: flex;
+	flex-direction: column;
+	padding: 20px 50px 20px 350px;;
+	overflow: hidden;
+	font-size: 1.6rem;
+	align-items: center;
+	width: 100%;
+
+	@media(max-width: 518px){
+		padding: 20px 20px 20px 20px;
+	}
+
+	h2{
+		font-size: 2.5rem;
+		margin-bottom: 10px;
+		background-color: @accent-color;
+		color: white;
+		padding: 10px 10px;
+		margin-left: -40px;
+	}
+	
+	.intro{
+		.info-card(30px, @that-other-gray);
+		max-width: 600px;
+		margin-bottom: 20px;
+	}
+
+	.work{
+		.info-card(30px, @that-other-gray);
+		width: 600px;
+
+		@media(max-width: 1000px){
+			width: 100%
+		}
+
+		.single-work{
+			display: flex;
+			margin-bottom: 5px;
+			justify-content: space-between;
+			border-bottom: 1px dotted black;
+			padding-bottom: 4px;
+
+			.company{
+				background-color: @accent-color;
+				color: white;
+				border-radius: 4px;
+				padding: 5px 5px;
+			}
+
+			// .google{
+			// 	background-color: #EA4335;
+			// }
+
+			// .mozilla{
+			// 	background-color: #E3580C;
+			// }
+
+			// .facebook{
+			// 	background-color: #395693;
+			// }
+
+			// .apple{
+			// 	background-color: white;
+			// 	color: black;
+			// }
+
+			// .amazon{
+			// 	background-color: #F79400;
+			// }
+
+			.position{
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+
+footer{
+	text-align: center;
+	padding-bottom: 10px;
+	position: absolute;
+	bottom: 0;
+	left: 40%;
+
+	@media(max-width: 518px){
+		position: static;
+		left: 0;
+	}
+
+	p{
+		font-size: 1.6rem;
+	}
+}
