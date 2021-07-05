@@ -4,48 +4,135 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    // border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -53,7 +140,205 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
+// amc code below
+
+.border {
+    border: 2px dotted #FF7F50;
+    padding: 2%;
+}
+
+.borderSolid {
+    border: 2px solid #FF7F50;
+    padding: 2%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Manjari|Roboto+Mono&display=swap');
+@body-font: 'Roboto Mono', monospace;
+@heading-font: 'Manjari', sans-serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    // border: 1px solid grey;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+.displayRow {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.leftCol-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    align-items: center;
+    padding: 1%;
+    margin: 2%;
+
+    span {
+        align-items: center;
+        padding: 2%;
+        margin: 5%;
+        .borderSolid();
+    }
+
+    //end of span
+
+    .leftColBox {
+        align-items: center;
+        padding: 5%;
+        margin: 15%;
+        font-size: 1.6rem;
+        text-align: center;
+        .border();
+        font-family: @heading-font;
+
+        .alignCenter {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        //end of rightColBox
+
+    }
+
+    //end of contactInfo
+
+}
+
+// end of leftCol-1
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+
+    .main-text {
+        display: flex;
+        width: 90%;
+        padding: 4%;
+        margin: 1%;
+        align-items: center;
+
+        .intro,
+        .history {
+            .borderSolid();
+            font-size: 1.4rem;
+        }
+
+        h2 {
+            padding: 2%;
+            margin: 1%;
+            font-family: @heading-font;
+            .borderSolid();
+        }
+
+        p {
+            padding: 2%;
+            margin: 1%;
+            font-family: @body-font;
+            .borderSolid();
+        }
+    }
+
+    .mainTopBox {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        padding: 5%;
+        margin: 2%;
+        background-color: #FFA07A;
+
+
+        .topRightBox {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            padding: 5%;
+            margin: 1%;
+            font-size: 3rem;
+
+            #nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100%;
+                padding: 5%;
+                margin: 1%;
+                font-size: 1.8rem;
+                font-family: @heading-font;
+
+                li {
+                    width: 100%;
+                    padding: 5%;
+                    margin: 1%;
+
+                }
+            }
+
+            //end of nav
+
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+
+            }
+
+            // end of container
+
+        }
+
+        //end of topRightBox
+    }
+
+    //end mainTopBox
+
+}
+
+//end of main content
+
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 50%;
+        overflow-wrap: break-word;
+    }
+
+    .topRightBox {
+        text-align: center;
+
+        #nav {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .displayRow {
+        flex-direction: column-reverse;
+    }
+}
