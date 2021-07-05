@@ -54,6 +54,126 @@ table {
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
+		font-size: 62.5%;
 }
 
+//Start of own code// 
+
+// Variables Here
+@mainColor: black;
+@accentColor: purple;
+
+@tall-poppy: #C42727;
+@fontSize: 1.6rem;
+@fontStack: Helvetica, Arial, sans-serif;
+
+@mobileValue: 500px;
+
+// Mixin
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-font() {
+  .center;
+  font-size: 6.7rem;
+}
+
+// Parametric Mixin
+// .custom-layout(center, flex-start);
+.custom-layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.container {
+	border: solid black;
+  max-width: 880px;
+  margin: 0 auto;
+  color: @mainColor;
+  font-size: @fontSize;
+  font-family: @fontStack;
+}
+
+// NESTING: Avoid nesting more than 1 section deep
+header {
+	margin: 20px 0;
+	padding: 0px 5%;
+	width: 100%;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+}	
+
+.Namepic {
+	display:flex;;
+	justify-content:space-between;
+	border-top: solid black;
+}
+
+h1 {
+	font-size: 3rem;
+	color: @accentColor;
+	
+	@media( max-width: 800px ) {
+		color: green;
+	}
+	
+	@media( max-width: @mobileValue ) {
+		color: red;
+	}
+}
+
+.IntroSkills {
+	display:flex;
+	border-top: solid black;
+	padding: 30px 0%;
+}
+
+.topcontent {
+	width:50%;
+	padding-left: 10%;
+	padding-right:10%;
+}
+
+.profilepic {
+	border-radius: 50%;
+	padding: 30px 5%;
+}
+
+.middletext {
+	.center;
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	justify-content: space-around;
+	padding-top: 17%;
+	padding-bottom: 17%;
+}
+
+ul.skills {
+	list-style-type: square;
+}
+
+.Workexperience {
+	border-top: solid black;
+	padding: 30px 7%;
+}
+
+.workcontent {
+	margin-top: 20px;
+}
+
+.languages {
+	padding: 0px 7%;
+}
+
+footer {
+	text-align: center;
+}
