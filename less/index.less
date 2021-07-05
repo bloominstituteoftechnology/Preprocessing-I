@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil|Archivo');
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -54,6 +55,128 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: white;
 }
+
+/* ---  Variables --- */
+
+@bgcolor: #020202;
+@bgltcolor: #0e0e0e;
+@seccolor: #394648;
+@redcolor: #EF3E36;
+@bluwhicolor: #DBF9F4;
+@greycolor: #DBE9EE;
+@whitecolor: white;
+
+/* --- Mixins --- */
+
+.navsettings {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	background-color: @redcolor;
+}	
+
+.headsettings {
+	width: 100%;
+	height: 170px;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: row-reverse;
+	background-color: @bgcolor;
+}
+
+/** --- Main Page --- */
+
+.container {
+	margin: auto;
+	height: 100%;
+	font-family: 'Archivo', 'Helevetica Neue', Arial, sans-serif;
+	width: 840px;
+	@media(max-width: 500px) {
+		width: 500px;
+	}
+	nav {
+		.navsettings();
+		a {
+			padding: 15px;
+			margin: 3px 10px;
+			color: @whitecolor;
+			text-decoration: none;
+		}
+	}
+
+	.headpage {
+		.headsettings();
+		h1 {
+			font-family: "Allerta Stencil";
+			font-size: 4em;
+			color: @whitecolor;
+			padding-right: 2%;
+		}
+	}
+
+	.introsect {
+		padding-top: 10px;
+		background-color: @bgcolor;
+		color: @bluwhicolor;
+		p {
+				margin-left: 15%;
+				padding-bottom: 2%;
+			}
+		}
+	
+	.skillwork {
+		padding-top: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 100%;
+		h2 {
+			font-size: 1.5em;
+			font-family: "Allerta Stencil";
+		}
+		@media (max-width: 500px) {
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
+	.skills {
+		ul {
+			li {
+				text-align: center;
+				padding: 7px 0px;
+				margin-top: 5px;
+			}
+		}
+	}
+
+	.workhistory {
+		ul {
+			li {
+				width: 100%;
+				padding: 7px 0px;
+				margin-top: 5px;
+			}
+		}
+	}
+	}
+
+	.contact {	
+		address {
+			padding-top: 15px;
+		}
+
+		a {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			color: @redcolor;
+			text-decoration: none;
+		}
+
+	}
+
+}
+
 
