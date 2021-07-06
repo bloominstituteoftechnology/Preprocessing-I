@@ -23,6 +23,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -32,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,  {
 	list-style: none;
 }
 blockquote, q {
@@ -49,11 +51,134 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
+// Variables
+
+@text-color: @firebrick;
+@firebrick: #B22222;
+@main-font: Georgia;
+
+
+// Mixins
+.bottom-content () {
+	
+	display: flex;
+	justify-content: center;
+
+}
+
+.intro-content () {
+	font-size: 2rem;
+}
+// General Styles
+
 * {
     box-sizing: border-box;
 }
 
+html {
+	
+	font-family: @main-font;
+  }
+
 html, body {
-    height: 100%;
+	height: 100%;
+	max-width: 100%;
+	@media (max-width: 500px) {
+		max-width: 100%;
+		background-color: pink;
+		display: flex;
+		flex-direction: column;
+		}
+
 }
 
+.intro-content img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	
+	max-width: 100%;
+	height: 100%;
+	padding: 5% 5%;
+	margin: 0% auto;
+	}
+
+.top-nav {
+	width: 80%;
+	padding-bottom: .05%;
+	font-size: 2rem;
+	align-content:center;
+}
+.top-nav a {
+	display: flex;
+	color: @text-color;
+	padding: 0.125%;
+	padding-bottom: .07%;
+	padding-top: .07%;
+}
+.intro-content h1 {
+	font-size: 3rem;
+	display: flex;
+	padding-left: 37%;
+	max-width: 100%;
+	
+	font-style: italic;
+	padding-top: 7%;
+	padding-bottom: 1%;
+	
+}
+.intro-content img {
+	padding-left: 37%;
+
+}
+.intro-content p {
+	font-size: 2rem;
+}
+
+.intro-content h2 {
+	.intro-content;
+	font-weight: bold;
+	padding-top: 5%;
+	padding-right: 10%;
+	padding-bottom: 1%;
+	border-bottom: 2px solid black;
+	width: 22%;
+	text-align: right;
+	margin-bottom: 1%;
+
+}
+.intro-content li {
+	font-size: 1.5rem;
+
+}
+
+.intro-content {
+	
+	
+	width: 100%;
+}
+.bottom-content {
+	
+	display: flex;
+	justify-content: center;
+
+}
+.bottom-content h3 {
+	font-size: 3rem;
+	padding-right: 4%;
+	padding: 2% 0;
+
+
+}
+.contact-content {
+	.bottom-content;
+
+	
+}
+.contact-content p {
+	font-size: 1.250rem;
+	padding: 0 5%;
+}
