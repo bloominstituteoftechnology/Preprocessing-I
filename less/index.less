@@ -29,8 +29,34 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	border: 2px solid grey;
+
+}
+//variables:
+@fontChange:'ZCOOL XiaoWei', serif;
+
+//mixin
+.center () {
+	display: flex;
+	justify-content: center;
+  }
+  .flexdisplay () {
+	  display: flex;
+	  justify-content: space-between;
+  }
+  .size () {
+	  width: 80%;
+  }
+
 body {
 	line-height: 1;
+	font-family: @fontChange;
+	border: 2px solid grey;
 }
 ol, ul {
 	list-style: none;
@@ -43,10 +69,6 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -54,6 +76,173 @@ table {
 }
 
 html, body {
-    height: 100%;
+	width: 100%;
+	font-size: 62.5%; 
+	font-family: @fontChange;
+	
 }
+p {
+	line-height: 1.25;
+	margin: 20px 0;
+	font-size: 1.8rem;
+}
+// Head
+nav {
+	text-align: right;
+	margin-top: 3em;
+	margin-right: 12em;
+	
+	a {
+	text-decoration: none;
+	font-size: 3em;
+	color: gray;
+	text-align: right;
+	padding: 1.5%;
+	@media (max-width: 500px) {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px solid grey;
+		margin-left: 25%;
+	}
+	}
+	}
+	//Header starts here
+	  #home {
+		width: 100%;
+		height: 50%;
 
+		margin: 5%;
+		@media (max-width: 500px) {
+			
+			margin: 0;
+		}
+	
+		.bigTop {
+			  .size();
+			  background-color:#AFEEEE;			  ;
+			 border-radius: 25px;
+			  margin-left: 10em;
+			  padding: 5%;
+			  margin-top: -3%;
+			  @media (max-width:500px){
+			  margin-left: 10%;
+			  margin-right: 3%;
+			}
+
+		img {
+			width: 39em;
+			margin: 1em;
+		}
+		h1 {
+			font-size: 5em;
+			font-weight: 500;
+			padding: 3%;
+		}
+		h2 {
+			font-size: 2em;
+			padding: 3%;
+		}
+	}
+	}	
+	.buttonOne {
+		display: block;
+		color: white;
+		background-color: #5F9EA0;
+		margin: 0 10px 20px;
+		cursor: pointer;
+		width: 8em;
+		height: 2em;
+		font-size: 2rem;
+		border-radius: 10px;
+	}
+	//middle section starts here
+
+	.middleSection {
+		.size();
+		display: flex;
+		justify-content: space-around;
+		margin-left: 11%;
+		margin-top: 0;
+		@media (max-width: 500px) {
+			flex-wrap: wrap;
+			padding: 0;
+			margin: 5%;
+		}
+		div {
+			width: 58%;
+			padding: 0;
+			@media (max-width: 500px){
+				width: 100%;
+				margin-left: 13%;
+				padding: 0;
+				h2 {
+					padding: 1%;
+					font-size: 5em;
+					margin: 10%;
+				}
+				p {
+					font-size: 3em;
+					margin-top: 2%;
+					scroll-margin-bottom: 1%;
+				}
+			}
+		}
+
+		h2 {
+			font-size: 3em;
+			padding: 1em;
+		}
+		
+		p {
+			font-size: 2.5em;
+			margin-left: 5%;
+		}
+		li {
+			font-size: 2em;
+			padding: 1em;
+		background-color: #AFEEEE;
+		
+		border: 1px solid #5F9EA0;
+		border-radius: 10px;
+		}
+	}
+	// Bottom Section
+	#workHistory {
+		table {
+			font-family: @fontChange;
+			border-collapse: collapse;
+			.size();
+			margin-left: 12%;
+		  }
+		  
+		  td, th {
+			border: 1px solid #5F9EA0;
+			text-align: left;
+			padding: 1em;
+		  }
+		  
+		  tr:nth-child(even) {
+			background-color: #AFEEEE;
+		  }
+		font-size: 2em;
+		h2 {
+			font-size: 2em;
+			padding: .5em;
+			margin-left: 12%;
+		}
+	}
+	footer {
+		border: 1px solid grey;
+		padding: 3%;
+		text-align: center;
+		background-color: #5F9EA0;
+		margin-left: 12%;
+		margin-top: 3%;
+		margin-bottom: 3%;
+		.size();
+		h3 {
+			color: white;
+		}
+	}
