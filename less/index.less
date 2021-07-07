@@ -57,3 +57,178 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+//Variables
+@background-color: lightgray;
+@font-family: Tahoma, Helvetica, serif;
+@height: 100%;
+@padding: 10px;
+@font-size: 4rem;
+@width: 45%;
+@flex-direction: column;
+@justify-content: center;
+@table-background-color: rgb(199, 196, 196);
+
+//Mixins
+.middle-left-right {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+// Nested at-rule
+// @media (max-width: 500px) {
+// 		//background: @background-color;
+// 		//.middle-right;
+// 		//.middle-left-right;
+// 		flex-flow: wrap;
+// 		width: 100%;
+
+// 		flex-direction: column;
+// }
+
+.container {
+	font-size: 1.6rem;
+	width: 50%;
+	margin: 0 auto;
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+	
+		header {
+
+			@media (max-width: 500px) {
+				//background: @background-color;
+				//.middle-right;
+				//.middle-left-right;
+				//flex-flow: wrap;
+				width: 100%;
+				//flex-direction: column;
+				display: flex;
+				justify-content: center;
+				max-width: 100%;
+			}		
+
+			nav {
+
+			}
+		}
+	}
+	
+	
+
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	margin-left: 50%;
+	margin-bottom: 20px;
+	
+
+	@media (max-width: 500px) {
+		margin-left: 0%;
+	}		
+	
+	a {
+		text-decoration: none;
+		color: black;
+		justify-content: flex-end;
+	}
+}
+
+img {
+	@media (max-width: 500px) {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.top-content {
+	background: @background-color;
+	padding: @padding;
+
+	h1 {
+		font-size: @font-size;
+		margin-bottom: 10px;
+	}
+}
+
+p {
+	margin: 20px 0;
+}
+
+.middle-section {
+	display: flex;
+	margin-top: 20px;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		width: 200%;
+		padding: 2%;
+
+	}
+	
+}
+
+.middle-left {
+	.middle-left-right;
+	flex-flow: wrap;
+	
+	h2 {
+		font-size: 2.5rem
+	}
+}
+
+.middle-right {
+	.middle-left-right;
+
+	tr {
+	border: 1px solid gray;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	}
+}
+
+h3 {
+	font-size: 1.8rem;
+	margin-bottom: 10px;
+}
+
+.bottom-content {
+	width: 100%;
+	//border: 2px solid blue;
+	
+	table {
+		//border: 5px solid red;
+		width: 100%;
+	}
+}
+
+.category {
+	height: 45px;
+	border: 1px solid gray;
+	width: 100%;
+}
+
+.jobs {
+	height: 45px;
+	padding: 30px;
+	border: 1px solid gray;
+}
+
+
+footer p {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: darkgray;
+	height: 50px;
+	color: white;
+	align-items: center;
+}
