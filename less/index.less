@@ -1,4 +1,4 @@
-// Is this working?
+/*Eric Meyer reset*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,4 +56,183 @@ table {
 html, body {
     height: 100%;
 }
+/*---end of reset---*/
 
+//Variables
+@main-font: 'Courier New', courier;
+@header-font: 'Permanent Marker', impact;
+@Matterhorn: #513D44;
+@standard-border: 1px solid black;
+
+//Mixins
+.layout(@j-content, @a-items, @f-direction) {
+	display: flex;
+	justify-content: @j-content;
+	align-items: @a-items;
+	flex-direction: @f-direction;
+}
+
+.layout-short(@j-content, @a-items, @f-direction) {
+	justify-content: @j-content;
+	align-items: @a-items;
+	flex-direction: @f-direction;
+}
+
+.center() {
+	justify-content: center;
+	align-items: center;
+}
+
+//Global Styles
+html {
+	font-size: 62.5%;
+	font-family: @main-font;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	max-width: 880px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	
+	@media (max-width: 500px) {
+		width: 90%;
+	}
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 15px 0;
+}
+
+p {
+	line-height: 1.25;
+}
+
+ul {
+	list-style: square;
+	line-height: 1.25;
+}
+
+footer {
+	display: flex;
+	.center;
+	width: 100%;
+	font-size: 1.3rem;
+	color: white;
+	margin-top: 2%;
+    background-color: @Matterhorn;
+    padding: 2% 0
+}
+
+//Header Styles
+.top-nav {
+	width: 100%;
+	margin: 20px 0;
+	border-bottom: 2px solid black;
+	padding-bottom: 1%;
+	.layout(space-between, baseline, row);
+
+	h1 {
+		font-size: 3rem;
+		font-family: @header-font;
+		color: red;
+	}
+
+	nav {
+		width: 50%;
+		.layout(space-between, center, row);
+		a {
+			text-decoration: none;
+			font-size: 1.8rem;
+			color: black;
+			&:hover{
+				text-decoration: underline;
+				font-style: italic;
+			}
+		}
+	}
+
+	//Tablet
+	@media (max-width: 700px) {
+		.layout(center, center, column);
+		nav {
+			width: 100%;
+			justify-content: space-evenly;
+			margin-top: 3%;
+		}
+	}
+
+	//mobile
+	@media (max-width: 500px) {
+		.layout(center, center, column);
+		margin: 1% 0;
+
+		h1{
+			padding: 2% 0;
+		}
+
+		nav{
+			.layout(center, center, column);
+			a {
+				width: 100%;
+				padding: 2% 0;
+				border-top: @standard-border;
+				display: flex;
+				justify-content: center;
+				&:last-child {
+					border-bottom: @standard-border;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}
+
+//Main Resume Styles
+.resume-main {
+	h2 {
+		margin-top: 4%;
+	}
+
+	@media (max-width: 500px){
+		.layout(flex-start, flex-start, column);
+	}
+}
+.resume-top {
+	width: 100%;
+	
+}
+.resume-middle {
+	width: 100%;
+	.layout(space-between, flex-start, row);
+
+	section {
+		width: 50%;
+		.layout(flex-start, flex-start, column);
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+	}
+
+	ul {
+		margin-left: 3%;
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+}
+
+.resume-bottom {
+	address {
+		a {
+			color: red;
+		}
+	}
+}
