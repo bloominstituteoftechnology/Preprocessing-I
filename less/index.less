@@ -1,59 +1,477 @@
-// Is this working?
+/* variables */
+
+@white: #fff;
+@gray: #b0b0b0;
+@black: #000;
+
+@ctaTextSize: 1rem * 4.5;
+@ctaH1Size: 1rem * 7;
+
+@tabletBreakPoint: 800px;
+@mobileBreakPoint: 500px;
+
+
+/* reset and setup code */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  font-family: "Titillium Web", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway", cursive;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/* responsive desktop styles */
+
+/* desktop header styles */
+
+header {
+  width: 100%;
+  display: flex;
+
+  .main-nav {
+    height: 0;
+    text-indent: -10000px;
+  }
+
+  .mainheader {
+    height: 0;
+    text-indent: -10000px;
+  }
+  nav {
+    margin-top: 40px;
+    margin-right: 6%;
+    width: 68.86%;
+    justify-content: space-between;
+    display: flex;
+
+    a {
+      text-decoration: none;
+      color: @gray;
+      font-size: 1.6rem;
+
+      &:hover {
+        text-decoration: underline;
+        color: @black;
+      }
+    }
+  }
+
+  .logo {
+    align-self: flex-end;
+    margin: 28px 0 0 91px;
+  }
+}
+
+/* desktop cta styles */
+
+.about {
+  display: flex;
+  margin-top: 72px;
+  width: 90%;
+  justify-content: flex-end;
+.about-text {
+    font-size: @ctaTextSize;
+    text-align: center;
+    letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+	margin: 0 82px 0 0;
+	
+	p {
+		font-size: 2rem;
+		margin-bottom: 20px;
+	}
+
+    h1 {
+      width: 275px;
+      margin-right: 12px;
+	  font-size: @ctaH1Size;
+	  font-weight: 700;
+    }
+
+    button {
+      border: 1px solid @black;
+      font-size: 1.6rem;
+      background: @white;
+      width: 170px;
+      height: 32px;
+      margin-top: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background: @black;
+        color: @white;
+      }
+    }
+  }
+
+  img {
+    width: 45%;
+    height: 45%;
+  }
+}
+
+/* main content styles */
+
+.main-content {
+  border-top: 2px solid @black;
+  border-bottom: 2px solid @black;
+  margin: 75px 0 35px 0;
+  padding: 35px 0;
+  font-size: 1.6rem;
+  line-height: 18px;
+
+  .top-2-col {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 4%;
+  }
+
+  .text-content {
+	  h4 {
+		  margin-top: 20px;
+	  }
+  }
+  .middle-img {
+    display: block;
+    margin: 30px auto;
+    width: 100%;
+  }
+
+  h2 {
+	  text-align: center;
+	  font-size: 4rem;
+	  margin-bottom: 50px;
+	  margin-top: 30px;
+  }
+
+  .bottom-3-col {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 4%;
+
+    p {
+      padding-right: 20px;
+    }
+  }
+}
+
+/* desktop contact styles */
+
+.contact {
+  p {
+    margin: 15px 0;
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+}
+
+/* desktop footer styles */
+
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 1.6rem;
+}
+
+/* responsive tablet styles */
+
+@media (max-width: @tabletBreakPoint) {
+  /* tablet header styles */
+  .container {
+    max-width: 800px;
+    width: 100%;
+
+    .logo {
+      order: -1;
+      margin: auto;
+      margin-top: 28px;
+    }
+  }
+
+  header {
+    flex-wrap: wrap;
+    width: 100%;
+
+    nav {
+      width: 90%;
+    }
+  }
+
+  /* tablet cta styles */
+.about {
+    flex-direction: column;
+    width: 100%;
+.about-text {
+      margin: auto;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  /* tablet main content styles */
+
+  .main-content {
+    .top-2-col {
+      .text-content {
+        padding: 0 4%;
+
+        p {
+          padding-right: 2%;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /* tablet contact styles */
+
+  .contact {
+	margin-left: 5%;
+	text-align: center;
+  }
+}
+
+/* responsive mobile styles */
+
+@media (max-width: @mobileBreakPoint) {
+  /* mobile header styles */
+
+  .container {
+    width: 100%;
+
+    .logo {
+      margin-top: 20px;
+    }
+
+    header {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+
+        a {
+          border-top: 1px solid @black;
+          padding: 18px 0px;
+          font-size: 2.2rem;
+          width: 112%;
+          overflow: none;
+          text-align: center;
+
+          &:last-of-type {
+            border-bottom: 1px solid @black;
+          }
+        }
+      }
+    }
+  }
+
+  /* mobile cta styles */
+
+  .container {about {
+      margin-top: 49px;
+
+      button {
+        margin-top: 10px;
+      }
+
+      h1 {
+        width: 90%;
+        padding-right: 2%;
+      }
+    }
+  }
+
+  /* mobile main content styles */
+
+  .container {
+    .main-content {
+      padding: 12px 0px;
+    }
+  }
+
+  .main-content {
+    .top-2-col {
+      flex-direction: column;
+    }
+
+    .bottom-3-col {
+      flex-direction: column;
+    }
+  }
+
+  .text-content {
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    h4 {
+      margin-top: 20px;
+    }
+  }
+}
