@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,21 +93,34 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
@@ -50,10 +131,213 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
+	font-size: 62.5%;
 }
 
+// --------------------------General Styles
+@import 'https://fonts.googleapis.com/css?family=Acme';
+
+@primary-color: #384651;
+@other-color: #e9ecef;
+@gray: #808080;
+@light-blue: #80ccff;
+@font-height: 2rem;
+@font-type: 'Acme', sans-serif;
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+
+	@media (max-width: 500px) {
+		max-width: 95%;
+	}
+}
+
+header {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: @primary-color;
+}
+
+img {
+	width: 250px;
+	height: 250px;
+	transform: rotate(90deg);
+
+	@media (max-width: 500px) {
+		margin-left: 19%;
+	}
+}
+
+h2 {
+	font-size: 2.8rem;
+	font-weight: 600;
+	padding: 20px 0 5px;
+	color: @light-blue;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	// background-color: @gray;
+	padding: 20px 0;
+	margin: 0 auto;
+	font-size: 2rem;
+
+	@media (max-width: 500px) {
+		position: relative;
+	}
+}
+
+// -----------------------------Mixin Styles
+.nav-styles() {
+	display: flex;
+	justify-content: flex-end;
+	padding: 20px 0;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.button() {
+	padding: 5px 10px;
+	background-color: @gray;
+	margin-top: 10px;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 10px;
+
+	&:hover {
+		color: @primary-color;
+		background-color: @light-blue;
+	}
+}
+
+// -----------------------------Specific Styles
+// -----------------Home Page
+nav {
+	.nav-styles;
+
+	a {
+		padding-left: 40px;
+		font-family: @font-type;
+
+		@media (max-width: 500px) {
+			padding: 30px 0;
+			font-size: 3rem;
+		}
+
+		&:hover {
+			color: @light-blue;
+		}
+	}
+}
+
+.container {
+	.portrait-section {
+		background-color: @other-color;
+		padding: 20px;
+
+		h1 {
+			margin: 10px 0;
+			font-size: 5rem;
+
+			span {
+				font-size: 3.5rem;
+			}
+		}
+
+		button {
+			.button;
+		}
+
+		.lower-portrait {
+			margin: 15px 0 20px;
+			border-top: 1px solid @gray;
+			padding-top: 15px;
+		}
+	}
+
+	.main-section {
+		padding: 20px 0;
+
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		div {
+			width: 50%;
+
+			@media (max-width: 500px) {
+				width: 80%;
+			}
+
+			h2 {
+				font-family: @font-type;
+
+				span {
+					font-size: @font-height;
+				}
+			}
+
+			@media (max-width: 500px) {
+				p {
+					font-size: 2rem;
+				}
+			}
+		}
+
+		a {
+			text-decoration: underline;
+			color: @primary-color;
+
+			&:hover {
+				color: @light-blue;
+			}
+		}
+	}
+}
+
+// -----------------------Contact Page
+#contact {
+}
+
+.form-section {
+	display: flex;
+	justify-content: center;
+	background-color: @light-blue;
+	font-size: 3rem;
+
+	form {
+		margin: 30rem 0;
+		font-family: @font-type;
+
+		div {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+
+		input {
+			width: 30rem;
+			height: 3rem;
+		}
+	}
+}
