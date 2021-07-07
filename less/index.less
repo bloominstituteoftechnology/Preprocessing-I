@@ -48,7 +48,29 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+//==============variables
+@periwinkleblue: #CCCCFF;
+
+@new-font: 'Merriweather', serif;
+
+
+//==============mixins
+
+.hover {
+	&:hover {
+		background-color: darkgreen;
+		color: black;
+	}
+}
+
+.fill-in {
+	letter-spacing: .3rem;
+	word-spacing: .4rem;
+	line-height: 19px;
+}
+
+//==============Styles
+
 * {
     box-sizing: border-box;
 }
@@ -57,3 +79,186 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+h1 {
+	font-size: 6.5rem;
+	font-family: @new-font;
+
+	@media (max-width: 500px) {
+			font-size: 3rem;
+	}
+}
+
+h2 {
+	font-size: 3.5rem;
+	font-family: @new-font;
+	padding-bottom: 10px;
+
+	@media (max-width: 500px) {
+		font-size: 2.5rem;		
+	}
+}
+
+h3, a, .intro button {
+	font-size: 2rem;
+}
+
+h3 {
+	font-family: @new-font;
+}
+
+nav {
+	width: 100%;
+	padding: 10px 0;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: flex-end;
+
+	a {
+		padding-left: 3rem;
+		color: darkgreen;
+	}
+}
+
+.container {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 5rem;
+	background-color: lavender;
+
+	@media (max-width: 500px) {
+		min-width: 500px;
+	}
+}
+
+//==============Intro section
+
+.intro {
+	width: 100%;
+	padding: 50px 2rem;
+	margin-bottom: 30px;
+	background-color: @periwinkleblue;
+
+	img {
+		width: 300px;
+		padding-bottom: 10px;
+	}
+
+	h1 {
+		padding-bottom: 15px;
+	}
+
+	h3 {
+		padding-bottom: 20px;
+		border-bottom: 2px dashed darkblue;
+		margin-bottom: 20px;
+	}
+
+	p {
+		padding-bottom: 15px;
+	}
+
+	button {
+		height: 50px;
+		width: 200px;
+		padding: 5px .5rem;
+		color: white;
+		font-weight: 1000;
+		background-color: midnightblue;
+		border-radius: 12px;
+		.hover();
+	}
+}
+
+//==============Skills section
+
+.skills {
+	width: 100%;
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: 500px) {
+		flex-direction: column;		
+	}
+
+	.about-me {
+		width: 49%;
+
+		@media (max-width: 500px) {
+			width: 100%;	
+			padding-bottom: 20px;
+		}
+		
+		h2 {
+			font-size: 4rem;
+		}
+
+		p {
+			.fill-in();
+		}
+	}
+
+	.talents {
+		width: 49%;
+		padding-left: 1%;
+
+		@media (max-width: 500px) {
+			width: 100%;	
+		}
+
+		p {
+		padding: 10px 1rem;
+		border: 1px solid gray;
+		}
+	}
+}
+
+
+//==============Work history section
+
+.work-history {
+
+	table {
+		width: 100%;
+		margin-bottom: 40px;
+
+		th, td {
+			height: 30px;
+			text-align: left;
+		}
+
+		.highlight1 {
+			background-color: lightcyan;
+		}
+
+		.highlight2 {
+			background-color: lightgreen;	
+		}
+	}	
+}
+
+
+//==============Contact section
+
+.contact {
+	margin-bottom: 20px;
+}
+
+
+//==============Footer section
+
+footer {
+	height: 50px;
+	padding: 15px 0;
+	text-align: center;
+	background-color: lightblue;
+}
