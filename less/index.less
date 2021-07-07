@@ -57,3 +57,146 @@ html, body {
     height: 100%;
 }
 
+// End of CSS Reset
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+@width-100pct: 100%;
+
+.flex-column-centered() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-row-space-between-wrap() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.container {
+	max-width: 900px;
+	width: 100%;
+	padding: 30px;
+
+	header {
+		padding: 0px 0px 20px 0px;
+
+		nav {
+			font-size: 1.6rem;
+
+			a {
+				text-decoration: none;
+				color: black;
+				margin: 0px 20px;
+			}
+		}
+	}
+
+	.main-container {
+		background-color: brown;
+
+		.top-container {
+			background-color: whitesmoke;
+			.flex-row-space-between-wrap;
+			padding-bottom: 15px;
+
+			.h1-container {
+				width: @width-100pct;
+				font-size: 4rem;
+				text-align: center;
+				margin-top: 20px;
+				margin-bottom: 30px;
+			}
+
+			.headshot-pic {
+				width: 50%;
+
+				img {
+					max-width: 250px;
+					width: 100%;
+				}
+			}
+
+			.quote {
+				width: 50%;
+				text-align: center;
+
+
+				h2 {
+					font-size: 3rem;
+				}
+				font-size: 2rem;
+			}
+		}
+
+		.mid-container {
+			display: flex;
+			justify-content: space-between;
+			width: @width-100pct;
+			margin-top: 20px;
+			flex-wrap: wrap;
+			padding: 0px 10px;
+
+			.textbox {
+				width: 46%;
+				font-size: 1.8rem;
+				margin-bottom: 20px;
+				background-color: aliceblue;
+				border-radius: 10px;
+
+				h2 {
+					font-size: 3rem;
+					margin-bottom: 15px;
+				}
+
+				li {
+					margin-left: 5%;
+				}
+			}	
+		}
+
+		.bottom-container {
+			width: @width-100pct;
+
+			.textbox {
+				background-color: aliceblue;
+				border-radius: 10px;
+				margin: 0px 10px;
+
+				h2 {
+					font-size: 3rem;
+					margin-bottom: 15px;
+				}
+
+				p {
+					font-size: 1.8rem;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	footer {
+		margin-top: 25px;
+		background-color: orange;
+		color: blue;
+		text-align: center;
+		font-size: 1.4rem;
+	}
+	
+}
+
+a:hover {
+	background-color: yellow;
+	color: black;
+}
