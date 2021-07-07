@@ -50,10 +50,304 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	scroll-behavior: smooth; // added this to make links to IDs smooth scroll.
 }
 
-html, body {
-    height: 100%;
+// Variables and Mix-ins to follow:
+
+// fonts
+@header-font: 'Libre Baskerville', serif;
+@body-font: 'Open Sans', sans-serif;
+@logo-font: 'Pacifico', cursive;
+
+// colors
+@main-color: #323232;
+@white: white; // this is a variable because designers might ask for a different white
+@yellow: #ffbb00;
+@gradient-start: #115599;
+@gradient-end: crimson;
+
+// parametric flexbox
+.flex(@direction, @wrap, @justify, @align) {
+	display: flex;
+	flex-flow: @direction @wrap;
+	justify-content: @justify;
+	align-items: @align;
 }
 
+// setting link and h2 styles
+.link-styling() {
+	text-decoration: none;
+	color: @main-color;
+	&:hover {
+		color: @yellow;
+	}
+}
+
+.h2-styling(@color) {
+	font-size: 4.5rem;
+	font-style: italic;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	color: @color;
+	border-bottom: 1px dashed @color;
+}
+
+.tagline-styling(@color) {
+	color: @color;
+	font-size: 2rem;
+	padding-bottom: 20px;
+	line-height: 1.3;
+	margin: 0 auto;
+}
+
+// Standard CSS to follow:
+h1, h2, h3, h4, h5, h6 {
+	font-family: @header-font;
+	font-size: 62.5%;
+}
+
+html, body, a {
+	font-family: @body-font;
+	font-size: 62.5%;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+
+	header {
+		.flex(row,wrap,space-between,center);
+		height: 50px;
+		width: 100%;
+		background: @white;
+		position: fixed;
+
+		.logo {
+			.link-styling;
+			font-size: 3rem;
+			font-family: @logo-font;
+			margin-left: 5%;
+		} // logo end
+
+		nav {
+			.flex(row,wrap,space-between,center);
+			margin-right: 5%;
+			width: 40%;
+
+			a { 
+				.link-styling;
+				font-size: 1.4rem;
+			}
+		} // nav end
+
+		@media (max-width: 500px) {
+			.flex(column,nowrap,center,center);
+			height: 50px;
+			position: relative;
+
+			.logo {
+				margin-left: 0;
+				display:none;
+			}
+
+			nav {
+				margin-right: 0;
+				width: 80%;		
+			}
+		} // header media query end
+	} // header end
+
+	#about-me {
+		.flex(column,nowrap,center,center);
+		background-image: url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdff4c62302fd44491d4850202323d11&auto=format&fit=crop&w=3900&q=80");
+		background-size: cover;
+		height: 759px;
+
+		h2 {
+			.h2-styling(@white);
+		}
+
+		.tagline {
+			.tagline-styling(@white);
+			width: 60%;
+		}
+
+		@media (max-width: 500px) {
+			height: 100%;
+			padding: 40px 0;
+		} // About Me media query end
+	}	// end About Me section
+
+
+	//start of Experience section
+	#experience {
+		.flex(row,wrap,space-around,center);
+		background-image: linear-gradient(to bottom right, @gradient-start, @gradient-end);
+		background-size: cover;
+		height: 1000px;
+		padding-bottom: 20px;
+
+		h2 {
+			.h2-styling(@white);
+			margin-top: 100px;
+		}
+
+		.tagline {
+			.tagline-styling(@white);
+			text-align: center;
+			width: 90%;
+		}
+
+		.box {
+			height: 30%;
+			width: 32%;
+			padding: 20px;
+			margin: 10px ;
+			background: @white;
+
+			h3 {
+				font-size: 2rem;
+				font-weight: bolder;
+			}
+
+			p {
+				font-size: 1.6rem;
+				margin-bottom: 25px;
+			}
+
+			ul {
+				list-style-type: disc;
+				font-size: 1.6rem;
+				padding-left: 4%
+			}
+
+			li {
+				padding-bottom: 10px;
+			}
+		}  
+
+		@media (max-width: 500px) {
+			.flex(column, nowrap, center, center);
+			height: 100%;
+			padding: 40px 0;
+
+			.box{
+				width: 90%;
+			}
+		} // Experience media query end
+	} // End Experience section
+
+
+	// Start of Skills section
+	#skills {
+		.flex(row, wrap, center, flex-start);
+		padding-bottom: 100px;
+		background-image: url(../img/stripes.png);
+
+		h2 {
+			.h2-styling(@main-color);
+			margin-top: 100px;
+			display: block;
+		}
+
+		.tagline {
+			.tagline-styling(@main-color);
+			text-align: center;
+			width: 90%;
+			margin-bottom: 80px;
+		}
+
+		.col {
+			width: 20%;
+		}
+
+		ul {
+			font-size: 2rem;
+		}
+
+		li {
+			padding-bottom: 10px;
+			text-align: center;
+		}
+
+		@media (max-width: 500px) {
+			.flex(column, nowrap, center, center);
+			height: 100%;
+			padding: 0 0 100px;
+
+			.col{
+				width: 90%;
+			}
+		} // Skills media query end
+	} // end Skills section
+
+
+	// Start of Contact Section
+	#contact {
+
+		.flex(row, wrap, center, center);
+		padding-bottom: 100px;
+		background-color: @yellow;
+
+		h2 {
+			.h2-styling(@main-color);
+			margin-top: 100px;
+			display: block;
+		}
+
+		.tagline {
+			.tagline-styling(@main-color);
+			text-align: center;
+			width: 90%;
+			margin-bottom: 20px;
+		}
+
+		label {
+			font-size: 1.6rem;
+		}
+
+		input[type=text], select, textarea {
+			width: 100%;
+			padding: 12px;   
+			border: 1px solid @main-color; 
+			border-radius: 4px; 
+			margin: 6px 0 30px;
+			resize: vertical;
+			font-family: inherit;
+			font-weight: 400; 
+		}
+		
+		input[type=submit] {
+			background-color: @white;
+			color: @main-color;
+			padding: 12px 20px;
+			border: 1px solid @main-color;
+			border-radius: 4px;
+			&:hover {
+				background-color: @main-color;
+				color: @white;
+			}
+		}
+
+		@media (max-width: 500px) {
+			form {
+				margin-left: 8%;
+			}
+
+			input[type=text], select, textarea {
+				width: 92%;
+			}	
+		} // end Contact media query
+	} //end Contact section
+
+	// Footer section (just to format copyright at page bottom)
+	footer {
+		.flex(row, nowrap, center, center);
+		height: 40px;
+		font-size: 1.2rem;
+		background: @main-color;
+		color: @white;
+	} //end footer
+} // end container
