@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,36 +92,274 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+@font-size: 1.6rem;
+.site-container {
+	width: 100%;
+	max-width: 850px;
+	height: 100%;
+}
+
+// * {
+// 	border: 1px solid #000 !important;
+// }
+.name-styling {
+	font-size: 2.5rem;
+	width: 100%;
+	.name-styling__name {
+		font-weight: bold;
+		font-style: italic;
+		font-family: 'Righteous';
+	}
+	.name-styling__title {
+		.name-styling__name;
+	}
+}
+
+.header-flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	width: 100%;
+	max-width: 950px;
+	.header-flex__nav {
+		border-width: 0px 12px 0px 12px;
+		border-style: double;
+		border-color: rgba(158, 158, 158, 0.255);
+		border-radius: 40px 40px 60px 60px;
+		-moz-border-radius: 40px 40px 60px 60px;
+		-webkit-border-radius: 40px 40px 60px 60px;
+
+		/* Full disclosure: I stole the above code for the design on the sides of the nav-bar */
+	
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-content: space-around;
+		height: 60px;
+		background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5));
+		a {
+			text-decoration: none;
+			button {
+				background: transparent;
+				font-size: 2.2rem;
+				font-family: Righteous;
+				border: none;
+				margin-left: 5px;
+				color: rgb(118, 109, 109);
+				text-shadow: 2px 2px 2px rgba(247, 247, 247, 0.796);
+			}
+		}
+		a:link {
+			color: rgb(186, 167, 167);
+		}
+		a:visited {
+			color: rgb(206, 190, 190);
+		}
+
+		@media (max-width: 500px) {
+			flex-direction: column ;
+			flex-wrap: wrap ;
+			background: none ;
+	
+		}
+	}
+}
+
+.personal-information {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: space-between;
+	flex-direction: column;
+	margin-bottom: 20px;
+	.name-styling__bio {
+		font-size: @font-size ;
+	}
+}
+
+hr {
+	border: 1px solid black;
+	width: 100%;
+}
+
+.name-styling {
+	.personal-information;
+	background: none;
+	p {
+		margin-bottom: 5px;
+		border: 1px solid black;
+		padding: 5px 5px;
+	}
+
+	.name-styling__bio {
+		color: rgb(254, 255, 255) ;
+	}
+}
+
+.gradient-overlay {
+	background-image: linear-gradient(to bottom, rgba(87, 87, 79, 0.5), rgba(53, 35, 52, 0.5)), url('../img/code-background.jpg');
+}
+
+.personal-img-container {
+	width: 100%;
+	max-width: 950px;
+	.personal-information;
+	.self-photo {
+		width: 100%;
+		max-width: 300px;
+		opacity: 0.6;
+	}
+	width: 100%;
+	height: 500px;
+	max-width: 750px;
+	margin: 10px 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.personal-content {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 3px groove gray;
+	border-right: 3px groove gray;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	max-width: 950px;
+	align-content: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	.personal-content__text {
+		font-size: @font-size ;
+		width: 100%;
+		max-width: 375px;
+		h2 {
+			font-size: 2.7rem;
+			font-family: 'Caveat';
+		}
+	}
+	.personal-content__skills {
+		.personal-content__text;
+
+		background: linear-gradient(rgb(140, 139, 139), rgb(87, 79, 79), rgb(34, 25, 25)) ;
+		font-style: italic ;
+		ul {
+			li {
+				padding: 12px 12px;
+				border: 1.5px solid darkslategray;
+				border-bottom: none;
+			}
+		}
+		ul li:last-child {
+			border: 1.5px solid darkslategray;
+		}
+	}
+}
+
+.work-history {
+	font-size: @font-size ;
+	display: flex;
+	justify-content: space-evenly;
+	align-content: center;
+	width: 100%;
+	max-width: 950px;
+	margin-top: 15px;
+	border-top: 2px solid slategray;
+	.work-history__table {
+		margin-top: 10px;
+		text-align: center;
+		td {
+			padding: 10px 10px;
+			background-color: aliceblue;
+		}
+		th {
+			padding: 10px 10px;
+			background-color: lavenderblush;
+		}
+		tbody {
+			padding: 10px 10px;
+			background-color: honeydew;
+		}
+	}
+	.work-history__logo {
+		img {
+			width: 100%;
+			max-width: 250px;
+			border: 1px solid black;
+			margin-top: 2px;
+		}
+
+		@media (max-width: 500px) {
+			img {
+				display: none ;
+			}
+		}
+	}
+}
