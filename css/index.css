@@ -1,1 +1,384 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+  border: 1px solid green;
+}
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+/***variables***/
+/***mixins***/
+.scale {
+  max-width: 100%;
+  width: 95%;
+  height: 95%;
+}
+.round-img {
+  border-radius: 50%;
+}
+.padding {
+  padding: 5%;
+}
+.flex-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.title {
+  font-weight: bold;
+  font-size: 3em;
+}
+/***container***/
+.container {
+  max-width: 90%;
+  display: flex;
+  margin: 0 auto;
+  padding: 5% 0;
+  font-size: 1em;
+  line-height: 1;
+  font-family: 'Quicksand', sans-serif;
+}
+.container div,
+.container .skills {
+  max-width: 100%;
+  width: 95%;
+  height: 95%;
+}
+.container .side-content {
+  width: 33%;
+  background: #b46d6d;
+  color: white;
+  padding: 3% 1%;
+  /****skills****/
+  /***white part of skill guage***/
+  /***time management***/
+  /***attn to detail***/
+  /***attention to detail***/
+  /***communication***/
+  /***photography***/
+  /***blending***/
+}
+.container .side-content .border-top {
+  border-top: 1px solid white;
+}
+.container .side-content .intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 3% 1%;
+}
+.container .side-content .intro .profile-photo img {
+  border-radius: 50%;
+  max-width: 100%;
+  width: 95%;
+  height: 95%;
+}
+.container .side-content .intro .nav a {
+  text-decoration: none;
+}
+.container .side-content .intro h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.container .side-content .intro .social-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100500%;
+}
+.container .side-content .social-media {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 3% 1%;
+}
+.container .side-content .education {
+  padding: 3% 1%;
+}
+.container .side-content .education h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+.container .side-content .experience {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 3% 1%;
+}
+.container .side-content .experience .job {
+  padding: 3% 1%;
+}
+.container .side-content .experience h3 {
+  font-size: 1.5em;
+}
+.container .side-content .skills-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.container .side-content .skills-container h2 {
+  font-size: 1.5em;
+}
+.container .side-content .skills-container .skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.container .side-content .skills-container .skills .skill {
+  width: 50%;
+  padding: 3%;
+}
+@media (max-width: 500px) {
+  .container .side-content .skills-container .skills {
+    font-size: 0.7em;
+  }
+}
+.container .side-content .skill-guage {
+  background: white;
+  max-width: 100%;
+  height: 10px;
+  display: flex;
+}
+.container .side-content .skill-guage .percent {
+  background: #25c3f8;
+}
+@media (max-width: 500px) {
+  .container .side-content .skill-guage .percent {
+    background: #b46d6d;
+  }
+}
+.container .side-content .time .percent {
+  width: 76%;
+}
+.container .side-content .creativity .percent {
+  width: 76%;
+}
+.container .side-content .attn-to-detail .percent {
+  width: 80%;
+}
+.container .side-content .communication .percent {
+  width: 90%;
+}
+.container .side-content .photography .percent {
+  width: 100%;
+}
+.container .side-content .blending .percent {
+  width: 93%;
+}
+@media (max-width: 500px) {
+  .container .side-content {
+    background: #25c3f8;
+  }
+}
+.container .content {
+  width: 66%;
+  padding: 5%;
+  line-height: 1.2;
+  /***projects***/
+}
+@media (max-width: 500px) {
+  .container .content {
+    text-align: center;
+  }
+}
+.container .content .name h1 {
+  font-weight: bold;
+  font-size: 3em;
+  padding: 0 0 8%;
+}
+.container .content .profession {
+  font-size: 1.5em;
+  padding: 0 0 8%;
+}
+.container .content .border-top {
+  border-bottom: 1px solid black;
+}
+.container .content .about-me {
+  padding: 4% 0;
+}
+.container .content .about-me h2 {
+  font-size: 1.5em;
+}
+.container .content .about-me span {
+  font-weight: bold;
+}
+.container .content .projects {
+  padding: 4% 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.container .content .projects h2 {
+  font-size: 1.5em;
+}
+.container .content .projects .project {
+  padding: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+@media (max-width: 500px) {
+  .container .content .projects .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 1%;
+  }
+}
+.container .content .projects .project h3 {
+  font-size: 1.2em;
+}
+.container .content .projects .project .caption {
+  width: 60%;
+  margin: 1%;
+}
+.container .content .projects .project img {
+  max-width: 35%;
+  background: #25c3f8;
+}

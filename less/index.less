@@ -49,11 +49,332 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+* {box-sizing: border-box;
+border: 1px solid green; }
+body {font-family: Verdana, sans-serif; margin:0}
+
+/***variables***/
+@primary-color: rgb(180, 109, 109); 
+@tertiary-color: rgb(37, 195, 248); 
+@seconday-color: lightsalmon; 
+@text-color: white; 
+@border-top: 1px solid black;
+@side-content-padding: 3% 1%;  
+@info-padding: 0 0 8%; 
+@section-padding: 4% 0; 
+@sub-title: 1.5em; 
+@projects-title: 1.2em; 
+
+ 
+
+/***mixins***/
+.scale{
+	max-width:100%; 
+	width: 95%;
+	height: 95%;  
+}
+.round-img{
+	border-radius: 50%; 
 }
 
-html, body {
-    height: 100%;
+.padding{
+	padding: 5%; 
 }
+
+.flex-column{
+	display:flex; 
+	justify-content: space-between; 
+	align-items:center; 
+	flex-direction:column; 
+}
+
+.flex{
+	display:flex; 
+	justify-content: center;  
+	flex-wrap: wrap; 
+	align-items:center; 
+}
+
+.title{
+	font-weight:bold; 
+	font-size: 3em; 
+
+}
+
+
+
+
+/***container***/
+.container {
+	
+	max-width: 90%; 
+	display: flex; 
+	margin: 0 auto; 
+	padding: 5% 0; 
+	font-size: 1em;   
+
+
+	line-height: 1; 
+	font-family: 'Quicksand', sans-serif;
+
+	
+
+
+
+
+	div, .skills{
+		.scale();
+	}
+
+	
+
+	.side-content {
+		width: 33%; 
+		background: @primary-color; 
+		color: @text-color; 
+		padding: @side-content-padding;
+
+		
+		 
+		.border-top{
+			border-top: 1px solid white; 
+		}
+		.intro{
+			.flex-column(); 
+			padding: @side-content-padding;
+			
+			.profile-photo{
+				img{
+					.round-img(); 
+					.scale(); 
+				}
+			}
+
+			.nav {
+				a{
+					text-decoration:none; 
+				}
+			}
+			h1{
+				font-size: 30px; 
+				font-weight: bold; 
+			}
+
+			.social-media{
+				.flex-column();
+				max-width: 100500%;
+			}
+		
+		}
+
+		.social-media{
+			.flex(); 
+			padding:@side-content-padding; 
+
+		}
+
+		.education{
+			padding: @side-content-padding; 
+			h2{
+			font-size: @sub-title; 
+			text-align:center;
+			}
+		}
+
+		.experience{
+		
+			.flex-column(); 
+			padding: @side-content-padding;
+			
+			.job{
+				padding: @side-content-padding; 
+				
+			}
+
+			h3{
+				font-size: @sub-title; 
+				}
+
+
+		}
+
+	/****skills****/
+
+	.skills-container{
+		.flex-column(); 
+		
+		h2{
+			font-size: @sub-title; 
+			}
+
+			
+		
+		.skills{
+			
+			.flex(); 
+			.skill{
+				width: 50%; 
+				
+				padding: 3%; 
+			}
+
+			@media (max-width:500px){
+				font-size: .7em; 
+			}
+		
+		}
+		
+	}
+	/***white part of skill guage***/
+	.skill-guage{
+		background:@text-color; 
+		max-width: 100%; 
+		height: 10px; 
+		display: flex;  
+		
+		.percent{
+			background:@tertiary-color; 
+			@media (max-width: 500px){
+				background:@primary-color; 
+			}
+		}
+	}
+	/***time management***/
+	.time{
+			.percent{
+				width:76%; 
+				
+			}
+		}
+
+	/***attn to detail***/
+	.creativity{
+		.percent{
+			width:76%;
+		}
+	}
+	/***attention to detail***/
+	.attn-to-detail{
+		.percent{
+			width:80%; 
+			
+		}
+	}
+
+	/***communication***/
+	.communication{
+		.percent{
+			width:90%; 
+			
+		}
+	}
+
+	/***photography***/
+	.photography{
+		.percent{
+			width:100%; 
+			
+		}
+	}
+
+	/***blending***/
+	.blending{
+		.percent{
+			width:93%; 
+			
+		}
+	}
+		@media( max-width: 500px ){
+			background:@tertiary-color;
+			
+		}
+	}	
+
+
+	.content{
+		width: 66%; 
+		.padding();
+		line-height:1.2; 
+		@media (max-width: 500px){
+			text-align:center; 
+		}
+		
+		.name{
+			h1{
+				.title();
+				padding:@info-padding; 
+			}
+			
+
+			
+		}
+
+		.profession{
+			font-size:@sub-title; 
+			padding:@info-padding; 
+		}
+		.border-top{
+			border-bottom: 1px solid black;
+		}
+		.about-me{
+			padding:@section-padding;
+			h2{
+				font-size:@sub-title; 
+			}
+			span{
+				font-weight:bold;
+			}
+		}
+
+		/***projects***/
+		.projects {
+			padding:@section-padding;
+			display:flex; 
+			flex-wrap: wrap; 
+			
+			margin: 0 auto;
+			
+			 
+			h2{
+					
+					font-size:@sub-title;  
+				}
+			.project{
+				padding: 2%;
+				width: 100%;
+				.flex(); 
+				border-bottom: 1px solid black; 
+				@media (max-width:500px){
+					.flex-column();
+					padding: 1%; 
+				}
+				h3{
+					font-size: @projects-title;
+				}
+				.caption{
+					width: 60%; 
+					margin: 1%; 
+				}
+				img{
+					max-width: 35%;
+					
+					background: @tertiary-color; 
+				}
+
+				
+			}
+	
+		}
+
+		
+	}
+	
+}
+
+
+
+
+
+
+
 
