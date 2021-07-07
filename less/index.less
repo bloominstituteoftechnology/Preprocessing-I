@@ -4,56 +4,358 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@font-color: rgb(231, 243, 166);
+@list-color: rgba(188, 253, 188, 0.87);
+@heading-color: rgb(70, 66, 66);
+
+.list() {
+  margin: 8px 0 8px 50px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+}
+.paragraph() {
+  color: @font-color;
+  line-height: 1.4;
+  font-size: 1.1rem;
 }
 
+//html {
+//font-size: 62.5%;
+//}
+
+html,
+body {
+  height: 100%;
+  //background-image: url("https://safeimage.vusercontent.com/?url=http%3A%2F%2Fi%2Eimgur%2Ecom%2FMdbHb5F%2Ejpg");
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  background-color: rgb(234, 34, 234, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 600px) {
+    width: 500px;
+  }
+
+  h1,
+  h2 {
+    color: @heading-color;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 30px;
+    background-color: grey;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //padding: 30px 0;
+    background-color: rgba(217, 241, 250, 0.938);
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-content: center;
+    }
+
+    .logo {
+      width: 20%;
+      height: 20%;
+      margin-left: 60px;
+    }
+
+    nav {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 40px;
+
+      @media (max-width: 600px) {
+        width: 100%;
+        justify-content: space-around;
+        margin-right: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  section {
+    margin: 20px 0;
+  }
+
+  .Intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    img {
+      width: 400px;
+      height: auto;
+      opacity: 0.7;
+    }
+
+    // .content-container {
+    //   background-image: url(http://i.imgur.com/o1a63.png);
+    // }
+
+    .name {
+      font-size: 2rem;
+      margin: 40px 0;
+    }
+
+    .quote {
+      margin: 20px 20px;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    p {
+      margin: 20px;
+      .paragraph();
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      border: 1px solid black;
+      background-color: white;
+      padding: 5px 20px;
+      font-size: 2rem;
+      a:hover {
+        background-color: black;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    section {
+      margin: 20px;
+
+      h2 {
+        font-size: 2.3rem;
+        margin-bottom: 20px;
+        color: @heading-color;
+      }
+    }
+
+    .brief-bio {
+      width: 100%;
+      padding: 0 20px;
+
+      p {
+        .paragraph();
+      }
+    }
+
+    .Skills {
+      li {
+        .list();
+        list-style-type: circle;
+        color: @list-color;
+      }
+    }
+
+    .Work-History {
+      li {
+        .list();
+        list-style-type: decimal;
+        color: @list-color;
+      }
+    }
+
+    .hobbies {
+      width: 100%;
+
+      h2 {
+        text-align: center;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          list-style-type: square;
+          width: 40%;
+          margin-left: 10%;
+          padding: 0 20px;
+          line-height: 1.5;
+          font-size: 1.5rem;
+          color: @list-color;
+        }
+      }
+    }
+  }
+}
+
+.container:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.3;
+  background-image: url(http://i.imgur.com/o1a63.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
