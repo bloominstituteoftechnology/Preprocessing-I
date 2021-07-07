@@ -4,56 +4,324 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  background: black;
+}
+html {
+  font-size: 62.5%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Permanent Marker", cursive;
+}
+
+p,
+a,
+ul,
+ol,
+li {
+  font-family: "Markazi Text", sans-serif;
+}
+
+@containerBG: #393535;
+@mainColor: red;
+@altColor: whitesmoke;
+@marker: "Permanent Marker", cursive;
+@mainFont: "Markazi Text", sans-serif;
+
+.full-flex(@dir, @align) {
+  display: flex;
+  flex-direction: @dir;
+  width: 100%;
+  justify-content: space-between;
+  align-items: @align;
+}
+
+.borderTopBuilder(@px) {
+  border-top: @px solid @altColor;
+  padding-top: 20px;
+}
+
+.container {
+  max-width: 800px;
+  padding: 40px 40px 10px;
+  margin: 10px auto;
+  background: @containerBG;
+  @media only screen and (max-width: 500px) {
+    width: 450px;
+  }
+}
+
+header {
+  .full-flex(row, center);
+  margin-bottom: 20px;
+  h1 {
+    font-size: 5rem;
+    color: @mainColor;
+  }
+  h3 {
+    font-size: 2.5rem;
+    color: @altColor;
+  }
+  @media only screen and (max-width:500px){
+	  flex-direction: column;
+	  margin-bottom: 0;
+  }
+}
+.headline {
+  .full-flex(row, flex-start);
+
+  img {
+    margin: 20px 0;
+    width: 60%;
+    height: auto;
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+  .links-and-blurb {
+	  margin: 20px 0;
+    width: 35%;
+    @media only screen and (max-width: 500px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .full-flex(column, flex-end);
+    .links {
+		.full-flex(column, flex-end);
+		@media only screen and (max-width: 500px){
+			.full-flex(row, space-between);
+		}
+      a {
+        font-family: @marker;
+        font-size: 4rem;
+        margin-bottom: 18px;
+        text-decoration: none;
+        color: @altColor;
+        &:hover {
+          color: @mainColor;
+        }
+      }
+    }
+    .blurb {
+      padding-left: 50px;
+      color: @altColor;
+	  font-size: 2rem;
+	  @media only screen and (max-width: 500px){
+		  padding:0;
+		  .borderTopBuilder(2px);
+	  }
+    }
+  }
+}
+.main-content {
+  .full-flex(row, flex-start);
+  flex-wrap: wrap;
+  .skills {
+    width: 50%;
+    h4 {
+      font-size: 2rem;
+      color: @altColor;
+      margin-bottom: 10px;
+    }
+    ul {
+      color: @altColor;
+      font-size: 1.8rem;
+    }
+  }
+  .contact {
+    width: 50%;
+    padding-left: 7%;
+    color: @altColor;
+    h5 {
+	  font-size: 2.3rem;
+	  @media only screen and (max-width: 500px){
+		  font-family: @mainFont;
+		  font-size: 1.8rem;
+	  }
+    }
+    p {
+      margin-top: 10px;
+    }
+  }
+  .work-history {
+    padding: 20px 0;
+    width: 100%;
+    ul {
+      .borderTopBuilder(2px);
+    }
+    li {
+      .full-flex(row, flex-start);
+	 @media only screen and (max-width:500px){
+		 border-bottom: @altColor 1px dashed;
+	 }
+	  p {
+        width: 33%;
+        color: @altColor;
+        font-size: 1.6rem;
+      }
+      .table-heading {
+        font-family: @marker;
+        padding-bottom: 10px;
+      }
+
+      .year {
+		text-align: right;
+		width: 10%;
+      }
+
+      .role {
+		padding-left: 50px;
+		width:59%;
+		@media only screen and (max-width:500px){
+			padding-left: 20px;
+		}
+      }
+    }
+  }
+}
+footer {
+  .borderTopBuilder(2px);
+  width: 100%;
+  text-align: center;
+  color: @mainColor;
+  font-size: 1.8rem;
+}
