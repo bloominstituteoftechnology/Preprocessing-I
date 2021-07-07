@@ -54,6 +54,190 @@ table {
 }
 
 html, body {
-    height: 100%;
+	font-size: 62.5%;
 }
 
+/* variables */
+@main-bg-color: silver;
+@secondary-bg-color: grey;
+@tertiary-bg-color: skyblue;
+@subtitle-font-family: "Times New Roman", Times, serif;
+@main-text-color: black;
+@secondary-text-color: skyblue;
+@tertiary-text-color: whitesmoke;
+@current-border-radius: 25px;
+
+/* mix-ins */
+.flex-spaced-column (@width: 100%, @height, @margin: auto, @font-size: 1.5rem) {
+	display:flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+	width: @width;
+	height: @height;
+	margin: @margin;
+	font-size: @font-size;
+}
+
+.flex-spaced-row (@width: 100%, @height, @margin: auto, @font-size: 1.5git rem) {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: @width;
+	height: @height;
+	margin: @margin;
+	font-size: @font-size;
+}
+
+/* main code */
+html {
+	background-color: @main-bg-color;
+	
+}
+
+body {
+	max-width: 1000px;
+	margin: auto;
+	height: auto;
+}
+
+.subcategories {
+	.flex-spaced-column (100%, auto, auto, 2rem);
+	padding: 3%;
+	.job-titles {
+		font-size: 2.5rem;
+		text-decoration: underline;
+		color: @secondary-text-color;
+	}
+	.duration {
+		font-size: 1.5rem;
+	}
+}
+a {
+	text-decoration: none;
+	color: @secondary-text-color;
+}
+h3 {
+	font-size: 3rem;
+	text-decoration: underline;
+	margin: 2%;
+}
+
+nav  {
+	.flex-spaced-row (80%, 50px, auto, 2.5rem);
+	margin-bottom: 2%;
+	background-color: @secondary-bg-color;
+	border-radius: @current-border-radius;
+	border: 1px solid @tertiary-text-color;
+}
+
+#top-content {
+	 border: 1px solid @main-text-color;
+	 .flex-spaced-row(90%, 175px, auto, 2rem);
+	 margin-bottom: 2%;
+	 background-color: @tertiary-bg-color;
+	 border-radius: @current-border-radius;
+	 #intro {
+		.flex-spaced-column(50%, 100%, auto, 2rem);
+		h1 {
+			font-size: 6rem;
+		}
+	 }
+	 #contact-info {
+		.flex-spaced-column(40%, 75px, auto, 1.75rem);
+		background-color: @secondary-bg-color;
+		border-radius: @current-border-radius;
+		padding-left: 1%;
+		border: 1px solid @tertiary-text-color;
+		color: @tertiary-text-color;
+	 }
+ }
+
+ #header-img {
+	width: 100px;
+	height: 100px;
+ }
+
+#main-content {
+	.flex-spaced-row(100%, auto, auto, 2rem);
+	#left-content {
+		border: 1px solid @main-text-color;
+		background-color: @tertiary-bg-color;
+		.flex-spaced-column(60%, auto, auto, 2rem);
+		border-radius: @current-border-radius;
+		#project-manager {
+			.flex-spaced-column(100%, 250px, auto, 2rem);
+			padding: 1%;
+			background-color: @secondary-bg-color;
+			border-radius: @current-border-radius;
+			margin-bottom: 1%;
+			color: @tertiary-text-color;
+			border: 1px solid @tertiary-text-color;
+		}
+		#package-handler {
+			.flex-spaced-column(100%, 200px, auto, 2rem);
+			padding: 1%;
+			background-color: @secondary-bg-color;
+			border-radius: @current-border-radius;
+			margin-top: 1%;
+			color: @tertiary-text-color;
+			border: 1px solid @tertiary-text-color;
+		}
+		#navy {
+			.flex-spaced-column(100%, 200px, auto, 2rem);
+			padding: 1%;
+			background-color: @secondary-bg-color;
+			border-radius: @current-border-radius;
+			margin-top: 1%;
+			color: @tertiary-text-color;
+			border: 1px solid @tertiary-text-color;
+			}
+		#century-college {
+			.flex-spaced-column(100%, 100px, auto, 2rem);
+			padding: 1%;
+			background-color: @secondary-bg-color;
+			border-radius: @current-border-radius;
+			margin-top: 1%;
+			color: @tertiary-text-color;
+			border: 1px solid @tertiary-text-color;
+		}
+	}
+   #right-content {
+	   .flex-spaced-column(35%, 750px, auto, 2rem);
+	   #core-skills {
+		  .flex-spaced-column(100%, 200px, auto, 2rem);
+		  padding: 2%;
+		  background-color: @tertiary-bg-color;
+		  border-radius: @current-border-radius;
+		  margin-top: 1%;
+		  border: 1px solid @main-text-color;
+	   }
+	   #groups {
+		  .flex-spaced-column(100%, 300px, auto, 2rem);
+		  padding: 1%;
+		  background-color: @tertiary-bg-color;
+		  border-radius: @current-border-radius;
+		  margin-top: 1%;
+		  border: 1px solid @main-text-color;
+		  .volunteer-work {
+			  .flex-spaced-column(95%, 100px, auto, 2rem);
+			  border: 1px solid @tertiary-text-color;
+			  padding: 1%;
+			  background-color: @secondary-bg-color;
+			  border-radius: @current-border-radius;
+			  color: @tertiary-text-color
+		  }
+	   }
+	   #references {
+		  .flex-spaced-column(100%, 100px, auto, 2rem);
+		  padding: 3%;
+		  background-color: @tertiary-bg-color;
+		  border-radius: @current-border-radius;
+		  border: 1px solid @main-text-color;
+		  margin-top: 1%;
+		  a {
+			color: black;
+		  }
+	   }
+	}
+}
