@@ -53,7 +53,232 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+// Less variables and mixins
+@link-color: rgb(75, 75, 75);
+@gray-color: #dddddd;
+@dark-gray-color: rgb(50, 50, 50);
+@white-color: white;
+@black-color: black;
+
+.link-mobile-border-style() {
+	border-bottom: 1px solid @black-color;
+	border-left: 1px solid @black-color;
+	border-right: 1px solid @black-color;
+	border-radius: 10px;
 }
 
+.main-font-style() {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+}
+
+.link-style() {
+	font-family: 'Montserrat', sans-serif;
+	color: @link-color;
+	font-size: 1.6rem;
+}
+
+.hover-style() {
+	background: @dark-gray-color;
+	color: @white-color;
+	cursor: pointer;
+}
+
+// Less code
+
+html {
+	font-size: 62.5%;
+}
+
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+	.main-font-style();
+
+	* {
+		padding: 1%;
+	}
+
+	h2 {
+		font-size: 2.2rem;
+
+		@media ( max-width: 500px ) {
+			font-size: 2rem;
+		}
+	}
+
+	header {
+		.main-nav {
+			display: flex;
+			width: 100%;
+			font-size: 2rem;
+			margin: 0 auto;
+			justify-content: flex-end;
+			
+			@media ( max-width: 500px ) {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			 a {
+				 text-decoration: none;
+				 margin-left: 5%;
+				 .link-style();
+
+				 &:hover {
+					 font-weight: bolder;
+					 font-style: italic;
+				 }
+
+				 @media ( max-width: 500px ) {
+					 width: 100%;
+					 margin: auto;
+					 text-align: center;
+					 padding: 5% 0 5% 0;
+					 .link-mobile-border-style();
+
+					 &:nth-child(1) {
+						 border-top: 1px solid @black-color;
+					 }
+
+					 &:hover {
+						 background: @dark-gray-color;
+						 color: @gray-color;
+					 }
+				 }
+			 }
+		} // .main-nav
+	} // header
+
+	.intro-section {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		background: @gray-color;
+		padding-bottom: 5%;
+		border-radius: 10%;
+
+		* {
+			@media ( max-width: 500px ) {
+				margin: 1% auto;
+			}
+		}
+
+		.img-div {
+			.intro-img {
+				width: 100%;
+				height: auto;
+				border-radius: 50%;
+			}
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 3rem;
+		}
+
+		h1, h2, h3, p {
+			width: 100%;
+
+			@media ( max-width: 500px ) {
+				text-align: center;
+			}
+		}
+
+		.show-on-mobile {
+			display: none;
+
+			@media ( max-width: 500px ) {
+				display: block;
+			}
+		}
+
+		.lets-team-up-btn {
+			@media ( max-width: 500px ) {
+				width: 100%;
+				padding: 5% 0 5% 0;
+				border-radius: 10px;
+				margin-bottom: 5%;
+				background: @white-color;
+			}
+
+			&:hover {
+				.hover-style();
+			}
+		}
+		
+	} // .intro-section
+
+	.skills-section {
+		display: flex;
+
+		div {
+			width: 50%;
+		}
+
+		.listen-up-div {
+			.hide-on-mobile {
+				@media ( max-width: 500px ) {
+					display: none;
+				}
+			}
+		}
+
+		.stuff-im-good-at-div {
+			div {
+				border-left:1px solid @gray-color;
+				border-right:1px solid @gray-color;
+				border-bottom: 1px solid @gray-color;
+				width: 100%;
+				padding: 2.5%;
+
+				// I know I need to be careful w/ nth-child
+				&:nth-child(2) {
+					border-top: 1px solid @gray-color;
+				}
+
+				&:hover {
+					.hover-style();
+				}
+			}
+		} // .stuff-im-good-at-div
+	} // .skills-section
+
+	.work-history-section {
+		.work-history-table {
+			.main-font-style();
+			border-collapse: collapse;
+			width: 100%;
+
+			th {
+				font-weight: bold;
+			}
+
+			td, th {
+				border: 1px solid @gray-color;
+				text-align: left;
+				padding: 1%;
+			}
+			
+			tr:nth-child(even) {
+				background-color: @gray-color;
+			}
+			.body-rows:hover {
+				.hover-style();
+			}
+		}
+	} // .work-history-section
+
+	.contact-section {
+		text-align:center;
+	}
+
+	footer {
+		background: @dark-gray-color;
+		color: @white-color;
+		text-align: center;
+		padding-top: 2.5%;
+		padding-bottom: 5%;
+	}
+} // .container
