@@ -1,22 +1,104 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/*Variables and mixins*/
+@tablet: max-width 800px;
+@phone: ~"only screen and (max-width:529px)";
+
+.inLine(@a:space-around; @b:space-around;) {
+	display: inline-flex;
+	align-items: @b;
+	justify-content: @a;
+}
+
+.center(@a: center; @b: center;) {
+	display: flex;
+	align-items: @a;
+	justify-content: @b;
+}
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,35 +107,318 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+.wrapper {
+	margin: 0 auto;
+	width: 1080px;
+	max-width: 100%;
+	height: 100%;
+	@media @phone {
+		width: 500px;
+		max-width: 100%;
+		height: 100%;
+	}
+
+	body,
+	html {
+		margin: 0;
+		/*font-size: 62.5%;*/
+	}
 }
 
+.nav {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	margin-top: 20px;
+	margin-bottom: 75px;
+	width: 100%;
+	height: auto;
+	@media @phone {
+		margin: 0 auto 100px;
+		.center;
+		width: 100%;
+		border: 0;
+	}
+
+	a {
+		&:hover {
+			color: white;
+			background-color: darkgrey;
+		}
+		width: 24.6%;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 10px;
+		display: inline-flex;
+		justify-content: space-around;
+		text-decoration: none;
+		@media @phone {
+			width: auto;
+			border-bottom: 1px solid darkgrey;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+}
+
+.introContent {
+	margin: 0 auto 75px;
+	width: 100%;
+	.center;
+	height: 750px;
+	width: 900px;
+	flex-direction: column;
+	background-color: lightgrey;
+	border-radius: 20px;
+	@media @phone {
+		border: 0;
+		width: 85%;
+		height: auto;
+
+		h1 {
+			text-align: center;
+			font-size: 35px;
+		}
+	}
+
+	h1 {
+		border-bottom: 4px solid darkgrey;
+		margin-top: 20px;
+		padding: 20px;
+		font-size: 40px;
+		align-items: flex-start;
+	}
+
+	img {
+		width: 300px;
+		height: 300px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@media @phone {
+			height: 75%;
+			width: 75%;
+		}
+	}
+
+	p {
+		strong {
+			font-size: 25px;
+			color: #404040;
+			font-weight: bold;
+			text-decoration-style: wavy;
+		}
+		text-align: center;
+		margin-top: 30px;
+		padding-left: 50px;
+		padding-right: 50px;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+		@media @phone {
+			border: 0;
+		}
+	}
+
+	button {
+		&:hover {
+			background-color: black;
+		}
+		border-radius: 10px;
+		border: 3px solid white;
+		color: white;
+		font-size: 20px;
+		margin-top: 50px;
+		background-color: grey;
+		padding: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+.midContent {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	margin: 0 auto;
+	width: auto;
+	.inLine;
+	@media @phone {
+		border: 0;
+		display: flex;
+		flex-direction: column;
+		.center;
+	}
+
+	h2 {
+		margin: 20px;
+		font-size: 30px;
+		align-self: flex-start;
+	}
+
+	.something {
+		padding: 10px;
+		margin: 40px;
+		width: 40%;
+		@media @phone {
+			margin: 0 auto;
+			width: 85%;
+		}
+	}
+
+	.something2 {
+		flex-direction: column;
+		padding: 10px;
+		margin: 40px;
+		width: 40%;
+		.center;
+		@media @phone {
+			.center;
+			width: 85%;
+			margin: 0 auto;
+		}
+
+		.list {
+			border: 1px solid lightgrey;
+			border-radius: 10px;
+			@media @phone {
+				.center;
+				border: 0;
+				width: 100%;
+				margin: 0 auto;
+				border-radius: 0;
+			}
+		}
+
+		li {
+			text-align: left;
+			width: 400px;
+			padding: 20px;
+			border-top: 1px solid lightgrey;
+			border-bottom: 1px solid lightgrey;
+			border-radius: 10px;
+			@media @phone {
+				border: 1px solid lightgrey;
+				border-radius: 0;
+				width: 85%;
+			}
+		}
+
+		h2 {
+			margin: 30px 30px 50px;
+		}
+	}
+}
+
+.bottomContent {
+	.center;
+	margin: 40px;
+
+	.moreStuff {
+		.center;
+		flex-direction: column;
+		padding: 10px;
+		width: 100%;
+		@media @phone {
+			width: 85%;
+		}
+
+		.workExperince {
+			.center;
+			height: 400px;
+			width: auto;
+			@media @phone {
+				width: 85%;
+			}
+
+			table {
+				border: 1px solid balck;
+				@media @phone {
+					width: 85%;
+				}
+			}
+
+			.one {
+				background-color: lightgrey;
+			}
+
+			.two {
+				background-color: #F3F1B6;
+			}
+
+			table,
+			td,
+			th,
+			tr {
+				border-collapse: collapse;
+				padding: 20px 70px;
+				@media @phone {
+					padding: 10px 20px;
+				}
+			}
+		}
+
+		h2 {
+			border-radius: 10px;
+			border: 1px solid darkgrey;
+			text-align: center;
+			background-color: lightgrey;
+			width: 600px;
+			height: auto;
+			margin: 20px 20px 0;
+			font-size: 30px;
+			@media @phone {
+				width: 300px;
+			}
+		}
+	}
+}
+
+.footer {
+	.center;
+
+	footer {}
+}
