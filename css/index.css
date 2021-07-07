@@ -1,1 +1,315 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/*My code starts here*/
+html {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+}
+/*Variables and Mixins*/
+.container {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+  /*Styling Header*/
+}
+@media (max-width: 500px) {
+  .container {
+    width: 80%;
+    max-width: 450px;
+  }
+}
+.container .navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: black;
+  /*Introducing breakpoint for mobile version on the header*/
+}
+.container .navigation .navigation__div--name {
+  width: 50%;
+  font-size: 3rem;
+  color: darkgrey;
+  text-align: center;
+  /*Introducing breakpoint for mobile version on one of the header elements*/
+}
+@media (max-width: 500px) {
+  .container .navigation .navigation__div--name {
+    padding: 15px 2%;
+  }
+}
+.container .navigation .navigation__nav {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  /*Introducing breakpoint for mobile version on one of the header elements*/
+}
+@media (max-width: 500px) {
+  .container .navigation .navigation__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .container .navigation .navigation__nav .navigation__nav__a {
+    align-self: stretch;
+    border: 1px solid darkgrey;
+    height: 50px;
+    padding-top: 12px;
+    text-align: center;
+  }
+}
+.container .navigation .navigation__nav .navigation__nav__a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: darkgrey;
+}
+@media (max-width: 500px) {
+  .container .navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 25px;
+  }
+  .container .navigation .navigation__div--name {
+    width: 100%;
+  }
+}
+/*Styling main, middle & contact sections using common class and sections elements using specific classes when needed*/
+.sections {
+  display: flex;
+  width: 100%;
+  margin: 20px 0%;
+  /*Introducing media query for mobile version on sections*/
+  /*styling image*/
+  /*Styling dscriptions div*/
+  /*Styling middle section divs*/
+  /*Styling all h1 tags*/
+  /*Styling contact section*/
+}
+@media (max-width: 500px) {
+  .sections {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+.sections .main-section__img {
+  width: 50%;
+  height: 300px;
+  /*Introducing media query to the image*/
+}
+@media (max-width: 500px) {
+  .sections .main-section__img {
+    width: 100%;
+    margin-top: 60px;
+  }
+}
+.sections .main-section__div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  /*Introducing media query to the descriptions div*/
+}
+@media (max-width: 500px) {
+  .sections .main-section__div {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+.sections .main-section__div .main-section__div__p--description {
+  font-size: 1.78rem;
+  text-align: start;
+  padding: 10%;
+}
+.sections .middle-section__divs {
+  width: 50%;
+  padding: 20px;
+  /*adding media query to these divs*/
+  /*Styling skills and experience list items*/
+}
+@media (max-width: 500px) {
+  .sections .middle-section__divs {
+    width: 100%;
+    text-align: center;
+  }
+}
+.sections .middle-section__divs .list {
+  display: flex;
+  flex-direction: column;
+}
+.sections .middle-section__divs .middle-secion__div__ul--experience {
+  margin-top: 30px;
+  list-style: square;
+}
+.sections .middle-section__divs .middle-secion__div__ul--experience .middle-secion__ul__p {
+  margin: 10px 0%;
+  font-size: 1.6rem;
+}
+.sections .middle-section__divs .middle-secion__div__ul--skills {
+  margin-top: 30px;
+  font-size: 1.6rem;
+}
+.sections .middle-section__divs .middle-secion__div__ul--skills .middle-section__ul__strong {
+  margin: 3px 0%;
+}
+.sections .sections__h1 {
+  font-size: 3rem;
+  color: darkgrey;
+  margin-bottom: 20px 10px;
+}
+.sections .contact-section__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.sections .contact-section__div .contact-section__div__h1 {
+  margin-bottom: 30px;
+}
+.sections .contact-section__div .contact-section__div__strong {
+  font-size: 1.8rem;
+}
+/*Seting the footer nav bar to display:none in Mobile version*/
+@media (max-width: 500px) {
+  .navigation.footer {
+    display: none;
+  }
+}

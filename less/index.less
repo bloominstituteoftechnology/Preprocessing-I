@@ -57,3 +57,197 @@ html, body {
     height: 100%;
 }
 
+/*My code starts here*/
+
+html {
+	font-size: 62.5%;
+	font-family: 'Montserrat', sans-serif;
+}
+/*Variables and Mixins*/
+.fx-layout-row() {
+	display: flex;
+}
+.fx-layout-column() {
+	display: flex;
+	flex-direction: column;
+}
+.fx-layout-column-rv() {
+	display: flex;
+	flex-direction: column-reverse;
+}
+@px-20: 20px;
+@font-s: 1.6rem;
+@width: 100%;
+@primary-color: black;
+@secondary-color: darkgrey;
+
+
+.container {
+
+	width: 90%;
+	max-width: 850px;
+	margin: 0 auto;
+	@media (max-width: 500px) {
+		width: 80%;
+		max-width: 450px;
+	}
+/*Styling Header*/
+	.navigation {
+		.fx-layout-row;
+		justify-content: flex-end;
+		align-items: center;
+		width: @width;
+		padding: @px-20;
+		background-color: @primary-color;
+		.navigation__div--name {
+			width: @width/2;
+			font-size: @font-s + 1.4rem;
+			color: @secondary-color;
+			text-align: center;
+			/*Introducing breakpoint for mobile version on one of the header elements*/
+			@media (max-width: 500px) {
+				padding: 15px 2%;
+			}
+		}
+
+		.navigation__nav {	
+			.fx-layout-row;		
+			justify-content: space-around;
+			width: @width/2;
+			/*Introducing breakpoint for mobile version on one of the header elements*/
+			@media (max-width: 500px) {				
+					.fx-layout-column;
+					align-items: center;
+					width: @width;
+	
+					.navigation__nav__a {
+						align-self: stretch;
+						border: 1px solid @secondary-color;
+						height: 50px;
+						padding-top: 12px;
+						text-align: center;
+					}
+				
+			}
+
+			.navigation__nav__a {
+				text-decoration: none;
+				font-size: @font-s + 0.4rem;
+				color: @secondary-color;
+			}
+		}
+		/*Introducing breakpoint for mobile version on the header*/
+		@media (max-width: 500px) {
+			
+				.fx-layout-column;
+				padding: 0px;
+				margin-top: @px-20+5px;
+	
+				.navigation__div--name {
+					width: @width
+				}
+				
+			}
+	}
+	}
+	/*Styling main, middle & contact sections using common class and sections elements using specific classes when needed*/
+	.sections {
+		.fx-layout-row;
+		width: @width;
+		margin: @px-20 0%;
+		/*Introducing media query for mobile version on sections*/
+		@media (max-width: 500px) {
+			.fx-layout-column-rv;
+			align-items: center;
+		}
+		/*styling image*/
+		.main-section__img {
+			width: @width/2;
+			height: 300px;
+			/*Introducing media query to the image*/
+			@media (max-width: 500px) {
+				width: @width;
+				margin-top: @px-20*3;
+			}
+		}
+		/*Styling dscriptions div*/
+		.main-section__div {
+			width: @width/2;
+			.fx-layout-column;
+			align-items: center;
+			height: 300px;
+
+			@media (max-width: 500px) {
+				width: @width;				
+				margin-bottom: @px-20*2;
+			}
+			/*Introducing media query to the descriptions div*/
+			.main-section__div__p--description {
+				font-size: @font-s+0.18rem;
+				text-align: start;
+				padding: 10%;
+			}			
+		}
+		/*Styling middle section divs*/
+		.middle-section__divs {
+			width: @width/2;
+			padding: @px-20;
+			/*adding media query to these divs*/
+			@media (max-width: 500px) {
+				width: @width;
+				text-align: center;
+			}
+			/*Styling skills and experience list items*/
+			.list {
+				.fx-layout-column;
+			}
+			.middle-secion__div__ul--experience {
+				margin-top: @px-20+10px;
+				list-style: square;
+
+				.middle-secion__ul__p {
+					margin: @px-20/2 0%;
+					font-size: @font-s;
+				}
+			}
+			.middle-secion__div__ul--skills {
+				margin-top: @px-20+10px;
+				font-size: @font-s;
+
+				.middle-section__ul__strong {
+					margin: 3px 0%;
+				}
+			}
+		}
+		/*Styling all h1 tags*/
+		.sections__h1 {
+			font-size: @font-s + 1.4rem;
+			color: @secondary-color;
+			margin-bottom: @px-20 +10px;
+		}
+		/*Styling contact section*/		
+		.contact-section__div {
+			.fx-layout-column;
+			align-items: center;
+			width: @width;
+
+			.contact-section__div__h1 {
+				margin-bottom: @px-20+10px;
+			}
+			.contact-section__div__strong {
+				font-size: @font-s + 0.2rem;
+			}
+		}	
+	
+}
+/*Seting the footer nav bar to display:none in Mobile version*/
+@media (max-width: 500px) {
+	.navigation.footer {
+		display: none;
+	}
+}
+
+
+
+
+
