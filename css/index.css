@@ -1,1 +1,387 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #FF331F;
+  background-color: #0C090D;
+}
+/* Variables */
+/* Mixinx */
+.intro {
+  font-size: 1.6rem;
+  border: 1px solid #FF331F;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -3px 20px #FF331F;
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .intro {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+.intro .intro__profile {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 45%;
+}
+.intro .intro__profile .intro__profile__name {
+  font-size: 3.6rem;
+  text-align: center;
+}
+.intro .intro__profile .intro__profile__title {
+  font-size: 2.8rem;
+  text-align: center;
+  letter-spacing: 1.25px;
+}
+.intro .intro__profile .intro__profile__summary {
+  padding: 2%;
+  padding-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .intro .intro__profile .intro__profile__summary {
+    display: none;
+  }
+}
+.intro .intro__navigation {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+}
+.intro .intro__navigation a:before,
+.intro .intro__navigation a:after {
+  position: absolute;
+  left: 51%;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  border: 2px solid #FF331F;
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+  border-radius: 50%;
+  background: transparent;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.intro .intro__navigation a:after {
+  border-width: 2px;
+  transition: all 0.4s;
+}
+.intro .intro__navigation a:hover:before {
+  opacity: 0.5;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.intro .intro__navigation a:hover:after {
+  opacity: 0.5;
+  transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
+.intro a {
+  color: #FF331F;
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 5px;
+}
+.intro a:hover {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin: 8px 0;
+}
+.intro .intro__navigation__media-set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro .intro__navigation__media-set a:hover {
+  font-weight: normal;
+  font-size: 1.8rem;
+  margin: 0 auto;
+}
+.intro .intro__navigation__media-set a:hover:before {
+  opacity: 0;
+}
+.intro .intro__navigation__media-set a:hover:after {
+  opacity: 0;
+}
+.skills {
+  height: 350px;
+  background-color: #0C090D;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .skills {
+    flex-direction: column;
+  }
+}
+.skills .skills__cat {
+  border: 1px solid #FF331F;
+  height: 75%;
+  width: 28%;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .skills .skills__cat {
+    width: 90%;
+    font-size: 1.4rem;
+    margin: 15px;
+    border: 1px solid #FF331F;
+  }
+}
+.skills .skills__cat .skills__cat__label {
+  font-size: 2.8rem;
+}
+@media (max-width: 500px) {
+  .skills .skills__cat .skills__cat__label {
+    display: none;
+  }
+}
+.skills .skills__cat .skills_cat_list {
+  height: 200px;
+  width: 65%;
+  border: 1px solid #FF331F;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -3px 20px #FF331F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .skills .skills__cat .skills_cat_list {
+    border: none;
+  }
+}
+.skills .skills__cat .skills_cat_list li {
+  padding: 0px 10px;
+}
+.exp {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #FF331F;
+  width: 90%;
+  margin: 25px auto;
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .exp {
+    padding: 10px;
+  }
+}
+.exp .exp__job {
+  margin: 25px 0;
+}
+.exp .exp__job p {
+  margin: 10px 0 10px 33%;
+  letter-spacing: 3px;
+}
+.exp .exp__job .exp__job__title {
+  font-size: 2.6rem;
+  margin: 5px 0;
+  border: 1px solid #FF331F;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -3px 20px #FF331F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.exp .exp__job .exp__job__title span {
+  font-size: 2rem;
+  font-style: italic;
+}
+.exp .exp__job .exp__job__resp {
+  border-top: 1px solid #FF331F;
+}
+.exp .exp__job .exp__job__resp ul li {
+  padding: 7px;
+}
+.contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #FF331F;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -3px 20px #FF331F;
+}
+@media (max-width: 500px) {
+  .contact {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+}
+.contact .contact__info {
+  font-size: 1.6rem;
+  margin-left: 7%;
+}
+.contact .contact__info .contact__info__head {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 10px;
+}
+.contact .contact__info .contact__info__text {
+  padding: 7px 0;
+}
+.contact .contact__social {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}

@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,297 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
 }
 
+body {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	color: @secondary;
+	background-color: @main-color;
+}
+
+/* Variables */
+@opacwhite: rgba(255,255,255, 0.1);
+@smokey: #0C090D;
+@red: #FF331F;
+
+@main-color: @smokey;
+@secondary: @red;
+@tertiary: @opacwhite;
+
+@corners: 10px;
+
+/* Mixinx */
+.space-around() {
+	display: flex;
+	justify-content: space-around;
+}
+
+.center() {
+	display: flex;
+	justify-content: center;
+}
+
+.centerColumn() {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.boxTheme() {
+	border: 1px solid @secondary;
+	border-radius: @corners;
+	background-color: @tertiary;
+	box-shadow: 0 -3px 20px @secondary;
+}
+
+.intro {
+	@media(max-width: 500px) {
+		width:90%;
+		margin: 10px auto;
+	}
+	font-size: 1.6rem;
+	.boxTheme;
+
+	margin: 50px 0;
+	.space-around;
+
+	.intro__profile {
+		.space-around;
+		flex-direction: column;
+
+		width: 45%;
+
+		.intro__profile__name {
+			font-size: 3.6rem;
+			text-align: center;
+		}
+
+		.intro__profile__title {
+			font-size: 2.8rem;
+			text-align: center;
+			letter-spacing: 1.25px;
+		}
+
+		.intro__profile__summary {
+			@media(max-width: 500px) {
+				display: none;
+			}
+
+			padding: 2%;
+			padding-bottom: 20px;
+			}
+		}
+
+	.intro__navigation {
+		.centerColumn;
+		align-items: center;
+		margin: 10px 0;
+		position: relative;
+
+			a:before, a:after {
+			position: absolute;
+			left: 51%;
+			width: 50px;
+			height: 50px;
+			margin-top: 10px;
+			border: 2px solid @secondary;
+			transform: translateX(-50%) translateY(-50%) scale(0.8);
+			border-radius: 50%;
+			background: transparent;
+			content: "";
+			opacity: 0;
+			transition: all 0.3s;
+			z-index: -1;
+			}
+
+			a:after {
+			border-width: 2px;
+			transition: all 0.4s;
+			}
+
+			a:hover:before {
+			opacity: 0.5;
+			transform: translateX(-50%) translateY(-50%) scale(1);
+			}
+
+			a:hover:after {
+			opacity: 0.5;
+			transform: translateX(-50%) translateY(-50%) scale(1.3);
+			}
+		}
+
+		a {
+			color: @secondary;
+			text-decoration: none;
+			font-size: 1.8rem;
+			padding: 5px;
+		}
+
+		a:hover {
+			font-weight: bold;
+			font-size: 2.2rem;
+			margin: 8px 0
+		}
+
+		.intro__navigation__media-set {
+			.center;
+			align-items: center;
+
+			a:hover {
+				font-weight: normal;
+				font-size: 1.8rem;
+				margin: 0 auto;
+			}
+
+			a:hover:before {
+			opacity: 0;
+			}
+
+			a:hover:after {
+			opacity: 0;
+			}
+		}
+
+
+}
+
+
+.skills {
+	@media(max-width: 500px) {
+		flex-direction: column;
+	}
+
+	height: 350px;
+	background-color: @main-color;
+	border-radius: 15px;
+	.space-around;
+	align-items: center;
+
+	.skills__cat {
+		@media(max-width: 500px) {
+			width: 90%;
+			font-size: 1.4rem;
+			margin: 15px;
+			border: 1px solid @secondary;
+		}
+		border: 1px solid @secondary;
+		//background-color: @tertiary;
+		height: 75%;
+		width: 28%;
+		border-radius: @corners;
+
+		font-size: 1.6rem;
+		.space-around;
+		align-items: center;
+		flex-direction: column;
+
+		.skills__cat__label {
+			@media(max-width: 500px) {
+				display: none;
+			}
+			font-size: 2.8rem;
+		}
+
+		.skills_cat_list {
+			@media(max-width: 500px) {
+				border: none;
+			}
+
+			height: 200px;
+			width: 65%;
+			border: 1px solid @secondary;
+			.boxTheme;
+
+			.center;
+			align-items: center;
+			flex-wrap: wrap;
+
+			li {
+				padding: 0px 10px;
+			}
+		}
+	}
+}
+
+.exp {
+	@media(max-width: 500px) {
+		padding: 10px;
+	}
+
+	.centerColumn;
+	align-items: center;
+	border: 1px solid @secondary;
+	width: 90%;
+	margin: 25px auto;
+
+	font-size: 1.6rem;
+
+	.exp__job {
+		margin: 25px 0;
+
+		p {
+			margin: 10px 0 10px 33%;
+			letter-spacing: 3px;
+		}
+
+		.exp__job__title {
+			font-size: 2.6rem;
+			margin: 5px 0;
+			.boxTheme;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			span {
+				font-size: 2rem;
+				font-style: italic;
+			}
+		}
+
+		.exp__job__resp {
+			border-top: 1px solid @secondary;
+
+			ul {
+				li {
+					padding: 7px;
+				}
+			}
+		}
+	}
+}
+
+.contact {
+	@media(max-width: 500px) {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
+
+	.space-around;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 15px;
+	.boxTheme;
+
+	.contact__info {
+		font-size: 1.6rem;
+		margin-left: 7%;
+		.contact__info__head {
+			font-size: 2.4rem;
+			font-weight: bold;
+			padding: 10px;
+		}
+
+		.contact__info__text {
+			padding: 7px 0;
+		}
+	}
+
+	.contact__social {
+		.space-around;
+		width: 40%;
+	}
+}
