@@ -47,13 +47,203 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+// variables
+@innerWidth: 95%;
+@fontStack: 'Source Sans Pro',
+sans-serif;
+@backgroundColor: @athensGray;
+@accentColor: @gullGray;
+@linkColor: @cornflowerBlue;
+@defaultTextColor: @asphalt;
+@athensGray: #E9ECEF;
+@cornflowerBlue: #6495ED;
+@asphalt: #130A06;
+@gullGray: #A3B0BD;
+@mobileView: 500px;
+//mixins
+.imgResponsive() {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex(@justify, @align) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.h2Styling() {
+    font-size: 2.4rem;
+    padding-bottom: 2%;
+}
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
     height: 100%;
+}
+
+.container {
+    max-width: 880px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    font-family: @fontStack;
+    color: @defaultTextColor;
+    @media (max-width: 500px) {
+        max-width: 95%;
+    }
+    header {
+        max-width: @innerWidth;
+        .flex(flex-end, flex-start);
+        margin: 1% 0;
+        @media (max-width: 500px) {
+            max-width: 95%;
+            margin-bottom: 3%;
+        }
+        nav {
+            width: 100%;
+            max-width: 40%;
+            @media (max-width: 500px) {
+                max-width: 100%;
+            }
+            .flex(space-between, flex-start);
+            a {
+                text-decoration: none;
+                color: @defaultTextColor;
+            }
+            a:hover {
+                color: @linkColor;
+            }
+        }
+    }
+    .introduction {
+        max-width: @innerWidth;
+        background-color: @backgroundColor;
+        height: 500px;
+        padding: 5% 3%;
+        margin: 3% 0 5% 0;
+        @media (max-width: 500px) {
+            height: auto;
+            border-radius: 10%;
+        }
+        img {
+            .imgResponsive();
+            width: 40%;
+            margin-bottom: 1%;
+            @media (max-width: 500px) {
+                display: block;
+                margin: 0 auto;
+                border-radius: 50%;
+            }
+        }
+        h1 {
+            color: @accentColor;
+            font-size: 3.6rem;
+            margin-bottom: 1%
+        }
+        h2 {
+            border-bottom: 1px solid @accentColor;
+            padding-bottom: 3%;
+        }
+        p {
+            margin: 3% 0;
+        }
+        button {
+            background-color: #808080;
+            color: @accentColor;
+            padding: 1.5%;
+            border-radius: 8%;
+            font-size: 2.0rem;
+            cursor: pointer;
+        }
+    }
+    .main-content {
+        max-width: @innerWidth;
+        height: auto;
+        .flex(flex-start, default);
+        margin-bottom: 5%;
+        @media (max-width: 500px) {
+            flex-wrap: wrap;
+            height: auto;
+        }
+        .main-left {
+            width: 50%;
+            padding-right: 3%;
+            @media (max-width: 500px) {
+                width: 100%;
+                padding-bottom: 5%;
+            }
+            h2 {
+                .h2Styling();
+            }
+        }
+        .main-right {
+            width: 45%;
+            @media (max-width: 500px) {
+                width: 100%;
+            }
+            h2 {
+                .h2Styling();
+            }
+            ul {
+                li {
+                    border: 1px solid @accentColor;
+                    padding: 3.5%;
+                }
+                li:nth-child(odd) {
+                    background-color: @backgroundColor;
+                }
+            }
+        }
+    }
+    .work-history {
+        max-width: @innerWidth;
+        h2 {
+            .h2Styling();
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 5%;
+            tr {
+                .flex(flex-start, center);
+                td,
+                th {
+                    border-top: .5px solid @backgroundColor;
+                    text-align: left;
+                    width: 25%;
+                    max-width: @innerWidth;
+                    padding: 3% 1%;
+                }
+                th {
+                    font-weight: bold;
+                }
+                td:nth-child(1) {
+                    font-weight: bold;
+                }
+            }
+            tr:nth-child(even) {
+                background-color: @backgroundColor;
+            }
+        }
+    }
+    footer {
+        max-width: @innerWidth;
+        background-color: #808080;
+        .flex(center, center);
+        color: white;
+        height: 50px;
+    }
 }
 
