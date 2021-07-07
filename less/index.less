@@ -30,7 +30,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.5;
+	background-color: pink + 40; 
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +55,277 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;	
+	margin: 0 auto; 
 }
+.section-area{
+	width: 90%;
+	margin: 0 auto;
+	display: flex;	
+}
+
+@ImportantFont: 1.7rem;
+@boxbackground: gray + 95;
+@TextPadding: .45rem;
+
+.SectionSize{
+	width: 90%;
+	height: auto;
+	margin: .5rem;
+}
+
+.ButtonSizing{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+
+h3{
+	Font-size: @ImportantFont - .3rem;
+	padding: @TextPadding - .3rem;
+	
+}
+
+img {
+	max-width: 300px;
+	max-height: 350px;
+	height: auto;
+	margin: 2rem;
+	}
+
+.container {
+	width: 80%;
+	margin: 0 aut0;
+	display: flex;
+	flex-direction: column;
+
+	header{
+		.SectionSize();	
+	}
+		nav{
+			.SectionSize();
+		}
+			a{
+				text-decoration: none;
+				font-size: @ImportantFont;
+				color: black;
+				display: inline;
+				padding: .5rem;
+				margin: 0 auto;
+			}
+	 
+
+	.AboutSection{
+			.SectionSize();
+			background-color: @boxbackground;
+			display: flex;	
+		}
+		.PortaitSection{
+			width: 50%;
+			align-content: flex-start;
+		}
+
+		.Text-Info{
+			width: 80%;
+			display: flex;
+			flex-direction: column;
+			margin: 0 auto;
+			padding: 1rem;
+		}
+		h1{
+			Font-size: @ImportantFont + .3rem;
+			padding: @TextPadding;
+			text-align: center;
+		}
+			h3{
+				width: 110%;
+				text-align: left;
+				font-size: @ImportantFont -.1rem;
+			}
+			.InfoPgraph{
+				padding: .5rem;
+				width: 50%;
+				text-align: center;
+				margin: 0 auto;
+			}
+			.ButtonDiv{
+				padding: 1rem;
+			}
+				.SignUpHere {
+					width: 20%;
+					.ButtonSizing();
+				}
+
+		.Middle-Section{
+			.SectionSize();
+			display: flex;
+		}
+
+			.Blurb-Pgraph{
+				width: 60%;
+				margin: left;
+				text-align: left;
+				display: flex;
+				flex-direction: column;
+				font-size: @ImportantFont - .6rem;
+				padding: .50rem;
+			}
+				h3{
+					text-align: center;
+				}
+
+			.Strengths-List{
+				width: 50%;
+				margin: right;
+				display: flex;
+				flex-direction: column;
+				font-size: @ImportantFont;	
+			}
+				.SkillsList{
+				 font-size: @ImportantFont;
+				 text-decoration: underline;
+				 text-align: center;
+				}
+				.BorderList {
+					table-layout: auto;
+					width: 75%;
+					height: auto;
+					border: .5px solid black;
+					padding: .5rem;
+					text-align: center;
+					margin: 0 auto;
+					font-size: @ImportantFont - .3rem;
+				}
+
+		.Bottom-Section{
+			.SectionSize();
+		
+		}
+			.Passion-Info{
+				margin: 1rem;
+				text-align: center;
+				background-color: @boxbackground;
+				padding: .25rem;
+				padding: @TextPadding;
+			}
+				.LearmMoreHere {
+					.ButtonSizing();
+				}
+
+		.End-Section{
+			.SectionSize();
+			width: 90%;
+		}
+			.WorkTable{
+				table-layout: fixed;
+				width: 90%;
+				text-align: center;
+			}	
+				h2{
+					text-align: center;
+					font-size: @ImportantFont;
+				}
+					tr{
+					font-size: @ImportantFont - .5rem;	
+					}
+						th{
+							text-decoration: underline;
+						}
+							td{
+							text-align: center;
+							font-size: @ImportantFont -.65rem;
+							}
+
+		.Foot-Section{
+			.SectionSize();
+			padding: 2rem;
+			background-color: @boxbackground;
+			display: flex;
+		  flex-direction: column;
+			margin: 0 auto;
+			text-align: center;
+			font-size: @ImportantFont - .5rem;
+		
+		}	
+}
+
+@media (max-width: 500px){
+	.container{
+		header{
+			nav{
+				a{
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					margin: 0 auto;
+					align-content: center;
+					justify-content: center;
+				}	
+			}
+		}	
+		.AboutSection{
+				width: 90%;
+				display: flexbox;
+				flex-direction: column;
+				margin: 0 auto;
+			}
+			.Portrait-Img{
+				img{
+					width: 75%;
+					align-content: center;
+					justify-content: center;
+					margin: 0 auto;
+					display: flex;
+					padding-top: 1.5rem;
+				}
+			}
+				.Text-Info{
+					display: flex;
+				}
+					.InfoPgraph{
+						width: 100%;
+					}
+					.SignUpHere{
+						width: 45%;
+					}
+		.Middle-Section{
+			width: 90%;
+			display: flexbox;
+			flex-direction: column;
+			margin: 0 auto;
+		}
+			.Blurb-Pgraph{
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				margin: 0 auto;
+				width: 95%;
+			}
+			.Strengths-List{
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				margin: 0 auto;
+			}
+				.BorderList{
+					width: 90%;
+				}
+		.End-Section{
+			.WorkHistory{
+				.WorkTable{
+					td{
+						font-size: @ImportantFont - .9rem;
+					}
+				}
+			}
+		}
+	}
+}	
+
+	
+
 
