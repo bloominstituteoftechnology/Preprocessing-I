@@ -56,4 +56,155 @@ table {
 html, body {
     height: 100%;
 }
+@text-field-color:white;
 
+.flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.flex-between{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+}
+.heading-font{
+	font-family: 'Fahkwang', sans-serif;
+	color: white;
+	font-size: 2.4rem;
+}
+
+.paragraph-text{
+	font-size:1.6rem;
+	font-family: 'Playfair Display', serif;
+	text-align: center;
+	padding: 20px;
+}
+@base-url: "C:/lamda/Preprocessing-I/images";
+
+.text-fields{
+	background-color: @text-field-color;
+		width: 45%;
+		border-radius: 5px;
+}
+
+.font-awesome{
+	color:white;
+	font-size: 2rem;
+}
+
+// end varibles and mixins 
+
+
+html{
+	font-size: 62.5%;
+}
+body{
+
+
+	background-image: url("@{base-url}/myBackground.jpg");
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: black;
+	background-attachment: fixed;
+
+	@media(max-width: 500px){
+		background-image: none;
+	}
+	
+}
+.container{
+.flex-center();
+max-width: 800px;
+width: 100%;
+margin: auto;
+
+	header{
+		width: 100%;
+	}
+	
+	.navigation{
+		width: 100%;
+		.flex-between();
+		margin: 25px auto;
+		a{
+			text-decoration: none;
+			font-size: 1.6rem;
+			.heading-font();
+			padding: 0 5px;
+		}
+		h1{
+			.heading-font();
+		}
+	}
+	.top{
+		width: 100%;
+
+		@media(max-width:500px){
+			.flex-center();
+		}
+	.bio{
+		.text-fields();
+		margin-top: 150px;
+
+		p{
+			.paragraph-text();
+		}
+		}
+	}
+	.skillsAndContact{
+		width: 100%;
+		margin-top: 50px;
+
+		@media(max-width: 500px){
+			.flex-center();
+		}
+
+		h1{
+			margin-top: 50px;
+			.heading-font();
+
+		}
+
+		.skills{
+			.text-fields();
+			margin-top: 50px;
+			
+			ul li{
+				.paragraph-text();
+			}
+			
+		}
+	
+		.contact{
+			.text-fields();
+			margin: 50px 0;
+
+			p{
+				.paragraph-text();
+			}
+		}
+		
+
+	}
+	footer{
+		.flex-between();
+		margin: 50px 0;
+		width: 100%;
+		
+		.fa-github{
+			.font-awesome();
+		}
+		.fa-twitter{
+			.font-awesome();
+		}
+		.fa-codepen{
+			.font-awesome();
+		}
+	}
+
+	
+}
