@@ -1,22 +1,90 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,35 +93,286 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body,
+html {
+	height: 100%;
+	font-size: 62.5%;
 }
 
+@mobile: ~"(max-width: 500px)";
+@dark-base: #004b4b;
+@base-color: #23b4b4;
+@accent-orange: #ffa75e;
+@accent-yellow: #ffc758;
+
+.sectionHeading() {
+	font-family: 'Arvo', serif;
+	font-size: 3rem;
+	padding-bottom: 20px;
+}
+
+.normalText() {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.4rem;
+}
+
+.link() {
+	text-decoration: none;
+	color: @dark-base;
+}
+
+.flexbox(@justify, @align) {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+	justify-content: @justify;
+	align-content: @align;
+}
+
+h2 {
+	.sectionHeading;
+
+	@media @mobile {
+		font-size: 2rem;
+	}
+}
+
+h3 {
+	.sectionHeading;
+	font-size: 1.4rem;
+
+	@media @mobile {
+		font-size: 1.2rem;
+	}
+}
+
+p, li {
+	.normalText;
+	line-height: 1.5;
+}
+
+.container {
+	max-width: 880px;
+	background-image: linear-gradient( @base-color, @dark-base);
+	margin: 0 auto;
+
+	@media @mobile{
+		max-width: 500px;
+	}
+
+
+	header {
+		.flexbox(space-around, center);
+
+		h1 {
+			.sectionHeading;
+			padding: 20px;
+
+			}
+		}
+
+		nav {
+			.flexbox(center, center);
+
+			a {
+				.link;
+				.sectionHeading;
+				font-size: 1.6rem;
+				padding: 10px;
+
+				@media @mobile {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+	.introduction {
+		.flexbox(center, center);
+		width: 80%;
+		margin: 0 auto;
+
+		@media @mobile {
+			flex-direction: column-reverse;
+			width: 95%;
+			margin: 0 auto;
+		}
+
+		.intro-text {
+			width: 50%;
+			padding: 13%;
+			text-align: center;
+
+			@media @mobile {
+				width: 100%;
+				padding: 7%;
+
+				// a[href^="mailto"] {
+				// 	.link;
+				// 	.sectionHeading;
+				// 	font-size: 1.6rem;
+				// 	padding: 10px;
+				//
+				// 	@media @mobile {
+				// 		font-size: 1.4rem;
+				// 	}
+				// }
+			}
+		}
+
+		.intro-photo {
+			width: 50%;
+			padding: 5% 0 10% 3%;
+
+			@media @mobile {
+				width: 100%;
+			}
+
+			img {
+				border-radius: 50%;
+				height: auto;
+				width: 80%;
+
+				@media @mobile {
+					height: 160px;
+					width: 130px;
+					margin-left: 30%;
+				}
+			}
+		}
+	}
+
+	.experience {
+		.flexbox (space-between, center);
+		width: 80%;
+		margin: 2% auto;
+
+		@media @mobile {
+			width: 100%;
+		}
+
+		.skills {
+			width: 48%;
+			padding: 20px;
+			background-color: @accent-yellow;
+			border: 2px dotted @dark-base;
+			border-radius: 10%;
+			opacity: 0.9;
+
+			h2 {
+				text-align: center;
+			}
+		}
+
+		.education {
+			width: 48%;
+			padding: 20px;
+			background-color: @accent-yellow;
+			border: 2px dotted @dark-base;
+			border-radius: 10%;
+			opacity: 0.9;
+
+			h2 {
+				text-align: center;
+			}
+		}
+	}
+
+	.portfolio {
+		width: 75%;
+		margin: 2% auto;
+		background-color: @accent-orange;
+		border: 2px dotted @dark-base;
+		border-radius: 5%;
+		padding: 30px;
+			h2 {
+				text-align: center;
+				width: 100%;
+			}
+		.flexbox(space-between, center);
+		@media @mobile {
+			width: 95%;
+			flex-direction: column;
+		}
+			.project {
+				width: 30%;
+				text-align: center;
+					img {
+						width: 50%;
+
+						}
+				@media @mobile {
+					width: 100%;
+				}
+					}
+			}
+
+	.work {
+		.flexbox(space-between, center);
+		width: 75%;
+		margin: 2% auto;
+		background-color: @base-color;
+		border: 2px dotted @dark-base;
+		border-radius: 5%;
+		opacity: 0.9;
+
+		@media @mobile {
+			width: 95%;
+		}
+
+			h2 {
+				text-align: center;
+				width: 100%;
+			}
+
+		.work-history {
+			width: 50%;
+			padding: 10px;
+			text-align: center;
+		}
+	}
+}
