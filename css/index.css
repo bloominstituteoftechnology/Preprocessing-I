@@ -1,1 +1,406 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+/******* VARIABLES *********/
+html,
+body {
+  height: 100%;
+  font-family: arial;
+}
+html {
+  font-size: 62.5%;
+}
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 880px;
+  padding-left: 1%;
+  padding: 4px;
+}
+.mainHeader {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.navBar {
+  display: flex;
+  flex-direction: row;
+  flex-flow: no-wrap;
+  max-width: 100%;
+  background-color: #c9f7ef;
+}
+.navBar:hover {
+  animation: moveIt 3s infinite;
+}
+.headerText {
+  padding-top: 10px;
+  font-family: arial;
+  font-size: 1.4rem;
+}
+.headerText2 {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  font-family: arial;
+  font-size: 1.4rem;
+}
+.navItemFlex {
+  padding: 8px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+}
+#hTitle {
+  font-size: 2rem;
+  font-family: arial;
+  padding: 4px;
+}
+.section1 {
+  font-size: 1.4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+.section2 {
+  font-size: 1.4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  padding: 10px;
+}
+.section3 {
+  font-size: 1.4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+}
+.section4 {
+  font-size: 1.4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  padding: 10px;
+}
+.section5 {
+  font-size: 1.4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  padding: 10px;
+}
+.section6 {
+  font-size: 1.4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  padding: 10px;
+}
+.sectionContainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sectionList {
+  display: flex;
+  max-width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.sectionList2 {
+  display: flex;
+  font-size: 1.4rem;
+  max-width: 100%;
+}
+.section3Container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 10px;
+}
+.sectionListContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 100%;
+  font-size: 1.4rem;
+}
+.sectionTitle {
+  display: flex;
+  font-size: 1.8rem;
+  max-width: 100%;
+}
+.sectionText {
+  font-size: 1.4rem;
+}
+h2 {
+  font-size: 1.8rem;
+  padding-bottom: 10px;
+  padding-top: 4px;
+}
+.ul-1 {
+  list-style-type: square;
+  list-style-position: inside;
+}
+.ul-2 {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+.ul-3 {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+hr {
+  width: 100%;
+}
+footer {
+  font-size: 1.6rem;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+@keyframes moveIt {
+  0% {
+    background-color: #c9f7ef;
+  }
+  25% {
+    background-color: #30b7c9;
+  }
+  50% {
+    background-color: #1b8af8;
+  }
+  100% {
+    background-color: #c9f7ef;
+  }
+}
+@media (max-width: 800px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding-left: 1%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding-left: 1%;
+  }
+  .mainHeader {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .navItemFlex {
+    font-size: 2rem;
+    height: 52px;
+    width: 100%;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid gray;
+    align-items: center;
+  }
+  .sectionListContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    font-size: 1.4rem;
+    justify-content: flex-start;
+  }
+  .sectionList {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: left;
+  }
+  .section3Container {
+    max-width: 100%;
+    padding: 0px;
+  }
+  .ul-2 {
+    max-width: 100%;
+  }
+  h2 {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    padding-top: 4px;
+  }
+  .sectionTitle {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+  #hTitle {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.2rem;
+  }
+  .headerText2 ul {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6rem;
+  }
+  .mainHeader .navBar a:last-child {
+    border-bottom: 1px solid gray;
+  }
+  .navBar:hover {
+    animation: moveIt;
+  }
+  footer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    width: 50%;
+  }
+}
