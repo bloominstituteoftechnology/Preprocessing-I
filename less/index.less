@@ -33,7 +33,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style: circle;
 }
 blockquote, q {
 	quotes: none;
@@ -54,6 +54,191 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	background: @body-color;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	background: @content-color;
+	@media (max-width: 500px){
+		width: 80%;
+	}
+	//mixins
+	.nav-footer-mixin() {						
+		width: 100%;
+		font-size: @links-n-such;
+		font-family: @content-color, sans-serif;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.h2-mixin(){
+		font-family: @header-font, @main-family;
+		font-size: @secondary-h;
+		color: @body-color;
+		padding: 2%;
+		text-decoration: underline;
+		display: flex;
+	}
+	.content-mixin() {					
+		font-family: @content-font, @main-family;
+		font-size: @secondary-p;
+		color: @p-color;
+	}
+	
+	header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: @content-color;
+	margin-bottom: 2%;
+	border-bottom: 1rem dashed @body-color;
+	@media (max-width: 500px) {
+		border-bottom: 1rem double @body-color;
+		//color change			
+	}
+		h1 {
+			font-size: @main-header;
+			font-family: @header-font, @main-family;
+			color: @body-color;
+			
+		}
+		nav {
+			padding: 2%;
+			.nav-footer-mixin;
+			@media (max-width: 500px) {
+				flex-direction: column;
+				align-items: center;
+			}
+			a {
+				color: @a-color;
+				font-family: @content-font, @main-family;
+				text-decoration: underline overline;
+				@media (max-width: 500px) {
+					padding: 2%;
+				}
+			}
+			a:hover {
+				text-decoration: none;
+			}
+		}
+  }		
+  	article {
+		  border: 1rem dashed @body-color;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  width: 50%;
+		  padding: 2%;
+		  margin: 0 auto;
+		  @media (max-width: 500px) {
+				border: 1rem double @body-color;
+				width: 90%;
+				h2 {
+					align-self: flex-start;
+				}
+		}
+		  	h2 {
+				  .h2-mixin;		  
+				}
+			p {
+				.content-mixin;
+			}
+			button {
+				width: 30%;
+				margin: 3%;
+				align-self: flex-end;
+				background-color: @body-color;
+				font-family: @content-font, @main-family;
+				font-weight: 800;
+				cursor: pointer;
+				@media (max-width: 500px) {
+					align-self: center;
+				}
+			}
+				.button:hover {background-color: @p-color;
+							   text-transform: uppercase;
+				}
+
+				.button:active {
+				background-color: @content-color;
+				box-shadow: 0 5px @body-color;
+				transform: translateY(4px);
+				}
+			button a {
+				text-decoration: none;
+				color: inherit;
+			}
+	  }
+	section {
+		 display: flex;
+		 justify-content: space-evenly;
+		 margin: 5%;
+		 padding: 2%;
+		 border: 1rem dashed @body-color;
+		 @media (max-width: 500px) {
+			border: 1rem double @body-color;
+			flex-direction: column;
+			width: 90%;		
+			padding: 2% 8%;
+		}
+		  	h2 {
+				 .h2-mixin;
+			  }
+			li {
+				.content-mixin;
+				line-height: 1.6rem;
+			}
+			p {
+				.content-mixin();
+				line-height: 1.6rem;
+			}
+	  }
+	footer {
+		.nav-footer-mixin;
+		color: @a-color;
+		padding: 2%;
+		margin: 0%;
+		font-family: @content-font;
+		font-size: 1.6rem;
+		
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 5%;
+			h2{
+				text-decoration: underline;
+				padding: 2%;
+			}
+			p{
+				padding: 2%;
+			}
+		}
+	}
+	
+}
+
+@header-font: 'Coiny'; 
+@content-font: 'Roboto Condensed';
+@main-family: sans-serif;
+@main-header: 6rem; 
+@links-n-such: 2rem;
+@secondary-h: 2.2rem;
+@secondary-p: 1.4rem;
+
+
+@a-color: white;
+@p-color: white; 
+@content-color: rgb(74, 122, 138);
+@body-color: lightcoral;
 
