@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,237 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
+		font-family: @cg;
 }
 
+
+//Variables
+@cg: 'Cormorant Garamond', serif;
+@cinzel: 'Cinzel', serif;
+//Colors from http://chir.ag/projects/name-that-color/#C35518
+@orangeRoughly: #C35518;
+
+//Font size
+@h2size: 2.5rem;
+@psize: 2rem;
+
+//Mixins
+.flex(){
+	margin: 1.6rem auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+}
+
+.content-flex(){
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column nowrap;
+	padding: 0 3rem;
+}
+
+.heading2() {
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.container{
+	max-width: 880px;
+	margin: 0 auto;
+	border: 1px solid red;
+	font-size: 1.6rem;
+	line-height: 2rem;
+
+	@media (max-width: 600px){
+		width: 100%;
+		margin: 0 auto;
+	}
+
+		nav{
+			display: flex;
+			justify-content: center;
+			background-color: @orangeRoughly;
+			@media (max-width: 600px){
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-evenly;
+			}
+	  }
+
+		a{
+			margin: 0 4rem;
+			text-decoration: none;
+			color: white;
+			@media (max-width: 600px){
+				margin: 0;
+				padding: 4rem 7rem;
+				font-size: 2.6rem;
+				text-align: center;
+				border: 1px solid white;
+			 background-color: @orangeRoughly;
+			}
+		}
+
+	.name {
+		display: flex;
+		align-items: center;
+		flex-flow: column nowrap;
+		margin-top: 4rem;
+		font-family: @cinzel;
+		@media (max-width: 600px){
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid red;
+			width: 100%;
+
+		}
+
+		h1{
+			font-size: 6rem;
+			margin: 1.6rem auto;
+			color: @orangeRoughly;
+			@media (max-width: 600px){
+				text-align: center;
+				font-size: 3rem;
+			}
+		}
+
+		p{
+			font-size: 2rem;
+			font-weight: bold;
+			margin-top: 2rem;
+		}
+	}
+	.main-content{
+		.flex();
+		margin-top: 5rem;
+		background-color: @orangeRoughly;
+		border-radius: 20%;
+		@media (max-width: 600px){
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			padding-top: 1.5rem;
+		}
+
+		img{
+			border-radius:30%;
+			height: 30rem;
+			margin: 0 0.8rem;
+			padding-left: 2.5rem;
+			@media (max-width: 600px){
+				padding-right: 2.5rem;
+			}
+		}
+
+		.introduction{
+			.content-flex();
+			color: white;
+			@media (max-width: 600px){
+				border: 1px solid blue;
+				padding: 5rem 4rem;
+				width: 100%;
+
+			}
+
+			h2{
+				font-size: 1.8rem;
+				font-weight: bold;
+				margin-bottom: 2rem;
+				@media (max-width: 600px){
+					font-size: @h2size;
+				}
+			}
+
+			p{
+				text-align: left;
+				@media (max-width: 600px){
+					font-size: @psize;
+				}
+			}
+		}
+	}
+	.bottom-content{
+		.flex();
+		margin: 1.6rem;
+		margin-top: 4rem;
+		padding-left: 3rem;
+		@media (max-width: 600px){
+			display: flex;
+			margin: 0;
+			padding: 5rem 4rem;
+			flex-flow: column nowrap;
+			align-items: center;
+			width: 100%;
+		}
+
+		.work-history{
+			.content-flex();
+			@media (max-width: 600px){
+				width: 100%;
+			}
+
+			h2{
+				.heading2();
+				font-size: @h2size;
+			}
+			ul{
+				list-style: circle;
+				font-size: @psize;
+				li{
+					font-weight: bold;
+					margin-bottom: 0.5rem;
+					margin-top: 0.4rem;
+				}
+			}
+		}
+		.skills{
+			.content-flex();
+			@media (max-width: 600px){
+				width: 100%;
+				padding: 5rem 1rem;
+			}
+
+			h2{
+				.heading2();
+				font-size: @h2size;
+			}
+
+			ul{
+				list-style: circle;
+				font-size: @psize;
+				li{
+					margin-bottom: 1rem;
+					@media (max-width: 600px){
+						margin-bottom: 1.7rem;
+					}
+				}
+			}
+		}
+	}
+
+	footer{
+		display: flex;
+		justify-content: flex-end;
+		background-color: @orangeRoughly;
+		@media (max-width: 600px){
+			justify-content: center;
+		}
+		address{
+			font-size: 1.3rem;
+			color: white;
+			@media (max-width: 600px){
+				font-size: @psize;
+				text-align: center;
+			}
+
+		}
+	}
+}
