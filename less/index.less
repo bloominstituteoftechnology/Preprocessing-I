@@ -54,6 +54,136 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+p {
+	font-size: 1.6rem;
+}
+
+
+// my code starts here: 
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+// variables
+@background-color: rgb(236, 236, 236);
+
+
+// mixins 
+.flex-item(@justify: center; @align: center) {
+	display: flex;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+.style-mixin() {
+	font-size: 1.6rem;
+	background-color: @background-color;
+}
+
+header {
+	padding: 20px 5%;
+	border-bottom: 1px solid black;
+	.style-mixin;
+	.flex-item(@justify: center; @align: flex-start);
+	@media (max-width: 500px) {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+	}
+	
+	nav {
+		width: 60%;
+		.flex-item(@justify: center; @align: center);
+		@media (max-width: 500px) {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		a {
+			text-decoration: none;
+			font-size: 2rem;
+			margin-left: 7%;
+			color: black;
+			@media (max-width: 500px) {
+				width: 100%;
+				border: 1px solid black;
+				text-align: center;
+				padding: 10px 0;
+			}
+			}
+		}
+	}
+
+
+
+.top-content {
+	padding: 20px 5% 30px 5%;
+	background-color: @background-color;
+	
+	h1 {
+		font-size: 2.6rem;
+	}
+	p {
+		padding-top: 10px;
+	}
+}
+
+.middle-content {
+	.flex-item(@justify: space-between; @align: center);
+	margin: 20px 0;
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
+	.intro {
+		width: 48%;
+		@media (max-width: 500px) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		h2 {
+			margin-bottom: 10px;
+			font-size: 1.6rem;
+		}
+	}
+
+	.skills {
+		width: 48%;
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+		ul {
+			font-size: 1.9rem;
+			li {
+				font-size: 1.6rem;
+				border: 1px solid black;
+				padding: 10px;
+			}
+		}
+	}
+}
+
+.work-history {
+	.style-mixin;
+	padding: 10px 5%;
+	border-bottom: 1px solid black;
+	ul {
+		list-style-type: square;
+	}
+}
+
+.contact {
+	.style-mixin;
+	padding: 10px 5%;
+}
