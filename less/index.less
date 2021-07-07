@@ -49,11 +49,139 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// Variables //
+@content-color : #F5F5DC;
+@base-font-size: 1.6rem;
+@headers-font-size: 2.2rem;
+@main-font: Trebuchet MS;
+@content-header-font: Georgia, 'Times New Roman', Times, serif;
+// Global Styling //
 * {
     box-sizing: border-box;
 }
-
-html, body {
-    height: 100%;
+html {	
+	font-size: 62.5%;
+	font-family: @main-font;
+} 
+body {
+	height: 100%;
+	background-color: #F1E9D2;
 }
-
+h1 {
+	font-family: @content-header-font;
+	font-size: @headers-font-size;
+	font-weight: 600;
+}
+h2 {
+	font-family: @content-header-font;
+	font-size: @headers-font-size;
+}
+p {
+	font-size: @base-font-size;
+	line-height: 1.5;
+}
+img {
+	height: auto;
+	max-width: 30%;
+}
+// Mixins //
+.content-box(@givenwidth) {
+	text-align: center;
+	border: 3px outset #796D62;
+	width: @givenwidth;
+	padding: 3%;
+	display: flex;
+	flex-direction: column;
+	padding: 3% 3%;
+	justify-content: space-around;
+	background-color: @content-color;
+	@media (max-width: 500px) {
+		width: 100%
+	}
+}
+.nav-styling() {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	margin: 20px 0;
+}
+// Header Styles //
+.Container {
+	max-width: 1000px;
+	margin: 0 auto;
+	header {
+		nav {
+			.nav-styling;
+		}
+			a {
+				font-size: @base-font-size;
+				text-decoration: none;
+				color: brown;} 				
+}
+// Main Content Styles //
+	.Intro {
+		margin: 0 auto;
+		.content-box(75%);
+	}	
+	.TrioContainer {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		margin-top: 50px;
+		height: 60rem;
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+		.Skills {
+			.content-box(30%);
+			}
+		.WorkHistory {
+			.content-box(30%);
+			}
+			ul {
+				line-height: 1.5;
+				list-style-type: square;
+				list-style-position: inside;
+			}
+			li {
+				font-family: @content-header-font;
+				font-size: @base-font-size;
+				text-align: left;
+				line-height: 2;
+				@media (max-width: 500px) {
+					text-align: center;
+				}
+			}
+			.CityName {
+				font-style: italic;
+				font-weight: 400;
+				text-align: center;
+			}
+		.Contact {
+			.content-box(30%);
+			}
+		}
+	.ImgContainer {
+		margin: 10px 0;
+		border-top: 2px inset silver;
+		border-bottom: 2px solid silver;
+		padding: 15px 0;
+		display: flex;
+		justify-content: space-around;
+	}
+	// Footer Styles//
+	footer {
+		nav {
+			.nav-styling;
+		}
+			a {
+				font-size: @base-font-size;
+				text-decoration: none;
+				color: brown;
+			} 
+		.CopyrightContainer {
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+}
