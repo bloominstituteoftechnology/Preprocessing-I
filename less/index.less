@@ -5,7 +5,8 @@
 */
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+
+	h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -53,7 +54,181 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html{
+font-size: 62.5%;
+} 
+
+h1{
+	font-family: 'Poppins', sans-serif;
+	font-size:10rem;
+}
+	h2{
+		font-family: 'Poppins', sans-serif;
+	font-size:4rem;
+	} 
+body {
+	height: 100%;
+	min-height: 100%;
 }
 
+//variables
+//colors
+@mypink: #ffe5f9;
+@taupe:#918A84;
+@lighttaupe:#877f78;
+//fonts
+@headerfont: 'Rock Salt', cursive;
+@handwriting: 'Reenie Beanie', cursive;
+
+
+
+//mixins
+.underline(){
+	border-bottom: solid black 1px;
+}
+.center(){
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	justify-self: center;
+	align-items: center;
+}
+.paragraph(){
+	font-size: 2.5rem;
+	line-height: 1.5;
+	font-family: @handwriting;
+}
+.link(){
+	text-decoration: none;
+			color:lightpink;
+}
+
+
+.container{
+	margin: 0 auto;
+background:@mypink;
+width:100%;
+max-width: 1089px;
+}
+
+
+header{
+	display:flex;
+	height:100vh;
+	}
+
+
+
+	.right{
+		flex:1;
+		order:2;
+		background: url('../images/Sabrina.jpg');
+		background-color: #ffe5f9;
+		background-position: center; 
+		background-repeat: no-repeat; 
+		background-size: cover; 
+	}
+	.left{
+		display:flex;
+		flex:1;
+		order:1;
+		
+		flex-direction: column;
+		text-align: center;
+		.center;
+		img{
+			width:80%;
+			padding:4rem;
+		}
+		
+	}
+
+
+
+	.bottom{
+		
+		
+		justify-content: space-between;
+		width:100%;
+		display: flex;
+		padding: 5rem 0;
+		align-content: space-between;
+		background-color: @taupe;
+		color:white;
+		
+
+		div{
+			flex:1;
+			padding:4rem 8rem;
+			text-align: center;
+			margin-bottom: 4rem;
+			.paragraph();
+			
+			img{
+				width: 4.5rem;
+				padding-bottom: 4rem;
+			}
+			a{
+			.link();
+			}
+			h3{
+				font-family: 'Poppins', sans-serif;
+				font-size:3rem;
+				font-family: @headerfont;
+				padding-bottom: 2rem;
+			}
+		}
+	
+	}
+
+
+	
+
+		
+	
+
+	footer{
+		display:flex;
+		.center();
+		background-color: @taupe;
+		padding:2rem;
+		border-top: dashed @lighttaupe 1px;
+		border-width: .8rem;
+		a{
+			font-family: @handwriting;
+			font-size: 3.5rem;
+			.link();
+			padding:2rem;
+		}
+		
+	}
+
+
+
+
+
+	@media(max-width:500px){
+		.container{
+			max-width:450px;	
+		}
+		header{
+		flex-flow: column wrap;
+		height:50vh;
+		div{
+			width: 100%;
+		}
+		img{
+			width:100%;
+		}
+		.right{
+			display: none;
+		}
+		}
+		.bottom{
+			flex-direction: column;
+		}
+	
+		
+}
