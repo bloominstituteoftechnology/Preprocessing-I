@@ -54,6 +54,209 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size:  62.5%;
+	overflow: auto;//makes it so the html and body actualy span the page
+}
+p{
+	line-height: 2rem;
+}
+@main-color: rgb(228, 224, 224);
+@secondary-color:rgb(165, 165, 165);
+@button-color:green;
+@link-color: black;
+@h2-size:3.5rem;
+@h3-size:2.5rem;
+@h-bottom-margin:1rem;
+@page-max-width:800px;
+@phone-size:500px;
+@phone-font-size:2.6rem;
+.button(){
+	font-weight: bold;
+	text-decoration: none;
+	background-color:@button-color;
+	color:white;
+	max-width:15rem;
+	text-align: center;
+	padding:1rem;
+	border-radius:4Ipx;
+} 
+.thin-border(){
+	border:1px solid @main-color;
+}
+.cell-padding(){
+	padding:1.6rem 0rem;
 }
 
+// all of my code
+.container {
+	max-width:@page-max-width;
+	width: 100%;
+
+	font-size: 1.6rem;
+	margin:25px auto;
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width:@phone-size) {
+		margin: 0rem .5rem;
+	}
+	// position: relative; //I think I need this for setting my footer at the bottom
+	
+	 .nav{
+		  display: flex;
+		  justify-content: flex-end;
+		  margin-bottom:2rem;
+		  a{
+			  text-decoration:none;
+			  margin-left:2rem;
+			  color:@link-color;
+
+			  @media (max-width:@phone-size) {
+				  margin:0rem;
+				  padding:1rem 0rem;
+				  font-size: 3rem;
+				  width: 100%;
+				  text-align: center;
+			  }
+		  }
+		  @media (max-width:@phone-size) {
+			  flex-direction: column;
+			  justify-content: center;
+			  align-items: center;
+		  }
+	 }
+
+	 .header{
+		 background-color: @main-color;
+		 padding:5rem 2rem;
+		 display: flex;
+		 flex-direction: column;
+		 margin-bottom: 2rem;
+		 @media (max-width:@phone-size) {
+			text-align: center;	 
+			font-size: @phone-font-size;
+		}
+
+
+
+		 h1{
+			 font-size: 5.6rem;
+			 margin: 1rem 0rem;
+		 }
+
+		 .header__img{
+			  max-width:250px;
+			  width: 100%;
+			  @media (max-width:@phone-size) {
+				max-width: 500px;
+			}
+		 }
+
+		 hr{
+			 width:100%;
+			 margin:2rem 0rem;
+			 @media (max-width:@phone-size) {
+				border-top-width: .6em;
+			}
+		 }
+	 }
+}
+
+.resume{
+	display: flex;
+	@media (max-width:@phone-size) {
+		flex-direction: column;
+	}
+	.about-me{
+	   max-width: 50%;
+	   width:100%;
+	   padding-right: 1rem;
+	   @media (max-width:@phone-size) {
+			max-width: 100%;
+			font-size: @phone-font-size;	 
+		}
+	   h2{
+		   font-size: @h2-size;
+		   margin-bottom: @h-bottom-margin;
+	   }
+	}
+	.skills{
+	   max-width: 50%;
+	   width:100%;
+
+	   @media (max-width:@phone-size) {
+			font-size: @phone-font-size;
+			max-width: 100%;	 
+		}
+
+	   h3{
+		   font-size: @h3-size;
+		   margin-bottom: @h-bottom-margin;
+
+		   @media (max-width:@phone-size) {
+			margin-top: 1rem; 
+			}
+	   }
+	   li{
+		@media (max-width:@phone-size) {
+			text-align: center;	 
+		}
+		   padding:1rem;
+		   .thin-border();
+		   &:not(:nth-of-type(1)):not(:nth-last-of-type(1)) {
+			   border-top:none;
+		   }
+		   &:nth-last-of-type(1){
+			   border-top:none;
+		   }
+	   }
+	}
+}
+
+.work-history{
+	margin:2em 0em;
+	display: flex;
+	flex-direction: column;
+	h3{
+		font-size: @h3-size;
+		margin-bottom: @h-bottom-margin;
+	}
+
+	.history-table{
+		border-top: 1px solid @main-color;
+		th{
+			.cell-padding();
+		}
+		tr{
+			.cell-padding();
+			&:nth-of-type(even){
+				background-color: @main-color;
+				border-top:1px solid @secondary-color;
+				border-bottom:1px solid @secondary-color;
+			}
+		}
+	}
+}
+
+
+.footer{
+	max-width: @page-max-width;
+	width: 100%;
+	height: 4rem;
+
+	text-align: center;
+	// justify-self: flex-end;
+	// position: fixed;
+	// bottom: 0;
+	// // left:0;
+	// // right:0;
+
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	background: @main-color;
+}
