@@ -4,56 +4,404 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
+
+body {
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+  background-color: @backgroundColor;
+}
+
+/* Variables */
+
+
+@so-border: 1px solid red;
+@backgroundColor: #839788;
+@linkColor: #B7B5B3;
+@linkBackground: rgb(45,45,45);
+@sectBkGndOne: rgb(69, 80, 128);
+@sectBkGndTwo: #C9D7F8;
+@shadowTintOne: rgb(102, 102, 163);
+@shadowTintTwo: #272e29;
+@margin-standard: 15px 0%;
+@h1FontSize: 3.5rem;
+@h2FontSize: 1.8rem;
+@stanTextSize: 1.2rem;
+@jobTitleSize: 1.4rem;
+
+/* Mixins */
+
+.section-gradient() {
+  background: linear-gradient(0deg, @sectBkGndOne, @sectBkGndTwo);
+  box-shadow: 7px 7px 4px @linkBackground, 3px 3px 20px @shadowTintOne, 4px 4px 25px @shadowTintTwo;
+  padding: 30px;
+}
+
+.flex-rowSpaceAround() {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-and-footer() {
+  .flex-rowSpaceAround;
+  width: 100%;
+  background-color: @linkBackground;
+  margin: @margin-standard;
+  padding: 5px 0%;
+}
+
+.flex-columnCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link-setup() {
+  color: @linkColor;
+  text-decoration: none;
+  padding: 0px 1%;
+  font-size: @stanTextSize;
+}
+
+.list-titles() {
+  font-size: @h2FontSize;
+  list-style: none;
+}
+
+/* LESS code */
+
+
+.container {
+  .flex-columnCenter;
+  width: 90%;
+  max-width: 880px;
+  margin: auto;
+  font-size: 1rem;
+
+  header {
+    .header-and-footer;
+    @media (max-width: 500px) {
+      .flex-columnCenter;
+    }
+    
+    p {
+      .link-setup;
+      font-size: @h2FontSize;
+    }
+
+  }
+  
+  nav {
+    width: 60%;
+    .flex-rowSpaceAround;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  
+  a {
+    .link-setup;
+  }
+  
+  .intro {
+    .flex-rowSpaceAround;
+    margin: @margin-standard;
+    .section-gradient;
+  
+    img {
+      width: 50%;
+      height: auto;
+      padding: 10px 2%;
+      @media (max-width: 500px) {
+       display: none; 
+      }
+    }
+  
+    .titleSection {
+      .flex-columnCenter;
+      text-align: center;
+      @media (max-width: 500) {
+        width: 90%;
+      }
+    }
+  
+    .title{
+      font-size: @h1FontSize;
+    }
+  
+    .subTitle {
+      padding: 10px;
+      border-top: 1px dotted @shadowTintTwo;
+      font-size: @h2FontSize;
+    }
+  }
+  
+  .goodHire {
+    font-size: @stanTextSize;
+    text-align: center;
+    margin: @margin-standard;
+  }
+  
+  .middleSection {
+    .flex-rowSpaceAround;
+    width: 100%;
+    margin: @margin-standard;
+    @media (max-width: 500px) {
+      .flex-columnCenter;
+    }
+  
+    .fullQuotation {
+      .flex-rowSpaceAround;
+      .section-gradient;
+      width: 55%;
+      height: 100%;
+      font-size: @stanTextSize;
+      text-align: center;
+      @media (max-width: 500px) {
+        width: 95%;
+      }
+    }
+  
+    .marks {
+      width: 20%;
+      transform: rotatex(180deg);
+      align-self: flex-start;
+    }
+  
+    .quote {
+      width: 75%;
+    }
+  
+    .skillSet {
+      .section-gradient;
+      width: 40%;
+      @media (max-width: 500px) {
+        width: 95%;
+        padding-left: 13%;
+        margin-bottom: 15px;
+      }
+    }
+  
+    .listHeading {
+      .list-titles;
+    }
+  
+    li {
+      list-style: circle inside;
+      padding: 3px 0%;
+    }
+  }
+  
+  .workHistory {
+    .section-gradient;
+    .flex-columnCenter;
+    align-items: initial;
+    width: 70%;
+    margin: @margin-standard;
+    @media (max-width: 700px) {
+      width: 80%;
+    }
+    @media (max-width: 500px) {
+      width: 95%;
+    }
+  
+    .jobDescr {
+      .flex-rowSpaceAround;
+      justify-content: space-between;
+
+      @media (max-width: 500px) {
+        .flex-columnCenter;
+        width: 90%;
+      }
+    }
+  
+    .listHeading {
+      .list-titles;
+      text-decoration-line: underline;
+      margin: 7px auto;
+    }
+  
+    .jobTitle {
+      font-size: @jobTitleSize;
+      padding-top: 5px;
+      width: 40%;
+
+      @media (max-width: 500px) {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 13px;
+      }
+    }
+  
+    .jobDetail {
+      font-size: @stanTextSize;
+      padding-bottom: 10px;
+      text-align: right;
+      width: 59%;
+
+      @media (max-width: 500px) {
+        .flex-columnCenter;
+        text-align: center;
+        padding-top: 10px;
+        width: 90%;
+        border: 1px solid @linkBackground;
+      }
+    }
+  }
+  
+
+  address {
+    .flex-rowSpaceAround;
+    width: 100%;
+    margin: @margin-standard;
+    @media (max-width:500px) {
+      .flex-columnCenter;
+      line-height: 25px;
+    }
+
+    a {
+      color: black;
+    }
+  }
+  
+  footer {
+    .header-and-footer;
+  }
+
+}
+
 
