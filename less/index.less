@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,162 @@ table {
 
 html, body {
     height: 100%;
+		}
+
+// rem size normalizer - setting html font size to 62.5%;
+html {
+	font-size: 62.5%;
+	// background for entire site set here
+	background-color: @background;
 }
 
+// Variables
+
+  // Colors
+@background: #F0F0E1;
+@box-color: #E0E9E9;
+@headers: #2D3956;
+@button-color: #A0001E;
+
+  // Font styles
+@style-main: EB Garamond;
+
+  // Font sizes
+@size-h1: 3rem;
+@size-p: 2rem;
+@size-nav: 2.5rem;
+@size-h2: 2.5rem;
+@size-button: 1rem;
+
+  // Padding and margin values
+@padding-text: 1rem 0.5rem 1rem 0.5rem;
+@padding-box: 1rem;
+@margin-text: 1rem;
+@margin-nav: 2rem 3rem 2rem 3rem;
+@margin-box: 1rem;
+
+// mixins
+.flex {
+	display: flex;
+}
+.center {
+	align-items: center;
+	align-content: center;
+}
+
+// Page styling begins
+
+.container {
+	.flex;
+	.center;
+	flex-direction: column;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	@media ( max-width: 500px ) {
+    max-width: 500px;
+		width: 100%;
+
+	}
+	header {
+  width: 100%;
+	justify-content: space-between;
+	align-self: center;
+	}
+	nav {
+		width: 75%;
+		font-size: @size-nav;
+		font-family: @style-main;
+		margin: auto;
+		.flex;
+    .center;
+		justify-content: space-between;
+
+		@media ( max-width: 500px ) {
+		 flex-flow: column nowrap;
+		 justify-content: center;
+		 align-items: center;
+		}
+		a {
+    padding: @padding-text;
+		text-decoration: none;
+    color: @headers;
+		}
+
+	} //nav container
+
+	div {
+		font-family: @style-main;
+		background-color: @box-color;
+		.flex;
+		.center;
+		width: 100%;
+		flex-direction: column;
+		align-self: center;
+		justify-content: center;
+		padding: @padding-box;
+		margin: 3rem auto;
+
+		img {
+			width: 20%;
+			align-self: center;
+		}
+
+		.button {
+			display: inline-flex;
+			border: 2px solid black;
+			background-color: @button-color;
+			width: 30%;
+			min-width: 20rem;
+			height: 5rem;
+			align-self: center;
+
+
+			@media ( max-width: 500px ) {
+			width: 100%;
+			margin: auto;
+
+			}
+
+      :hover {
+				color: white;
+				cursor: pointer;
+			}
+			p {
+      width: 100%;
+			text-align: center;
+			padding: @padding-text;
+			margin: @margin-text;
+      @media ( max-width: 500px ) {
+
+			}
+			}
+		} // button container
+
+
+	  h1 {
+			font-size: @size-h1;
+			color: @headers;
+			padding: @padding-text;
+			}
+    h2 {
+			font-size: @size-h2;
+			color: @headers;
+			padding: @padding-text;
+		}
+		p {
+			font-size: @size-p;
+			padding: @padding-text;
+			text-align: center;
+		}
+    ul {
+			font-size: @size-p;
+			padding: @padding-text;
+			list-style: disc inside;
+		}
+		li {
+			padding: @padding-text;
+		}
+
+		} //all divs inside .container
+	} //container
