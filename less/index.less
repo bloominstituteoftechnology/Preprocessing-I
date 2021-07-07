@@ -3,7 +3,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+//ksusha
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,13 +47,153 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+// Fonts
+@custom-font: "Comic Sans MS", cursive, sans-serif;
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+//Colors
+ @main-color:@black;
+ @black: black;
+ @background:lightgrey;
+ @footer-color:grey;
+
+//Mixins
+.center(){
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	}
+	.font(){
+	margin: 20px;
+	font-family: @custom-font;
+	}
+// Variables
+	@padding: 10px;
+	@main-padding:20px;
+
+//custom button
+.custom-button(@width, @height, @background, @color){
+	width: @width;
+	height: @height;
+	background: @background; 
+	color: black;
+	font-size: 1.6rem;
+	border-radius: 5px;
+	border:1px solid black;
+	.center;
+	margin:20px;
+	cursor: pointer;
+	
+	&:hover{
+	color: @color;
+	background: @footer-color;
+}
+}
+*{
+box-sizing: border-box;
+
+}
+html{
+	font-size: 62.5%;	
+}
+h1, h2, {
+font-size: 3rem;
+.font();
+
+}
+h3{
+.font();
+font-size: 2.5rem;
+}
+.container{
+
+padding: @main-padding;
+font-size: 1.6rem;
+max-width: 800px;
+margin:0 auto;
+@media (max-width:500px){
+	.middle-content{
+	display: flex;
+	flex-direction: column;
+		.part1{
+			width:100%;
+		}
+	}
+}
+	nav{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	padding: @padding;
+	
+		
+	a:link{
+		text-decoration: none;
+		color: @main-color;	
+		padding: @padding;
+			}
+		}
+	}
+
+.top-content{
+	border: 1px solid @background;
+	background-color: @background;
+	.top-img{
+	padding: @main-padding;
+	width: 80%;
+	max-width: 450px;
+	}
+	h4{
+	font-size: 2rem;
+	.font();
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgb(172, 170, 170);
+	}
+	p{
+	padding: @main-padding;
+	}
+
+	.button{
+		.custom-button(200px, 20px, pink, @background);
+		.center();
+		//padding-left: 20px; //was trying this
+		//padding-bottom: 30px;
+	}
+//can't raise the button
+}
+.middle-content{
+	display: flex;
+	justify-content: space-around;
+.part1{
+	width: 50%;
+}
+p{
+	border:1px solid @background;
+	line-height: 25px;
+}
 }
 
-html, body {
-    height: 100%;
-}
+.buttom-content{
+	table{		
+		border-collapse: collapse;
+		width: 100%;
+		}
+		td, th {
+		border: 1px solid black;
+		text-align: center;
+		padding: 8px;
+		 }
+		tr:nth-child(even) {
+		background-color: @background;
+		}
+
+	}	
+	footer{
+		border: 1px solid @footer-color;
+		background: @footer-color;
+		padding:30px;
+		display: flex;
+		justify-content: center;
+
+	}
 
