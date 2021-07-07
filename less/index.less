@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 0;
 }
 ol, ul {
 	list-style: none;
@@ -50,10 +50,136 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	line-height: 1px;
 }
+
+.container {
+	margin: 0 auto;
+	max-width: 900px;
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin: 20px 0;
+		padding: 40px 0;
+		background-color: lightgray;
+		color: @fontcolor;
+
+		@media(max-width:700px) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+			padding: 40px 0;
+			background-color: lightgray;
+			color: @fontcolor;
+
+		}
+	
+		nav {
+			display: flex;
+			justify-content: space-evenly;
+			width: 40%;
+
+			@media(max-width:700px) {
+				width: 80%;
+			}
+		}
+		
+		h1 {
+			font-size: 4rem;
+			padding: 40px;
+			@media(max-width:700px) {
+				font-size: 3rem;
+				padding: 40px;
+			}
+		}
+		
+		nav a {
+			font-size: 1.5rem; 
+			text-decoration: none;
+			color: black;
+
+			@media(max-width:700px) {
+				font-size: 1.5rem;
+			}
+		
+			&:hover {
+				color: @fontcolor;
+				font-weight: bolder;
+			}
+		}
+	}
+	
+	.intro-paragraph {
+		.section;
+	
+		h2 {
+		.title;
+		}
+		p {
+		letter-spacing: 1;
+		}
+	}
+	
+	.skills {
+		.section;
+	
+		h2 {
+			.title;
+		}
+		p {
+			letter-spacing: 1;
+		}
+	}
+	
+	.contact {
+		.section;
+	
+		h2 {
+			.title;
+		}
+		p {
+			letter-spacing: 1;
+		}
+	}
+	
+	.work-history {
+		.section;
+	
+		h2 {
+			.title;
+		}
+		p {
+			letter-spacing: 1;
+		}
+	}
+}
+
+@fontcolor: rgb(22,44,93);
+
+.title() {
+	letter-spacing: 1;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: @fontcolor;
+}
+
+.section() {
+	display: flex;
+	margin: 20px 0;
+	flex-direction: column;
+	line-height: 1;
+}
+
+
 
