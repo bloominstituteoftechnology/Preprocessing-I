@@ -57,3 +57,108 @@ html, body {
     height: 100%;
 }
 
+// Variables
+@maintextcolor: white;
+@maintextclrtran: grey;
+@backgroundcolor: black;
+
+// Mixins
+.center-all {
+	justify-content: center;
+	text-align: center;
+}
+
+* {	
+	max-width: 900px;
+	width: 100%;
+}
+
+.navigation {	
+	width: 100%;
+	display: flex;
+	background:@backgroundcolor;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	padding: 10px 0;	
+
+	.nav-logo{
+		display: flex;
+		margin: 0 10px;
+		font-size: 2rem;
+		color: @maintextcolor;
+		
+	}
+
+	nav {
+	display: flex;
+	}
+
+	a {
+		text-decoration: none;
+		color: @maintextcolor;
+		margin: auto 10px;
+		font-size: 2rem;
+
+		&:hover {
+			color: @maintextclrtran;
+			transition: 1s;
+		}
+	}
+}
+
+.container {
+	// border: 1px solid red;	
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;	
+	margin-left: 22px;
+	
+	
+		header img {						
+			width: 95%;
+			margin: 1rem auto;
+			border-radius: 25px;				
+		}
+	
+}
+
+.exp {	
+	display: flex;
+	align-items: center;
+	.center-all;
+	margin-top: 1rem;
+	margin-left: 22px;
+	
+	img{
+		
+		border-radius: 25px;
+	}
+	h1{
+		font-size: 2rem;
+	}
+}
+	
+footer {
+    width: 100%;
+	background: black;
+	margin-top: 1rem;
+	nav { 
+		width: 60%;
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    	padding: 20px 2%;
+		font-size: 1.5rem;		
+	}
+	a {
+		color: white;
+		text-decoration: none;
+		
+		&:hover {
+			color: grey;
+			transition: 1s;
+	}	
+}
+}
+
