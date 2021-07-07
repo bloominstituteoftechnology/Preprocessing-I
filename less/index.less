@@ -4,56 +4,262 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+//VARIABLES
+@eiffelColor: #e1ffe1;
+@abdicateColor: #abd1c8;
+@mainColor: @abdicateColor;
+@boxColor: @eiffelColor;
+@defaultFontSize: 1.6rem;
+
+@defaultFontStack: Calisto MT, Georgia, serif;
+
+//MIXINs
+.center() {
+  display: flex;
+  align-items: center;
+}
+
+.centerSW() {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 2%;
+}
+
+//STARTS HERE
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+	font-size: @defaultFontSize;
+	font-family: @defaultFontStack;
+
+  h1 {
+    font-size: 5.5rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1%;
+  }
+}
+
+header {
+  display: flex;
+  padding: 20px 0;
+	background: @boxColor;
+	
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: 500px) {
+      .center;
+      flex-direction: column;
+    }
+    a {
+      font-size: 1.5rem;
+      padding: 1%;
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  background: @mainColor;
+  padding: 5%;
+  @media (max-width: 500px) {
+    .center;
+    flex-direction: column;
+  }
+  .photo {
+    .center;
+		margin-right: 2%;
+		
+		@media (max-width: 500px) {
+			padding: 0;
+		}
+	.information .info_header{
+		}
+
+  }
+}
+
+.skillswork {
+  display: flex;
+  justify-content: space-evenly;
+  background: @boxColor;
+  padding: 2.5%;
+  @media (max-width: 500px) {
+    .center;
+    flex-direction: column;
+    padding: 5% 0;
+  }
+  .skills {
+    .centerSW();
+    h3 {
+      border-bottom: 1px solid black;
+    }
+  }
+  .workhistory {
+    .centerSW;
+    h3 {
+      border-bottom: 1px solid black;
+    }
+  }
+  li {
+    font-size: 2.4rem;
+  }
+}
+
+address {
+  .center;
+  flex-direction: column;
+  padding: 5% 0;
+  background: @mainColor;
+}
