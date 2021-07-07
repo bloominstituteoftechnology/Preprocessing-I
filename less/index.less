@@ -52,8 +52,188 @@ table {
 * {
     box-sizing: border-box;
 }
-
+html{
+	font-size: 62.5%;
+	
+}
 html, body {
-    height: 100%;
+	height: 100%;
+}
+@mainFontSize: 1.6rem;
+@textColor: #424242;
+@hCTextColor: white;
+@fontStack: Helvetica, Ariel, sans-serif;
+
+.greyMainFont(){
+	font-size: @mainFontSize;
+	color: @hCTextColor;
+	font-family: @fontStack;
+}
+.mainFont(){
+	font-size: @mainFontSize;
+	color: @textColor;
+	font-family: @fontStack;
+}
+.subjBoxes() {
+	font-size: 2.8rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	margin-top: 20px;
+	
 }
 
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding-bottom: 20px;
+}
+.container .navBar{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 20px;
+	background-color:#fafafa; 
+	width: 100%;
+
+	a {
+		text-decoration: none;
+		font-size:1.6rem;
+		color: @textColor;
+		font-family: @fontStack;
+		padding-left:5%;
+		padding-right:5%;
+	}
+}
+.resumeContainer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	
+}
+.resumeContent {
+	width: 70%;
+	padding-top: 8%;
+	padding-left: 10%;
+	margin-right: 8%;
+	display:flex;
+	flex-direction:column;
+	padding-bottom: 20px;
+}
+
+.greySideBar {
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+	
+	background-color: #424242;
+	color: @hCTextColor;
+	width: 30%;
+	
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.mobileTitle {
+		display: none;
+	}
+	img {
+		height: auto;
+		width: 80%;
+		border-radius: 50%;
+		margin: 10px;
+	}
+	h3 {
+		.subjBoxes();
+	}
+		p {
+			.greyMainFont();
+			line-height: 1.5;
+			padding: 15px;
+			text-align: center;
+		}
+
+	}
+
+.contactItems{
+	.greyMainFont();
+	font-size: 2rem;
+	text-decoration: underline;
+	padding-top:20px;
+	
+}
+.info1 {
+	background-color: #cf6e6e;
+	
+}
+
+.info2{
+	background-color: #6ecdcf;
+}
+
+.info3 {
+	background-color: #9ed16f;
+}
+
+.nameContainer {
+	.mainFont();
+	h2 {
+		font-size: 3.2rem;
+		font-weight: bold; 
+	}
+	h1 {
+		font-size: 4.2rem;
+		font-weight: bolder;
+		line-height: 1.25;
+	}
+}
+.mainContent {
+	.mainFont();
+	line-height: 1.25;
+	padding-top: 50px;
+	h3 {
+		font-size: 2.8rem;
+		padding-top: 30px;
+		padding-bottom: 10px;
+		font-weight: bold;
+	}
+		h4 {
+			font-size: 2rem;
+			padding-top: 10px;
+			text-decoration: underline;
+		}
+		li {
+			list-style-type: circle;
+			list-style-position: inside;
+			line-height: 1.5;
+			font-size: 2rem;
+		}
+}
+
+@media (max-width: 500px){
+
+	.resumeContainer{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.greySideBar {
+		width: 100%;
+	}
+	.mobileTitle{
+		.greyMainFont();
+		display: flex;
+		justify-content: center;
+		padding: 20px;
+
+
+
+	}
+}
