@@ -57,3 +57,183 @@ html, body {
     height: 100%;
 }
 
+// Variable
+@fontSize: 1.6rem;
+@fontStack: Helvetica, Arial, sans-serif;
+
+@mobileValue: 500px;
+@mainColor: @Chambray	;
+@accentColor: orange;
+@Chambray : #3A5C98;
+
+// Maxin
+.layout(@justi, @align) {
+	display: flex;
+	justify-content: @justi;
+	align-items: @align;
+  }
+
+.border(@size, @color) {
+	border : @size solid @color;
+}
+
+html {
+	font-size: 62.5%;
+	color : @mainColor;
+
+	font-family: @fontStack;
+  }
+
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size : @fontSize;
+  }
+
+  h1 {
+	font-size : @fontSize *2;
+	text-align: center;
+	margin : 10px 0;
+}
+
+  h2 {
+	  font-size : @fontSize *1.7;
+  }
+header{
+	width : 30%;
+	margin-left : 65%;
+ 
+	
+	 nav {
+	.layout(space-around, center);
+	}
+
+}
+
+.intro{
+	margin : 10px 0 20px 0;
+	.layout(space-around, center);
+
+	@media( max-width: @mobileValue ) {
+		flex-direction:  column;
+	  }
+
+
+	.bio{
+		margin-top : 30px;
+		width : 45%;
+		.layout(space-around, center);
+		flex-direction: column;
+		
+		img {
+			width : 50%;
+			height : auto;
+		}
+
+		h1{
+			margin : 5px 0;
+		}
+	}
+
+	.skill{
+
+		.layout(center, center);
+		flex-direction : column; 
+		align-items: center;
+		width : 45%;
+		@media( max-width: @mobileValue ) {
+			margin-top : 10px;
+		}
+		h2 {
+			margin-bottom : 10px;
+		}
+		p{
+			margin : 5px 0 5px 10%;
+			.border(2px, blue);
+			width : 40%;
+			text-align : center;
+			height : 40px;
+			padding-top : 10px;
+			background : lightblue;
+			color : red;
+			@media( max-width: @mobileValue ) {
+				width : 60%;
+			}
+		}
+	}
+}
+
+.bottom{
+	.layout(space-between, center);
+
+	@media( max-width: @mobileValue ) {
+		flex-direction : column;
+	}
+
+	h2{
+		margin-bottom : 10px;
+	}
+	.work{
+
+		width : 45%;
+		.layout(space-between, center);
+		flex-direction:column;
+		@media( max-width: @mobileValue ) {
+			margin-top : 10px;
+		}
+	
+		li{
+			list-style-type: square;
+			margin : 5px 0;
+		}
+	}
+
+	
+
+	.contact{
+		.layout(center, center);
+		flex-direction : column; 
+		align-items: center;
+
+		width : 45%;
+
+		@media( max-width: @mobileValue ) {
+			margin-top : 10px;
+		}
+		p {margin : 5px 5px 5px 0;}
+	}
+}
+
+// PORTFOLIO Section
+
+.portfolios{
+	width : 100%;
+	.layout(flex-start, space-around);
+	flex-wrap : wrap;
+	margin-top : 15px;
+
+	@media( max-width: @mobileValue ) {
+		flex-direction : column;
+		align-items: center;
+	}
+
+	.item{
+		.border(1px;red);
+		width : 31%;
+		height : 300px;
+		margin : 10px 1%;
+		.layout(center, center);
+		flex-direction : column;
+		text-align:center;
+	
+		@media( max-width: @mobileValue ) {
+			width : 50%;
+		}
+		h3, p{
+			margin : 10px 0;
+		}
+
+		
+	}
+}
