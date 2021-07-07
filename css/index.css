@@ -1,1 +1,376 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+}
+p {
+  font-family: 'Indie Flower', cursive;
+  letter-spacing: 0.2rem;
+}
+a {
+  font-family: 'Shadows Into Light', cursive;
+}
+.container {
+  max-width: 880px;
+  min-height: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+    padding: 0;
+  }
+}
+#nav {
+  margin: 25px;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  #nav {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+  }
+}
+#nav nav {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid lightslategray;
+  padding: 25px;
+  border-radius: 55px;
+  margin-bottom: 5rem;
+}
+@media (max-width: 500px) {
+  #nav nav {
+    width: 100%;
+    display: flex;
+    border: 0;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 0;
+  }
+}
+#nav nav a {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  color: rgba(95, 95, 95, 0.8);
+}
+#nav nav a:hover {
+  color: #000000;
+}
+@media (max-width: 500px) {
+  #nav nav a {
+    font-size: 2rem;
+    padding: 10px 0;
+    border-bottom: 1px solid lightslategray;
+    width: 100%;
+    text-align: center;
+  }
+}
+#hero {
+  display: flex;
+}
+#hero .imgBorder {
+  border: 10px solid purple;
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+}
+@media (max-width: 500px) {
+  #hero .imgBorder {
+    display: none;
+  }
+}
+#hero .imgBorder img {
+  border-radius: 50%;
+  border: 4px solid yellow;
+}
+#hero .hero-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  #hero .hero-title {
+    padding-top: 0px;
+  }
+}
+#hero .hero-title h1 {
+  font-family: 'Shadows Into Light', cursive;
+  letter-spacing: 0.7rem;
+  font-size: 7rem;
+}
+#hero .hero-title h2 {
+  font-size: 2.5rem;
+  margin: 20px;
+}
+#hero .hero-title h3 {
+  text-decoration: line-through;
+  font-size: 1.8rem;
+}
+#hero .hero-title p {
+  font-size: 1.8rem;
+  margin: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid lightslategray;
+}
+#hero .hero-title .buttons {
+  padding: 24px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+#hero .hero-title .buttons button {
+  padding: 10px 15px;
+  background: #8144ba;
+  color: #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: solid 1px #24043a;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+#hero .hero-title .buttons button:hover {
+  background: #563594;
+  border: solid 1px #582a77;
+}
+#thingsAboutMe {
+  border-bottom: 1px solid lightslategray;
+  padding-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  #thingsAboutMe {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+#thingsAboutMe .aboutme {
+  width: 70%;
+  margin-right: 2%;
+  padding: 25px;
+}
+@media (max-width: 500px) {
+  #thingsAboutMe .aboutme {
+    display: block;
+    width: 100%;
+  }
+}
+#thingsAboutMe h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+@media (max-width: 500px) {
+  #thingsAboutMe h4 {
+    text-align: center;
+  }
+}
+#thingsAboutMe p {
+  line-height: 2.5rem;
+}
+#thingsAboutMe .aside {
+  width: 30%;
+  padding: 25px;
+}
+@media (max-width: 500px) {
+  #thingsAboutMe .aside {
+    width: 100%;
+  }
+}
+#thingsAboutMe .aside p {
+  line-height: 4.2rem;
+  border-bottom: 1px solid lightslategray;
+}
+#work-history {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 94%;
+}
+#work-history h2 {
+  font-size: 3rem;
+}
+#work-history h4 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#work-history .myWork .titles {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+#work-history .myWork .info {
+  display: flex;
+  justify-content: space-between;
+  line-height: 4rem;
+  margin-bottom: 90px;
+}
+#work-history .myWork .info .Yrs {
+  margin-right: 4%;
+}
+#copywrite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-top: -50px;
+  font-size: 1.6rem;
+  background: black;
+  color: rgba(95, 95, 95, 0.8);
+}
