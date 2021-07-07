@@ -52,8 +52,245 @@ table {
 * {
     box-sizing: border-box;
 }
-
-html, body {
-    height: 100%;
+//variables
+//font-family: 'K2D', sans-serif;
+//font-family: 'Roboto', sans-serif;
+@custom-font: K2D, Roboto, sans-serif;
+@light-shade: #F1F4F1;
+@light-accent: #7D7C74;
+@main-color: #8BB4C2;
+@dark-accent: #767679; 
+@dark-shade: #3E5165;
+//Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+.border-mix() {
+	border: .2rem double @main-color;
+	border-radius: 5%;
+}
+//main css below
 
+html {
+	font-size: 62.5%;
+}
+html, body {
+	height: 100%;
+	}
+h1, h2, h3, h4, h5 {
+	font-family: 'K2D', Arial, sans-serif;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	font-size: 1.6rem;
+}
+p {
+    font-size: 1.6rem;
+}
+.container {
+	max-width: 1000px;
+	width: 100%;
+	margin: auto;
+	background: @dark-shade;
+	@media(max-width: 500px) {
+		
+	}
+	header {
+		width: 100%;
+		display: flex;
+		font-size: 1.6rem;
+		background:#111111;
+			nav {
+				width: 100%;
+				margin: 3% 10%;
+				justify-content: flex-end;
+				display: flex;
+				@media(max-width: 500px) {
+					.center
+					}
+				a {
+					display: flex;
+					justify-content: space-between;
+					margin-left: 7%;
+					font-family: @custom-font;
+					text-decoration: none;
+					color: @light-shade;
+				}
+				a:hover {
+					text-decoration: underline;
+					color: @main-color;
+				}
+
+			}
+		}		
+	}
+.cta {
+	// max-width 1000px;
+	width: 90%;
+	margin:5% 5% 5% 5%;
+	border-radius: 1%;
+	background: #8BB4C2;	
+	.cta-top {
+		img {
+			margin: 5.5% 0 1% 5.5%;
+			border-radius: 1%;
+		}
+		h1 {
+			font-size: 4rem;
+			color: #F1F4F1;
+			.center
+			}
+		p {
+		font-family: 'Roboto';	
+		margin-left: 5.5%;	
+		font-size: 2rem;
+		color: #F1F4F1;
+		#gitHub {
+			color: red;
+		}
+				}
+		p:after {
+			content: "";
+			display: block;
+			margin: 0 auto;
+			width: 90%;
+			padding-top: 20px;
+			border-bottom: 2px solid #767679;
+			}
+	}
+	.cta-bottom {
+		margin: 3% 0 5% 0;
+		padding-bottom: 5%;
+		margin-left: 5.5%;
+		@media(max-width: 500px) {
+			margin-right: 5%
+	}
+		p {
+			font-size: 2rem;
+			font-family: 'Roboto';
+		}
+		.btn {
+			.center;
+			border: .2rem double @dark-shade;
+			border-radius: 5%;
+			font-size: 1.6rem;
+			font-family: 'K2D';
+			color: #F1F4F1;
+			background: @light-accent;
+			line-height: 2rem;
+			width: 15%;
+			height: 5%;
+			margin-top: 1%;
+			cursor: pointer;
+			@media(max-width: 500px) {
+			font-size: 3rem;
+			line-height: 2rem;
+			width: 100%;
+			height: 5%;
+			margin-top: 1%;
+			padding: 5%;
+			cursor: pointer;
+	}
+		}
+	}
+}	
+.main {
+	display: flex;
+	.text {
+		background: @dark-accent;
+		color: @light-shade;
+		width: 40%;
+		margin-left: 5.5%;
+		border: .2rem double @main-color;
+		border-radius: 5%;
+		 
+		h2 {
+			padding: 2% 0 2% 2%;
+			font-size: 2rem;
+		}
+		p {
+			.center;
+			padding: 2%;
+			font-size: 1.6rem;
+			font-family: 'Roboto';
+		}
+	}
+	.good-at {
+		background: @dark-accent;
+		color: @light-shade;
+		width: 40%;
+		margin-left: 10%;
+		border: .2rem double @main-color;
+		border-radius: 5%;
+		display: flex;
+		flex-direction: column;
+		h2 {
+			padding: 2% 0 2% 2%;
+			font-size: 2rem;
+		}
+		a {
+			display: flex;
+					.center;
+					font-size: 1.6rem;
+					font-family: @custom-font;
+					text-decoration: none;
+					color: @light-shade;
+					border-top: .2rem double @dark-shade;
+					padding: 7.5% 0 7.5% 0;
+		}
+	}
+}
+.work-history {
+	background: @light-accent;
+	font-size: 1.6rem;
+	margin: 5% 5% 5% 5.5%;
+	border: .2rem double @main-color;
+	border-radius: 1%;
+	@media(max-width: 500px) {
+				border: 1px solid @light-accent;
+				}
+	
+	h2 {
+		padding: 5%;
+		font-size: 3rem;
+	}
+	table {
+		@media(max-width: 500px) {
+		margin-right: 10%;
+	}
+		margin: 0 0 5% 15%;
+		font-family: 'Roboto';
+		border: 1rem double @light-shade;
+			.table-head {
+				background: @dark-shade
+			}
+			.job1 {
+				background: @main-color;
+			}
+			.job2 {
+				background: @dark-shade;
+			}
+			.job3 {
+				background: @main-color;
+			}
+			tr {
+				
+			}
+			th {
+			padding: 5% 10% 5% 5%;
+			@media(max-width: 500px) {
+				padding: 0 0 0 1%;
+				}
+			}
+		}
+	}
+
+footer {
+	width: 100%;
+	padding: 1% 0;
+	color: @light-shade;
+	.center;
+	background: #111111;
+
+}
