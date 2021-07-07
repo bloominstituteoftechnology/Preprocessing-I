@@ -49,11 +49,252 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; 
 }
 
 html, body {
     height: 100%;
+}
+
+/* Variables */ 
+@header-font: 'Roboto Mono', monospace;
+@table-font: Inconsolata, monospace;
+@background-color: #97CAEF;
+@footer-color: #659DBD;
+
+
+h1, h2 {
+	font-family: @header-font;
+}
+
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+	font-size: 2rem;
+	@media @tablet{
+		max-width: 80%;
+		font-size: 1rem;
+	}
+}
+
+/* Mix-ins */ 
+.flex-right(){
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.column-centered(){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mobile: ~"(max-width: 500px)";
+
+
+/* Nave style */ 
+
+nav {
+	.flex-right();
+	margin: 1% 0 0.5% 0;
+	a {
+		padding: 0 1.5%;
+		text-decoration: none;
+		color: black;
+		font-size: 2rem;
+		&:hover {
+			color: tint(dodgerblue,10%);
+		}
+		@media @tablet{
+			max-width: 80%;
+			font-size: 1.6rem;
+			padding: 1.5% 1.5%;
+		}
+	}
+}
+
+/* Top content style */ 
+
+section {
+	padding-top: 2.5%;
+}
+.top-content {
+	background: @background-color;
+&:hover {
+	background: darken(@background-color, 20%);
+		}img {
+		width:40%;
+		margin: 4rem 0 2rem 3rem;
+		@media @tablet{
+			margin: 2rem 0 2rem 3rem;
+		}
+	}
+	div {
+		.column-centered();
+		@media @tablet{
+			margin-bottom: 2%;
+		}
+		h1 {
+			font-size: 3.5rem;
+			padding-bottom: 1.5%;
+			@media @tablet{
+				font-size: 2.2rem;
+				padding: 0.5% 0 1.5% 0;
+			}
+		}
+		p {
+			font-size: 2.5rem;
+			padding-bottom: 1%;
+			@media @tablet{
+				font-size: 1.6rem;
+				text-align: center;
+				padding: 1.5% 0;
+			}
+		}
+		button {
+			background-color: @footer-color; 
+			border: none;
+			color: white;
+			padding: 1% 2%;
+			text-align: center;
+			text-decoration: none;
+			font-size: 2rem;
+			margin-bottom: 1%;
+			font-weight: bold;
+			&:hover {
+				background: darken(@footer-color, 20%);
+				}
+			@media @tablet{
+				font-size: 1.6rem;
+				margin: 1.5% 0;
+			}
+		}
+	}
+}
+/* Main content style */ 
+.main-content {
+		.experience-top {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding-bottom: 1%;
+			@media @tablet{
+				padding-bottom: 2%;
+			}
+			div {
+				width: 50%;
+				h2 {
+					font-size: 2.5rem;
+					padding: 1% 0;
+					@media @tablet{
+						font-size: 1.6rem;
+					}
+				}
+				li {
+					font-size: 1.6rem;
+					line-height: 200%;
+					list-style-type: square;
+					list-style-position: inside;
+					@media @tablet{
+						font-size: 1rem;
+						line-height: 140%;
+					}
+				}
+				p {
+					font-size: 1.6rem;
+					line-height: 300%;
+					border: 1px solid gray;
+					padding-left: 1.5%;
+					@media @tablet{
+						font-size: 1.1rem;
+						line-height: 180%;
+						border: none;
+						display: list-item;
+						list-style-position: inside;
+
+					}
+				}
+			}
+		}
+	}
+
+	.main-content .experience-top div:first-child{
+		width: 70%;
+		@media @tablet{
+			width: 100%;
+			margin-bottom: 3;
+		}
+	}
+
+	.main-content .experience-top div:last-child{
+		width: 30%;
+		@media @tablet{
+			width: 100%;
+			margin-bottom: 3;
+				}
+	}
+
+	.experience-bottom {
+		padding-bottom: 2%;
+		/* add table style and remove 100% width from html */
+		h2 {
+			font-size: 2.5rem;
+			padding-bottom: 1%;
+			@media @tablet{
+				font-size: 1.6rem;
+			}
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			td, th {
+				border: 1px solid gray;
+				text-align: left;
+				padding: 0.5%;
+				font-family: @table-font;
+				@media @tablet{
+					padding: 1% 0.5%;
+				}
+			  }
+			  tr:nth-child(even) {
+				background-color: @background-color;
+			  }
+		}
+	}
+
+/* Footer style */ 
+footer {
+	div h2 {
+		font-size: 2.5rem;
+		padding-bottom: 1%;
+		@media (max-width:500px){
+			font-size: 1.6rem;
+	}
+		}	
+	div address a, p {
+		display: inline-block;
+		padding: 0.5% 0;
+		@media (max-width:500px){
+			padding: 1% 0;
+		}
+	}
+}
+
+footer div:last-child {
+	padding: 1% 0%;
+	color: white;
+	text-align: center;
+	background: @footer-color;
+	&:hover {
+		background: lighten(@footer-color, 10%);
+		}
+	@media (max-width:500px){
+		padding: 1.5% 0;
+	}
 }
 

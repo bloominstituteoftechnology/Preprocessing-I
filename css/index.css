@@ -1,1 +1,385 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+}
+/* Variables */
+h1,
+h2 {
+  font-family: 'Roboto Mono', monospace;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 80%;
+    font-size: 1rem;
+  }
+}
+/* Mix-ins */
+/* Nave style */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1% 0 0.5% 0;
+}
+nav a {
+  padding: 0 1.5%;
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+nav a:hover {
+  color: #349bff;
+}
+@media (max-width: 500px) {
+  nav a {
+    max-width: 80%;
+    font-size: 1.6rem;
+    padding: 1.5% 1.5%;
+  }
+}
+/* Top content style */
+section {
+  padding-top: 2.5%;
+}
+.top-content {
+  background: #97CAEF;
+}
+.top-content:hover {
+  background: #3f9de1;
+}
+.top-content img {
+  width: 40%;
+  margin: 4rem 0 2rem 3rem;
+}
+@media (max-width: 500px) {
+  .top-content img {
+    margin: 2rem 0 2rem 3rem;
+  }
+}
+.top-content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .top-content div {
+    margin-bottom: 2%;
+  }
+}
+.top-content div h1 {
+  font-size: 3.5rem;
+  padding-bottom: 1.5%;
+}
+@media (max-width: 500px) {
+  .top-content div h1 {
+    font-size: 2.2rem;
+    padding: 0.5% 0 1.5% 0;
+  }
+}
+.top-content div p {
+  font-size: 2.5rem;
+  padding-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .top-content div p {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1.5% 0;
+  }
+}
+.top-content div button {
+  background-color: #659DBD;
+  border: none;
+  color: white;
+  padding: 1% 2%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+.top-content div button:hover {
+  background: #386884;
+}
+@media (max-width: 500px) {
+  .top-content div button {
+    font-size: 1.6rem;
+    margin: 1.5% 0;
+  }
+}
+/* Main content style */
+.main-content .experience-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .main-content .experience-top {
+    padding-bottom: 2%;
+  }
+}
+.main-content .experience-top div {
+  width: 50%;
+}
+.main-content .experience-top div h2 {
+  font-size: 2.5rem;
+  padding: 1% 0;
+}
+@media (max-width: 500px) {
+  .main-content .experience-top div h2 {
+    font-size: 1.6rem;
+  }
+}
+.main-content .experience-top div li {
+  font-size: 1.6rem;
+  line-height: 200%;
+  list-style-type: square;
+  list-style-position: inside;
+}
+@media (max-width: 500px) {
+  .main-content .experience-top div li {
+    font-size: 1rem;
+    line-height: 140%;
+  }
+}
+.main-content .experience-top div p {
+  font-size: 1.6rem;
+  line-height: 300%;
+  border: 1px solid gray;
+  padding-left: 1.5%;
+}
+@media (max-width: 500px) {
+  .main-content .experience-top div p {
+    font-size: 1.1rem;
+    line-height: 180%;
+    border: none;
+    display: list-item;
+    list-style-position: inside;
+  }
+}
+.main-content .experience-top div:first-child {
+  width: 70%;
+}
+@media (max-width: 500px) {
+  .main-content .experience-top div:first-child {
+    width: 100%;
+    margin-bottom: 3;
+  }
+}
+.main-content .experience-top div:last-child {
+  width: 30%;
+}
+@media (max-width: 500px) {
+  .main-content .experience-top div:last-child {
+    width: 100%;
+    margin-bottom: 3;
+  }
+}
+.experience-bottom {
+  padding-bottom: 2%;
+  /* add table style and remove 100% width from html */
+}
+.experience-bottom h2 {
+  font-size: 2.5rem;
+  padding-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .experience-bottom h2 {
+    font-size: 1.6rem;
+  }
+}
+.experience-bottom table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.experience-bottom table td,
+.experience-bottom table th {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 0.5%;
+  font-family: Inconsolata, monospace;
+}
+@media (max-width: 500px) {
+  .experience-bottom table td,
+  .experience-bottom table th {
+    padding: 1% 0.5%;
+  }
+}
+.experience-bottom table tr:nth-child(even) {
+  background-color: #97CAEF;
+}
+/* Footer style */
+footer div h2 {
+  font-size: 2.5rem;
+  padding-bottom: 1%;
+}
+@media (max-width: 500px) {
+  footer div h2 {
+    font-size: 1.6rem;
+  }
+}
+footer div address a,
+footer p {
+  display: inline-block;
+  padding: 0.5% 0;
+}
+@media (max-width: 500px) {
+  footer div address a,
+  footer p {
+    padding: 1% 0;
+  }
+}
+footer div:last-child {
+  padding: 1% 0%;
+  color: white;
+  text-align: center;
+  background: #659DBD;
+}
+footer div:last-child:hover {
+  background: #89b4cc;
+}
+@media (max-width: 500px) {
+  footer div:last-child {
+    padding: 1.5% 0;
+  }
+}
