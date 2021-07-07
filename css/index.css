@@ -1,1 +1,278 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+/* BEGIN CUSTOM STYLES */
+html {
+  font-size: 62.5%;
+  font-family: 'Titillium Web', sans-serif;
+}
+.container {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid #a0a0a0;
+  border-right: 1px solid #a0a0a0;
+}
+.container h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.container header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container header .normal-weight {
+  font-weight: normal;
+  color: #a0a0a0;
+}
+.container header h1 {
+  color: #870101;
+  align-self: center;
+}
+.container header .header-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container header .header-desktop {
+    display: none;
+  }
+  .container header .header-mobile {
+    display: contents;
+  }
+}
+.container header nav {
+  margin: 20px 0 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.container header button {
+  border: transparent;
+  background: transparent;
+}
+@media (max-width: 500px) {
+  .container header nav,
+  .container header nav button {
+    width: 100%;
+  }
+  .container header nav {
+    flex-direction: column;
+    border-top: 1px solid #3a3a3a;
+  }
+  .container header nav button {
+    padding: 10px 0;
+    border-bottom: 1px solid #3a3a3a;
+  }
+}
+.container header a {
+  color: black;
+  font-size: 2rem;
+  text-decoration: none;
+}
+.container header a:hover {
+  color: #870101;
+}
+@media (max-width: 500px) {
+  .container header {
+    width: 100%;
+    margin: 0;
+  }
+}
+.container .page-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 80%;
+}
+.container .page-content img {
+  max-width: 300px;
+  border: 1px solid #a0a0a0;
+  margin: 10px;
+}
+@media (max-width: 500px) {
+  .container .page-content img {
+    width: 100%;
+  }
+}
+.container .page-content section {
+  margin-top: 15px;
+  align-self: flex-start;
+}
+.container .page-content section h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #3a3a3a;
+}
+.container .page-content section h2::after {
+  margin-left: 10px;
+  content: "ʕ •ₒ• ʔ";
+}
+.container .page-content section p {
+  margin: 5px 0;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+.container .page-content section p::selection {
+  color: #870101;
+}
+.container .page-content section ul {
+  list-style: inside;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.container .page-content section li {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+.container .page-content section i {
+  font-style: italic;
+}
+.container footer h3 {
+  font-size: 1.6rem;
+  margin: 20px 0 10px;
+  color: #a0a0a0;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0px;
+  }
+}
