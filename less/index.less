@@ -54,6 +54,154 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+
 }
 
+@h2-font-size: 2.2rem;
+@regular-font-size: 1.6rem;
+@bottom-margin: 20px;
+
+.flexMixin(@jc, @ai) {
+	display: flex;
+	justify-content: @jc;
+	align-items: @ai
+}
+
+.btnMixin(@border, @background) {
+	border: 1px solid midnightblue;
+	border-radius: 10px;
+	background-color: midnightblue;
+	color: white;
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	width: 45%;
+}
+
+.container {
+	background-color: white;
+	width: 100%;
+	max-width: 880px;
+	margin: auto;
+}
+
+header {
+	.flexMixin(space-between, center);
+	width: 100%;
+	margin-bottom: 40px;
+	background-color: whitesmoke;
+	@media(max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	h1 {
+		margin: 30px 0  30px 10px;;
+		font-size: 3.6rem;
+	}
+
+	nav {
+		.flexMixin(flex-end);
+		margin-bottom: 20px;
+		margin-left: 20%;
+		padding: 20px 0;
+		font-size: 1.8rem;
+		@media(max-width: 500px) {
+			justify-content: space-around;
+			margin-left: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			margin: 0 10%;
+		}
+	}
+}
+
+h2 {
+	font-size: @h2-font-size2rem;
+	margin-bottom: @bottom-margin;
+}
+
+p {
+	font-size: 1.6rem;
+	margin-bottom: @bottom-margin;
+}
+
+
+.personal_info {
+	background-color: lightgrey;
+	.flexMixin(space-around);
+	padding: 40px;
+	@media(max-width: 500px) {
+		flex-direction: column;
+	}
+	
+	.about {
+		width: 50%;	
+		img {
+			border-radius: 10px;
+			width: 80%;
+		}
+		@media(max-width: 500px) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+
+	.skills {
+		width: 30%;
+		@media(max-width: 500px) {
+			width: 100%;
+		}
+
+		li {
+			border-bottom: 1px solid gray;
+			font-size: 1.6rem;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+		}
+
+		.btn {
+			.btnMixin(midnightblue, midnightblue);
+
+			&:hover {
+				box-shadow: 5px 5px black;
+			}
+
+		}
+	}
+}
+
+.work {
+	margin-top: 20px;
+
+	h2 {
+		padding-left: 5%;
+	}
+	
+	.p2{
+		padding-left: 5%;
+	}
+
+	.p1 {
+		background-color: whitesmoke;
+		padding: 15px 0 15px 5%;
+	}
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	padding: 60px 0 20px 2%;
+}
+
+.footer {
+	background-color: whitesmoke;
+	.flexMixin(center);
+	padding: 40px;
+	font-size: @regular-font-size;
+}
