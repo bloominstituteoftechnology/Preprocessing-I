@@ -54,6 +54,192 @@ table {
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
 }
 
+body {
+	background-image: url("http://www.recordedtvhd.com/images/background-gray.jpg");
+}
+
+.container {
+  max-width: 1024px;
+	margin: 0 auto;
+	font-size:62.5%;
+}
+
+.header() {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main() {
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	flex-direction: row;
+}
+
+.ulList() {
+	display:flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items:center;
+}
+
+.contactInfo() {
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items:center;
+}
+
+.bottomContent() {
+	display:flex;
+	justify-content: space-between;
+}
+
+.bottomUl() {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+@backgroundColor:#696969;
+@navColor: #87CEEB;
+@hoverColor:#F0E68C;
+@fontSixteen:1.6rem;
+@fontTwelve:1.2rem;
+@fontThirteen:1.3rem;
+
+
+header {
+	.header;
+	font-family: 'Merriweather', serif;
+	margin: 20px 20px;
+	height:200px;
+	background-color:@backgroundColor;
+	border:solid dodgerblue 1px;
+	
+	.logo {
+		width:150px;
+		height:150px;
+		order:1;
+	}
+
+  h1 {
+		font-size: 3rem;
+		background: -webkit-linear-gradient(#eee, #333);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  }
+
+  nav {
+
+    a {
+			margin: 10px;
+			font-size:2.5em;
+			margin:20px;
+			color:@navColor;
+			text-decoration: none;
+		}
+		
+	}
+	
+} // header
+
+
+a:hover { 
+	color:@hoverColor;
+	text-decoration: underline;
+	border-radius:90%;
+}
+
+
+.contact {
+		height:100px;
+		font-size:@fontSixteen;
+		color:#00008B;
+		margin-left:50px;
+		.contactInfo;
+}
+
+
+.main-content {
+	.main;
+	border-bottom:solid black 1px;
+	margin-bottom:50px;
+	padding:30px;
+
+	h2 {
+		font-size:@fontSixteen;
+		color:#5F9EA0;
+		border-bottom: solid black 1px;
+	}
+
+	p {
+		font-size:@fontTwelve;
+		width:400px;
+		margin-top:10px;
+	}
+
+	ul {
+		font-size:@fontTwelve;
+		width:400px;
+		height:200px;
+		margin-top:10px;
+
+		.ulList();
+  }
+
+	li {
+		border-bottom:solid black 1px;
+	}
+
+	@media (max-width:500px) {
+		display:flex;
+		flex-direction: column;
+		margin:80px 0px;
+		
+	}
+
+} //Main Content
+
+
+.bottom-content {
+	.bottomContent();
+	
+	h2 {
+		font-size:@fontSixteen;
+		border-bottom:solid black 1px;
+	}
+
+	h3 {
+		font-size:@fontThirteen;
+		color:#5F9EA0;
+		border-bottom:solid black 1px;
+	}
+
+	ul {
+		width:200px;
+		font-size:@fontTwelve;
+		.bottomUl;
+
+	}
+
+	li {
+		border-bottom:solid black 1px;
+	}
+
+	@media (max-width:500px) {
+		display:flex;
+		flex-direction: column;
+		align-items:center;
+
+		ul {
+			padding:20px;
+		}
+	} 
+
+} //Bottom Content
