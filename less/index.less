@@ -17,6 +17,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+	
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -54,6 +55,189 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+
+
+
+// ________________________________________Reset_______________________________________________________________________________________________
+
+@main: black;
+@accent: white;
+@nav: grey;
+@hover: darkgrey;
+@mobile: 500px;
+@h2: 3.6rem;
+
+.center() {
+	display: flex;
+	flex-direction: column;
+	margin: 0px auto;
+}
+
+.atag() {
+	text-decoration: none;
+	font-size: 2.6rem;
+	color: @nav;
+}
+
+
+
+// ________________________________________Variables/Mixins_______________________________________________________________________________________________
+
+
+.container {
+	max-width: 1080px;
+	width: 100%;
+	.center();
+	background-color: @accent;
+
+	.navbar {
+		width: 100%;
+		background-color: @main;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		border-bottom: 15px solid @accent;
+		padding: 25px;
+		
+	}
+
+	.h1 {
+		color: @accent;
+		font-size: 5.6rem;
+		font-family: 'Permanent Marker', cursive;
+	}
+
+
+	nav {
+		display: flex;
+		flex-direction: space-evenly;
+		
+		a {
+			.atag();
+			margin-right: 15px;
+			font-family: 'Permanent Marker', cursive;
+
+			&:hover{
+				color: @hover;
+			}
+		}
+	
+	}
+
+	h2 {
+		color: @accent;
+		font-size: @h2;
+		padding-left: 20px;
+		font-family: 'Permanent Marker', cursive;
+		padding-bottom: 5px;
+	}
+
+	.accent {
+		background-color: @main;
+	}
+
+	.intro {
+
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		width: 100%;
+		margin-bottom: 20px;
+
+		p {
+			font-size: 2.0rem;
+			padding: 25px;
+			
+		}
+	}
+
+
+	.skills {
+		
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		margin-bottom: 20px;
+		width: 100%;
+
+		ul {
+			font-size: 2.0rem;
+			padding: 25px;
+			padding-left: 40px;
+			list-style-type: square;
+		}
+
+		p {
+			font-size: 2.0rem;
+			padding-left: 20px;
+			font-family: 'Permanent Marker', cursive;
+		}
+
+	}
+
+	.work {
+
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		margin-bottom: 20px;
+
+		h3 {
+			font-size: 2.6rem;
+			padding: 10px;
+			border-top: 1px solid @nav;
+		}
+
+		p {
+			font-size: 2.0rem;
+			padding-left: 20px;
+			padding-bottom: 5px;
+		}
+	}
+
+	.contact {
+		border-right: 5px @main solid;
+		border-bottom: 5px @accent solid;
+		margin-bottom: 20px;
+		height: 700px;
+		
+		p {
+			font-size: 3.0rem;
+			padding-left: 20px;
+			font-family: 'Permanent Marker', cursive;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+
+		.information {
+			
+			border-top: 2px @main solid;
+		
+			p {
+				font-size: 2.0rem;
+			}
+		}
+	}
+
+	@media (max-width: @mobile) {
+
+		.navbar {
+			flex-direction: column;
+		}
+
+		nav {
+			flex-direction: column;
+
+			a {
+				padding-top: 25px;
+				border-bottom: 2px @nav solid;
+				width: 250px;
+			}
+		}
+	}
+
+}
