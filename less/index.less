@@ -4,6 +4,15 @@
    License: none (public domain)
 */
 
+@import "mixins.less";
+@import "variables.less";
+
+html {
+	font-size: 62.5%;
+	color: @text;
+	.standard-font;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,7 +30,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -55,5 +63,159 @@ table {
 
 html, body {
     height: 100%;
+}
+
+.root {
+	max-width: 800px;
+}
+
+nav {
+	padding: 20px 0;
+	width: 100%;
+	.flex;
+	.just-end;
+
+	a {
+		margin-right: 20px;
+		color: black;
+		text-decoration: none;
+	}
+}
+
+.container {
+	padding: 50px;
+	margin: 0 auto;
+	.desktop-width;
+}
+
+.header {
+	background: @background;
+	height: 600px;
+	padding: 50px;
+	.full-width;
+	.border-radius(5px);
+
+	h1 {
+		margin: 20px 0 10px 0;
+		font-size: @big-header;
+	}
+
+	.description {
+		margin-top: 13%;
+	}
+}
+
+.button {
+	width: 200px;
+	padding: 10px;
+	color: white;
+	background: @button;
+	.border-radius(5px);
+}
+
+.info {
+	margin-top: 30px;
+	.full-width;
+
+	.about {
+		width: 45%;
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: @med-header;
+		}
+
+		@media @mobile {
+			width: 100%;
+		}
+	}
+
+	.skills {
+		width: 45%;
+
+		h3 {
+			font-size: @sm-header;
+			margin-bottom: 10px;
+
+			@media @mobile {
+				margin-top: 40px;
+			}
+		}
+
+		.list {
+			border: thin solid lightgray;
+			.border-radius(4px);
+
+			div {
+				padding: 10px;
+				border-bottom: thin solid lightgray;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
+		@media @mobile {
+			width: 100%;
+		}
+	}
+
+	@media @mobile {
+		.flex(column);
+		.align-items(center);
+	}
+}
+
+.history {
+
+	.full-width;
+
+	h3 {
+		font-size: @sm-header;
+		margin-bottom: 10px;
+
+		@media @mobile {
+			margin-top: 40px;
+		}
+	}
+
+	.table {
+		.full-width;
+
+		.row {
+			padding: 10px;
+			.full-width;
+			.justify-content(space-between);
+
+			&:nth-child(even) {
+				background: @color-row;
+			}
+		}
+
+		.yrs {
+			width: 10%;
+		}
+
+		.company {
+			width: 30%;
+		}
+
+		.title {
+			width: 35%;
+		}
+
+		.tech {
+			width: 15%;
+		}
+	}
+}
+
+footer {
+	color: @text;
+	margin-top: 50px;
+	height: 75px;
+	background: @background;
+	.full-width;
 }
 
