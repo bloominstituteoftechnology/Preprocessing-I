@@ -1,1 +1,342 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+  background-color: lightgrey;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100%;
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid black 1px;
+}
+nav a {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration-line: none;
+  border: solid black 1px;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+nav a:hover {
+  color: blue;
+}
+.container .profile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.container .profile p {
+  font-size: 1.6rem;
+  font-family: serif;
+  padding: 5%;
+  border: solid black 2px;
+  margin: 0 5%;
+}
+.container .profile img {
+  max-width: 100%;
+  height: auto;
+  border: solid black 4px;
+}
+@media (max-width: 800px) {
+  .container .profile img {
+    width: 80%;
+    margin-left: 11%;
+  }
+}
+.container .profile h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.container .profile h3 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.container .profile .about-me h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 37px;
+  text-decoration-line: underline;
+}
+@media (max-width: 800px) {
+  .container .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container .skills {
+  border-top: black solid 1px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.container .skills h2 {
+  font-size: 3rem;
+  text-decoration-line: underline;
+  margin-bottom: 10px;
+}
+.container .skills ol {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: s0px 20%;
+}
+.container .skills ol li {
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.container .skills .work {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .container .skills .work {
+    width: 100%;
+  }
+}
+.container .skills .work h2 {
+  margin-left: 33%;
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .container .skills .work h2 {
+    margin-top: 25px;
+  }
+}
+.container .skills .work table {
+  width: 500px;
+  height: 100px;
+}
+.container .skills .work table th {
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid black;
+  text-decoration-line: underline;
+}
+.container .skills .work table td {
+  text-align: center;
+  font-size: 1.6rem;
+  border: 2px solid black;
+}
+@media (max-width: 500px) {
+  .container .skills .work table {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .container .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container .line {
+  border-top: black solid 1px;
+  margin-top: 40px;
+}
+.container #contact {
+  margin-top: 50px;
+}
+.container #contact input[type="text"],
+.container #contact select,
+.container #contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.container #contact input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 10%;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+.container #contact input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.container #contact .column {
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px 5% 0 0;
+}
+@media (max-width: 800px) {
+  .container #contact .column {
+    width: 80%;
+  }
+}
+.container #contact h2 {
+  text-decoration-line: underline;
+  margin-top: 30px;
+  font-size: 3rem;
+}
+@media (max-width: 800px) {
+  .container #contact h2 {
+    margin-left: 25%;
+  }
+}
+@media (max-width: 500px) {
+  .container #contact h2 {
+    margin-left: 20%;
+  }
+}
+@media (max-width: 800px) {
+  .container #contact {
+    margin-left: 20%;
+  }
+}
+.container .bottomNav a {
+  white-space: nowrap;
+}
