@@ -4,56 +4,301 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab|Source+Serif+Pro');
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
+html {
+    font-size: 62.5%
+}
+
+// variables
+@font-stack: 'Roboto Slab', serif;
+@title-font: 'Source Serif Pro',
+serif;
+@font-color: #444;
+@font-size: 1.6rem;
+@border-color: #666;
+@background-color: #f5f5f5;
+@link-color: #990003;
+// mixins
+.flex() {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bor-bot() {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+body {
+    font-family: @font-stack;
+    color: @font-color;
+    height: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: @font-size;
+    background: @background-color;
+    border: solid @border-color;
+    border-width: 8px 0 2px 0;
+    a {
+        color: @link-color;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    header {
+        nav {
+            margin: 0 3%;
+            .flex;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                a {
+                    text-align: center;
+                    padding: 10px 0;
+                    flex-wrap: wrap;
+                    .bor-bot();
+                }
+            }
+        }
+    }
+    .main-content {
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: @title-font;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-family: @title-font;
+        }
+        .italicized {
+            font-style: italic;
+        }
+        h3 {
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1.4rem;
+            padding: 10px 1%;
+        }
+        div {
+            padding: 20px 2.5%;
+        }
+        .intro {
+            .flex;
+            justify-content: space-between;
+            .bor-bot;
+            margin: 30px 0;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+            .left {
+                h2 {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .profile {
+            .flex;
+            .bor-bot;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+        .skills {
+            .bor-bot;
+            .flex;
+            p {
+                font-size: 1.2rem;
+            }
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+        .work-history {
+            .bor-bot;
+            .flex;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+			}
+			h2,h3 {
+			padding: 5px 0;
+			}
+        }
+        .education {
+            .bor-bot();
+            display: flex;
+            .italicized {
+                justify-content: flex-start;
+            }
+            @media (max-width: 500px) {
+                flex-direction: column;
+                text-align: center;
+                flex-wrap: wrap;
+			}
+			h2,h3 {
+				padding: 5px 0;
+				}
+        }
+    }
+    footer {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}

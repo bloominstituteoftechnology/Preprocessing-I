@@ -1,1 +1,304 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v7/BngMUXZYTXPIvIBgJJSb6ufN5qA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Serif Pro'), local('SourceSerifPro-Regular'), url(https://fonts.gstatic.com/s/sourceserifpro/v5/neIQzD-0qpwxpaWvjeD0X88SAOeauXQ-pQ.ttf) format('truetype');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto Slab', serif;
+  color: #444;
+  height: 100%;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  background: #f5f5f5;
+  border: solid #666;
+  border-width: 8px 0 2px 0;
+}
+.container a {
+  color: #990003;
+}
+.container a:hover {
+  text-decoration: none;
+}
+.container header nav {
+  margin: 0 3%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+  }
+  .container header nav a {
+    text-align: center;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+}
+.container .main-content h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Source Serif Pro', serif;
+}
+.container .main-content h2 {
+  font-size: 2.2rem;
+  font-family: 'Source Serif Pro', serif;
+}
+.container .main-content .italicized {
+  font-style: italic;
+}
+.container .main-content h3 {
+  font-size: 1.8rem;
+}
+.container .main-content p {
+  font-size: 1.4rem;
+  padding: 10px 1%;
+}
+.container .main-content div {
+  padding: 20px 2.5%;
+}
+.container .main-content .intro {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin: 30px 0;
+}
+@media (max-width: 500px) {
+  .container .main-content .intro {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+.container .main-content .intro .left h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.container .main-content .profile {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .container .main-content .profile {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+.container .main-content .skills {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .main-content .skills p {
+  font-size: 1.2rem;
+}
+@media (max-width: 500px) {
+  .container .main-content .skills {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+.container .main-content .work-history {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container .main-content .work-history {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+.container .main-content .work-history h2,
+.container .main-content .work-history h3 {
+  padding: 5px 0;
+}
+.container .main-content .education {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  display: flex;
+}
+.container .main-content .education .italicized {
+  justify-content: flex-start;
+}
+@media (max-width: 500px) {
+  .container .main-content .education {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+.container .main-content .education h2,
+.container .main-content .education h3 {
+  padding: 5px 0;
+}
+.container footer {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.6rem;
+}
