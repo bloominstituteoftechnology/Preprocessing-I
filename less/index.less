@@ -34,6 +34,7 @@ body {
 }
 ol, ul {
 	list-style: none;
+	text-align: center;
 }
 blockquote, q {
 	quotes: none;
@@ -46,14 +47,120 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+  
+	
+  }
+  
+  table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	justify-content: center;
+  }
+  
+  th, td {
+	text-align: center;
+  }
+  
+  th {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: larger;
+	font-weight:bold;
+  }
+  
+  /* Set every element's box-sizing to border-box */
+  * {
+	box-sizing: border-box;
+  }
+  html,
+  body {
+	height: 100%;
+  }
+	
+	@macback: #ECE7CF;
+	
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
+  .bordered() {
+	border-top: dotted 1px black;
+	border-bottom: solid 2px black;
+  }
+  
+  .centersa() {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-around;
+  }
 
-html, body {
-    height: 100%;
-}
+  .niceNavs() {
+	text-decoration: none;
+	color: chocolate;
+  }
 
+  .centerFDC() {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+  }
+
+  h1 {
+		font-size: xx-large;
+  }
+  
+  h2,h3,h4,h5,h6 {
+		font-size: x-large
+  }
+  
+  .container {
+		margin: 0 auto;
+		// border: 1px solid black;
+		width: 880px;
+
+		@media (max-width: 500px) {
+			width: 90%;
+			background: @macback;
+			
+			.dj {
+				width:80%;
+				height: auto;
+			}
+		
+		}
+	
+	}
+  
+  
+  nav {
+	// border: 1px solid black;
+	.centersa;
+
+	a {
+		.niceNavs;
+	  }
+  }
+  
+
+  
+  main {
+	// border: 1px solid black;
+	background-color: @macback; 
+	.dj {
+		  width:540px;
+		  height: auto;
+	  }
+	
+	  .box {
+		.centerFDC;
+	  }
+	  
+	  section-bottom {
+		.centerFDC;
+	}
+	  
+  } //main
+  
+
+
+footer {
+	.centerFDC;
+}
