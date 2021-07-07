@@ -3,6 +3,35 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+//Variables
+@spacing: 2rem;
+@font-color:white;
+@fullname:'Your Name';
+@description: 'Brief description';
+
+//Mixins
+.zero-margin-padding(){
+	margin:0;
+	padding:0;
+}
+
+.flexbox-declaration(){
+	display:flex;
+	// justify-content: center;
+}
+.font-color() {
+	color:@font-color;
+}
+.top-bottom-padding(){
+	padding:@spacing 0;
+}
+.left-right-padding(){
+	padding:0 @spacing;
+}
+.top-bottom-margin(){
+	margin:@spacing 0;
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -54,6 +83,88 @@ table {
 }
 
 html, body {
-    height: 100%;
+	// height: 100%;
+	// background-color: red;
+	font-size: 62.5%;
+	width:100%;
+	.flexbox-declaration();
+	justify-content: center;
+	background-color:white;
 }
+
+body .container {
+	.zero-margin-padding();
+	.flexbox-declaration;
+	flex-direction: column;
+	background-color:gray;
+	max-width:900px;
+	width:100%;
+	font-size:1rem;
+	align-items: flex-start;
+	nav {
+		.top-bottom-margin();
+		.flexbox-declaration();
+		width: 100%;
+		// margin: @spacing;
+		justify-content: flex-end;
+		.nav-anchors{
+			width:50%;	
+			.flexbox-declaration();
+			justify-content: flex-end;
+			// background-color: blue;
+			a {
+				width:20%;
+				text-decoration: none;
+				.font-color();
+				font-size: 2rem;
+			}
+			a:hover{
+				text-decoration: underline;
+				color:blue;
+			}
+		}
+	}		
+	.profile-box{
+		.left-right-padding();
+		.flexbox-declaration();
+		flex-direction:column;
+		// align-items: flex-start;
+		width: 100%;
+		height: 100rem;
+		// .profile-pic{
+		// 	// padding: @spacing;
+		// 	// height:50rem;
+		// }
+		.profile-pic{
+			width:50%;
+		}	
+		.profile-text {
+			h1 {
+				font-size: 4rem;
+				.font-color();
+			}
+			h3{
+				font-size: 2rem;
+				.font-color();
+			}
+		}
+		button {
+			height:2rem;
+			width:10rem;
+			background-color:white;
+			color:black;
+		}
+	}
+	.intro-skills{
+		width: 100%;
+		.intro-paragraph{
+			font:3rem;
+			color: white;
+		}
+		.skill-list{
+
+		}
+	}
+}
+
 
