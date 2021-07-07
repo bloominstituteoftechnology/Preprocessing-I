@@ -57,3 +57,309 @@ html, body {
     height: 100%;
 }
 
+html {
+	background: #293b59;
+	font-size: 62.5%;
+}
+
+@main-color: #6ddb69;
+@secondary-color: #2b2d2b;
+@header-color: #474c47;
+@font-color: #999e99;
+
+.center() {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.div-background(){
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 5px 10px 10px black;
+	border-radius: 8px;
+}
+.form-styling(){
+	width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.container{
+	max-width: 880px;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 1.6rem;
+}
+
+.home{ // home container
+	
+	header{ // Header
+		width: 100%;
+		.center;
+		justify-content: space-between;
+
+		.logo-img{  //Logo Img
+			width: 20%;
+		}
+		
+		nav{ //Navigation
+			width: 100%;
+			.center;
+			justify-content: space-between;
+
+			a{
+				margin: 0 8%;
+				text-decoration: none;
+				color: @secondary-color;
+				font-size: 1.8rem;
+				color: white;
+
+				@media(max-width: 500px){
+					margin: 4% 0;
+				}
+
+			}
+			a:hover{
+				color: @main-color;
+			}
+			@media(max-width: 500px){
+				flex-flow: column wrap;
+			}
+		}// end of navigation
+
+		@media(max-width: 500px){
+			flex-flow: column wrap;
+		} 
+
+	} //end of header
+
+	.intro{
+		width: 100%;
+		flex-flow: row wrap;
+		.center;
+		.div-background;
+
+		@media(max-width: 500px){
+			flex-flow: column wrap;
+		}
+
+		.profile-img{
+			width: 50%;
+			margin: 3%;
+			box-shadow: 5px 10px 10px black;
+		}
+
+		.intro-caption{
+			width: 40%;
+
+			h1{
+				font-size: 4rem;
+				color: @main-color;
+			}
+			h2{
+				font-size: 2.3rem;
+				margin: 3%;
+				color: @font-color;
+			}
+		} //End of Intro Caption
+
+		.hire-plea{
+			margin: 5%;
+
+			h2{
+				color: @main-color;
+				font-size: 2.5rem;
+				margin-bottom: 20px;
+			}
+			p{
+				color: @font-color;
+				font-size: 2rem;
+			}
+		}
+	} //end of intro
+
+	.bottom-content{
+		
+		display:flex;
+
+		@media(max-width: 500px){
+			flex-flow: column wrap;
+		}
+		
+	
+		.skills{
+			.div-background;
+			.center;
+			flex-direction: column;
+			width: 50%;
+			margin: 2% 1% 2% 0;
+
+			h2{
+				font-size: 2.5rem;
+				color: @main-color;
+				margin: 4.3%;
+			}
+			h3{
+				font-size: 2rem;
+				color: @font-color;
+				width: 100%;
+				height: 60px;
+				text-align: center;
+
+				a{
+					text-decoration: none;
+					color: @font-color;
+				}
+			}
+
+			@media(max-width: 500px){
+				width: 90%;
+				margin-left: 5%;
+				margin-top: 5%;
+			}
+		} // end of skills
+
+		.work-history{
+			.div-background;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 50%;
+			margin: 2% 0% 2% 1%;
+			padding: 3%;
+
+			h2{
+				color: @main-color;
+				font-size: 2.5rem;
+				align-self: center;
+			}
+			.job{
+				width: 100%;
+
+				h3{
+					color: @main-color;
+					font-size: 2rem;
+				}
+				p{
+					color: @font-color;
+					margin: 1.5% 0;
+				}
+
+
+			}
+
+			@media(max-width: 500px){
+				width: 90%;
+				margin-left: 5%;
+			}
+		
+
+		} //end of work history
+	} //end of bottom content
+} // end of home
+
+.contact{ // Contact Page
+	
+	header{
+		width: 100%;
+		.center;
+		justify-content: space-between;
+
+		.logo-img{
+			width: 20%;
+
+		}
+		
+		nav{
+			width: 100%;
+			.center;
+			justify-content: space-between;
+
+			a{
+				margin: 0 8%;
+				text-decoration: none;
+				color: @secondary-color;
+				font-size: 1.8rem;
+				color: white;
+			}
+		}
+
+	} //end of header
+	
+	
+	.contact-form{ //Contact Form
+		.div-background;
+		padding: 8%;
+		color: @font-color;
+		margin-top: 50px;
+	
+		input[type=text]{
+			.form-styling;
+		}
+		input[type=email]{
+			.form-styling;
+		}
+		textarea{
+			.form-styling;
+		}
+		input[type=submit]{
+			background-color: @main-color;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 200px;
+		}
+		input[type=submit]:hover{
+			background-color: rgba(15, 179, 0, 0.62);
+		}
+
+	}
+} // end of contact page
+
+.art{
+	.div-background;
+
+	header{
+		width: 100%;
+		.center;
+		justify-content: space-between;
+
+		.logo-img{
+			width: 20%;
+
+		}
+		
+		nav{
+			width: 100%;
+			.center;
+			justify-content: space-between;
+
+			a{
+				margin: 0 8%;
+				text-decoration: none;
+				color: @secondary-color;
+				font-size: 1.8rem;
+				color: white;
+			}
+		}
+
+	} //end of header
+
+	.art-show{
+		display: flex;
+		flex-flow: row wrap;
+
+		.art-pic{
+			width: 50%;
+			height: 50%;
+			
+		}
+	}
+}
