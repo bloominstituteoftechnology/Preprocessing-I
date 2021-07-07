@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,19 +13,19 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,218 @@ table {
 
 html, body {
     height: 100%;
+	font-size: 62.5%;
 }
 
+.profile {
+	max-height: 60%;
+	max-width: 60%;
+	display: block;
+	margin: auto;
+	padding: 10px 0;
+}
+
+.profile-mobile {
+	height: 80%;
+	width: 80%;
+}
+
+.nav-style {
+	margin-right: 20px;
+	padding: 20px 10px 15px 10px;
+}
+
+.content-margins {
+	margin: 5px 20px 10px 20px;
+}
+
+.link-style-nav {
+	text-decoration: none;
+	color: black;
+	font-size: 1.8rem;
+}
+
+.link-style {
+	text-decoration: none;
+	color: black;
+	border-bottom: 1px solid black;
+}
+
+.h1-style {
+	font-size: 2.8rem;
+}
+
+.button-clear {
+	border: 0;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+.button-style {
+	margin: 25px 0 25px 0;
+	padding: 12px 26px;
+	background-color: white;
+	border: 2px solid black;
+	cursor: pointer;
+}
+
+.table-style {
+	font-size: 1.8rem;
+	width: 33%;
+	text-align: center;
+	padding: 10px;
+}
+
+@border: 3px solid black;
+
+// Styling
+
+.container {
+	font-size: 1.6rem;
+	width: 880px;
+}
+
+header {
+	nav {
+
+	}
+		ul {
+			display: flex;
+			justify-content: space-around;
+			margin: 0 20px 0 20px;
+		}
+			li {
+				.nav-style();
+			}
+				li:last-child {
+					margin-right: 0;
+				}
+				li a {
+					.link-style-nav();
+				}
+}
+
+.top-content {
+	.content-margins();
+	text-align: center;
+		.photo img {
+			.profile();
+			@media (max-width: 500px) {
+				.profile-mobile();
+			}
+		}
+		.info {
+			display: inline-block;
+		}
+			h1 {
+				border-bottom: @border;
+				padding-bottom: 10px;
+				.h1-style();
+			}
+			p {
+				margin: 10px 0 10px 0;
+				font-size: 1.8rem;
+			}
+}
+
+.cta {
+	.button {
+		.button-clear();
+		.button-style();
+	}
+	a {
+		.link-style();
+	}
+}
+
+.middle-content {
+	display: flex;
+	justify-content: space-between;
+	.content-margins();
+	@media (max-width: 500px) {
+		flex-wrap: wrap;
+	}
+	h2 {
+		font-size: 2.4rem;
+		margin-bottom: 8px;
+		@media (max-width: 500px) {
+			text-align: center;
+			padding-bottom: 10px;
+			border-bottom: @border;
+		}
+	}
+	.main-text {
+		width: 48%;
+		font-size: 1.8rem;
+		@media (max-width: 500px) {
+			width: 100%;
+			margin-bottom: 25px;
+			text-align: center;
+		}
+	}
+	.enjoy {
+		width: 48%;
+		@media (max-width: 500px) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+		ul {
+		}
+			li {
+				border: 1px solid lightgrey;
+				font-size: 1.8rem;
+				padding: 5px;
+				@media (max-width: 500px) {
+					border: none;
+				}
+			}
+
+}
+
+.history {
+	margin: 20px;
+	border-top: @border;
+	padding-top: 10px;
+	@media (max-width: 500px) {
+		border: none;
+	}
+
+	h2 {
+		font-size: 2.4rem;
+		text-align: center;
+		padding-bottom: 10px;
+		border-bottom: @border;
+	}
+		table {
+			width: 100%;
+			margin: 10px auto 0 auto;
+		}
+			td, th {
+				.table-style();
+			}
+			tr:nth-child(even) {
+				background-color: lightgrey;
+			}
+
+}
+
+footer {
+	border-top: @border;
+	margin-top: 23px;
+	padding-top: 20px;
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+			@media (max-width: 500px) {
+
+			}
+		}
+			li {
+				font-size: 1.8rem;
+				@media (max-width: 500px) {
+					font-size: 1.4rem;
+				}
+			}
+}
