@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -54,6 +54,299 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	background: @main-bg-color;
+	}
+
+@main-bg-color: #031634;
+
+@section-bg-color: #033649;
+
+@main-font-color:  #E8DDCB;
+
+@header-font-color: #CDB380;
+
+
+
+.header-font {
+	font-size: 2.4rem;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	text-align: center;
+	color: @header-font-color;
+	margin: 10px;
 }
+
+.header2-font {
+	font-size: 1.6rem;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	text-align: center;
+	color: @header-font-color;
+	margin: 5px;
+}
+
+
+
+.para-font {
+	font-size: 1.4rem;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-align: left;
+	color: @main-font-color;
+	line-height: 2rem;
+	margin: 10px;
+}
+
+.para-font-mobile {
+	font-size: 1.6rem;
+}
+
+.centered {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2px;
+}
+
+
+	.centered-mobile {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: column;
+		margin: 2px;
+	}
+
+
+.sectiondesign {
+	background: @section-bg-color;
+	margin: 5px;
+	padding: 3px;
+}
+
+.links {
+	color: #359668;
+	text-decoration: none;
+
+}
+
+
+.container {
+	max-width: 800px;
+	width: 100%;
+	// border: 5px solid black;
+	margin: 0 auto;
+
+
+
+	// h1 {
+
+	// 	font-size: 2.4rem;
+	// font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	// }
+
+	// h2 {
+	// 	font-size: 1.6rem;
+	// 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	// }
+
+	// p {
+	// 	font-size: 1.4rem;
+	// 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+	// }
+
+	// li {
+	// 	font-size: 1.2rem;
+	// }
+
+	header {
+		.centered();
+		.sectiondesign();
+
+		nav {
+			// background-color: maroon;
+			.centered();
+			width: 65%;
+
+			@media (max-width: 500px) {
+				.centered-mobile();
+			}
+
+			a {
+				.para-font();
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
+	
+
+				.links();
+				text-decoration: none;
+
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	} //header
+
+	.top-content {
+		background-color: orangered;
+		.centered();
+		.sectiondesign();
+
+		@media (max-width: 500px) {
+			.centered-mobile();
+		}
+
+
+		img {
+			width: 150px;
+			height: 150px;
+		}
+
+		.title {
+			// background-color: orange;
+			width: 50%;
+			.header-font();
+
+			h2 {
+				.header2-font();
+			}
+
+			p {
+				.para-font;
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
+
+				text-align: center;
+			}
+		}
+	} //top-content
+
+	.intro {
+		// background-color: goldenrod;
+		margin: 5px;
+		.header-font();
+		.sectiondesign();
+
+		p {
+			.para-font();
+
+			@media (max-width: 500px) {
+				.para-font-mobile();
+			}
+		}
+	} //intro
+
+	.middle-content {
+		// background-color: yellow;
+		.centered();
+
+		@media (max-width: 500px) {
+			.centered-mobile();
+		}
+
+
+		h1 {
+			.header-font();
+		}	
+
+		h2 {
+			.header2-font();
+		}
+		
+		p {
+			.para-font();
+
+			@media (max-width: 500px) {
+				.para-font-mobile();
+			}
+		}
+
+
+		.left-content {
+			// background-color: greenyellow;
+			.sectiondesign();
+			width: 30%;
+			.header-font();
+
+			
+
+			@media (max-width: 500px) {
+				width: 80%;
+			}
+
+			li {
+				.para-font();
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
+			}
+
+			.skills {
+				.sectiondesign();
+				// background-color: turquoise;
+			}
+
+			.edu {
+				background-color: blueviolet;
+				.sectiondesign();
+
+			}
+		}
+
+		.history {
+			width: 50%;
+			// background-color: pink;
+			.sectiondesign();
+
+			@media (max-width: 500px) {
+				width: 80%;
+			}
+
+
+			h2 {
+				.header2-font();
+			}
+			
+			p {
+				.para-font();
+
+				@media (max-width: 500px) {
+					.para-font-mobile();
+				}
+			}
+		}
+
+
+	} //middle-content
+
+	.contact {
+		// background-color: magenta;
+		.sectiondesign();
+		.header-font();
+
+		p {
+			.para-font();
+
+			@media (max-width: 500px) {
+				.para-font-mobile();
+			}
+
+			text-align: center;
+		}
+
+		button {
+
+		}
+	} //content
+
+} //container
+
+
+
 
