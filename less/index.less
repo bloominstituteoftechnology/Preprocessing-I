@@ -1,4 +1,3 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -50,10 +49,340 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	background: black;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, p, div {
+	font-family: 'Krub', sans-serif;
+	color: white;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+html {
+	font-size:62.5%;
+}
+
+p, a{
+	font-size: 1.6rem;
+}
+
+/* Imported Styles */
+.fa {
+	padding: 10px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 20%;
+}
+ 
+.fa:hover {
+	opacity: 0.7;
+}
+
+.fa-facebook {
+  background:  green;
+  color: black;
+}
+
+.fa-twitter {
+  background:  green;
+  color: black;
+}
+
+.fa-linkedin {
+  background: green;
+  color: black;
+}
+
+.fa-github {
+	background: green;
+	color: black;
+}
+
+/* Variables*/
+@yusuke-header-green: @header-color;
+@yusuke-text-lightgreen: @text-color;
+@yusuke-paragraph-green: @paragraph-color;
+@master-font: "Krub", Arial, sans-serif;
+
+@header-color: #004d00;
+@text-color: #00cc00;
+@paragraph-color: #009900;
+
+/* Mixins */
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.paragraph() {
+	color: @yusuke-paragraph-green;
+	margin: 1rem;
+}
+
+.portfolio-paragraph() {
+	color: @yusuke-paragraph-green;
+	width: 20%;
+	margin: 5%;
+}
+
+.h2-custom() {
+	color: @yusuke-header-green;
+	border: 1px solid white;
+	padding: 20px;
+}
+
+.portfolio-custom() {
+	.center();
+	justify-content: space-between;
+	margin-top: 100px;
+}
+
+.yusuke-custom() {
+	.center();
+	width: 40%;
+}
+
+.ptag-custom() {
+	.portfolio-paragraph;
+	border: 1px solid white;
+	padding: 20px;
+}
+
+.form-name-email() {
+	background: white;
+	height: 60px;
+	width: 100%;
+}
+
+.form-message-submit() {
+	background: white;
+	width: 100%;
+}
+
+/* INDEX */
+.container {
+	max-width: 880px;
+	margin: 0 auto;
+}
+
+header {
+	.center();
+	flex-direction: column-reverse;
+	margin: 1.5%;
+
+	h1 {
+		margin: 2%;
+		color: @yusuke-header-green;
+	}
+	
+	nav {
+		margin: 2%;
+		width: 50%;
+		display: flex;
+		justify-content: space-evenly;
+
+		a {
+			text-decoration: none;
+			color: @yusuke-text-lightgreen;
+			border: 2px solid black;
+			background: black;
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+} // header
+
+.navigation {
+	.center();
+	justify-content: space-between;
+	margin: 2.0px;
+
+	h2 {
+		color: @yusuke-header-green;
+	}
+
+	a {
+		margin-left: 5px;
+		text-decoration: none;
+	}
+} // navigation
+
+.top-content {
+	p {
+		.paragraph();
+	}
+
+	a {
+		display: flex;
+		justify-content: center;
+		font-size: 3rem;
+		text-decoration: none;
+		color: white;
+		padding: 10px;
+		margin: 20px;
+		border: 1px solid white;
+
+		&:hover {
+			background: white;
+			color: black;
+		}
+	}
+} // top-content
+
+.bottom-content {
+	h2 {
+		color: @yusuke-header-green;
+	}
+
+	h3 {
+		margin-top: 2%;
+		margin-bottom: 3%;
+		color: @yusuke-text-lightgreen;
+	}
+
+	p {
+		.paragraph();
+	}
+} // bottom-content
+
+/* PORTFOLIO */
+.portfolio {
+	.portfolio-custom()
+
+	.yusuke_move {
+		.yusuke-custom()
+	}	
+
+	h2 {
+		.h2-custom()
+	}
+
+	p {
+		.ptag-custom()
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+
+		h2 {
+			margin-top: 20px;
+		}
+		
+		p {
+			width: 400px;
+		}
+	}
+}
+
+.portfolio2 {
+	.portfolio-custom()
+
+	.yusuke_battle {
+		.yusuke-custom()
+	}
+
+	h2 {
+		.h2-custom()
+	}
+
+	p {
+		.ptag-custom()
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+
+		h2 {
+			margin-top: 20px;
+		}
+		
+		p {
+			width: 400px;
+		}
+	}
+}
+
+.portfolio3 {
+	.portfolio-custom()
+
+	.yusuke_team {
+		.yusuke-custom()
+	}
+
+	h2 {
+		.h2-custom()
+	}
+
+	p {
+		.ptag-custom()
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+
+		h2 {
+			margin-top: 20px;
+		}
+		
+		p {
+			width: 400px;
+		}
+	}
+}
+
+/* CONTACT */
+.container-contact {
+	max-width: 880;
+	margin: 0 auto;
+}
+
+.contact-form {
+	.center();
+	margin: 50px;
+
+	#contact-form {
+		height: 300px;
+		width: 100%;
+		border: 1px solid white;
+
+		.form-name {
+			.form-name-email()
+		}
+
+		.form-email {
+			.form-name-email()
+		}
+
+		.form-message {
+			.form-message-submit()
+			height: 130px;
+		}
+
+		.form-submit {
+			.form-message-submit()
+			height: 45px;
+		}
+	}
+}
