@@ -1,7 +1,7 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -17,35 +17,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -56,4 +56,225 @@ table {
 html, body {
     height: 100%;
 }
+
+// Styling the header nav bar 
+
+//*******************Variables
+//=========>Color Variables
+
+@contentColor : #f2f2f2;
+@buttonColor : #000033;
+@evenColor : #e6fff2;
+@hoverSubmit :#111a00;
+
+//****************** font Variables 
+
+@fontSizeHtml :62.5%;
+@fontFamilyH3:'Cabin', sans-serif;
+@fontLi :'Nunito Sans', sans-serif;
+
+//******************** mixins
+
+.check {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.my-hover-mixin() {
+    &:hover {
+        background-color: @hoverSubmit;  }
+}
+
+.form(){
+    width: 100%;
+    margin: 8px 0;
+    border-radius: 4px;
+    border-radius: 4px;
+}
+
+//*********************
+
+
+html{
+    font-size: @fontSizeHtml;
+}
+.container {
+    width :100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 5%;
+    height: auto;
+    nav {
+        margin-bottom: 4%;
+        background-color: #f7ffe6;
+        .check();
+        @media(max-width :500px){
+            nav {
+                border-bottom: 1px solid black;
+            }
+        }
+
+        a {
+            .check();
+            width: 45%;
+            justify-content: space-between;
+            text-decoration: none;
+            //************8****media query for the nav a 
+            @media(max-width :500px){
+                display: flex;
+                justify-content: center;
+                font-size: 1.5rem;
+                margin-bottom: 5%;
+
+            }
+        }
+        .content {
+            background-color: @contentColor ;
+            .picture img {
+                width: 40%;
+                height: auto;
+                margin-top: 10%;
+                border-radius: 20%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                @media(max-width :500px){
+                    {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            h1{
+                margin-top: 4%;
+                font-size: 3rem;
+            }
+            @media(max-width:500px){       
+                .title-content{
+                    margin-top: 8%;
+                    text-align: center;
+                }
+
+            }
+            .paragraphs {
+                font-size: 1.2rem;
+                display: flex;
+                p {
+                    margin: 3% 3%;
+                    line-height: 1.6;
+                }
+                @media(max-width :500px){
+                    {
+                        display: flex;
+                        flex-direction: column;        
+                    }
+                }
+
+            }
+
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            margin-top: 12%;
+            margin-bottom: 5%;
+
+        }
+        button:hover {
+            color: #6666ff;
+        }
+        button:active{
+            background-color:@buttonColor ;
+        }
+        .second-section {
+            background-color: #e6ffff;
+            display: flex;
+            justify-content:space-between;
+            flex-direction: column;
+            margin: 10% 9% 9% 10%;
+            h3{
+                margin-top: 3%;
+            }
+            p{
+                line-height: 2;
+                font-size: 1.4rem;
+            }
+
+        }
+        .work-history {
+            margin-top: 6%;
+            table{
+                width:100%;
+
+                th, td {
+                    border-collapse: collapse;
+                    font-size: 1.3rem;
+                    padding: 3%;
+                }
+                th {
+                    text-align: left;
+                    tr:nth-of-type(odd){
+                        background-color: #f2f2f2;
+                    }
+                    tr:nth-of-type(even){
+                        background-color:@evenColor;
+                    }
+                }
+            }
+        }
+        .copy{
+            text-align: center;
+            margin-top: 15%;
+            font-size: 1.3rem;
+        }
+    }
+
+    h3{
+        font-family: @fontFamilyH3 ;
+        font-size: 2rem;
+        margin-bottom:4%;
+    }
+
+    ul li {
+        font-family: @fontLi;
+        line-height: 2;
+        font-size: 1.4rem;
+    }
+
+
+
+
+    /************form style******************/
+
+
+    .forms {
+        margin-top: 6%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        input[type=text], select {
+            .form();
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            .form();
+            background-color: #cfff66;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            .my-hover-mixin();
+        }
+        textArea {
+            width: 100%;
+            border-radius: 2%;
+        }
+
+    }
+
+
 
