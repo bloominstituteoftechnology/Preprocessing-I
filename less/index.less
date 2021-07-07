@@ -1,59 +1,170 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import './reset.less';
+@import './color.less';
+@import './font.less';
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
-
+// Breakpoints
+@mobileBreakpoint: 500px;
+	
 html, body {
-    height: 100%;
+	background: #5c5454; 
+	font-family: 'Lato', helvetica, arial, sans-serif; 
+	font-size: 1rem; 
+	color: #222;
+}
+	
+.clear {
+	clear: both;
 }
 
+p {
+	font-size: 1em;
+	line-height: 1.4em;
+	margin-bottom: 20px;
+	color: #444;
+}
+
+.cv {
+	width: 90%;
+	max-width: 800px;
+	background: #eff3f3;
+	margin: 30px auto;
+}
+
+.mainDetails {
+	padding: 25px 35px;
+	border-bottom: 2px solid #cf8a05;
+	background: #ededed;
+}
+
+.name {
+	float: left;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+
+	h1 {
+		font-size: 2.5em;
+		font-weight: 700;
+		margin-bottom: -6px;
+
+		@media (max-width:@mobileBreakpoint) {
+			line-height: .5em;
+			margin-bottom: 2px;
+		}
+	} 
+	
+	h2 {
+		font-size: 2em;
+		margin-left: 2px;
+	}
+}
+
+.mainArea {
+	padding: 0 40px;
+
+	@media (max-width: @mobileBreakpoint) {
+		padding: 0 25px;	
+	}
+}
+
+.headshot {
+	width: 12.5%;
+	float: left;
+	margin-right: 30px;
+
+	@media (max-width: 900px) {
+		display: inherit;
+	}
+	@media (max-width: @mobileBreakpoint) {
+		display: inherit;
+	}
+}
+
+.headshot img {
+	width: 100%;
+	height: auto;
+	border-radius: 50px;
+}
+
+.contactDetails {
+	float: right;
+}
+
+.contactDetails ul {
+	list-style-type: none;
+	font-size: 0.9em;
+	margin-top: 2px;
+}
+
+.contactDetails ul li {
+	margin-bottom: 3px;
+	color: #444;
+}
+
+.contactDetails ul li a:hover { 
+	color: #cf8a05;
+}
+
+
+section {
+	border-top: 1px solid #dedede;
+	padding: 20px 0 0;
+
+	@media (max-width: @mobileBreakpoint) {
+		padding: 15px 0 0;
+	}
+}
+
+.sectionTitle {
+	float: left;
+	width: 25%;
+
+	h1 {
+		font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+		font-style: italic;
+		font-size: 1.5em;
+		color: #cf8a05;
+	}
+
+}
+
+.sectionContent {
+	float: right;
+	width: 72.5%;
+
+	h2 {
+		font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+		font-size: 1.5em;
+		margin-bottom: -2px;
+	}
+}
+
+.subDetails {
+	font-size: 0.8em;
+	margin-bottom: 3px;
+}
+
+@media (max-width: @mobileBreakpoint) {
+	.cv {
+		width: 95%;
+		margin: 10px auto;
+		min-width: 280px;
+	}
+
+}
+
+footer {
+	text-align: center;
+}
+
+nav {
+	display: flex;
+
+	@media (max-width: @mobileBreakpoint) {
+		padding: 0 auto;
+		min-width: 0;
+	}
+	
+}
+.navclass {
+	padding: 3px;
+	text-decoration: none;
+}
