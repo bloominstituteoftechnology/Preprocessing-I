@@ -49,11 +49,147 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// Variables
+@background-color: lightgray;
+@font-family: Tahoma, Helvetica, serif;
+@height: 100%;
+@padding: 10px;
+@font-size: 2rem;
+@width: 45%;
+@flex-direction: column;
+@justify-content: center;
+@table-background-color: rgb(199, 196, 196);
+
+
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
+html, body {
+	height: @height;
+	padding: @padding;
+	font-family: @font-family;
+}
+
+
+.main-container {
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 50px;
+	border: 1px solid black;
+	line-height: 1.6;
+}
+nav {
+	display: flex;
+
+	// width: 100%;
+	// padding: 10px;
+	justify-content: flex-end;
+
+}
+nav a {
+	text-decoration: none;
+	color: #b0b0b0;
+	font-size: @font-size;
+	display: flex;
+	// width: 10%;
+	justify-content: flex-end;
+	
+
+}
+
+div .navigation {
+
+}
+
+.mid-container {
+	display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	// margin-top: 25px;
+
+	flex-wrap: wrap;
+	justify-content: space-between;
+	// padding: 10px;
+	
+
+}
+
+.top-container {
+	width: @width;
+	display: flex;
+	justify-content: @justify-content;
+	flex-wrap: wrap;
+	flex-direction: @flex-direction;
+}
+
+.list-container {
+	width: @width;
+	display: flex;
+	justify-content: @justify-content;
+	flex-direction: @flex-direction;
+}
+
+// .top-container .list-container {
+// 	display: flex;
+// 	justify-content: space-between;
+// }
+
+h1, h2 {
+	font-size: 4rem;
+}
+
+
+p {
+	font-size: @font-size;
+}
+
+.title-container {
+	font-size: 3rem;
+}
+
+div .background {
+	display: flex;
+	font-size: @font-size;
+	flex-direction: @flex-direction;
+	
+	background: @background-color;
+	padding: 20px;
+	height: 500px;
+	// align-items: start;
+	// width: auto;
+
+}
+
+.container {
+	// margin-right: 10%;
+}
+
+.list-container {
+	display: flex;
+	
+}
+
+ul {
+	font-size: @font-size;
+	// display: flex;
+	// flex-direction: column;
+	// width: 80px;
+	
+}
+
+table, th, td {
+	border-top: 1px solid rgb(240, 236, 236);
+	font-size: @font-size;
+	// border: 1px solid red;
+ }
+
+
+ .d1, .d3 {
+	background-color: @table-background-color;
+ }
