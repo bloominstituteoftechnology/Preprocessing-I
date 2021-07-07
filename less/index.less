@@ -57,3 +57,178 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+//Variables
+@pfont-size: 1.6rem;
+@row-color: #dddddd;
+
+//Mixins
+.margin {
+	margin-top: 10px;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+
+//Less Code
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 900px;
+
+	.navbar {
+		margin: 15px 0;
+		display: flex;
+		justify-content: flex-end;
+		a {
+			text-decoration: none;
+			color: black;
+			margin-left: 2%;
+			font-size: 1.3rem;
+
+			@media (max-width: 500px){
+				font-size: 1.6rem;
+			}
+		}
+
+		@media (max-width: 500px){
+			justify-content: space-around;
+		}
+	}
+
+	.cta {
+		background: #E9ECEF;
+		padding: 5% 2.5%;
+		.cta-top {
+			@media (max-width: 500px){
+				.flex-center();
+				flex-direction: column;
+			}
+			.name {
+				.margin();
+				font-size: 3.5rem;
+			}
+			h2 {
+				font-size: 1.5rem;
+				margin-top: 10px;
+				margin-bottom: 20px;
+			}
+			border-bottom: 2px solid lightgray;
+			img {
+				@media (max-width: 500px){
+					margin: 0 auto;
+				}
+			}
+		}
+
+		.cta-bottom {
+			p {
+				.margin();
+				font-size: @pfont-size;
+			}
+			button {
+				margin-top: 5px;
+				background: darkgray;
+				color: white;
+				border-radius: 5px;
+				padding: 5px 10px;
+				font-size: 1.2rem;
+			}
+		}
+
+	}
+
+	.about {
+		margin: 20px 0;
+		display: flex;
+		@media (max-width: 500px){
+			flex-direction: column;
+		}
+		.about-summ {
+			width: 50%;
+			@media (max-width: 500px){
+				width: 90%;
+				margin: 0 auto;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			p {
+				.margin();
+				font-size: @pfont-size;
+			}
+		}
+		.about-skills {
+			width: 50%;
+			@media (max-width: 500px){
+				width: 90%;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+
+			ul {
+				display: flex;
+				justify-content: flex-start;
+				flex-direction: column;
+				margin-top: 5px;
+				li {
+					font-size: 1.6rem;
+					border: 0.5px solid grey;
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+
+	.history {
+		margin-bottom: 30px;
+		@media (max-width: 500px){
+			width: 90%;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+		.history-table {
+			font-size: @pfont-size;
+			border-collapse: collapse;
+			width: 100%;
+			.margin();
+			td, th {
+				text-align: left;
+				padding: 8px;
+			}
+			th {
+			border-top: 1px solid @row-color;
+			border-bottom: 1px solid @row-color;
+			}
+			tr:nth-child(even) {
+				background-color: @row-color;
+			}
+		}
+	}
+
+	footer {
+		background: grey;
+		text-align: center;
+		padding: 20px 0px 20px 0px;
+		margin-top: 20px;
+		h3 {
+			font-size: @pfont-size;
+			color: white;
+		}
+	}
+
+}
+
