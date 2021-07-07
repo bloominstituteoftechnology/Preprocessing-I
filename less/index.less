@@ -53,7 +53,135 @@ table {
     box-sizing: border-box;
 }
 
+@rowOneBackground: rgb(139,32,50);
+@rowTwoBackground: blue;
+
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: darkslategray;
+	
+	@media (max-width: 500px) {
+		width: 100%;
+		background: white;
+	}
 }
 
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	justify-content: space-around;
+
+
+
+	h1 {
+		margin: 20px 0px;
+		text-decoration: underline; 
+		font-size: 16px;
+	}
+
+	h3 {
+		margin: 10px 0px;
+	}
+	
+
+	nav {
+		display:flex;
+		justify-content: space-around;
+		background-color:rgb(42,46,54);
+		padding: 20px 0px; 
+		font-size: 17px;
+
+		z-index: 1;
+		// position: fixed; 
+		// the start of this fixed header begins at the container and pushed out only to the left.
+		border-bottom: 4px solid red;
+		width: 100%;
+		align-content: center;
+
+		a {
+			color: white;
+		}
+
+		a:link {
+			text-decoration: none;
+		}
+
+		a:hover {
+			background-color: grey;
+			color: white;
+		}
+	}
+
+	.top-content {
+		.bordered();
+
+		background-color: @rowOneBackground;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 500px;
+		color: white;
+
+		p {
+			padding: 30px 0px;
+		}
+
+	}
+
+
+	.middle-content {
+		.bordered();
+		display: flex;
+
+		// this gives a parallax image 
+		background-image: url("https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?cs=srgb&dl=architecture-blue-sky-building-310479.jpg&fm=jpg");
+		height: 500px;
+		background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+		background-size: cover;
+		
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-around;
+
+		.middle-text {
+			.shadow();
+			justify-content: space-around;
+			background-color: blue;
+			color: rgb(214, 214, 214);
+			padding: 20px;
+		}
+	}
+
+	.skillsEducation {
+		.bordered();
+		flex-direction: row;
+		background-color: @rowTwoBackground;
+		color: white;
+		width: 40%;
+	}
+
+	.workHistory {
+		.bordered();
+		width: 25%;
+	}
+
+	.contact {
+		.bordered();
+
+		background-color: @rowOneBackground;
+		color: white;
+	}
+
+}
+
+
+.bordered {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.shadow {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.527);
+}
