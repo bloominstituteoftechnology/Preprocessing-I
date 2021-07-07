@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +55,207 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
 }
 
+
+@mobile: 500px;
+@padding: 40px;
+@base-color: white;
+@background : lightgray;
+@fontcolor: black;
+
+
+.centered-column() {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+.max-width(@max-width:880px) {
+	width:100%;
+	max-width: @max-width
+}
+
+	.container {
+	.max-width();
+		margin:0 auto;
+	}
+
+	.home {
+	padding: @padding;
+	background: lightgray;
+	@media(max-width:@mobile) {
+	background: lightgray;
+	padding:15px 5px;
+													}
+	    .main-header {
+	       display:flex;
+	       justify-content: flex-end;
+	       align-items:center;
+	       padding: 20px;
+	       padding-right:0px;
+
+	       @media(max-width:@mobile) {
+					 	justify-content:center;
+						padding:0 auto;
+													}
+
+  .nav {
+
+       .a {
+           padding:20px;
+           font-size:1.8rem;
+           color:@fontcolor;
+           text-decoration:none;
+
+	           &:last-child {
+	            padding-right:0px;
+	           }
+
+	           @media(max-width:@mobile) {
+                 width:100%;
+                 border-bottom: 1px solid #D3D3D3;
+                 display:flex;
+                 justify-content:space-between;
+                 padding:15px;
+						}
+          }
+
+           @media(max-width:@mobile) {
+              width:100%;
+              display:flex;
+							flex-direction:column;
+						}
+
+       }
+    }
+
+		.top {
+       padding:@padding;
+       background: @background;
+
+       .name {
+		          @media(max-width:@mobile) {
+							   font-size: 2.4rem;
+							   margin: 10px 0;
+							}
+         font-size: 4.5rem;
+         margin-bottom: 20px;
+       }
+       .tech {
+         font-size: 2.4rem;
+       }
+
+       .choose{
+          font-size:1.8rem;
+          margin-bottom: 28px;
+
+       }
+       .meet {
+          text-decoration:none;
+          font-size: 1.8rem;
+          padding: 10px 20px;
+          background: gray;
+          color: white;
+          margin-top: 20px;
+          border-radius: 5px;
+       }
+
+   @media(max-width:@mobile) {
+			   padding:0px;
+			   padding-bottom:25px;
+			}
+    }
+
+
+  .middle {
+       display:flex;
+       justify-content:space-between;
+       margin-bottom: 25px;
+	     .content {
+	     	width: 48%;
+	      display:flex;
+	      flex-direction:column;
+	      justify-content:flex-start;
+	      align-items:flex-start;
+	      font-size: 1.6rem;
+
+	      .aside-h2 {
+	      	font-size:2.6rem;
+	       	margin: 16px 0px;
+	       }
+	       .content-summary {
+	       	line-height: 1.2;
+	        font-size:1.6rem;
+	        @media(max-width:@mobile) {
+          	text-align:justify;
+          }
+	       }
+	       .un-ordered  {
+	       	width:100%;
+	        .list {
+	        	display:flex;
+	          justify-content:flex-start;
+	          padding: 15px 40px;
+	          border: 1px solid black;
+	          }
+	       }
+	      }
+
+	       @media(max-width:@mobile) {
+					 flex-direction:column;
+					 justify-content:center;
+					 align-items:center;
+
+						.content {
+							width:100%;
+							margin: 20px 0px;
+						}
+				}
+    }
+
+    .history {
+       font-size: 1.6rem;
+       .work {
+         font-size: 2.4rem;
+         margin: 10px 0px;
+       }
+       .table {
+
+           border: 1px solid black;
+           border-collapse: collapse;
+           .tr:nth-child(odd) {
+			        background-color: lightgray;
+			     }
+			.tr {
+           .th {
+             text-align:left;
+             font-size: 2rem;
+           }
+           .th, .td {
+               border: 1px solid black;
+               border-collapse: collapse;
+               padding: 9px;
+           }
+
+      	}
+       }
+
+    }
+
+}
+
+.footer {
+	.max-width();
+	margin:0 auto;
+  padding:20px;
+	background: darkgray;
+  width:100%;
+  height: 100px;
+  .centered-column();
+  font-size:2.0rem;
+  line-height:1.1;
+
+
+}
