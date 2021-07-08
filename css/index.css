@@ -1,1 +1,330 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+@keyframes jump-in {
+  from {
+    margin-right: 500%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+/* variables */
+/* mixins */
+html {
+  font-size: 62.5%;
+}
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+header {
+  width: 100%;
+  margin: 30px auto;
+}
+header nav {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+  }
+}
+header nav a {
+  color: gray;
+  text-decoration: none;
+}
+header nav a:hover {
+  color: purple;
+}
+@media (max-width: 500px) {
+  header nav a {
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+  }
+}
+.cta {
+  background-color: lightgray;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.cta img {
+  width: 20%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  animation-name: jump-in;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in;
+}
+.cta h1 {
+  font-family: 'Gamja Flower', cursive;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.cta h2 {
+  color: blue;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.cta p {
+  line-height: 1.5;
+  margin: 5px 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+.cta .button-div {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+.cta .button-div button {
+  width: 20%;
+  padding: 20px 0;
+  font-size: 3rem;
+  text-align: center;
+  color: blue;
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  .cta .button-div button {
+    width: 40%;
+  }
+}
+.main-content {
+  border-top: 1px solid gray;
+  padding-top: 15px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .main-content {
+    align-items: flex-start;
+    display: flex-inline;
+  }
+}
+.main-content .text-block {
+  width: 50%;
+  margin-right: 7%;
+}
+.main-content .text-block h2 {
+  color: blue;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-left: 2%;
+}
+.main-content p {
+  line-height: 1.5;
+  margin: 5px 2%;
+}
+.attributes {
+  width: 50%;
+  background: #465977;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.attributes h2 {
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-top: 10%;
+}
+.attributes ul {
+  padding-left: 10%;
+}
+.attributes ul li {
+  list-style: square;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+}
+.work-history {
+  margin-top: 10px;
+}
+.work-history h2 {
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  margin-bottom: 0;
+  background-color: #a39ea0;
+}
+.work-history table {
+  width: 100%;
+  background-color: lightgray;
+}
+.work-history table tr {
+  padding-top: 2rem;
+  border: 1px solid black;
+  height: 40px;
+  valign: bottom;
+}
+.work-history table tr th {
+  font-weight: bold;
+  font-size: 1.8rem;
+  vertical-align: bottom;
+}
+.work-history table tr td {
+  text-align: center;
+  vertical-align: bottom;
+}
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: blue;
+}

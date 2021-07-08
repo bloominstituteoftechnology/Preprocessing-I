@@ -1,8 +1,8 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+v2.0 | 20110126
+License: none (public domain)
+ */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -17,35 +17,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -56,4 +56,235 @@ table {
 html, body {
     height: 100%;
 }
+
+@keyframes jump-in {
+    from {
+        margin-right: 500%;
+    }
+
+    to {
+        margin-right: 0%;
+    }
+}
+/* variables */
+@backgroundColor: lightgray;
+@secondaryColor: #465977;
+
+
+/* mixins */
+
+.header2(@color) {
+    color: @color;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.par() {
+    line-height: 1.5;
+    margin: 5px 2%;
+}
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    max-width: 880px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+}
+
+header {
+    width: 100%;
+    margin: 30px auto;
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+
+        @media (max-width: 500px){
+            flex-direction: column;
+            align-items: center;
+            border-bottom: none;
+        }
+
+        a {
+            color: gray;
+            text-decoration: none;
+
+            &:hover {
+                color: purple;
+            }
+
+            @media (max-width: 500px){
+                margin-bottom: 10px;
+                border-bottom: 1px solid black;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+    }
+}
+
+.cta {
+    background-color: @backgroundColor;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+
+    img {
+        width: 20%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        animation-name: jump-in;
+        animation-duration: 1s;
+        animation-delay: .5s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease-in;
+    }
+
+    h1 {
+        font-family: 'Gamja Flower', cursive;
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        .header2(blue);
+        text-align: center;
+    }
+
+    p {
+        .par();
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .button-div {
+        display: flex;
+        justify-content: center;
+        border: none;
+
+        button {
+            width: 20%;
+            padding: 20px 0;
+            font-size: 3rem;
+            text-align: center;
+            color: blue;
+            margin-top: 20px;
+
+            @media(max-width: 500px) {
+                width: 40%;
+            }
+
+        }
+    }
+
+}
+
+.main-content {
+    border-top: 1px solid gray;
+    padding-top: 15px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: 500px) {
+        align-items: flex-start;
+        display: flex-inline;
+    }
+
+    .text-block {
+        width: 50%;
+        margin-right: 7%;
+
+        h2 {
+            .header2(blue);
+            margin-left: 2%;
+        }
+    }
+
+    p { //mixin probably not necessary, just confusing. just messing around
+        .par();
+    } 
+
+}
+
+.attributes {
+    width: 50%;
+    background: @secondaryColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h2 {
+        .header2(black);
+        padding-top: 10%;
+    }
+
+    ul {
+        padding-left: 10%;
+
+        li {
+            list-style: square;
+            padding-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+    }
+    
+    img {
+        
+    }
+}
+
+.work-history {
+    margin-top: 10px;
+
+    h2 {
+        .header2(black);
+        text-align: center;
+        margin-bottom: 0;
+        background-color: #a39ea0;
+    }
+
+    table {
+    width: 100%;
+    background-color:@backgroundColor;
+
+    tr {
+        padding-top: 2rem;
+        border: 1px solid black;
+        height: 40px;
+        valign: bottom;
+
+        th {
+            font-weight: bold;
+            font-size: 1.8rem;
+            vertical-align: bottom;
+        }
+        td {
+            text-align: center;
+            vertical-align: bottom;
+        }
+    }
+}
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: blue;
+}
+
+
 
