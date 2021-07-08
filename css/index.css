@@ -1,1 +1,287 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: serif;
+}
+html {
+  font-size: 62.5%;
+}
+p {
+  font-size: 1.6rem;
+}
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.center {
+  margin: 0 auto;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+@keyframes cross-out {
+  0% {
+    text-decoration: underline;
+  }
+  100% {
+    text-decoration: line-through;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+}
+nav div {
+  padding: 1rem 0;
+  width: 25%;
+  flex-grow: 1;
+  border-right: 0.1rem dashed black;
+}
+nav div .flex-center a {
+  text-decoration: none;
+  font-size: 2.4rem;
+}
+nav div:last-child {
+  border-right: none;
+}
+nav div:hover {
+  text-decoration: line-through;
+  animation: cross-out 1s;
+  background-color: red;
+  color: black;
+}
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+  }
+  nav div {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 0.1rem dashed black;
+  }
+}
+header {
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  flex-wrap: wrap;
+}
+header h1 {
+  font-size: 3.6rem;
+  color: red;
+  padding-left: 4rem;
+}
+header h4 {
+  margin: 1.5rem;
+  font-size: 1.8rem;
+  color: grey;
+  letter-spacing: 2rem;
+  padding-left: 6rem;
+}
+header p {
+  font-size: 14.4rem;
+  padding-bottom: 0.64rem;
+  overflow: visible;
+}
+header div.cta {
+  padding: 2rem;
+  color: white;
+  background-color: blue;
+  font-size: 14.4rem;
+  border: 0.5rem solid grey;
+}
+header div.cta:hover {
+  color: white;
+  border: 0.5rem solid grey;
+  background-color: black;
+}
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.info-container .info-padding {
+  padding-top: 2rem;
+}
+.info-container section.bio {
+  width: 50%;
+}
+.info-container section.bio h2 {
+  font-size: 2.4rem;
+}
+.info-container section.bio p {
+  margin: 1rem 0rem 2rem 1.5rem;
+}
+.info-container section.skills {
+  height: 100%;
+  width: 50%;
+}
+.info-container section.skills h3 {
+  font-size: 2.4rem;
+  text-align: right;
+}
+.info-container section.skills ul.skills-list {
+  border: 0.1rem dashed black;
+}
+.info-container section.skills ul.skills-list li {
+  font-size: 2.4rem;
+  margin: 1rem 0;
+  border-top: 0.1rem dashed black;
+}
+.info-container section.skills ul.skills-list li:last-child {
+  border-bottom: 0.1rem dashed black;
+}
+section.work-history {
+  display: flex;
+  flex-direction: column;
+}
+section.work-history h3 {
+  font-size: 3.6rem;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.4rem;
+  margin: 2rem 0;
+}
+div.table div.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.4rem;
+  margin: 2rem 0;
+}
+div.table div.row:first-child {
+  font-weight: bold;
+}
