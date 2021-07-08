@@ -24,6 +24,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -49,11 +50,213 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-* {
+*{
     box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
+    //font-size : 62.5%
 }
 
+//Variables
+@greyshade : #897171;
+@lightgrey : lighten(@greyshade, 45%);
+@darkgrey : darken(@greyshade, 30%);
+@mobile : 500px;
+
+//mixin to display in center main and cross axis considered.
+.center() {
+	display : flex;
+	justify-content : center;
+	align-items : center;
+}
+
+.custom-layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+//Container div..
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  border : 1px solid @greyshade;
+
+  //@media(max-width : @mobile){
+  	//background : teal;
+  //}
+}
+
+.margin() {
+	margin-left : 3rem;
+	margin-right : 3rem;
+}
+
+header {
+	display : flex;
+	.margin();
+	width : 90%;
+	justify-content : flex-end;
+	padding : 20px;
+
+	@media (max-width : @mobile) {
+		justify-content : center;
+		background : gold;
+		width : 80%;
+	}
+		
+	nav {
+ 		font-size : 1em;
+    	
+		a {
+			margin : 1em;
+			text-decoration : none;
+			color : @greyshade;
+
+			@media (max-width : @mobile){
+				margin : 0.9em;
+			}
+		}
+
+		a:hover {
+			color : red;
+		}
+
+	}
+}
+	
+.first-section {
+	background : @lightgrey;
+	padding : 3em 1.5em;
+	.margin(); 
+	.name-head-div {
+		padding-top : 10px;
+		padding-bottom : 30px;
+		
+		h1{
+			font-size : 2em;
+
+			@media (max-width : @mobile){
+				font-size : 1.75em;
+			}
+		}
+	}
+
+	.info-div {
+		
+		button {
+    		background-color: @darkgrey;
+    		color: white;
+    		border : none;
+    		padding: 10px 18px;
+    		text-align: center;
+    		font-size: 1em;
+    		margin-top : 10px;
+		}
+	}
+}
+
+.second-section {
+	.margin();
+	padding : 1em;
+	display : flex;
+
+	@media (max-width : @mobile){
+		display : flex;
+		flex-wrap : wrap;	
+	}
+
+  
+	.listen-div {
+    	h3 {
+    		font-size : 1.8em;
+    		margin-bottom : 10px;
+    		
+			@media (max-width : @mobile){
+				font-size : 1.6em;
+				background : @lightgrey;
+				width : 38%;
+			}
+    	}
+    	p{
+     		width : 25em;
+      		height : auto;   
+    	
+    		@media (max-width : @mobile){
+    			width : 100%;
+    		}
+    	}
+	}
+
+	.stuff-div {
+    	h4 {
+      		margin-left : 2em;
+      		font-size : 2em;
+      		margin-bottom : 15px;
+
+      		@media (max-width : @mobile){
+      			font-size : 1.4em;
+      			background : @lightgrey;
+				width : 78%;
+				margin-left : 0;
+				margin-top : 20px;
+      		}
+    	}
+    	p {
+      		border-bottom : 1px dotted @greyshade;
+      		margin-left : 3em;
+      		padding : 0.35em;
+    	}
+
+	}
+}
+
+.third-section {
+	.margin();
+ 	
+ 	.third-section-div {
+ 		width : 70em;
+ 		height : 20em;
+
+ 		h4 {
+ 			font-size : 1.5em;
+      		margin-bottom : 15px;
+      		margin-top : 1.5em;
+      		padding : 5px;
+
+      		@media (max-width : @mobile){
+      			font-size : 1.4em;
+      			background : @lightgrey;
+				width : 15%;
+				margin-top : 20px;
+      		}
+ 		}
+
+ 		  table{
+    		border-collapse: collapse;
+    		width : 70%;
+    		
+    		@media (max-width : @mobile){
+      			width : 40%;
+      		}
+    		td, th {
+    			border-bottom: 1px solid #ddd;
+      			padding: 15px;
+    			text-align: left;
+      		}
+      		th {
+      			font-weight : bold;
+      		}
+      	}
+ 	}
+}
+
+
+footer {
+	.center();
+	background : @darkgrey;
+	padding  : 20px;
+	color : white;
+}
