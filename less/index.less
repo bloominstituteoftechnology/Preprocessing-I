@@ -53,7 +53,133 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//variables....
+
+@mobileBreakPoint:800px;
+@splashBackGroundColor:#E6F9AF;
+@textColor:#384E77;
+@buttonColor:#18314F;
+@navColor:#8BBEB2;
+@accentColor:#E6F9AF;
+
+.alignMenu(){
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+.roundedPhoto(){
+	border:2px solid black;
+	border-radius: 50%;
 }
 
+//main css body
+html, body {
+	height: 100%;
+	font-size: 62.5%;
+	color:@textColor;
+}
+.spacer{
+	margin-top:15px;
+	width: 100%;
+	margin-bottom:15px;
+}
+.accentColor{
+	background-color:@accentColor
+}
+.pageContainer{
+	max-width: 1050px;
+	margin:0 auto;
+	font-size: 1.6rem;
+}
+.header{
+	font-size:3rem;
+	font-weight:bold;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+footer{
+	margin-top:30px;
+	height:30px;
+	background-color: @accentColor;
+}
+header {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-top:15px;
+	margin-bottom:30px;
+	height:50px;
+	font-size:2rem;
+	width:100%;
+
+	@media(min-width:@mobileBreakPoint){
+		.alignMenu
+
+	}
+
+	nav a{
+		padding:10px;
+		text-decoration: none;
+		color: @navColor;
+	}
+}
+
+.photoSection{
+	background-color:@splashBackGroundColor;
+
+	.photoContainer{
+		padding:20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media(min-width:@mobileBreakPoint){
+			align-items: flex-start;
+		}
+
+		.profilePicture{
+			.roundedPhoto
+		}
+		.profileHeader{
+			font-size: 3rem;
+			margin-top: 20px;
+		}
+		.profileText{
+			margin-top:10px;
+			font-size:2rem;
+		}
+		.teamUp{
+			margin-top: 15px;
+			align-self: center;
+			padding:10px;
+			background:@buttonColor;
+			font-size: 2rem; 
+			color:white;
+			margin-bottom:30px;
+		
+			@media(min-width:@mobileBreakPoint){
+				align-self:flex-start;
+			}
+		}		
+	}
+}
+.aboutMeSection{
+	display: flex;
+	.aboutMeText{
+		width: 50%;
+	}
+	.aboutMeHobbies{	
+		width: 50%;
+		.hobbies{
+			border-top:1px solid black;
+			border-left:1px solid black;
+			border-right:1px solid black;
+
+				ul li{
+					padding:10px;
+					border-bottom:1px solid black;
+					text-align: center;
+				}
+		}
+	}
+}
