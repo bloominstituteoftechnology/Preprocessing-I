@@ -55,5 +55,178 @@ table {
 
 html, body {
     height: 100%;
+	font-size: 62.5%;
 }
+
+@shadow-color: #404040;
+
+header {
+	background-color: lightgray;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 100%;
+	@media (max-width: 500px) {
+		position: relative;
+		height: 100px;
+	}
+	nav {
+		height: 25px;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+		padding: 0 5%;
+		@media (max-width: 500px) {
+			justify-content: space-around;
+			align-items: center;
+			align-content: center;
+			flex-direction: column;
+			height: 100px;
+			padding: 5px 0;
+		}
+		a {
+			text-decoration: none;
+			color: darkslategrey;
+			font-size: 1.4rem;
+			&:hover {
+				color: white;
+			}
+			@media (max-width: 500px) {
+				border-bottom: 1px solid darkgray;
+				width: 50%;
+				text-align: center;
+				padding-bottom: 5px;
+				&:last-of-type {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+.lead {
+	img {
+		max-width: 250px;
+		width: 100%;
+		height: auto;
+		border-radius: 15%;
+		border: 2px solid white;
+		box-shadow: 2px 2px 2px @shadow-color;
+	}
+	.flexDefault;
+	 @media (max-width: 500px) {
+		 flex-direction: column;
+	 }
+	h1 {
+		color: darkslategray;
+		font-family: 'Pacifico', cursive;
+		margin: -28px 0 5px -10px;
+		.strokeText(1px, #FFF, 3px 3px 2px @shadow-color);
+	}
+	.headline {
+		flex: 1;
+		h2 {
+			text-decoration: none;
+		}
+		h3 {
+			margin: 0;
+		}
+		@media (max-width: 500px) {
+			margin: 0 auto;
+		}
+	}
+	.right {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	.skills {
+		//flex: 1;
+		margin: 15px 0;
+		ul {
+			.flexDefault;
+			list-style: disc inside;
+			flex-wrap: wrap;
+			margin-left: 10px;
+		}
+		h2 {
+			margin-bottom: 15px;
+		}
+	}
+	.education {
+		h3 {
+			font-size: 2rem;
+			font-style: italic;
+			margin: 10px 0 10px 10px;
+		}
+	}
+	h3, h4 {
+		margin-left: 10px;
+	}
+}
+
+.container {
+	.centerContent;
+	padding: 15px;
+	max-width: 600px;
+	font-size: 1.6rem;
+	background-color: #E8E8E8;
+	margin-top: 25px;
+	@media (max-width: 500px) {
+		margin-top: 0;
+	}
+}
+
+.intro {
+	p {
+		margin: 25px;
+	}
+	h2 {
+		margin-top: 20px;
+	}
+}
+
+.experience {
+	h3, h4 {
+		margin-left: 10px;
+	}
+	h3 {
+		margin-top: 10px;
+	}
+}
+
+h1 {
+	font-size: 3.2rem;
+}
+
+h2 {
+	font-size: 2.4rem;
+	text-decoration: underline;
+}
+
+// mixins
+.flexDefault() {
+	display: flex;
+	justify-content: space-between;
+}
+
+.centerContent() {
+	margin: 0 auto;
+}
+
+// Based on: https://css-tricks.com/adding-stroke-to-web-text/
+.strokeText(@thicc, @color, @extra: 0px 0px 0 #000) {
+	text-shadow:
+						-@thicc -@thicc 0 @color,
+							@thicc -@thicc 0 @color,
+					-@thicc @thicc 0 @color,
+							@thicc @thicc 0 @color,
+					@extra;
+}
+
 
