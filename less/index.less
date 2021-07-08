@@ -1,52 +1,14 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// import
+@import "mixins";
+@import "reset";
+@import "contact";
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+// variables
+@background-color: #E9ECEF;
+@font-size: 1.6rem;
+@nav-color: black;
+@mobile: (max-width: 500px);
+
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -57,3 +19,154 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+	margin: 0 auto;
+}
+
+header {
+	padding: 15px 0;
+	@media @mobile {
+		padding: 0;
+	}
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	@media @mobile {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	a {
+		color: @nav-color;
+		font-family: 'Roboto', sans-serif;
+		font-size: @font-size;
+		text-decoration: none;
+		padding-left: 4%;
+		@media @mobile {
+			font-size: 2.4rem;
+			border-bottom: 1px solid #e5e5e5;
+		}
+	}
+}
+.container {
+	width: 880px;
+  max-width: 100%;
+	margin: 0 auto;
+}
+
+.main-resume-info {
+	padding-top: 55px;
+	height: 600px;
+	width: 100%;
+	background: @background-color;
+	.img-container {
+		display: flex;
+		justify-content: center;
+	}
+
+		img {
+			align-self: center;
+			width: 33.33%;
+		}
+
+		h1 {
+			font-size: 4rem;
+			text-align: center;
+		}
+
+		p {
+			padding-top: 10px;
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		.resume-text {
+			line-height: 25px;
+		}
+}
+
+.btn-container {
+	padding-top: 25px;
+	display: flex;
+	justify-content: center;
+	.resume-btn {
+		.button;
+	}
+}
+
+.mid-section-container {
+	padding-top: 25px;
+	display: flex;
+	width: 100%;
+	.mid-col-1 {
+		margin-right: 3%;
+		width: 47%;
+		h2 {
+			font-size: 2.8rem;
+			font-weight: bold;
+			padding-bottom: 10px;
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+	.mid-col-2 {
+		width: 50%;
+		h2 {
+			font-size: 2.6rem;
+			font-weight: bold;
+			padding-bottom: 3px;
+		}
+		ul {
+			border: 1px solid #e5e5e5;
+			li {
+				font-size: 2rem;
+				padding: 10px 0 10px 10px;
+			}
+			.underline {
+				border-bottom: 1px solid #e5e5e5;
+			}
+		}
+	}
+}
+
+.work-history-container {
+	padding-top: 20px;
+	h2 {
+		font-size: 2rem;
+		font-weight: bold;
+		border-bottom: 1px solid #e5e5e5;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+.work-table {
+	width: 100%;
+	.table-header {
+		font-size: 1.4rem;
+		font-weight: bold;
+		th {
+			padding: 10px 0;
+			text-align: left;
+		}
+		}
+	}
+	.table-data {
+		width: 100%;
+		font-size: 1.4rem;
+		td {
+			padding: 10px 0;
+		}
+		.bold {
+			font-weight: bold;
+			width: 15%;
+		}
+	}
+
+	footer {
+		.footer;
+	}
