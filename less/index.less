@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -57,3 +57,220 @@ html, body {
     height: 100%;
 }
 
+html {font-size: 62.5%;}
+
+.flex_display(){
+	display: flex;
+	wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.separate_section(){
+	margin: 60px 0;
+	padding: 60px 0;
+	border: 1px solid white;
+	background-color: @section-color;
+	opacity: @opacity;
+	h1{
+		font-size: @h1-size;
+	}
+	h2{
+		font-size: @h2-size;
+		margin: 0 0 120px;
+	}
+	h3{
+		font-size: @h3-size;
+	}
+}
+
+// @title-f:
+// @text-f:
+@h1-size: 4.5rem;
+@h2-size: 3.8rem;
+@h3-size: 2.6rem;
+@section-color: gray;
+@opacity: 0.8;
+@background-color: black;
+@background-img: url("../img/Star-2.png");
+@progress-bar-color: black;
+
+body {
+	background-color: @background-color;
+	background-image: @background-img;
+	// background-size: cover;
+}
+.container{
+	color: white;
+	max-width: 1024px;
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid black;
+	font-size: 2rem;
+
+		@media(max-width: 920px){
+			max-width: 800px;
+		}
+		@media(max-width: 768px){
+			max-width: 600px;
+		}
+
+
+header {
+	.flex_display;
+		@media(max-width: 768px){
+			flex-direction: column-reverse;
+		}
+	img{
+		width: 120px;
+		height: auto;
+		margin-left: 10%;
+
+		@media(max-width: 768px){
+			margin: auto;
+		}
+	}
+	nav{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		a{
+			text-decoration: none;
+			color: white;
+			font-size: 2.6rem;
+		}
+
+			@media(max-width: 768px){
+				flex-direction: column;
+				align-items: center;
+				a{
+					padding: 10px 0;
+				}
+				img {
+					margin: 10px;
+				}
+
+			}
+	}
+}
+
+
+.intro {
+	.separate_section;
+	.flex_display;
+	justify-content: flex-start;
+
+	.intro-img{
+		width: 30%;
+		height: auto;
+	}
+	.intro-details{
+		margin: 0 auto;
+		max-width: 450px;
+
+			.name{
+				border-bottom: 1px gray solid;
+				margin: 	0 0 10px;
+				padding:	0 0 10px;
+			}
+			table, tr, th {
+				border: 1px solid black;
+				padding: 8px;
+				text-align: center;
+			}
+
+			table{
+				max-width: 450px;
+				tbody {
+					width: 100%;
+				}
+				@media (max-width: 768px){
+					max-width: 100%;
+					// color: orange;
+				}
+			}
+
+	}
+}
+
+
+// table,
+// tr,
+// th {
+//   border: 1px solid black;
+//   padding: 8px;
+//   text-align: center;
+// }
+// table{
+//   width: 450px;
+//   /* width: 100%; */
+// }
+
+.skills {
+	.separate_section;
+  .flex_display;
+	flex-direction: column;
+
+
+
+	.skills-content{
+		.flex_display;
+		align-items: flex-start;
+		// justify-content: space-between;
+		width: 80%;
+
+			.skill-list{
+				max-width: 350px;
+				width: 100%;
+				.progress-bar {
+					width: 100%;
+					height: 20px;
+					background-color: #ddd;
+
+				.strength {width: 90%; background-color: @progress-bar-color;}
+				.x-ray {width: 80%; background-color: @progress-bar-color;}
+				.speed {width: 98.7%; background-color: @progress-bar-color;}
+				.fly {width: 86%; background-color: @progress-bar-color;}
+
+				.skills-bar {
+					 text-align: right;
+					padding-right: 20px;
+					line-height: 20px;
+					color: white;
+				}
+			}
+			}
+	}
+}
+
+.work-history {
+	.separate_section;
+	.flex_display;
+	flex-direction: column;
+	.projects{
+		line-height: 4rem;
+	}
+}
+
+footer {
+	.separate_section;
+	.contact-title{
+		text-align: center;
+		margin-bottom: 80px;
+
+	}
+	.contact-form {
+		margin-left: 5%;
+		font-size: @h3-size;
+		line-height: 3rem;
+		form{
+			max-width: 400px;
+			width: 100%;
+			input, textarea{
+				width:80%;
+			}
+		}
+
+	}
+}
+}
