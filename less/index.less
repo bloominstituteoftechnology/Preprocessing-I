@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,6 +48,23 @@ table {
 	border-spacing: 0;
 }
 
+//Variables and other LESS elements
+
+@fonts: gray;
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0% 4%;
+}
+
+.font-general {
+	color: @fonts;
+	font-size: 1.1rem;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -55,5 +72,166 @@ table {
 
 html, body {
     height: 100%;
+		font-family: Raleway, serif;
+		.font-general;
 }
 
+.container {
+	max-width: 880px;
+	margin: 0 auto;
+	background: #b5fcf7;
+
+
+header nav {
+	display: flex;
+	font-size: 1.0rem;
+	margin: 2% 0%;
+	justify-content: space-between;
+	padding: 1% 5%;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+  a {
+		display: flex;
+		justify-content: space-between;
+		text-decoration: none;
+		@media (max-width: 500px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			font-size: 1.2rem;
+			border-bottom: 1px solid gray;
+			padding: 1.8%;
+	}
+}
+	a:hover {
+		color: gray;
+		background-color: white;
+	}
+
+}
+.top-box {
+	.center;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	height: 50%;
+	background-color: white;
+	margin: 0 auto;
+	padding-bottom: 2%;
+
+	h1 {
+		padding: 5%;
+		font-size: 1.7rem;
+		font-style: oblique;
+		@media (max-width: 500px) {
+			text-align: center;
+		}
+	}
+
+	h3 {
+		font-size: 1.4rem;
+		font-style: italic;
+		text-decoration: underline;
+		padding: 2%;
+	}
+
+	p {
+		.font-general;
+		padding: 3%;
+	}
+
+	img {
+		width: 80%;
+		.center;
+		padding-top: 3%;
+		@media (max-width: 500px) {
+			display: none;
+		}
+	}
+
+	button {
+		padding: 2%;
+		padding-bottom: 35
+		border: 1px solid black;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background: #b5fcf7;
+		transition: width 3s;
+		transition-timing-function: ease-in;
+	}
+
+} // .top-box
+
+.middle-content {
+	.center;
+	width: 100%;
+
+	.middle-text {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 2%;
+	  width: 80%;
+		height: 20%;
+		font-size: 1.1rem;
+	}
+
+	.middle-text ul {
+		width: 100%;
+		padding: 3%;
+		list-style-type: square;
+	}
+
+	.middle-text h3 {
+		font-size: 1.4rem;
+		padding-bottom: 2%;
+		padding-top: 2%;
+	}
+
+}
+
+.experience {
+	.center;
+
+	table {
+		.center;
+		border-collapse: collapse;
+    width: 100%;
+		padding-top: 3%;
+		padding-bottom: 5%;
+
+		@media (max-width: 500px) {
+			width: 80%;
+		}
+		td, th {
+		    border: 1px solid grey;
+		    text-align: center;
+		    padding: 2%;
+				width: 50%;
+		}
+
+		th {
+			font-weight: bold;
+		}
+
+		tr:nth-child(even) {
+		    background-color: #dddddd;
+		}
+	} // table
+} //experience
+
+footer {
+	margin: 0 auto;
+	text-align: center;
+	width: 50%;
+	padding: 2%;
+	margin-bottom: 1%;
+	background: white;
+}
+
+} // container
