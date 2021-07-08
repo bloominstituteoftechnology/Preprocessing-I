@@ -4,56 +4,450 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+// General Styles
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
+// Variables
+@main-color: #ff5252;
+@invert-color: white;
+@main-font: "Allerta Stencil", sans-serif;
+
+// Mixins
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout(@j-content, @a-items) {
+  display: flex;
+  justify-content: @j-content;
+  align-items: @a-items;
+}
+
+.inverted-section() {
+  background: @invert-color;
+  margin: 20px auto;
+  color: @main-color;
+}
+
+.main-colored-section() {
+  background: @main-color;
+  padding: 20px 0;
+  margin: 20px auto;
+  color: @invert-color;
+}
+
+// Rest of Styles
+.container {
+  // Header Styles
+  header {
+    background: @main-color;
+    .layout(space-between, center);
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+    h1 {
+      margin-left: 20px;
+      color: @invert-color;
+      font-family: @main-font;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      width: 400px;
+      justify-content: space-around;
+      @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      a {
+        color: @invert-color;
+        text-decoration: none;
+        height: 100%;
+        padding: 20px;
+        &:hover {
+          background: @invert-color;
+          color: @main-color;
+        }
+      }
+    }
+  }
+
+  // Intro Section Styles
+  .intro {
+    padding: 20px 0;
+    .intro-img {
+      position: relative;
+      text-align: center;
+      color: @main-color;
+      font-size: 2rem;
+      letter-spacing: 1rem;
+      h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: @main-font;
+        line-height: 1.5;
+      }
+    }
+    div {
+      .layout(space-around, center);
+      img {
+        border-radius: 50%;
+      }
+      @media (max-width: 500px) {
+        flex-direction: column;
+      }
+    }
+    .intro-text {
+      .main-colored-section;
+      p {
+        color: @invert-color;
+        padding: 20px;
+      }
+      h2 {
+        font-family: @main-font;
+        color: @invert-color;
+      }
+      button {
+        border: none;
+        color: @main-color;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.6rem;
+        background: @invert-color;
+        font-family: @main-font;
+        &:hover {
+          background: #008cba;
+          color: @invert-color;
+        }
+        &:active {
+          background: @main-color;
+          color: @invert-color;
+        }
+      }
+    }
+  }
+
+  // Skills Section Styles
+  .skills-section {
+    h2 {
+      padding: 20px;
+      font-size: 2rem;
+      font-family: @main-font;
+    }
+    p {
+      padding: 20px;
+      font-family: @main-font;
+    }
+    .inverted-section;
+    .skills {
+      text-align: right;
+      padding: 10px;
+      color: white;
+    }
+    .html {
+      width: 100%;
+      background-color: #4caf50;
+    }
+    .css {
+      width: 80%;
+      background-color: #2196f3;
+    }
+    .js {
+      width: 65%;
+      background-color: #f44336;
+    }
+    .php {
+      width: 90%;
+      background-color: #808080;
+    }
+    .react {
+      width: 60%;
+      background-color: @main-color;
+    }
+    .skill-container {
+      width: 100%;
+      background-color: #ddd;
+    }
+  }
+
+  // Work History Styles
+  .work-history {
+    .company-logo {
+      padding: 20px 0;
+    }
+    .media-body {
+      padding: 20px;
+    }
+    .main-colored-section;
+    h2 {
+      padding: 20px;
+      font-size: 2rem;
+      font-family: @main-font;
+    }
+    .inside-sec {
+      padding: 20px;
+      h5 {
+        font-family: @main-font;
+        font-size: 1.2rem;
+        padding: 10px 0;
+      }
+    }
+    .inside-sec {
+      width: 100%;
+      display: inline-block;
+      background: @main-color;
+    }
+
+    .margin-top-30 {
+      margin-top: 30px !important;
+    }
+  }
+
+  // Contact Section Styles
+  .contact {
+    .inverted-section;
+    padding-bottom: 60px;
+    h2 {
+      padding: 20px;
+      font-size: 2rem;
+      font-family: @main-font;
+    }
+    form {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      input[type="text"],
+      select,
+      textarea {
+        width: 80%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 16px;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        border: none;
+        color: @invert-color;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.6rem;
+        background: @main-color;
+        font-family: @main-font;
+        &:hover {
+          background: #008cba;
+          color: @invert-color;
+        }
+        &:active {
+          background: @main-color;
+          color: @invert-color;
+        }
+      }
+
+      label {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  // Portfolio Page
+  .portfolio-header {
+    text-align: center;
+    margin: 20px 0;
+    font-family: @main-font;
+    font-size: 2rem;
+    color: @main-color;
+  }
+  .portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 500px) {
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    div.gallery {
+      margin: 5px;
+      border: 3px solid #ccc;
+      float: left;
+      width: 100%;
+      .desc {
+        padding: 15px;
+        text-align: center;
+      }
+      &:hover {
+        border: 1px solid @main-color;
+      }
+      img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  }
+}
+
+// Footer Section Styles
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background: @main-color;
+  color: @invert-color;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
