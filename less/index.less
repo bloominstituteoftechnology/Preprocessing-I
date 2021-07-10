@@ -1,3 +1,4 @@
+/* Reset Start */
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -47,13 +48,155 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Reset End */
 
+/* Less Start */
 /* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+
+/* Vars Start */
+@batblue: rgb(10,145,191);
+@batdark: rgb(15,55,79);
+/* Vars End */
+
+/* Mixins Start */
+.normalize {
+	text-decoration: none;
+	color: black;
 }
+
+.bold {
+	font-weight: bold;
+}
+/* Mixins Start */
+
+html { font-size: 62.5%; }
+
+* {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+} 
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
+body {
+	max-width: 880px;
+	height: 100%;
+	margin: 0 auto;
+	background-color: @batdark;
+
+	.container {
+		background-color: @batblue;
+		padding-left: 20px; 
+		padding-right: 20px;
+	}
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	height: 100%;
+	width: 75%;
+	
+	a {
+		.normalize;
+		font-size: 3.2rem;
+		.bold;
+
+		@media (max-width: 500px) {
+		font-size: 2rem;
+		}
+	}
+}
+
+header {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 40px;
+
+	.title {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+    height: 400px;
+		width: 100%;
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+		
+		h1 {
+			align-items: center;
+			font-size: 6.4rem;
+			font-family: "Comic Sans MS", "Comic Sans", cursive;
+			.bold;
+		}
+	}
+}
+
+main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 40px;
+
+	.contentContainer1 {
+		display: flex;
+		align-items: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+	}
+
+	.contentContainer2 {
+		margin-top: 10px;
+	}
+
+	h4 {
+		font-size: 2rem;
+		.bold;
+	}
+}
+
+#intro {
+	width: 50%;
+}
+
+#skills {
+	width: 50%;
+	margin-left: 25%;
+	line-height: 1.2;
+
+	@media (max-width: 500px) {
+		width: 50%;
+		margin-left: 0%;
+		line-height: 1.2;
+	}
+}
+
+#contact {
+	margin-top: 20px;
+
+	h4 {
+		.bold;
+	}
+
+	address .auto-generated-link {
+		.normalize;
+	}
+}
+
+footer p {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* Less End */
