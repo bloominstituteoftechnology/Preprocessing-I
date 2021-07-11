@@ -1,1 +1,435 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+html,
+body {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100%;
+  background-color: #dddddd;
+}
+ul {
+  list-style-type: circle;
+}
+/* Variables */
+/* mixins */
+.textfam1 {
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+}
+.textfam2 {
+  font-size: 1.05rem;
+  font-family: 'Thasadith', sans-serif;
+  color: black;
+}
+.container header .navbar {
+  background-color: #a282cb;
+  display: flex;
+  padding: 1.6rem;
+  font-family: sans-serif;
+  color: white;
+}
+.container header .navbar_link {
+  width: 45%;
+}
+.container header .navbar_link a {
+  color: white;
+  text-decoration: none;
+}
+.container header .navbar_link a:hover {
+  color: #a4bafa;
+  transition: 1s;
+  transform: scale(1.1);
+}
+.container header .navbar_link-brand {
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+  font-size: 1.4rem;
+  margin-right: 4rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0;
+  width: 30%;
+}
+.container header .navbar_link-brand:hover {
+  color: white;
+  transition: 2s;
+}
+.container header .navbar_items {
+  width: 35%;
+  justify-content: flex-end;
+  display: flex;
+}
+.container header .navbar_items-right {
+  width: 30%;
+  justify-content: flex-start;
+  margin-left: 0;
+}
+.container header .navbar_link-toggle {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .container header .navbar_items,
+  .container header .navbar {
+    flex-direction: column;
+  }
+  .container header .navbar_items {
+    display: none;
+  }
+  .container header .navbar_items-right {
+    margin-left: 0;
+  }
+  .container header .Navbar__ToggleShow {
+    display: flex;
+  }
+  .container header .navbar_link-toggle {
+    padding: 0;
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+  }
+  .container header .navbar_link {
+    width: 20%;
+  }
+  .container header .navbar_link-toggle img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+.container .main {
+  background-color: #dddddd;
+  max-width: 1920px;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.container .main .mainbox1 {
+  align-self: center;
+  height: 100%;
+  width: 40%;
+  padding: 1rem;
+}
+@media (max-width: 768px) {
+  .container .main .mainbox1 {
+    margin-right: 0.5rem;
+  }
+}
+.container .main .mainbox1 .slides {
+  margin: 0;
+  background-color: #a282cb;
+}
+.container .main .mainbox1 .slides .slideimgs {
+  height: 12.5rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .container .main .mainbox1 .slides .slideimgs {
+    height: 10.5rem;
+  }
+}
+.container .main .mainbox1 .slides button {
+  width: 25%;
+  margin: 2.5% 11%;
+  background-color: #545252;
+  border: 1px solid black;
+}
+.container .main .mainbox1 .slides button:hover {
+  transition: 1s;
+  transform: scale(1.1);
+  box-shadow: 1px 3px #5e5d5d;
+}
+.container .main .mainbox1 .info {
+  padding: 6.5% 0;
+  border: 2px solid #a282cb;
+  display: flex;
+  justify-content: center;
+}
+.container .main .mainbox1 .info .list1 {
+  font-size: 1.05rem;
+  font-family: 'Thasadith', sans-serif;
+  color: black;
+  list-style-type: none;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px grey;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .container .main .mainbox1 .info .list1 {
+    font-size: 0.7rem;
+  }
+}
+.container .main .mainbox2 {
+  width: 55%;
+  padding: 1rem;
+}
+.container .main .mainbox2 .achievements {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .main .mainbox2 .achievements .aheader {
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+  height: 20%;
+  text-align: center;
+  width: 35%;
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .container .main .mainbox2 .achievements .aheader {
+    font-size: 1.6rem;
+  }
+}
+.container .main .mainbox2 .achievements .list2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.05rem;
+  font-family: 'Thasadith', sans-serif;
+  color: black;
+}
+.container .main .mainbox2 .achievements .list2 li {
+  width: 100%;
+  text-align: center;
+  padding: 2.5% 0;
+  border-bottom: 1px solid black;
+}
+.container .main .mainbox2 .achievements img {
+  margin-left: 20%;
+  height: 3.25rem;
+  width: 12.5%;
+  margin-right: 2%;
+}
+.container .divider {
+  margin-top: 50px;
+  width: 95%;
+  margin: auto;
+  border-top: 2px solid grey;
+}
+.container .middlecontent {
+  padding: 0 5%;
+  display: flex;
+  margin: 5% 0;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.container .middlecontent .education {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+}
+.container .middlecontent .education .eduheader {
+  width: 90%;
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+}
+@media (max-width: 768px) {
+  .container .middlecontent .education .eduheader {
+    font-size: 1.6rem;
+  }
+}
+.container .middlecontent .education .list3 {
+  font-size: 1.05rem;
+  font-family: 'Thasadith', sans-serif;
+  color: black;
+}
+.container .middlecontent .education .list3 li {
+  padding: 0.8rem 0;
+}
+.container .middlecontent .languages {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.container .middlecontent .languages .langsheader {
+  width: 90%;
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+}
+@media (max-width: 768px) {
+  .container .middlecontent .languages .langsheader {
+    font-size: 1.6rem;
+  }
+}
+.container .middlecontent .languages .list4 {
+  font-size: 1.05rem;
+  font-family: 'Thasadith', sans-serif;
+  color: black;
+}
+.container .middlecontent .languages .list4 li {
+  padding: 0.8rem 0;
+}
+.container .middlecontent .work {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.container .middlecontent .work .workheader {
+  width: 90%;
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+  font-size: 1.8rem;
+}
+@media (max-width: 768px) {
+  .container .middlecontent .work .workheader {
+    font-size: 1.6rem;
+  }
+}
+.container .middlecontent .work .list5 {
+  font-size: 1.05rem;
+  font-family: 'Thasadith', sans-serif;
+  color: black;
+}
+.container .middlecontent .work .list5 li {
+  padding: 0.8rem 0;
+}
+.container footer {
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a282cb;
+}
+.container footer .footer h2 {
+  padding-top: 1.25rem;
+  font-size: 2rem;
+  font-family: 'Staatliches', cursive;
+  color: black;
+}
