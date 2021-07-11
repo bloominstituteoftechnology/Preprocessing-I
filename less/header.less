@@ -1,0 +1,63 @@
+#content {
+    > header {
+        .flex(flex-end, baseline);
+        margin: 3rem 0;
+
+        @media @mobileBreakpoint {
+            .flex(flex-start, center);
+            flex-direction: column;
+            margin: 1.5rem 0;
+        }
+
+        > nav {
+            .flex(flex-start, baseline);
+
+            @media @mobileBreakpoint {
+                .flex(flex-start, center);
+                flex-direction: column;
+                width: 100%;
+            }
+
+            > a {
+                margin: 0 2rem;
+                color: @primaryColor;
+                text-decoration: none;
+
+                @media @mobileBreakpoint {
+                    margin: 0;
+                    padding: 0.7rem 0;
+                    width: 100%;
+                    text-align: center;
+                    border-bottom: 0.1rem solid @primaryColor;
+                    transition: background-color 0.2s;
+                    -webkit-tap-highlight-color: transparent;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+
+                    @media @mobileBreakpoint {
+                        text-decoration: none;
+                        background-color: @secondaryColor;
+                    }
+                }
+
+                &:focus {
+                    outline: 0;
+                }
+
+                &:first-of-type {
+                    margin-left: 0;
+
+                    @media @mobileBreakpoint {
+                        border-top: 0.1rem solid @primaryColor;
+                    }
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

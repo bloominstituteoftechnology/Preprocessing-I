@@ -1,1 +1,403 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+:root {
+  font-size: 62.5%;
+  font-family: "Open Sans";
+}
+h1 {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+p,
+a,
+li,
+th,
+td {
+  font-size: 1.8rem;
+  color: #444;
+  line-height: 120%;
+}
+p {
+  margin-bottom: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#content {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 95%;
+}
+@media screen and (max-width: 500px) {
+  #content {
+    width: 90%;
+  }
+}
+#content > header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 3rem 0;
+}
+@media screen and (max-width: 500px) {
+  #content > header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.5rem 0;
+  }
+}
+#content > header > nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+@media screen and (max-width: 500px) {
+  #content > header > nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+#content > header > nav > a {
+  margin: 0 2rem;
+  color: #631aec;
+  text-decoration: none;
+}
+@media screen and (max-width: 500px) {
+  #content > header > nav > a {
+    margin: 0;
+    padding: 0.7rem 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 0.1rem solid #631aec;
+    transition: background-color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+#content > header > nav > a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 500px) {
+  #content > header > nav > a:hover {
+    text-decoration: none;
+    background-color: #f3eefe;
+  }
+}
+#content > header > nav > a:focus {
+  outline: 0;
+}
+#content > header > nav > a:first-of-type {
+  margin-left: 0;
+}
+@media screen and (max-width: 500px) {
+  #content > header > nav > a:first-of-type {
+    border-top: 0.1rem solid #631aec;
+  }
+}
+#content > header > nav > a:last-of-type {
+  margin-right: 0;
+}
+#content > #introduction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 500px) {
+  #content > #introduction {
+    flex-direction: column-reverse;
+  }
+}
+#content > #introduction > #intro-text {
+  margin-right: 2rem;
+}
+@media screen and (max-width: 500px) {
+  #content > #introduction > #intro-text {
+    margin-right: 0rem;
+  }
+}
+#content > #introduction > #intro-text > a {
+  display: inline-block;
+  color: #631aec;
+  text-decoration: none;
+  border: 0.2rem solid #631aec;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  transition: background-color 0.5s;
+  -webkit-tap-highlight-color: transparent;
+}
+#content > #introduction > #intro-text > a:hover {
+  background-color: #f3eefe;
+}
+#content > #introduction > #intro-text > a:focus {
+  outline: 0;
+}
+#content > #introduction > img {
+  width: 30rem;
+  border: 0.2rem solid #631aec;
+  border-radius: 100%;
+}
+@media screen and (max-width: 600px) {
+  #content > #introduction > img {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #content > #introduction > img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+#content > #columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-top;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 500px) {
+  #content > #columns {
+    flex-direction: column;
+  }
+}
+#content > #columns > #about-me,
+#content > #columns > #good-at {
+  width: 48%;
+}
+@media screen and (max-width: 500px) {
+  #content > #columns > #about-me,
+  #content > #columns > #good-at {
+    width: 100%;
+  }
+}
+#content > #columns > #good-at > ul {
+  border: 0.2rem solid #631aec;
+  border-radius: 0.5rem;
+}
+#content > #columns > #good-at > ul > li {
+  padding: 1rem 2rem;
+  border-bottom: 0.2rem solid #631aec;
+}
+#content > #columns > #good-at > ul > li:last-of-type {
+  border-bottom: none;
+}
+#content > #columns > #good-at > ul > li:nth-child(even) {
+  background-color: #f3eefe;
+}
+#content > #work-history > table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+#content > #work-history > table tr > th {
+  font-weight: bold;
+}
+#content > #work-history > table tr > td,
+#content > #work-history > table tr > th {
+  border: 0.2rem solid #631aec;
+  text-align: left;
+  padding: 0.8rem;
+}
+#content > #work-history > table tr > td:first-of-type,
+#content > #work-history > table tr > th:first-of-type {
+  border-left: none;
+}
+#content > #work-history > table tr > td:last-of-type,
+#content > #work-history > table tr > th:last-of-type {
+  border-right: none;
+}
+#content > #work-history > table tr > th {
+  border-top: none;
+}
+#content > #work-history > table tr:nth-child(even) {
+  background-color: #f3eefe;
+}
+#content > #work-history > table tr:last-of-type > td {
+  border-bottom: none;
+}
+#cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#cards div {
+  border: 2px solid #631aec;
+  border-radius: 0.5rem;
+  width: 48%;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 500px) {
+  #cards div {
+    width: 100%;
+  }
+}
+#cards div img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+#cards div h2,
+#cards div p,
+#cards div a {
+  margin: 1rem 1rem;
+}
+#cards div a {
+  display: inline-block;
+  color: #631aec;
+  text-decoration: none;
+  border: 0.2rem solid #631aec;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  transition: background-color 0.5s;
+  -webkit-tap-highlight-color: transparent;
+}
+#cards div a:hover {
+  background-color: #f3eefe;
+}
+#cards div a:focus {
+  outline: 0;
+}

@@ -1,0 +1,35 @@
+#content > #introduction {
+    .flex(space-between, center);
+    margin-bottom: 2rem;
+
+    @media @mobileBreakpoint {
+        flex-direction: column-reverse;
+    }
+
+    > #intro-text {
+        margin-right: 2rem;
+
+        @media @mobileBreakpoint {
+            margin-right: 0rem;
+        }
+
+        > a {
+            .button();
+        }
+    }
+
+    > img {
+        width: 30rem;
+        border: 0.2rem solid @primaryColor;
+        border-radius: 100%;
+
+        @media screen and (max-width: 600px) {
+            width: 20rem;
+        }
+
+        @media @mobileBreakpoint {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
